@@ -1,9 +1,3 @@
----
-title: Untitled
-
----
-
-
 # ACES guide
 
 ## Getting Online
