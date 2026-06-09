@@ -1,0 +1,30 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%environment
+    export RUSTUP_HOME=/opt/rust/rustup
+    export CARGO_HOME=/opt/rust/cargo
+    export PATH=/opt/rust/cargo/bin:$PATH
+
+%post
+    apt-get update && apt-get install -y \
+        curl build-essential ca-certificates \
+        git pkg-config libssl-dev jq \
+        libfontconfig1-dev libfreetype6-dev
+
+    export RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo PATH=/opt/rust/cargo/bin:$PATH
+
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | \
+        sh -s -- -y --no-modify-path --default-toolchain nightly-2026-06-01
+    rustup component add rust-src clippy
+    rustup toolchain install stable --profile default \
+        --target i686-unknown-linux-musl \
+        --target x86_64-unknown-linux-gnu
+
+    # Your additions (installing Miri, BorrowSanitizer) go here!
+
+    chmod -R a+rX /opt/rust
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+%labels
+    Description Rust nightly-2026-06-01 toolchain, read-only at /opt/rust
