@@ -84,6 +84,9 @@ done
 if [[ "$IMAGE" == "rust" ]]; then
     COMPILE_CMD='cargo test --no-run --lib --tests'
     RUN_CMD='cargo test --lib --tests'
+elif [[ "$IMAGE" == *"tracing"* ]]; then
+    COMPILE_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace cargo miri test --no-run --lib --tests"
+    RUN_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace cargo miri test --lib --tests 2>/dev/null"
 else
     COMPILE_CMD="MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test --no-run --lib --tests"
     RUN_CMD="MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test --lib --tests"
