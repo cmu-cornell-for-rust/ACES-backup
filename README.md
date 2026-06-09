@@ -2,7 +2,7 @@
 
 ## Intro
 
-This repo is a regular backup for our research group's directory on the [NSF ACES](https://hprc.tamu.edu/aces/) computing platform. All our data set creation, container build, execution, and analysis scripts are provided and can be replicated on any SLURM batch system. Here is a breif overview of our home directory:
+This repo is a regular backup for our research group's directory on the [NSF ACES](https://hprc.tamu.edu/aces/) computing platform. All our dataset creation, container build, execution, and analysis scripts are provided and can be replicated on any SLURM batch system. Here is a breif overview of our home directory:
 
 ```
 /scratch/group/p.cis260229.000/:
