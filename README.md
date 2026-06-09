@@ -1,13 +1,9 @@
-# ACES guide
+# ACES Backup
 
-## Getting Online
+## Intro
 
-After you've made an ACCESS account and we've successfully added you to the group, you should have access to the portal at: https://portal-aces.hprc.tamu.edu/pun/sys/dashboard/files/fs//scratch/group/p.cis260229.000
+This repo is a regular backup for our research group's directory on the [NSF ACES](https://hprc.tamu.edu/aces/) computing platform. All our data set creation, container build, execution, and analysis scripts are provided and can be replicated on any SLURM batch system. Here is a breif overview of our home directory:
 
-Above is a direct link to the group folder GUI. Here it's easiest to upload and download files onto your personal machine. You can access the terminal via the `_Open in Terminal` button or at [this link](https://portal-aces.hprc.tamu.edu/pun/sys/shell/ssh/default/scratch/group/p.cis260229.000). Tragically, the easiest way to use ACEs is via the browser terminal. Otherwise, you can generate SSH keys, but they expire every two days and renewing them frequently can get annoying. Instructions to do so are available on the [first page of the guide](https://hprc.tamu.edu/kb/User-Guides/ACES/#portal-login).
-
-Our shared group folder has everything you need to run parallel benchmarking jobs. You can always switch to the absolute path at `/scratch/group/p.cis260229.000/`
-Here's an overview of some important folders and scripts in our group directory:
 ```
 /scratch/group/p.cis260229.000/:
 ├── cargo-temp-*
