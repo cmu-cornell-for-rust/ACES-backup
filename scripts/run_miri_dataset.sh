@@ -152,6 +152,7 @@ status=""
 cms=0
 rms=0
 cargo clean || true
+rm -f tracing-* events-* 2>/dev/null || true
 if ! cargo fetch; then
     status=fetch_failed
 fi
@@ -186,6 +187,13 @@ EOF
         cd "$CRATE_PATH" || exit 1
         "$RUN_JOB" -J "$JOBNAME" "$IMAGE" "$WALLTIME" "$MEM" -- "$CMD"
         rc=$?
+        if [[ "$IMAGE" == *"tracing"* ]]; then
+            TRACE_OUT="$OUTPUTS_DIR/tracing/$CRATE"
+            mkdir -p "$TRACE_OUT"
+            for f in tracing-* events-*; do
+                [[ -e "$f" ]] && mv "$f" "$TRACE_OUT/"
+            done
+        fi
         row="$(grep -m1 '^CSVROW:' "$LOGFILE" 2>/dev/null | cut -d: -f2-)"
         if [[ -n "$row" ]]; then
             { flock 9; printf '%s\n' "$row" >> "$CSV"; } 9>"$LOCKFILE"
