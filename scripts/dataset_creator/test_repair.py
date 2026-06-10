@@ -10,13 +10,13 @@ Given a list of `name-version` entries, for each crate this:
   1. looks up its repository on crates.io,
   2. resolves the GitHub/GitLab release tag for that version,
   3. fetches the source at that tag, and
-  4. copies the **non-.rs** files under the crate's tests/ directory into the
+  4. copies files under the crate's tests/ directory into the
      local crate folder, at the same relative paths.
 
-It does NOT touch Cargo.toml, .rs files, or anything outside tests/. The crate
+It does NOT touch Cargo.toml or anything outside tests/. The crate
 stays the (buildable) crates.io version; only the missing data files are added.
-By default existing files are left alone (only missing ones are written); pass
---overwrite to replace. Archives are cached per (repo, tag) for the run, so the
+By default existing files are overwritten; pass --no-overwrite to preserve
+existing files. Archives are cached per (repo, tag) for the run, so the
 members of a mono-repo are downloaded only once.
 
 Stdlib only (no requests / jq). Set GITHUB_TOKEN to raise the API rate limit
@@ -26,7 +26,7 @@ Usage:
     python3 fetch_test_fixtures.py [LIST_FILE] [CRATES_DIR] [options]
       LIST_FILE   default: missing_test_data.log
       CRATES_DIR  default: downloaded_crates   (where <name-version>/ folders live)
-    options: --overwrite  --dry-run  --limit N  --only NAME-VER ...  --keep-cache
+    options: --no-overwrite  --dry-run  --limit N  --only NAME-VER ...  --keep-cache
 """
 
 import argparse
@@ -45,7 +45,7 @@ import urllib.request
 USER_AGENT   = "crate-fixture-fetcher (CMU systems research; via crates.io)"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 HTTP_TIMEOUT = 90
-# directories (relative to the crate's package root) whose non-.rs files are
+# directories (relative to the crate's package root) whose files are
 # treated as test fixtures and restored into the local crate folder
 FIXTURE_DIRS = ["tests", "testdata", "test", "src/unicode/data", "src/tests"]
 
@@ -245,7 +245,7 @@ def get_archive(host, owner, repo, project_path, name, version, cachedir):
 
 # --------------------------------- core ------------------------------------ #
 def copy_fixtures(pkg_dir, local_dir, overwrite, dry_run):
-    """Copy non-.rs files under each FIXTURE_DIRS entry (relative to pkg_dir)
+    """Copy files under each FIXTURE_DIRS entry (relative to pkg_dir)
     into local_dir at the same relative path. Returns (copied, skipped, status)."""
     copied = skipped = 0
     found_any = False
@@ -257,8 +257,6 @@ def copy_fixtures(pkg_dir, local_dir, overwrite, dry_run):
         for dp, dns, fns in os.walk(src_root):
             dns[:] = [d for d in dns if d != ".git"]
             for fn in fns:
-                if fn.endswith(".rs"):
-                    continue
                 src = os.path.join(dp, fn)
                 rel = os.path.relpath(src, pkg_dir)    # e.g. tests/data/x.zip
                 dst = os.path.join(local_dir, rel)
@@ -330,8 +328,9 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("list_file", nargs="?", default="missing_test_data.log")
     ap.add_argument("crates_dir", nargs="?", default="downloaded_crates")
-    ap.add_argument("--overwrite", action="store_true",
-                    help="overwrite fixtures that already exist locally")
+    ap.add_argument("--no-overwrite", action="store_false", dest="overwrite",
+                    help="do not overwrite fixtures that already exist locally (default: overwrite)",
+                    default=True)
     ap.add_argument("--dry-run", action="store_true", help="report only; copy nothing")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only", nargs="*", default=None)

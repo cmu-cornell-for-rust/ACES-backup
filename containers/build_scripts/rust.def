@@ -24,8 +24,7 @@ From: ubuntu:22.04
         --target x86_64-unknown-linux-gnu
 
     cargo install rustup-toolchain-install-master --version 1.12.0
-    rustup-toolchain-install-master -n master
-    rustup component add rust-src clippy --toolchain master
+    rustup-toolchain-install-master -n master --component rust-src --component clippy
     rustup default master
 
     # Your additions (installing Miri, BorrowSanitizer) go here!
@@ -35,3 +34,4 @@ From: ubuntu:22.04
 
 %labels
     Description Rust master toolchain (via rustup-toolchain-install-master), read-only at /opt/rust
+
