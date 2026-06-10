@@ -191,7 +191,7 @@ EOF
             TRACE_OUT="$OUTPUTS_DIR/tracing/$CRATE"
             mkdir -p "$TRACE_OUT"
             for f in tracing-* events-*; do
-                [[ -e "$f" ]] && mv "$f" "$TRACE_OUT/"
+                [[ -e "$f" ]] && gzip "$f" && mv "${f}.gz" "$TRACE_OUT/"
             done
         fi
         row="$(grep -m1 '^CSVROW:' "$LOGFILE" 2>/dev/null | cut -d: -f2-)"
