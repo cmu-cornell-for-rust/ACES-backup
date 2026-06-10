@@ -45,7 +45,9 @@ import urllib.request
 USER_AGENT   = "crate-fixture-fetcher (CMU systems research; via crates.io)"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 HTTP_TIMEOUT = 90
-TESTS_DIRNAME = "tests"        # which directory's fixtures to restore
+# directories (relative to the crate's package root) whose non-.rs files are
+# treated as test fixtures and restored into the local crate folder
+FIXTURE_DIRS = ["tests", "testdata", "test", "src/unicode/data", "src/tests"]
 
 # per-run archive cache:  (repo_id, tag) -> extracted_root
 _CACHE = {}
@@ -154,15 +156,16 @@ def _best_tag(names, version):
 
 
 # --------------------------- archive acquisition --------------------------- #
-def _download_tag(host, owner, repo, project_path, tag, cachedir):
-    safe = re.sub(r"[^A-Za-z0-9._-]", "_", f"{owner or project_path}_{repo}_{tag}")
+def _download(host, owner, repo, project_path, ref, cachedir, is_branch=False):
+    safe = re.sub(r"[^A-Za-z0-9._-]", "_", f"{owner or project_path}_{repo}_{ref}")
     tgz = os.path.join(cachedir, safe + ".tgz")
     out = os.path.join(cachedir, safe)
     if host == "github":
-        url = (f"https://codeload.github.com/{owner}/{repo}/tar.gz/refs/tags/"
-               + urllib.parse.quote(tag, safe="/"))
-    else:  # gitlab (written but untested here)
-        enc = urllib.parse.quote(tag, safe="")
+        kind = "heads" if is_branch else "tags"
+        url = (f"https://codeload.github.com/{owner}/{repo}/tar.gz/refs/{kind}/"
+               + urllib.parse.quote(ref, safe="/"))
+    else:  # gitlab (written but untested here); archive endpoint takes any ref
+        enc = urllib.parse.quote(ref, safe="")
         url = f"https://gitlab.com/{project_path}/-/archive/{enc}/{repo}-{enc}.tar.gz"
     if os.path.isdir(out):
         return url, out
@@ -175,61 +178,99 @@ def _download_tag(host, owner, repo, project_path, tag, cachedir):
     return url, out
 
 
-def get_archive(host, owner, repo, project_path, name, version, cachedir):
-    """Resolve the matching tag and return (extract_root, tag, url) or Nones,
-    reusing the per-run cache so mono-repo members download once."""
-    repo_id = f"{host}:{owner}/{repo}" if host == "github" else f"{host}:{project_path}"
-    for tag in tag_candidates(name, version):
-        if (repo_id, tag) in _CACHE:
-            return _CACHE[(repo_id, tag)], tag, _CACHE_URL[(repo_id, tag)]
-        url, root = _download_tag(host, owner, repo, project_path, tag, cachedir)
-        if root:
-            _CACHE[(repo_id, tag)] = root
-            _CACHE_URL[(repo_id, tag)] = url
-            return root, tag, url
-    # fallback: list tags, match by version
+def _take(repo_id, host, owner, repo, project_path, ref, cachedir, is_branch=False):
+    """Download+extract a ref (cache-aware). Returns (root, url) or (None, url)."""
+    if (repo_id, ref) in _CACHE:
+        return _CACHE[(repo_id, ref)], _CACHE_URL[(repo_id, ref)]
+    url, root = _download(host, owner, repo, project_path, ref, cachedir, is_branch)
+    if root:
+        _CACHE[(repo_id, ref)] = root
+        _CACHE_URL[(repo_id, ref)] = url
+    return root, url
+
+
+def latest_ref(host, owner, repo, project_path):
+    """(ref, is_branch) for the repo's latest release, else its default branch."""
     if host == "github":
-        api = f"https://api.github.com/repos/{owner}/{repo}/tags?per_page=100"
-        tags = http_json(api, github_api=True) or []
+        rel = http_json(f"https://api.github.com/repos/{owner}/{repo}/releases/latest",
+                        github_api=True)
+        if rel and rel.get("tag_name"):
+            return rel["tag_name"], False
+        info = http_json(f"https://api.github.com/repos/{owner}/{repo}", github_api=True)
+        if info and info.get("default_branch"):
+            return info["default_branch"], True
     else:
         enc = urllib.parse.quote(project_path, safe="")
-        api = f"https://gitlab.com/api/v4/projects/{enc}/repository/tags?per_page=100"
-        tags = http_json(api) or []
+        tags = http_json(f"https://gitlab.com/api/v4/projects/{enc}/repository/tags"
+                         f"?order_by=updated&sort=desc&per_page=1") or []
+        if tags and tags[0].get("name"):
+            return tags[0]["name"], False
+        info = http_json(f"https://gitlab.com/api/v4/projects/{enc}") or {}
+        if info.get("default_branch"):
+            return info["default_branch"], True
+    return None, None
+
+
+def get_archive(host, owner, repo, project_path, name, version, cachedir):
+    """Resolve a source ref and return (extract_root, ref_label, url, kind),
+    kind in {'exact','latest'}, or (None, None, None, None). Caches per ref so
+    mono-repo members download once."""
+    repo_id = f"{host}:{owner}/{repo}" if host == "github" else f"{host}:{project_path}"
+    # 1) version-matched tag spellings
+    for tag in tag_candidates(name, version):
+        root, url = _take(repo_id, host, owner, repo, project_path, tag, cachedir)
+        if root:
+            return root, tag, url, "exact"
+    # 2) list tags, match one by version
+    if host == "github":
+        tags = http_json(f"https://api.github.com/repos/{owner}/{repo}/tags?per_page=100",
+                         github_api=True) or []
+    else:
+        enc = urllib.parse.quote(project_path, safe="")
+        tags = http_json(f"https://gitlab.com/api/v4/projects/{enc}/repository/tags"
+                         f"?per_page=100") or []
     pick = _best_tag([t.get("name", "") for t in tags], version)
     if pick:
-        if (repo_id, pick) in _CACHE:
-            return _CACHE[(repo_id, pick)], pick, _CACHE_URL[(repo_id, pick)]
-        url, root = _download_tag(host, owner, repo, project_path, pick, cachedir)
+        root, url = _take(repo_id, host, owner, repo, project_path, pick, cachedir)
         if root:
-            _CACHE[(repo_id, pick)] = root
-            _CACHE_URL[(repo_id, pick)] = url
-            return root, pick, url
-    return None, None, None
+            return root, pick, url, "exact"
+    # 3) fallback: latest release, else default branch
+    ref, is_branch = latest_ref(host, owner, repo, project_path)
+    if ref:
+        root, url = _take(repo_id, host, owner, repo, project_path, ref, cachedir, is_branch)
+        if root:
+            return root, (f"{ref} (branch)" if is_branch else ref), url, "latest"
+    return None, None, None, None
 
 
 # --------------------------------- core ------------------------------------ #
 def copy_fixtures(pkg_dir, local_dir, overwrite, dry_run):
-    """Copy non-.rs files under pkg_dir/tests/ into local_dir/tests/...
-    Returns (copied, skipped_existing)."""
-    src_tests = os.path.join(pkg_dir, TESTS_DIRNAME)
-    if not os.path.isdir(src_tests):
-        return (0, 0, "no tests/ in repo")
+    """Copy non-.rs files under each FIXTURE_DIRS entry (relative to pkg_dir)
+    into local_dir at the same relative path. Returns (copied, skipped, status)."""
     copied = skipped = 0
-    for dp, dns, fns in os.walk(src_tests):
-        dns[:] = [d for d in dns if d != ".git"]
-        for fn in fns:
-            if fn.endswith(".rs"):
-                continue
-            src = os.path.join(dp, fn)
-            rel = os.path.relpath(src, pkg_dir)        # e.g. tests/data/x.zip
-            dst = os.path.join(local_dir, rel)
-            if os.path.exists(dst) and not overwrite:
-                skipped += 1
-                continue
-            if not dry_run:
-                os.makedirs(os.path.dirname(dst), exist_ok=True)
-                shutil.copy2(src, dst)
-            copied += 1
+    found_any = False
+    for rel_dir in FIXTURE_DIRS:
+        src_root = os.path.join(pkg_dir, rel_dir)
+        if not os.path.isdir(src_root):
+            continue
+        found_any = True
+        for dp, dns, fns in os.walk(src_root):
+            dns[:] = [d for d in dns if d != ".git"]
+            for fn in fns:
+                if fn.endswith(".rs"):
+                    continue
+                src = os.path.join(dp, fn)
+                rel = os.path.relpath(src, pkg_dir)    # e.g. tests/data/x.zip
+                dst = os.path.join(local_dir, rel)
+                if os.path.exists(dst) and not overwrite:
+                    skipped += 1
+                    continue
+                if not dry_run:
+                    os.makedirs(os.path.dirname(dst), exist_ok=True)
+                    shutil.copy2(src, dst)
+                copied += 1
+    if not found_any:
+        return (0, 0, "no fixture dirs in repo")
     return (copied, skipped, "ok")
 
 
@@ -266,20 +307,22 @@ def process(line, crates_dir, cachedir, args, writer, fh):
     if host not in ("github", "gitlab"):
         return rec(f"unsupported host: {host}")
 
-    root, tag, _url = get_archive(host, owner, repo, project_path, name, version, cachedir)
+    root, ref, _url, kind = get_archive(host, owner, repo, project_path,
+                                        name, version, cachedir)
     if not root:
-        return rec("no matching release tag")
-    row["resolved_tag"] = tag
+        return rec("no matching tag and no latest available")
+    row["resolved_tag"] = ref
     pkg = find_package_dir(root, name)
     if not pkg:
-        return rec(f"tag {tag}: package '{name}' not in archive")
+        return rec(f"{ref}: package '{name}' not in archive")
 
     copied, skipped, why = copy_fixtures(pkg, local_dir, args.overwrite, args.dry_run)
     if why != "ok":
-        return rec(f"tag {tag}: {why}")
+        return rec(f"{ref}: {why}")
     verb = "would copy" if args.dry_run else "copied"
     extra = f", {skipped} already present" if skipped else ""
-    return rec(f"{verb} from {tag}{extra}", copied)
+    label = ref if kind == "exact" else f"{ref} [LATEST: v{version} not tagged]"
+    return rec(f"{verb} from {label}{extra}", copied)
 
 
 def main():
@@ -313,8 +356,8 @@ def main():
     if args.limit:
         lines = lines[:args.limit]
 
-    print(f"==> {len(lines)} crate(s); copying non-.rs {TESTS_DIRNAME}/ fixtures "
-          f"into {args.crates_dir}/")
+    print(f"==> {len(lines)} crate(s); copying non-.rs fixtures from "
+          f"{', '.join(d + '/' for d in FIXTURE_DIRS)} into {args.crates_dir}/")
     if args.dry_run:
         print("    DRY RUN: nothing will be written")
     if not GITHUB_TOKEN:

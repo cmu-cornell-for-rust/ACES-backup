@@ -15,8 +15,7 @@ From: ubuntu:22.04
     export RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo PATH=/opt/rust/cargo/bin:$PATH
 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | \
-        sh -s -- -y --no-modify-path --default-toolchain nightly-2026-06-01
-    rustup component add rust-src clippy
+        sh -s -- -y --no-modify-path --default-toolchain stable
     rustup toolchain install stable --profile default \
         --target i686-unknown-linux-musl \
         --target x86_64-unknown-linux-gnu
@@ -24,10 +23,15 @@ From: ubuntu:22.04
         --target i686-unknown-linux-musl \
         --target x86_64-unknown-linux-gnu
 
+    cargo install rustup-toolchain-install-master --version 1.12.0
+    rustup-toolchain-install-master -n master
+    rustup component add rust-src clippy --toolchain master
+    rustup default master
+
     # Your additions (installing Miri, BorrowSanitizer) go here!
 
     chmod -R a+rX /opt/rust
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 %labels
-    Description Rust nightly-2026-06-01 toolchain, read-only at /opt/rust
+    Description Rust master toolchain (via rustup-toolchain-install-master), read-only at /opt/rust
