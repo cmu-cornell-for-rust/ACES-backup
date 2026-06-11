@@ -8,6 +8,9 @@ use flate2::read::GzDecoder;
 use regex::Regex;
 use serde_json;
 
+// Directory holding the per-crate tracing output, relative to where the binary runs.
+const BASE_DIR: &str = "../../outputs/tracing";
+
 // ── File reading (transparently gunzips .gz files) ──────────────────────────────
 
 fn read_content(path: &Path) -> std::io::Result<String> {
@@ -24,7 +27,7 @@ fn read_content(path: &Path) -> std::io::Result<String> {
 // ── Crate list ────────────────────────────────────────────────────────────────
 
 fn collect_crates() -> Result<Vec<String>, Box<dyn std::error::Error>> {
-    let mut names: Vec<String> = fs::read_dir("..")?
+    let mut names: Vec<String> = fs::read_dir(BASE_DIR)?
         .filter_map(|e| e.ok())
         .filter(|e| e.path().is_dir())
         .map(|e| e.file_name().to_string_lossy().to_string())
@@ -113,7 +116,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     wtr_main.write_record(&build_header_main())?;
 
     for crate_name in collect_crates()? {
-        let crate_path = Path::new("..").join(&crate_name);
+        let crate_path = Path::new(BASE_DIR).join(&crate_name);
         if !crate_path.exists() {
             eprintln!("Warning: directory {} not found, skipping", crate_name);
             continue;
