@@ -8,8 +8,10 @@ use flate2::read::GzDecoder;
 use regex::Regex;
 use serde_json;
 
-// Directory holding the per-crate tracing output, relative to where the binary runs.
-const BASE_DIR: &str = "../../outputs/tracing";
+// Directory holding the per-crate tracing output. Absolute by default because the
+// binary runs from /work inside the container, so a relative path can't reach it.
+// Override with the first CLI argument: `tree_timing /some/other/tracing`.
+const BASE_DIR: &str = "/scratch/group/p.cis260229.000/outputs/tracing";
 
 // ── File reading (transparently gunzips .gz files) ──────────────────────────────
 
@@ -26,8 +28,8 @@ fn read_content(path: &Path) -> std::io::Result<String> {
 
 // ── Crate list ────────────────────────────────────────────────────────────────
 
-fn collect_crates() -> Result<Vec<String>, Box<dyn std::error::Error>> {
-    let mut names: Vec<String> = fs::read_dir(BASE_DIR)?
+fn collect_crates(base: &str) -> Result<Vec<String>, Box<dyn std::error::Error>> {
+    let mut names: Vec<String> = fs::read_dir(base)?
         .filter_map(|e| e.ok())
         .filter(|e| e.path().is_dir())
         .map(|e| e.file_name().to_string_lossy().to_string())
@@ -112,11 +114,14 @@ fn build_header_main() -> Vec<String> {
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let pat = Patterns::new();
 
+    let base_dir = std::env::args().nth(1).unwrap_or_else(|| BASE_DIR.to_string());
+    eprintln!("Reading tracing output from {}", base_dir);
+
     let mut wtr_main = Writer::from_path("output.csv")?;
     wtr_main.write_record(&build_header_main())?;
 
-    for crate_name in collect_crates()? {
-        let crate_path = Path::new(BASE_DIR).join(&crate_name);
+    for crate_name in collect_crates(&base_dir)? {
+        let crate_path = Path::new(&base_dir).join(&crate_name);
         if !crate_path.exists() {
             eprintln!("Warning: directory {} not found, skipping", crate_name);
             continue;

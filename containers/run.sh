@@ -116,7 +116,7 @@ if ! command -v singularity &>/dev/null; then
 fi
 
 # Writable per-job scratch under group space, bound at the SAME path in/out.
-JOBSCRATCH="/scratch/group/p.cis260229.000/$USER/cargo-$SLURM_JOB_ID"
+JOBSCRATCH="/scratch/group/p.cis260229.000/cargo-temp-$USER/cargo-$SLURM_JOB_ID"
 mkdir -p "$JOBSCRATCH/home" "$JOBSCRATCH/target"
 
 echo
@@ -130,6 +130,7 @@ echo
 # and PATH stay pointed at the read-only toolchain baked into the image.
 exec singularity shell --cleanenv --pwd /work \
     --bind "$JOBSCRATCH" --bind "$PWD:/work" \
+    --bind /scratch/group/p.cis260229.000/outputs \
     --env CARGO_HOME="$JOBSCRATCH/home" \
     --env CARGO_TARGET_DIR="$JOBSCRATCH/target" \
     --env http_proxy="$http_proxy"   --env https_proxy="$https_proxy" \
