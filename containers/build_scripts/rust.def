@@ -14,8 +14,10 @@ From: ubuntu:22.04
 
     export RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo PATH=/opt/rust/cargo/bin:$PATH
 
+    # Same pinned nightly as base-miri (opt-in via `cargo +nightly-2026-06-01 ...`);
+    # the default is switched to the `miri` toolchain below.
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | \
-        sh -s -- -y --no-modify-path --default-toolchain stable
+        sh -s -- -y --no-modify-path --default-toolchain nightly-2026-06-01
     rustup toolchain install stable --profile default \
         --target i686-unknown-linux-musl \
         --target x86_64-unknown-linux-gnu
@@ -24,14 +26,18 @@ From: ubuntu:22.04
         --target x86_64-unknown-linux-gnu
 
     cargo install rustup-toolchain-install-master --version 1.12.0
-    rustup-toolchain-install-master -n master --component rust-src --component clippy
-    rustup default master
 
-    # Your additions (installing Miri, BorrowSanitizer) go here!
+    MIRI_RUST_VERSION=$(curl -sSfL https://raw.githubusercontent.com/cmu-cornell-for-rust/miri/master/rust-version)
+    test -n "$MIRI_RUST_VERSION" || { echo "ERROR: could not fetch miri fork's rust-version"; exit 1; }
+    echo "$MIRI_RUST_VERSION" > /opt/rust/rust-version
+    rustup-toolchain-install-master "$MIRI_RUST_VERSION" -n miri \
+        --component rust-src --component clippy --component rustfmt
+    rustup default miri
 
     chmod -R a+rX /opt/rust
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 %labels
-    Description Rust master toolchain (via rustup-toolchain-install-master), read-only at /opt/rust
+    Description Rust toolchain pinned to the miri fork's rust-version commit (named `miri`, default), plus nightly-2026-06-01, read-only at /opt/rust
+
 
