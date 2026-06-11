@@ -152,7 +152,7 @@ status=""
 cms=0
 rms=0
 cargo clean || true
-rm -f tracing-* events-* 2>/dev/null || true
+rm -f trace-* events-* 2>/dev/null || true
 if ! cargo fetch; then
     status=fetch_failed
 fi
@@ -190,7 +190,7 @@ EOF
         if [[ "$IMAGE" == *"tracing"* ]]; then
             TRACE_OUT="$OUTPUTS_DIR/tracing/$CRATE"
             mkdir -p "$TRACE_OUT"
-            for f in tracing-* events-*; do
+            for f in trace-* events-*; do
                 [[ -e "$f" ]] && gzip "$f" && mv "${f}.gz" "$TRACE_OUT/"
             done
         fi
