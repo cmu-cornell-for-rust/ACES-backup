@@ -39,7 +39,8 @@ From: ubuntu:22.04
     cargo install rustup-toolchain-install-master
 
     # --- Build & install the Miri fork --------------------------------------
-    git clone --depth 1 https://github.com/cmu-cornell-for-rust/miri /opt/miri
+    git clone --branch tracing \
+        --depth 1 https://github.com/cmu-cornell-for-rust/miri /opt/miri
     cd /opt/miri
 
     ./miri toolchain
@@ -75,4 +76,5 @@ From: ubuntu:22.04
 %test
     cargo miri --version
     cargo miri setup --print-sysroot
+
 
