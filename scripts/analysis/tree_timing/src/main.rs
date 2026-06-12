@@ -82,7 +82,7 @@ impl Patterns {
             e3:    Regex::new(r"E3[^(]*\(t(\d+)\)").unwrap(),
             e4:    Regex::new(r"E4[^(]*\(t(\d+)\)").unwrap(),
             e5:    Regex::new(r"E5[^(]*\(t(\d+), (\d+), (\d+)\)").unwrap(),
-            e6:    Regex::new(r"E6[^(]*\(\)").unwrap(),
+            e6:    Regex::new(r"E6.*GC").unwrap(),
             e7:    Regex::new(r"E7[^(]*\(t(\d+), (\d+)\)").unwrap(),
         }
     }
@@ -241,10 +241,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                         }
 
                     } else if e.starts_with("E6") {
+                        // Count "E6: GC" invocations; the "E6 ... start" sentinel has no "GC".
                         if pat.e6.is_match(e) {
                             gc_invoked += 1;
                         }
-                        // "E6 (start)" sentinel — skip
 
                     } else if e.starts_with("E7") {
                         if let Some(caps) = pat.e7.captures(e) {
