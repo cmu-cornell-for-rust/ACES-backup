@@ -12,10 +12,13 @@
 # `normal` QOS allows 40 concurrent jobs. Each job runs with 16G memory, is
 # named "<crate>-<image>", writes its full stdout+stderr to "<crate>/<image>.log",
 # and cleans up its per-job scratch on the way out. A row per crate
-# (build,crate,status,compile_seconds,run_seconds,timestamp,job_id) is appended
-# to /scratch/group/p.cis260229.000/outputs/<image>-<dataset>.csv, with
+# (build,crate,status,compile_seconds,run_seconds,tests,timestamp,job_id) is
+# appended to /scratch/group/p.cis260229.000/outputs/<image>-<dataset>.csv, with
 # concurrent writes serialized by a lock. compile_seconds/run_seconds time the
-# (--no-run) build and the execution separately. status is one of: success,
+# (--no-run) build and the execution separately. tests is the number of tests
+# executed (summed across every "running N tests" line in the run output, i.e.
+# unit + integration + doc tests); passed is how many of those passed (summed
+# across the "test result:" lines). Both are 0 when nothing ran. status is one of: success,
 # test_failed (compiled, tests/Miri failed), build_failed (compile error),
 # fetch_failed (deps wouldn't download). The orchestrator waits for every job to
 # finish, then exits, printing a count of each status.
@@ -104,7 +107,7 @@ echo
 # node, so we serialize appends with an flock on a node-local lock file.
 mkdir -p "$OUTPUTS_DIR"
 if [[ ! -f "$CSV" ]]; then
-    echo "build,crate,status,compile_seconds,run_seconds,timestamp,job_id" > "$CSV"
+    echo "build,crate,status,compile_seconds,run_seconds,tests,passed,timestamp,job_id" > "$CSV"
 fi
 LOCKFILE="$(mktemp /tmp/run_dataset.lock.XXXXXX)"
 
@@ -151,8 +154,10 @@ trap 'rm -rf "\$CARGO_HOME" "\$CARGO_TARGET_DIR" 2>/dev/null || true' EXIT
 status=""
 cms=0
 rms=0
+tests=0
+passed=0
 cargo clean || true
-rm -f traces-* events-* 2>/dev/null || true
+rm -f trace* events-* 2>/dev/null || true
 if ! cargo fetch; then
     status=fetch_failed
 fi
@@ -163,15 +168,26 @@ if [ -z "\$status" ]; then
 fi
 if [ -z "\$status" ]; then
     rstart=\$(date +%s%3N)
-    if ${RUN_CMD}; then status=success; else status=test_failed; fi
+    # Capture run stdout so we can count tests; stderr still flows to the log.
+    # (Only stdout is redirected, so any embedded "2>/dev/null" in RUN_CMD --
+    # e.g. the tracing image -- keeps suppressing stderr as intended.)
+    runlog="\$(mktemp)"
+    ${RUN_CMD} > "\$runlog"; rc=\$?
+    cat "\$runlog"
+    if [ "\$rc" -eq 0 ]; then status=success; else status=test_failed; fi
     rms=\$(( \$(date +%s%3N) - rstart ))
+    # Sum every "running N tests" line (unit + integration + doc test binaries).
+    tests=\$(grep -oE '^running [0-9]+ test' "\$runlog" | grep -oE '[0-9]+' | awk '{s+=\$1} END{print s+0}')
+    # Sum the "N passed" from each "test result:" summary line.
+    passed=\$(grep -oE 'test result:.* [0-9]+ passed' "\$runlog" | grep -oE '[0-9]+ passed' | grep -oE '[0-9]+' | awk '{s+=\$1} END{print s+0}')
+    rm -f "\$runlog"
 fi
 compile=\$(printf '%d.%03d' \$(( cms / 1000 )) \$(( cms % 1000 )))
 run=\$(printf '%d.%03d' \$(( rms / 1000 )) \$(( rms % 1000 )))
 ts=\$(date -u +'%Y-%m-%dT%H:%M:%SZ')
 jobid="\$(basename "\${CARGO_HOME%/home}")"; jobid="\${jobid#cargo-}"
 echo "result: ${CRATE} (${IMAGE}) -> \$status (compile \${cms}ms, run \${rms}ms)"
-echo "CSVROW:${IMAGE},${CRATE},\$status,\$compile,\$run,\$ts,\$jobid"
+echo "CSVROW:${IMAGE},${CRATE},\$status,\$compile,\$run,\$tests,\$passed,\$ts,\$jobid"
 EOF
 
     # Wait for a free slot before launching the next crate.
@@ -190,7 +206,7 @@ EOF
         if [[ "$IMAGE" == *"tracing"* ]]; then
             TRACE_OUT="$OUTPUTS_DIR/tracing/$CRATE"
             mkdir -p "$TRACE_OUT"
-            for f in trace-* events-*; do
+            for f in trace* events-*; do
                 [[ -e "$f" ]] && gzip "$f" && mv "${f}.gz" "$TRACE_OUT/"
             done
         fi
