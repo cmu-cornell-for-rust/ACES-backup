@@ -31,7 +31,7 @@ From: ubuntu:22.04
     test -n "$MIRI_RUST_VERSION" || { echo "ERROR: could not fetch miri fork's rust-version"; exit 1; }
     echo "$MIRI_RUST_VERSION" > /opt/rust/rust-version
     rustup-toolchain-install-master "$MIRI_RUST_VERSION" -n miri \
-        --component rust-src --component clippy --component rustfmt
+        --component cargo --component rust-src --component clippy --component rustfmt
     rustup default miri
 
     chmod -R a+rX /opt/rust
@@ -39,5 +39,6 @@ From: ubuntu:22.04
 
 %labels
     Description Rust toolchain pinned to the miri fork's rust-version commit (named `miri`, default), plus nightly-2026-06-01, read-only at /opt/rust
+
 
 

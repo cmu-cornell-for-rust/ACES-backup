@@ -82,14 +82,14 @@ done
 # Tree Borrows. COMPILE_CMD (--no-run) does all the building; RUN_CMD then only
 # executes, so the two phases can be timed separately and cleanly.
 if [[ "$IMAGE" == "rust" ]]; then
-    COMPILE_CMD='cargo test --no-run --lib --tests'
-    RUN_CMD='cargo test --lib --tests'
+    COMPILE_CMD='cargo test --no-run'
+    RUN_CMD='cargo test'
 elif [[ "$IMAGE" == *"tracing"* ]]; then
-    COMPILE_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test --no-run --lib --tests"
-    RUN_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test --lib --tests 2>/dev/null"
+    COMPILE_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test --no-run"
+    RUN_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test 2>/dev/null"
 else
-    COMPILE_CMD="MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test --no-run --lib --tests"
-    RUN_CMD="MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test --lib --tests"
+    COMPILE_CMD="MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test --no-run"
+    RUN_CMD="MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test"
 fi
 
 echo "Image:    $IMAGE"
@@ -152,7 +152,7 @@ status=""
 cms=0
 rms=0
 cargo clean || true
-rm -f trace-* events-* 2>/dev/null || true
+rm -f traces-* events-* 2>/dev/null || true
 if ! cargo fetch; then
     status=fetch_failed
 fi
@@ -243,3 +243,4 @@ fi
 if (( fail > 0 )); then
     exit 1
 fi
+
