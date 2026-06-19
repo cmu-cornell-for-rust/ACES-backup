@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-writeable-0.6.3, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838481 queued and waiting for resources
+srun: job 1838481 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/writeable-0.6.3'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838481)
+
+Analyzing crate 'writeable-0.6.3' at /scratch/group/p.cis260229.000/outputs/tracing/writeable-0.6.3
+wrote /scratch/group/p.cis260229.000/outputs/tracing/writeable-0.6.3/output_tree_size_dist_writeable-0.6.3.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:writeable-0.6.3,"5,538,827","17,152,030","3.1 (226,884)","8,366,741","1.5 (226,883)","6,566,305","1.2 (12,001)","818,110,349","147.7 (3,357,166)","132,593,918","23.9 (28,598,067)","2,497","1,659,209","0.3 (226,883)","{""Machine(Global)"":1422}"
+✓ writeable-0.6.3

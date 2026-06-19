@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-terminal_size-0.4.4, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838437 queued and waiting for resources
+srun: job 1838437 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/terminal_size-0.4.4'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838437)
+
+Analyzing crate 'terminal_size-0.4.4' at /scratch/group/p.cis260229.000/outputs/tracing/terminal_size-0.4.4
+wrote /scratch/group/p.cis260229.000/outputs/tracing/terminal_size-0.4.4/output_tree_size_dist_terminal_size-0.4.4.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:terminal_size-0.4.4,"39,675","121,137","3.1 (12,327)","57,372","1.4 (1,453)","43,815",1.1 (40),"3,533,373","89.1 (1,626,021)","1,168,893","29.5 (601,624)",15,"38,168","1.0 (11,544)","{""Machine(Global)"":172}"
+✓ terminal_size-0.4.4

@@ -1,0 +1,15 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-futures-util-0.3.32, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted using account 158460239852
+srun: Current account balance = 53153.826944
+srun: job 1838273 queued and waiting for resources
+srun: job 1838273 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/futures-util-0.3.32'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838273)
+
+Analyzing crate 'futures-util-0.3.32' at /scratch/group/p.cis260229.000/outputs/tracing/futures-util-0.3.32
+wrote /scratch/group/p.cis260229.000/outputs/tracing/futures-util-0.3.32/output_tree_size_dist_futures-util-0.3.32.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:futures-util-0.3.32,"46,799","144,661","3.1 (12,327)","67,775","1.4 (1,453)","52,234",1.1 (183),"4,172,241","89.2 (1,626,021)","1,295,118","27.7 (601,624)",18,"44,731","1.0 (11,544)","{""Machine(Global)"":205}"
+✓ futures-util-0.3.32

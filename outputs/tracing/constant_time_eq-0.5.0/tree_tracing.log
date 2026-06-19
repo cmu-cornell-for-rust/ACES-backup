@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-constant_time_eq-0.5.0, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838223 queued and waiting for resources
+srun: job 1838223 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/constant_time_eq-0.5.0'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838223)
+
+Analyzing crate 'constant_time_eq-0.5.0' at /scratch/group/p.cis260229.000/outputs/tracing/constant_time_eq-0.5.0
+wrote /scratch/group/p.cis260229.000/outputs/tracing/constant_time_eq-0.5.0/output_tree_size_dist_constant_time_eq-0.5.0.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:constant_time_eq-0.5.0,"199,094","627,392","3.2 (12,327)","289,954","1.5 (1,453)","224,079",1.1 (126),"19,419,975","97.5 (1,632,397)","6,214,893","31.2 (606,700)",75,"189,382","1.0 (11,530)","{""Machine(Global)"":887}"
+✓ constant_time_eq-0.5.0

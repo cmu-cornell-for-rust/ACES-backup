@@ -5,7 +5,7 @@
 #   [image]       image/SIF name under the group containers dir used to run the
 #                 prebuilt analysis binary. Default: rust (the binary is built in,
 #                 and runs in, this container).
-#   [walltime]    per-job walltime, HH or HH:MM (passed to run_job.sh). Default: 1.
+#   [walltime]    per-job walltime, HH or HH:MM (passed to run_job.sh). Default: 60.
 #   [tracing_dir] directory whose subdirectories are per-crate tracing outputs
 #                 (events-*, gzipped). Default: $OUTPUTS/tracing.
 #
@@ -50,12 +50,13 @@ CONTAINERS_DIR="$GROUP/containers"
 OUTPUTS_DIR="$GROUP/outputs"
 TREE_TRACING_SRC="$GROUP/scripts/analysis/tree_tracing"   # cargo project
 BIN_NAME="tree_tracing.bin"                              # built artifact under SRC
-MEM="${MEM:-8G}"
+MEM="${MEM:-64G}"            # per-crate analysis job memory
+BUILD_MEM="${BUILD_MEM:-8G}" # the one-off build job needs far less
 MAX_PARALLEL="${MAX_PARALLEL:-40}"   # max jobs in flight at once (QOS MaxJobsPU=40)
 
 # ── Args ──────────────────────────────────────────────────────────────────--
 IMAGE_ARG="${1:-rust}"
-WALLTIME="${2:-1}"
+WALLTIME="${2:-60}"
 TRACING_DIR="${3:-$OUTPUTS_DIR/tracing}"
 
 IMAGE="$(basename "${IMAGE_ARG%.sif}")"
@@ -100,7 +101,7 @@ else
     BUILD_CMD='cargo build --release && cp "$CARGO_TARGET_DIR/release/tree_tracing" "./'"$BIN_NAME"'"'
     (
         cd "$TREE_TRACING_SRC"
-        "$RUN_JOB" -J tree_tracing-build "$IMAGE" "$WALLTIME" "$MEM" -- "$BUILD_CMD"
+        "$RUN_JOB" -J tree_tracing-build "$IMAGE" "$WALLTIME" "$BUILD_MEM" -- "$BUILD_CMD"
     )
     [[ -f "$BIN" ]] || { echo "Error: build did not produce $BIN" >&2; exit 1; }
     echo "Built: $BIN"
@@ -200,3 +201,4 @@ fi
 if (( fail > 0 )); then
     exit 1
 fi
+

@@ -1,0 +1,15 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-sha1-0.11.0, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted using account 158460239852
+srun: Current account balance = 52055.633056
+srun: job 1838412 queued and waiting for resources
+srun: job 1838412 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/sha1-0.11.0'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838412)
+
+Analyzing crate 'sha1-0.11.0' at /scratch/group/p.cis260229.000/outputs/tracing/sha1-0.11.0
+wrote /scratch/group/p.cis260229.000/outputs/tracing/sha1-0.11.0/output_tree_size_dist_sha1-0.11.0.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:sha1-0.11.0,"7,044","20,462","2.9 (1,573)","10,656",1.5 (387),"10,878",1.5 (66),"1,839,539","261.1 (583,116)","2,877,739","408.5 (1,272,289)",2,"2,583",0.4 (960),"{""Machine(Global)"":38}"
+✓ sha1-0.11.0

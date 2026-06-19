@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-libm-0.2.16, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838314 queued and waiting for resources
+srun: job 1838314 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/libm-0.2.16'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838314)
+
+Analyzing crate 'libm-0.2.16' at /scratch/group/p.cis260229.000/outputs/tracing/libm-0.2.16
+wrote /scratch/group/p.cis260229.000/outputs/tracing/libm-0.2.16/output_tree_size_dist_libm-0.2.16.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:libm-0.2.16,"53,389","171,234","3.2 (12,327)","78,119","1.5 (1,453)","63,608",1.2 (247),"4,351,813","81.5 (1,659,406)","2,477,069","46.4 (581,208)",17,"62,662","1.2 (11,846)","{""Machine(Global)"":411}"
+✓ libm-0.2.16

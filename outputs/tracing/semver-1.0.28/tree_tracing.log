@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-semver-1.0.28, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838398 queued and waiting for resources
+srun: job 1838398 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/semver-1.0.28'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838398)
+
+Analyzing crate 'semver-1.0.28' at /scratch/group/p.cis260229.000/outputs/tracing/semver-1.0.28
+wrote /scratch/group/p.cis260229.000/outputs/tracing/semver-1.0.28/output_tree_size_dist_semver-1.0.28.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:semver-1.0.28,"682,751","2,370,264","3.5 (22,359)","1,013,857","1.5 (2,137)","790,526","1.2 (1,266)","198,135,367","290.2 (20,175,801)","41,679,923","61.0 (5,426,000)",277,"770,072","1.1 (21,946)","{""Machine(Global)"":1466}"
+✓ semver-1.0.28

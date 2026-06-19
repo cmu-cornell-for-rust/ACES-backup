@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-async-lock-3.4.2, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838173 queued and waiting for resources
+srun: job 1838173 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/async-lock-3.4.2'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838173)
+
+Analyzing crate 'async-lock-3.4.2' at /scratch/group/p.cis260229.000/outputs/tracing/async-lock-3.4.2
+wrote /scratch/group/p.cis260229.000/outputs/tracing/async-lock-3.4.2/output_tree_size_dist_async-lock-3.4.2.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:async-lock-3.4.2,"5,876,278","19,421,064","3.3 (2,971,436)","8,200,251","1.4 (321,735)","7,103,835","1.2 (76,114)","216,804,778","36.9 (59,169,198)","236,156,147","40.2 (113,602,267)","2,273","9,661,115","1.6 (2,970,557)","{""Machine(Global)"":3174}"
+✓ async-lock-3.4.2

@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-native-tls-0.2.18, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838340 queued and waiting for resources
+srun: job 1838340 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/native-tls-0.2.18'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838340)
+
+Analyzing crate 'native-tls-0.2.18' at /scratch/group/p.cis260229.000/outputs/tracing/native-tls-0.2.18
+wrote /scratch/group/p.cis260229.000/outputs/tracing/native-tls-0.2.18/output_tree_size_dist_native-tls-0.2.18.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:native-tls-0.2.18,"42,325","131,265","3.1 (12,327)","61,653","1.5 (1,453)","47,928",1.1 (60),"3,855,328","91.1 (1,676,041)","1,235,736","29.2 (596,879)",15,"39,402","0.9 (11,305)","{""Machine(Global)"":202}"
+✓ native-tls-0.2.18

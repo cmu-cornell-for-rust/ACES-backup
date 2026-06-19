@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-winnow-1.0.3, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838480 queued and waiting for resources
+srun: job 1838480 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/winnow-1.0.3'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838480)
+
+Analyzing crate 'winnow-1.0.3' at /scratch/group/p.cis260229.000/outputs/tracing/winnow-1.0.3
+wrote /scratch/group/p.cis260229.000/outputs/tracing/winnow-1.0.3/output_tree_size_dist_winnow-1.0.3.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:winnow-1.0.3,"79,052","270,123","3.4 (12,327)","117,978","1.5 (1,453)","99,195",1.3 (557),"6,728,510","85.1 (1,643,655)","6,001,946","75.9 (1,493,028)",25,"111,853","1.4 (11,683)","{""Machine(Global)"":734}"
+✓ winnow-1.0.3

@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-yansi-1.0.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838483 queued and waiting for resources
+srun: job 1838483 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/yansi-1.0.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838483)
+
+Analyzing crate 'yansi-1.0.1' at /scratch/group/p.cis260229.000/outputs/tracing/yansi-1.0.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/yansi-1.0.1/output_tree_size_dist_yansi-1.0.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:yansi-1.0.1,"679,805","2,140,946","3.1 (12,327)","956,148","1.4 (1,739)","795,257",1.2 (525),"72,926,531","107.3 (1,672,707)","13,334,404","19.6 (606,700)",106,"232,578","0.3 (11,510)","{""Machine(Global)"":10239}"
+✓ yansi-1.0.1

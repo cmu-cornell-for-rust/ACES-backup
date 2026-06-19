@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-httparse-1.10.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838287 queued and waiting for resources
+srun: job 1838287 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/httparse-1.10.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838287)
+
+Analyzing crate 'httparse-1.10.1' at /scratch/group/p.cis260229.000/outputs/tracing/httparse-1.10.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/httparse-1.10.1/output_tree_size_dist_httparse-1.10.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:httparse-1.10.1,"2,274,070","7,195,613","3.2 (264,636)","3,431,788","1.5 (25,466)","2,631,269","1.2 (15,117)","151,479,675","66.6 (14,145,042)","67,205,986","29.6 (14,192,795)",880,"2,208,285","1.0 (264,444)","{""Machine(Global)"":3602}"
+✓ httparse-1.10.1

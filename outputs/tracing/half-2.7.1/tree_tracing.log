@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-half-2.7.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838280 queued and waiting for resources
+srun: job 1838280 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/half-2.7.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838280)
+
+Analyzing crate 'half-2.7.1' at /scratch/group/p.cis260229.000/outputs/tracing/half-2.7.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/half-2.7.1/output_tree_size_dist_half-2.7.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:half-2.7.1,"825,466","2,296,153","2.8 (47,278)","1,193,061","1.4 (4,536)","978,152","1.2 (2,691)","50,016,440","60.6 (2,526,835)","10,378,532","12.6 (576,476)",296,"490,832","0.6 (47,086)","{""Machine(Global)"":1305}"
+✓ half-2.7.1

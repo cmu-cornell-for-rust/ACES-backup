@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-arc-swap-1.9.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838206 queued and waiting for resources
+srun: job 1838206 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/arc-swap-1.9.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838206)
+
+Analyzing crate 'arc-swap-1.9.1' at /scratch/group/p.cis260229.000/outputs/tracing/arc-swap-1.9.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/arc-swap-1.9.1/output_tree_size_dist_arc-swap-1.9.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:arc-swap-1.9.1,"7,041,720","23,110,835","3.3 (626,158)","10,062,375","1.4 (55,081)","6,657,034","0.9 (9,046)","238,439,748","33.9 (2,216,124)","51,885,356","7.4 (1,670,749)","2,173","7,890,167","1.1 (626,154)","{""Machine(Global)"":776}"
+✓ arc-swap-1.9.1

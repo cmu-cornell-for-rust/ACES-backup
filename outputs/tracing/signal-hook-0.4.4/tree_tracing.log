@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-signal-hook-0.4.4, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838417 queued and waiting for resources
+srun: job 1838417 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/signal-hook-0.4.4'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838417)
+
+Analyzing crate 'signal-hook-0.4.4' at /scratch/group/p.cis260229.000/outputs/tracing/signal-hook-0.4.4
+wrote /scratch/group/p.cis260229.000/outputs/tracing/signal-hook-0.4.4/output_tree_size_dist_signal-hook-0.4.4.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:signal-hook-0.4.4,"40,746","124,789","3.1 (12,327)","59,060","1.4 (1,453)","45,520",1.1 (40),"3,694,744","90.7 (1,690,243)","1,161,219","28.5 (596,397)",15,"38,345","0.9 (11,358)","{""Machine(Global)"":191}"
+✓ signal-hook-0.4.4

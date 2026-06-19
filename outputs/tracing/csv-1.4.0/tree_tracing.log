@@ -1,0 +1,15 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-csv-1.4.0, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted using account 158460239852
+srun: Current account balance = 52853.826944
+srun: job 1838238 queued and waiting for resources
+srun: job 1838238 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/csv-1.4.0'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838238)
+
+Analyzing crate 'csv-1.4.0' at /scratch/group/p.cis260229.000/outputs/tracing/csv-1.4.0
+wrote /scratch/group/p.cis260229.000/outputs/tracing/csv-1.4.0/output_tree_size_dist_csv-1.4.0.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:csv-1.4.0,"2,997,248","10,682,604","3.6 (879,781)","5,914,468","2.0 (146,630)","4,419,889","1.5 (8,163)","425,052,690","141.8 (14,022,542)","14,660,840,488","4891.4 (655,272,386)","1,151","4,425,052","1.5 (879,780)","{""Machine(Global)"":1318}"
+✓ csv-1.4.0

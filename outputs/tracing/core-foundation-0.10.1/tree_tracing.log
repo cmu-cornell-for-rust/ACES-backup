@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-core-foundation-0.10.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838226 queued and waiting for resources
+srun: job 1838226 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/core-foundation-0.10.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838226)
+
+Analyzing crate 'core-foundation-0.10.1' at /scratch/group/p.cis260229.000/outputs/tracing/core-foundation-0.10.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/core-foundation-0.10.1/output_tree_size_dist_core-foundation-0.10.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:core-foundation-0.10.1,"43,278","134,876","3.1 (12,327)","63,099","1.5 (1,453)","49,441",1.1 (91),"4,032,617","93.2 (1,665,237)","1,314,378","30.4 (565,873)",15,"40,963","0.9 (10,925)","{""Machine(Global)"":233}"
+✓ core-foundation-0.10.1

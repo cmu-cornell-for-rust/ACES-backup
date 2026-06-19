@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-ansi_term-0.12.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838177 queued and waiting for resources
+srun: job 1838177 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/ansi_term-0.12.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838177)
+
+Analyzing crate 'ansi_term-0.12.1' at /scratch/group/p.cis260229.000/outputs/tracing/ansi_term-0.12.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/ansi_term-0.12.1/output_tree_size_dist_ansi_term-0.12.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:ansi_term-0.12.1,"2,050,058","6,630,573","3.2 (473,170)","3,374,667","1.6 (113,821)","2,629,991","1.3 (14,990)","315,978,333","154.1 (33,363,486)","657,325,771","320.6 (233,996,130)",776,"2,601,329","1.3 (472,829)","{""Machine(Global)"":1702}"
+✓ ansi_term-0.12.1

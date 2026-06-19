@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-alloc-stdlib-0.2.2, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838194 queued and waiting for resources
+srun: job 1838194 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/alloc-stdlib-0.2.2'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838194)
+
+Analyzing crate 'alloc-stdlib-0.2.2' at /scratch/group/p.cis260229.000/outputs/tracing/alloc-stdlib-0.2.2
+wrote /scratch/group/p.cis260229.000/outputs/tracing/alloc-stdlib-0.2.2/output_tree_size_dist_alloc-stdlib-0.2.2.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:alloc-stdlib-0.2.2,"140,380","502,651","3.6 (12,327)","195,915","1.4 (1,453)","158,174","1.1 (4,096)","12,126,128","86.4 (1,679,838)","3,770,610","26.9 (611,298)",51,"125,889","0.9 (11,510)","{""Machine(Global)"":4600}"
+✓ alloc-stdlib-0.2.2

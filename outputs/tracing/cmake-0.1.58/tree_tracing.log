@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-cmake-0.1.58, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838211 queued and waiting for resources
+srun: job 1838211 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/cmake-0.1.58'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838211)
+
+Analyzing crate 'cmake-0.1.58' at /scratch/group/p.cis260229.000/outputs/tracing/cmake-0.1.58
+wrote /scratch/group/p.cis260229.000/outputs/tracing/cmake-0.1.58/output_tree_size_dist_cmake-0.1.58.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:cmake-0.1.58,"39,629","121,858","3.1 (12,327)","57,557","1.5 (1,453)","43,984",1.1 (40),"3,733,229","94.2 (1,635,634)","1,192,407","30.1 (601,689)",15,"38,443","1.0 (11,487)","{""Machine(Global)"":177}"
+✓ cmake-0.1.58

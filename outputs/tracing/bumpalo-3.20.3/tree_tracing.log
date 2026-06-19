@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-bumpalo-3.20.3, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838196 queued and waiting for resources
+srun: job 1838196 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/bumpalo-3.20.3'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838196)
+
+Analyzing crate 'bumpalo-3.20.3' at /scratch/group/p.cis260229.000/outputs/tracing/bumpalo-3.20.3
+wrote /scratch/group/p.cis260229.000/outputs/tracing/bumpalo-3.20.3/output_tree_size_dist_bumpalo-3.20.3.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:bumpalo-3.20.3,"511,882","1,471,419","2.9 (140,453)","859,483","1.7 (30,002)","657,467","1.3 (10,001)","18,706,466","36.5 (2,167,373)","17,180,145","33.6 (4,133,737)",358,"637,089","1.2 (140,365)","{""Machine(Global)"":1175}"
+✓ bumpalo-3.20.3

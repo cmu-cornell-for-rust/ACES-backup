@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-indexmap-2.14.0, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838301 queued and waiting for resources
+srun: job 1838301 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/indexmap-2.14.0'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838301)
+
+Analyzing crate 'indexmap-2.14.0' at /scratch/group/p.cis260229.000/outputs/tracing/indexmap-2.14.0
+wrote /scratch/group/p.cis260229.000/outputs/tracing/indexmap-2.14.0/output_tree_size_dist_indexmap-2.14.0.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:indexmap-2.14.0,"11,132,356","31,841,058","2.9 (136,011)","19,167,447","1.7 (37,824)","18,289,479","1.6 (16,202)","988,808,334","88.8 (14,898,229)","605,417,787","54.4 (26,604,932)","5,088","8,351,511","0.8 (136,010)","{""Machine(Global)"":4109}"
+✓ indexmap-2.14.0

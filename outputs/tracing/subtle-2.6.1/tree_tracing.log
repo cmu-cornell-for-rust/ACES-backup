@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-subtle-2.6.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838429 queued and waiting for resources
+srun: job 1838429 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/subtle-2.6.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838429)
+
+Analyzing crate 'subtle-2.6.1' at /scratch/group/p.cis260229.000/outputs/tracing/subtle-2.6.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/subtle-2.6.1/output_tree_size_dist_subtle-2.6.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:subtle-2.6.1,"1,012,053","3,472,046","3.4 (129,001)","1,489,336","1.5 (23,396)","1,159,885","1.1 (1,722)","149,673,221","147.9 (4,294,324)","23,931,459","23.6 (1,923,020)",440,"1,024,277","1.0 (129,000)","{""Machine(Global)"":614}"
+✓ subtle-2.6.1

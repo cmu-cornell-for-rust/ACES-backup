@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-colored-3.1.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838212 queued and waiting for resources
+srun: job 1838212 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/colored-3.1.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838212)
+
+Analyzing crate 'colored-3.1.1' at /scratch/group/p.cis260229.000/outputs/tracing/colored-3.1.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/colored-3.1.1/output_tree_size_dist_colored-3.1.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:colored-3.1.1,"598,388","1,902,771","3.2 (111,123)","867,138","1.4 (10,920)","688,585","1.2 (5,605)","50,607,470","84.6 (6,840,930)","14,949,314","25.0 (1,544,003)",230,"605,776","1.0 (111,120)","{""Machine(Global)"":706}"
+✓ colored-3.1.1

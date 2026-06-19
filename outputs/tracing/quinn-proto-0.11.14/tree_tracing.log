@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-quinn-proto-0.11.14, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838379 queued and waiting for resources
+srun: job 1838379 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/quinn-proto-0.11.14'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838379)
+
+Analyzing crate 'quinn-proto-0.11.14' at /scratch/group/p.cis260229.000/outputs/tracing/quinn-proto-0.11.14
+wrote /scratch/group/p.cis260229.000/outputs/tracing/quinn-proto-0.11.14/output_tree_size_dist_quinn-proto-0.11.14.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:quinn-proto-0.11.14,"71,940","237,428","3.3 (12,327)","105,795","1.5 (1,453)","89,650",1.2 (545),"5,028,406","69.9 (1,644,618)","5,741,786","79.8 (1,443,370)",21,"97,557","1.4 (11,792)","{""Machine(Global)"":691}"
+✓ quinn-proto-0.11.14

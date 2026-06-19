@@ -1,0 +1,13 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-pyo3-ffi-0.28.3, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838378 queued and waiting for resources
+srun: job 1838378 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/pyo3-ffi-0.28.3'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838378)
+
+Analyzing crate 'pyo3-ffi-0.28.3' at /scratch/group/p.cis260229.000/outputs/tracing/pyo3-ffi-0.28.3
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:pyo3-ffi-0.28.3,0,0,0.0 (0),0,0.0 (0),0,0.0 (0),0,0.0 (0),0,0.0 (0),0,0,0.0 (0),{}
+✓ pyo3-ffi-0.28.3

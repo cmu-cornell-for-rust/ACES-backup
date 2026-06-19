@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-combine-4.6.7, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838213 queued and waiting for resources
+srun: job 1838213 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/combine-4.6.7'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838213)
+
+Analyzing crate 'combine-4.6.7' at /scratch/group/p.cis260229.000/outputs/tracing/combine-4.6.7
+wrote /scratch/group/p.cis260229.000/outputs/tracing/combine-4.6.7/output_tree_size_dist_combine-4.6.7.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:combine-4.6.7,"908,361","2,858,096","3.1 (42,347)","1,290,621","1.4 (4,065)","1,036,417","1.1 (2,406)","124,784,742","137.4 (12,631,724)","28,163,853","31.0 (2,472,375)",285,"730,900","0.8 (41,664)","{""Machine(Global)"":4133}"
+✓ combine-4.6.7

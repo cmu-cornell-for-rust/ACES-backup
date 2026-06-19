@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-prost-0.14.3, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838375 queued and waiting for resources
+srun: job 1838375 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/prost-0.14.3'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838375)
+
+Analyzing crate 'prost-0.14.3' at /scratch/group/p.cis260229.000/outputs/tracing/prost-0.14.3
+wrote /scratch/group/p.cis260229.000/outputs/tracing/prost-0.14.3/output_tree_size_dist_prost-0.14.3.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:prost-0.14.3,"91,778","308,412","3.4 (21,327)","135,196","1.5 (2,108)","117,549",1.3 (845),"5,956,205","64.9 (1,641,659)","16,957,012","184.8 (8,919,864)",25,"135,301","1.5 (20,799)","{""Machine(Global)"":1000}"
+✓ prost-0.14.3

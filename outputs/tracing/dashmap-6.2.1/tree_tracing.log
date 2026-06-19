@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-dashmap-6.2.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838241 queued and waiting for resources
+srun: job 1838241 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/dashmap-6.2.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838241)
+
+Analyzing crate 'dashmap-6.2.1' at /scratch/group/p.cis260229.000/outputs/tracing/dashmap-6.2.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/dashmap-6.2.1/output_tree_size_dist_dashmap-6.2.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:dashmap-6.2.1,"1,005,734","3,101,654","3.1 (54,252)","1,876,060","1.9 (9,936)","1,390,543","1.4 (1,266)","46,930,304","46.7 (3,759,673)","561,816,392","558.6 (4,458,957)",554,"1,272,266","1.3 (53,399)","{""Machine(Global)"":315}"
+✓ dashmap-6.2.1

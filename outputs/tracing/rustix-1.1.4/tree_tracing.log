@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-rustix-1.1.4, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838389 queued and waiting for resources
+srun: job 1838389 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/rustix-1.1.4'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838389)
+
+Analyzing crate 'rustix-1.1.4' at /scratch/group/p.cis260229.000/outputs/tracing/rustix-1.1.4
+wrote /scratch/group/p.cis260229.000/outputs/tracing/rustix-1.1.4/output_tree_size_dist_rustix-1.1.4.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:rustix-1.1.4,"44,922","138,562","3.1 (12,327)","65,108","1.4 (1,453)","50,265",1.1 (97),"4,003,127","89.1 (1,691,245)","1,202,720","26.8 (596,042)",16,"41,153","0.9 (11,349)","{""Machine(Global)"":201}"
+✓ rustix-1.1.4

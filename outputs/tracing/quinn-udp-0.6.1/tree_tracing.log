@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-quinn-udp-0.6.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838380 queued and waiting for resources
+srun: job 1838380 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/quinn-udp-0.6.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838380)
+
+Analyzing crate 'quinn-udp-0.6.1' at /scratch/group/p.cis260229.000/outputs/tracing/quinn-udp-0.6.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/quinn-udp-0.6.1/output_tree_size_dist_quinn-udp-0.6.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:quinn-udp-0.6.1,"99,377","311,213","3.1 (12,327)","146,604","1.5 (1,453)","112,178",1.1 (297),"8,657,596","87.1 (1,665,730)","2,983,282","30.0 (611,298)",38,"92,646","0.9 (11,487)","{""Machine(Global)"":372}"
+✓ quinn-udp-0.6.1

@@ -1,0 +1,15 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-matchers-0.2.0, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted using account 158460239852
+srun: Current account balance = 52793.826944
+srun: job 1838322 queued and waiting for resources
+srun: job 1838322 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/matchers-0.2.0'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838322)
+
+Analyzing crate 'matchers-0.2.0' at /scratch/group/p.cis260229.000/outputs/tracing/matchers-0.2.0
+wrote /scratch/group/p.cis260229.000/outputs/tracing/matchers-0.2.0/output_tree_size_dist_matchers-0.2.0.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:matchers-0.2.0,"19,814,859","75,426,552","3.8 (1,200,234)","29,674,188","1.5 (211,891)","23,476,117","1.2 (29,497)","2,420,219,271","122.1 (82,211,783)","3,585,730,329","181.0 (62,369,408)","7,844","41,023,947","2.1 (1,200,094)","{""Machine(Global)"":895}"
+✓ matchers-0.2.0

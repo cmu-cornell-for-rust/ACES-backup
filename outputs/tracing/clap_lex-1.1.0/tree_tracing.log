@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-clap_lex-1.1.0, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838210 queued and waiting for resources
+srun: job 1838210 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/clap_lex-1.1.0'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838210)
+
+Analyzing crate 'clap_lex-1.1.0' at /scratch/group/p.cis260229.000/outputs/tracing/clap_lex-1.1.0
+wrote /scratch/group/p.cis260229.000/outputs/tracing/clap_lex-1.1.0/output_tree_size_dist_clap_lex-1.1.0.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:clap_lex-1.1.0,"55,160","183,324","3.3 (12,327)","79,515","1.4 (1,453)","63,541",1.2 (126),"9,765,605","177.0 (1,632,397)","1,979,816","35.9 (606,700)",17,"46,806","0.8 (11,510)","{""Machine(Global)"":460}"
+✓ clap_lex-1.1.0

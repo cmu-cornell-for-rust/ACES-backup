@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-h2-0.4.14, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838278 queued and waiting for resources
+srun: job 1838278 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/h2-0.4.14'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838278)
+
+Analyzing crate 'h2-0.4.14' at /scratch/group/p.cis260229.000/outputs/tracing/h2-0.4.14
+wrote /scratch/group/p.cis260229.000/outputs/tracing/h2-0.4.14/output_tree_size_dist_h2-0.4.14.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:h2-0.4.14,"1,034,228","3,240,729","3.1 (36,774)","1,640,907","1.6 (7,842)","1,153,607","1.1 (2,092)","102,718,602","99.3 (1,960,853)","51,393,780","49.7 (7,810,917)",384,"740,204","0.7 (36,771)","{""Machine(Global)"":1386}"
+✓ h2-0.4.14

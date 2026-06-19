@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-tokio-stream-0.1.18, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838445 queued and waiting for resources
+srun: job 1838445 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/tokio-stream-0.1.18'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838445)
+
+Analyzing crate 'tokio-stream-0.1.18' at /scratch/group/p.cis260229.000/outputs/tracing/tokio-stream-0.1.18
+wrote /scratch/group/p.cis260229.000/outputs/tracing/tokio-stream-0.1.18/output_tree_size_dist_tokio-stream-0.1.18.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:tokio-stream-0.1.18,"3,409,150","9,207,314","2.7 (29,356)","4,575,497","1.3 (2,812)","3,966,320","1.2 (1,665)","376,322,048","110.4 (1,696,590)","590,690,309","173.3 (1,272,289)","1,024","2,335,909","0.7 (29,164)","{""Machine(Global)"":9089}"
+✓ tokio-stream-0.1.18

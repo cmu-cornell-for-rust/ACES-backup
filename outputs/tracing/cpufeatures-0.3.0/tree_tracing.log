@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-cpufeatures-0.3.0, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838229 queued and waiting for resources
+srun: job 1838229 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/cpufeatures-0.3.0'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838229)
+
+Analyzing crate 'cpufeatures-0.3.0' at /scratch/group/p.cis260229.000/outputs/tracing/cpufeatures-0.3.0
+wrote /scratch/group/p.cis260229.000/outputs/tracing/cpufeatures-0.3.0/output_tree_size_dist_cpufeatures-0.3.0.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:cpufeatures-0.3.0,"164,377","514,019","3.1 (12,327)","238,912","1.5 (1,453)","183,413",1.1 (240),"15,420,104","93.8 (1,635,634)","4,980,034","30.3 (606,700)",64,"161,595","1.0 (11,530)","{""Machine(Global)"":582}"
+✓ cpufeatures-0.3.0

@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-concurrent-queue-2.5.0, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838215 queued and waiting for resources
+srun: job 1838215 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/concurrent-queue-2.5.0'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838215)
+
+Analyzing crate 'concurrent-queue-2.5.0' at /scratch/group/p.cis260229.000/outputs/tracing/concurrent-queue-2.5.0
+wrote /scratch/group/p.cis260229.000/outputs/tracing/concurrent-queue-2.5.0/output_tree_size_dist_concurrent-queue-2.5.0.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:concurrent-queue-2.5.0,"2,715,480","9,576,300","3.5 (342,416)","4,490,020","1.7 (169,561)","3,957,631","1.5 (10,745)","101,399,002","37.3 (5,773,659)","129,616,208","47.7 (53,694,328)","1,375","4,812,305","1.8 (342,350)","{""Machine(Global)"":1273}"
+✓ concurrent-queue-2.5.0

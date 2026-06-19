@@ -1,0 +1,15 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-brotli-decompressor-5.0.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted using account 158460239852
+srun: Current account balance = 55793.826944
+srun: job 1838192 queued and waiting for resources
+srun: job 1838192 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/brotli-decompressor-5.0.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838192)
+
+Analyzing crate 'brotli-decompressor-5.0.1' at /scratch/group/p.cis260229.000/outputs/tracing/brotli-decompressor-5.0.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/brotli-decompressor-5.0.1/output_tree_size_dist_brotli-decompressor-5.0.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:brotli-decompressor-5.0.1,"848,901","2,953,860","3.5 (85,891)","1,850,652","2.2 (54,388)","1,376,562","1.6 (18,301)","252,068,531","296.9 (104,851,806)","25,446,201,613","29975.5 (24,446,148,534)",417,"1,637,001","1.9 (85,683)","{""Machine(Global)"":370}"
+✓ brotli-decompressor-5.0.1

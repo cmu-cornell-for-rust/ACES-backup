@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-yoke-0.8.2, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838484 queued and waiting for resources
+srun: job 1838484 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/yoke-0.8.2'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838484)
+
+Analyzing crate 'yoke-0.8.2' at /scratch/group/p.cis260229.000/outputs/tracing/yoke-0.8.2
+wrote /scratch/group/p.cis260229.000/outputs/tracing/yoke-0.8.2/output_tree_size_dist_yoke-0.8.2.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:yoke-0.8.2,"206,035","636,251","3.1 (12,395)","294,958","1.4 (1,453)","231,454",1.1 (696),"17,292,554","83.9 (1,692,865)","4,662,978","22.6 (602,503)",72,"178,871","0.9 (12,205)","{""Machine(Global)"":1125}"
+✓ yoke-0.8.2

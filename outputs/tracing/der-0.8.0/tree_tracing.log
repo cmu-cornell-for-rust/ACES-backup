@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-der-0.8.0, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838243 queued and waiting for resources
+srun: job 1838243 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/der-0.8.0'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838243)
+
+Analyzing crate 'der-0.8.0' at /scratch/group/p.cis260229.000/outputs/tracing/der-0.8.0
+wrote /scratch/group/p.cis260229.000/outputs/tracing/der-0.8.0/output_tree_size_dist_der-0.8.0.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:der-0.8.0,"571,209","1,738,171","3.0 (78,221)","823,487","1.4 (7,518)","674,181","1.2 (4,458)","45,639,650","79.9 (4,118,447)","10,482,742","18.4 (881,253)",207,"512,376","0.9 (77,484)","{""Machine(Global)"":948}"
+✓ der-0.8.0

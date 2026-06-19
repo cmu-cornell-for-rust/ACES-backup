@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-serde_bytes-0.11.19, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838400 queued and waiting for resources
+srun: job 1838400 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/serde_bytes-0.11.19'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838400)
+
+Analyzing crate 'serde_bytes-0.11.19' at /scratch/group/p.cis260229.000/outputs/tracing/serde_bytes-0.11.19
+wrote /scratch/group/p.cis260229.000/outputs/tracing/serde_bytes-0.11.19/output_tree_size_dist_serde_bytes-0.11.19.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:serde_bytes-0.11.19,"206,483","650,823","3.2 (12,327)","300,062","1.5 (1,453)","232,062",1.1 (297),"24,411,643","118.2 (5,740,303)","6,217,980","30.1 (610,764)",78,"212,387","1.0 (11,530)","{""Machine(Global)"":840}"
+✓ serde_bytes-0.11.19

@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-inout-0.2.2, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838302 queued and waiting for resources
+srun: job 1838302 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/inout-0.2.2'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838302)
+
+Analyzing crate 'inout-0.2.2' at /scratch/group/p.cis260229.000/outputs/tracing/inout-0.2.2
+wrote /scratch/group/p.cis260229.000/outputs/tracing/inout-0.2.2/output_tree_size_dist_inout-0.2.2.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:inout-0.2.2,"85,752","268,902","3.1 (12,327)","126,023","1.5 (1,453)","96,121",1.1 (183),"7,894,644","92.1 (1,638,831)","2,767,412","32.3 (606,700)",34,"82,198","1.0 (11,510)","{""Machine(Global)"":318}"
+✓ inout-0.2.2

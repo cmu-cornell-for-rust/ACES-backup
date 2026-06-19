@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-filetime-0.2.29, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838255 queued and waiting for resources
+srun: job 1838255 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/filetime-0.2.29'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838255)
+
+Analyzing crate 'filetime-0.2.29' at /scratch/group/p.cis260229.000/outputs/tracing/filetime-0.2.29
+wrote /scratch/group/p.cis260229.000/outputs/tracing/filetime-0.2.29/output_tree_size_dist_filetime-0.2.29.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:filetime-0.2.29,"46,300","142,962","3.1 (12,327)","67,276","1.5 (1,453)","52,058",1.1 (97),"4,090,974","88.4 (1,666,061)","1,234,679","26.7 (599,816)",17,"43,948","0.9 (11,401)","{""Machine(Global)"":197}"
+✓ filetime-0.2.29

@@ -1,0 +1,15 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-minimal-lexical-0.2.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted using account 158460239852
+srun: Current account balance = 53093.826944
+srun: job 1838335 queued and waiting for resources
+srun: job 1838335 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/minimal-lexical-0.2.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838335)
+
+Analyzing crate 'minimal-lexical-0.2.1' at /scratch/group/p.cis260229.000/outputs/tracing/minimal-lexical-0.2.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/minimal-lexical-0.2.1/output_tree_size_dist_minimal-lexical-0.2.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:minimal-lexical-0.2.1,"1,609,126","5,013,227","3.1 (18,449)","2,562,573","1.6 (2,492)","1,789,243","1.1 (1,076)","204,073,144","126.8 (2,084,231)","135,896,460","84.5 (2,577,349)",577,"1,413,360","0.9 (18,259)","{""Machine(Global)"":2618}"
+✓ minimal-lexical-0.2.1

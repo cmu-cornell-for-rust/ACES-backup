@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-ppv-lite86-0.2.21, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838368 queued and waiting for resources
+srun: job 1838368 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/ppv-lite86-0.2.21'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838368)
+
+Analyzing crate 'ppv-lite86-0.2.21' at /scratch/group/p.cis260229.000/outputs/tracing/ppv-lite86-0.2.21
+wrote /scratch/group/p.cis260229.000/outputs/tracing/ppv-lite86-0.2.21/output_tree_size_dist_ppv-lite86-0.2.21.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:ppv-lite86-0.2.21,"51,813","162,711","3.1 (12,327)","76,309","1.5 (1,453)","58,301",1.1 (240),"4,510,458","87.1 (1,635,634)","1,555,485","30.0 (601,689)",20,"47,782","0.9 (11,487)","{""Machine(Global)"":179}"
+✓ ppv-lite86-0.2.21

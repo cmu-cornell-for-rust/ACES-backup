@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-event-listener-5.4.1, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838253 queued and waiting for resources
+srun: job 1838253 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/event-listener-5.4.1'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838253)
+
+Analyzing crate 'event-listener-5.4.1' at /scratch/group/p.cis260229.000/outputs/tracing/event-listener-5.4.1
+wrote /scratch/group/p.cis260229.000/outputs/tracing/event-listener-5.4.1/output_tree_size_dist_event-listener-5.4.1.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:event-listener-5.4.1,"234,041","724,648","3.1 (12,327)","329,540","1.4 (1,453)","265,789",1.1 (639),"18,567,295","79.3 (1,680,712)","5,226,551","22.3 (606,459)",75,"179,430","0.8 (11,487)","{""Machine(Global)"":1257}"
+✓ event-listener-5.4.1

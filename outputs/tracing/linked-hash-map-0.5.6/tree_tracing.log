@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-linked-hash-map-0.5.6, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838317 queued and waiting for resources
+srun: job 1838317 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/linked-hash-map-0.5.6'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838317)
+
+Analyzing crate 'linked-hash-map-0.5.6' at /scratch/group/p.cis260229.000/outputs/tracing/linked-hash-map-0.5.6
+wrote /scratch/group/p.cis260229.000/outputs/tracing/linked-hash-map-0.5.6/output_tree_size_dist_linked-hash-map-0.5.6.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:linked-hash-map-0.5.6,"292,356","845,183","2.9 (27,356)","450,611","1.5 (2,619)","396,766","1.4 (1,551)","16,646,058","56.9 (1,678,848)","4,098,684","14.0 (588,833)",109,"208,309","0.7 (27,166)","{""Machine(Global)"":1104}"
+✓ linked-hash-map-0.5.6

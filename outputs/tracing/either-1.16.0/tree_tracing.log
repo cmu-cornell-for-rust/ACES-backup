@@ -1,0 +1,14 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-either-1.16.0, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted with no account set
+srun: job 1838249 queued and waiting for resources
+srun: job 1838249 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/either-1.16.0'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838249)
+
+Analyzing crate 'either-1.16.0' at /scratch/group/p.cis260229.000/outputs/tracing/either-1.16.0
+wrote /scratch/group/p.cis260229.000/outputs/tracing/either-1.16.0/output_tree_size_dist_either-1.16.0.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:either-1.16.0,"115,630","346,663","3.0 (12,327)","162,331","1.4 (1,453)","133,372",1.2 (525),"8,926,259","77.2 (1,651,932)","3,177,722","27.5 (674,253)",29,"76,795","0.7 (11,435)","{""Machine(Global)"":1340}"
+✓ either-1.16.0

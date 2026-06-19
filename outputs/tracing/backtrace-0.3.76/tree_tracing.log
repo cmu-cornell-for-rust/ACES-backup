@@ -1,0 +1,15 @@
+Requesting node: 1 task, 64G, 60:00:00, job=tt-backtrace-0.3.76, image=/scratch/group/p.cis260229.000/containers/rust.sif
+srun: Job submitted using account 158460239852
+srun: Current account balance = 55793.826944
+srun: job 1838175 queued and waiting for resources
+srun: job 1838175 has been allocated resources
+
+Running in container (/work -> /scratch/group/p.cis260229.000/scripts/analysis/tree_tracing):
+    ./tree_tracing.bin '/scratch/group/p.cis260229.000/outputs/tracing/backtrace-0.3.76'
+(scratch: /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/cargo-1838175)
+
+Analyzing crate 'backtrace-0.3.76' at /scratch/group/p.cis260229.000/outputs/tracing/backtrace-0.3.76
+wrote /scratch/group/p.cis260229.000/outputs/tracing/backtrace-0.3.76/output_tree_size_dist_backtrace-0.3.76.csv
+CSVHEADER:crate,trees,nodes,avg_nodes,read,avg_read (max),write,avg_write (max),visited,avg_visited (max),skipped,avg_skipped (max),gc_invoked,gc_pruned,avg_gc_pruned,memory_kinds
+CSVROW:backtrace-0.3.76,"496,923","1,491,257","3.0 (49,414)","740,676","1.5 (7,812)","543,521","1.1 (1,737)","171,833,316","345.8 (4,020,316)","80,068,814","161.1 (3,345,430)",196,"494,929","1.0 (49,272)","{""Machine(Global)"":817}"
+✓ backtrace-0.3.76
