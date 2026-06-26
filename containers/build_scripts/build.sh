@@ -38,9 +38,13 @@ export SINGULARITY_TMPDIR="${tmp_dir}/tmp"
 mkdir -p "$SINGULARITY_TMPDIR"
 trap 'rm -rf "$tmp_dir"' EXIT
 
-# BSAN_REF is forwarded to the def file as a build arg ({{ BSAN_REF }}). It is
-# harmless for defs that don't reference it. Empty value => build from default.
-singularity build --fakeroot --build-arg BSAN_REF="${ref}" \
+# When a ref is given, forward it to the def as a build arg ({{ BSAN_REF }}).
+# We only pass --build-arg for a non-empty ref: singularity rejects an empty
+# value ("missing value portion"), and the def supplies its own default
+# (build from main) via its %arguments section when none is passed.
+build_args=()
+[[ -n "$ref" ]] && build_args=(--build-arg "BSAN_REF=${ref}")
+singularity build --fakeroot "${build_args[@]+"${build_args[@]}"}" \
     "${tmp_dir}/${outname}.sif" "${name}.def"
 cp -f "${tmp_dir}/${outname}.sif" "../${outname}.sif"
 echo ">> Done: ../${outname}.sif"

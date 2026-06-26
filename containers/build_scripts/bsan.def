@@ -1,6 +1,11 @@
 Bootstrap: docker
 From: ubuntu:25.04
 
+%arguments
+    # git branch/commit to build bsan from. Overridden by build.sh's --build-arg
+    # when a ref is given; empty default => build from the default branch (main).
+    BSAN_REF=""
+
 %environment
     export RUSTUP_HOME=/opt/rust/rustup
     export CARGO_HOME=/opt/rust/cargo
