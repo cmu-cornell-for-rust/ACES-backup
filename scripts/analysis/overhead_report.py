@@ -28,6 +28,10 @@ extra Miri edition and gets:
   <image>_speedup   base-miri seconds / <image> seconds   (>1 = faster than stock Miri)
   <image>_overhead  <image> seconds / rust seconds        (its slowdown vs native)
 
+Any build whose result CSV carries `tests`/`passed` columns also gets
+<build>_tests and <build>_passed (the raw test counts from its last row);
+builds without those columns omit them.
+
 Output is always written to <outputs dir>/analysis/. By default the file is
 overhead-<dataset>.csv; passing an explicit name uses that name (its basename,
 with a .csv extension forced) within that same directory. The outputs dir
@@ -54,13 +58,25 @@ def ran(status):
 
 
 def load_results(path):
-    """Map crate -> (status, run_seconds), last row per crate winning
-    (result files are append-only, so re-runs supersede earlier rows)."""
+    """Map crate -> (status, run_seconds, tests, passed), last row per crate
+    winning (result files are append-only, so re-runs supersede earlier rows).
+    `tests`/`passed` are the raw strings (or "" when the column is absent);
+    the second return value flags whether this CSV carries those columns."""
     results = {}
+    has_counts = False
     with open(path, newline="") as f:
-        for row in csv.DictReader(f):
-            results[row["crate"]] = (row["status"], float(row["run_seconds"]))
-    return results
+        reader = csv.DictReader(f)
+        has_counts = reader.fieldnames is not None and (
+            "tests" in reader.fieldnames and "passed" in reader.fieldnames
+        )
+        for row in reader:
+            results[row["crate"]] = (
+                row["status"],
+                float(row["run_seconds"]),
+                row.get("tests", "") or "",
+                row.get("passed", "") or "",
+            )
+    return results, has_counts
 
 
 def main():
@@ -75,8 +91,8 @@ def main():
         if not os.path.isfile(csv_path(image)):
             sys.exit(f"Error: missing baseline {csv_path(image)}")
 
-    rust = load_results(csv_path("rust"))
-    base = load_results(csv_path("base-miri"))
+    rust, rust_counts = load_results(csv_path("rust"))
+    base, base_counts = load_results(csv_path("base-miri"))
 
     # Any other <image>-<dataset>.csv in the outputs dir is an extra edition.
     suffix = f"-{dataset}.csv"
@@ -85,7 +101,9 @@ def main():
         for name in os.listdir(OUTPUTS_DIR)
         if name.endswith(suffix) and name[: -len(suffix)] not in ("rust", "base-miri")
     )
-    edition_results = {e: load_results(csv_path(e)) for e in editions}
+    loaded = {e: load_results(csv_path(e)) for e in editions}
+    edition_results = {e: res for e, (res, _) in loaded.items()}
+    edition_counts = {e: counts for e, (_, counts) in loaded.items()}
 
     # All crates seen in any result file, regardless of outcome.
     all_crates = set(rust) | set(base)
@@ -93,16 +111,16 @@ def main():
         all_crates |= set(e_results)
     crates = sorted(all_crates)
 
-    header = [
-        "crate",
-        "rust_status",
-        "rust_seconds",
-        "base_miri_status",
-        "base_miri_seconds",
-        "base_miri_overhead",
-    ]
+    header = ["crate", "rust_status", "rust_seconds"]
+    if rust_counts:
+        header += ["rust_tests", "rust_passed"]
+    header += ["base_miri_status", "base_miri_seconds", "base_miri_overhead"]
+    if base_counts:
+        header += ["base_miri_tests", "base_miri_passed"]
     for e in editions:
         header += [f"{e}_status", f"{e}_seconds", f"{e}_speedup", f"{e}_overhead"]
+        if edition_counts[e]:
+            header += [f"{e}_tests", f"{e}_passed"]
 
     analysis_dir = os.path.join(OUTPUTS_DIR, "analysis")
     if len(sys.argv) == 3:
@@ -117,20 +135,32 @@ def main():
     writer = csv.writer(out)
     writer.writerow(header)
     for crate in crates:
-        rust_status, rust_s = rust.get(crate, ("absent", 0.0))
-        base_status, base_s = base.get(crate, ("absent", 0.0))
+        rust_status, rust_s, rust_tests, rust_passed = rust.get(
+            crate, ("absent", 0.0, "", "")
+        )
+        base_status, base_s, base_tests, base_passed = base.get(
+            crate, ("absent", 0.0, "", "")
+        )
         rust_ok = ran(rust_status)
         base_ok = ran(base_status)
         row = [
             crate,
             rust_status,
             f"{rust_s:.3f}" if rust_ok else "",
+        ]
+        if rust_counts:
+            row += [rust_tests, rust_passed]
+        row += [
             base_status,
             f"{base_s:.3f}" if base_ok else "",
             f"{base_s / rust_s:.3f}" if rust_ok and base_ok and rust_s > 0 else "",
         ]
+        if base_counts:
+            row += [base_tests, base_passed]
         for e in editions:
-            status, secs = edition_results[e].get(crate, ("absent", 0.0))
+            status, secs, tests, passed = edition_results[e].get(
+                crate, ("absent", 0.0, "", "")
+            )
             ok = ran(status)
             row += [
                 status,
@@ -138,6 +168,8 @@ def main():
                 f"{base_s / secs:.3f}" if ok and base_ok and secs > 0 else "",
                 f"{secs / rust_s:.3f}" if ok and rust_ok and rust_s > 0 else "",
             ]
+            if edition_counts[e]:
+                row += [tests, passed]
         writer.writerow(row)
     out.close()
     print(f"Wrote {len(crates)} crates to {out_path}", file=sys.stderr)
