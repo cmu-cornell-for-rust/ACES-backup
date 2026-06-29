@@ -1,86 +1,63 @@
 Bootstrap: docker
-From: ubuntu:25.04
-
-%arguments
-    # git branch/commit to build bsan from. Overridden by build.sh's --build-arg
-    # when a ref is given; empty default => build from the default branch (main).
-    BSAN_REF=""
+# Upstream's own tested release image (the exact artifact their CI publishes).
+# Use this as ground truth: if `cargo bsan test` segfaults the SAME way here as
+# in our from-source bsan.sif, the install is fine and the segfaults are bsan
+# itself (its README calls the project "work-in-progress / not functional yet").
+# Tags: `latest` (main) or `sha-<short-commit>` for a specific commit.
+From: ghcr.io/borrowsanitizer/bsan:latest
 
 %environment
-    export RUSTUP_HOME=/opt/rust/rustup
-    export CARGO_HOME=/opt/rust/cargo
-    export PATH=/opt/rust/cargo/bin:$PATH
+    # The upstream image installs the toolchain under /root, not /opt. rustup
+    # honors RUSTUP_HOME directly, so this works under `--cleanenv` even though
+    # run_job.sh doesn't set HOME. CARGO_HOME is overridden to scratch at run
+    # time by run_job.sh; the value here only matters during %post.
+    export RUSTUP_HOME=/root/.rustup
+    export CARGO_HOME=/root/.cargo
+    export PATH=/root/.cargo/bin:$PATH
     export USER="${USER:-$(id -un)}"
+    export BSAN_SYSROOT=/opt/bsan-sysroot
+    export BSAN_SYMBOLIZER=/root/.rustup/toolchains/bsan/bin/llvm-symbolizer
 
 %post
     set -eux
+    export RUSTUP_HOME=/root/.rustup
+    export CARGO_HOME=/root/.cargo
+    export PATH=/root/.cargo/bin:$PATH
 
-    export DEBIAN_FRONTEND=noninteractive
-
-    # --- System packages (mirrors the project's .devcontainer Dockerfile) ----
-    apt-get update && apt-get install -y \
-        build-essential \
-        cmake \
-        clang \
-        clang-tidy \
-        clang-format \
-        ninja-build \
-        curl \
-        vim \
-        pkg-config \
-        libssl-dev \
-        sudo \
-        git \
-        gdb \
-        ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
-
-    # Use clang as the default C/C++ compiler (matches the dev container).
-    update-alternatives --install /usr/bin/cc  cc  /usr/bin/clang   100
-    update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
-
-    # Install Rust into a fixed, world-readable location so the toolchain works
-    # on a read-only container FS without per-user rustup state.
-    export RUSTUP_HOME=/opt/rust/rustup
-    export CARGO_HOME=/opt/rust/cargo
-    export PATH=/opt/rust/cargo/bin:$PATH
-
-    # --- Rust toolchain ------------------------------------------------------
-    # bsan is built on top of nightly (xb needs it for -Zroot-dir).
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | \
-        sh -s -- -y --no-modify-path --default-toolchain nightly
-
-    # --- Clone & build BorrowSanitizer --------------------------------------
-    # BSAN_REF is supplied by build.sh via --build-arg. When non-empty, check
-    # out that branch/commit; otherwise build from the default branch (main).
-    BSAN_REF="{{ BSAN_REF }}"
-    if [ -n "$BSAN_REF" ]; then
-        git clone https://github.com/BorrowSanitizer/bsan /opt/bsan
-        git -C /opt/bsan checkout "$BSAN_REF"
-    else
-        git clone --depth 1 https://github.com/BorrowSanitizer/bsan /opt/bsan
-    fi
-    cd /opt/bsan
-
-    # Build and install the `bsan` toolchain into $RUSTUP_HOME/toolchains/bsan
-    # (same step as `./xb install` in the .devcontainer release image).
-    ./xb install
-
-    # Make `bsan` the default toolchain and sanity-check it.
     rustup default bsan
     rustc -vV
 
-    # --- Cleanup -------------------------------------------------------------
-    # The toolchain now lives under /opt/rust; drop the build tree.
-    rm -rf /opt/bsan/target /opt/bsan/bsan-script/target
-
-    chmod -R a+rX /opt/rust
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+    # Pre-build the instrumented sysroot once into a fixed path (see bsan.def for
+    # the rationale: avoids per-job rebuilds under --cleanenv + ephemeral scratch).
+    export BSAN_SYSROOT=/opt/bsan-sysroot
+    cargo bsan setup
+    test -d "$BSAN_SYSROOT" && [ -n "$(ls -A "$BSAN_SYSROOT")" ] || \
+        { echo "ERROR: bsan sysroot was not built at $BSAN_SYSROOT"; exit 1; }
+    chmod -R a+rX /opt/bsan-sysroot
 
 %runscript
     cd /scratch/group/p.cis260229.000/containers/ 2>/dev/null || cd "$HOME"
     exec "$@"
 
 %test
-    rustup default bsan
+    set -e
+    export BSAN_SYSROOT=/opt/bsan-sysroot
+    rustup default bsan >/dev/null 2>&1 || true
     rustc -vV
+    tmp="$(mktemp -d)"
+    export CARGO_HOME="$tmp/cargo"
+    export CARGO_TARGET_DIR="$tmp/target"
+    cargo new --lib "$tmp/bsan_smoke" >/dev/null
+    cat >> "$tmp/bsan_smoke/src/lib.rs" <<'RS'
+
+#[test]
+fn heap_roundtrip() {
+    let v = vec![1_i32, 2, 3];
+    let p = v.as_ptr();
+    assert_eq!(unsafe { *p.add(2) }, 3);
+    assert_eq!(v.iter().sum::<i32>(), 6);
+}
+RS
+    cd "$tmp/bsan_smoke"
+    cargo bsan test
+    echo "BSAN SMOKE TEST: OK"
