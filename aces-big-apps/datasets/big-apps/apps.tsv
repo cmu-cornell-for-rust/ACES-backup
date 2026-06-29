@@ -1,0 +1,4 @@
+# name	repo	branch	subdir	fetch_cmd	test_cmd	notes
+servo-xpath	https://github.com/servo/servo.git	main	.		cargo bsan test -p servo-xpath --lib --tests	Smoke target — run first
+react-compiler	https://github.com/facebook/react.git	main	compiler		cargo bsan test --lib --tests	Rust React Compiler workspace
+bun-react-compiler	https://github.com/oven-sh/bun.git	main	.		cargo bsan test -p bun_react_compiler --lib --tests	Bun React Compiler crate

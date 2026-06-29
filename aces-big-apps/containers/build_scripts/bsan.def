@@ -1,0 +1,25 @@
+Bootstrap: docker-library://ubuntu:22.04
+
+%labels
+    Author BorrowSanitizer / ACES big-apps
+    Version 1.0
+
+%environment
+    export DEBIAN_FRONTEND=noninteractive
+    export RUSTUP_HOME=/opt/rustup
+    export CARGO_HOME=/opt/cargo
+    export PATH=/opt/cargo/bin:$PATH
+    export CC=clang
+    export CXX=clang++
+
+%post
+    apt-get update && apt-get install -y --no-install-recommends \
+        build-essential ca-certificates clang clang-tidy cmake curl git \
+        ninja-build pkg-config python3 python3-pip unzip wget \
+        && rm -rf /var/lib/apt/lists/*
+
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain nightly
+    rustup component add rust-src rustfmt clippy
+
+%runscript
+    exec /bin/bash "$@"

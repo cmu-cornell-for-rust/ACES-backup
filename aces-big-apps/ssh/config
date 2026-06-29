@@ -1,0 +1,25 @@
+# ACES SSH config. Keys expire ~49h — regenerate via portal Utilities → sshca.
+# Connect ONLY to the login host (jump is ProxyJump-only; direct jump login shows
+# "This account is currently not available").
+#
+#   ssh -F /Users/rafo/projects/big-programs/aces/ssh/config login.aces
+#
+# Use absolute IdentityFile paths (relative paths resolve from cwd, not this file).
+
+Host aces-jump aces-jump.hprc.tamu.edu
+    HostName aces-jump.hprc.tamu.edu
+    User u.ra353315
+    IdentityFile /Users/rafo/projects/big-programs/id_aces_tamu
+    Port 8822
+    MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com
+
+Host login.aces login.aces.hprc.tamu.edu
+    HostName login.aces.hprc.tamu.edu
+    User u.ra353315
+    IdentityFile /Users/rafo/projects/big-programs/id_aces_tamu
+    Port 22
+    ProxyJump aces-jump
+    MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com
+    ForwardAgent yes
+    ServerAliveInterval 60
+    ServerAliveCountMax 6
