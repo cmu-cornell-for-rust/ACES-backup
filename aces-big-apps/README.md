@@ -84,6 +84,26 @@ Results land in `$ACES_ROOT/outputs/bsan-big-apps/` (`results.csv` + per-run log
 
 Full Servo needs `./mach bootstrap` and system deps. The default target (`servo-xpath`) is a small workspace member for smoke testing. After bootstrap, add more rows to `apps.tsv` (e.g. other `tests/unit/*` crates).
 
+### servo-fonts (unsafe / FFI)
+
+`servo-fonts` links `yeslogic-fontconfig-sys` and `freetype-sys` via **pkg-config** (linked mode). Do **not** set `RUST_FONTCONFIG_DLOPEN` for Servo — dlopen hides the `Fc*` symbols that `components/fonts/platform/freetype/font_list.rs` imports.
+
+Build the layered servo image once (extends group `bsan.sif` with `libfontconfig-dev` / `libfreetype-dev`):
+
+```bash
+./scripts/rebuild_bsan_servo_image_job.sh   # writes $BSAN_SERVO_IMAGE (user scratch)
+```
+
+```bash
+cd "$ACES_ROOT"
+./scripts/fetch_apps.sh servo-xpath
+./scripts/run_servo_fonts_job.sh          # 2h, 32G — servo-fonts BSAN test
+# or on an allocated node / existing srun shell:
+./scripts/run_servo_bsan_package.sh fonts
+```
+
+If a prior run set `RUST_FONTCONFIG_DLOPEN=1`, the script cleans `yeslogic-fontconfig-sys` artifacts by default (`SERVO_FONTCONFIG_CLEAN=1`).
+
 ## Policies
 
 - Respect ACES job and storage limits; clean up `cargo-temp-*` after `scancel`.

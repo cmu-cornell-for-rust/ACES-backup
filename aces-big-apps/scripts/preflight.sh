@@ -18,6 +18,12 @@ if [[ -n "${APP}" ]]; then
   log "OK:   app ${APP} checkout present"
 fi
 
-require_bsan_ready
+if bsan_artifacts_ready; then
+  require_bsan_ready
+elif [[ "${FORCE}" -eq 1 ]]; then
+  log "WARN: BSAN artifacts missing on login; compute job will run setup_bsan.sh"
+else
+  require_bsan_ready
+fi
 resolve_image "${BSAN_IMAGE}" >/dev/null
 log "OK:   preflight passed"

@@ -33,6 +33,7 @@ done
 
 TIME="${POSARGS[0]:?walltime required}"
 MEM="${POSARGS[1]:-32}"
+CPUS="${BSAN_CPUS:-${SMOKE_CPUS:-1}}"
 if [[ "${MEM}" != *G && "${MEM}" != *M ]]; then MEM="${MEM}G"; fi
 [[ -n "${IMAGE}" ]] || IMAGE="${BSAN_IMAGE}"
 IMAGE="$(resolve_image "${IMAGE}")"
@@ -52,10 +53,12 @@ if [[ "${DRY_RUN}" -eq 1 ]]; then
   exit 0
 fi
 
-SRUN_ARGS=(-A "${SLURM_ACCOUNT}" --nodes=1 --ntasks-per-node=1 --mem="${MEM}" --time="${WALLTIME}")
+SRUN_ARGS=(-A "${SLURM_ACCOUNT}" --nodes=1 --ntasks-per-node=1 --cpus-per-task="${CPUS}" --mem="${MEM}" --time="${WALLTIME}")
+[[ -n "${BSAN_SRUN_IMMEDIATE:-}" ]] && SRUN_ARGS=(--immediate="${BSAN_SRUN_IMMEDIATE}" "${SRUN_ARGS[@]}")
 [[ -n "${JOBNAME}" ]] && SRUN_ARGS=(--job-name="${JOBNAME}" "${SRUN_ARGS[@]}")
 
-log "Submitting: ${IMAGE} ${MEM} ${WALLTIME} ${JOBNAME:+-J ${JOBNAME}}"
+log "Submitting: ${IMAGE} ${MEM} ${WALLTIME} cpus=${CPUS} ${JOBNAME:+-J ${JOBNAME}}"
+export CPUS
 
 srun "${SRUN_ARGS[@]}" bash -s -- "${IMAGE}" "${WORKDIR_ABS}" "${CMD_STR}" <<'NODE'
 set -euo pipefail
@@ -71,6 +74,22 @@ command -v singularity &>/dev/null || { echo "singularity not found"; exit 1; }
 source "${WORKDIR_ABS}/config.env"
 
 mkdir -p "${CARGO_HOME}" "${RUSTUP_HOME}" "${APPS_DIR}" "${OUTPUT_DIR}"
+# shellcheck source=/dev/null
+source "${WORKDIR_ABS}/scripts/common.sh"
+apply_bsan_stack_limit
+echo "Stack soft limit: $(ulimit -S -s) KB"
+
+SING_BIND_ARGS=()
+if [[ "${BSAN_BIND_HOST_FFI:-0}" == 1 || "${CMD_STR}" == *run_servo* ]]; then
+  local_spec=""
+  while IFS= read -r local_spec; do
+    [[ -n "${local_spec}" ]] || continue
+    SING_BIND_ARGS+=(--bind "${local_spec}")
+  done < <(bsan_singularity_host_ffi_binds)
+  if [[ ${#SING_BIND_ARGS[@]} -gt 0 ]]; then
+    echo "Host FFI binds: ${SING_BIND_ARGS[*]}"
+  fi
+fi
 
 echo "Container: ${SIF_ABS}"
 echo "Command:   ${CMD_STR}"
@@ -79,9 +98,11 @@ singularity exec --cleanenv --pwd "${WORKDIR_ABS}" \
   --bind "${USER_SCRATCH}:${USER_SCRATCH}" \
   --bind "${GROUP_ROOT}:${GROUP_ROOT}" \
   --bind "${WORKDIR_ABS}:${WORKDIR_ABS}" \
+  "${SING_BIND_ARGS[@]}" \
   --env ACES_ROOT="${ACES_ROOT}" \
   --env CARGO_HOME="${CARGO_HOME}" \
   --env RUSTUP_HOME="${RUSTUP_HOME}" \
+  --env CARGO_BUILD_JOBS="${CPUS}" \
   --env PATH="${CARGO_HOME}/bin:/opt/cargo/bin:/opt/rust/cargo/bin:${PATH}" \
   --env http_proxy="${http_proxy:-}" --env https_proxy="${https_proxy:-}" \
   --env HTTP_PROXY="${HTTP_PROXY:-}" --env HTTPS_PROXY="${HTTPS_PROXY:-}" \

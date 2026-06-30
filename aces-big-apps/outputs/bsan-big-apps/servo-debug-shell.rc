@@ -1,0 +1,14 @@
+cd '/scratch/user/u.ra353315/big-apps/servo-xpath'
+echo
+echo "Inside BSAN container on compute node: $(hostname)"
+echo "App dir: $(pwd)"
+echo
+echo "Find latest test binary:"
+echo "  find target/bsan/x86_64-unknown-linux-gnu/debug/deps -maxdepth 1 -type f -executable -name 'servo_xpath-*' -print | sort | tail -1"
+echo
+echo "Run gdb:"
+echo "  BIN=$(find target/bsan/x86_64-unknown-linux-gnu/debug/deps -maxdepth 1 -type f -executable -name 'servo_xpath-*' -print | sort | tail -1)"
+echo "  gdb --args \"$BIN\" --nocapture --test-threads=1"
+echo
+echo "Useful gdb commands: run ; bt full ; info registers ; thread apply all bt full"
+echo

@@ -7,6 +7,72 @@ source "${SCRIPT_DIR}/../config.env"
 log() { printf '[%s] %s\n' "$(date -u +%H:%M:%S)" "$*"; }
 die() { log "ERROR: $*"; exit 1; }
 
+# Bound stack so ACES' unlimited default does not perturb Linux mmap layout enough
+# to collide with BSAN/DFSan reserved regions. The exact KiB value is not magic;
+# any reasonable finite limit works. Override with BSAN_STACK_KB or opt out via
+# BSAN_STACK_UNLIMITED=1.
+apply_bsan_stack_limit() {
+  if [[ "${BSAN_STACK_UNLIMITED:-0}" == 1 ]]; then
+    log "WARN: BSAN_STACK_UNLIMITED=1; stack soft limit left at $(ulimit -S -s) KB"
+    return 0
+  fi
+  local limit_kb="${BSAN_STACK_KB:-8192}"
+  ulimit -S -s "${limit_kb}" || die "ulimit -S -s ${limit_kb} failed"
+}
+
+# servo-fonts links yeslogic-fontconfig-sys + freetype-sys through pkg-config.
+# Servo's Linux font_list.rs imports Fc* symbols at the fontconfig_sys crate
+# root (linked mode). RUST_FONTCONFIG_DLOPEN switches fontconfig-sys to dlopen
+# and hides those root exports — that mode does not match Servo's imports.
+prepare_servo_fontconfig_build() {
+  unset RUST_FONTCONFIG_DLOPEN
+  export PKG_CONFIG_ALLOW_CROSS=1
+  require_pkg_config_modules fontconfig freetype2
+}
+
+require_pkg_config_modules() {
+  local m
+  for m in "$@"; do
+    if ! pkg-config --exists "$m" 2>/dev/null; then
+      die "pkg-config missing ${m}. Rebuild group bsan.sif (see containers/build_scripts/bsan.def: libfontconfig-dev libfreetype-dev)."
+    fi
+    log "pkg-config ${m}=$(pkg-config --modversion "$m") libs=$(pkg-config --libs "$m")"
+  done
+}
+
+# yeslogic-fontconfig-sys fingerprints the dlopen cfg in its build script. A prior
+# build with RUST_FONTCONFIG_DLOPEN=1 poisons the cache and breaks servo-fonts.
+clean_servo_fontconfig_cargo_cache() {
+  local root="$1"
+  log "Cleaning stale fontconfig-sys / freetype-sys / dlib artifacts (target/bsan)"
+  (
+    cd "${root}"
+    export RUSTUP_TOOLCHAIN="${RUSTUP_TOOLCHAIN:-bsan}"
+    export BSAN_RUST_ONLY="${BSAN_RUST_ONLY:-1}"
+    export PATH="${CARGO_HOME}/bin:${PATH}"
+    # cargo +bsan bsan uses target/bsan; plain cargo +bsan clean only hits target/debug.
+    for pkg in dlib yeslogic-fontconfig-sys freetype-sys; do
+      cargo +bsan bsan clean -p "${pkg}" 2>/dev/null || true
+    done
+    # Drop stale fingerprints from prior wrong-target cleans.
+    find target/bsan -type d -path '*/.fingerprint/dlib-*' -prune -exec rm -rf {} + 2>/dev/null || true
+    find target/bsan -type d -path '*/.fingerprint/yeslogic-fontconfig-sys-*' -prune -exec rm -rf {} + 2>/dev/null || true
+    find target/bsan -type d -path '*/.fingerprint/freetype-sys-*' -prune -exec rm -rf {} + 2>/dev/null || true
+  ) || true
+}
+
+bsan_singularity_host_ffi_binds() {
+  local lib
+  for lib in \
+    /usr/lib64/libfontconfig.so.1 \
+    /usr/lib64/libfreetype.so.6 \
+    /usr/lib64/libexpat.so.1; do
+    if [[ -e "${lib}" ]]; then
+      printf '%s:%s:ro\n' "${lib}" "${lib}"
+    fi
+  done
+}
+
 ensure_network() {
   if command -v module >/dev/null 2>&1; then
     module load WebProxy 2>/dev/null || true

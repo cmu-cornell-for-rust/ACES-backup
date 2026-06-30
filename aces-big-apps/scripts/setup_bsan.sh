@@ -47,11 +47,15 @@ cd "${BSAN_DIR}"
 
 if ! bsan_toolchain_ready; then
   log "Running xb setup (downloads custom rustc; one-time, may take ~30-60 min)"
-  ./xb setup
+  unset RUSTUP_TOOLCHAIN
+  rustup override unset 2>/dev/null || true
+  RUSTUP_TOOLCHAIN=nightly ./xb setup
 fi
 
 log "Installing cargo-bsan"
-./xb install
+unset RUSTUP_TOOLCHAIN
+rustup override unset 2>/dev/null || true
+RUSTUP_TOOLCHAIN=nightly ./xb install
 rustup default bsan
 
 cargo_bsan_ready || die "cargo-bsan missing after install"

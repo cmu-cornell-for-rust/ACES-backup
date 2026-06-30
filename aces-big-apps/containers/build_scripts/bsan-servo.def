@@ -1,0 +1,25 @@
+# Extends the group bsan.sif with pkg-config deps for servo-fonts linked builds.
+# Build on a compute node:
+#   ./scripts/rebuild_bsan_servo_image_job.sh
+Bootstrap: localimage
+From: /scratch/group/p.cis260229.000/containers/bsan.sif
+
+%post
+    set -eux
+    apt-get update
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        libfontconfig-dev libfreetype-dev
+    rm -rf /var/lib/apt/lists/*
+    pkg-config --modversion fontconfig
+    pkg-config --modversion freetype2
+
+%environment
+    export RUSTUP_HOME=/root/.rustup
+    export CARGO_HOME=/root/.cargo
+    export PATH=/root/.cargo/bin:$PATH
+    export USER="${USER:-$(id -un)}"
+    export BSAN_SYSROOT=/opt/bsan-sysroot
+    export BSAN_SYMBOLIZER=/root/.rustup/toolchains/bsan/bin/llvm-symbolizer
+
+%runscript
+    exec "$@"

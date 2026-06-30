@@ -25,8 +25,23 @@ csv="${OUTPUT_DIR}/results.csv"
 mkdir -p "${OUTPUT_DIR}"
 
 export RUSTUP_HOME CARGO_HOME
+export RUSTUP_TOOLCHAIN=bsan
+export BSAN_RUST_ONLY=1
 export PATH="${CARGO_HOME}/bin:${PATH}"
-rustup default bsan >/dev/null
+BSAN_CARGO=(cargo +bsan)
+
+# cargo-bsan injects the BSAN LLVM plugin through global CC/CFLAGS so Rust crates
+# that compile C/C++ helpers can be instrumented too. For these big-app smoke
+# tests we want Rust instrumentation only; C autoconf probes such as jemalloc's
+# `configure` link tiny executables without BSAN runtimes and fail on unresolved
+# `__bsan_*` symbols. Target-specific cc-rs variables take precedence over the
+# global CC/CFLAGS that cargo-bsan sets, keeping C/C++ build scripts ordinary
+# while `rustc` still goes through BSAN.
+BSAN_SYSROOT="$(rustc +bsan --print sysroot)"
+export CC_x86_64_unknown_linux_gnu="${BSAN_SYSROOT}/bin/clang-22"
+export CXX_x86_64_unknown_linux_gnu="${BSAN_SYSROOT}/bin/clang-22"
+export CFLAGS_x86_64_unknown_linux_gnu="-O1 -ffunction-sections -fdata-sections -fPIC -g -gdwarf-4 -fno-omit-frame-pointer -m64 --target=x86_64-unknown-linux-gnu"
+export CXXFLAGS_x86_64_unknown_linux_gnu="${CFLAGS_x86_64_unknown_linux_gnu}"
 
 cd "${app_dir}"
 log "App=${APP} dir=${app_dir}"
@@ -38,15 +53,15 @@ log "Logs -> ${log_file}"
   echo "test_cmd=${test_cmd} $*"
 
   echo "--- cargo clean ---"
-  cargo clean
+  "${BSAN_CARGO[@]}" clean
 
   echo "--- cargo fetch ---"
-  if ! cargo fetch; then
+  if ! "${BSAN_CARGO[@]}" fetch; then
     echo "status=fetch_error"
     exit 1
   fi
 
-  echo "--- compile (cargo bsan test --no-run) ---"
+  echo "--- compile (BSAN test --no-run) ---"
   compile_start=$(date +%s)
   if ! eval "${test_cmd} --no-run $*"; then
     echo "status=build_error"

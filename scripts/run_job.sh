@@ -180,6 +180,16 @@ echo "    $CMD_STR"
 echo "(scratch: $JOBSCRATCH)"
 echo
 
+# Bound the stack before entering the container. BorrowSanitizer's shadow
+# memory assumes Linux's modern top-down mmap layout, which the kernel only
+# uses when RLIMIT_STACK is finite. SLURM propagates an unlimited stack, which
+# forces the legacy bottom-up layout -- that loads shared libraries (libc) into
+# bsan's shadow/origin regions, so every instrumented binary segfaults at
+# startup. Singularity passes rlimits through, so lowering the soft limit here
+# makes the container, and the binary it runs, inherit a compatible layout.
+# Harmless for non-bsan images.
+ulimit -S -s 8192
+
 # Run the command INSIDE the container via `bash -c` so shell operators work.
 # Non-login shell (-c, not -lc) so it inherits the toolchain PATH baked into
 # the image rather than letting /etc/profile reset it. Only CARGO_HOME and
