@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 #
-# Usage: run_dataset.sh <image> <walltime> <dataset>
+# Usage: run_dataset.sh <image> <walltime> <dataset> [miriflags]
 #
-#   <image>     image/SIF name under the group containers dir (e.g. base, rust).
-#               The `rust` image runs `cargo test`; anything else runs Miri.
-#   <walltime>  per-job walltime, HH or HH:MM (passed straight to run_job.sh).
-#   <dataset>   folder under the group datasets dir holding crate subdirectories.
+#   <image>       image/SIF name under the group containers dir (e.g. base, rust).
+#                 The `rust` image runs `cargo test`; anything else runs Miri.
+#   <walltime>    per-job walltime, HH or HH:MM (passed straight to run_job.sh).
+#   <dataset>     folder under the group datasets dir holding crate subdirectories.
+#   [miriflags]   optional extra -Z Miri flags appended to the built-in set
+#                 (e.g. "-Zmiri-strict-provenance -Zmiri-symbolic-alignment-check").
+#                 Added to MIRIFLAGS on both the compile and run phase. Ignored
+#                 for the `rust` image.
 #
 # Launches ONE SLURM job per crate via run_job.sh, keeping at most MAX_PARALLEL
 # (default 40, override with the MAX_PARALLEL env var) running at once -- the
@@ -46,17 +50,22 @@ MAX_PARALLEL="${MAX_PARALLEL:-40}"   # max jobs in flight at once (QOS MaxJobsPU
 MIRI_COMMON="-Zmiri-disable-alignment-check -Zmiri-disable-data-race-detector -Zmiri-ignore-leaks -Zmiri-tree-borrows"
 
 # ── Args ──────────────────────────────────────────────────────────────────--
-if [[ $# -ne 3 ]]; then
-    echo "Usage: $0 <image> <walltime> <dataset>" >&2
+if [[ $# -lt 3 || $# -gt 4 ]]; then
+    echo "Usage: $0 <image> <walltime> <dataset> [miriflags]" >&2
     echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. base, rust)" >&2
     echo "  <walltime>  per-job walltime, HH or HH:MM" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT holding crate subdirectories" >&2
+    echo "  [miriflags] optional extra -Z Miri flags appended to the built-in set" >&2
     exit 1
 fi
 
 IMAGE_ARG="$1"
 WALLTIME="$2"
 DATASET="$3"
+EXTRA_MIRIFLAGS="${4:-}"   # extra -Z Miri flags, appended to MIRI_COMMON
+
+# Full flag set for this run: the built-in common flags plus any extras.
+MIRIFLAGS_ALL="$MIRI_COMMON${EXTRA_MIRIFLAGS:+ $EXTRA_MIRIFLAGS}"
 
 # Normalized image name (strip any dir + .sif) for the job name and rust check.
 IMAGE="$(basename "${IMAGE_ARG%.sif}")"
@@ -88,17 +97,18 @@ if [[ "$IMAGE" == "rust" ]]; then
     COMPILE_CMD='cargo test --no-run'
     RUN_CMD='cargo test'
 elif [[ "$IMAGE" == *"tracing"* ]]; then
-    COMPILE_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test --no-run"
-    RUN_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test 2>/dev/null"
+    COMPILE_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --no-run"
+    RUN_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test 2>/dev/null"
 else
-    COMPILE_CMD="MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test --no-run"
-    RUN_CMD="MIRIFLAGS=\"$MIRI_COMMON\" cargo miri test"
+    COMPILE_CMD="MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --no-run"
+    RUN_CMD="MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test"
 fi
 
 echo "Image:    $IMAGE"
 echo "Walltime: $WALLTIME   Mem: $MEM"
 echo "Dataset:  $DATASET_DIR"
 echo "Crates:   ${#CRATE_DIRS[@]}"
+[[ "$IMAGE" != "rust" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 echo "Results:  $CSV"
 echo
 
