@@ -97,9 +97,7 @@ Build the layered servo image once (extends group `bsan.sif` with `libfontconfig
 ```bash
 cd "$ACES_ROOT"
 ./scripts/fetch_apps.sh servo-xpath
-./scripts/run_servo_fonts_job.sh          # 2h, 32G — servo-fonts BSAN test
-# or on an allocated node / existing srun shell:
-./scripts/run_servo_bsan_package.sh fonts
+./scripts/run_servo_fonts_one_job.sh      # one srun: setup (if needed) + servo-fonts test
 ```
 
 If a prior run set `RUST_FONTCONFIG_DLOPEN=1`, the script cleans `yeslogic-fontconfig-sys` artifacts by default (`SERVO_FONTCONFIG_CLEAN=1`).

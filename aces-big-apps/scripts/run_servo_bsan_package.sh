@@ -50,16 +50,29 @@ stamp="$(date -u +%Y%m%dT%H%M%SZ)"
 log_file="${OUTPUT_DIR}/${APP}.${PACKAGE}.bsan.${stamp}.log"
 geiger_file="${OUTPUT_DIR}/${APP}.geiger.${stamp}.txt"
 mkdir -p "${OUTPUT_DIR}"
+: >"${log_file}"
+finalize_log() {
+  local ec=$?
+  if [[ ${ec} -ne 0 ]] && ! grep -q '^status=' "${log_file}" 2>/dev/null; then
+    echo "status=aborted exit_code=${ec}" >>"${log_file}"
+  fi
+  return "${ec}"
+}
+trap finalize_log EXIT
+
+log "package=${PACKAGE} log=${log_file}"
+# Tee from the start so setup_bsan.sh (30-60 min) is visible before compile.
+exec > >(tee -a "${log_file}") 2>&1
 
 export RUSTUP_HOME CARGO_HOME
 export PATH="${CARGO_HOME}/bin:${PATH}"
 
-if ! bsan_toolchain_ready; then
-  log "BSAN toolchain missing; running setup_bsan.sh (may take ~30-60 min)"
+if ! bsan_runtime_ready; then
+  log "BSAN not ready; running setup_bsan.sh (may take ~30-60 min)"
   unset RUSTUP_TOOLCHAIN BSAN_RUST_ONLY
   "${SCRIPT_DIR}/setup_bsan.sh"
 fi
-cargo_bsan_ready || die "cargo-bsan missing after setup"
+bsan_runtime_ready || die "BSAN setup incomplete (need bsan rustc + cargo-bsan in container)"
 
 export RUSTUP_TOOLCHAIN=bsan
 export BSAN_RUST_ONLY=1
@@ -134,7 +147,6 @@ log_package_unsafe_stats() {
 cd "${SERVO_DIR}"
 log "Servo package=${PACKAGE} dir=${SERVO_DIR}"
 log "stack_soft_kb=$(ulimit -S -s)"
-log "Logs -> ${log_file}"
 
 {
   echo "app=${APP}"
@@ -192,7 +204,7 @@ log "Logs -> ${log_file}"
     echo "status=test_error"
     exit 1
   fi
-} 2>&1 | tee "${log_file}"
+}
 
 csv="${OUTPUT_DIR}/results.csv"
 if [[ ! -f "${csv}" ]]; then

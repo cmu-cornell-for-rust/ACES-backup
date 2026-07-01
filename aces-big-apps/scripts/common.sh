@@ -123,14 +123,70 @@ export_rust_env() {
   export PATH="${CARGO_HOME}/bin:/opt/cargo/bin:/opt/rust/cargo/bin:${PATH}"
 }
 
+prepare_bsan_cargo_env() {
+  export_rust_env
+  ensure_bsan_toolchain_linked || true
+  # bsan-servo.sif sets BSAN_SYSROOT=/opt/bsan-sysroot, which makes cargo-bsan skip its sysroot build.
+  unset BSAN_SYSROOT
+  export RUSTUP_TOOLCHAIN=bsan
+  export BSAN_RUST_ONLY=1
+  export_bsan_dep_env
+}
+
+export_bsan_dep_env() {
+  export_rust_env
+  local sysroot plugin rt_rust rt_llvm
+  sysroot="$(rustc +bsan --print sysroot)"
+  plugin="${sysroot}/lib/libbsan_plugin.so"
+  rt_rust="${sysroot}/lib/libbsan_rt.a"
+  rt_llvm="$(find "${sysroot}/lib" -maxdepth 1 -name 'libclang_rt.bsan-*.a' 2>/dev/null | head -1 || true)"
+  if [[ ! -f "${plugin}" ]]; then
+    plugin="${BSAN_DIR}/target/release/bsan-pass/build/libbsan_plugin.so"
+  fi
+  if [[ ! -f "${rt_rust}" ]]; then
+    rt_rust="${BSAN_DIR}/target/release/libbsan_rt.a"
+  fi
+  if [[ -z "${rt_llvm}" || ! -f "${rt_llvm}" ]]; then
+    rt_llvm="${BSAN_DIR}/target/release/compiler-rt/build/lib/linux/libclang_rt.bsan-x86_64.a"
+  fi
+  [[ -f "${plugin}" ]] || die "Missing libbsan_plugin.so — run setup_bsan.sh (xb install)"
+  [[ -f "${rt_rust}" ]] || die "Missing libbsan_rt.a — run setup_bsan.sh (xb install)"
+  [[ -f "${rt_llvm}" ]] || die "Missing libclang_rt.bsan runtime — run setup_bsan.sh (xb install)"
+  export BSAN_PLUGIN="${plugin}"
+  export BSAN_RT_RUST="${rt_rust}"
+  export BSAN_RT_LLVM="${rt_llvm}"
+}
+
 bsan_toolchain_installed() {
   [[ -x "${RUSTUP_HOME}/toolchains/bsan/bin/rustc" ]]
 }
 
+bsan_toolchain_registered() {
+  export_rust_env
+  if command -v rustup >/dev/null 2>&1 && rustup toolchain list 2>/dev/null | grep -qE '^bsan( |$)'; then
+    return 0
+  fi
+  # xb setup can leave a full toolchain tree without a rustup list entry.
+  bsan_toolchain_installed
+}
+
+ensure_bsan_toolchain_linked() {
+  export_rust_env
+  bsan_toolchain_installed || return 1
+  if bsan_toolchain_registered && rustc_bsan_works && cargo +bsan -V >/dev/null 2>&1; then
+    return 0
+  fi
+  command -v rustup >/dev/null 2>&1 || return 1
+  log "Linking bsan toolchain into rustup (${RUSTUP_HOME}/toolchains/bsan)"
+  rustup toolchain uninstall bsan 2>/dev/null || true
+  rustup toolchain link bsan "${RUSTUP_HOME}/toolchains/bsan"
+  rustup default bsan 2>/dev/null || true
+}
+
 bsan_toolchain_ready() {
   export_rust_env
-  command -v rustup >/dev/null 2>&1 \
-    && rustup toolchain list 2>/dev/null | grep -qE '^bsan( |$)'
+  ensure_bsan_toolchain_linked || true
+  bsan_toolchain_installed && bsan_toolchain_registered && rustc_bsan_works && cargo +bsan -V >/dev/null 2>&1
 }
 
 rustc_bsan_works() {
@@ -159,7 +215,7 @@ bsan_artifacts_ready() {
 
 # Inside container/compute node: toolchain actually executes.
 bsan_runtime_ready() {
-  bsan_artifacts_ready && rustc_bsan_works
+  bsan_toolchain_ready && cargo_bsan_ready
 }
 
 bsan_ready() {

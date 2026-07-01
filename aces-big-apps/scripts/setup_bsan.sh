@@ -12,12 +12,18 @@ export RUSTUP_HOME CARGO_HOME
 export PATH="${CARGO_HOME}/bin:/opt/cargo/bin:/opt/rust/cargo/bin:${PATH}"
 
 bootstrap_rustup() {
-  if rustup_healthy; then
+  export_rust_env
+  if rustc +nightly -vV >/dev/null 2>&1 && bsan_toolchain_ready; then
     return 0
   fi
 
   log "Bootstrapping rustup into ${CARGO_HOME}"
-  rm -rf "${RUSTUP_HOME}/toolchains"/* 2>/dev/null || true
+  # Never wipe an existing bsan toolchain — only remove broken non-bsan toolchains.
+  if bsan_toolchain_installed; then
+    find "${RUSTUP_HOME}/toolchains" -mindepth 1 -maxdepth 1 ! -name 'bsan' -exec rm -rf {} + 2>/dev/null || true
+  else
+    rm -rf "${RUSTUP_HOME}/toolchains"/* 2>/dev/null || true
+  fi
 
   if [[ ! -x "${CARGO_HOME}/bin/rustup" ]]; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
@@ -52,11 +58,21 @@ if ! bsan_toolchain_ready; then
   RUSTUP_TOOLCHAIN=nightly ./xb setup
 fi
 
-log "Installing cargo-bsan"
+log "Installing cargo-bsan + BSAN pass/runtime"
 unset RUSTUP_TOOLCHAIN
 rustup override unset 2>/dev/null || true
-RUSTUP_TOOLCHAIN=nightly ./xb install
-rustup default bsan
-
+need_install=0
+cargo_bsan_ready || need_install=1
+[[ -f "${BSAN_DIR}/target/release/bsan-pass/build/libbsan_plugin.so" ]] || need_install=1
+if [[ "${need_install}" -eq 1 ]]; then
+  # xb install must run against the bsan toolchain (llvm-objcopy lives there).
+  RUSTUP_TOOLCHAIN=bsan ./xb install || {
+    cargo_bsan_ready || die "xb install failed and cargo-bsan missing"
+    log "WARN: xb install exited non-zero but cargo-bsan is present; continuing"
+  }
+fi
+rustup default bsan 2>/dev/null || true
 cargo_bsan_ready || die "cargo-bsan missing after install"
-log "BSAN ready: $(cargo bsan --version 2>/dev/null || cargo bsan -V)"
+ensure_bsan_toolchain_linked || true
+bsan_runtime_ready || die "BSAN runtime not ready after setup"
+log "BSAN ready: $(RUSTUP_TOOLCHAIN=bsan cargo-bsan -V 2>/dev/null || echo cargo-bsan)"

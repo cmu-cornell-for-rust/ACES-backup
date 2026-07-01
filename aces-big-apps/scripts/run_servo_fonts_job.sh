@@ -17,7 +17,8 @@ if [[ $# -gt 0 && "$1" =~ ^[0-9]+$ ]]; then
 fi
 
 ensure_dirs
-"${SCRIPT_DIR}/preflight.sh" servo-xpath
+# Login node may lack the bsan toolchain (host glibc); compute self-heals via setup_bsan.sh.
+PREFLIGHT_FORCE=1 "${SCRIPT_DIR}/preflight.sh" servo-xpath
 
 if [[ -f "${BSAN_SERVO_IMAGE}" ]]; then
   IMAGE="${BSAN_SERVO_IMAGE}"
@@ -37,6 +38,10 @@ fi
 
 INNER="set -euo pipefail; export ACES_ROOT='${ACES_ROOT}'; source '${ACES_ROOT}/config.env'; source '${ACES_ROOT}/scripts/common.sh'; ensure_dirs; '${ACES_ROOT}/scripts/run_servo_bsan_package.sh' fonts${EXTRA_Q}"
 
-"${SCRIPT_DIR}/run_bsan_job.sh" -J "bsan-servo-fonts" "${IMAGE}" "${TIME}" "${MEM}" -- bash -lc "${INNER}"
+submit_stamp="$(date -u +%Y%m%dT%H%M%SZ)"
+submit_log="${OUTPUT_DIR}/servo-fonts.submit.${submit_stamp}.log"
+log "srun output -> ${submit_log}"
+"${SCRIPT_DIR}/run_bsan_job.sh" -J "bsan-servo-fonts" "${IMAGE}" "${TIME}" "${MEM}" -- bash -lc "${INNER}" \
+  2>&1 | tee "${submit_log}"
 
-log "Job submitted. Logs: ${OUTPUT_DIR}/servo-xpath.servo-fonts.bsan.*.log"
+log "Done. Package logs: ${OUTPUT_DIR}/servo-xpath.servo-fonts.bsan.*.log"
