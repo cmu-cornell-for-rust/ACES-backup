@@ -118,6 +118,25 @@ guard_no_duplicate_jobs() {
   fi
 }
 
+
+# Host strace for Singularity jobs (container image often lacks strace).
+resolve_strace() {
+  local candidate
+  local staged="${USER_SCRATCH}/tools/strace-bundle/bin/strace"
+  for candidate in "${staged}" /usr/bin/strace strace /bin/strace; do
+    if command -v "${candidate}" &>/dev/null; then
+      command -v "${candidate}"
+      return 0
+    fi
+    if [[ -x "${candidate}" ]]; then
+      printf '%s
+' "${candidate}"
+      return 0
+    fi
+  done
+  return 1
+}
+
 export_rust_env() {
   export RUSTUP_HOME CARGO_HOME
   export PATH="${CARGO_HOME}/bin:/opt/cargo/bin:/opt/rust/cargo/bin:${PATH}"

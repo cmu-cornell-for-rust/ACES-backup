@@ -91,6 +91,27 @@ if [[ "${BSAN_BIND_HOST_FFI:-0}" == 1 || "${CMD_STR}" == *run_servo* ]]; then
   fi
 fi
 
+# Bind staged strace (copied from login node; compute nodes lack /usr/bin/strace).
+staged_strace="${USER_SCRATCH}/tools/strace-bundle/bin/strace"
+if [[ -x "${staged_strace}" ]]; then
+  SING_BIND_ARGS+=(--bind "${staged_strace}:/usr/bin/strace")
+  echo "Staged strace bind: ${staged_strace} -> /usr/bin/strace"
+elif host_strace="$(command -v strace 2>/dev/null)" && [[ -n "${host_strace}" && -x "${host_strace}" ]]; then
+  SING_BIND_ARGS+=(--bind "${host_strace}:/usr/bin/strace")
+  echo "Host strace bind: ${host_strace} -> /usr/bin/strace"
+fi
+
+# bsan-servo.sif has no strace; bind host binary when strace scripts run.
+if [[ "${CMD_STR}" == *strace* ]]; then
+  for strace_bin in /usr/bin/strace /bin/strace; do
+    if [[ -x "${strace_bin}" ]]; then
+      SING_BIND_ARGS+=(--bind "${strace_bin}:${strace_bin}")
+      echo "Host strace bind: ${strace_bin}"
+      break
+    fi
+  done
+fi
+
 echo "Container: ${SIF_ABS}"
 echo "Command:   ${CMD_STR}"
 
