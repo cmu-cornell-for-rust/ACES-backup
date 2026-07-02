@@ -1,4 +1,21 @@
 # name	repo	branch	subdir	fetch_cmd	test_cmd	notes
-servo-xpath	https://github.com/servo/servo.git	main	.		cargo +bsan bsan test -p servo-xpath --lib --tests	Smoke target — run first
-react-compiler	https://github.com/facebook/react.git	main	compiler		cargo bsan test --lib --tests	Rust React Compiler workspace
-bun-react-compiler	https://github.com/oven-sh/bun.git	main	.		cargo bsan test -p bun_react_compiler --lib --tests	Bun React Compiler crate
+# --- Tier A: large FFI/unsafe, default Rust allocator (corpus batch) ---
+uutils-coreutils	https://github.com/uutils/coreutils.git	main	.		cargo +bsan bsan test -p uu_cp -p uu_sort -p uu_dd -p uu_expr --lib --tests	Rust GNU coreutils; ~260 unsafe; rustix+libc; no custom allocator
+ripgrep	https://github.com/BurntSushi/ripgrep.git	master	.		cargo +bsan bsan test -p ripgrep --tests	Fast grep; mmap+regex FFI; system allocator (binary crate, no --lib)
+ring	https://github.com/briansmith/ring.git	main	.		cargo +bsan bsan test -p ring --lib --tests	Crypto; heavy unsafe + asm/C; system allocator
+rustls	https://github.com/rustls/rustls.git	main	.		cargo +bsan bsan test -p rustls --lib --tests	TLS stack; ring/aws-lc FFI; system allocator
+nix	https://github.com/nix-rust/nix.git	master	.		cargo +bsan bsan test -p nix --lib --tests	Unix API wrappers; libc FFI throughout
+quiche	https://github.com/cloudflare/quiche.git	master	.		cargo +bsan bsan test -p quiche --lib --tests	QUIC; BoringSSL/quiche C FFI
+git2-rs	https://github.com/rust-lang/git2-rs.git	main	.		cargo +bsan bsan test -p git2 --lib --tests	libgit2 FFI; needs libgit2-dev in image
+rusqlite	https://github.com/rusqlite/rusqlite.git	master	.		cargo +bsan bsan test -p rusqlite --lib --tests	SQLite FFI; needs libsqlite3-dev
+bat	https://github.com/sharkdp/bat.git	master	.		cargo +bsan bsan test -p bat --lib --tests	Cat with syntax; git2/onig FFI
+fd	https://github.com/sharkdp/fd.git	master	.		cargo +bsan bsan test -p fd-find --tests	Fast find; rustix; system allocator (binary crate, no --lib)
+# --- Tier B: very large workspaces (scoped packages) ---
+tikv-codec	https://github.com/tikv/tikv.git	master	.		cargo +bsan bsan test -p codec --lib --tests	TiKV codec crate; jemalloc in full tikv but scoped smoke
+polars-core	https://github.com/pola-rs/polars.git	main	.		cargo +bsan bsan test -p polars-core --lib --tests	DataFrame core; arrow FFI
+vector-core	https://github.com/vectordotdev/vector.git	master	.		cargo +bsan bsan test -p vector-core --lib --tests	Observability pipeline core
+# --- Existing smoke targets ---
+react-compiler	https://github.com/facebook/react.git	main	compiler		cargo +bsan bsan test --lib --tests	Rust React Compiler workspace
+bun-react-compiler	https://github.com/oven-sh/bun.git	main	.		cargo +bsan bsan test -p bun_react_compiler --lib --tests	Bun React Compiler crate (custom runtime — deprioritize)
+# --- Servo (custom jemalloc; separate one-job scripts only) ---
+servo-xpath	https://github.com/servo/servo.git	main	.		cargo +bsan bsan test -p servo-xpath --lib --tests	Servo smoke; use run_servo_fonts_one_job.sh for fonts

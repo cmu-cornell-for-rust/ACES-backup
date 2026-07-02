@@ -142,6 +142,22 @@ export_rust_env() {
   export PATH="${CARGO_HOME}/bin:/opt/cargo/bin:/opt/rust/cargo/bin:${PATH}"
 }
 
+prepare_bsan_native_cc_env() {
+  # cargo-bsan sets global CC/CFLAGS with the BSAN plugin and lld driver flags.
+  # cc-rs and autoconf inherit those and break -Werror C builds (ring) and
+  # configure link probes (protobuf-src). Rust stays on BSAN via RUSTUP_TOOLCHAIN.
+  unset CC CXX CFLAGS CXXFLAGS CPPFLAGS LDFLAGS LD
+  local host_cc host_cxx
+  host_cc="$(command -v cc 2>/dev/null || echo /usr/bin/cc)"
+  host_cxx="$(command -v c++ 2>/dev/null || echo /usr/bin/c++)"
+  export CC="${host_cc}"
+  export CXX="${host_cxx}"
+  export CC_x86_64_unknown_linux_gnu="${host_cc}"
+  export CXX_x86_64_unknown_linux_gnu="${host_cxx}"
+  export CFLAGS_x86_64_unknown_linux_gnu="-O1 -ffunction-sections -fdata-sections -fPIC -g -gdwarf-4 -fno-omit-frame-pointer -m64"
+  export CXXFLAGS_x86_64_unknown_linux_gnu="${CFLAGS_x86_64_unknown_linux_gnu}"
+}
+
 prepare_bsan_cargo_env() {
   export_rust_env
   ensure_bsan_toolchain_linked || true
@@ -196,8 +212,12 @@ ensure_bsan_toolchain_linked() {
     return 0
   fi
   command -v rustup >/dev/null 2>&1 || return 1
+  # xb setup installs directly into ${RUSTUP_HOME}/toolchains/bsan. rustup
+  # uninstall of a link pointing at that tree can delete the real toolchain.
+  if rustup toolchain list 2>/dev/null | grep -qE '^bsan( |$)'; then
+    return 0
+  fi
   log "Linking bsan toolchain into rustup (${RUSTUP_HOME}/toolchains/bsan)"
-  rustup toolchain uninstall bsan 2>/dev/null || true
   rustup toolchain link bsan "${RUSTUP_HOME}/toolchains/bsan"
   rustup default bsan 2>/dev/null || true
 }

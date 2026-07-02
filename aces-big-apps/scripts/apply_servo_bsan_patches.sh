@@ -16,7 +16,7 @@ STAMP="${SERVO_DIR}/.aces-bsan-patches.stamp"
 
 patch_hash="$(sha256sum "${SOURCE}" | awk '{print $1}')"
 if [[ -f "${STAMP}" ]] && grep -q "${patch_hash}" "${STAMP}"; then
-  if ! grep -q 'usable_size' "${TARGET}" && grep -q 'if req_size <= 0' "${TARGET}"; then
+  if ! grep -q 'usable_size' "${TARGET}" && grep -q 'FREETYPE_ALLOC_SIZES' "${TARGET}"; then
     log "Servo BSAN patches already applied (${patch_hash:0:12}…)"
     exit 0
   fi

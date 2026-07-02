@@ -24,26 +24,24 @@ log_file="${OUTPUT_DIR}/${APP}.${stamp}.log"
 csv="${OUTPUT_DIR}/results.csv"
 mkdir -p "${OUTPUT_DIR}"
 
-export RUSTUP_HOME CARGO_HOME
-export RUSTUP_TOOLCHAIN=bsan
-export BSAN_RUST_ONLY=1
-export PATH="${CARGO_HOME}/bin:${PATH}"
+apply_bsan_stack_limit
+export CARGO_TARGET_DIR="${app_dir}/target/bsan-${APP}"
+export CARGO_BUILD_JOBS="${CARGO_BUILD_JOBS:-1}"
+
+export_rust_env
+if ! bsan_runtime_ready; then
+  log "BSAN not ready; running setup_bsan.sh (may take ~30-60 min)"
+  unset RUSTUP_TOOLCHAIN BSAN_RUST_ONLY
+  "${SCRIPT_DIR}/setup_bsan.sh"
+fi
+ensure_bsan_toolchain_linked || true
+bsan_runtime_ready || die "BSAN setup incomplete"
+prepare_bsan_cargo_env
+prepare_bsan_native_cc_env
 BSAN_CARGO=(cargo +bsan)
 
-# cargo-bsan injects the BSAN LLVM plugin through global CC/CFLAGS so Rust crates
-# that compile C/C++ helpers can be instrumented too. For these big-app smoke
-# tests we want Rust instrumentation only; C autoconf probes such as jemalloc's
-# `configure` link tiny executables without BSAN runtimes and fail on unresolved
-# `__bsan_*` symbols. Target-specific cc-rs variables take precedence over the
-# global CC/CFLAGS that cargo-bsan sets, keeping C/C++ build scripts ordinary
-# while `rustc` still goes through BSAN.
-BSAN_SYSROOT="$(rustc +bsan --print sysroot)"
-export CC_x86_64_unknown_linux_gnu="${BSAN_SYSROOT}/bin/clang-22"
-export CXX_x86_64_unknown_linux_gnu="${BSAN_SYSROOT}/bin/clang-22"
-export CFLAGS_x86_64_unknown_linux_gnu="-O1 -ffunction-sections -fdata-sections -fPIC -g -gdwarf-4 -fno-omit-frame-pointer -m64 --target=x86_64-unknown-linux-gnu"
-export CXXFLAGS_x86_64_unknown_linux_gnu="${CFLAGS_x86_64_unknown_linux_gnu}"
+# See prepare_bsan_native_cc_env() in common.sh — host cc for C build scripts only.
 
-cd "${app_dir}"
 log "App=${APP} dir=${app_dir}"
 log "Logs -> ${log_file}"
 
@@ -51,14 +49,29 @@ log "Logs -> ${log_file}"
   echo "app=${APP}"
   echo "start=${stamp}"
   echo "test_cmd=${test_cmd} $*"
+  echo "app_dir=${app_dir}"
+  echo "target_dir=${CARGO_TARGET_DIR}"
 
-  echo "--- cargo clean ---"
-  "${BSAN_CARGO[@]}" clean
+  cd "${app_dir}"
 
-  echo "--- cargo fetch ---"
-  if ! "${BSAN_CARGO[@]}" fetch; then
-    echo "status=fetch_error"
-    exit 1
+  if [[ "${BSAN_CLEAN:-0}" == 1 ]]; then
+    echo "--- cargo clean ---"
+    "${BSAN_CARGO[@]}" clean
+  fi
+
+  if [[ "${BSAN_SKIP_FETCH:-0}" != 1 ]]; then
+    echo "--- cargo fetch ---"
+    if ! "${BSAN_CARGO[@]}" fetch; then
+      echo "status=fetch_error"
+      exit 1
+    fi
+  else
+    echo "fetch=skipped"
+  fi
+
+  if [[ "${BSAN_FETCH_ONLY:-0}" == 1 ]]; then
+    echo "status=fetch_ok"
+    exit 0
   fi
 
   echo "--- compile (BSAN test --no-run) ---"
@@ -68,7 +81,6 @@ log "Logs -> ${log_file}"
     exit 1
   fi
   compile_end=$(date +%s)
-  echo "compile_seconds=$((compile_end - compile_start))"
 
   echo "--- run tests ---"
   run_start=$(date +%s)

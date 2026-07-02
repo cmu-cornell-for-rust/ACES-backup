@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Install BorrowSanitizer (icmccorm/thread-docs). Run inside bsan.sif on a compute node.
+# Install BorrowSanitizer (BSAN_BRANCH from config.env). Run inside bsan.sif on a compute node.
 set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=/dev/null
@@ -42,10 +42,15 @@ if [[ ! -d "${BSAN_DIR}/.git" ]]; then
   log "Cloning ${BSAN_REPO} (${BSAN_BRANCH})"
   git clone --branch "${BSAN_BRANCH}" --depth 1 "${BSAN_REPO}" "${BSAN_DIR}"
 else
-  log "Updating ${BSAN_DIR}"
-  git -C "${BSAN_DIR}" fetch origin "${BSAN_BRANCH}"
-  git -C "${BSAN_DIR}" checkout "${BSAN_BRANCH}"
-  git -C "${BSAN_DIR}" pull --ff-only origin "${BSAN_BRANCH}" || true
+  log "Updating ${BSAN_DIR} -> origin/${BSAN_BRANCH}"
+  git -C "${BSAN_DIR}" fetch --depth 1 origin "${BSAN_BRANCH}"
+  git -C "${BSAN_DIR}" checkout "${BSAN_BRANCH}" 2>/dev/null \
+    || git -C "${BSAN_DIR}" checkout -B "${BSAN_BRANCH}"
+  if git -C "${BSAN_DIR}" rev-parse --verify "origin/${BSAN_BRANCH}" >/dev/null 2>&1; then
+    git -C "${BSAN_DIR}" reset --hard "origin/${BSAN_BRANCH}"
+  else
+    git -C "${BSAN_DIR}" reset --hard FETCH_HEAD
+  fi
 fi
 
 bootstrap_rustup
@@ -64,6 +69,10 @@ rustup override unset 2>/dev/null || true
 need_install=0
 cargo_bsan_ready || need_install=1
 [[ -f "${BSAN_DIR}/target/release/bsan-pass/build/libbsan_plugin.so" ]] || need_install=1
+if [[ "${SETUP_FORCE:-0}" == 1 ]]; then
+  need_install=1
+  log "SETUP_FORCE=1: rebuilding cargo-bsan + BSAN pass/runtime"
+fi
 if [[ "${need_install}" -eq 1 ]]; then
   # xb install must run against the bsan toolchain (llvm-objcopy lives there).
   RUSTUP_TOOLCHAIN=bsan ./xb install || {

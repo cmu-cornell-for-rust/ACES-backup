@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Run a command inside a Singularity image on a compute node.
-# Usage: run_bsan_job.sh [-J NAME] [--dry-run] [image.sif] <HH[:MM]> [MEM] -- <command>
+# Usage: run_bsan_job.sh [-J NAME] [--batch] [--dry-run] [image.sif] <HH[:MM]> [MEM] -- <command>
 set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=/dev/null
@@ -9,6 +9,7 @@ source "${SCRIPT_DIR}/common.sh"
 JOBNAME=""
 IMAGE=""
 DRY_RUN=0
+BATCH=0
 POSARGS=()
 CMD=()
 SEP_SEEN=0
@@ -17,6 +18,7 @@ while [[ $# -gt 0 ]]; do
   case "$1" in
     --) SEP_SEEN=1; shift; CMD=("$@"); break ;;
     -J|--name) JOBNAME="$2"; shift 2 ;;
+    --batch) BATCH=1; shift ;;
     --dry-run) DRY_RUN=1; shift ;;
     -*) die "Unknown option: $1" ;;
     *)
@@ -29,7 +31,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-[[ "$SEP_SEEN" -eq 1 && ${#CMD[@]} -gt 0 ]] || die "Usage: run_bsan_job.sh [-J NAME] [--dry-run] [image.sif] <HH[:MM]> [MEM] -- <command>"
+[[ "$SEP_SEEN" -eq 1 && ${#CMD[@]} -gt 0 ]] || die "Usage: run_bsan_job.sh [-J NAME] [--batch] [--dry-run] [image.sif] <HH[:MM]> [MEM] -- <command>"
 
 TIME="${POSARGS[0]:?walltime required}"
 MEM="${POSARGS[1]:-32}"
@@ -44,12 +46,44 @@ case "${TIME}" in
   *) WALLTIME="$(printf '%02d' "${TIME}"):00:00" ;;
 esac
 
-WORKDIR_ABS="$(pwd)"
+WORKDIR_ABS="${ACES_ROOT}"
 CMD_STR="${CMD[*]}"
+SINGULARITY_RUN="${SCRIPT_DIR}/bsan_singularity_run.sh"
 
 if [[ "${DRY_RUN}" -eq 1 ]]; then
-  log "DRY-RUN: would submit ${IMAGE} ${MEM} ${WALLTIME} ${JOBNAME:+-J ${JOBNAME}}"
+  log "DRY-RUN: would submit ${IMAGE} ${MEM} ${WALLTIME} ${JOBNAME:+-J ${JOBNAME}} batch=${BATCH}"
   log "DRY-RUN: ${CMD_STR}"
+  exit 0
+fi
+
+if [[ "${BATCH}" -eq 1 ]]; then
+  mkdir -p "${OUTPUT_DIR}/sbatch"
+  job_stamp="$(date -u +%Y%m%dT%H%M%SZ)"
+  job_label="${JOBNAME:-bsan-job}"
+  wrapper="${OUTPUT_DIR}/sbatch/${job_label}.${job_stamp}.sh"
+  {
+    echo "#!/bin/bash"
+    echo "#SBATCH -A ${SLURM_ACCOUNT}"
+    echo "#SBATCH --job-name=${job_label}"
+    echo "#SBATCH --nodes=1"
+    echo "#SBATCH --ntasks-per-node=1"
+    echo "#SBATCH --cpus-per-task=${CPUS}"
+    echo "#SBATCH --mem=${MEM}"
+    echo "#SBATCH --time=${WALLTIME}"
+    echo "#SBATCH --output=${OUTPUT_DIR}/sbatch/${job_label}.%j.log"
+    echo "export CPUS=${CPUS}"
+    {
+      printf 'exec %q' "${SINGULARITY_RUN}"
+      printf ' %q' "${IMAGE}" "${WORKDIR_ABS}"
+      printf ' %q' "${CMD[@]}"
+      echo
+    }
+  } >"${wrapper}"
+  chmod +x "${wrapper}"
+  log "Submitting batch: ${IMAGE} ${MEM} ${WALLTIME} cpus=${CPUS} -J ${job_label}"
+  job_id="$(sbatch --parsable "${wrapper}")"
+  log "Submitted batch job ${job_id} (${job_label})"
+  echo "${job_id}"
   exit 0
 fi
 
@@ -60,72 +94,4 @@ SRUN_ARGS=(-A "${SLURM_ACCOUNT}" --nodes=1 --ntasks-per-node=1 --cpus-per-task="
 log "Submitting: ${IMAGE} ${MEM} ${WALLTIME} cpus=${CPUS} ${JOBNAME:+-J ${JOBNAME}}"
 export CPUS
 
-srun "${SRUN_ARGS[@]}" bash -s -- "${IMAGE}" "${WORKDIR_ABS}" "${CMD_STR}" <<'NODE'
-set -euo pipefail
-SIF_ABS="$1"
-WORKDIR_ABS="$2"
-CMD_STR="$3"
-
-module load WebProxy 2>/dev/null || true
-command -v singularity &>/dev/null || module load Singularity 2>/dev/null || module load singularity 2>/dev/null || true
-command -v singularity &>/dev/null || { echo "singularity not found"; exit 1; }
-
-# shellcheck source=/dev/null
-source "${WORKDIR_ABS}/config.env"
-
-mkdir -p "${CARGO_HOME}" "${RUSTUP_HOME}" "${APPS_DIR}" "${OUTPUT_DIR}"
-# shellcheck source=/dev/null
-source "${WORKDIR_ABS}/scripts/common.sh"
-apply_bsan_stack_limit
-echo "Stack soft limit: $(ulimit -S -s) KB"
-
-SING_BIND_ARGS=()
-if [[ "${BSAN_BIND_HOST_FFI:-0}" == 1 || "${CMD_STR}" == *run_servo* ]]; then
-  local_spec=""
-  while IFS= read -r local_spec; do
-    [[ -n "${local_spec}" ]] || continue
-    SING_BIND_ARGS+=(--bind "${local_spec}")
-  done < <(bsan_singularity_host_ffi_binds)
-  if [[ ${#SING_BIND_ARGS[@]} -gt 0 ]]; then
-    echo "Host FFI binds: ${SING_BIND_ARGS[*]}"
-  fi
-fi
-
-# Bind staged strace (copied from login node; compute nodes lack /usr/bin/strace).
-staged_strace="${USER_SCRATCH}/tools/strace-bundle/bin/strace"
-if [[ -x "${staged_strace}" ]]; then
-  SING_BIND_ARGS+=(--bind "${staged_strace}:/usr/bin/strace")
-  echo "Staged strace bind: ${staged_strace} -> /usr/bin/strace"
-elif host_strace="$(command -v strace 2>/dev/null)" && [[ -n "${host_strace}" && -x "${host_strace}" ]]; then
-  SING_BIND_ARGS+=(--bind "${host_strace}:/usr/bin/strace")
-  echo "Host strace bind: ${host_strace} -> /usr/bin/strace"
-fi
-
-# bsan-servo.sif has no strace; bind host binary when strace scripts run.
-if [[ "${CMD_STR}" == *strace* ]]; then
-  for strace_bin in /usr/bin/strace /bin/strace; do
-    if [[ -x "${strace_bin}" ]]; then
-      SING_BIND_ARGS+=(--bind "${strace_bin}:${strace_bin}")
-      echo "Host strace bind: ${strace_bin}"
-      break
-    fi
-  done
-fi
-
-echo "Container: ${SIF_ABS}"
-echo "Command:   ${CMD_STR}"
-
-singularity exec --cleanenv --pwd "${WORKDIR_ABS}" \
-  --bind "${USER_SCRATCH}:${USER_SCRATCH}" \
-  --bind "${GROUP_ROOT}:${GROUP_ROOT}" \
-  --bind "${WORKDIR_ABS}:${WORKDIR_ABS}" \
-  "${SING_BIND_ARGS[@]}" \
-  --env ACES_ROOT="${ACES_ROOT}" \
-  --env CARGO_HOME="${CARGO_HOME}" \
-  --env RUSTUP_HOME="${RUSTUP_HOME}" \
-  --env CARGO_BUILD_JOBS="${CPUS}" \
-  --env PATH="${CARGO_HOME}/bin:/opt/cargo/bin:/opt/rust/cargo/bin:${PATH}" \
-  --env http_proxy="${http_proxy:-}" --env https_proxy="${https_proxy:-}" \
-  --env HTTP_PROXY="${HTTP_PROXY:-}" --env HTTPS_PROXY="${HTTPS_PROXY:-}" \
-  "${SIF_ABS}" bash -lc "${CMD_STR}"
-NODE
+srun "${SRUN_ARGS[@]}" env CPUS="${CPUS}" "${SINGULARITY_RUN}" "${IMAGE}" "${WORKDIR_ABS}" "${CMD[@]}"

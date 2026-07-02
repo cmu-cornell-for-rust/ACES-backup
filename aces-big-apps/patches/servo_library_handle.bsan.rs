@@ -2,6 +2,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
+// BSAN-safe FreeType allocator hooks for Servo (aces patch).
+//
+// Upstream probes jemalloc chunk metadata in FreeType hooks and MallocSizeOf (BSAN OOB).
+//
+// This patch:
+// - Tracks requested sizes per pointer (FreeType's free callback has no size argument).
+// - Avoids ops.malloc_size_of() on FT_Library / FT_Memory opaque pointers.
+
+use std::collections::HashMap;
 use std::os::raw::{c_long, c_void};
 use std::ptr;
 use std::sync::OnceLock;
@@ -11,11 +20,33 @@ use freetype_sys::{
     FT_Add_Default_Modules, FT_Done_Library, FT_Library, FT_Memory, FT_MemoryRec, FT_New_Library,
 };
 use malloc_size_of::{MallocSizeOf, MallocSizeOfOps};
-use parking_lot::ReentrantMutex;
+use parking_lot::{Mutex, ReentrantMutex};
 use servo_allocator::libc_compat::{free, malloc, realloc};
 
 static FREETYPE_MEMORY_USAGE: AtomicUsize = AtomicUsize::new(0);
+static FREETYPE_ALLOC_SIZES: OnceLock<Mutex<HashMap<usize, usize>>> = OnceLock::new();
 static FREETYPE_LIBRARY_HANDLE: OnceLock<ReentrantMutex<FreeTypeLibraryHandle>> = OnceLock::new();
+
+fn alloc_sizes() -> &'static Mutex<HashMap<usize, usize>> {
+    FREETYPE_ALLOC_SIZES.get_or_init(|| Mutex::new(HashMap::new()))
+}
+
+fn track_alloc(pointer: *mut c_void, size: usize) {
+    if size == 0 || pointer.is_null() {
+        return;
+    }
+    FREETYPE_MEMORY_USAGE.fetch_add(size, Ordering::Relaxed);
+    alloc_sizes().lock().insert(pointer as usize, size);
+}
+
+fn track_free(pointer: *mut c_void) {
+    if pointer.is_null() {
+        return;
+    }
+    if let Some(size) = alloc_sizes().lock().remove(&(pointer as usize)) {
+        FREETYPE_MEMORY_USAGE.fetch_sub(size, Ordering::Relaxed);
+    }
+}
 
 extern "C" fn ft_alloc(_: FT_Memory, req_size: c_long) -> *mut c_void {
     if req_size <= 0 {
@@ -24,7 +55,7 @@ extern "C" fn ft_alloc(_: FT_Memory, req_size: c_long) -> *mut c_void {
     unsafe {
         let pointer = malloc(req_size as usize);
         if !pointer.is_null() {
-            FREETYPE_MEMORY_USAGE.fetch_add(req_size as usize, Ordering::Relaxed);
+            track_alloc(pointer, req_size as usize);
         }
         pointer
     }
@@ -34,6 +65,7 @@ extern "C" fn ft_free(_: FT_Memory, pointer: *mut c_void) {
     if pointer.is_null() {
         return;
     }
+    track_free(pointer);
     unsafe {
         free(pointer as *mut _);
     }
@@ -46,27 +78,35 @@ extern "C" fn ft_realloc(
     old_pointer: *mut c_void,
 ) -> *mut c_void {
     if new_req_size <= 0 {
-        if !old_pointer.is_null() && old_size > 0 {
-            FREETYPE_MEMORY_USAGE.fetch_sub(old_size as usize, Ordering::Relaxed);
-        }
         if !old_pointer.is_null() {
+            track_free(old_pointer);
             unsafe {
                 free(old_pointer as *mut _);
             }
         }
         return ptr::null_mut();
     }
+
+    let old_tracked = if old_pointer.is_null() {
+        0
+    } else if let Some(size) = alloc_sizes().lock().remove(&(old_pointer as usize)) {
+        FREETYPE_MEMORY_USAGE.fetch_sub(size, Ordering::Relaxed);
+        size
+    } else if old_size > 0 {
+        old_size as usize
+    } else {
+        0
+    };
+    let _ = old_tracked;
+
     unsafe {
-        if !old_pointer.is_null() && old_size > 0 {
-            FREETYPE_MEMORY_USAGE.fetch_sub(old_size as usize, Ordering::Relaxed);
-        }
         let new_pointer = if old_pointer.is_null() {
             malloc(new_req_size as usize)
         } else {
             realloc(old_pointer, new_req_size as usize)
         };
         if !new_pointer.is_null() {
-            FREETYPE_MEMORY_USAGE.fetch_add(new_req_size as usize, Ordering::Relaxed);
+            track_alloc(new_pointer, new_req_size as usize);
         }
         new_pointer
     }
@@ -97,12 +137,11 @@ impl Drop for FreeTypeLibraryHandle {
 }
 
 impl MallocSizeOf for FreeTypeLibraryHandle {
-    fn size_of(&self, ops: &mut MallocSizeOfOps) -> usize {
-        unsafe {
-            FREETYPE_MEMORY_USAGE.load(Ordering::Relaxed) +
-                ops.malloc_size_of(self.freetype_library as *const _) +
-                ops.malloc_size_of(self.freetype_memory as *const _)
-        }
+    fn size_of(&self, _ops: &mut MallocSizeOfOps) -> usize {
+        // Do not call ops.malloc_size_of on FT_Library / FT_Memory pointers: that uses
+        // jemalloc metadata internally. FreeType bytes are already tracked in
+        // FREETYPE_MEMORY_USAGE via the hooks above.
+        FREETYPE_MEMORY_USAGE.load(Ordering::Relaxed)
     }
 }
 

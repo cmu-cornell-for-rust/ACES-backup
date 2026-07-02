@@ -22,15 +22,15 @@ fi
 
 if bsan_toolchain_ready; then
   pass "bsan registered with rustup"
-elif bsan_artifacts_ready; then
-  pass "bsan on disk (rustup link happens inside compute jobs)"
+elif bsan_toolchain_installed; then
+  pass "bsan toolchain on disk (rustup link happens inside compute jobs)"
 else
   fail "bsan not registered with rustup"
 fi
 
 if rustc_bsan_works; then
   pass "rustc +bsan runs in this environment"
-elif bsan_artifacts_ready; then
+elif bsan_toolchain_installed; then
   pass "rustc +bsan deferred to container (login node glibc)"
 else
   fail "rustc +bsan unavailable"
