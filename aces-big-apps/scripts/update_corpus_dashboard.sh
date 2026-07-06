@@ -11,8 +11,10 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "${SCRIPT_DIR}/../config.env"
 
 LOOP_INTERVAL=""
+POLL_LABEL="30s"
 if [[ "${1:-}" == "--loop" ]]; then
-  LOOP_INTERVAL="${2:-2m}"
+  LOOP_INTERVAL="${2:-30s}"
+  POLL_LABEL="${LOOP_INTERVAL}"
   shift 2
 fi
 
@@ -62,6 +64,16 @@ refresh_once() {
     log "ERROR: invalid snapshot JSON"
     return 1
   fi
+  python3 -c "
+import json, sys
+p = sys.argv[1]
+poll = sys.argv[2]
+with open(p) as f:
+    d = json.load(f)
+d['pollInterval'] = poll
+with open(p, 'w') as f:
+    json.dump(d, f)
+" "${TMP_JSON}" "${POLL_LABEL}"
   mkdir -p "${CANVAS_DIR}"
   python3 "${SCRIPT_DIR}/render_corpus_dashboard.py" "${TMP_JSON}" >"${CANVAS_FILE}.tmp"
   mv "${CANVAS_FILE}.tmp" "${CANVAS_FILE}"

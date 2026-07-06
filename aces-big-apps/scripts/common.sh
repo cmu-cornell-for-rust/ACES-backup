@@ -189,13 +189,16 @@ prepare_bsan_native_cc_env() {
 }
 
 # cargo-bsan overwrites shell CC with BSAN clang; [env] force=true wins for build scripts.
+# Optional extra [env] lines: write_host_cc_cargo_config <app_dir> "KEY = ..." ...
 write_host_cc_cargo_config() {
   local app_dir="$1"
+  shift
   local wrap_dir="${CARGO_TEMP:-/tmp}/host-cc-wrap/bin"
-  local host_cc host_cxx clean_flags
+  local host_cc host_cxx clean_flags clean_cxxflags extra
   host_cc="$(command -v cc 2>/dev/null || echo /usr/bin/cc)"
   host_cxx="$(command -v c++ 2>/dev/null || echo /usr/bin/c++)"
   clean_flags="-O1 -ffunction-sections -fdata-sections -fPIC -g -gdwarf-4 -fno-omit-frame-pointer -m64"
+  clean_cxxflags="${clean_flags} -std=c++17"
   mkdir -p "${wrap_dir}"
   cat > "${wrap_dir}/cc" <<'WRAP'
 #!/usr/bin/env bash
@@ -225,7 +228,8 @@ WRAP
   export HOST_CC_REAL="${host_cc}"
   export HOST_CXX_REAL="${host_cxx}"
   mkdir -p "${app_dir}/.cargo"
-  cat > "${app_dir}/.cargo/config.toml" <<EOF
+  {
+    cat <<EOF
 # BSAN corpus: host C toolchain for build scripts (ring, tikv protobuf-src, quiche cmake).
 [env]
 HOST_CC_REAL = { value = "${host_cc}", force = true }
@@ -233,55 +237,71 @@ HOST_CXX_REAL = { value = "${host_cxx}", force = true }
 CC = { value = "${wrap_dir}/cc", force = true }
 CXX = { value = "${wrap_dir}/c++", force = true }
 CFLAGS = { value = "${clean_flags}", force = true }
-CXXFLAGS = { value = "${clean_flags}", force = true }
+CXXFLAGS = { value = "${clean_cxxflags}", force = true }
 CMAKE_C_COMPILER = { value = "${wrap_dir}/cc", force = true }
 CMAKE_CXX_COMPILER = { value = "${wrap_dir}/c++", force = true }
 CMAKE_C_FLAGS = { value = "${clean_flags}", force = true }
-CMAKE_CXX_FLAGS = { value = "${clean_flags}", force = true }
+CMAKE_CXX_FLAGS = { value = "${clean_cxxflags}", force = true }
 EOF
-}
-
-append_cargo_config_env() {
-  local app_dir="$1"
-  shift
-  [[ $# -gt 0 ]] || return 0
-  mkdir -p "${app_dir}/.cargo"
-  {
-    echo ""
-    echo "# BSAN corpus app-specific build env"
-    echo "[env]"
-    while [[ $# -gt 0 ]]; do
-      echo "$1"
-      shift
+    for extra in "$@"; do
+      echo "${extra}"
     done
-  } >>"${app_dir}/.cargo/config.toml"
+    cat <<'EOF'
+
+[build]
+jobs = 1
+EOF
+  } >"${app_dir}/.cargo/config.toml"
 }
 
-# ahash stdsimd needs removed nightly feature; unify on 0.8.x without stdsimd.
+# ahash stdsimd needs removed nightly feature; patch via git (crates.io patch must differ in source).
 patch_vector_core_ahash() {
   local app_dir="$1"
   local cargo="${app_dir}/Cargo.toml"
   [[ -f "${cargo}" ]] || return 0
-  if grep -q 'bsan-patch-ahash' "${cargo}" 2>/dev/null; then
+  local tmp ahash_line
+  tmp="$(mktemp)"
+  ahash_line='ahash = { git = "https://github.com/tkaitchuck/aHash.git", tag = "v0.8.11", default-features = false, features = ["std", "runtime-rng"] }'
+
+  # Cargo.toml allows one [patch.crates-io]; drop duplicate harness sections.
+  awk -v ahash="${ahash_line}" '
+    BEGIN { patch_idx=0 }
+    /^\[patch\.crates-io\]/ {
+      patch_idx++
+      if (patch_idx > 1) { skip=1; next }
+      print
+      next
+    }
+    skip {
+      if (/^\[/ ) { skip=0; print; next }
+      if ($0 ~ /^ahash = /) next
+      if ($0 ~ /^# bsan-patch-ahash:/) next
+      next
+    }
+    $0 ~ /^ahash = / { next }
+    $0 ~ /^# bsan-patch-ahash:/ { next }
+    { print }
+  ' "${cargo}" >"${tmp}" && mv "${tmp}" "${cargo}"
+
+  if grep -qF 'github.com/tkaitchuck/aHash.git' "${cargo}" 2>/dev/null; then
     return 0
   fi
-  log "vector-core: patching ahash (disable stdsimd via [patch.crates-io])"
-  cat >>"${cargo}" <<'PATCH'
 
-# bsan-patch-ahash: stdsimd feature requires removed nightly feature
-[patch.crates-io]
-ahash = { version = "0.8.11", default-features = false, features = ["std", "runtime-rng"] }
-PATCH
-  (
-    cd "${app_dir}"
-    export_rust_env
-    prepare_bsan_cargo_env
-    cargo +bsan update -p ahash 2>/dev/null || true
-  )
+  log "vector-core: patching ahash (disable stdsimd via git [patch.crates-io])"
+  awk -v ahash="${ahash_line}" '
+    /^\[patch\.crates-io\]/ && !done {
+      print
+      print "# bsan-patch-ahash: stdsimd feature requires removed nightly feature"
+      print ahash
+      done=1
+      next
+    }
+    { print }
+  ' "${cargo}" >"${tmp}" && mv "${tmp}" "${cargo}"
 }
 
-# rusty_v8 expects gen/src_binding_*.rs; download prebuilts and prime build-script.
-prepare_rusty_v8_prebuild() {
+# rusty_v8 expects gen/src_binding_*.rs from GitHub releases.
+download_rusty_v8_bindings() {
   local app_dir="$1"
   local mirror="https://github.com/denoland/rusty_v8/releases/download"
   local v8_ver name binding
@@ -293,44 +313,54 @@ prepare_rusty_v8_prebuild() {
     log "rusty-v8: downloading prebuilt ${name} (v${v8_ver})"
     curl -fsSL -o "${binding}" "${mirror}/v${v8_ver}/${name}"
   fi
-  append_cargo_config_env "${app_dir}" \
+  printf '%s\n%s' \
     "RUSTY_V8_MIRROR = { value = \"${mirror}\", force = true }" \
     "RUSTY_V8_SRC_BINDING_PATH = { value = \"${binding}\", force = true }"
-  (
-    cd "${app_dir}"
-    export_rust_env
-    prepare_bsan_cargo_env
-    export RUSTY_V8_MIRROR
-    export RUSTY_V8_SRC_BINDING_PATH="${binding}"
-    log "rusty-v8: priming v8 build-script (cargo +bsan bsan build -p v8)"
-    cargo +bsan bsan build -p v8 2>&1 | tail -30 || true
-  )
+}
+
+# rusty_v8: `cargo bsan build -p <dep>` writes host-layout rlibs that break the BSAN graph.
+prepare_rusty_v8_bsan_target_fixup() {
+  local app_dir="$1"
+  local td="${app_dir}/target/bsan-rusty-v8"
+  if [[ -d "${td}" ]]; then
+    log "rusty-v8: cleaning ${td} (avoid host/target dep path mismatch from prior prebuilds)"
+    rm -rf "${td}"
+  fi
+}
+
+# firecracker vm-memory needs thiserror proc-macro ready; partial parallel builds leave bad rlibs.
+prepare_firecracker_bsan_target_fixup() {
+  local app_dir="$1"
+  local td="${app_dir}/target/bsan-firecracker"
+  if [[ -d "${td}" ]]; then
+    log "firecracker: cleaning ${td} (avoid vm-memory/thiserror proc-macro partial builds)"
+    rm -rf "${td}"
+  fi
 }
 
 # Per-app build fixes (lockfile pins, etc.) before compile.
 prepare_app_build_fixes() {
   local app="$1"
   local app_dir="$2"
-  write_host_cc_cargo_config "${app_dir}"
+  local cargo_extras=()
   case "${app}" in
     vector-core)
       patch_vector_core_ahash "${app_dir}"
       ;;
     rusty-v8)
-      prepare_rusty_v8_prebuild "${app_dir}"
+      while IFS= read -r line; do
+        [[ -n "${line}" ]] && cargo_extras+=("${line}")
+      done < <(download_rusty_v8_bindings "${app_dir}")
+      prepare_rusty_v8_bsan_target_fixup "${app_dir}"
       ;;
     firecracker)
+      prepare_firecracker_bsan_target_fixup "${app_dir}"
       if ! pkg-config --exists libseccomp 2>/dev/null; then
-        log "WARN: firecracker needs libseccomp-dev in bsan.sif (rebuild containers/build_scripts/bsan.def)"
+        log "WARN: firecracker needs libseccomp-dev (run scripts/rebuild_bsan_ext_image_job.sh)"
       fi
       ;;
-    tikv-codec)
-      # grpcio-sys cmake must not inherit BSAN --target= from cargo-bsan.
-      append_cargo_config_env "${app_dir}" \
-        'CMAKE_CXX_FLAGS = { value = "-O1 -ffunction-sections -fdata-sections -fPIC -g -gdwarf-4 -fno-omit-frame-pointer -m64", force = true }' \
-        'CMAKE_C_FLAGS = { value = "-O1 -ffunction-sections -fdata-sections -fPIC -g -gdwarf-4 -fno-omit-frame-pointer -m64", force = true }'
-      ;;
   esac
+  write_host_cc_cargo_config "${app_dir}" "${cargo_extras[@]}"
 }
 
 prepare_bsan_cargo_env() {
@@ -396,12 +426,13 @@ ensure_bsan_toolchain_linked() {
   command -v rustup >/dev/null 2>&1 || return 1
   # xb setup installs directly into ${RUSTUP_HOME}/toolchains/bsan. rustup
   # uninstall of a link pointing at that tree can delete the real toolchain.
-  if rustup toolchain list 2>/dev/null | grep -qE '^bsan( |$)'; then
+  log "Linking bsan toolchain into rustup (${RUSTUP_HOME}/toolchains/bsan)"
+  rustup toolchain link bsan "${RUSTUP_HOME}/toolchains/bsan" 2>/dev/null || true
+  if rustc_bsan_works && cargo +bsan -V >/dev/null 2>&1; then
+    rustup default bsan 2>/dev/null || true
     return 0
   fi
-  log "Linking bsan toolchain into rustup (${RUSTUP_HOME}/toolchains/bsan)"
-  rustup toolchain link bsan "${RUSTUP_HOME}/toolchains/bsan"
-  rustup default bsan 2>/dev/null || true
+  return 1
 }
 
 bsan_toolchain_ready() {

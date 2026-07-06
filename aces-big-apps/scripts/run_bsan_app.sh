@@ -26,7 +26,7 @@ mkdir -p "${OUTPUT_DIR}"
 
 apply_bsan_stack_limit
 export CARGO_TARGET_DIR="${app_dir}/target/bsan-${APP}"
-export CARGO_BUILD_JOBS="${CARGO_BUILD_JOBS:-1}"
+export CARGO_BUILD_JOBS=1
 
 export_rust_env
 if ! bsan_runtime_ready; then

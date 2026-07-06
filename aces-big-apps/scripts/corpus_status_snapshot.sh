@@ -52,6 +52,62 @@ def pick_latest_log(app):
     logs = sorted(glob.glob(pattern), key=os.path.getmtime, reverse=True)
     return logs[0] if logs else None
 
+def pick_sbatch_log(app, job_id):
+    sbatch_dir = os.path.join(output_dir, "sbatch")
+    if job_id:
+        exact = os.path.join(sbatch_dir, "bsan-{}.{}.log".format(app, job_id))
+        if os.path.isfile(exact):
+            return exact
+    pattern = os.path.join(sbatch_dir, "bsan-{}.*.log".format(app))
+    logs = sorted(glob.glob(pattern), key=os.path.getmtime, reverse=True)
+    return logs[0] if logs else None
+
+def pick_active_log(app, job_id, slurm_state):
+    """Prefer in-flight sbatch log over stale corpus log during reruns."""
+    sbatch = pick_sbatch_log(app, job_id) if job_id else pick_sbatch_log(app, "")
+    corpus = pick_latest_log(app)
+    active_states = ("RUNNING", "COMPLETING", "PENDING")
+    if slurm_state in active_states and sbatch:
+        return sbatch, "sbatch"
+    if sbatch and corpus:
+        if os.path.getmtime(sbatch) >= os.path.getmtime(corpus):
+            return sbatch, "sbatch"
+        lines = read_log_lines(corpus)
+        if not log_status_from_lines(lines):
+            return sbatch, "sbatch"
+        return corpus, "corpus"
+    if sbatch:
+        return sbatch, "sbatch"
+    return corpus, "corpus"
+
+def parse_submit_log(path):
+    info = {"stamp": "", "apps": [], "submissions": []}
+    if not path or not os.path.isfile(path):
+        return info
+    with open(path, encoding="utf-8", errors="replace") as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith("stamp="):
+                info["stamp"] = line.split("=", 1)[1]
+            elif line.startswith("apps="):
+                info["apps"] = line.split("=", 1)[1].split()
+            elif line.startswith("submitted job_id="):
+                parts = line.split()
+                row = {}
+                for p in parts[1:]:
+                    if "=" in p:
+                        k, v = p.split("=", 1)
+                        row[k] = v
+                if row:
+                    info["submissions"].append(row)
+    return info
+
+def tail_lines(path, max_lines=20):
+    if not path or not os.path.isfile(path):
+        return []
+    with open(path, encoding="utf-8", errors="replace") as f:
+        return f.readlines()[-max_lines:]
+
 def read_log_lines(path):
     with open(path, encoding="utf-8", errors="replace") as f:
         return f.readlines()
@@ -197,6 +253,22 @@ for app in apps:
     if match:
         job_by_app[app] = match
 
+submit_logs = sorted(
+    glob.glob(os.path.join(output_dir, "corpus.submit.*.log")),
+    key=os.path.getmtime,
+    reverse=True,
+)
+rerun_batch = parse_submit_log(submit_logs[0]) if submit_logs else {"stamp": "", "apps": [], "submissions": []}
+rerun_job_ids = {s.get("app"): s.get("job_id") for s in rerun_batch.get("submissions", []) if s.get("app")}
+rerun_apps = set(rerun_batch.get("apps", []))
+
+servo_submit_logs = sorted(
+    glob.glob(os.path.join(output_dir, "servo-fonts.submit.*.log")),
+    key=os.path.getmtime,
+    reverse=True,
+)
+servo_batch = parse_submit_log(servo_submit_logs[0]) if servo_submit_logs else {"stamp": "", "submissions": []}
+
 app_rows = []
 counts = {
     "ok": 0, "test_error": 0, "build_error": 0, "fetch_error": 0,
@@ -204,7 +276,12 @@ counts = {
 }
 
 for app in apps:
-    latest = pick_latest_log(app)
+    slurm = job_by_app.get(app, {})
+    slurm_state = slurm.get("state", "")
+    slurm_id = slurm.get("id", "") or rerun_job_ids.get(app, "")
+    slurm_elapsed = slurm.get("elapsed", "")
+
+    latest, log_source = pick_active_log(app, slurm_id, slurm_state)
     log_status = ""
     log_stamp = ""
     log_file = None
@@ -213,18 +290,22 @@ for app in apps:
     lines = []
     if latest:
         log_file = os.path.basename(latest)
-        log_stamp = log_file.replace("{}.".format(app), "").replace(".log", "")
+        if log_source == "sbatch":
+            log_stamp = "sbatch:{}".format(slurm_id or "?")
+        else:
+            log_stamp = log_file.replace("{}.".format(app), "").replace(".log", "")
         lines = read_log_lines(latest)
         log_status = log_status_from_lines(lines)
         headline = log_headline(lines)
         excerpt = log_excerpt(lines)
-
-    slurm = job_by_app.get(app, {})
-    slurm_state = slurm.get("state", "")
-    slurm_id = slurm.get("id", "")
-    slurm_elapsed = slurm.get("elapsed", "")
+        if slurm_state in ("RUNNING", "COMPLETING") and not excerpt:
+            excerpt = "".join(tail_lines(latest, 18)).strip()
 
     verdict, analysis = classify_app(app, log_status, headline, excerpt, slurm_state)
+    if app in rerun_apps and slurm_state in ("RUNNING", "COMPLETING", "PENDING"):
+        verdict, analysis = "running", "Rerun in progress (live sbatch log)."
+    elif app in rerun_apps and not log_status and slurm_state:
+        verdict, analysis = "running", "Rerun queued or starting."
 
     if log_status == "ok":
         counts["ok"] += 1
@@ -250,6 +331,7 @@ for app in apps:
         "logStatus": log_status or None,
         "logStamp": log_stamp or None,
         "logFile": log_file,
+        "logSource": log_source if latest else None,
         "headline": headline or None,
         "logExcerpt": excerpt or None,
         "verdict": verdict,
@@ -257,35 +339,108 @@ for app in apps:
         "slurmId": slurm_id or None,
         "slurmState": slurm_state or None,
         "slurmElapsed": slurm_elapsed or None,
+        "isRerun": app in rerun_apps,
     })
 
-submit_log = ""
-submit_logs = sorted(
-    glob.glob(os.path.join(output_dir, "corpus.submit.*.log")),
-    key=os.path.getmtime,
-    reverse=True,
-)
-if submit_logs:
-    submit_log = os.path.basename(submit_logs[0])
+submit_log = os.path.basename(submit_logs[0]) if submit_logs else ""
+
+rerun_rows = []
+for sub in rerun_batch.get("submissions", []):
+    app_name = sub.get("app", "")
+    jid = sub.get("job_id", "")
+    jstate = ""
+    jelapsed = ""
+    for j in jobs:
+        if j["id"] == jid:
+            jstate = j["state"]
+            jelapsed = j["elapsed"]
+            break
+    row = next((r for r in app_rows if r["app"] == app_name), None)
+    rerun_rows.append({
+        "app": app_name,
+        "jobId": jid,
+        "state": jstate or (row or {}).get("slurmState") or "—",
+        "elapsed": jelapsed or (row or {}).get("slurmElapsed") or "",
+        "logStatus": (row or {}).get("logStatus"),
+        "headline": (row or {}).get("headline"),
+    })
+
+corpus_app_names = set(apps)
+infra_jobs = []
+for j in jobs:
+    if j["app"] in corpus_app_names:
+        continue
+    sbatch_path = os.path.join(output_dir, "sbatch", "{}.{}.log".format(j["name"], j["id"]))
+    infra_jobs.append({
+        "id": j["id"],
+        "name": j["name"],
+        "state": j["state"],
+        "elapsed": j["elapsed"],
+        "logExcerpt": "".join(tail_lines(sbatch_path, 14)).strip() or None,
+    })
+
+servo_job = next((j for j in jobs if j["name"] == "bsan-servo-fonts"), None)
+servo_row = None
+if servo_job or servo_batch.get("submissions"):
+    sj = servo_job or {}
+    sid = sj.get("id", "")
+    if not sid and servo_batch.get("submissions"):
+        sid = servo_batch["submissions"][0].get("job_id", "")
+    sbatch = os.path.join(output_dir, "sbatch", "bsan-servo-fonts.{}.log".format(sid)) if sid else ""
+    if not os.path.isfile(sbatch):
+        matches = sorted(glob.glob(os.path.join(output_dir, "sbatch", "bsan-servo-fonts.*.log")), key=os.path.getmtime, reverse=True)
+        sbatch = matches[0] if matches else ""
+    lines = read_log_lines(sbatch) if sbatch else []
+    servo_row = {
+        "jobId": sid or None,
+        "state": sj.get("state"),
+        "elapsed": sj.get("elapsed"),
+        "submitStamp": servo_batch.get("stamp"),
+        "logStatus": log_status_from_lines(lines) or None,
+        "headline": log_headline(lines) or None,
+        "logExcerpt": log_excerpt(lines) or "".join(tail_lines(sbatch, 16)).strip() or None,
+    }
 
 verdict_counts = {}
 for row in app_rows:
     v = row["verdict"]
     verdict_counts[v] = verdict_counts.get(v, 0) + 1
 
+rerun_active = any(
+    r.get("state") in ("RUNNING", "COMPLETING", "PENDING") for r in rerun_rows
+) or any(j["state"] in ("RUNNING", "COMPLETING", "PENDING") for j in infra_jobs)
+
+if rerun_active:
+    analysis = (
+        "Live rerun batch {} — tracking sbatch logs for in-flight jobs. "
+        "Apps: {}. Infra/setup jobs shown separately. BSAN_CPUS={}."
+    ).format(
+        rerun_batch.get("stamp") or "latest",
+        ", ".join(rerun_batch.get("apps", [])) or "—",
+        os.environ.get("BSAN_CPUS", "4"),
+    )
+else:
+    analysis = (
+        "BSAN corpus (17 apps + servo-fonts). Tier-A passes show no confirmed UB. "
+        "Build reruns target tikv-codec, vector-core, rusty-v8, firecracker (bsan-ext.sif). "
+        "BSAN_CPUS={}.".format(os.environ.get("BSAN_CPUS", "4"))
+    )
+
 snapshot = {
     "fetchedAt": fetched_at,
     "bsan": bsan,
     "submitLog": submit_log,
+    "rerunBatch": {
+        "stamp": rerun_batch.get("stamp"),
+        "submitLog": submit_log,
+        "apps": rerun_batch.get("apps", []),
+        "rows": rerun_rows,
+        "active": rerun_active,
+    },
+    "servoFonts": servo_row,
+    "infraJobs": infra_jobs,
     "verdictLabels": VERDICT_LABELS,
-    "analysisSummary": (
-        "BSAN main corpus (17 apps + servo-fonts track). No confirmed sanitizer UB in "
-        "Tier-A passes (ripgrep, rustls, quiche, …). Failures cluster as: harness CC "
-        "(ring/tikv build), infra (nix kernel, fd 1-CPU), likely mixed-heap FP "
-        "(git2-rs/uutils), workspace/build blockers (polars proptest, vector), and "
-        "Servo-fonts teardown (jemalloc track). New: rusty-v8, firecracker, wgpu-hal. "
-        "Jobs use BSAN_CPUS={}.".format(os.environ.get("BSAN_CPUS", "4"))
-    ),
+    "analysisSummary": analysis,
     "summary": {
         "total": len(apps),
         "queued": sum(1 for j in jobs if j["state"] == "PENDING"),

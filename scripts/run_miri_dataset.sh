@@ -70,7 +70,15 @@ MIRIFLAGS_ALL="$MIRI_COMMON${EXTRA_MIRIFLAGS:+ $EXTRA_MIRIFLAGS}"
 # Normalized image name (strip any dir + .sif) for the job name and rust check.
 IMAGE="$(basename "${IMAGE_ARG%.sif}")"
 DATASET_DIR="$DATASETS_ROOT/$DATASET"
+
+# When extra Miri flags are given, fold a filesystem-safe slug of them into the
+# CSV name so runs with different flag sets land in separate files instead of
+# appending to the same one. Non-alphanumerics collapse to single dashes.
 CSV="$OUTPUTS_DIR/${IMAGE}-${DATASET}.csv"
+if [[ -n "$EXTRA_MIRIFLAGS" ]]; then
+    FLAG_SLUG="$(printf '%s' "$EXTRA_MIRIFLAGS" | tr -c '[:alnum:]' '-' | sed 's/-\{1,\}/-/g; s/^-//; s/-$//')"
+    CSV="$OUTPUTS_DIR/${IMAGE}-${DATASET}-${FLAG_SLUG}.csv"
+fi
 
 # ── Validate ──────────────────────────────────────────────────────────────--
 [[ -x "$RUN_JOB" ]] \
@@ -269,4 +277,5 @@ fi
 if (( fail > 0 )); then
     exit 1
 fi
+
 

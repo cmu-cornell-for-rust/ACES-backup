@@ -73,6 +73,7 @@ function verdictLabel(v: string): string {
 function interestingApps(): AppRow[] {
   return SNAPSHOT.apps.filter(
     (a) =>
+      a.isRerun ||
       a.logExcerpt ||
       a.logStatus === "test_error" ||
       a.logStatus === "build_error" ||
@@ -83,6 +84,7 @@ function interestingApps(): AppRow[] {
 
 export default function BsanCorpusDashboard() {
   const s = SNAPSHOT.summary;
+  const rb = SNAPSHOT.rerunBatch;
   const done = s.ok + s.test_error + s.build_error + s.fetch_error + s.other;
   const segments = [
     { id: "ok", value: s.ok, color: "green" as const },
@@ -93,21 +95,51 @@ export default function BsanCorpusDashboard() {
   ].filter((x) => x.value > 0);
 
   const flagged = interestingApps();
+  const rerunLive = Boolean(rb?.active);
 
   return (
     <Stack gap={16} style={{ padding: 20, maxWidth: 1100 }}>
       <Stack gap={4}>
         <H1>BSAN Corpus — Live Status</H1>
         <Text tone="secondary" size="small">
-          Updated {SNAPSHOT.fetchedAt} UTC · BSAN {SNAPSHOT.bsan.branch} @ {SNAPSHOT.bsan.commit}
+          Updated {SNAPSHOT.fetchedAt} UTC
+          {SNAPSHOT.pollInterval ? ` · polling every ${SNAPSHOT.pollInterval}` : ""}
+          {" · BSAN "}{SNAPSHOT.bsan.branch} @ {SNAPSHOT.bsan.commit}
           {SNAPSHOT.bsan.subject ? ` — ${SNAPSHOT.bsan.subject}` : ""}
         </Text>
         {SNAPSHOT.submitLog ? (
-          <Text tone="tertiary" size="small">Batch: {SNAPSHOT.submitLog}</Text>
+          <Text tone="tertiary" size="small">Latest submit: {SNAPSHOT.submitLog}</Text>
         ) : null}
       </Stack>
 
-      <Callout tone="info" title="Main-branch analysis">
+      {rerunLive ? (
+        <Callout tone="warning" title={`Rerun batch ${rb.stamp ?? "active"}`}>
+          <Stack gap={8}>
+            <Text size="small">
+              Live tracking {rb.apps?.length ?? 0} app(s): {rb.apps?.join(", ") ?? "—"}
+            </Text>
+            <Table
+              headers={["App", "Job", "Slurm", "Log", "Latest"]}
+              rows={(rb.rows ?? []).map((r) => [
+                r.app,
+                r.jobId ?? "—",
+                <Pill tone={slurmTone(r.state === "—" ? null : r.state)} size="sm">
+                  {r.state ?? "—"}
+                </Pill>,
+                r.logStatus ? (
+                  <Pill tone={logStatusTone(r.logStatus)} size="sm">{fmtStatus(r.logStatus)}</Pill>
+                ) : (
+                  <Pill tone="info" size="sm">live</Pill>
+                ),
+                r.headline ?? "—",
+              ])}
+              striped
+            />
+          </Stack>
+        </Callout>
+      ) : null}
+
+      <Callout tone="info" title="Summary">
         {SNAPSHOT.analysisSummary}
       </Callout>
 
@@ -137,15 +169,19 @@ export default function BsanCorpusDashboard() {
       <Table
         headers={["App", "Verdict", "Slurm", "Log status", "Headline"]}
         rows={SNAPSHOT.apps.map((a) => [
-          a.app,
+          a.isRerun ? `${a.app} ↻` : a.app,
           <Pill tone={verdictTone(a.verdict)} size="sm">{verdictLabel(a.verdict)}</Pill>,
           a.slurmState ? (
-            <Pill tone={slurmTone(a.slurmState)} size="sm">{a.slurmState}</Pill>
+            <Pill tone={slurmTone(a.slurmState)} size="sm">
+              {a.slurmState}{a.slurmElapsed ? ` ${a.slurmElapsed}` : ""}
+            </Pill>
           ) : (
             "—"
           ),
           a.logStatus ? (
             <Pill tone={logStatusTone(a.logStatus)} size="sm">{fmtStatus(a.logStatus)}</Pill>
+          ) : a.slurmState === "RUNNING" || a.slurmState === "COMPLETING" ? (
+            <Pill tone="info" size="sm">live</Pill>
           ) : (
             "—"
           ),
@@ -154,6 +190,50 @@ export default function BsanCorpusDashboard() {
         rowTone={SNAPSHOT.apps.map((a) => rowTone(a))}
         striped
       />
+
+      {SNAPSHOT.servoFonts ? (
+        <>
+          <H2>Servo-fonts (jemalloc track)</H2>
+          <Card>
+            <CardBody>
+              <Stack gap={6}>
+                <Text size="small">
+                  Job {SNAPSHOT.servoFonts.jobId ?? "—"}
+                  {SNAPSHOT.servoFonts.state ? (
+                    <> · <Pill tone={slurmTone(SNAPSHOT.servoFonts.state)} size="sm">{SNAPSHOT.servoFonts.state}</Pill></>
+                  ) : null}
+                  {SNAPSHOT.servoFonts.elapsed ? ` · ${SNAPSHOT.servoFonts.elapsed}` : ""}
+                </Text>
+                {SNAPSHOT.servoFonts.headline ? (
+                  <Text size="small" weight="semibold">{SNAPSHOT.servoFonts.headline}</Text>
+                ) : null}
+                {SNAPSHOT.servoFonts.logExcerpt ? (
+                  <Code style={{ display: "block", whiteSpace: "pre-wrap", fontSize: 11, maxHeight: 200, overflow: "auto" }}>
+                    {SNAPSHOT.servoFonts.logExcerpt}
+                  </Code>
+                ) : null}
+              </Stack>
+            </CardBody>
+          </Card>
+        </>
+      ) : null}
+
+      {SNAPSHOT.infraJobs && SNAPSHOT.infraJobs.length > 0 ? (
+        <>
+          <H2>Infra / setup jobs</H2>
+          <Table
+            headers={["Job ID", "Name", "State", "Elapsed", "Tail"]}
+            rows={SNAPSHOT.infraJobs.map((j) => [
+              j.id,
+              j.name,
+              <Pill tone={slurmTone(j.state)} size="sm">{j.state}</Pill>,
+              j.elapsed || "—",
+              j.logExcerpt ? j.logExcerpt.split("\n").slice(-1)[0]?.slice(0, 80) ?? "—" : "—",
+            ])}
+            striped
+          />
+        </>
+      ) : null}
 
       <H2>Logs and findings ({flagged.length})</H2>
       <Stack gap={8}>
@@ -165,18 +245,27 @@ export default function BsanCorpusDashboard() {
               <Pill tone={verdictTone(a.verdict)} size="sm">{verdictLabel(a.verdict)}</Pill>
             }
             defaultOpen={
+              a.isRerun ||
               a.logStatus === "test_error" ||
               a.logStatus === "build_error" ||
-              a.verdict === "likely_fp"
+              a.verdict === "likely_fp" ||
+              a.slurmState === "RUNNING" ||
+              a.slurmState === "COMPLETING"
             }
           >
             <Stack gap={6}>
               <Text size="small" tone="secondary">{a.analysis}</Text>
+              {a.isRerun ? (
+                <Pill tone="info" size="sm">rerun batch</Pill>
+              ) : null}
               {a.headline ? (
                 <Text size="small" weight="semibold">{a.headline}</Text>
               ) : null}
               {a.logFile ? (
-                <Text size="small" tone="tertiary">{a.logFile}</Text>
+                <Text size="small" tone="tertiary">
+                  {a.logSource === "sbatch" ? "sbatch log" : "corpus log"}: {a.logFile}
+                  {a.slurmId ? ` (job ${a.slurmId})` : ""}
+                </Text>
               ) : null}
               {a.logExcerpt ? (
                 <Code style={{ display: "block", whiteSpace: "pre-wrap", fontSize: 11, maxHeight: 280, overflow: "auto" }}>
@@ -207,7 +296,7 @@ export default function BsanCorpusDashboard() {
       ) : null}
 
       <Text tone="tertiary" size="small">
-        Local poll every 2m via update_corpus_dashboard.sh · read-only SSH to ACES
+        Local poll via update_corpus_dashboard.sh --loop {SNAPSHOT.pollInterval ?? "30s"} · read-only SSH to ACES
       </Text>
     </Stack>
   );

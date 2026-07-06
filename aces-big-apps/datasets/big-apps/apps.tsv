@@ -14,9 +14,9 @@ fd	https://github.com/sharkdp/fd.git	master	.		cargo +bsan bsan test -p fd-find 
 tikv-codec	https://github.com/tikv/tikv.git	master	.		cargo +bsan bsan test -p codec --lib --tests	TiKV codec crate; jemalloc in full tikv but scoped smoke
 polars-core	https://github.com/pola-rs/polars.git	main	.		cargo +bsan bsan test -p polars-core --lib --tests --features object	DataFrame core; object feature for PolarsObject types
 vector-core	https://github.com/vectordotdev/vector.git	master	.		cargo +bsan bsan test -p vector-core --lib --tests	Observability pipeline core
-rusty-v8	https://github.com/denoland/rusty_v8.git	main	.		cargo +bsan bsan test -p v8 --lib --tests -- --test-threads=1	V8 bindings (deno); prebuilt static lib; serialize V8 tests
-firecracker	https://github.com/firecracker-microvm/firecracker.git	main	.		cargo +bsan bsan test -p firecracker --lib --tests	Firecracker VMM; heavy libc/KVM FFI (unit/integration smoke)
-wgpu-hal	https://github.com/gfx-rs/wgpu.git	trunk	.		cargo +bsan bsan test -p wgpu-hal --lib --tests --features vulkan	wgpu hardware abstraction; Vulkan backend on Linux
+rusty-v8	https://github.com/denoland/rusty_v8.git	main	.		cargo +bsan bsan test -j1 -p v8 --lib -- --test-threads=1	V8 bindings (deno); lib tests only (integration tests need icudtl.dat submodule)
+firecracker	https://github.com/firecracker-microvm/firecracker.git	main	.		cargo +bsan bsan test -j1 -p firecracker --lib --tests	Firecracker VMM; heavy libc/KVM FFI (unit/integration smoke)
+wgpu-hal	https://github.com/gfx-rs/wgpu.git	trunk	.		cargo +bsan bsan test -j1 -p wgpu-hal --lib --tests --features vulkan	wgpu hardware abstraction; Vulkan backend on Linux
 # --- Existing smoke targets ---
 react-compiler	https://github.com/facebook/react.git	main	compiler		cargo +bsan bsan test --lib --tests	Rust React Compiler workspace
 bun-react-compiler	https://github.com/oven-sh/bun.git	main	.		cargo +bsan bsan test -p bun_react_compiler --lib --tests	Bun React Compiler crate (custom runtime — deprioritize)
