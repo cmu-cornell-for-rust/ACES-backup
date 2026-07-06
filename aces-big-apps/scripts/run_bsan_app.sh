@@ -51,8 +51,14 @@ log "Logs -> ${log_file}"
   echo "test_cmd=${test_cmd} $*"
   echo "app_dir=${app_dir}"
   echo "target_dir=${CARGO_TARGET_DIR}"
+  bsan_revision_line || true
+  echo "rustc=$(rustc +bsan -V 2>/dev/null | head -1 || echo unknown)"
+  echo "stack_soft_kb=$(ulimit -S -s)"
+  echo "BSAN_RUST_ONLY=${BSAN_RUST_ONLY:-}"
+  echo "BSAN_OPTIONS=${BSAN_OPTIONS:-}"
 
   cd "${app_dir}"
+  prepare_app_build_fixes "${APP}" "${app_dir}"
 
   if [[ "${BSAN_CLEAN:-0}" == 1 ]]; then
     echo "--- cargo clean ---"

@@ -10,11 +10,8 @@ TIME="${1:-1:00}"
 MEM="${2:-16}"
 shift 2 2>/dev/null || true
 
-DEFAULT_CORPUS=(
-  uutils-coreutils ripgrep ring rustls nix quiche git2-rs rusqlite bat fd
-  tikv-codec polars-core vector-core react-compiler
-)
-if [[ $# -gt 0 ]]; then APPS=("$@"); else APPS=("${DEFAULT_CORPUS[@]}"); fi
+load_corpus_apps
+if [[ $# -gt 0 ]]; then APPS=("$@"); else APPS=("${CORPUS_APPS[@]}"); fi
 
 IMAGE="$(resolve_image "${BSAN_IMAGE}")"
 stamp="$(date -u +%Y%m%dT%H%M%SZ)"

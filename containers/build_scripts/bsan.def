@@ -18,6 +18,14 @@ From: ubuntu:25.04
     export BSAN_SYSROOT=/opt/bsan-sysroot
     # Symbolizer so aliasing-violation reports show source locations.
     export BSAN_SYMBOLIZER=/opt/rust/rustup/toolchains/bsan/bin/llvm-symbolizer
+    # clang-sys/bindgen (pulled in by crates with C bindings) need llvm-config +
+    # libclang. Point the well-known env vars at the LLVM 19 install from %post
+    # and put its bin on PATH; these resolve even under run_job.sh's --cleanenv
+    # (host env is stripped, but %environment still runs). The versioned clang
+    # binaries bsan/crates invoke by name (clang-19 .. clang-22) are also on PATH.
+    export LLVM_CONFIG_PATH=/usr/lib/llvm-19/bin/llvm-config
+    export LIBCLANG_PATH=/usr/lib/llvm-19/lib
+    export PATH=/usr/lib/llvm-19/bin:$PATH
 
 %post
     set -eux
@@ -44,6 +52,27 @@ From: ubuntu:25.04
         libfontconfig1-dev \
         libfreetype6-dev \
     && rm -rf /var/lib/apt/lists/*
+
+    # --- LLVM / Clang (a range of recent versions) ---------------------------
+    # bsan's toolchain links with a bundled clang (currently clang-22, under
+    # /opt/rust/rustup/toolchains/bsan/bin), but build steps and some crates also
+    # invoke a versioned *system* clang by name (e.g. clang-19), and bindgen-based
+    # crates pull in clang-sys, which needs `llvm-config` + `libclang.so`. Ubuntu
+    # 25.04 ships only one default `clang`, so install a spread from apt.llvm.org
+    # so whichever `clang-NN` is requested exists on PATH, plus the -dev bits
+    # (llvm-config + libclang) that clang-sys/bindgen need.
+    apt-get update && apt-get install -y wget gnupg lsb-release software-properties-common
+    wget -qO /tmp/llvm.sh https://apt.llvm.org/llvm.sh
+    chmod +x /tmp/llvm.sh
+    for v in 19 20 21 22; do
+        /tmp/llvm.sh "$v" || echo "WARN: LLVM $v unavailable from apt.llvm.org; skipping"
+    done
+    # clang-sys/bindgen need one llvm-config + libclang; libclang is
+    # forward-compatible, and 19 is the safe match for the old clang-sys 0.28
+    # some crates pin. The %environment LLVM_CONFIG_PATH/LIBCLANG_PATH point here.
+    apt-get install -y llvm-19-dev libclang-19-dev
+    rm -f /tmp/llvm.sh
+    rm -rf /var/lib/apt/lists/*
 
     # Use clang as the default C/C++ compiler (matches the dev container).
     update-alternatives --install /usr/bin/cc  cc  /usr/bin/clang   100
@@ -84,6 +113,21 @@ From: ubuntu:25.04
         git clone --depth 1 https://github.com/BorrowSanitizer/bsan /opt/bsan
     fi
     cd /opt/bsan
+
+    # --- Patch: tolerate bsan's link flag on compile-only C steps ------------
+    # bsan_cflags() (cargo-bsan/src/phases.rs) unconditionally adds
+    # `-fuse-ld=...` (a *linker* flag) to CFLAGS/CXXFLAGS for every C-dep build,
+    # including compile-only (`-c`) probes. Crates that compile those probes with
+    # `-Werror` (e.g. aws-lc-sys) then die on clang's
+    # -Wunused-command-line-argument. cargo-bsan OVERWRITES CFLAGS, so this can't
+    # be fixed from the run environment -- append the suppression to bsan's own
+    # default C flags before building it. Guard: fail loudly if upstream renamed
+    # the constant so we don't silently ship an unpatched image.
+    sed -i \
+      's/"-mno-omit-leaf-frame-pointer"\]/"-mno-omit-leaf-frame-pointer", "-Wno-unused-command-line-argument"]/' \
+      cargo-bsan/src/phases.rs
+    grep -q -- '-Wno-unused-command-line-argument' cargo-bsan/src/phases.rs \
+        || { echo "ERROR: failed to patch BSAN_DEFAULT_CFLAGS in cargo-bsan/src/phases.rs (upstream changed?)"; exit 1; }
 
     # First-time setup, then build & install the `bsan` toolchain into
     # $RUSTUP_HOME/toolchains/bsan. Per upstream docs, `xb setup` must run
@@ -144,3 +188,4 @@ RS
     cd "$tmp/bsan_smoke"
     cargo bsan test
     echo "BSAN SMOKE TEST: OK"
+

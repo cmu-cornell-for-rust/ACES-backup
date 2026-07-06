@@ -6,12 +6,21 @@ set -euo pipefail
 : "${ACES_ROOT:?ACES_ROOT required}"
 # shellcheck source=/dev/null
 source "${ACES_ROOT}/config.env"
-export ACES_ROOT ACES_USER OUTPUT_DIR BSAN_DIR APPS_DIR GROUP_ROOT USER_SCRATCH
+export ACES_ROOT ACES_USER OUTPUT_DIR BSAN_DIR APPS_DIR GROUP_ROOT USER_SCRATCH BSAN_CPUS
 
-CORPUS_APPS=(
-  uutils-coreutils ripgrep ring rustls nix quiche git2-rs rusqlite bat fd
-  tikv-codec polars-core vector-core react-compiler
-)
+load_corpus_apps() {
+  local list_file="${ACES_ROOT}/datasets/big-apps/corpus-apps.txt"
+  CORPUS_APPS=()
+  local line trimmed
+  while IFS= read -r line || [[ -n "${line}" ]]; do
+    trimmed="${line%%#*}"
+    trimmed="$(echo "${trimmed}" | xargs 2>/dev/null || true)"
+    [[ -n "${trimmed}" ]] || continue
+    CORPUS_APPS+=("${trimmed}")
+  done <"${list_file}"
+}
+
+load_corpus_apps
 
 python3 - "${CORPUS_APPS[@]}" <<'PY'
 import json, os, subprocess, sys, glob
@@ -124,6 +133,12 @@ def classify_app(app, status, headline, excerpt, slurm_state):
             return "infra", "SIGKILL after long run — likely OOM or node kill, not a BSAN report."
         if "sigsegv" in h or "signal: 11" in h:
             return "investigate", "SIGSEGV during tests — needs isolated repro."
+        if app == "fd" and ("test_exec_nulls" in h or "null" in h):
+            return "infra", "fd --print0/--exec ordering on 1-CPU nodes; fixed with BSAN_CPUS>1."
+        if app == "polars-core" and "unreachable" in h:
+            return "investigate", "proptest scalar cast hit unreachable! — isolate vs BSAN/proptest seed."
+        if app in ("rusty-v8", "firecracker", "wgpu-hal") and status == "build_error":
+            return "build_blocker", "Heavy FFI/native deps — may need image or host-cc tweaks."
         if "stack_overflow" in h:
             return "investigate", "Fault in std PAL stack_overflow handler — may be signal-path noise."
         return "investigate", "Test failure under BSAN — isolate named test."
@@ -264,10 +279,12 @@ snapshot = {
     "submitLog": submit_log,
     "verdictLabels": VERDICT_LABELS,
     "analysisSummary": (
-        "BSAN main (@ deferred GC #252). Build errors cluster into harness CC flags "
-        "(ring, tikv), container deps (rusqlite), and toolchain/workspace pins "
-        "(vector, polars). Test errors: git2-rs matches mixed-heap FP pattern; "
-        "uutils hits new GC tag violation on System dealloc; nix SIGKILL is infra."
+        "BSAN main corpus (17 apps + servo-fonts track). No confirmed sanitizer UB in "
+        "Tier-A passes (ripgrep, rustls, quiche, …). Failures cluster as: harness CC "
+        "(ring/tikv build), infra (nix kernel, fd 1-CPU), likely mixed-heap FP "
+        "(git2-rs/uutils), workspace/build blockers (polars proptest, vector), and "
+        "Servo-fonts teardown (jemalloc track). New: rusty-v8, firecracker, wgpu-hal. "
+        "Jobs use BSAN_CPUS={}.".format(os.environ.get("BSAN_CPUS", "4"))
     ),
     "summary": {
         "total": len(apps),

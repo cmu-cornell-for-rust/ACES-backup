@@ -72,6 +72,7 @@ if ! bsan_runtime_ready; then
   unset RUSTUP_TOOLCHAIN BSAN_RUST_ONLY
   "${SCRIPT_DIR}/setup_bsan.sh"
 fi
+ensure_bsan_toolchain_linked || true
 bsan_runtime_ready || die "BSAN setup incomplete (need bsan rustc + cargo-bsan in container)"
 
 export RUSTUP_TOOLCHAIN=bsan

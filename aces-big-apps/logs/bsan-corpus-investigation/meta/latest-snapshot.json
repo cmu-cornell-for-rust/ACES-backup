@@ -1,0 +1,289 @@
+{
+  "fetchedAt": "2026-07-06T16:18:23Z",
+  "bsan": {
+    "branch": "main",
+    "commit": "890b2b3",
+    "subject": "Set `CLANG_PATH` and `LIBCLANG_PATH` in `cargo-bsan` (#270)"
+  },
+  "submitLog": "corpus.submit.20260706T160706Z.log",
+  "verdictLabels": {
+    "pass": "Passed",
+    "running": "In progress",
+    "likely_fp": "Likely FP",
+    "investigate": "Investigate",
+    "harness_cc": "Harness CC",
+    "container_deps": "Container deps",
+    "toolchain_compat": "Toolchain",
+    "workspace_pin": "Workspace",
+    "build_blocker": "Build blocker",
+    "infra": "Infra",
+    "harness": "Harness",
+    "unknown": "Unknown"
+  },
+  "analysisSummary": "BSAN main (@ deferred GC #252). Build errors cluster into harness CC flags (ring, tikv), container deps (rusqlite), and toolchain/workspace pins (vector, polars). Test errors: git2-rs matches mixed-heap FP pattern; uutils hits new GC tag violation on System dealloc; nix SIGKILL is infra.",
+  "summary": {
+    "total": 14,
+    "queued": 0,
+    "running": 9,
+    "verdicts": {
+      "running": 9,
+      "investigate": 2,
+      "pass": 3
+    },
+    "ok": 3,
+    "test_error": 2,
+    "build_error": 0,
+    "fetch_error": 0,
+    "in_progress": 9,
+    "other": 0
+  },
+  "jobs": [
+    {
+      "id": "1919565",
+      "name": "bsan-uutils-coreutils",
+      "app": "uutils-coreutils",
+      "state": "RUNNING",
+      "elapsed": "6:46"
+    },
+    {
+      "id": "1919566",
+      "name": "bsan-ripgrep",
+      "app": "ripgrep",
+      "state": "RUNNING",
+      "elapsed": "6:46"
+    },
+    {
+      "id": "1919567",
+      "name": "bsan-ring",
+      "app": "ring",
+      "state": "RUNNING",
+      "elapsed": "6:46"
+    },
+    {
+      "id": "1919568",
+      "name": "bsan-rustls",
+      "app": "rustls",
+      "state": "RUNNING",
+      "elapsed": "6:46"
+    },
+    {
+      "id": "1919573",
+      "name": "bsan-bat",
+      "app": "bat",
+      "state": "RUNNING",
+      "elapsed": "6:46"
+    },
+    {
+      "id": "1919575",
+      "name": "bsan-tikv-codec",
+      "app": "tikv-codec",
+      "state": "RUNNING",
+      "elapsed": "6:46"
+    },
+    {
+      "id": "1919576",
+      "name": "bsan-polars-core",
+      "app": "polars-core",
+      "state": "RUNNING",
+      "elapsed": "6:46"
+    },
+    {
+      "id": "1919577",
+      "name": "bsan-vector-core",
+      "app": "vector-core",
+      "state": "RUNNING",
+      "elapsed": "6:46"
+    },
+    {
+      "id": "1919578",
+      "name": "bsan-react-compiler",
+      "app": "react-compiler",
+      "state": "RUNNING",
+      "elapsed": "6:46"
+    }
+  ],
+  "apps": [
+    {
+      "app": "uutils-coreutils",
+      "logStatus": null,
+      "logStamp": "20260706T161144Z",
+      "logFile": "uutils-coreutils.20260706T161144Z.log",
+      "headline": null,
+      "logExcerpt": "Compiling toml_parser v1.1.2+spec-1.1.0\n   Compiling indexmap v2.13.1\n   Compiling calendrical_calculations v0.2.4\n   Compiling terminal_size v0.4.4\n   Compiling codspeed v5.0.1\n   Compiling approx v0.5.1\n   Compiling thiserror-impl v2.0.18\n   Compiling serde_derive v1.0.228\n   Compiling icu_normalizer_data v2.2.0\n   Compiling icu_decimal_data v2.2.0\n   Compiling toml_datetime v1.1.1+spec-1.1.0\n   Compiling icu_plurals_data v2.2.0\n   Compiling strsim v0.11.1\n   Compiling crc32fast v1.5.0\n   Compiling rustc-hash v2.1.3\n   Compiling clap_lex v1.1.0",
+      "verdict": "running",
+      "analysis": "Job still in flight; log is partial.",
+      "slurmId": "1919565",
+      "slurmState": "RUNNING",
+      "slurmElapsed": "6:46"
+    },
+    {
+      "app": "ripgrep",
+      "logStatus": null,
+      "logStamp": "20260706T161144Z",
+      "logFile": "ripgrep.20260706T161144Z.log",
+      "headline": "test result: ok. 114 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s",
+      "logExcerpt": "test feature::f917_trim_max_columns_matches ... ok\ntest feature::f917_trim_max_columns_multi_only_matching ... ok\ntest feature::f917_trim_max_columns_multi_per_match ... ok\ntest feature::f917_trim_max_columns_multi_standard ... ok\ntest feature::f917_trim_max_columns_normal ... ok\ntest feature::f917_trim_multi_standard ... ok\ntest feature::f948_exit_code_error ... ok\ntest feature::f948_exit_code_match ... ok\ntest feature::f948_exit_code_no_match ... ok\ntest feature::f993_null_data ... ok\ntest feature::no_context_sep ... ok\ntest feature::no_context_sep_overridden ... ok\ntest feature::no_context_sep_overrides ... ok\ntest feature::no_unicode ... ok\ntest feature::stop_on_nonmatch ... ok\ntest json::basic ... ok",
+      "verdict": "running",
+      "analysis": "Job still in flight; log is partial.",
+      "slurmId": "1919566",
+      "slurmState": "RUNNING",
+      "slurmElapsed": "6:46"
+    },
+    {
+      "app": "ring",
+      "logStatus": null,
+      "logStamp": "20260706T161144Z",
+      "logFile": "ring.20260706T161144Z.log",
+      "headline": null,
+      "logExcerpt": "Executable tests/agreement_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/agreement_tests-5f3faeda459e78b7)\n  Executable tests/build_path_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/build_path_tests-7e9b307b433a42b9)\n  Executable tests/constant_time_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/constant_time_tests-389d6281d97bda6b)\n  Executable tests/digest_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/digest_tests-eead287b7e27fb31)\n  Executable tests/ecdsa_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/ecdsa_tests-2d1fbc7cf1f1fc2b)\n  Executable tests/ed25519_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/ed25519_tests-97daea8e5ce8df29)\n  Executable tests/error_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/error_tests-77a88c08d5d6e329)\n  Executable tests/hkdf_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/hkdf_tests-e8d9adb11540a948)\n  Executable tests/hmac_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/hmac_tests-3ed76d64235e7ea9)\n  Executable tests/pbkdf2_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/pbkdf2_tests-c01fb095cd70e00b)\n  Executable tests/quic_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/quic_tests-ac435e93e511a5b1)\n  Executable tests/rand_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/rand_tests-461e70e6fb627beb)\n  Executable tests/rsa_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/rsa_tests-f35742e15ea697dc)\n  Executable tests/signature_tests.rs (target/bsan-ring/bsan/x86_64-unknown-linux-gnu/debug/deps/signature_tests-2b60fa91324ec1bc)\n--- run tests ---\n   Compiling ring v0.17.16000 (/scratch/user/u.ra353315/big-apps/ring)",
+      "verdict": "running",
+      "analysis": "Job still in flight; log is partial.",
+      "slurmId": "1919567",
+      "slurmState": "RUNNING",
+      "slurmElapsed": "6:46"
+    },
+    {
+      "app": "rustls",
+      "logStatus": null,
+      "logStamp": "20260706T161144Z",
+      "logFile": "rustls.20260706T161144Z.log",
+      "headline": null,
+      "logExcerpt": "Compiling utf8parse v0.2.2\n   Compiling getrandom v0.3.4\n   Compiling subtle v2.6.1\n   Compiling rustls v0.24.0-dev.0 (/scratch/user/u.ra353315/big-apps/rustls/rustls)\n   Compiling anstyle-parse v1.0.0\n   Compiling time v0.3.53\n   Compiling regex v1.12.4\n   Compiling anstyle-query v1.1.5\n   Compiling is_terminal_polyfill v1.70.2\n   Compiling cfg-if v1.0.4\n   Compiling colorchoice v1.0.5\n   Compiling base64 v0.22.1\n   Compiling anstyle v1.0.14\n   Compiling anstream v1.0.0\n   Compiling pem v3.0.6\n   Compiling env_filter v2.0.0",
+      "verdict": "running",
+      "analysis": "Job still in flight; log is partial.",
+      "slurmId": "1919568",
+      "slurmState": "RUNNING",
+      "slurmElapsed": "6:46"
+    },
+    {
+      "app": "nix",
+      "logStatus": "test_error",
+      "logStamp": "20260706T161138Z",
+      "logFile": "nix.20260706T161138Z.log",
+      "headline": "error: test failed, to rerun pass `-p nix --test test`",
+      "logExcerpt": "sys::test_mman::test_mremap_dontunmap\n\ntest result: FAILED. 384 passed; 1 failed; 4 ignored; 0 measured; 0 filtered out; finished in 7.10s\n\nerror: test failed, to rerun pass `-p nix --test test`\nrun_seconds=7\nstatus=test_error",
+      "verdict": "investigate",
+      "analysis": "Test failure under BSAN \u2014 isolate named test.",
+      "slurmId": null,
+      "slurmState": null,
+      "slurmElapsed": null
+    },
+    {
+      "app": "quiche",
+      "logStatus": "ok",
+      "logStamp": "20260706T161138Z",
+      "logFile": "quiche.20260706T161138Z.log",
+      "headline": "test tests::update_key_request_twice_error::cc_algorithm_name_2___bbr2_gcongestion__ ... ok",
+      "logExcerpt": "test tests::zero_rtt::cc_algorithm_name_1___cubic__ ... ok\ntest tests::zero_rtt::cc_algorithm_name_2___bbr2_gcongestion__ ... ok\n\ntest result: ok. 1029 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 70.66s\n\nrun_seconds=71\nstatus=ok",
+      "verdict": "pass",
+      "analysis": "All tests passed under BSAN main.",
+      "slurmId": null,
+      "slurmState": null,
+      "slurmElapsed": null
+    },
+    {
+      "app": "git2-rs",
+      "logStatus": "ok",
+      "logStamp": "20260706T161138Z",
+      "logFile": "git2-rs.20260706T161138Z.log",
+      "headline": "test tag::tests::is_valid_name_for_invalid_tag - should panic ... ok",
+      "logExcerpt": "running 1 test\ntest test_remove_extensions ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\nrun_seconds=1\nstatus=ok",
+      "verdict": "pass",
+      "analysis": "All tests passed under BSAN main.",
+      "slurmId": null,
+      "slurmState": null,
+      "slurmElapsed": null
+    },
+    {
+      "app": "rusqlite",
+      "logStatus": "ok",
+      "logStamp": "20260706T161138Z",
+      "logFile": "rusqlite.20260706T161138Z.log",
+      "headline": "run_seconds=6",
+      "logExcerpt": "running 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\nrun_seconds=6\nstatus=ok",
+      "verdict": "pass",
+      "analysis": "All tests passed under BSAN main.",
+      "slurmId": null,
+      "slurmState": null,
+      "slurmElapsed": null
+    },
+    {
+      "app": "bat",
+      "logStatus": null,
+      "logStamp": "20260706T161138Z",
+      "logFile": "bat.20260706T161138Z.log",
+      "headline": null,
+      "logExcerpt": "Compiling walkdir v2.5.0\n   Compiling prodash v31.0.0\n   Compiling zlib-rs v0.6.3\n   Compiling gix-features v0.48.1\n   Compiling version_check v0.9.5\n   Compiling generic-array v0.14.7\n   Compiling gix-error v0.2.4\n   Compiling typenum v1.20.0\n   Compiling foldhash v0.2.0\n   Compiling byteorder v1.5.0\n   Compiling equivalent v1.0.2\n   Compiling allocator-api2 v0.2.21\n   Compiling heapless v0.8.0\n   Compiling hash32 v0.3.1\n   Compiling stable_deref_trait v1.2.1\n   Compiling block-buffer v0.10.4",
+      "verdict": "running",
+      "analysis": "Job still in flight; log is partial.",
+      "slurmId": "1919573",
+      "slurmState": "RUNNING",
+      "slurmElapsed": "6:46"
+    },
+    {
+      "app": "fd",
+      "logStatus": "test_error",
+      "logStamp": "20260706T161138Z",
+      "logFile": "fd.20260706T161138Z.log",
+      "headline": "error: test failed, to rerun pass `-p fd-find --test tests`",
+      "logExcerpt": "test_exec_nulls\n\ntest result: FAILED. 110 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 30.23s\n\nerror: test failed, to rerun pass `-p fd-find --test tests`\nrun_seconds=32\nstatus=test_error",
+      "verdict": "investigate",
+      "analysis": "Test failure under BSAN \u2014 isolate named test.",
+      "slurmId": null,
+      "slurmState": null,
+      "slurmElapsed": null
+    },
+    {
+      "app": "tikv-codec",
+      "logStatus": null,
+      "logStamp": "20260706T161138Z",
+      "logFile": "tikv-codec.20260706T161138Z.log",
+      "headline": null,
+      "logExcerpt": "Compiling pin-project-lite v0.2.15\n   Compiling syn v1.0.103\n   Compiling futures-io v0.3.31\n   Compiling futures-util v0.3.31\n   Compiling grpcio-sys v0.10.3+1.44.0-patched\n   Compiling raft-proto v0.7.0 (https://github.com/tikv/raft-rs?branch=master#ad13f3d9)\n   Compiling proc-macro-error v1.0.4\n   Compiling instant v0.1.12\n   Compiling smallvec v1.13.2\n   Compiling scopeguard v1.1.0\n   Compiling lock_api v0.4.6\n   Compiling parking_lot_core v0.8.3\n   Compiling rand_core v0.9.5",
+      "verdict": "running",
+      "analysis": "Job still in flight; log is partial.",
+      "slurmId": "1919575",
+      "slurmState": "RUNNING",
+      "slurmElapsed": "6:46"
+    },
+    {
+      "app": "polars-core",
+      "logStatus": null,
+      "logStamp": "20260706T161138Z",
+      "logFile": "polars-core.20260706T161138Z.log",
+      "headline": null,
+      "logExcerpt": "Compiling equivalent v1.0.2\n   Compiling cpufeatures v0.3.0\n   Compiling allocator-api2 v0.2.21\n   Compiling foldhash v0.2.0\n   Compiling hashbrown v0.17.1\n   Compiling chacha20 v0.10.0\n   Compiling polars-error v0.54.4 (/scratch/user/u.ra353315/big-apps/polars-core/crates/polars-error)\n   Compiling regex-automata v0.4.14\n   Compiling half v2.7.1\n   Compiling castaway v0.2.4\n   Compiling polars-utils v0.54.4 (/scratch/user/u.ra353315/big-apps/polars-core/crates/polars-utils)\n   Compiling ryu v1.0.23\n   Compiling static_assertions v1.1.0\n   Compiling compact_str v0.9.1\n   Compiling argminmax v0.6.3\n   Compiling regex v1.12.3",
+      "verdict": "running",
+      "analysis": "Job still in flight; log is partial.",
+      "slurmId": "1919576",
+      "slurmState": "RUNNING",
+      "slurmElapsed": "6:46"
+    },
+    {
+      "app": "vector-core",
+      "logStatus": null,
+      "logStamp": "20260706T161138Z",
+      "logFile": "vector-core.20260706T161138Z.log",
+      "headline": null,
+      "logExcerpt": "Compiling unicode-general-category v1.1.0\n   Compiling glob v0.3.3\n   Compiling simdutf8 v0.1.5\n   Compiling zstd-safe v7.2.1\n   Compiling clap_lex v1.0.0\n   Compiling vcpkg v0.2.15\n   Compiling unicode-xid v0.2.4\n   Compiling siphasher v1.0.1\n   Compiling owo-colors v4.2.3\n   Compiling unicode-width v0.1.13\n   Compiling unsafe-libyaml v0.2.11\n   Compiling serde_yaml_ng v0.10.0\n   Compiling phf_shared v0.12.1\n   Compiling lalrpop v0.22.0\n   Compiling openssl-sys v0.9.116\n   Compiling clap_builder v4.5.60",
+      "verdict": "running",
+      "analysis": "Job still in flight; log is partial.",
+      "slurmId": "1919577",
+      "slurmState": "RUNNING",
+      "slurmElapsed": "6:46"
+    },
+    {
+      "app": "react-compiler",
+      "logStatus": null,
+      "logStamp": "20260706T161138Z",
+      "logFile": "react-compiler.20260706T161138Z.log",
+      "headline": null,
+      "logExcerpt": "Compiling futures-macro v0.3.32\n   Compiling futures-task v0.3.32\n   Compiling same-file v1.0.6\n   Compiling futures-io v0.3.32\n   Compiling hmac-sha256 v1.1.14\n   Compiling slab v0.4.12\n   Compiling pin-project-lite v0.2.17\n   Compiling futures-util v0.3.32\n   Compiling walkdir v2.5.0\n   Compiling unicode-segmentation v1.12.0\n   Compiling similar v3.1.1\n   Compiling cfg-if v1.0.4\n   Compiling libloading v0.9.0\n   Compiling convert_case v0.11.0\n   Compiling futures-executor v0.3.32\n   Compiling react_compiler_reactive_scopes v0.1.0 (/scratch/user/u.ra353315/big-apps/react-compiler/compiler/crates/react_compiler_reactive_scopes)",
+      "verdict": "running",
+      "analysis": "Job still in flight; log is partial.",
+      "slurmId": "1919578",
+      "slurmState": "RUNNING",
+      "slurmElapsed": "6:46"
+    }
+  ]
+}

@@ -10,11 +10,8 @@ TIME="${1:-4:00}"
 MEM="${2:-32}"
 shift 2 2>/dev/null || true
 
-DEFAULT_CORPUS=(
-  uutils-coreutils ripgrep ring rustls nix quiche git2-rs rusqlite bat fd
-  tikv-codec polars-core vector-core react-compiler
-)
-if [[ $# -gt 0 ]]; then APPS=("$@"); else APPS=("${DEFAULT_CORPUS[@]}"); fi
+load_corpus_apps
+if [[ $# -gt 0 ]]; then APPS=("$@"); else APPS=("${CORPUS_APPS[@]}"); fi
 
 IMAGE="$(resolve_image "${BSAN_IMAGE}")"
 ensure_dirs
@@ -35,8 +32,10 @@ mkdir -p "${OUTPUT_DIR}"
 {
   echo "stamp=${stamp}"
   echo "apps=${APPS[*]}"
-  echo "time=${TIME} mem=${MEM}G image=${IMAGE}"
+  echo "time=${TIME} mem=${MEM}G cpus=${BSAN_CPUS} image=${IMAGE}"
   echo "mode=prefetch_then_sbatch"
+  bsan_revision_line || true
+  echo "BSAN_CLEAN=${BSAN_CLEAN:-0}"
 } | tee "${submit_log}"
 
 log "Phase 1: serial prefetch (shared CARGO_HOME, no lock fights later)"
@@ -46,7 +45,7 @@ log "Phase 2: sbatch ${#APPS[@]} corpus job(s) in parallel"
 JOB_IDS=()
 for app in "${APPS[@]}"; do
   job_name="bsan-${app}"
-  INNER="set -euo pipefail; export ACES_ROOT='${ACES_ROOT}'; source '${ACES_ROOT}/config.env'; source '${ACES_ROOT}/scripts/common.sh'; ensure_dirs; export BSAN_CLEAN=0; export BSAN_SKIP_FETCH=1; '${ACES_ROOT}/scripts/run_bsan_app.sh' '${app}'"
+  INNER="set -euo pipefail; export ACES_ROOT='${ACES_ROOT}'; source '${ACES_ROOT}/config.env'; source '${ACES_ROOT}/scripts/common.sh'; ensure_dirs; export BSAN_CLEAN=${BSAN_CLEAN:-0}; export BSAN_SKIP_FETCH=1; '${ACES_ROOT}/scripts/run_bsan_app.sh' '${app}'"
   log "  -> ${job_name}"
   job_id="$("${SCRIPT_DIR}/run_bsan_job.sh" --batch -J "${job_name}" "${IMAGE}" "${TIME}" "${MEM}" -- bash -lc "${INNER}" \
     2>&1 | tee -a "${submit_log}" | tail -1)"

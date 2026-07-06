@@ -31,7 +31,7 @@ if [[ $# -gt 0 ]]; then
   EXTRA_Q="$(printf ' %q' "$@")"
 fi
 
-log "Submitting servo-fonts BSAN job: time=${TIME} mem=${MEM}G image=${IMAGE}"
+log "Submitting servo-fonts BSAN job: time=${TIME} mem=${MEM}G cpus=${BSAN_CPUS} image=${IMAGE}"
 if [[ -n "${EXTRA_Q}" ]]; then
   log "Extra cargo args:${EXTRA_Q}"
 fi
@@ -40,8 +40,13 @@ INNER="set -euo pipefail; export ACES_ROOT='${ACES_ROOT}'; source '${ACES_ROOT}/
 
 submit_stamp="$(date -u +%Y%m%dT%H%M%SZ)"
 submit_log="${OUTPUT_DIR}/servo-fonts.submit.${submit_stamp}.log"
-log "srun output -> ${submit_log}"
-"${SCRIPT_DIR}/run_bsan_job.sh" -J "bsan-servo-fonts" "${IMAGE}" "${TIME}" "${MEM}" -- bash -lc "${INNER}" \
-  2>&1 | tee "${submit_log}"
+log "Batch output -> ${OUTPUT_DIR}/sbatch/bsan-servo-fonts.*.log  submit_log=${submit_log}"
+{
+  echo "stamp=${submit_stamp}"
+  echo "time=${TIME} mem=${MEM}G cpus=${BSAN_CPUS} image=${IMAGE}"
+} >"${submit_log}"
+job_id="$("${SCRIPT_DIR}/run_bsan_job.sh" --batch -J "bsan-servo-fonts" "${IMAGE}" "${TIME}" "${MEM}" -- bash -lc "${INNER}" \
+  2>&1 | tee -a "${submit_log}" | tail -1)"
+echo "submitted job_id=${job_id}" >>"${submit_log}"
 
-log "Done. Package logs: ${OUTPUT_DIR}/servo-xpath.servo-fonts.bsan.*.log"
+log "Submitted servo-fonts job ${job_id}. Package logs: ${OUTPUT_DIR}/servo-xpath.servo-fonts.bsan.*.log"

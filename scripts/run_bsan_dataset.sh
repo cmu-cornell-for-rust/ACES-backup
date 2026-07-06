@@ -83,12 +83,15 @@ done
 # BorrowSanitizer via `cargo bsan test`. COMPILE_CMD (--no-run) does all the
 # building (including bsan's first-use instrumented-sysroot setup); RUN_CMD then
 # only executes, so the two phases can be timed separately and cleanly.
+# The bsan run sets BSAN_OPTIONS=stacktrace_max_len=32 (a runtime option, so it
+# only needs to be on RUN_CMD) to cap how many frames the runtime records per
+# stack trace.
 if [[ "$IMAGE" == "rust" ]]; then
     COMPILE_CMD='cargo test --no-run'
     RUN_CMD='cargo test'
 else
-    COMPILE_CMD='cargo bsan test --no-run'
-    RUN_CMD='cargo bsan test'
+    COMPILE_CMD='BSAN_OPTIONS=stacktrace_max_len=32 cargo bsan test --no-run'
+    RUN_CMD='BSAN_OPTIONS=stacktrace_max_len=32 cargo bsan test'
 fi
 
 echo "Image:    $IMAGE"
@@ -245,3 +248,4 @@ fi
 if (( fail > 0 )); then
     exit 1
 fi
+

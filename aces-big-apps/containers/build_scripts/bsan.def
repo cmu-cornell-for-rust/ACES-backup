@@ -16,7 +16,7 @@ Bootstrap: docker-library://ubuntu:22.04
     apt-get update && apt-get install -y --no-install-recommends \
         build-essential ca-certificates clang clang-tidy cmake curl git \
         ninja-build pkg-config python3 python3-pip unzip wget \
-        libfontconfig-dev libfreetype-dev libsqlite3-dev \
+        libfontconfig-dev libfreetype-dev libsqlite3-dev libgit2-dev libseccomp-dev \
         && rm -rf /var/lib/apt/lists/*
 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain nightly
