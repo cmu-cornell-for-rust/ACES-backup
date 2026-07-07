@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 #
-# Usage: run_dataset.sh <image> <walltime> <dataset> [miriflags]
+# Usage: run_dataset.sh [--ignore FILE] <image> <walltime> <dataset> [miriflags]
 #
+#   --ignore FILE optional file of crate names to skip, one per line (blank
+#                 lines and #-comments ignored). Names match the crate directory
+#                 basenames under the dataset (e.g. bstr-1.12.1).
 #   <image>       image/SIF name under the group containers dir (e.g. base, rust).
 #                 The `rust` image runs `cargo test`; anything else runs Miri.
 #   <walltime>    per-job walltime, HH or HH:MM (passed straight to run_job.sh).
@@ -50,8 +53,26 @@ MAX_PARALLEL="${MAX_PARALLEL:-40}"   # max jobs in flight at once (QOS MaxJobsPU
 MIRI_COMMON="-Zmiri-disable-alignment-check -Zmiri-disable-data-race-detector -Zmiri-ignore-leaks -Zmiri-tree-borrows"
 
 # ── Args ──────────────────────────────────────────────────────────────────--
+# Pull the optional --ignore/-i FILE flag out from anywhere in the arg list,
+# leaving the positional args behind.
+IGNORE_FILE=""
+POS=()
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -i|--ignore)
+            [[ $# -ge 2 ]] || { echo "Error: $1 requires a FILE argument." >&2; exit 1; }
+            IGNORE_FILE="$2"; shift 2 ;;
+        --ignore=*)
+            IGNORE_FILE="${1#*=}"; shift ;;
+        *)
+            POS+=("$1"); shift ;;
+    esac
+done
+set -- ${POS[@]+"${POS[@]}"}
+
 if [[ $# -lt 3 || $# -gt 4 ]]; then
-    echo "Usage: $0 <image> <walltime> <dataset> [miriflags]" >&2
+    echo "Usage: $0 [--ignore FILE] <image> <walltime> <dataset> [miriflags]" >&2
+    echo "  --ignore FILE  crate names to skip, one per line" >&2
     echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. base, rust)" >&2
     echo "  <walltime>  per-job walltime, HH or HH:MM" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT holding crate subdirectories" >&2
@@ -67,17 +88,30 @@ EXTRA_MIRIFLAGS="${4:-}"   # extra -Z Miri flags, appended to MIRI_COMMON
 # Full flag set for this run: the built-in common flags plus any extras.
 MIRIFLAGS_ALL="$MIRI_COMMON${EXTRA_MIRIFLAGS:+ $EXTRA_MIRIFLAGS}"
 
+# Load the ignorelist (if any) into a set keyed by crate-dir basename.
+declare -A IGNORE=()
+if [[ -n "$IGNORE_FILE" ]]; then
+    [[ -f "$IGNORE_FILE" ]] \
+        || { echo "Error: ignorelist not found: $IGNORE_FILE" >&2; exit 1; }
+    while IFS= read -r line || [[ -n "$line" ]]; do
+        line="${line%%#*}"              # strip trailing comments
+        line="${line//[[:space:]]/}"    # strip whitespace (crate names have none)
+        [[ -n "$line" ]] && IGNORE["$line"]=1
+    done < "$IGNORE_FILE"
+fi
+
 # Normalized image name (strip any dir + .sif) for the job name and rust check.
 IMAGE="$(basename "${IMAGE_ARG%.sif}")"
 DATASET_DIR="$DATASETS_ROOT/$DATASET"
 
 # When extra Miri flags are given, fold a filesystem-safe slug of them into the
 # CSV name so runs with different flag sets land in separate files instead of
-# appending to the same one. Non-alphanumerics collapse to single dashes.
+# appending to the same one. Non-alphanumerics collapse to single dashes. The
+# dataset name always comes LAST (e.g. visit-gc-Zmiri-tree-gc-min-nodes-64-top_500.csv).
 CSV="$OUTPUTS_DIR/${IMAGE}-${DATASET}.csv"
 if [[ -n "$EXTRA_MIRIFLAGS" ]]; then
     FLAG_SLUG="$(printf '%s' "$EXTRA_MIRIFLAGS" | tr -c '[:alnum:]' '-' | sed 's/-\{1,\}/-/g; s/^-//; s/-$//')"
-    CSV="$OUTPUTS_DIR/${IMAGE}-${DATASET}-${FLAG_SLUG}.csv"
+    CSV="$OUTPUTS_DIR/${IMAGE}-${FLAG_SLUG}-${DATASET}.csv"
 fi
 
 # ── Validate ──────────────────────────────────────────────────────────────--
@@ -90,12 +124,17 @@ fi
 
 # ── Collect crate dirs ──────────────────────────────────────────────────────
 CRATE_DIRS=()
+skipped=0
 for d in "$DATASET_DIR"/*/; do
     [[ -d "$d" ]] || continue
+    if [[ -n "${IGNORE[$(basename "${d%/}")]:-}" ]]; then
+        skipped=$((skipped + 1))
+        continue
+    fi
     CRATE_DIRS+=("${d%/}")
 done
 [[ ${#CRATE_DIRS[@]} -gt 0 ]] \
-    || { echo "Error: no crate subdirectories in $DATASET_DIR" >&2; exit 1; }
+    || { echo "Error: no crate subdirectories in $DATASET_DIR (after ignorelist)" >&2; exit 1; }
 
 # ── Per-image compile + run commands ─────────────────────────────────────────
 # The `rust` image runs the normal suite; every other image runs under Miri with
@@ -115,7 +154,7 @@ fi
 echo "Image:    $IMAGE"
 echo "Walltime: $WALLTIME   Mem: $MEM"
 echo "Dataset:  $DATASET_DIR"
-echo "Crates:   ${#CRATE_DIRS[@]}"
+echo "Crates:   ${#CRATE_DIRS[@]}${IGNORE_FILE:+  (skipped $skipped via $IGNORE_FILE)}"
 [[ "$IMAGE" != "rust" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 echo "Results:  $CSV"
 echo

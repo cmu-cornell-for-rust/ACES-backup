@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 #
-# Usage: run_bsan_dataset.sh <image> <walltime> <dataset>
+# Usage: run_bsan_dataset.sh [--ignore FILE] <image> <walltime> <dataset>
 #
+#   --ignore FILE  optional file of crate names to skip, one per line (blank
+#                  lines and #-comments ignored). Names match the crate
+#                  directory basenames under the dataset (e.g. bstr-1.12.1).
 #   <image>     image/SIF name under the group containers dir (e.g. base, rust,
 #               bsan). The `rust` image runs `cargo test`; anything else runs
 #               BorrowSanitizer via `cargo bsan test`.
@@ -44,8 +47,26 @@ MEM="16G"
 MAX_PARALLEL="${MAX_PARALLEL:-40}"   # max jobs in flight at once (QOS MaxJobsPU=40)
 
 # ── Args ──────────────────────────────────────────────────────────────────--
+# Pull the optional --ignore/-i FILE flag out from anywhere in the arg list,
+# leaving the positional args behind.
+IGNORE_FILE=""
+POS=()
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -i|--ignore)
+            [[ $# -ge 2 ]] || { echo "Error: $1 requires a FILE argument." >&2; exit 1; }
+            IGNORE_FILE="$2"; shift 2 ;;
+        --ignore=*)
+            IGNORE_FILE="${1#*=}"; shift ;;
+        *)
+            POS+=("$1"); shift ;;
+    esac
+done
+set -- ${POS[@]+"${POS[@]}"}
+
 if [[ $# -ne 3 ]]; then
-    echo "Usage: $0 <image> <walltime> <dataset>" >&2
+    echo "Usage: $0 [--ignore FILE] <image> <walltime> <dataset>" >&2
+    echo "  --ignore FILE  crate names to skip, one per line" >&2
     echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. base, rust, bsan)" >&2
     echo "  <walltime>  per-job walltime, HH or HH:MM" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT holding crate subdirectories" >&2
@@ -55,6 +76,18 @@ fi
 IMAGE_ARG="$1"
 WALLTIME="$2"
 DATASET="$3"
+
+# Load the ignorelist (if any) into a set keyed by crate-dir basename.
+declare -A IGNORE=()
+if [[ -n "$IGNORE_FILE" ]]; then
+    [[ -f "$IGNORE_FILE" ]] \
+        || { echo "Error: ignorelist not found: $IGNORE_FILE" >&2; exit 1; }
+    while IFS= read -r line || [[ -n "$line" ]]; do
+        line="${line%%#*}"              # strip trailing comments
+        line="${line//[[:space:]]/}"    # strip whitespace (crate names have none)
+        [[ -n "$line" ]] && IGNORE["$line"]=1
+    done < "$IGNORE_FILE"
+fi
 
 # Normalized image name (strip any dir + .sif) for the job name and rust check.
 IMAGE="$(basename "${IMAGE_ARG%.sif}")"
@@ -69,14 +102,19 @@ CSV="$OUTPUTS_DIR/${IMAGE}-${DATASET}.csv"
 [[ -d "$DATASET_DIR" ]] \
     || { echo "Error: dataset dir not found: $DATASET_DIR" >&2; exit 1; }
 
-# ── Collect crate dirs ──────────────────────────────────────────────────────
+# ── Collect crate dirs (skipping any on the ignorelist) ──────────────────────
 CRATE_DIRS=()
+skipped=0
 for d in "$DATASET_DIR"/*/; do
     [[ -d "$d" ]] || continue
+    if [[ -n "${IGNORE[$(basename "${d%/}")]:-}" ]]; then
+        skipped=$((skipped + 1))
+        continue
+    fi
     CRATE_DIRS+=("${d%/}")
 done
 [[ ${#CRATE_DIRS[@]} -gt 0 ]] \
-    || { echo "Error: no crate subdirectories in $DATASET_DIR" >&2; exit 1; }
+    || { echo "Error: no crate subdirectories in $DATASET_DIR (after ignorelist)" >&2; exit 1; }
 
 # ── Per-image compile + run commands ─────────────────────────────────────────
 # The `rust` image runs the normal suite; every other image runs under
@@ -97,7 +135,7 @@ fi
 echo "Image:    $IMAGE"
 echo "Walltime: $WALLTIME   Mem: $MEM"
 echo "Dataset:  $DATASET_DIR"
-echo "Crates:   ${#CRATE_DIRS[@]}"
+echo "Crates:   ${#CRATE_DIRS[@]}${IGNORE_FILE:+  (skipped $skipped via $IGNORE_FILE)}"
 echo "Results:  $CSV"
 echo
 
