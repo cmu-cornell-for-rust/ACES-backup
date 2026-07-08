@@ -1,0 +1,79 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%environment
+    export RUSTUP_HOME=/opt/rust/rustup
+    export CARGO_HOME=/opt/rust/cargo
+    export PATH=/opt/rust/cargo/bin:$PATH
+    export USER="${USER:-$(id -un)}"
+    # Pre-built Miri std sysroot baked into the image, so the first `cargo miri test`
+    # at run time doesn't need to write anything (important on read-only Apptainer FS).
+    export MIRI_SYSROOT=/opt/miri-sysroot
+
+%post
+    set -eux
+
+    apt-get update && apt-get install -y \
+        curl build-essential ca-certificates \
+        git pkg-config libssl-dev \
+        jq \
+        libfontconfig1-dev libfreetype6-dev
+
+    export RUSTUP_HOME=/opt/rust/rustup
+    export CARGO_HOME=/opt/rust/cargo
+    export PATH=/opt/rust/cargo/bin:$PATH
+
+    # --- Rust toolchains -----------------------------------------------------
+    # Keep the project's pinned nightly as the initial default, and also install
+    # `stable`: the `./miri` wrapper builds its `miri-script` helper with `+stable`.
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | \
+        sh -s -- -y --no-modify-path --default-toolchain nightly-2026-06-01
+        
+    rustup toolchain install stable --profile default \
+        --target i686-unknown-linux-musl \
+        --target x86_64-unknown-linux-gnu
+    rustup toolchain install 1.85 --profile default \
+        --target i686-unknown-linux-musl \
+        --target x86_64-unknown-linux-gnu
+
+    cargo install rustup-toolchain-install-master
+
+    # --- Build & install the Miri fork --------------------------------------
+    git clone --branch no-harness \
+        --depth 1 https://github.com/cmu-cornell-for-rust/miri /opt/miri
+    cd /opt/miri
+
+    ./miri toolchain
+
+    ./miri install
+
+    # Set the fork's toolchain as default so `cargo miri test` resolves cargo-miri/miri
+    # from the right sysroot without needing `+miri`.
+    rustup default miri
+
+    # Also expose the binaries directly on PATH (belt-and-suspenders; harmless).
+    ln -sf /opt/rust/rustup/toolchains/miri/bin/cargo-miri /opt/rust/cargo/bin/cargo-miri
+    ln -sf /opt/rust/rustup/toolchains/miri/bin/miri       /opt/rust/cargo/bin/miri
+
+    # Pre-build Miri's standard-library sysroot into a fixed, world-readable path so
+    # `cargo miri test` works on a read-only container FS without rebuilding at run time.
+    MIRI_SYSROOT=/opt/miri-sysroot cargo miri setup
+    # Guard: fail the build if the sysroot wasn't actually populated.
+    test -d /opt/miri-sysroot && [ -n "$(ls -A /opt/miri-sysroot)" ] || \
+        { echo "ERROR: Miri sysroot was not built at /opt/miri-sysroot"; exit 1; }
+
+    # --- Cleanup -------------------------------------------------------------
+    # Drop build artifacts (the binaries already live in the toolchain sysroot).
+    rm -rf /opt/miri/target /opt/miri/miri-script/target
+
+    chmod -R a+rX /opt/rust /opt/miri-sysroot /opt/miri
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+%runscript
+    cd /scratch/group/p.cis260229.000/containers/ 2>/dev/null || cd "$HOME"
+    exec "$@"
+
+%test
+    cargo miri --version
+    cargo miri setup --print-sysroot
+
