@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 """
-Usage: plot_speedup_by_crate.py [overhead_csv] [tracing_csv] [output_dir]
+Usage: plot_speedup_by_crate.py [overhead_csv] [output_dir]
 
 Plot every crate's value for each *speedup column of the overhead report,
-with crates ordered along the x axis by avg_nodes (ascending) from the
-reconstructed tree-tracing summary. One series per variant, a dashed line at
-speedup = 1, and only crates present in both CSVs are shown.
+with crates ordered along the x axis by base_miri_overhead (ascending).
+One series per variant, a dashed line at speedup = 1. Crates with no
+base-miri overhead or no passing lazy-alloc tests are skipped.
 
   overhead_csv  the overhead report. Default: <OUTPUTS_DIR>/analysis/overhead-top_500.csv.
-  tracing_csv   per-crate tracing summary holding avg_nodes.
-                Default: <OUTPUTS_DIR>/analysis/tree_tracing-reconstructed-tracing.csv.
   output_dir    where the PNG is written. Default: <OUTPUTS_DIR>/analysis.
 
 The outputs dir defaults to <repo root>/outputs, found relative to this script
@@ -39,9 +37,6 @@ def main():
     )
     parser.add_argument("overhead_csv", nargs="?",
                         default=os.path.join(OUTPUTS_DIR, "analysis", "overhead-top_500.csv"))
-    parser.add_argument("tracing_csv", nargs="?",
-                        default=os.path.join(OUTPUTS_DIR, "analysis",
-                                             "tree_tracing-reconstructed-tracing.csv"))
     parser.add_argument("output_dir", nargs="?",
                         default=os.path.join(OUTPUTS_DIR, "analysis"))
     args = parser.parse_args()
@@ -63,12 +58,11 @@ def main():
     if not speedup_cols:
         sys.exit(f"Error: no *speedup columns in {args.overhead_csv}")
 
-    avg_nodes = {}
-    for row in read_csv(args.tracing_csv):
+    def base_overhead(row):
         try:
-            avg_nodes[row["crate"]] = float(row["avg_nodes"])
+            return float(row["base_miri_overhead"])
         except (KeyError, ValueError):
-            pass
+            return None
 
     def passed(row):
         try:
@@ -76,16 +70,17 @@ def main():
         except (KeyError, ValueError):
             return False
 
-    # Crates in both CSVs with at least one passing lazy-alloc test,
-    # ordered by avg_nodes ascending.
-    crates = sorted((r["crate"] for r in overhead
-                     if r["crate"] in avg_nodes and passed(r)),
-                    key=avg_nodes.get)
-    by_crate = {r["crate"]: r for r in overhead}
+    # Crates with a base-miri overhead and at least one passing lazy-alloc
+    # test, ordered by base_miri_overhead ascending.
+    kept = sorted((r for r in overhead
+                   if base_overhead(r) is not None and passed(r)),
+                  key=base_overhead)
+    crates = [r["crate"] for r in kept]
+    by_crate = {r["crate"]: r for r in kept}
     skipped = len(overhead) - len(crates)
 
     fig, ax = plt.subplots(figsize=(max(12, 0.11 * len(crates)), 7))
-    cmap = plt.get_cmap("tab10")
+    cmap = plt.get_cmap("tab10" if len(speedup_cols) <= 10 else "tab20")
     xs_all = range(len(crates))
     for i, col in enumerate(speedup_cols):
         variant = col[:-len("speedup")].rstrip("_")
@@ -99,7 +94,7 @@ def main():
             continue
         xs, ys = zip(*pts)
         ax.plot(xs, ys, marker="o", ms=3, lw=0.8, alpha=0.8,
-                color=cmap(i % 10), label=variant)
+                color=cmap(i % cmap.N), label=variant)
 
     ax.axhline(1.0, ls="--", color="0.4", lw=1)
     # Ratios are multiplicative: log y keeps 2x and 0.5x equidistant from 1 and
@@ -108,7 +103,7 @@ def main():
     ax.set_xticks(list(xs_all))
     ax.set_xticklabels(crates, rotation=90, fontsize=5)
     ax.set_xlim(-1, len(crates))
-    ax.set_xlabel("crate  (ordered by avg_nodes, ascending)")
+    ax.set_xlabel("crate  (ordered by base_miri_overhead, ascending)")
     ax.set_ylabel("speedup vs. base miri  (log scale)")
     ax.set_title(f"Per-crate speedup by variant  ({len(crates)} crates)")
     ax.grid(True, axis="y", ls=":", alpha=0.4)
@@ -121,7 +116,7 @@ def main():
     plt.close(fig)
 
     print(f"Plotted {len(speedup_cols)} variants over {len(crates)} crates "
-          f"({skipped} overhead rows had no avg_nodes or no passing "
+          f"({skipped} overhead rows had no base-miri overhead or no passing "
           f"lazy-alloc tests and were skipped).")
     print(f"Wrote {out}")
 

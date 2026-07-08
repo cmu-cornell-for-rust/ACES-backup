@@ -234,9 +234,9 @@ if [ -z "\$status" ]; then
     if [ "\$rc" -eq 0 ]; then status=success; else status=test_failed; fi
     rms=\$(( \$(date +%s%3N) - rstart ))
     # Sum every "running N tests" line (unit + integration + doc test binaries).
-    tests=\$(grep -oE '^running [0-9]+ test' "\$runlog" | grep -oE '[0-9]+' | awk '{s+=\$1} END{print s+0}')
+    tests=\$(grep -aoE '^running [0-9]+ test' "\$runlog" | grep -oE '[0-9]+' | awk '{s+=\$1} END{print s+0}')
     # Sum the "N passed" from each "test result:" summary line.
-    passed=\$(grep -oE 'test result:.* [0-9]+ passed' "\$runlog" | grep -oE '[0-9]+ passed' | grep -oE '[0-9]+' | awk '{s+=\$1} END{print s+0}')
+    passed=\$(grep -aoE 'test result:.* [0-9]+ passed' "\$runlog" | grep -oE '[0-9]+ passed' | grep -oE '[0-9]+' | awk '{s+=\$1} END{print s+0}')
     rm -f "\$runlog"
 fi
 compile=\$(printf '%d.%03d' \$(( cms / 1000 )) \$(( cms % 1000 )))
@@ -267,7 +267,7 @@ EOF
                 [[ -e "$f" ]] && gzip "$f" && mv "${f}.gz" "$TRACE_OUT/"
             done
         fi
-        row="$(grep -m1 '^CSVROW:' "$LOGFILE" 2>/dev/null | cut -d: -f2-)"
+        row="$(grep -am1 '^CSVROW:' "$LOGFILE" 2>/dev/null | cut -d: -f2-)"
         if [[ -n "$row" ]]; then
             { flock 9; printf '%s\n' "$row" >> "$CSV"; } 9>"$LOCKFILE"
         fi
@@ -294,7 +294,7 @@ declare -A counts=()
 rows=0
 for CRATE_PATH in "${CRATE_DIRS[@]}"; do
     CRATE="$(basename "$CRATE_PATH")"
-    st="$(grep -m1 '^CSVROW:' "$CRATE_PATH/${IMAGE}.log" 2>/dev/null | cut -d: -f2- | cut -d, -f3)"
+    st="$(grep -am1 '^CSVROW:' "$CRATE_PATH/${IMAGE}.log" 2>/dev/null | cut -d: -f2- | cut -d, -f3)"
     if [[ -n "$st" ]]; then
         counts[$st]=$(( ${counts[$st]:-0} + 1 ))
         rows=$((rows + 1))

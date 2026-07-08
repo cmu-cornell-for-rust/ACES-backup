@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Usage: run_bsan_dataset.sh [--ignore FILE] <image> <walltime> <dataset>
+# Usage: run_bsan_dataset.sh [--ignore FILE] <image> <walltime> <dataset> [bsan_options]
 #
 #   --ignore FILE  optional file of crate names to skip, one per line (blank
 #                  lines and #-comments ignored). Names match the crate
@@ -10,6 +10,9 @@
 #               BorrowSanitizer via `cargo bsan test`.
 #   <walltime>  per-job walltime, HH or HH:MM (passed straight to run_job.sh).
 #   <dataset>   folder under the group datasets dir holding crate subdirectories.
+#   [bsan_options] optional extra BSAN_OPTIONS appended (colon-separated, e.g.
+#                  "opt1=val:opt2=val") to the built-in set on both the compile
+#                  and run phase. Ignored for the `rust` image.
 #
 # Launches ONE SLURM job per crate via run_job.sh, keeping at most MAX_PARALLEL
 # (default 40, override with the MAX_PARALLEL env var) running at once -- the
@@ -46,6 +49,10 @@ OUTPUTS_DIR="$GROUP/outputs"
 MEM="16G"
 MAX_PARALLEL="${MAX_PARALLEL:-40}"   # max jobs in flight at once (QOS MaxJobsPU=40)
 
+# BSAN_OPTIONS used for every bsan image. stacktrace_max_len caps how many
+# frames the runtime records per stack trace.
+BSAN_COMMON="stacktrace_max_len=32"
+
 # ── Args ──────────────────────────────────────────────────────────────────--
 # Pull the optional --ignore/-i FILE flag out from anywhere in the arg list,
 # leaving the positional args behind.
@@ -64,18 +71,24 @@ while [[ $# -gt 0 ]]; do
 done
 set -- ${POS[@]+"${POS[@]}"}
 
-if [[ $# -ne 3 ]]; then
-    echo "Usage: $0 [--ignore FILE] <image> <walltime> <dataset>" >&2
+if [[ $# -lt 3 || $# -gt 4 ]]; then
+    echo "Usage: $0 [--ignore FILE] <image> <walltime> <dataset> [bsan_options]" >&2
     echo "  --ignore FILE  crate names to skip, one per line" >&2
     echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. base, rust, bsan)" >&2
     echo "  <walltime>  per-job walltime, HH or HH:MM" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT holding crate subdirectories" >&2
+    echo "  [bsan_options] optional extra BSAN_OPTIONS (colon-separated) appended to the built-in set" >&2
     exit 1
 fi
 
 IMAGE_ARG="$1"
 WALLTIME="$2"
 DATASET="$3"
+EXTRA_BSAN_OPTIONS="${4:-}"   # extra BSAN_OPTIONS, appended to BSAN_COMMON
+
+# Full option set for this run: the built-in common options plus any extras
+# (colon-separated, sanitizer-style).
+BSAN_OPTIONS_ALL="$BSAN_COMMON${EXTRA_BSAN_OPTIONS:+:$EXTRA_BSAN_OPTIONS}"
 
 # Load the ignorelist (if any) into a set keyed by crate-dir basename.
 declare -A IGNORE=()
@@ -92,7 +105,16 @@ fi
 # Normalized image name (strip any dir + .sif) for the job name and rust check.
 IMAGE="$(basename "${IMAGE_ARG%.sif}")"
 DATASET_DIR="$DATASETS_ROOT/$DATASET"
+
+# When extra BSAN_OPTIONS are given, fold a filesystem-safe slug of them into
+# the CSV name so runs with different option sets land in separate files
+# instead of appending to the same one. Non-alphanumerics collapse to single
+# dashes. The dataset name always comes LAST.
 CSV="$OUTPUTS_DIR/${IMAGE}-${DATASET}.csv"
+if [[ -n "$EXTRA_BSAN_OPTIONS" ]]; then
+    OPT_SLUG="$(printf '%s' "$EXTRA_BSAN_OPTIONS" | tr -c '[:alnum:]' '-' | sed 's/-\{1,\}/-/g; s/^-//; s/-$//')"
+    CSV="$OUTPUTS_DIR/${IMAGE}-${OPT_SLUG}-${DATASET}.csv"
+fi
 
 # ── Validate ──────────────────────────────────────────────────────────────--
 [[ -x "$RUN_JOB" ]] \
@@ -121,21 +143,19 @@ done
 # BorrowSanitizer via `cargo bsan test`. COMPILE_CMD (--no-run) does all the
 # building (including bsan's first-use instrumented-sysroot setup); RUN_CMD then
 # only executes, so the two phases can be timed separately and cleanly.
-# The bsan run sets BSAN_OPTIONS=stacktrace_max_len=32 (a runtime option, so it
-# only needs to be on RUN_CMD) to cap how many frames the runtime records per
-# stack trace.
 if [[ "$IMAGE" == "rust" ]]; then
     COMPILE_CMD='cargo test --no-run'
     RUN_CMD='cargo test'
 else
-    COMPILE_CMD='BSAN_OPTIONS=stacktrace_max_len=32 cargo bsan test --no-run'
-    RUN_CMD='BSAN_OPTIONS=stacktrace_max_len=32 cargo bsan test'
+    COMPILE_CMD="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --no-run"
+    RUN_CMD="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test"
 fi
 
 echo "Image:    $IMAGE"
 echo "Walltime: $WALLTIME   Mem: $MEM"
 echo "Dataset:  $DATASET_DIR"
 echo "Crates:   ${#CRATE_DIRS[@]}${IGNORE_FILE:+  (skipped $skipped via $IGNORE_FILE)}"
+[[ "$IMAGE" != "rust" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
 echo "Results:  $CSV"
 echo
 
@@ -211,9 +231,9 @@ if [ -z "\$status" ]; then
     if [ "\$rc" -eq 0 ]; then status=success; else status=test_failed; fi
     rms=\$(( \$(date +%s%3N) - rstart ))
     # Sum every "running N tests" line (unit + integration + doc test binaries).
-    tests=\$(grep -oE '^running [0-9]+ test' "\$runlog" | grep -oE '[0-9]+' | awk '{s+=\$1} END{print s+0}')
+    tests=\$(grep -aoE '^running [0-9]+ test' "\$runlog" | grep -oE '[0-9]+' | awk '{s+=\$1} END{print s+0}')
     # Sum the "N passed" from each "test result:" summary line.
-    passed=\$(grep -oE 'test result:.* [0-9]+ passed' "\$runlog" | grep -oE '[0-9]+ passed' | grep -oE '[0-9]+' | awk '{s+=\$1} END{print s+0}')
+    passed=\$(grep -aoE 'test result:.* [0-9]+ passed' "\$runlog" | grep -oE '[0-9]+ passed' | grep -oE '[0-9]+' | awk '{s+=\$1} END{print s+0}')
     rm -f "\$runlog"
 fi
 compile=\$(printf '%d.%03d' \$(( cms / 1000 )) \$(( cms % 1000 )))
@@ -237,7 +257,7 @@ EOF
         cd "$CRATE_PATH" || exit 1
         "$RUN_JOB" -J "$JOBNAME" "$IMAGE" "$WALLTIME" "$MEM" -- "$CMD"
         rc=$?
-        row="$(grep -m1 '^CSVROW:' "$LOGFILE" 2>/dev/null | cut -d: -f2-)"
+        row="$(grep -am1 '^CSVROW:' "$LOGFILE" 2>/dev/null | cut -d: -f2-)"
         if [[ -n "$row" ]]; then
             { flock 9; printf '%s\n' "$row" >> "$CSV"; } 9>"$LOCKFILE"
         fi
@@ -264,7 +284,7 @@ declare -A counts=()
 rows=0
 for CRATE_PATH in "${CRATE_DIRS[@]}"; do
     CRATE="$(basename "$CRATE_PATH")"
-    st="$(grep -m1 '^CSVROW:' "$CRATE_PATH/${IMAGE}.log" 2>/dev/null | cut -d: -f2- | cut -d, -f3)"
+    st="$(grep -am1 '^CSVROW:' "$CRATE_PATH/${IMAGE}.log" 2>/dev/null | cut -d: -f2- | cut -d, -f3)"
     if [[ -n "$st" ]]; then
         counts[$st]=$(( ${counts[$st]:-0} + 1 ))
         rows=$((rows + 1))
