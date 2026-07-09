@@ -57,8 +57,8 @@ From: ubuntu:22.04
     # shim so it also works as the `cargo scan` subcommand (cargo invokes
     # `cargo-scan scan <args>`, i.e. with the subcommand name as the first arg,
     # which the real binary would misparse as the crate path).
-    cargo +stable install --locked --git https://github.com/PLSysSec/cargo-scan --bin scan \
-        || cargo +stable install --git https://github.com/PLSysSec/cargo-scan --bin scan
+    cargo +stable install --locked --git https://github.com/PLSysSec/cargo-scan cargo-scan --bin scan \
+        || cargo +stable install --git https://github.com/PLSysSec/cargo-scan cargo-scan --bin scan
     cat > /opt/rust/cargo/bin/cargo-scan <<'SH'
 #!/bin/sh
 [ "$1" = "scan" ] && shift

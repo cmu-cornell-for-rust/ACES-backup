@@ -16,9 +16,12 @@ ref="${2:-}"
 
 # Output image name. When a ref is given, tag the image as "<ref>-<image>" so
 # branch/commit builds don't clobber the default one. Slashes in the ref (e.g.
-# "feature/foo") are flattened to dashes so it's a valid filename.
+# "feature/foo") are flattened to dashes so it's a valid filename, and pluses
+# (e.g. "lazy+gc") too, so the name stays inert in regex/URL contexts.
 if [[ -n "$ref" ]]; then
-    outname="${ref//\//-}-${name}"
+    slug="${ref//\//-}"
+    slug="${slug//+/-}"
+    outname="${slug}-${name}"
 else
     outname="$name"
 fi
