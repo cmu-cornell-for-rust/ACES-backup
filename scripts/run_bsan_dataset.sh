@@ -1,32 +1,32 @@
 #!/usr/bin/env bash
 #
-# Usage: run_dataset.sh [--ignore FILE] <image> <walltime> <dataset> [miriflags]
+# Usage: run_bsan_dataset.sh [--ignore FILE] <image> <walltime> <dataset> [bsan_options]
 #
-#   --ignore FILE optional file of crate names to skip, one per line (blank
-#                 lines and #-comments ignored). Names match the crate directory
-#                 basenames under the dataset (e.g. bstr-1.12.1).
-#   <image>       image/SIF name under the group containers dir (e.g. miri, rust).
-#                 The `rust` image runs `cargo test`; anything else runs Miri.
-#   <walltime>    per-job walltime, HH or HH:MM (passed straight to run_job.sh).
-#   <dataset>     folder under the group datasets dir holding crate subdirectories.
-#   [miriflags]   optional extra -Z Miri flags appended to the built-in set
-#                 (e.g. "-Zmiri-strict-provenance -Zmiri-symbolic-alignment-check").
-#                 Added to MIRIFLAGS on both the compile and run phase. Ignored
-#                 for the `rust` image.
+#   --ignore FILE  optional file of crate names to skip, one per line (blank
+#                  lines and #-comments ignored). Names match the crate
+#                  directory basenames under the dataset (e.g. bstr-1.12.1).
+#   <image>     image/SIF name under the group containers dir (e.g. miri, rust,
+#               bsan). The `rust` image runs `cargo test`; anything else runs
+#               BorrowSanitizer via `cargo bsan test`.
+#   <walltime>  per-job walltime, HH or HH:MM (passed straight to run_job.sh).
+#   <dataset>   folder under the group datasets dir holding crate subdirectories.
+#   [bsan_options] optional extra BSAN_OPTIONS appended (colon-separated, e.g.
+#                  "opt1=val:opt2=val") to the built-in set on both the compile
+#                  and run phase. Ignored for the `rust` image.
 #
 # Launches ONE SLURM job per crate via run_job.sh, keeping at most MAX_PARALLEL
 # (default 40, override with the MAX_PARALLEL env var) running at once -- the
 # `normal` QOS allows 40 concurrent jobs. Each job runs with 16G memory, is
 # named "<crate>-<image>", writes its full stdout+stderr to "<crate>/<image>.log",
 # and cleans up its per-job scratch on the way out. A row per crate
-# (build,crate,status,compile_seconds,run_seconds,tests,timestamp,job_id) is
+# (build,crate,status,compile_seconds,run_seconds,tests,passed,timestamp,job_id) is
 # appended to /scratch/group/p.cis260229.000/outputs/<image>-<dataset>.csv, with
 # concurrent writes serialized by a lock. compile_seconds/run_seconds time the
 # (--no-run) build and the execution separately. tests is the number of tests
 # executed (summed across every "running N tests" line in the run output, i.e.
 # unit + integration + doc tests); passed is how many of those passed (summed
 # across the "test result:" lines). Both are 0 when nothing ran. status is one of: success,
-# test_failed (compiled, tests/Miri failed), build_failed (compile error),
+# test_failed (compiled, tests/bsan failed), build_failed (compile error),
 # fetch_failed (deps wouldn't download). The orchestrator waits for every job to
 # finish, then exits, printing a count of each status.
 #
@@ -49,8 +49,9 @@ OUTPUTS_DIR="$GROUP/outputs"
 MEM="16G"
 MAX_PARALLEL="${MAX_PARALLEL:-40}"   # max jobs in flight at once (QOS MaxJobsPU=40)
 
-# Miri flags used for every Miri image (Tree Borrows is the borrow model).
-MIRI_COMMON="-Zmiri-disable-alignment-check -Zmiri-disable-data-race-detector -Zmiri-ignore-leaks -Zmiri-tree-borrows"
+# BSAN_OPTIONS used for every bsan image. stacktrace_max_len caps how many
+# frames the runtime records per stack trace.
+BSAN_COMMON="stacktrace_max_len=32"
 
 # ── Args ──────────────────────────────────────────────────────────────────--
 # Pull the optional --ignore/-i FILE flag out from anywhere in the arg list,
@@ -71,22 +72,23 @@ done
 set -- ${POS[@]+"${POS[@]}"}
 
 if [[ $# -lt 3 || $# -gt 4 ]]; then
-    echo "Usage: $0 [--ignore FILE] <image> <walltime> <dataset> [miriflags]" >&2
+    echo "Usage: $0 [--ignore FILE] <image> <walltime> <dataset> [bsan_options]" >&2
     echo "  --ignore FILE  crate names to skip, one per line" >&2
-    echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. miri, rust)" >&2
+    echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. miri, rust, bsan)" >&2
     echo "  <walltime>  per-job walltime, HH or HH:MM" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT holding crate subdirectories" >&2
-    echo "  [miriflags] optional extra -Z Miri flags appended to the built-in set" >&2
+    echo "  [bsan_options] optional extra BSAN_OPTIONS (colon-separated) appended to the built-in set" >&2
     exit 1
 fi
 
 IMAGE_ARG="$1"
 WALLTIME="$2"
 DATASET="$3"
-EXTRA_MIRIFLAGS="${4:-}"   # extra -Z Miri flags, appended to MIRI_COMMON
+EXTRA_BSAN_OPTIONS="${4:-}"   # extra BSAN_OPTIONS, appended to BSAN_COMMON
 
-# Full flag set for this run: the built-in common flags plus any extras.
-MIRIFLAGS_ALL="$MIRI_COMMON${EXTRA_MIRIFLAGS:+ $EXTRA_MIRIFLAGS}"
+# Full option set for this run: the built-in common options plus any extras
+# (colon-separated, sanitizer-style).
+BSAN_OPTIONS_ALL="$BSAN_COMMON${EXTRA_BSAN_OPTIONS:+:$EXTRA_BSAN_OPTIONS}"
 
 # Load the ignorelist (if any) into a set keyed by crate-dir basename.
 declare -A IGNORE=()
@@ -104,14 +106,14 @@ fi
 IMAGE="$(basename "${IMAGE_ARG%.sif}")"
 DATASET_DIR="$DATASETS_ROOT/$DATASET"
 
-# When extra Miri flags are given, fold a filesystem-safe slug of them into the
-# CSV name so runs with different flag sets land in separate files instead of
-# appending to the same one. Non-alphanumerics collapse to single dashes. The
-# dataset name always comes LAST (e.g. visit-gc-Zmiri-tree-gc-min-nodes-64-top_500.csv).
+# When extra BSAN_OPTIONS are given, fold a filesystem-safe slug of them into
+# the CSV name so runs with different option sets land in separate files
+# instead of appending to the same one. Non-alphanumerics collapse to single
+# dashes. The dataset name always comes LAST.
 CSV="$OUTPUTS_DIR/${IMAGE}-${DATASET}.csv"
-if [[ -n "$EXTRA_MIRIFLAGS" ]]; then
-    FLAG_SLUG="$(printf '%s' "$EXTRA_MIRIFLAGS" | tr -c '[:alnum:]' '-' | sed 's/-\{1,\}/-/g; s/^-//; s/-$//')"
-    CSV="$OUTPUTS_DIR/${IMAGE}-${FLAG_SLUG}-${DATASET}.csv"
+if [[ -n "$EXTRA_BSAN_OPTIONS" ]]; then
+    OPT_SLUG="$(printf '%s' "$EXTRA_BSAN_OPTIONS" | tr -c '[:alnum:]' '-' | sed 's/-\{1,\}/-/g; s/^-//; s/-$//')"
+    CSV="$OUTPUTS_DIR/${IMAGE}-${OPT_SLUG}-${DATASET}.csv"
 fi
 
 # ── Validate ──────────────────────────────────────────────────────────────--
@@ -122,7 +124,7 @@ fi
 [[ -d "$DATASET_DIR" ]] \
     || { echo "Error: dataset dir not found: $DATASET_DIR" >&2; exit 1; }
 
-# ── Collect crate dirs ──────────────────────────────────────────────────────
+# ── Collect crate dirs (skipping any on the ignorelist) ──────────────────────
 CRATE_DIRS=()
 skipped=0
 for d in "$DATASET_DIR"/*/; do
@@ -137,25 +139,23 @@ done
     || { echo "Error: no crate subdirectories in $DATASET_DIR (after ignorelist)" >&2; exit 1; }
 
 # ── Per-image compile + run commands ─────────────────────────────────────────
-# The `rust` image runs the normal suite; every other image runs under Miri with
-# Tree Borrows. COMPILE_CMD (--no-run) does all the building; RUN_CMD then only
-# executes, so the two phases can be timed separately and cleanly.
+# The `rust` image runs the normal suite; every other image runs under
+# BorrowSanitizer via `cargo bsan test`. COMPILE_CMD (--no-run) does all the
+# building (including bsan's first-use instrumented-sysroot setup); RUN_CMD then
+# only executes, so the two phases can be timed separately and cleanly.
 if [[ "$IMAGE" == "rust" ]]; then
     COMPILE_CMD='cargo test --no-run'
     RUN_CMD='cargo test'
-elif [[ "$IMAGE" == *"tracing"* ]]; then
-    COMPILE_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --no-run"
-    RUN_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test 2>/dev/null"
 else
-    COMPILE_CMD="MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --no-run"
-    RUN_CMD="MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test"
+    COMPILE_CMD="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --no-run"
+    RUN_CMD="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test"
 fi
 
 echo "Image:    $IMAGE"
 echo "Walltime: $WALLTIME   Mem: $MEM"
 echo "Dataset:  $DATASET_DIR"
 echo "Crates:   ${#CRATE_DIRS[@]}${IGNORE_FILE:+  (skipped $skipped via $IGNORE_FILE)}"
-[[ "$IMAGE" != "rust" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
+[[ "$IMAGE" != "rust" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
 echo "Results:  $CSV"
 echo
 
@@ -214,7 +214,6 @@ rms=0
 tests=0
 passed=0
 cargo clean || true
-rm -f trace* events-* 2>/dev/null || true
 if ! cargo fetch; then
     status=fetch_failed
 fi
@@ -226,8 +225,6 @@ fi
 if [ -z "\$status" ]; then
     rstart=\$(date +%s%3N)
     # Capture run stdout so we can count tests; stderr still flows to the log.
-    # (Only stdout is redirected, so any embedded "2>/dev/null" in RUN_CMD --
-    # e.g. the tracing image -- keeps suppressing stderr as intended.)
     runlog="\$(mktemp)"
     ${RUN_CMD} > "\$runlog"; rc=\$?
     cat "\$runlog"
@@ -260,13 +257,6 @@ EOF
         cd "$CRATE_PATH" || exit 1
         "$RUN_JOB" -J "$JOBNAME" "$IMAGE" "$WALLTIME" "$MEM" -- "$CMD"
         rc=$?
-        if [[ "$IMAGE" == *"tracing"* ]]; then
-            TRACE_OUT="$OUTPUTS_DIR/tracing/$CRATE"
-            mkdir -p "$TRACE_OUT"
-            for f in trace* events-*; do
-                [[ -e "$f" ]] && gzip "$f" && mv "${f}.gz" "$TRACE_OUT/"
-            done
-        fi
         row="$(grep -am1 '^CSVROW:' "$LOGFILE" 2>/dev/null | cut -d: -f2-)"
         if [[ -n "$row" ]]; then
             { flock 9; printf '%s\n' "$row" >> "$CSV"; } 9>"$LOCKFILE"
