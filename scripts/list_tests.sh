@@ -9,10 +9,13 @@
 #   <dataset>     folder under the group datasets dir holding crate subdirectories.
 #
 # For every crate, runs (in the stock `miri` image)
-#     cargo miri test -- --list --format=json -Zunstable-options
+#     cargo miri test --tests -- --list --format=json -Zunstable-options
 # which builds the test binaries and emits one JSON line per discovered test,
 # then collects the names of tests marked "ignore": false, i.e. the tests that
-# actually run. Also runs `cargo scan` (cargo-scan, the PLSysSec crate auditor)
+# actually run. --tests covers unit + integration test binaries but NOT doc
+# tests -- deliberately: doc-test names embed the item's generics (e.g.
+# "arrayvec::ArrayVec<T,CAP> (line 748)"), whose commas would corrupt the CSV,
+# while binary test names are Rust paths and can never contain a comma. Also runs `cargo scan` (cargo-scan, the PLSysSec crate auditor)
 # on the crate and checks its effect list for FFI effects ("[FFI Call]" /
 # "[FFI Declaration]" rows). Appends one row per crate
 # (crate,tests,contains_ffi) to
@@ -174,7 +177,7 @@ if ! cargo fetch; then
     exit 1
 fi
 listlog="\$(mktemp)"
-if ! cargo miri test -- --list --format=json -Zunstable-options > "\$listlog"; then
+if ! cargo miri test --tests -- --list --format=json -Zunstable-options > "\$listlog"; then
     echo "result: ${CRATE} -> list_failed"
     rm -f "\$listlog"
     exit 1
@@ -257,3 +260,4 @@ fi
 if (( fail > 0 )); then
     exit 1
 fi
+
