@@ -8,7 +8,7 @@
 #   <walltime>    per-job walltime, HH or HH:MM (passed straight to run_job.sh).
 #   <dataset>     folder under the group datasets dir holding crate subdirectories.
 #
-# For every crate, runs (in the `base` Miri image)
+# For every crate, runs (in the stock `miri` image)
 #     cargo miri test -- --list --format=json -Zunstable-options
 # which builds the test binaries and emits one JSON line per discovered test,
 # then collects the names of tests marked "ignore": false, i.e. the tests that
@@ -42,7 +42,7 @@ DATASETS_ROOT="$GROUP/datasets"
 OUTPUTS_DIR="$GROUP/outputs"
 MEM="16G"
 MAX_PARALLEL="${MAX_PARALLEL:-40}"   # max jobs in flight at once (QOS MaxJobsPU=40)
-IMAGE="base"                         # always the base Miri image
+IMAGE="miri"                         # always the stock Miri image (miri.def, no ref)
 
 # ── Args ──────────────────────────────────────────────────────────────────--
 # Pull the optional --ignore/-i FILE flag out from anywhere in the arg list,

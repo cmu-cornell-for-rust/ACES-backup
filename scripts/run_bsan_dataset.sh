@@ -5,7 +5,7 @@
 #   --ignore FILE  optional file of crate names to skip, one per line (blank
 #                  lines and #-comments ignored). Names match the crate
 #                  directory basenames under the dataset (e.g. bstr-1.12.1).
-#   <image>     image/SIF name under the group containers dir (e.g. base, rust,
+#   <image>     image/SIF name under the group containers dir (e.g. miri, rust,
 #               bsan). The `rust` image runs `cargo test`; anything else runs
 #               BorrowSanitizer via `cargo bsan test`.
 #   <walltime>  per-job walltime, HH or HH:MM (passed straight to run_job.sh).
@@ -74,7 +74,7 @@ set -- ${POS[@]+"${POS[@]}"}
 if [[ $# -lt 3 || $# -gt 4 ]]; then
     echo "Usage: $0 [--ignore FILE] <image> <walltime> <dataset> [bsan_options]" >&2
     echo "  --ignore FILE  crate names to skip, one per line" >&2
-    echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. base, rust, bsan)" >&2
+    echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. miri, rust, bsan)" >&2
     echo "  <walltime>  per-job walltime, HH or HH:MM" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT holding crate subdirectories" >&2
     echo "  [bsan_options] optional extra BSAN_OPTIONS (colon-separated) appended to the built-in set" >&2

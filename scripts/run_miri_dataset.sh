@@ -5,7 +5,7 @@
 #   --ignore FILE optional file of crate names to skip, one per line (blank
 #                 lines and #-comments ignored). Names match the crate directory
 #                 basenames under the dataset (e.g. bstr-1.12.1).
-#   <image>       image/SIF name under the group containers dir (e.g. base, rust).
+#   <image>       image/SIF name under the group containers dir (e.g. miri, rust).
 #                 The `rust` image runs `cargo test`; anything else runs Miri.
 #   <walltime>    per-job walltime, HH or HH:MM (passed straight to run_job.sh).
 #   <dataset>     folder under the group datasets dir holding crate subdirectories.
@@ -73,7 +73,7 @@ set -- ${POS[@]+"${POS[@]}"}
 if [[ $# -lt 3 || $# -gt 4 ]]; then
     echo "Usage: $0 [--ignore FILE] <image> <walltime> <dataset> [miriflags]" >&2
     echo "  --ignore FILE  crate names to skip, one per line" >&2
-    echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. base, rust)" >&2
+    echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. miri, rust)" >&2
     echo "  <walltime>  per-job walltime, HH or HH:MM" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT holding crate subdirectories" >&2
     echo "  [miriflags] optional extra -Z Miri flags appended to the built-in set" >&2

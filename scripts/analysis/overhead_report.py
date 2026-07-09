@@ -7,7 +7,8 @@ Combines the per-image result CSVs for one dataset
 
 Baselines (always required):
   rust-<dataset>.csv        plain `cargo test` runtimes
-  base-miri-<dataset>.csv   stock Miri runtimes
+  miri-<dataset>.csv        stock Miri runtimes (falls back to the older
+                            base-miri-<dataset>.csv name if miri- is absent)
 
 Every crate seen in ANY result file is included, regardless of outcome.
 Each build contributes a <build>_status column (its recorded status, or
@@ -25,7 +26,7 @@ Every other <image>-<dataset>.csv found in the outputs dir is treated as an
 extra Miri edition and gets:
   <image>_status    its recorded status (or `absent`)
   <image>_seconds   its run_seconds (success only)
-  <image>_speedup   base-miri seconds / <image> seconds   (>1 = faster than stock Miri)
+  <image>_speedup   stock-Miri seconds / <image> seconds  (>1 = faster than stock Miri)
   <image>_overhead  <image> seconds / rust seconds        (its slowdown vs native)
 
 Any build whose result CSV carries `tests`/`passed` columns also gets
@@ -87,19 +88,29 @@ def main():
     def csv_path(image):
         return os.path.join(OUTPUTS_DIR, f"{image}-{dataset}.csv")
 
-    for image in ("rust", "base-miri"):
-        if not os.path.isfile(csv_path(image)):
-            sys.exit(f"Error: missing baseline {csv_path(image)}")
+    # Stock-Miri baseline: the unified miri.def builds the default branch as
+    # plain `miri`; older sweeps recorded it as `base-miri`. Prefer the new
+    # name, fall back to the old one. (Report columns stay base_miri_* either
+    # way -- plot_speedup_by_crate.py depends on them.)
+    STOCK_MIRI_NAMES = ("miri", "base-miri")
+    stock_miri = next(
+        (i for i in STOCK_MIRI_NAMES if os.path.isfile(csv_path(i))), None
+    )
+    if not os.path.isfile(csv_path("rust")):
+        sys.exit(f"Error: missing baseline {csv_path('rust')}")
+    if stock_miri is None:
+        sys.exit(f"Error: missing baseline {csv_path('miri')} (or base-miri-)")
 
     rust, rust_counts = load_results(csv_path("rust"))
-    base, base_counts = load_results(csv_path("base-miri"))
+    base, base_counts = load_results(csv_path(stock_miri))
 
     # Any other <image>-<dataset>.csv in the outputs dir is an extra edition.
+    baselines = ("rust",) + STOCK_MIRI_NAMES
     suffix = f"-{dataset}.csv"
     editions = sorted(
         name[: -len(suffix)]
         for name in os.listdir(OUTPUTS_DIR)
-        if name.endswith(suffix) and name[: -len(suffix)] not in ("rust", "base-miri")
+        if name.endswith(suffix) and name[: -len(suffix)] not in baselines
     )
     loaded = {e: load_results(csv_path(e)) for e in editions}
     edition_results = {e: res for e, (res, _) in loaded.items()}
