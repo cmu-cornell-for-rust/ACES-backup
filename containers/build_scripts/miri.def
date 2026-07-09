@@ -1,6 +1,19 @@
 Bootstrap: docker
 From: ubuntu:22.04
 
+%arguments
+    # git branch/commit of cmu-cornell-for-rust/miri to build. Overridden by
+    # build.sh's --build-arg when a ref is given; empty default => build from
+    # the default branch. Known refs and the images they replace:
+    #   (empty)     -> base-miri.def
+    #   lazy+gc     -> visit-gc.def
+    #   lazy-alloc  -> lazy-alloc.def
+    #   no-harness  -> no-har.def
+    #   gc          -> no-lazy-gc.def
+    #   tracing     -> tracing.def (a *tracing* ref also enables the tracing
+    #                  feature of `./miri install`, see %post)
+    MIRI_REF=""
+
 %environment
     export RUSTUP_HOME=/opt/rust/rustup
     export CARGO_HOME=/opt/rust/cargo
@@ -38,14 +51,40 @@ From: ubuntu:22.04
 
     cargo install rustup-toolchain-install-master
 
-    # --- Build & install the Miri fork --------------------------------------
-    git clone --branch lazy-alloc \
-        --depth 1 https://github.com/cmu-cornell-for-rust/miri /opt/miri
+    # --- cargo-scan (PLSysSec crate auditor) ---------------------------------
+    # Used by list_tests.sh to flag crates containing FFI. Upstream ships its
+    # CLI as a binary named plain `scan`, so install that and add a `cargo-scan`
+    # shim so it also works as the `cargo scan` subcommand (cargo invokes
+    # `cargo-scan scan <args>`, i.e. with the subcommand name as the first arg,
+    # which the real binary would misparse as the crate path).
+    cargo +stable install --locked --git https://github.com/PLSysSec/cargo-scan --bin scan \
+        || cargo +stable install --git https://github.com/PLSysSec/cargo-scan --bin scan
+    cat > /opt/rust/cargo/bin/cargo-scan <<'SH'
+#!/bin/sh
+[ "$1" = "scan" ] && shift
+exec /opt/rust/cargo/bin/scan "$@"
+SH
+    chmod +x /opt/rust/cargo/bin/cargo-scan
+
+    # --- Build & install the Miri fork ---------------------------------------
+    # MIRI_REF is supplied by build.sh via --build-arg. When non-empty, check
+    # out that branch/commit; otherwise build from the default branch.
+    MIRI_REF="{{ MIRI_REF }}"
+    if [ -n "$MIRI_REF" ]; then
+        git clone https://github.com/cmu-cornell-for-rust/miri /opt/miri
+        git -C /opt/miri checkout "$MIRI_REF"
+    else
+        git clone --depth 1 https://github.com/cmu-cornell-for-rust/miri /opt/miri
+    fi
     cd /opt/miri
 
     ./miri toolchain
 
-    ./miri install
+    # The tracing branch needs Miri built with its tracing feature enabled.
+    case "$MIRI_REF" in
+        *tracing*) ./miri install --features=tracing ;;
+        *)         ./miri install ;;
+    esac
 
     # Set the fork's toolchain as default so `cargo miri test` resolves cargo-miri/miri
     # from the right sysroot without needing `+miri`.
@@ -76,4 +115,4 @@ From: ubuntu:22.04
 %test
     cargo miri --version
     cargo miri setup --print-sysroot
-
+    cargo scan --version
