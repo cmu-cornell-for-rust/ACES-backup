@@ -22,5 +22,11 @@ Bootstrap: docker-library://ubuntu:22.04
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain nightly
     rustup component add rust-src rustfmt clippy
 
+    # hyperfine: benchmark runner used by run_bench_dataset.sh. The rustup
+    # install above lands in $HOME (%environment's /opt paths only apply at
+    # run time), so use that cargo and copy the binary somewhere always on PATH.
+    "$HOME/.cargo/bin/cargo" install --locked hyperfine --version 1.19.0
+    install -m 0755 "$HOME/.cargo/bin/hyperfine" /usr/local/bin/hyperfine
+
 %runscript
     exec /bin/bash "$@"

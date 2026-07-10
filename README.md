@@ -10,13 +10,18 @@ This repo is a regular backup for our research group's directory on the [NSF ACE
 ├── containers
 │   ├── build_scripts
 │   │   ├── build.sh
+│   │   ├── bsan.def
+│   │   ├── miri.def
 │   │   └── rust.def
+│   ├── bsan.def
+│   ├── miri.def
 │   ├── run.sh
 │   └── rust.sif
 ├── datasets
 │   ├── high_overheads
 │   ├── top_30
-│   └── top_500
+│   ├── top_500
+│   └── top_500_fast
 ├── outputs
 │   ├── traces
 │   └── output_buffer
@@ -27,6 +32,7 @@ This repo is a regular backup for our research group's directory on the [NSF ACE
     │   ├── filter_unsafe.sh
     │   └── top_500_unsafe_crates.log
     ├── run_job.sh
+    ├── run_bsan_dataset.sh
     └── run_miri_dataset.sh
 ```
 
@@ -40,6 +46,11 @@ Inside `containers/build_scripts/` you can run:
 ```
 and it will create a `.sif` in the parent folder. Behind the scenes, this puts you on a compute node with a 2 hour time limit, builds the container in your *home* directory, and copies it to `containers/`. For example, you'd write `rust.def` and do the above process to create `rust.sif`.
 
+If you want to build a specific branch or commit hash of BSan or the Miri fork, add an extra arg, e.g.
+```
+./build.sh bsan 12345678
+```
+
 You can run your container in interactive mode by going back to `containers/` and running: 
 ```
 ./run.sh <sif file> <time limit in HH:MM> <memory in GB>
@@ -52,6 +63,7 @@ Here is where all your Rust target crates should live. We currently have:
 - `high_overheads`: Isolated high overhead crates with over 100x overhead in Miri
 - `top_30`: After pulling the top 30 crates from crates.io (in January 2026) and filtering for unsafe crates
 - `top_500`: After pulling the top 500 crates from crates.io (in June 2026) and filtering for unsafe crates
+- `top_500_fast`: A subset of `top_500` that only has tests that pass at least one test in Miri and take < 2hrs to run
 
 Please give your datasets a parent folder like these, or use the scripts in `scripts/dataset_creator/`.
 

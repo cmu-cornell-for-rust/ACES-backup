@@ -82,6 +82,9 @@ From: ubuntu:25.04
 
     cargo install rustup-toolchain-install-master
 
+    # hyperfine: benchmark runner used by run_bench_dataset.sh.
+    cargo +stable install --locked hyperfine --version 1.19.0
+
     # --- Clone & build BorrowSanitizer --------------------------------------
     # BSAN_REF is supplied by build.sh via --build-arg. When non-empty, check
     # out that branch/commit; otherwise build from the default branch (main).
@@ -170,6 +173,7 @@ From: ubuntu:25.04
     export BSAN_SYSROOT=/opt/bsan-sysroot
     rustup default bsan >/dev/null 2>&1 || true
     rustc -vV
+    hyperfine --version
 
     tmp="$(mktemp -d)"
     export CARGO_HOME="$tmp/cargo"
