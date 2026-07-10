@@ -27,6 +27,9 @@ From: ubuntu:22.04
 
     cargo install rustup-toolchain-install-master --version 1.12.0
 
+    # hyperfine: benchmark runner used by run_bench_dataset.sh.
+    cargo +stable install --locked hyperfine --version 1.19.0
+
     MIRI_RUST_VERSION=$(curl -sSfL https://raw.githubusercontent.com/cmu-cornell-for-rust/miri/master/rust-version)
     test -n "$MIRI_RUST_VERSION" || { echo "ERROR: could not fetch miri fork's rust-version"; exit 1; }
     echo "$MIRI_RUST_VERSION" > /opt/rust/rust-version

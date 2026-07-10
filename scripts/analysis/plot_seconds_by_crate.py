@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Usage: plot_speedup_by_crate.py [overhead_csv] [output_dir]
+Usage: plot_seconds_by_crate.py [overhead_csv] [output_dir]
 
-Plot every crate's value for each *speedup column of the overhead report,
-with crates ordered along the x axis by base_miri_seconds (ascending).
-One series per variant, a dashed line at speedup = 1. Only plain
-better-bt-bsan and the visits-per-gc variants at or above 60000 are
-plotted, and only crates with a base-miri runtime and a speedup value for
-every plotted variant, so all series cover the same crate set.
+Plot every crate's runtime in seconds for each variant of the overhead
+report, with crates ordered along the x axis by visits-per-gc-150000
+seconds (ascending). One series per variant. Only plain better-bt-bsan and
+visits-per-gc-150000 are plotted, and only crates with a runtime and at
+least one passing test under every plotted variant, so all series cover
+the same crate set.
 
-  overhead_csv  the overhead report. Default: <OUTPUTS_DIR>/analysis/overhead-top_500.csv.
+  overhead_csv  the overhead report. Default: <OUTPUTS_DIR>/analysis/overhead-top_500_fast.csv.
   output_dir    where the PNG is written. Default: <OUTPUTS_DIR>/analysis.
 
 The outputs dir defaults to <repo root>/outputs, found relative to this script
@@ -53,50 +53,37 @@ def main():
 
     overhead = read_csv(args.overhead_csv)
 
-    def visits_per_gc(col):
-        prefix = "visit-gc-bsan-visits-per-gc-"
-        if not (col.startswith(prefix) and col.endswith("_speedup")):
-            return None
-        try:
-            return int(col[len(prefix):-len("_speedup")])
-        except ValueError:
-            return None
+    wanted = ["better-bt-bsan_seconds",
+              "visit-gc-bsan-visits-per-gc-150000_seconds"]
+    seconds_cols = [c for c in wanted if c in overhead[0]]
+    if len(seconds_cols) < len(wanted):
+        missing = sorted(set(wanted) - set(seconds_cols))
+        sys.exit(f"Error: missing columns {missing} in {args.overhead_csv}")
 
-    speedup_cols = [c for c in overhead[0]
-                    if c == "better-bt-bsan_speedup"
-                    or (visits_per_gc(c) or 0) >= 60_000]
-    if not speedup_cols:
-        sys.exit(f"Error: no better-bt-bsan or visits-per-gc >= 60000 "
-                 f"speedup columns in {args.overhead_csv}")
-
-    def base_seconds(row):
+    def has_all_seconds(row):
         try:
-            return float(row["base_miri_seconds"])
-        except (KeyError, ValueError):
-            return None
-
-    def has_all_speedups(row):
-        try:
-            for c in speedup_cols:
+            for c in seconds_cols:
                 float(row[c])
+                passed = c[:-len("_seconds")] + "_passed"
+                if int(row[passed]) == 0:
+                    return False
             return True
         except (KeyError, ValueError):
             return False
 
-    # Crates with a base-miri runtime and a speedup for every plotted
-    # variant, ordered by base_miri_seconds ascending.
-    kept = sorted((r for r in overhead
-                   if base_seconds(r) is not None and has_all_speedups(r)),
-                  key=base_seconds)
+    # Crates with a runtime and at least one passing test for every plotted
+    # variant, ordered by visits-per-gc-150000 seconds ascending.
+    kept = sorted((r for r in overhead if has_all_seconds(r)),
+                  key=lambda r: float(r["visit-gc-bsan-visits-per-gc-150000_seconds"]))
     crates = [r["crate"] for r in kept]
     by_crate = {r["crate"]: r for r in kept}
     skipped = len(overhead) - len(crates)
 
     fig, ax = plt.subplots(figsize=(max(12, 0.11 * len(crates)), 7))
-    cmap = plt.get_cmap("tab10" if len(speedup_cols) <= 10 else "tab20")
+    cmap = plt.get_cmap("tab10" if len(seconds_cols) <= 10 else "tab20")
     xs_all = range(len(crates))
-    for i, col in enumerate(speedup_cols):
-        variant = col[:-len("speedup")].rstrip("_")
+    for i, col in enumerate(seconds_cols):
+        variant = col[:-len("seconds")].rstrip("_")
         pts = []
         for x, crate in zip(xs_all, crates):
             try:
@@ -109,27 +96,26 @@ def main():
         ax.plot(xs, ys, marker="o", ms=3, lw=0.8, alpha=0.8,
                 color=cmap(i % cmap.N), label=variant)
 
-    ax.axhline(1.0, ls="--", color="0.4", lw=1)
-    # Ratios are multiplicative: log y keeps 2x and 0.5x equidistant from 1 and
-    # stops the few enormous outliers from flattening everything else.
+    # Runtimes span orders of magnitude across crates; log y keeps the fast
+    # crates readable next to the slow ones.
     ax.set_yscale("log")
     ax.set_xticks(list(xs_all))
     ax.set_xticklabels(crates, rotation=90, fontsize=5)
     ax.set_xlim(-1, len(crates))
-    ax.set_xlabel("crate  (ordered by base_miri_seconds, ascending)")
-    ax.set_ylabel("speedup vs. base miri  (log scale)")
-    ax.set_title(f"Per-crate speedup by variant  ({len(crates)} crates)")
+    ax.set_xlabel("crate  (ordered by visits-per-gc-150000 seconds, ascending)")
+    ax.set_ylabel("test-suite runtime, seconds  (log scale)")
+    ax.set_title(f"Per-crate runtime by variant  ({len(crates)} crates)")
     ax.grid(True, axis="y", ls=":", alpha=0.4)
     ax.legend(loc="upper left", fontsize=8, ncol=2, framealpha=0.9)
     fig.tight_layout()
 
     os.makedirs(args.output_dir, exist_ok=True)
-    out = os.path.join(args.output_dir, "speedup_by_crate.png")
+    out = os.path.join(args.output_dir, "seconds_by_crate.png")
     fig.savefig(out, dpi=150)
     plt.close(fig)
 
-    print(f"Plotted {len(speedup_cols)} variants over {len(crates)} crates "
-          f"({skipped} overhead rows lacked a base-miri runtime or a speedup "
+    print(f"Plotted {len(seconds_cols)} series over {len(crates)} crates "
+          f"({skipped} overhead rows lacked a runtime or a passing test "
           f"for some plotted variant and were skipped).")
     print(f"Wrote {out}")
 

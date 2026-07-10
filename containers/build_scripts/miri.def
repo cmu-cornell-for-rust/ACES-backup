@@ -66,6 +66,10 @@ exec /opt/rust/cargo/bin/scan "$@"
 SH
     chmod +x /opt/rust/cargo/bin/cargo-scan
 
+    # --- hyperfine (benchmark runner) -----------------------------------------
+    # Used by run_bench_dataset.sh to sample per-test runtimes.
+    cargo +stable install --locked hyperfine --version 1.19.0
+
     # --- Build & install the Miri fork ---------------------------------------
     # MIRI_REF is supplied by build.sh via --build-arg. When non-empty, check
     # out that branch/commit; otherwise build from the default branch.
@@ -116,3 +120,4 @@ SH
     cargo miri --version
     cargo miri setup --print-sysroot
     cargo scan --version
+    hyperfine --version
