@@ -21,10 +21,12 @@
 #   --no-ffi          only run crates whose contains_ffi column is exactly
 #                     "false" (both "true" and "scan_failed" are skipped)
 #   --ignore FILE     crate names to skip, one per line (#-comments ok)
-#   --jobs N          number of single-node sbatch jobs to spread over (default 1)
+#   --jobs N          number of single-node sbatch jobs to spread over.
+#                     Default: as many as needed for full parallelism,
+#                     ceil(crates / tasks), capped at 40 (the QOS job limit)
 #   --tasks N         worker tasks per node (default 24)
 #   --cpus-per-task N cores per worker (default 2; also caps cargo build jobs)
-#   --mem-per-task G  GB per worker (default 16; tasks*mem must fit 488G/node)
+#   --mem-per-task G  GB per worker (default 8; tasks*mem must fit 488G/node)
 #   --runs N          hyperfine timing runs per test (default 10)
 #   --warmup N        hyperfine warmup runs per test (default 0 -- the status
 #                     pre-run already warms caches)
@@ -58,7 +60,7 @@
 # build_failed, fetch_failed. Timing fields are empty unless status=success.
 #
 # The orchestrator submits the jobs, polls squeue with a progress line, then
-# merges all shards into <outputs>/hyperfine-<image>[-<extra-slug>]-<dataset>.csv
+# merges all shards into <outputs>/<image>[-<extra-slug>]-<dataset>-hyperfine.csv
 # and prints a status breakdown. Per-crate logs land in
 # <crate>/hyperfine-<image>.log. Chunks/shards/logs for the run live under
 # <outputs>/hyperfine-runs/<runid>/ for debugging.
@@ -91,10 +93,10 @@ BSAN_COMMON="stacktrace_max_len=32"
 TESTS_CSV=""
 NO_FFI=0
 IGNORE_FILE=""
-JOBS=1
+JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
 TASKS=24
 CPUS_PER_TASK=2
-MEM_PER_TASK=16      # GB per worker
+MEM_PER_TASK=8       # GB per worker
 RUNS=10
 WARMUP=0
 
@@ -161,10 +163,13 @@ else
 fi
 
 MEM_PER_TASK="${MEM_PER_TASK%G}"
-for v in JOBS TASKS CPUS_PER_TASK MEM_PER_TASK RUNS WARMUP; do
+for v in TASKS CPUS_PER_TASK MEM_PER_TASK RUNS WARMUP; do
     [[ "${!v}" =~ ^[0-9]+$ ]] || { echo "Error: $v must be a number." >&2; exit 1; }
 done
-(( JOBS >= 1 && TASKS >= 1 )) || { echo "Error: --jobs/--tasks must be >= 1." >&2; exit 1; }
+if [[ -n "$JOBS" ]]; then
+    [[ "$JOBS" =~ ^[0-9]+$ && "$JOBS" -ge 1 ]] || { echo "Error: --jobs must be a number >= 1." >&2; exit 1; }
+fi
+(( TASKS >= 1 )) || { echo "Error: --tasks must be >= 1." >&2; exit 1; }
 TOTAL_MEM=$(( TASKS * MEM_PER_TASK ))
 if (( TOTAL_MEM > 488 )); then
     echo "Error: tasks*mem = ${TOTAL_MEM}G exceeds the 488G usable on an ACES node." >&2
@@ -190,12 +195,13 @@ case "$MODE" in
     bsan) BSAN_OPTIONS_ALL="$BSAN_COMMON${EXTRA:+:$EXTRA}" ;;
 esac
 
-# Master CSV: hyperfine-<image>[-<extra slug>]-<dataset>.csv (slug logic as in
-# the other run_*_dataset scripts, so different flag sets land in different files).
-CSV="$OUTPUTS_DIR/hyperfine-${IMAGE}-${DATASET}.csv"
+# Master CSV: <image>[-<extra slug>]-<dataset>-hyperfine.csv (slug logic as in
+# the other run_*_dataset scripts, so different flag sets land in different
+# files; the -hyperfine suffix marks the per-test benchmark format).
+CSV="$OUTPUTS_DIR/${IMAGE}-${DATASET}-hyperfine.csv"
 if [[ -n "$EXTRA" && "$MODE" != "rust" ]]; then
     SLUG="$(printf '%s' "$EXTRA" | tr -c '[:alnum:]' '-' | sed 's/-\{1,\}/-/g; s/^-//; s/-$//')"
-    CSV="$OUTPUTS_DIR/hyperfine-${IMAGE}-${SLUG}-${DATASET}.csv"
+    CSV="$OUTPUTS_DIR/${IMAGE}-${SLUG}-${DATASET}-hyperfine.csv"
 fi
 
 # ── Validate ──────────────────────────────────────────────────────────────--
@@ -248,6 +254,15 @@ done < "$TESTS_CSV"
 if (( ${#SELECTED[@]} == 0 )); then
     echo "Error: no crates left to run after filtering $TESTS_CSV." >&2
     exit 1
+fi
+
+# ── Job count: auto-size unless --jobs was given ─────────────────────────────
+# Enough single-node jobs that every crate gets its own worker from the start
+# (ceil(crates/tasks)), capped at the QOS's 40 concurrent jobs. More jobs than
+# crates/tasks would just sit idle; more than 40 would sit in the queue anyway.
+if [[ -z "$JOBS" ]]; then
+    JOBS=$(( (${#SELECTED[@]} + TASKS - 1) / TASKS ))
+    (( JOBS > 40 )) && JOBS=40
 fi
 
 # ── Deal crates round-robin across jobs*tasks workers, biggest first ─────────
@@ -511,3 +526,4 @@ if (( rows < TOTAL_TESTS )); then
     echo "  build failures, which emit 1 row for a whole crate). See the crates'"
     echo "  hyperfine-${IMAGE}.log and $RUNDIR/job-*.out"
 fi
+
