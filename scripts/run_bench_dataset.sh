@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Usage: run_bench_dataset.sh [options] <mode> <image> <walltime> <dataset> [extra]
+# Usage: run_bench_dataset.sh [options] <mode> <image> [walltime] <dataset> [extra]
 #
 #   <mode>      miri | bsan | rust -- which tool runs the tests:
 #                 miri: MIRIFLAGS=<common+extra> cargo miri test
@@ -9,8 +9,12 @@
 #   <image>     image/SIF name under the group containers dir (e.g. miri, bsan,
 #               rust, visit-gc). Mode and image are separate so variant images
 #               (e.g. a patched miri) can still be driven in miri mode.
-#   <walltime>  walltime PER SBATCH JOB, HH or HH:MM. Unlike the per-crate
-#               scripts this must cover a whole node-job's share of the sweep.
+#   [walltime]  walltime per REGULAR sbatch job, HH or HH:MM (default 2).
+#               Only needs to cover the non-slowlist crates on one worker --
+#               short+narrow jobs backfill into scheduling gaps that long
+#               ones never fit. Slowlist jobs use --slow-walltime instead.
+#               (Recognized positionally by shape, so a purely numeric
+#               dataset name would need the walltime spelled out.)
 #   <dataset>   folder under the group datasets dir holding crate subdirectories.
 #   [extra]     mode-specific extras: -Z Miri flags (miri) or colon-separated
 #               BSAN_OPTIONS (bsan), appended to the built-in set.
@@ -30,12 +34,17 @@
 #                     slowlist) crates. Default: as many as needed for full
 #                     parallelism, ceil(crates / tasks), capped at 40 (the
 #                     QOS job limit)
-#   --tasks N         worker tasks per node (default 24)
+#   --tasks N         worker tasks per node (default 12 -- 24 cpus/96G per
+#                     regular job, small enough to backfill readily)
 #   --cpus-per-task N cores per worker (default 2; also caps cargo build jobs)
 #   --mem-per-task G  GB per worker (default 8; tasks*mem must fit 488G/node)
-#   --runs N          hyperfine timing runs per test (default 10)
-#   --warmup N        hyperfine warmup runs per test (default 0 -- the status
-#                     pre-run already warms caches)
+#   --slow-walltime T walltime for the per-crate slowlist jobs, HH or HH:MM
+#                     (default 12). SLURM bills elapsed time, not the request,
+#                     and these jobs are tiny (2 cpus), so generous is cheap
+#   --runs N          hyperfine timing runs per test (default 5)
+#   --warmup N        hyperfine warmup runs per test (default 1; the untimed
+#                     status pre-run also warms caches, so each test runs
+#                     1 + warmup + runs times in total)
 #
 # Unlike run_miri_dataset.sh / run_bsan_dataset.sh (one srun job per crate,
 # throttled to the 40-job QOS cap), this packs many single-core workers into a
@@ -48,9 +57,9 @@
 # allocation until the job's last process exits, each slow crate stops
 # costing anything the moment it finishes instead of idling until the
 # slowest one drains. Slowlist entries not selected for the run are ignored,
-# so the list is dataset-agnostic. Give <walltime> enough headroom for the
-# slowest crate: SLURM bills elapsed time, not the request, so generous is
-# cheap.
+# so the list is dataset-agnostic. Slow jobs request --slow-walltime (12h
+# default) while the regular jobs keep the short <walltime>, so the wide
+# fast jobs stay backfill-friendly.
 #
 # Crates from the tests CSV are dealt round-robin (largest test count first)
 # across jobs*tasks workers; each worker processes its crates sequentially:
@@ -115,11 +124,13 @@ NO_FFI=0
 IGNORE_FILE=""
 ONLY_FILE=""
 JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
-TASKS=24
+TASKS=12
 CPUS_PER_TASK=2
 MEM_PER_TASK=8       # GB per worker
-RUNS=10
-WARMUP=0
+RUNS=5
+WARMUP=1
+WALLTIME_ARG=2         # walltime for the regular jobs (positional overrides)
+SLOW_WALLTIME_ARG=12   # walltime for the per-crate slowlist jobs
 
 POS=()
 while [[ $# -gt 0 ]]; do
@@ -143,6 +154,8 @@ while [[ $# -gt 0 ]]; do
         --runs=*)        RUNS="${1#*=}"; shift ;;
         --warmup)        WARMUP="$2"; shift 2 ;;
         --warmup=*)      WARMUP="${1#*=}"; shift ;;
+        --slow-walltime) SLOW_WALLTIME_ARG="$2"; shift 2 ;;
+        --slow-walltime=*) SLOW_WALLTIME_ARG="${1#*=}"; shift ;;
         -*)
             echo "Error: unknown option '$1'." >&2; exit 1 ;;
         *)
@@ -151,39 +164,52 @@ while [[ $# -gt 0 ]]; do
 done
 set -- ${POS[@]+"${POS[@]}"}
 
-if [[ $# -lt 4 || $# -gt 5 ]]; then
-    echo "Usage: $0 [options] <mode> <image> <walltime> <dataset> [extra]" >&2
+usage() {
+    echo "Usage: $0 [options] <mode> <image> [walltime] <dataset> [extra]" >&2
     echo "  <mode>   miri | bsan | rust" >&2
     echo "  <image>  image/SIF name under $CONTAINERS_DIR" >&2
-    echo "  <walltime>  PER-JOB walltime, HH or HH:MM" >&2
+    echo "  [walltime]  regular-job walltime, HH or HH:MM (default 2)" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT" >&2
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --tests FILE --no-ffi --ignore FILE --only FILE --jobs N" >&2
     echo "           --tasks N --cpus-per-task N --mem-per-task G --runs N --warmup N" >&2
+    echo "           --slow-walltime T (for slowlist jobs, default 12)" >&2
     exit 1
-fi
+}
+[[ $# -ge 3 && $# -le 5 ]] || usage
 
 MODE="$1"
 IMAGE_ARG="$2"
-WALLTIME_ARG="$3"
-DATASET="$4"
-EXTRA="${5:-}"
+shift 2
+# The walltime positional is optional: take the next arg as walltime only if
+# it is shaped like one (HH or HH:MM); otherwise it is the dataset.
+if [[ $# -ge 2 && "$1" =~ ^[0-9]{1,3}(:[0-9]{2})?$ ]]; then
+    WALLTIME_ARG="$1"
+    shift
+fi
+[[ $# -ge 1 && $# -le 2 ]] || usage
+DATASET="$1"
+EXTRA="${2:-}"
 
 case "$MODE" in miri|bsan|rust) ;; *)
     echo "Error: mode must be miri, bsan, or rust (got '$MODE')." >&2; exit 1 ;;
 esac
 
-# Walltime: accept HH (1-2 digits) or HH:MM (same as run_job.sh).
-if [[ "$WALLTIME_ARG" =~ ^([0-9]{1,2})$ ]]; then
-    WALLTIME=$(printf '%02d:00:00' "$((10#${BASH_REMATCH[1]}))")
-elif [[ "$WALLTIME_ARG" =~ ^([0-9]{1,2}):([0-9]{2})$ ]]; then
-    H=$((10#${BASH_REMATCH[1]})); M=$((10#${BASH_REMATCH[2]}))
-    (( M <= 59 )) || { echo "Error: minutes must be 00-59." >&2; exit 1; }
-    WALLTIME=$(printf '%02d:%02d:00' "$H" "$M")
-else
-    echo "Error: walltime must be HH or HH:MM (e.g. 8 or 8:30)." >&2
-    exit 1
-fi
+# Walltime: accept HH (1-3 digits) or HH:MM (same as run_job.sh).
+parse_walltime() {
+    if [[ "$1" =~ ^([0-9]{1,3})$ ]]; then
+        printf '%02d:00:00' "$((10#${BASH_REMATCH[1]}))"
+    elif [[ "$1" =~ ^([0-9]{1,3}):([0-9]{2})$ ]]; then
+        local h=$((10#${BASH_REMATCH[1]})) m=$((10#${BASH_REMATCH[2]}))
+        (( m <= 59 )) || { echo "Error: minutes must be 00-59 (got '$1')." >&2; exit 1; }
+        printf '%02d:%02d:00' "$h" "$m"
+    else
+        echo "Error: walltime must be HH or HH:MM (e.g. 8 or 8:30; got '$1')." >&2
+        exit 1
+    fi
+}
+WALLTIME=$(parse_walltime "$WALLTIME_ARG")
+SLOW_WALLTIME=$(parse_walltime "$SLOW_WALLTIME_ARG")
 
 MEM_PER_TASK="${MEM_PER_TASK%G}"
 for v in TASKS CPUS_PER_TASK MEM_PER_TASK RUNS WARMUP; do
@@ -540,7 +566,7 @@ if (( ${#MISSING[@]} > 0 )); then
 fi
 echo "Shape:    $JOBS job(s) x $TASKS tasks x ${CPUS_PER_TASK} cpus, ${MEM_PER_TASK}G/task (${TOTAL_MEM}G/node), $WALLTIME each"
 if (( ${#SLOW_CRATES[@]} > 0 )); then
-    echo "Slow:     ${#SLOW_CRATES[@]} slowlist crate(s), each in its own 1-worker job"
+    echo "Slow:     ${#SLOW_CRATES[@]} slowlist crate(s), each in its own 1-worker job at $SLOW_WALLTIME"
 fi
 echo "Sampling: $RUNS runs, $WARMUP warmup per test"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
@@ -556,12 +582,12 @@ echo
 # runs the long tail.
 JOBIDS=()
 submit_one() {
-    local j="$1" ntasks="$2" label="$3" jid
+    local j="$1" ntasks="$2" label="$3" wall="$4" jid
     compgen -G "$RUNDIR/chunks/chunk-$j-*.txt" >/dev/null || return 0
     if ! jid=$(sbatch --parsable \
         --job-name="hf-${IMAGE}-${DATASET}-${label}" \
         --nodes=1 --ntasks-per-node="$ntasks" --cpus-per-task="$CPUS_PER_TASK" \
-        --mem="$(( ntasks * MEM_PER_TASK ))G" --time="$WALLTIME" \
+        --mem="$(( ntasks * MEM_PER_TASK ))G" --time="$wall" \
         --output="$RUNDIR/job-%j.out" \
         "$RUNDIR/job.sh" "$RUNDIR" "$j" "$ntasks"); then
         echo "Error: sbatch failed for job $label; cancelling ${JOBIDS[*]:-nothing}." >&2
@@ -573,10 +599,10 @@ submit_one() {
     echo "submitted job $label ($ntasks workers) -> SLURM job $jid"
 }
 for (( j = 0; j < JOBS; j++ )); do
-    submit_one "$j" "$TASKS" "$j"
+    submit_one "$j" "$TASKS" "$j" "$WALLTIME"
 done
 for (( k = 0; k < ${#SLOW_CRATES[@]}; k++ )); do
-    submit_one "$(( JOBS + k ))" 1 "slow-${SLOW_CRATES[$k]}"
+    submit_one "$(( JOBS + k ))" 1 "slow-${SLOW_CRATES[$k]}" "$SLOW_WALLTIME"
 done
 
 cancel_jobs() {
