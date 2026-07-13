@@ -42,12 +42,15 @@
 # few whole-node sbatch jobs -- HPRC's preferred shape for many small tasks.
 #
 # Known-slow crates (scripts/slowlist, one name per line, #-comments ok) are
-# automatically pulled out and isolated in ONE extra sbatch job with a worker
-# per crate, sized to just those crates -- so a straggler that needs many
-# hours never sits in (and never times out of) the regular jobs. Slowlist
-# entries not selected for the run are ignored, so the list is dataset-
-# agnostic. Give <walltime> enough headroom for the slowest crate: SLURM
-# bills elapsed time, not the request, so generous is cheap.
+# automatically pulled out of the regular dealing and EACH submitted as its
+# own single-worker job -- so a straggler that needs many hours never sits in
+# (or times out of) the regular jobs, and since SLURM bills the full
+# allocation until the job's last process exits, each slow crate stops
+# costing anything the moment it finishes instead of idling until the
+# slowest one drains. Slowlist entries not selected for the run are ignored,
+# so the list is dataset-agnostic. Give <walltime> enough headroom for the
+# slowest crate: SLURM bills elapsed time, not the request, so generous is
+# cheap.
 #
 # Crates from the tests CSV are dealt round-robin (largest test count first)
 # across jobs*tasks workers; each worker processes its crates sequentially:
@@ -291,10 +294,10 @@ fi
 
 # ── Split off the known-slow crates (scripts/slowlist) ───────────────────────
 # Crates listed in the slowlist file are pulled out of the normal dealing and
-# isolated in ONE dedicated job (one worker per crate, capped at TASKS), so
-# the regular jobs can run with a short walltime while only the slow job
-# occupies a node for the long tail. Slowlist crates not selected for this
-# run are simply ignored, so the list works across datasets.
+# each isolated in its own single-worker job, so the regular jobs can run
+# with a short walltime and no slow crate bills idle cores while waiting for
+# a slower one to drain. Slowlist crates not selected for this run are
+# simply ignored, so the list works across datasets.
 SLOWLIST_FILE="$GROUP/scripts/slowlist"
 declare -A SLOWLIST=()
 if [[ -f "$SLOWLIST_FILE" ]]; then
@@ -338,18 +341,15 @@ if (( ${#FAST_SEL[@]} > 0 && JOBS > 0 )); then
     done
 fi
 
-# The slow job takes the job index after the regular ones and gets exactly as
-# many workers as it has crates (capped at TASKS; beyond that they queue).
-SLOW_JOB_IDX=$JOBS
-SLOW_TASKS=0
+# Slow crates take the job indices after the regular ones, one single-worker
+# job each (chunk-<idx>-0.txt holds exactly that crate).
+SLOW_CRATES=()
 if (( ${#SLOW_SEL[@]} > 0 )); then
-    SLOW_TASKS=$(( ${#SLOW_SEL[@]} < TASKS ? ${#SLOW_SEL[@]} : TASKS ))
     mapfile -t SLOW_SORTED < <(printf '%s\n' "${SLOW_SEL[@]}" | sort -t$'\t' -k1,1nr -k2,2)
-    i=0
     for line in "${SLOW_SORTED[@]}"; do
         crate="${line#*$'\t'}"
-        printf '%s\n' "$crate" >> "$RUNDIR/chunks/chunk-${SLOW_JOB_IDX}-$(( i % SLOW_TASKS )).txt"
-        i=$((i + 1))
+        printf '%s\n' "$crate" > "$RUNDIR/chunks/chunk-$(( JOBS + ${#SLOW_CRATES[@]} ))-0.txt"
+        SLOW_CRATES+=("$crate")
     done
 fi
 
@@ -539,8 +539,8 @@ if (( ${#MISSING[@]} > 0 )); then
     printf '  missing from dataset: %s\n' "${MISSING[@]}" | head -20
 fi
 echo "Shape:    $JOBS job(s) x $TASKS tasks x ${CPUS_PER_TASK} cpus, ${MEM_PER_TASK}G/task (${TOTAL_MEM}G/node), $WALLTIME each"
-if (( SLOW_TASKS > 0 )); then
-    echo "Slow:     ${#SLOW_SEL[@]} slowlist crate(s) isolated in 1 extra job with $SLOW_TASKS worker(s)"
+if (( ${#SLOW_CRATES[@]} > 0 )); then
+    echo "Slow:     ${#SLOW_CRATES[@]} slowlist crate(s), each in its own 1-worker job"
 fi
 echo "Sampling: $RUNS runs, $WARMUP warmup per test"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
@@ -575,9 +575,9 @@ submit_one() {
 for (( j = 0; j < JOBS; j++ )); do
     submit_one "$j" "$TASKS" "$j"
 done
-if (( SLOW_TASKS > 0 )); then
-    submit_one "$SLOW_JOB_IDX" "$SLOW_TASKS" "slow"
-fi
+for (( k = 0; k < ${#SLOW_CRATES[@]}; k++ )); do
+    submit_one "$(( JOBS + k ))" 1 "slow-${SLOW_CRATES[$k]}"
+done
 
 cancel_jobs() {
     trap - INT TERM
