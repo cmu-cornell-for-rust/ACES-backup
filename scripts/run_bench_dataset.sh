@@ -21,9 +21,15 @@
 #   --no-ffi          only run crates whose contains_ffi column is exactly
 #                     "false" (both "true" and "scan_failed" are skipped)
 #   --ignore FILE     crate names to skip, one per line (#-comments ok)
-#   --jobs N          number of single-node sbatch jobs to spread over.
-#                     Default: as many as needed for full parallelism,
-#                     ceil(crates / tasks), capped at 40 (the QOS job limit)
+#   --only FILE       run ONLY the crates listed in FILE (one per line,
+#                     #-comments ok; --ignore/--no-ffi still apply on top).
+#                     Made for isolating known-slow crates in their own
+#                     long-walltime job, e.g. a list produced by
+#                     analysis/remaining_crates.py after a timed-out sweep
+#   --jobs N          number of single-node sbatch jobs for the regular (non-
+#                     slowlist) crates. Default: as many as needed for full
+#                     parallelism, ceil(crates / tasks), capped at 40 (the
+#                     QOS job limit)
 #   --tasks N         worker tasks per node (default 24)
 #   --cpus-per-task N cores per worker (default 2; also caps cargo build jobs)
 #   --mem-per-task G  GB per worker (default 8; tasks*mem must fit 488G/node)
@@ -34,6 +40,15 @@
 # Unlike run_miri_dataset.sh / run_bsan_dataset.sh (one srun job per crate,
 # throttled to the 40-job QOS cap), this packs many single-core workers into a
 # few whole-node sbatch jobs -- HPRC's preferred shape for many small tasks.
+#
+# Known-slow crates (scripts/slowlist, one name per line, #-comments ok) are
+# automatically pulled out and isolated in ONE extra sbatch job with a worker
+# per crate, sized to just those crates -- so a straggler that needs many
+# hours never sits in (and never times out of) the regular jobs. Slowlist
+# entries not selected for the run are ignored, so the list is dataset-
+# agnostic. Give <walltime> enough headroom for the slowest crate: SLURM
+# bills elapsed time, not the request, so generous is cheap.
+#
 # Crates from the tests CSV are dealt round-robin (largest test count first)
 # across jobs*tasks workers; each worker processes its crates sequentially:
 #
@@ -48,9 +63,11 @@
 #                 in several binaries is executed in each of them per run.
 #
 # Tests come from the CSV's ';'-joined tests column (crates with an empty list
-# are skipped); the crate is matched to the dataset dir by basename. Each
-# worker appends rows to its own shard CSV (no cross-node locking), a row per
-# test plus a single test-less row for fetch_failed/build_failed crates:
+# are skipped); the crate is matched to the dataset dir by basename. Rows are
+# STREAMED into a per-worker shard CSV as each test finishes (single writer
+# per shard, so no cross-node locking; a walltime kill loses only the
+# in-flight test), a row per test plus a single test-less row for
+# fetch_failed/build_failed crates:
 #
 #   build,crate,test,status,compile_seconds,mean_s,stddev_s,median_s,min_s,
 #   max_s,runs,timestamp,job_id
@@ -93,6 +110,7 @@ BSAN_COMMON="stacktrace_max_len=32"
 TESTS_CSV=""
 NO_FFI=0
 IGNORE_FILE=""
+ONLY_FILE=""
 JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
 TASKS=24
 CPUS_PER_TASK=2
@@ -108,6 +126,8 @@ while [[ $# -gt 0 ]]; do
         --no-ffi)        NO_FFI=1; shift ;;
         -i|--ignore)     IGNORE_FILE="$2"; shift 2 ;;
         --ignore=*)      IGNORE_FILE="${1#*=}"; shift ;;
+        --only)          ONLY_FILE="$2"; shift 2 ;;
+        --only=*)        ONLY_FILE="${1#*=}"; shift ;;
         --jobs)          JOBS="$2"; shift 2 ;;
         --jobs=*)        JOBS="${1#*=}"; shift ;;
         --tasks)         TASKS="$2"; shift 2 ;;
@@ -135,8 +155,8 @@ if [[ $# -lt 4 || $# -gt 5 ]]; then
     echo "  <walltime>  PER-JOB walltime, HH or HH:MM" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT" >&2
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
-    echo "  options: --tests FILE --no-ffi --ignore FILE --jobs N --tasks N" >&2
-    echo "           --cpus-per-task N --mem-per-task G --runs N --warmup N" >&2
+    echo "  options: --tests FILE --no-ffi --ignore FILE --only FILE --jobs N" >&2
+    echo "           --tasks N --cpus-per-task N --mem-per-task G --runs N --warmup N" >&2
     exit 1
 fi
 
@@ -220,6 +240,18 @@ if [[ -n "$IGNORE_FILE" ]]; then
     done < "$IGNORE_FILE"
 fi
 
+# Load the --only list (if any) the same way; when non-empty, crates absent
+# from it are skipped.
+declare -A ONLY=()
+if [[ -n "$ONLY_FILE" ]]; then
+    [[ -f "$ONLY_FILE" ]] || { echo "Error: --only list not found: $ONLY_FILE" >&2; exit 1; }
+    while IFS= read -r line || [[ -n "$line" ]]; do
+        line="${line%%#*}"; line="${line//[[:space:]]/}"
+        [[ -n "$line" ]] && ONLY["$line"]=1
+    done < "$ONLY_FILE"
+    (( ${#ONLY[@]} > 0 )) || { echo "Error: --only list $ONLY_FILE is empty." >&2; exit 1; }
+fi
+
 # ── Run dir: chunks, per-crate test lists, shards, job scripts, logs ─────────
 RUNDIR="$OUTPUTS_DIR/hyperfine-runs/$(date +%Y%m%d-%H%M%S)-$$"
 mkdir -p "$RUNDIR/chunks" "$RUNDIR/tests" "$RUNDIR/shards"
@@ -231,7 +263,7 @@ mkdir -p "$RUNDIR/chunks" "$RUNDIR/tests" "$RUNDIR/shards"
 SELECTED=()          # "count<TAB>crate" lines, for size-descending dealing
 declare -A SEEN_CRATE=()
 TOTAL_TESTS=0
-skip_ignored=0; skip_ffi=0; skip_empty=0
+skip_ignored=0; skip_only=0; skip_ffi=0; skip_empty=0
 MISSING=()
 first=1
 while IFS=, read -r crate tests ffi || [[ -n "$crate" ]]; do
@@ -241,6 +273,7 @@ while IFS=, read -r crate tests ffi || [[ -n "$crate" ]]; do
     [[ -n "${SEEN_CRATE[$crate]:-}" ]] && continue
     SEEN_CRATE[$crate]=1
     if [[ -n "${IGNORE[$crate]:-}" ]]; then skip_ignored=$((skip_ignored+1)); continue; fi
+    if (( ${#ONLY[@]} > 0 )) && [[ -z "${ONLY[$crate]:-}" ]]; then skip_only=$((skip_only+1)); continue; fi
     if (( NO_FFI )) && [[ "$ffi" != "false" ]]; then skip_ffi=$((skip_ffi+1)); continue; fi
     if [[ -z "$tests" ]]; then skip_empty=$((skip_empty+1)); continue; fi
     if [[ ! -d "$DATASET_DIR/$crate" ]]; then MISSING+=("$crate"); continue; fi
@@ -256,27 +289,69 @@ if (( ${#SELECTED[@]} == 0 )); then
     exit 1
 fi
 
+# ── Split off the known-slow crates (scripts/slowlist) ───────────────────────
+# Crates listed in the slowlist file are pulled out of the normal dealing and
+# isolated in ONE dedicated job (one worker per crate, capped at TASKS), so
+# the regular jobs can run with a short walltime while only the slow job
+# occupies a node for the long tail. Slowlist crates not selected for this
+# run are simply ignored, so the list works across datasets.
+SLOWLIST_FILE="$GROUP/scripts/slowlist"
+declare -A SLOWLIST=()
+if [[ -f "$SLOWLIST_FILE" ]]; then
+    while IFS= read -r line || [[ -n "$line" ]]; do
+        line="${line%%#*}"; line="${line//[[:space:]]/}"
+        [[ -n "$line" ]] && SLOWLIST["$line"]=1
+    done < "$SLOWLIST_FILE"
+fi
+
+FAST_SEL=(); SLOW_SEL=()
+for line in "${SELECTED[@]}"; do
+    if [[ -n "${SLOWLIST[${line#*$'\t'}]:-}" ]]; then
+        SLOW_SEL+=("$line")
+    else
+        FAST_SEL+=("$line")
+    fi
+done
+
 # ── Job count: auto-size unless --jobs was given ─────────────────────────────
-# Enough single-node jobs that every crate gets its own worker from the start
-# (ceil(crates/tasks)), capped at the QOS's 40 concurrent jobs. More jobs than
-# crates/tasks would just sit idle; more than 40 would sit in the queue anyway.
+# Enough single-node jobs that every non-slow crate gets its own worker from
+# the start (ceil(fast crates/tasks)), capped at the QOS's 40 concurrent jobs.
+# More jobs than crates/tasks would just sit idle; more than 40 would sit in
+# the queue anyway. The slow job (if any) is submitted on top of these.
 if [[ -z "$JOBS" ]]; then
-    JOBS=$(( (${#SELECTED[@]} + TASKS - 1) / TASKS ))
+    JOBS=$(( (${#FAST_SEL[@]} + TASKS - 1) / TASKS ))
     (( JOBS > 40 )) && JOBS=40
 fi
 
 # ── Deal crates round-robin across jobs*tasks workers, biggest first ─────────
 # Sorting by test count descending before dealing gives a rough longest-
 # processing-time-first balance, so no worker gets all the monster crates.
-mapfile -t SORTED < <(printf '%s\n' "${SELECTED[@]}" | sort -t$'\t' -k1,1nr -k2,2)
-WORKERS=$(( JOBS * TASKS ))
-i=0
-for line in "${SORTED[@]}"; do
-    crate="${line#*$'\t'}"
-    w=$(( i % WORKERS ))
-    printf '%s\n' "$crate" >> "$RUNDIR/chunks/chunk-$(( w % JOBS ))-$(( w / JOBS )).txt"
-    i=$((i + 1))
-done
+if (( ${#FAST_SEL[@]} > 0 && JOBS > 0 )); then
+    mapfile -t SORTED < <(printf '%s\n' "${FAST_SEL[@]}" | sort -t$'\t' -k1,1nr -k2,2)
+    WORKERS=$(( JOBS * TASKS ))
+    i=0
+    for line in "${SORTED[@]}"; do
+        crate="${line#*$'\t'}"
+        w=$(( i % WORKERS ))
+        printf '%s\n' "$crate" >> "$RUNDIR/chunks/chunk-$(( w % JOBS ))-$(( w / JOBS )).txt"
+        i=$((i + 1))
+    done
+fi
+
+# The slow job takes the job index after the regular ones and gets exactly as
+# many workers as it has crates (capped at TASKS; beyond that they queue).
+SLOW_JOB_IDX=$JOBS
+SLOW_TASKS=0
+if (( ${#SLOW_SEL[@]} > 0 )); then
+    SLOW_TASKS=$(( ${#SLOW_SEL[@]} < TASKS ? ${#SLOW_SEL[@]} : TASKS ))
+    mapfile -t SLOW_SORTED < <(printf '%s\n' "${SLOW_SEL[@]}" | sort -t$'\t' -k1,1nr -k2,2)
+    i=0
+    for line in "${SLOW_SORTED[@]}"; do
+        crate="${line#*$'\t'}"
+        printf '%s\n' "$crate" >> "$RUNDIR/chunks/chunk-${SLOW_JOB_IDX}-$(( i % SLOW_TASKS )).txt"
+        i=$((i + 1))
+    done
+fi
 
 # ── Config shared with the node-side scripts ─────────────────────────────────
 {
@@ -312,8 +387,14 @@ esac
 
 ts() { date -u +'%Y-%m-%dT%H:%M:%SZ'; }
 # row <test> <status> <compile> <mean> <stddev> <median> <min> <max>
+# Streams the row STRAIGHT into this worker's shard (we are its only writer),
+# so a walltime kill loses at most the in-flight test -- not, as when rows
+# were harvested from the log after the container exited, the whole crate.
+# The CSVROW echo is kept purely as a log-side copy for debugging.
 row() {
-    echo "CSVROW:$HF_BUILD,$HF_CRATE,$1,$2,$3,$4,$5,$6,$7,$8,$HF_RUNS,$(ts),$HF_JOBID"
+    line="$HF_BUILD,$HF_CRATE,$1,$2,$3,$4,$5,$6,$7,$8,$HF_RUNS,$(ts),$HF_JOBID"
+    echo "$line" >> "$HF_SHARD"
+    echo "CSVROW:$line"
 }
 
 cargo clean >/dev/null 2>&1 || true
@@ -375,6 +456,9 @@ set -u
 RUNDIR="$1"
 JOBIDX="$2"
 source "$RUNDIR/config.env"
+# Worker count for THIS job: the slow-crate job runs fewer workers than the
+# regular TASKS (one per slow crate); the orchestrator passes it explicitly.
+NTASKS="${3:-$TASKS}"
 
 if ! command -v module &>/dev/null; then
     source /etc/profile.d/lmod.sh    2>/dev/null || \
@@ -428,6 +512,7 @@ worker() {
             --env HF_BUILD="$IMAGE" --env HF_MODE="$MODE" \
             --env HF_CRATE="$crate" \
             --env HF_TESTFILE="$RUNDIR/tests/$crate.txt" \
+            --env HF_SHARD="$shard" \
             --env HF_RUNS="$RUNS" --env HF_WARMUP="$WARMUP" \
             --env HF_MIRIFLAGS="$MIRIFLAGS_ALL" \
             --env HF_BSAN_OPTIONS="$BSAN_OPTIONS_ALL" \
@@ -435,12 +520,11 @@ worker() {
             --env http_proxy="${http_proxy:-}"   --env https_proxy="${https_proxy:-}" \
             --env HTTP_PROXY="${HTTP_PROXY:-}"   --env HTTPS_PROXY="${HTTPS_PROXY:-}" \
             "$SIF_ABS" bash "$RUNDIR/inner.sh" > "$log" 2>&1
-        grep -a '^CSVROW:' "$log" | cut -d: -f2- >> "$shard"
         rm -rf "$scr"
     done < "$chunk"
 }
 
-for (( tid = 0; tid < TASKS; tid++ )); do
+for (( tid = 0; tid < NTASKS; tid++ )); do
     worker "$tid" &
 done
 wait
@@ -450,11 +534,14 @@ JOB_EOF
 echo "Mode:     $MODE   Image: $IMAGE"
 echo "Dataset:  $DATASET_DIR"
 echo "Tests:    $TOTAL_TESTS across ${#SELECTED[@]} crates (from $TESTS_CSV)"
-echo "Skipped:  ignored=$skip_ignored ffi=$skip_ffi no-tests=$skip_empty missing-dir=${#MISSING[@]}"
+echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only ffi=$skip_ffi no-tests=$skip_empty missing-dir=${#MISSING[@]}"
 if (( ${#MISSING[@]} > 0 )); then
     printf '  missing from dataset: %s\n' "${MISSING[@]}" | head -20
 fi
 echo "Shape:    $JOBS job(s) x $TASKS tasks x ${CPUS_PER_TASK} cpus, ${MEM_PER_TASK}G/task (${TOTAL_MEM}G/node), $WALLTIME each"
+if (( SLOW_TASKS > 0 )); then
+    echo "Slow:     ${#SLOW_SEL[@]} slowlist crate(s) isolated in 1 extra job with $SLOW_TASKS worker(s)"
+fi
 echo "Sampling: $RUNS runs, $WARMUP warmup per test"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
@@ -464,24 +551,33 @@ echo
 
 # ── Submit one single-node sbatch job per chunked job index ──────────────────
 # Independent 1-node jobs backfill better than one multi-node job; a job index
-# with no chunks (more workers than crates) is simply not submitted.
+# with no chunks (more workers than crates) is simply not submitted. The slow
+# job is sized to its own worker count so it doesn't hold idle cores while it
+# runs the long tail.
 JOBIDS=()
-for (( j = 0; j < JOBS; j++ )); do
-    compgen -G "$RUNDIR/chunks/chunk-$j-*.txt" >/dev/null || continue
+submit_one() {
+    local j="$1" ntasks="$2" label="$3" jid
+    compgen -G "$RUNDIR/chunks/chunk-$j-*.txt" >/dev/null || return 0
     if ! jid=$(sbatch --parsable \
-        --job-name="hf-${IMAGE}-${DATASET}-$j" \
-        --nodes=1 --ntasks-per-node="$TASKS" --cpus-per-task="$CPUS_PER_TASK" \
-        --mem="${TOTAL_MEM}G" --time="$WALLTIME" \
+        --job-name="hf-${IMAGE}-${DATASET}-${label}" \
+        --nodes=1 --ntasks-per-node="$ntasks" --cpus-per-task="$CPUS_PER_TASK" \
+        --mem="$(( ntasks * MEM_PER_TASK ))G" --time="$WALLTIME" \
         --output="$RUNDIR/job-%j.out" \
-        "$RUNDIR/job.sh" "$RUNDIR" "$j"); then
-        echo "Error: sbatch failed for job $j; cancelling ${JOBIDS[*]:-nothing}." >&2
+        "$RUNDIR/job.sh" "$RUNDIR" "$j" "$ntasks"); then
+        echo "Error: sbatch failed for job $label; cancelling ${JOBIDS[*]:-nothing}." >&2
         [[ ${#JOBIDS[@]} -gt 0 ]] && scancel "${JOBIDS[@]}" 2>/dev/null || true
         exit 1
     fi
     jid="${jid%%;*}"
     JOBIDS+=("$jid")
-    echo "submitted job $j -> SLURM job $jid"
+    echo "submitted job $label ($ntasks workers) -> SLURM job $jid"
+}
+for (( j = 0; j < JOBS; j++ )); do
+    submit_one "$j" "$TASKS" "$j"
 done
+if (( SLOW_TASKS > 0 )); then
+    submit_one "$SLOW_JOB_IDX" "$SLOW_TASKS" "slow"
+fi
 
 cancel_jobs() {
     trap - INT TERM
