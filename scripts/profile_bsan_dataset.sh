@@ -207,6 +207,24 @@ DATASET_DIR="$DATASETS_ROOT/$DATASET"
 # Full option set: built-in common options plus any extras (colon-separated).
 BSAN_OPTIONS_ALL="$BSAN_COMMON${EXTRA:+:$EXTRA}"
 
+# Fail fast on malformed options: the runtime tokenizes BSAN_OPTIONS on
+# colons/spaces/commas and ABORTS EVERY instrumented process with
+# "ERROR: expected '=' in BSAN_OPTIONS" if any token lacks a name=value
+# shape -- catch that here instead of across a whole sweep. (A bare number
+# also lands here when the walltime is put after the dataset: with
+# `<image> <dataset> <walltime>` the walltime is taken as [bsan_options].)
+IFS=$' :,\t' read -ra _opt_toks <<<"$BSAN_OPTIONS_ALL"
+for tok in ${_opt_toks[@]+"${_opt_toks[@]}"}; do
+    [[ -z "$tok" || "$tok" == ?*=* ]] || {
+        echo "Error: BSAN_OPTIONS token '$tok' is not name=value." >&2
+        echo "  full value: $BSAN_OPTIONS_ALL" >&2
+        echo "  extras must be colon-separated name=value pairs," >&2
+        echo "  e.g. bsan_visits_per_gc=40000 -- and the walltime goes BEFORE" >&2
+        echo "  the dataset: $0 <image> [walltime] <dataset> [bsan_options]" >&2
+        exit 1
+    }
+done
+
 # Run stem: <image>[-<extra slug>]-<dataset> (slug logic as in the other
 # run_*_dataset scripts, so different flag sets land in different files).
 STEM="${IMAGE}-${DATASET}"
@@ -365,6 +383,9 @@ cat > "$RUNDIR/inner.sh" << 'INNER_EOF'
 set -u
 
 export BSAN_OPTIONS="$PF_BSAN_OPTIONS"
+# Log the exact value the runtime will parse, so a bad option set is
+# diagnosable from any crate's profile log.
+echo "BSAN_OPTIONS=[$BSAN_OPTIONS]"
 RUN="cargo bsan test --tests"
 PROFILE_CSV="$PF_PROFILE_DIR/$PF_CRATE.csv"
 
