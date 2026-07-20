@@ -91,7 +91,7 @@ def main():
     # Stock-Miri baseline: the unified miri.def builds the default branch as
     # plain `miri`; older sweeps recorded it as `base-miri`. Prefer the new
     # name, fall back to the old one. (Report columns stay base_miri_* either
-    # way -- plot_speedup_by_crate.py depends on them.)
+    # way, for downstream consumers of the report.)
     STOCK_MIRI_NAMES = ("miri", "base-miri")
     stock_miri = next(
         (i for i in STOCK_MIRI_NAMES if os.path.isfile(csv_path(i))), None
