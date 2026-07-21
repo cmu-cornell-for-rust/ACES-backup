@@ -10,14 +10,17 @@
 //! per crate, as laid out by profile_bsan_dataset.sh) and combines rows that
 //! share an origin line location, summing the alloc ids (roots) and nodes:
 //!
-//!     origin_file,origin_line,alloc_ids,nodes,rows,origin_source,tests
+//!     origin_file,origin_line,alloc_ids,nodes,rows,avg_size,max_size,std_size,origin_source,tests
 //!
 //! Rows are grouped by (origin_file, origin_line) -- columns are folded
 //! together. `alloc_ids`/`nodes` are the sums of the `num_alloc_ids`/`num_nodes`
 //! columns across every matching run; `rows` counts the folded input runs.
-//! `tests` is a space-separated list of the distinct `test_file:test_line`
-//! frames seen at that origin (first-seen order; empty test locations dropped).
-//! Output is sorted by nodes descending.
+//! `avg_size`/`max_size`/`std_size` describe the distribution of per-run size
+//! (a run's size is num_nodes / num_alloc_ids): the mean, maximum, and
+//! population standard deviation across the runs folded into that origin
+//! (std_size is 0 for a single-run origin). `tests` is a space-separated list of
+//! the distinct `test_file:test_line` frames seen at that origin (first-seen
+//! order; empty test locations dropped). Output is sorted by nodes descending.
 //!
 //! Paths under the profiling container's `/work` mount are rewritten so the
 //! `/work` prefix becomes the crate name (taken from each input file's stem),
@@ -41,6 +44,13 @@ struct Entry {
     alloc_ids: u64,
     nodes: u64,
     rows: u64,
+    // Per-run size distribution folded into this origin, where a run's size is
+    // num_nodes / num_alloc_ids (mean tree size per root). Tracked as running
+    // sums so avg/max/std can be emitted per row without keeping every value.
+    size_sum: f64,
+    size_sq_sum: f64,
+    size_n: u64,
+    max_size: f64,
     source: String,
     tests: Vec<String>,
     seen_tests: HashSet<String>,
@@ -52,9 +62,35 @@ impl Default for Entry {
             alloc_ids: 0,
             nodes: 0,
             rows: 0,
+            size_sum: 0.0,
+            size_sq_sum: 0.0,
+            size_n: 0,
+            max_size: 0.0,
             source: String::new(),
             tests: Vec::new(),
             seen_tests: HashSet::new(),
+        }
+    }
+}
+
+impl Entry {
+    /// Mean per-run size over the runs folded into this origin.
+    fn avg_size(&self) -> f64 {
+        if self.size_n > 0 {
+            self.size_sum / self.size_n as f64
+        } else {
+            0.0
+        }
+    }
+
+    /// Population standard deviation of the per-run sizes (0 for a single run).
+    fn std_size(&self) -> f64 {
+        if self.size_n > 0 {
+            let n = self.size_n as f64;
+            let mean = self.size_sum / n;
+            (self.size_sq_sum / n - mean * mean).max(0.0).sqrt()
+        } else {
+            0.0
         }
     }
 }
@@ -232,6 +268,15 @@ fn main() -> ExitCode {
             entry.alloc_ids += na;
             entry.nodes += nn;
             entry.rows += 1;
+            if na > 0 {
+                let size = nn as f64 / na as f64;
+                entry.size_sum += size;
+                entry.size_sq_sum += size * size;
+                entry.size_n += 1;
+                if size > entry.max_size {
+                    entry.max_size = size;
+                }
+            }
             if entry.source.is_empty() {
                 entry.source = record.get(i_os).unwrap_or("").to_string();
             }
@@ -267,6 +312,9 @@ fn main() -> ExitCode {
         "alloc_ids",
         "nodes",
         "rows",
+        "avg_size",
+        "max_size",
+        "std_size",
         "origin_source",
         "tests",
     ]) {
@@ -280,6 +328,9 @@ fn main() -> ExitCode {
             &entry.alloc_ids.to_string(),
             &entry.nodes.to_string(),
             &entry.rows.to_string(),
+            &format!("{:.6}", entry.avg_size()),
+            &format!("{:.6}", entry.max_size),
+            &format!("{:.6}", entry.std_size()),
             &entry.source,
             &entry.tests.join(" "),
         ]) {
@@ -292,11 +343,11 @@ fn main() -> ExitCode {
         return ExitCode::from(1);
     }
 
-    // Distribution of per-origin tree size (nodes per root) across all origins.
+    // Distribution of per-origin avg_size across all origins.
     let sizes: Vec<f64> = agg
         .values()
-        .filter(|e| e.alloc_ids > 0)
-        .map(|e| e.nodes as f64 / e.alloc_ids as f64)
+        .filter(|e| e.size_n > 0)
+        .map(|e| e.avg_size())
         .collect();
     if !sizes.is_empty() {
         let n = sizes.len() as f64;
