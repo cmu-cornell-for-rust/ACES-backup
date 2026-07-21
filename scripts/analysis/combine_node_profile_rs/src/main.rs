@@ -19,6 +19,13 @@
 //! frames seen at that origin (first-seen order; empty test locations dropped).
 //! Output is sorted by nodes descending.
 //!
+//! Paths under the profiling container's `/work` mount are rewritten so the
+//! `/work` prefix becomes the crate name (taken from each input file's stem),
+//! keeping per-crate paths distinct. Malformed / column-shifted input rows
+//! (non-numeric origin_line / num_nodes / num_alloc_ids) are dropped and
+//! counted rather than folded into the wrong columns. On completion the tool
+//! reports the mean/max/std of the per-origin size (nodes/alloc_ids).
+//!
 //! The leading `test` column that profile_bsan_dataset.sh adds is optional;
 //! files with or without it are both accepted (columns are looked up by name).
 
@@ -49,6 +56,17 @@ impl Default for Entry {
             tests: Vec::new(),
             seen_tests: HashSet::new(),
         }
+    }
+}
+
+/// Rewrite the profiling container's `/work` mount prefix back to the crate the
+/// paths actually belong to (the crate name is the input file's stem). Paths not
+/// under /work are returned unchanged. This also keeps each crate's own
+/// `/work/src/lib.rs` etc. distinct instead of all merging under one key.
+fn deproj(path: &str, crate_name: &str) -> String {
+    match path.strip_prefix("/work") {
+        Some(rest) => format!("{}{}", crate_name, rest),
+        None => path.to_string(),
     }
 }
 
@@ -117,6 +135,7 @@ fn main() -> ExitCode {
     let mut agg: HashMap<(String, String), Entry> = HashMap::new();
     let mut files_read: u64 = 0;
     let mut rows_read: u64 = 0;
+    let mut rows_skipped: u64 = 0;
 
     for path in &paths {
         let file = match File::open(path) {
@@ -162,6 +181,19 @@ fn main() -> ExitCode {
         let i_tf = idx("test_file");
         let i_tl = idx("test_line");
 
+        // Crate name = input filename without .csv/.csv.gz; used to rewrite the
+        // profiling container's /work mount back to the crate the paths belong to.
+        let crate_name = path
+            .file_name()
+            .and_then(|s| s.to_str())
+            .map(|n| {
+                n.strip_suffix(".csv.gz")
+                    .or_else(|| n.strip_suffix(".csv"))
+                    .unwrap_or(n)
+            })
+            .unwrap_or("")
+            .to_string();
+
         files_read += 1;
 
         let mut record = csv::StringRecord::new();
@@ -174,17 +206,28 @@ fn main() -> ExitCode {
                     break;
                 }
             }
-            if record.len() <= i_os {
-                continue;
-            }
+            // Guard against malformed / column-shifted input rows. If the
+            // numeric columns aren't numeric or origin_line isn't a line number,
+            // the row's fields no longer line up (e.g. it got split by an
+            // embedded newline in a source column upstream) -- drop it rather
+            // than folding garbage into the wrong output columns.
+            let (of, ol, na, nn) = match (
+                record.get(i_of),
+                record.get(i_ol),
+                record.get(i_na).and_then(|s| s.parse::<u64>().ok()),
+                record.get(i_nn).and_then(|s| s.parse::<u64>().ok()),
+            ) {
+                (Some(of), Some(ol), Some(na), Some(nn)) if ol.parse::<u64>().is_ok() => {
+                    (of, ol, na, nn)
+                }
+                _ => {
+                    rows_skipped += 1;
+                    continue;
+                }
+            };
             rows_read += 1;
 
-            let na: u64 = record.get(i_na).unwrap_or("").parse().unwrap_or(0);
-            let nn: u64 = record.get(i_nn).unwrap_or("").parse().unwrap_or(0);
-            let key = (
-                record.get(i_of).unwrap_or("").to_string(),
-                record.get(i_ol).unwrap_or("").to_string(),
-            );
+            let key = (deproj(of, &crate_name), ol.to_string());
             let entry = agg.entry(key).or_default();
             entry.alloc_ids += na;
             entry.nodes += nn;
@@ -195,7 +238,7 @@ fn main() -> ExitCode {
             let tf = i_tf.and_then(|i| record.get(i)).unwrap_or("");
             if !tf.is_empty() {
                 let tl = i_tl.and_then(|i| record.get(i)).unwrap_or("");
-                let loc = format!("{}:{}", tf, tl);
+                let loc = format!("{}:{}", deproj(tf, &crate_name), tl);
                 if entry.seen_tests.insert(loc.clone()) {
                     entry.tests.push(loc);
                 }
@@ -249,9 +292,30 @@ fn main() -> ExitCode {
         return ExitCode::from(1);
     }
 
+    // Distribution of per-origin tree size (nodes per root) across all origins.
+    let sizes: Vec<f64> = agg
+        .values()
+        .filter(|e| e.alloc_ids > 0)
+        .map(|e| e.nodes as f64 / e.alloc_ids as f64)
+        .collect();
+    if !sizes.is_empty() {
+        let n = sizes.len() as f64;
+        let mean = sizes.iter().sum::<f64>() / n;
+        let max = sizes.iter().cloned().fold(f64::MIN, f64::max);
+        let var = sizes.iter().map(|x| (x - mean).powi(2)).sum::<f64>() / n;
+        eprintln!(
+            "size (nodes/alloc_ids) over {} origins: mean={:.3} max={:.3} std={:.3}",
+            sizes.len(),
+            mean,
+            max,
+            var.sqrt(),
+        );
+    }
+
     eprintln!(
-        "read {} rows from {} files -> {} line locations",
+        "read {} rows ({} skipped malformed) from {} files -> {} line locations",
         rows_read,
+        rows_skipped,
         files_read,
         agg.len()
     );
