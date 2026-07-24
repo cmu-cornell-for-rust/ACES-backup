@@ -1,21 +1,23 @@
 use std::collections::HashMap;
 use std::fs;
-use std::io::Read;
+use std::io::{BufRead, BufReader};
 use std::path::Path;
 
 use flate2::read::GzDecoder;
 use regex::Regex;
 
-// ── File reading (transparently gunzips .gz files) ──────────────────────────────
+// ── File reading (streams line-by-line, transparently gunzipping .gz) ──────────
+//
+// Returns a buffered reader rather than the whole file: a large trace (or a small
+// gzip that explodes when decompressed) is processed one line at a time, so peak
+// memory is bounded by the event maps, not by the file size.
 
-fn read_content(path: &Path) -> std::io::Result<String> {
+fn open_reader(path: &Path) -> std::io::Result<Box<dyn BufRead>> {
+    let file = fs::File::open(path)?;
     if path.extension().and_then(|e| e.to_str()) == Some("gz") {
-        let mut decoder = GzDecoder::new(fs::File::open(path)?);
-        let mut s = String::new();
-        decoder.read_to_string(&mut s)?;
-        Ok(s)
+        Ok(Box::new(BufReader::new(GzDecoder::new(file))))
     } else {
-        fs::read_to_string(path)
+        Ok(Box::new(BufReader::new(file)))
     }
 }
 
@@ -165,14 +167,14 @@ fn process_file(
     let mut tree_gc_pruned: HashMap<u64, u64> = HashMap::new();
     let mut tree_exposures: HashMap<u64, u64> = HashMap::new();
 
-    let content = read_content(file_path)?;
-    let events: Vec<&str> = content
-        .lines()
-        .map(|l| l.trim())
-        .filter(|l| !l.is_empty())
-        .collect();
-
-    for e in &events {
+    // Stream the trace one line at a time; never materialize the whole file.
+    let reader = open_reader(file_path)?;
+    for line in reader.lines() {
+        let line = line?;
+        let e = line.trim();
+        if e.is_empty() {
+            continue;
+        }
         if e.starts_with("E1") {
             if let Some(caps) = pat.e1.captures(e) {
                 let alloc_id: u64 = caps[1].parse()?;
