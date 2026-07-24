@@ -54,6 +54,14 @@ fn format_comma(n: u64) -> String {
 //     E7: Pruned(alloc3, 5)           nodes removed from an alloc during a prune
 //     E8: Exposed (t483, alloc83)     tag exposed (ptr->int)
 struct Patterns {
+    // Locates the event column within a line. The trace lines are CSV: an
+    // arbitrary prefix column precedes the event, e.g.
+    //     filter_ok,E5: Access(alloc32482, 6, 0)
+    // The event token (`E<n>:`) sits at line start or right after a comma;
+    // group 1 captures it so we can slice the line from there. Anchoring to
+    // start-or-comma avoids matching the `, ` separators inside a payload like
+    // `Access(alloc32482, 6, 0)`.
+    event: Regex,
     e1: Regex,
     e2: Regex,
     e3: Regex,
@@ -67,6 +75,7 @@ struct Patterns {
 impl Patterns {
     fn new() -> Self {
         Self {
+            event: Regex::new(r"(?:^|,)\s*(E[1-8]:)").unwrap(),
             e1: Regex::new(r"E1[^(]*\(alloc(\d+), t(\d+)\)").unwrap(),
             e2: Regex::new(r"E2[^(]*\(t(\d+), (t\d+|tw), s(\d+)\)").unwrap(),
             e3: Regex::new(r"E3[^(]*\((t\d+|tw)\)").unwrap(),
@@ -171,10 +180,16 @@ fn process_file(
     let reader = open_reader(file_path)?;
     for line in reader.lines() {
         let line = line?;
-        let e = line.trim();
-        if e.is_empty() {
+        let trimmed = line.trim();
+        if trimmed.is_empty() {
             continue;
         }
+        // Slice off any CSV prefix column so `e` starts at the event token.
+        // Lines with no event (e.g. a header row) are skipped.
+        let e = match pat.event.captures(trimmed) {
+            Some(c) => &trimmed[c.get(1).unwrap().start()..],
+            None => continue,
+        };
         if e.starts_with("E1") {
             if let Some(caps) = pat.e1.captures(e) {
                 let alloc_id: u64 = caps[1].parse()?;
