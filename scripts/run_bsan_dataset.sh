@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 #
-# Usage: run_bsan_dataset.sh [--ignore FILE] <image> <walltime> <dataset> [bsan_options]
+# Usage: run_bsan_dataset.sh [--ignore FILE] [--tests FILE] [--no-ffi] <image> <walltime> <dataset> [bsan_options]
 #
 #   --ignore FILE  optional file of crate names to skip, one per line (blank
 #                  lines and #-comments ignored). Names match the crate
 #                  directory basenames under the dataset (e.g. bstr-1.12.1).
+#   --tests FILE      tests CSV (crate,tests,contains_ffi -- as produced by
+#                     list_tests.sh). Default: <outputs>/tests-<dataset>.csv
+#   --no-ffi          only run crates whose contains_ffi column is exactly
+#                     "false" (both "true" and "scan_failed" are skipped)
 #   <image>     image/SIF name under the group containers dir (e.g. miri, rust,
 #               bsan). The `rust` image runs `cargo test`; anything else runs
 #               BorrowSanitizer via `cargo bsan test`.
@@ -14,11 +18,16 @@
 #                  "opt1=val:opt2=val") to the built-in set on both the compile
 #                  and run phase. Ignored for the `rust` image.
 #
-# Launches ONE SLURM job per crate via run_job.sh, keeping at most MAX_PARALLEL
-# (default 40, override with the MAX_PARALLEL env var) running at once -- the
-# `normal` QOS allows 40 concurrent jobs. Each job runs with 16G memory, is
-# named "<crate>-<image>", writes its full stdout+stderr to "<crate>/<image>.log",
-# and cleans up its per-job scratch on the way out. A row per crate
+# The tests CSV is the source of truth for what runs: a crate runs only if it is
+# listed there with a non-empty tests column AND its dir exists under <dataset>.
+# For each crate, ONLY the tests named in its row are run (passed as `--exact`
+# filters), not the whole suite; doctests are excluded (--tests).
+#
+# Launches ONE SLURM job per selected crate via run_job.sh, keeping at most
+# MAX_PARALLEL (default 40, override with the MAX_PARALLEL env var) running at
+# once -- the `normal` QOS allows 40 concurrent jobs. Each job runs with 16G
+# memory, is named "<crate>-<image>", writes its full stdout+stderr to
+# "<crate>/<image>.log", and cleans up its per-job scratch on the way out. A row per crate
 # (build,crate,status,compile_seconds,run_seconds,tests,passed,timestamp,job_id) is
 # appended to /scratch/group/p.cis260229.000/outputs/<image>-<dataset>.csv, with
 # concurrent writes serialized by a lock. compile_seconds/run_seconds time the
@@ -54,9 +63,11 @@ MAX_PARALLEL="${MAX_PARALLEL:-40}"   # max jobs in flight at once (QOS MaxJobsPU
 BSAN_COMMON="stacktrace_max_len=32"
 
 # ── Args ──────────────────────────────────────────────────────────────────--
-# Pull the optional --ignore/-i FILE flag out from anywhere in the arg list,
-# leaving the positional args behind.
+# Pull the optional flags out from anywhere in the arg list, leaving the
+# positional args behind.
 IGNORE_FILE=""
+TESTS_CSV=""
+NO_FFI=0
 POS=()
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -65,6 +76,13 @@ while [[ $# -gt 0 ]]; do
             IGNORE_FILE="$2"; shift 2 ;;
         --ignore=*)
             IGNORE_FILE="${1#*=}"; shift ;;
+        --tests)
+            [[ $# -ge 2 ]] || { echo "Error: $1 requires a FILE argument." >&2; exit 1; }
+            TESTS_CSV="$2"; shift 2 ;;
+        --tests=*)
+            TESTS_CSV="${1#*=}"; shift ;;
+        --no-ffi)
+            NO_FFI=1; shift ;;
         *)
             POS+=("$1"); shift ;;
     esac
@@ -72,8 +90,12 @@ done
 set -- ${POS[@]+"${POS[@]}"}
 
 if [[ $# -lt 3 || $# -gt 4 ]]; then
-    echo "Usage: $0 [--ignore FILE] <image> <walltime> <dataset> [bsan_options]" >&2
+    echo "Usage: $0 [--ignore FILE] [--tests FILE] [--no-ffi] <image> <walltime> <dataset> [bsan_options]" >&2
     echo "  --ignore FILE  crate names to skip, one per line" >&2
+    echo "  --tests FILE   tests CSV (crate,tests,contains_ffi -- as produced by" >&2
+    echo "                 list_tests.sh). Default: $OUTPUTS_DIR/tests-<dataset>.csv" >&2
+    echo "  --no-ffi       only run crates whose contains_ffi column is exactly" >&2
+    echo "                 \"false\" (both \"true\" and \"scan_failed\" are skipped)" >&2
     echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. miri, rust, bsan)" >&2
     echo "  <walltime>  per-job walltime, HH or HH:MM" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT holding crate subdirectories" >&2
@@ -85,6 +107,9 @@ IMAGE_ARG="$1"
 WALLTIME="$2"
 DATASET="$3"
 EXTRA_BSAN_OPTIONS="${4:-}"   # extra BSAN_OPTIONS, appended to BSAN_COMMON
+
+# Default the tests CSV to the conventional per-dataset path when not given.
+[[ -n "$TESTS_CSV" ]] || TESTS_CSV="$OUTPUTS_DIR/tests-${DATASET}.csv"
 
 # Full option set for this run: the built-in common options plus any extras
 # (colon-separated, sanitizer-style).
@@ -123,37 +148,63 @@ fi
     || { echo "Error: image not found at $CONTAINERS_DIR/$IMAGE.sif" >&2; exit 1; }
 [[ -d "$DATASET_DIR" ]] \
     || { echo "Error: dataset dir not found: $DATASET_DIR" >&2; exit 1; }
+[[ -f "$TESTS_CSV" ]] \
+    || { echo "Error: tests CSV not found: $TESTS_CSV (--tests FILE?)" >&2; exit 1; }
 
-# ── Collect crate dirs (skipping any on the ignorelist) ──────────────────────
+# ── Select crates from the tests CSV ─────────────────────────────────────────
+# The tests CSV is the source of truth for what runs: each row is
+# crate,tests,contains_ffi (tests is ';'-joined and comma-free, per
+# list_tests.sh). A crate runs only if it is listed here with a non-empty tests
+# column and its dir exists under the dataset. CRATE_TESTS holds that crate's
+# ';'-joined test names, which the per-crate command turns into `--exact`
+# filters so ONLY the listed tests run (not the whole suite).
 CRATE_DIRS=()
-skipped=0
-for d in "$DATASET_DIR"/*/; do
-    [[ -d "$d" ]] || continue
-    if [[ -n "${IGNORE[$(basename "${d%/}")]:-}" ]]; then
-        skipped=$((skipped + 1))
-        continue
-    fi
-    CRATE_DIRS+=("${d%/}")
-done
+declare -A CRATE_TESTS=()
+declare -A SEEN_CRATE=()
+skipped=0; skip_ffi=0; skip_empty=0
+MISSING=()
+first=1
+while IFS=, read -r crate tests ffi || [[ -n "$crate" ]]; do
+    if (( first )); then first=0; [[ "$crate" == "crate" ]] && continue; fi
+    crate="${crate//$'\r'/}"; ffi="${ffi//$'\r'/}"
+    [[ -n "$crate" ]] || continue
+    [[ -n "${SEEN_CRATE[$crate]:-}" ]] && continue
+    SEEN_CRATE[$crate]=1
+    if [[ -n "${IGNORE[$crate]:-}" ]]; then skipped=$((skipped + 1)); continue; fi
+    if (( NO_FFI )) && [[ "$ffi" != "false" ]]; then skip_ffi=$((skip_ffi + 1)); continue; fi
+    if [[ -z "$tests" ]]; then skip_empty=$((skip_empty + 1)); continue; fi
+    if [[ ! -d "$DATASET_DIR/$crate" ]]; then MISSING+=("$crate"); continue; fi
+    CRATE_DIRS+=("$DATASET_DIR/$crate")
+    CRATE_TESTS[$crate]="$tests"
+done < "$TESTS_CSV"
+
 [[ ${#CRATE_DIRS[@]} -gt 0 ]] \
-    || { echo "Error: no crate subdirectories in $DATASET_DIR (after ignorelist)" >&2; exit 1; }
+    || { echo "Error: no crates to run from $TESTS_CSV (after ignore/ffi/empty filters)" >&2; exit 1; }
+if (( ${#MISSING[@]} > 0 )); then
+    echo "Warning: ${#MISSING[@]} crate(s) in the tests CSV have no dir under $DATASET_DIR (skipped):" >&2
+    printf '  %s\n' "${MISSING[@]}" >&2
+fi
 
 # ── Per-image compile + run commands ─────────────────────────────────────────
-# The `rust` image runs the normal suite; every other image runs under
-# BorrowSanitizer via `cargo bsan test`. COMPILE_CMD (--no-run) does all the
-# building (including bsan's first-use instrumented-sysroot setup); RUN_CMD then
-# only executes, so the two phases can be timed separately and cleanly.
+# The `rust` image runs plain cargo; every other image runs under
+# BorrowSanitizer via `cargo bsan test`. COMPILE_CMD (--tests --no-run) does all
+# the building (including bsan's first-use instrumented-sysroot setup);
+# RUN_PREFIX then only executes, and each crate's run appends `-- --exact <its
+# listed tests>` so ONLY the tests named in the CSV run (see the loop). Using
+# --tests limits building/running to unit + integration test binaries (doctests
+# are excluded), matching how list_tests.sh enumerated them.
 if [[ "$IMAGE" == "rust" ]]; then
-    COMPILE_CMD='cargo test --no-run'
-    RUN_CMD='cargo test'
+    COMPILE_CMD='cargo test --tests --no-run'
+    RUN_PREFIX='cargo test --tests'
 else
-    COMPILE_CMD="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --no-run"
-    RUN_CMD="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test"
+    COMPILE_CMD="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --tests --no-run"
+    RUN_PREFIX="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --tests"
 fi
 
 echo "Image:    $IMAGE"
 echo "Walltime: $WALLTIME   Mem: $MEM"
 echo "Dataset:  $DATASET_DIR"
+echo "Tests:    $TESTS_CSV${NO_FFI:+  (--no-ffi)}"
 echo "Crates:   ${#CRATE_DIRS[@]}${IGNORE_FILE:+  (skipped $skipped via $IGNORE_FILE)}"
 [[ "$IMAGE" != "rust" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
 echo "Results:  $CSV"
@@ -198,13 +249,25 @@ for CRATE_PATH in "${CRATE_DIRS[@]}"; do
     LOGFILE="$CRATE_PATH/${IMAGE}.log"
     i=$((i + 1))
 
+    # Build this crate's run command: only the tests listed for it in the CSV,
+    # passed as exact filters (`-- --exact t1 t2 ...`). Test names from
+    # list_tests.sh are Rust paths (no whitespace or single quotes), so
+    # single-quoting each is safe against the container shell.
+    TEST_FILTERS=""
+    IFS=';' read -ra _tests <<< "${CRATE_TESTS[$CRATE]}"
+    for t in ${_tests[@]+"${_tests[@]}"}; do
+        [[ -n "$t" ]] && TEST_FILTERS+=" '$t'"
+    done
+    RUN_CMD="$RUN_PREFIX -- --exact$TEST_FILTERS"
+
     # Command that runs INSIDE the container, with /work == the crate dir.
     # CARGO_HOME / CARGO_TARGET_DIR are injected by run_job.sh and live under
     # the per-job scratch dir (named cargo-<SLURM_JOB_ID>), so deleting them on
     # exit reclaims that scratch, and the job id can be recovered from the path.
     # Phases are timed separately: COMPILE_CMD (--no-run) builds everything, then
-    # RUN_CMD only executes -- so compile_seconds and run_seconds are clean. A row
-    # is always emitted. status distinguishes fetch / build / test failures.
+    # RUN_CMD runs only this crate's listed tests -- so compile_seconds and
+    # run_seconds are clean. A row is always emitted. status distinguishes
+    # fetch / build / test failures.
     # "\$" values expand inside the container; the rest expand here, now.
     read -r -d '' CMD <<EOF || true
 trap 'rm -rf "\$CARGO_HOME" "\$CARGO_TARGET_DIR" 2>/dev/null || true' EXIT
