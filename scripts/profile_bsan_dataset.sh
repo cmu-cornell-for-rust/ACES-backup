@@ -108,7 +108,7 @@ TASKS=12
 CPUS_PER_TASK=2
 MEM_PER_TASK=8       # GB per worker
 WALLTIME_ARG=2         # walltime for the regular jobs (positional overrides)
-SLOW_WALLTIME_ARG=12   # walltime for the per-crate slowlist jobs
+SLOW_WALLTIME_ARG=24   # walltime for the per-crate slowlist jobs
 
 POS=()
 while [[ $# -gt 0 ]]; do
