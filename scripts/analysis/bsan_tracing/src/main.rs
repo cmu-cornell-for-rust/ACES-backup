@@ -386,11 +386,11 @@ fn project_name(file_name: &str) -> String {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 //
-// Usage: bsan_tracing <folder> [out.csv]
+// Usage: bsan_tracing [--dist-only] <folder> [out]
 //
 // Processes every `<project>.csv.gz` file in <folder> -- each file being one
 // project's BorrowSanitizer event stream -- and writes a single combined CSV
-// (a header plus one row per project) to <out.csv>, or to stdout if no output
+// (a header plus one row per project) to <out>, or to stdout if no output
 // path is given. The project name is the file name with `.csv.gz` stripped.
 //
 // As a side output it also writes each project's tree-size distribution
@@ -398,18 +398,67 @@ fn project_name(file_name: &str) -> String {
 // row per distinct tree size with the tree count plus the total and average of
 // each per-tree event (reads, writes, visited, skipped, gc_pruned, exposures).
 //
+// With --dist-only the same logs are parsed but ONLY the per-project tree-size
+// distributions are produced: the combined CSV is neither written nor printed,
+// and <out> (if given) names the directory the distribution files go into
+// (created if missing) instead of a CSV path. This mirrors tree_tracing's
+// distribution output, letting the distribution be regenerated on its own
+// without touching the main table.
+//
 // Diagnostics and per-project progress go to stderr.
+
+const USAGE: &str = "Usage: bsan_tracing [--dist-only] <folder> [out]\n\
+    \n\
+    \x20 <folder>      directory of <project>.csv[.gz] BSAN trace files\n\
+    \x20 <out>         combined CSV path (default: stdout), or with\n\
+    \x20               --dist-only the directory for the distribution files\n\
+    \x20 --dist-only   write only output_tree_size_dist_<project>.csv; skip\n\
+    \x20               the combined per-project table\n";
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let pat = Patterns::new();
 
-    let mut args = std::env::args().skip(1);
-    let dir_arg = args.next().unwrap_or_else(|| ".".to_string());
-    let out_arg = args.next();
+    // Flags may appear anywhere; the two positionals keep their order.
+    let mut dist_only = false;
+    let mut positional: Vec<String> = Vec::new();
+    for arg in std::env::args().skip(1) {
+        match arg.as_str() {
+            "--dist-only" => dist_only = true,
+            "-h" | "--help" => {
+                print!("{}", USAGE);
+                return Ok(());
+            }
+            // Usage goes to stderr as plain text: returning it as an Err would
+            // print it Debug-escaped, with literal \n.
+            _ if arg.starts_with('-') => {
+                eprintln!("unknown flag: {}\n{}", arg, USAGE);
+                std::process::exit(2);
+            }
+            _ => positional.push(arg),
+        }
+    }
+    if positional.len() > 2 {
+        eprintln!("too many arguments\n{}", USAGE);
+        std::process::exit(2);
+    }
+    let mut positional = positional.into_iter();
+    let dir_arg = positional.next().unwrap_or_else(|| ".".to_string());
+    let out_arg = positional.next();
     let dir = Path::new(&dir_arg);
     if !dir.is_dir() {
         return Err(format!("folder not found: {}", dir.display()).into());
     }
+
+    // In --dist-only mode the optional positional is the distribution output
+    // directory; otherwise the distributions land next to the inputs.
+    let dist_dir = match (dist_only, out_arg.as_deref()) {
+        (true, Some(out)) => {
+            let p = Path::new(out);
+            fs::create_dir_all(p)?;
+            p.to_path_buf()
+        }
+        _ => dir.to_path_buf(),
+    };
 
     // Collect the trace files (`*.csv.gz` or `*.csv`), sorted for stable output.
     let mut files: Vec<_> = fs::read_dir(dir)?
@@ -422,8 +471,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         return Err(format!("no <project>.csv[.gz] files in {}", dir.display()).into());
     }
     eprintln!("Found {} project file(s) in {}", files.len(), dir.display());
+    if dist_only {
+        eprintln!(
+            "--dist-only: writing tree-size distributions to {} (no combined CSV)",
+            dist_dir.display()
+        );
+    }
 
     // Buffer the combined CSV, then write it to the output path or stdout.
+    // Under --dist-only the rows are still computed (same single pass) but the
+    // buffer is discarded.
     let mut wtr = csv::WriterBuilder::new().from_writer(vec![]);
     wtr.write_record(&build_header_main())?;
 
@@ -433,7 +490,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let fname = entry.file_name();
         let name = project_name(&fname.to_string_lossy());
         eprintln!("Analyzing '{}'", name);
-        match process_file(&pat, &name, &entry.path(), dir) {
+        match process_file(&pat, &name, &entry.path(), &dist_dir) {
             Ok(row) => {
                 wtr.write_record(&row)?;
                 ok += 1;
@@ -448,18 +505,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     wtr.flush()?;
     let csv_bytes = wtr.into_inner()?;
 
-    match out_arg {
-        Some(path) => {
-            fs::write(&path, &csv_bytes)?;
-            eprintln!("wrote {}", path);
-        }
-        None => {
-            use std::io::Write;
-            std::io::stdout().write_all(&csv_bytes)?;
+    if !dist_only {
+        match out_arg {
+            Some(path) => {
+                fs::write(&path, &csv_bytes)?;
+                eprintln!("wrote {}", path);
+            }
+            None => {
+                use std::io::Write;
+                std::io::stdout().write_all(&csv_bytes)?;
+            }
         }
     }
 
-    eprintln!("Done: {} row(s) written, {} failed.", ok, failed);
+    let unit = if dist_only { "distribution(s)" } else { "row(s)" };
+    eprintln!("Done: {} {} written, {} failed.", ok, unit, failed);
     if failed > 0 {
         std::process::exit(1);
     }
