@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Usage: run_bsan_dataset.sh [--ignore FILE] [--tests FILE] [--no-ffi] <image> <walltime> <dataset> [bsan_options]
+# Usage: run_bsan_dataset.sh [--ignore FILE] [--tests FILE] [--no-ffi] <mode> <image> <walltime> <dataset> [extra]
 #
 #   --ignore FILE  optional file of crate names to skip, one per line (blank
 #                  lines and #-comments ignored). Names match the crate
@@ -9,14 +9,19 @@
 #                     list_tests.sh). Default: <outputs>/tests-<dataset>.csv
 #   --no-ffi          only run crates whose contains_ffi column is exactly
 #                     "false" (both "true" and "scan_failed" are skipped)
+#   <mode>      miri | bsan | rust -- which tool runs the tests:
+#                 miri: MIRIFLAGS=<common+extra> cargo miri test
+#                 bsan: BSAN_OPTIONS=<common+extra> cargo bsan test
+#                 rust: plain cargo test (extra ignored)
 #   <image>     image/SIF name under the group containers dir (e.g. miri, rust,
-#               bsan). The `rust` image runs `cargo test`; anything else runs
-#               BorrowSanitizer via `cargo bsan test`.
+#               bsan). Mode and image are separate so variant images (e.g. a
+#               patched miri) can still be driven in miri mode.
 #   <walltime>  per-job walltime, HH or HH:MM (passed straight to run_job.sh).
 #   <dataset>   folder under the group datasets dir holding crate subdirectories.
-#   [bsan_options] optional extra BSAN_OPTIONS appended (colon-separated, e.g.
-#                  "opt1=val:opt2=val") to the built-in set on both the compile
-#                  and run phase. Ignored for the `rust` image.
+#   [extra]     mode-specific extras appended to the built-in set on both the
+#               compile and run phase: -Z Miri flags (miri, space-separated,
+#               e.g. "-Zmiri-strict-provenance") or BSAN_OPTIONS (bsan,
+#               colon-separated, e.g. "opt1=val:opt2=val"). Ignored for rust.
 #
 # The tests CSV is the source of truth for what runs: a crate runs only if it is
 # listed there with a non-empty tests column AND its dir exists under <dataset>.
@@ -35,7 +40,7 @@
 # executed (summed across every "running N tests" line in the run output, i.e.
 # unit + integration + doc tests); passed is how many of those passed (summed
 # across the "test result:" lines). Both are 0 when nothing ran. status is one of: success,
-# test_failed (compiled, tests/bsan failed), build_failed (compile error),
+# test_failed (compiled, tests/tool failed), build_failed (compile error),
 # fetch_failed (deps wouldn't download). The orchestrator waits for every job to
 # finish, then exits, printing a count of each status.
 #
@@ -58,8 +63,10 @@ OUTPUTS_DIR="$GROUP/outputs"
 MEM="16G"
 MAX_PARALLEL="${MAX_PARALLEL:-40}"   # max jobs in flight at once (QOS MaxJobsPU=40)
 
-# BSAN_OPTIONS used for every bsan image. stacktrace_max_len caps how many
-# frames the runtime records per stack trace.
+# Built-in per-mode option sets (same as run_miri_dataset / run_bench_dataset).
+# stacktrace_max_len caps how many frames the bsan runtime records per stack
+# trace; Tree Borrows is the borrow model on the Miri side.
+MIRI_COMMON="-Zmiri-disable-alignment-check -Zmiri-disable-data-race-detector -Zmiri-ignore-leaks -Zmiri-tree-borrows"
 BSAN_COMMON="stacktrace_max_len=32"
 
 # ── Args ──────────────────────────────────────────────────────────────────--
@@ -89,31 +96,44 @@ while [[ $# -gt 0 ]]; do
 done
 set -- ${POS[@]+"${POS[@]}"}
 
-if [[ $# -lt 3 || $# -gt 4 ]]; then
-    echo "Usage: $0 [--ignore FILE] [--tests FILE] [--no-ffi] <image> <walltime> <dataset> [bsan_options]" >&2
+if [[ $# -lt 4 || $# -gt 5 ]]; then
+    echo "Usage: $0 [--ignore FILE] [--tests FILE] [--no-ffi] <mode> <image> <walltime> <dataset> [extra]" >&2
     echo "  --ignore FILE  crate names to skip, one per line" >&2
     echo "  --tests FILE   tests CSV (crate,tests,contains_ffi -- as produced by" >&2
     echo "                 list_tests.sh). Default: $OUTPUTS_DIR/tests-<dataset>.csv" >&2
     echo "  --no-ffi       only run crates whose contains_ffi column is exactly" >&2
     echo "                 \"false\" (both \"true\" and \"scan_failed\" are skipped)" >&2
+    echo "  <mode>      miri | bsan | rust -- which tool runs the tests" >&2
     echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. miri, rust, bsan)" >&2
     echo "  <walltime>  per-job walltime, HH or HH:MM" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT holding crate subdirectories" >&2
-    echo "  [bsan_options] optional extra BSAN_OPTIONS (colon-separated) appended to the built-in set" >&2
+    echo "  [extra]     extra MIRIFLAGS (miri, space-separated) or BSAN_OPTIONS" >&2
+    echo "              (bsan, colon-separated), appended to the built-in set" >&2
     exit 1
 fi
 
-IMAGE_ARG="$1"
-WALLTIME="$2"
-DATASET="$3"
-EXTRA_BSAN_OPTIONS="${4:-}"   # extra BSAN_OPTIONS, appended to BSAN_COMMON
+MODE="$1"
+IMAGE_ARG="$2"
+WALLTIME="$3"
+DATASET="$4"
+EXTRA="${5:-}"   # mode-specific extras, appended to the built-in common set
+
+case "$MODE" in miri|bsan|rust) ;; *)
+    echo "Error: mode must be miri, bsan, or rust (got '$MODE')." >&2; exit 1 ;;
+esac
 
 # Default the tests CSV to the conventional per-dataset path when not given.
 [[ -n "$TESTS_CSV" ]] || TESTS_CSV="$OUTPUTS_DIR/tests-${DATASET}.csv"
 
-# Full option set for this run: the built-in common options plus any extras
-# (colon-separated, sanitizer-style).
-BSAN_OPTIONS_ALL="$BSAN_COMMON${EXTRA_BSAN_OPTIONS:+:$EXTRA_BSAN_OPTIONS}"
+# Full per-mode option set for this run: the built-in common options plus any
+# extras (space-separated -Z flags for Miri, colon-separated sanitizer-style
+# options for bsan).
+MIRIFLAGS_ALL=""
+BSAN_OPTIONS_ALL=""
+case "$MODE" in
+    miri) MIRIFLAGS_ALL="$MIRI_COMMON${EXTRA:+ $EXTRA}" ;;
+    bsan) BSAN_OPTIONS_ALL="$BSAN_COMMON${EXTRA:+:$EXTRA}" ;;
+esac
 
 # Load the ignorelist (if any) into a set keyed by crate-dir basename.
 declare -A IGNORE=()
@@ -127,17 +147,17 @@ if [[ -n "$IGNORE_FILE" ]]; then
     done < "$IGNORE_FILE"
 fi
 
-# Normalized image name (strip any dir + .sif) for the job name and rust check.
+# Normalized image name (strip any dir + .sif) for the job name and CSV/log names.
 IMAGE="$(basename "${IMAGE_ARG%.sif}")"
 DATASET_DIR="$DATASETS_ROOT/$DATASET"
 
-# When extra BSAN_OPTIONS are given, fold a filesystem-safe slug of them into
-# the CSV name so runs with different option sets land in separate files
-# instead of appending to the same one. Non-alphanumerics collapse to single
-# dashes. The dataset name always comes LAST.
+# When extras are given, fold a filesystem-safe slug of them into the CSV name
+# so runs with different flag/option sets land in separate files instead of
+# appending to the same one. Non-alphanumerics collapse to single dashes. The
+# dataset name always comes LAST.
 CSV="$OUTPUTS_DIR/${IMAGE}-${DATASET}.csv"
-if [[ -n "$EXTRA_BSAN_OPTIONS" ]]; then
-    OPT_SLUG="$(printf '%s' "$EXTRA_BSAN_OPTIONS" | tr -c '[:alnum:]' '-' | sed 's/-\{1,\}/-/g; s/^-//; s/-$//')"
+if [[ -n "$EXTRA" && "$MODE" != "rust" ]]; then
+    OPT_SLUG="$(printf '%s' "$EXTRA" | tr -c '[:alnum:]' '-' | sed 's/-\{1,\}/-/g; s/^-//; s/-$//')"
     CSV="$OUTPUTS_DIR/${IMAGE}-${OPT_SLUG}-${DATASET}.csv"
 fi
 
@@ -185,28 +205,34 @@ if (( ${#MISSING[@]} > 0 )); then
     printf '  %s\n' "${MISSING[@]}" >&2
 fi
 
-# ── Per-image compile + run commands ─────────────────────────────────────────
-# The `rust` image runs plain cargo; every other image runs under
-# BorrowSanitizer via `cargo bsan test`. COMPILE_CMD (--tests --no-run) does all
-# the building (including bsan's first-use instrumented-sysroot setup);
-# RUN_PREFIX then only executes, and each crate's run appends `-- --exact <its
-# listed tests>` so ONLY the tests named in the CSV run (see the loop). Using
-# --tests limits building/running to unit + integration test binaries (doctests
-# are excluded), matching how list_tests.sh enumerated them.
-if [[ "$IMAGE" == "rust" ]]; then
-    COMPILE_CMD='cargo test --tests --no-run'
-    RUN_PREFIX='cargo test --tests'
-else
-    COMPILE_CMD="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --tests --no-run"
-    RUN_PREFIX="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --tests"
-fi
+# ── Per-mode compile + run commands ──────────────────────────────────────────
+# `rust` mode runs plain cargo; `miri` runs under Miri with Tree Borrows;
+# `bsan` runs under BorrowSanitizer. COMPILE_CMD (--tests --no-run) does all
+# the building (including bsan's first-use instrumented-sysroot setup and
+# miri's sysroot build); RUN_PREFIX then only executes, and each crate's run
+# appends `-- --exact <its listed tests>` so ONLY the tests named in the CSV
+# run (see the loop). Using --tests limits building/running to unit +
+# integration test binaries (doctests are excluded), matching how
+# list_tests.sh enumerated them.
+case "$MODE" in
+    rust)
+        COMPILE_CMD='cargo test --tests --no-run'
+        RUN_PREFIX='cargo test --tests' ;;
+    miri)
+        COMPILE_CMD="MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --tests --no-run"
+        RUN_PREFIX="MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --tests" ;;
+    bsan)
+        COMPILE_CMD="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --tests --no-run"
+        RUN_PREFIX="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --tests" ;;
+esac
 
-echo "Image:    $IMAGE"
+echo "Mode:     $MODE   Image: $IMAGE"
 echo "Walltime: $WALLTIME   Mem: $MEM"
 echo "Dataset:  $DATASET_DIR"
 echo "Tests:    $TESTS_CSV${NO_FFI:+  (--no-ffi)}"
 echo "Crates:   ${#CRATE_DIRS[@]}${IGNORE_FILE:+  (skipped $skipped via $IGNORE_FILE)}"
-[[ "$IMAGE" != "rust" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
+[[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
+[[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
 echo "Results:  $CSV"
 echo
 
