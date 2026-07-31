@@ -1,18 +1,9 @@
 Bootstrap: docker
 From: ubuntu:22.04
 
-%arguments
-    # git branch/commit of cmu-cornell-for-rust/miri to build. Overridden by
-    # build.sh's --build-arg when a ref is given; empty default => build from
-    # the default branch. Known refs and the images they replace:
-    #   (empty)     -> base-miri.def
-    #   lazy+gc     -> visit-gc.def
-    #   lazy-alloc  -> lazy-alloc.def
-    #   no-harness  -> no-har.def
-    #   gc          -> no-lazy-gc.def
-    #   tracing     -> tracing.def (a *tracing* ref also enables the tracing
-    #                  feature of `./miri install`, see %post)
-    MIRI_REF=""
+# Upstream Miri at its default branch -- deliberately NOT parameterized: this
+# image is the "latest upstream" baseline. Use miri.def (which takes a MIRI_REF
+# build arg) to build a specific branch/commit of the cmu-cornell-for-rust fork.
 
 %environment
     export RUSTUP_HOME=/opt/rust/rustup
@@ -75,11 +66,7 @@ SH
 
     ./miri toolchain
 
-    # The tracing branch needs Miri built with its tracing feature enabled.
-    case "$MIRI_REF" in
-        *tracing*) ./miri install --features=tracing ;;
-        *)         ./miri install ;;
-    esac
+    ./miri install
 
     # Set the fork's toolchain as default so `cargo miri test` resolves cargo-miri/miri
     # from the right sysroot without needing `+miri`.

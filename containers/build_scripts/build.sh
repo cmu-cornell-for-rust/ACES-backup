@@ -6,6 +6,8 @@
 #        ./build-sif.sh miri <ref>        (git branch/commit of the Miri fork,
 #                                          e.g. lazy+gc, tracing; defaults to
 #                                          the default branch)
+#        ./build-sif.sh miri_latest       (upstream Miri; takes no ref -- only
+#                                          bsan.def and miri.def accept one)
 set -euo pipefail
 
 # Accept "rust" or "rust.def"
@@ -13,6 +15,16 @@ name="${1%.def}"
 # Optional git branch/commit to check out (consumed by defs that declare a
 # *_REF build arg, i.e. bsan.def / miri.def). Empty => default branch.
 ref="${2:-}"
+
+# Only bsan.def and miri.def are parameterized; every other def (rust,
+# miri_latest) always builds from its default branch, so a ref there is a
+# mistake rather than something to silently drop. Checked here, before the
+# srun re-exec, so it fails on the login node instead of after an allocation.
+if [[ -n "$ref" && "$name" != "bsan" && "$name" != "miri" ]]; then
+    echo "Error: ${name}.def takes no ref (got '$ref'); it always builds from" >&2
+    echo "       the default branch. Use 'miri <ref>' for fork builds." >&2
+    exit 1
+fi
 
 # Output image name. When a ref is given, tag the image as "<ref>-<image>" so
 # branch/commit builds don't clobber the default one. Slashes in the ref (e.g.
@@ -50,11 +62,13 @@ trap 'rm -rf "$tmp_dir"' EXIT
 # --build-arg for a non-empty ref: singularity rejects an empty value
 # ("missing value portion"), and the def supplies its own default (build from
 # the default branch) via its %arguments section when none is passed.
+# Unparameterized defs were already rejected above, so this only ever sees
+# bsan/miri with a non-empty ref.
 build_args=()
 if [[ -n "$ref" ]]; then
     case "$name" in
         bsan) build_args=(--build-arg "BSAN_REF=${ref}") ;;
-        *)    build_args=(--build-arg "MIRI_REF=${ref}") ;;
+        miri) build_args=(--build-arg "MIRI_REF=${ref}") ;;
     esac
 fi
 singularity build --fakeroot "${build_args[@]+"${build_args[@]}"}" \
