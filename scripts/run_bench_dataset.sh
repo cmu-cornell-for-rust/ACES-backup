@@ -65,14 +65,22 @@
 # across jobs*tasks workers; each worker processes its crates sequentially:
 #
 #   compile once  (cargo <tool> test --tests --no-run, timed)
+#   calibrate     one `hyperfine` run of the same command with a filter that
+#                 matches nothing, so it pays cargo's freshness check and every
+#                 test binary's startup but runs zero tests
 #   per test      one untimed pre-run to classify (success / test_failed /
 #                 no_match), then `hyperfine --runs N` on
 #                 `cargo <tool> test --tests -- --exact <test>` for passing
 #                 tests. Times include cargo's no-op freshness check and the
 #                 startup of every test binary in the crate (the filter runs in
 #                 all of them) -- constant per crate, so comparable across
-#                 modes, but not a bare test-body time. A test name that occurs
-#                 in several binaries is executed in each of them per run.
+#                 modes, but not a bare test-body time. Subtract the crate's
+#                 calibration row to recover the test body alone: that constant
+#                 is ~1-3s per invocation under bsan/miri vs ~0.05s native, so
+#                 for crates of short tests it otherwise dominates the timing
+#                 (and inflates a bsan-vs-rust ratio into a startup ratio).
+#                 A test name that occurs in several binaries is executed in
+#                 each of them per run.
 #
 # Tests come from the CSV's ';'-joined tests column (crates with an empty list
 # are skipped); the crate is matched to the dataset dir by basename. Rows are
@@ -86,7 +94,10 @@
 #
 # status: success, test_failed (pre-run exited non-zero), no_match (filter ran
 # 0 tests -- stale test list), bench_failed (hyperfine itself errored),
-# build_failed, fetch_failed. Timing fields are empty unless status=success.
+# build_failed, fetch_failed, plus one calibration row per crate (see above;
+# test=__calibration__). Timing fields are empty unless status is success or
+# calibration -- so a crate contributes 1 + (its passing tests) rows, and the
+# progress line's row count runs slightly ahead of the test count.
 #
 # The orchestrator submits the jobs, polls squeue with a progress line, then
 # merges all shards into <outputs>/<image>[-<extra-slug>]-<dataset>-hyperfine.csv
@@ -436,6 +447,27 @@ if ! $RUN --no-run; then
 fi
 cms=$(( $(date +%s%3N) - cstart ))
 compile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
+
+# --- Calibration: what an invocation costs before any test body runs --------
+# The same command with a filter matching nothing still pays cargo's freshness
+# check and starts every test binary in the crate, running zero tests -- i.e.
+# exactly the constant that every per-test timing below also carries. Measured
+# once per crate and written as its own row (test=__calibration__,
+# status=calibration) rather than subtracted here, so the CSV keeps raw
+# measurements and the analysis decides what to do with them. A crate gets no
+# calibration row if this errors; consumers then fall back to raw sums.
+CALIB_FILTER=__hyperfine_calibration_no_such_test__
+hfcsv=$(mktemp)
+if hyperfine --style basic -N --warmup "$HF_WARMUP" --runs "$HF_RUNS" \
+        --export-csv "$hfcsv" "$RUN -- --exact $CALIB_FILTER"; then
+    read -r cmean cstddev cmedian cmin cmax <<EOV
+$(tail -n1 "$hfcsv" | awk -F, '{print $(NF-6), $(NF-5), $(NF-4), $(NF-1), $NF}')
+EOV
+    echo "calibration: $HF_CRATE -> ${cmedian}s per invocation (0 tests)"
+    row "__calibration__" calibration "$compile" \
+        "$cmean" "$cstddev" "$cmedian" "$cmin" "$cmax"
+fi
+rm -f "$hfcsv"
 
 while IFS= read -r t; do
     [ -n "$t" ] || continue

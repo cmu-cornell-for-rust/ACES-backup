@@ -2,12 +2,23 @@
 """
 Usage: plot_by_crate.py <metric> <csv> [csv ...] [-o output_dir]
 
-Plot a per-crate metric straight from the raw per-image result CSVs (the
-<image>-<dataset>.csv files, each with a run_seconds column). One series per
-plotted CSV, crates ordered along the x axis by the first plotted series
-(ascending). Runtime always comes from run_seconds. Only crates that ran with
-valid data under every input CSV are drawn, so all series cover the same crate
-set.
+Plot a per-crate metric straight from the result CSVs the run_*_dataset scripts
+produce, in either format:
+
+  raw        <image>-<dataset>.csv -- one row per crate, runtime read from
+             its run_seconds column (the whole test suite in one invocation)
+  hyperfine  <image>-<dataset>-hyperfine.csv -- one row per TEST; a crate's
+             runtime is the SUM of its tests' median_s
+
+The two can't be compared against each other: every hyperfine median_s includes
+cargo's freshness check and the startup of all the crate's test binaries, so
+summing N tests counts that constant N times, well above the raw CSVs'
+whole-suite run_seconds. Plot hyperfine against hyperfine (the constant is in
+both) -- the script warns if the inputs mix formats.
+
+One series per plotted CSV, crates ordered along the x axis by the first
+plotted series (ascending). Only crates that ran with valid data under every
+input CSV are drawn, so all series cover the same crate set.
 
   metric   what to plot:
              seconds   run_seconds of each CSV
@@ -47,42 +58,144 @@ METRICS = {
         "has_baseline": False,
         "check_passed": True,
         "ylabel": "test-suite runtime, seconds  (log scale)",
-        "title": "Per-crate runtime by variant",
+        "title": "Per-crate runtime by version",
     },
     "overhead": {
         "has_baseline": True,
         "check_passed": True,
         "ylabel": "overhead vs. {baseline}  (log scale)",
-        "title": "Per-crate overhead by variant",
+        "title": "Per-crate overhead by version",
     },
     "speedup": {
         "has_baseline": True,
         "check_passed": False,
         "ylabel": "speedup vs. {baseline}  (log scale)",
-        "title": "Per-crate speedup by variant",
+        "title": "Per-crate speedup by version",
     },
 }
 
 
+def aggregate_hyperfine(reader):
+    """Collapse a per-test hyperfine CSV into the per-crate rows the rest of
+    this script expects: a crate's runtime is the SUM of its tests' median_s,
+    each net of the crate's calibration row.
+
+    The median of each test's runs is used rather than the mean because a
+    hyperfine sample of a handful of runs is easily skewed upward by one
+    scheduling hiccup on a shared node, and the sum inherits every one of
+    those excursions.
+
+    Every measurement includes a constant: cargo's freshness check plus the
+    startup of all the crate's test binaries (the --exact filter runs in each
+    of them). run_bench_dataset.sh measures that constant per crate with a
+    filter matching nothing and writes it as a test=__calibration__ row, which
+    is subtracted here so what is summed is test-body time. The constant is
+    ~1-3s per invocation under bsan/miri vs ~0.05s native, so leaving it in
+    would turn a short-test crate's overhead into a startup-cost ratio.
+
+    Subtraction is clamped at 0: a test whose body is faster than the noise on
+    the calibration measurement contributes nothing rather than a negative.
+    CSVs predating the calibration row are summed raw -- the caller reports
+    which, since the two are not comparable.
+
+    Only benchmarked tests carry a median_s -- test_failed / no_match /
+    bench_failed rows, and the single test-less row a build/fetch failure
+    emits, all leave the timing columns empty and so contribute nothing. Like
+    the raw result CSVs these files are append-only, so the same test can
+    appear more than once; the last row for each (crate, test) wins, otherwise
+    re-benchmarking a crate would inflate its sum.
+
+    A crate with no benchmarked test at all gets no row, which `keeps()` then
+    treats the same as a crate missing from the file.
+
+    The synthetic row carries `passed` = the number of tests summed, so the
+    check_passed metrics behave as they do for raw CSVs (where passed is the
+    count of passing tests), and status=success so `ran()` accepts it.
+
+    Returns (data, stats) where stats reports the calibration coverage.
+    """
+    def timing(row):
+        try:
+            v = float(row["median_s"])
+        except (KeyError, TypeError, ValueError):
+            return None
+        return v if v > 0 else None
+
+    latest = {}
+    calibration = {}
+    for row in reader:
+        crate = row.get("crate")
+        if crate is None:
+            continue
+        if row.get("status") == "calibration":
+            v = timing(row)
+            if v is not None:
+                calibration[crate] = v    # last calibration for the crate wins
+            continue
+        latest[(crate, row.get("test") or "")] = row
+
+    data = {}
+    zeroed = 0
+    for (crate, _test), row in latest.items():
+        median = timing(row)
+        if median is None:
+            continue                      # not benchmarked -- no timing to add
+        net = median - calibration.get(crate, 0.0)
+        if net <= 0:
+            zeroed += 1
+            net = 0.0
+        agg = data.setdefault(crate, {"crate": crate, "status": "success",
+                                      "run_seconds": 0.0, "passed": 0})
+        agg["run_seconds"] += net
+        agg["passed"] += 1
+
+    # A crate whose every test came out at or below its calibration has no
+    # measurable body time left; run_seconds() rejects the 0 and the crate
+    # drops out, so surface it rather than let it vanish.
+    empty = [c for c, agg in data.items() if agg["run_seconds"] <= 0]
+    for crate in empty:
+        del data[crate]
+    stats = {
+        "calibrated": len(calibration),
+        "zeroed_tests": zeroed,
+        "dropped_crates": empty,
+    }
+    return data, stats
+
+
 def load_csv(path):
-    """Return (label, {crate: row}) for a raw result CSV. Result files are
-    append-only, so the last row per crate wins. The series label is the
-    filename without its .csv extension."""
+    """Return (label, {crate: row}, kind, stats) for a result CSV, accepting
+    either format produced by the run_*_dataset scripts:
+
+      raw        one row per crate with a run_seconds column -- the last row
+                 per crate wins, since result files are append-only
+      hyperfine  one row per TEST with a median_s column (the -hyperfine.csv
+                 files) -- summed into one row per crate, see above
+
+    The series label is the filename without its .csv extension.
+    """
     if not os.path.isfile(path):
         sys.exit(f"Error: file not found: {path}")
-    data = {}
+    stats = None
     with open(path, newline="") as f:
         reader = csv.DictReader(f)
-        if reader.fieldnames is None or "run_seconds" not in reader.fieldnames:
-            sys.exit(f"Error: {path} has no run_seconds column "
-                     f"(is it a raw result CSV?)")
-        for row in reader:
-            crate = row.get("crate")
-            if crate is not None:
-                data[crate] = row
+        fields = reader.fieldnames or []
+        if "run_seconds" in fields:
+            kind = "raw"
+            data = {}
+            for row in reader:
+                crate = row.get("crate")
+                if crate is not None:
+                    data[crate] = row
+        elif "median_s" in fields and "test" in fields:
+            kind = "hyperfine"
+            data, stats = aggregate_hyperfine(reader)
+        else:
+            sys.exit(f"Error: {path} has neither a run_seconds column (raw "
+                     f"result CSV) nor median_s + test columns (hyperfine CSV).")
     base = os.path.basename(path)
     label = base[:-len(".csv")] if base.endswith(".csv") else base
-    return label, data
+    return label, data, kind, stats
 
 
 def ran(row):
@@ -153,15 +266,58 @@ def main():
         sys.exit("Error: matplotlib is required (pip install matplotlib).")
 
     loaded = [load_csv(p) for p in args.csvs]
+
+    # A hyperfine crate total is the sum of its per-test medians, and each of
+    # those includes cargo's freshness check plus the startup of every test
+    # binary in the crate (see run_bench_dataset.sh) -- so it counts that
+    # constant N times for N tests and is NOT comparable to a raw CSV's
+    # whole-suite run_seconds. Comparing hyperfine against hyperfine is fine
+    # (the constant is in both); mixing the two formats is not.
+    kinds = {kind for _, _, kind, _ in loaded}
+    if len(kinds) > 1:
+        print("Warning: mixing raw and hyperfine CSVs. A hyperfine crate total "
+              "sums per-test\n         medians, each including per-invocation "
+              "cargo + test-binary startup, so it\n         overstates the raw "
+              "CSVs' whole-suite run_seconds. Ratios across the\n         two "
+              "formats are not meaningful.", file=sys.stderr)
+    uncalibrated = []
+    for (_, data, kind, stats), path in zip(loaded, args.csvs):
+        if kind != "hyperfine":
+            continue
+        n_tests = sum(row["passed"] for row in data.values())
+        note = ""
+        if stats["calibrated"]:
+            note = (f", net of per-crate calibration "
+                    f"({stats['calibrated']} crates calibrated")
+            if stats["zeroed_tests"]:
+                note += f", {stats['zeroed_tests']} at/below it"
+            note += ")"
+        else:
+            uncalibrated.append(path)
+        print(f"Aggregated {path}: {n_tests} benchmarked tests summed into "
+              f"{len(data)} crates{note}.")
+        if stats["dropped_crates"]:
+            print(f"  {len(stats['dropped_crates'])} crate(s) had no test above "
+                  f"their calibration and were dropped: "
+                  f"{', '.join(sorted(stats['dropped_crates'])[:6])}"
+                  f"{' ...' if len(stats['dropped_crates']) > 6 else ''}")
+    if uncalibrated:
+        print("Warning: no calibration rows in "
+              f"{', '.join(os.path.basename(p) for p in uncalibrated)} -- summed "
+              "raw, so\n         these totals still carry per-invocation cargo + "
+              "test-binary startup\n         (re-run run_bench_dataset.sh to "
+              "measure it). Do not compare them against\n         calibrated "
+              "totals.", file=sys.stderr)
+
     if spec["has_baseline"]:
-        (baseline_label, baseline_data), series = loaded[0], loaded[1:]
+        (baseline_label, baseline_data, _, _), series = loaded[0], loaded[1:]
     else:
         baseline_label, baseline_data, series = None, None, loaded
 
     # Number apart any variants sharing a `build` name so the legend (and the
     # averages below) can tell them apart.
-    series = [(label, data) for label, (_, data)
-              in zip(disambiguate([lbl for lbl, _ in series]), series)]
+    series = [(label, data) for label, (_, data, _k, _s)
+              in zip(disambiguate([lbl for lbl, _, _, _ in series]), series)]
 
     check_passed = spec["check_passed"]
 
@@ -225,9 +381,9 @@ def main():
     ax.set_xticks(list(xs_all))
     ax.set_xticklabels(crates, rotation=90, fontsize=5)
     ax.set_xlim(-1, len(crates))
-    ax.set_xlabel(f"crate  (ordered by {series[0][0]} {metric}, ascending)")
+    ax.set_xlabel(f"crate  (ordered by {series[0][0]}, ascending)")
     ax.set_ylabel(spec["ylabel"].format(baseline=baseline_label))
-    ax.set_title(f"{spec['title']}  ({len(crates)} crates)")
+    ax.set_title(f"{spec['title']}  ({len(crates)} crate testbenches)")
     ax.grid(True, axis="y", ls=":", alpha=0.4)
     ax.legend(loc="upper left", fontsize=8, ncol=2, framealpha=0.9)
     fig.tight_layout()

@@ -43,7 +43,10 @@ for path in args.csvs:
     build = None
     with open(path, newline="") as f:
         for r in csv.DictReader(f):
-            if not r["test"]:
+            # Skip the non-test rows: crate-level failures (empty test) and the
+            # per-crate calibration measurement, which is an invocation-cost
+            # baseline rather than a test and would merge as a bogus one.
+            if not r["test"] or r.get("status") == "calibration":
                 continue
             rows[(r["crate"], r["test"])] = r
             build = r["build"] or build
