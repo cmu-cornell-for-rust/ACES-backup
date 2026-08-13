@@ -116,7 +116,7 @@ def aggregate_hyperfine(reader):
     """
     def timing(row):
         try:
-            v = float(row["median_s"])
+            v = float(row["min_s"])
         except (KeyError, TypeError, ValueError):
             return None
         return v if v > 0 else None
