@@ -20,6 +20,13 @@ One series per plotted CSV, crates ordered along the x axis by the first
 plotted series (ascending). Only crates that ran with valid data under every
 input CSV are drawn, so all series cover the same crate set.
 
+A crate is also required to have the SAME passed test count in every input
+(the baseline included, since it sets the ratio): a crate where one image ran
+300 tests and another ran 9 is not measuring the same workload, so its runtime
+difference is mostly a difference in which tests ran. Those crates are listed
+on stdout with their per-input counts rather than silently dropped. Pass
+--allow-passed-mismatch to plot them anyway (the pre-existing behaviour).
+
   metric   what to plot:
              seconds   run_seconds of each CSV
              overhead  variant run_seconds / baseline run_seconds
@@ -34,13 +41,24 @@ input CSV are drawn, so all series cover the same crate set.
 
   -o/--output-dir  where the PNG is written (default <OUTPUTS_DIR>/analysis).
 
-The PNG is written to <output_dir>/<metric>_by_crate.png. The outputs dir
+  --no-ffi         plot only crates whose contains_ffi is false in the
+                   list_tests.sh CSV (crate,tests,contains_ffi), i.e. crates
+                   cargo-scan found no FFI call or declaration in. Crates with
+                   FFI, and crates whose status is unknown -- scan_failed, or no
+                   row in that CSV -- are excluded and listed on stdout. The CSV
+                   is found by matching its tests-<dataset>.csv name against the
+                   input filenames (<OUTPUTS_DIR> first, then <repo>/scripts);
+                   --tests-csv FILE points at one directly. The output file
+                   gains a _no_ffi suffix so it never overwrites the full plot.
+
+The PNG is written to <output_dir>/<metric>_by_crate[_no_ffi].png. The outputs dir
 defaults to <repo root>/outputs, found relative to this script (so it works
 both locally and on the cluster); override with $OUTPUTS_DIR.
 """
 
 import argparse
 import csv
+import glob
 import math
 import os
 import sys
@@ -198,6 +216,53 @@ def load_csv(path):
     return label, data, kind, stats
 
 
+def find_tests_csv(paths):
+    """Locate the list_tests.sh CSV (crate,tests,contains_ffi) that goes with
+    the result CSVs being plotted, for --no-ffi.
+
+    list_tests.sh writes tests-<dataset>.csv, so any candidate whose <dataset>
+    appears in an input filename (miri-top_500_fast-hyperfine.csv contains
+    top_500_fast) is the right one. The outputs dir is searched first, then the
+    repo's scripts dir, where a copy is sometimes kept; the longest matching
+    dataset wins, so top_500_fast is not shadowed by a shorter name that is a
+    substring of it. Returns None when nothing matches -- the caller reports it
+    with the dirs searched, since --tests-csv is the way out.
+    """
+    bases = [os.path.basename(p) for p in paths]
+    for d in (os.path.join(OUTPUTS_DIR), os.path.join(REPO_ROOT, "scripts")):
+        matches = []
+        for cand in sorted(glob.glob(os.path.join(d, "tests-*.csv"))):
+            dataset = os.path.basename(cand)[len("tests-"):-len(".csv")]
+            if dataset and any(dataset in b for b in bases):
+                matches.append((len(dataset), cand))
+        if matches:
+            return max(matches)[1]
+    return None
+
+
+def load_ffi(path):
+    """Return {crate: contains_ffi} from a list_tests.sh CSV, where the value is
+    one of true/false/scan_failed (see list_tests.sh). The file is append-only
+    and consumers keep the FIRST row per crate, so that is what is kept here."""
+    if not os.path.isfile(path):
+        sys.exit(f"Error: --no-ffi needs a list_tests.sh CSV; not found: {path}")
+    ffi = {}
+    with open(path, newline="") as f:
+        reader = csv.DictReader(f)
+        if "contains_ffi" not in (reader.fieldnames or []):
+            sys.exit(f"Error: {path} has no contains_ffi column -- --no-ffi "
+                     f"needs a list_tests.sh CSV (crate,tests,contains_ffi).")
+        for row in reader:
+            crate = row.get("crate")
+            if crate and crate not in ffi:
+                ffi[crate] = row.get("contains_ffi")
+    if not ffi:
+        sys.exit(f"Error: {path} has no crate rows, so --no-ffi would exclude "
+                 f"every crate. Point --tests-csv at a populated list_tests.sh "
+                 f"CSV (re-run list_tests.sh if this dataset was never listed).")
+    return ffi
+
+
 def ran(row):
     status = row.get("status")
     return status is None or status in RAN_STATUSES
@@ -220,6 +285,17 @@ def passed_ok(row):
         return int(row["passed"]) > 0
     except (KeyError, ValueError):
         return False
+
+
+def passed_count(row):
+    """The row's passed test count, or None when it has no usable one. For a
+    raw CSV that is the crate's passing-test count; for a hyperfine CSV it is
+    the number of tests that carried a timing and were summed (see
+    aggregate_hyperfine)."""
+    try:
+        return int(row["passed"])
+    except (KeyError, TypeError, ValueError):
+        return None
 
 
 def disambiguate(labels):
@@ -249,6 +325,30 @@ def main():
     parser.add_argument("csvs", nargs="+")
     parser.add_argument("-o", "--output-dir",
                         default=os.path.join(OUTPUTS_DIR, "analysis"))
+    parser.add_argument("--dpi", type=int, default=300, metavar="N",
+                        help="output resolution (default 300, print quality). This figure's "
+                             "width scales with the crate count, so a wide dataset at high "
+                             "dpi makes a large PNG; matplotlib also caps any dimension at "
+                             "65536 px. Use --format pdf for a resolution-independent file.")
+    parser.add_argument("--format", default="png", metavar="EXT",
+                        help="output file format: png (default), pdf or svg. The vector "
+                             "formats ignore --dpi and stay sharp at any zoom.")
+    parser.add_argument("--no-ffi", action="store_true",
+                        help="plot only crates whose contains_ffi is false in the "
+                             "list_tests.sh CSV (crate,tests,contains_ffi). Crates with "
+                             "FFI, and crates whose FFI status is unknown (scan_failed, or "
+                             "absent from that CSV), are excluded and listed. The output "
+                             "file gains a _no_ffi suffix so it does not overwrite the "
+                             "unfiltered plot.")
+    parser.add_argument("--tests-csv", metavar="FILE",
+                        help="the list_tests.sh CSV --no-ffi should read. Default: the "
+                             "tests-<dataset>.csv whose dataset name appears in the input "
+                             "filenames, looked up in <OUTPUTS_DIR> then <repo>/scripts.")
+    parser.add_argument("--allow-passed-mismatch", action="store_true",
+                        help="plot crates whose passed test count differs between inputs. "
+                             "By default they are excluded and listed, since a crate that "
+                             "ran a different number of tests under each image is not the "
+                             "same workload and its runtime difference reflects that.")
     args = parser.parse_args()
     metric = args.metric
     spec = METRICS[metric]
@@ -256,6 +356,22 @@ def main():
     if spec["has_baseline"] and len(args.csvs) < 2:
         sys.exit(f"Error: {metric} needs the baseline CSV first, then at least "
                  f"one variant CSV (got {len(args.csvs)}).")
+
+    # Resolved before any plotting so a missing/unusable tests CSV fails fast.
+    ffi = None
+    if args.no_ffi:
+        tests_csv = args.tests_csv or find_tests_csv(args.csvs)
+        if tests_csv is None:
+            sys.exit("Error: --no-ffi could not find a list_tests.sh CSV matching "
+                     f"the inputs.\nLooked for tests-<dataset>.csv in {OUTPUTS_DIR} "
+                     f"and {os.path.join(REPO_ROOT, 'scripts')}, where <dataset> "
+                     "appears in an input\nfilename. Pass --tests-csv FILE.")
+        ffi = load_ffi(tests_csv)
+        print(f"FFI status from {tests_csv}: {len(ffi)} crates listed, "
+              f"{sum(1 for v in ffi.values() if v == 'true')} with FFI.")
+    elif args.tests_csv:
+        print("Warning: --tests-csv is only used with --no-ffi; ignoring it.",
+              file=sys.stderr)
 
     # Headless-safe backend; import after so --help works without matplotlib.
     try:
@@ -334,7 +450,7 @@ def main():
             return v / b if metric == "overhead" else b / v
         return v
 
-    def keeps(crate):
+    def has_data(crate):
         for _, data in series:
             row = data.get(crate)
             if row is None or value(crate, row) is None:
@@ -343,19 +459,78 @@ def main():
                 return False
         return True
 
+    # Inputs the passed-count comparison spans: every plotted series plus the
+    # baseline when there is one, since the baseline's runtime is half of every
+    # ratio and a crate that ran a different number of tests there is just as
+    # incomparable.
+    counted = ([(baseline_label, baseline_data)] if baseline_data is not None
+               else []) + series
+
+    def passed_counts(crate):
+        return [(label, passed_count(data.get(crate) or {}))
+                for label, data in counted]
+
+    def passed_agrees(crate):
+        """True when every input reports the same passed test count for the
+        crate. A missing count counts as disagreement -- it cannot be shown to
+        match, and every CSV format here carries a `passed` column."""
+        counts = [n for _, n in passed_counts(crate)]
+        return None not in counts and len(set(counts)) == 1
+
     # Every crate seen in any input, and the subset with usable data across all
-    # of them, ordered by the first plotted series ascending.
+    # of them, ordered by the first plotted series ascending. Crates that have
+    # the data but disagree on the passed count are held back separately so they
+    # can be reported with their counts.
     all_crates = set(baseline_data or {})
     for _, data in series:
         all_crates |= set(data)
+    usable = [c for c in all_crates if has_data(c)]
+    skipped = len(all_crates) - len(usable)
+
+    # --no-ffi narrows the crate set before the passed-count check, so the
+    # mismatch table below doesn't list crates that are out of scope anyway.
+    # An unknown status (scan_failed, or no row at all in the tests CSV) is not
+    # "no FFI" and is excluded too, but reported apart from the confirmed ones.
+    if ffi is not None:
+        with_ffi = sorted(c for c in usable if ffi.get(c) == "true")
+        unknown = sorted(c for c in usable if ffi.get(c) not in ("true", "false"))
+        usable = [c for c in usable if ffi.get(c) == "false"]
+        for names, what in ((with_ffi, "contain FFI"),
+                            (unknown, "have an unknown FFI status "
+                                      "(scan_failed, or no row in the tests CSV)")):
+            if names:
+                print(f"\n--no-ffi excluded {len(names)} crate(s) that {what}:")
+                print("  " + ", ".join(names))
+        if with_ffi or unknown:
+            print()
+
+    if args.allow_passed_mismatch:
+        kept, mismatched = usable, []
+    else:
+        kept = [c for c in usable if passed_agrees(c)]
+        mismatched = sorted(c for c in usable if not passed_agrees(c))
     first_data = series[0][1]
-    crates = sorted((c for c in all_crates if keeps(c)),
-                    key=lambda c: value(c, first_data[c]))
-    skipped = len(all_crates) - len(crates)
+    crates = sorted(kept, key=lambda c: value(c, first_data[c]))
+
+    if mismatched:
+        labels = [label for label, _ in counted]
+        cw = max(max(len(c) for c in mismatched), len("crate")) + 2
+        widths = [max(len(lab), 8) + 2 for lab in labels]
+        print(f"\n{len(mismatched)} crate(s) excluded: the inputs disagree on how "
+              f"many tests passed, so their\nruntimes are not the same workload "
+              f"(plot them anyway with --allow-passed-mismatch):")
+        print("crate".ljust(cw)
+              + "".join(f"{lab:>{w}}" for lab, w in zip(labels, widths)))
+        for crate in mismatched:
+            cells = "".join(f"{'?' if n is None else n:>{w}}"
+                            for (_, n), w in zip(passed_counts(crate), widths))
+            print(crate.ljust(cw) + cells)
+        print()
+
     if not crates:
         sys.exit(f"Error: no crate has a usable {metric} value"
-                 f"{' and a passing test' if check_passed else ''} "
-                 f"across every input CSV.")
+                 f"{' and a passing test' if check_passed else ''}, with a "
+                 f"matching passed test count, across every input CSV.")
 
     fig, ax = plt.subplots(figsize=(max(12, 0.11 * len(crates)), 7))
     cmap = plt.get_cmap("tab10" if len(series) <= 10 else "tab20")
@@ -383,20 +558,24 @@ def main():
     ax.set_xlim(-1, len(crates))
     ax.set_xlabel(f"crate  (ordered by {series[0][0]}, ascending)")
     ax.set_ylabel(spec["ylabel"].format(baseline=baseline_label))
-    ax.set_title(f"{spec['title']}  ({len(crates)} crate testbenches)")
+    ax.set_title(f"{spec['title']}  ({len(crates)} crate testbenches"
+                 f"{', no FFI' if args.no_ffi else ''})")
     ax.grid(True, axis="y", ls=":", alpha=0.4)
     ax.legend(loc="upper left", fontsize=8, ncol=2, framealpha=0.9)
     fig.tight_layout()
 
     os.makedirs(args.output_dir, exist_ok=True)
-    out = os.path.join(args.output_dir, f"{metric}_by_crate.png")
-    fig.savefig(out, dpi=150)
+    # The _no_ffi suffix keeps a filtered plot from overwriting the full one.
+    out = os.path.join(args.output_dir, f"{metric}_by_crate"
+                       f"{'_no_ffi' if args.no_ffi else ''}.{args.format}")
+    fig.savefig(out, dpi=args.dpi)
     plt.close(fig)
 
     print(f"Plotted {len(series)} series over {len(crates)} crates "
           f"({skipped} crates lacked a usable {metric} value"
           f"{' or a passing test' if check_passed else ''} "
-          f"under some input CSV and were skipped).")
+          f"under some input CSV and were skipped"
+          f"{f'; {len(mismatched)} more disagreed on the passed test count' if mismatched else ''}).")
     print(f"Wrote {out}")
 
     # Per-crate averages of each series over the shared crate set. Every kept

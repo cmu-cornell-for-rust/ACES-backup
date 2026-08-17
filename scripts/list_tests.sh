@@ -28,11 +28,23 @@
 # For every crate, runs (in the stock `miri` image)
 #     cargo miri test --tests -- --list --format=json -Zunstable-options
 # which builds the test binaries and emits one JSON line per discovered test,
-# then collects the names of tests marked "ignore": false, i.e. the tests that
-# actually run. --tests covers unit + integration test binaries but NOT doc
-# tests -- deliberately: doc-test names embed the item's generics (e.g.
-# "arrayvec::ArrayVec<T,CAP> (line 748)"), whose commas would corrupt the CSV,
-# while binary test names are Rust paths and can never contain a comma. Also runs `cargo scan` (cargo-scan, the PLSysSec crate auditor)
+# then collects the names of "type": "test" entries marked "ignore": false, i.e.
+# the tests that actually run. --tests covers unit + integration test binaries
+# but NOT doc tests -- deliberately: doc-test names embed the item's generics
+# (e.g. "arrayvec::ArrayVec<T,CAP> (line 748)"), whose commas would corrupt the
+# CSV, while binary test names are Rust paths and can never contain a comma.
+#
+# Names are deduplicated (sort -u, so the column is sorted rather than in
+# listing order): a test name appearing in two test binaries is listed once,
+# matching the ignored_tests column of list_ignored_tests.sh, whose rows are the
+# intended complement of this one's. The "type" filter matters for the same
+# reason -- benchmark entries carry an "ignore" field but are not tests, and the
+# ignored side's cfg(not(miri)) bucket is a diff over "type": "test" names only.
+# Caveat inherited from that dedup: if a name exists in two binaries and one copy
+# is ignored under Miri while the other runs, it appears in BOTH CSVs, since
+# listings carry no binary qualifier and the two are indistinguishable here.
+#
+# Also runs `cargo scan` (cargo-scan, the PLSysSec crate auditor)
 # on the crate and checks its effect list for FFI effects ("[FFI Call]" /
 # "[FFI Declaration]" rows). Appends one row per crate
 # (crate,tests,contains_ffi) to
@@ -245,14 +257,18 @@ for CRATE_PATH in "${CRATE_DIRS[@]}"; do
     # CARGO_HOME / CARGO_TARGET_DIR are injected by run_job.sh and live under
     # the per-job scratch dir, so deleting them on exit reclaims that scratch.
     # --list emits one JSON line per discovered test on stdout (build noise goes
-    # to stderr, i.e. the log); tests with "ignore": false are collected and
-    # joined with ';'. cargo scan's CSV effect list is checked for "[FFI"
+    # to stderr, i.e. the log); "type": "test" entries with "ignore": false are
+    # collected, deduplicated and joined with ';'. The grep/sed/sort pipeline is
+    # the same one list_ignored_tests.sh uses, so the two CSVs describe the same
+    # universe of names -- see the note in the header comment.
+    # cargo scan's CSV effect list is checked for "[FFI"
     # (matches both "[FFI Call]" and "[FFI Declaration]"); a scan failure is
     # recorded as scan_failed rather than dropping the row, since the test list
     # is still valid. A CSVROW line is only emitted when listing succeeds.
     # "\$" values expand inside the container; the rest expand here, now.
     read -r -d '' CMD <<EOF || true
 trap 'rm -rf "\$CARGO_HOME" "\$CARGO_TARGET_DIR" 2>/dev/null || true' EXIT
+export LC_ALL=C
 cargo clean || true
 if ! cargo fetch; then
     echo "result: ${CRATE} -> fetch_failed"
@@ -264,9 +280,12 @@ if ! cargo miri test --tests -- --list --format=json -Zunstable-options > "\$lis
     rm -f "\$listlog"
     exit 1
 fi
-tests="\$(grep -a '"ignore": false' "\$listlog" | sed -E 's/.*"name": *"([^"]*)".*/\1/' | paste -sd';' -)"
-n="\$(grep -ac '"ignore": false' "\$listlog" || true)"
-rm -f "\$listlog"
+runnable="\$(mktemp)"
+namesof() { sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^\$/d' | sort -u; }
+grep -a '"type": *"test"' "\$listlog" | grep -a '"ignore": *false' | namesof > "\$runnable"
+n="\$(wc -l < "\$runnable" | tr -d ' ')"
+tests="\$(paste -sd';' - < "\$runnable")"
+rm -f "\$listlog" "\$runnable"
 ffi=scan_failed
 scanlog="\$(mktemp)"
 if cargo scan . > "\$scanlog"; then
