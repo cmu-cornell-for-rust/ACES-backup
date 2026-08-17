@@ -1,8 +1,13 @@
 #!/bin/bash
 #
-# Usage: ./run_job.sh [-J NAME] <image.sif> <HH[:MM]> [MEM] -- <command> [args...]
+# Usage: ./run_job.sh [-J NAME] [-c N] <image.sif> <HH[:MM]> [MEM] -- <command> [args...]
 #
 #   -J, --name   optional SLURM job name
+#   -c, --cpus   cores for the task (--cpus-per-task). Default: 4. cargo sizes
+#                its own build parallelism from the affinity mask SLURM sets, so
+#                this is also the effective `cargo build -j`. Raising it makes a
+#                job build faster but request more of the node, so a sweep at
+#                MAX_PARALLEL=40 asks for 40*N cores and may queue longer.
 #   <image.sif>  path to the Rust SIF image (basename resolved under the shared
 #                containers dir; `rust`, `rust.sif`, `/x/rust.sif` all work)
 #   <HH[:MM]>    walltime as whole hours (4 -> 04:00:00) or HH:MM (4:30 -> 04:30:00)
@@ -34,8 +39,9 @@
 set -euo pipefail
 
 JOBNAME=""
+CPUS=4          # --cpus-per-task; also what cargo picks up as its -j
 
-# Parse optional leading flags (only -J/--name for now).
+# Parse optional leading flags (-J/--name, -c/--cpus).
 while [[ $# -gt 0 ]]; do
     case "$1" in
         -J|--name)
@@ -45,6 +51,18 @@ while [[ $# -gt 0 ]]; do
             fi
             JOBNAME="$2"
             shift 2
+            ;;
+        -c|--cpus)
+            if [[ $# -lt 2 ]]; then
+                echo "Error: $1 requires a value." >&2
+                exit 1
+            fi
+            CPUS="$2"
+            shift 2
+            ;;
+        --cpus=*)
+            CPUS="${1#*=}"
+            shift
             ;;
         -*)
             echo "Error: unknown option '$1'." >&2
@@ -74,14 +92,15 @@ done
 
 if [[ "$SEP_SEEN" -eq 0 || ${#CMD[@]} -eq 0 ]]; then
     echo "Error: no command given. Put the command after '--'." >&2
-    echo "Usage: $0 [-J NAME] <image.sif> <HH[:MM]> [MEM] -- <command> [args...]" >&2
+    echo "Usage: $0 [-J NAME] [-c N] <image.sif> <HH[:MM]> [MEM] -- <command> [args...]" >&2
     exit 1
 fi
 
 set -- "${POSARGS[@]}"
 if [[ $# -lt 2 || $# -gt 3 ]]; then
-    echo "Usage: $0 [-J NAME] <image.sif> <HH[:MM]> [MEM] -- <command> [args...]" >&2
+    echo "Usage: $0 [-J NAME] [-c N] <image.sif> <HH[:MM]> [MEM] -- <command> [args...]" >&2
     echo "  -J, --name: optional SLURM job name" >&2
+    echo "  -c, --cpus: cores for the task (--cpus-per-task). Default: 4" >&2
     echo "  HH[:MM]: walltime as hours (4) or HH:MM (4:30)" >&2
     echo "  MEM: e.g. 32G, 64G, 512M (bare number = GB). Default: 32G" >&2
     exit 1
@@ -90,6 +109,11 @@ fi
 SIF="$1"
 TIME="$2"
 MEM="${3:-32G}"
+
+if ! [[ "$CPUS" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Error: --cpus must be a positive integer (got '$CPUS')." >&2
+    exit 1
+fi
 
 # Walltime: accept HH (1-2 digits) or HH:MM.
 if [[ "$TIME" =~ ^([0-9]{1,2})$ ]]; then
@@ -210,12 +234,13 @@ NODE_EOF
 
 # Assemble srun arguments, adding --job-name only if one was given.
 # No --pty now: this is a one-shot batch-style command, not an interactive shell.
-SRUN_ARGS=(--nodes=1 --ntasks-per-node=1 --mem="${MEM}" --time="${WALLTIME}")
+SRUN_ARGS=(--nodes=1 --ntasks-per-node=1 --cpus-per-task="${CPUS}"
+           --mem="${MEM}" --time="${WALLTIME}")
 if [[ -n "$JOBNAME" ]]; then
     SRUN_ARGS=(--job-name="$JOBNAME" "${SRUN_ARGS[@]}")
 fi
 
-echo "Requesting node: 1 task, ${MEM}, ${WALLTIME}${JOBNAME:+, job=${JOBNAME}}, image=${SIF_ABS}"
+echo "Requesting node: 1 task, ${CPUS} cpu(s), ${MEM}, ${WALLTIME}${JOBNAME:+, job=${JOBNAME}}, image=${SIF_ABS}"
 
 # Land on the node and run the node script, passing the command as ONE arg.
 # "${CMD[*]}" joins the post-`--` words with a single space into a command
