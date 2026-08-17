@@ -275,7 +275,11 @@ if ! cargo fetch; then
     exit 1
 fi
 listlog="\$(mktemp)"
-if ! cargo miri test --tests -- --list --format=json -Zunstable-options > "\$listlog"; then
+# --cfg=miri matches what the run scripts now compile every image with, so this
+# listing is the test set they will actually execute. Redundant here (cargo miri
+# sets --cfg=miri for target crates itself) but kept explicit: if this listing
+# and the runs ever disagree on the cfg, every --exact filter goes stale.
+if ! RUSTFLAGS="--cfg=miri" cargo miri test --tests -- --list --format=json -Zunstable-options > "\$listlog"; then
     echo "result: ${CRATE} -> list_failed"
     rm -f "\$listlog"
     exit 1

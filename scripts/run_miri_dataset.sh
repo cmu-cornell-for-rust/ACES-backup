@@ -14,6 +14,13 @@
 #                 Added to MIRIFLAGS on both the compile and run phase. Ignored
 #                 for the `rust` image.
 #
+# Every image compiles with RUSTFLAGS="--cfg=miri" -- including `rust`. It makes
+# the native build select the same cfg(miri) code and, crucially, the same TEST
+# SET as Miri: #[cfg(not(miri))] tests are compiled out and
+# #[cfg_attr(miri, ignore)] tests are ignored in both, so the images are
+# comparable instead of each running whatever its own cfg selected. Rows written
+# before this change came from differently-configured builds.
+#
 # Launches ONE SLURM job per crate via run_job.sh, keeping at most MAX_PARALLEL
 # (default 40, override with the MAX_PARALLEL env var) running at once -- the
 # `normal` QOS allows 40 concurrent jobs. Each job runs with 16G memory, is
@@ -51,6 +58,17 @@ MAX_PARALLEL="${MAX_PARALLEL:-40}"   # max jobs in flight at once (QOS MaxJobsPU
 
 # Miri flags used for every Miri image (Tree Borrows is the borrow model).
 MIRI_COMMON="-Zmiri-disable-alignment-check -Zmiri-disable-data-race-detector -Zmiri-ignore-leaks -Zmiri-tree-borrows"
+
+# rustc flags for every crate compile, in EVERY image -- including `rust`.
+# --cfg=miri makes the native build select the same cfg(miri) code, and the same
+# test set, as the Miri build: #[cfg(not(miri))] tests compile out and
+# #[cfg_attr(miri, ignore)] tests are ignored everywhere, so all images run the
+# same testbench instead of each running whatever its own cfg selected.
+# cargo has no --cfg flag of its own, so this goes through RUSTFLAGS, which cargo
+# appends to every rustc invocation; cargo-miri and cargo-bsan are rustc wrappers
+# that forward it. Under `cargo miri` it is redundant (cargo-miri sets
+# --cfg=miri for target crates itself) but harmless -- cfg values are a set.
+CFG_RUSTFLAGS="--cfg=miri"
 
 # ── Args ──────────────────────────────────────────────────────────────────--
 # Pull the optional --ignore/-i FILE flag out from anywhere in the arg list,
@@ -141,20 +159,21 @@ done
 # Tree Borrows. COMPILE_CMD (--no-run) does all the building; RUN_CMD then only
 # executes, so the two phases can be timed separately and cleanly.
 if [[ "$IMAGE" == "rust" ]]; then
-    COMPILE_CMD='cargo test --no-run'
-    RUN_CMD='cargo test'
+    COMPILE_CMD="RUSTFLAGS=\"$CFG_RUSTFLAGS\" cargo test --no-run"
+    RUN_CMD="RUSTFLAGS=\"$CFG_RUSTFLAGS\" cargo test"
 elif [[ "$IMAGE" == *"tracing"* ]]; then
-    COMPILE_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --no-run"
-    RUN_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test 2>/dev/null"
+    COMPILE_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace RUSTFLAGS=\"$CFG_RUSTFLAGS\" MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --no-run"
+    RUN_CMD="MIRI_TRACING=1 RUSTC_LOG=miri=trace RUSTFLAGS=\"$CFG_RUSTFLAGS\" MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test 2>/dev/null"
 else
-    COMPILE_CMD="MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --no-run"
-    RUN_CMD="MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test"
+    COMPILE_CMD="RUSTFLAGS=\"$CFG_RUSTFLAGS\" MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --no-run"
+    RUN_CMD="RUSTFLAGS=\"$CFG_RUSTFLAGS\" MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test"
 fi
 
 echo "Image:    $IMAGE"
 echo "Walltime: $WALLTIME   Mem: $MEM"
 echo "Dataset:  $DATASET_DIR"
 echo "Crates:   ${#CRATE_DIRS[@]}${IGNORE_FILE:+  (skipped $skipped via $IGNORE_FILE)}"
+echo "RUSTFLAGS: $CFG_RUSTFLAGS"
 [[ "$IMAGE" != "rust" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 echo "Results:  $CSV"
 echo

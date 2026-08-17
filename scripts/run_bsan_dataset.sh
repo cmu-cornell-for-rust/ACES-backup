@@ -23,6 +23,13 @@
 #               e.g. "-Zmiri-strict-provenance") or BSAN_OPTIONS (bsan,
 #               colon-separated, e.g. "opt1=val:opt2=val"). Ignored for rust.
 #
+# Every mode compiles with RUSTFLAGS="--cfg=miri" -- including rust and bsan. It
+# makes all three select the same cfg(miri) code and, crucially, the same TEST
+# SET as Miri: #[cfg(not(miri))] tests are compiled out and
+# #[cfg_attr(miri, ignore)] tests are ignored everywhere, so the modes are
+# comparable instead of each running whatever its own cfg selected. Rows written
+# before this change came from differently-configured builds.
+#
 # The tests CSV is the source of truth for what runs: a crate runs only if it is
 # listed there with a non-empty tests column AND its dir exists under <dataset>.
 # For each crate, ONLY the tests named in its row are run (passed as `--exact`
@@ -68,6 +75,16 @@ MAX_PARALLEL="${MAX_PARALLEL:-40}"   # max jobs in flight at once (QOS MaxJobsPU
 # trace; Tree Borrows is the borrow model on the Miri side.
 MIRI_COMMON="-Zmiri-disable-alignment-check -Zmiri-disable-data-race-detector -Zmiri-ignore-leaks -Zmiri-tree-borrows"
 BSAN_COMMON="stacktrace_max_len=32"
+
+# rustc flags for every crate compile, in EVERY mode -- rust and bsan included.
+# --cfg=miri makes them select the same cfg(miri) code, and the same test set, as
+# the Miri build: #[cfg(not(miri))] tests compile out and #[cfg_attr(miri,
+# ignore)] tests are ignored everywhere, so the three modes run the same
+# testbench rather than each running whatever its own cfg selected. cargo has no
+# --cfg flag, so this goes through RUSTFLAGS, which cargo appends to every rustc
+# invocation; cargo-miri and cargo-bsan are rustc wrappers that forward it (and
+# add their own --cfg=miri / --cfg=bsan for target crates on top).
+CFG_RUSTFLAGS="--cfg=miri"
 
 # ── Args ──────────────────────────────────────────────────────────────────--
 # Pull the optional flags out from anywhere in the arg list, leaving the
@@ -216,14 +233,14 @@ fi
 # list_tests.sh enumerated them.
 case "$MODE" in
     rust)
-        COMPILE_CMD='cargo test --tests --no-run'
-        RUN_PREFIX='cargo test --tests' ;;
+        COMPILE_CMD="RUSTFLAGS=\"$CFG_RUSTFLAGS\" cargo test --tests --no-run"
+        RUN_PREFIX="RUSTFLAGS=\"$CFG_RUSTFLAGS\" cargo test --tests" ;;
     miri)
-        COMPILE_CMD="MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --tests --no-run"
-        RUN_PREFIX="MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --tests" ;;
+        COMPILE_CMD="RUSTFLAGS=\"$CFG_RUSTFLAGS\" MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --tests --no-run"
+        RUN_PREFIX="RUSTFLAGS=\"$CFG_RUSTFLAGS\" MIRIFLAGS=\"$MIRIFLAGS_ALL\" cargo miri test --tests" ;;
     bsan)
-        COMPILE_CMD="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --tests --no-run"
-        RUN_PREFIX="BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --tests" ;;
+        COMPILE_CMD="RUSTFLAGS=\"$CFG_RUSTFLAGS\" BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --tests --no-run"
+        RUN_PREFIX="RUSTFLAGS=\"$CFG_RUSTFLAGS\" BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --tests" ;;
 esac
 
 echo "Mode:     $MODE   Image: $IMAGE"
@@ -231,6 +248,7 @@ echo "Walltime: $WALLTIME   Mem: $MEM"
 echo "Dataset:  $DATASET_DIR"
 echo "Tests:    $TESTS_CSV${NO_FFI:+  (--no-ffi)}"
 echo "Crates:   ${#CRATE_DIRS[@]}${IGNORE_FILE:+  (skipped $skipped via $IGNORE_FILE)}"
+echo "RUSTFLAGS: $CFG_RUSTFLAGS"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
 echo "Results:  $CSV"

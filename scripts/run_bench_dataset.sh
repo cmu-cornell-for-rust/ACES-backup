@@ -46,6 +46,13 @@
 #                     status pre-run also warms caches, so each test runs
 #                     1 + warmup + runs times in total)
 #
+# Every mode compiles with RUSTFLAGS="--cfg=miri" -- including rust and bsan. It
+# makes all three select the same cfg(miri) code and, crucially, the same TEST
+# SET as Miri: #[cfg(not(miri))] tests are compiled out and
+# #[cfg_attr(miri, ignore)] tests are ignored everywhere, so the modes are
+# comparable instead of each running whatever its own cfg selected. Rows written
+# before this change came from differently-configured builds.
+#
 # Unlike run_miri_dataset.sh / run_bsan_dataset.sh (one srun job per crate,
 # throttled to the 40-job QOS cap), this packs many single-core workers into a
 # few whole-node sbatch jobs -- HPRC's preferred shape for many small tasks.
@@ -421,6 +428,15 @@ case "$HF_MODE" in
     bsan) export BSAN_OPTIONS="$HF_BSAN_OPTIONS"; RUN="cargo bsan test --tests" ;;
     *) echo "Error: bad HF_MODE '$HF_MODE'" >&2; exit 1 ;;
 esac
+
+# --cfg=miri for every mode, so all three select the same cfg(miri) code and the
+# same test set (#[cfg(not(miri))] compiled out, #[cfg_attr(miri, ignore)]
+# ignored) and time the same testbench. cargo has no --cfg flag, so it rides in
+# RUSTFLAGS. EXPORTED rather than prefixed onto $RUN because $RUN is handed to
+# hyperfine, which runs with -N (no shell) -- a "VAR=value cmd" prefix would be
+# taken as the program name there, not as an assignment.
+export RUSTFLAGS="--cfg=miri"
+echo "RUSTFLAGS=[$RUSTFLAGS]"
 
 ts() { date -u +'%Y-%m-%dT%H:%M:%SZ'; }
 # row <test> <status> <compile> <mean> <stddev> <median> <min> <max>

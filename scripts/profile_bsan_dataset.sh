@@ -12,6 +12,11 @@
 #   [bsan_options] optional extra BSAN_OPTIONS appended (colon-separated) to
 #                  the built-in set.
 #
+# The crate compiles with RUSTFLAGS="--cfg=miri" so the profiled test set matches
+# the Miri and rust sweeps (#[cfg(not(miri))] tests compiled out,
+# #[cfg_attr(miri, ignore)] tests ignored). Profiles written before this change
+# came from a differently-configured build.
+#
 # Options:
 #   --tests FILE      tests CSV (crate,tests,contains_ffi -- as produced by
 #                     list_tests.sh). Default: <outputs>/tests-<dataset>.csv
@@ -386,6 +391,13 @@ export BSAN_OPTIONS="$PF_BSAN_OPTIONS"
 # Log the exact value the runtime will parse, so a bad option set is
 # diagnosable from any crate's profile log.
 echo "BSAN_OPTIONS=[$BSAN_OPTIONS]"
+# --cfg=miri so this bsan build selects the same cfg(miri) code and the same test
+# set as the Miri and rust runs (#[cfg(not(miri))] compiled out,
+# #[cfg_attr(miri, ignore)] ignored) -- the profiled tests are then the same
+# tests the other sweeps measured. cargo has no --cfg flag, so it rides in
+# RUSTFLAGS, which cargo-bsan forwards to rustc for target crates.
+export RUSTFLAGS="--cfg=miri"
+echo "RUSTFLAGS=[$RUSTFLAGS]"
 RUN="cargo bsan test --tests"
 PROFILE_CSV="$PF_PROFILE_DIR/$PF_CRATE.csv"
 
