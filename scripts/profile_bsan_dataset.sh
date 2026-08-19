@@ -31,7 +31,8 @@
 #                     QOS job limit)
 #   --tasks N         worker tasks per node (default 12 -- so up to 12 crates
 #                     run concurrently on one node)
-#   --cpus-per-task N cores per worker (default 2; also caps cargo build jobs)
+#   --cpus-per-task N cores per worker (default 4; also caps cargo build jobs
+#                     via CARGO_BUILD_JOBS)
 #   --mem-per-task G  GB per worker (default 8; tasks*mem must fit 488G/node)
 #   --slow-walltime T walltime for the per-crate slowlist jobs, HH or HH:MM
 #                     (default 12)
@@ -110,7 +111,7 @@ IGNORE_FILE=""
 ONLY_FILE=""
 JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
 TASKS=12
-CPUS_PER_TASK=2
+CPUS_PER_TASK=4
 MEM_PER_TASK=8       # GB per worker
 WALLTIME_ARG=2         # walltime for the regular jobs (positional overrides)
 SLOW_WALLTIME_ARG=24   # walltime for the per-crate slowlist jobs
