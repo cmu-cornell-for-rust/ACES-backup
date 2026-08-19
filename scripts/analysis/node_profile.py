@@ -3,7 +3,7 @@
 
 Usage: node_profile.py [-o OUT.csv] [--by origin|test] <profile_dir_or_csv> [...]
 
-Reads every <crate>.csv / <crate>.csv.gz written via BSAN_NODE_LOG (as laid
+Reads every <crate>.log / <crate>.log.gz written via BSAN_NODE_LOG (as laid
 out by profile_bsan_dataset.sh, one file per crate) and aggregates, per
 source line, how many distinct trees (alloc ids) minted a node there and how
 many nodes (borrow tags) were made in total:
@@ -52,21 +52,25 @@ ap.add_argument("-o", "--output", help="write the profile CSV here (default: std
 ap.add_argument("--by", choices=("origin", "test"), default="origin",
                 help="group by the node's origin (default) or test location")
 ap.add_argument("inputs", nargs="+",
-                help="profile dirs (of <crate>.csv[.gz]) and/or individual csvs")
+                help="profile dirs (of <crate>.log[.gz]) and/or individual logs")
 args = ap.parse_args()
 
 # ── Collect input files ───────────────────────────────────────────────────────
 paths = []
 for inp in args.inputs:
     if os.path.isdir(inp):
-        paths += sorted(glob.glob(os.path.join(inp, "*.csv"))
+        # .csv[.gz] is the legacy spelling of these node logs; profile dirs
+        # generated before the rename still work.
+        paths += sorted(glob.glob(os.path.join(inp, "*.log"))
+                        + glob.glob(os.path.join(inp, "*.log.gz"))
+                        + glob.glob(os.path.join(inp, "*.csv"))
                         + glob.glob(os.path.join(inp, "*.csv.gz")))
     elif os.path.isfile(inp):
         paths.append(inp)
     else:
         sys.exit(f"Error: no such file or directory: {inp}")
 if not paths:
-    sys.exit("Error: no .csv/.csv.gz files found in the given inputs")
+    sys.exit("Error: no .log/.log.gz files found in the given inputs")
 
 F, L, S = (("origin_file", "origin_line", "origin_source")
            if args.by == "origin" else
@@ -82,7 +86,7 @@ skipped = 0
 
 for path in paths:
     name = os.path.basename(path)
-    crate = name.removesuffix(".gz").removesuffix(".csv")
+    crate = name.removesuffix(".gz").removesuffix(".log").removesuffix(".csv")
     opener = gzip.open if path.endswith(".gz") else open
     with opener(path, "rt", newline="") as f:
         reader = csv.reader(f)

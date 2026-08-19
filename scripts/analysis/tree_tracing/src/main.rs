@@ -37,7 +37,7 @@
 //!     boundary.
 //!   * bsan runs each test in its own process under a fresh `BSAN_NODE_LOG`,
 //!     then `profile_bsan_dataset.sh` folds every test's log into one
-//!     `<crate>.csv` under a leading test-name column:
+//!     `<crate>.log` under a leading test-name column:
 //!         filter_ok,E5: Access(t4, 6, 0)
 //!     so a change in that column is a process boundary.
 //!
@@ -476,25 +476,31 @@ thread_local! {
 enum Format {
     /// Miri: <path> is ONE crate dir of `events-*` files (one file per process).
     Miri,
-    /// bsan: <path> is a folder of `<project>.csv[.gz]` logs (one file per
+    /// bsan: <path> is a folder of `<project>.log[.gz]` node logs (one file per
     /// project, many test processes concatenated inside).
     Bsan,
 }
 
-// True for the bsan trace files we process. Our own `output_tree_size_dist_*.csv`
+/// Suffixes of the bsan node logs we accept, longest first so `.log.gz` is
+/// stripped before `.log`. `.csv[.gz]` is the legacy spelling: these files were
+/// named `<crate>.csv.gz` before it became clear they are event logs rather than
+/// tables, and profile dirs generated back then still work.
+const TRACE_SUFFIXES: [&str; 4] = [".log.gz", ".log", ".csv.gz", ".csv"];
+
+// True for the bsan node logs we process. Our own `output_tree_size_dist_*.csv`
 // side outputs are excluded so re-running on a folder never eats its own output.
 fn is_trace_file(file_name: &str) -> bool {
     !file_name.starts_with("output_tree_size_dist_")
-        && (file_name.ends_with(".csv.gz") || file_name.ends_with(".csv"))
+        && TRACE_SUFFIXES.iter().any(|ext| file_name.ends_with(ext))
 }
 
-// Strip `.csv.gz` / `.csv` to recover the project name.
+// Strip the trace suffix to recover the project name.
 fn project_name(file_name: &str) -> String {
-    file_name
-        .strip_suffix(".csv.gz")
-        .or_else(|| file_name.strip_suffix(".csv"))
-        .map(|s| s.to_string())
-        .unwrap_or_else(|| file_name.to_string())
+    TRACE_SUFFIXES
+        .iter()
+        .find_map(|ext| file_name.strip_suffix(ext))
+        .unwrap_or(file_name)
+        .to_string()
 }
 
 fn detect_format(dir: &Path) -> Result<Format, Box<dyn std::error::Error>> {
@@ -513,7 +519,7 @@ fn detect_format(dir: &Path) -> Result<Format, Box<dyn std::error::Error>> {
         (false, true) => Ok(Format::Bsan),
         (false, false) => Err(format!(
             "cannot tell format of {}: no events-* files (miri) and no \
-             <project>.csv[.gz] files (bsan). Pass --format to force one.",
+             <project>.log[.gz] files (bsan). Pass --format to force one.",
             dir.display()
         )
         .into()),
@@ -541,7 +547,7 @@ fn analyze(paths: &[PathBuf]) -> Result<Analysis, Box<dyn std::error::Error>> {
 const USAGE: &str = "Usage: tree_tracing [--format miri|bsan] [--dist-only] <path> [out]\n\
     \n\
     \x20 <path>          miri: ONE crate dir of events-* files\n\
-    \x20                 bsan: a folder of <project>.csv[.gz] trace files\n\
+    \x20                 bsan: a folder of <project>.log[.gz] node logs\n\
     \x20 <out>           bsan: combined CSV path (default: stdout)\n\
     \x20                 with --dist-only: the directory for the dist files\n\
     \x20 --format F      force miri or bsan (default: detected from <path>)\n\

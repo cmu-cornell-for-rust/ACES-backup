@@ -54,17 +54,20 @@
 #                 keep more than the last run; note that WITHIN one run, if
 #                 several test binaries execute instrumented code, only the
 #                 last binary's log survives. After the run the temp log's
-#                 rows are appended to the per-crate profile CSV under a
+#                 rows are appended to the per-crate node log under a
 #                 leading `test` column.
 #
-# Per-crate profiles land in
-#   <outputs>/bsan_profile/<image>[-<extra-slug>]-<dataset>/<crate>.csv.gz
-# with columns
-#   test,num_alloc_ids,num_nodes,alloc_ids,origin_file,origin_line,origin_col,
-#   origin_source,test_file,test_line,test_col,test_source
-# (one row per run of consecutive nodes sharing a location; alloc_ids is a
-# space-separated list of the distinct allocations in the run). Aggregate them
-# with analysis/node_profile.py. The profile dir is on group scratch, written
+# Per-crate node logs land in
+#   <outputs>/bsan_profile/<image>[-<extra-slug>]-<dataset>/<crate>.log.gz
+# Every line is prefixed with the test it came from; what follows depends on
+# which bsan branch the image was built from, so these are logs rather than CSVs:
+#   main       node-profile rows, num_alloc_ids,num_nodes,alloc_ids,origin_file,
+#              origin_line,origin_col,origin_source,test_file,test_line,
+#              test_col,test_source -- one per run of consecutive nodes sharing
+#              a location; alloc_ids is a space-separated list of the distinct
+#              allocations in the run. Aggregate with analysis/node_profile.py.
+#   e-logging  Tree Borrows events (E1..E8), one per line. Aggregate with
+#              analysis/tree_tracing. The profile dir is on group scratch, written
 # from inside the container via the cluster's /scratch auto-bind.
 #
 # Result rows are STREAMED into per-worker shard CSVs (single writer per
@@ -239,7 +242,7 @@ if [[ -n "$EXTRA" ]]; then
     STEM="${IMAGE}-${SLUG}-${DATASET}"
 fi
 CSV="$OUTPUTS_DIR/${STEM}-profile.csv"
-PROFILE_DIR="$OUTPUTS_DIR/bsan_profile/$STEM"   # per-crate node-log csvs (gzipped)
+PROFILE_DIR="$OUTPUTS_DIR/bsan_profile/$STEM"   # per-crate node logs (gzipped)
 
 # ── Validate ──────────────────────────────────────────────────────────────--
 [[ -f "$SIF_ABS" ]]    || { echo "Error: image not found at $SIF_ABS" >&2; exit 1; }
@@ -400,7 +403,7 @@ echo "BSAN_OPTIONS=[$BSAN_OPTIONS]"
 export RUSTFLAGS="--cfg=miri"
 echo "RUSTFLAGS=[$RUSTFLAGS]"
 RUN="cargo bsan test --tests"
-PROFILE_CSV="$PF_PROFILE_DIR/$PF_CRATE.csv"
+PROFILE_LOG="$PF_PROFILE_DIR/$PF_CRATE.log"
 
 ts() { date -u +'%Y-%m-%dT%H:%M:%SZ'; }
 # row <test> <status> <compile> <run>
@@ -429,11 +432,13 @@ fi
 cms=$(( $(date +%s%3N) - cstart ))
 compile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
 
-# Fresh per-crate profile (one canonical header; the runtime's own header
-# lines are stripped as rows are folded in). This lives on group scratch,
+# Fresh per-crate node log (one canonical header; the runtime's own header
+# lines are stripped as rows are folded in). The header describes the
+# `main`-branch node-profile rows and is inert for an e-logging image, whose
+# event lines carry no header. This lives on group scratch,
 # reachable in-container via the cluster's /scratch auto-bind; this worker is
 # the only writer for this crate, so no locking is needed.
-echo "test,num_alloc_ids,num_nodes,alloc_ids,origin_file,origin_line,origin_col,origin_source,test_file,test_line,test_col,test_source" > "$PROFILE_CSV"
+echo "test,num_alloc_ids,num_nodes,alloc_ids,origin_file,origin_line,origin_col,origin_source,test_file,test_line,test_col,test_source" > "$PROFILE_LOG"
 
 while IFS= read -r t; do
     [ -n "$t" ] || continue
@@ -451,11 +456,11 @@ while IFS= read -r t; do
     elif [ "$rc" -ne 0 ]; then status=test_failed
     else status=success
     fi
-    # Fold this test's node rows into the crate profile under a leading test
+    # Fold this test's node rows into the crate log under a leading test
     # column (test names are comma-free per list_tests.sh, so plain prefixing
-    # keeps the CSV valid). The runtime header, when present, is line 1.
+    # stays parseable). The runtime header, when present, is line 1.
     awk -v t="$t" 'NR == 1 && /^num_alloc_ids,/ { next } { print t "," $0 }' \
-        "$nodelog" >> "$PROFILE_CSV"
+        "$nodelog" >> "$PROFILE_LOG"
     rm -f "$nodelog"
     run=$(printf '%d.%03d' $(( rms / 1000 )) $(( rms % 1000 )))
     echo "result: $PF_CRATE :: $t -> $status (${run}s)"
@@ -464,7 +469,7 @@ done < "$PF_TESTFILE"
 
 # Compress on the compute node, so compression runs in parallel across
 # workers; -f overwrites any .gz from a previous run.
-gzip -f "$PROFILE_CSV" || true
+gzip -f "$PROFILE_LOG" || true
 INNER_EOF
 
 # ── job.sh: the sbatch payload, one per node ─────────────────────────────────
@@ -558,7 +563,7 @@ if (( ${#SLOW_SEL[@]} > 0 )); then
     echo "Slow:     ${#SLOW_SEL[@]} slowlist crate(s), each in its own 1-worker job at $SLOW_WALLTIME"
 fi
 echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
-echo "Profiles: $PROFILE_DIR/<crate>.csv.gz"
+echo "Profiles: $PROFILE_DIR/<crate>.log.gz"
 echo "Results:  $CSV"
 echo "Run dir:  $RUNDIR"
 echo
@@ -621,8 +626,9 @@ cat "$RUNDIR"/shards/*.csv >> "$CSV" 2>/dev/null || true
 
 echo
 echo "Done. Results CSV: $CSV"
-echo "Per-crate profiles: $PROFILE_DIR/<crate>.csv.gz"
-echo "Aggregate with: analysis/node_profile.py $PROFILE_DIR"
+echo "Per-crate node logs: $PROFILE_DIR/<crate>.log.gz"
+echo "Aggregate with: analysis/tree_tracing $PROFILE_DIR   (event logs)"
+echo "               analysis/node_profile.py $PROFILE_DIR (node profiles)"
 # Status is field 4; test names contain '::' but never commas, so this is safe.
 cat "$RUNDIR"/shards/*.csv 2>/dev/null | awk -F, '
     { c[$4]++; total++ }

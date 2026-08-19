@@ -6,7 +6,7 @@
 //!
 //! Usage: combine_node_profile_rs [-o OUT.csv] <dir_or_csv> [<dir_or_csv> ...]
 //!
-//! Reads every <crate>.csv / <crate>.csv.gz written via BSAN_NODE_LOG (one file
+//! Reads every <crate>.log / <crate>.log.gz written via BSAN_NODE_LOG (one file
 //! per crate, as laid out by profile_bsan_dataset.sh) and combines rows that
 //! share an origin line location, summing the alloc ids (roots) and nodes:
 //!
@@ -147,9 +147,9 @@ fn main() -> ExitCode {
             for entry in entries.flatten() {
                 let path = entry.path();
                 let name = path.file_name().and_then(|s| s.to_str()).unwrap_or("");
-                if name.ends_with(".csv.gz") {
+                if name.ends_with(".log.gz") || name.ends_with(".csv.gz") {
                     gzs.push(path);
-                } else if name.ends_with(".csv") {
+                } else if name.ends_with(".log") || name.ends_with(".csv") {
                     csvs.push(path);
                 }
             }
@@ -163,7 +163,7 @@ fn main() -> ExitCode {
     }
 
     if paths.is_empty() {
-        eprintln!("no input .csv/.csv.gz files found");
+        eprintln!("no input .log/.log.gz files found");
         return ExitCode::from(1);
     }
 
@@ -217,13 +217,16 @@ fn main() -> ExitCode {
         let i_tf = idx("test_file");
         let i_tl = idx("test_line");
 
-        // Crate name = input filename without .csv/.csv.gz; used to rewrite the
-        // profiling container's /work mount back to the crate the paths belong to.
+        // Crate name = input filename without its node-log suffix; used to rewrite
+        // the profiling container's /work mount back to the crate the paths belong
+        // to. `.csv[.gz]` is the legacy spelling of these logs.
         let crate_name = path
             .file_name()
             .and_then(|s| s.to_str())
             .map(|n| {
-                n.strip_suffix(".csv.gz")
+                n.strip_suffix(".log.gz")
+                    .or_else(|| n.strip_suffix(".log"))
+                    .or_else(|| n.strip_suffix(".csv.gz"))
                     .or_else(|| n.strip_suffix(".csv"))
                     .unwrap_or(n)
             })
