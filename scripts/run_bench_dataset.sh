@@ -34,9 +34,10 @@
 #                     slowlist) crates. Default: as many as needed for full
 #                     parallelism, ceil(crates / tasks), capped at 40 (the
 #                     QOS job limit)
-#   --tasks N         worker tasks per node (default 12 -- 24 cpus/96G per
+#   --tasks N         worker tasks per node (default 12 -- 48 cpus/96G per
 #                     regular job, small enough to backfill readily)
-#   --cpus-per-task N cores per worker (default 2; also caps cargo build jobs)
+#   --cpus-per-task N cores per worker (default 4; also caps cargo build jobs
+#                     via CARGO_BUILD_JOBS)
 #   --mem-per-task G  GB per worker (default 8; tasks*mem must fit 488G/node)
 #   --slow-walltime T walltime for the per-crate slowlist jobs, HH or HH:MM
 #                     (default 12). SLURM bills elapsed time, not the request,
@@ -143,7 +144,7 @@ IGNORE_FILE=""
 ONLY_FILE=""
 JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
 TASKS=12
-CPUS_PER_TASK=2
+CPUS_PER_TASK=4
 MEM_PER_TASK=8       # GB per worker
 RUNS=5
 WARMUP=1
