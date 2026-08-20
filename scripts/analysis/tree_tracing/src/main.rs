@@ -482,10 +482,18 @@ enum Format {
 }
 
 /// Suffixes of the bsan node logs we accept, longest first so `.log.gz` is
-/// stripped before `.log`. `.csv[.gz]` is the legacy spelling: these files were
+/// stripped before `.log`. `.csv.gz` is the legacy spelling: these files were
 /// named `<crate>.csv.gz` before it became clear they are event logs rather than
 /// tables, and profile dirs generated back then still work.
-const TRACE_SUFFIXES: [&str; 4] = [".log.gz", ".log", ".csv.gz", ".csv"];
+///
+/// Plain `.csv` is deliberately absent. A profile/tracing folder also tends to
+/// hold combined outputs, a master `-profile.csv`, or an unpacked copy of a log,
+/// and this tool takes a directory with no way to name one file -- so accepting
+/// the extension means every such stray becomes a bogus unit (an all-zero row
+/// for a "crate" that is really an output file). A legacy UNCOMPRESSED log has
+/// to be gzipped to be read; ignored `.csv` files are reported so that is
+/// visible rather than silent.
+const TRACE_SUFFIXES: [&str; 3] = [".log.gz", ".log", ".csv.gz"];
 
 // True for the bsan node logs we process. Our own `output_tree_size_dist_*.csv`
 // side outputs are excluded so re-running on a folder never eats its own output.
@@ -519,7 +527,8 @@ fn detect_format(dir: &Path) -> Result<Format, Box<dyn std::error::Error>> {
         (false, true) => Ok(Format::Bsan),
         (false, false) => Err(format!(
             "cannot tell format of {}: no events-* files (miri) and no \
-             <project>.log[.gz] files (bsan). Pass --format to force one.",
+             <project>.log[.gz]/.csv.gz files (bsan). Pass --format to force \
+             one; note plain .csv is not read -- gzip a legacy log first.",
             dir.display()
         )
         .into()),
@@ -642,11 +651,31 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 .unwrap_or_else(|| dir_arg.clone());
             vec![(name, files)]
         }
-        Format::Bsan => entries
-            .iter()
-            .filter(|e| is_trace_file(&e.file_name().to_string_lossy()))
-            .map(|e| (project_name(&e.file_name().to_string_lossy()), vec![e.path()]))
-            .collect(),
+        Format::Bsan => {
+            // Report plain .csv files rather than dropping them silently: one
+            // may be a legacy uncompressed node log, which now needs gzipping
+            // to be read. Our own dist outputs live here too, so they are not
+            // reported -- they are never inputs.
+            let ignored: Vec<String> = entries
+                .iter()
+                .map(|e| e.file_name().to_string_lossy().to_string())
+                .filter(|n| n.ends_with(".csv") && !n.starts_with("output_tree_size_dist_"))
+                .collect();
+            if !ignored.is_empty() {
+                eprintln!(
+                    "note: ignoring {} plain .csv file(s) ({}{}) -- only .log, \
+.log.gz and .csv.gz are read; gzip a legacy uncompressed log to include it",
+                    ignored.len(),
+                    ignored[..ignored.len().min(3)].join(", "),
+                    if ignored.len() > 3 { ", ..." } else { "" }
+                );
+            }
+            entries
+                .iter()
+                .filter(|e| is_trace_file(&e.file_name().to_string_lossy()))
+                .map(|e| (project_name(&e.file_name().to_string_lossy()), vec![e.path()]))
+                .collect()
+        }
     };
     if units.is_empty() || units.iter().all(|(_, f)| f.is_empty()) {
         return Err(format!("no input files in {}", dir.display()).into());
