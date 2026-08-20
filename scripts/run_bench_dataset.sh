@@ -40,12 +40,22 @@
 #                     via CARGO_BUILD_JOBS)
 #   --mem-per-task G  GB per worker (default 8; tasks*mem must fit 488G/node)
 #   --slow-walltime T walltime for the per-crate slowlist jobs, HH or HH:MM
-#                     (default 12). SLURM bills elapsed time, not the request,
-#                     and these jobs are tiny (2 cpus), so generous is cheap
+#                     (default 14). SLURM bills elapsed time, not the request,
+#                     and these jobs are tiny (4 cpus), so generous is cheap
 #   --runs N          hyperfine timing runs per test (default 5)
 #   --warmup N        hyperfine warmup runs per test (default 1; the untimed
 #                     status pre-run also warms caches, so each test runs
 #                     1 + warmup + runs times in total)
+#   --test-threads N  pass `--test-threads=N` to the test harness on every run
+#                     (and on the calibration run), e.g. 1 to execute each
+#                     test binary's tests serially. Off by default, which
+#                     leaves libtest's own default (one thread per core). Since
+#                     only the named test runs per invocation this rarely
+#                     changes what executes -- but a name matching in several
+#                     binaries, or a #[test] that itself spawns threads, is
+#                     affected. It also changes every timing, so the run gets
+#                     its own CSV (a -tt<N> slug) instead of appending to a
+#                     parallel run's file.
 #
 # Every mode compiles with RUSTFLAGS="--cfg=miri" -- including rust and bsan. It
 # makes all three select the same cfg(miri) code and, crucially, the same TEST
@@ -65,7 +75,7 @@
 # allocation until the job's last process exits, each slow crate stops
 # costing anything the moment it finishes instead of idling until the
 # slowest one drains. Slowlist entries not selected for the run are ignored,
-# so the list is dataset-agnostic. Slow jobs request --slow-walltime (12h
+# so the list is dataset-agnostic. Slow jobs request --slow-walltime (14h
 # default) while the regular jobs keep the short <walltime>, so the wide
 # fast jobs stay backfill-friendly.
 #
@@ -148,8 +158,9 @@ CPUS_PER_TASK=4
 MEM_PER_TASK=8       # GB per worker
 RUNS=5
 WARMUP=1
+TEST_THREADS=""        # --test-threads N for the harness; empty = don't pass it
 WALLTIME_ARG=2         # walltime for the regular jobs (positional overrides)
-SLOW_WALLTIME_ARG=12   # walltime for the per-crate slowlist jobs
+SLOW_WALLTIME_ARG=14   # walltime for the per-crate slowlist jobs
 
 POS=()
 while [[ $# -gt 0 ]]; do
@@ -173,6 +184,8 @@ while [[ $# -gt 0 ]]; do
         --runs=*)        RUNS="${1#*=}"; shift ;;
         --warmup)        WARMUP="$2"; shift 2 ;;
         --warmup=*)      WARMUP="${1#*=}"; shift ;;
+        --test-threads)  TEST_THREADS="$2"; shift 2 ;;
+        --test-threads=*) TEST_THREADS="${1#*=}"; shift ;;
         --slow-walltime) SLOW_WALLTIME_ARG="$2"; shift 2 ;;
         --slow-walltime=*) SLOW_WALLTIME_ARG="${1#*=}"; shift ;;
         -*)
@@ -192,7 +205,7 @@ usage() {
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --tests FILE --no-ffi --ignore FILE --only FILE --jobs N" >&2
     echo "           --tasks N --cpus-per-task N --mem-per-task G --runs N --warmup N" >&2
-    echo "           --slow-walltime T (for slowlist jobs, default 12)" >&2
+    echo "           --slow-walltime T (for slowlist jobs, default 14)" >&2
     exit 1
 }
 [[ $# -ge 3 && $# -le 5 ]] || usage
@@ -238,6 +251,10 @@ if [[ -n "$JOBS" ]]; then
     [[ "$JOBS" =~ ^[0-9]+$ && "$JOBS" -ge 1 ]] || { echo "Error: --jobs must be a number >= 1." >&2; exit 1; }
 fi
 (( TASKS >= 1 )) || { echo "Error: --tasks must be >= 1." >&2; exit 1; }
+if [[ -n "$TEST_THREADS" ]]; then
+    [[ "$TEST_THREADS" =~ ^[1-9][0-9]*$ ]] \
+        || { echo "Error: --test-threads must be a positive integer (got '$TEST_THREADS')." >&2; exit 1; }
+fi
 TOTAL_MEM=$(( TASKS * MEM_PER_TASK ))
 if (( TOTAL_MEM > 488 )); then
     echo "Error: tasks*mem = ${TOTAL_MEM}G exceeds the 488G usable on an ACES node." >&2
@@ -267,10 +284,15 @@ esac
 # the other run_*_dataset scripts, so different flag sets land in different
 # files; the -hyperfine suffix marks the per-test benchmark format).
 CSV="$OUTPUTS_DIR/${IMAGE}-${DATASET}-hyperfine.csv"
+SLUG=""
 if [[ -n "$EXTRA" && "$MODE" != "rust" ]]; then
     SLUG="$(printf '%s' "$EXTRA" | tr -c '[:alnum:]' '-' | sed 's/-\{1,\}/-/g; s/^-//; s/-$//')"
-    CSV="$OUTPUTS_DIR/${IMAGE}-${SLUG}-${DATASET}-hyperfine.csv"
 fi
+# --test-threads changes every timing in the run (a serial suite pays no
+# contention but loses all overlap), so it joins the slug: rows from a serial
+# run must not append into a parallel run's CSV.
+[[ -n "$TEST_THREADS" ]] && SLUG="${SLUG:+$SLUG-}tt${TEST_THREADS}"
+[[ -n "$SLUG" ]] && CSV="$OUTPUTS_DIR/${IMAGE}-${SLUG}-${DATASET}-hyperfine.csv"
 
 # ── Validate ──────────────────────────────────────────────────────────────--
 [[ -f "$SIF_ABS" ]]    || { echo "Error: image not found at $SIF_ABS" >&2; exit 1; }
@@ -409,6 +431,7 @@ fi
     printf 'CPUS_PER_TASK=%q\n'    "$CPUS_PER_TASK"
     printf 'RUNS=%q\n'             "$RUNS"
     printf 'WARMUP=%q\n'           "$WARMUP"
+    printf 'TEST_THREADS=%q\n'     "$TEST_THREADS"
     printf 'MIRIFLAGS_ALL=%q\n'    "$MIRIFLAGS_ALL"
     printf 'BSAN_OPTIONS_ALL=%q\n' "$BSAN_OPTIONS_ALL"
 } > "$RUNDIR/config.env"
@@ -438,6 +461,14 @@ esac
 # taken as the program name there, not as an assignment.
 export RUSTFLAGS="--cfg=miri"
 echo "RUSTFLAGS=[$RUSTFLAGS]"
+
+# libtest's --test-threads is a HARNESS flag, so it goes after the `--`, before
+# --exact. Empty unless --test-threads was passed; the leading space lives
+# inside the expansion so the command string is byte-identical to before when
+# the option is unset (hyperfine runs with -N and splits on whitespace).
+HARNESS="${HF_TEST_THREADS:-}"
+HARNESS="${HARNESS:+ --test-threads=$HARNESS}"
+[ -n "$HARNESS" ] && echo "HARNESS=[$HARNESS]"
 
 ts() { date -u +'%Y-%m-%dT%H:%M:%SZ'; }
 # row <test> <status> <compile> <mean> <stddev> <median> <min> <max>
@@ -476,7 +507,7 @@ compile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
 CALIB_FILTER=__hyperfine_calibration_no_such_test__
 hfcsv=$(mktemp)
 if hyperfine --style basic -N --warmup "$HF_WARMUP" --runs "$HF_RUNS" \
-        --export-csv "$hfcsv" "$RUN -- --exact $CALIB_FILTER"; then
+        --export-csv "$hfcsv" "$RUN --$HARNESS --exact $CALIB_FILTER"; then
     read -r cmean cstddev cmedian cmin cmax <<EOV
 $(tail -n1 "$hfcsv" | awk -F, '{print $(NF-6), $(NF-5), $(NF-4), $(NF-1), $NF}')
 EOV
@@ -491,7 +522,7 @@ while IFS= read -r t; do
     # Untimed pre-run: classifies the test and warms caches. no_match means the
     # --exact filter ran 0 tests everywhere (stale test list).
     runlog=$(mktemp)
-    $RUN -- --exact "$t" > "$runlog" 2>&1; rc=$?
+    $RUN --$HARNESS --exact "$t" > "$runlog" 2>&1; rc=$?
     nrun=$(grep -aoE '^running [0-9]+ test' "$runlog" | grep -oE '[0-9]+' | awk '{s+=$1} END{print s+0}')
     rm -f "$runlog"
     status=""
@@ -505,7 +536,7 @@ while IFS= read -r t; do
         # command,mean,stddev,median,user,system,min,max -- counted from the
         # end so a comma in the command column can never shift them.
         if hyperfine --style basic -N --warmup "$HF_WARMUP" --runs "$HF_RUNS" \
-                --export-csv "$hfcsv" "$RUN -- --exact $t"; then
+                --export-csv "$hfcsv" "$RUN --$HARNESS --exact $t"; then
             read -r mean stddev median minv maxv <<EOV
 $(tail -n1 "$hfcsv" | awk -F, '{print $(NF-6), $(NF-5), $(NF-4), $(NF-1), $NF}')
 EOV
@@ -589,6 +620,7 @@ worker() {
             --env HF_TESTFILE="$RUNDIR/tests/$crate.txt" \
             --env HF_SHARD="$shard" \
             --env HF_RUNS="$RUNS" --env HF_WARMUP="$WARMUP" \
+            --env HF_TEST_THREADS="$TEST_THREADS" \
             --env HF_MIRIFLAGS="$MIRIFLAGS_ALL" \
             --env HF_BSAN_OPTIONS="$BSAN_OPTIONS_ALL" \
             --env HF_JOBID="${SLURM_JOB_ID}.${tid}" \
@@ -617,7 +649,7 @@ echo "Shape:    $JOBS job(s) x $TASKS tasks x ${CPUS_PER_TASK} cpus, ${MEM_PER_T
 if (( ${#SLOW_CRATES[@]} > 0 )); then
     echo "Slow:     ${#SLOW_CRATES[@]} slowlist crate(s), each in its own 1-worker job at $SLOW_WALLTIME"
 fi
-echo "Sampling: $RUNS runs, $WARMUP warmup per test"
+echo "Sampling: $RUNS runs, $WARMUP warmup per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
 echo "Results:  $CSV"

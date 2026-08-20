@@ -8,9 +8,9 @@ produce, in either format:
   raw        <image>-<dataset>.csv -- one row per crate, runtime read from
              its run_seconds column (the whole test suite in one invocation)
   hyperfine  <image>-<dataset>-hyperfine.csv -- one row per TEST; a crate's
-             runtime is the SUM of its tests' median_s
+             runtime is the SUM of its tests' mean_s
 
-The two can't be compared against each other: every hyperfine median_s includes
+The two can't be compared against each other: every hyperfine mean_s includes
 cargo's freshness check and the startup of all the crate's test binaries, so
 summing N tests counts that constant N times, well above the raw CSVs'
 whole-suite run_seconds. Plot hyperfine against hyperfine (the constant is in
@@ -95,13 +95,17 @@ METRICS = {
 
 def aggregate_hyperfine(reader):
     """Collapse a per-test hyperfine CSV into the per-crate rows the rest of
-    this script expects: a crate's runtime is the SUM of its tests' median_s,
+    this script expects: a crate's runtime is the SUM of its tests' mean_s,
     each net of the crate's calibration row.
 
-    The median of each test's runs is used rather than the mean because a
-    hyperfine sample of a handful of runs is easily skewed upward by one
-    scheduling hiccup on a shared node, and the sum inherits every one of
-    those excursions.
+    mean_s is the statistic, matching merge_hyperfine.py and crate_totals.py so
+    the plotted totals and those tools' per-crate tables are the same number.
+    The tradeoff is deliberate: a hyperfine sample of a handful of runs is
+    easily skewed upward by one scheduling hiccup on a shared node, and a sum
+    of means inherits every such excursion, where min_s or median_s would shrug
+    them off. On this dataset the choice is worth ~7% of a crate total, against
+    the ~50% that subtracting calibration is worth -- so cross-tool agreement
+    buys more than the noise resistance costs.
 
     Every measurement includes a constant: cargo's freshness check plus the
     startup of all the crate's test binaries (the --exact filter runs in each
@@ -116,7 +120,7 @@ def aggregate_hyperfine(reader):
     CSVs predating the calibration row are summed raw -- the caller reports
     which, since the two are not comparable.
 
-    Only benchmarked tests carry a median_s -- test_failed / no_match /
+    Only benchmarked tests carry a mean_s -- test_failed / no_match /
     bench_failed rows, and the single test-less row a build/fetch failure
     emits, all leave the timing columns empty and so contribute nothing. Like
     the raw result CSVs these files are append-only, so the same test can
@@ -134,7 +138,7 @@ def aggregate_hyperfine(reader):
     """
     def timing(row):
         try:
-            v = float(row["min_s"])
+            v = float(row["mean_s"])
         except (KeyError, TypeError, ValueError):
             return None
         return v if v > 0 else None
@@ -155,10 +159,10 @@ def aggregate_hyperfine(reader):
     data = {}
     zeroed = 0
     for (crate, _test), row in latest.items():
-        median = timing(row)
-        if median is None:
+        mean = timing(row)
+        if mean is None:
             continue                      # not benchmarked -- no timing to add
-        net = median - calibration.get(crate, 0.0)
+        net = mean - calibration.get(crate, 0.0)
         if net <= 0:
             zeroed += 1
             net = 0.0
@@ -187,7 +191,7 @@ def load_csv(path):
 
       raw        one row per crate with a run_seconds column -- the last row
                  per crate wins, since result files are append-only
-      hyperfine  one row per TEST with a median_s column (the -hyperfine.csv
+      hyperfine  one row per TEST with a mean_s column (the -hyperfine.csv
                  files) -- summed into one row per crate, see above
 
     The series label is the filename without its .csv extension.
@@ -205,12 +209,12 @@ def load_csv(path):
                 crate = row.get("crate")
                 if crate is not None:
                     data[crate] = row
-        elif "median_s" in fields and "test" in fields:
+        elif "mean_s" in fields and "test" in fields:
             kind = "hyperfine"
             data, stats = aggregate_hyperfine(reader)
         else:
             sys.exit(f"Error: {path} has neither a run_seconds column (raw "
-                     f"result CSV) nor median_s + test columns (hyperfine CSV).")
+                     f"result CSV) nor mean_s + test columns (hyperfine CSV).")
     base = os.path.basename(path)
     label = base[:-len(".csv")] if base.endswith(".csv") else base
     return label, data, kind, stats
@@ -383,7 +387,7 @@ def main():
 
     loaded = [load_csv(p) for p in args.csvs]
 
-    # A hyperfine crate total is the sum of its per-test medians, and each of
+    # A hyperfine crate total is the sum of its per-test means, and each of
     # those includes cargo's freshness check plus the startup of every test
     # binary in the crate (see run_bench_dataset.sh) -- so it counts that
     # constant N times for N tests and is NOT comparable to a raw CSV's
@@ -392,7 +396,7 @@ def main():
     kinds = {kind for _, _, kind, _ in loaded}
     if len(kinds) > 1:
         print("Warning: mixing raw and hyperfine CSVs. A hyperfine crate total "
-              "sums per-test\n         medians, each including per-invocation "
+              "sums per-test\n         means, each including per-invocation "
               "cargo + test-binary startup, so it\n         overstates the raw "
               "CSVs' whole-suite run_seconds. Ratios across the\n         two "
               "formats are not meaningful.", file=sys.stderr)
