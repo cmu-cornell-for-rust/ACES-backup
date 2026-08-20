@@ -31,6 +31,13 @@
 //!
 //! The leading `test` column that profile_bsan_dataset.sh adds is optional;
 //! files with or without it are both accepted (columns are looked up by name).
+//!
+//! A directory yields its .log, .log.gz and .csv.gz files -- .csv.gz being the
+//! legacy spelling of a node log. Plain .csv is deliberately NOT picked up: a
+//! profile dir also tends to hold this tool's own combined output or a master
+//! -profile.csv, and folding those in would double-count or corrupt the
+//! aggregate. Ignored .csv files are reported. An explicitly named path is read
+//! whatever its extension, so a lone uncompressed log still works.
 
 use std::collections::{HashMap, HashSet};
 use std::fs::{self, File};
@@ -135,8 +142,9 @@ fn main() -> ExitCode {
     for inp in &inputs {
         let p = PathBuf::from(inp);
         if p.is_dir() {
-            let mut csvs: Vec<PathBuf> = Vec::new();
+            let mut plain: Vec<PathBuf> = Vec::new();
             let mut gzs: Vec<PathBuf> = Vec::new();
+            let mut ignored_csv: u64 = 0;
             let entries = match fs::read_dir(&p) {
                 Ok(e) => e,
                 Err(e) => {
@@ -149,13 +157,28 @@ fn main() -> ExitCode {
                 let name = path.file_name().and_then(|s| s.to_str()).unwrap_or("");
                 if name.ends_with(".log.gz") || name.ends_with(".csv.gz") {
                     gzs.push(path);
-                } else if name.ends_with(".log") || name.ends_with(".csv") {
-                    csvs.push(path);
+                } else if name.ends_with(".log") {
+                    plain.push(path);
+                } else if name.ends_with(".csv") {
+                    // A plain .csv in a profile dir is NOT a node log: it is
+                    // this tool's own combined output, a master -profile.csv,
+                    // or an unpacked copy of a log that would double-count.
+                    // Only the gzipped legacy spelling (.csv.gz) is picked up
+                    // from a directory; name a .csv explicitly to force it.
+                    ignored_csv += 1;
                 }
             }
-            csvs.sort();
+            if ignored_csv > 0 {
+                eprintln!(
+                    "note: ignored {} plain .csv file(s) in {} (a directory \
+yields only .log, .log.gz and .csv.gz; pass the path explicitly to force one)",
+                    ignored_csv,
+                    p.display()
+                );
+            }
+            plain.sort();
             gzs.sort();
-            paths.extend(csvs);
+            paths.extend(plain);
             paths.extend(gzs);
         } else {
             paths.push(p);
@@ -163,7 +186,7 @@ fn main() -> ExitCode {
     }
 
     if paths.is_empty() {
-        eprintln!("no input .log/.log.gz files found");
+        eprintln!("no input .log/.log.gz/.csv.gz files found");
         return ExitCode::from(1);
     }
 

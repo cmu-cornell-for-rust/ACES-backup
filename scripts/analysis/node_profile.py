@@ -59,18 +59,26 @@ args = ap.parse_args()
 paths = []
 for inp in args.inputs:
     if os.path.isdir(inp):
-        # .csv[.gz] is the legacy spelling of these node logs; profile dirs
-        # generated before the rename still work.
+        # .csv.gz is the legacy spelling of these node logs; profile dirs
+        # generated before the rename still work. Plain .csv is deliberately
+        # NOT collected: a profile dir also tends to hold a combined output or
+        # a master -profile.csv, and folding those in would double-count. Name
+        # such a file explicitly to force it.
         paths += sorted(glob.glob(os.path.join(inp, "*.log"))
                         + glob.glob(os.path.join(inp, "*.log.gz"))
-                        + glob.glob(os.path.join(inp, "*.csv"))
                         + glob.glob(os.path.join(inp, "*.csv.gz")))
+        ignored = [f for f in glob.glob(os.path.join(inp, "*.csv"))
+                   if not f.endswith(".csv.gz")]
+        if ignored:
+            print(f"note: ignored {len(ignored)} plain .csv file(s) in {inp} "
+                  f"(a directory yields only .log, .log.gz and .csv.gz; pass "
+                  f"the path explicitly to force one)", file=sys.stderr)
     elif os.path.isfile(inp):
         paths.append(inp)
     else:
         sys.exit(f"Error: no such file or directory: {inp}")
 if not paths:
-    sys.exit("Error: no .log/.log.gz files found in the given inputs")
+    sys.exit("Error: no .log/.log.gz/.csv.gz files found in the given inputs")
 
 F, L, S = (("origin_file", "origin_line", "origin_source")
            if args.by == "origin" else
