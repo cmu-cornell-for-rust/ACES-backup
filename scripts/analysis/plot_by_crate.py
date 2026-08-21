@@ -20,12 +20,17 @@ One series per plotted CSV, crates ordered along the x axis by the first
 plotted series (ascending). Only crates that ran with valid data under every
 input CSV are drawn, so all series cover the same crate set.
 
-A crate is also required to have the SAME passed test count in every input
-(the baseline included, since it sets the ratio): a crate where one image ran
-300 tests and another ran 9 is not measuring the same workload, so its runtime
-difference is mostly a difference in which tests ran. Those crates are listed
-on stdout with their per-input counts rather than silently dropped. Pass
---allow-passed-mismatch to plot them anyway (the pre-existing behaviour).
+A crate is also required to have EVERY test passing in every input (the
+baseline included, since it sets the ratio): if a crate's suite failed partway
+under one image, its runtime is the cost of the part that ran, not of the
+workload the other images completed. Those crates are listed on stdout with
+their per-input passed/tests counts rather than silently dropped. Pass
+--allow-failures to plot them anyway.
+
+Note that all-passing does NOT imply the inputs ran the same NUMBER of tests --
+an input can compile out (#[cfg(not(miri))]) or ignore (#[cfg_attr(miri,
+ignore)]) tests the others ran, and every one that did run then passed. Add
+--require-equal-passed to demand matching counts as well.
 
   metric   what to plot:
              seconds   run_seconds of each CSV
@@ -158,7 +163,15 @@ def aggregate_hyperfine(reader):
 
     data = {}
     zeroed = 0
-    for (crate, _test), row in latest.items():
+    # Per-crate count of real test rows, so the caller can tell "every test
+    # passed" from "every test that produced a timing passed". Rows with an
+    # empty test name are the crate-level fetch/build failure markers, not
+    # tests, and are excluded -- these CSVs are append-only, so a stale failure
+    # row would otherwise mark a since-fixed crate as failing forever.
+    test_rows = {}
+    for (crate, test), row in latest.items():
+        if test:
+            test_rows[crate] = test_rows.get(crate, 0) + 1
         mean = timing(row)
         if mean is None:
             continue                      # not benchmarked -- no timing to add
@@ -170,6 +183,13 @@ def aggregate_hyperfine(reader):
                                       "run_seconds": 0.0, "passed": 0})
         agg["run_seconds"] += net
         agg["passed"] += 1
+
+    # `tests` completes the synthetic row: `passed` counts the rows that
+    # produced a timing, `tests` every row that was a test at all, so
+    # passed == tests means the crate had no test_failed / no_match /
+    # bench_failed row in this input.
+    for crate, agg in data.items():
+        agg["tests"] = test_rows.get(crate, agg["passed"])
 
     # A crate whose every test came out at or below its calibration has no
     # measurable body time left; run_seconds() rejects the 0 and the crate
@@ -291,6 +311,33 @@ def passed_ok(row):
         return False
 
 
+def all_passed(row):
+    """True when every test of the crate passed in this input, False when any
+    failed, None when the row cannot say.
+
+    For a raw CSV `tests`/`passed` are libtest's own counts, summed over the
+    crate's test binaries. For a hyperfine CSV they come from
+    aggregate_hyperfine: `tests` is how many per-test rows the crate has and
+    `passed` how many produced a timing, so passed < tests means the run
+    recorded a test_failed / no_match / bench_failed row.
+
+    A crate with zero tests is not "all passed" -- there is nothing to compare.
+    """
+    try:
+        tests, passed = int(row["tests"]), int(row["passed"])
+    except (KeyError, TypeError, ValueError):
+        return None
+    return passed == tests if tests > 0 else False
+
+
+def passed_fraction(row):
+    """`passed/tests` as a display string, or "?" when the row lacks them."""
+    try:
+        return f'{int(row["passed"])}/{int(row["tests"])}'
+    except (KeyError, TypeError, ValueError):
+        return "?"
+
+
 def passed_count(row):
     """The row's passed test count, or None when it has no usable one. For a
     raw CSV that is the crate's passing-test count; for a hyperfine CSV it is
@@ -348,11 +395,16 @@ def main():
                         help="the list_tests.sh CSV --no-ffi should read. Default: the "
                              "tests-<dataset>.csv whose dataset name appears in the input "
                              "filenames, looked up in <OUTPUTS_DIR> then <repo>/scripts.")
-    parser.add_argument("--allow-passed-mismatch", action="store_true",
-                        help="plot crates whose passed test count differs between inputs. "
-                             "By default they are excluded and listed, since a crate that "
-                             "ran a different number of tests under each image is not the "
-                             "same workload and its runtime difference reflects that.")
+    parser.add_argument("--allow-failures", "--allow-passed-mismatch",
+                        dest="allow_failures", action="store_true",
+                        help="plot crates that had failing tests. By default only crates "
+                             "where EVERY test passed in EVERY input are drawn, since a "
+                             "run that bailed out partway is not the same workload as one "
+                             "that completed. (--allow-passed-mismatch is the old name.)")
+    parser.add_argument("--require-equal-passed", action="store_true",
+                        help="additionally require the passed test COUNT to match across "
+                             "inputs. All-passing does not imply equal counts: an input "
+                             "can compile out or ignore tests the others ran.")
     args = parser.parse_args()
     metric = args.metric
     spec = METRICS[metric]
@@ -474,10 +526,21 @@ def main():
         return [(label, passed_count(data.get(crate) or {}))
                 for label, data in counted]
 
+    def passed_fractions(crate):
+        return [(label, passed_fraction(data.get(crate) or {}))
+                for label, data in counted]
+
+    def clean_everywhere(crate):
+        """True when every input ran the crate with every test passing. An
+        input that cannot report its counts (None) is treated as failing: it
+        cannot be shown clean, and both CSV formats carry the columns."""
+        return all(all_passed(data.get(crate) or {}) is True
+                   for _, data in counted)
+
     def passed_agrees(crate):
-        """True when every input reports the same passed test count for the
-        crate. A missing count counts as disagreement -- it cannot be shown to
-        match, and every CSV format here carries a `passed` column."""
+        """True when every input reports the same passed test count. Only used
+        under --require-equal-passed: all-passing does not imply equal counts,
+        since an input can compile out or ignore tests the others ran."""
         counts = [n for _, n in passed_counts(crate)]
         return None not in counts and len(set(counts)) == 1
 
@@ -508,26 +571,35 @@ def main():
         if with_ffi or unknown:
             print()
 
-    if args.allow_passed_mismatch:
-        kept, mismatched = usable, []
-    else:
-        kept = [c for c in usable if passed_agrees(c)]
-        mismatched = sorted(c for c in usable if not passed_agrees(c))
+    def selected(crate):
+        if not args.allow_failures and not clean_everywhere(crate):
+            return False
+        if args.require_equal_passed and not passed_agrees(crate):
+            return False
+        return True
+
+    kept = [c for c in usable if selected(c)]
+    excluded = sorted(c for c in usable if not selected(c))
     first_data = series[0][1]
     crates = sorted(kept, key=lambda c: value(c, first_data[c]))
 
-    if mismatched:
+    if excluded:
         labels = [label for label, _ in counted]
-        cw = max(max(len(c) for c in mismatched), len("crate")) + 2
-        widths = [max(len(lab), 8) + 2 for lab in labels]
-        print(f"\n{len(mismatched)} crate(s) excluded: the inputs disagree on how "
-              f"many tests passed, so their\nruntimes are not the same workload "
-              f"(plot them anyway with --allow-passed-mismatch):")
+        cw = max(max(len(c) for c in excluded), len("crate")) + 2
+        widths = [max(len(lab), 9) + 2 for lab in labels]
+        why = "not every test passed in every input"
+        if args.allow_failures:
+            why = "the inputs disagree on how many tests passed"
+        elif args.require_equal_passed:
+            why += ", or the counts differ between inputs"
+        print(f"\n{len(excluded)} crate(s) excluded: {why}, so their runtimes are "
+              f"not\nthe same workload (plot them anyway with --allow-failures). "
+              f"Columns are passed/tests:")
         print("crate".ljust(cw)
               + "".join(f"{lab:>{w}}" for lab, w in zip(labels, widths)))
-        for crate in mismatched:
-            cells = "".join(f"{'?' if n is None else n:>{w}}"
-                            for (_, n), w in zip(passed_counts(crate), widths))
+        for crate in excluded:
+            cells = "".join(f"{frac:>{w}}"
+                            for (_, frac), w in zip(passed_fractions(crate), widths))
             print(crate.ljust(cw) + cells)
         print()
 
@@ -579,7 +651,7 @@ def main():
           f"({skipped} crates lacked a usable {metric} value"
           f"{' or a passing test' if check_passed else ''} "
           f"under some input CSV and were skipped"
-          f"{f'; {len(mismatched)} more disagreed on the passed test count' if mismatched else ''}).")
+          f"{f'; {len(excluded)} more had failing tests' if excluded else ''}).")
     print(f"Wrote {out}")
 
     # Per-crate averages of each series over the shared crate set. Every kept

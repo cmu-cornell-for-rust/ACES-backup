@@ -9,6 +9,14 @@
 #                     list_tests.sh). Default: <outputs>/tests-<dataset>.csv
 #   --no-ffi          only run crates whose contains_ffi column is exactly
 #                     "false" (both "true" and "scan_failed" are skipped)
+#   --test-threads N  pass `--test-threads=N` to the test harness, e.g. 1 to run
+#                     the crate's tests serially. Off by default (libtest's own
+#                     default is one thread per core). This bites harder here
+#                     than in run_bench_dataset.sh: that script invokes each
+#                     test on its own, while this one passes the crate's WHOLE
+#                     --exact list to a single cargo invocation, so N caps the
+#                     parallelism across all of them. It changes every timing,
+#                     so the run gets its own CSV (a -tt<N> slug).
 #   <mode>      miri | bsan | rust -- which tool runs the tests:
 #                 miri: MIRIFLAGS=<common+extra> cargo miri test
 #                 bsan: BSAN_OPTIONS=<common+extra> cargo bsan test
@@ -92,6 +100,7 @@ CFG_RUSTFLAGS="--cfg=miri"
 IGNORE_FILE=""
 TESTS_CSV=""
 NO_FFI=0
+TEST_THREADS=""   # --test-threads N for the harness; empty = don't pass it
 POS=()
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -107,6 +116,11 @@ while [[ $# -gt 0 ]]; do
             TESTS_CSV="${1#*=}"; shift ;;
         --no-ffi)
             NO_FFI=1; shift ;;
+        --test-threads)
+            [[ $# -ge 2 ]] || { echo "Error: $1 requires a value." >&2; exit 1; }
+            TEST_THREADS="$2"; shift 2 ;;
+        --test-threads=*)
+            TEST_THREADS="${1#*=}"; shift ;;
         *)
             POS+=("$1"); shift ;;
     esac
@@ -120,6 +134,7 @@ if [[ $# -lt 4 || $# -gt 5 ]]; then
     echo "                 list_tests.sh). Default: $OUTPUTS_DIR/tests-<dataset>.csv" >&2
     echo "  --no-ffi       only run crates whose contains_ffi column is exactly" >&2
     echo "                 \"false\" (both \"true\" and \"scan_failed\" are skipped)" >&2
+    echo "  --test-threads N  pass --test-threads=N to the test harness" >&2
     echo "  <mode>      miri | bsan | rust -- which tool runs the tests" >&2
     echo "  <image>     image/SIF name under $CONTAINERS_DIR (e.g. miri, rust, bsan)" >&2
     echo "  <walltime>  per-job walltime, HH or HH:MM" >&2
@@ -138,6 +153,16 @@ EXTRA="${5:-}"   # mode-specific extras, appended to the built-in common set
 case "$MODE" in miri|bsan|rust) ;; *)
     echo "Error: mode must be miri, bsan, or rust (got '$MODE')." >&2; exit 1 ;;
 esac
+
+if [[ -n "$TEST_THREADS" ]]; then
+    [[ "$TEST_THREADS" =~ ^[1-9][0-9]*$ ]] \
+        || { echo "Error: --test-threads must be a positive integer (got '$TEST_THREADS')." >&2; exit 1; }
+fi
+
+# libtest's --test-threads is a HARNESS flag, so it rides after the `--`, ahead
+# of the --exact filters. The leading space lives inside the expansion so the
+# command is byte-identical to before when the option is unset.
+HARNESS_ARG="${TEST_THREADS:+ --test-threads=$TEST_THREADS}"
 
 # Default the tests CSV to the conventional per-dataset path when not given.
 [[ -n "$TESTS_CSV" ]] || TESTS_CSV="$OUTPUTS_DIR/tests-${DATASET}.csv"
@@ -173,10 +198,15 @@ DATASET_DIR="$DATASETS_ROOT/$DATASET"
 # appending to the same one. Non-alphanumerics collapse to single dashes. The
 # dataset name always comes LAST.
 CSV="$OUTPUTS_DIR/${IMAGE}-${DATASET}.csv"
+OPT_SLUG=""
 if [[ -n "$EXTRA" && "$MODE" != "rust" ]]; then
     OPT_SLUG="$(printf '%s' "$EXTRA" | tr -c '[:alnum:]' '-' | sed 's/-\{1,\}/-/g; s/^-//; s/-$//')"
-    CSV="$OUTPUTS_DIR/${IMAGE}-${OPT_SLUG}-${DATASET}.csv"
 fi
+# Serialized tests are a different workload (no cross-test overlap, no
+# contention), so the run gets its own CSV rather than appending to a parallel
+# run's -- same rule as run_bench_dataset.sh.
+[[ -n "$TEST_THREADS" ]] && OPT_SLUG="${OPT_SLUG:+$OPT_SLUG-}tt${TEST_THREADS}"
+[[ -n "$OPT_SLUG" ]] && CSV="$OUTPUTS_DIR/${IMAGE}-${OPT_SLUG}-${DATASET}.csv"
 
 # ── Validate ──────────────────────────────────────────────────────────────--
 [[ -x "$RUN_JOB" ]] \
@@ -248,7 +278,7 @@ echo "Walltime: $WALLTIME   Mem: $MEM"
 echo "Dataset:  $DATASET_DIR"
 echo "Tests:    $TESTS_CSV${NO_FFI:+  (--no-ffi)}"
 echo "Crates:   ${#CRATE_DIRS[@]}${IGNORE_FILE:+  (skipped $skipped via $IGNORE_FILE)}"
-echo "RUSTFLAGS: $CFG_RUSTFLAGS"
+echo "RUSTFLAGS: $CFG_RUSTFLAGS${TEST_THREADS:+   Harness: --test-threads=$TEST_THREADS}"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
 echo "Results:  $CSV"
@@ -302,7 +332,7 @@ for CRATE_PATH in "${CRATE_DIRS[@]}"; do
     for t in ${_tests[@]+"${_tests[@]}"}; do
         [[ -n "$t" ]] && TEST_FILTERS+=" '$t'"
     done
-    RUN_CMD="$RUN_PREFIX -- --exact$TEST_FILTERS"
+    RUN_CMD="$RUN_PREFIX --$HARNESS_ARG --exact$TEST_FILTERS"
 
     # Command that runs INSIDE the container, with /work == the crate dir.
     # CARGO_HOME / CARGO_TARGET_DIR are injected by run_job.sh and live under
