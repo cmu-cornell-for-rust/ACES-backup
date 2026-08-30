@@ -56,7 +56,15 @@ ignore)]) tests the others ran, and every one that did run then passed. Add
                    --tests-csv FILE points at one directly. The output file
                    gains a _no_ffi suffix so it never overwrites the full plot.
 
-The PNG is written to <output_dir>/<metric>_by_crate[_no_ffi].png. The outputs dir
+  --min-seconds N  drop crates whose measured time in the FIRST csv is under
+                   N seconds -- the crates whose totals are mostly the
+                   per-invocation startup constant that survives the
+                   calibration subtraction. For overhead/speedup that first csv
+                   is the baseline, so this also removes the ratios whose
+                   denominator was noise. Excluded crates are listed with their
+                   times, and the output file gains a _min<N>s suffix.
+
+The PNG is written to <output_dir>/<metric>_by_crate[_no_ffi][_min<N>s].png. The outputs dir
 defaults to <repo root>/outputs, found relative to this script (so it works
 both locally and on the cluster); override with $OUTPUTS_DIR.
 """
@@ -80,8 +88,8 @@ METRICS = {
     "seconds": {
         "has_baseline": False,
         "check_passed": True,
-        "ylabel": "test-suite runtime, seconds  (log scale)",
-        "title": "Per-crate runtime by version",
+        "ylabel": "Testbench Runtime, Seconds  (Log Scale)",
+        "title": "With vs Without Compaction (GC): Crate Testbench Runtimes",
     },
     "overhead": {
         "has_baseline": True,
@@ -401,6 +409,14 @@ def main():
                              "where EVERY test passed in EVERY input are drawn, since a "
                              "run that bailed out partway is not the same workload as one "
                              "that completed. (--allow-passed-mismatch is the old name.)")
+    parser.add_argument("--min-seconds", type=float, metavar="N",
+                        help="drop crates whose measured time in the FIRST csv is under N "
+                             "seconds. Aimed at the calibration noise floor: a crate whose "
+                             "total is a fraction of a second is mostly per-invocation "
+                             "startup residue, and for overhead/speedup it is the baseline "
+                             "such a crate divides into, which inflates the ratio. Excluded "
+                             "crates are listed with their times. The output file gains a "
+                             "_min<N>s suffix so it cannot overwrite the unfiltered plot.")
     parser.add_argument("--require-equal-passed", action="store_true",
                         help="additionally require the passed test COUNT to match across "
                              "inputs. All-passing does not imply equal counts: an input "
@@ -571,6 +587,30 @@ def main():
         if with_ffi or unknown:
             print()
 
+    # --min-seconds cuts on the FIRST csv, before the pass filter, so the
+    # exclusion table below doesn't list crates that are out of scope anyway.
+    # The first input is the natural reference: for `seconds` it also sets the x
+    # ordering, and for overhead/speedup it is the baseline every ratio divides
+    # by -- a baseline down in the noise floor turns the ratio into a
+    # startup-cost artifact rather than a measurement.
+    if args.min_seconds is not None:
+        ref_label, ref_data = loaded[0][0], loaded[0][1]
+
+        def ref_secs(crate):
+            return run_seconds(ref_data.get(crate) or {}) or 0.0
+
+        too_small = sorted((c for c in usable if ref_secs(c) < args.min_seconds),
+                           key=lambda c: -ref_secs(c))
+        if too_small:
+            small = set(too_small)
+            usable = [c for c in usable if c not in small]
+            print(f"\n--min-seconds {args.min_seconds:g} excluded {len(too_small)} "
+                  f"crate(s) measuring under that in {ref_label}:")
+            cw = max(max(len(c) for c in too_small), len("crate")) + 2
+            for crate in too_small:
+                print(f"  {crate.ljust(cw)}{ref_secs(crate):9.3f}s")
+            print()
+
     def selected(crate):
         if not args.allow_failures and not clean_everywhere(crate):
             return False
@@ -621,7 +661,7 @@ def main():
             continue
         xs, ys = zip(*pts)
         ax.plot(xs, ys, marker="o", ms=3, lw=0.8, alpha=0.8,
-                color=cmap(i % cmap.N), label=label)
+                color=cmap(i % cmap.N+3), label=label)
 
     if metric == "speedup":
         ax.axhline(1.0, ls="--", color="0.4", lw=1)
@@ -632,18 +672,25 @@ def main():
     ax.set_xticks(list(xs_all))
     ax.set_xticklabels(crates, rotation=90, fontsize=5)
     ax.set_xlim(-1, len(crates))
-    ax.set_xlabel(f"crate  (ordered by {series[0][0]}, ascending)")
-    ax.set_ylabel(spec["ylabel"].format(baseline=baseline_label))
-    ax.set_title(f"{spec['title']}  ({len(crates)} crate testbenches"
-                 f"{', no FFI' if args.no_ffi else ''})")
+    ax.set_xlabel(f"Crate  (Ordered by {series[0][0]}, ascending)", fontsize=12)
+    ax.set_ylabel(spec["ylabel"].format(baseline=baseline_label),fontsize=12)
+    ax.set_title(f"{spec['title']}  ({len(crates)} Crates with Unsafe)"
+                 f"{', no FFI' if args.no_ffi else ''}"
+                 #f"{f', >={args.min_seconds:g}s' if args.min_seconds is not None else ''})"
+                , fontsize=14)
     ax.grid(True, axis="y", ls=":", alpha=0.4)
-    ax.legend(loc="upper left", fontsize=8, ncol=2, framealpha=0.9)
+    ax.legend(loc="upper left", fontsize=12, ncol=2, framealpha=0.9)
     fig.tight_layout()
 
     os.makedirs(args.output_dir, exist_ok=True)
-    # The _no_ffi suffix keeps a filtered plot from overwriting the full one.
-    out = os.path.join(args.output_dir, f"{metric}_by_crate"
-                       f"{'_no_ffi' if args.no_ffi else ''}.{args.format}")
+    # The _no_ffi / _min<N>s suffixes keep a filtered plot from overwriting the
+    # full one. The float is rendered with 'p' for the point so the name stays
+    # one extension-free token (0.5 -> _min0p5s).
+    tag = "_no_ffi" if args.no_ffi else ""
+    if args.min_seconds is not None:
+        tag += "_min" + f"{args.min_seconds:g}".replace(".", "p") + "s"
+    out = os.path.join(args.output_dir,
+                       f"{metric}_by_crate{tag}.{args.format}")
     fig.savefig(out, dpi=args.dpi)
     plt.close(fig)
 
