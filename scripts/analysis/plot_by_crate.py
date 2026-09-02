@@ -56,17 +56,41 @@ ignore)]) tests the others ran, and every one that did run then passed. Add
                    --tests-csv FILE points at one directly. The output file
                    gains a _no_ffi suffix so it never overwrites the full plot.
 
-  --min-seconds N  drop crates whose measured time in the FIRST csv is under
-                   N seconds -- the crates whose totals are mostly the
+  --min-seconds N  drop crates measuring under N seconds in ANY input, the
+                   baseline included -- the crates whose totals are mostly the
                    per-invocation startup constant that survives the
-                   calibration subtraction. For overhead/speedup that first csv
-                   is the baseline, so this also removes the ratios whose
-                   denominator was noise. Excluded crates are listed with their
+                   calibration subtraction. Applying it to every input rather
+                   than one keeps the selection symmetric: conditioning on a
+                   single arm biases every ratio involving that arm upward, so
+                   the result would otherwise depend on which csv was listed
+                   first. Excluded crates are listed with their per-input
                    times, and the output file gains a _min<N>s suffix.
+
+  --min-seconds-only-first
+                   apply --min-seconds to the FIRST csv alone (the baseline, for
+                   overhead/speedup) rather than to every input -- the old
+                   behaviour, kept for reproducing older plots and for cutting on
+                   a known-good baseline. It is asymmetric by construction: the
+                   kept crates are the ones where that one arm was large, which
+                   biases every ratio involving it upward and makes the selection
+                   depend on argument order. The output gains a _first suffix.
 
 The PNG is written to <output_dir>/<metric>_by_crate[_no_ffi][_min<N>s].png. The outputs dir
 defaults to <repo root>/outputs, found relative to this script (so it works
 both locally and on the cluster); override with $OUTPUTS_DIR.
+
+    --cmap-indices N [N ...]
+                                     explicit colormap index per plotted series, in plotting
+                                     order. For seconds, provide one index per input CSV. For
+                                     overhead/speedup, provide one per VARIANT (the baseline is
+                                     first input CSV and is not plotted).
+
+  --labels L [L ...]
+                   legend label per input CSV, in the order given (baseline
+                   included). Without it a series is named after its file, and a
+                   real run name is long enough that the legend outgrows the
+                   figure -- tight_layout then squeezes the axes to half width
+                   making room for it. Quote labels containing spaces.
 """
 
 import argparse
@@ -89,7 +113,7 @@ METRICS = {
         "has_baseline": False,
         "check_passed": True,
         "ylabel": "Testbench Runtime, Seconds  (Log Scale)",
-        "title": "With vs Without Compaction (GC): Crate Testbench Runtimes",
+        "title": "Unsafe Crate Testbench Runtimes",
     },
     "overhead": {
         "has_baseline": True,
@@ -410,18 +434,45 @@ def main():
                              "run that bailed out partway is not the same workload as one "
                              "that completed. (--allow-passed-mismatch is the old name.)")
     parser.add_argument("--min-seconds", type=float, metavar="N",
-                        help="drop crates whose measured time in the FIRST csv is under N "
-                             "seconds. Aimed at the calibration noise floor: a crate whose "
-                             "total is a fraction of a second is mostly per-invocation "
-                             "startup residue, and for overhead/speedup it is the baseline "
-                             "such a crate divides into, which inflates the ratio. Excluded "
-                             "crates are listed with their times. The output file gains a "
-                             "_min<N>s suffix so it cannot overwrite the unfiltered plot.")
+                        help="drop crates measuring under N seconds in ANY input (the "
+                             "baseline included). Aimed at the calibration noise floor: a "
+                             "crate whose total is a fraction of a second is mostly the "
+                             "per-invocation startup residue that survived the calibration "
+                             "subtraction. The cut spans every input on purpose -- cutting "
+                             "on one arm biases every ratio involving it upward, so the "
+                             "answer would depend on which csv you listed first. Excluded "
+                             "crates are listed with their per-input times. The output file "
+                             "gains a _min<N>s suffix.")
+    parser.add_argument("--min-seconds-only-first", action="store_true",
+                        help="apply --min-seconds to the FIRST csv alone (the baseline for "
+                             "overhead/speedup) instead of to every input. This is the old "
+                             "behaviour and it is asymmetric on purpose only when you want "
+                             "it: the kept crates are the ones where that one arm happened "
+                             "to be large, which biases every ratio involving it upward and "
+                             "makes the result depend on argument order. Use it to reproduce "
+                             "an older plot or to cut on a known-good baseline. The output "
+                             "file gains a _first suffix so it cannot overwrite the "
+                             "symmetric plot.")
     parser.add_argument("--require-equal-passed", action="store_true",
                         help="additionally require the passed test COUNT to match across "
                              "inputs. All-passing does not imply equal counts: an input "
                              "can compile out or ignore tests the others ran.")
+    parser.add_argument("--cmap-indices", type=int, nargs="+", metavar="N",
+                        help="explicit colormap index per plotted series, in plotting "
+                            "order. For seconds: one index per input CSV. For "
+                            "overhead/speedup: one per variant (baseline is not "
+                            "plotted).")
+    parser.add_argument("--labels", nargs="+", metavar="LABEL",
+                        help="legend label per input CSV, in the order the CSVs were "
+                             "given (the baseline included, since overhead/speedup name "
+                             "it in the y axis). Overrides the filename-derived labels, "
+                             "which are long enough on a real run name that the legend "
+                             "outgrows the figure and tight_layout squeezes the axes to "
+                             "half width making room for it. Quote labels containing "
+                             "spaces.")
     args = parser.parse_args()
+    if args.min_seconds_only_first and args.min_seconds is None:
+        parser.error("--min-seconds-only-first has no effect without --min-seconds.")
     metric = args.metric
     spec = METRICS[metric]
 
@@ -454,6 +505,17 @@ def main():
         sys.exit("Error: matplotlib is required (pip install matplotlib).")
 
     loaded = [load_csv(p) for p in args.csvs]
+
+    # Filename-derived labels are as long as the run name (~90 chars for a
+    # -Zmiri-flag sweep); two of those in the legend are wider than the whole
+    # canvas, and tight_layout shrinks the axes trying to fit them. Let the
+    # caller name the series instead.
+    if args.labels is not None:
+        if len(args.labels) != len(loaded):
+            sys.exit(f"Error: --labels expects {len(loaded)} value(s) (one per input "
+                     f"CSV, baseline included), got {len(args.labels)}.")
+        loaded = [(lab, data, kind, stats)
+                  for lab, (_, data, kind, stats) in zip(args.labels, loaded)]
 
     # A hyperfine crate total is the sum of its per-test means, and each of
     # those includes cargo's freshness check plus the startup of every test
@@ -506,6 +568,20 @@ def main():
     # averages below) can tell them apart.
     series = [(label, data) for label, (_, data, _k, _s)
               in zip(disambiguate([lbl for lbl, _, _, _ in series]), series)]
+
+    color_indices = None
+    if args.cmap_indices is not None:
+        color_indices = list(args.cmap_indices)
+        if spec["has_baseline"] and len(color_indices) == len(args.csvs):
+            # overhead/speedup baseline is not plotted, so ignore its color.
+            color_indices = color_indices[1:]
+        if len(color_indices) != len(series):
+            if spec["has_baseline"]:
+                expect = f"{len(series)} (variants) or {len(args.csvs)} (all CSVs incl. baseline)"
+            else:
+                expect = str(len(series))
+            sys.exit(f"Error: --cmap-indices expects {expect} value(s), got "
+                     f"{len(args.cmap_indices)}.")
 
     check_passed = spec["check_passed"]
 
@@ -587,28 +663,61 @@ def main():
         if with_ffi or unknown:
             print()
 
-    # --min-seconds cuts on the FIRST csv, before the pass filter, so the
-    # exclusion table below doesn't list crates that are out of scope anyway.
-    # The first input is the natural reference: for `seconds` it also sets the x
-    # ordering, and for overhead/speedup it is the baseline every ratio divides
-    # by -- a baseline down in the noise floor turns the ratio into a
-    # startup-cost artifact rather than a measurement.
+    # --min-seconds runs before the pass filter, so the exclusion table below
+    # doesn't list crates that are out of scope anyway.
+    #
+    # The cut is applied to EVERY input (the baseline included), not just the
+    # first, and deliberately so. Cutting on one input conditions the comparison
+    # on that arm: the kept crates are the ones where it happened to be large,
+    # which biases every ratio involving it upward (regression to the mean). On
+    # this dataset that was worth a 3.5x swing in the geometric mean depending
+    # only on which csv was listed first. Requiring all inputs above the cut is
+    # symmetric, so no arm is privileged and reordering the arguments cannot
+    # change the result. It is also the stricter rule -- for overhead/speedup,
+    # where the baseline is the fastest arm by construction, the two coincide.
     if args.min_seconds is not None:
-        ref_label, ref_data = loaded[0][0], loaded[0][1]
+        # --min-seconds-only-first narrows the cut back to one arm; the table
+        # below still shows every input, so the asymmetry stays visible.
+        # Indices, not labels: the baseline shares disambiguate()'s namespace
+        # with the variants but not its numbering, so labels can collide.
+        cut_on = [0] if args.min_seconds_only_first else list(range(len(counted)))
 
-        def ref_secs(crate):
-            return run_seconds(ref_data.get(crate) or {}) or 0.0
+        def input_secs(crate):
+            return [(label, run_seconds(data.get(crate) or {}) or 0.0)
+                    for label, data in counted]
 
-        too_small = sorted((c for c in usable if ref_secs(c) < args.min_seconds),
-                           key=lambda c: -ref_secs(c))
+        def worst_secs(crate):
+            secs = input_secs(crate)
+            return min(secs[i][1] for i in cut_on)
+
+        too_small = sorted((c for c in usable if worst_secs(c) < args.min_seconds),
+                           key=lambda c: -worst_secs(c))
         if too_small:
             small = set(too_small)
             usable = [c for c in usable if c not in small]
-            print(f"\n--min-seconds {args.min_seconds:g} excluded {len(too_small)} "
-                  f"crate(s) measuring under that in {ref_label}:")
+            labels = [label for label, _ in counted]
             cw = max(max(len(c) for c in too_small), len("crate")) + 2
+            widths = [max(len(lab), 9) + 2 for lab in labels]
+            if args.min_seconds_only_first:
+                scope = (f"crate(s) measuring under that in {counted[0][0]}\n"
+                         f"(--min-seconds-only-first: the cut is on that arm alone, "
+                         f"so the selection depends on argument order and every "
+                         f"ratio involving it is biased upward). Seconds per input, "
+                         f"* marks the ones below the cut:")
+            else:
+                scope = ("crate(s) measuring under that in at least one input\n"
+                         "(the cut applies to every input, so argument order cannot "
+                         "change the selection). Seconds per input, * marks the ones "
+                         "below the cut:")
+            print(f"\n--min-seconds {args.min_seconds:g} excluded {len(too_small)} "
+                  + scope)
+            print("crate".ljust(cw)
+                  + "".join(f"{lab:>{w}}" for lab, w in zip(labels, widths)))
             for crate in too_small:
-                print(f"  {crate.ljust(cw)}{ref_secs(crate):9.3f}s")
+                cells = "".join(
+                    f"{f'{v:.3f}' + ('*' if v < args.min_seconds else ''):>{w}}"
+                    for (_, v), w in zip(input_secs(crate), widths))
+                print(crate.ljust(cw) + cells)
             print()
 
     def selected(crate):
@@ -660,8 +769,9 @@ def main():
         if not pts:
             continue
         xs, ys = zip(*pts)
+        ci = color_indices[i] if color_indices is not None else i
         ax.plot(xs, ys, marker="o", ms=3, lw=0.8, alpha=0.8,
-                color=cmap(i % cmap.N+3), label=label)
+            color=cmap(ci % cmap.N), label=label)
 
     if metric == "speedup":
         ax.axhline(1.0, ls="--", color="0.4", lw=1)
@@ -674,7 +784,7 @@ def main():
     ax.set_xlim(-1, len(crates))
     ax.set_xlabel(f"Crate  (Ordered by {series[0][0]}, ascending)", fontsize=12)
     ax.set_ylabel(spec["ylabel"].format(baseline=baseline_label),fontsize=12)
-    ax.set_title(f"{spec['title']}  ({len(crates)} Crates with Unsafe)"
+    ax.set_title(f"{spec['title']}"
                  f"{', no FFI' if args.no_ffi else ''}"
                  #f"{f', >={args.min_seconds:g}s' if args.min_seconds is not None else ''})"
                 , fontsize=14)
@@ -689,6 +799,8 @@ def main():
     tag = "_no_ffi" if args.no_ffi else ""
     if args.min_seconds is not None:
         tag += "_min" + f"{args.min_seconds:g}".replace(".", "p") + "s"
+        if args.min_seconds_only_first:
+            tag += "_first"
     out = os.path.join(args.output_dir,
                        f"{metric}_by_crate{tag}.{args.format}")
     fig.savefig(out, dpi=args.dpi)

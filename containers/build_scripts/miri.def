@@ -14,6 +14,10 @@ From: ubuntu:22.04
     #                  feature of `./miri install`, see %post)
     MIRI_REF=""
 
+    # "0" builds Miri with its `lazy-alloc` feature turned off (build.sh's
+    # --no-lazy-alloc); any other value leaves the default feature set alone.
+    MIRI_LAZY_ALLOC="1"
+
 %environment
     export RUSTUP_HOME=/opt/rust/rustup
     export CARGO_HOME=/opt/rust/cargo
@@ -74,6 +78,7 @@ SH
     # MIRI_REF is supplied by build.sh via --build-arg. When non-empty, check
     # out that branch/commit; otherwise build from the default branch.
     MIRI_REF="{{ MIRI_REF }}"
+    MIRI_LAZY_ALLOC="{{ MIRI_LAZY_ALLOC }}"
     if [ -n "$MIRI_REF" ]; then
         git clone https://github.com/cmu-cornell-for-rust/miri /opt/miri
         git -C /opt/miri checkout "$MIRI_REF"
@@ -84,11 +89,39 @@ SH
 
     ./miri toolchain
 
-    # The tracing branch needs Miri built with its tracing feature enabled.
+    # Feature selection for `./miri install`:
+    #   - the tracing branch needs Miri's `tracing` feature;
+    #   - MIRI_LAZY_ALLOC=0 turns off `lazy-alloc`. That feature is part of
+    #     Miri's `default` set, and it is a compile-time #[cfg] (it swaps the
+    #     type of tree_borrows::AllocState), so the only way off is
+    #     --no-default-features -- which also drops `stack-cache` and
+    #     `native-lib`. Both are re-added explicitly so this build differs from
+    #     the default one in lazy-alloc alone.
+    #
+    # Order matters: miri-script takes --features itself but forwards every
+    # other flag verbatim to BOTH `cargo install` invocations (the root crate
+    # and cargo-miri), and its `flags` arg is a trailing var-arg -- so anything
+    # after --no-default-features gets swallowed into it. A --features that
+    # landed there would be passed to cargo-miri, which declares no features,
+    # and cargo would reject it. Keep --features first.
+    features=""
     case "$MIRI_REF" in
-        *tracing*) ./miri install --features=tracing ;;
-        *)         ./miri install ;;
+        *tracing*) features="tracing" ;;
     esac
+
+    install_args=""
+    if [ "$MIRI_LAZY_ALLOC" = "0" ]; then
+        # Fail loudly rather than quietly producing a "-nolazy" image that is
+        # byte-for-byte the default one, if this ref predates the feature.
+        grep -q '^lazy-alloc *=' Cargo.toml || \
+            { echo "ERROR: ref '${MIRI_REF:-<default branch>}' has no 'lazy-alloc' feature"; exit 1; }
+        features="stack-cache,native-lib${features:+,${features}}"
+        install_args="--no-default-features"
+    fi
+    if [ -n "$features" ]; then
+        install_args="--features=${features} ${install_args}"
+    fi
+    ./miri install $install_args
 
     # Set the fork's toolchain as default so `cargo miri test` resolves cargo-miri/miri
     # from the right sysroot without needing `+miri`.
