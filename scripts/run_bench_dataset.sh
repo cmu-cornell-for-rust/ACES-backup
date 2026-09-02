@@ -39,17 +39,17 @@
 #                     --no-ffi filtering, minus the slowlist), capped at
 #                     --max-tasks. Each job is then submitted with only the
 #                     workers it actually holds, so the tail job asks for its
-#                     9 crates rather than a full 48
-#   --max-tasks N     ceiling for the auto-sized worker count (default 48,
-#                     half an ACES node). Half-node jobs backfill into gaps
-#                     that whole-node jobs never fit; raise it only if the
-#                     queue is empty and you want fewer, wider jobs
+#                     9 crates rather than a full 24
+#   --max-tasks N     ceiling for the auto-sized worker count (default 24 --
+#                     a quarter node of cores, 192G). Narrow jobs backfill
+#                     into scheduling gaps that wide ones never fit; raise it
+#                     only if the queue is empty and you want fewer, wider jobs
 #   --cpus-per-task N cores per worker (default 1; also caps cargo build jobs
 #                     via CARGO_BUILD_JOBS). One is enough: the timed command
 #                     is a single-threaded interpretation under miri/bsan, so
 #                     extra cores only speed the one-off compile
 #   --mem-per-task G  GB per worker (default 8; tasks*mem must fit 488G/node,
-#                     so 48 workers x 8G = 384G leaves headroom)
+#                     so 24 workers x 8G = 192G leaves ample headroom)
 #   --slow-walltime T walltime for the slowlist jobs, HH or HH:MM (default 14).
 #                     SLURM bills elapsed time, not the request, and these jobs
 #                     are small, so generous is cheap
@@ -175,9 +175,9 @@ IGNORE_FILE=""
 ONLY_FILE=""
 JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
 TASKS=""            # empty = auto: min(fast crates, MAX_TASKS)
-MAX_TASKS=48         # ceiling on auto-sized workers per job (half an ACES node)
+MAX_TASKS=24         # ceiling on auto-sized workers per job (a quarter node)
 CPUS_PER_TASK=1
-MEM_PER_TASK=8       # GB per worker (48*8=384G, inside the 488G node cap)
+MEM_PER_TASK=8       # GB per worker (24*8=192G, well inside the 488G node cap)
 SLOW_GROUP=10        # slowlist crates per group
 SLOW_SPLITS=4        # jobs each group's tests are split across
 RUNS=3
@@ -425,9 +425,9 @@ done
 
 # ── Worker count per job: auto-size unless --tasks was given ─────────────────
 # Ask for what the run actually needs, not a whole node: one worker per fast
-# (non-slowlist) crate, capped at MAX_TASKS. Half-node-or-smaller jobs backfill
-# into scheduling gaps that whole-node jobs never fit, and a run of 12 crates
-# should not sit in the queue waiting for 48 free cores. Each job is later
+# (non-slowlist) crate, capped at MAX_TASKS. Narrow jobs backfill into
+# scheduling gaps that whole-node jobs never fit, and a run of 12 crates
+# should not sit in the queue waiting for 24 free cores. Each job is later
 # submitted with its OWN worker count (see job_worker_count), so a final job
 # holding 9 crates requests 9 tasks, not TASKS.
 if [[ -z "$TASKS" ]]; then
