@@ -34,14 +34,22 @@
 #                     slowlist) crates. Default: as many as needed for full
 #                     parallelism, ceil(crates / tasks), capped at 40 (the
 #                     QOS job limit)
-#   --tasks N         worker tasks per node (default 96 -- a whole node of
-#                     single-cpu workers per regular job)
+#   --tasks N         worker tasks per job. Default: auto -- one worker per
+#                     REGULAR crate (the --tests CSV after --ignore/--only/
+#                     --no-ffi filtering, minus the slowlist), capped at
+#                     --max-tasks. Each job is then submitted with only the
+#                     workers it actually holds, so the tail job asks for its
+#                     9 crates rather than a full 48
+#   --max-tasks N     ceiling for the auto-sized worker count (default 48,
+#                     half an ACES node). Half-node jobs backfill into gaps
+#                     that whole-node jobs never fit; raise it only if the
+#                     queue is empty and you want fewer, wider jobs
 #   --cpus-per-task N cores per worker (default 1; also caps cargo build jobs
 #                     via CARGO_BUILD_JOBS). One is enough: the timed command
 #                     is a single-threaded interpretation under miri/bsan, so
 #                     extra cores only speed the one-off compile
-#   --mem-per-task G  GB per worker (default 5; tasks*mem must fit 488G/node,
-#                     so 96 workers x 5G = 480G is the default's ceiling)
+#   --mem-per-task G  GB per worker (default 8; tasks*mem must fit 488G/node,
+#                     so 48 workers x 8G = 384G leaves headroom)
 #   --slow-walltime T walltime for the slowlist jobs, HH or HH:MM (default 14).
 #                     SLURM bills elapsed time, not the request, and these jobs
 #                     are small, so generous is cheap
@@ -166,9 +174,10 @@ NO_FFI=0
 IGNORE_FILE=""
 ONLY_FILE=""
 JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
-TASKS=96
+TASKS=""            # empty = auto: min(fast crates, MAX_TASKS)
+MAX_TASKS=48         # ceiling on auto-sized workers per job (half an ACES node)
 CPUS_PER_TASK=1
-MEM_PER_TASK=5       # GB per worker (96*5=480G, just under the 488G node cap)
+MEM_PER_TASK=8       # GB per worker (48*8=384G, inside the 488G node cap)
 SLOW_GROUP=10        # slowlist crates per group
 SLOW_SPLITS=4        # jobs each group's tests are split across
 RUNS=3
@@ -191,6 +200,8 @@ while [[ $# -gt 0 ]]; do
         --jobs=*)        JOBS="${1#*=}"; shift ;;
         --tasks)         TASKS="$2"; shift 2 ;;
         --tasks=*)       TASKS="${1#*=}"; shift ;;
+        --max-tasks)     MAX_TASKS="$2"; shift 2 ;;
+        --max-tasks=*)   MAX_TASKS="${1#*=}"; shift ;;
         --cpus-per-task) CPUS_PER_TASK="$2"; shift 2 ;;
         --cpus-per-task=*) CPUS_PER_TASK="${1#*=}"; shift ;;
         --mem-per-task)  MEM_PER_TASK="$2"; shift 2 ;;
@@ -223,7 +234,8 @@ usage() {
     echo "  <dataset>   folder under $DATASETS_ROOT" >&2
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --tests FILE --no-ffi --ignore FILE --only FILE --jobs N" >&2
-    echo "           --tasks N --cpus-per-task N --mem-per-task G --runs N --warmup N" >&2
+    echo "           --tasks N --max-tasks N --cpus-per-task N --mem-per-task G" >&2
+    echo "           --runs N --warmup N" >&2
     echo "           --slow-walltime T (for slowlist jobs, default 14)" >&2
     echo "           --slow-group N --slow-splits N (slowlist shape, 10 x 4)" >&2
     exit 1
@@ -264,30 +276,24 @@ WALLTIME=$(parse_walltime "$WALLTIME_ARG")
 SLOW_WALLTIME=$(parse_walltime "$SLOW_WALLTIME_ARG")
 
 MEM_PER_TASK="${MEM_PER_TASK%G}"
-for v in TASKS CPUS_PER_TASK MEM_PER_TASK RUNS WARMUP SLOW_GROUP SLOW_SPLITS; do
+for v in CPUS_PER_TASK MEM_PER_TASK RUNS WARMUP SLOW_GROUP SLOW_SPLITS MAX_TASKS; do
     [[ "${!v}" =~ ^[0-9]+$ ]] || { echo "Error: $v must be a number." >&2; exit 1; }
 done
 (( SLOW_GROUP  >= 1 )) || { echo "Error: --slow-group must be >= 1." >&2; exit 1; }
 (( SLOW_SPLITS >= 1 )) || { echo "Error: --slow-splits must be >= 1." >&2; exit 1; }
+(( MAX_TASKS   >= 1 )) || { echo "Error: --max-tasks must be >= 1." >&2; exit 1; }
 if [[ -n "$JOBS" ]]; then
     [[ "$JOBS" =~ ^[0-9]+$ && "$JOBS" -ge 1 ]] || { echo "Error: --jobs must be a number >= 1." >&2; exit 1; }
 fi
-(( TASKS >= 1 )) || { echo "Error: --tasks must be >= 1." >&2; exit 1; }
+if [[ -n "$TASKS" ]]; then
+    [[ "$TASKS" =~ ^[0-9]+$ && "$TASKS" -ge 1 ]] || { echo "Error: --tasks must be a number >= 1." >&2; exit 1; }
+fi
 if [[ -n "$TEST_THREADS" ]]; then
     [[ "$TEST_THREADS" =~ ^[1-9][0-9]*$ ]] \
         || { echo "Error: --test-threads must be a positive integer (got '$TEST_THREADS')." >&2; exit 1; }
 fi
-TOTAL_MEM=$(( TASKS * MEM_PER_TASK ))
-if (( TOTAL_MEM > 488 )); then
-    echo "Error: tasks*mem = ${TOTAL_MEM}G exceeds the 488G usable on an ACES node." >&2
-    echo "Lower --tasks or --mem-per-task." >&2
-    exit 1
-fi
-TOTAL_CPUS=$(( TASKS * CPUS_PER_TASK ))
-if (( TOTAL_CPUS > 96 )); then
-    echo "Error: tasks*cpus = ${TOTAL_CPUS} exceeds the 96 cores on an ACES node." >&2
-    exit 1
-fi
+# The tasks*mem / tasks*cpus node-capacity checks need the resolved TASKS, so
+# they live just after auto-sizing (below the crate selection).
 
 IMAGE="$(basename "${IMAGE_ARG%.sif}")"
 SIF_ABS="$CONTAINERS_DIR/$IMAGE.sif"
@@ -417,11 +423,38 @@ for crate in ${SLOW_ORDER[@]+"${SLOW_ORDER[@]}"}; do
     [[ -n "${SEL_COUNT[$crate]:-}" ]] && SLOW_CRATES+=("$crate")
 done
 
+# ── Worker count per job: auto-size unless --tasks was given ─────────────────
+# Ask for what the run actually needs, not a whole node: one worker per fast
+# (non-slowlist) crate, capped at MAX_TASKS. Half-node-or-smaller jobs backfill
+# into scheduling gaps that whole-node jobs never fit, and a run of 12 crates
+# should not sit in the queue waiting for 48 free cores. Each job is later
+# submitted with its OWN worker count (see job_worker_count), so a final job
+# holding 9 crates requests 9 tasks, not TASKS.
+if [[ -z "$TASKS" ]]; then
+    TASKS=${#FAST_SEL[@]}
+    (( TASKS > MAX_TASKS )) && TASKS=$MAX_TASKS
+    (( TASKS < 1 )) && TASKS=1
+fi
+
+# Node-capacity checks, now that TASKS is known. These bound the LARGEST job;
+# per-job right-sizing only ever shrinks the request from here.
+TOTAL_MEM=$(( TASKS * MEM_PER_TASK ))
+if (( TOTAL_MEM > 488 )); then
+    echo "Error: tasks*mem = ${TOTAL_MEM}G exceeds the 488G usable on an ACES node." >&2
+    echo "Lower --tasks/--max-tasks or --mem-per-task." >&2
+    exit 1
+fi
+TOTAL_CPUS=$(( TASKS * CPUS_PER_TASK ))
+if (( TOTAL_CPUS > 96 )); then
+    echo "Error: tasks*cpus = ${TOTAL_CPUS} exceeds the 96 cores on an ACES node." >&2
+    exit 1
+fi
+
 # ── Job count: auto-size unless --jobs was given ─────────────────────────────
 # Enough single-node jobs that every non-slow crate gets its own worker from
 # the start (ceil(fast crates/tasks)), capped at the QOS's 40 concurrent jobs.
 # More jobs than crates/tasks would just sit idle; more than 40 would sit in
-# the queue anyway. The slow job (if any) is submitted on top of these.
+# the queue anyway. The slow jobs are submitted on top of these.
 if [[ -z "$JOBS" ]]; then
     JOBS=$(( (${#FAST_SEL[@]} + TASKS - 1) / TASKS ))
     (( JOBS > 40 )) && JOBS=40
@@ -717,7 +750,8 @@ echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only ffi=$skip_ffi no-te
 if (( ${#MISSING[@]} > 0 )); then
     printf '  missing from dataset: %s\n' "${MISSING[@]}" | head -20
 fi
-echo "Shape:    $JOBS job(s) x $TASKS tasks x ${CPUS_PER_TASK} cpus, ${MEM_PER_TASK}G/task (${TOTAL_MEM}G/node), $WALLTIME each"
+echo "Shape:    $JOBS job(s) x up to $TASKS tasks x ${CPUS_PER_TASK} cpus, ${MEM_PER_TASK}G/task (<=${TOTAL_MEM}G/job), $WALLTIME each"
+echo "          (${#FAST_SEL[@]} regular crate(s); each job requests only the workers it holds)"
 if (( ${#SLOW_CRATES[@]} > 0 )); then
     echo "Slow:     ${#SLOW_CRATES[@]} slowlist crate(s) -> ${#SLOW_JOBS[@]} job(s) at $SLOW_WALLTIME"
     echo "          (groups of $SLOW_GROUP crates, each group's tests split $SLOW_SPLITS ways)"
@@ -740,6 +774,20 @@ echo
 # job is sized to its own worker count so it doesn't hold idle cores while it
 # runs the long tail.
 JOBIDS=()
+# Workers actually needed by job <j>: highest occupied task id + 1. Chunk task
+# ids are contiguous from 0 for the regular dealing, so this is just the crate
+# count; for a split slowlist group a crate with too few tests can leave a hole,
+# and job.sh iterates 0..NTASKS-1 skipping empty chunks, so the max (not the
+# count) is what must be requested.
+job_worker_count() {
+    local j="$1" f tid max=-1
+    for f in "$RUNDIR"/chunks/chunk-"$j"-*.txt; do
+        [[ -s "$f" ]] || continue
+        tid="${f##*-}"; tid="${tid%.txt}"
+        (( tid > max )) && max=$tid
+    done
+    echo $(( max + 1 ))
+}
 submit_one() {
     local j="$1" ntasks="$2" label="$3" wall="$4" jid
     compgen -G "$RUNDIR/chunks/chunk-$j-*.txt" >/dev/null || return 0
@@ -758,7 +806,9 @@ submit_one() {
     echo "submitted job $label ($ntasks workers) -> SLURM job $jid"
 }
 for (( j = 0; j < JOBS; j++ )); do
-    submit_one "$j" "$TASKS" "$j" "$WALLTIME"
+    nt=$(job_worker_count "$j")
+    (( nt > 0 )) || continue
+    submit_one "$j" "$nt" "$j" "$WALLTIME"
 done
 for spec in ${SLOW_JOBS[@]+"${SLOW_JOBS[@]}"}; do
     read -r sj snt slabel <<<"$spec"
