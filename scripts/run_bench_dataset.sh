@@ -34,17 +34,26 @@
 #                     slowlist) crates. Default: as many as needed for full
 #                     parallelism, ceil(crates / tasks), capped at 40 (the
 #                     QOS job limit)
-#   --tasks N         worker tasks per node (default 12 -- 48 cpus/96G per
-#                     regular job, small enough to backfill readily)
-#   --cpus-per-task N cores per worker (default 4; also caps cargo build jobs
-#                     via CARGO_BUILD_JOBS)
-#   --mem-per-task G  GB per worker (default 8; tasks*mem must fit 488G/node)
-#   --slow-walltime T walltime for the per-crate slowlist jobs, HH or HH:MM
-#                     (default 14). SLURM bills elapsed time, not the request,
-#                     and these jobs are tiny (4 cpus), so generous is cheap
-#   --runs N          hyperfine timing runs per test (default 5)
-#   --warmup N        hyperfine warmup runs per test (default 1; the untimed
-#                     status pre-run also warms caches, so each test runs
+#   --tasks N         worker tasks per node (default 96 -- a whole node of
+#                     single-cpu workers per regular job)
+#   --cpus-per-task N cores per worker (default 1; also caps cargo build jobs
+#                     via CARGO_BUILD_JOBS). One is enough: the timed command
+#                     is a single-threaded interpretation under miri/bsan, so
+#                     extra cores only speed the one-off compile
+#   --mem-per-task G  GB per worker (default 5; tasks*mem must fit 488G/node,
+#                     so 96 workers x 5G = 480G is the default's ceiling)
+#   --slow-walltime T walltime for the slowlist jobs, HH or HH:MM (default 14).
+#                     SLURM bills elapsed time, not the request, and these jobs
+#                     are small, so generous is cheap
+#   --slow-group N    slowlist crates per group (default 10). Groups are cut in
+#                     slowlist FILE ORDER: first N entries, then the next N
+#   --slow-splits N   how many jobs each group's tests are spread over
+#                     (default 4). Each group becomes N jobs; every crate's
+#                     test list is strided N ways, so a group of 10 crates
+#                     runs as N jobs x 10 single-cpu workers
+#   --runs N          hyperfine timing runs per test (default 3)
+#   --warmup N        hyperfine warmup runs per test (default 0; the untimed
+#                     status pre-run already warms caches, so each test runs
 #                     1 + warmup + runs times in total)
 #   --test-threads N  pass `--test-threads=N` to the test harness on every run
 #                     (and on the calibration run), e.g. 1 to execute each
@@ -69,15 +78,19 @@
 # few whole-node sbatch jobs -- HPRC's preferred shape for many small tasks.
 #
 # Known-slow crates (scripts/slowlist, one name per line, #-comments ok) are
-# automatically pulled out of the regular dealing and EACH submitted as its
-# own single-worker job -- so a straggler that needs many hours never sits in
-# (or times out of) the regular jobs, and since SLURM bills the full
-# allocation until the job's last process exits, each slow crate stops
-# costing anything the moment it finishes instead of idling until the
-# slowest one drains. Slowlist entries not selected for the run are ignored,
-# so the list is dataset-agnostic. Slow jobs request --slow-walltime (14h
-# default) while the regular jobs keep the short <walltime>, so the wide
-# fast jobs stay backfill-friendly.
+# automatically pulled out of the regular dealing -- so a straggler that needs
+# many hours never sits in (or times out of) the regular jobs. They are cut
+# into groups of --slow-group (10) crates in slowlist FILE ORDER, and each
+# group is submitted as --slow-splits (4) jobs: one worker per crate, with
+# every crate's test list strided across the 4 jobs. A 40-crate slowlist is
+# therefore 4 groups x 4 = 16 jobs of 10 single-cpu workers, and each slow
+# crate's tests are worked by 4 machines at once instead of one. Each split
+# job recompiles the crate and writes its own __calibration__ row (private
+# CARGO_TARGET_DIR per worker, so they cannot collide); part logs land in
+# <crate>/hyperfine-<image>-part<N>.log. Slowlist entries not selected for the
+# run are ignored, so the list is dataset-agnostic. Slow jobs request
+# --slow-walltime (14h default) while the regular jobs keep the short
+# <walltime>, so the wide fast jobs stay backfill-friendly.
 #
 # Crates from the tests CSV are dealt round-robin (largest test count first)
 # across jobs*tasks workers; each worker processes its crates sequentially:
@@ -153,14 +166,16 @@ NO_FFI=0
 IGNORE_FILE=""
 ONLY_FILE=""
 JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
-TASKS=12
-CPUS_PER_TASK=4
-MEM_PER_TASK=8       # GB per worker
-RUNS=5
-WARMUP=1
+TASKS=96
+CPUS_PER_TASK=1
+MEM_PER_TASK=5       # GB per worker (96*5=480G, just under the 488G node cap)
+SLOW_GROUP=10        # slowlist crates per group
+SLOW_SPLITS=4        # jobs each group's tests are split across
+RUNS=3
+WARMUP=0
 TEST_THREADS=""        # --test-threads N for the harness; empty = don't pass it
 WALLTIME_ARG=2         # walltime for the regular jobs (positional overrides)
-SLOW_WALLTIME_ARG=14   # walltime for the per-crate slowlist jobs
+SLOW_WALLTIME_ARG=14   # walltime for the slowlist jobs
 
 POS=()
 while [[ $# -gt 0 ]]; do
@@ -188,6 +203,10 @@ while [[ $# -gt 0 ]]; do
         --test-threads=*) TEST_THREADS="${1#*=}"; shift ;;
         --slow-walltime) SLOW_WALLTIME_ARG="$2"; shift 2 ;;
         --slow-walltime=*) SLOW_WALLTIME_ARG="${1#*=}"; shift ;;
+        --slow-group)    SLOW_GROUP="$2"; shift 2 ;;
+        --slow-group=*)  SLOW_GROUP="${1#*=}"; shift ;;
+        --slow-splits)   SLOW_SPLITS="$2"; shift 2 ;;
+        --slow-splits=*) SLOW_SPLITS="${1#*=}"; shift ;;
         -*)
             echo "Error: unknown option '$1'." >&2; exit 1 ;;
         *)
@@ -206,6 +225,7 @@ usage() {
     echo "  options: --tests FILE --no-ffi --ignore FILE --only FILE --jobs N" >&2
     echo "           --tasks N --cpus-per-task N --mem-per-task G --runs N --warmup N" >&2
     echo "           --slow-walltime T (for slowlist jobs, default 14)" >&2
+    echo "           --slow-group N --slow-splits N (slowlist shape, 10 x 4)" >&2
     exit 1
 }
 [[ $# -ge 3 && $# -le 5 ]] || usage
@@ -244,9 +264,11 @@ WALLTIME=$(parse_walltime "$WALLTIME_ARG")
 SLOW_WALLTIME=$(parse_walltime "$SLOW_WALLTIME_ARG")
 
 MEM_PER_TASK="${MEM_PER_TASK%G}"
-for v in TASKS CPUS_PER_TASK MEM_PER_TASK RUNS WARMUP; do
+for v in TASKS CPUS_PER_TASK MEM_PER_TASK RUNS WARMUP SLOW_GROUP SLOW_SPLITS; do
     [[ "${!v}" =~ ^[0-9]+$ ]] || { echo "Error: $v must be a number." >&2; exit 1; }
 done
+(( SLOW_GROUP  >= 1 )) || { echo "Error: --slow-group must be >= 1." >&2; exit 1; }
+(( SLOW_SPLITS >= 1 )) || { echo "Error: --slow-splits must be >= 1." >&2; exit 1; }
 if [[ -n "$JOBS" ]]; then
     [[ "$JOBS" =~ ^[0-9]+$ && "$JOBS" -ge 1 ]] || { echo "Error: --jobs must be a number >= 1." >&2; exit 1; }
 fi
@@ -361,26 +383,38 @@ fi
 
 # ── Split off the known-slow crates (scripts/slowlist) ───────────────────────
 # Crates listed in the slowlist file are pulled out of the normal dealing and
-# each isolated in its own single-worker job, so the regular jobs can run
-# with a short walltime and no slow crate bills idle cores while waiting for
-# a slower one to drain. Slowlist crates not selected for this run are
-# simply ignored, so the list works across datasets.
+# run in their own long-walltime jobs, so the regular jobs can keep a short
+# walltime and no slow crate bills idle cores while waiting for a slower one
+# to drain. Slowlist crates not selected for this run are simply ignored, so
+# the list works across datasets.
+#
+# The slowlist is read IN FILE ORDER and kept that way: grouping is positional
+# (first --slow-group entries, then the next...), so the file itself is the
+# knob for which crates share a job.
 SLOWLIST_FILE="$GROUP/scripts/slowlist"
 declare -A SLOWLIST=()
+SLOW_ORDER=()
 if [[ -f "$SLOWLIST_FILE" ]]; then
     while IFS= read -r line || [[ -n "$line" ]]; do
         line="${line%%#*}"; line="${line//[[:space:]]/}"
-        [[ -n "$line" ]] && SLOWLIST["$line"]=1
+        [[ -n "$line" ]] || continue
+        [[ -n "${SLOWLIST[$line]:-}" ]] && continue
+        SLOWLIST["$line"]=1
+        SLOW_ORDER+=("$line")
     done < "$SLOWLIST_FILE"
 fi
 
-FAST_SEL=(); SLOW_SEL=()
+FAST_SEL=()
+declare -A SEL_COUNT=()
 for line in "${SELECTED[@]}"; do
-    if [[ -n "${SLOWLIST[${line#*$'\t'}]:-}" ]]; then
-        SLOW_SEL+=("$line")
-    else
-        FAST_SEL+=("$line")
-    fi
+    crate="${line#*$'\t'}"
+    SEL_COUNT["$crate"]="${line%%$'\t'*}"
+    [[ -z "${SLOWLIST[$crate]:-}" ]] && FAST_SEL+=("$line")
+done
+
+SLOW_CRATES=()
+for crate in ${SLOW_ORDER[@]+"${SLOW_ORDER[@]}"}; do
+    [[ -n "${SEL_COUNT[$crate]:-}" ]] && SLOW_CRATES+=("$crate")
 done
 
 # ── Job count: auto-size unless --jobs was given ─────────────────────────────
@@ -408,15 +442,42 @@ if (( ${#FAST_SEL[@]} > 0 && JOBS > 0 )); then
     done
 fi
 
-# Slow crates take the job indices after the regular ones, one single-worker
-# job each (chunk-<idx>-0.txt holds exactly that crate).
-SLOW_CRATES=()
-if (( ${#SLOW_SEL[@]} > 0 )); then
-    mapfile -t SLOW_SORTED < <(printf '%s\n' "${SLOW_SEL[@]}" | sort -t$'\t' -k1,1nr -k2,2)
-    for line in "${SLOW_SORTED[@]}"; do
-        crate="${line#*$'\t'}"
-        printf '%s\n' "$crate" > "$RUNDIR/chunks/chunk-$(( JOBS + ${#SLOW_CRATES[@]} ))-0.txt"
-        SLOW_CRATES+=("$crate")
+# Slow crates take the job indices after the regular ones. They are cut into
+# groups of SLOW_GROUP (in slowlist order), and each group is submitted as
+# SLOW_SPLITS separate jobs: one worker per crate in the group, and every
+# crate's TEST LIST split SLOW_SPLITS ways (strided, so the split is even even
+# when the list is cost-ordered). So a 40-crate slowlist at 10 x 4 becomes 16
+# jobs of 10 single-cpu workers, and the slowest crate's tests finish ~4x
+# sooner than when one worker owned the whole crate.
+#
+# The cost of the split is that each of the SLOW_SPLITS jobs compiles the crate
+# itself (they run on different nodes with private CARGO_TARGET_DIRs) and emits
+# its own __calibration__ row -- build time is small next to these crates' test
+# time, and per-job calibration rows are arguably the right ones to subtract
+# since each job measures its own node.
+SLOW_JOBS=()   # "<job idx> <ntasks> <label>" per submitted slow job
+if (( ${#SLOW_CRATES[@]} > 0 )); then
+    ngroups=$(( (${#SLOW_CRATES[@]} + SLOW_GROUP - 1) / SLOW_GROUP ))
+    for (( g = 0; g < ngroups; g++ )); do
+        gstart=$(( g * SLOW_GROUP ))
+        gsize=$(( ${#SLOW_CRATES[@]} - gstart ))
+        (( gsize > SLOW_GROUP )) && gsize=$SLOW_GROUP
+        for (( f = 0; f < SLOW_SPLITS; f++ )); do
+            j=$(( JOBS + g * SLOW_SPLITS + f ))
+            maxtid=-1
+            for (( t = 0; t < gsize; t++ )); do
+                crate="${SLOW_CRATES[$(( gstart + t ))]}"
+                part="$RUNDIR/tests/$crate.part$f.txt"
+                awk -v f="$f" -v n="$SLOW_SPLITS" 'NR % n == f' \
+                    "$RUNDIR/tests/$crate.txt" > "$part"
+                # A crate with fewer tests than SLOW_SPLITS leaves some parts
+                # empty; those get no chunk, so the worker never starts.
+                [[ -s "$part" ]] || { rm -f "$part"; continue; }
+                printf '%s\t%s\n' "$crate" "$f" > "$RUNDIR/chunks/chunk-$j-$t.txt"
+                maxtid=$t
+            done
+            (( maxtid >= 0 )) && SLOW_JOBS+=("$j $(( maxtid + 1 )) g$(( g + 1 ))p$(( f + 1 ))")
+        done
     done
 fi
 
@@ -600,13 +661,24 @@ worker() {
     local chunk="$RUNDIR/chunks/chunk-${JOBIDX}-${tid}.txt"
     local shard="$RUNDIR/shards/shard-${JOBIDX}-${tid}.csv"
     [ -s "$chunk" ] || return 0
-    local n k=0 crate
+    local n k=0 line crate part testfile log
     n=$(wc -l < "$chunk")
-    while IFS= read -r crate; do
+    # Chunk lines are "<crate>" or, for a split slowlist crate, "<crate>\t<part>"
+    # -- the part selects that job's slice of the test list (and its own log,
+    # since the other parts run the same crate dir concurrently on other nodes).
+    while IFS= read -r line; do
         k=$((k + 1))
+        crate="${line%%$'\t'*}"
+        part=""
+        [ "$line" != "$crate" ] && part="${line#*$'\t'}"
+        testfile="$RUNDIR/tests/$crate.txt"
         local cdir="$DATASET_DIR/$crate"
         local scr="$SCRATCH_BASE/hf-${SLURM_JOB_ID}-${tid}"
-        local log="$cdir/hyperfine-${IMAGE}.log"
+        log="$cdir/hyperfine-${IMAGE}.log"
+        if [ -n "$part" ]; then
+            testfile="$RUNDIR/tests/$crate.part$part.txt"
+            log="$cdir/hyperfine-${IMAGE}-part$part.log"
+        fi
         rm -rf "$scr"
         mkdir -p "$scr/home" "$scr/target"
         echo "[job $JOBIDX task $tid] ($k/$n) $crate"
@@ -617,7 +689,7 @@ worker() {
             --env CARGO_BUILD_JOBS="$CPUS_PER_TASK" \
             --env HF_BUILD="$IMAGE" --env HF_MODE="$MODE" \
             --env HF_CRATE="$crate" \
-            --env HF_TESTFILE="$RUNDIR/tests/$crate.txt" \
+            --env HF_TESTFILE="$testfile" \
             --env HF_SHARD="$shard" \
             --env HF_RUNS="$RUNS" --env HF_WARMUP="$WARMUP" \
             --env HF_TEST_THREADS="$TEST_THREADS" \
@@ -647,7 +719,13 @@ if (( ${#MISSING[@]} > 0 )); then
 fi
 echo "Shape:    $JOBS job(s) x $TASKS tasks x ${CPUS_PER_TASK} cpus, ${MEM_PER_TASK}G/task (${TOTAL_MEM}G/node), $WALLTIME each"
 if (( ${#SLOW_CRATES[@]} > 0 )); then
-    echo "Slow:     ${#SLOW_CRATES[@]} slowlist crate(s), each in its own 1-worker job at $SLOW_WALLTIME"
+    echo "Slow:     ${#SLOW_CRATES[@]} slowlist crate(s) -> ${#SLOW_JOBS[@]} job(s) at $SLOW_WALLTIME"
+    echo "          (groups of $SLOW_GROUP crates, each group's tests split $SLOW_SPLITS ways)"
+fi
+TOTAL_JOBS=$(( JOBS + ${#SLOW_JOBS[@]} ))
+if (( TOTAL_JOBS > 40 )); then
+    echo "WARNING:  $TOTAL_JOBS jobs exceeds the 40-job QOS limit; the extras will"
+    echo "          queue until earlier ones finish (lower --jobs or --slow-splits)."
 fi
 echo "Sampling: $RUNS runs, $WARMUP warmup per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
@@ -682,8 +760,9 @@ submit_one() {
 for (( j = 0; j < JOBS; j++ )); do
     submit_one "$j" "$TASKS" "$j" "$WALLTIME"
 done
-for (( k = 0; k < ${#SLOW_CRATES[@]}; k++ )); do
-    submit_one "$(( JOBS + k ))" 1 "slow-${SLOW_CRATES[$k]}" "$SLOW_WALLTIME"
+for spec in ${SLOW_JOBS[@]+"${SLOW_JOBS[@]}"}; do
+    read -r sj snt slabel <<<"$spec"
+    submit_one "$sj" "$snt" "slow-$slabel" "$SLOW_WALLTIME"
 done
 
 cancel_jobs() {
