@@ -50,7 +50,7 @@
 #                     extra cores only speed the one-off compile
 #   --mem-per-task G  GB per worker (default 8; tasks*mem must fit 488G/node,
 #                     so 24 workers x 8G = 192G leaves ample headroom)
-#   --slow-walltime T walltime for the slowlist jobs, HH or HH:MM (default 14).
+#   --slow-walltime T walltime for the slowlist jobs, HH or HH:MM (default 24).
 #                     SLURM bills elapsed time, not the request, and these jobs
 #                     are small, so generous is cheap
 #   --slow-group N    slowlist crates per group (default 10). Groups are cut in
@@ -60,6 +60,10 @@
 #                     test list is strided N ways, so a group of 10 crates
 #                     runs as N jobs x 10 single-cpu workers
 #   --runs N          hyperfine timing runs per test (default 3)
+#   --slow-runs N     hyperfine timing runs per test for SLOWLIST crates
+#                     (default 1). These crates' tests are slow enough that
+#                     repeating them costs hours for a variance estimate that
+#                     matters least where the signal is largest
 #   --warmup N        hyperfine warmup runs per test (default 0; the untimed
 #                     status pre-run already warms caches, so each test runs
 #                     1 + warmup + runs times in total)
@@ -97,7 +101,7 @@
 # CARGO_TARGET_DIR per worker, so they cannot collide); part logs land in
 # <crate>/hyperfine-<image>-part<N>.log. Slowlist entries not selected for the
 # run are ignored, so the list is dataset-agnostic. Slow jobs request
-# --slow-walltime (14h default) while the regular jobs keep the short
+# --slow-walltime (24h default) while the regular jobs keep the short
 # <walltime>, so the wide fast jobs stay backfill-friendly.
 #
 # Crates from the tests CSV are dealt round-robin (largest test count first)
@@ -181,10 +185,11 @@ MEM_PER_TASK=8       # GB per worker (24*8=192G, well inside the 488G node cap)
 SLOW_GROUP=10        # slowlist crates per group
 SLOW_SPLITS=4        # jobs each group's tests are split across
 RUNS=3
+SLOW_RUNS=1          # hyperfine runs per test for slowlist crates
 WARMUP=0
 TEST_THREADS=""        # --test-threads N for the harness; empty = don't pass it
 WALLTIME_ARG=2         # walltime for the regular jobs (positional overrides)
-SLOW_WALLTIME_ARG=14   # walltime for the slowlist jobs
+SLOW_WALLTIME_ARG=24   # walltime for the slowlist jobs
 
 POS=()
 while [[ $# -gt 0 ]]; do
@@ -208,6 +213,8 @@ while [[ $# -gt 0 ]]; do
         --mem-per-task=*) MEM_PER_TASK="${1#*=}"; shift ;;
         --runs)          RUNS="$2"; shift 2 ;;
         --runs=*)        RUNS="${1#*=}"; shift ;;
+        --slow-runs)     SLOW_RUNS="$2"; shift 2 ;;
+        --slow-runs=*)   SLOW_RUNS="${1#*=}"; shift ;;
         --warmup)        WARMUP="$2"; shift 2 ;;
         --warmup=*)      WARMUP="${1#*=}"; shift ;;
         --test-threads)  TEST_THREADS="$2"; shift 2 ;;
@@ -235,8 +242,8 @@ usage() {
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --tests FILE --no-ffi --ignore FILE --only FILE --jobs N" >&2
     echo "           --tasks N --max-tasks N --cpus-per-task N --mem-per-task G" >&2
-    echo "           --runs N --warmup N" >&2
-    echo "           --slow-walltime T (for slowlist jobs, default 14)" >&2
+    echo "           --runs N --warmup N --slow-runs N (slowlist runs, default 1)" >&2
+    echo "           --slow-walltime T (for slowlist jobs, default 24)" >&2
     echo "           --slow-group N --slow-splits N (slowlist shape, 10 x 4)" >&2
     exit 1
 }
@@ -276,9 +283,11 @@ WALLTIME=$(parse_walltime "$WALLTIME_ARG")
 SLOW_WALLTIME=$(parse_walltime "$SLOW_WALLTIME_ARG")
 
 MEM_PER_TASK="${MEM_PER_TASK%G}"
-for v in CPUS_PER_TASK MEM_PER_TASK RUNS WARMUP SLOW_GROUP SLOW_SPLITS MAX_TASKS; do
+for v in CPUS_PER_TASK MEM_PER_TASK RUNS SLOW_RUNS WARMUP SLOW_GROUP SLOW_SPLITS MAX_TASKS; do
     [[ "${!v}" =~ ^[0-9]+$ ]] || { echo "Error: $v must be a number." >&2; exit 1; }
 done
+(( RUNS      >= 1 )) || { echo "Error: --runs must be >= 1." >&2; exit 1; }
+(( SLOW_RUNS >= 1 )) || { echo "Error: --slow-runs must be >= 1." >&2; exit 1; }
 (( SLOW_GROUP  >= 1 )) || { echo "Error: --slow-group must be >= 1." >&2; exit 1; }
 (( SLOW_SPLITS >= 1 )) || { echo "Error: --slow-splits must be >= 1." >&2; exit 1; }
 (( MAX_TASKS   >= 1 )) || { echo "Error: --max-tasks must be >= 1." >&2; exit 1; }
@@ -524,6 +533,7 @@ fi
     printf 'TASKS=%q\n'            "$TASKS"
     printf 'CPUS_PER_TASK=%q\n'    "$CPUS_PER_TASK"
     printf 'RUNS=%q\n'             "$RUNS"
+    printf 'SLOW_RUNS=%q\n'        "$SLOW_RUNS"
     printf 'WARMUP=%q\n'           "$WARMUP"
     printf 'TEST_THREADS=%q\n'     "$TEST_THREADS"
     printf 'MIRIFLAGS_ALL=%q\n'    "$MIRIFLAGS_ALL"
@@ -694,7 +704,7 @@ worker() {
     local chunk="$RUNDIR/chunks/chunk-${JOBIDX}-${tid}.txt"
     local shard="$RUNDIR/shards/shard-${JOBIDX}-${tid}.csv"
     [ -s "$chunk" ] || return 0
-    local n k=0 line crate part testfile log
+    local n k=0 line crate part testfile log runs
     n=$(wc -l < "$chunk")
     # Chunk lines are "<crate>" or, for a split slowlist crate, "<crate>\t<part>"
     # -- the part selects that job's slice of the test list (and its own log,
@@ -708,9 +718,13 @@ worker() {
         local cdir="$DATASET_DIR/$crate"
         local scr="$SCRATCH_BASE/hf-${SLURM_JOB_ID}-${tid}"
         log="$cdir/hyperfine-${IMAGE}.log"
+        runs="$RUNS"
+        # A part field is only ever set for slowlist crates, so it doubles as
+        # the "this is a slow crate" flag: sample it SLOW_RUNS times, not RUNS.
         if [ -n "$part" ]; then
             testfile="$RUNDIR/tests/$crate.part$part.txt"
             log="$cdir/hyperfine-${IMAGE}-part$part.log"
+            runs="$SLOW_RUNS"
         fi
         rm -rf "$scr"
         mkdir -p "$scr/home" "$scr/target"
@@ -724,7 +738,7 @@ worker() {
             --env HF_CRATE="$crate" \
             --env HF_TESTFILE="$testfile" \
             --env HF_SHARD="$shard" \
-            --env HF_RUNS="$RUNS" --env HF_WARMUP="$WARMUP" \
+            --env HF_RUNS="$runs" --env HF_WARMUP="$WARMUP" \
             --env HF_TEST_THREADS="$TEST_THREADS" \
             --env HF_MIRIFLAGS="$MIRIFLAGS_ALL" \
             --env HF_BSAN_OPTIONS="$BSAN_OPTIONS_ALL" \
@@ -754,14 +768,17 @@ echo "Shape:    $JOBS job(s) x up to $TASKS tasks x ${CPUS_PER_TASK} cpus, ${MEM
 echo "          (${#FAST_SEL[@]} regular crate(s); each job requests only the workers it holds)"
 if (( ${#SLOW_CRATES[@]} > 0 )); then
     echo "Slow:     ${#SLOW_CRATES[@]} slowlist crate(s) -> ${#SLOW_JOBS[@]} job(s) at $SLOW_WALLTIME"
-    echo "          (groups of $SLOW_GROUP crates, each group's tests split $SLOW_SPLITS ways)"
+    echo "          (groups of $SLOW_GROUP crates, each group's tests split $SLOW_SPLITS ways,"
+    echo "           $SLOW_RUNS run(s) per test)"
 fi
 TOTAL_JOBS=$(( JOBS + ${#SLOW_JOBS[@]} ))
 if (( TOTAL_JOBS > 40 )); then
     echo "WARNING:  $TOTAL_JOBS jobs exceeds the 40-job QOS limit; the extras will"
     echo "          queue until earlier ones finish (lower --jobs or --slow-splits)."
 fi
-echo "Sampling: $RUNS runs, $WARMUP warmup per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}"
+SLOW_RUNS_NOTE=""
+(( ${#SLOW_CRATES[@]} > 0 )) && SLOW_RUNS_NOTE=" (slowlist: $SLOW_RUNS)"
+echo "Sampling: $RUNS runs$SLOW_RUNS_NOTE, $WARMUP warmup per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
 echo "Results:  $CSV"

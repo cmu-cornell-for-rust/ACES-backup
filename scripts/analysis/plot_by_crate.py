@@ -237,6 +237,20 @@ def aggregate_hyperfine(reader):
     return data, stats
 
 
+# Boilerplate every run of a dataset shares, dropped from filename-derived
+# legend labels: it costs horizontal space without telling the series apart.
+LABEL_NOISE = ("-top_500-hyperfine", "lazy-gc-")
+
+
+def clean_label(label):
+    """Strip LABEL_NOISE from a filename-derived series label, keeping the
+    label as given if nothing distinguishing would be left."""
+    stripped = label
+    for noise in LABEL_NOISE:
+        stripped = stripped.replace(noise, "")
+    return stripped.strip("-") or label
+
+
 def load_csv(path):
     """Return (label, {crate: row}, kind, stats) for a result CSV, accepting
     either format produced by the run_*_dataset scripts:
@@ -246,7 +260,8 @@ def load_csv(path):
       hyperfine  one row per TEST with a mean_s column (the -hyperfine.csv
                  files) -- summed into one row per crate, see above
 
-    The series label is the filename without its .csv extension.
+    The series label is the filename without its .csv extension, run through
+    clean_label().
     """
     if not os.path.isfile(path):
         sys.exit(f"Error: file not found: {path}")
@@ -269,7 +284,7 @@ def load_csv(path):
                      f"result CSV) nor mean_s + test columns (hyperfine CSV).")
     base = os.path.basename(path)
     label = base[:-len(".csv")] if base.endswith(".csv") else base
-    return label, data, kind, stats
+    return clean_label(label), data, kind, stats
 
 
 def find_tests_csv(paths):
