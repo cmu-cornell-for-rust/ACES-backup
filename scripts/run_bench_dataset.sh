@@ -56,6 +56,13 @@
 #   --slow-walltime T walltime for the slowlist jobs, HH or HH:MM (default 24).
 #                     SLURM bills elapsed time, not the request, and these jobs
 #                     are small, so generous is cheap
+#   --all-slow        treat EVERY selected test as slow: skip the slowlist and
+#                     the crate-level dealing entirely and split the tests
+#                     evenly over --jobs jobs of --tasks workers (default
+#                     16 x 24), at --slow-walltime and one run per test. Made
+#                     for reruns where everything left is slow -- e.g. the
+#                     leftovers missing_tests.py finds after a sweep is killed
+#                     by walltime -- see the "Even test deal" note below
 #   --slow-group N    slowlist crates per group (default 10). Groups are cut in
 #                     slowlist FILE ORDER: first N entries, then the next N
 #   --slow-splits N   how many jobs each group's tests are spread over
@@ -63,14 +70,6 @@
 #                     test list is strided N ways, so a group of 10 crates
 #                     runs as N jobs x 10 single-cpu workers
 #   --runs N          hyperfine timing runs per test (default 3)
-#   --split-tests N   ignore the fast/slow split and deal every selected TEST
-#                     evenly across N jobs (e.g. 40, the QOS cap) instead of
-#                     dealing whole crates to workers. Sets --runs 1 unless
-#                     --runs says otherwise, and uses --slow-walltime unless a
-#                     walltime is given, since any job can now hold slow tests.
-#                     Conflicts with --jobs/--tasks (it sets both). Made for
-#                     reruns of a few crates with many tests -- see the
-#                     "Even test deal" note below
 #   --slow-runs N     hyperfine timing runs per test for SLOWLIST crates
 #                     (default 1). These crates' tests are slow enough that
 #                     repeating them costs hours for a variance estimate that
@@ -115,24 +114,30 @@
 # --slow-walltime (24h default) while the regular jobs keep the short
 # <walltime>, so the wide fast jobs stay backfill-friendly.
 #
-# Even test deal (--split-tests N)
-# -------------------------------
-# The default shape above deals whole CRATES to workers, so a run of 10 crates
-# uses 10 workers however many tests they hold, and only slowlist crates get
-# their test list split. --split-tests N replaces both: every selected crate's
-# tests are laid end to end in crate order and cut into N contiguous shares of
-# equal size (differing by at most one test), one per job, with the slowlist
-# ignored entirely. Each maximal run of one crate inside a share becomes one
-# worker, so jobs are typically 1-2 workers wide and backfill readily.
+# Even test deal (--all-slow)
+# ---------------------------
+# Both shapes above still deal whole CRATES to workers, so a rerun of 7 crates
+# uses 7 workers however many tests they hold. --all-slow drops the fast/slow
+# distinction and makes the TEST the unit: every selected crate's tests are
+# laid end to end in the tests CSV's crate order and cut evenly TWICE -- first
+# into --jobs shares, one per job, then each job's share into --tasks worker
+# slices. Shares differ by at most one test at both levels, so a run is
+# --jobs x --tasks workers wide (16 x 24 by default, i.e. 384 tests in flight)
+# and every job holds the same amount of work. The slowlist file has no say --
+# every test is treated as slow: --slow-walltime for every job and one run per
+# test unless --runs says otherwise.
 #
-# Contiguous cutting is what makes it affordable: every worker that touches a
-# crate compiles it privately, so a crate is split only where it straddles a
-# share boundary -- about N + <crates> compiles overall, not one per worker.
-# Round-robin dealing at test granularity would instead compile every crate in
-# every job. Even by test COUNT is not even by test TIME, so all jobs get the
-# same (long) walltime. Typical use, after missing_tests.py built a rerun list:
+# Both cuts are CONTIGUOUS rather than round-robin, which is what keeps the
+# compile bill near its floor: every worker that touches a crate compiles it
+# privately, so a crate is split only where it straddles a slice boundary and
+# costs one compile per worker it lands on. Round-robin at test granularity
+# would instead compile every crate on every worker. Wider jobs trade core
+# time for wall clock -- those extra compiles run concurrently, one per core,
+# so 24 workers on 24 slow tests turn "24 x test" into "compile + test" -- and
+# --tasks is the knob when that trade is not worth it. Typical use, after
+# missing_tests.py built a rerun list:
 #
-#   run_bench_dataset.sh --tests tests-rest.csv --split-tests 40 miri miri top_500
+#   run_bench_dataset.sh --tests tests-rest.csv --all-slow miri miri top_500
 #
 # Crates from the tests CSV are dealt round-robin (largest test count first)
 # across jobs*tasks workers; each worker processes its crates sequentially:
@@ -212,16 +217,18 @@ TASKS=""            # empty = auto: min(fast crates, MAX_TASKS)
 MAX_TASKS=24         # ceiling on auto-sized workers per job (a quarter node)
 CPUS_PER_TASK=1
 MEM_PER_TASK=8       # GB per worker (24*8=192G, well inside the 488G node cap)
+ALL_SLOW=0           # --all-slow: split every test evenly, no fast/slow split
+ALL_SLOW_JOBS=16     # its default job count (overridden by --jobs)
+ALL_SLOW_TASKS=24    # its default workers per job (overridden by --tasks)
+RUNS_GIVEN=0         # was --runs passed? (--all-slow forces 1 otherwise)
+WALLTIME_GIVEN=0     # was the walltime positional passed?
 SLOW_GROUP=10        # slowlist crates per group
 SLOW_SPLITS=4        # jobs each group's tests are split across
 RUNS=3
-RUNS_GIVEN=0         # was --runs passed? (--split-tests forces 1 otherwise)
 SLOW_RUNS=1          # hyperfine runs per test for slowlist crates
-SPLIT_TESTS=0        # --split-tests N: N jobs, every test dealt evenly
 WARMUP=0
 TEST_THREADS=""        # --test-threads N for the harness; empty = don't pass it
 WALLTIME_ARG=2         # walltime for the regular jobs (positional overrides)
-WALLTIME_GIVEN=0       # was the walltime positional passed?
 SLOW_WALLTIME_ARG=24   # walltime for the slowlist jobs
 
 POS=()
@@ -246,14 +253,13 @@ while [[ $# -gt 0 ]]; do
         --mem-per-task=*) MEM_PER_TASK="${1#*=}"; shift ;;
         --runs)          RUNS="$2"; RUNS_GIVEN=1; shift 2 ;;
         --runs=*)        RUNS="${1#*=}"; RUNS_GIVEN=1; shift ;;
-        --split-tests)   SPLIT_TESTS="$2"; shift 2 ;;
-        --split-tests=*) SPLIT_TESTS="${1#*=}"; shift ;;
         --slow-runs)     SLOW_RUNS="$2"; shift 2 ;;
         --slow-runs=*)   SLOW_RUNS="${1#*=}"; shift ;;
         --warmup)        WARMUP="$2"; shift 2 ;;
         --warmup=*)      WARMUP="${1#*=}"; shift ;;
         --test-threads)  TEST_THREADS="$2"; shift 2 ;;
         --test-threads=*) TEST_THREADS="${1#*=}"; shift ;;
+        --all-slow)      ALL_SLOW=1; shift ;;
         --slow-walltime) SLOW_WALLTIME_ARG="$2"; shift 2 ;;
         --slow-walltime=*) SLOW_WALLTIME_ARG="${1#*=}"; shift ;;
         --slow-group)    SLOW_GROUP="$2"; shift 2 ;;
@@ -278,7 +284,7 @@ usage() {
     echo "  options: --tests FILE --no-ffi --ignore FILE --only FILE --jobs N" >&2
     echo "           --tasks N --max-tasks N --cpus-per-task N --mem-per-task G" >&2
     echo "           --runs N --warmup N --slow-runs N (slowlist runs, default 1)" >&2
-    echo "           --split-tests N (deal every test evenly across N jobs)" >&2
+    echo "           --all-slow (split every test evenly over --jobs x --tasks)" >&2
     echo "           --slow-walltime T (for slowlist jobs, default 24)" >&2
     echo "           --slow-group N --slow-splits N (slowlist shape, 10 x 4)" >&2
     exit 1
@@ -320,25 +326,22 @@ WALLTIME=$(parse_walltime "$WALLTIME_ARG")
 SLOW_WALLTIME=$(parse_walltime "$SLOW_WALLTIME_ARG")
 
 MEM_PER_TASK="${MEM_PER_TASK%G}"
-for v in CPUS_PER_TASK MEM_PER_TASK RUNS SLOW_RUNS WARMUP SLOW_GROUP SLOW_SPLITS MAX_TASKS SPLIT_TESTS; do
+for v in CPUS_PER_TASK MEM_PER_TASK RUNS SLOW_RUNS WARMUP SLOW_GROUP SLOW_SPLITS MAX_TASKS; do
     [[ "${!v}" =~ ^[0-9]+$ ]] || { echo "Error: $v must be a number." >&2; exit 1; }
 done
 (( RUNS      >= 1 )) || { echo "Error: --runs must be >= 1." >&2; exit 1; }
 (( SLOW_RUNS >= 1 )) || { echo "Error: --slow-runs must be >= 1." >&2; exit 1; }
-if (( SPLIT_TESTS > 0 )); then
-    # --split-tests owns the job count and derives the worker count from the
-    # deal, so the two knobs that would fight it are refused rather than
-    # silently ignored.
-    [[ -z "$JOBS"  ]] || { echo "Error: --split-tests sets the job count; drop --jobs." >&2; exit 1; }
-    [[ -z "$TASKS" ]] || { echo "Error: --split-tests sizes each job from its share of the deal; drop --tasks." >&2; exit 1; }
-    # "1 run per test" is the point of the mode -- these crates' tests are the
-    # slow ones and the deal already ignores the fast/slow distinction.
+if (( ALL_SLOW )); then
+    # Every worker reads a part file, and the worker samples a part with
+    # SLOW_RUNS -- so both counts must agree or the sampling would depend on a
+    # flag the user never set. One run per test unless --runs says otherwise.
     (( RUNS_GIVEN )) || RUNS=1
-    SLOW_RUNS=$RUNS   # every chunk line carries a part, so keep the two equal
-    # An even deal puts slowlist tests in ANY job, so the short regular
-    # walltime no longer holds; default to the slow one unless asked otherwise.
-    # (WALLTIME is already parsed by here, so assign the parsed value.)
+    SLOW_RUNS=$RUNS
+    # No share is "the fast one" any more, so the short regular walltime no
+    # longer holds. (WALLTIME is parsed by here, so assign the parsed value.)
     (( WALLTIME_GIVEN )) || WALLTIME="$SLOW_WALLTIME"
+    [[ -n "$JOBS"  ]] || JOBS=$ALL_SLOW_JOBS
+    [[ -n "$TASKS" ]] || TASKS=$ALL_SLOW_TASKS
 fi
 (( SLOW_GROUP  >= 1 )) || { echo "Error: --slow-group must be >= 1." >&2; exit 1; }
 (( SLOW_SPLITS >= 1 )) || { echo "Error: --slow-splits must be >= 1." >&2; exit 1; }
@@ -476,96 +479,89 @@ declare -A SEL_COUNT=()
 for line in "${SELECTED[@]}"; do
     crate="${line#*$'\t'}"
     SEL_COUNT["$crate"]="${line%%$'\t'*}"
+    (( ALL_SLOW )) && continue      # --all-slow deals tests, not crates
     [[ -z "${SLOWLIST[$crate]:-}" ]] && FAST_SEL+=("$line")
 done
 
 SLOW_CRATES=()
-for crate in ${SLOW_ORDER[@]+"${SLOW_ORDER[@]}"}; do
-    [[ -n "${SEL_COUNT[$crate]:-}" ]] && SLOW_CRATES+=("$crate")
-done
+if (( ! ALL_SLOW )); then
+    for crate in ${SLOW_ORDER[@]+"${SLOW_ORDER[@]}"}; do
+        [[ -n "${SEL_COUNT[$crate]:-}" ]] && SLOW_CRATES+=("$crate")
+    done
+fi
 
-# ── --split-tests N: one flat, even deal of every test across N jobs ─────────
-# The default shape deals whole CRATES to workers and only splits the tests of
-# slowlist crates. That leaves a rerun of a few crates with many tests (say the
-# leftovers from a walltime-killed sweep) using a handful of workers. With
-# --split-tests the unit is the TEST: every selected crate's tests are laid end
-# to end in crate order and cut into N contiguous, equal shares -- sizes differ
-# by at most one test -- one share per job. The slowlist plays no part.
+# ── --all-slow: cut every test into JOBS x TASKS even slices ─────────────────
+# Two contiguous cuts. First the whole test stream (all crates, in tests-CSV
+# order) into JOBS shares, so every job holds the same amount of work; then
+# each job's share into TASKS worker slices. Both differ by at most one test.
 #
-# Contiguous (rather than round-robin) cutting is what keeps this affordable:
-# every worker that touches a crate compiles it privately, so a crate is only
-# ever split where it straddles a share boundary. A crate therefore costs about
-# one compile per job it lands in -- roughly N + <crates> compiles overall,
-# not one per worker. Each maximal run of one crate inside one share becomes a
-# single worker holding that slice, so most jobs are 1-2 workers wide.
-#
-# Even by test COUNT is not even by test TIME, so every job gets the same
-# walltime (--slow-walltime by default, since any share may hold slow tests).
-if (( SPLIT_TESTS > 0 )); then
-    JOBS=$SPLIT_TESTS
-    FAST_SEL=()      # nothing goes through the crate-level dealing below
-    SLOW_CRATES=()   # and no crate is pulled out into a slowlist job
-
-    # Every test as "<crate>\t<test>", in selection order, one pass to awk.
+# Slices are filled in order and a crate's tests are adjacent, so a crate is
+# split only where it straddles a slice boundary -- one compile per worker it
+# lands on, no more -- and exactly one part file is open at a time, so awk's
+# open-file limit never comes into play. Part files and chunk lines are the
+# same ones the slowlist splitting writes, so the worker and inner.sh need no
+# changes: a chunk line "<crate>\t<part>" points a worker at its slice.
+if (( ALL_SLOW )); then
     for line in "${SELECTED[@]}"; do
         crate="${line#*$'\t'}"
         awk -v c="$crate" '{ print c "\t" $0 }' "$RUNDIR/tests/$crate.txt"
     done > "$RUNDIR/all-tests.tsv"
 
-    # Cut the stream into JOBS shares, emitting a part file per (job, crate)
-    # slice and the chunk line that points a worker at it. Crates arrive
-    # grouped and jobs only ever advance, so exactly one part file is open at
-    # a time -- no risk of running into awk's open-file limit.
-    mapfile -t SPLIT_SIZES < <(awk -F'\t' -v n="$JOBS" -v total="$TOTAL_TESTS" -v rundir="$RUNDIR" '
+    mapfile -t ALL_SLOW_SHAPE < <(awk -F'\t' -v jobs="$JOBS" -v tasks="$TASKS" \
+        -v total="$TOTAL_TESTS" -v rundir="$RUNDIR" '
         BEGIN {
-            base = int(total / n); rem = total % n
-            j = -1; filled = 0; cap = 0; cur = ""
+            jbase = int(total / jobs); jrem = total % jobs
+            j = -1; jfilled = 0; jcap = 0
+            w = -1; wfilled = 0; wcap = 0
+            cur = ""
         }
         {
-            while (filled >= cap && j < n - 1) { j++; filled = 0; cap = base + (j < rem ? 1 : 0) }
+            # Next job once this one has its share (a job can be capped at 0
+            # when there are more jobs than tests; the guard just skips it).
+            while (jfilled >= jcap && j < jobs - 1) {
+                j++; jfilled = 0; jcap = jbase + (j < jrem ? 1 : 0)
+                wbase = int(jcap / tasks); wrem = jcap % tasks
+                w = -1; wfilled = 0; wcap = 0
+            }
+            while (wfilled >= wcap && w < tasks - 1) {
+                w++; wfilled = 0; wcap = wbase + (w < wrem ? 1 : 0)
+            }
             crate = $1; test = $2
-            if (cur != j SUBSEP crate) {
+            if (cur != j SUBSEP w SUBSEP crate) {
                 if (cur != "") close(partfile)
-                cur = j SUBSEP crate
-                part = nparts[crate]++          # per-crate part index (0,1,2..)
-                tid  = ntasks[j]++              # worker id inside the job
+                cur = j SUBSEP w SUBSEP crate
+                part = nparts[crate]++      # per-crate part index (0,1,2..)
                 partfile = rundir "/tests/" crate ".part" part ".txt"
-                chunkfile = rundir "/chunks/chunk-" j "-" tid ".txt"
-                printf "%s\t%s\n", crate, part > chunkfile
+                chunkfile = rundir "/chunks/chunk-" j "-" w ".txt"
+                printf "%s\t%s\n", crate, part >> chunkfile
                 close(chunkfile)
+                if (w + 1 > ntasks[j]) ntasks[j] = w + 1
+                nslices++                   # one slice == one compile
             }
             print test >> partfile
-            filled++
-            jobtests[j]++
+            jfilled++; wfilled++; jobtests[j]++
         }
         END {
             if (cur != "") close(partfile)
-            for (k = 0; k < n; k++)
-                if (ntasks[k] > 0) printf "%d %d %d\n", k, ntasks[k], jobtests[k]
+            for (k = 0; k < jobs; k++)
+                if (ntasks[k] > 0) printf "%d %d %d %d\n", k, ntasks[k], jobtests[k], nslices
         }' "$RUNDIR/all-tests.tsv")
 
-    (( ${#SPLIT_SIZES[@]} > 0 )) || { echo "Error: --split-tests produced no work." >&2; exit 1; }
+    (( ${#ALL_SLOW_SHAPE[@]} > 0 )) || { echo "Error: --all-slow produced no work." >&2; exit 1; }
 
-    # Asking for more shares than there are tests leaves the tail empty. The
-    # deal fills jobs from 0 up, so the occupied ones are exactly 0..count-1
-    # and JOBS can shrink to what will actually be submitted.
-    JOBS=${#SPLIT_SIZES[@]}
-
-    # Widest share decides the per-job request; the node-capacity checks below
-    # then run against it exactly as they do for an auto-sized TASKS.
+    # More jobs (or workers) than tests leaves the tail empty. Shares are
+    # filled in order, so the occupied jobs are exactly 0..count-1, and JOBS
+    # and TASKS can shrink to what will actually be submitted rather than
+    # asking for a quarter node to run three tests.
+    JOBS=${#ALL_SLOW_SHAPE[@]}
     TASKS=1
-    SPLIT_MIN=0; SPLIT_MAX=0
-    for spec in "${SPLIT_SIZES[@]}"; do
-        read -r _ nt ntests <<<"$spec"
+    ALL_SLOW_MIN=0; ALL_SLOW_MAX=0; ALL_SLOW_SLICES=0
+    for spec in "${ALL_SLOW_SHAPE[@]}"; do
+        read -r _ nt ntests ALL_SLOW_SLICES <<<"$spec"
         (( nt > TASKS )) && TASKS=$nt
-        (( SPLIT_MIN == 0 || ntests < SPLIT_MIN )) && SPLIT_MIN=$ntests
-        (( ntests > SPLIT_MAX )) && SPLIT_MAX=$ntests
+        (( ALL_SLOW_MIN == 0 || ntests < ALL_SLOW_MIN )) && ALL_SLOW_MIN=$ntests
+        (( ntests > ALL_SLOW_MAX )) && ALL_SLOW_MAX=$ntests
     done
-    if (( TASKS > MAX_TASKS )); then
-        echo "Error: --split-tests $SPLIT_TESTS puts up to $TASKS crates in one job," >&2
-        echo "       over the $MAX_TASKS-worker ceiling. Raise --max-tasks or --split-tests." >&2
-        exit 1
-    fi
 fi
 
 # ── Worker count per job: auto-size unless --tasks was given ─────────────────
@@ -593,6 +589,20 @@ TOTAL_CPUS=$(( TASKS * CPUS_PER_TASK ))
 if (( TOTAL_CPUS > 96 )); then
     echo "Error: tasks*cpus = ${TOTAL_CPUS} exceeds the 96 cores on an ACES node." >&2
     exit 1
+fi
+
+# A slow job asks for one worker per crate in its group, so SLOW_GROUP -- not
+# TASKS -- bounds those. Only worth checking when slow jobs will be submitted.
+if (( ${#SLOW_CRATES[@]} > 0 )); then
+    if (( SLOW_GROUP * MEM_PER_TASK > 488 )); then
+        echo "Error: slow-group*mem = $(( SLOW_GROUP * MEM_PER_TASK ))G exceeds the 488G usable on an ACES node." >&2
+        echo "Lower --slow-group or --mem-per-task." >&2
+        exit 1
+    fi
+    if (( SLOW_GROUP * CPUS_PER_TASK > 96 )); then
+        echo "Error: slow-group*cpus = $(( SLOW_GROUP * CPUS_PER_TASK )) exceeds the 96 cores on an ACES node." >&2
+        exit 1
+    fi
 fi
 
 # ── Job count: auto-size unless --jobs was given ─────────────────────────────
@@ -900,27 +910,33 @@ echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only ffi=$skip_ffi no-te
 if (( ${#MISSING[@]} > 0 )); then
     printf '  missing from dataset: %s\n' "${MISSING[@]}" | head -20
 fi
-echo "Shape:    $JOBS job(s) x up to $TASKS tasks x ${CPUS_PER_TASK} cpus, ${MEM_PER_TASK}G/task (<=${TOTAL_MEM}G/job), $WALLTIME each"
-if (( SPLIT_TESTS > 0 )); then
-    nparts=$(compgen -G "$RUNDIR/chunks/chunk-*.txt" | wc -l | tr -d ' ')
-    echo "          (--split-tests: $TOTAL_TESTS test(s) dealt evenly over $JOBS job(s),"
-    echo "           $SPLIT_MIN-$SPLIT_MAX tests each, $nparts crate-slice(s) = $nparts compile(s); slowlist ignored)"
-else
+if (( ALL_SLOW )); then
+    echo "Shape:    $JOBS job(s) x up to $TASKS tasks x ${CPUS_PER_TASK} cpus, ${MEM_PER_TASK}G/task (<=${TOTAL_MEM}G/job), $WALLTIME each"
+    echo "          (--all-slow: $TOTAL_TESTS test(s) split evenly over $JOBS job(s), $ALL_SLOW_MIN-$ALL_SLOW_MAX each,"
+    echo "           then over their workers: $ALL_SLOW_SLICES slice(s) = $ALL_SLOW_SLICES compile(s); slowlist ignored)"
+elif (( ${#FAST_SEL[@]} > 0 )); then
+    echo "Shape:    $JOBS job(s) x up to $TASKS tasks x ${CPUS_PER_TASK} cpus, ${MEM_PER_TASK}G/task (<=${TOTAL_MEM}G/job), $WALLTIME each"
     echo "          (${#FAST_SEL[@]} regular crate(s); each job requests only the workers it holds)"
 fi
 if (( ${#SLOW_CRATES[@]} > 0 )); then
-    echo "Slow:     ${#SLOW_CRATES[@]} slowlist crate(s) -> ${#SLOW_JOBS[@]} job(s) at $SLOW_WALLTIME"
+    echo "Slow:     ${#SLOW_CRATES[@]} slowlist crate(s) -> ${#SLOW_JOBS[@]} job(s) x up to $SLOW_GROUP workers at $SLOW_WALLTIME"
     echo "          (groups of $SLOW_GROUP crates, each group's tests split $SLOW_SPLITS ways,"
     echo "           $SLOW_RUNS run(s) per test)"
 fi
 TOTAL_JOBS=$(( JOBS + ${#SLOW_JOBS[@]} ))
 if (( TOTAL_JOBS > 40 )); then
     echo "WARNING:  $TOTAL_JOBS jobs exceeds the 40-job QOS limit; the extras will"
-    echo "          queue until earlier ones finish (lower --jobs or --slow-splits)."
+    echo "          queue until earlier ones finish (lower --jobs/--slow-splits,"
+    echo "          or raise --slow-group to pack more crates per job)."
 fi
-SLOW_RUNS_NOTE=""
-(( ${#SLOW_CRATES[@]} > 0 )) && SLOW_RUNS_NOTE=" (slowlist: $SLOW_RUNS)"
-echo "Sampling: $RUNS runs$SLOW_RUNS_NOTE, $WARMUP warmup per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}"
+# With no regular crates, $RUNS applies to nothing -- report only what runs.
+RUNS_NOTE="$RUNS runs"
+if (( ${#FAST_SEL[@]} == 0 && ${#SLOW_CRATES[@]} > 0 )); then
+    RUNS_NOTE="$SLOW_RUNS runs"
+elif (( ${#SLOW_CRATES[@]} > 0 )); then
+    RUNS_NOTE="$RUNS runs (slowlist: $SLOW_RUNS)"
+fi
+echo "Sampling: $RUNS_NOTE, $WARMUP warmup per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
 echo "Results:  $CSV"
