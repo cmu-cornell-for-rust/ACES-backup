@@ -56,6 +56,40 @@ ignore)]) tests the others ran, and every one that did run then passed. Add
                    --tests-csv FILE points at one directly. The output file
                    gains a _no_ffi suffix so it never overwrites the full plot.
 
+  --show-crate NAME [NAME ...]
+                   print a per-series table for each named crate after the
+                   averages: its value, and the difference and ratio against
+                   the first plotted series. NAME matches exactly or by prefix
+                   (aho-corasick -> aho-corasick-1.1.4). A crate excluded from
+                   the plot is still reported, marked as such, since that is
+                   usually when you want to see it.
+
+  --only-tests FILE
+                   restrict every crate's sum to the tests named in this tests
+                   CSV (crate,tests,contains_ffi -- the schema list_tests.sh
+                   writes and common_tests.py reproduces), and drop crates it
+                   does not list. Inputs otherwise contribute whatever tests
+                   each happened to measure, so a config that lost tests to a
+                   walltime kill is compared on less work than the others;
+                   pass common_tests.py's intersection here to put every series
+                   on the same workload. Hyperfine CSVs only -- a raw result
+                   CSV has one whole-suite row per crate and nothing to filter.
+                   The output file gains a suffix from the filename
+                   (tests-common.csv -> _common).
+
+  --no-calibration
+                   sum each crate's raw mean_s instead of subtracting its
+                   __calibration__ row. The subtraction is meant to remove the
+                   per-invocation constant (cargo's freshness check plus the
+                   startup of every test binary), but it is measured cold and
+                   only once per crate, while each test's timing is preceded by
+                   an untimed warming pre-run -- so the calibration reads high
+                   and a crate of short tests can land at the noise floor or
+                   below it, where it is zeroed and then dropped entirely. Use
+                   this to see those crates at all, remembering that every total
+                   now counts the constant once per test. The output file gains
+                   a _nocal suffix.
+
   --min-seconds N  drop crates measuring under N seconds in ANY input, the
                    baseline included -- the crates whose totals are mostly the
                    per-invocation startup constant that survives the
@@ -75,7 +109,8 @@ ignore)]) tests the others ran, and every one that did run then passed. Add
                    biases every ratio involving it upward and makes the selection
                    depend on argument order. The output gains a _first suffix.
 
-The PNG is written to <output_dir>/<metric>_by_crate[_no_ffi][_min<N>s].png. The outputs dir
+The PNG is written to
+<output_dir>/<metric>_by_crate[_no_ffi][_<only-tests>][_nocal][_min<N>s].png. The outputs dir
 defaults to <repo root>/outputs, found relative to this script (so it works
 both locally and on the cluster); override with $OUTPUTS_DIR.
 
@@ -98,6 +133,7 @@ import csv
 import glob
 import math
 import os
+import re
 import sys
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -112,6 +148,7 @@ METRICS = {
     "seconds": {
         "has_baseline": False,
         "check_passed": True,
+        "unit": " (s)",
         "ylabel": "Testbench Runtime, Seconds  (Log Scale)",
         "title": "Unsafe Crate Testbench Runtimes",
     },
@@ -130,7 +167,7 @@ METRICS = {
 }
 
 
-def aggregate_hyperfine(reader):
+def aggregate_hyperfine(reader, subtract_calibration=True, only_tests=None):
     """Collapse a per-test hyperfine CSV into the per-crate rows the rest of
     this script expects: a crate's runtime is the SUM of its tests' mean_s,
     each net of the crate's calibration row.
@@ -171,6 +208,16 @@ def aggregate_hyperfine(reader):
     check_passed metrics behave as they do for raw CSVs (where passed is the
     count of passing tests), and status=success so `ran()` accepts it.
 
+    With subtract_calibration=False the __calibration__ rows are read but not
+    applied: a crate's total is the plain sum of its tests' mean_s, so every
+    total still carries the per-invocation constant once per test. Nothing is
+    clamped and no crate is dropped for measuring below its calibration -- see
+    --no-calibration.
+
+    only_tests, when given, is {crate: {test, ...}} from a list_tests.sh CSV: a
+    crate's sum then covers only those tests, and a crate absent from it is
+    dropped outright -- see --only-tests.
+
     Returns (data, stats) where stats reports the calibration coverage.
     """
     def timing(row):
@@ -191,10 +238,18 @@ def aggregate_hyperfine(reader):
             if v is not None:
                 calibration[crate] = v    # last calibration for the crate wins
             continue
-        latest[(crate, row.get("test") or "")] = row
+        test = row.get("test") or ""
+        if only_tests is not None and test not in only_tests.get(crate, ()):
+            continue                      # --only-tests: not in the allowlist
+        latest[(crate, test)] = row
 
     data = {}
     zeroed = 0
+    # Tests that produced a timing, counted BEFORE the calibration drop below.
+    # The caller compares it against an --only-tests list, and a crate dropped
+    # for measuring at/below its calibration still had timings -- charging its
+    # tests as "no timing" would blame the wrong step.
+    timed = 0
     # Per-crate count of real test rows, so the caller can tell "every test
     # passed" from "every test that produced a timing passed". Rows with an
     # empty test name are the crate-level fetch/build failure markers, not
@@ -207,14 +262,18 @@ def aggregate_hyperfine(reader):
         mean = timing(row)
         if mean is None:
             continue                      # not benchmarked -- no timing to add
-        net = mean - calibration.get(crate, 0.0)
-        if net <= 0:
-            zeroed += 1
-            net = 0.0
+        if subtract_calibration:
+            net = mean - calibration.get(crate, 0.0)
+            if net <= 0:
+                zeroed += 1
+                net = 0.0
+        else:
+            net = mean                    # --no-calibration: raw sum
         agg = data.setdefault(crate, {"crate": crate, "status": "success",
                                       "run_seconds": 0.0, "passed": 0})
         agg["run_seconds"] += net
         agg["passed"] += 1
+        timed += 1
 
     # `tests` completes the synthetic row: `passed` counts the rows that
     # produced a timing, `tests` every row that was a test at all, so
@@ -225,7 +284,9 @@ def aggregate_hyperfine(reader):
 
     # A crate whose every test came out at or below its calibration has no
     # measurable body time left; run_seconds() rejects the 0 and the crate
-    # drops out, so surface it rather than let it vanish.
+    # drops out, so surface it rather than let it vanish. Without the
+    # subtraction a positive mean is always a positive total, so nothing here
+    # can fire.
     empty = [c for c, agg in data.items() if agg["run_seconds"] <= 0]
     for crate in empty:
         del data[crate]
@@ -233,6 +294,9 @@ def aggregate_hyperfine(reader):
         "calibrated": len(calibration),
         "zeroed_tests": zeroed,
         "dropped_crates": empty,
+        "subtracted": subtract_calibration,
+        "restricted": only_tests is not None,
+        "timed_tests": timed,
     }
     return data, stats
 
@@ -240,6 +304,22 @@ def aggregate_hyperfine(reader):
 # Boilerplate every run of a dataset shares, dropped from filename-derived
 # legend labels: it costs horizontal space without telling the series apart.
 LABEL_NOISE = ("-top_500-hyperfine", "lazy-gc-")
+
+
+def md_table(headers, rows):
+    """Render headers + rows as a GitHub-flavoured markdown table.
+
+    Cells are padded to their column width so the table reads as a table in the
+    terminal too, which is where this output usually lands; the padding is
+    insignificant to a markdown renderer.
+    """
+    cols = list(zip(headers, *rows)) if rows else [(h,) for h in headers]
+    widths = [max(len(str(c)) for c in col) for col in cols]
+    def line(cells):
+        return "| " + " | ".join(str(c).ljust(w) for c, w in zip(cells, widths)) + " |"
+    return "\n".join([line(headers),
+                      "| " + " | ".join("-" * w for w in widths) + " |",
+                      *(line(r) for r in rows)])
 
 
 def clean_label(label):
@@ -251,7 +331,7 @@ def clean_label(label):
     return stripped.strip("-") or label
 
 
-def load_csv(path):
+def load_csv(path, subtract_calibration=True, only_tests=None):
     """Return (label, {crate: row}, kind, stats) for a result CSV, accepting
     either format produced by the run_*_dataset scripts:
 
@@ -270,6 +350,10 @@ def load_csv(path):
         reader = csv.DictReader(f)
         fields = reader.fieldnames or []
         if "run_seconds" in fields:
+            if only_tests is not None:
+                sys.exit(f"Error: --only-tests needs per-test rows, but {path} is a "
+                         f"raw result CSV (one row per crate, whole suite in one "
+                         f"run_seconds). Drop --only-tests or pass hyperfine CSVs.")
             kind = "raw"
             data = {}
             for row in reader:
@@ -278,13 +362,38 @@ def load_csv(path):
                     data[crate] = row
         elif "mean_s" in fields and "test" in fields:
             kind = "hyperfine"
-            data, stats = aggregate_hyperfine(reader)
+            data, stats = aggregate_hyperfine(reader, subtract_calibration, only_tests)
         else:
             sys.exit(f"Error: {path} has neither a run_seconds column (raw "
                      f"result CSV) nor mean_s + test columns (hyperfine CSV).")
     base = os.path.basename(path)
     label = base[:-len(".csv")] if base.endswith(".csv") else base
     return clean_label(label), data, kind, stats
+
+
+def load_only_tests(path):
+    """{crate: {test, ...}} from a list_tests.sh CSV (crate,tests,contains_ffi).
+
+    The ';'-joined tests column is the same one list_tests.sh writes and
+    common_tests.py reproduces, so an intersection CSV drops straight in.
+    """
+    if not os.path.isfile(path):
+        sys.exit(f"Error: --only-tests file not found: {path}")
+    allow = {}
+    with open(path, newline="") as f:
+        reader = csv.DictReader(f)
+        for col in ("crate", "tests"):
+            if col not in (reader.fieldnames or []):
+                sys.exit(f"Error: {path} has no '{col}' column -- not a tests CSV "
+                         f"(crate,tests,contains_ffi as list_tests.sh writes)?")
+        for row in reader:
+            crate = row["crate"]
+            tests = {t for t in (row["tests"] or "").split(";") if t}
+            if crate and tests:
+                allow.setdefault(crate, set()).update(tests)
+    if not allow:
+        sys.exit(f"Error: --only-tests file {path} lists no tests.")
+    return allow
 
 
 def find_tests_csv(paths):
@@ -442,6 +551,28 @@ def main():
                         help="the list_tests.sh CSV --no-ffi should read. Default: the "
                              "tests-<dataset>.csv whose dataset name appears in the input "
                              "filenames, looked up in <OUTPUTS_DIR> then <repo>/scripts.")
+    parser.add_argument("--show-crate", nargs="+", metavar="NAME", default=[],
+                        help="after the averages, print a table of one or more named "
+                             "crates on their own: each series' value plus the "
+                             "difference and ratio against the first plotted series. "
+                             "A NAME matches the crate exactly or by prefix, so "
+                             "'aho-corasick' finds aho-corasick-1.1.4. Reported even "
+                             "when the crate was excluded from the plot, with a note "
+                             "saying so.")
+    parser.add_argument("--only-tests", metavar="FILE",
+                        help="restrict every crate's sum to the tests listed in this "
+                             "tests CSV (crate,tests,contains_ffi -- e.g. the "
+                             "intersection common_tests.py writes), so the series "
+                             "cover the same workload. Crates absent from it are "
+                             "dropped. The output file gains a suffix from the "
+                             "filename so it cannot overwrite the unrestricted plot.")
+    parser.add_argument("--no-calibration", action="store_true",
+                        help="sum each crate's raw mean_s instead of subtracting its "
+                             "__calibration__ row. Totals then include the "
+                             "per-invocation cargo + test-binary startup once per "
+                             "test, but no crate is zeroed or dropped for measuring "
+                             "below a calibration run. The output file gains a "
+                             "_nocal suffix so it cannot overwrite the calibrated plot.")
     parser.add_argument("--allow-failures", "--allow-passed-mismatch",
                         dest="allow_failures", action="store_true",
                         help="plot crates that had failing tests. By default only crates "
@@ -519,7 +650,8 @@ def main():
     except ImportError:
         sys.exit("Error: matplotlib is required (pip install matplotlib).")
 
-    loaded = [load_csv(p) for p in args.csvs]
+    only_tests = load_only_tests(args.only_tests) if args.only_tests else None
+    loaded = [load_csv(p, not args.no_calibration, only_tests) for p in args.csvs]
 
     # Filename-derived labels are as long as the run name (~90 chars for a
     # -Zmiri-flag sweep); two of those in the legend are wider than the whole
@@ -551,7 +683,10 @@ def main():
             continue
         n_tests = sum(row["passed"] for row in data.values())
         note = ""
-        if stats["calibrated"]:
+        if not stats["subtracted"]:
+            note = (f", RAW sums -- calibration not subtracted "
+                    f"({stats['calibrated']} crates have a calibration row)")
+        elif stats["calibrated"]:
             note = (f", net of per-crate calibration "
                     f"({stats['calibrated']} crates calibrated")
             if stats["zeroed_tests"]:
@@ -559,14 +694,28 @@ def main():
             note += ")"
         else:
             uncalibrated.append(path)
+        if stats["restricted"]:
+            note += f", restricted to {os.path.basename(args.only_tests)}"
         print(f"Aggregated {path}: {n_tests} benchmarked tests summed into "
               f"{len(data)} crates{note}.")
+        if stats["restricted"]:
+            want = sum(len(v) for v in only_tests.values())
+            if stats["timed_tests"] < want:
+                print(f"  {want - stats['timed_tests']} of {want} listed test(s) had "
+                      f"no timing here -- this input does not cover the whole list.")
         if stats["dropped_crates"]:
             print(f"  {len(stats['dropped_crates'])} crate(s) had no test above "
                   f"their calibration and were dropped: "
                   f"{', '.join(sorted(stats['dropped_crates'])[:6])}"
                   f"{' ...' if len(stats['dropped_crates']) > 6 else ''}")
-    if uncalibrated:
+    if args.no_calibration:
+        print("Warning: --no-calibration -- every total carries the per-invocation\n"
+              "         cargo + test-binary startup once per test, so a crate of many\n"
+              "         short tests is mostly startup. Ratios between two hyperfine\n"
+              "         inputs still divide it out to first order; absolute seconds do\n"
+              "         not. Do not compare these totals against calibrated ones.",
+              file=sys.stderr)
+    elif uncalibrated:
         print("Warning: no calibration rows in "
               f"{', '.join(os.path.basename(p) for p in uncalibrated)} -- summed "
               "raw, so\n         these totals still carry per-invocation cargo + "
@@ -812,6 +961,16 @@ def main():
     # full one. The float is rendered with 'p' for the point so the name stays
     # one extension-free token (0.5 -> _min0p5s).
     tag = "_no_ffi" if args.no_ffi else ""
+    if args.only_tests:
+        # Name the plot after the list, so two restrictions cannot collide:
+        # tests-common.csv -> _common. A leading "tests-" is redundant here.
+        stem = os.path.basename(args.only_tests)
+        stem = re.sub(r"\.csv$", "", stem)
+        stem = re.sub(r"^tests[-_]", "", stem)
+        stem = re.sub(r"[^A-Za-z0-9]+", "", stem) or "onlytests"
+        tag += "_" + stem
+    if args.no_calibration:
+        tag += "_nocal"
     if args.min_seconds is not None:
         tag += "_min" + f"{args.min_seconds:g}".replace(".", "p") + "s"
         if args.min_seconds_only_first:
@@ -832,13 +991,49 @@ def main():
     # crate has a value in every series, so all averages cover the same crates.
     # Ratios (overhead/speedup) are multiplicative, so the geometric mean is
     # the meaningful average; seconds is additive, so read the plain mean.
-    print(f"\nPer-crate {metric} averaged over {len(crates)} crates:")
-    width = max(len(label) for label, _ in series)
+    print(f"\nPer-crate {metric} averaged over {len(crates)} crates:\n")
+    rows = []
     for label, data in series:
         ys = [value(crate, data[crate]) for crate in crates]
         mean = sum(ys) / len(ys)
         geomean = math.exp(sum(math.log(y) for y in ys) / len(ys))
-        print(f"  {label:<{width}}  mean={mean:.3f}  geomean={geomean:.3f}")
+        rows.append((label, f"{mean:.3f}", f"{geomean:.3f}"))
+    # overhead/speedup are ratios, so they get no unit -- labelling a ratio
+    # "(s)" would misread as a time.
+    unit = spec.get("unit", "")
+    print(md_table(("Config", f"Mean{unit}", f"Geomean{unit}"), rows))
+
+    # ── Named crates on their own ────────────────────────────────────────────
+    # Averages hide the crate you are actually chasing, so allow asking for it
+    # directly. Values come from the loaded series rather than the plotted crate
+    # set, so a crate the filters excluded can still be inspected -- that is
+    # usually exactly when you want to look at it.
+    for name in args.show_crate:
+        matches = sorted({c for _, data in series for c in data
+                          if c == name or c.startswith(name)})
+        if not matches:
+            print(f"\n{name}: no such crate in any input.")
+            continue
+        for crate in matches:
+            note = "" if crate in crates else "  (excluded from the plot)"
+            print(f"\n{crate}{note}:\n")
+            first = None
+            rows = []
+            for label, data in series:
+                row = data.get(crate)
+                v = value(crate, row) if row is not None else None
+                if v is None:
+                    rows.append((label, "-", "-", "-"))
+                    continue
+                if first is None:
+                    first = v
+                    rows.append((label, f"{v:.3f}", "-", "-"))
+                else:
+                    rows.append((label, f"{v:.3f}", f"{v - first:+.3f}",
+                                 f"{v / first:.3f}x" if first else "-"))
+            base = series[0][0] if series else "first"
+            print(md_table(("Config", f"Value{unit}", f"Diff vs {base}{unit}",
+                            f"Ratio vs {base}"), rows))
 
 
 if __name__ == "__main__":

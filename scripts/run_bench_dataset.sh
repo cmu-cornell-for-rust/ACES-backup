@@ -88,12 +88,14 @@
 #                     its own CSV (a -tt<N> slug) instead of appending to a
 #                     parallel run's file.
 #
-# Every mode compiles with RUSTFLAGS="--cfg=miri" -- including rust and bsan. It
-# makes all three select the same cfg(miri) code and, crucially, the same TEST
-# SET as Miri: #[cfg(not(miri))] tests are compiled out and
-# #[cfg_attr(miri, ignore)] tests are ignored everywhere, so the modes are
-# comparable instead of each running whatever its own cfg selected. Rows written
-# before this change came from differently-configured builds.
+# Every mode compiles with RUSTFLAGS="--cfg=miri --cap-lints=warn" -- including
+# rust and bsan. The --cfg=miri part makes all three select the same cfg(miri)
+# code and, crucially, the same TEST SET as Miri: #[cfg(not(miri))] tests are
+# compiled out and #[cfg_attr(miri, ignore)] tests are ignored everywhere, so
+# the modes are comparable instead of each running whatever its own cfg
+# selected. Rows written before this change came from differently-configured
+# builds. --cap-lints=warn keeps a crate whose own deny/forbid lints fire from
+# failing the build outright, so it still compiles and gets timed.
 #
 # Unlike run_miri_dataset.sh / run_bsan_dataset.sh (one srun job per crate,
 # throttled to the 40-job QOS cap), this packs many single-core workers into a
@@ -706,10 +708,13 @@ esac
 # --cfg=miri for every mode, so all three select the same cfg(miri) code and the
 # same test set (#[cfg(not(miri))] compiled out, #[cfg_attr(miri, ignore)]
 # ignored) and time the same testbench. cargo has no --cfg flag, so it rides in
-# RUSTFLAGS. EXPORTED rather than prefixed onto $RUN because $RUN is handed to
-# hyperfine, which runs with -N (no shell) -- a "VAR=value cmd" prefix would be
-# taken as the program name there, not as an assignment.
-export RUSTFLAGS="--cfg=miri"
+# RUSTFLAGS. --cap-lints=warn demotes the crate's own deny/forbid lints to
+# warnings, so a crate that would otherwise fail to build on a lint it never
+# meant to gate the build on still compiles and gets timed. EXPORTED rather
+# than prefixed onto $RUN because $RUN is handed to hyperfine, which runs with
+# -N (no shell) -- a "VAR=value cmd" prefix would be taken as the program name
+# there, not as an assignment.
+export RUSTFLAGS="--cfg=miri --cap-lints=warn"
 echo "RUSTFLAGS=[$RUSTFLAGS]"
 
 # libtest's --test-threads is a HARNESS flag, so it goes after the `--`, before
