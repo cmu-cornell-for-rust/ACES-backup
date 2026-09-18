@@ -77,6 +77,17 @@ ignore)]) tests the others ran, and every one that did run then passed. Add
                    The output file gains a suffix from the filename
                    (tests-common.csv -> _common).
 
+  --common-tests   the same restriction, but with the list computed from the
+                   plotted CSVs themselves: keep only the tests EVERY input
+                   measured (their intersection, the set common_tests.py writes
+                   to a file), so the series cover the same workload without a
+                   second command and a file to keep in sync. A test that
+                   failed, went unmatched or was never reached in even one
+                   input has no comparable number there and is dropped, as are
+                   crates left with no test at all. Hyperfine CSVs only, and
+                   not combinable with --only-tests. The output file gains a
+                   _common suffix.
+
   --no-calibration
                    sum each crate's raw mean_s instead of subtracting its
                    __calibration__ row. The subtraction is meant to remove the
@@ -110,7 +121,7 @@ ignore)]) tests the others ran, and every one that did run then passed. Add
                    depend on argument order. The output gains a _first suffix.
 
 The PNG is written to
-<output_dir>/<metric>_by_crate[_no_ffi][_<only-tests>][_nocal][_min<N>s].png. The outputs dir
+<output_dir>/<metric>_by_crate[_no_ffi][_<only-tests>|_common][_nocal][_min<N>s].png. The outputs dir
 defaults to <repo root>/outputs, found relative to this script (so it works
 both locally and on the cluster); override with $OUTPUTS_DIR.
 
@@ -396,6 +407,64 @@ def load_only_tests(path):
     return allow
 
 
+def common_tests(paths, statuses=("success",)):
+    """{crate: {test, ...}} of the tests EVERY input measured -- see --common-tests.
+
+    The same intersection common_tests.py writes to a tests CSV, computed
+    inline from the plotted CSVs instead, so the series can be put on one
+    workload without a second command and a file to keep in sync. The result
+    is fed to load_csv() exactly as an --only-tests list is.
+
+    "Measured" means the test has a row whose status is in `statuses` (success
+    by default, i.e. it produced a usable timing) in that file -- matching
+    common_tests.py, where one wanted status anywhere in an append-only file
+    counts, rather than the last row for the pair. A test that failed, went
+    unmatched or was never reached in even one input has no comparable number
+    there and is left out. Calibration rows and the test-less rows a
+    build/fetch failure emits are never tests.
+
+    A raw result CSV holds one whole-suite row per crate and no tests to
+    intersect, so it is rejected rather than silently narrowing nothing.
+    """
+    want = set(statuses)
+    per_file = []
+    for path in paths:
+        if not os.path.isfile(path):
+            sys.exit(f"Error: file not found: {path}")
+        with open(path, newline="") as f:
+            reader = csv.DictReader(f)
+            fields = reader.fieldnames or []
+            if "run_seconds" in fields:
+                sys.exit(f"Error: --common-tests needs per-test rows, but {path} is "
+                         f"a raw result CSV (one row per crate, whole suite in one "
+                         f"run_seconds). Drop --common-tests or pass hyperfine CSVs.")
+            for col in ("crate", "test", "status"):
+                if col not in fields:
+                    sys.exit(f"Error: {path} has no '{col}' column -- not a "
+                             f"hyperfine CSV?")
+            seen = set()
+            for row in reader:
+                crate, test = row.get("crate"), row.get("test")
+                if not crate or not test or test == "__calibration__":
+                    continue
+                if row.get("status") in want:
+                    seen.add((crate, test))
+        if not seen:
+            sys.exit(f"Error: --common-tests: no test in {path} has status "
+                     f"{'/'.join(sorted(want))} -- nothing to intersect.")
+        per_file.append(seen)
+
+    shared = set.intersection(*per_file)
+    if not shared:
+        sys.exit("Error: --common-tests: no test was measured in every input, so "
+                 "the intersection is empty. Check that the inputs cover the same "
+                 "dataset.")
+    allow = {}
+    for crate, test in shared:
+        allow.setdefault(crate, set()).add(test)
+    return allow
+
+
 def find_tests_csv(paths):
     """Locate the list_tests.sh CSV (crate,tests,contains_ffi) that goes with
     the result CSVs being plotted, for --no-ffi.
@@ -566,6 +635,14 @@ def main():
                              "cover the same workload. Crates absent from it are "
                              "dropped. The output file gains a suffix from the "
                              "filename so it cannot overwrite the unrestricted plot.")
+    parser.add_argument("--common-tests", action="store_true",
+                        help="restrict every crate's sum to the tests EVERY input CSV "
+                             "measured -- their intersection, computed from the inputs "
+                             "themselves, so the series cover the same workload without "
+                             "running common_tests.py first. A test missing (or not "
+                             "successful) in any input is dropped, as are crates left "
+                             "with none. Hyperfine CSVs only; not combinable with "
+                             "--only-tests. The output file gains a _common suffix.")
     parser.add_argument("--no-calibration", action="store_true",
                         help="sum each crate's raw mean_s instead of subtracting its "
                              "__calibration__ row. Totals then include the "
@@ -650,7 +727,20 @@ def main():
     except ImportError:
         sys.exit("Error: matplotlib is required (pip install matplotlib).")
 
-    only_tests = load_only_tests(args.only_tests) if args.only_tests else None
+    # Both narrow the test set; --common-tests is --only-tests with the list
+    # computed from the inputs, so taking both would be ambiguous about which.
+    if args.common_tests and args.only_tests:
+        sys.exit("Error: --common-tests and --only-tests both restrict the test set -- "
+                 "pass one. (--common-tests is --only-tests with the list computed from "
+                 "the input CSVs instead of read from a file.)")
+    if args.common_tests:
+        only_tests = common_tests(args.csvs)
+        restriction = f"the tests common to all {len(args.csvs)} input(s)"
+        print(f"--common-tests: {sum(len(v) for v in only_tests.values())} test(s) "
+              f"across {len(only_tests)} crate(s) measured in every input.")
+    else:
+        only_tests = load_only_tests(args.only_tests) if args.only_tests else None
+        restriction = os.path.basename(args.only_tests) if args.only_tests else None
     loaded = [load_csv(p, not args.no_calibration, only_tests) for p in args.csvs]
 
     # Filename-derived labels are as long as the run name (~90 chars for a
@@ -695,7 +785,7 @@ def main():
         else:
             uncalibrated.append(path)
         if stats["restricted"]:
-            note += f", restricted to {os.path.basename(args.only_tests)}"
+            note += f", restricted to {restriction}"
         print(f"Aggregated {path}: {n_tests} benchmarked tests summed into "
               f"{len(data)} crates{note}.")
         if stats["restricted"]:
@@ -961,7 +1051,9 @@ def main():
     # full one. The float is rendered with 'p' for the point so the name stays
     # one extension-free token (0.5 -> _min0p5s).
     tag = "_no_ffi" if args.no_ffi else ""
-    if args.only_tests:
+    if args.common_tests:
+        tag += "_common"
+    elif args.only_tests:
         # Name the plot after the list, so two restrictions cannot collide:
         # tests-common.csv -> _common. A leading "tests-" is redundant here.
         stem = os.path.basename(args.only_tests)

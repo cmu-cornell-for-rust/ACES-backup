@@ -179,6 +179,12 @@
 # calibration -- so a crate contributes 1 + (its passing tests) rows, and the
 # progress line's row count runs slightly ahead of the test count.
 #
+# A test_failed or no_match test never reaches hyperfine, so the CSV records
+# only the verdict. Its output -- the panic message, the Miri/BSAN report,
+# libtest's `failures:` summary -- is written to the crate log between
+# "--- output: <crate> :: <test> ..." markers (last 200 lines), which is the
+# only place it exists.
+#
 # The orchestrator submits the jobs, polls squeue with a progress line, then
 # merges all shards into <outputs>/<image>[-<extra-slug>]-<dataset>-hyperfine.csv
 # and prints a status breakdown. Per-crate logs land in
@@ -725,6 +731,11 @@ HARNESS="${HF_TEST_THREADS:-}"
 HARNESS="${HARNESS:+ --test-threads=$HARNESS}"
 [ -n "$HARNESS" ] && echo "HARNESS=[$HARNESS]"
 
+# How many lines of a failing test's output to keep in the crate log. Enough
+# for a Miri/BSAN report plus libtest's failure summary, bounded so one test
+# spewing to stdout cannot swamp the log for every other test in the crate.
+FAIL_LOG_LINES=200
+
 ts() { date -u +'%Y-%m-%dT%H:%M:%SZ'; }
 # row <test> <status> <compile> <mean> <stddev> <median> <min> <max>
 # Streams the row STRAIGHT into this worker's shard (we are its only writer),
@@ -779,6 +790,22 @@ while IFS= read -r t; do
     runlog=$(mktemp)
     $RUN --$HARNESS --exact "$t" > "$runlog" 2>&1; rc=$?
     nrun=$(grep -aoE '^running [0-9]+ test' "$runlog" | grep -oE '[0-9]+' | awk '{s+=$1} END{print s+0}')
+    # A test that fails (or matches nothing) never reaches hyperfine, so this
+    # pre-run is the ONLY place its panic / UB report ever exists -- dump it
+    # into the crate log before the temp file goes, or the CSV's test_failed
+    # says nothing about WHY. Tail, not head: the diagnosis (the panic message,
+    # Miri's or BSAN's report, libtest's `failures:` summary) is at the end,
+    # while the head is per-binary "running N tests" noise. Passing tests are
+    # untouched, so a clean crate's log reads exactly as it did before.
+    if [ "$rc" -ne 0 ] || [ "$nrun" -eq 0 ]; then
+        nlines=$(wc -l < "$runlog")
+        echo "--- output: $HF_CRATE :: $t (exit $rc, $nrun test(s) matched) ---"
+        if [ "$nlines" -gt "$FAIL_LOG_LINES" ]; then
+            echo "[... $(( nlines - FAIL_LOG_LINES )) earlier line(s) omitted ...]"
+        fi
+        tail -n "$FAIL_LOG_LINES" "$runlog"
+        echo "--- end output: $HF_CRATE :: $t ---"
+    fi
     rm -f "$runlog"
     status=""
     if [ "$nrun" -eq 0 ]; then status=no_match

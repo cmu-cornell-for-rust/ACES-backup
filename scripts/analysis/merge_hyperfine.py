@@ -6,19 +6,26 @@ Usage: merge_hyperfine.py [-o OUT.csv] <a-hyperfine.csv> <b-hyperfine.csv> [...]
 Produces one wide CSV with a row per (crate, test) -- the union across all
 inputs -- and, per input file, its status/mean_s/min_s/max_s for that test:
 
-    crate,test,<label>_status,<label>_mean_s,<label>_min_s,<label>_max_s,...
+    crate,test,contains_ffi,<label>_status,<label>_mean_s,<label>_min_s,<label>_max_s,...
 
 <label> is the file's `build` column when unique across the inputs (e.g.
 miri, bsan, rust), otherwise the file's basename. Cells are empty where a
 file has no row for that test; timing cells are empty where status is not
 success. Crate-level failure rows (empty test: fetch_failed/build_failed)
-are not merged. If a file contains the same (crate, test) twice (a rerun
-appended to the same CSV), the LAST row wins, since appends are newest-last.
+and the per-crate __calibration__ rows are not merged. If a file contains the
+same (crate, test) twice (a rerun appended to the same CSV), the LAST row
+wins, since appends are newest-last.
+
+contains_ffi is not rescanned: it is copied per crate from --ffi FILE (a
+list_tests.sh CSV -- crate,tests,contains_ffi, e.g. outputs/tests-<dataset>.csv
+or scripts/miri-tests.csv) and left empty when --ffi is not given.
 
 The merged CSV goes to stdout (or -o FILE). A per-crate table of total
 measured time -- the sum of mean_s over success rows, per input -- is
 printed to stderr, sorted by the largest total, so
-    merge_hyperfine.py a.csv b.csv > merged.csv
+    merge_hyperfine.py --ffi scripts/miri-tests.csv \\
+        outputs/rust-top_500-hyperfine.csv outputs/miri-top_500-hyperfine.csv \\
+        outputs/bsan-top_500-hyperfine.csv > merged.csv
 leaves the totals on the terminal.
 """
 import argparse
@@ -29,12 +36,22 @@ from collections import defaultdict
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-o", "--output", help="write the merged CSV here (default: stdout)")
+ap.add_argument("--ffi", metavar="FILE",
+                help="a list_tests.sh CSV (crate,tests,contains_ffi) to copy the "
+                     "contains_ffi column from; left empty without it")
 ap.add_argument("csvs", nargs="+", help="two or more *-hyperfine.csv files")
 args = ap.parse_args()
 if len(args.csvs) < 2:
     ap.error("need at least two CSVs to merge")
 
 FIELDS = ("status", "mean_s", "min_s", "max_s")
+
+# crate -> "true"/"false"/"scan_failed", as list_tests.sh recorded it.
+ffi_of = {}
+if args.ffi:
+    with open(args.ffi, newline="") as f:
+        for r in csv.DictReader(f):
+            ffi_of[r["crate"]] = r.get("contains_ffi", "")
 
 tables = []   # one dict per input: (crate, test) -> row
 builds = []
@@ -70,9 +87,10 @@ else:
 keys = sorted(set().union(*tables))
 out = open(args.output, "w", newline="") if args.output else sys.stdout
 w = csv.writer(out)
-w.writerow(["crate", "test"] + [f"{lab}_{f}" for lab in labels for f in FIELDS])
+w.writerow(["crate", "test", "contains_ffi"]
+           + [f"{lab}_{f}" for lab in labels for f in FIELDS])
 for key in keys:
-    row = list(key)
+    row = [key[0], key[1], ffi_of.get(key[0], "")]
     for table in tables:
         r = table.get(key)
         row += [r[f] for f in FIELDS] if r else [""] * len(FIELDS)
@@ -93,7 +111,16 @@ err = sys.stderr
 for path, lab, table, cnt in zip(args.csvs, labels, tables, counts):
     err.write(f"{lab}: {path} ({len(table)} test rows, "
               f"{sum(cnt.values())} success across {len(cnt)} crates)\n")
-err.write(f"merged: {len(keys)} (crate, test) pairs\n\n")
+err.write(f"merged: {len(keys)} (crate, test) pairs\n")
+if args.ffi:
+    unknown = sorted({c for c, _ in keys} - ffi_of.keys())
+    if unknown:
+        err.write(f"note: contains_ffi empty for {len(unknown)} crate(s) absent from "
+                  f"{args.ffi}: {', '.join(unknown[:5])}"
+                  + (", ..." if len(unknown) > 5 else "") + "\n")
+else:
+    err.write("note: contains_ffi left empty (no --ffi FILE)\n")
+err.write("\n")
 
 crates = sorted(set().union(*totals), key=lambda c: -max(t[c] for t in totals))
 cw = max((len(c) for c in crates), default=5) + 2

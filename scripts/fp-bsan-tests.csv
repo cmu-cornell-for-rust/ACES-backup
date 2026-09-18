@@ -1,0 +1,7 @@
+crate,tests,contains_ffi
+aho-corasick-1.1.4,tests::regression_stream_rare_byte_prefilter,false
+brotli-decompressor-5.0.1,integration_tests::lcet10;integration_tests::test_alice29;integration_tests::test_as_you_like_it;integration_tests::test_metablock_reset;integration_tests::test_reader_uni;test::test_dict_medium;test::test_quickfox_repeated_exported;test::test_x,false
+csv-1.4.0,deserializer::tests::enum_label_simple_tagged;deserializer::tests::enum_untagged;deserializer::tests::with_header;deserializer::tests::with_header_missing;deserializer::tests::with_header_missing_ok,false
+curve25519-dalek-4.1.3,edwards::test::multiscalar_consistency_n_250;edwards::test::multiscalar_consistency_n_500,false
+flate2-1.1.9,deflate::tests::reset_decoder;deflate::tests::reset_reader;deflate::tests::reset_writer;deflate::tests::roundtrip;deflate::tests::roundtrip2;deflate::tests::roundtrip3;deflate::tests::total_in;deflate::tests::zero_length_read_with_data;gz::tests::gzip_encoder_matches_rfc1952;gz::tests::roundtrip_big;gz::tests::roundtrip_big2;zlib::tests::roundtrip;zlib::tests::roundtrip2;zlib::tests::roundtrip3,true
+num-bigint-0.4.6,test_big_str;test_pow,false
