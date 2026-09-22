@@ -278,6 +278,17 @@ case "$MODE" in
         RUN_PREFIX="RUSTFLAGS=\"$CFG_RUSTFLAGS\" BSAN_OPTIONS=\"$BSAN_OPTIONS_ALL\" cargo bsan test --tests" ;;
 esac
 
+# One file per RUN holding every non-success crate's log tail, so a sweep's
+# failures can be read in one place instead of opening <crate>/<image>.log one
+# at a time. Per run, not appended across runs: a crate log is overwritten by
+# its next run, and an errors file outliving the logs it quotes would mix
+# sweeps. The tail is what matters -- libtest's `failures:` summary and the
+# Miri/BSAN report land at the end, while the head is compile output; raise
+# ERROR_LINES to keep more.
+ERROR_LINES="${ERROR_LINES:-200}"
+ERRORS_LOG="$OUTPUTS_DIR/errors/$(basename "${CSV%.csv}")-$(date +%Y%m%d-%H%M%S).log"
+mkdir -p "$(dirname "$ERRORS_LOG")"
+
 echo "Mode:     $MODE   Image: $IMAGE"
 echo "Walltime: $WALLTIME   Mem: $MEM"
 echo "Dataset:  $DATASET_DIR"
@@ -298,17 +309,6 @@ if [[ ! -f "$CSV" ]]; then
     echo "build,crate,status,compile_seconds,run_seconds,tests,passed,timestamp,job_id" > "$CSV"
 fi
 LOCKFILE="$(mktemp /tmp/run_dataset.lock.XXXXXX)"
-
-# One file per RUN holding every non-success crate's log tail, so a sweep's
-# failures can be read in one place instead of opening <crate>/<image>.log one
-# at a time. Per run, not appended across runs: a crate log is overwritten by
-# its next run, and an errors file outliving the logs it quotes would mix
-# sweeps. The tail is what matters -- libtest's `failures:` summary and the
-# Miri/BSAN report land at the end, while the head is compile output; raise
-# ERROR_LINES to keep more.
-ERROR_LINES="${ERROR_LINES:-200}"
-ERRORS_LOG="$OUTPUTS_DIR/errors/$(basename "${CSV%.csv}")-$(date +%Y%m%d-%H%M%S).log"
-mkdir -p "$(dirname "$ERRORS_LOG")"
 
 # ── Launch jobs, at most MAX_PARALLEL in flight at once ──────────────────────
 pids=()        # every launcher pid (for teardown on interrupt)
