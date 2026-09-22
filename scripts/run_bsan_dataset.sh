@@ -47,7 +47,12 @@
 # MAX_PARALLEL (default 40, override with the MAX_PARALLEL env var) running at
 # once -- the `normal` QOS allows 40 concurrent jobs. Each job runs with 16G
 # memory, is named "<crate>-<image>", writes its full stdout+stderr to
-# "<crate>/<image>.log", and cleans up its per-job scratch on the way out. A row per crate
+# "<crate>/<image>.log", and cleans up its per-job scratch on the way out.
+# Every crate that does not come back `success` -- build/fetch/test failures,
+# and the ones killed or timed out with no row at all -- also has the tail of
+# that log copied into ONE file for the run,
+# <outputs>/errors/<csv stem>-<timestamp>.log, so a sweep's failures read in
+# one place ($ERROR_LINES lines per crate, default 200). A row per crate
 # (build,crate,status,compile_seconds,run_seconds,tests,passed,timestamp,job_id) is
 # appended to /scratch/group/p.cis260229.000/outputs/<image>-<dataset>.csv, with
 # concurrent writes serialized by a lock. compile_seconds/run_seconds time the
@@ -282,6 +287,7 @@ echo "RUSTFLAGS: $CFG_RUSTFLAGS${TEST_THREADS:+   Harness: --test-threads=$TEST_
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
 echo "Results:  $CSV"
+echo "Errors:   $ERRORS_LOG"
 echo
 
 # Results CSV (appended across runs; header written once). Lives on group
@@ -292,6 +298,17 @@ if [[ ! -f "$CSV" ]]; then
     echo "build,crate,status,compile_seconds,run_seconds,tests,passed,timestamp,job_id" > "$CSV"
 fi
 LOCKFILE="$(mktemp /tmp/run_dataset.lock.XXXXXX)"
+
+# One file per RUN holding every non-success crate's log tail, so a sweep's
+# failures can be read in one place instead of opening <crate>/<image>.log one
+# at a time. Per run, not appended across runs: a crate log is overwritten by
+# its next run, and an errors file outliving the logs it quotes would mix
+# sweeps. The tail is what matters -- libtest's `failures:` summary and the
+# Miri/BSAN report land at the end, while the head is compile output; raise
+# ERROR_LINES to keep more.
+ERROR_LINES="${ERROR_LINES:-200}"
+ERRORS_LOG="$OUTPUTS_DIR/errors/$(basename "${CSV%.csv}")-$(date +%Y%m%d-%H%M%S).log"
+mkdir -p "$(dirname "$ERRORS_LOG")"
 
 # ── Launch jobs, at most MAX_PARALLEL in flight at once ──────────────────────
 pids=()        # every launcher pid (for teardown on interrupt)
@@ -394,9 +411,37 @@ EOF
         cd "$CRATE_PATH" || exit 1
         "$RUN_JOB" -J "$JOBNAME" "$IMAGE" "$WALLTIME" "$MEM" -- "$CMD"
         rc=$?
-        row="$(grep -am1 '^CSVROW:' "$LOGFILE" 2>/dev/null | cut -d: -f2-)"
+        # `|| true`: no CSVROW means grep exits 1, and under `set -e` that
+        # assignment would abort this subshell on the spot -- skipping the
+        # error capture below for exactly the crates that need it most, the
+        # ones killed or timed out before emitting a row.
+        row="$(grep -am1 '^CSVROW:' "$LOGFILE" 2>/dev/null | cut -d: -f2- || true)"
+        if [[ -z "$row" ]]; then
+            # No row means the crate did not complete, whatever the launcher's
+            # own status says -- keep it counted as a failure, which is what
+            # the aborted subshell used to do by accident.
+            (( rc == 0 )) && rc=1
+        fi
         if [[ -n "$row" ]]; then
             { flock 9; printf '%s\n' "$row" >> "$CSV"; } 9>"$LOCKFILE"
+        fi
+        # Anything but a clean success goes into the run's errors file: the
+        # build/fetch/test failures the CSV only names, plus the crates that
+        # emitted no row at all (killed, walltime, srun error), which the CSV
+        # cannot record. Same flock as the CSV append -- the writers are these
+        # launcher subshells, so one lock serializes both.
+        status="$(cut -d, -f3 <<<"$row")"
+        if [[ "$status" != "success" ]]; then
+            {
+                flock 9
+                {
+                    echo "===== $CRATE [${status:-no row: killed / timeout / srun error}] (launcher rc=$rc)"
+                    echo "===== full log: $LOGFILE"
+                    tail -n "$ERROR_LINES" "$LOGFILE" 2>/dev/null \
+                        || echo "(no log at $LOGFILE)"
+                    echo
+                } >> "$ERRORS_LOG"
+            } 9>"$LOCKFILE"
         fi
         exit "$rc"
     ) > "$LOGFILE" 2>&1 &
@@ -436,6 +481,11 @@ for st in success test_failed build_failed fetch_failed; do
 done
 if (( incomplete > 0 )); then
     echo "  incomplete (killed / timeout / srun error, no row): $incomplete -- see those crates' .log"
+fi
+if [[ -s "$ERRORS_LOG" ]]; then
+    echo "  every non-success crate's log tail: $ERRORS_LOG"
+else
+    rm -f "$ERRORS_LOG"      # nothing failed -- do not leave an empty file
 fi
 
 # Non-zero exit if any job failed to even complete (distinct from build/test
