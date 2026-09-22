@@ -79,14 +79,16 @@ ignore)]) tests the others ran, and every one that did run then passed. Add
 
   --common-tests   the same restriction, but with the list computed from the
                    plotted CSVs themselves: keep only the tests EVERY input
-                   measured (their intersection, the set common_tests.py writes
-                   to a file), so the series cover the same workload without a
-                   second command and a file to keep in sync. A test that
-                   failed, went unmatched or was never reached in even one
-                   input has no comparable number there and is dropped, as are
-                   crates left with no test at all. Hyperfine CSVs only, and
-                   not combinable with --only-tests. The output file gains a
-                   _common suffix.
+                   measured with the SAME status (their intersection, stricter
+                   than the plain set common_tests.py writes to a file), so
+                   the series cover the same workload without a second command
+                   and a file to keep in sync. A test that failed, went
+                   unmatched, was never reached in even one input, or whose
+                   status disagrees between inputs (success in one, failed in
+                   another) has no comparable number there and is dropped, as
+                   are crates left with no test at all. Hyperfine CSVs only,
+                   and not combinable with --only-tests. The output file gains
+                   a _common suffix.
 
   --no-calibration
                    sum each crate's raw mean_s instead of subtracting its
@@ -408,20 +410,24 @@ def load_only_tests(path):
 
 
 def common_tests(paths, statuses=("success",)):
-    """{crate: {test, ...}} of the tests EVERY input measured -- see --common-tests.
+    """{crate: {test, ...}} of the tests EVERY input measured, ALL AGREEING on
+    the same status -- see --common-tests.
 
     The same intersection common_tests.py writes to a tests CSV, computed
     inline from the plotted CSVs instead, so the series can be put on one
     workload without a second command and a file to keep in sync. The result
     is fed to load_csv() exactly as an --only-tests list is.
 
-    "Measured" means the test has a row whose status is in `statuses` (success
-    by default, i.e. it produced a usable timing) in that file -- matching
-    common_tests.py, where one wanted status anywhere in an append-only file
-    counts, rather than the last row for the pair. A test that failed, went
-    unmatched or was never reached in even one input has no comparable number
-    there and is left out. Calibration rows and the test-less rows a
-    build/fetch failure emits are never tests.
+    A test qualifies when every input has a row for it AND every input's
+    status for it is the SAME one, and that status is in `statuses` (success
+    by default, i.e. it produced a usable timing). The last row for a
+    (crate, test) pair wins, since these CSVs are append-only -- matching
+    check_consistency.py, not common_tests.py's own "any row ever" rule, since
+    here a stray earlier success followed by a real failure would otherwise
+    pass a broken test's timing off as comparable data. A test that failed,
+    went unmatched, disagreed between inputs, or was never reached in even one
+    input has no comparable number and is left out. Calibration rows and the
+    test-less rows a build/fetch failure emits are never tests.
 
     A raw result CSV holds one whole-suite row per crate and no tests to
     intersect, so it is rejected rather than silently narrowing nothing.
@@ -442,26 +448,41 @@ def common_tests(paths, statuses=("success",)):
                 if col not in fields:
                     sys.exit(f"Error: {path} has no '{col}' column -- not a "
                              f"hyperfine CSV?")
-            seen = set()
+            last = {}
             for row in reader:
                 crate, test = row.get("crate"), row.get("test")
                 if not crate or not test or test == "__calibration__":
                     continue
-                if row.get("status") in want:
-                    seen.add((crate, test))
-        if not seen:
-            sys.exit(f"Error: --common-tests: no test in {path} has status "
-                     f"{'/'.join(sorted(want))} -- nothing to intersect.")
-        per_file.append(seen)
+                last[(crate, test)] = row.get("status")
+        if not last:
+            sys.exit(f"Error: --common-tests: {path} has no test rows -- nothing "
+                     f"to intersect.")
+        per_file.append(last)
 
-    shared = set.intersection(*per_file)
-    if not shared:
-        sys.exit("Error: --common-tests: no test was measured in every input, so "
+    present_everywhere = set.intersection(*(set(d) for d in per_file))
+    if not present_everywhere:
+        sys.exit("Error: --common-tests: no test appears in every input, so "
                  "the intersection is empty. Check that the inputs cover the same "
                  "dataset.")
+
     allow = {}
-    for crate, test in shared:
-        allow.setdefault(crate, set()).add(test)
+    disagreed = 0
+    for key in present_everywhere:
+        got = {d[key] for d in per_file}
+        if len(got) > 1:
+            disagreed += 1
+            continue
+        if got.pop() in want:
+            crate, test = key
+            allow.setdefault(crate, set()).add(test)
+    if not allow:
+        sys.exit("Error: --common-tests: no test has the same status "
+                 f"({'/'.join(sorted(want))}) in every input, so the intersection "
+                 "is empty. Check that the inputs cover the same dataset.")
+    if disagreed:
+        print(f"--common-tests: {disagreed} test(s) present everywhere but dropped "
+              f"-- status disagreed between inputs (see check_consistency.py to "
+              f"see which).", file=sys.stderr)
     return allow
 
 
@@ -637,10 +658,12 @@ def main():
                              "filename so it cannot overwrite the unrestricted plot.")
     parser.add_argument("--common-tests", action="store_true",
                         help="restrict every crate's sum to the tests EVERY input CSV "
-                             "measured -- their intersection, computed from the inputs "
-                             "themselves, so the series cover the same workload without "
-                             "running common_tests.py first. A test missing (or not "
-                             "successful) in any input is dropped, as are crates left "
+                             "measured with the SAME status -- their intersection, "
+                             "computed from the inputs themselves, so the series cover "
+                             "the same workload without running common_tests.py first. "
+                             "A test missing in any input, not successful, or whose "
+                             "status disagrees between inputs (e.g. success in one, "
+                             "test_failed in another) is dropped, as are crates left "
                              "with none. Hyperfine CSVs only; not combinable with "
                              "--only-tests. The output file gains a _common suffix.")
     parser.add_argument("--no-calibration", action="store_true",

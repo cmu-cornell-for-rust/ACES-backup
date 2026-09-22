@@ -69,6 +69,18 @@
 #                     (default 4). Each group becomes N jobs; every crate's
 #                     test list is strided N ways, so a group of 10 crates
 #                     runs as N jobs x 10 single-cpu workers
+#                     (--slow-group/--slow-splits shape the CRATE slowlist
+#                     only; they are unused when a test-level list is in play)
+#   --slow-tests FILE test-level slow list, "crate,test" rows ordered SLOWEST
+#                     FIRST. Replaces the crate slowlist entirely (see "Test-
+#                     level slow/medium lists" below). Default: <scripts>/
+#                     <mode>-slow.csv if it exists (so bsan picks up
+#                     bsan-slow.csv on its own)
+#   --medium-tests FILE  test-level medium list, same "crate,test" format.
+#                     Its tests all run in ONE job of --max-tasks workers.
+#                     Default: <scripts>/<mode>-medium.csv if it exists
+#   --no-test-lists   ignore those defaults and use the crate slowlist, i.e.
+#                     the behaviour from before the test-level lists existed
 #   --runs N          hyperfine timing runs per test (default 3)
 #   --slow-runs N     hyperfine timing runs per test for SLOWLIST crates
 #                     (default 1). These crates' tests are slow enough that
@@ -115,6 +127,46 @@
 # run are ignored, so the list is dataset-agnostic. Slow jobs request
 # --slow-walltime (24h default) while the regular jobs keep the short
 # <walltime>, so the wide fast jobs stay backfill-friendly.
+#
+# Test-level slow/medium lists
+# ----------------------------
+# The crate slowlist above deals whole CRATES, so its jobs are only as wide as
+# the group (10 workers by default) no matter how lopsided the crates are. When
+# a run has already been profiled the unit that matters is the TEST, not the
+# crate, and both lists below are read in place of scripts/slowlist:
+#
+#   <scripts>/<mode>-slow.csv    the slowest tests, ORDERED slowest first
+#   <scripts>/<mode>-medium.csv  the middling ones, any order
+#
+# Both are "crate,test" rows (the test column may be ';'-joined, and rows may
+# be CRLF/quoted/TAB-separated -- these files are assembled by hand and by
+# several analysis scripts, so the parser tolerates all of that). They are
+# picked up automatically when present, which for `bsan` means bsan-slow.csv
+# and bsan-medium.csv; --slow-tests/--medium-tests point elsewhere and
+# --no-test-lists turns the whole thing off.
+#
+#   slow    cut into jobs of --max-tasks (24) tests IN FILE ORDER, ONE TEST PER
+#           WORKER -- so the first job holds the 24 slowest tests, the next the
+#           24 after those. 96 slow tests is 4 jobs x 24 single-cpu workers,
+#           each worker compiling its crate and timing its one test.
+#   medium  ONE job of --max-tasks (24) workers, the list cut into 24 even
+#           contiguous slices. Contiguous so a crate stays inside as few
+#           slices as possible: every worker that touches a crate compiles it.
+#   rest    everything left in the --tests CSV runs as REGULAR crate-per-worker
+#           jobs, with the slow and medium tests SUBTRACTED from each crate's
+#           test list so nothing is timed twice (a crate whose tests are all
+#           claimed drops out of the regular dealing entirely).
+#
+# Slow and medium jobs both run at --slow-walltime and --slow-runs. Every
+# worker gets a private CARGO_HOME and CARGO_TARGET_DIR, so the only thing the
+# slices of one crate share is the crate DIRECTORY (and a Cargo.lock cargo may
+# want to write). The crate slowlist already ran 4 workers per crate that way;
+# a heavily-listed crate now reaches ~20, since its slow tests, its medium
+# slice and its regular leftovers are all in flight at once.
+#
+# Typical use, with the tests CSV that the lists were derived from:
+#
+#   run_bench_dataset.sh --tests scripts/bsan-tests.csv bsan bsan top_500
 #
 # Even test deal (--all-slow)
 # ---------------------------
@@ -232,6 +284,9 @@ RUNS_GIVEN=0         # was --runs passed? (--all-slow forces 1 otherwise)
 WALLTIME_GIVEN=0     # was the walltime positional passed?
 SLOW_GROUP=10        # slowlist crates per group
 SLOW_SPLITS=4        # jobs each group's tests are split across
+SLOW_TESTS_FILE=""   # test-level slow list; empty = <scripts>/<mode>-slow.csv
+MEDIUM_TESTS_FILE="" # test-level medium list; empty = <mode>-medium.csv
+NO_TEST_LISTS=0      # --no-test-lists: ignore both defaults
 RUNS=3
 SLOW_RUNS=1          # hyperfine runs per test for slowlist crates
 WARMUP=0
@@ -274,6 +329,11 @@ while [[ $# -gt 0 ]]; do
         --slow-group=*)  SLOW_GROUP="${1#*=}"; shift ;;
         --slow-splits)   SLOW_SPLITS="$2"; shift 2 ;;
         --slow-splits=*) SLOW_SPLITS="${1#*=}"; shift ;;
+        --slow-tests)    SLOW_TESTS_FILE="$2"; shift 2 ;;
+        --slow-tests=*)  SLOW_TESTS_FILE="${1#*=}"; shift ;;
+        --medium-tests)  MEDIUM_TESTS_FILE="$2"; shift 2 ;;
+        --medium-tests=*) MEDIUM_TESTS_FILE="${1#*=}"; shift ;;
+        --no-test-lists) NO_TEST_LISTS=1; shift ;;
         -*)
             echo "Error: unknown option '$1'." >&2; exit 1 ;;
         *)
@@ -294,7 +354,9 @@ usage() {
     echo "           --runs N --warmup N --slow-runs N (slowlist runs, default 1)" >&2
     echo "           --all-slow (split every test evenly over --jobs x --tasks)" >&2
     echo "           --slow-walltime T (for slowlist jobs, default 24)" >&2
-    echo "           --slow-group N --slow-splits N (slowlist shape, 10 x 4)" >&2
+    echo "           --slow-group N --slow-splits N (crate slowlist shape, 10 x 4)" >&2
+    echo "           --slow-tests FILE --medium-tests FILE --no-test-lists" >&2
+    echo "             (test-level lists; default <mode>-slow/-medium.csv)" >&2
     exit 1
 }
 [[ $# -ge 3 && $# -le 5 ]] || usage
@@ -400,6 +462,46 @@ fi
 [[ -f "$TESTS_CSV" ]]  || { echo "Error: tests CSV not found: $TESTS_CSV (--tests FILE?)" >&2; exit 1; }
 command -v sbatch >/dev/null || { echo "Error: sbatch not found (run on a login node)." >&2; exit 1; }
 
+# ── Test-level slow/medium lists ─────────────────────────────────────────────
+# Named after the mode, so `bsan` finds bsan-slow.csv / bsan-medium.csv without
+# being told. A file named explicitly must exist (a typo there should not
+# silently fall back to whole-crate dealing); a defaulted one is optional.
+# --all-slow deals every test itself, so the lists have nothing to say there.
+for v in SLOW_TESTS_FILE MEDIUM_TESTS_FILE; do
+    if [[ -n "${!v}" ]]; then
+        [[ -f "${!v}" ]] || { echo "Error: test list not found: ${!v}" >&2; exit 1; }
+    fi
+done
+if (( NO_TEST_LISTS || ALL_SLOW )); then
+    SLOW_TESTS_FILE=""; MEDIUM_TESTS_FILE=""
+else
+    [[ -n "$SLOW_TESTS_FILE"   ]] || SLOW_TESTS_FILE="$GROUP/scripts/${MODE}-slow.csv"
+    [[ -n "$MEDIUM_TESTS_FILE" ]] || MEDIUM_TESTS_FILE="$GROUP/scripts/${MODE}-medium.csv"
+    [[ -f "$SLOW_TESTS_FILE"   ]] || SLOW_TESTS_FILE=""
+    [[ -f "$MEDIUM_TESTS_FILE" ]] || MEDIUM_TESTS_FILE=""
+fi
+# When a test-level list is in play it replaces the crate slowlist outright:
+# the lists already say which individual tests are slow, and leaving whole
+# crates out of the regular dealing on top of that would strand the tests the
+# lists did NOT claim in a 24h job of their own.
+USE_TEST_LISTS=0
+[[ -n "$SLOW_TESTS_FILE" || -n "$MEDIUM_TESTS_FILE" ]] && USE_TEST_LISTS=1
+
+# Slow and medium jobs are MAX_TASKS wide by construction (TASKS is auto-sized
+# from the regular crates and says nothing about them), so the node-capacity
+# check that guards TASKS has to cover MAX_TASKS too.
+if (( USE_TEST_LISTS )); then
+    if (( MAX_TASKS * MEM_PER_TASK > 488 )); then
+        echo "Error: max-tasks*mem = $(( MAX_TASKS * MEM_PER_TASK ))G exceeds the 488G usable on an ACES node." >&2
+        echo "Lower --max-tasks or --mem-per-task." >&2
+        exit 1
+    fi
+    if (( MAX_TASKS * CPUS_PER_TASK > 96 )); then
+        echo "Error: max-tasks*cpus = $(( MAX_TASKS * CPUS_PER_TASK )) exceeds the 96 cores on an ACES node." >&2
+        exit 1
+    fi
+fi
+
 # Load the ignorelist (if any) into a set keyed by crate-dir basename.
 declare -A IGNORE=()
 if [[ -n "$IGNORE_FILE" ]]; then
@@ -432,6 +534,8 @@ mkdir -p "$RUNDIR/chunks" "$RUNDIR/tests" "$RUNDIR/shards"
 # several binaries) are collapsed -- --exact runs it in every binary anyway.
 SELECTED=()          # "count<TAB>crate" lines, for size-descending dealing
 declare -A SEEN_CRATE=()
+declare -A ELIGIBLE=()   # crates that survived the filters AND have a dataset
+                         # dir -- what a test-level list entry is checked against
 TOTAL_TESTS=0
 skip_ignored=0; skip_only=0; skip_ffi=0; skip_empty=0
 MISSING=()
@@ -445,8 +549,9 @@ while IFS=, read -r crate tests ffi || [[ -n "$crate" ]]; do
     if [[ -n "${IGNORE[$crate]:-}" ]]; then skip_ignored=$((skip_ignored+1)); continue; fi
     if (( ${#ONLY[@]} > 0 )) && [[ -z "${ONLY[$crate]:-}" ]]; then skip_only=$((skip_only+1)); continue; fi
     if (( NO_FFI )) && [[ "$ffi" != "false" ]]; then skip_ffi=$((skip_ffi+1)); continue; fi
-    if [[ -z "$tests" ]]; then skip_empty=$((skip_empty+1)); continue; fi
     if [[ ! -d "$DATASET_DIR/$crate" ]]; then MISSING+=("$crate"); continue; fi
+    ELIGIBLE["$crate"]=1
+    if [[ -z "$tests" ]]; then skip_empty=$((skip_empty+1)); continue; fi
     tr ';' '\n' <<<"$tests" | awk 'NF && !seen[$0]++' > "$RUNDIR/tests/$crate.txt"
     cnt=$(wc -l < "$RUNDIR/tests/$crate.txt")
     (( cnt > 0 )) || { skip_empty=$((skip_empty+1)); continue; }
@@ -456,6 +561,105 @@ done < "$TESTS_CSV"
 
 if (( ${#SELECTED[@]} == 0 )); then
     echo "Error: no crates left to run after filtering $TESTS_CSV." >&2
+    exit 1
+fi
+
+# ── Claim the tests named by the test-level lists ────────────────────────────
+# Both lists are read IN FILE ORDER and kept that way -- the slow one is sorted
+# slowest-first, and that order is what decides which tests share a job.
+#
+# The parser is deliberately forgiving: these files are assembled by hand and
+# by several analysis scripts, so rows arrive with CRLF endings, a quoted crate
+# field, a TAB where the comma should be, or several ';'-joined tests in the
+# test column. Each is normalised to one "crate<TAB>test" line per test. A
+# trailing contains_ffi column (should a full tests CSV be passed) is dropped.
+parse_test_list() {
+    awk '
+        {
+            line = $0
+            sub(/\r$/, "", line)
+            gsub(/"/, "", line)
+            if (line ~ /^[[:space:]]*(#|$)/) next
+            i = index(line, ",")
+            if (i > 0) { crate = substr(line, 1, i - 1); tests = substr(line, i + 1) }
+            else { if (split(line, f, /[ \t]+/) < 2) next; crate = f[1]; tests = f[2] }
+            i = index(tests, ",")          # drop a contains_ffi column if present
+            if (i > 0) tests = substr(tests, 1, i - 1)
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "", crate)
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "", tests)
+            if (crate == "" || crate == "crate" || tests == "") next
+            n = split(tests, t, ";")
+            for (k = 1; k <= n; k++) {
+                gsub(/^[[:space:]]+|[[:space:]]+$/, "", t[k])
+                if (t[k] != "") printf "%s\t%s\n", crate, t[k]
+            }
+        }' "$1"
+}
+
+SLOW_TESTS=()            # "crate<TAB>test", slowest first
+MEDIUM_TESTS=()
+declare -A CLAIMED=()    # every test either list took, to subtract below
+TL_PAIRS=(); TL_SKIPPED=0; TL_DUP=0
+# Fills TL_PAIRS with the eligible, not-yet-claimed tests of <file>.
+load_test_list() {
+    local crate test key
+    TL_PAIRS=(); TL_SKIPPED=0; TL_DUP=0
+    while IFS=$'\t' read -r crate test; do
+        key="$crate"$'\t'"$test"
+        # A test named twice (in one list or in both) is run once: the first
+        # list to claim it owns it, so slow beats medium.
+        if [[ -n "${CLAIMED[$key]:-}" ]]; then TL_DUP=$((TL_DUP+1)); continue; fi
+        # Crates the run's own filters dropped -- or that the dataset does not
+        # have -- stay dropped, so the lists work across datasets the way the
+        # crate slowlist does.
+        if [[ -z "${ELIGIBLE[$crate]:-}" ]]; then TL_SKIPPED=$((TL_SKIPPED+1)); continue; fi
+        CLAIMED["$key"]=1
+        TL_PAIRS+=("$key")
+    done < <(parse_test_list "$1")
+}
+
+slow_skipped=0; medium_skipped=0; tl_dups=0; skip_claimed=0
+if [[ -n "$SLOW_TESTS_FILE" ]]; then
+    load_test_list "$SLOW_TESTS_FILE"
+    SLOW_TESTS=(${TL_PAIRS[@]+"${TL_PAIRS[@]}"})
+    slow_skipped=$TL_SKIPPED; tl_dups=$(( tl_dups + TL_DUP ))
+fi
+if [[ -n "$MEDIUM_TESTS_FILE" ]]; then
+    load_test_list "$MEDIUM_TESTS_FILE"
+    MEDIUM_TESTS=(${TL_PAIRS[@]+"${TL_PAIRS[@]}"})
+    medium_skipped=$TL_SKIPPED; tl_dups=$(( tl_dups + TL_DUP ))
+fi
+
+# Subtract the claimed tests from the regular per-crate lists, so a test timed
+# in a slow or medium job is not timed again by the crate that owns it. A crate
+# left with nothing drops out of the regular dealing (and out of the worker and
+# job sizing below) entirely.
+if (( ${#CLAIMED[@]} > 0 )); then
+    printf '%s\n' "${!CLAIMED[@]}" > "$RUNDIR/claimed.tsv"
+    awk -F'\t' -v d="$RUNDIR/tests" '{ f = d "/" $1 ".claimed.txt"; print $2 >> f; close(f) }' \
+        "$RUNDIR/claimed.tsv"
+    KEPT=(); TOTAL_TESTS=0
+    for line in "${SELECTED[@]}"; do
+        crate="${line#*$'\t'}"
+        claims="$RUNDIR/tests/$crate.claimed.txt"
+        if [[ -f "$claims" ]]; then
+            # grep exits 1 when every line was claimed -- an empty result, not
+            # an error, so it must not take the script down under set -e.
+            grep -Fxv -f "$claims" "$RUNDIR/tests/$crate.txt" \
+                > "$RUNDIR/tests/$crate.rest.txt" || true
+            mv "$RUNDIR/tests/$crate.rest.txt" "$RUNDIR/tests/$crate.txt"
+        fi
+        cnt=$(wc -l < "$RUNDIR/tests/$crate.txt")
+        (( cnt > 0 )) || { skip_claimed=$((skip_claimed+1)); continue; }
+        KEPT+=("$(printf '%d\t%s' "$cnt" "$crate")")
+        TOTAL_TESTS=$(( TOTAL_TESTS + cnt ))
+    done
+    SELECTED=(${KEPT[@]+"${KEPT[@]}"})
+    TOTAL_TESTS=$(( TOTAL_TESTS + ${#SLOW_TESTS[@]} + ${#MEDIUM_TESTS[@]} ))
+fi
+
+if (( ${#SELECTED[@]} + ${#SLOW_TESTS[@]} + ${#MEDIUM_TESTS[@]} == 0 )); then
+    echo "Error: no tests left to run after filtering $TESTS_CSV." >&2
     exit 1
 fi
 
@@ -469,10 +673,14 @@ fi
 # The slowlist is read IN FILE ORDER and kept that way: grouping is positional
 # (first --slow-group entries, then the next...), so the file itself is the
 # knob for which crates share a job.
+#
+# A test-level list (above) takes this over completely: it already says which
+# individual tests are slow, so the crates holding them keep their remaining
+# tests in the regular dealing instead of being pulled out wholesale.
 SLOWLIST_FILE="$GROUP/scripts/slowlist"
 declare -A SLOWLIST=()
 SLOW_ORDER=()
-if [[ -f "$SLOWLIST_FILE" ]]; then
+if (( ! USE_TEST_LISTS )) && [[ -f "$SLOWLIST_FILE" ]]; then
     while IFS= read -r line || [[ -n "$line" ]]; do
         line="${line%%#*}"; line="${line//[[:space:]]/}"
         [[ -n "$line" ]] || continue
@@ -488,6 +696,8 @@ for line in "${SELECTED[@]}"; do
     crate="${line#*$'\t'}"
     SEL_COUNT["$crate"]="${line%%$'\t'*}"
     (( ALL_SLOW )) && continue      # --all-slow deals tests, not crates
+    # With a test-level list the SLOWLIST array is empty, so every crate that
+    # still has tests is a regular one.
     [[ -z "${SLOWLIST[$crate]:-}" ]] && FAST_SEL+=("$line")
 done
 
@@ -675,6 +885,86 @@ if (( ${#SLOW_CRATES[@]} > 0 )); then
             (( maxtid >= 0 )) && SLOW_JOBS+=("$j $(( maxtid + 1 )) g$(( g + 1 ))p$(( f + 1 ))")
         done
     done
+fi
+
+# ── Jobs for the test-level slow and medium lists ────────────────────────────
+# They take the job indices after everything above. A worker is pointed at a
+# slice with the same "<crate>\t<part>" chunk line the crate slowlist writes,
+# so job.sh needs no changes -- and the part field is also what makes those
+# workers sample SLOW_RUNS times instead of RUNS.
+#
+# Part numbers are handed out per crate across BOTH lists (a crate appears in
+# each, and both write into $RUNDIR/tests), so no two slices of a crate can
+# claim the same file or the same part log.
+NEXT_JOB=$JOBS
+for spec in ${SLOW_JOBS[@]+"${SLOW_JOBS[@]}"}; do
+    read -r sj _ _ <<<"$spec"
+    (( sj + 1 > NEXT_JOB )) && NEXT_JOB=$(( sj + 1 ))
+done
+declare -A PART_IDX=()
+PART=""
+next_part() {   # sets PART to the next free part index for crate $1
+    PART="${PART_IDX[$1]:-0}"
+    PART_IDX["$1"]=$(( PART + 1 ))
+}
+
+# Slow: MAX_TASKS tests per job, one test per worker, in list order -- so the
+# first job holds the slowest MAX_TASKS tests, the next the MAX_TASKS after
+# those. Nothing is shared inside a job, so a job ends when its slowest single
+# test does, and grouping by rank keeps the fast ones from waiting on it.
+SLOW_TEST_JOBS=()   # "<job idx> <ntasks> <label>"
+if (( ${#SLOW_TESTS[@]} > 0 )); then
+    nsjobs=$(( (${#SLOW_TESTS[@]} + MAX_TASKS - 1) / MAX_TASKS ))
+    for (( g = 0; g < nsjobs; g++ )); do
+        j=$NEXT_JOB; NEXT_JOB=$(( NEXT_JOB + 1 ))
+        nt=0
+        for (( t = 0; t < MAX_TASKS; t++ )); do
+            idx=$(( g * MAX_TASKS + t ))
+            (( idx < ${#SLOW_TESTS[@]} )) || break
+            crate="${SLOW_TESTS[$idx]%%$'\t'*}"
+            test="${SLOW_TESTS[$idx]#*$'\t'}"
+            next_part "$crate"
+            printf '%s\n' "$test" > "$RUNDIR/tests/$crate.part$PART.txt"
+            printf '%s\t%s\n' "$crate" "$PART" > "$RUNDIR/chunks/chunk-$j-$t.txt"
+            nt=$(( t + 1 ))
+        done
+        SLOW_TEST_JOBS+=("$j $nt slow$(( g + 1 ))")
+    done
+fi
+
+# Medium: one job, MAX_TASKS workers, the list cut into that many even
+# CONTIGUOUS slices. Contiguous because every worker that touches a crate
+# compiles it privately: with the list grouped by crate, a crate is split only
+# where it straddles a slice boundary, and consecutive tests of one crate
+# inside a slice share a single part file (one compile, one calibration row).
+MEDIUM_JOB=""
+if (( ${#MEDIUM_TESTS[@]} > 0 )); then
+    j=$NEXT_JOB; NEXT_JOB=$(( NEXT_JOB + 1 ))
+    nmed=${#MEDIUM_TESTS[@]}
+    nworkers=$MAX_TASKS
+    (( nworkers > nmed )) && nworkers=$nmed
+    mbase=$(( nmed / nworkers )); mrem=$(( nmed % nworkers ))
+    idx=0
+    for (( t = 0; t < nworkers; t++ )); do
+        share=$(( mbase + (t < mrem ? 1 : 0) ))
+        chunk="$RUNDIR/chunks/chunk-$j-$t.txt"
+        : > "$chunk"
+        cur=""; partfile=""
+        for (( s = 0; s < share; s++ )); do
+            crate="${MEDIUM_TESTS[$idx]%%$'\t'*}"
+            test="${MEDIUM_TESTS[$idx]#*$'\t'}"
+            if [[ "$crate" != "$cur" ]]; then
+                cur="$crate"
+                next_part "$crate"
+                partfile="$RUNDIR/tests/$crate.part$PART.txt"
+                : > "$partfile"
+                printf '%s\t%s\n' "$crate" "$PART" >> "$chunk"
+            fi
+            printf '%s\n' "$test" >> "$partfile"
+            idx=$(( idx + 1 ))
+        done
+    done
+    MEDIUM_JOB="$j $nworkers medium"
 fi
 
 # ── Config shared with the node-side scripts ─────────────────────────────────
@@ -937,8 +1227,16 @@ JOB_EOF
 # ── Plan summary ─────────────────────────────────────────────────────────────
 echo "Mode:     $MODE   Image: $IMAGE"
 echo "Dataset:  $DATASET_DIR"
-echo "Tests:    $TOTAL_TESTS across ${#SELECTED[@]} crates (from $TESTS_CSV)"
+if (( ${#SLOW_TESTS[@]} + ${#MEDIUM_TESTS[@]} > 0 )); then
+    # TOTAL_TESTS counts the list tests too, and their crates need not be among
+    # the regular ones -- a crate can have every test claimed by a list.
+    echo "Tests:    $TOTAL_TESTS total: $(( TOTAL_TESTS - ${#SLOW_TESTS[@]} - ${#MEDIUM_TESTS[@]} )) across ${#SELECTED[@]} regular crate(s),"
+    echo "          plus the test-level lists below (from $TESTS_CSV)"
+else
+    echo "Tests:    $TOTAL_TESTS across ${#SELECTED[@]} crates (from $TESTS_CSV)"
+fi
 echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only ffi=$skip_ffi no-tests=$skip_empty missing-dir=${#MISSING[@]}"
+(( skip_claimed > 0 )) && echo "          ($skip_claimed crate(s) had every test claimed by a test-level list)"
 if (( ${#MISSING[@]} > 0 )); then
     printf '  missing from dataset: %s\n' "${MISSING[@]}" | head -20
 fi
@@ -955,7 +1253,20 @@ if (( ${#SLOW_CRATES[@]} > 0 )); then
     echo "          (groups of $SLOW_GROUP crates, each group's tests split $SLOW_SPLITS ways,"
     echo "           $SLOW_RUNS run(s) per test)"
 fi
-TOTAL_JOBS=$(( JOBS + ${#SLOW_JOBS[@]} ))
+if (( ${#SLOW_TESTS[@]} > 0 )); then
+    echo "Slow:     ${#SLOW_TESTS[@]} test(s) from $(basename "$SLOW_TESTS_FILE") -> ${#SLOW_TEST_JOBS[@]} job(s) x up to $MAX_TASKS workers"
+    echo "          (one test per worker, list order -- slowest first; $SLOW_WALLTIME, $SLOW_RUNS run(s) per test)"
+    (( slow_skipped > 0 )) && echo "          ($slow_skipped entr(y/ies) skipped: crate not selected for this run)"
+fi
+if [[ -n "$MEDIUM_JOB" ]]; then
+    read -r _ mnt _ <<<"$MEDIUM_JOB"
+    echo "Medium:   ${#MEDIUM_TESTS[@]} test(s) from $(basename "$MEDIUM_TESTS_FILE") -> 1 job x $mnt workers"
+    echo "          (even contiguous slices; $SLOW_WALLTIME, $SLOW_RUNS run(s) per test)"
+    (( medium_skipped > 0 )) && echo "          ($medium_skipped entr(y/ies) skipped: crate not selected for this run)"
+fi
+(( tl_dups > 0 )) && echo "          ($tl_dups duplicate test-list entr(y/ies) collapsed)"
+TOTAL_JOBS=$(( JOBS + ${#SLOW_JOBS[@]} + ${#SLOW_TEST_JOBS[@]} ))
+[[ -n "$MEDIUM_JOB" ]] && TOTAL_JOBS=$(( TOTAL_JOBS + 1 ))
 if (( TOTAL_JOBS > 40 )); then
     echo "WARNING:  $TOTAL_JOBS jobs exceeds the 40-job QOS limit; the extras will"
     echo "          queue until earlier ones finish (lower --jobs/--slow-splits,"
@@ -1021,6 +1332,14 @@ for spec in ${SLOW_JOBS[@]+"${SLOW_JOBS[@]}"}; do
     read -r sj snt slabel <<<"$spec"
     submit_one "$sj" "$snt" "slow-$slabel" "$SLOW_WALLTIME"
 done
+for spec in ${SLOW_TEST_JOBS[@]+"${SLOW_TEST_JOBS[@]}"}; do
+    read -r sj snt slabel <<<"$spec"
+    submit_one "$sj" "$snt" "$slabel" "$SLOW_WALLTIME"
+done
+if [[ -n "$MEDIUM_JOB" ]]; then
+    read -r mj mnt mlabel <<<"$MEDIUM_JOB"
+    submit_one "$mj" "$mnt" "$mlabel" "$SLOW_WALLTIME"
+fi
 
 cancel_jobs() {
     trap - INT TERM
