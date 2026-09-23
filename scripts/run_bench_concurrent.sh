@@ -68,10 +68,14 @@
 #                     crate left after filtering and claiming, capped at
 #                     --max-tasks. Each job is submitted with only the workers
 #                     it actually holds
-#   --max-tasks N     ceiling for the auto-sized worker count (default 12 --
-#                     at 4 cpus each that is half a node's 96 cores and 192G,
-#                     the same node footprint the per-test script's 24x1
-#                     default asks for. tasks*cpus may not exceed 96)
+#   --max-tasks N     ceiling for the auto-sized worker count (default 6 --
+#                     at 4 cpus each that is a quarter node, 24 of its 96
+#                     cores and 96G, the same footprint the per-test script's
+#                     24x1 default asks for. Narrow jobs backfill into
+#                     scheduling gaps that wide ones never fit, so the default
+#                     spends the parallelism on MORE jobs rather than wider
+#                     ones: 120 crates is 20 jobs of 6, not 10 of 12.
+#                     tasks*cpus may not exceed 96)
 #   --cpus-per-task N cores per worker (default 4). Unlike in the per-test
 #                     script this is the knob that matters: it caps cargo's
 #                     build jobs AND, via --test-threads, how many tests run
@@ -82,8 +86,8 @@
 #                     the CSV name (-c<cpus>tt<threads>) so runs of different
 #                     shapes can never append into one file
 #   --mem-per-task G  GB per worker (default 16 -- four concurrent bsan tests
-#                     hold rather more shadow memory than one; 12 x 16 = 192G,
-#                     inside the 488G node cap)
+#                     hold rather more shadow memory than one; 6 x 16 = 96G,
+#                     well inside the 488G node cap)
 #   --runs N          hyperfine timing runs per crate (default 3)
 #   --warmup N        hyperfine warmup runs per crate (default 0; the untimed
 #                     status pre-run already warms caches, so each crate's
@@ -177,10 +181,10 @@ IGNORE_FILE=""
 ONLY_FILE=""
 JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
 TASKS=""             # empty = auto: min(crates, MAX_TASKS)
-MAX_TASKS=12         # ceiling on auto-sized workers per job (half a node at 4 cpus)
+MAX_TASKS=6          # ceiling on auto-sized workers per job (24 cores at 4 cpus)
 CPUS_PER_TASK=4
 TEST_THREADS=""      # empty = follow CPUS_PER_TASK
-MEM_PER_TASK=16      # GB per worker (12*16=192G, well inside the 488G node cap)
+MEM_PER_TASK=16      # GB per worker (6*16=96G, well inside the 488G node cap)
 RUNS=3
 WARMUP=0
 MAX_PRERUNS=3        # pre-run passes allowed while dropping failing tests
