@@ -79,8 +79,11 @@
 #   --medium-tests FILE  test-level medium list, same "crate,test" format.
 #                     Its tests all run in ONE job of --max-tasks workers.
 #                     Default: <scripts>/<mode>-medium.csv if it exists
-#   --no-test-lists   ignore those defaults and use the crate slowlist, i.e.
-#                     the behaviour from before the test-level lists existed
+#   --no-test-lists   still resolve and CLAIM the slow/medium lists (so their
+#                     tests are still subtracted from the regular dealing) but
+#                     never build the jobs that would run them -- i.e. run only
+#                     the tests NOT named in either list. Use to skip a slow
+#                     tail entirely rather than pay for it in its own jobs.
 #   --runs N          hyperfine timing runs per test (default 3)
 #   --slow-runs N     hyperfine timing runs per test for SLOWLIST crates
 #                     (default 1). These crates' tests are slow enough that
@@ -142,8 +145,13 @@
 # be CRLF/quoted/TAB-separated -- these files are assembled by hand and by
 # several analysis scripts, so the parser tolerates all of that). They are
 # picked up automatically when present, which for `bsan` means bsan-slow.csv
-# and bsan-medium.csv; --slow-tests/--medium-tests point elsewhere and
-# --no-test-lists turns the whole thing off.
+# and bsan-medium.csv; --slow-tests/--medium-tests point elsewhere.
+#
+# --no-test-lists does NOT bring back the crate slowlist. The lists are still
+# resolved and their tests are still subtracted from the regular dealing --
+# it just stops there, building no slow/medium jobs, so those tests are
+# excluded from the run entirely rather than run somewhere else. Use it to
+# skip a known-slow tail on a rerun instead of paying for it again.
 #
 #   slow    cut into jobs of --max-tasks (24) tests IN FILE ORDER, ONE TEST PER
 #           WORKER -- so the first job holds the 24 slowest tests, the next the
@@ -286,7 +294,7 @@ SLOW_GROUP=10        # slowlist crates per group
 SLOW_SPLITS=4        # jobs each group's tests are split across
 SLOW_TESTS_FILE=""   # test-level slow list; empty = <scripts>/<mode>-slow.csv
 MEDIUM_TESTS_FILE="" # test-level medium list; empty = <mode>-medium.csv
-NO_TEST_LISTS=0      # --no-test-lists: ignore both defaults
+NO_TEST_LISTS=0      # --no-test-lists: claim but don't run the listed tests
 RUNS=3
 SLOW_RUNS=1          # hyperfine runs per test for slowlist crates
 WARMUP=0
@@ -472,7 +480,7 @@ for v in SLOW_TESTS_FILE MEDIUM_TESTS_FILE; do
         [[ -f "${!v}" ]] || { echo "Error: test list not found: ${!v}" >&2; exit 1; }
     fi
 done
-if (( NO_TEST_LISTS || ALL_SLOW )); then
+if (( ALL_SLOW )); then
     SLOW_TESTS_FILE=""; MEDIUM_TESTS_FILE=""
 else
     [[ -n "$SLOW_TESTS_FILE"   ]] || SLOW_TESTS_FILE="$GROUP/scripts/${MODE}-slow.csv"
@@ -487,10 +495,22 @@ fi
 USE_TEST_LISTS=0
 [[ -n "$SLOW_TESTS_FILE" || -n "$MEDIUM_TESTS_FILE" ]] && USE_TEST_LISTS=1
 
+# --no-test-lists still resolves and claims the lists (below) -- so their tests
+# are still pulled out of the regular dealing -- it just never builds the
+# slow-test/medium jobs those tests would otherwise run in. The run therefore
+# covers only what neither list claims.
+if (( NO_TEST_LISTS )) && (( ! USE_TEST_LISTS )); then
+    echo "Warning: --no-test-lists has nothing to exclude -- no slow/medium list" >&2
+    echo "resolved (mode '$MODE' has no default, and neither --slow-tests nor" >&2
+    echo "--medium-tests was given)." >&2
+fi
+
 # Slow and medium jobs are MAX_TASKS wide by construction (TASKS is auto-sized
 # from the regular crates and says nothing about them), so the node-capacity
-# check that guards TASKS has to cover MAX_TASKS too.
-if (( USE_TEST_LISTS )); then
+# check that guards TASKS has to cover MAX_TASKS too. Only relevant when those
+# jobs will actually be submitted -- --no-test-lists claims the same tests but
+# never builds them.
+if (( USE_TEST_LISTS && ! NO_TEST_LISTS )); then
     if (( MAX_TASKS * MEM_PER_TASK > 488 )); then
         echo "Error: max-tasks*mem = $(( MAX_TASKS * MEM_PER_TASK ))G exceeds the 488G usable on an ACES node." >&2
         echo "Lower --max-tasks or --mem-per-task." >&2
@@ -655,10 +675,19 @@ if (( ${#CLAIMED[@]} > 0 )); then
         TOTAL_TESTS=$(( TOTAL_TESTS + cnt ))
     done
     SELECTED=(${KEPT[@]+"${KEPT[@]}"})
-    TOTAL_TESTS=$(( TOTAL_TESTS + ${#SLOW_TESTS[@]} + ${#MEDIUM_TESTS[@]} ))
+    # Under --no-test-lists the claimed tests are excluded outright -- no job
+    # will ever produce a row for them -- so they must not inflate the total
+    # the progress line and the "fewer rows than tests" check are judged against.
+    (( NO_TEST_LISTS )) || TOTAL_TESTS=$(( TOTAL_TESTS + ${#SLOW_TESTS[@]} + ${#MEDIUM_TESTS[@]} ))
 fi
 
-if (( ${#SELECTED[@]} + ${#SLOW_TESTS[@]} + ${#MEDIUM_TESTS[@]} == 0 )); then
+if (( NO_TEST_LISTS )); then
+    if (( ${#SELECTED[@]} == 0 )); then
+        echo "Error: --no-test-lists excludes every test claimed by the slow/medium" >&2
+        echo "lists, and no regular tests are left after filtering $TESTS_CSV." >&2
+        exit 1
+    fi
+elif (( ${#SELECTED[@]} + ${#SLOW_TESTS[@]} + ${#MEDIUM_TESTS[@]} == 0 )); then
     echo "Error: no tests left to run after filtering $TESTS_CSV." >&2
     exit 1
 fi
@@ -912,8 +941,12 @@ next_part() {   # sets PART to the next free part index for crate $1
 # first job holds the slowest MAX_TASKS tests, the next the MAX_TASKS after
 # those. Nothing is shared inside a job, so a job ends when its slowest single
 # test does, and grouping by rank keeps the fast ones from waiting on it.
+#
+# --no-test-lists skips this block entirely: SLOW_TESTS is still populated (it
+# already did its job subtracting these tests from the regular dealing above),
+# but no chunks are written for them, so they simply never run this pass.
 SLOW_TEST_JOBS=()   # "<job idx> <ntasks> <label>"
-if (( ${#SLOW_TESTS[@]} > 0 )); then
+if (( ${#SLOW_TESTS[@]} > 0 && ! NO_TEST_LISTS )); then
     nsjobs=$(( (${#SLOW_TESTS[@]} + MAX_TASKS - 1) / MAX_TASKS ))
     for (( g = 0; g < nsjobs; g++ )); do
         j=$NEXT_JOB; NEXT_JOB=$(( NEXT_JOB + 1 ))
@@ -937,8 +970,10 @@ fi
 # compiles it privately: with the list grouped by crate, a crate is split only
 # where it straddles a slice boundary, and consecutive tests of one crate
 # inside a slice share a single part file (one compile, one calibration row).
+#
+# Also skipped under --no-test-lists, same reasoning as the slow block above.
 MEDIUM_JOB=""
-if (( ${#MEDIUM_TESTS[@]} > 0 )); then
+if (( ${#MEDIUM_TESTS[@]} > 0 && ! NO_TEST_LISTS )); then
     j=$NEXT_JOB; NEXT_JOB=$(( NEXT_JOB + 1 ))
     nmed=${#MEDIUM_TESTS[@]}
     nworkers=$MAX_TASKS
@@ -1227,10 +1262,14 @@ JOB_EOF
 # ── Plan summary ─────────────────────────────────────────────────────────────
 echo "Mode:     $MODE   Image: $IMAGE"
 echo "Dataset:  $DATASET_DIR"
-if (( ${#SLOW_TESTS[@]} + ${#MEDIUM_TESTS[@]} > 0 )); then
+TL_TOTAL=$(( ${#SLOW_TESTS[@]} + ${#MEDIUM_TESTS[@]} ))
+if (( NO_TEST_LISTS && TL_TOTAL > 0 )); then
+    echo "Tests:    $TOTAL_TESTS across ${#SELECTED[@]} crate(s) (from $TESTS_CSV)"
+    echo "          --no-test-lists: $TL_TOTAL test(s) excluded, not run (see Slow/Medium below)"
+elif (( TL_TOTAL > 0 )); then
     # TOTAL_TESTS counts the list tests too, and their crates need not be among
     # the regular ones -- a crate can have every test claimed by a list.
-    echo "Tests:    $TOTAL_TESTS total: $(( TOTAL_TESTS - ${#SLOW_TESTS[@]} - ${#MEDIUM_TESTS[@]} )) across ${#SELECTED[@]} regular crate(s),"
+    echo "Tests:    $TOTAL_TESTS total: $(( TOTAL_TESTS - TL_TOTAL )) across ${#SELECTED[@]} regular crate(s),"
     echo "          plus the test-level lists below (from $TESTS_CSV)"
 else
     echo "Tests:    $TOTAL_TESTS across ${#SELECTED[@]} crates (from $TESTS_CSV)"
@@ -1254,14 +1293,22 @@ if (( ${#SLOW_CRATES[@]} > 0 )); then
     echo "           $SLOW_RUNS run(s) per test)"
 fi
 if (( ${#SLOW_TESTS[@]} > 0 )); then
-    echo "Slow:     ${#SLOW_TESTS[@]} test(s) from $(basename "$SLOW_TESTS_FILE") -> ${#SLOW_TEST_JOBS[@]} job(s) x up to $MAX_TASKS workers"
-    echo "          (one test per worker, list order -- slowest first; $SLOW_WALLTIME, $SLOW_RUNS run(s) per test)"
+    if (( NO_TEST_LISTS )); then
+        echo "Slow:     ${#SLOW_TESTS[@]} test(s) from $(basename "$SLOW_TESTS_FILE") -- excluded by --no-test-lists, not run"
+    else
+        echo "Slow:     ${#SLOW_TESTS[@]} test(s) from $(basename "$SLOW_TESTS_FILE") -> ${#SLOW_TEST_JOBS[@]} job(s) x up to $MAX_TASKS workers"
+        echo "          (one test per worker, list order -- slowest first; $SLOW_WALLTIME, $SLOW_RUNS run(s) per test)"
+    fi
     (( slow_skipped > 0 )) && echo "          ($slow_skipped entr(y/ies) skipped: crate not selected for this run)"
 fi
-if [[ -n "$MEDIUM_JOB" ]]; then
-    read -r _ mnt _ <<<"$MEDIUM_JOB"
-    echo "Medium:   ${#MEDIUM_TESTS[@]} test(s) from $(basename "$MEDIUM_TESTS_FILE") -> 1 job x $mnt workers"
-    echo "          (even contiguous slices; $SLOW_WALLTIME, $SLOW_RUNS run(s) per test)"
+if (( ${#MEDIUM_TESTS[@]} > 0 )); then
+    if (( NO_TEST_LISTS )); then
+        echo "Medium:   ${#MEDIUM_TESTS[@]} test(s) from $(basename "$MEDIUM_TESTS_FILE") -- excluded by --no-test-lists, not run"
+    else
+        read -r _ mnt _ <<<"$MEDIUM_JOB"
+        echo "Medium:   ${#MEDIUM_TESTS[@]} test(s) from $(basename "$MEDIUM_TESTS_FILE") -> 1 job x $mnt workers"
+        echo "          (even contiguous slices; $SLOW_WALLTIME, $SLOW_RUNS run(s) per test)"
+    fi
     (( medium_skipped > 0 )) && echo "          ($medium_skipped entr(y/ies) skipped: crate not selected for this run)"
 fi
 (( tl_dups > 0 )) && echo "          ($tl_dups duplicate test-list entr(y/ies) collapsed)"
