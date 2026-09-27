@@ -147,10 +147,14 @@ per_run = [statuses(p) for p in paths]
 # Trim the prefix/suffix every filename shares -- these are all
 # <config>-<dataset>-hyperfine.csv, and the config is the only part that varies.
 names = [os.path.basename(p) for p in paths]
+# Snap both to a '-' boundary so a shared tail like "miri" in miri- and
+# master-miri- is not cut out of the middle of a config name.
 pre = os.path.commonprefix(names)
+pre = pre[:pre.rfind("-") + 1]
 suf = os.path.commonprefix([n[::-1] for n in names])[::-1]
-trimmed = [n[len(pre):len(n) - len(suf)] or n for n in names]
-if all(trimmed):
+suf = suf[suf.find("-"):] if "-" in suf else ""
+trimmed = [n[len(pre):len(n) - len(suf)] for n in names]
+if all(trimmed) and len(set(trimmed)) == len(trimmed):
     names = trimmed
 
 # ── Compare ─────────────────────────────────────────────────────────────────

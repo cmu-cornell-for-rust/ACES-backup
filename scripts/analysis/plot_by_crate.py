@@ -127,6 +127,12 @@ The PNG is written to
 defaults to <repo root>/outputs, found relative to this script (so it works
 both locally and on the cluster); override with $OUTPUTS_DIR.
 
+After plotting, check_consistency.py is run on the inputs (hyperfine only) and
+writes its per-test report to <output_dir>/report.csv (--consistency-report
+FILE to move it, --no-consistency to skip). It checks the --only-tests list if
+given, else --tests-csv, else the tests-<dataset>.csv matching the inputs,
+else every test any input ran.
+
     --cmap-indices N [N ...]
                                      explicit colormap index per plotted series, in plotting
                                      order. For seconds, provide one index per input CSV. For
@@ -147,7 +153,9 @@ import glob
 import math
 import os
 import re
+import subprocess
 import sys
+import tempfile
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OUTPUTS_DIR = os.environ.get("OUTPUTS_DIR", os.path.join(REPO_ROOT, "outputs"))
@@ -716,6 +724,15 @@ def main():
                              "outgrows the figure and tight_layout squeezes the axes to "
                              "half width making room for it. Quote labels containing "
                              "spaces.")
+    parser.add_argument("--consistency-report", metavar="FILE",
+                        help="where check_consistency.py, run automatically on the "
+                             "hyperfine inputs after plotting, writes its full per-test "
+                             "report (default: <output_dir>/report.csv). It checks the "
+                             "--only-tests list if given, else --tests-csv, else the "
+                             "tests-<dataset>.csv matching the inputs, else every "
+                             "test any input ran.")
+    parser.add_argument("--no-consistency", action="store_true",
+                        help="skip the automatic check_consistency.py run.")
     args = parser.parse_args()
     if args.min_seconds_only_first and args.min_seconds is None:
         parser.error("--min-seconds-only-first has no effect without --min-seconds.")
@@ -738,9 +755,6 @@ def main():
         ffi = load_ffi(tests_csv)
         print(f"FFI status from {tests_csv}: {len(ffi)} crates listed, "
               f"{sum(1 for v in ffi.values() if v == 'true')} with FFI.")
-    elif args.tests_csv:
-        print("Warning: --tests-csv is only used with --no-ffi; ignoring it.",
-              file=sys.stderr)
 
     # Headless-safe backend; import after so --help works without matplotlib.
     try:
@@ -1106,17 +1120,23 @@ def main():
     # crate has a value in every series, so all averages cover the same crates.
     # Ratios (overhead/speedup) are multiplicative, so the geometric mean is
     # the meaningful average; seconds is additive, so read the plain mean.
-    print(f"\nPer-crate {metric} averaged over {len(crates)} crates:\n")
+    # The test count is per series (the passed tests summed into its crates),
+    # since inputs can run different numbers of tests even when all pass.
+    n_tests = [sum(passed_count(data[crate]) or 0 for crate in crates)
+               for _, data in series]
+    tests_note = (f" ({n_tests[0]} tests)" if len(set(n_tests)) == 1
+                  else f" ({min(n_tests)}-{max(n_tests)} tests, per series below)")
+    print(f"\nPer-crate {metric} averaged over {len(crates)} crates{tests_note}:\n")
     rows = []
-    for label, data in series:
+    for (label, data), n in zip(series, n_tests):
         ys = [value(crate, data[crate]) for crate in crates]
         mean = sum(ys) / len(ys)
         geomean = math.exp(sum(math.log(y) for y in ys) / len(ys))
-        rows.append((label, f"{mean:.3f}", f"{geomean:.3f}"))
+        rows.append((label, n, f"{mean:.3f}", f"{geomean:.3f}"))
     # overhead/speedup are ratios, so they get no unit -- labelling a ratio
     # "(s)" would misread as a time.
     unit = spec.get("unit", "")
-    print(md_table(("Config", f"Mean{unit}", f"Geomean{unit}"), rows))
+    print(md_table(("Config", "Tests", f"Mean{unit}", f"Geomean{unit}"), rows))
 
     # ── Named crates on their own ────────────────────────────────────────────
     # Averages hide the crate you are actually chasing, so allow asking for it
@@ -1149,6 +1169,59 @@ def main():
             base = series[0][0] if series else "first"
             print(md_table(("Config", f"Value{unit}", f"Diff vs {base}{unit}",
                             f"Ratio vs {base}"), rows))
+
+    if not args.no_consistency:
+        run_consistency_check(args, kinds)
+
+
+def run_consistency_check(args, kinds):
+    """Run check_consistency.py over the input CSVs, so every plot comes with a
+    check that the configurations agreed on each test's outcome. Only hyperfine
+    CSVs carry per-test statuses; its disagreement exit status is reported, not
+    propagated, since the plot has already been written."""
+    print("\n── Consistency check " + "─" * 58)
+    if kinds != {"hyperfine"}:
+        print("Skipped: check_consistency.py needs hyperfine CSVs (per-test statuses).")
+        return
+    if len(args.csvs) < 2:
+        print("Skipped: check_consistency.py needs at least two inputs.")
+        return
+    tests_csv = args.only_tests or args.tests_csv or find_tests_csv(args.csvs)
+    tmp = None
+    if tests_csv is None:
+        # No list_tests.sh CSV for this dataset: check every test any input
+        # ran, so a test missing from one run still shows up as incomplete.
+        union = {}
+        for path in args.csvs:
+            with open(path, newline="") as f:
+                for row in csv.DictReader(f):
+                    crate, test = row.get("crate"), row.get("test")
+                    if crate and test and test != "__calibration__":
+                        union.setdefault(crate, {})[test] = None
+        tmp = tempfile.NamedTemporaryFile("w", suffix=".csv", newline="",
+                                          delete=False)
+        with tmp:
+            w = csv.writer(tmp)
+            w.writerow(["crate", "tests", "contains_ffi"])
+            for crate in sorted(union):
+                w.writerow([crate, ";".join(union[crate]), ""])
+        tests_csv = tmp.name
+        print("No tests CSV for these inputs; checking every test any input ran.")
+    report = args.consistency_report or os.path.join(args.output_dir, "report.csv")
+    script = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                          "check_consistency.py")
+    sys.stdout.flush()
+    try:
+        rc = subprocess.run([sys.executable, script, "-o", report, tests_csv,
+                             *args.csvs]).returncode
+    finally:
+        if tmp is not None:
+            os.unlink(tmp.name)
+    if rc == 1:
+        print("Note: some tests disagreed between inputs (see above).")
+    elif rc:
+        print(f"Warning: check_consistency.py exited with status {rc}.",
+              file=sys.stderr)
 
 
 if __name__ == "__main__":
