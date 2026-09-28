@@ -811,8 +811,20 @@ worker() {
         rm -rf "$scr"
         mkdir -p "$scr/home" "$scr/target"
         echo "[job $JOBIDX task $tid] ($k/$n) $crate"
+        # PRIVATE copy of the crate dir, bound as /work instead of $cdir itself
+        # -- cargo fetch writes Cargo.lock into the crate dir, so any two
+        # workers sharing that dir race on one Lustre file and both get EIO.
+        # One crate is one worker here, but a per-test run over the same
+        # dataset collides just as hard (its distinct log name does not save
+        # Cargo.lock), so this stays isolated the same way. See the matching
+        # comment in run_bench_dataset.sh for the failure it fixes.
+        if ! cp -a "$cdir" "$scr/work"; then
+            echo "[job $JOBIDX task $tid] cp failed for $crate -- skipping" >&2
+            rm -rf "$scr"; continue
+        fi
+        rm -rf "$scr/work/target" "$scr/work"/hyperfine-*.log
         singularity exec --cleanenv --pwd /work \
-            --bind "$scr" --bind "$RUNDIR" --bind "$cdir:/work" \
+            --bind "$scr" --bind "$RUNDIR" --bind "$scr/work:/work" \
             --env CARGO_HOME="$scr/home" \
             --env CARGO_TARGET_DIR="$scr/target" \
             --env CARGO_BUILD_JOBS="$CPUS_PER_TASK" \

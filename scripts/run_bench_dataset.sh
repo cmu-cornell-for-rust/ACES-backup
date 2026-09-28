@@ -1232,8 +1232,24 @@ worker() {
         rm -rf "$scr"
         mkdir -p "$scr/home" "$scr/target"
         echo "[job $JOBIDX task $tid] ($k/$n) $crate"
+        # PRIVATE copy of the crate dir, bound as /work instead of $cdir itself.
+        # Slices of one crate run concurrently on many workers across many nodes
+        # (the slow/medium lists deal consecutive tests of a crate to adjacent
+        # tasks of one job; --all-slow splits every crate this way), and cargo
+        # fetch writes Cargo.lock INTO the crate dir. Bound straight in, N
+        # workers wrote one Lustre file in the same instant and every one got
+        # EIO -- whole runs came back all-fetch_failed. CARGO_HOME is already
+        # per-worker, so cargo's own package-cache lock never serialized them.
+        # Source only: target/ is private via CARGO_TARGET_DIR, and the crate
+        # logs stay in $cdir, written by the redirect below (outside the
+        # container) where every consumer still expects them.
+        if ! cp -a "$cdir" "$scr/work"; then
+            echo "[job $JOBIDX task $tid] cp failed for $crate -- skipping" >&2
+            rm -rf "$scr"; continue
+        fi
+        rm -rf "$scr/work/target" "$scr/work"/hyperfine-*.log
         singularity exec --cleanenv --pwd /work \
-            --bind "$scr" --bind "$RUNDIR" --bind "$cdir:/work" \
+            --bind "$scr" --bind "$RUNDIR" --bind "$scr/work:/work" \
             --env CARGO_HOME="$scr/home" \
             --env CARGO_TARGET_DIR="$scr/target" \
             --env CARGO_BUILD_JOBS="$CPUS_PER_TASK" \
