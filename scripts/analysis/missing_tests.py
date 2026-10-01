@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Tests CSV of everything a hyperfine run did NOT get to.
 
-Usage: missing_tests.py [-o OUT.csv] <tests.csv> <hyperfine.csv> [more-hyperfine.csv ...]
+Usage: missing_tests.py [-o OUT.csv] <tests.csv | hyperfine.csv> <hyperfine.csv> [more-hyperfine.csv ...]
 
 Diffs a tests CSV (crate,tests,contains_ffi -- as produced by list_tests.sh)
 against one or more *-hyperfine.csv files and writes a tests CSV in the same
@@ -28,6 +28,14 @@ every one of its tests looks missing; --skip-build-failed drops those crates
 instead (a rerun would just fail again). Giving several hyperfine CSVs unions
 their coverage: a test must be missing from all of them to be emitted.
 
+The first argument can also be a *-hyperfine.csv instead of a tests CSV, to
+diff one run against another: the tests list is then every test that run gave
+a done status (same --done-status set), in first-seen order, with
+contains_ffi left empty. E.g. what gc-opts-1-miri got to that miri did not:
+
+    missing_tests.py outputs/gc-opts-1-miri-top_500-hyperfine.csv \\
+        outputs/miri-top_500-hyperfine.csv
+
 The CSV goes to stdout (or -o FILE); a per-crate summary goes to stderr.
 """
 import argparse
@@ -44,7 +52,8 @@ ap.add_argument("--done-status", default=DONE_DEFAULT,
 ap.add_argument("--skip-build-failed", action="store_true",
                 help="omit crates whose only rows are build_failed/fetch_failed")
 ap.add_argument("-q", "--quiet", action="store_true", help="no stderr summary")
-ap.add_argument("tests_csv", help="tests CSV from list_tests.sh (crate,tests,contains_ffi)")
+ap.add_argument("tests_csv", help="tests CSV from list_tests.sh (crate,tests,contains_ffi), "
+                "or a reference *-hyperfine.csv whose done tests form the list")
 ap.add_argument("hyperfine_csvs", nargs="+", help="one or more *-hyperfine.csv files")
 args = ap.parse_args()
 
@@ -84,24 +93,38 @@ if unknown and not args.quiet:
 out_rows = []       # (crate, [missing tests], contains_ffi, crate's test count)
 skipped_broken = []
 total_tests = total_missing = 0
-with open(args.tests_csv, newline="") as f:
-    reader = csv.DictReader(f)
-    if "crate" not in (reader.fieldnames or []) or "tests" not in (reader.fieldnames or []):
-        sys.exit(f"Error: {args.tests_csv} needs crate,tests columns -- not a tests CSV?")
-    for r in reader:
-        crate = r["crate"]
-        tests = [t for t in r["tests"].split(";") if t]
-        if not tests:
-            continue
-        total_tests += len(tests)
-        missing = [t for t in tests if (crate, t) not in done]
-        if not missing:
-            continue
-        if args.skip_build_failed and crate in broken:
-            skipped_broken.append((crate, len(missing)))
-            continue
-        total_missing += len(missing)
-        out_rows.append((crate, missing, r.get("contains_ffi", ""), len(tests)))
+def load_tests_list(path):
+    """[(crate, [tests], contains_ffi)] in file order, from a tests CSV or --
+    for a run-vs-run diff -- the done tests of a reference hyperfine CSV."""
+    with open(path, newline="") as f:
+        reader = csv.DictReader(f)
+        fields = reader.fieldnames or []
+        if "crate" in fields and "tests" in fields:
+            return [(r["crate"], [t for t in r["tests"].split(";") if t],
+                     r.get("contains_ffi", "")) for r in reader]
+        if not all(c in fields for c in ("crate", "test", "status")):
+            sys.exit(f"Error: {path} needs crate,tests columns (tests CSV) or "
+                     f"crate,test,status columns (hyperfine CSV)")
+        by_crate = {}       # dicts keep first-seen order for crates and tests
+        for r in reader:
+            crate, test = r["crate"], r["test"]
+            if crate and test and test != "__calibration__" and r["status"] in done_status:
+                by_crate.setdefault(crate, {})[test] = None
+        return [(c, list(ts), "") for c, ts in by_crate.items()]
+
+
+for crate, tests, ffi in load_tests_list(args.tests_csv):
+    if not tests:
+        continue
+    total_tests += len(tests)
+    missing = [t for t in tests if (crate, t) not in done]
+    if not missing:
+        continue
+    if args.skip_build_failed and crate in broken:
+        skipped_broken.append((crate, len(missing)))
+        continue
+    total_missing += len(missing)
+    out_rows.append((crate, missing, ffi, len(tests)))
 
 out = open(args.output, "w", newline="") if args.output else sys.stdout
 w = csv.writer(out)
