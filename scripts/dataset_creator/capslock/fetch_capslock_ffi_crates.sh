@@ -264,10 +264,14 @@ rm -f "$todo"
 fi
 
 # ---------------------------- phase 3: write CSV ---------------------------- #
+# Concatenate every per-crate verdict. Not `cat "$STATE_DIR"/*.tsv`: with ~17k
+# files the expanded glob overflows ARG_MAX and cat silently reads nothing.
+all_states() { find "$STATE_DIR" -maxdepth 1 -name '*.tsv' -exec cat {} + 2>/dev/null; }
+
 echo "==> Writing $CSV_PATH ..."
 {
     echo "crate,name,version,repository,host,extern_c,extern_c_unwind,extern_cpp,matched_files,status"
-    cat "$STATE_DIR"/*.tsv 2>/dev/null \
+    all_states \
       | awk -F'\t' '$9 == "kept"' \
       | LC_ALL=C sort -t$'\t' -k1,1 \
       | while IFS=$'\t' read -r crate name version repository n_c n_cu n_cpp n_files _; do
@@ -285,7 +289,7 @@ echo "==> Writing $CSV_PATH ..."
 } > "$CSV_PATH"
 
 # --------------------------------- summary ---------------------------------- #
-tally() { cat "$STATE_DIR"/*.tsv 2>/dev/null | awk -F'\t' -v s="$1" '$9 == s' | wc -l | tr -d ' '; }
+tally() { all_states | awk -F'\t' -v s="$1" '$9 == s' | wc -l | tr -d ' '; }
 kept="$(tally kept)"; none="$(tally no-c-ffi)"
 dl_fail="$(tally download-failed)"; ex_fail="$(tally extract-failed)"
 cp_fail="$(tally copy-failed)"; st_fail="$(tally store-failed)"
