@@ -31,9 +31,12 @@
 #
 # Usage:
 #   ./fetch_capslock_ffi_crates.sh [OUTPUT_DIR] [CSV_PATH]
+#   ./fetch_capslock_ffi_crates.sh --csv-only [OUTPUT_DIR] [CSV_PATH]
 #
 #   OUTPUT_DIR  default: capslock_ffi_crates
 #   CSV_PATH    default: capslock_ffi.csv (next to this script)
+#
+#   --csv-only  skip fetching: just rebuild the CSV from OUTPUT_DIR/_state/.
 #
 # Environment knobs:
 #   FFI_JSON=ffi.json   list of crate names (next to this script)
@@ -199,6 +202,9 @@ if [ "${1:-}" = "--worker" ]; then
 fi
 
 # --------------------------------- setup ----------------------------------- #
+CSV_ONLY=0
+if [ "${1:-}" = "--csv-only" ]; then CSV_ONLY=1; shift; fi
+
 OUTPUT_DIR="${1:-capslock_ffi_crates}"
 CSV_PATH="${2:-$HERE/capslock_ffi.csv}"
 
@@ -219,6 +225,7 @@ mkdir -p "$STATE_DIR"
 export SELF SLEEP_BETWEEN USER_AGENT API CDN FFI_RE RG SRC_ROOT \
        OUTPUT_DIR STATE_DIR
 
+if [ "$CSV_ONLY" -eq 0 ]; then
 # ---------------- phase 1: resolve exact versions from db.json -------------- #
 echo "==> Resolving versions for $(jq length "$FFI_JSON") crates from $(basename "$DB_JSON") ..."
 missing="$OUTPUT_DIR/_missing_from_db.txt"
@@ -254,6 +261,7 @@ if [ "$n_todo" -gt 0 ]; then
         | xargs -0 -n 3 -P "$JOBS" "$SELF" --worker
 fi
 rm -f "$todo"
+fi
 
 # ---------------------------- phase 3: write CSV ---------------------------- #
 echo "==> Writing $CSV_PATH ..."
