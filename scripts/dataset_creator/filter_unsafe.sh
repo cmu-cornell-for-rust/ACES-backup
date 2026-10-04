@@ -3,22 +3,23 @@
 # filter_unsafe_crates.sh
 #
 #   Runs `cargo geiger` over every crate already present in downloaded_crates
-#   and removes the ones whose code contains NO `unsafe` usage — i.e. those
-#   geiger marks ":)" or "?" — keeping only the ones marked "!".
+#   and records, for each one, whether its code contains `unsafe` usage
+#   (geiger "!") or not (geiger ":)" or "?"). No crates are removed.
 #
 #   Pairs with download_top_crates.sh, which populates the directory.
 #
 #   geiger legend (for reference):
 #       :) = no `unsafe`, declares #![forbid(unsafe_code)]
 #       ?  = no `unsafe`, missing #![forbid(unsafe_code)]
-#       !  = `unsafe` usage found            <-- these are the ones we keep
+#       !  = `unsafe` usage found
 #
 #   Outputs (in $OUTPUT_DIR/_logs):
-#       kept_unsafe_crates.csv   -> columns: crate, feature_args
-#                                   (feature_args = extra flags needed to build it,
+#       unsafe_scan.csv          -> columns: crate, unsafe_found, feature_args
+#                                   (unsafe_found = yes / no / unknown;
+#                                    feature_args = extra flags needed to build it,
 #                                    empty if it built with default features)
-#       geiger_errors.csv        -> columns: crate, error  (the failing output)
-#       removed_safe_crates.log  -> plain list of removed (no-unsafe) crates
+#       geiger_errors.csv        -> columns: crate, error  (the failing output
+#                                   for crates marked "unknown")
 #
 # Requirements: bash, cargo, cargo-geiger, sed, grep
 #       cargo install cargo-geiger
@@ -33,7 +34,7 @@ if [ "$#" -lt 1 ] || [ -z "${1:-}" ]; then
 fi
 OUTPUT_DIR="$1"   # directory to filter (positional arg, required)
 INCLUDE_DEPS="${INCLUDE_DEPS:-0}"   # 0 = judge crate's OWN code only
-                                    # 1 = keep if ANY crate in its dep tree uses unsafe
+                                    # 1 = "yes" if ANY crate in its dep tree uses unsafe
 
 # Extra geiger flags applied to EVERY crate. Leave EMPTY for default features.
 # Do NOT put --all-features here: std-adjacent crates (addr2line, gimli,
@@ -61,8 +62,7 @@ PIN_TOOLCHAIN="${PIN_TOOLCHAIN:-$(rustup show active-toolchain 2>/dev/null | awk
 
 LOG_DIR="$OUTPUT_DIR/_logs"
 ERROR_CSV="$LOG_DIR/geiger_errors.csv"
-REMOVED_LOG="$LOG_DIR/removed_safe_crates.log"
-KEPT_LOG="$LOG_DIR/kept_unsafe_crates.log"
+RESULTS_CSV="$LOG_DIR/unsafe_scan.csv"
 ESC=$(printf '\033')
 
 # globals set by crate_has_unsafe() and read by the main loop
@@ -83,9 +83,8 @@ cargo geiger --version >/dev/null 2>&1 \
 [ -d "$OUTPUT_DIR" ] || die "$OUTPUT_DIR does not exist — run download_top_crates.sh first"
 
 mkdir -p "$LOG_DIR"
-: > "$KEPT_LOG"
+printf 'crate,unsafe_found,feature_args\n' > "$RESULTS_CSV"
 printf 'crate,error\n' > "$ERROR_CSV"
-: > "$REMOVED_LOG"
 
 # ------------------- decide if geiger output shows unsafe ------------------- #
 # Every table row looks like:
@@ -199,10 +198,10 @@ crate_has_unsafe() {
     analyze_geiger_output "$out"
 }
 
-# --------------------------- run geiger and prune --------------------------- #
-echo "==> Running cargo geiger and removing crates with no unsafe usage ..."
+# --------------------------- run geiger and record -------------------------- #
+echo "==> Running cargo geiger and recording unsafe usage per crate ..."
 shopt -s nullglob
-kept=0; removed=0; errored=0
+n_unsafe=0; n_safe=0; errored=0
 for crate_dir in "$OUTPUT_DIR"/*/; do
     crate_dir="${crate_dir%/}"
     base=$(basename "$crate_dir")
@@ -212,28 +211,27 @@ for crate_dir in "$OUTPUT_DIR"/*/; do
     printf '    geiger: %-40s ' "$base"
     crate_has_unsafe "$crate_dir"
     case $? in
-        0)  echo "unsafe -> keep"
-            echo "$base" >> "$KEPT_LOG"
-            kept=$((kept+1)) ;;
-        1)  echo "safe   -> remove"
-            echo "$base" >> "$REMOVED_LOG"
-            rm -rf "$crate_dir"
-            removed=$((removed+1)) ;;
-        2)  echo "unanalyzable -> kept"
+        0)  echo "unsafe"
+            printf '%s,yes,%s\n' "$(csv_field "$base")" "$(csv_field "$LAST_FEATS")" >> "$RESULTS_CSV"
+            n_unsafe=$((n_unsafe+1)) ;;
+        1)  echo "safe"
+            printf '%s,no,%s\n' "$(csv_field "$base")" "$(csv_field "$LAST_FEATS")" >> "$RESULTS_CSV"
+            n_safe=$((n_safe+1)) ;;
+        2)  echo "unanalyzable"
+            printf '%s,unknown,\n' "$(csv_field "$base")" >> "$RESULTS_CSV"
             # collapse newlines/tabs so each crate is one CSV row
             err_flat=$(printf '%s' "$LAST_ERR" | tr '\n\r\t' '   ' | tr -s ' ')
             printf '%s,%s\n' "$(csv_field "$base")" "$(csv_field "$err_flat")" >> "$ERROR_CSV"
             errored=$((errored+1)) ;;
     esac
 
-    # reclaim disk after each crate, but only if it still exists
-    if [ -d "$crate_dir" ]; then
-        cargo clean --manifest-path "$crate_dir/Cargo.toml" >/dev/null 2>&1 || true
-    fi
+    # reclaim disk after each crate
+    cargo clean --manifest-path "$crate_dir/Cargo.toml" >/dev/null 2>&1 || true
 done
 
 echo
 echo "==> Done."
-echo "    kept (unsafe found):   $kept    -> $KEPT_LOG"
-echo "    removed (no unsafe):   $removed -> $REMOVED_LOG"
-echo "    could not analyze:     $errored (left in place) -> $ERROR_CSV"
+echo "    unsafe found:          $n_unsafe"
+echo "    no unsafe:             $n_safe"
+echo "    could not analyze:     $errored -> $ERROR_CSV"
+echo "    results:               $RESULTS_CSV"
