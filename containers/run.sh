@@ -1,8 +1,9 @@
 #!/bin/bash
 #
-# Usage: ./run_image.sh [-J NAME] <image.sif> <HH[:MM]> [MEM]
+# Usage: ./run_image.sh [-J NAME] [-c CPUS] <image.sif> <HH[:MM]> [MEM]
 #
 #   -J, --name   optional SLURM job name
+#   -c, --cpus   optional CPU count (--cpus-per-task). Default: SLURM default
 #   <image.sif>  path to the Rust SIF image
 #   <HH[:MM]>    walltime as whole hours (4 -> 04:00:00) or HH:MM (4:30 -> 04:30:00)
 #   [MEM]        memory, e.g. 32G, 64G, 512M. Bare number = GB. Default: 32G
@@ -14,8 +15,9 @@
 set -euo pipefail
 
 JOBNAME=""
+CPUS=""
 
-# Parse optional leading flags (only -J/--name for now).
+# Parse optional leading flags.
 while [[ $# -gt 0 ]]; do
     case "$1" in
         -J|--name)
@@ -24,6 +26,14 @@ while [[ $# -gt 0 ]]; do
                 exit 1
             fi
             JOBNAME="$2"
+            shift 2
+            ;;
+        -c|--cpus)
+            if [[ $# -lt 2 ]]; then
+                echo "Error: $1 requires a value." >&2
+                exit 1
+            fi
+            CPUS="$2"
             shift 2
             ;;
         --)
@@ -41,8 +51,9 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ $# -lt 2 || $# -gt 3 ]]; then
-    echo "Usage: $0 [-J NAME] <image.sif> <HH[:MM]> [MEM]" >&2
+    echo "Usage: $0 [-J NAME] [-c CPUS] <image.sif> <HH[:MM]> [MEM]" >&2
     echo "  -J, --name: optional SLURM job name" >&2
+    echo "  -c, --cpus: optional CPU count (default: SLURM default)" >&2
     echo "  HH[:MM]: walltime as hours (4) or HH:MM (4:30)" >&2
     echo "  MEM: e.g. 32G, 64G, 512M (bare number = GB). Default: 32G" >&2
     exit 1
@@ -72,6 +83,11 @@ if [[ "$MEM" =~ ^[0-9]+$ ]]; then
     MEM="${MEM}G"
 elif ! [[ "$MEM" =~ ^[0-9]+[KMGT]$ ]]; then
     echo "Error: MEM must be like 32G, 512M, or a bare number (GB)." >&2
+    exit 1
+fi
+
+if [[ -n "$CPUS" ]] && ! [[ "$CPUS" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Error: CPUS must be a positive integer." >&2
     exit 1
 fi
 
@@ -138,13 +154,16 @@ exec singularity shell --cleanenv --pwd /work \
     "$SIF_ABS"
 NODE_EOF
 
-# Assemble srun arguments, adding --job-name only if one was given.
+# Assemble srun arguments, adding --job-name / --cpus-per-task only if given.
 SRUN_ARGS=(--nodes=1 --ntasks-per-node=1 --mem="${MEM}" --time="${WALLTIME}" --pty)
 if [[ -n "$JOBNAME" ]]; then
     SRUN_ARGS=(--job-name="$JOBNAME" "${SRUN_ARGS[@]}")
 fi
+if [[ -n "$CPUS" ]]; then
+    SRUN_ARGS=(--cpus-per-task="$CPUS" "${SRUN_ARGS[@]}")
+fi
 
-echo "Requesting interactive node: 1 task, ${MEM}, ${WALLTIME}${JOBNAME:+, job=${JOBNAME}}, image=${SIF_ABS}"
+echo "Requesting interactive node: 1 task, ${CPUS:+${CPUS} CPUs, }${MEM}, ${WALLTIME}${JOBNAME:+, job=${JOBNAME}}, image=${SIF_ABS}"
 
 # Land on the node and run the node script, which execs into the container.
 srun "${SRUN_ARGS[@]}" bash "$NODE_SCRIPT"
