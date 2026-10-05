@@ -21,7 +21,7 @@
 #   --tests FILE      tests CSV (crate,tests,contains_ffi -- as produced by
 #                     list_tests.sh); runs each listed test on its own. Without
 #                     it, every crate dir in the dataset is run WHOLE: one plain
-#                     `cargo bsan test --tests` per crate, no filter, recorded
+#                     `cargo bsan test` per crate, no filter, recorded
 #                     as a single row with test=__all__ (see "Whole-crate mode")
 #   --no-ffi          only run crates whose contains_ffi column is exactly
 #                     "false" (both "true" and "scan_failed" are skipped).
@@ -63,7 +63,8 @@
 #
 # Whole-crate mode (no --tests): the crate list is every dir under the dataset
 # that holds a Cargo.toml (--ignore/--only still apply), and the per-test loop
-# runs once, without `-- --exact`, so the whole suite runs in one invocation.
+# runs plain `cargo bsan test` once -- no --tests, no `-- --exact` -- so the
+# whole suite, doctests included, runs in one invocation.
 # Its node rows and result row carry test=__all__; status is no_match when the
 # suite ran 0 tests. The same caveat as above applies, more strongly: if
 # several test binaries run instrumented code, only the last one's node log
@@ -441,6 +442,11 @@ echo "BSAN_OPTIONS=[$BSAN_OPTIONS]"
 export RUSTFLAGS="--cfg=miri"
 echo "RUSTFLAGS=[$RUSTFLAGS]"
 RUN="cargo bsan test --tests"
+# Whole-crate mode runs plain `cargo bsan test` (see the run loop), which also
+# builds targets --tests skips (examples, ...). Compile THAT set up front, or
+# the rest would build during the profiled run, under BSAN_NODE_LOG.
+COMPILE="$RUN"
+grep -qx "$PF_WHOLE_TEST" "$PF_TESTFILE" && COMPILE="cargo bsan test"
 PROFILE_LOG="$PF_PROFILE_DIR/$PF_CRATE.log"
 
 ts() { date -u +'%Y-%m-%dT%H:%M:%SZ'; }
@@ -463,7 +469,7 @@ fi
 # setup and build scripts would otherwise pollute the profile with nodes that
 # have nothing to do with the tests.
 cstart=$(date +%s%3N)
-if ! $RUN --no-run; then
+if ! $COMPILE --no-run; then
     row "" build_failed "" ""
     exit 1
 fi
@@ -487,7 +493,7 @@ while IFS= read -r t; do
     rstart=$(date +%s%3N)
     # The __all__ sentinel (whole-crate mode) runs the suite unfiltered.
     if [ "$t" = "$PF_WHOLE_TEST" ]; then
-        BSAN_NODE_LOG="$nodelog" $RUN > "$runlog" 2>&1; rc=$?
+        BSAN_NODE_LOG="$nodelog" cargo bsan test > "$runlog" 2>&1; rc=$?
     else
         BSAN_NODE_LOG="$nodelog" $RUN -- --exact "$t" > "$runlog" 2>&1; rc=$?
     fi
