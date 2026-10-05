@@ -27,6 +27,13 @@
 #                     reported, to pick up a walltime-killed sweep
 #   --no-ffi          only run crates whose contains_ffi column is exactly
 #                     "false" (both "true" and "scan_failed" are skipped)
+#   --safety safe|unsafe
+#                     only run crates the unsafe scan marked "no" (safe) or
+#                     "yes" (unsafe). Crates it marked "unknown" or never
+#                     scanned are skipped either way. See --unsafe-scan
+#   --unsafe-scan FILE  unsafe_scan.csv from dataset_creator/filter_unsafe.sh
+#                     (crate,unsafe_found,feature_args). Default: <dataset
+#                     dir>/_logs/unsafe_scan.csv. Only read with --safety
 #   --ignore FILE     crate names to skip, one per line (#-comments ok)
 #   --only FILE       run ONLY the crates listed in FILE (one per line,
 #                     #-comments ok; --ignore/--no-ffi still apply on top).
@@ -102,6 +109,15 @@
 #                     affected. It also changes every timing, so the run gets
 #                     its own CSV (a -tt<N> slug) instead of appending to a
 #                     parallel run's file.
+#   --test-timeout T  time limit per test invocation, in any form coreutils
+#                     `timeout` accepts (e.g. 300, 90s, 10m, 1.5h). The
+#                     untimed pre-run is capped at T: a test that hits it is
+#                     recorded as status `timeout` and never reaches hyperfine.
+#                     Each timed hyperfine run is capped at T too, so one that
+#                     passed the pre-run but overruns later comes back as
+#                     bench_failed. Unset by default (no limit). The build and
+#                     the calibration run are never capped. SIGKILL follows
+#                     30s after the SIGTERM if the test ignores it.
 #
 # Every mode compiles with RUSTFLAGS="--cfg=miri --cap-lints=warn" -- including
 # rust and bsan. The --cfg=miri part makes all three select the same cfg(miri)
@@ -233,13 +249,14 @@
 #   max_s,runs,timestamp,job_id
 #
 # status: success, test_failed (pre-run exited non-zero), no_match (filter ran
-# 0 tests -- stale test list), bench_failed (hyperfine itself errored),
+# 0 tests -- stale test list), timeout (pre-run hit --test-timeout),
+# bench_failed (hyperfine itself errored, incl. a run over --test-timeout),
 # build_failed, fetch_failed, plus one calibration row per crate (see above;
 # test=__calibration__). Timing fields are empty unless status is success or
 # calibration -- so a crate contributes 1 + (its passing tests) rows, and the
 # progress line's row count runs slightly ahead of the test count.
 #
-# A test_failed or no_match test never reaches hyperfine, so the CSV records
+# A test_failed, no_match or timeout test never reaches hyperfine, so the CSV records
 # only the verdict. Its output -- the panic message, the Miri/BSAN report,
 # libtest's `failures:` summary -- is written to the crate log between
 # "--- output: <crate> :: <test> ..." markers (last 200 lines), which is the
@@ -280,6 +297,8 @@ TESTS_CSV=""
 NO_FFI=0
 IGNORE_FILE=""
 ONLY_FILE=""
+SAFETY=""            # --safety safe|unsafe; empty = don't filter on unsafe
+UNSAFE_SCAN=""       # empty = <dataset dir>/_logs/unsafe_scan.csv
 JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
 TASKS=""            # empty = auto: min(fast crates, MAX_TASKS)
 MAX_TASKS=24         # ceiling on auto-sized workers per job (a quarter node)
@@ -299,6 +318,7 @@ RUNS=3
 SLOW_RUNS=1          # hyperfine runs per test for slowlist crates
 WARMUP=0
 TEST_THREADS=""        # --test-threads N for the harness; empty = don't pass it
+TEST_TIMEOUT=""        # --test-timeout T per test invocation; empty = no limit
 WALLTIME_ARG=2         # walltime for the regular jobs (positional overrides)
 SLOW_WALLTIME_ARG=24   # walltime for the slowlist jobs
 
@@ -312,6 +332,10 @@ while [[ $# -gt 0 ]]; do
         --ignore=*)      IGNORE_FILE="${1#*=}"; shift ;;
         --only)          ONLY_FILE="$2"; shift 2 ;;
         --only=*)        ONLY_FILE="${1#*=}"; shift ;;
+        --safety)        SAFETY="$2"; shift 2 ;;
+        --safety=*)      SAFETY="${1#*=}"; shift ;;
+        --unsafe-scan)   UNSAFE_SCAN="$2"; shift 2 ;;
+        --unsafe-scan=*) UNSAFE_SCAN="${1#*=}"; shift ;;
         --jobs)          JOBS="$2"; shift 2 ;;
         --jobs=*)        JOBS="${1#*=}"; shift ;;
         --tasks)         TASKS="$2"; shift 2 ;;
@@ -330,6 +354,8 @@ while [[ $# -gt 0 ]]; do
         --warmup=*)      WARMUP="${1#*=}"; shift ;;
         --test-threads)  TEST_THREADS="$2"; shift 2 ;;
         --test-threads=*) TEST_THREADS="${1#*=}"; shift ;;
+        --test-timeout)  TEST_TIMEOUT="$2"; shift 2 ;;
+        --test-timeout=*) TEST_TIMEOUT="${1#*=}"; shift ;;
         --all-slow)      ALL_SLOW=1; shift ;;
         --slow-walltime) SLOW_WALLTIME_ARG="$2"; shift 2 ;;
         --slow-walltime=*) SLOW_WALLTIME_ARG="${1#*=}"; shift ;;
@@ -358,6 +384,7 @@ usage() {
     echo "  <dataset>   folder under $DATASETS_ROOT" >&2
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --tests FILE --no-ffi --ignore FILE --only FILE --jobs N" >&2
+    echo "           --safety safe|unsafe [--unsafe-scan FILE] (geiger scan filter)" >&2
     echo "           --tasks N --max-tasks N --cpus-per-task N --mem-per-task G" >&2
     echo "           --runs N --warmup N --slow-runs N (slowlist runs, default 1)" >&2
     echo "           --all-slow (split every test evenly over --jobs x --tasks)" >&2
@@ -365,6 +392,7 @@ usage() {
     echo "           --slow-group N --slow-splits N (crate slowlist shape, 10 x 4)" >&2
     echo "           --slow-tests FILE --medium-tests FILE --no-test-lists" >&2
     echo "             (test-level lists; default <mode>-slow/-medium.csv)" >&2
+    echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m)" >&2
     exit 1
 }
 [[ $# -ge 3 && $# -le 5 ]] || usage
@@ -433,6 +461,10 @@ fi
 if [[ -n "$TEST_THREADS" ]]; then
     [[ "$TEST_THREADS" =~ ^[1-9][0-9]*$ ]] \
         || { echo "Error: --test-threads must be a positive integer (got '$TEST_THREADS')." >&2; exit 1; }
+fi
+if [[ -n "$TEST_TIMEOUT" ]]; then
+    [[ "$TEST_TIMEOUT" =~ ^([0-9]+(\.[0-9]+)?|\.[0-9]+)[smhd]?$ && ! "$TEST_TIMEOUT" =~ ^[0.]+[smhd]?$ ]] \
+        || { echo "Error: --test-timeout must be a positive duration like 300, 90s, 10m or 1.5h (got '$TEST_TIMEOUT')." >&2; exit 1; }
 fi
 # The tasks*mem / tasks*cpus node-capacity checks need the resolved TASKS, so
 # they live just after auto-sizing (below the crate selection).
@@ -544,6 +576,26 @@ if [[ -n "$ONLY_FILE" ]]; then
     (( ${#ONLY[@]} > 0 )) || { echo "Error: --only list $ONLY_FILE is empty." >&2; exit 1; }
 fi
 
+# Load the unsafe scan (if --safety) into crate -> yes/no/unknown. Written by
+# filter_unsafe.sh with every field double-quoted, so quotes are stripped; the
+# crate field is the dir basename, the same key the tests CSV uses.
+declare -A SAFETY_OF=()
+if [[ -n "$SAFETY" ]]; then
+    [[ "$SAFETY" == safe || "$SAFETY" == unsafe ]] \
+        || { echo "Error: --safety must be 'safe' or 'unsafe' (got '$SAFETY')." >&2; exit 1; }
+    [[ -n "$UNSAFE_SCAN" ]] || UNSAFE_SCAN="$DATASET_DIR/_logs/unsafe_scan.csv"
+    [[ -f "$UNSAFE_SCAN" ]] \
+        || { echo "Error: unsafe scan not found: $UNSAFE_SCAN (run dataset_creator/filter_unsafe.sh, or --unsafe-scan FILE)" >&2; exit 1; }
+    while IFS=, read -r crate found _ || [[ -n "$crate" ]]; do
+        crate="${crate//\"/}"; found="${found//\"/}"; found="${found//$'\r'/}"
+        [[ -n "$crate" && "$crate" != "crate" ]] && SAFETY_OF["$crate"]="$found"
+    done < "$UNSAFE_SCAN"
+    (( ${#SAFETY_OF[@]} > 0 )) || { echo "Error: unsafe scan $UNSAFE_SCAN has no rows." >&2; exit 1; }
+fi
+WANT_FOUND=""
+[[ "$SAFETY" == safe ]]   && WANT_FOUND=no
+[[ "$SAFETY" == unsafe ]] && WANT_FOUND=yes
+
 # ── Run dir: chunks, per-crate test lists, shards, job scripts, logs ─────────
 RUNDIR="$OUTPUTS_DIR/hyperfine-runs/$(date +%Y%m%d-%H%M%S)-$$"
 mkdir -p "$RUNDIR/chunks" "$RUNDIR/tests" "$RUNDIR/shards"
@@ -557,7 +609,7 @@ declare -A SEEN_CRATE=()
 declare -A ELIGIBLE=()   # crates that survived the filters AND have a dataset
                          # dir -- what a test-level list entry is checked against
 TOTAL_TESTS=0
-skip_ignored=0; skip_only=0; skip_ffi=0; skip_empty=0
+skip_ignored=0; skip_only=0; skip_ffi=0; skip_safety=0; skip_empty=0
 MISSING=()
 first=1
 while IFS=, read -r crate tests ffi || [[ -n "$crate" ]]; do
@@ -569,6 +621,7 @@ while IFS=, read -r crate tests ffi || [[ -n "$crate" ]]; do
     if [[ -n "${IGNORE[$crate]:-}" ]]; then skip_ignored=$((skip_ignored+1)); continue; fi
     if (( ${#ONLY[@]} > 0 )) && [[ -z "${ONLY[$crate]:-}" ]]; then skip_only=$((skip_only+1)); continue; fi
     if (( NO_FFI )) && [[ "$ffi" != "false" ]]; then skip_ffi=$((skip_ffi+1)); continue; fi
+    if [[ -n "$WANT_FOUND" && "${SAFETY_OF[$crate]:-}" != "$WANT_FOUND" ]]; then skip_safety=$((skip_safety+1)); continue; fi
     if [[ ! -d "$DATASET_DIR/$crate" ]]; then MISSING+=("$crate"); continue; fi
     ELIGIBLE["$crate"]=1
     if [[ -z "$tests" ]]; then skip_empty=$((skip_empty+1)); continue; fi
@@ -1015,6 +1068,7 @@ fi
     printf 'SLOW_RUNS=%q\n'        "$SLOW_RUNS"
     printf 'WARMUP=%q\n'           "$WARMUP"
     printf 'TEST_THREADS=%q\n'     "$TEST_THREADS"
+    printf 'TEST_TIMEOUT=%q\n'     "$TEST_TIMEOUT"
     printf 'MIRIFLAGS_ALL=%q\n'    "$MIRIFLAGS_ALL"
     printf 'BSAN_OPTIONS_ALL=%q\n' "$BSAN_OPTIONS_ALL"
 } > "$RUNDIR/config.env"
@@ -1055,6 +1109,15 @@ echo "RUSTFLAGS=[$RUSTFLAGS]"
 HARNESS="${HF_TEST_THREADS:-}"
 HARNESS="${HARNESS:+ --test-threads=$HARNESS}"
 [ -n "$HARNESS" ] && echo "HARNESS=[$HARNESS]"
+
+# --test-timeout: prefix every per-test invocation (pre-run and each hyperfine
+# run) with coreutils `timeout`, which signals the whole process group, so
+# cargo's test binary children die with it. Left UNQUOTED at the use sites so
+# it splits into words; empty when unset, leaving the commands unchanged. A
+# limited command exits 124 on SIGTERM, or 137 if the -k SIGKILL was needed.
+LIMIT=""
+[ -n "${HF_TEST_TIMEOUT:-}" ] && LIMIT="timeout -k 30 $HF_TEST_TIMEOUT "
+[ -n "$LIMIT" ] && echo "LIMIT=[$LIMIT]"
 
 # How many lines of a failing test's output to keep in the crate log. Enough
 # for a Miri/BSAN report plus libtest's failure summary, bounded so one test
@@ -1113,7 +1176,7 @@ while IFS= read -r t; do
     # Untimed pre-run: classifies the test and warms caches. no_match means the
     # --exact filter ran 0 tests everywhere (stale test list).
     runlog=$(mktemp)
-    $RUN --$HARNESS --exact "$t" > "$runlog" 2>&1; rc=$?
+    $LIMIT$RUN --$HARNESS --exact "$t" > "$runlog" 2>&1; rc=$?
     nrun=$(grep -aoE '^running [0-9]+ test' "$runlog" | grep -oE '[0-9]+' | awk '{s+=$1} END{print s+0}')
     # A test that fails (or matches nothing) never reaches hyperfine, so this
     # pre-run is the ONLY place its panic / UB report ever exists -- dump it
@@ -1133,7 +1196,11 @@ while IFS= read -r t; do
     fi
     rm -f "$runlog"
     status=""
-    if [ "$nrun" -eq 0 ]; then status=no_match
+    # Checked first: a test killed mid-run may have printed "running 1 test"
+    # or not, so neither nrun nor a plain non-zero exit says what happened.
+    if [ -n "$LIMIT" ] && { [ "$rc" -eq 124 ] || [ "$rc" -eq 137 ]; }; then
+        status=timeout
+    elif [ "$nrun" -eq 0 ]; then status=no_match
     elif [ "$rc" -ne 0 ]; then status=test_failed
     fi
     mean=""; stddev=""; median=""; minv=""; maxv=""
@@ -1143,7 +1210,7 @@ while IFS= read -r t; do
         # command,mean,stddev,median,user,system,min,max -- counted from the
         # end so a comma in the command column can never shift them.
         if hyperfine --style basic -N --warmup "$HF_WARMUP" --runs "$HF_RUNS" \
-                --export-csv "$hfcsv" "$RUN --$HARNESS --exact $t"; then
+                --export-csv "$hfcsv" "$LIMIT$RUN --$HARNESS --exact $t"; then
             read -r mean stddev median minv maxv <<EOV
 $(tail -n1 "$hfcsv" | awk -F, '{print $(NF-6), $(NF-5), $(NF-4), $(NF-1), $NF}')
 EOV
@@ -1191,6 +1258,11 @@ fi
 
 if ! singularity exec "$SIF_ABS" sh -c 'command -v hyperfine' >/dev/null 2>&1; then
     echo "Error: 'hyperfine' not found inside $SIF_ABS -- add it to the image." >&2
+    exit 1
+fi
+if [ -n "$TEST_TIMEOUT" ] && \
+        ! singularity exec "$SIF_ABS" sh -c 'command -v timeout' >/dev/null 2>&1; then
+    echo "Error: 'timeout' (coreutils) not found inside $SIF_ABS, needed by --test-timeout." >&2
     exit 1
 fi
 
@@ -1259,6 +1331,7 @@ worker() {
             --env HF_SHARD="$shard" \
             --env HF_RUNS="$runs" --env HF_WARMUP="$WARMUP" \
             --env HF_TEST_THREADS="$TEST_THREADS" \
+            --env HF_TEST_TIMEOUT="$TEST_TIMEOUT" \
             --env HF_MIRIFLAGS="$MIRIFLAGS_ALL" \
             --env HF_BSAN_OPTIONS="$BSAN_OPTIONS_ALL" \
             --env HF_JOBID="${SLURM_JOB_ID}.${tid}" \
@@ -1290,7 +1363,7 @@ elif (( TL_TOTAL > 0 )); then
 else
     echo "Tests:    $TOTAL_TESTS across ${#SELECTED[@]} crates (from $TESTS_CSV)"
 fi
-echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only ffi=$skip_ffi no-tests=$skip_empty missing-dir=${#MISSING[@]}"
+echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only ffi=$skip_ffi${SAFETY:+ not-$SAFETY=$skip_safety} no-tests=$skip_empty missing-dir=${#MISSING[@]}"
 (( skip_claimed > 0 )) && echo "          ($skip_claimed crate(s) had every test claimed by a test-level list)"
 if (( ${#MISSING[@]} > 0 )); then
     printf '  missing from dataset: %s\n' "${MISSING[@]}" | head -20
@@ -1342,7 +1415,7 @@ if (( ${#FAST_SEL[@]} == 0 && ${#SLOW_CRATES[@]} > 0 )); then
 elif (( ${#SLOW_CRATES[@]} > 0 )); then
     RUNS_NOTE="$RUNS runs (slowlist: $SLOW_RUNS)"
 fi
-echo "Sampling: $RUNS_NOTE, $WARMUP warmup per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}"
+echo "Sampling: $RUNS_NOTE, $WARMUP warmup per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}${TEST_TIMEOUT:+, --test-timeout=$TEST_TIMEOUT}"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
 echo "Results:  $CSV"
