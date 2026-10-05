@@ -43,7 +43,7 @@ import csv
 import sys
 
 DONE_DEFAULT = "success,test_failed,no_match"
-CRATE_FAILURES = {"build_failed", "fetch_failed"}
+CRATE_FAILURES = {"build_failed", "fetch_failed", "list_failed"}
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-o", "--output", help="write the tests CSV here (default: stdout)")

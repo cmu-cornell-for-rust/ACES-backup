@@ -46,8 +46,8 @@ import re
 import sys
 
 DEFAULT_DATASETS = "/scratch/group/p.cis260229.000/datasets"
-DEFAULT_STATUS = "test_failed,no_match,timeout,bench_failed,build_failed,fetch_failed"
-CRATE_FAILURES = {"build_failed", "fetch_failed"}
+DEFAULT_STATUS = "test_failed,no_match,timeout,bench_failed,build_failed,fetch_failed,list_failed"
+CRATE_FAILURES = {"build_failed", "fetch_failed", "list_failed"}
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-o", "--output", help="write the CSV here (default: stdout)")
