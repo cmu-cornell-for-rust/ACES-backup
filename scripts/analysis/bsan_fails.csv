@@ -1,5 +1,5 @@
-build,crate,test,status,log_file,log_found,output_found,exit_code,output
-parse-patch-bsan,adler-1.0.2,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/adler-1.0.2/hyperfine-parse-patch-bsan.log,true,true,1,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+build,crate,test,status,error_type,log_file,log_found,output_found,exit_code,output
+parse-patch-bsan,adler-1.0.2,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/adler-1.0.2/hyperfine-parse-patch-bsan.log,true,true,1,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `adler` (manifest) generated 1 warning
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1.27s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188452-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/adler/dae2a2a70902a151/out/adler-dae2a2a70902a151)
@@ -18,7 +18,7 @@ error: test failed, to rerun pass `--lib`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188452-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/adler/dae2a2a70902a151/out/adler-dae2a2a70902a151` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,signature-3.0.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/signature-3.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s
+parse-patch-bsan,signature-3.0.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/signature-3.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188452-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/signature/fe3831ce8e1bfcad/out/signature-fe3831ce8e1bfcad)
 
 running 0 tests
@@ -31,7 +31,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,futures-io-0.3.34,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/futures-io-0.3.34/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.35s
+parse-patch-bsan,futures-io-0.3.34,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/futures-io-0.3.34/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.35s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188452-4/target/bsan/x86_64-unknown-linux-gnu/debug/build/futures-io/926de6bbf0b97ee9/out/futures_io-926de6bbf0b97ee9)
 
 running 0 tests
@@ -44,7 +44,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,levenshtein_automata-0.2.1,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/levenshtein_automata-0.2.1/hyperfine-parse-patch-bsan.log,true,true,1,"warning: `package.homepage` is redundant with `package.repository`
+parse-patch-bsan,levenshtein_automata-0.2.1,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/levenshtein_automata-0.2.1/hyperfine-parse-patch-bsan.log,true,true,1,"warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:19:12
    |
 19 | homepage = ""https://github.com/tantivy-search/levenshtein-automata""
@@ -134,12 +134,12 @@ error: test failed, to rerun pass `--lib`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188452-6/target/bsan/x86_64-unknown-linux-gnu/debug/build/levenshtein_automata/4dfd71c301904814/out/levenshtein_automata-4dfd71c301904814` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,never-say-never-6.6.666,,fetch_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/never-say-never-6.6.666/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,never-say-never-6.6.666,,fetch_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/never-say-never-6.6.666/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
 info: syncing channel updates for 1.14.0-x86_64-unknown-linux-gnu
 error: could not create temp file /opt/rust/rustup/tmp/1gqwwmw0dt3llcx__file: Read-only file system (os error 30)
 CSVROW:parse-patch-bsan,never-say-never-6.6.666,,fetch_failed,,,,,,,1,2026-10-05T14:00:03Z,2188452.7"
-parse-patch-bsan,quad-rand-0.2.3,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/quad-rand-0.2.3/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.repository`
+parse-patch-bsan,quad-rand-0.2.3,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/quad-rand-0.2.3/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:25:12
    |
 25 | homepage = ""https://github.com/not-fl3/quad-rand""
@@ -229,7 +229,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,tower-layer-0.3.3,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/tower-layer-0.3.3/hyperfine-parse-patch-bsan.log,true,true,101,"warning: `package.homepage` is redundant with `package.repository`
+parse-patch-bsan,tower-layer-0.3.3,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/tower-layer-0.3.3/hyperfine-parse-patch-bsan.log,true,true,101,"warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:25:12
    |
 25 | homepage = ""https://github.com/tower-rs/tower""
@@ -355,7 +355,7 @@ failures:
 test result: FAILED. 0 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.94s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,valuable-0.1.1,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/valuable-0.1.1/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,valuable-0.1.1,,build_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/valuable-0.1.1/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
     Updating crates.io index
  Downloading crates ...
@@ -533,7 +533,7 @@ For more information about this error, try `rustc --explain E0277`.
 error: could not compile `valuable` (example ""print"") due to 3 previous errors
 warning: build failed, waiting for other jobs to finish...
 CSVROW:parse-patch-bsan,valuable-0.1.1,,build_failed,,,,,,,1,2026-10-05T15:02:41Z,2188462.12"
-parse-patch-bsan,cityhash-rs-1.0.1,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/cityhash-rs-1.0.1/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,cityhash-rs-1.0.1,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/cityhash-rs-1.0.1/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188462-1/target/bsan/x86_64-unknown-linux-gnu/debug/build/cityhash-rs/19cc058921aebeca/out/cityhash_rs-19cc058921aebeca)
 
 running 3 tests
@@ -547,7 +547,7 @@ error: test failed, to rerun pass `--lib`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188462-1/target/bsan/x86_64-unknown-linux-gnu/debug/build/cityhash-rs/19cc058921aebeca/out/cityhash_rs-19cc058921aebeca` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,gpu-alloc-types-0.3.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/gpu-alloc-types-0.3.1/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.repository`
+parse-patch-bsan,gpu-alloc-types-0.3.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/gpu-alloc-types-0.3.1/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:24:12
    |
 24 | homepage = ""https://github.com/zakarumych/gpu-alloc""
@@ -572,7 +572,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,num-integer-0.1.47,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/num-integer-0.1.47/hyperfine-parse-patch-bsan.log,true,true,1,"[... 1990 earlier line(s) omitted ...]
+parse-patch-bsan,num-integer-0.1.47,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/num-integer-0.1.47/hyperfine-parse-patch-bsan.log,true,true,1,"[... 1990 earlier line(s) omitted ...]
 test test_integer_u64::test_even ... ok
 test test_integer_u64::test_gcd ... ok
 test test_integer_u64::test_lcm ... ok
@@ -773,7 +773,7 @@ error: test failed, to rerun pass `--test roots`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188462-7/target/bsan/x86_64-unknown-linux-gnu/debug/build/num-integer/5317c39e8adf59ec/out/roots-5317c39e8adf59ec` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,regex-syntax-0.8.11,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/regex-syntax-0.8.11/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+parse-patch-bsan,regex-syntax-0.8.11,__all__,test_failed,crash,/scratch/group/p.cis260229.000/datasets/top_1_percent/regex-syntax-0.8.11/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188462-9/target/bsan/x86_64-unknown-linux-gnu/debug/build/regex-syntax/8fd05c5d1017dcba/out/regex_syntax-8fd05c5d1017dcba)
 
 running 147 tests
@@ -811,7 +811,7 @@ error: test failed, to rerun pass `--lib`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188462-9/target/bsan/x86_64-unknown-linux-gnu/debug/build/regex-syntax/8fd05c5d1017dcba/out/regex_syntax-8fd05c5d1017dcba` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,adler2-2.0.1,__all__,timeout,/scratch/group/p.cis260229.000/datasets/top_1_percent/adler2-2.0.1/hyperfine-parse-patch-bsan.log,true,true,124,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,adler2-2.0.1,__all__,timeout,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/adler2-2.0.1/hyperfine-parse-patch-bsan.log,true,true,124,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188453-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/adler2/bdb8d8aedd9fc735/out/adler2-bdb8d8aedd9fc735)
 
 running 6 tests
@@ -822,7 +822,7 @@ test tests::zeroes ... ok
 test tests::bufread has been running for over 60 seconds
 test tests::resume has been running for over 60 seconds
 test tests::resume ... ok"
-parse-patch-bsan,xml-rs-1.0.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/xml-rs-1.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,xml-rs-1.0.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/xml-rs-1.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188463-13/target/bsan/x86_64-unknown-linux-gnu/debug/build/xml-rs/b377e6a68b490483/out/xml-b377e6a68b490483)
 
 running 0 tests
@@ -835,7 +835,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,unicode-width-0.2.2,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/unicode-width-0.2.2/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,unicode-width-0.2.2,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/unicode-width-0.2.2/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188453-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/unicode-width/e72c34c83ac2df85/out/unicode_width-e72c34c83ac2df85)
 
 running 1 test
@@ -888,7 +888,7 @@ error: test failed, to rerun pass `--test tests`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188453-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/unicode-width/f7b4b2e5938fcbb3/out/tests-f7b4b2e5938fcbb3` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,deflate-1.0.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/deflate-1.0.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 29 earlier line(s) omitted ...]
+parse-patch-bsan,deflate-1.0.0,__all__,test_failed,oom,/scratch/group/p.cis260229.000/datasets/top_1_percent/deflate-1.0.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 29 earlier line(s) omitted ...]
              [lints.rust]
              unexpected_cfgs = { level = ""warn"", check-cfg = ['cfg(debug)'] }
     = help: or consider adding `println!(""cargo::rustc-check-cfg=cfg(debug)"");` to the top of the `build.rs`
@@ -1089,7 +1089,7 @@ error: test failed, to rerun pass `--lib`
 
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188463-2/target/bsan/x86_64-unknown-linux-gnu/debug/build/deflate/2360e298d37f5ffc/out/deflate-2360e298d37f5ffc` (signal: 9, SIGKILL: kill)"
-parse-patch-bsan,windows-targets-0.53.5,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows-targets-0.53.5/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+parse-patch-bsan,windows-targets-0.53.5,__all__,test_failed,linker,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows-targets-0.53.5/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188453-13/target/bsan/x86_64-unknown-linux-gnu/debug/build/windows-targets/7671b912724a960c/out/windows_targets-7671b912724a960c)
 
 running 0 tests
@@ -1128,7 +1128,7 @@ failures:
 test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.51s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,gpu-descriptor-types-0.2.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/gpu-descriptor-types-0.2.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.repository`
+parse-patch-bsan,gpu-descriptor-types-0.2.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/gpu-descriptor-types-0.2.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:18:12
    |
 18 | homepage = ""https://github.com/zakarumych/gpu-descriptor""
@@ -1153,7 +1153,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,mac-0.1.1,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/mac-0.1.1/hyperfine-parse-patch-bsan.log,true,true,101,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,mac-0.1.1,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/mac-0.1.1/hyperfine-parse-patch-bsan.log,true,true,101,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `mac` (manifest) generated 1 warning
 warning: `...` range patterns are deprecated
   --> src/matches.rs:42:41
@@ -1221,7 +1221,7 @@ failures:
 test result: FAILED. 10 passed; 1 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.36s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,plotters-svg-0.3.7,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/plotters-svg-0.3.7/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,plotters-svg-0.3.7,,build_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/plotters-svg-0.3.7/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
     Updating crates.io index
  Downloading crates ...
@@ -1345,7 +1345,7 @@ Some errors have detailed explanations: E0433, E0599.
 For more information about an error, try `rustc --explain E0433`.
 error: could not compile `plotters-svg` (lib test) due to 12 previous errors
 CSVROW:parse-patch-bsan,plotters-svg-0.3.7,,build_failed,,,,,,,1,2026-10-05T15:06:41Z,2188463.8"
-parse-patch-bsan,treediff-5.0.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/treediff-5.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.62s
+parse-patch-bsan,treediff-5.0.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/treediff-5.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.62s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188464-11/target/bsan/x86_64-unknown-linux-gnu/debug/build/treediff/88f649f0380d3016/out/treediff-88f649f0380d3016)
 
 running 0 tests
@@ -1358,7 +1358,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,deflate64-0.1.12,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/deflate64-0.1.12/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.39s
+parse-patch-bsan,deflate64-0.1.12,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/deflate64-0.1.12/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.39s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188464-2/target/bsan/x86_64-unknown-linux-gnu/debug/build/deflate64/d14444c52a704014/out/deflate64-d14444c52a704014)
 
 running 0 tests
@@ -1371,7 +1371,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,guppy-workspace-hack-0.1.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/guppy-workspace-hack-0.1.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,guppy-workspace-hack-0.1.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/guppy-workspace-hack-0.1.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `guppy-workspace-hack` (manifest) generated 1 warning
     Finished `test` profile [unoptimized + debuginfo] target(s) in 0.28s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188464-4/target/bsan/x86_64-unknown-linux-gnu/debug/build/guppy-workspace-hack/d243a3891e5b1672/out/guppy_workspace_hack-d243a3891e5b1672)
@@ -1386,7 +1386,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,ctor-proc-macro-0.0.13,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/ctor-proc-macro-0.0.13/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,ctor-proc-macro-0.0.13,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/ctor-proc-macro-0.0.13/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188453-2/target/bsan/debug/build/ctor-proc-macro/cb2882b06ca503f4/out/ctor_proc_macro-cb2882b06ca503f4)
 
 running 0 tests
@@ -1399,7 +1399,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,solana-program-pack-3.1.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/solana-program-pack-3.1.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,solana-program-pack-3.1.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/solana-program-pack-3.1.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188465-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/solana-program-pack/afee2cb12f5560b4/out/solana_program_pack-afee2cb12f5560b4)
 
 running 0 tests
@@ -1412,17 +1412,17 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,vec1-1.12.1,,fetch_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/vec1-1.12.1/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,vec1-1.12.1,,fetch_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/vec1-1.12.1/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
 info: syncing channel updates for 1.71.1-x86_64-unknown-linux-gnu
 error: could not create temp file /opt/rust/rustup/tmp/s2n7kj1413ywevvh_file: Read-only file system (os error 30)
 CSVROW:parse-patch-bsan,vec1-1.12.1,,fetch_failed,,,,,,,1,2026-10-05T15:18:09Z,2188465.12"
-parse-patch-bsan,macro_rules_attribute-0.2.3,,fetch_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/macro_rules_attribute-0.2.3/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,macro_rules_attribute-0.2.3,,fetch_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/macro_rules_attribute-0.2.3/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
 info: syncing channel updates for 1.78.0-x86_64-unknown-linux-gnu
 error: could not create temp file /opt/rust/rustup/tmp/9jvzqun00ore73k2_file: Read-only file system (os error 30)
 CSVROW:parse-patch-bsan,macro_rules_attribute-0.2.3,,fetch_failed,,,,,,,1,2026-10-05T15:18:09Z,2188465.6"
-parse-patch-bsan,precomputed-hash-0.1.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/precomputed-hash-0.1.1/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,precomputed-hash-0.1.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/precomputed-hash-0.1.1/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `precomputed-hash` (manifest) generated 1 warning
     Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188465-8/target/bsan/x86_64-unknown-linux-gnu/debug/build/precomputed-hash/8cc22837764cfbda/out/precomputed_hash-8cc22837764cfbda)
@@ -1437,7 +1437,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,solana-sanitize-3.0.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/solana-sanitize-3.0.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,solana-sanitize-3.0.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/solana-sanitize-3.0.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188466-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/solana-sanitize/9ec33e1654e3a85f/out/solana_sanitize-9ec33e1654e3a85f)
 
 running 0 tests
@@ -1450,7 +1450,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,xshell-macros-0.2.7,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/xshell-macros-0.2.7/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
+parse-patch-bsan,xshell-macros-0.2.7,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/xshell-macros-0.2.7/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188466-13/target/bsan/debug/build/xshell-macros/9e6c903e8f34778c/out/xshell_macros-9e6c903e8f34778c)
 
 running 0 tests
@@ -1463,7 +1463,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,deno_core_icudata-0.78.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/deno_core_icudata-0.78.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,deno_core_icudata-0.78.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/deno_core_icudata-0.78.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188466-2/target/bsan/x86_64-unknown-linux-gnu/debug/build/deno_core_icudata/bae19738ac1885d8/out/deno_core_icudata-bae19738ac1885d8)
 
 running 0 tests
@@ -1476,7 +1476,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,hash-db-0.16.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/hash-db-0.16.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,hash-db-0.16.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/hash-db-0.16.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188466-4/target/bsan/x86_64-unknown-linux-gnu/debug/build/hash-db/7536d1ab6303696d/out/hash_db-7536d1ab6303696d)
 
 running 0 tests
@@ -1489,7 +1489,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,indexmap-nostd-0.4.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/indexmap-nostd-0.4.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: hiding a lifetime that's elided elsewhere is confusing
+parse-patch-bsan,indexmap-nostd-0.4.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/indexmap-nostd-0.4.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: hiding a lifetime that's elided elsewhere is confusing
    --> src/map.rs:184:18
     |
 184 |     pub fn entry(&mut self, key: K) -> Entry<K, V>
@@ -1589,7 +1589,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,macro_rules_attribute-proc_macro-0.2.3,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/macro_rules_attribute-proc_macro-0.2.3/hyperfine-parse-patch-bsan.log,true,true,0,"warning: non-local `impl` definition, `impl` blocks should be written at the same level as their item
+parse-patch-bsan,macro_rules_attribute-proc_macro-0.2.3,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/macro_rules_attribute-proc_macro-0.2.3/hyperfine-parse-patch-bsan.log,true,true,0,"warning: non-local `impl` definition, `impl` blocks should be written at the same level as their item
    --> mod.rs:300:9
     |
 297 | /     fn vec (self: Self)
@@ -1619,7 +1619,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,fake-simd-0.1.2,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/fake-simd-0.1.2/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,fake-simd-0.1.2,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/fake-simd-0.1.2/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `fake-simd` (manifest) generated 1 warning
     Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188467-3/target/bsan/x86_64-unknown-linux-gnu/debug/build/fake-simd/4d3e741637246e1b/out/fake_simd-4d3e741637246e1b)
@@ -1634,7 +1634,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,predicates-tree-1.0.13,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/predicates-tree-1.0.13/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.06s
+parse-patch-bsan,predicates-tree-1.0.13,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/predicates-tree-1.0.13/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.06s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188467-8/target/bsan/x86_64-unknown-linux-gnu/debug/build/predicates-tree/21381d0d9dec8c9c/out/predicates_tree-21381d0d9dec8c9c)
 
 running 0 tests
@@ -1647,12 +1647,12 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,atoi-3.1.0,,fetch_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/atoi-3.1.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,atoi-3.1.0,,fetch_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/atoi-3.1.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
 info: syncing channel updates for 1.86.0-x86_64-unknown-linux-gnu
 error: could not create temp file /opt/rust/rustup/tmp/go5ovee_ngn19m3e_file: Read-only file system (os error 30)
 CSVROW:parse-patch-bsan,atoi-3.1.0,,fetch_failed,,,,,,,1,2026-10-05T15:21:40Z,2188468.0"
-parse-patch-bsan,ttf-parser-0.25.1,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/ttf-parser-0.25.1/hyperfine-parse-patch-bsan.log,true,true,1,"warning: hiding a lifetime that's elided elsewhere is confusing
+parse-patch-bsan,ttf-parser-0.25.1,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/ttf-parser-0.25.1/hyperfine-parse-patch-bsan.log,true,true,1,"warning: hiding a lifetime that's elided elsewhere is confusing
     --> src/lib.rs:2204:9
      |
 2204 |         &self,
@@ -1799,7 +1799,7 @@ error: test failed, to rerun pass `--lib`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188468-11/target/bsan/x86_64-unknown-linux-gnu/debug/build/ttf-parser/2825da3ff30fcb74/out/ttf_parser-2825da3ff30fcb74` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,yazi-0.2.1,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/yazi-0.2.1/hyperfine-parse-patch-bsan.log,true,true,101,"warning: `package.homepage` is redundant with `package.repository`
+parse-patch-bsan,yazi-0.2.1,__all__,test_failed,oom,/scratch/group/p.cis260229.000/datasets/top_1_percent/yazi-0.2.1/hyperfine-parse-patch-bsan.log,true,true,101,"warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:24:12
    |
 24 | homepage = ""https://github.com/dfrg/yazi""
@@ -1825,7 +1825,7 @@ error: test failed, to rerun pass `--lib`
 
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188468-13/target/bsan/x86_64-unknown-linux-gnu/debug/build/yazi/7ad38f5fca98c37f/out/yazi-7ad38f5fca98c37f` (signal: 9, SIGKILL: kill)"
-parse-patch-bsan,autocfg-1.5.1,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/autocfg-1.5.1/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.10s
+parse-patch-bsan,autocfg-1.5.1,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/autocfg-1.5.1/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.10s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188469-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/autocfg/76b92df62b5a8469/out/autocfg-76b92df62b5a8469)
 
 running 5 tests
@@ -1896,7 +1896,7 @@ failures:
 test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.60s
 
 error: test failed, to rerun pass `--test rustflags`"
-parse-patch-bsan,typeable-0.1.2,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/typeable-0.1.2/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,typeable-0.1.2,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/typeable-0.1.2/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `typeable` (manifest) generated 1 warning
     Finished `test` profile [unoptimized + debuginfo] target(s) in 0.12s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188469-11/target/bsan/x86_64-unknown-linux-gnu/debug/build/typeable/4cc455e66c189b9f/out/typeable-4cc455e66c189b9f)
@@ -1911,7 +1911,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,void-1.0.2,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/void-1.0.2/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,void-1.0.2,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/void-1.0.2/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `void` (manifest) generated 1 warning
 warning: trait objects without an explicit `dyn` are deprecated
   --> src/lib.rs:67:32
@@ -1961,7 +1961,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,color_quant-2.0.0,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/color_quant-2.0.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,color_quant-2.0.0,,build_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/color_quant-2.0.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
    Compiling color_quant v2.0.0 (/work)
 warning: use of deprecated constant `core::f64::MAX`: replaced by the `MAX` associated constant on `f64`
@@ -2008,7 +2008,7 @@ Some errors have detailed explanations: E0599, E0635.
 For more information about an error, try `rustc --explain E0599`.
 error: could not compile `color_quant` (example ""quantize"") due to 3 previous errors
 CSVROW:parse-patch-bsan,color_quant-2.0.0,,build_failed,,,,,,,1,2026-10-05T15:22:58Z,2188469.1"
-parse-patch-bsan,once_cell_polyfill-1.70.2,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/once_cell_polyfill-1.70.2/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
+parse-patch-bsan,once_cell_polyfill-1.70.2,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/once_cell_polyfill-1.70.2/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188469-7/target/bsan/x86_64-unknown-linux-gnu/debug/build/once_cell_polyfill/fc36164711ed9b74/out/once_cell_polyfill-fc36164711ed9b74)
 
 running 0 tests
@@ -2021,7 +2021,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,aws-endpoint-0.60.3,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/aws-endpoint-0.60.3/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,aws-endpoint-0.60.3,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/aws-endpoint-0.60.3/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188470-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/aws-endpoint/2a0493bcb3036ef2/out/aws_endpoint-2a0493bcb3036ef2)
 
 running 0 tests
@@ -2034,7 +2034,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,static_assertions_next-1.1.2,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/static_assertions_next-1.1.2/hyperfine-parse-patch-bsan.log,true,true,101,"[... 479 earlier line(s) omitted ...]
+parse-patch-bsan,static_assertions_next-1.1.2,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/static_assertions_next-1.1.2/hyperfine-parse-patch-bsan.log,true,true,101,"[... 479 earlier line(s) omitted ...]
    |
 11 | #[macro_use] extern crate static_assertions;
    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ can't find crate
@@ -2235,7 +2235,7 @@ failures:
 test result: FAILED. 31 passed; 44 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.55s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,interpolator-0.5.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/interpolator-0.5.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 188 earlier line(s) omitted ...]
+parse-patch-bsan,interpolator-0.5.0,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/interpolator-0.5.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 188 earlier line(s) omitted ...]
     |
 154 |   let context = context! {
     |  _______________^
@@ -2436,7 +2436,7 @@ failures:
 test result: FAILED. 7 passed; 9 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.27s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,proc-macro-hack-0.5.20+deprecated,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/proc-macro-hack-0.5.20+deprecated/hyperfine-parse-patch-bsan.log,true,true,101,"warning: unexpected `cfg` condition name: `need_proc_macro_hack`
+parse-patch-bsan,proc-macro-hack-0.5.20+deprecated,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/proc-macro-hack-0.5.20+deprecated/hyperfine-parse-patch-bsan.log,true,true,101,"warning: unexpected `cfg` condition name: `need_proc_macro_hack`
    --> src/lib.rs:267:45
     |
 267 |     if args.only_hack_old_rustc && cfg!(not(need_proc_macro_hack)) {
@@ -2552,7 +2552,7 @@ failures:
 test result: FAILED. 1 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,aws-sig-auth-0.60.3,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/aws-sig-auth-0.60.3/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,aws-sig-auth-0.60.3,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/aws-sig-auth-0.60.3/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188471-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/aws-sig-auth/bf3b258bffda0274/out/aws_sig_auth-bf3b258bffda0274)
 
 running 0 tests
@@ -2565,7 +2565,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,fastdivide-0.4.2,__all__,timeout,/scratch/group/p.cis260229.000/datasets/top_1_percent/fastdivide-0.4.2/hyperfine-parse-patch-bsan.log,true,true,124,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.11s
+parse-patch-bsan,fastdivide-0.4.2,__all__,timeout,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/fastdivide-0.4.2/hyperfine-parse-patch-bsan.log,true,true,124,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.11s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188471-3/target/bsan/x86_64-unknown-linux-gnu/debug/build/fastdivide/b0ea83b6788efe10/out/fastdivide-b0ea83b6788efe10)
 
 running 10 tests
@@ -2579,7 +2579,7 @@ test tests::test_proptest has been running for over 60 seconds
 test tests::test_proptest_divide_by_11 has been running for over 60 seconds
 test tests::test_proptest_divide_by_7 has been running for over 60 seconds
 test tests::test_proptest_divide_by_any has been running for over 60 seconds"
-parse-patch-bsan,is_ci-1.2.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/is_ci-1.2.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+parse-patch-bsan,is_ci-1.2.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/is_ci-1.2.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188471-5/target/bsan/x86_64-unknown-linux-gnu/debug/build/is_ci/b97499eb1c729828/out/is_ci-b97499eb1c729828)
 
 running 0 tests
@@ -2598,7 +2598,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,md5-0.8.1,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/md5-0.8.1/hyperfine-parse-patch-bsan.log,true,true,1,"warning: `package.homepage` is redundant with `package.repository`
+parse-patch-bsan,md5-0.8.1,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/md5-0.8.1/hyperfine-parse-patch-bsan.log,true,true,1,"warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:35:12
    |
 35 | homepage = ""https://github.com/stainless-steel/md5""
@@ -2632,7 +2632,7 @@ error: test failed, to rerun pass `--lib`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188471-6/target/bsan/x86_64-unknown-linux-gnu/debug/build/md5/604bb8a15bfb54a4/out/md5-604bb8a15bfb54a4` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,ruint-macro-1.2.1,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/ruint-macro-1.2.1/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,ruint-macro-1.2.1,,build_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/ruint-macro-1.2.1/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
    Compiling ruint-macro v1.2.1 (/work)
 error[E0433]: cannot find module or crate `ruint` in this scope
@@ -2660,7 +2660,7 @@ error[E0433]: cannot find `ruint` in the list of imported crates
 For more information about this error, try `rustc --explain E0433`.
 error: could not compile `ruint-macro` (test ""parse_mixed"") due to 2 previous errors
 CSVROW:parse-patch-bsan,ruint-macro-1.2.1,,build_failed,,,,,,,1,2026-10-05T13:59:59Z,2188471.9"
-parse-patch-bsan,query_map-0.7.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/query_map-0.7.0/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.05s
+parse-patch-bsan,query_map-0.7.0,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/query_map-0.7.0/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.05s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188453-9/target/bsan/x86_64-unknown-linux-gnu/debug/build/query_map/f1b73a57ab71b0b6/out/query_map-f1b73a57ab71b0b6)
 
 running 5 tests
@@ -2719,7 +2719,7 @@ failures:
 test result: FAILED. 1 passed; 1 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.32s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,aws-smithy-client-0.60.3,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/aws-smithy-client-0.60.3/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,aws-smithy-client-0.60.3,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/aws-smithy-client-0.60.3/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188472-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/aws-smithy-client/50f3b7e06d524362/out/aws_smithy_client-50f3b7e06d524362)
 
 running 0 tests
@@ -2732,7 +2732,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,stdweb-internal-runtime-0.1.5,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/stdweb-internal-runtime-0.1.5/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,stdweb-internal-runtime-0.1.5,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/stdweb-internal-runtime-0.1.5/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:19:12
    |
@@ -2758,7 +2758,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,tz-rs-0.7.3,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/tz-rs-0.7.3/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,tz-rs-0.7.3,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/tz-rs-0.7.3/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188472-11/target/bsan/x86_64-unknown-linux-gnu/debug/build/tz-rs/d977b36a0eb66f66/out/tz-d977b36a0eb66f66)
 
 running 44 tests
@@ -2824,7 +2824,7 @@ failures:
 test result: FAILED. 43 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.59s
 
 error: test failed, to rerun pass `--lib`"
-parse-patch-bsan,wasm-encoder-0.261.0,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/wasm-encoder-0.261.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,wasm-encoder-0.261.0,,build_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/wasm-encoder-0.261.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
     Updating crates.io index
  Downloading crates ...
@@ -2937,7 +2937,7 @@ Some errors have detailed explanations: E0432, E0433.
 For more information about an error, try `rustc --explain E0432`.
 error: could not compile `wasm-encoder` (lib test) due to 6 previous errors
 CSVROW:parse-patch-bsan,wasm-encoder-0.261.0,,build_failed,,,,,,,1,2026-10-05T14:27:12Z,2188472.12"
-parse-patch-bsan,fastrand-2.5.0,__all__,timeout,/scratch/group/p.cis260229.000/datasets/top_1_percent/fastrand-2.5.0/hyperfine-parse-patch-bsan.log,true,true,124,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s
+parse-patch-bsan,fastrand-2.5.0,__all__,timeout,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/fastrand-2.5.0/hyperfine-parse-patch-bsan.log,true,true,124,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188472-3/target/bsan/x86_64-unknown-linux-gnu/debug/build/fastrand/572bb300b4b2e77b/out/fastrand-572bb300b4b2e77b)
 
 running 0 tests
@@ -2988,12 +2988,12 @@ test u64 has been running for over 60 seconds
 test u64 ... ok
 test u32 ... ok
 test u128 ... ok"
-parse-patch-bsan,higher-kinded-types-0.3.2,,fetch_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/higher-kinded-types-0.3.2/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,higher-kinded-types-0.3.2,,fetch_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/higher-kinded-types-0.3.2/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
 info: syncing channel updates for 1.85.0-x86_64-unknown-linux-gnu
 error: could not create temp file /opt/rust/rustup/tmp/xd8gtpepf8xrgt2b_file: Read-only file system (os error 30)
 CSVROW:parse-patch-bsan,higher-kinded-types-0.3.2,,fetch_failed,,,,,,,1,2026-10-05T14:26:46Z,2188472.4"
-parse-patch-bsan,opaque-debug-0.4.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/opaque-debug-0.4.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,opaque-debug-0.4.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/opaque-debug-0.4.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188472-7/target/bsan/x86_64-unknown-linux-gnu/debug/build/opaque-debug/214ced2168dac02c/out/opaque_debug-214ced2168dac02c)
 
 running 0 tests
@@ -3006,7 +3006,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,runfiles-0.3.0,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/runfiles-0.3.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,runfiles-0.3.0,,build_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/runfiles-0.3.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
    Compiling runfiles v0.3.0 (/work)
 error: environment variable `REPOSITORY_NAME` not defined at compile time
@@ -3120,7 +3120,7 @@ error: environment variable `REPOSITORY_NAME` not defined at compile time
 error: could not compile `runfiles` (lib test) due to 9 previous errors
 warning: build failed, waiting for other jobs to finish...
 CSVROW:parse-patch-bsan,runfiles-0.3.0,,build_failed,,,,,,,1,2026-10-05T14:26:52Z,2188472.9"
-parse-patch-bsan,adler32-1.2.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/adler32-1.2.0/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.21s
+parse-patch-bsan,adler32-1.2.0,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/adler32-1.2.0/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.21s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188454-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/adler32/16d5af7135abc5ef/out/adler32-16d5af7135abc5ef)
 
 running 4 tests
@@ -3135,7 +3135,7 @@ error: test failed, to rerun pass `--lib`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188454-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/adler32/16d5af7135abc5ef/out/adler32-16d5af7135abc5ef` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,aws-smithy-http-tower-0.60.3,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/aws-smithy-http-tower-0.60.3/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,aws-smithy-http-tower-0.60.3,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/aws-smithy-http-tower-0.60.3/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188473-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/aws-smithy-http-tower/a1402a6ede1141b9/out/aws_smithy_http_tower-a1402a6ede1141b9)
 
 running 0 tests
@@ -3148,7 +3148,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,ucd-trie-0.1.7,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/ucd-trie-0.1.7/hyperfine-parse-patch-bsan.log,true,true,1,"warning: `package.homepage` is redundant with `package.repository`
+parse-patch-bsan,ucd-trie-0.1.7,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/ucd-trie-0.1.7/hyperfine-parse-patch-bsan.log,true,true,1,"warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:25:12
    |
 25 | homepage = ""https://github.com/BurntSushi/ucd-generate""
@@ -3213,7 +3213,7 @@ error: test failed, to rerun pass `--lib`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188473-11/target/bsan/x86_64-unknown-linux-gnu/debug/build/ucd-trie/9c47b927e44a3010/out/ucd_trie-9c47b927e44a3010` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,wasmtime-asm-macros-34.0.2,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/wasmtime-asm-macros-34.0.2/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+parse-patch-bsan,wasmtime-asm-macros-34.0.2,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/wasmtime-asm-macros-34.0.2/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188473-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/wasmtime-asm-macros/158a553d947b64f9/out/wasmtime_asm_macros-158a553d947b64f9)
 
 running 0 tests
@@ -3226,7 +3226,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,unicode-xid-0.2.6,__all__,timeout,/scratch/group/p.cis260229.000/datasets/top_1_percent/unicode-xid-0.2.6/hyperfine-parse-patch-bsan.log,true,true,124,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.17s
+parse-patch-bsan,unicode-xid-0.2.6,__all__,timeout,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/unicode-xid-0.2.6/hyperfine-parse-patch-bsan.log,true,true,124,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.17s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188454-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/unicode-xid/983e376cbd5d1d95/out/unicode_xid-983e376cbd5d1d95)
 
 running 4 tests
@@ -3242,7 +3242,7 @@ test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 running 2 tests
 test all_valid_chars_do_not_panic_for_is_xid_continue has been running for over 60 seconds
 test all_valid_chars_do_not_panic_for_is_xid_start has been running for over 60 seconds"
-parse-patch-bsan,windows_x86_64_gnu-0.53.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_x86_64_gnu-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+parse-patch-bsan,windows_x86_64_gnu-0.53.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_x86_64_gnu-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188454-13/target/bsan/x86_64-unknown-linux-gnu/debug/build/windows_x86_64_gnu/a2e0a36052b08856/out/windows_x86_64_gnu-a2e0a36052b08856)
 
 running 0 tests
@@ -3255,7 +3255,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,feature-probe-0.1.1,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/feature-probe-0.1.1/hyperfine-parse-patch-bsan.log,true,true,101,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,feature-probe-0.1.1,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/feature-probe-0.1.1/hyperfine-parse-patch-bsan.log,true,true,101,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `feature-probe` (manifest) generated 1 warning
     Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188473-3/target/bsan/x86_64-unknown-linux-gnu/debug/build/feature-probe/6122a4da69e72a2d/out/feature_probe-6122a4da69e72a2d)
@@ -3323,7 +3323,7 @@ failures:
 test result: FAILED. 3 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.23s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,is_terminal_polyfill-1.70.2,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/is_terminal_polyfill-1.70.2/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,is_terminal_polyfill-1.70.2,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/is_terminal_polyfill-1.70.2/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188473-5/target/bsan/x86_64-unknown-linux-gnu/debug/build/is_terminal_polyfill/df6ffe651d8bd4c8/out/is_terminal_polyfill-df6ffe651d8bd4c8)
 
 running 0 tests
@@ -3336,7 +3336,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,opentelemetry-semantic-conventions-0.33.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/opentelemetry-semantic-conventions-0.33.0/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.11s
+parse-patch-bsan,opentelemetry-semantic-conventions-0.33.0,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/opentelemetry-semantic-conventions-0.33.0/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.11s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188473-7/target/bsan/x86_64-unknown-linux-gnu/debug/build/opentelemetry-semantic-conventions/fbb3810d3d5b0c66/out/opentelemetry_semantic_conventions-fbb3810d3d5b0c66)
 
 running 0 tests
@@ -3370,7 +3370,7 @@ failures:
 test result: FAILED. 2 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.36s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,rustc-demangle-0.1.28,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/rustc-demangle-0.1.28/hyperfine-parse-patch-bsan.log,true,true,1,"[... 181 earlier line(s) omitted ...]
+parse-patch-bsan,rustc-demangle-0.1.28,__all__,test_failed,crash,/scratch/group/p.cis260229.000/datasets/top_1_percent/rustc-demangle-0.1.28/hyperfine-parse-patch-bsan.log,true,true,1,"[... 181 earlier line(s) omitted ...]
    --> src/lib.rs:39:9
     |
  39 | /         assert!(
@@ -3571,7 +3571,7 @@ error: test failed, to rerun pass `--lib`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188473-9/target/bsan/x86_64-unknown-linux-gnu/debug/build/rustc-demangle/b6fac180ade0af35/out/rustc_demangle-b6fac180ade0af35` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,az-1.3.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/az-1.3.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 252 earlier line(s) omitted ...]
+parse-patch-bsan,az-1.3.0,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/az-1.3.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 252 earlier line(s) omitted ...]
     = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
 note: the lint level is defined here
    --> src/lib.rs:755:9
@@ -3772,7 +3772,7 @@ test result: FAILED. 33 passed; 14 failed; 0 ignored; 0 measured; 0 filtered out
 
 all doctests ran in 0.70s; merged doctests compilation took 0.14s
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,wasmtime-internal-component-util-49.0.2,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/wasmtime-internal-component-util-49.0.2/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,wasmtime-internal-component-util-49.0.2,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/wasmtime-internal-component-util-49.0.2/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188474-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/wasmtime-internal-component-util/21fbf7f70bb2e6a1/out/wasmtime_internal_component_util-21fbf7f70bb2e6a1)
 
 running 0 tests
@@ -3785,7 +3785,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,doctest-file-1.1.1,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/doctest-file-1.1.1/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [optimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,doctest-file-1.1.1,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/doctest-file-1.1.1/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [optimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188474-2/target/bsan/debug/build/doctest-file/bb078f47364d825d/out/doctest_file-bb078f47364d825d)
 
 running 0 tests
@@ -3867,7 +3867,7 @@ failures:
 test result: FAILED. 1 passed; 4 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.69s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,fiat-crypto-0.3.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/fiat-crypto-0.3.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.repository`
+parse-patch-bsan,fiat-crypto-0.3.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/fiat-crypto-0.3.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:25:12
    |
 25 | homepage = ""https://github.com/mit-plv/fiat-crypto""
@@ -3892,12 +3892,12 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,iter-read-1.1.0,,fetch_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/iter-read-1.1.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,iter-read-1.1.0,,fetch_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/iter-read-1.1.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
 info: syncing channel updates for 1.58.1-x86_64-unknown-linux-gnu
 error: could not create temp file /opt/rust/rustup/tmp/zcf22w8o3gpbw0d1_file: Read-only file system (os error 30)
 CSVROW:parse-patch-bsan,iter-read-1.1.0,,fetch_failed,,,,,,,1,2026-10-05T15:12:37Z,2188474.5"
-parse-patch-bsan,cty-0.2.2,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/cty-0.2.2/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,cty-0.2.2,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/cty-0.2.2/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `cty` (manifest) generated 1 warning
 warning: unexpected `cfg` condition value: `asmjs`
   --> src/lib.rs:21:11
@@ -3946,7 +3946,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,document-features-0.2.12,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/document-features-0.2.12/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,document-features-0.2.12,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/document-features-0.2.12/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188475-2/target/bsan/debug/build/document-features/4f96b74c4f954c05/out/document_features-4f96b74c4f954c05)
 
 running 19 tests
@@ -4003,7 +4003,7 @@ error: doctest failed, to rerun pass `--doc`
 Caused by:
   process didn't exit successfully: `/opt/rust/cargo/bin/cargo-bsan --edition=2018 --crate-type proc-macro --color auto --crate-name document_features --test lib.rs --test-run-directory /work --extern document_features=/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188475-2/target/bsan/debug/build/document-features/7974ce0467f5296b/out/libdocument_features-7974ce0467f5296b.so --extern litrs=/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188475-2/target/bsan/debug/build/litrs/2d1ab9e8c942c16b/out/liblitrs-2d1ab9e8c942c16b.rlib --extern litrs=/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188475-2/target/bsan/debug/build/litrs/2d1ab9e8c942c16b/out/liblitrs-2d1ab9e8c942c16b.rmeta --extern proc_macro -C embed-bitcode=no --cfg 'feature=""default""' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values(""default"", ""self-test""))' --error-format human` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,ittapi-sys-0.5.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/ittapi-sys-0.5.0/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.12s
+parse-patch-bsan,ittapi-sys-0.5.0,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/ittapi-sys-0.5.0/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.12s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188475-5/target/bsan/x86_64-unknown-linux-gnu/debug/build/ittapi-sys/2adc29933e9f8505/out/ittapi_sys-2adc29933e9f8505)
 
 running 17 tests
@@ -4039,7 +4039,7 @@ error: test failed, to rerun pass `--test bindgen-up-to-date`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188475-5/target/bsan/x86_64-unknown-linux-gnu/debug/build/ittapi-sys/e051c85f454bfee9/out/bindgen_up_to_date-e051c85f454bfee9` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,unic-common-0.9.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/unic-common-0.9.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+parse-patch-bsan,unic-common-0.9.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/unic-common-0.9.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188476-11/target/bsan/x86_64-unknown-linux-gnu/debug/build/unic-common/a15e6595f3ccaa39/out/unic_common-a15e6595f3ccaa39)
 
 running 0 tests
@@ -4052,7 +4052,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,web-time-1.1.0,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/web-time-1.1.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,web-time-1.1.0,,build_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/web-time-1.1.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
     Updating crates.io index
  Downloading crates ...
@@ -4102,12 +4102,12 @@ error: can't find example `benchmark` at path `/work/benches/benchmark.rs`
  --> /work/Cargo.toml
 error: could not compile due to 1 previous target resolution error
 CSVROW:parse-patch-bsan,web-time-1.1.0,,build_failed,,,,,,,1,2026-10-05T15:25:52Z,2188476.12"
-parse-patch-bsan,convert_case-0.12.0,,fetch_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/convert_case-0.12.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,convert_case-0.12.0,,fetch_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/convert_case-0.12.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
 info: syncing channel updates for 1.97.1-x86_64-unknown-linux-gnu
 error: could not create temp file /opt/rust/rustup/tmp/_xzrcnoqp33dl45j_file: Read-only file system (os error 30)
 CSVROW:parse-patch-bsan,convert_case-0.12.0,,fetch_failed,,,,,,,1,2026-10-05T15:25:41Z,2188476.1"
-parse-patch-bsan,five8_core-1.0.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/five8_core-1.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.repository`
+parse-patch-bsan,five8_core-1.0.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/five8_core-1.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:24:12
    |
 24 | homepage = ""https://github.com/kevinheavey/five8""
@@ -4132,7 +4132,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,weezl-0.2.1,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/weezl-0.2.1/hyperfine-parse-patch-bsan.log,true,true,,"  Downloaded serde_derive v1.0.228
+parse-patch-bsan,weezl-0.2.1,,build_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/weezl-0.2.1/hyperfine-parse-patch-bsan.log,true,true,,"  Downloaded serde_derive v1.0.228
   Downloaded cfg-if v1.0.0
   Downloaded winapi-util v0.1.5
   Downloaded serde_core v1.0.228
@@ -4332,8 +4332,8 @@ error: couldn't read `/work/benches/binary-8-msb.lzw`: No such file or directory
 error: could not compile `weezl` (lib test) due to 1 previous error
 warning: build failed, waiting for other jobs to finish...
 CSVROW:parse-patch-bsan,weezl-0.2.1,,build_failed,,,,,,,1,2026-10-05T15:28:30Z,2188477.12"
-parse-patch-bsan,mirai-annotations-1.12.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/mirai-annotations-1.12.0/hyperfine-parse-patch-bsan.log,true,true,0,    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
-parse-patch-bsan,parity-wasm-0.45.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/parity-wasm-0.45.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 139 earlier line(s) omitted ...]
+parse-patch-bsan,mirai-annotations-1.12.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/mirai-annotations-1.12.0/hyperfine-parse-patch-bsan.log,true,true,0,    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+parse-patch-bsan,parity-wasm-0.45.0,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/parity-wasm-0.45.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 139 earlier line(s) omitted ...]
 test elements::name_section::tests::serialize_function_names ... ok
 test elements::name_section::tests::serialize_local_names ... ok
 test elements::name_section::tests::serialize_module_name ... ok
@@ -4534,7 +4534,7 @@ failures:
 test result: FAILED. 80 passed; 23 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.58s
 
 error: test failed, to rerun pass `--lib`"
-parse-patch-bsan,rustls-platform-verifier-android-0.2.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/rustls-platform-verifier-android-0.2.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.46s
+parse-patch-bsan,rustls-platform-verifier-android-0.2.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/rustls-platform-verifier-android-0.2.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.46s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188477-9/target/bsan/x86_64-unknown-linux-gnu/debug/build/rustls-platform-verifier-android/757f0c5fb2762812/out/rustls_platform_verifier_android-757f0c5fb2762812)
 
 running 0 tests
@@ -4547,7 +4547,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,id-arena-2.3.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/id-arena-2.3.0/hyperfine-parse-patch-bsan.log,true,true,101,"warning: hiding a lifetime that's elided elsewhere is confusing
+parse-patch-bsan,id-arena-2.3.0,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/id-arena-2.3.0/hyperfine-parse-patch-bsan.log,true,true,101,"warning: hiding a lifetime that's elided elsewhere is confusing
    --> src/lib.rs:474:17
     |
 474 |     pub fn iter(&self) -> Iter<T, A> {
@@ -4607,7 +4607,7 @@ failures:
 test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
 
 error: test failed, to rerun pass `--test readme_up_to_date`"
-parse-patch-bsan,strum-0.28.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/strum-0.28.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 153 earlier line(s) omitted ...]
+parse-patch-bsan,strum-0.28.0,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/strum-0.28.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 153 earlier line(s) omitted ...]
     |
     = help: items from traits can only be used if the trait is implemented and in scope
     = note: the following trait defines an item `get_bool`, perhaps you need to implement it:
@@ -4808,11 +4808,11 @@ failures:
 test result: FAILED. 0 passed; 4 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.18s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,unicode-bom-2.0.3,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/unicode-bom-2.0.3/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,unicode-bom-2.0.3,,build_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/unicode-bom-2.0.3/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
 failed to find `clang-23`
 CSVROW:parse-patch-bsan,unicode-bom-2.0.3,,build_failed,,,,,,,1,2026-10-05T15:27:15Z,2188478.11"
-parse-patch-bsan,wgpu-core-deps-apple-30.0.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/wgpu-core-deps-apple-30.0.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.06s
+parse-patch-bsan,wgpu-core-deps-apple-30.0.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/wgpu-core-deps-apple-30.0.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.06s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188478-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/wgpu-core-deps-apple/e55866879a183439/out/wgpu_core_deps_apple-e55866879a183439)
 
 running 0 tests
@@ -4825,12 +4825,12 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,float_next_after-2.0.0,,fetch_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/float_next_after-2.0.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,float_next_after-2.0.0,,fetch_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/float_next_after-2.0.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
 info: syncing channel updates for stable-x86_64-unknown-linux-gnu
 error: could not create temp file /opt/rust/rustup/tmp/y1rohff7wdezkj7k_file: Read-only file system (os error 30)
 CSVROW:parse-patch-bsan,float_next_after-2.0.0,,fetch_failed,,,,,,,1,2026-10-05T15:27:14Z,2188478.3"
-parse-patch-bsan,winapi-build-0.1.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/winapi-build-0.1.1/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,winapi-build-0.1.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/winapi-build-0.1.1/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `winapi-build` (manifest) generated 1 warning
     Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188479-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/winapi-build/6741f58816d87361/out/build-6741f58816d87361)
@@ -4845,7 +4845,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,jiff-tzdb-platform-0.1.3,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/jiff-tzdb-platform-0.1.3/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,jiff-tzdb-platform-0.1.3,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/jiff-tzdb-platform-0.1.3/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188479-5/target/bsan/x86_64-unknown-linux-gnu/debug/build/jiff-tzdb-platform/65d51aba410b1407/out/jiff_tzdb_platform-65d51aba410b1407)
 
 running 0 tests
@@ -4858,7 +4858,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,block-modes-0.9.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/block-modes-0.9.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,block-modes-0.9.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/block-modes-0.9.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188480-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/block-modes/b422f3939bb3e4c8/out/block_modes-b422f3939bb3e4c8)
 
 running 0 tests
@@ -4871,7 +4871,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,winapi-i686-pc-windows-gnu-0.4.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/winapi-i686-pc-windows-gnu-0.4.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,winapi-i686-pc-windows-gnu-0.4.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/winapi-i686-pc-windows-gnu-0.4.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `winapi-i686-pc-windows-gnu` (manifest) generated 1 warning
     Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188480-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/winapi-i686-pc-windows-gnu/868b19d5415e126d/out/winapi_i686_pc_windows_gnu-868b19d5415e126d)
@@ -4886,7 +4886,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,frunk_core-0.5.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/frunk_core-0.5.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 899 earlier line(s) omitted ...]
+parse-patch-bsan,frunk_core-0.5.0,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/frunk_core-0.5.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 899 earlier line(s) omitted ...]
    --> src/labelled.rs:895:1
     |
 895 | pub trait Transmogrifier<Target, TransmogrifyIndexIndices> {
@@ -5087,7 +5087,7 @@ failures:
 test result: FAILED. 71 passed; 16 failed; 2 ignored; 0 measured; 0 filtered out; finished in 1.54s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,block-sys-0.2.1,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/block-sys-0.2.1/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,block-sys-0.2.1,,build_failed,linker,/scratch/group/p.cis260229.000/datasets/top_1_percent/block-sys-0.2.1/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
     Updating crates.io index
  Downloading crates ...
@@ -5126,7 +5126,7 @@ error: linking with `/opt/rust/rustup/toolchains/bsan/bin/clang-23` failed: exit
 warning: `block-sys` (lib test) generated 2 warnings (2 duplicates)
 error: could not compile `block-sys` (lib test) due to 1 previous error; 2 warnings emitted
 CSVROW:parse-patch-bsan,block-sys-0.2.1,,build_failed,,,,,,,1,2026-10-05T15:39:23Z,2188481.0"
-parse-patch-bsan,winapi-x86_64-pc-windows-gnu-0.4.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/winapi-x86_64-pc-windows-gnu-0.4.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,winapi-x86_64-pc-windows-gnu-0.4.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/winapi-x86_64-pc-windows-gnu-0.4.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `winapi-x86_64-pc-windows-gnu` (manifest) generated 1 warning
     Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188481-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/winapi-x86_64-pc-windows-gnu/d932e4d919a01775/out/winapi_x86_64_pc_windows_gnu-d932e4d919a01775)
@@ -5141,7 +5141,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,cranelift-isle-0.136.2,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/cranelift-isle-0.136.2/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+parse-patch-bsan,cranelift-isle-0.136.2,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/cranelift-isle-0.136.2/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188481-1/target/bsan/x86_64-unknown-linux-gnu/debug/build/cranelift-isle/16013ed140dbaa81/out/cranelift_isle-16013ed140dbaa81)
 
 running 11 tests
@@ -5244,7 +5244,7 @@ error: test failed, to rerun pass `--test run_tests`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188481-1/target/bsan/x86_64-unknown-linux-gnu/debug/build/cranelift-isle/3d425c4d2b1d4cdb/out/run_tests-3d425c4d2b1d4cdb` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,dtor-proc-macro-0.0.13,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/dtor-proc-macro-0.0.13/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,dtor-proc-macro-0.0.13,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/dtor-proc-macro-0.0.13/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188481-2/target/bsan/debug/build/dtor-proc-macro/f037ffbc648a1756/out/dtor_proc_macro-f037ffbc648a1756)
 
 running 0 tests
@@ -5257,7 +5257,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,jsonrpsee-wasm-client-0.26.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/jsonrpsee-wasm-client-0.26.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
+parse-patch-bsan,jsonrpsee-wasm-client-0.26.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/jsonrpsee-wasm-client-0.26.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188481-5/target/bsan/x86_64-unknown-linux-gnu/debug/build/jsonrpsee-wasm-client/aca93721a242c9e4/out/jsonrpsee_wasm_client-aca93721a242c9e4)
 
 running 0 tests
@@ -5270,7 +5270,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,password-hash-0.6.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/password-hash-0.6.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
+parse-patch-bsan,password-hash-0.6.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/password-hash-0.6.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188481-7/target/bsan/x86_64-unknown-linux-gnu/debug/build/password-hash/20409055527b1623/out/password_hash-20409055527b1623)
 
 running 0 tests
@@ -5289,7 +5289,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,psl-2.1.239,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/psl-2.1.239/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.15s
+parse-patch-bsan,psl-2.1.239,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/psl-2.1.239/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.15s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188481-8/target/bsan/x86_64-unknown-linux-gnu/debug/build/psl/68f38d2a7c3bc1c7/out/psl-68f38d2a7c3bc1c7)
 
 running 0 tests
@@ -5302,7 +5302,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,unicode-id-0.3.7,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/unicode-id-0.3.7/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,unicode-id-0.3.7,,build_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/unicode-id-0.3.7/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
     Updating crates.io index
  Downloading crates ...
@@ -5339,7 +5339,7 @@ LIMIT=[timeout -k 30 1h ]
   Downloaded syn v2.0.118
 failed to find `clang-23`
 CSVROW:parse-patch-bsan,unicode-id-0.3.7,,build_failed,,,,,,,1,2026-10-05T15:41:23Z,2188482.11"
-parse-patch-bsan,windows_aarch64_gnullvm-0.53.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_aarch64_gnullvm-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,windows_aarch64_gnullvm-0.53.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_aarch64_gnullvm-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188482-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/windows_aarch64_gnullvm/baf0651ddae54cd0/out/windows_aarch64_gnullvm-baf0651ddae54cd0)
 
 running 0 tests
@@ -5352,7 +5352,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,icu_locid-2.0.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/icu_locid-2.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,icu_locid-2.0.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/icu_locid-2.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188482-4/target/bsan/x86_64-unknown-linux-gnu/debug/build/icu_locid/76bba584c7452d35/out/icu_locid-76bba584c7452d35)
 
 running 0 tests
@@ -5365,7 +5365,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,paste-1.0.15,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/paste-1.0.15/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,paste-1.0.15,,build_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/paste-1.0.15/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
     Updating crates.io index
  Downloading crates ...
@@ -5435,7 +5435,7 @@ error: expected item, found `@`
 error: could not compile `paste-test-suite` (lib) due to 1 previous error
 warning: build failed, waiting for other jobs to finish...
 CSVROW:parse-patch-bsan,paste-1.0.15,,build_failed,,,,,,,1,2026-10-05T15:41:48Z,2188482.7"
-parse-patch-bsan,always-assert-0.2.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/always-assert-0.2.0/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,always-assert-0.2.0,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/always-assert-0.2.0/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188455-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/always-assert/4d553a3a98dbe16f/out/always_assert-4d553a3a98dbe16f)
 
 running 0 tests
@@ -5472,7 +5472,7 @@ failures:
 test result: FAILED. 9 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
 
 error: test failed, to rerun pass `--test it`"
-parse-patch-bsan,windows_aarch64_msvc-0.53.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_aarch64_msvc-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+parse-patch-bsan,windows_aarch64_msvc-0.53.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_aarch64_msvc-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188483-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/windows_aarch64_msvc/8e756f687a4d5546/out/windows_aarch64_msvc-8e756f687a4d5546)
 
 running 0 tests
@@ -5485,7 +5485,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,time-core-0.1.9,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/time-core-0.1.9/hyperfine-parse-patch-bsan.log,true,true,101,"warning: Cargo.toml: `lints.clippy.alloc-instead-of-core` is deprecated in favor of `lints.clippy.alloc_instead_of_core` and will not work in a future edition
+parse-patch-bsan,time-core-0.1.9,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/time-core-0.1.9/hyperfine-parse-patch-bsan.log,true,true,101,"warning: Cargo.toml: `lints.clippy.alloc-instead-of-core` is deprecated in favor of `lints.clippy.alloc_instead_of_core` and will not work in a future edition
 warning: Cargo.toml: `lints.clippy.as-underscore` is deprecated in favor of `lints.clippy.as_underscore` and will not work in a future edition
 warning: Cargo.toml: `lints.clippy.dbg-macro` is deprecated in favor of `lints.clippy.dbg_macro` and will not work in a future edition
 warning: Cargo.toml: `lints.clippy.decimal-literal-representation` is deprecated in favor of `lints.clippy.decimal_literal_representation` and will not work in a future edition
@@ -5619,7 +5619,7 @@ test result: FAILED. 1 passed; 3 failed; 0 ignored; 0 measured; 0 filtered out; 
 
 all doctests ran in 0.82s; merged doctests compilation took 0.44s
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,dyn-stack-macros-0.1.3,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/dyn-stack-macros-0.1.3/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,dyn-stack-macros-0.1.3,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/dyn-stack-macros-0.1.3/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188483-2/target/bsan/debug/build/dyn-stack-macros/fa2d8159cb8f1718/out/dyn_stack_macros-fa2d8159cb8f1718)
 
 running 0 tests
@@ -5632,7 +5632,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,windows_x86_64_gnullvm-0.53.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_x86_64_gnullvm-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
+parse-patch-bsan,windows_x86_64_gnullvm-0.53.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_x86_64_gnullvm-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188455-13/target/bsan/x86_64-unknown-linux-gnu/debug/build/windows_x86_64_gnullvm/031a9666d94bf23b/out/windows_x86_64_gnullvm-031a9666d94bf23b)
 
 running 0 tests
@@ -5645,7 +5645,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,icu_locid_transform-2.0.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/icu_locid_transform-2.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,icu_locid_transform-2.0.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/icu_locid_transform-2.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188483-4/target/bsan/x86_64-unknown-linux-gnu/debug/build/icu_locid_transform/1f6cce1c59023de8/out/icu_locid_transform-1f6cce1c59023de8)
 
 running 0 tests
@@ -5658,7 +5658,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,khronos_api-3.1.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/khronos_api-3.1.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,khronos_api-3.1.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/khronos_api-3.1.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:19:12
    |
@@ -5684,7 +5684,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,paste-impl-0.1.18,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/paste-impl-0.1.18/hyperfine-parse-patch-bsan.log,true,true,0,"warning: panic message contains braces
+parse-patch-bsan,paste-impl-0.1.18,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/paste-impl-0.1.18/hyperfine-parse-patch-bsan.log,true,true,0,"warning: panic message contains braces
   --> src/enum_hack.rs:66:28
    |
 66 |         _ => unreachable!(""{...}""),
@@ -5726,7 +5726,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,pulp-wasm-simd-flag-0.1.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/pulp-wasm-simd-flag-0.1.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,pulp-wasm-simd-flag-0.1.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/pulp-wasm-simd-flag-0.1.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188483-8/target/bsan/x86_64-unknown-linux-gnu/debug/build/pulp-wasm-simd-flag/9dda02f2457439eb/out/pulp_wasm_simd_flag-9dda02f2457439eb)
 
 running 0 tests
@@ -5739,7 +5739,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,windows_i686_gnu-0.53.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_i686_gnu-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,windows_i686_gnu-0.53.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_i686_gnu-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188484-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/windows_i686_gnu/21ce74404e568352/out/windows_i686_gnu-21ce74404e568352)
 
 running 0 tests
@@ -5752,12 +5752,12 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,function_name-0.3.0,,fetch_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/function_name-0.3.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,function_name-0.3.0,,fetch_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/function_name-0.3.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
 info: syncing channel updates for 1.45.0-x86_64-unknown-linux-gnu
 error: could not create temp file /opt/rust/rustup/tmp/hb6o_p_6ir_59gcb_file: Read-only file system (os error 30)
 CSVROW:parse-patch-bsan,function_name-0.3.0,,fetch_failed,,,,,,,1,2026-10-05T15:42:18Z,2188484.3"
-parse-patch-bsan,built-0.8.1,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/built-0.8.1/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.13s
+parse-patch-bsan,built-0.8.1,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/built-0.8.1/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.13s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188485-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/built/e707a7d40db6ecac/out/built-e707a7d40db6ecac)
 
 running 1 test
@@ -5807,7 +5807,7 @@ failures:
 test result: FAILED. 0 passed; 4 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.11s
 
 error: test failed, to rerun pass `--test testbox_tests`"
-parse-patch-bsan,task-local-extensions-0.1.4,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/task-local-extensions-0.1.4/hyperfine-parse-patch-bsan.log,true,true,101,"warning: unnecessary parentheses around type
+parse-patch-bsan,task-local-extensions-0.1.4,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/task-local-extensions-0.1.4/hyperfine-parse-patch-bsan.log,true,true,101,"warning: unnecessary parentheses around type
   --> src/extensions.rs:66:45
    |
 66 |             .and_then(|boxed| (&**boxed as &(dyn Any)).downcast_ref())
@@ -5930,7 +5930,7 @@ failures:
 test result: FAILED. 1 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.37s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,windows_i686_gnullvm-0.53.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_i686_gnullvm-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,windows_i686_gnullvm-0.53.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_i686_gnullvm-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188485-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/windows_i686_gnullvm/a1ab52f460658c1b/out/windows_i686_gnullvm-a1ab52f460658c1b)
 
 running 0 tests
@@ -5943,7 +5943,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,function_name-proc-macro-0.3.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/function_name-proc-macro-0.3.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,function_name-proc-macro-0.3.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/function_name-proc-macro-0.3.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188485-3/target/bsan/debug/build/function_name-proc-macro/7e1272cf5c983c05/out/function_name_proc_macro-7e1272cf5c983c05)
 
 running 0 tests
@@ -5956,7 +5956,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,python3-dll-a-0.2.15,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/python3-dll-a-0.2.15/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+parse-patch-bsan,python3-dll-a-0.2.15,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/python3-dll-a-0.2.15/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188485-8/target/bsan/x86_64-unknown-linux-gnu/debug/build/python3-dll-a/b92065c58904a56e/out/python3_dll_a-b92065c58904a56e)
 
 running 5 tests
@@ -6005,7 +6005,7 @@ failures:
 test result: FAILED. 0 passed; 5 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.41s
 
 error: test failed, to rerun pass `--lib`"
-parse-patch-bsan,windows_i686_msvc-0.53.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_i686_msvc-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,windows_i686_msvc-0.53.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_i686_msvc-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188486-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/windows_i686_msvc/067639a200b6334e/out/windows_i686_msvc-067639a200b6334e)
 
 running 0 tests
@@ -6018,7 +6018,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,elf-0.8.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/elf-0.8.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 374 earlier line(s) omitted ...]
+parse-patch-bsan,elf-0.8.0,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/elf-0.8.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 374 earlier line(s) omitted ...]
 
 ---- elf_bytes::interface_tests::symbol_version_table stdout ----
 
@@ -6219,7 +6219,7 @@ failures:
 test result: FAILED. 189 passed; 53 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.48s
 
 error: test failed, to rerun pass `--lib`"
-parse-patch-bsan,funty-2.0.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/funty-2.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"[... 653 earlier line(s) omitted ...]
+parse-patch-bsan,funty-2.0.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/funty-2.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"[... 653 earlier line(s) omitted ...]
      |
 1388 | macro_rules! impl_for {
 ...
@@ -6420,7 +6420,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,levenshtein-1.0.5,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/levenshtein-1.0.5/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,levenshtein-1.0.5,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/levenshtein-1.0.5/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `levenshtein` (manifest) generated 1 warning
     Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188486-5/target/bsan/x86_64-unknown-linux-gnu/debug/build/levenshtein/841890c2509e70ed/out/levenshtein-841890c2509e70ed)
@@ -6435,7 +6435,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,qrcodegen-1.8.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/qrcodegen-1.8.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 10 earlier line(s) omitted ...]
+parse-patch-bsan,qrcodegen-1.8.0,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/qrcodegen-1.8.0/hyperfine-parse-patch-bsan.log,true,true,101,"[... 10 earlier line(s) omitted ...]
     = note: `#[warn(unused_parens)]` (part of `#[warn(unused)]`) on by default
 help: remove these parentheses
     |
@@ -6636,7 +6636,7 @@ failures:
 test result: FAILED. 1 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.71s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,smawk-0.3.3,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/smawk-0.3.3/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.43s
+parse-patch-bsan,smawk-0.3.3,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/smawk-0.3.3/hyperfine-parse-patch-bsan.log,true,true,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.43s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188456-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/smawk/c0538f7d33e2d9f2/out/smawk-c0538f7d33e2d9f2)
 
 running 19 tests
@@ -6690,7 +6690,7 @@ error: test failed, to rerun pass `--test version-numbers`
 Caused by:
   process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188456-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/smawk/0ff1659761bf4b1c/out/version_numbers-0ff1659761bf4b1c` (exit status: 1)
 note: test exited abnormally; to see the full output pass --no-capture to the harness."
-parse-patch-bsan,unidecode-0.3.0,__all__,timeout,/scratch/group/p.cis260229.000/datasets/top_1_percent/unidecode-0.3.0/hyperfine-parse-patch-bsan.log,true,true,124,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,unidecode-0.3.0,__all__,timeout,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/unidecode-0.3.0/hyperfine-parse-patch-bsan.log,true,true,124,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `package.homepage` is redundant with `package.repository`
  --> Cargo.toml:7:12
   |
@@ -6715,7 +6715,7 @@ running 3 tests
 test test_unidecode_char ... ok
 test test_conversion ... ok
 test test_all_ascii has been running for over 60 seconds"
-parse-patch-bsan,windows_x86_64_msvc-0.53.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_x86_64_msvc-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.12s
+parse-patch-bsan,windows_x86_64_msvc-0.53.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/windows_x86_64_msvc-0.53.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.12s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188456-13/target/bsan/x86_64-unknown-linux-gnu/debug/build/windows_x86_64_msvc/0a5124d67204fd4a/out/windows_x86_64_msvc-0a5124d67204fd4a)
 
 running 0 tests
@@ -6728,7 +6728,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,census-0.4.2,__all__,timeout,/scratch/group/p.cis260229.000/datasets/top_1_percent/census-0.4.2/hyperfine-parse-patch-bsan.log,true,true,124,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,census-0.4.2,__all__,timeout,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/census-0.4.2/hyperfine-parse-patch-bsan.log,true,true,124,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:17:12
    |
@@ -6771,7 +6771,7 @@ test tests::test_census_race_condition ... ok
 test tests::test_census_changes_iter_many has been running for over 60 seconds
 test tests::test_census_concurrent_drop has been running for over 60 seconds
 test tests::test_census_changes_iter_many ... ok"
-parse-patch-bsan,cursor-icon-1.2.0,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/cursor-icon-1.2.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,cursor-icon-1.2.0,,build_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/cursor-icon-1.2.0/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
     Updating crates.io index
  Downloading crates ...
@@ -6841,7 +6841,7 @@ For more information about this error, try `rustc --explain E0635`.
 error: could not compile `proc-macro2` (lib) due to 1 previous error
 warning: build failed, waiting for other jobs to finish...
 CSVROW:parse-patch-bsan,cursor-icon-1.2.0,,build_failed,,,,,,,1,2026-10-05T14:08:02Z,2188456.2"
-parse-patch-bsan,encoding_index_tests-0.1.4,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/encoding_index_tests-0.1.4/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+parse-patch-bsan,encoding_index_tests-0.1.4,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/encoding_index_tests-0.1.4/hyperfine-parse-patch-bsan.log,true,true,0,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `encoding_index_tests` (manifest) generated 1 warning
     Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests index_tests.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188456-3/target/bsan/x86_64-unknown-linux-gnu/debug/build/encoding_index_tests/b4c2557da7bb484e/out/encoding_index_tests-b4c2557da7bb484e)
@@ -6856,7 +6856,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,get-size-0.1.4,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/get-size-0.1.4/hyperfine-parse-patch-bsan.log,true,true,," 66 | pub trait GetSize: Sized {
+parse-patch-bsan,get-size-0.1.4,,build_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/get-size-0.1.4/hyperfine-parse-patch-bsan.log,true,true,," 66 | pub trait GetSize: Sized {
     | ^^^^^^^^^^^^^^^^^^^^^^^^
 
 error[E0599]: no method named `get_heap_size` found for enum `TestEnumGenerics<'a, A, B, C>` in the current scope
@@ -7056,7 +7056,7 @@ For more information about this error, try `rustc --explain E0599`.
 error: could not compile `get-size` (lib test) due to 38 previous errors
 warning: build failed, waiting for other jobs to finish...
 CSVROW:parse-patch-bsan,get-size-0.1.4,,build_failed,,,,,,,1,2026-10-05T14:07:33Z,2188456.4"
-parse-patch-bsan,peg-runtime-0.8.6,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/peg-runtime-0.8.6/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.49s
+parse-patch-bsan,peg-runtime-0.8.6,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/peg-runtime-0.8.6/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.49s
      Running unittests lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188456-8/target/bsan/x86_64-unknown-linux-gnu/debug/build/peg-runtime/07c9667bf0eab7f5/out/peg_runtime-07c9667bf0eab7f5)
 
 running 0 tests
@@ -7069,7 +7069,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,android_log-sys-0.3.2,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/android_log-sys-0.3.2/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,android_log-sys-0.3.2,,build_failed,linker,/scratch/group/p.cis260229.000/datasets/top_1_percent/android_log-sys-0.3.2/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
 warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
 warning: `android_log-sys` (manifest) generated 1 warning
@@ -7086,7 +7086,7 @@ error: linking with `/opt/rust/rustup/toolchains/bsan/bin/clang-23` failed: exit
 
 error: could not compile `android_log-sys` (lib test) due to 1 previous error
 CSVROW:parse-patch-bsan,android_log-sys-0.3.2,,build_failed,,,,,,,1,2026-10-05T14:07:42Z,2188457.0"
-parse-patch-bsan,snapbox-macros-1.1.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/snapbox-macros-1.1.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+parse-patch-bsan,snapbox-macros-1.1.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/snapbox-macros-1.1.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188457-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/snapbox-macros/162f8bdc77c18a24/out/snapbox_macros-162f8bdc77c18a24)
 
 running 0 tests
@@ -7099,7 +7099,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,tinyvec_macros-0.1.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/tinyvec_macros-0.1.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,tinyvec_macros-0.1.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/tinyvec_macros-0.1.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188457-11/target/bsan/x86_64-unknown-linux-gnu/debug/build/tinyvec_macros/5a4ed9f772aa2050/out/tinyvec_macros-5a4ed9f772aa2050)
 
 running 0 tests
@@ -7112,7 +7112,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,write16-1.0.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/write16-1.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.documentation`
+parse-patch-bsan,write16-1.0.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/write16-1.0.0/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.documentation`
   --> Cargo.toml:17:12
    |
 17 | homepage = ""https://docs.rs/write16/""
@@ -7145,7 +7145,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,cvss-3.0.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/cvss-3.0.0/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+parse-patch-bsan,cvss-3.0.0,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/cvss-3.0.0/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188457-2/target/bsan/x86_64-unknown-linux-gnu/debug/build/cvss/f7c422f269fdc9d2/out/cvss-f7c422f269fdc9d2)
 
 running 24 tests
@@ -7252,7 +7252,7 @@ failures:
 test result: FAILED. 0 passed; 4 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
 
 error: test failed, to rerun pass `--test redhat-v2`"
-parse-patch-bsan,get-size2-0.11.0,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/get-size2-0.11.0/hyperfine-parse-patch-bsan.log,true,true,,"error[E0599]: no method named `get_heap_size` found for struct `std::sync::RwLock<T>` in the current scope
+parse-patch-bsan,get-size2-0.11.0,,build_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/get-size2-0.11.0/hyperfine-parse-patch-bsan.log,true,true,,"error[E0599]: no method named `get_heap_size` found for struct `std::sync::RwLock<T>` in the current scope
    --> src/tests/mod.rs:726:20
     |
 726 |     assert!(rwlock.get_heap_size() >= 8);
@@ -7452,7 +7452,7 @@ For more information about an error, try `rustc --explain E0432`.
 error: could not compile `get-size2` (lib test) due to 170 previous errors
 warning: build failed, waiting for other jobs to finish...
 CSVROW:parse-patch-bsan,get-size2-0.11.0,,build_failed,,,,,,,1,2026-10-05T14:07:51Z,2188457.4"
-parse-patch-bsan,line-wrap-0.2.0,__all__,timeout,/scratch/group/p.cis260229.000/datasets/top_1_percent/line-wrap-0.2.0/hyperfine-parse-patch-bsan.log,true,true,124,"warning: hiding a lifetime that's elided elsewhere is confusing
+parse-patch-bsan,line-wrap-0.2.0,__all__,timeout,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/line-wrap-0.2.0/hyperfine-parse-patch-bsan.log,true,true,124,"warning: hiding a lifetime that's elided elsewhere is confusing
    --> src/lib.rs:176:23
     |
 176 |     pub fn new(slice: &[u8]) -> Option<SliceLineEnding> {
@@ -7487,7 +7487,7 @@ test tests::line_wrap_length_2_lf_partial_line ... ok
 test tests::line_wrap_random_single_byte has been running for over 60 seconds
 test tests::line_wrap_random_slice has been running for over 60 seconds
 test tests::line_wrap_random_two_bytes has been running for over 60 seconds"
-parse-patch-bsan,android-tzdata-0.1.1,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/android-tzdata-0.1.1/hyperfine-parse-patch-bsan.log,true,true,101,"warning: hiding a lifetime that's elided elsewhere is confusing
+parse-patch-bsan,android-tzdata-0.1.1,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/android-tzdata-0.1.1/hyperfine-parse-patch-bsan.log,true,true,101,"warning: hiding a lifetime that's elided elsewhere is confusing
    --> src/tzdata.rs:106:19
     |
 106 |     fn find_entry(&self, name: &str) -> Option<IndexEntry> {
@@ -7525,7 +7525,7 @@ failures:
 test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
 
 error: test failed, to rerun pass `--lib`"
-parse-patch-bsan,snmalloc-sys-0.7.6,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/snmalloc-sys-0.7.6/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
+parse-patch-bsan,snmalloc-sys-0.7.6,,build_failed,linker,/scratch/group/p.cis260229.000/datasets/top_1_percent/snmalloc-sys-0.7.6/hyperfine-parse-patch-bsan.log,true,true,,"RUSTFLAGS=[--cfg=miri --cap-lints=warn]
 LIMIT=[timeout -k 30 1h ]
 warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:32:12
@@ -7666,7 +7666,7 @@ Caused by:
   build script failed, must exit now
   note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 CSVROW:parse-patch-bsan,snmalloc-sys-0.7.6,,build_failed,,,,,,,1,2026-10-05T14:10:41Z,2188458.10"
-parse-patch-bsan,toml_datetime-1.1.1+spec-1.1.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/toml_datetime-1.1.1+spec-1.1.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.51s
+parse-patch-bsan,toml_datetime-1.1.1+spec-1.1.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/toml_datetime-1.1.1+spec-1.1.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.51s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188458-11/target/bsan/x86_64-unknown-linux-gnu/debug/build/toml_datetime/277b627c51295815/out/toml_datetime-277b627c51295815)
 
 running 0 tests
@@ -7679,7 +7679,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,cxxbridge-flags-1.0.202,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/cxxbridge-flags-1.0.202/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.05s
+parse-patch-bsan,cxxbridge-flags-1.0.202,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/cxxbridge-flags-1.0.202/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.05s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188458-2/target/bsan/x86_64-unknown-linux-gnu/debug/build/cxxbridge-flags/210263afc73ba91c/out/cxxbridge_flags-210263afc73ba91c)
 
 running 0 tests
@@ -7692,7 +7692,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,gif-0.14.2,__all__,timeout,/scratch/group/p.cis260229.000/datasets/top_1_percent/gif-0.14.2/hyperfine-parse-patch-bsan.log,true,true,124,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.30s
+parse-patch-bsan,gif-0.14.2,__all__,timeout,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/gif-0.14.2/hyperfine-parse-patch-bsan.log,true,true,124,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.30s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188458-4/target/bsan/x86_64-unknown-linux-gnu/debug/build/gif/ed2bdb8ce2179884/out/gif-ed2bdb8ce2179884)
 
 running 6 tests
@@ -7714,7 +7714,7 @@ test src/lib.rs - (line 170) ... FAILED
 test src/lib.rs - (line 17) ... FAILED
 test src/lib.rs - (line 225) has been running for over 60 seconds
 test src/lib.rs - (line 74) has been running for over 60 seconds"
-parse-patch-bsan,no-std-compat-0.4.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/no-std-compat-0.4.1/hyperfine-parse-patch-bsan.log,true,true,0,"warning: use of deprecated module `core::i128`: all constants in this module replaced by associated constants on the type
+parse-patch-bsan,no-std-compat-0.4.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/no-std-compat-0.4.1/hyperfine-parse-patch-bsan.log,true,true,0,"warning: use of deprecated module `core::i128`: all constants in this module replaced by associated constants on the type
   --> src/generated.rs:72:21
    |
 72 |     pub use __core::i128::*;
@@ -7803,7 +7803,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,solana-atomic-u64-3.0.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/solana-atomic-u64-3.0.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,solana-atomic-u64-3.0.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/solana-atomic-u64-3.0.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188459-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/solana-atomic-u64/0009e3064a430c38/out/solana_atomic_u64-0009e3064a430c38)
 
 running 0 tests
@@ -7816,8 +7816,8 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,gix-trace-0.2.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/gix-trace-0.2.0/hyperfine-parse-patch-bsan.log,true,true,0,    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
-parse-patch-bsan,solana-define-syscall-5.2.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/solana-define-syscall-5.2.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,gix-trace-0.2.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/gix-trace-0.2.0/hyperfine-parse-patch-bsan.log,true,true,0,    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,solana-define-syscall-5.2.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/solana-define-syscall-5.2.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188460-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/solana-define-syscall/b7b1efe216816bda/out/solana_define_syscall-b7b1efe216816bda)
 
 running 0 tests
@@ -7830,7 +7830,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,epaint_default_fonts-0.36.2,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/epaint_default_fonts-0.36.2/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.repository`
+parse-patch-bsan,epaint_default_fonts-0.36.2,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/epaint_default_fonts-0.36.2/hyperfine-parse-patch-bsan.log,true,true,0,"warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:35:12
    |
 35 | homepage = ""https://github.com/emilk/egui/tree/main/crates/epaint_default_fonts""
@@ -7855,7 +7855,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,ihex-3.0.0,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/ihex-3.0.0/hyperfine-parse-patch-bsan.log,true,true,101,"warning: `package.homepage` is redundant with `package.repository`
+parse-patch-bsan,ihex-3.0.0,__all__,test_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/ihex-3.0.0/hyperfine-parse-patch-bsan.log,true,true,101,"warning: `package.homepage` is redundant with `package.repository`
   --> Cargo.toml:19:12
    |
 19 | homepage = ""http://github.com/martinmroz/ihex""
@@ -7924,7 +7924,7 @@ failures:
 test result: FAILED. 23 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.88s
 
 error: test failed, to rerun pass `--test test_reader`"
-parse-patch-bsan,reborrow-0.5.5,__all__,test_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/reborrow-0.5.5/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,reborrow-0.5.5,__all__,test_failed,rustc,/scratch/group/p.cis260229.000/datasets/top_1_percent/reborrow-0.5.5/hyperfine-parse-patch-bsan.log,true,true,101,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188460-9/target/bsan/x86_64-unknown-linux-gnu/debug/build/reborrow/b81e2e1321717ab2/out/reborrow-b81e2e1321717ab2)
 
 running 3 tests
@@ -8040,7 +8040,7 @@ failures:
 test result: FAILED. 4 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.35s
 
 error: doctest failed, to rerun pass `--doc`"
-parse-patch-bsan,argh_shared-0.1.19,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/argh_shared-0.1.19/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,argh_shared-0.1.19,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/argh_shared-0.1.19/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188461-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/argh_shared/93916cf1e5f233a9/out/argh_shared-93916cf1e5f233a9)
 
 running 0 tests
@@ -8053,7 +8053,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,solana-measure-4.3.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/solana-measure-4.3.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,solana-measure-4.3.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/solana-measure-4.3.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188461-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/solana-measure/658071f01b49d31c/out/solana_measure-658071f01b49d31c)
 
 running 0 tests
@@ -8066,7 +8066,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,equator-macro-0.6.0,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/equator-macro-0.6.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,equator-macro-0.6.0,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/equator-macro-0.6.0/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188461-3/target/bsan/debug/build/equator-macro/a545fac90463679d/out/equator_macro-a545fac90463679d)
 
 running 0 tests
@@ -8079,7 +8079,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,glutin_wgl_sys-0.6.1,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/glutin_wgl_sys-0.6.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
+parse-patch-bsan,glutin_wgl_sys-0.6.1,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/glutin_wgl_sys-0.6.1/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188461-4/target/bsan/x86_64-unknown-linux-gnu/debug/build/glutin_wgl_sys/dc33d4a5cf7114a8/out/glutin_wgl_sys-dc33d4a5cf7114a8)
 
 running 0 tests
@@ -8092,7 +8092,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,local-waker-0.1.4,__all__,no_match,/scratch/group/p.cis260229.000/datasets/top_1_percent/local-waker-0.1.4/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+parse-patch-bsan,local-waker-0.1.4,__all__,no_match,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/local-waker-0.1.4/hyperfine-parse-patch-bsan.log,true,true,0,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188461-6/target/bsan/x86_64-unknown-linux-gnu/debug/build/local-waker/2f2735dc1600ce83/out/local_waker-2f2735dc1600ce83)
 
 running 0 tests
@@ -8105,7 +8105,7 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 "
-parse-patch-bsan,regex-lite-0.1.9,,build_failed,/scratch/group/p.cis260229.000/datasets/top_1_percent/regex-lite-0.1.9/hyperfine-parse-patch-bsan.log,true,true,,"   |     --------------------- in this macro invocation
+parse-patch-bsan,regex-lite-0.1.9,,build_failed,other,/scratch/group/p.cis260229.000/datasets/top_1_percent/regex-lite-0.1.9/hyperfine-parse-patch-bsan.log,true,true,,"   |     --------------------- in this macro invocation
    |
    = note: this error originates in the macro `include_bytes` which comes from the expansion of the macro `load` (in Nightly builds, run with -Z macro-backtrace for more info)
 
