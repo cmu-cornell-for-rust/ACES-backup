@@ -26,8 +26,17 @@ is the CSV's build column (the image name). Crate logs are overwritten by each
 run of the same image, so a log from a later run may not hold a given failure;
 such rows get log_found=false / output_found=false instead of being dropped.
 
-Output columns: build,crate,test,status,log_file,log_found,output_found,
-exit_code,output. The CSV goes to stdout (or -o FILE); a summary to stderr.
+error_type classifies the extracted output, first match winning:
+  rustc   error[E<code>]
+  linker  rust-lld
+  oom     SIGKILL
+  gc      ERROR: BorrowSanitizer: garbage collection
+  crash   BorrowSanitizer:DEADLYSIGNAL
+  bsan    error: Undefined Behavior:
+and "other" when none match ("" when no output was found).
+
+Output columns: build,crate,test,status,error_type,log_file,log_found,
+output_found,exit_code,output. The CSV goes to stdout (or -o FILE); a summary to stderr.
 """
 import argparse
 import csv
@@ -79,6 +88,22 @@ def crate_logs(crate, build):
 
 _log_cache = {}
 
+ERROR_TYPES = [
+    ("rustc", re.compile(r"error\[E\d+\]")),
+    ("linker", re.compile(re.escape("rust-lld"))),
+    ("oom", re.compile(re.escape("SIGKILL"))),
+    ("gc", re.compile(re.escape("ERROR: BorrowSanitizer: garbage collection"))),
+    ("crash", re.compile(re.escape("BorrowSanitizer:DEADLYSIGNAL"))),
+    ("bsan", re.compile(re.escape("error: Undefined Behavior:"))),
+]
+
+
+def error_type(text):
+    for name, pat in ERROR_TYPES:
+        if pat.search(text):
+            return name
+    return "other"
+
 
 def read_lines(path):
     if path not in _log_cache:
@@ -117,7 +142,7 @@ def bench_failed_block(lines, crate, test):
 
 out = open(args.output, "w", newline="") if args.output else sys.stdout
 w = csv.writer(out)
-w.writerow(["build", "crate", "test", "status", "log_file", "log_found",
+w.writerow(["build", "crate", "test", "status", "error_type", "log_file", "log_found",
             "output_found", "exit_code", "output"])
 
 n_found = 0
@@ -141,9 +166,10 @@ for r in failures:
     if hit:
         n_found += 1
         path, code, text = hit
-        w.writerow([build, crate, test, status, path, "true", "true", code, text])
+        w.writerow([build, crate, test, status, error_type(text), path,
+                    "true", "true", code, text])
     else:
-        w.writerow([build, crate, test, status, logs[0] if logs else "",
+        w.writerow([build, crate, test, status, "", logs[0] if logs else "",
                     "true" if logs else "false", "false", "", ""])
 
 if args.output:
