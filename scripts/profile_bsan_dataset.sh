@@ -19,9 +19,13 @@
 #
 # Options:
 #   --tests FILE      tests CSV (crate,tests,contains_ffi -- as produced by
-#                     list_tests.sh). Default: <outputs>/tests-<dataset>.csv
+#                     list_tests.sh); runs each listed test on its own. Without
+#                     it, every crate dir in the dataset is run WHOLE: one plain
+#                     `cargo bsan test --tests` per crate, no filter, recorded
+#                     as a single row with test=__all__ (see "Whole-crate mode")
 #   --no-ffi          only run crates whose contains_ffi column is exactly
-#                     "false" (both "true" and "scan_failed" are skipped)
+#                     "false" (both "true" and "scan_failed" are skipped).
+#                     Needs --tests, since that column lives in the tests CSV
 #   --ignore FILE     crate names to skip, one per line (#-comments ok)
 #   --only FILE       run ONLY the crates listed in FILE (one per line,
 #                     #-comments ok; --ignore/--no-ffi still apply on top)
@@ -57,6 +61,14 @@
 #                 rows are appended to the per-crate node log under a
 #                 leading `test` column.
 #
+# Whole-crate mode (no --tests): the crate list is every dir under the dataset
+# that holds a Cargo.toml (--ignore/--only still apply), and the per-test loop
+# runs once, without `-- --exact`, so the whole suite runs in one invocation.
+# Its node rows and result row carry test=__all__; status is no_match when the
+# suite ran 0 tests. The same caveat as above applies, more strongly: if
+# several test binaries run instrumented code, only the last one's node log
+# survives.
+#
 # Per-crate node logs land in
 #   <outputs>/bsan_profile/<image>[-<extra-slug>]-<dataset>/<crate>.log.gz
 # Every line is prefixed with the test it came from; what follows depends on
@@ -77,7 +89,8 @@
 #   build,crate,test,status,compile_seconds,run_seconds,timestamp,job_id
 #
 # status: success, test_failed, no_match (--exact filter ran 0 tests -- stale
-# test list), build_failed, fetch_failed. run_seconds is empty for the
+# test list; whole-crate mode: the suite has no tests), build_failed,
+# fetch_failed. run_seconds is empty for the
 # crate-level failure rows.
 #
 # The orchestrator submits the jobs, polls squeue with a progress line, then
@@ -153,7 +166,8 @@ usage() {
     echo "  [walltime]  regular-job walltime, HH or HH:MM (default 2)" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT" >&2
     echo "  [bsan_options] extra BSAN_OPTIONS (colon-separated)" >&2
-    echo "  options: --tests FILE --no-ffi --ignore FILE --only FILE --jobs N" >&2
+    echo "  options: --tests FILE (omit to run each crate's whole suite once)" >&2
+    echo "           --no-ffi (needs --tests) --ignore FILE --only FILE --jobs N" >&2
     echo "           --tasks N --cpus-per-task N --mem-per-task G" >&2
     echo "           --slow-walltime T (for slowlist jobs, default 12)" >&2
     exit 1
@@ -211,7 +225,9 @@ fi
 IMAGE="$(basename "${IMAGE_ARG%.sif}")"
 SIF_ABS="$CONTAINERS_DIR/$IMAGE.sif"
 DATASET_DIR="$DATASETS_ROOT/$DATASET"
-[[ -n "$TESTS_CSV" ]] || TESTS_CSV="$OUTPUTS_DIR/tests-${DATASET}.csv"
+# No --tests = whole-crate mode: one unfiltered `cargo bsan test` per crate.
+WHOLE=0
+[[ -n "$TESTS_CSV" ]] || WHOLE=1
 
 # Full option set: built-in common options plus any extras (colon-separated).
 BSAN_OPTIONS_ALL="$BSAN_COMMON${EXTRA:+:$EXTRA}"
@@ -247,7 +263,11 @@ PROFILE_DIR="$OUTPUTS_DIR/bsan_profile/$STEM"   # per-crate node logs (gzipped)
 # ── Validate ──────────────────────────────────────────────────────────────--
 [[ -f "$SIF_ABS" ]]    || { echo "Error: image not found at $SIF_ABS" >&2; exit 1; }
 [[ -d "$DATASET_DIR" ]] || { echo "Error: dataset dir not found: $DATASET_DIR" >&2; exit 1; }
-[[ -f "$TESTS_CSV" ]]  || { echo "Error: tests CSV not found: $TESTS_CSV (--tests FILE?)" >&2; exit 1; }
+if (( WHOLE )); then
+    (( ! NO_FFI )) || { echo "Error: --no-ffi needs --tests (contains_ffi comes from the tests CSV)." >&2; exit 1; }
+else
+    [[ -f "$TESTS_CSV" ]] || { echo "Error: tests CSV not found: $TESTS_CSV" >&2; exit 1; }
+fi
 command -v sbatch >/dev/null || { echo "Error: sbatch not found (run on a login node)." >&2; exit 1; }
 
 # Load the ignorelist (if any) into a set keyed by crate-dir basename.
@@ -281,12 +301,27 @@ mkdir -p "$PROFILE_DIR"
 # Rows are crate,tests,contains_ffi where tests is ';'-joined and guaranteed
 # comma-free (see list_tests.sh). Duplicate names within a crate (same test in
 # several binaries) are collapsed -- --exact runs it in every binary anyway.
+# In whole-crate mode the "CSV" is synthesized from the dataset dir instead:
+# one row per crate whose test list is the single __all__ sentinel, which
+# inner.sh runs as the unfiltered suite.
+WHOLE_TEST=__all__
 SELECTED=()          # "count<TAB>crate" lines, for size-descending dealing
 declare -A SEEN_CRATE=()
 TOTAL_TESTS=0
 skip_ignored=0; skip_only=0; skip_ffi=0; skip_empty=0
 MISSING=()
 first=1
+crate_rows() {
+    if (( WHOLE )); then
+        local d
+        for d in "$DATASET_DIR"/*/; do
+            d="${d%/}"
+            [[ -f "$d/Cargo.toml" ]] && printf '%s,%s,\n' "$(basename "$d")" "$WHOLE_TEST"
+        done
+    else
+        cat "$TESTS_CSV"
+    fi
+}
 while IFS=, read -r crate tests ffi || [[ -n "$crate" ]]; do
     if (( first )); then first=0; [[ "$crate" == "crate" ]] && continue; fi
     crate="${crate//$'\r'/}"; ffi="${ffi//$'\r'/}"
@@ -303,10 +338,12 @@ while IFS=, read -r crate tests ffi || [[ -n "$crate" ]]; do
     (( cnt > 0 )) || { skip_empty=$((skip_empty+1)); continue; }
     SELECTED+=("$(printf '%d\t%s' "$cnt" "$crate")")
     TOTAL_TESTS=$(( TOTAL_TESTS + cnt ))
-done < "$TESTS_CSV"
+done < <(crate_rows)
 
+SOURCE="$TESTS_CSV"
+(( WHOLE )) && SOURCE="whole-crate runs of $DATASET_DIR"
 if (( ${#SELECTED[@]} == 0 )); then
-    echo "Error: no crates left to run after filtering $TESTS_CSV." >&2
+    echo "Error: no crates left to run after filtering ($SOURCE)." >&2
     exit 1
 fi
 
@@ -378,6 +415,7 @@ fi
     printf 'CPUS_PER_TASK=%q\n'    "$CPUS_PER_TASK"
     printf 'BSAN_OPTIONS_ALL=%q\n' "$BSAN_OPTIONS_ALL"
     printf 'PROFILE_DIR=%q\n'      "$PROFILE_DIR"
+    printf 'WHOLE_TEST=%q\n'       "$WHOLE_TEST"
 } > "$RUNDIR/config.env"
 
 # ── inner.sh: runs INSIDE the container, once per crate, cwd = /work ─────────
@@ -447,7 +485,12 @@ while IFS= read -r t; do
     nodelog=$(mktemp)
     runlog=$(mktemp)
     rstart=$(date +%s%3N)
-    BSAN_NODE_LOG="$nodelog" $RUN -- --exact "$t" > "$runlog" 2>&1; rc=$?
+    # The __all__ sentinel (whole-crate mode) runs the suite unfiltered.
+    if [ "$t" = "$PF_WHOLE_TEST" ]; then
+        BSAN_NODE_LOG="$nodelog" $RUN > "$runlog" 2>&1; rc=$?
+    else
+        BSAN_NODE_LOG="$nodelog" $RUN -- --exact "$t" > "$runlog" 2>&1; rc=$?
+    fi
     rms=$(( $(date +%s%3N) - rstart ))
     # no_match means the --exact filter ran 0 tests everywhere (stale list).
     nrun=$(grep -aoE '^running [0-9]+ test' "$runlog" | grep -oE '[0-9]+' | awk '{s+=$1} END{print s+0}')
@@ -535,6 +578,7 @@ worker() {
             --env PF_TESTFILE="$RUNDIR/tests/$crate.txt" \
             --env PF_SHARD="$shard" \
             --env PF_PROFILE_DIR="$PROFILE_DIR" \
+            --env PF_WHOLE_TEST="$WHOLE_TEST" \
             --env PF_BSAN_OPTIONS="$BSAN_OPTIONS_ALL" \
             --env PF_JOBID="${SLURM_JOB_ID}.${tid}" \
             --env http_proxy="${http_proxy:-}"   --env https_proxy="${https_proxy:-}" \
@@ -553,7 +597,11 @@ JOB_EOF
 # ── Plan summary ─────────────────────────────────────────────────────────────
 echo "Image:    $IMAGE"
 echo "Dataset:  $DATASET_DIR"
-echo "Tests:    $TOTAL_TESTS across ${#SELECTED[@]} crates (from $TESTS_CSV)"
+if (( WHOLE )); then
+    echo "Tests:    whole suite of each of ${#SELECTED[@]} crates (no --tests: one unfiltered run per crate)"
+else
+    echo "Tests:    $TOTAL_TESTS across ${#SELECTED[@]} crates (from $TESTS_CSV)"
+fi
 echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only ffi=$skip_ffi no-tests=$skip_empty missing-dir=${#MISSING[@]}"
 if (( ${#MISSING[@]} > 0 )); then
     printf '  missing from dataset: %s\n' "${MISSING[@]}" | head -20
