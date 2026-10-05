@@ -21,7 +21,9 @@
 #
 # Options:
 #   --tests FILE      tests CSV (crate,tests,contains_ffi -- as produced by
-#                     list_tests.sh). Default: <outputs>/tests-<dataset>.csv.
+#                     list_tests.sh). Default: <outputs>/tests-<dataset>.csv;
+#                     if that does not exist either, every crate dir in the
+#                     dataset is run WHOLE (see "Whole-crate mode" below).
 #                     analysis/missing_tests.py diffs such a CSV against a
 #                     run's hyperfine CSV and writes the tests it never
 #                     reported, to pick up a walltime-killed sweep
@@ -191,6 +193,20 @@
 # Typical use, with the tests CSV that the lists were derived from:
 #
 #   run_bench_dataset.sh --tests scripts/bsan-tests.csv bsan bsan top_500
+#
+# Whole-crate mode
+# ----------------
+# With no --tests and no <outputs>/tests-<dataset>.csv, there is no test list
+# to run test by test, so each crate's suite is benchmarked as ONE command:
+# plain `cargo <tool> test` (no --tests, no `-- --exact` filter -- doctests
+# included). The crate list is every dir under the dataset holding a
+# Cargo.toml; --ignore/--only/--safety and the crate slowlist still apply.
+# --no-ffi needs the tests CSV's contains_ffi column and the test-level
+# slow/medium lists name individual tests, so neither works here (the former
+# is an error, the latter are not loaded). Each crate yields one row with
+# test=__all__, status as above (no_match = the suite ran 0 tests), and no
+# __calibration__ row -- there is no per-test startup constant to subtract.
+# --test-timeout caps the whole suite.
 #
 # Even test deal (--all-slow)
 # ---------------------------
@@ -472,7 +488,15 @@ fi
 IMAGE="$(basename "${IMAGE_ARG%.sif}")"
 SIF_ABS="$CONTAINERS_DIR/$IMAGE.sif"
 DATASET_DIR="$DATASETS_ROOT/$DATASET"
-[[ -n "$TESTS_CSV" ]] || TESTS_CSV="$OUTPUTS_DIR/tests-${DATASET}.csv"
+# No --tests: fall back to the dataset's default tests CSV, and if there is
+# none, to whole-crate mode (one unfiltered `cargo <tool> test` per crate). An
+# explicitly given --tests file must exist -- a typo should not silently turn
+# a per-test sweep into a whole-crate one.
+WHOLE=0
+if [[ -z "$TESTS_CSV" ]]; then
+    TESTS_CSV="$OUTPUTS_DIR/tests-${DATASET}.csv"
+    [[ -f "$TESTS_CSV" ]] || WHOLE=1
+fi
 
 # Full per-mode option set: built-in common options plus any extras.
 MIRIFLAGS_ALL=""
@@ -499,7 +523,16 @@ fi
 # ── Validate ──────────────────────────────────────────────────────────────--
 [[ -f "$SIF_ABS" ]]    || { echo "Error: image not found at $SIF_ABS" >&2; exit 1; }
 [[ -d "$DATASET_DIR" ]] || { echo "Error: dataset dir not found: $DATASET_DIR" >&2; exit 1; }
-[[ -f "$TESTS_CSV" ]]  || { echo "Error: tests CSV not found: $TESTS_CSV (--tests FILE?)" >&2; exit 1; }
+if (( WHOLE )); then
+    echo "Note: no --tests and no $TESTS_CSV -- running each crate's whole suite once."
+    (( ! NO_FFI )) || { echo "Error: --no-ffi needs a tests CSV (contains_ffi lives there)." >&2; exit 1; }
+    [[ -z "$SLOW_TESTS_FILE$MEDIUM_TESTS_FILE" ]] \
+        || { echo "Error: --slow-tests/--medium-tests name individual tests; they need a tests CSV." >&2; exit 1; }
+    TESTS_SRC="whole-crate runs of $DATASET_DIR"
+else
+    [[ -f "$TESTS_CSV" ]] || { echo "Error: tests CSV not found: $TESTS_CSV" >&2; exit 1; }
+    TESTS_SRC="$TESTS_CSV"
+fi
 command -v sbatch >/dev/null || { echo "Error: sbatch not found (run on a login node)." >&2; exit 1; }
 
 # ── Test-level slow/medium lists ─────────────────────────────────────────────
@@ -512,7 +545,7 @@ for v in SLOW_TESTS_FILE MEDIUM_TESTS_FILE; do
         [[ -f "${!v}" ]] || { echo "Error: test list not found: ${!v}" >&2; exit 1; }
     fi
 done
-if (( ALL_SLOW )); then
+if (( ALL_SLOW || WHOLE )); then
     SLOW_TESTS_FILE=""; MEDIUM_TESTS_FILE=""
 else
     [[ -n "$SLOW_TESTS_FILE"   ]] || SLOW_TESTS_FILE="$GROUP/scripts/${MODE}-slow.csv"
@@ -612,6 +645,22 @@ TOTAL_TESTS=0
 skip_ignored=0; skip_only=0; skip_ffi=0; skip_safety=0; skip_empty=0
 MISSING=()
 first=1
+# In whole-crate mode the rows are synthesized from the dataset dir: one per
+# crate, its test list the single __all__ sentinel that inner.sh runs as the
+# unfiltered suite. Everything downstream (filters, slowlist, dealing) then
+# treats it as a crate with one test.
+WHOLE_TEST=__all__
+crate_rows() {
+    if (( WHOLE )); then
+        local d
+        for d in "$DATASET_DIR"/*/; do
+            d="${d%/}"
+            [[ -f "$d/Cargo.toml" ]] && printf '%s,%s,\n' "$(basename "$d")" "$WHOLE_TEST"
+        done
+    else
+        cat "$TESTS_CSV"
+    fi
+}
 while IFS=, read -r crate tests ffi || [[ -n "$crate" ]]; do
     if (( first )); then first=0; [[ "$crate" == "crate" ]] && continue; fi
     crate="${crate//$'\r'/}"; ffi="${ffi//$'\r'/}"
@@ -630,10 +679,10 @@ while IFS=, read -r crate tests ffi || [[ -n "$crate" ]]; do
     (( cnt > 0 )) || { skip_empty=$((skip_empty+1)); continue; }
     SELECTED+=("$(printf '%d\t%s' "$cnt" "$crate")")
     TOTAL_TESTS=$(( TOTAL_TESTS + cnt ))
-done < "$TESTS_CSV"
+done < <(crate_rows)
 
 if (( ${#SELECTED[@]} == 0 )); then
-    echo "Error: no crates left to run after filtering $TESTS_CSV." >&2
+    echo "Error: no crates left to run after filtering ($TESTS_SRC)." >&2
     exit 1
 fi
 
@@ -737,11 +786,11 @@ fi
 if (( NO_TEST_LISTS )); then
     if (( ${#SELECTED[@]} == 0 )); then
         echo "Error: --no-test-lists excludes every test claimed by the slow/medium" >&2
-        echo "lists, and no regular tests are left after filtering $TESTS_CSV." >&2
+        echo "lists, and no regular tests are left after filtering $TESTS_SRC." >&2
         exit 1
     fi
 elif (( ${#SELECTED[@]} + ${#SLOW_TESTS[@]} + ${#MEDIUM_TESTS[@]} == 0 )); then
-    echo "Error: no tests left to run after filtering $TESTS_CSV." >&2
+    echo "Error: no tests left to run after filtering $TESTS_SRC." >&2
     exit 1
 fi
 
@@ -1069,6 +1118,7 @@ fi
     printf 'WARMUP=%q\n'           "$WARMUP"
     printf 'TEST_THREADS=%q\n'     "$TEST_THREADS"
     printf 'TEST_TIMEOUT=%q\n'     "$TEST_TIMEOUT"
+    printf 'WHOLE_TEST=%q\n'       "$WHOLE_TEST"
     printf 'MIRIFLAGS_ALL=%q\n'    "$MIRIFLAGS_ALL"
     printf 'BSAN_OPTIONS_ALL=%q\n' "$BSAN_OPTIONS_ALL"
 } > "$RUNDIR/config.env"
@@ -1136,6 +1186,16 @@ row() {
     echo "CSVROW:$line"
 }
 
+# Whole-crate mode: the test list is just the __all__ sentinel, run as plain
+# `cargo <tool> test` -- $RUN minus --tests. That builds more than --tests does
+# (examples, ...), so the compile below must use the same command, or the rest
+# would build inside the timed runs.
+WHOLE_RUN="${RUN% --tests}"
+WHOLE=0
+grep -qxF "$HF_WHOLE_TEST" "$HF_TESTFILE" && WHOLE=1
+COMPILE="$RUN"
+[ "$WHOLE" -eq 1 ] && COMPILE="$WHOLE_RUN"
+
 cargo clean >/dev/null 2>&1 || true
 if ! cargo fetch; then
     row "" fetch_failed "" "" "" "" "" ""
@@ -1143,7 +1203,7 @@ if ! cargo fetch; then
 fi
 
 cstart=$(date +%s%3N)
-if ! $RUN --no-run; then
+if ! $COMPILE --no-run; then
     row "" build_failed "" "" "" "" "" ""
     exit 1
 fi
@@ -1158,9 +1218,10 @@ compile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
 # status=calibration) rather than subtracted here, so the CSV keeps raw
 # measurements and the analysis decides what to do with them. A crate gets no
 # calibration row if this errors; consumers then fall back to raw sums.
+# Skipped in whole-crate mode: one invocation per crate, nothing to subtract.
 CALIB_FILTER=__hyperfine_calibration_no_such_test__
 hfcsv=$(mktemp)
-if hyperfine --style basic -N --warmup "$HF_WARMUP" --runs "$HF_RUNS" \
+if [ "$WHOLE" -eq 0 ] && hyperfine --style basic -N --warmup "$HF_WARMUP" --runs "$HF_RUNS" \
         --export-csv "$hfcsv" "$RUN --$HARNESS --exact $CALIB_FILTER"; then
     read -r cmean cstddev cmedian cmin cmax <<EOV
 $(tail -n1 "$hfcsv" | awk -F, '{print $(NF-6), $(NF-5), $(NF-4), $(NF-1), $NF}')
@@ -1176,7 +1237,15 @@ while IFS= read -r t; do
     # Untimed pre-run: classifies the test and warms caches. no_match means the
     # --exact filter ran 0 tests everywhere (stale test list).
     runlog=$(mktemp)
-    $LIMIT$RUN --$HARNESS --exact "$t" > "$runlog" 2>&1; rc=$?
+    # The timed command, shared with hyperfine below: the whole suite for the
+    # __all__ sentinel (harness flags only when there are any), else one test.
+    if [ "$t" = "$HF_WHOLE_TEST" ]; then
+        CMD="$WHOLE_RUN${HARNESS:+ --$HARNESS}"
+        $LIMIT$CMD > "$runlog" 2>&1; rc=$?
+    else
+        CMD="$RUN --$HARNESS --exact $t"
+        $LIMIT$RUN --$HARNESS --exact "$t" > "$runlog" 2>&1; rc=$?
+    fi
     nrun=$(grep -aoE '^running [0-9]+ test' "$runlog" | grep -oE '[0-9]+' | awk '{s+=$1} END{print s+0}')
     # A test that fails (or matches nothing) never reaches hyperfine, so this
     # pre-run is the ONLY place its panic / UB report ever exists -- dump it
@@ -1210,7 +1279,7 @@ while IFS= read -r t; do
         # command,mean,stddev,median,user,system,min,max -- counted from the
         # end so a comma in the command column can never shift them.
         if hyperfine --style basic -N --warmup "$HF_WARMUP" --runs "$HF_RUNS" \
-                --export-csv "$hfcsv" "$LIMIT$RUN --$HARNESS --exact $t"; then
+                --export-csv "$hfcsv" "$LIMIT$CMD"; then
             read -r mean stddev median minv maxv <<EOV
 $(tail -n1 "$hfcsv" | awk -F, '{print $(NF-6), $(NF-5), $(NF-4), $(NF-1), $NF}')
 EOV
@@ -1332,6 +1401,7 @@ worker() {
             --env HF_RUNS="$runs" --env HF_WARMUP="$WARMUP" \
             --env HF_TEST_THREADS="$TEST_THREADS" \
             --env HF_TEST_TIMEOUT="$TEST_TIMEOUT" \
+            --env HF_WHOLE_TEST="$WHOLE_TEST" \
             --env HF_MIRIFLAGS="$MIRIFLAGS_ALL" \
             --env HF_BSAN_OPTIONS="$BSAN_OPTIONS_ALL" \
             --env HF_JOBID="${SLURM_JOB_ID}.${tid}" \
@@ -1360,6 +1430,9 @@ elif (( TL_TOTAL > 0 )); then
     # the regular ones -- a crate can have every test claimed by a list.
     echo "Tests:    $TOTAL_TESTS total: $(( TOTAL_TESTS - TL_TOTAL )) across ${#SELECTED[@]} regular crate(s),"
     echo "          plus the test-level lists below (from $TESTS_CSV)"
+elif (( WHOLE )); then
+    WHOLE_CMD_WORD="$MODE "; [[ "$MODE" == rust ]] && WHOLE_CMD_WORD=""
+    echo "Tests:    whole suite of each of ${#SELECTED[@]} crate(s), one plain \`cargo ${WHOLE_CMD_WORD}test\` each"
 else
     echo "Tests:    $TOTAL_TESTS across ${#SELECTED[@]} crates (from $TESTS_CSV)"
 fi
