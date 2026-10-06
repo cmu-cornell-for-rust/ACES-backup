@@ -1,0 +1,1298 @@
+﻿build,crate,test,status,error_type,log_file,log_found,output_found,exit_code,output
+parse-patch-bsan,adler-1.0.2,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/adler-1.0.2/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"warning: Cargo.toml: `package.edition` is unspecified, defaulting to `2015` while the latest is `2024`
+warning: `adler` (manifest) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.27s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188452-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/adler/dae2a2a70902a151/out/adler-dae2a2a70902a151)
+
+running 6 tests
+test tests::wiki ... ok
+test tests::bufread has been running for over 60 seconds
+test tests::mixed has been running for over 60 seconds
+test tests::ones has been running for over 60 seconds
+test tests::resume has been running for over 60 seconds
+test tests::zeroes has been running for over 60 seconds
+ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000).
+  Thread T1 (os_id 0) has not reached a safepoint.
+error: test failed, to rerun pass `--lib`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188452-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/adler/dae2a2a70902a151/out/adler-dae2a2a70902a151` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,levenshtein_automata-0.2.1,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/levenshtein_automata-0.2.1/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"warning: `package.homepage` is redundant with `package.repository`
+  --> Cargo.toml:19:12
+   |
+19 | homepage = ""https://github.com/tantivy-search/levenshtein-automata""
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+25 | repository = ""https://github.com/tantivy-search/levenshtein-automata""
+   |              --------------------------------------------------------
+   |
+   = note: `cargo::redundant_homepage` is set to `warn` by default
+help: consider removing `package.homepage`
+warning: `levenshtein_automata` (manifest) generated 1 warning
+warning: hiding a lifetime that's elided elsewhere is confusing
+  --> src/alphabet.rs:25:17
+   |
+25 |     pub fn iter(&self) -> slice::Iter<(char, FullCharacteristicVector)> {
+   |                 ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+   |                 |
+   |                 the lifetime is elided here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+   |
+25 |     pub fn iter(&self) -> slice::Iter<'_, (char, FullCharacteristicVector)> {
+   |                                       +++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> src/dfa.rs:228:9
+    |
+228 |         &mut self,
+    |         ^^^^^^^^^ the lifetime is elided here
+...
+232 |     ) -> Utf8DFAStateBuilder {
+    |          ^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+232 |     ) -> Utf8DFAStateBuilder<'_> {
+    |                             ++++
+
+warning: `levenshtein_automata` (lib) generated 2 warnings (run `cargo fix --lib -p levenshtein_automata` to apply 2 suggestions)
+warning: `levenshtein_automata` (lib test) generated 2 warnings (2 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.43s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188452-6/target/bsan/x86_64-unknown-linux-gnu/debug/build/levenshtein_automata/4dfd71c301904814/out/levenshtein_automata-4dfd71c301904814)
+
+running 34 tests
+test alphabet::tests::test_full_characteristic ... ok
+test alphabet::tests::test_alphabet ... ok
+test alphabet::tests::test_long_characteristic ... ok
+test tests::test_levenshtein_dfa_slow ... ignored
+test tests::test_levenshtein_nfa_slow ... ignored
+test tests::test_levenshtein_parametric_dfa_slow ... ignored
+test tests::test_damerau ... ok
+test bench::bench_build_parametricdfa_perf_1 ... ok
+test tests::test_levenshtein ... ok
+test bench::bench_build_parametricdfa_damerau_perf_1 ... ok
+test dfa::tests::test_utf8_dfa_builder ... ok
+test tests::test_prefix ... ok
+test bench::bench_build_dfa_distance1_no_transpose has been running for over 60 seconds
+test bench::bench_build_dfa_distance1_with_transpose has been running for over 60 seconds
+test bench::bench_build_dfa_distance2_no_transpose has been running for over 60 seconds
+test bench::bench_build_dfa_distance2_with_transpose has been running for over 60 seconds
+test bench::bench_build_dfa_distance3_no_transpose has been running for over 60 seconds
+test bench::bench_build_dfa_distance3_with_transpose has been running for over 60 seconds
+test bench::bench_build_dfa_distance4_no_transpose has been running for over 60 seconds
+test bench::bench_build_parametricdfa_damerau_perf_2_profile has been running for over 60 seconds
+test bench::bench_build_parametricdfa_perf_2 has been running for over 60 seconds
+test bench::bench_build_parametricdfa_perf_3 has been running for over 60 seconds
+test tests::test_applied_distance has been running for over 60 seconds
+test tests::test_dead_state has been running for over 60 seconds
+test tests::test_issue_3 has been running for over 60 seconds
+test tests::test_jp has been running for over 60 seconds
+test tests::test_jp2 has been running for over 60 seconds
+test tests::test_levenshtein_dfa has been running for over 60 seconds
+test tests::test_levenshtein_parametric_dfa_long has been running for over 60 seconds
+test tests::test_prefix_dfa_1_damerau has been running for over 60 seconds
+test tests::test_prefix_dfa_1_lev has been running for over 60 seconds
+test tests::test_prefix_dfa_2_lev has been running for over 60 seconds
+test tests::test_simple has been running for over 60 seconds
+test tests::test_utf8_simple has been running for over 60 seconds
+test bench::bench_build_parametricdfa_perf_2 ... ok
+ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000).
+  Thread T31 (os_id 0) has not reached a safepoint.
+error: test failed, to rerun pass `--lib`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188452-6/target/bsan/x86_64-unknown-linux-gnu/debug/build/levenshtein_automata/4dfd71c301904814/out/levenshtein_automata-4dfd71c301904814` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,cityhash-rs-1.0.1,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/cityhash-rs-1.0.1/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188462-1/target/bsan/x86_64-unknown-linux-gnu/debug/build/cityhash-rs/19cc058921aebeca/out/cityhash_rs-19cc058921aebeca)
+
+running 3 tests
+test test_102::test_standard has been running for over 60 seconds
+test test_103::test_standard has been running for over 60 seconds
+test test_110::test_standard has been running for over 60 seconds
+ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000).
+  Thread T1 (os_id 0) has not reached a safepoint.
+error: test failed, to rerun pass `--lib`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188462-1/target/bsan/x86_64-unknown-linux-gnu/debug/build/cityhash-rs/19cc058921aebeca/out/cityhash_rs-19cc058921aebeca` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,num-integer-0.1.47,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/num-integer-0.1.47/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"[... 1990 earlier line(s) omitted ...]
+test test_integer_u64::test_even ... ok
+test test_integer_u64::test_gcd ... ok
+test test_integer_u64::test_lcm ... ok
+test test_integer_u64::test_is_multiple_of ... ok
+test test_integer_u64::test_odd ... ok
+test test_integer_u8::test_div_mod_floor ... ok
+test test_integer_u8::test_even ... ok
+test test_integer_u8::test_gcd ... ok
+test test_integer_i16::test_gcd_cmp_with_euclidean ... ok
+test test_integer_u8::test_is_multiple_of ... ok
+test test_integer_u8::test_lcm ... ok
+test test_integer_i32::test_gcd_cmp_with_euclidean ... ok
+test test_integer_u8::test_odd ... ok
+test test_integer_usize::test_div_mod_floor ... ok
+test test_integer_usize::test_even ... ok
+test test_integer_usize::test_gcd ... ok
+test test_integer_i8::test_gcd_cmp_with_euclidean ... ok
+test test_integer_usize::test_is_multiple_of ... ok
+test test_integer_usize::test_lcm ... ok
+test test_integer_usize::test_odd ... ok
+test test_integer_isize::test_gcd_cmp_with_euclidean ... ok
+test test_lcm_overflow ... ok
+test test_multinomial ... ok
+test test_iter_binomial ... ok
+test test_integer_u16::test_gcd_cmp_with_euclidean ... ok
+test test_integer_u32::test_gcd_cmp_with_euclidean ... ok
+test test_integer_u8::test_gcd_cmp_with_euclidean ... ok
+test test_integer_i64::test_gcd_cmp_with_euclidean ... ok
+test test_integer_u128::test_gcd_lcm ... ok
+test test_integer_u64::test_gcd_cmp_with_euclidean ... ok
+test test_integer_u16::test_gcd_lcm ... ok
+test test_integer_u32::test_gcd_lcm ... ok
+test test_integer_u64::test_gcd_lcm ... ok
+test test_integer_u8::test_gcd_lcm ... ok
+test test_integer_i128::test_gcd_cmp_with_euclidean ... ok
+test test_integer_u128::test_gcd_cmp_with_euclidean ... ok
+test test_integer_usize::test_gcd_cmp_with_euclidean ... ok
+test test_integer_usize::test_gcd_lcm ... ok
+test test_integer_i128::test_extended_gcd_lcm has been running for over 60 seconds
+test test_integer_i128::test_gcd_lcm has been running for over 60 seconds
+test test_integer_i16::test_extended_gcd_lcm has been running for over 60 seconds
+test test_integer_i16::test_gcd_lcm has been running for over 60 seconds
+test test_integer_i32::test_extended_gcd_lcm has been running for over 60 seconds
+test test_integer_i32::test_gcd_lcm has been running for over 60 seconds
+test test_integer_i64::test_extended_gcd_lcm has been running for over 60 seconds
+test test_integer_i64::test_gcd_lcm has been running for over 60 seconds
+test test_integer_i8::test_extended_gcd_lcm has been running for over 60 seconds
+test test_integer_i8::test_gcd_lcm has been running for over 60 seconds
+test test_integer_isize::test_extended_gcd_lcm has been running for over 60 seconds
+test test_integer_isize::test_gcd_lcm has been running for over 60 seconds
+test test_integer_i32::test_gcd_lcm ... ok
+test test_integer_i128::test_gcd_lcm ... ok
+test test_integer_i64::test_gcd_lcm ... ok
+test test_integer_i16::test_gcd_lcm ... ok
+test test_integer_i8::test_gcd_lcm ... ok
+test test_integer_isize::test_gcd_lcm ... ok
+test test_integer_i128::test_extended_gcd_lcm ... ok
+test test_integer_i32::test_extended_gcd_lcm ... ok
+test test_integer_i8::test_extended_gcd_lcm ... ok
+test test_integer_isize::test_extended_gcd_lcm ... ok
+test test_integer_i64::test_extended_gcd_lcm ... ok
+test test_integer_i16::test_extended_gcd_lcm ... ok
+
+test result: ok. 136 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 274.57s
+
+     Running tests/average.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188462-7/target/bsan/x86_64-unknown-linux-gnu/debug/build/num-integer/58028fa7e9f73a7b/out/average-58028fa7e9f73a7b)
+
+running 48 tests
+test i128::ceil::different_sign ... ok
+test i128::ceil::same_sign ... ok
+test i128::floor::different_sign ... ok
+test i128::floor::same_sign ... ok
+test i16::ceil::different_sign ... ok
+test i16::ceil::same_sign ... ok
+test i16::floor::different_sign ... ok
+test i16::floor::same_sign ... ok
+test i32::ceil::different_sign ... ok
+test i32::ceil::same_sign ... ok
+test i32::floor::different_sign ... ok
+test i32::floor::same_sign ... ok
+test i64::ceil::different_sign ... ok
+test i64::ceil::same_sign ... ok
+test i64::floor::different_sign ... ok
+test i64::floor::same_sign ... ok
+test i8::ceil::different_sign ... ok
+test i8::ceil::same_sign ... ok
+test i8::floor::different_sign ... ok
+test i8::floor::same_sign ... ok
+test isize::ceil::different_sign ... ok
+test isize::ceil::same_sign ... ok
+test isize::floor::different_sign ... ok
+test isize::floor::same_sign ... ok
+test u128::ceil::bounded ... ok
+test u128::ceil::overflow ... ok
+test u128::floor::bounded ... ok
+test u128::floor::overflow ... ok
+test u16::ceil::bounded ... ok
+test u16::ceil::overflow ... ok
+test u16::floor::bounded ... ok
+test u16::floor::overflow ... ok
+test u32::ceil::bounded ... ok
+test u32::ceil::overflow ... ok
+test u32::floor::bounded ... ok
+test u32::floor::overflow ... ok
+test u64::ceil::bounded ... ok
+test u64::ceil::overflow ... ok
+test u64::floor::bounded ... ok
+test u64::floor::overflow ... ok
+test u8::ceil::bounded ... ok
+test u8::ceil::overflow ... ok
+test u8::floor::bounded ... ok
+test u8::floor::overflow ... ok
+test usize::ceil::bounded ... ok
+test usize::ceil::overflow ... ok
+test usize::floor::bounded ... ok
+test usize::floor::overflow ... ok
+
+test result: ok. 48 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.26s
+
+     Running tests/roots.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188462-7/target/bsan/x86_64-unknown-linux-gnu/debug/build/num-integer/5317c39e8adf59ec/out/roots-5317c39e8adf59ec)
+
+running 78 tests
+test i128::bit_size ... ok
+test i128::sqrt_neg - should panic ... ok
+test i128::zeroth_root - should panic ... ok
+test i16::bit_size ... ok
+test i16::sqrt_neg - should panic ... ok
+test i32::bit_size ... ok
+test i16::zeroth_root - should panic ... ok
+test i32::sqrt_neg - should panic ... ok
+test i32::zeroth_root - should panic ... ok
+test i64::bit_size ... ok
+test i64::sqrt_neg - should panic ... ok
+test i64::zeroth_root - should panic ... ok
+test i8::bit_size ... ok
+test i16::cbrt ... ok
+test i16::sqrt ... ok
+test i16::cbrt_neg ... ok
+test i32::sqrt ... ok
+test i8::cbrt ... ok
+test i32::cbrt ... ok
+test i8::sqrt_neg - should panic ... ok
+test i8::cbrt_neg ... ok
+test i32::cbrt_neg ... ok
+test i8::zeroth_root - should panic ... ok
+test i8::nth_root_neg ... ok
+test isize::bit_size ... ok
+test i8::sqrt ... ok
+test i64::sqrt ... ok
+test i64::cbrt ... ok
+test i8::nth_root ... ok
+test i128::sqrt ... ok
+test isize::sqrt_neg - should panic ... ok
+test isize::zeroth_root - should panic ... ok
+test u128::bit_size ... ok
+test i64::cbrt_neg ... ok
+test u128::zeroth_root - should panic ... ok
+test u16::bit_size ... ok
+test u16::zeroth_root - should panic ... ok
+test u32::bit_size ... ok
+test isize::sqrt ... ok
+test isize::cbrt ... ok
+test u32::zeroth_root - should panic ... ok
+test u64::bit_size ... ok
+test isize::cbrt_neg ... ok
+test u16::cbrt ... ok
+test u16::sqrt ... ok
+test i128::cbrt_neg ... ok
+test u64::zeroth_root - should panic ... ok
+test u8::bit_size ... ok
+test i16::nth_root_neg ... ok
+test u32::sqrt ... ok
+test u32::cbrt ... ok
+test usize::bit_size ... ok
+test u8::zeroth_root - should panic ... ok
+test usize::zeroth_root - should panic ... ok
+test u128::sqrt ... ok
+test u8::cbrt ... ok
+test u8::sqrt ... ok
+test u64::sqrt ... ok
+test u8::nth_root ... ok
+test u64::cbrt ... ok
+test i128::cbrt ... ok
+test usize::sqrt ... ok
+test usize::cbrt ... ok
+test u128::cbrt ... ok
+test i16::nth_root ... ok
+test u16::nth_root ... ok
+test i32::nth_root_neg ... ok
+test i32::nth_root ... ok
+test u32::nth_root ... ok
+test i64::nth_root_neg ... ok
+test isize::nth_root_neg ... ok
+ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000).
+  Thread T5 (os_id 0) has not reached a safepoint.
+error: test failed, to rerun pass `--test roots`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188462-7/target/bsan/x86_64-unknown-linux-gnu/debug/build/num-integer/5317c39e8adf59ec/out/roots-5317c39e8adf59ec` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,regex-syntax-0.8.11,__all__,test_failed,crash,/scratch/group/p.cis260229.000/datasets/top_1_percent/regex-syntax-0.8.11/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188462-9/target/bsan/x86_64-unknown-linux-gnu/debug/build/regex-syntax/8fd05c5d1017dcba/out/regex_syntax-8fd05c5d1017dcba)
+
+running 147 tests
+test ast::parse::tests::parse_flag ... ok
+test ast::parse::tests::maybe_parse_ascii_class ... ok
+test ast::parse::tests::parse_decimal ... ok
+test ast::parse::tests::parse_primitive_non_escape ... ok
+test ast::parse::tests::parse_unsupported_backreference ... ok
+test ast::parse::tests::parse_perl_class ... ok
+test ast::parse::tests::parse_comments ... ok
+test ast::parse::tests::parse_flags ... ok
+test ast::parse::tests::parse_holistic ... ok
+test ast::parse::tests::parse_unsupported_lookaround ... ok
+test ast::parse::tests::parse_newlines ... ok
+test ast::print::tests::print_dot ... ok
+test ast::print::tests::print_assertion ... ok
+test ast::parse::tests::parse_escape ... ok
+test ast::tests::ast_size ... ok
+test ast::parse::tests::parse_set_class_open ... ok
+test ast::parse::tests::parse_hex_brace ... ok
+test ast::print::tests::print_concat ... ok
+test ast::print::tests::print_flags ... ok
+test error::tests::regression_464 ... ok
+test error::tests::repetition_quantifier_expects_a_valid_decimal ... ok
+test ast::print::tests::print_group ... ok
+BorrowSanitizer:DEADLYSIGNAL
+==3137790==ERROR: BorrowSanitizer: stack-overflow on address 0x7b0eea700f78 (pc 0x55a7d73c545a bp 0x6100013e1f00 sp 0x7b0eea700f80 T3137868)
+test ast::parse::tests::parse_group ... ok
+    #0 0x55a7d73c545a in __bsan::RustAlloc(unsigned long, unsigned long) /opt/rust/rustup/toolchains/bsan/compiler-rt/lib/bsan/bsan_allocator.cpp:159:7
+
+SUMMARY: BorrowSanitizer: stack-overflow /opt/rust/rustup/toolchains/bsan/compiler-rt/lib/bsan/bsan_allocator.cpp:159:7 in __bsan::RustAlloc(unsigned long, unsigned long)
+==3137790==ABORTING
+error: test failed, to rerun pass `--lib`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188462-9/target/bsan/x86_64-unknown-linux-gnu/debug/build/regex-syntax/8fd05c5d1017dcba/out/regex_syntax-8fd05c5d1017dcba` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,unicode-width-0.2.2,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/unicode-width-0.2.2/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188453-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/unicode-width/e72c34c83ac2df85/out/unicode_width-e72c34c83ac2df85)
+
+running 1 test
+test tables::tests::test_normalization has been running for over 60 seconds
+test tables::tests::test_normalization ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1118.28s
+
+     Running tests/tests.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188453-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/unicode-width/f7b4b2e5938fcbb3/out/tests-f7b4b2e5938fcbb3)
+
+running 34 tests
+test ambiguous_line_break ... ok
+test test_ambiguous ... ok
+test test_bad_devanagari ... ok
+test test_char ... ok
+test test_char2 ... ok
+test test_arabic_lam_alef ... ok
+test test_control_line_break ... ok
+test test_default_ignorable ... ok
+test test_devanagari_caret ... ok
+test test_buginese_a_i_ya ... ok
+test test_emoji ... ok
+test test_emoji_modifier ... ok
+test test_emoji_presentation ... ok
+test test_gcb_prepend ... ok
+test test_hieroglyph_format_controls ... ok
+test test_interlinear_annotation_chars ... ok
+test test_jamo ... ok
+test test_hebrew_alef_lamed ... ok
+test test_khmer_qaa ... ok
+test test_khmer_sign_beyyal ... ok
+test test_marks ... ok
+test test_prepended_concatenation_marks ... ok
+test test_old_turkic_ligature ... ok
+test test_solidus_overlay ... ok
+test test_str ... ok
+test test_text_presentation ... ok
+test test_tifinagh_biconsonants ... ok
+test unicode_12 ... ok
+test test_lisu_tones ... ok
+test test_emoji_zwj ... ok
+test char_str_consistent has been running for over 60 seconds
+test emoji_test_file has been running for over 60 seconds
+test test_khmer_coeng has been running for over 60 seconds
+test test_vs1_vs2_vs3 has been running for over 60 seconds
+ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000).
+  Thread T3 (os_id 0) has not reached a safepoint.
+error: test failed, to rerun pass `--test tests`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188453-12/target/bsan/x86_64-unknown-linux-gnu/debug/build/unicode-width/f7b4b2e5938fcbb3/out/tests-f7b4b2e5938fcbb3` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,deflate-1.0.0,__all__,test_failed,oom,/scratch/group/p.cis260229.000/datasets/top_1_percent/deflate-1.0.0/hyperfine-parse-patch-bsan.log,TRUE,TRUE,101,"[... 29 earlier line(s) omitted ...]
+             [lints.rust]
+             unexpected_cfgs = { level = ""warn"", check-cfg = ['cfg(debug)'] }
+    = help: or consider adding `println!(""cargo::rustc-check-cfg=cfg(debug)"");` to the top of the `build.rs`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: `#[warn(unexpected_cfgs)]` on by default
+
+warning: unexpected `cfg` condition name: `debug`
+   --> src/length_encode.rs:207:15
+    |
+207 |     #[cfg(not(debug))]
+    |               ^^^^^ help: found config with similar value: `target_feature = ""debug""`
+    |
+    = help: consider using a Cargo feature instead
+    = help: or consider adding in `Cargo.toml` the `check-cfg` lint config for the lint:
+             [lints.rust]
+             unexpected_cfgs = { level = ""warn"", check-cfg = ['cfg(debug)'] }
+    = help: or consider adding `println!(""cargo::rustc-check-cfg=cfg(debug)"");` to the top of the `build.rs`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: use of deprecated module `std::u16`: all constants in this module replaced by associated constants on the type
+ --> src/output_writer.rs:1:10
+  |
+1 | use std::u16;
+  |          ^^^
+  |
+  = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated module `std::u16`: all constants in this module replaced by associated constants on the type
+ --> src/stored_block.rs:4:10
+  |
+4 | use std::u16;
+  |          ^^^
+
+warning: use of deprecated constant `std::u16::MAX`: replaced by the `MAX` associated constant on this type
+  --> src/stored_block.rs:11:50
+   |
+11 | pub const MAX_STORED_BLOCK_LENGTH: usize = (u16::MAX as usize) / 2;
+   |                                                  ^^^
+
+warning: use of deprecated associated function `core::num::<impl u16>::max_value`: replaced by the `MAX` associated constant on this type
+  --> src/stored_block.rs:27:27
+   |
+27 |     if input.len() > u16::max_value() as usize {
+   |                           ^^^^^^^^^
+
+warning: method `update` is never used
+ --> src/checksum.rs:4:8
+  |
+3 | pub trait RollingChecksum {
+  |           --------------- method in this trait
+4 |     fn update(&mut self, byte: u8);
+  |        ^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `compression_options` is never read
+  --> src/deflate_state.rs:70:9
+   |
+66 | pub struct DeflateState<W: Write> {
+   |            ------------ field in this struct
+...
+70 |     pub compression_options: CompressionOptions,
+   |         ^^^^^^^^^^^^^^^^^^^
+
+warning: `deflate` (lib) generated 9 warnings (run `cargo fix --lib -p deflate` to apply 1 suggestion)
+warning: use of deprecated module `std::u16`: all constants in this module replaced by associated constants on the type
+   --> src/length_encode.rs:422:14
+    |
+422 |     use std::u16;
+    |              ^^^
+    |
+    = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated constant `std::u16::MAX`: replaced by the `MAX` associated constant on this type
+   --> src/length_encode.rs:607:32
+    |
+607 |         frequencies[55] = u16::MAX / 3;
+    |                                ^^^
+
+warning: use of deprecated constant `std::u16::MAX`: replaced by the `MAX` associated constant on this type
+   --> src/length_encode.rs:608:33
+    |
+608 |         frequencies[125] = u16::MAX / 3;
+    |                                 ^^^
+
+warning: use of deprecated module `std::u16`: all constants in this module replaced by associated constants on the type
+ --> src/output_writer.rs:1:10
+  |
+1 | use std::u16;
+  |          ^^^
+
+warning: use of deprecated associated function `core::num::<impl u16>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src/output_writer.rs:130:26
+    |
+130 |         for i in 0..u16::max_value() {
+    |                          ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl u16>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src/output_writer.rs:134:26
+    |
+134 |         for i in 0..u16::max_value() {
+    |                          ^^^^^^^^^
+
+warning: field `length_extra_bits` is never read
+   --> src/huffman_table.rs:223:9
+    |
+221 | pub struct LengthAndDistanceBits {
+    |            --------------------- field in this struct
+222 |     pub length_code: HuffmanCode,
+223 |     pub length_extra_bits: HuffmanCode,
+    |         ^^^^^^^^^^^^^^^^^
+
+warning: eliding a lifetime that's named elsewhere is confusing
+  --> src/input_buffer.rs:16:60
+   |
+16 |     pub fn new<'a>(data: &'a [u8]) -> (InputBuffer, Option<&[u8]>) {
+   |                           -- the lifetime is named here    ^^^^^ the same lifetime is elided here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: consistently use `'a`
+   |
+16 |     pub fn new<'a>(data: &'a [u8]) -> (InputBuffer, Option<&'a [u8]>) {
+   |                                                             ++
+
+warning: `deflate` (lib test) generated 16 warnings (8 duplicates) (run `cargo fix --lib -p deflate --tests` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188463-2/target/bsan/x86_64-unknown-linux-gnu/debug/build/deflate/2360e298d37f5ffc/out/deflate-2360e298d37f5ffc)
+
+running 66 tests
+test bit_reverse::test::test_bit_reverse ... ok
+test bitstream::test::write_bits ... ok
+test chained_hash_table::test::table_slide ... FAILED
+test huffman_lengths::test::padding ... ok
+test huffman_table::test::extra_bits_distance ... ok
+test compress::test::fixed_string_file ... FAILED
+test huffman_table::test::test_distance_code ... ok
+test huffman_table::test::test_distance_extra_bits ... ok
+test huffman_table::test::test_get_length_code ... ok
+test huffman_table::test::test_empty_table - should panic ... ok
+test input_buffer::test::buffer_add_full ... ok
+test input_buffer::test::buffer_add_not_full ... ok
+test input_buffer::test::slide ... ok
+test huffman_table::test::test_length_table_fixed ... ok
+test huffman_table::test::test_length_table_max_length - should panic ... ok
+test lz77::test::buffer_fill ... FAILED
+test lz77::test::compress_block_multiple_windows ... FAILED
+test lz77::test::compress_long ... FAILED
+test lz77::test::test_decompress_with_backbuffer ... ok
+test matching::test::fast_match_at_least_equal ... ignored
+test matching::test::match_length ... ok
+test rle::test::rle_compress ... ok
+test stored_block::test::no_compression_multiple_chunks ... ok
+test stored_block::test::no_compression_one_chunk ... ok
+test stored_block::test::no_compression_string ... ok
+test test::dynamic_string_file ... FAILED
+test test::file_zlib ... FAILED
+test test::file_rle ... FAILED
+test length_encode::test::optimal_lengths ... ok
+test test::zlib_writer_chunks ... ignored
+test huffman_table::test::make_table_fixed ... ok
+test writer::test::deflate_writer ... FAILED
+test writer::test::writer_reset ... FAILED
+test writer::test::writer_reset_zlib ... FAILED
+test writer::test::writer_sync ... FAILED
+test writer::test::writer_sync_multiple ... FAILED
+test length_encode::test::test_lengths_from_frequencies ... ok
+test zlib::test::test_gen_fcheck ... ok
+test writer::test::zlib_writer ... FAILED
+test zlib::test::test_header ... ok
+test length_encode::test::test_encode_lengths ... ok
+test lzvalue::test::lzvalue ... ok
+test output_writer::test::array_bounds ... ok
+test chained_hash_table::test::chained_hash has been running for over 60 seconds
+test chained_hash_table::test::initial_chains has been running for over 60 seconds
+test chained_hash_table::test::table_unique has been running for over 60 seconds
+test compress::test::fixed_data has been running for over 60 seconds
+test compress::test::fixed_example has been running for over 60 seconds
+test compress::test::fixed_string_mem has been running for over 60 seconds
+test lz77::test::border has been running for over 60 seconds
+test lz77::test::border_multiple_blocks has been running for over 60 seconds
+test lz77::test::compress_block_status has been running for over 60 seconds
+test lz77::test::compress_short has been running for over 60 seconds
+test lz77::test::exact_window_size has been running for over 60 seconds
+test lz77::test::lazy has been running for over 60 seconds
+test lz77::test::multiple_inputs has been running for over 60 seconds
+test matching::test::get_longest_match has been running for over 60 seconds
+test matching::test::match_index_zero has been running for over 60 seconds
+test test::deflate_short has been running for over 60 seconds
+test test::dynamic_string_mem has been running for over 60 seconds
+test test::empty_input has been running for over 60 seconds
+test test::frequency_overflow has been running for over 60 seconds
+test test::one_and_two_values has been running for over 60 seconds
+test test::zlib_last_block has been running for over 60 seconds
+test test::zlib_short has been running for over 60 seconds
+test writer::test::issue_18 has been running for over 60 seconds
+error: test failed, to rerun pass `--lib`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188463-2/target/bsan/x86_64-unknown-linux-gnu/debug/build/deflate/2360e298d37f5ffc/out/deflate-2360e298d37f5ffc` (signal: 9, SIGKILL: kill)"
+parse-patch-bsan,ttf-parser-0.25.1,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/ttf-parser-0.25.1/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"warning: hiding a lifetime that's elided elsewhere is confusing
+    --> src/lib.rs:2204:9
+     |
+2204 |         &self,
+     |         ^^^^^ the lifetime is elided here
+...
+2207 |     ) -> Option<RasterGlyphImage> {
+     |                 ^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+     = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+     |
+2207 |     ) -> Option<RasterGlyphImage<'_>> {
+     |                                 ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> src/tables/cff/cff1.rs:802:29
+    |
+802 | fn parse_cid_metadata(data: &[u8], top_dict: TopDict, number_of_glyphs: u16) -> Option<FontKind> {
+    |                             ^^^^^ the lifetime is elided here                          ^^^^^^^^ the same lifetime is hidden here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+802 | fn parse_cid_metadata(data: &[u8], top_dict: TopDict, number_of_glyphs: u16) -> Option<FontKind<'_>> {
+    |                                                                                                ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> src/tables/glyf.rs:485:17
+    |
+485 |     glyph_data: &[u8],
+    |                 ^^^^^ the lifetime is elided here
+486 |     number_of_contours: NonZeroU16,
+487 | ) -> Option<GlyphPointsIter> {
+    |             ^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+487 | ) -> Option<GlyphPointsIter<'_>> {
+    |                            ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> src/tables/stat.rs:420:9
+    |
+420 |         &self,
+    |         ^^^^^ the lifetime is elided here
+...
+423 |     ) -> Option<AxisValueSubtable> {
+    |                 ^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+423 |     ) -> Option<AxisValueSubtable<'_>> {
+    |                                  ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> src/tables/gpos.rs:910:16
+    |
+910 |     pub fn get(&self, row: u16, col: u16) -> Option<Anchor> {
+    |                ^^^^^ the lifetime is elided here    ^^^^^^ the same lifetime is hidden here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+910 |     pub fn get(&self, row: u16, col: u16) -> Option<Anchor<'_>> {
+    |                                                           ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+  --> src/tables/math.rs:48:24
+   |
+48 |     fn get(self, data: &[u8]) -> MathValue {
+   |                        ^^^^^     ^^^^^^^^^ the same lifetime is hidden here
+   |                        |
+   |                        the lifetime is elided here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+   |
+48 |     fn get(self, data: &[u8]) -> MathValue<'_> {
+   |                                           ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+  --> src/var_store.rs:63:27
+   |
+63 |     pub fn region_indices(&self, index: u16) -> Option<LazyArray16<u16>> {
+   |                           ^^^^^                        ^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+   |                           |
+   |                           the lifetime is elided here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+   |
+63 |     pub fn region_indices(&self, index: u16) -> Option<LazyArray16<'_, u16>> {
+   |                                                                    +++
+
+warning: `ttf-parser` (lib) generated 7 warnings (run `cargo fix --lib -p ttf-parser` to apply 7 suggestions)
+warning: `ttf-parser` (lib test) generated 7 warnings (7 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.05s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188468-11/target/bsan/x86_64-unknown-linux-gnu/debug/build/ttf-parser/2825da3ff30fcb74/out/ttf_parser-2825da3ff30fcb74)
+
+running 37 tests
+test tables::cff::cff1::tests::negative_private_dict_offset_and_size ... ok
+test tables::cff::cff1::tests::private_dict_negative_char_strings_offset ... ok
+test tables::cff::cff1::tests::private_dict_no_char_strings_offset_operand ... ok
+test tables::cff::cff1::tests::private_dict_size_overflow ... ok
+test tables::cff::dict::tests::parse_dict_number ... ok
+test tables::cff::index::tests::parse_offset_size ... ok
+test tables::gvar::packed_deltas::tests::delta_after_zeros ... ok
+test tables::gvar::packed_deltas::tests::empty ... ok
+test tables::gvar::packed_deltas::tests::invalid_number_of_pairs ... ok
+test tables::gvar::packed_deltas::tests::non_default_scalar ... ok
+test tables::gvar::packed_deltas::tests::mixed_runs ... ok
+test tables::gvar::packed_deltas::tests::single_delta ... ok
+test tables::gvar::packed_deltas::tests::single_long_delta ... ok
+test tables::gvar::packed_deltas::tests::single_run ... ok
+test tables::gvar::packed_deltas::tests::too_many_pairs ... ok
+test tables::gvar::packed_deltas::tests::two_deltas ... ok
+test tables::gvar::packed_deltas::tests::unexpected_end_of_data_1 ... ok
+test tables::gvar::packed_deltas::tests::unexpected_end_of_data_2 ... ok
+test tables::gvar::packed_deltas::tests::unexpected_end_of_data_3 ... ok
+test tables::gvar::packed_deltas::tests::unexpected_end_of_data_4 ... ok
+test tables::gvar::packed_deltas::tests::unexpected_end_of_data_6 ... ok
+test tables::gvar::packed_deltas::tests::unexpected_end_of_data_7 ... ok
+test tables::gvar::packed_deltas::tests::zero_runs ... ok
+test tables::gvar::packed_deltas::tests::zero_words ... ok
+test tables::gvar::packed_deltas::tests::zeros ... ok
+test tables::gvar::packed_points::tests::empty ... ok
+test tables::gvar::packed_points::tests::long_points ... ok
+test tables::gvar::packed_points::tests::multiple_runs ... ok
+test tables::gvar::packed_points::tests::set_0_and_2 ... ok
+test tables::gvar::packed_points::tests::set_1_and_2 ... ok
+test tables::gvar::packed_points::tests::set_1_and_3 ... ok
+test tables::gvar::packed_points::tests::set_2_5_7 ... ok
+test tables::gvar::packed_points::tests::single_point ... ok
+test tables::gvar::packed_points::tests::single_zero_control ... ok
+test tables::gvar::packed_points::tests::more_than_127_points ... ok
+test tables::gvar::packed_points::tests::runs_overflow ... ok
+ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000).
+  Thread T12 (os_id 0) has not reached a safepoint.
+error: test failed, to rerun pass `--lib`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188468-11/target/bsan/x86_64-unknown-linux-gnu/debug/build/ttf-parser/2825da3ff30fcb74/out/ttf_parser-2825da3ff30fcb74` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,yazi-0.2.1,__all__,test_failed,oom,/scratch/group/p.cis260229.000/datasets/top_1_percent/yazi-0.2.1/hyperfine-parse-patch-bsan.log,TRUE,TRUE,101,"warning: `package.homepage` is redundant with `package.repository`
+  --> Cargo.toml:24:12
+   |
+24 | homepage = ""https://github.com/dfrg/yazi""
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+34 | repository = ""https://github.com/dfrg/yazi""
+   |              ------------------------------
+   |
+   = note: `cargo::redundant_homepage` is set to `warn` by default
+help: consider removing `package.homepage`
+warning: `yazi` (manifest) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188468-13/target/bsan/x86_64-unknown-linux-gnu/debug/build/yazi/7ad38f5fca98c37f/out/yazi-7ad38f5fca98c37f)
+
+running 6 tests
+test tests::compress_decompress has been running for over 60 seconds
+test tests::compress_decompress_raw has been running for over 60 seconds
+test tests::compress_decompress_static has been running for over 60 seconds
+test tests::compress_decompress_streaming_1byte has been running for over 60 seconds
+test tests::compress_decompress_streaming_64bytes has been running for over 60 seconds
+test tests::compress_decompress_zlib has been running for over 60 seconds
+error: test failed, to rerun pass `--lib`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188468-13/target/bsan/x86_64-unknown-linux-gnu/debug/build/yazi/7ad38f5fca98c37f/out/yazi-7ad38f5fca98c37f` (signal: 9, SIGKILL: kill)"
+parse-patch-bsan,md5-0.8.1,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/md5-0.8.1/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"warning: `package.homepage` is redundant with `package.repository`
+  --> Cargo.toml:35:12
+   |
+35 | homepage = ""https://github.com/stainless-steel/md5""
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+49 | repository = ""https://github.com/stainless-steel/md5""
+   |              ----------------------------------------
+   |
+   = note: `cargo::redundant_homepage` is set to `warn` by default
+help: consider removing `package.homepage`
+warning: `md5` (manifest) generated 1 warning
+warning: use of deprecated constant `std::u32::MAX`: replaced by the `MAX` associated constant on this type
+   --> src/lib.rs:438:38
+    |
+438 |         let data = vec![0; std::u32::MAX as usize + 1];
+    |                                      ^^^
+    |
+    = note: `#[warn(deprecated)]` on by default
+
+warning: `md5` (lib test) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188471-6/target/bsan/x86_64-unknown-linux-gnu/debug/build/md5/604bb8a15bfb54a4/out/md5-604bb8a15bfb54a4)
+
+running 5 tests
+test tests::index ... ok
+test tests::compute ... ok
+ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000).
+  Thread T2 (os_id 0) has not reached a safepoint.
+error: test failed, to rerun pass `--lib`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188471-6/target/bsan/x86_64-unknown-linux-gnu/debug/build/md5/604bb8a15bfb54a4/out/md5-604bb8a15bfb54a4` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,adler32-1.2.0,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/adler32-1.2.0/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.21s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188454-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/adler32/16d5af7135abc5ef/out/adler32-16d5af7135abc5ef)
+
+running 4 tests
+test test::rolling ... ok
+test test::testvectors ... ok
+test test::compare has been running for over 60 seconds
+test test::long_window_remove has been running for over 60 seconds
+ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000).
+  Thread T1 (os_id 0) has not reached a safepoint.
+error: test failed, to rerun pass `--lib`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188454-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/adler32/16d5af7135abc5ef/out/adler32-16d5af7135abc5ef` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,ucd-trie-0.1.7,__all__,test_failed,crash,/scratch/group/p.cis260229.000/datasets/top_1_percent/ucd-trie-0.1.7/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"warning: `package.homepage` is redundant with `package.repository`
+  --> Cargo.toml:25:12
+   |
+25 | homepage = ""https://github.com/BurntSushi/ucd-generate""
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+36 | repository = ""https://github.com/BurntSushi/ucd-generate""
+   |              --------------------------------------------
+   |
+   = note: `cargo::redundant_homepage` is set to `warn` by default
+help: consider removing `package.homepage`
+warning: `ucd-trie` (manifest) generated 1 warning
+warning: use of deprecated constant `std::u8::MAX`: replaced by the `MAX` associated constant on this type
+   --> src/owned.rs:235:35
+    |
+235 |             if start > ::std::u8::MAX as usize {
+    |                                   ^^^
+    |
+    = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated constant `std::u8::MAX`: replaced by the `MAX` associated constant on this type
+   --> src/owned.rs:257:35
+    |
+257 |             if start > ::std::u8::MAX as usize {
+    |                                   ^^^
+
+warning: `ucd-trie` (lib) generated 2 warnings
+warning: `ucd-trie` (lib test) generated 2 warnings (2 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188473-11/target/bsan/x86_64-unknown-linux-gnu/debug/build/ucd-trie/9c47b927e44a3010/out/ucd_trie-9c47b927e44a3010)
+
+running 40 tests
+test owned::tests::gencat_cased_letter has been running for over 60 seconds
+test owned::tests::gencat_close_punctuation has been running for over 60 seconds
+test owned::tests::gencat_connector_punctuation has been running for over 60 seconds
+test owned::tests::gencat_control has been running for over 60 seconds
+test owned::tests::gencat_currency_symbol has been running for over 60 seconds
+test owned::tests::gencat_dash_punctuation has been running for over 60 seconds
+test owned::tests::gencat_decimal_number has been running for over 60 seconds
+test owned::tests::gencat_enclosing_mark has been running for over 60 seconds
+test owned::tests::gencat_final_punctuation has been running for over 60 seconds
+test owned::tests::gencat_format has been running for over 60 seconds
+test owned::tests::gencat_initial_punctuation has been running for over 60 seconds
+test owned::tests::gencat_letter has been running for over 60 seconds
+test owned::tests::gencat_letter_number has been running for over 60 seconds
+test owned::tests::gencat_line_separator has been running for over 60 seconds
+test owned::tests::gencat_lowercase_letter has been running for over 60 seconds
+test owned::tests::gencat_mark has been running for over 60 seconds
+test owned::tests::gencat_math_symbol has been running for over 60 seconds
+test owned::tests::gencat_modifier_letter has been running for over 60 seconds
+test owned::tests::gencat_modifier_symbol has been running for over 60 seconds
+test owned::tests::gencat_nonspacing_mark has been running for over 60 seconds
+test owned::tests::gencat_number has been running for over 60 seconds
+test owned::tests::gencat_open_punctuation has been running for over 60 seconds
+test owned::tests::gencat_other has been running for over 60 seconds
+test owned::tests::gencat_other_letter has been running for over 60 seconds
+test owned::tests::gencat_other_number has been running for over 60 seconds
+test owned::tests::gencat_other_punctuation has been running for over 60 seconds
+==3629189==ERROR: BorrowSanitizer failed to deallocate 0x86000 (548864) bytes at address 0x7b0c68a26000 (error code: 12)
+ERROR: Failed to munmap
+error: test failed, to rerun pass `--lib`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188473-11/target/bsan/x86_64-unknown-linux-gnu/debug/build/ucd-trie/9c47b927e44a3010/out/ucd_trie-9c47b927e44a3010` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,rustc-demangle-0.1.28,__all__,test_failed,crash,/scratch/group/p.cis260229.000/datasets/top_1_percent/rustc-demangle-0.1.28/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"[... 181 earlier line(s) omitted ...]
+   --> src/lib.rs:39:9
+    |
+ 39 | /         assert!(
+ 40 | |             s.contains(needle),
+ 41 | |             ""{:?} should've contained {:?}"",
+ 42 | |             s,
+ 43 | |             needle
+ 44 | |         );
+    | |_________^ ambiguous name
+...
+544 | /         assert_contains!(
+545 | |             super::demangle(""_RMC0RB2_"").to_string(),
+546 | |             ""{recursion limit reached}""
+547 | |         );
+    | |_________- in this macro invocation
+    |
+    = note: ambiguous because of a conflict between a name from a glob import and an outer scope during import or macro resolution
+note: `panic` could refer to the macro imported here
+   --> src/lib.rs:356:9
+    |
+356 |     use std::prelude::v1::*;
+    |         ^^^^^^^^^^^^^^^^^^^
+    = help: consider adding an explicit import of `panic` to disambiguate
+    = help: or use `self::panic` to refer to this macro unambiguously
+note: `panic` could also refer to the macro defined here
+   --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/prelude/mod.rs:21:13
+    |
+ 21 |     pub use super::v1::*;
+    |             ^^^^^^^^^
+    = warning: this was previously accepted by the compiler but is being phased out; it will become a hard error in a future release!
+    = note: for more information, see issue #147319 <https://github.com/rust-lang/rust/issues/147319>
+    = note: this warning originates in the macro `assert` which comes from the expansion of the macro `assert_contains` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: `panic` is ambiguous
+   --> src/lib.rs:51:9
+    |
+ 51 | /         assert!(
+ 52 | |             s.ends_with(suffix),
+ 53 | |             ""{:?} should've ended in {:?}"",
+ 54 | |             s,
+ 55 | |             suffix
+ 56 | |         );
+    | |_________^ ambiguous name
+...
+552 | /         assert_ends_with!(
+553 | |             super::demangle(""RYFG_FGyyEvRYFF_EvRYFFEvERLB_B_B_ERLRjB_B_B_"").to_string(),
+554 | |             ""{size limit reached}""
+555 | |         );
+    | |_________- in this macro invocation
+    |
+    = note: ambiguous because of a conflict between a name from a glob import and an outer scope during import or macro resolution
+note: `panic` could refer to the macro imported here
+   --> src/lib.rs:356:9
+    |
+356 |     use std::prelude::v1::*;
+    |         ^^^^^^^^^^^^^^^^^^^
+    = help: consider adding an explicit import of `panic` to disambiguate
+    = help: or use `self::panic` to refer to this macro unambiguously
+note: `panic` could also refer to the macro defined here
+   --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/prelude/mod.rs:21:13
+    |
+ 21 |     pub use super::v1::*;
+    |             ^^^^^^^^^
+    = warning: this was previously accepted by the compiler but is being phased out; it will become a hard error in a future release!
+    = note: for more information, see issue #147319 <https://github.com/rust-lang/rust/issues/147319>
+    = note: this warning originates in the macro `assert` which comes from the expansion of the macro `assert_ends_with` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: `panic` is ambiguous
+   --> src/lib.rs:51:9
+    |
+ 51 | /         assert!(
+ 52 | |             s.ends_with(suffix),
+ 53 | |             ""{:?} should've ended in {:?}"",
+ 54 | |             s,
+ 55 | |             suffix
+ 56 | |         );
+    | |_________^ ambiguous name
+...
+558 | /         assert_ends_with!(
+559 | |             super::demangle(""_RMC0FGZZZ_Eu"").to_string(),
+560 | |             ""{size limit reached}""
+561 | |         );
+    | |_________- in this macro invocation
+    |
+    = note: ambiguous because of a conflict between a name from a glob import and an outer scope during import or macro resolution
+note: `panic` could refer to the macro imported here
+   --> src/lib.rs:356:9
+    |
+356 |     use std::prelude::v1::*;
+    |         ^^^^^^^^^^^^^^^^^^^
+    = help: consider adding an explicit import of `panic` to disambiguate
+    = help: or use `self::panic` to refer to this macro unambiguously
+note: `panic` could also refer to the macro defined here
+   --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/prelude/mod.rs:21:13
+    |
+ 21 |     pub use super::v1::*;
+    |             ^^^^^^^^^
+    = warning: this was previously accepted by the compiler but is being phased out; it will become a hard error in a future release!
+    = note: for more information, see issue #147319 <https://github.com/rust-lang/rust/issues/147319>
+    = note: this warning originates in the macro `assert` which comes from the expansion of the macro `assert_ends_with` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: `rustc-demangle` (lib test) generated 10 warnings (4 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188473-9/target/bsan/x86_64-unknown-linux-gnu/debug/build/rustc-demangle/b6fac180ade0af35/out/rustc_demangle-b6fac180ade0af35)
+
+running 58 tests
+test legacy::tests::demangle ... ok
+test legacy::tests::demangle_elements_beginning_with_underscore ... ok
+test legacy::tests::demangle_ignores_suffix_that_doesnt_look_like_a_symbol ... ok
+test legacy::tests::demangle_dollars ... ok
+test legacy::tests::demangle_many_dollars ... ok
+test legacy::tests::demangle_issue_60925 ... ok
+test legacy::tests::demangle_thinlto ... ok
+test legacy::tests::demangle_windows ... ok
+test legacy::tests::dont_panic ... ok
+test legacy::tests::demangle_without_hash ... ok
+test legacy::tests::demangle_trait_impls ... ok
+test legacy::tests::invalid_no_chop ... ok
+test legacy::tests::demangle_utf8_idents ... ok
+test legacy::tests::demangle_llvm_ir_branch_labels ... ok
+test legacy::tests::demangle_without_hash_edgecases ... ok
+test tests::demangle ... ok
+test tests::demangle_ignores_suffix_that_doesnt_look_like_a_symbol ... ok
+test legacy::tests::demangle_osx ... ok
+test legacy::tests::handle_bang ... ok
+test tests::demangle_many_dollars ... ok
+test tests::demangle_dollars ... ok
+test tests::demangle_elements_beginning_with_underscore ... ok
+test tests::demangle_thinlto ... ok
+test legacy::tests::handle_assoc_types ... ok
+test tests::demangle_windows ... ok
+test tests::demangle_trait_impls ... ok
+test tests::demangle_without_hash ... ok
+test tests::demangle_llvm_ir_branch_labels ... ok
+test tests::demangle_without_hash_edgecases ... ok
+test tests::demangle_osx ... ok
+test tests::dont_panic ... ok
+test tests::invalid_no_chop ... ok
+test tests::handle_bang ... ok
+test tests::handle_assoc_types ... ok
+test v0::tests::demangle_const_generics_preview ... ok
+test v0::tests::demangle_closure ... ok
+test v0::tests::demangle_crate_with_leading_digit ... ok
+test v0::tests::demangle_const_ref ... ok
+test v0::tests::demangle_const_array ... ok
+test v0::tests::demangle_crate_with_zero_disambiguator ... ok
+test v0::tests::demangle_const_adt ... ok
+test v0::tests::demangle_dyn_trait_assoc_const_binding ... ok
+test v0::tests::demangle_const_tuple ... ok
+test v0::tests::demangle_dyn_trait ... ok
+test v0::tests::demangle_extra_suffix ... ok
+test v0::tests::demangle_pat_ty ... ok
+test v0::tests::demangle_thinlto ... ok
+test v0::tests::demangle_utf8_idents ... ok
+test v0::tests::demangle_min_const_generics ... ok
+test v0::tests::demangle_splat ... ok
+BorrowSanitizer:DEADLYSIGNAL
+==3629530==ERROR: BorrowSanitizer: stack-overflow on address 0x7b3cebef7948 (pc 0x5634a40f19c9 bp 0x7b3cebefa490 sp 0x7b3cebef7950 T3629838)
+test v0::tests::demangle_exponential_explosion ... ok
+    #0 0x5634a40f19c9 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:795
+    #1 0x5634a41d2bed in <rustc_demangle::v0::Printer>::print_path::{closure#1} /work/src/v0.rs:882:48
+    #2 0x5634a41a3a8c in <rustc_demangle::v0::Printer>::print_backref::<<rustc_demangle::v0::Printer>::print_path::{closure#1}> /work/src/v0.rs:665:17
+    #3 0x5634a40f4351 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:882:22
+    #4 0x5634a40f8ea9 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:816:22
+    #5 0x5634a41d2bed in <rustc_demangle::v0::Printer>::print_path::{closure#1} /work/src/v0.rs:882:48
+    #6 0x5634a41a3a8c in <rustc_demangle::v0::Printer>::print_backref::<<rustc_demangle::v0::Printer>::print_path::{closure#1}> /work/src/v0.rs:665:17
+    #7 0x5634a40f4351 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:882:22
+    #8 0x5634a40f8ea9 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:816:22
+    #9 0x5634a41d2bed in <rustc_demangle::v0::Printer>::print_path::{closure#1} /work/src/v0.rs:882:48
+    #10 0x5634a41a3a8c in <rustc_demangle::v0::Printer>::print_backref::<<rustc_demangle::v0::Printer>::print_path::{closure#1}> /work/src/v0.rs:665:17
+    #11 0x5634a40f4351 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:882:22
+    #12 0x5634a40f8ea9 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:816:22
+    #13 0x5634a41d2bed in <rustc_demangle::v0::Printer>::print_path::{closure#1} /work/src/v0.rs:882:48
+    #14 0x5634a41a3a8c in <rustc_demangle::v0::Printer>::print_backref::<<rustc_demangle::v0::Printer>::print_path::{closure#1}> /work/src/v0.rs:665:17
+    #15 0x5634a40f4351 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:882:22
+    #16 0x5634a40f8ea9 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:816:22
+    #17 0x5634a41d2bed in <rustc_demangle::v0::Printer>::print_path::{closure#1} /work/src/v0.rs:882:48
+    #18 0x5634a41a3a8c in <rustc_demangle::v0::Printer>::print_backref::<<rustc_demangle::v0::Printer>::print_path::{closure#1}> /work/src/v0.rs:665:17
+    #19 0x5634a40f4351 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:882:22
+    #20 0x5634a40f8ea9 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:816:22
+    #21 0x5634a41d2bed in <rustc_demangle::v0::Printer>::print_path::{closure#1} /work/src/v0.rs:882:48
+    #22 0x5634a41a3a8c in <rustc_demangle::v0::Printer>::print_backref::<<rustc_demangle::v0::Printer>::print_path::{closure#1}> /work/src/v0.rs:665:17
+    #23 0x5634a40f4351 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:882:22
+    #24 0x5634a40f8ea9 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:816:22
+    #25 0x5634a41d2bed in <rustc_demangle::v0::Printer>::print_path::{closure#1} /work/src/v0.rs:882:48
+    #26 0x5634a41a3a8c in <rustc_demangle::v0::Printer>::print_backref::<<rustc_demangle::v0::Printer>::print_path::{closure#1}> /work/src/v0.rs:665:17
+    #27 0x5634a40f4351 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:882:22
+    #28 0x5634a40f8ea9 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:816:22
+    #29 0x5634a41d2bed in <rustc_demangle::v0::Printer>::print_path::{closure#1} /work/src/v0.rs:882:48
+    #30 0x5634a41a3a8c in <rustc_demangle::v0::Printer>::print_backref::<<rustc_demangle::v0::Printer>::print_path::{closure#1}> /work/src/v0.rs:665:17
+    #31 0x5634a40f4351 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:882:22
+    #32 0x5634a40f8ea9 in <rustc_demangle::v0::Printer>::print_path /work/src/v0.rs:816:22
+
+SUMMARY: BorrowSanitizer: stack-overflow /work/src/v0.rs:795 in <rustc_demangle::v0::Printer>::print_path
+==3629530==ABORTING
+error: test failed, to rerun pass `--lib`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188473-9/target/bsan/x86_64-unknown-linux-gnu/debug/build/rustc-demangle/b6fac180ade0af35/out/rustc_demangle-b6fac180ade0af35` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,ittapi-sys-0.5.0,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/ittapi-sys-0.5.0/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.12s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188475-5/target/bsan/x86_64-unknown-linux-gnu/debug/build/ittapi-sys/2adc29933e9f8505/out/ittapi_sys-2adc29933e9f8505)
+
+running 17 tests
+test bindgen_test_layout__LineNumberInfo ... ok
+test bindgen_test_layout____itt_clock_domain ... ok
+test bindgen_test_layout____itt_clock_info ... ok
+test bindgen_test_layout____itt_context_metadata ... ok
+test bindgen_test_layout____itt_domain ... ok
+test bindgen_test_layout____itt_histogram ... ok
+test bindgen_test_layout____itt_id ... ok
+test bindgen_test_layout____itt_module_object ... ok
+test bindgen_test_layout____itt_section_info ... ok
+test bindgen_test_layout____itt_string_handle ... ok
+test bindgen_test_layout____itt_track ... ok
+test bindgen_test_layout____itt_track_group ... ok
+test bindgen_test_layout__iJIT_Method_Inline_Load ... ok
+test bindgen_test_layout__iJIT_Method_Load ... ok
+test bindgen_test_layout__iJIT_Method_Load_V2 ... ok
+test bindgen_test_layout__iJIT_Method_Load_V3 ... ok
+test bindgen_test_layout__iJIT_Method_Update ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+     Running tests/bindgen-up-to-date.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188475-5/target/bsan/x86_64-unknown-linux-gnu/debug/build/ittapi-sys/e051c85f454bfee9/out/bindgen_up_to_date-e051c85f454bfee9)
+
+running 2 tests
+test test_ittnotify_bindings_up_to_date has been running for over 60 seconds
+test test_jitprofiling_bindings_up_to_date has been running for over 60 seconds
+ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000).
+  Thread T1 (os_id 0) has not reached a safepoint.
+error: test failed, to rerun pass `--test bindgen-up-to-date`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188475-5/target/bsan/x86_64-unknown-linux-gnu/debug/build/ittapi-sys/e051c85f454bfee9/out/bindgen_up_to_date-e051c85f454bfee9` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,cranelift-isle-0.136.2,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/cranelift-isle-0.136.2/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188481-1/target/bsan/x86_64-unknown-linux-gnu/debug/build/cranelift-isle/16013ed140dbaa81/out/cranelift_isle-16013ed140dbaa81)
+
+running 11 tests
+test codegen::tests::formats_wrapped_signed_literals ... ok
+test codegen::tests::preserves_positive_unsigned_literals ... ok
+test codegen::tests::formats_wrapped_unsigned_literals ... ok
+test files::tests::line_map ... ok
+test lexer::test::ends_with_num ... ok
+test lexer::test::ends_with_sym ... ok
+test lexer::test::lexer_basic ... ok
+test lexer::test::weird_syms ... ok
+test serialize::tests::test_group_mut ... ok
+test lexer::test::integers ... ok
+test sema::test::build_type_env ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+
+     Running tests/printer_tests.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188481-1/target/bsan/x86_64-unknown-linux-gnu/debug/build/cranelift-isle/802877d7e1744b77/out/printer_tests-802877d7e1744b77)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/run_tests.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188481-1/target/bsan/x86_64-unknown-linux-gnu/debug/build/cranelift-isle/3d425c4d2b1d4cdb/out/run_tests-3d425c4d2b1d4cdb)
+
+running 59 tests
+test test_run_fail_multi_internal_etor ... ok
+test test_run_fail_multi_prio ... ok
+test test_run_fail_bound_var_type_mismatch ... ok
+test test_run_fail_extra_parens ... ok
+test test_run_pass_nodebug ... ok
+test test_run_fail_recursion_direct ... ok
+test test_run_fail_impure_expression ... ok
+test test_run_fail_bad_converters ... ok
+test test_run_pass_bound_var ... ok
+test test_run_fail_error1 ... ok
+test test_run_fail_impure_rhs ... ok
+test test_run_print_bound_var ... ok
+test test_run_fail_recursion_cycle ... ok
+test test_run_link_multi_extractor ... ok
+test test_run_link_multi_constructor ... ok
+test test_run_pass_construct_and_extract ... ok
+test test_run_pass_recursion ... ok
+test test_run_link_convert_partial_borrows ... ok
+test test_run_link_borrows ... ok
+test test_run_pass_conversions_extern ... ok
+test test_run_pass_struct ... ok
+test test_run_print_nodebug ... ok
+test test_run_print_borrows ... ok
+test test_run_pass_let ... ok
+test test_run_link_test ... ok
+test test_run_print_construct_and_extract ... ok
+test test_run_print_convert_partial_borrows ... ok
+test test_run_fail_converter_extractor_constructor ... ok
+test test_run_print_conversions_extern ... ok
+test test_run_pass_test2 ... ok
+test test_run_print_multi_extractor ... ok
+test test_run_print_multi_constructor ... ok
+test test_run_pass_veri_spec ... ok
+test test_run_print_struct_test ... ok
+test test_run_print_recursion ... ok
+test test_run_print_let ... ok
+test test_run_pass_conversions ... ok
+test test_run_print_struct ... ok
+test test_run_print_iconst ... ok
+test test_run_print_conversions ... ok
+warning: unused variable: `unit`
+  --> /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188481-1/target/bsan/x86_64-unknown-linux-gnu/tmp/struct_test/struct_test_main.rs:39:9
+   |
+39 |     let unit = UnitStruct;
+   |         ^^^^ help: if this is intentional, prefix it with an underscore: `_unit`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: 1 warning emitted
+
+test test_run_run_struct_test ... ok
+test test_run_pass_test4 ... ok
+test test_run_link_iflets ... ok
+test test_run_print_test2 ... ok
+test test_run_print_test ... ok
+test test_run_print_iflets ... ok
+test test_run_print_let_shadowing ... ok
+test test_run_print_tuple_variants ... ok
+test test_run_run_tuple_variants ... ok
+test test_run_print_test4 ... ok
+test test_run_run_let_shadowing ... ok
+test test_run_run_iconst ... ok
+test test_run_print_veri_spec ... ok
+test test_run_pass_test3 ... ok
+test test_run_print_test3 ... ok
+test test_run_pass_prio_trie_bug has been running for over 60 seconds
+test test_run_pass_tutorial has been running for over 60 seconds
+test test_run_print_prio_trie_bug has been running for over 60 seconds
+test test_run_print_tutorial has been running for over 60 seconds
+ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000).
+  Thread T30 (os_id 0) has not reached a safepoint.
+error: test failed, to rerun pass `--test run_tests`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188481-1/target/bsan/x86_64-unknown-linux-gnu/debug/build/cranelift-isle/3d425c4d2b1d4cdb/out/run_tests-3d425c4d2b1d4cdb` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
+parse-patch-bsan,smawk-0.3.3,__all__,test_failed,gc,/scratch/group/p.cis260229.000/datasets/top_1_percent/smawk-0.3.3/hyperfine-parse-patch-bsan.log,TRUE,TRUE,1,"    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.43s
+     Running unittests src/lib.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188456-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/smawk/c0538f7d33e2d9f2/out/smawk-c0538f7d33e2d9f2)
+
+running 19 tests
+test monge::tests::is_monge_handles_overflow ... ok
+test monge::tests::monge_constant_cols ... ok
+test monge::tests::monge_constant_rows ... ok
+test tests::online_1x1 ... ok
+test tests::online_2x2 ... ok
+test monge::tests::monge_lower_left ... ok
+test tests::online_3x3 ... ok
+test monge::tests::monge_upper_right ... ok
+test tests::online_4x4 ... ok
+test tests::online_works_with_partial_ord ... ok
+test tests::online_5x5 ... ok
+test tests::smawk_1x1 ... ok
+test tests::smawk_1x2 ... ok
+test tests::smawk_2x1 ... ok
+test tests::smawk_2x2 ... ok
+test tests::smawk_3x3 ... ok
+test tests::smawk_works_with_partial_ord ... ok
+test tests::smawk_4x4 ... ok
+test tests::smawk_5x5 ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
+
+     Running tests/agreement.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188456-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/smawk/66849b7b19b7a9aa/out/agreement-66849b7b19b7a9aa)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/complexity.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188456-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/smawk/5c574b1c988a87cd/out/complexity-5c574b1c988a87cd)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/monge.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188456-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/smawk/c7cfe0f5e8484c70/out/monge-c7cfe0f5e8484c70)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/version-numbers.rs (/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188456-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/smawk/0ff1659761bf4b1c/out/version_numbers-0ff1659761bf4b1c)
+
+running 2 tests
+ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000).
+  Thread T2 (os_id 0) has not reached a safepoint.
+error: test failed, to rerun pass `--test version-numbers`
+
+Caused by:
+  process didn't exit successfully: `/scratch/group/p.cis260229.000/cargo-temp-u.mm346025/hf-2188456-10/target/bsan/x86_64-unknown-linux-gnu/debug/build/smawk/0ff1659761bf4b1c/out/version_numbers-0ff1659761bf4b1c` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness."
