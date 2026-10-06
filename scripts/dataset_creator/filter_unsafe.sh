@@ -60,6 +60,15 @@ PIN_TOOLCHAIN="${PIN_TOOLCHAIN:-$(rustup show active-toolchain 2>/dev/null | awk
 [ -n "$PIN_TOOLCHAIN" ] && export RUSTUP_TOOLCHAIN="$PIN_TOOLCHAIN"
 # --------------------------------------------------------------------------- #
 
+# Each crate builds into its own target dir, deleted once it's scanned. If
+# CARGO_TARGET_DIR is set (containers/run.sh points it at one shared job
+# scratch dir) the per-crate dirs go under it; otherwise into <crate>/target.
+# Never share one across crates: geiger walks every dep-info (.d) file in the
+# target dir and resolves their relative paths against the CURRENT crate, so
+# leftovers from an earlier crate fail the scan with "Io(Os { code: 2 ...
+# src/<some other crate's file>.rs".
+TARGET_BASE="${CARGO_TARGET_DIR:-}"
+
 LOG_DIR="$OUTPUT_DIR/_logs"
 ERROR_CSV="$LOG_DIR/geiger_errors.csv"
 RESULTS_CSV="$LOG_DIR/unsafe_scan.csv"
@@ -205,14 +214,14 @@ crate_has_unsafe() {
     analyze_geiger_output "$out"
 }
 
-# Remove the build artifacts geiger left in a crate dir so a full scan doesn't
+# Remove the build artifacts geiger left for a crate so a full scan doesn't
 # fill the disk. rm -rf rather than `cargo clean`, because cargo clean has to
 # resolve the manifest first and silently does nothing for exactly the crates
 # that failed to build. A Cargo.lock geiger generated (the crate didn't ship
 # one) is removed too; a shipped one is left as-is.
 cleanup_crate() {
     local dir="$1" had_lock="$2"
-    rm -rf "$dir/target"
+    rm -rf "$CARGO_TARGET_DIR"
     [ "$had_lock" = 0 ] && rm -f "$dir/Cargo.lock"
     return 0
 }
@@ -228,6 +237,12 @@ for crate_dir in "$OUTPUT_DIR"/*/; do
     [ -f "$crate_dir/Cargo.toml" ] || continue
 
     had_lock=0; [ -f "$crate_dir/Cargo.lock" ] && had_lock=1
+    if [ -n "$TARGET_BASE" ]; then
+        export CARGO_TARGET_DIR="$TARGET_BASE/geiger-$base"
+    else
+        export CARGO_TARGET_DIR="$crate_dir/target"
+    fi
+    rm -rf "$CARGO_TARGET_DIR"   # start clean even if a previous run was killed
 
     printf '    geiger: %-40s ' "$base"
     crate_has_unsafe "$crate_dir"
