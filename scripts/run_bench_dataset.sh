@@ -29,12 +29,17 @@
 #                     reported, to pick up a walltime-killed sweep
 #   --no-ffi          only run crates whose contains_ffi column is exactly
 #                     "false" (both "true" and "scan_failed" are skipped)
-#   --safety safe|unsafe
-#                     only run crates the unsafe scan marked "no" (safe) or
-#                     "yes" (unsafe). Crates it marked "unknown" or never
-#                     scanned are skipped either way. See --unsafe-scan
+#   --safety LIST     only run crates whose unsafe-scan status is in LIST, a
+#                     comma-separated subset of
+#                       unsafe       (!)  the crate's own code uses unsafe
+#                       unsafe-deps  (?)  own code safe, a dependency isn't
+#                       safe         (:)) no unsafe anywhere in the tree
+#                     e.g. --safety safe,unsafe-deps = own code unsafe-free.
+#                     The symbols themselves are accepted too. Crates marked
+#                     "unknown" or never scanned are always skipped. See
+#                     --unsafe-scan
 #   --unsafe-scan FILE  unsafe_scan.csv from dataset_creator/filter_unsafe.sh
-#                     (crate,unsafe_found,feature_args). Default: <dataset
+#                     (crate,unsafe_status,feature_args). Default: <dataset
 #                     dir>/_logs/unsafe_scan.csv. Only read with --safety
 #   --ignore FILE     crate names to skip, one per line (#-comments ok)
 #   --only FILE       run ONLY the crates listed in FILE (one per line,
@@ -313,7 +318,7 @@ TESTS_CSV=""
 NO_FFI=0
 IGNORE_FILE=""
 ONLY_FILE=""
-SAFETY=""            # --safety safe|unsafe; empty = don't filter on unsafe
+SAFETY=""            # --safety LIST of safe|unsafe-deps|unsafe; empty = don't filter on unsafe
 UNSAFE_SCAN=""       # empty = <dataset dir>/_logs/unsafe_scan.csv
 JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
 TASKS=""            # empty = auto: min(fast crates, MAX_TASKS)
@@ -400,7 +405,7 @@ usage() {
     echo "  <dataset>   folder under $DATASETS_ROOT" >&2
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --tests FILE --no-ffi --ignore FILE --only FILE --jobs N" >&2
-    echo "           --safety safe|unsafe [--unsafe-scan FILE] (geiger scan filter)" >&2
+    echo "           --safety safe,unsafe-deps,unsafe [--unsafe-scan FILE] (geiger scan filter)" >&2
     echo "           --tasks N --max-tasks N --cpus-per-task N --mem-per-task G" >&2
     echo "           --runs N --warmup N --slow-runs N (slowlist runs, default 1)" >&2
     echo "           --all-slow (split every test evenly over --jobs x --tasks)" >&2
@@ -609,25 +614,36 @@ if [[ -n "$ONLY_FILE" ]]; then
     (( ${#ONLY[@]} > 0 )) || { echo "Error: --only list $ONLY_FILE is empty." >&2; exit 1; }
 fi
 
-# Load the unsafe scan (if --safety) into crate -> yes/no/unknown. Written by
+# Load the unsafe scan (if --safety) into crate -> !/?/:)/unknown. Written by
 # filter_unsafe.sh with every field double-quoted, so quotes are stripped; the
 # crate field is the dir basename, the same key the tests CSV uses.
+# WANT_STATUS holds the statuses --safety selected, as keys.
 declare -A SAFETY_OF=()
+declare -A WANT_STATUS=()
 if [[ -n "$SAFETY" ]]; then
-    [[ "$SAFETY" == safe || "$SAFETY" == unsafe ]] \
-        || { echo "Error: --safety must be 'safe' or 'unsafe' (got '$SAFETY')." >&2; exit 1; }
+    IFS=, read -ra _classes <<<"$SAFETY"
+    for c in "${_classes[@]}"; do
+        case "$c" in
+            unsafe|'!')       WANT_STATUS['!']=1 ;;
+            unsafe-deps|'?')  WANT_STATUS['?']=1 ;;
+            safe|':)')        WANT_STATUS[':)']=1 ;;
+            *) echo "Error: --safety takes a comma-separated list of safe, unsafe-deps, unsafe (got '$c')." >&2; exit 1 ;;
+        esac
+    done
     [[ -n "$UNSAFE_SCAN" ]] || UNSAFE_SCAN="$DATASET_DIR/_logs/unsafe_scan.csv"
     [[ -f "$UNSAFE_SCAN" ]] \
         || { echo "Error: unsafe scan not found: $UNSAFE_SCAN (run dataset_creator/filter_unsafe.sh, or --unsafe-scan FILE)" >&2; exit 1; }
     while IFS=, read -r crate found _ || [[ -n "$crate" ]]; do
         crate="${crate//\"/}"; found="${found//\"/}"; found="${found//$'\r'/}"
-        [[ -n "$crate" && "$crate" != "crate" ]] && SAFETY_OF["$crate"]="$found"
+        [[ -n "$crate" && "$crate" != "crate" ]] || continue
+        if [[ "$found" == yes || "$found" == no ]]; then
+            echo "Error: $UNSAFE_SCAN is in the old yes/no format; re-run dataset_creator/filter_unsafe.sh for !/?/:) statuses." >&2
+            exit 1
+        fi
+        SAFETY_OF["$crate"]="$found"
     done < "$UNSAFE_SCAN"
     (( ${#SAFETY_OF[@]} > 0 )) || { echo "Error: unsafe scan $UNSAFE_SCAN has no rows." >&2; exit 1; }
 fi
-WANT_FOUND=""
-[[ "$SAFETY" == safe ]]   && WANT_FOUND=no
-[[ "$SAFETY" == unsafe ]] && WANT_FOUND=yes
 
 # ── Run dir: chunks, per-crate test lists, shards, job scripts, logs ─────────
 RUNDIR="$OUTPUTS_DIR/hyperfine-runs/$(date +%Y%m%d-%H%M%S)-$$"
@@ -670,7 +686,7 @@ while IFS=, read -r crate tests ffi || [[ -n "$crate" ]]; do
     if [[ -n "${IGNORE[$crate]:-}" ]]; then skip_ignored=$((skip_ignored+1)); continue; fi
     if (( ${#ONLY[@]} > 0 )) && [[ -z "${ONLY[$crate]:-}" ]]; then skip_only=$((skip_only+1)); continue; fi
     if (( NO_FFI )) && [[ "$ffi" != "false" ]]; then skip_ffi=$((skip_ffi+1)); continue; fi
-    if [[ -n "$WANT_FOUND" && "${SAFETY_OF[$crate]:-}" != "$WANT_FOUND" ]]; then skip_safety=$((skip_safety+1)); continue; fi
+    if [[ -n "$SAFETY" && -z "${WANT_STATUS[${SAFETY_OF[$crate]:-unknown}]:-}" ]]; then skip_safety=$((skip_safety+1)); continue; fi
     if [[ ! -d "$DATASET_DIR/$crate" ]]; then MISSING+=("$crate"); continue; fi
     ELIGIBLE["$crate"]=1
     if [[ -z "$tests" ]]; then skip_empty=$((skip_empty+1)); continue; fi
