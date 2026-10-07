@@ -20,9 +20,9 @@
 #                              Miri and diff the two name sets.
 #
 # So for every crate we run (in the stock `miri` image) both
-#     cargo test      --tests -- --list --format=json -Zunstable-options
-#     cargo miri test --tests -- --list --format=json -Zunstable-options
-# and take the union of
+#                         cargo test --tests -- --list --format=json -Zunstable-options
+#     RUSTFLAGS=--cfg=miri cargo test --tests -- --list --format=json -Zunstable-options
+# ("the Miri listing" below) and take the union of
 #     (a) Miri-listed tests with "ignore": true   -- cfg_attr(miri, ignore) and
 #         plain #[ignore]; both are tests Miri skips.
 #     (b) host-listed names absent from the Miri listing -- cfg(not(miri)).
@@ -39,10 +39,16 @@
 # runs, the name still lands in the ignored column (listings carry no binary
 # qualifier, so the two are indistinguishable here).
 #
+# The Miri listing is plain cargo with --cfg=miri, NOT cargo miri: --list
+# still starts each test binary, and under Miri that alone fails for crates
+# whose startup Miri can't interpret (e.g. a mimalloc global allocator: "can't
+# call foreign function mi_malloc_aligned"), losing the crate's row. The cfg
+# is what decides which tests exist / are ignored, so the result is the same;
+# it is also exactly the view list_tests.sh and the run scripts compile with.
+#
 # Crates where either listing fails (fetch/build error) get no row -- check
-# "<crate>/list-ignored.log". Note that bucket (b) is a set difference between
-# two builds, so any *other* cfg difference between the host and Miri builds
-# would also land there; in practice cfg(miri) is the only one that differs.
+# "<crate>/list-ignored.log". Bucket (b) is a set difference between two
+# builds that differ only in --cfg=miri, so it is exactly the cfg(miri) effect.
 # Launches ONE SLURM job per crate via run_job.sh, keeping at most MAX_PARALLEL
 # (default 40, override with the MAX_PARALLEL env var) running at once.
 #
@@ -182,9 +188,9 @@ for CRATE_PATH in "${CRATE_DIRS[@]}"; do
     # CARGO_HOME / CARGO_TARGET_DIR are injected by run_job.sh and live under
     # the per-job scratch dir, so deleting them on exit reclaims that scratch.
     # --list emits one JSON line per discovered test on stdout (build noise goes
-    # to stderr, i.e. the log). We list twice -- host first (cheaper, and it
-    # writes to a different target subdir than cargo-miri, so the two builds do
-    # not clobber each other) -- then union the "ignore": true names with the
+    # to stderr, i.e. the log). We list twice -- host, then with --cfg=miri in
+    # its own target subdir so the two builds do not clobber each other -- then
+    # union the "ignore": true names with the
     # host-minus-miri names and join with ';'. LC_ALL=C keeps the sorts and
     # `comm` on the same collation. A CSVROW line is only emitted when both
     # listings succeed. "\$" values expand inside the container; the rest expand
@@ -204,7 +210,8 @@ if ! cargo test --tests -- --list --format=json -Zunstable-options > "\$hostlog"
     exit 1
 fi
 mirilog="\$(mktemp)"
-if ! cargo miri test --tests -- --list --format=json -Zunstable-options > "\$mirilog"; then
+if ! RUSTFLAGS="--cfg=miri" CARGO_TARGET_DIR="\$CARGO_TARGET_DIR/cfg-miri" \\
+        cargo test --tests -- --list --format=json -Zunstable-options > "\$mirilog"; then
     echo "result: ${CRATE} -> miri_list_failed"
     rm -f "\$hostlog" "\$mirilog"
     exit 1

@@ -27,8 +27,9 @@
 #   <walltime>    per-job walltime, HH or HH:MM (passed straight to run_job.sh).
 #   <dataset>     folder under the group datasets dir holding crate subdirectories.
 #
-# For every crate, runs (in the stock `miri` image)
-#     cargo miri test --tests -- --list --format=json -Zunstable-options
+# For every crate, runs (in the stock `miri` image, but with plain cargo, not
+# Miri, and RUSTFLAGS="--cfg=miri")
+#     cargo test --tests -- --list --format=json -Zunstable-options
 # which builds the test binaries and emits one JSON line per discovered test,
 # then collects the names of "type": "test" entries marked "ignore": false, i.e.
 # the tests that actually run. --tests covers unit + integration test binaries
@@ -307,11 +308,14 @@ if ! cargo fetch; then
     exit 1
 fi
 listlog="\$(mktemp)"
-# --cfg=miri matches what the run scripts now compile every image with, so this
-# listing is the test set they will actually execute. Redundant here (cargo miri
-# sets --cfg=miri for target crates itself) but kept explicit: if this listing
-# and the runs ever disagree on the cfg, every --exact filter goes stale.
-if ! RUSTFLAGS="--cfg=miri" cargo miri test --tests -- --list --format=json -Zunstable-options > "\$listlog"; then
+# --cfg=miri matches what the run scripts compile every image with, so this
+# listing is the test set they will actually execute: if the two ever disagree
+# on the cfg, every --exact filter goes stale. Plain cargo rather than
+# cargo miri: --list still starts each test binary, and under Miri that alone
+# fails for crates whose startup Miri can't interpret (e.g. a mimalloc global
+# allocator: "can't call foreign function mi_malloc_aligned"), losing the
+# whole crate's listing. Natively the harness just prints the names.
+if ! RUSTFLAGS="--cfg=miri" cargo test --tests -- --list --format=json -Zunstable-options > "\$listlog"; then
     echo "result: ${CRATE} -> list_failed"
     rm -f "\$listlog"
     exit 1
