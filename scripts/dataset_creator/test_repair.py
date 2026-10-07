@@ -12,10 +12,18 @@ Given a list of `name-version` entries, for each crate this:
   4. copies files under the crate's tests/ directory into the
      local crate folder, at the same relative paths.
 
-It does NOT touch Cargo.toml or anything outside tests/. The crate
-stays the (buildable) crates.io version; only the missing data files are added.
-By default existing files are overwritten; pass --no-overwrite to preserve
-existing files. Archives are cached per (repo, tag) for the run, so the
+Files under FIXTURE_DIRS (tests/, testdata/, ...) are copied, and by default
+overwrite existing ones (--no-overwrite preserves them). Everywhere else in the
+package, only NON-.rs files that are MISSING locally are added (e.g. ring's
+src/test_1_tests.txt and crypto/fipsmodule/bn/test/*.txt) -- the crate's own
+sources are never replaced there, and Cargo.toml / Cargo.lock never copied.
+The crate stays the (buildable) crates.io version plus the missing data files.
+
+The source ref is, in order: the exact commit in the crate's
+.cargo_vcs_info.json (when the crate was published from git), a tag matching
+the version, the default branch's last commit before the version was
+published on crates.io (flagged DATED: right for repos that never tag, e.g.
+ring), else the latest release / default branch (flagged LATEST). Archives are cached per (repo, tag) for the run, so the
 members of a mono-repo are downloaded only once.
 
 Stdlib only (no requests / jq). Set GITHUB_TOKEN to raise the API rate limit
@@ -23,11 +31,13 @@ Stdlib only (no requests / jq). Set GITHUB_TOKEN to raise the API rate limit
 
 Usage:
     python3 test_repair.py CRATES_DIR [options]
-      CRATES_DIR  the dataset dir, where the <name-version>/ folders live
-      --list FILE crates to repair, one name-version per line. Default:
-                  CRATES_DIR/_logs/missing_test_data.log, as written by
-                  check_builds.sh (which finds the crates whose test build
-                  can't read a fixture file)
+      CRATES_DIR  the dataset dir, where the <name-version>/ folders live: a
+                  path, or just a dataset name under DATASETS_ROOT
+                  (/scratch/group/p.cis260229.000/datasets)
+      --list FILE crates to repair: one name-version per line, or a
+                  check_builds.sh build_check.csv (its build_failed rows).
+                  Default: CRATES_DIR/_logs/build_check.csv, i.e. every crate
+                  whose test build failed
       --log FILE  results CSV. Default: CRATES_DIR/_logs/test_fixtures_fetched.csv
     options: --no-overwrite  --dry-run  --limit N  --only NAME-VER ...  --keep-cache
 
@@ -50,9 +60,14 @@ import urllib.request
 USER_AGENT   = "crate-fixture-fetcher (CMU systems research; via crates.io)"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 HTTP_TIMEOUT = 90
+DATASETS_ROOT = "/scratch/group/p.cis260229.000/datasets"
 # directories (relative to the crate's package root) whose files are
 # treated as test fixtures and restored into the local crate folder
 FIXTURE_DIRS = ["tests", "testdata", "test", "src/unicode/data", "src/tests"]
+# everywhere else, only non-.rs files missing locally are added (never
+# overwritten); these dirs / file names are never copied by that pass
+FILL_SKIP_DIRS = {".git", ".github", "target"}
+FILL_SKIP_FILES = {"Cargo.toml", "Cargo.lock"}
 
 # per-run archive cache:  (repo_id, tag) -> extracted_root
 _CACHE = {}
@@ -161,11 +176,14 @@ def _best_tag(names, version):
 
 
 # --------------------------- archive acquisition --------------------------- #
-def _download(host, owner, repo, project_path, ref, cachedir, is_branch=False):
+def _download(host, owner, repo, project_path, ref, cachedir, is_branch=False,
+              is_commit=False):
     safe = re.sub(r"[^A-Za-z0-9._-]", "_", f"{owner or project_path}_{repo}_{ref}")
     tgz = os.path.join(cachedir, safe + ".tgz")
     out = os.path.join(cachedir, safe)
-    if host == "github":
+    if host == "github" and is_commit:
+        url = f"https://codeload.github.com/{owner}/{repo}/tar.gz/{ref}"
+    elif host == "github":
         kind = "heads" if is_branch else "tags"
         url = (f"https://codeload.github.com/{owner}/{repo}/tar.gz/refs/{kind}/"
                + urllib.parse.quote(ref, safe="/"))
@@ -183,11 +201,13 @@ def _download(host, owner, repo, project_path, ref, cachedir, is_branch=False):
     return url, out
 
 
-def _take(repo_id, host, owner, repo, project_path, ref, cachedir, is_branch=False):
+def _take(repo_id, host, owner, repo, project_path, ref, cachedir, is_branch=False,
+          is_commit=False):
     """Download+extract a ref (cache-aware). Returns (root, url) or (None, url)."""
     if (repo_id, ref) in _CACHE:
         return _CACHE[(repo_id, ref)], _CACHE_URL[(repo_id, ref)]
-    url, root = _download(host, owner, repo, project_path, ref, cachedir, is_branch)
+    url, root = _download(host, owner, repo, project_path, ref, cachedir, is_branch,
+                          is_commit)
     if root:
         _CACHE[(repo_id, ref)] = root
         _CACHE_URL[(repo_id, ref)] = url
@@ -216,11 +236,43 @@ def latest_ref(host, owner, repo, project_path):
     return None, None
 
 
-def get_archive(host, owner, repo, project_path, name, version, cachedir):
+def vcs_commit(local_dir):
+    """The git commit the crate was packaged from (.cargo_vcs_info.json), or None."""
+    import json
+    try:
+        with open(os.path.join(local_dir, ".cargo_vcs_info.json"), encoding="utf-8") as f:
+            sha = (json.load(f).get("git") or {}).get("sha1", "")
+    except (OSError, ValueError):
+        return None
+    return sha if re.fullmatch(r"[0-9a-f]{7,40}", sha or "") else None
+
+
+def commit_before(host, owner, repo, project_path, when):
+    """sha of the default branch's last commit at or before ISO time `when`."""
+    q = urllib.parse.quote(when, safe="")
+    if host == "github":
+        cs = http_json(f"https://api.github.com/repos/{owner}/{repo}/commits"
+                       f"?until={q}&per_page=1", github_api=True) or []
+        return cs[0].get("sha") if isinstance(cs, list) and cs else None
+    enc = urllib.parse.quote(project_path, safe="")
+    cs = http_json(f"https://gitlab.com/api/v4/projects/{enc}/repository/commits"
+                   f"?until={q}&per_page=1") or []
+    return cs[0].get("id") if isinstance(cs, list) and cs else None
+
+
+def get_archive(host, owner, repo, project_path, name, version, cachedir, commit=None,
+                published=None):
     """Resolve a source ref and return (extract_root, ref_label, url, kind),
     kind in {'exact','latest'}, or (None, None, None, None). Caches per ref so
     mono-repo members download once."""
     repo_id = f"{host}:{owner}/{repo}" if host == "github" else f"{host}:{project_path}"
+    # 0) the exact commit the crate was published from (gitlab's archive
+    #    endpoint takes a sha like any other ref)
+    if commit:
+        root, url = _take(repo_id, host, owner, repo, project_path, commit, cachedir,
+                          is_commit=True)
+        if root:
+            return root, f"commit {commit[:12]}", url, "exact"
     # 1) version-matched tag spellings
     for tag in tag_candidates(name, version):
         root, url = _take(repo_id, host, owner, repo, project_path, tag, cachedir)
@@ -239,7 +291,15 @@ def get_archive(host, owner, repo, project_path, name, version, cachedir):
         root, url = _take(repo_id, host, owner, repo, project_path, pick, cachedir)
         if root:
             return root, pick, url, "exact"
-    # 3) fallback: latest release, else default branch
+    # 3) no tag: the default branch as of the version's crates.io publish time
+    if published:
+        sha = commit_before(host, owner, repo, project_path, published)
+        if sha:
+            root, url = _take(repo_id, host, owner, repo, project_path, sha, cachedir,
+                              is_commit=True)
+            if root:
+                return root, f"commit {sha[:12]} @ {published[:10]}", url, "dated"
+    # 4) fallback: latest release, else default branch
     ref, is_branch = latest_ref(host, owner, repo, project_path)
     if ref:
         root, url = _take(repo_id, host, owner, repo, project_path, ref, cachedir, is_branch)
@@ -272,6 +332,24 @@ def copy_fixtures(pkg_dir, local_dir, overwrite, dry_run):
                     os.makedirs(os.path.dirname(dst), exist_ok=True)
                     shutil.copy2(src, dst)
                 copied += 1
+    # Fill pass over the whole package: missing non-.rs data files only.
+    found_any = True
+    for dp, dns, fns in os.walk(pkg_dir):
+        dns[:] = [d for d in dns if d not in FILL_SKIP_DIRS]
+        for fn in fns:
+            if fn.endswith(".rs") or fn in FILL_SKIP_FILES:
+                continue
+            src = os.path.join(dp, fn)
+            rel = os.path.relpath(src, pkg_dir)
+            if any(rel.startswith(d + os.sep) for d in FIXTURE_DIRS):
+                continue                               # handled above
+            dst = os.path.join(local_dir, rel)
+            if os.path.lexists(dst):
+                continue
+            if not dry_run:
+                os.makedirs(os.path.dirname(dst), exist_ok=True)
+                shutil.copy2(src, dst)
+            copied += 1
     if not found_any:
         return (0, 0, "no fixture dirs in repo")
     return (copied, skipped, "ok")
@@ -310,8 +388,17 @@ def process(line, crates_dir, cachedir, args, writer, fh):
     if host not in ("github", "gitlab"):
         return rec(f"unsupported host: {host}")
 
+    # crates.io publish time of this version, for the dated fallback
+    try:
+        vdata = http_json(f"https://crates.io/api/v1/crates/{urllib.parse.quote(name)}"
+                          f"/{urllib.parse.quote(version)}") or {}
+        published = (vdata.get("version") or {}).get("created_at")
+    except Exception:
+        published = None
     root, ref, _url, kind = get_archive(host, owner, repo, project_path,
-                                        name, version, cachedir)
+                                        name, version, cachedir,
+                                        commit=vcs_commit(local_dir),
+                                        published=published)
     if not root:
         return rec("no matching tag and no latest available")
     row["resolved_tag"] = ref
@@ -324,7 +411,9 @@ def process(line, crates_dir, cachedir, args, writer, fh):
         return rec(f"{ref}: {why}")
     verb = "would copy" if args.dry_run else "copied"
     extra = f", {skipped} already present" if skipped else ""
-    label = ref if kind == "exact" else f"{ref} [LATEST: v{version} not tagged]"
+    label = {"exact": ref,
+             "dated": f"{ref} [DATED: v{version} not tagged]"}.get(
+                 kind, f"{ref} [LATEST: v{version} not tagged]")
     return rec(f"{verb} from {label}{extra}", copied)
 
 
@@ -334,7 +423,7 @@ def main():
     ap.add_argument("paths", nargs="+", metavar="CRATES_DIR",
                     help="dataset dir (or the old LIST_FILE CRATES_DIR pair)")
     ap.add_argument("--list", dest="list_file", default=None,
-                    help="default: CRATES_DIR/_logs/missing_test_data.log")
+                    help="default: CRATES_DIR/_logs/build_check.csv (build_failed rows)")
     ap.add_argument("--no-overwrite", action="store_false", dest="overwrite",
                     help="do not overwrite fixtures that already exist locally (default: overwrite)",
                     default=True)
@@ -353,9 +442,13 @@ def main():
         args.list_file, args.crates_dir = args.paths
     else:
         ap.error("expected CRATES_DIR (or LIST_FILE CRATES_DIR without --list)")
+    # A path, or a bare dataset name under the group datasets dir.
+    if not os.path.isdir(args.crates_dir) and \
+            os.path.isdir(os.path.join(DATASETS_ROOT, args.crates_dir)):
+        args.crates_dir = os.path.join(DATASETS_ROOT, args.crates_dir)
     logs_dir = os.path.join(args.crates_dir, "_logs")
     if args.list_file is None:
-        args.list_file = os.path.join(logs_dir, "missing_test_data.log")
+        args.list_file = os.path.join(logs_dir, "build_check.csv")
     if args.log is None:
         os.makedirs(logs_dir, exist_ok=True)
         args.log = os.path.join(logs_dir, "test_fixtures_fetched.csv")
@@ -363,22 +456,30 @@ def main():
     if not os.path.isdir(args.crates_dir):
         sys.exit(f"ERROR: crates dir not found: {args.crates_dir}")
     if not os.path.isfile(args.list_file):
-        sys.exit(f"ERROR: list file not found: {args.list_file}\n"
+        sys.exit(f"ERROR: crate list not found: {args.list_file}\n"
                  f"       (run check_builds.sh {args.crates_dir} to generate it)")
 
     lines = []
-    for raw in open(args.list_file, encoding="utf-8"):
-        s = raw.strip()
-        if s and not s.startswith("#"):
-            lines.append(s)
+    with open(args.list_file, encoding="utf-8", newline="") as fh:
+        first = fh.readline()
+        fh.seek(0)
+        if first.startswith("crate,status"):            # check_builds.sh CSV
+            lines = [r["crate"] for r in csv.DictReader(fh)
+                     if r.get("status") == "build_failed"]
+        else:
+            for raw in fh:
+                s = raw.strip()
+                if s and not s.startswith("#"):
+                    lines.append(s)
     if args.only:
         want = set(args.only)
         lines = [l for l in lines if l in want]
     if args.limit:
         lines = lines[:args.limit]
 
-    print(f"==> {len(lines)} crate(s); copying non-.rs fixtures from "
-          f"{', '.join(d + '/' for d in FIXTURE_DIRS)} into {args.crates_dir}/")
+    print(f"==> {len(lines)} crate(s) from {args.list_file}; copying fixtures from "
+          f"{', '.join(d + '/' for d in FIXTURE_DIRS)} + any missing non-.rs "
+          f"files into {args.crates_dir}/")
     if args.dry_run:
         print("    DRY RUN: nothing will be written")
     if not GITHUB_TOKEN:
