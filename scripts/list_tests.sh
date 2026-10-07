@@ -36,8 +36,9 @@
 # (e.g. "arrayvec::ArrayVec<T,CAP> (line 748)"), whose commas would corrupt the
 # CSV, while binary test names are Rust paths and can never contain a comma.
 #
-# Doc tests (--doc): additionally runs
-#     cargo miri test --doc -- --list --format=json -Zunstable-options
+# Doc tests (--doc): additionally runs plain cargo (not Miri), with
+# RUSTFLAGS/RUSTDOCFLAGS="--cfg=miri":
+#     cargo test --doc -- --list --format=json -Zunstable-options
 # and appends its runnable ones as "doc:<name>#<filter>[#<skip>...]", every
 # part with the characters that would break either CSV or a ';'-joined list
 # percent-encoded (% , ; space ' " #), e.g.
@@ -321,9 +322,11 @@ grep -a '"type": *"test"' "\$listlog" | grep -a '"ignore": *false' | namesof > "
 ndoc=0
 if [ ${DOC} -eq 1 ]; then
     # Doc tests as doc:<name>#<filter> -- see "Doc tests" in list_tests.sh.
-    # RUSTDOCFLAGS carries the cfg to rustdoc, which ignores RUSTFLAGS.
+    # Plain cargo, not cargo miri: listing only collects doc tests, and
+    # --cfg=miri (in RUSTDOCFLAGS too, as rustdoc ignores RUSTFLAGS) keeps the
+    # same cfg(miri) view the runs compile with.
     doclog="\$(mktemp)"
-    if RUSTFLAGS="--cfg=miri" RUSTDOCFLAGS="--cfg=miri" cargo miri test --doc -- --list --format=json -Zunstable-options > "\$doclog"; then
+    if RUSTFLAGS="--cfg=miri" RUSTDOCFLAGS="--cfg=miri" cargo test --doc -- --list --format=json -Zunstable-options > "\$doclog"; then
         grep -a '"type": *"test"' "\$doclog" | namesof > "\$doclog.all"
         grep -a '"type": *"test"' "\$doclog" | grep -a '"ignore": *false' | namesof > "\$doclog.run"
         # For each runnable doc test: the filter token (item path tried first)
