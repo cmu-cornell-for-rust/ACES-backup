@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """
-fetch_test_fixtures.py   (lives in /scratch/group/p.cis260229.000/)
 
 Some crates.io tarballs ship the test *code* (tests/*.rs) but strip the test
 *data* (tests/data/**, fixtures, sample files) via `include`/`exclude`, so the
@@ -23,10 +22,16 @@ Stdlib only (no requests / jq). Set GITHUB_TOKEN to raise the API rate limit
 (only the tag-listing fallback uses the API).
 
 Usage:
-    python3 fetch_test_fixtures.py [LIST_FILE] [CRATES_DIR] [options]
-      LIST_FILE   default: missing_test_data.log
-      CRATES_DIR  default: downloaded_crates   (where <name-version>/ folders live)
+    python3 test_repair.py CRATES_DIR [options]
+      CRATES_DIR  the dataset dir, where the <name-version>/ folders live
+      --list FILE crates to repair, one name-version per line. Default:
+                  CRATES_DIR/_logs/missing_test_data.log, as written by
+                  check_builds.sh (which finds the crates whose test build
+                  can't read a fixture file)
+      --log FILE  results CSV. Default: CRATES_DIR/_logs/test_fixtures_fetched.csv
     options: --no-overwrite  --dry-run  --limit N  --only NAME-VER ...  --keep-cache
+
+    The old form `test_repair.py LIST_FILE CRATES_DIR` still works.
 """
 
 import argparse
@@ -326,8 +331,10 @@ def process(line, crates_dir, cachedir, args, writer, fh):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("list_file", nargs="?", default="missing_test_data.log")
-    ap.add_argument("crates_dir", nargs="?", default="downloaded_crates")
+    ap.add_argument("paths", nargs="+", metavar="CRATES_DIR",
+                    help="dataset dir (or the old LIST_FILE CRATES_DIR pair)")
+    ap.add_argument("--list", dest="list_file", default=None,
+                    help="default: CRATES_DIR/_logs/missing_test_data.log")
     ap.add_argument("--no-overwrite", action="store_false", dest="overwrite",
                     help="do not overwrite fixtures that already exist locally (default: overwrite)",
                     default=True)
@@ -336,13 +343,28 @@ def main():
     ap.add_argument("--only", nargs="*", default=None)
     ap.add_argument("--keep-cache", action="store_true",
                     help="don't delete the downloaded-archive cache on exit")
-    ap.add_argument("--log", default="test_fixtures_fetched.csv")
+    ap.add_argument("--log", default=None,
+                    help="default: CRATES_DIR/_logs/test_fixtures_fetched.csv")
     args = ap.parse_args()
 
-    if not os.path.isfile(args.list_file):
-        sys.exit(f"ERROR: list file not found: {args.list_file}")
+    if len(args.paths) == 1:
+        args.crates_dir = args.paths[0]
+    elif len(args.paths) == 2 and args.list_file is None:   # old positional form
+        args.list_file, args.crates_dir = args.paths
+    else:
+        ap.error("expected CRATES_DIR (or LIST_FILE CRATES_DIR without --list)")
+    logs_dir = os.path.join(args.crates_dir, "_logs")
+    if args.list_file is None:
+        args.list_file = os.path.join(logs_dir, "missing_test_data.log")
+    if args.log is None:
+        os.makedirs(logs_dir, exist_ok=True)
+        args.log = os.path.join(logs_dir, "test_fixtures_fetched.csv")
+
     if not os.path.isdir(args.crates_dir):
         sys.exit(f"ERROR: crates dir not found: {args.crates_dir}")
+    if not os.path.isfile(args.list_file):
+        sys.exit(f"ERROR: list file not found: {args.list_file}\n"
+                 f"       (run check_builds.sh {args.crates_dir} to generate it)")
 
     lines = []
     for raw in open(args.list_file, encoding="utf-8"):
