@@ -3,9 +3,9 @@
 # fetch_all_c_ffi_crates.sh
 #
 #   Downloads EVERY crate on crates.io (~340k, one version each), greps each
-#   one's Rust sources for C / C++ FFI declarations, and keeps only the crates
-#   that have them. Crates with no C FFI are deleted immediately after the
-#   scan, so the output directory only ever holds keepers.
+#   one's Rust sources for C / C++ FFI declarations, and records the crates
+#   that have them in all_c_ffi_crates.csv. No crate sources are kept: every
+#   crate is extracted to a temp dir, scanned, and deleted.
 #
 #   Same scan and CSV as fetch_c_ffi_crates.sh; only the crate list differs.
 #   Instead of paging the API (crates.io asks bulk users not to), the list
@@ -23,35 +23,48 @@
 #       extern "C++"         - cxx-style C++ bridges (`#[cxx::bridge]` modules
 #                              contain `unsafe extern "C++" { .. }`).
 #
-#   The surviving crates are written to all_c_ffi_crates.csv, in the same
-#   shape as c_ffi_bindings.csv:
+#   Crates with C FFI are written to all_c_ffi_crates.csv, in the same shape
+#   as c_ffi_bindings.csv, one row per crate name:
 #       crate,name,version,repository,host,extern_c,extern_c_unwind,extern_cpp,matched_files,status
 #
-#   Resumable: every crate that has been processed leaves a marker in
-#   OUTPUT_DIR/_state/, and a re-run skips it. Delete the marker (or the whole
-#   _state dir) to force a re-fetch. Per-crate failures never abort the run.
-#   The crate list is cached in OUTPUT_DIR/_crate_list.tsv; delete it to
-#   re-download the dump and pick up newly published crates.
+#   Incremental: the CSV is updated in place, never rebuilt from scratch.
+#     - a crate whose current version is already in the CSV is not downloaded;
+#     - a crate already in the CSV at an OLDER version is re-scanned at the new
+#       one and its row replaced (or removed, if the new version has no C FFI;
+#       a failed download/extract leaves the old row alone);
+#     - rows for crates no longer in the list are left as they are.
+#   Every scanned name-version also leaves a verdict in OUTPUT_DIR/_state/, so
+#   crates WITHOUT C FFI aren't re-downloaded either. Delete a marker (or the
+#   whole _state dir) to force a re-scan. Per-crate failures never abort the run.
+#
+#   The crate list is cached in OUTPUT_DIR/_crate_list.tsv and rebuilt from a
+#   fresh dump once it is older than LIST_MAX_AGE_HOURS (the dump is nightly,
+#   so re-fetching more often gains nothing), which is how new versions and
+#   newly published crates get picked up.
 #
 # Usage:
 #   ./fetch_all_c_ffi_crates.sh [OUTPUT_DIR] [CSV_PATH]
 #   ./fetch_all_c_ffi_crates.sh --csv-only [OUTPUT_DIR] [CSV_PATH]
 #
-#   OUTPUT_DIR  default: all_c_ffi_crates
+#   OUTPUT_DIR  state dir (verdicts + crate list), default: all_c_ffi_crates
 #   CSV_PATH    default: all_c_ffi_crates.csv (next to this script)
 #
-#   --csv-only  skip fetching: just rebuild the CSV from OUTPUT_DIR/_state/.
+#   --csv-only  skip fetching: just merge the verdicts in OUTPUT_DIR/_state/
+#               into the CSV.
 #
 # Environment knobs:
 #   JOBS=8              parallel download+scan workers
 #   SLEEP_BETWEEN=1     per-worker politeness delay, seconds
+#   LIST_MAX_AGE_HOURS=24  rebuild the cached crate list from a new dump once
+#                       it is older than this (0 = every run, -1 = never)
 #   SKIP_YANKED=0       1 = skip crates whose default version is yanked
 #   LIMIT=0             process at most N not-yet-done crates this run (0 = all)
 #   DUMP_URL=...        db dump location (a file:// URL works for a local copy)
 #   USER_AGENT=...      sent to crates.io (keep a contact address in it)
 #
 # Disk: the dump needs ~2 GB + ~3.5 GB extracted while the list is built;
-# both are deleted afterwards. Then only kept crates stay on disk.
+# both are deleted afterwards. Beyond that, only one extracted crate per
+# worker is on disk at a time.
 #
 # Requirements: bash 4+, curl, tar, python3. Uses ripgrep if present, else grep.
 
@@ -64,6 +77,7 @@ JOBS="${JOBS:-8}"
 SLEEP_BETWEEN="${SLEEP_BETWEEN:-1}"
 SKIP_YANKED="${SKIP_YANKED:-0}"
 LIMIT="${LIMIT:-0}"
+LIST_MAX_AGE_HOURS="${LIST_MAX_AGE_HOURS:-24}"
 USER_AGENT="${USER_AGENT:-aces-c-ffi-dataset-builder (CMU systems research; mmaclare@andrew.cmu.edu)}"
 
 API="https://crates.io/api/v1/crates"
@@ -135,7 +149,8 @@ csv_field() {   # RFC4180-quote $1 only when it needs it
 all_states() { find "$STATE_DIR" -maxdepth 1 -name '*.tsv' -exec cat {} + 2>/dev/null; }
 
 # ------------------------------- worker mode ------------------------------- #
-# Invoked by xargs, one crate per call: download, extract, scan, keep or drop.
+# Invoked by xargs, one crate per call: download, extract, scan, record the
+# verdict, delete the sources.
 # argv: --worker <name> <version> <repository>
 if [ "${1:-}" = "--worker" ]; then
     name="$2"; version="$3"; repository="${4:-}"
@@ -177,22 +192,14 @@ if [ "${1:-}" = "--worker" ]; then
             "$crate" "$name" "$version" "$repository" > "$state"; exit 0; }
     fi
 
+    # Either way the extracted tree is dropped with the temp dir (EXIT trap).
     read -r n_c n_cu n_cpp n_files <<<"$(scan_crate "$src")"
     if [ $(( n_c + n_cu + n_cpp )) -gt 0 ]; then
-        rm -rf "${OUTPUT_DIR:?}/$crate"
-        if mv "$src" "$OUTPUT_DIR/$crate" 2>/dev/null; then
-            printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\tkept\n' \
-                "$crate" "$name" "$version" "$repository" \
-                "$n_c" "$n_cu" "$n_cpp" "$n_files" > "$state"
-            echo "    keep: $crate  (C=$n_c C-unwind=$n_cu C++=$n_cpp in $n_files files)"
-        else
-            printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\tstore-failed\n' \
-                "$crate" "$name" "$version" "$repository" \
-                "$n_c" "$n_cu" "$n_cpp" "$n_files" > "$state"
-            echo "    fail (store): $crate" >&2
-        fi
+        printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\tkept\n' \
+            "$crate" "$name" "$version" "$repository" \
+            "$n_c" "$n_cu" "$n_cpp" "$n_files" > "$state"
+        echo "    c-ffi: $crate  (C=$n_c C-unwind=$n_cu C++=$n_cpp in $n_files files)"
     else
-        # No C FFI -> the extracted tree is dropped with the temp dir.
         printf '%s\t%s\t%s\t%s\t0\t0\t0\t0\tno-c-ffi\n' \
             "$crate" "$name" "$version" "$repository" > "$state"
     fi
@@ -223,9 +230,18 @@ export SELF SLEEP_BETWEEN USER_AGENT API CDN FFI_RE RG \
 
 if [ "$CSV_ONLY" -eq 0 ]; then
 # --------------- phase 1: build the crate list from the db dump ------------- #
+list_fresh=0
 if [ -s "$CRATE_LIST" ]; then
+    if [ "$LIST_MAX_AGE_HOURS" -lt 0 ]; then
+        list_fresh=1
+    elif [ "$LIST_MAX_AGE_HOURS" -gt 0 ] \
+         && [ -n "$(find "$CRATE_LIST" -mmin -$(( LIST_MAX_AGE_HOURS * 60 )) 2>/dev/null)" ]; then
+        list_fresh=1
+    fi
+fi
+if [ "$list_fresh" -eq 1 ]; then
     echo "==> Reusing cached crate list ($(wc -l < "$CRATE_LIST" | tr -d ' ') crates): $CRATE_LIST"
-    echo "    (delete it to re-download the crates.io dump)"
+    echo "    (younger than LIST_MAX_AGE_HOURS=$LIST_MAX_AGE_HOURS; LIST_MAX_AGE_HOURS=0 forces a new dump)"
 else
     dump_dir="$OUTPUT_DIR/_dump"
     mkdir -p "$dump_dir"
@@ -277,20 +293,34 @@ PY
          "($(awk -F'\t' '$4 == "yanked"' "$CRATE_LIST" | wc -l | tr -d ' ') with a yanked default version)."
 fi
 
-# -------------------- phase 2: download + scan + keep/drop ------------------ #
+# ------------------------ phase 2: download + scan -------------------------- #
+# Skip a crate if the CSV already lists this exact name-version, or if this
+# name-version was already scanned (covers the crates WITHOUT C FFI, which
+# aren't in the CSV). Anything else is new, or a newer version of a CSV row.
 todo="$(mktemp)"
-while IFS=$'\t' read -r name version repository yanked; do
-    [ -z "$name" ] && continue
-    [ "$SKIP_YANKED" = "1" ] && [ "$yanked" = "yanked" ] && continue
-    [ -f "$STATE_DIR/${name}-${version}.tsv" ] && continue
-    printf '%s\t%s\t%s\n' "$name" "$version" "$repository" >> "$todo"
-done < "$CRATE_LIST"
+in_csv="$(mktemp)"
+# name<TAB>version of every existing row (name/version never need quoting).
+[ -f "$CSV_PATH" ] && awk -F, 'NR>1 && $2 != "" {print $2 "\t" $3}' "$CSV_PATH" > "$in_csv"
+awk -F'\t' -v state_dir="$STATE_DIR" -v skip_yanked="$SKIP_YANKED" '
+    FILENAME == ARGV[1] { listed[$1 "\t" $2] = 1; csv_ver[$1] = $2; next }
+    $1 == "" { next }
+    skip_yanked == "1" && $4 == "yanked" { next }
+    ($1 "\t" $2) in listed { next }
+    { f = state_dir "/" $1 "-" $2 ".tsv"
+      if ((getline _ < f) >= 0) { close(f); next }   # already scanned
+      if ($1 in csv_ver) upd++; else new++
+      print $1 "\t" $2 "\t" $3 }
+    END { printf "%d %d\n", new+0, upd+0 > "/dev/stderr" }
+' "$in_csv" "$CRATE_LIST" > "$todo" 2> "$todo.counts"
+rm -f "$in_csv"
+read -r n_new n_upd < "$todo.counts"; rm -f "$todo.counts"
 
 if [ "$LIMIT" -gt 0 ]; then
     head -n "$LIMIT" "$todo" > "$todo.lim" && mv "$todo.lim" "$todo"
 fi
 n_todo="$(wc -l < "$todo" | tr -d ' ')"
-echo "==> Downloading + scanning $n_todo crates with $JOBS workers ..."
+echo "==> Downloading + scanning $n_todo crates with $JOBS workers" \
+     "($n_upd new versions of CSV rows, $n_new others before LIMIT) ..."
 if [ "$n_todo" -gt 0 ]; then
     # macOS xargs -0 silently drops empty arguments, which would shift the
     # 3-arg groups; send "-" for a missing repository and unmap it in the worker.
@@ -300,14 +330,46 @@ fi
 rm -f "$todo"
 fi
 
-# ---------------------------- phase 3: write CSV ---------------------------- #
-echo "==> Writing $CSV_PATH ..."
+# ---------------------------- phase 3: merge CSV ---------------------------- #
+# Start from the existing rows and, per crate name, apply the verdict for the
+# version currently in the crate list:
+#   kept (C FFI)      -> (re)write the row from the verdict
+#   no-c-ffi          -> drop the row (the current version lost its FFI)
+#   failure / none    -> keep the existing row untouched
+# Names in the list but not yet in the CSV get a row if their verdict is kept.
+# awk tags each output line: R = existing CSV line verbatim, S = verdict to format.
+echo "==> Updating $CSV_PATH ..."
+csv_tmp="$(mktemp)"
+csv_old="$(mktemp)"
+[ -f "$CSV_PATH" ] && tail -n +2 "$CSV_PATH" > "$csv_old"
+states="$(mktemp)"
+all_states > "$states"
 {
     echo "crate,name,version,repository,host,extern_c,extern_c_unwind,extern_cpp,matched_files,status"
-    all_states \
-      | awk -F'\t' '$9 == "kept"' \
-      | LC_ALL=C sort -t$'\t' -k1,1 \
-      | while IFS=$'\t' read -r crate name version repository n_c n_cu n_cpp n_files _; do
+    awk -F'\t' -v list="$CRATE_LIST" -v states="$states" '
+            BEGIN {
+                while ((getline l < list) > 0)   { split(l, f, "\t"); if (f[1] != "") cur[f[1]] = f[2] }
+                while ((getline l < states) > 0) { split(l, f, "\t"); k = f[2] "\t" f[3]; verdict[k] = f[9]; line[k] = l }
+            }
+            {   split($0, f, ","); name = f[2]
+                if (name == "" || (name in seen)) next
+                seen[name] = 1
+                k = name "\t" cur[name]
+                if ((name in cur) && verdict[k] == "kept")          print "S\t" line[k]
+                else if ((name in cur) && verdict[k] == "no-c-ffi") dropped++
+                else                                                print "R\t" $0
+            }
+            END {
+                for (name in cur) {
+                    k = name "\t" cur[name]
+                    if (!(name in seen) && verdict[k] == "kept") print "S\t" line[k]
+                }
+                printf "%d\n", dropped+0 > "/dev/stderr"
+            }
+        ' "$csv_old" 2> "$csv_tmp.dropped" \
+      | while IFS=$'\t' read -r tag rest; do
+            if [ "$tag" = R ]; then printf '%s\n' "$rest"; continue; fi
+            IFS=$'\t' read -r crate name version repository n_c n_cu n_cpp n_files _ <<<"$rest"
             # Mirror test_fixtures_fetched.csv's free-text status column.
             kinds=""
             [ "$n_c"   -gt 0 ] && kinds="extern \"C\""
@@ -319,22 +381,27 @@ echo "==> Writing $CSV_PATH ..."
                 "$(csv_field "$(host_of "$repository")")" \
                 "$n_c" "$n_cu" "$n_cpp" "$n_files" \
                 "$(csv_field "$kinds")"
-        done
-} > "$CSV_PATH"
+        done \
+      | LC_ALL=C sort -t, -k1,1
+} > "$csv_tmp"
+n_dropped="$(cat "$csv_tmp.dropped" 2>/dev/null || echo 0)"
+rm -f "$csv_tmp.dropped" "$csv_old" "$states"
+mv "$csv_tmp" "$CSV_PATH"
 
 # --------------------------------- summary ---------------------------------- #
 counts="$(all_states | awk -F'\t' '{ n[$9]++ } END { for (s in n) print s, n[s] }')"
 tally() { awk -v s="$1" '$1 == s { print $2; f=1 } END { if (!f) print 0 }' <<<"$counts"; }
-kept="$(tally kept)"; none="$(tally no-c-ffi)"
-dl_fail="$(tally download-failed)"; ex_fail="$(tally extract-failed)"; st_fail="$(tally store-failed)"
+ffi="$(tally kept)"; none="$(tally no-c-ffi)"
+dl_fail="$(tally download-failed)"; ex_fail="$(tally extract-failed)"
 
+# Counts are over every verdict in _state, i.e. all versions ever scanned.
 echo
 echo "==> Done."
-echo "    kept (C/C++ FFI):  $kept   -> $OUTPUT_DIR/"
-echo "    deleted (no FFI):  $none"
-echo "    download failures: $dl_fail"
-echo "    extract failures:  $ex_fail"
-[ "$st_fail" -gt 0 ] && echo "    store failures:    $st_fail"
-echo "    csv:               $CSV_PATH ($kept rows)"
-echo "    per-crate verdicts: $STATE_DIR/"
+echo "    scanned with C/C++ FFI:  $ffi"
+echo "    scanned without FFI:     $none"
+echo "    download failures:       $dl_fail"
+echo "    extract failures:        $ex_fail"
+echo "    rows dropped (new version has no FFI): $n_dropped"
+echo "    csv:                     $CSV_PATH ($(( $(wc -l < "$CSV_PATH") - 1 )) rows)"
+echo "    per-crate verdicts:      $STATE_DIR/"
 exit 0
