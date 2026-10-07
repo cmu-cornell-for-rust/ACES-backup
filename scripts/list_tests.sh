@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Usage: list_tests.sh [--ignore FILE] [--only FILE] [--out FILE] <walltime> <dataset>
+# Usage: list_tests.sh [--ignore FILE] [--only FILE] [--out FILE] [--doc] <walltime> <dataset>
 #
 #   --ignore FILE optional file of crate names to skip, one per line (blank
 #                 lines and #-comments ignored). Names match the crate directory
@@ -22,6 +22,8 @@
 #                 into the canonical CSV -- but note the run_*_dataset scripts
 #                 look for the default path unless pointed at yours with their
 #                 own --tests FILE flag.
+#   --doc         also list doc tests (see "Doc tests" below). Off by default,
+#                 so existing listings are unchanged.
 #   <walltime>    per-job walltime, HH or HH:MM (passed straight to run_job.sh).
 #   <dataset>     folder under the group datasets dir holding crate subdirectories.
 #
@@ -33,6 +35,30 @@
 # but NOT doc tests -- deliberately: doc-test names embed the item's generics
 # (e.g. "arrayvec::ArrayVec<T,CAP> (line 748)"), whose commas would corrupt the
 # CSV, while binary test names are Rust paths and can never contain a comma.
+#
+# Doc tests (--doc): additionally runs
+#     cargo miri test --doc -- --list --format=json -Zunstable-options
+# and appends its runnable ones as "doc:<name>#<filter>[#<skip>...]", every
+# part with the characters that would break either CSV or a ';'-joined list
+# percent-encoded (% , ; space ' " #), e.g.
+#     doc:src/lib.rs%20-%20Pair%20(line%201)#Pair#Pair<A%2CB>::new
+# The "doc:" prefix can't collide with a binary test (a Rust path never has a
+# single ':').
+#
+# Why <filter>/<skip>: rustdoc splits its test args on whitespace, so a doc
+# test can never be selected by its full name ("src/lib.rs - X (line 7)" turns
+# into five OR'd filters, and --exact matches none). Instead <filter> is one
+# whitespace-free token of the name, and each <skip> a token of another doc
+# test that <filter> would also match, chosen so it is NOT in this name --
+# together `<filter> --skip <skip>...` selects exactly this test. Of the
+# name's tokens, the filter needing the fewest skips wins (usually the item
+# path, needing none). Every doc test in the crate counts, ignored ones
+# included. One that can't be isolated is left out with a warning in the log
+# (shouldn't happen: two doc tests differ at least in their line token).
+# run_bench_dataset.sh runs these as
+# `cargo <tool> test --doc -- '<filter>' --skip '<skip>' ...`. A crate whose
+# doc-test listing fails (most often: no lib target, so no doc tests) still
+# gets its row with the binary tests only; the log says so.
 #
 # Names are deduplicated (sort -u, so the column is sorted rather than in
 # listing order): a test name appearing in two test binaries is listed once,
@@ -82,6 +108,7 @@ IMAGE="miri"                         # always the stock Miri image (miri.def, no
 IGNORE_FILE=""
 ONLY_FILE=""
 OUT_CSV=""      # --out FILE; empty => <outputs>/tests-<dataset>.csv
+DOC=0           # --doc: also list doc tests
 POS=()
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -100,6 +127,8 @@ while [[ $# -gt 0 ]]; do
             OUT_CSV="$2"; shift 2 ;;
         --out=*)
             OUT_CSV="${1#*=}"; shift ;;
+        --doc)
+            DOC=1; shift ;;
         *)
             POS+=("$1"); shift ;;
     esac
@@ -107,12 +136,13 @@ done
 set -- ${POS[@]+"${POS[@]}"}
 
 if [[ $# -ne 2 ]]; then
-    echo "Usage: $0 [--ignore FILE] [--only FILE] [--out FILE] <walltime> <dataset>" >&2
+    echo "Usage: $0 [--ignore FILE] [--only FILE] [--out FILE] [--doc] <walltime> <dataset>" >&2
     echo "  --ignore FILE  crate names to skip, one per line" >&2
     echo "  --only FILE    run ONLY the crates listed in FILE, one per line" >&2
     echo "                 (--ignore still applies on top)" >&2
     echo "  --out FILE     results CSV to write/append (default" >&2
     echo "                 $OUTPUTS_DIR/tests-<dataset>.csv)" >&2
+    echo "  --doc          also list doc tests (as doc:<encoded name>)" >&2
     echo "  <walltime>  per-job walltime, HH or HH:MM" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT holding crate subdirectories" >&2
     exit 1
@@ -212,6 +242,7 @@ echo "Walltime: $WALLTIME   Mem: $MEM"
 echo "Dataset:  $DATASET_DIR"
 echo "Crates:   ${#CRATE_DIRS[@]}${ONLY_FILE:+  (only $ONLY_FILE, skipped $skip_only not listed)}${IGNORE_FILE:+  (skipped $skipped via $IGNORE_FILE)}"
 echo "Results:  $CSV"
+(( DOC )) && echo "Doc tests: included (doc:<encoded name>)"
 echo
 
 # Results CSV (appended across runs; header written once). Normally lives on
@@ -287,6 +318,56 @@ fi
 runnable="\$(mktemp)"
 namesof() { sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^\$/d' | sort -u; }
 grep -a '"type": *"test"' "\$listlog" | grep -a '"ignore": *false' | namesof > "\$runnable"
+ndoc=0
+if [ ${DOC} -eq 1 ]; then
+    # Doc tests as doc:<name>#<filter> -- see "Doc tests" in list_tests.sh.
+    # RUSTDOCFLAGS carries the cfg to rustdoc, which ignores RUSTFLAGS.
+    doclog="\$(mktemp)"
+    if RUSTFLAGS="--cfg=miri" RUSTDOCFLAGS="--cfg=miri" cargo miri test --doc -- --list --format=json -Zunstable-options > "\$doclog"; then
+        grep -a '"type": *"test"' "\$doclog" | namesof > "\$doclog.all"
+        grep -a '"type": *"test"' "\$doclog" | grep -a '"ignore": *false' | namesof > "\$doclog.run"
+        # For each runnable doc test: the filter token (item path tried first)
+        # needing the fewest --skip tokens, see "Doc tests" in list_tests.sh.
+        # enc() percent-encodes % , ; space ' " # (\047 = single quote).
+        awk '
+            function enc(s) {
+                gsub(/%/, "%25", s); gsub(/,/, "%2C", s); gsub(/;/, "%3B", s)
+                gsub(/ /, "%20", s); gsub(/\047/, "%27", s); gsub(/"/, "%22", s)
+                gsub(/#/, "%23", s); return s
+            }
+            NR == FNR { all[++n] = \$0; next }
+            {
+                k = split(\$0, tok, " "); best = ""; bestn = -1
+                for (j = 0; j <= k; j++) {
+                    i = (j == 0) ? 3 : j
+                    f = tok[i]
+                    if (f == "" || f == "-") continue
+                    skips = ""; cnt = 0; ok = 1
+                    for (m = 1; m <= n; m++) {
+                        o = all[m]
+                        if (o == \$0 || !index(o, f)) continue
+                        # o also matches f: skip it by a token not in this name
+                        ko = split(o, otok, " "); sk = ""
+                        for (q = 1; q <= ko; q++)
+                            if (otok[q] != "-" && !index(\$0, otok[q])) { sk = otok[q]; break }
+                        if (sk == "") { ok = 0; break }
+                        skips = skips "#" enc(sk); cnt++
+                    }
+                    if (ok && (bestn < 0 || cnt < bestn)) { best = enc(f) skips; bestn = cnt }
+                    if (bestn == 0) break
+                }
+                if (bestn < 0) { print "warning: cannot isolate, skipped doc test: " \$0 > "/dev/stderr"; next }
+                print "doc:" enc(\$0) "#" best
+            }
+        ' "\$doclog.all" "\$doclog.run" > "\$doclog.names"
+        ndoc="\$(wc -l < "\$doclog.names" | tr -d ' ')"
+        cat "\$doclog.names" >> "\$runnable"
+        rm -f "\$doclog.all" "\$doclog.run" "\$doclog.names"
+    else
+        echo "warning: ${CRATE}: doc-test listing failed (no lib target?); binary tests only"
+    fi
+    rm -f "\$doclog"
+fi
 n="\$(wc -l < "\$runnable" | tr -d ' ')"
 tests="\$(paste -sd';' - < "\$runnable")"
 rm -f "\$listlog" "\$runnable"
@@ -296,7 +377,7 @@ if cargo scan . > "\$scanlog"; then
     if grep -aq '\[FFI' "\$scanlog"; then ffi=true; else ffi=false; fi
 fi
 rm -f "\$scanlog"
-echo "result: ${CRATE} -> success (\$n tests, ffi=\$ffi)"
+echo "result: ${CRATE} -> success (\$n tests, \$ndoc doc, ffi=\$ffi)"
 echo "CSVROW:${CRATE},\$tests,\$ffi"
 EOF
 

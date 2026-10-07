@@ -1176,6 +1176,23 @@ HARNESS="${HF_TEST_THREADS:-}"
 HARNESS="${HARNESS:+ --test-threads=$HARNESS}"
 [ -n "$HARNESS" ] && echo "HARNESS=[$HARNESS]"
 
+# Doc tests (from list_tests.sh --doc) arrive as
+# "doc:<name>#<filter>[#<skip>...]", every part with % , ; space ' " #
+# percent-encoded. They run through rustdoc, so with --doc instead of --tests,
+# and rustdoc takes its flags from RUSTDOCFLAGS, not RUSTFLAGS. rustdoc splits
+# test args on whitespace, so a doc test can't be picked by its full name with
+# --exact; list_tests.sh instead chose whitespace-free tokens such that
+# `<filter> --skip <skip>...` (substring matches) selects exactly this one.
+# Each is single-quoted in the hyperfine command string (split shell-style
+# under -N), since they can contain ' < > etc.
+DOC_RUN="${RUN% --tests} --doc"
+export RUSTDOCFLAGS="$RUSTFLAGS"
+pct_decode() {
+    printf '%s' "$1" | sed -e 's/%2C/,/g' -e 's/%3B/;/g' -e 's/%20/ /g' \
+        -e "s/%27/'/g" -e 's/%22/"/g' -e 's/%23/#/g' -e 's/%25/%/g'
+}
+shq() { printf "'%s'" "$(printf '%s' "$1" | sed "s/'/'\\\\''/g")"; }
+
 # --test-timeout: prefix every per-test invocation (pre-run and each hyperfine
 # run) with coreutils `timeout`, which signals the whole process group, so
 # cargo's test binary children die with it. Left UNQUOTED at the use sites so
@@ -1258,6 +1275,16 @@ while IFS= read -r t; do
     if [ "$t" = "$HF_WHOLE_TEST" ]; then
         CMD="$WHOLE_RUN${HARNESS:+ --$HARNESS}"
         $LIMIT$CMD > "$runlog" 2>&1; rc=$?
+    elif [ "${t#doc:}" != "$t" ]; then
+        # Timings include rustdoc collecting the crate's doc tests and
+        # compiling this one's snippet: neither can be built ahead with
+        # --no-run, and the __calibration__ row covers --tests only.
+        IFS='#' read -ra dparts <<< "${t#doc:}"
+        dargs=( "$(pct_decode "${dparts[1]}")" )
+        for sk in "${dparts[@]:2}"; do dargs+=( --skip "$(pct_decode "$sk")" ); done
+        CMD="$DOC_RUN --$HARNESS"
+        for a in "${dargs[@]}"; do CMD="$CMD $(shq "$a")"; done
+        $LIMIT$DOC_RUN --$HARNESS "${dargs[@]}" > "$runlog" 2>&1; rc=$?
     else
         CMD="$RUN --$HARNESS --exact $t"
         $LIMIT$RUN --$HARNESS --exact "$t" > "$runlog" 2>&1; rc=$?
