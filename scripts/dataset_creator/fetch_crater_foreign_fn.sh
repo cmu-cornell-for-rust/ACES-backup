@@ -24,44 +24,76 @@
 #
 #   Resumable: while running, each processed crate appends
 #   `name<TAB>version<TAB>status<TAB>functions` to CSV_PATH.state.tsv
-#   (status: match | nomatch | fail). A re-run skips everything except
+#   (status: match | nomatch | nolog | fail; nolog = 404, the index lists
+#   the crate but its log is gone). A re-run skips everything except
 #   `fail`. When the run ends the CSV is written from it and the state file
 #   is deleted, unless some fetches failed (re-run to retry those).
 #
 # Usage:
-#   ./fetch_crater_foreign_fn.sh [CSV_PATH]
+#   ./fetch_crater_foreign_fn.sh [CSV_PATH]      # directly
+#   sbatch fetch_crater_foreign_fn.sh [CSV_PATH] # as a Slurm job (#SBATCH below)
 #   CSV_PATH    default: crater_foreign_fn.csv
+#   A job that hits its time limit can be resubmitted with the same CSV_PATH.
 #
 # Environment knobs:
-#   JOBS=32     parallel download+scan workers
+#   JOBS=16     parallel download+scan workers. The logs are on CloudFront,
+#               which shrugs this off, but keep it modest; if the output fills
+#               with `curl: (52) Empty reply from server` you're being
+#               throttled, so stop (progress is kept) and resubmit with fewer.
 #
-# Requirements: bash, curl, perl, python3; flock (util-linux) if available.
+# Requirements: bash, curl, perl, python3, tr, fold; flock (util-linux) if available.
+
+# Ignored when run directly. One task: the work is network-bound and more
+# tasks would just duplicate the crawl. Workers need only a few MB each.
+#SBATCH --job-name=crater-foreign-fn
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=16G
+#SBATCH --time=48:00:00
+#SBATCH --output=crater_foreign_fn.%j.log
+##SBATCH --account=<your-account>      # uncomment if your allocation needs it
+##SBATCH --partition=cpu
 
 set -uo pipefail   # no -e; per-crate failures are handled inline
 
 SELF="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 
 # ------------------------------ configuration ------------------------------ #
-JOBS="${JOBS:-32}"
+JOBS="${JOBS:-16}"
 BASE="https://miri.saethlin.dev"
 # Same string as the grep -q check, plus the backquoted function name.
 NEEDLE_RE="error: unsupported operation: can't call foreign function \`[^\`]*\`"
 
-strip_ansi() { perl -pe 's/\e\[[0-9;?]*[ -\/]*[@-~]//g; s/\e[()][0-9A-Za-z]//g'; }
+# Logs are pty output: progress bars redraw with \r, so a whole log can be
+# one multi-GB "line", and perl/grep hold a line in memory (OOM-killed on
+# ACES). Split on \r and hard-wrap at 1 MB so memory stays bounded. The
+# needle is ~60 bytes, so a wrap landing inside it is vanishingly rare.
+strip_ansi() {
+    tr '\r' '\n' | fold -b -w 1048576 \
+        | perl -pe 's/\e\[[0-9;?]*[ -\/]*[@-~]//g; s/\e[()][0-9A-Za-z]//g'
+}
 
 # ------------------------------- worker mode ------------------------------- #
 # Invoked by xargs as: SELF --one NAME VERSION   (STATE from the env)
 if [[ "${1:-}" == "--one" ]]; then
     name="$2"; version="$3"
     url="$BASE/raw/$name/${version//+/%2B}"
-    # Last line of the output is curl's exit status (PIPESTATUS doesn't
-    # survive the command substitution).
+    # Last line of the output is "curl strip grep" exit statuses (PIPESTATUS
+    # doesn't survive the command substitution).
     out="$(curl -sSf --retry 3 --retry-delay 2 "$url" | strip_ansi \
            | grep -aoE "$NEEDLE_RE" | sed -E 's/.*`([^`]*)`$/\1/' | sort -u | paste -sd ';' -
-           echo "${PIPESTATUS[0]}")"
-    curl_rc="${out##*$'\n'}"; fns="${out%"$curl_rc"}"; fns="${fns%$'\n'}"
-    # curl failing is a fetch failure; grep finding nothing is not.
-    if [[ "$curl_rc" != 0 ]]; then status=fail; fns=""
+           echo "${PIPESTATUS[0]} ${PIPESTATUS[1]} ${PIPESTATUS[2]}")"
+    rcs="${out##*$'\n'}"; fns="${out%"$rcs"}"; fns="${fns%$'\n'}"
+    read -r curl_rc strip_rc grep_rc <<< "$rcs"
+    # curl/strip failing (or grep erroring, rc > 1) is a fetch failure;
+    # grep finding nothing (rc 1) is not. A 404 won't fix itself on retry.
+    # (curl's exit code for an HTTP error varies by version: 22, or 56 over
+    # HTTP/2, so ask for the status explicitly.)
+    if [[ "$curl_rc" != 0 ]] \
+       && [[ "$(curl -sI -o /dev/null -w '%{http_code}' "$url")" == 404 ]]; then
+        status=nolog; fns=""
+    elif [[ "$curl_rc" != 0 || "$strip_rc" != 0 || "$grep_rc" -gt 1 ]]; then
+        status=fail; fns=""
     elif [[ -n "$fns" ]]; then status=match
     else status=nomatch; fi
     line="$(printf '%s\t%s\t%s\t%s' "$name" "$version" "$status" "$fns")"
