@@ -4,15 +4,14 @@
 #
 #   Reads a list of crates (same formats as download_dataset.sh), downloads
 #   each one's crates.io tarball, and keeps it in OUTPUT_DIR/<name-version>/
-#   ONLY if its Rust sources contain an `extern "C"` declaration. Crates
+#   ONLY if its Rust sources contain a C / C++ FFI declaration. Crates
 #   without one are deleted right after the scan.
 #
-#   Matched pattern (in *.rs files only, so vendored .c/.h sources don't
-#   produce false positives):
-#       extern[[:space:]]*"C"
-#   The closing quote has to follow the C, so `extern "C-unwind"` and
-#   `extern "C++"` do NOT count (unlike fetch_c_ffi_crates.sh, which keeps
-#   all three).
+#   Same scan as fetch_c_ffi_crates.sh (in *.rs files only, so vendored
+#   .c/.h sources don't produce false positives):
+#       extern "C"           - `extern "C" { .. }` blocks and `extern "C" fn`
+#       extern "C-unwind"    - the unwinding variant of the C ABI.
+#       extern "C++"         - cxx-style C++ bridges.
 #
 #   The list can be:
 #     - plain lines of `name-version` (e.g. zstd-sys-2.0.16+zstd.1.5.7), or
@@ -21,11 +20,13 @@
 #       "name" and the version from the first containing "version"
 #       (case-insensitive), e.g. tree_borrows/crates.csv (crate_name,version).
 #
-#   The kept crates are written to CSV_PATH:
-#       crate,name,version,extern_c,matched_files
+#   The kept crates are written to CSV_PATH, in the same shape as
+#   c_ffi_bindings.csv (repository/host are empty: the list doesn't have them):
+#       crate,name,version,repository,host,extern_c,extern_c_unwind,extern_cpp,matched_files,status
 #
-#   Resumable: every processed crate leaves a verdict in OUTPUT_DIR/_state/,
-#   and a re-run skips it. Delete the marker (or the whole _state dir) to
+#   Resumable: every processed crate leaves a verdict in OUTPUT_DIR/_state/
+#   (same format as the other fetchers, so state_to_csv.sh reads it), and a
+#   re-run skips it. Delete the marker (or the whole _state dir) to
 #   force a re-scan. A crate folder that is already in OUTPUT_DIR but has no
 #   verdict is scanned in place (and deleted if it has no extern "C") instead
 #   of being downloaded again. Per-crate failures never abort the run.
@@ -54,32 +55,50 @@ USER_AGENT="${USER_AGENT:-aces-c-ffi-dataset-builder (CMU systems research; mmac
 API="https://crates.io/api/v1/crates"
 CDN="https://static.crates.io/crates"
 
-# `extern"C"` (no space) is legal Rust, hence the optional whitespace.
-EXTERN_C_RE='extern[[:space:]]*"C"'
+# Any of the three FFI ABI strings. `extern"C"` (no space) is legal Rust, hence
+# the optional whitespace. Keep in sync with the other fetchers.
+FFI_RE='extern[[:space:]]*"(C|C-unwind|C\+\+)"'
 
 die() { echo "ERROR: $*" >&2; exit 1; }
 
 # --------------------------------- scanning -------------------------------- #
-# Print "<n_matches> <n_files>" for the crate tree at $1.
-scan_crate() {
-    local n_c n_files
+# Emit every FFI ABI literal found under $1, one per line.
+ffi_matches() {
     if [ -n "${RG:-}" ]; then
-        n_c="$("$RG" --no-config --no-messages -o --no-filename --no-line-number \
-                     -g '*.rs' -e "$EXTERN_C_RE" -- "$1" 2>/dev/null | wc -l | tr -d ' ')"
-        n_files="$("$RG" --no-config --no-messages -l -g '*.rs' -e "$EXTERN_C_RE" -- "$1" 2>/dev/null | wc -l | tr -d ' ')"
+        "$RG" --no-config --no-messages -o --no-filename --no-line-number \
+              -g '*.rs' -e "$FFI_RE" -- "$1" 2>/dev/null
     else
-        n_c="$(grep -rhoE --include='*.rs' "$EXTERN_C_RE" "$1" 2>/dev/null | wc -l | tr -d ' ')"
-        n_files="$(grep -rlE --include='*.rs' "$EXTERN_C_RE" "$1" 2>/dev/null | wc -l | tr -d ' ')"
+        grep -rhoE --include='*.rs' "$FFI_RE" "$1" 2>/dev/null
     fi
-    printf '%s %s' "${n_c:-0}" "${n_files:-0}"
 }
 
-csv_field() {   # RFC4180-quote $1 only when it needs it
-    local v="$1"
-    case "$v" in
-        *[,\"$'\n']*) printf '"%s"' "${v//\"/\"\"}" ;;
-        *)            printf '%s'   "$v" ;;
-    esac
+# Count the *.rs files under $1 containing at least one FFI ABI literal.
+ffi_file_count() {
+    if [ -n "${RG:-}" ]; then
+        "$RG" --no-config --no-messages -l -g '*.rs' -e "$FFI_RE" -- "$1" 2>/dev/null | wc -l | tr -d ' '
+    else
+        grep -rlE --include='*.rs' "$FFI_RE" "$1" 2>/dev/null | wc -l | tr -d ' '
+    fi
+}
+
+# Print "<n_c> <n_c_unwind> <n_cpp> <n_files>" for the crate tree at $1.
+scan_crate() {
+    local dir="$1" counts
+    # "C" cannot match "C-unwind" or "C++": the closing quote has to follow the C.
+    counts="$(ffi_matches "$dir" | awk '
+        /"C"/        { c++ }
+        /"C-unwind"/ { u++ }
+        /"C\+\+"/    { p++ }
+        END { printf "%d %d %d", c+0, u+0, p+0 }')"
+    [ -z "$counts" ] && counts="0 0 0"
+    printf '%s %s' "$counts" "$(ffi_file_count "$dir")"
+}
+
+# State line: crate name version repository n_c n_c_unwind n_cpp n_files status
+# (repository is always empty here; the column keeps the fetchers' format).
+verdict() {   # $1 = status, then n_c n_cu n_cpp n_files (default 0)
+    printf '%s\t%s\t%s\t\t%s\t%s\t%s\t%s\t%s\n' \
+        "$crate" "$name" "$version" "${2:-0}" "${3:-0}" "${4:-0}" "${5:-0}" "$1" > "$state"
 }
 
 # ------------------------------- worker mode ------------------------------- #
@@ -93,14 +112,14 @@ if [ "${1:-}" = "--worker" ]; then
 
     # Already on disk (e.g. from download_dataset.sh): scan it in place.
     if [ -d "$OUTPUT_DIR/$crate" ]; then
-        read -r n_c n_files <<<"$(scan_crate "$OUTPUT_DIR/$crate")"
-        if [ "$n_c" -gt 0 ]; then
-            printf '%s\t%s\t%s\t%s\t%s\tkept\n' "$crate" "$name" "$version" "$n_c" "$n_files" > "$state"
-            echo "    keep:   $crate  (extern \"C\" x$n_c in $n_files files, already present)"
+        read -r n_c n_cu n_cpp n_files <<<"$(scan_crate "$OUTPUT_DIR/$crate")"
+        if [ $((n_c + n_cu + n_cpp)) -gt 0 ]; then
+            verdict kept "$n_c" "$n_cu" "$n_cpp" "$n_files"
+            echo "    keep:   $crate  (C=$n_c C-unwind=$n_cu C++=$n_cpp in $n_files files, already present)"
         else
             rm -rf "${OUTPUT_DIR:?}/$crate"
-            printf '%s\t%s\t%s\t0\t0\tno-extern-c\n' "$crate" "$name" "$version" > "$state"
-            echo "    delete: $crate  (no extern \"C\")"
+            verdict no-c-ffi
+            echo "    delete: $crate  (no C FFI)"
         fi
         exit 0
     fi
@@ -115,14 +134,14 @@ if [ "${1:-}" = "--worker" ]; then
         # version); the API download endpoint redirects to the right object.
         if ! curl -fsSL -A "$USER_AGENT" --retry 3 --retry-delay 2 --max-time 180 \
                   -o "$tarball" "$API/$name/$version/download" 2>/dev/null; then
-            printf '%s\t%s\t%s\t0\t0\tdownload-failed\n' "$crate" "$name" "$version" > "$state"
+            verdict download-failed
             echo "    fail (download): $crate" >&2
             exit 0
         fi
     fi
 
     if ! tar -xzf "$tarball" -C "$tmpdir" 2>/dev/null; then
-        printf '%s\t%s\t%s\t0\t0\textract-failed\n' "$crate" "$name" "$version" > "$state"
+        verdict extract-failed
         echo "    fail (extract): $crate" >&2
         exit 0
     fi
@@ -132,22 +151,21 @@ if [ "${1:-}" = "--worker" ]; then
     src="$tmpdir/$crate"
     if [ ! -d "$src" ]; then
         src="$(find "$tmpdir" -mindepth 1 -maxdepth 1 -type d | head -n 1)"
-        [ -d "$src" ] || { printf '%s\t%s\t%s\t0\t0\textract-failed\n' \
-            "$crate" "$name" "$version" > "$state"; exit 0; }
+        [ -d "$src" ] || { verdict extract-failed; exit 0; }
     fi
 
-    read -r n_c n_files <<<"$(scan_crate "$src")"
-    if [ "$n_c" -gt 0 ]; then
+    read -r n_c n_cu n_cpp n_files <<<"$(scan_crate "$src")"
+    if [ $((n_c + n_cu + n_cpp)) -gt 0 ]; then
         if mv "$src" "$OUTPUT_DIR/$crate" 2>/dev/null; then
-            printf '%s\t%s\t%s\t%s\t%s\tkept\n' "$crate" "$name" "$version" "$n_c" "$n_files" > "$state"
-            echo "    keep:   $crate  (extern \"C\" x$n_c in $n_files files)"
+            verdict kept "$n_c" "$n_cu" "$n_cpp" "$n_files"
+            echo "    keep:   $crate  (C=$n_c C-unwind=$n_cu C++=$n_cpp in $n_files files)"
         else
-            printf '%s\t%s\t%s\t%s\t%s\tstore-failed\n' "$crate" "$name" "$version" "$n_c" "$n_files" > "$state"
+            verdict store-failed "$n_c" "$n_cu" "$n_cpp" "$n_files"
             echo "    fail (store): $crate" >&2
         fi
     else
-        # No extern "C" -> the extracted tree is dropped with the temp dir.
-        printf '%s\t%s\t%s\t0\t0\tno-extern-c\n' "$crate" "$name" "$version" > "$state"
+        # No C FFI -> the extracted tree is dropped with the temp dir.
+        verdict no-c-ffi
     fi
     sleep "$SLEEP_BETWEEN"
     exit 0
@@ -169,7 +187,7 @@ OUTPUT_DIR="$(cd "$OUTPUT_DIR" && pwd)"
 STATE_DIR="$OUTPUT_DIR/_state"
 mkdir -p "$STATE_DIR"
 
-export SELF SLEEP_BETWEEN USER_AGENT API CDN EXTERN_C_RE RG OUTPUT_DIR STATE_DIR
+export SELF SLEEP_BETWEEN USER_AGENT API CDN FFI_RE RG OUTPUT_DIR STATE_DIR
 
 # ------------------ phase 1: list -> name<TAB>version lines ----------------- #
 todo="$(mktemp)"
@@ -250,25 +268,27 @@ verdicts() { find "$STATE_DIR" -maxdepth 1 -name '*.tsv' -exec cat {} + 2>/dev/n
 
 echo "==> Writing $CSV_PATH ..."
 {
-    echo "crate,name,version,extern_c,matched_files"
+    echo "crate,name,version,repository,host,extern_c,extern_c_unwind,extern_cpp,matched_files,status"
+    # awk, not `while read`: IFS=tab would merge the empty repository column.
     verdicts \
-      | awk -F'\t' '$6 == "kept"' \
-      | LC_ALL=C sort -t$'\t' -k1,1 \
-      | while IFS=$'\t' read -r crate name version n_c n_files _; do
-            printf '%s,%s,%s,%s,%s\n' \
-                "$(csv_field "$crate")" "$(csv_field "$name")" \
-                "$(csv_field "$version")" "$n_c" "$n_files"
-        done
+      | awk -F'\t' '
+            function q(v) {   # RFC4180-quote only when needed
+                if (v ~ /[,"\n]/) { gsub(/"/, "\"\"", v); return "\"" v "\"" }
+                return v
+            }
+            $9 == "kept" { printf "%s,%s,%s,,,%d,%d,%d,%d,%s\n",
+                                  q($1), q($2), q($3), $5, $6, $7, $8, $9 }' \
+      | LC_ALL=C sort -t, -k1,1
 } > "$CSV_PATH"
 
 # --------------------------------- summary ---------------------------------- #
-tally() { verdicts | awk -F'\t' -v s="$1" '$6 == s' | wc -l | tr -d ' '; }
+tally() { verdicts | awk -F'\t' -v s="$1" '$9 == s' | wc -l | tr -d ' '; }
 kept="$(tally kept)"
 
 echo
 echo "==> Done."
-echo "    kept (extern \"C\"):  $kept   -> $OUTPUT_DIR/"
-echo "    deleted (none):     $(tally no-extern-c)"
+echo "    kept (C FFI):       $kept   -> $OUTPUT_DIR/"
+echo "    deleted (none):     $(tally no-c-ffi)"
 echo "    download failures:  $(tally download-failed)"
 echo "    extract failures:   $(tally extract-failed)"
 st_fail="$(tally store-failed)"
