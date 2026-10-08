@@ -245,10 +245,13 @@ if [ "$n_todo" -gt 0 ]; then
 fi
 
 # ---------------------------- phase 3: write CSV ---------------------------- #
+# Not `cat "$STATE_DIR"/*.tsv`: with this many files the glob overflows ARG_MAX.
+verdicts() { find "$STATE_DIR" -maxdepth 1 -name '*.tsv' -exec cat {} + 2>/dev/null; }
+
 echo "==> Writing $CSV_PATH ..."
 {
     echo "crate,name,version,extern_c,matched_files"
-    cat "$STATE_DIR"/*.tsv 2>/dev/null \
+    verdicts \
       | awk -F'\t' '$6 == "kept"' \
       | LC_ALL=C sort -t$'\t' -k1,1 \
       | while IFS=$'\t' read -r crate name version n_c n_files _; do
@@ -259,7 +262,7 @@ echo "==> Writing $CSV_PATH ..."
 } > "$CSV_PATH"
 
 # --------------------------------- summary ---------------------------------- #
-tally() { cat "$STATE_DIR"/*.tsv 2>/dev/null | awk -F'\t' -v s="$1" '$6 == s' | wc -l | tr -d ' '; }
+tally() { verdicts | awk -F'\t' -v s="$1" '$6 == s' | wc -l | tr -d ' '; }
 kept="$(tally kept)"
 
 echo
