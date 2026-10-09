@@ -36,10 +36,10 @@
 #   A job that hits its time limit can be resubmitted with the same CSV_PATH.
 #
 # Environment knobs:
-#   JOBS=16     parallel download+scan workers. The logs are on CloudFront,
-#               which shrugs this off, but keep it modest; if the output fills
-#               with `curl: (52) Empty reply from server` you're being
-#               throttled, so stop (progress is kept) and resubmit with fewer.
+#   JOBS=8      parallel download+scan workers. If the output fills with
+#               `curl: (22) ... 503` or `(52) Empty reply from server` the
+#               server is throttling: stop (progress is kept) and resubmit
+#               with fewer. Workers already back off on their own (below).
 #
 # Requirements: bash, curl, perl, python3, tr, fold; flock (util-linux) if available.
 
@@ -59,7 +59,7 @@ set -uo pipefail   # no -e; per-crate failures are handled inline
 SELF="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 
 # ------------------------------ configuration ------------------------------ #
-JOBS="${JOBS:-16}"
+JOBS="${JOBS:-8}"
 BASE="https://miri.saethlin.dev"
 # Same string as the grep -q check, plus the backquoted function name.
 NEEDLE_RE="error: unsupported operation: can't call foreign function \`[^\`]*\`"
@@ -80,7 +80,9 @@ if [[ "${1:-}" == "--one" ]]; then
     url="$BASE/raw/$name/${version//+/%2B}"
     # Last line of the output is "curl strip grep" exit statuses (PIPESTATUS
     # doesn't survive the command substitution).
-    out="$(curl -sSf --retry 3 --retry-delay 2 "$url" | strip_ansi \
+    # No --retry-delay: curl then backs off exponentially (1, 2, 4 .. 32 s),
+    # which is what a 503 "slow down" wants.
+    out="$(curl -sSf --retry 6 "$url" | strip_ansi \
            | grep -aoE "$NEEDLE_RE" | sed -E 's/.*`([^`]*)`$/\1/' | sort -u | paste -sd ';' -
            echo "${PIPESTATUS[0]} ${PIPESTATUS[1]} ${PIPESTATUS[2]}")"
     rcs="${out##*$'\n'}"; fns="${out%"$rcs"}"; fns="${fns%$'\n'}"
@@ -94,6 +96,9 @@ if [[ "${1:-}" == "--one" ]]; then
         status=nolog; fns=""
     elif [[ "$curl_rc" != 0 || "$strip_rc" != 0 || "$grep_rc" -gt 1 ]]; then
         status=fail; fns=""
+        # Still failing after curl's retries: hold this worker slot for a
+        # while, so a throttled server sees the whole pool ease off.
+        sleep 30
     elif [[ -n "$fns" ]]; then status=match
     else status=nomatch; fi
     line="$(printf '%s\t%s\t%s\t%s' "$name" "$version" "$status" "$fns")"
