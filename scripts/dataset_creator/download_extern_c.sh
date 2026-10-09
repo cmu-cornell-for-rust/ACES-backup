@@ -12,6 +12,9 @@
 #       extern "C"           - `extern "C" { .. }` blocks and `extern "C" fn`
 #       extern "C-unwind"    - the unwinding variant of the C ABI.
 #       extern "C++"         - cxx-style C++ bridges.
+#   Not counted: `extern "C"` blocks marked #[wasm_bindgen] or
+#   #[link(wasm_import_module = ..)] -- they import JavaScript / wasm host
+#   functions, not C (see ffi_scan.pl).
 #
 #   The list can be:
 #     - plain lines of `name-version` (e.g. zstd-sys-2.0.16+zstd.1.5.7), or
@@ -41,7 +44,7 @@
 #   SLEEP_BETWEEN=0.2   per-worker politeness delay, seconds
 #   USER_AGENT=...      sent to crates.io (keep a contact address in it)
 #
-# Requirements: bash, curl, tar. Uses ripgrep if present, else grep.
+# Requirements: bash, curl, tar, perl. Uses ripgrep if present, else grep.
 
 set -uo pipefail   # no -e; per-crate failures are handled inline
 
@@ -58,28 +61,27 @@ CDN="https://static.crates.io/crates"
 # Any of the three FFI ABI strings. `extern"C"` (no space) is legal Rust, hence
 # the optional whitespace. Keep in sync with the other fetchers.
 FFI_RE='extern[[:space:]]*"(C|C-unwind|C\+\+)"'
+# Drops wasm-bindgen / wasm import blocks, which share the "C" syntax.
+FFI_SCAN="$(dirname "$SELF")/ffi_scan.pl"
 
 die() { echo "ERROR: $*" >&2; exit 1; }
 
 # --------------------------------- scanning -------------------------------- #
-# Emit every FFI ABI literal found under $1, one per line.
-ffi_matches() {
+# Emit "<file>\t<literal>" for every FFI ABI literal under $1. rg/grep find the
+# candidate files; ffi_scan.pl drops the ones that aren't C (wasm-bindgen).
+ffi_hits() {
     if [ -n "${RG:-}" ]; then
-        "$RG" --no-config --no-messages -o --no-filename --no-line-number \
-              -g '*.rs' -e "$FFI_RE" -- "$1" 2>/dev/null
+        "$RG" --no-config --no-messages -l -0 -g '*.rs' -e "$FFI_RE" -- "$1" 2>/dev/null
     else
-        grep -rhoE --include='*.rs' "$FFI_RE" "$1" 2>/dev/null
-    fi
+        grep -rlE --null --include='*.rs' "$FFI_RE" "$1" 2>/dev/null
+    fi | perl "$FFI_SCAN"
 }
 
+# Emit every FFI ABI literal found under $1, one per line.
+ffi_matches() { ffi_hits "$1" | cut -f2; }
+
 # Count the *.rs files under $1 containing at least one FFI ABI literal.
-ffi_file_count() {
-    if [ -n "${RG:-}" ]; then
-        "$RG" --no-config --no-messages -l -g '*.rs' -e "$FFI_RE" -- "$1" 2>/dev/null | wc -l | tr -d ' '
-    else
-        grep -rlE --include='*.rs' "$FFI_RE" "$1" 2>/dev/null | wc -l | tr -d ' '
-    fi
-}
+ffi_file_count() { ffi_hits "$1" | cut -f1 | sort -u | wc -l | tr -d ' '; }
 
 # Print "<n_c> <n_c_unwind> <n_cpp> <n_files>" for the crate tree at $1.
 scan_crate() {
@@ -187,7 +189,7 @@ OUTPUT_DIR="$(cd "$OUTPUT_DIR" && pwd)"
 STATE_DIR="$OUTPUT_DIR/_state"
 mkdir -p "$STATE_DIR"
 
-export SELF SLEEP_BETWEEN USER_AGENT API CDN FFI_RE RG OUTPUT_DIR STATE_DIR
+export SELF FFI_SCAN SLEEP_BETWEEN USER_AGENT API CDN FFI_RE RG OUTPUT_DIR STATE_DIR
 
 # ------------------ phase 1: list -> name<TAB>version lines ----------------- #
 todo="$(mktemp)"

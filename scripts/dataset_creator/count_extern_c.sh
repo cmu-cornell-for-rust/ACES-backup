@@ -13,6 +13,9 @@
 #       extern_c_unwind  extern "C-unwind"
 #       extern_cpp       extern "C++"
 #   matched_files is the number of .rs files with at least one of the three.
+#   Not counted: `extern "C"` blocks marked #[wasm_bindgen] or
+#   #[link(wasm_import_module = ..)] -- they import JavaScript / wasm host
+#   functions, not C (see ffi_scan.pl).
 #
 #   Every crate gets a row, including those with no matches:
 #       crate,name,version,extern_c,extern_c_unwind,extern_cpp,matched_files
@@ -27,7 +30,7 @@
 # Environment knobs:
 #   JOBS=8   parallel scan workers
 #
-# Requirements: bash, find, xargs. Uses ripgrep if present, else grep.
+# Requirements: bash, find, xargs, perl. Uses ripgrep if present, else grep.
 
 set -uo pipefail
 
@@ -37,27 +40,26 @@ JOBS="${JOBS:-8}"
 # Any of the three FFI ABI strings. `extern"C"` (no space) is legal Rust, hence
 # the optional whitespace. Keep in sync with the fetchers.
 FFI_RE='extern[[:space:]]*"(C|C-unwind|C\+\+)"'
+# Drops wasm-bindgen / wasm import blocks, which share the "C" syntax.
+FFI_SCAN="$(dirname "$SELF")/ffi_scan.pl"
 
 die() { echo "ERROR: $*" >&2; exit 1; }
 
-# Emit every FFI ABI literal found under $1, one per line.
-ffi_matches() {
+# Emit "<file>\t<literal>" for every FFI ABI literal under $1. rg/grep find the
+# candidate files; ffi_scan.pl drops the ones that aren't C (wasm-bindgen).
+ffi_hits() {
     if [ -n "${RG:-}" ]; then
-        "$RG" --no-config --no-messages -o --no-filename --no-line-number \
-              -g '*.rs' -e "$FFI_RE" -- "$1" 2>/dev/null
+        "$RG" --no-config --no-messages -l -0 -g '*.rs' -e "$FFI_RE" -- "$1" 2>/dev/null
     else
-        grep -rhoE --include='*.rs' "$FFI_RE" "$1" 2>/dev/null
-    fi
+        grep -rlE --null --include='*.rs' "$FFI_RE" "$1" 2>/dev/null
+    fi | perl "$FFI_SCAN"
 }
 
+# Emit every FFI ABI literal found under $1, one per line.
+ffi_matches() { ffi_hits "$1" | cut -f2; }
+
 # Count the *.rs files under $1 containing at least one FFI ABI literal.
-ffi_file_count() {
-    if [ -n "${RG:-}" ]; then
-        "$RG" --no-config --no-messages -l -g '*.rs' -e "$FFI_RE" -- "$1" 2>/dev/null | wc -l | tr -d ' '
-    else
-        grep -rlE --include='*.rs' "$FFI_RE" "$1" 2>/dev/null | wc -l | tr -d ' '
-    fi
-}
+ffi_file_count() { ffi_hits "$1" | cut -f1 | sort -u | wc -l | tr -d ' '; }
 
 # Print "<n_c> <n_c_unwind> <n_cpp> <n_files>" for the crate tree at $1.
 scan_crate() {
@@ -108,7 +110,7 @@ RG="$(command -v rg || true)"
 ROWS_DIR="$(mktemp -d "${TMPDIR:-/tmp}/count_extern_c.XXXXXX")" || die "mktemp failed"
 trap 'rm -rf "$ROWS_DIR"' EXIT
 
-export SELF RG ROWS_DIR FFI_RE
+export SELF FFI_SCAN RG ROWS_DIR FFI_RE
 
 n_total="$(find "$CRATES_DIR" -mindepth 1 -maxdepth 1 -type d ! -name '_*' | wc -l | tr -d ' ')"
 echo "==> Scanning $n_total crates in $CRATES_DIR with $JOBS workers ..." >&2
