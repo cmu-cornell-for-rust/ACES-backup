@@ -15,29 +15,37 @@
 #   target dir, deleted once it's checked, and a Cargo.lock the build generated
 #   (the crate didn't ship one) is removed.
 #
-#   Where it runs: from the login node this submits ONE job via run_job.sh in
-#   the `bsan` image (--image to change), with the dataset dir bound at /work;
-#   the job runs this script again with --local, which does the builds. A copy
-#   of the script is placed in <DATASET_DIR>/_logs/ for that, since only the
-#   dataset dir is visible inside the container. The launcher waits for the
-#   job, then copies the CSV to the outputs dir; run it under tmux/nohup for
-#   big datasets.
+#   Where it runs: from the login node the crates are dealt round-robin into
+#   ceil(crates / -n) parts (so part sizes differ by at most one crate, and
+#   none holds more than -n), and each part is built by its own job via
+#   run_job.sh in the `bsan` image (--image to change), with the dataset dir
+#   bound at /work. At most 40 jobs (the QOS limit) run at once; the rest
+#   start as earlier ones finish. Each job runs this script again with
+#   --local --part K, which builds that part's crates. A copy of the script is
+#   placed in <DATASET_DIR>/_logs/ for that, since only the dataset dir is
+#   visible inside the container. The launcher waits for every job, merges the
+#   parts' CSVs and copies the result to the outputs dir; run it under
+#   tmux/nohup for big datasets. Each job's run_job.sh output goes to
+#   <DATASET_DIR>/_logs/_build_parts/job-K.log.
 #
 # Usage:
-#   ./build_dataset.sh [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] <DATASET>
+#   ./build_dataset.sh [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] <DATASET>
 #   ./build_dataset.sh --local [--image IMG] [--whole] <DATASET_DIR>   # no job
 #
 #   DATASET       a dataset name under $GROUP/datasets/ (e.g. top_500), or a path
 #
-#   -c CPUS       cores for the job (default 16)
-#   -t HH[:MM]    job walltime (default 8)
-#   -m MEM        job memory (default 64G)
+#   -n N          at most N crates per job (default 100)
+#   -c CPUS       cores per job (default 16)
+#   -t HH[:MM]    walltime per job (default 8)
+#   -m MEM        memory per job (default 64G)
 #   --image IMG   container image (default bsan); also the CSV's build column.
 #                 Plain cargo either way -- no `cargo bsan`, so nothing is
 #                 instrumented; in bsan, cargo is the image's default toolchain
 #   --whole       compile with `cargo test --no-run` (all targets cargo test
 #                 builds), not `cargo test --tests --no-run`
 #   --local       skip the job: build on this machine / inside an image shell
+#   --part K      with --local: build only the crates in part K's list
+#                 (_logs/_build_parts/part-K.txt); set by the launcher
 #
 # Output:
 #   <DATASET_DIR>/_logs/build-<image>.csv, and (when launched as a job) a copy
@@ -144,11 +152,14 @@ fi
 GROUP="/scratch/group/p.cis260229.000"
 RUN_JOB="$GROUP/scripts/run_job.sh"
 OUTPUTS_DIR="$GROUP/outputs"
-LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=bsan; WHOLE=0; POS=()
+LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=bsan; WHOLE=0; PER_JOB=100; PART=""; POS=()
+MAX_PARALLEL=40   # jobs in flight at once (QOS limit)
 while [ "$#" -gt 0 ]; do
     case "$1" in
         --local)    LOCAL=1; shift ;;
         --whole)    WHOLE=1; shift ;;
+        --part)     PART="$2"; shift 2 ;;
+        -n|--per-job) PER_JOB="$2"; shift 2 ;;
         -c|--cpus)  CPUS="$2"; shift 2 ;;
         -t|--time)  WALLTIME="$2"; shift 2 ;;
         -m|--mem)   MEM="$2"; shift 2 ;;
@@ -158,39 +169,111 @@ while [ "$#" -gt 0 ]; do
     esac
 done
 [ "${#POS[@]}" -eq 1 ] && [ -n "${POS[0]}" ] \
-    || { echo "Usage: $0 [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--local] <DATASET>" >&2; exit 1; }
+    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--local] <DATASET>" >&2; exit 1; }
 # A bare dataset name under the group datasets dir, or a path.
 DATASET_DIR="$(cd "$GROUP/datasets/${POS[0]}" 2>/dev/null && pwd -P)" \
     || DATASET_DIR="$(cd "${POS[0]}" 2>/dev/null && pwd -P)" \
     || die "${POS[0]} is neither a dataset under $GROUP/datasets nor a directory"
 BUILD_RUSTFLAGS="${BUILD_RUSTFLAGS:---cfg=miri --cap-lints=warn}"
 RESULTS_CSV="$DATASET_DIR/_logs/build-$IMAGE.csv"
+PARTS_DIR="$DATASET_DIR/_logs/_build_parts"
 
-# ------------------------- launcher: submit the job ------------------------- #
+# summarize <csv>: status / error_type counts.
+summarize() {
+    tail -n +2 "$1" | awk -F, '
+        { c[$3]++; if ($5 != "") t[$5]++ }
+        END {
+            for (s in c) printf "    %-14s %d\n", s ":", c[s]
+            for (k in t) printf "      error_type %s: %d\n", k, t[k]
+        }'
+}
+
+# ------------------------ launcher: submit the jobs ------------------------ #
 if [ "$LOCAL" -eq 0 ]; then
+    (( BASH_VERSINFO[0] > 4 || (BASH_VERSINFO[0] == 4 && BASH_VERSINFO[1] >= 3) )) \
+        || die "the launcher needs bash >= 4.3 (wait -n)"
     [ -x "$RUN_JOB" ] || die "run_job.sh not found at $RUN_JOB (or use --local)"
     [[ "$CPUS" =~ ^[1-9][0-9]*$ ]] || die "-c must be a positive integer"
+    [[ "$PER_JOB" =~ ^[1-9][0-9]*$ ]] || die "-n must be a positive integer"
     JOBS="${JOBS:-$(( CPUS >= 4 ? CPUS / 4 : 1 ))}"
-    mkdir -p "$DATASET_DIR/_logs"
+
+    CRATES=()
+    for d in "$DATASET_DIR"/*/; do
+        d="${d%/}"
+        case "$(basename "$d")" in _*) continue ;; esac
+        [ -f "$d/Cargo.toml" ] && CRATES+=("$(basename "$d")")
+    done
+    n=${#CRATES[@]}
+    [ "$n" -gt 0 ] || die "no crates (dirs with a Cargo.toml) in $DATASET_DIR"
+    NPARTS=$(( (n + PER_JOB - 1) / PER_JOB ))
+
+    # Deal round-robin, so part sizes differ by at most one crate.
+    rm -rf "$PARTS_DIR"
+    mkdir -p "$PARTS_DIR"
+    i=0
+    for c in "${CRATES[@]}"; do
+        printf '%s\n' "$c" >> "$PARTS_DIR/part-$(( i % NPARTS )).txt"
+        i=$((i + 1))
+    done
     cp "$SELF" "$DATASET_DIR/_logs/.build_dataset.sh"
     WHOLE_FLAG=""; [ "$WHOLE" -eq 1 ] && WHOLE_FLAG="--whole"
-    echo "==> Submitting the build in the '$IMAGE' image" \
-         "($CPUS cpus, $JOBS crates at a time, $MEM, ${WALLTIME}h) ..."
-    cd "$DATASET_DIR" || exit 1
-    # Single-quoted pieces survive run_job.sh's space-join + `bash -c`.
-    "$RUN_JOB" -J build-dataset -c "$CPUS" "$IMAGE" "$WALLTIME" "$MEM" -- \
-        "JOBS=$JOBS CARGO_BUILD_JOBS=$(( CPUS / JOBS > 0 ? CPUS / JOBS : 1 ))" \
-        "BUILD_RUSTFLAGS='$BUILD_RUSTFLAGS'" \
-        "bash _logs/.build_dataset.sh --local --image $IMAGE $WHOLE_FLAG /work"
-    rc=$?
+    echo "==> Building $n crates in the '$IMAGE' image as $NPARTS job(s) of" \
+         "$(( n / NPARTS ))-$(( (n + NPARTS - 1) / NPARTS )) crates" \
+         "($CPUS cpus, $JOBS crates at a time, $MEM, ${WALLTIME}h each; at most $MAX_PARALLEL at once)"
+
+    pids=()
+    cleanup() {
+        trap - INT TERM
+        # The run_job.sh launchers (and their srun) are the subshells' children.
+        for p in ${pids[@]+"${pids[@]}"}; do pkill -TERM -P "$p" 2>/dev/null; kill "$p" 2>/dev/null; done
+        exit 130
+    }
+    trap cleanup INT TERM
+    inflight=0; failed=0
+    reap_one() {
+        wait -n; [ $? -eq 0 ] || failed=$((failed + 1))
+        inflight=$((inflight - 1))
+    }
+    for (( k = 0; k < NPARTS; k++ )); do
+        [ "$inflight" -lt "$MAX_PARALLEL" ] || reap_one
+        # Single-quoted pieces survive run_job.sh's space-join + `bash -c`.
+        (
+            cd "$DATASET_DIR" || exit 1
+            "$RUN_JOB" -J "build-dataset-$k" -c "$CPUS" "$IMAGE" "$WALLTIME" "$MEM" -- \
+                "JOBS=$JOBS CARGO_BUILD_JOBS=$(( CPUS / JOBS > 0 ? CPUS / JOBS : 1 ))" \
+                "BUILD_RUSTFLAGS='$BUILD_RUSTFLAGS'" \
+                "bash _logs/.build_dataset.sh --local --part $k --image $IMAGE $WHOLE_FLAG /work"
+        ) > "$PARTS_DIR/job-$k.log" 2>&1 &
+        pids+=("$!")
+        inflight=$((inflight + 1))
+        echo "    [$((k + 1))/$NPARTS] launched part $k ($(wc -l < "$PARTS_DIR/part-$k.txt") crates)"
+    done
+    while [ "$inflight" -gt 0 ]; do reap_one; done
+    trap - INT TERM
     rm -f "$DATASET_DIR/_logs/.build_dataset.sh"
-    # Inside the job the dataset was /work, so the CSV landed at the same
-    # _logs path; copy it next to the run CSVs.
-    if [ -f "$RESULTS_CSV" ]; then
-        out="$OUTPUTS_DIR/$IMAGE-$(basename "$DATASET_DIR")-build.csv"
-        mkdir -p "$OUTPUTS_DIR" && cp "$RESULTS_CSV" "$out" && echo "    copied to:     $out"
+
+    # Merge the parts' CSVs (inside a job the dataset was /work, so they
+    # landed at the same _logs paths).
+    {
+        echo "build,crate,status,compile_seconds,error_type,error,timestamp"
+        for f in "$PARTS_DIR"/build-"$IMAGE".part-*.csv; do
+            [ -f "$f" ] && tail -n +2 "$f"
+        done | LC_ALL=C sort -t, -k2,2
+    } > "$RESULTS_CSV"
+    rows=$(( $(wc -l < "$RESULTS_CSV") - 1 ))
+
+    echo
+    echo "==> Done ($rows/$n crates have a row)."
+    summarize "$RESULTS_CSV"
+    echo "    results:       $RESULTS_CSV"
+    if [ "$rows" -lt "$n" ]; then
+        echo "    $(( n - rows )) crate(s) have no row (job killed / walltime); see $PARTS_DIR/job-*.log"
     fi
-    exit "$rc"
+    [ "$failed" -eq 0 ] || echo "    $failed job(s) exited non-zero; see $PARTS_DIR/job-*.log"
+    out="$OUTPUTS_DIR/$IMAGE-$(basename "$DATASET_DIR")-build.csv"
+    mkdir -p "$OUTPUTS_DIR" && cp "$RESULTS_CSV" "$out" && echo "    copied to:     $out"
+    [ "$failed" -eq 0 ]
+    exit $?
 fi
 
 # ---------------------------- --local: do builds ---------------------------- #
@@ -203,6 +286,14 @@ export CARGO_TERM_COLOR=never
 
 LOG_DIR="$DATASET_DIR/_logs"
 STATE_DIR="$LOG_DIR/_build_dataset_state"   # per-crate rows, merged + removed below
+if [ -n "$PART" ]; then
+    # One job of several: its own crate list, state dir and CSV, so parts
+    # running at once never touch each other's files.
+    PART_LIST="$PARTS_DIR/part-$PART.txt"
+    [ -f "$PART_LIST" ] || die "no crate list for part $PART at $PART_LIST"
+    STATE_DIR="$PARTS_DIR/_state-$PART"
+    RESULTS_CSV="$PARTS_DIR/build-$IMAGE.part-$PART.csv"
+fi
 rm -rf "$STATE_DIR"                         # fresh check every run
 mkdir -p "$STATE_DIR"
 
@@ -210,11 +301,17 @@ export SELF BUILD_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE
 
 # ------------------------------ build each crate ---------------------------- #
 crates="$(mktemp)"
-for d in "$DATASET_DIR"/*/; do
-    d="${d%/}"
-    case "$(basename "$d")" in _*) continue ;; esac
-    [ -f "$d/Cargo.toml" ] && printf '%s\0' "$d"
-done > "$crates"
+if [ -n "$PART" ]; then
+    while IFS= read -r c; do
+        [ -n "$c" ] && [ -f "$DATASET_DIR/$c/Cargo.toml" ] && printf '%s\0' "$DATASET_DIR/$c"
+    done < "$PART_LIST"
+else
+    for d in "$DATASET_DIR"/*/; do
+        d="${d%/}"
+        case "$(basename "$d")" in _*) continue ;; esac
+        [ -f "$d/Cargo.toml" ] && printf '%s\0' "$d"
+    done
+fi > "$crates"
 n="$(tr -cd '\0' < "$crates" | wc -c | tr -d ' ')"
 echo "==> Building $n crates in $DATASET_DIR with $JOBS worker(s):" \
      "$COMPILE --no-run (RUSTFLAGS=\"$BUILD_RUSTFLAGS\") ..."
@@ -230,10 +327,5 @@ rm -rf "$STATE_DIR"
 
 echo
 echo "==> Done."
-tail -n +2 "$RESULTS_CSV" | awk -F, '
-    { c[$3]++; if ($5 != "") t[$5]++ }
-    END {
-        for (s in c) printf "    %-14s %d\n", s ":", c[s]
-        for (k in t) printf "      error_type %s: %d\n", k, t[k]
-    }'
+summarize "$RESULTS_CSV"
 echo "    results:       $RESULTS_CSV"
