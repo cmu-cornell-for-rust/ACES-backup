@@ -16,7 +16,7 @@
 #   (the crate didn't ship one) is removed.
 #
 #   Where it runs: from the login node this submits ONE job via run_job.sh in
-#   the `rust` image (--image to change), with the dataset dir bound at /work;
+#   the `bsan` image (--image to change), with the dataset dir bound at /work;
 #   the job runs this script again with --local, which does the builds. A copy
 #   of the script is placed in <DATASET_DIR>/_logs/ for that, since only the
 #   dataset dir is visible inside the container. The launcher waits for the
@@ -32,7 +32,9 @@
 #   -c CPUS       cores for the job (default 16)
 #   -t HH[:MM]    job walltime (default 8)
 #   -m MEM        job memory (default 64G)
-#   --image IMG   container image (default rust); also the CSV's build column
+#   --image IMG   container image (default bsan); also the CSV's build column.
+#                 Plain cargo either way -- no `cargo bsan`, so nothing is
+#                 instrumented; in bsan, cargo is the image's default toolchain
 #   --whole       compile with `cargo test --no-run` (all targets cargo test
 #                 builds), not `cargo test --tests --no-run`
 #   --local       skip the job: build on this machine / inside an image shell
@@ -142,7 +144,7 @@ fi
 GROUP="/scratch/group/p.cis260229.000"
 RUN_JOB="$GROUP/scripts/run_job.sh"
 OUTPUTS_DIR="$GROUP/outputs"
-LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=rust; WHOLE=0; POS=()
+LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=bsan; WHOLE=0; POS=()
 while [ "$#" -gt 0 ]; do
     case "$1" in
         --local)    LOCAL=1; shift ;;

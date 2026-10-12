@@ -14,7 +14,8 @@ database dump, https://static.crates.io/db-dump.tar.gz (~2 GB), which is
 streamed: only the tables we need are written to disk (~5 GB).
 For each crate we take its *default version* (the version crates.io shows)
 and check its declared dependencies (any version requirement, any target,
-optional or not) against the names in targets.csv.
+optional or not) against the names in targets.csv, minus IGNORED_DEPS
+(e.g. anyhow).
 
 Output (default: <targets_stem>_dependents.csv next to targets.csv), one row
 per crate with >= 1 target dependency:
@@ -40,6 +41,9 @@ DUMP_URL = "https://static.crates.io/db-dump.tar.gz"
 USER_AGENT = "aces-c-ffi-dataset-builder (CMU systems research; mmaclare@andrew.cmu.edu)"
 TABLES = ("crates", "versions", "default_versions", "dependencies")
 KINDS = {"0": "normal", "1": "build", "2": "dev"}  # dependencies.kind
+# Targets that don't make a crate a dependent: depending on these alone
+# doesn't put a crate in the output (they're still skipped as crates).
+IGNORED_DEPS = {"anyhow"}
 
 csv.field_size_limit(sys.maxsize)  # crates.csv carries whole READMEs
 
@@ -103,6 +107,7 @@ def main():
     skip = set(targets)
     for p in args.skip:
         skip |= names(p)
+    targets -= IGNORED_DEPS
     print(f"==> {len(targets)} target crates in {args.targets.name}, skipping {len(skip)} crates")
 
     data, tmp = open_dump(args)
