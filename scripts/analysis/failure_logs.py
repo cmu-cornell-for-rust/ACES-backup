@@ -33,6 +33,7 @@ error_type classifies the extracted output, first match winning:
   gc      ERROR: BorrowSanitizer: garbage collection
   crash   BorrowSanitizer:DEADLYSIGNAL
   bsan    error: Undefined Behavior:
+  panic   panicked at
 and "other" when none match ("" when no output was found).
 
 Output columns: build,crate,test,status,error_type,log_file,log_found,
@@ -95,6 +96,7 @@ ERROR_TYPES = [
     ("gc", re.compile(re.escape("ERROR: BorrowSanitizer: garbage collection"))),
     ("crash", re.compile(re.escape("BorrowSanitizer:DEADLYSIGNAL"))),
     ("bsan", re.compile(re.escape("error: Undefined Behavior:"))),
+    ("panic", re.compile(re.escape("panicked at"))),
 ]
 
 
