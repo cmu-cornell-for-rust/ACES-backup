@@ -215,9 +215,9 @@ def aggregate_hyperfine(reader, subtract_calibration=True, only_tests=None):
     CSVs predating the calibration row are summed raw -- the caller reports
     which, since the two are not comparable.
 
-    Only benchmarked tests carry a mean_s -- test_failed / no_match /
-    bench_failed rows, and the single test-less row a build/fetch failure
-    emits, all leave the timing columns empty and so contribute nothing. Like
+    Only success rows are summed. test_failed rows carry a mean_s too (failing
+    tests are timed) but are skipped; no_match / bench_failed rows, and the
+    single test-less row a build/fetch failure emits, have no timing. Like
     the raw result CSVs these files are append-only, so the same test can
     appear more than once; the last row for each (crate, test) wins, otherwise
     re-benchmarking a crate would inflate its sum.
@@ -280,7 +280,9 @@ def aggregate_hyperfine(reader, subtract_calibration=True, only_tests=None):
     for (crate, test), row in latest.items():
         if test:
             test_rows[crate] = test_rows.get(crate, 0) + 1
-        mean = timing(row)
+        # test_failed rows carry a timing too (run_bench_dataset.sh times
+        # failing tests), but only passing tests count toward a crate's total.
+        mean = timing(row) if row.get("status") == "success" else None
         if mean is None:
             continue                      # not benchmarked -- no timing to add
         if subtract_calibration:

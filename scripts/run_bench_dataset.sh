@@ -267,21 +267,36 @@
 # fetch_failed/build_failed crates:
 #
 #   build,crate,test,status,compile_seconds,mean_s,stddev_s,median_s,min_s,
-#   max_s,runs,timestamp,job_id
+#   max_s,runs,timestamp,job_id,error_type,error
 #
 # status: success, test_failed (pre-run exited non-zero), no_match (filter ran
 # 0 tests -- stale test list), timeout (pre-run hit --test-timeout),
 # bench_failed (hyperfine itself errored, incl. a run over --test-timeout),
 # build_failed, fetch_failed, plus one calibration row per crate (see above;
-# test=__calibration__). Timing fields are empty unless status is success or
-# calibration -- so a crate contributes 1 + (its passing tests) rows, and the
-# progress line's row count runs slightly ahead of the test count.
+# test=__calibration__). Timing fields are filled for success, calibration and
+# test_failed (a failing test is still timed, with hyperfine -i so its
+# non-zero exit does not abort the benchmark; its status stays test_failed, so
+# filter on status before summing timings). A crate contributes 1 + (its
+# tests) rows, and the progress line's row count runs slightly ahead of the
+# test count.
 #
-# A test_failed, no_match or timeout test never reaches hyperfine, so the CSV records
-# only the verdict. Its output -- the panic message, the Miri/BSAN report,
+# error_type/error are set on every row whose command exited non-zero
+# (test_failed, timeout, a no_match whose run errored, bench_failed,
+# build_failed, fetch_failed). error_type uses the same patterns, in the same
+# first-match order, as analysis/failure_logs.py:
+#   rustc   error[E<code>]                    (compile error)
+#   linker  rust-lld
+#   oom     SIGKILL
+#   gc      ERROR: BorrowSanitizer: garbage collection
+#   crash   BorrowSanitizer:DEADLYSIGNAL
+#   bsan    error: Undefined Behavior:        (BSAN/Miri UB report)
+#   panic   panicked at                       (ordinary test failure)
+#   other   none of the above
+# and error is the matching line (for panic, plus the message line after it;
+# for other, the last error:/non-empty line), one line, at most 300 chars,
+# double-quoted. The full output -- the panic message, the Miri/BSAN report,
 # libtest's `failures:` summary -- is written to the crate log between
-# "--- output: <crate> :: <test> ..." markers (last 200 lines), which is the
-# only place it exists.
+# "--- output: <crate> :: <test> ..." markers (last 200 lines).
 #
 # The orchestrator submits the jobs, polls squeue with a progress line, then
 # merges all shards into <outputs>/<image>[-<extra-slug>]-<dataset>-hyperfine.csv
@@ -1208,13 +1223,42 @@ LIMIT=""
 FAIL_LOG_LINES=200
 
 ts() { date -u +'%Y-%m-%dT%H:%M:%SZ'; }
-# row <test> <status> <compile> <mean> <stddev> <median> <min> <max>
+
+# classify <output file>: sets ekind/emsg from a failed command's output. Same
+# patterns, same first-match order, as analysis/failure_logs.py's error_type --
+# keep the two in sync. emsg is flattened to one line (ANSI codes, CR, tabs and
+# newlines removed) and capped at 300 chars for the CSV.
+classify() {
+    ekind=other; emsg=""
+    local kp
+    for kp in 'rustc|error\[E[0-9]+\]' 'linker|rust-lld' 'oom|SIGKILL' \
+              'gc|ERROR: BorrowSanitizer: garbage collection' \
+              'crash|BorrowSanitizer:DEADLYSIGNAL' \
+              'bsan|error: Undefined Behavior:' 'panic|panicked at'; do
+        # panic takes the line after too: newer libtest prints the message there.
+        if [ "${kp%%|*}" = panic ]; then
+            emsg=$(grep -aE -m1 -A1 -- "${kp#*|}" "$1")
+        else
+            emsg=$(grep -aE -m1 -- "${kp#*|}" "$1")
+        fi
+        if [ -n "$emsg" ]; then ekind=${kp%%|*}; break; fi
+    done
+    [ -n "$emsg" ] || emsg=$(grep -aE '^error' "$1" | tail -n1)
+    [ -n "$emsg" ] || emsg=$(grep -av '^[[:space:]]*$' "$1" | tail -n1)
+    emsg=$(printf '%s' "$emsg" | sed -e 's/\x1b\[[0-9;]*[A-Za-z]//g' \
+        | tr -d '\r' | tr '\n\t' '  ' | sed -e 's/^ *//' -e 's/  */ /g' | cut -c1-300)
+}
+
+# CSV-quote a field (empty stays empty).
+csvq() { [ -n "$1" ] && printf '"%s"' "${1//\"/\"\"}"; }
+
+# row <test> <status> <compile> <mean> <stddev> <median> <min> <max> [<error_type> <error>]
 # Streams the row STRAIGHT into this worker's shard (we are its only writer),
 # so a walltime kill loses at most the in-flight test -- not, as when rows
 # were harvested from the log after the container exited, the whole crate.
 # The CSVROW echo is kept purely as a log-side copy for debugging.
 row() {
-    line="$HF_BUILD,$HF_CRATE,$1,$2,$3,$4,$5,$6,$7,$8,$HF_RUNS,$(ts),$HF_JOBID"
+    line="$HF_BUILD,$HF_CRATE,$1,$2,$3,$4,$5,$6,$7,$8,$HF_RUNS,$(ts),$HF_JOBID,${9:-},$(csvq "${10:-}")"
     echo "$line" >> "$HF_SHARD"
     echo "CSVROW:$line"
 }
@@ -1230,17 +1274,26 @@ COMPILE="$RUN"
 [ "$WHOLE" -eq 1 ] && COMPILE="$WHOLE_RUN"
 
 cargo clean >/dev/null 2>&1 || true
-if ! cargo fetch; then
-    row "" fetch_failed "" "" "" "" "" ""
+# fetch/build output is tee'd (still streamed to the crate log) so a failure's
+# error can be classified for the row.
+buildlog=$(mktemp)
+cargo fetch 2>&1 | tee "$buildlog"
+if [ "${PIPESTATUS[0]}" -ne 0 ]; then
+    classify "$buildlog"
+    row "" fetch_failed "" "" "" "" "" "" "$ekind" "$emsg"
     exit 1
 fi
 
 cstart=$(date +%s%3N)
-if ! $COMPILE --no-run; then
-    row "" build_failed "" "" "" "" "" ""
+$COMPILE --no-run 2>&1 | tee "$buildlog"
+brc=${PIPESTATUS[0]}
+cms=$(( $(date +%s%3N) - cstart ))
+if [ "$brc" -ne 0 ]; then
+    classify "$buildlog"
+    row "" build_failed "" "" "" "" "" "" "$ekind" "$emsg"
     exit 1
 fi
-cms=$(( $(date +%s%3N) - cstart ))
+rm -f "$buildlog"
 compile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
 
 # --- Calibration: what an invocation costs before any test body runs --------
@@ -1297,6 +1350,8 @@ while IFS= read -r t; do
     # Miri's or BSAN's report, libtest's `failures:` summary) is at the end,
     # while the head is per-binary "running N tests" noise. Passing tests are
     # untouched, so a clean crate's log reads exactly as it did before.
+    ekind=""; emsg=""
+    [ "$rc" -ne 0 ] && classify "$runlog"
     if [ "$rc" -ne 0 ] || [ "$nrun" -eq 0 ]; then
         nlines=$(wc -l < "$runlog")
         echo "--- output: $HF_CRATE :: $t (exit $rc, $nrun test(s) matched) ---"
@@ -1316,24 +1371,30 @@ while IFS= read -r t; do
     elif [ "$rc" -ne 0 ]; then status=test_failed
     fi
     mean=""; stddev=""; median=""; minv=""; maxv=""
-    if [ -z "$status" ]; then
-        hfcsv=$(mktemp)
+    # Passing AND failing tests are timed. A failing one gets -i so its
+    # non-zero exit does not abort hyperfine, and keeps status test_failed.
+    if [ -z "$status" ] || [ "$status" = test_failed ]; then
+        IGNORE=""
+        [ "$status" = test_failed ] && IGNORE="-i"
+        hfcsv=$(mktemp); hferr=$(mktemp)
         # -N: exec directly, no intermediate shell. Export columns are
         # command,mean,stddev,median,user,system,min,max -- counted from the
         # end so a comma in the command column can never shift them.
-        if hyperfine --style basic -N --warmup "$HF_WARMUP" --runs "$HF_RUNS" \
-                --export-csv "$hfcsv" "$LIMIT$CMD"; then
+        if hyperfine --style basic -N $IGNORE --warmup "$HF_WARMUP" --runs "$HF_RUNS" \
+                --export-csv "$hfcsv" "$LIMIT$CMD" 2> "$hferr"; then
             read -r mean stddev median minv maxv <<EOV
 $(tail -n1 "$hfcsv" | awk -F, '{print $(NF-6), $(NF-5), $(NF-4), $(NF-1), $NF}')
 EOV
-            status=success
-        else
+            [ -n "$status" ] || status=success
+        elif [ -z "$status" ]; then
             status=bench_failed
+            classify "$hferr"
         fi
-        rm -f "$hfcsv"
+        cat "$hferr" >&2
+        rm -f "$hfcsv" "$hferr"
     fi
-    echo "result: $HF_CRATE :: $t -> $status${mean:+ (mean ${mean}s)}"
-    row "$t" "$status" "$compile" "$mean" "$stddev" "$median" "$minv" "$maxv"
+    echo "result: $HF_CRATE :: $t -> $status${mean:+ (mean ${mean}s)}${ekind:+ [$ekind]}"
+    row "$t" "$status" "$compile" "$mean" "$stddev" "$median" "$minv" "$maxv" "$ekind" "$emsg"
 done < "$HF_TESTFILE"
 INNER_EOF
 
@@ -1616,8 +1677,14 @@ trap - INT TERM
 
 # ── Merge shards into the master CSV and summarize ───────────────────────────
 mkdir -p "$OUTPUTS_DIR"
+OLD_HEADER="build,crate,test,status,compile_seconds,mean_s,stddev_s,median_s,min_s,max_s,runs,timestamp,job_id"
+HEADER="$OLD_HEADER,error_type,error"
 if [[ ! -f "$CSV" ]]; then
-    echo "build,crate,test,status,compile_seconds,mean_s,stddev_s,median_s,min_s,max_s,runs,timestamp,job_id" > "$CSV"
+    echo "$HEADER" > "$CSV"
+elif [[ "$(head -n1 "$CSV")" == "$OLD_HEADER" ]]; then
+    # A CSV from before error_type/error existed: widen its header in place.
+    # Its old rows just leave the two new columns empty.
+    sed -i "1s/.*/$HEADER/" "$CSV"
 fi
 cat "$RUNDIR"/shards/*.csv >> "$CSV" 2>/dev/null || true
 
