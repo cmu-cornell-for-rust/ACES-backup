@@ -59,9 +59,12 @@
 # * A worker keeps its CARGO_HOME across the crates it handles, so registry
 #   downloads are reused; the target dir is fresh per crate.
 #
-# Every mode compiles with RUSTFLAGS="--cfg=miri --cap-lints=warn", like
-# run_bench_dataset.sh, so all three select the same cfg(miri) code and test
-# set, and a crate's own deny/forbid lints don't fail the build.
+# Every mode compiles with --cfg=miri and RUSTFLAGS="--cap-lints=warn", so all
+# three select the same cfg(miri) code and test set, and a crate's own
+# deny/forbid lints don't fail the build. Unlike run_bench_dataset.sh, rust and
+# bsan mode put --cfg=miri on the crate under test only (rustc-cfg-miri.sh), as
+# build_dataset.sh does, so dependencies that call Miri-only fns under
+# cfg(miri) still link.
 #
 # Per crate, inside the container:
 #   fetch         cargo fetch                                  (fetch_failed)
@@ -392,10 +395,24 @@ case "$EV_MODE" in
     *) echo "Error: bad EV_MODE '$EV_MODE'" >&2; exit 1 ;;
 esac
 
-# Same as run_bench_dataset.sh: --cfg=miri so every mode selects the same code
-# and test set, --cap-lints=warn so a crate's own deny lints don't fail it.
-export RUSTFLAGS="--cfg=miri --cap-lints=warn"
-echo "RUSTFLAGS=[$RUSTFLAGS]"
+# --cfg=miri so every mode selects the same code and test set, --cap-lints=warn
+# so a crate's own deny lints don't fail it. In rust/bsan mode --cfg=miri goes
+# on the crate under test only: under cfg(miri), dependencies like backtrace
+# call Miri-only extern fns (miri_backtrace_size, ...) that fail to link
+# natively. rustc-cfg-miri.sh adds it, standing in for rustc as RUSTC (plain
+# cargo) and as BSAN_ORIG_RUSTC (cargo bsan, which overrides RUSTC and
+# RUSTC_WRAPPER but runs that as its rustc). Miri sets cfg(miri) on every
+# crate and provides those fns, so miri mode keeps the flag in RUSTFLAGS.
+if [ "$EV_MODE" = miri ]; then
+    export RUSTFLAGS="--cfg=miri --cap-lints=warn"
+else
+    export RUSTFLAGS="--cap-lints=warn"
+    EV_REAL_RUSTC=$(command -v rustc) || { echo "Error: rustc not found" >&2; exit 1; }
+    export EV_REAL_RUSTC
+    export RUSTC="$(dirname "$0")/rustc-cfg-miri.sh"
+    export BSAN_ORIG_RUSTC="$RUSTC"
+fi
+echo "RUSTFLAGS=[$RUSTFLAGS]${RUSTC:+ RUSTC=[$RUSTC]}"
 
 HARNESS=()
 [ -n "${EV_TEST_THREADS:-}" ] && HARNESS=(--test-threads="$EV_TEST_THREADS")
@@ -540,6 +557,18 @@ while IFS= read -r t; do
     row "$t" "$status" "$compile" "$run" "$ekind" "$emsg"
 done < "$tmp/tests"
 INNER_EOF
+
+# ── rustc-cfg-miri.sh: inner.sh's rustc in rust/bsan mode ────────────────────
+# --cfg=miri for the crate under test (the primary package, in /work) only;
+# the /work check keeps out cargo bsan's sysroot build, where std is primary.
+cat > "$RUNDIR/rustc-cfg-miri.sh" << 'SHIM_EOF'
+#!/bin/bash
+if [ "${CARGO_PRIMARY_PACKAGE:-}" = 1 ] && [[ "${CARGO_MANIFEST_DIR:-}" == /work* ]]; then
+    exec "$EV_REAL_RUSTC" "$@" --cfg=miri
+fi
+exec "$EV_REAL_RUSTC" "$@"
+SHIM_EOF
+chmod +x "$RUNDIR/rustc-cfg-miri.sh"
 
 # ── job.sh: the sbatch payload, one per node ─────────────────────────────────
 # Args: <rundir> <job index> <workers>. The workers share the job's crate
