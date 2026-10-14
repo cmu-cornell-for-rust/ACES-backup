@@ -27,12 +27,12 @@
 #   --unsafe-scan FILE  unsafe_scan.csv from dataset_creator/filter_unsafe.sh.
 #                     Default: <dataset dir>/_logs/unsafe_scan.csv
 #   --jobs N          sbatch jobs to spread the crates over (default: one per
-#                     crate, capped at 40 -- the QOS job limit)
+#                     crate, capped at 80)
 #   --max-tasks N     ceiling on workers per job (default: as many as fit a
-#                     48-core / 488G slice of a node at --cpus-per-task and
-#                     --mem-per-task, i.e. 30 at the defaults)
+#                     24-core / 488G slice of a node at --cpus-per-task and
+#                     --mem-per-task, i.e. 24 at the defaults)
 #   --cpus-per-task N cores per worker (default 1; also caps CARGO_BUILD_JOBS)
-#   --mem-per-task G  GB per worker (default 16, at most 16)
+#   --mem-per-task G  GB per worker (default 8, at most 16)
 #   --test-threads N  pass `--test-threads=N` to the test harness on every run
 #   --test-timeout T  time limit per test invocation, in any form coreutils
 #                     `timeout` accepts (e.g. 300, 90s, 10m, 1.5h); a test that
@@ -120,11 +120,12 @@ CONTAINERS_DIR="$GROUP/containers"
 DATASETS_ROOT="$GROUP/datasets"
 OUTPUTS_DIR="$GROUP/outputs"
 
-# Node slice a job may ask for, and the per-worker memory ceiling.
-NODE_CPUS=48
+# Node slice a job may ask for (a hard cap of 24 cpus per job), the
+# per-worker memory ceiling, and the most jobs submitted at once.
+NODE_CPUS=24
 NODE_MEM=488
 MAX_MEM_PER_TASK=16
-MAX_JOBS=40
+MAX_JOBS=80
 
 # Built-in per-mode option sets (same as run_bench_dataset.sh).
 MIRI_COMMON="-Zmiri-disable-alignment-check -Zmiri-disable-data-race-detector -Zmiri-ignore-leaks -Zmiri-tree-borrows"
@@ -138,7 +139,7 @@ UNSAFE_SCAN=""
 JOBS=""              # empty = auto: one per crate, capped at MAX_JOBS
 MAX_TASKS=""         # empty = auto: what fits NODE_CPUS / NODE_MEM
 CPUS_PER_TASK=1
-MEM_PER_TASK=16
+MEM_PER_TASK=8
 TEST_THREADS=""
 TEST_TIMEOUT=""
 WALLTIME_ARG=48
@@ -229,7 +230,7 @@ done
     || { echo "Error: --cpus-per-task is at most $NODE_CPUS." >&2; exit 1; }
 if [[ -n "$JOBS" ]]; then
     [[ "$JOBS" =~ ^[1-9][0-9]*$ ]] || { echo "Error: --jobs must be a positive integer." >&2; exit 1; }
-    (( JOBS <= MAX_JOBS )) || { echo "Error: --jobs is at most $MAX_JOBS (the QOS job limit)." >&2; exit 1; }
+    (( JOBS <= MAX_JOBS )) || { echo "Error: --jobs is at most $MAX_JOBS." >&2; exit 1; }
 fi
 # The largest worker count a job may hold at this cpu/mem per worker.
 FIT_TASKS=$(( NODE_CPUS / CPUS_PER_TASK ))
