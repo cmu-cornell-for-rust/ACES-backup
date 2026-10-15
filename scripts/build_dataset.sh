@@ -4,16 +4,28 @@
 #
 #   Fetches and compiles every crate in a dataset ONCE -- no tests are run --
 #   and records per crate whether it got through, how long the compile took,
-#   and, for a failure, what the error was. Use it to see which crates can be
-#   benchmarked at all before spending a run_bench_dataset.sh sweep on them.
+#   how many runnable tests it has, and, for a failure, what the error was.
+#   Use it to see which crates can be benchmarked at all before spending a
+#   run_bench_dataset.sh sweep on them.
 #
 #   Per crate:  cargo fetch  &&  cargo test --tests --no-run
-#   with RUSTFLAGS="--cfg=miri --cap-lints=warn" -- byte-for-byte the compile
-#   step run_bench_dataset.sh does in `rust` mode, so a crate that builds here
-#   builds there. --whole drops --tests (`cargo test --no-run`), matching
-#   run_bench_dataset.sh's whole-crate mode. Each crate builds into its own
-#   target dir, deleted once it's checked, and a Cargo.lock the build generated
-#   (the crate didn't ship one) is removed.
+#               &&  cargo test --tests -- --list --format=json -Zunstable-options
+#   with RUSTFLAGS="--cap-lints=warn" and --cfg=miri on the crate under test
+#   only (see PRIMARY_RUSTFLAGS), as run_eval_dataset.sh compiles in rust/bsan
+#   mode. --whole drops --tests from the compile (`cargo test --no-run`),
+#   matching run_bench_dataset.sh's whole-crate mode; the listing is always
+#   --tests. Each crate builds into its own target dir, deleted once it's
+#   checked, and a Cargo.lock the build generated (the crate didn't ship one)
+#   is removed.
+#
+#   --cfg=miri goes on the primary package only, through this script acting as
+#   RUSTC_WRAPPER, because dependencies like backtrace link against Miri-only
+#   symbols (miri_backtrace_size, ...) under cfg(miri).
+#
+#   The listing keeps "type": "test" entries with "ignore": false (the tests
+#   that actually run, as list_tests.sh and run_eval_dataset.sh do), and writes
+#   them to <dataset>_list.csv (see Output), which run_eval_dataset.sh uses in
+#   place of listing on the node when it exists.
 #
 #   Where it runs: from the login node the crates are dealt round-robin into
 #   ceil(crates / -n) parts (so part sizes differ by at most one crate, and
@@ -50,9 +62,10 @@
 # Output:
 #   <DATASET_DIR>/_logs/build-<image>.csv, and (when launched as a job) a copy
 #   at $GROUP/outputs/<image>-<dataset>-build.csv, columns:
-#     build,crate,status,compile_seconds,error_type,error,timestamp
-#   status           ok / fetch_failed / build_failed
+#     build,crate,status,compile_seconds,tests,error_type,error,timestamp
+#   status           ok / fetch_failed / build_failed / list_failed
 #   compile_seconds  wall time of the --no-run compile (empty on fetch_failed)
+#   tests            number of runnable tests (empty unless status is ok)
 #   error_type       for a failure, the first of these to match cargo's output
 #                    (same patterns, same order, as run_bench_dataset.sh and
 #                    analysis/failure_logs.py):
@@ -68,10 +81,19 @@
 #                    one line, at most 300 chars
 #   Each crate's full fetch+build output goes to <crate>/build-<image>.log.
 #
+#   <DATASET_DIR>/_logs/<dataset>_list.csv, and (when launched as a job) a copy
+#   at $GROUP/outputs/<dataset>_list.csv, columns:
+#     crate,tests
+#   one row per crate with status ok, tests its runnable test names joined by
+#   ';' (empty when it has none) -- the same format as list_tests.sh's CSV.
+#
 # Environment knobs:
 #   JOBS                crates built in parallel (default: CPUS/4 in a job,
 #                       1 with --local); each cargo gets CPUS/JOBS cores
-#   BUILD_RUSTFLAGS="--cfg=miri --cap-lints=warn"   RUSTFLAGS for the build
+#   BUILD_RUSTFLAGS="--cap-lints=warn"   RUSTFLAGS for the build (every crate)
+#   PRIMARY_RUSTFLAGS="--cfg=miri"       extra rustc flags for the crate under
+#                       test only; set it empty and BUILD_RUSTFLAGS to
+#                       "--cfg=miri --cap-lints=warn" for the old behaviour
 #   CARGO_TARGET_DIR    if set, per-crate target dirs go under it
 #
 # Requirements: bash 4+; cargo (in the image, or here with --local).
@@ -81,6 +103,14 @@ set -uo pipefail   # no -e; per-crate failures are handled inline
 SELF="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 
 die() { echo "ERROR: $*" >&2; exit 1; }
+
+# As cargo's RUSTC_WRAPPER (set by the worker's build): argv is rustc and its
+# args; the crate under test gets PRIMARY_RUSTFLAGS on top.
+if [ -n "${BUILD_DATASET_RUSTC_WRAPPER:-}" ]; then
+    # shellcheck disable=SC2086  # PRIMARY_RUSTFLAGS splits into flags
+    [ "${CARGO_PRIMARY_PACKAGE:-}" = 1 ] && exec "$@" $PRIMARY_RUSTFLAGS
+    exec "$@"
+fi
 
 # classify <output file>: sets ekind/emsg from a failed command's output. Same
 # patterns, same first-match order, as run_bench_dataset.sh's classify and
@@ -111,7 +141,8 @@ csvq() { [ -n "$1" ] && printf '"%s"' "${1//\"/\"\"}"; }
 
 # ------------------------------- worker mode ------------------------------- #
 # Invoked by xargs, one crate per call. argv: --worker <crate_dir>
-# Writes the crate's CSV row to $STATE_DIR/<crate>.csv.
+# Writes the crate's CSV row to $STATE_DIR/<crate>.csv and, when it built and
+# listed, its <dataset>_list.csv row to $STATE_DIR/<crate>.list.
 if [ "${1:-}" = "--worker" ]; then
     dir="$2"
     crate="$(basename "$dir")"
@@ -124,23 +155,44 @@ if [ "${1:-}" = "--worker" ]; then
     fi
     rm -rf "$CARGO_TARGET_DIR"
 
-    status=ok; compile=""; ekind=""; emsg=""
+    status=ok; compile=""; ntests=""; ekind=""; emsg=""
+    wrap=()
+    [ -n "$PRIMARY_RUSTFLAGS" ] \
+        && wrap=(RUSTC_WRAPPER="$SELF" BUILD_DATASET_RUSTC_WRAPPER=1)
     if ! ( cd "$dir" && cargo fetch ) > "$log" 2>&1; then
         status=fetch_failed
     else
         cstart=$(date +%s%3N)
-        ( cd "$dir" && RUSTFLAGS="$BUILD_RUSTFLAGS" $COMPILE --no-run ) >> "$log" 2>&1
+        ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" $COMPILE --no-run ) >> "$log" 2>&1
         brc=$?
         cms=$(( $(date +%s%3N) - cstart ))
         compile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
         [ "$brc" -eq 0 ] || status=build_failed
     fi
+    if [ "$status" = ok ]; then
+        # JSON lines on stdout, build noise on stderr (into the log). Same
+        # flags as the build, so the binaries it just made are reused.
+        list="$STATE_DIR/$crate.json"
+        if ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" \
+                cargo test --tests -- --list --format=json -Zunstable-options ) \
+                > "$list" 2>> "$log"; then
+            names=$(grep -a '"type": *"test"' "$list" | grep -a '"ignore": *false' \
+                | sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u)
+            ntests=$(printf '%s' "$names" | grep -c . || true)
+            printf '%s,%s\n' "$crate" "$(printf '%s' "$names" | paste -sd';' -)" \
+                > "$STATE_DIR/$crate.list"
+        else
+            status=list_failed
+            cat "$list" >> "$log"
+        fi
+        rm -f "$list"
+    fi
     if [ "$status" != ok ]; then
         classify "$log"
         echo "    $status: $crate [$ekind] $emsg"
     fi
-    printf '%s,%s,%s,%s,%s,%s,%s\n' "$IMAGE" "$crate" "$status" "$compile" \
-        "$ekind" "$(csvq "$emsg")" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+    printf '%s,%s,%s,%s,%s,%s,%s,%s\n' "$IMAGE" "$crate" "$status" "$compile" \
+        "$ntests" "$ekind" "$(csvq "$emsg")" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
         > "$STATE_DIR/$crate.csv"
 
     rm -rf "$CARGO_TARGET_DIR"
@@ -174,17 +226,20 @@ done
 DATASET_DIR="$(cd "$GROUP/datasets/${POS[0]}" 2>/dev/null && pwd -P)" \
     || DATASET_DIR="$(cd "${POS[0]}" 2>/dev/null && pwd -P)" \
     || die "${POS[0]} is neither a dataset under $GROUP/datasets nor a directory"
-BUILD_RUSTFLAGS="${BUILD_RUSTFLAGS:---cfg=miri --cap-lints=warn}"
+BUILD_RUSTFLAGS="${BUILD_RUSTFLAGS:---cap-lints=warn}"
+PRIMARY_RUSTFLAGS="${PRIMARY_RUSTFLAGS---cfg=miri}"   # set but empty: off
 RESULTS_CSV="$DATASET_DIR/_logs/build-$IMAGE.csv"
+LIST_CSV="$DATASET_DIR/_logs/$(basename "$DATASET_DIR")_list.csv"
 PARTS_DIR="$DATASET_DIR/_logs/_build_parts"
 
 # summarize <csv>: status / error_type counts.
 summarize() {
     tail -n +2 "$1" | awk -F, '
-        { c[$3]++; if ($5 != "") t[$5]++ }
+        { c[$3]++; if ($6 != "") t[$6]++; n += $5 }
         END {
             for (s in c) printf "    %-14s %d\n", s ":", c[s]
             for (k in t) printf "      error_type %s: %d\n", k, t[k]
+            printf "    tests (ok crates): %d\n", n
         }'
 }
 
@@ -241,7 +296,7 @@ if [ "$LOCAL" -eq 0 ]; then
             cd "$DATASET_DIR" || exit 1
             "$RUN_JOB" -J "build-dataset-$k" -c "$CPUS" "$IMAGE" "$WALLTIME" "$MEM" -- \
                 "JOBS=$JOBS CARGO_BUILD_JOBS=$(( CPUS / JOBS > 0 ? CPUS / JOBS : 1 ))" \
-                "BUILD_RUSTFLAGS='$BUILD_RUSTFLAGS'" \
+                "BUILD_RUSTFLAGS='$BUILD_RUSTFLAGS' PRIMARY_RUSTFLAGS='$PRIMARY_RUSTFLAGS'" \
                 "bash _logs/.build_dataset.sh --local --part $k --image $IMAGE $WHOLE_FLAG /work"
         ) > "$PARTS_DIR/job-$k.log" 2>&1 &
         pids+=("$!")
@@ -255,23 +310,32 @@ if [ "$LOCAL" -eq 0 ]; then
     # Merge the parts' CSVs (inside a job the dataset was /work, so they
     # landed at the same _logs paths).
     {
-        echo "build,crate,status,compile_seconds,error_type,error,timestamp"
+        echo "build,crate,status,compile_seconds,tests,error_type,error,timestamp"
         for f in "$PARTS_DIR"/build-"$IMAGE".part-*.csv; do
             [ -f "$f" ] && tail -n +2 "$f"
         done | LC_ALL=C sort -t, -k2,2
     } > "$RESULTS_CSV"
+    {
+        echo "crate,tests"
+        for f in "$PARTS_DIR"/list.part-*.csv; do
+            [ -f "$f" ] && tail -n +2 "$f"
+        done | LC_ALL=C sort -t, -k1,1
+    } > "$LIST_CSV"
     rows=$(( $(wc -l < "$RESULTS_CSV") - 1 ))
 
     echo
     echo "==> Done ($rows/$n crates have a row)."
     summarize "$RESULTS_CSV"
     echo "    results:       $RESULTS_CSV"
+    echo "    test list:     $LIST_CSV"
     if [ "$rows" -lt "$n" ]; then
         echo "    $(( n - rows )) crate(s) have no row (job killed / walltime); see $PARTS_DIR/job-*.log"
     fi
     [ "$failed" -eq 0 ] || echo "    $failed job(s) exited non-zero; see $PARTS_DIR/job-*.log"
     out="$OUTPUTS_DIR/$IMAGE-$(basename "$DATASET_DIR")-build.csv"
     mkdir -p "$OUTPUTS_DIR" && cp "$RESULTS_CSV" "$out" && echo "    copied to:     $out"
+    out="$OUTPUTS_DIR/$(basename "$DATASET_DIR")_list.csv"
+    cp "$LIST_CSV" "$out" && echo "    copied to:     $out"
     [ "$failed" -eq 0 ]
     exit $?
 fi
@@ -293,11 +357,12 @@ if [ -n "$PART" ]; then
     [ -f "$PART_LIST" ] || die "no crate list for part $PART at $PART_LIST"
     STATE_DIR="$PARTS_DIR/_state-$PART"
     RESULTS_CSV="$PARTS_DIR/build-$IMAGE.part-$PART.csv"
+    LIST_CSV="$PARTS_DIR/list.part-$PART.csv"
 fi
 rm -rf "$STATE_DIR"                         # fresh check every run
 mkdir -p "$STATE_DIR"
 
-export SELF BUILD_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE
+export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE
 
 # ------------------------------ build each crate ---------------------------- #
 crates="$(mktemp)"
@@ -314,18 +379,24 @@ else
 fi > "$crates"
 n="$(tr -cd '\0' < "$crates" | wc -c | tr -d ' ')"
 echo "==> Building $n crates in $DATASET_DIR with $JOBS worker(s):" \
-     "$COMPILE --no-run (RUSTFLAGS=\"$BUILD_RUSTFLAGS\") ..."
+     "$COMPILE --no-run (RUSTFLAGS=\"$BUILD_RUSTFLAGS\"," \
+     "crate under test +\"$PRIMARY_RUSTFLAGS\"), then list tests ..."
 xargs -0 -n 1 -P "$JOBS" "$SELF" --worker < "$crates"
 rm -f "$crates"
 
 # ---------------------------------- outputs --------------------------------- #
 {
-    echo "build,crate,status,compile_seconds,error_type,error,timestamp"
+    echo "build,crate,status,compile_seconds,tests,error_type,error,timestamp"
     find "$STATE_DIR" -maxdepth 1 -name '*.csv' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k2,2
 } > "$RESULTS_CSV"
+{
+    echo "crate,tests"
+    find "$STATE_DIR" -maxdepth 1 -name '*.list' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k1,1
+} > "$LIST_CSV"
 rm -rf "$STATE_DIR"
 
 echo
 echo "==> Done."
 summarize "$RESULTS_CSV"
 echo "    results:       $RESULTS_CSV"
+echo "    test list:     $LIST_CSV"

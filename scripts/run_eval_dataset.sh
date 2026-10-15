@@ -26,6 +26,10 @@
 #                     are skipped. See --unsafe-scan
 #   --unsafe-scan FILE  unsafe_scan.csv from dataset_creator/filter_unsafe.sh.
 #                     Default: <dataset dir>/_logs/unsafe_scan.csv
+#   --list FILE       per-crate test list (crate,tests with ';'-joined names, as
+#                     build_dataset.sh / list_tests.sh write). Default:
+#                     <outputs>/<dataset>_list.csv, else
+#                     <dataset dir>/_logs/<dataset>_list.csv, if either exists
 #   --jobs N          sbatch jobs to spread the crates over (default: one per
 #                     crate, capped at 80)
 #   --max-tasks N     ceiling on workers per job (default: as many as fit a
@@ -42,8 +46,11 @@
 #
 # How it differs from run_bench_dataset.sh
 # ----------------------------------------
-# * No tests CSV: each worker lists the crate's tests itself, after compiling,
-#   with `cargo <tool> test --tests -- --list --format=json -Zunstable-options`
+# * Tests come from <dataset>_list.csv (build_dataset.sh's listing; see
+#   --list) when there is one: a crate with a row there runs exactly those
+#   tests (none: no_tests). Any other crate -- or every crate, without a list
+#   -- is listed by its worker after compiling, with
+#   `cargo <tool> test --tests -- --list --format=json -Zunstable-options`
 #   (the same listing as list_tests.sh, but under the run's own tool so it
 #   reuses the build just made). Ignored tests -- including
 #   #[cfg_attr(miri, ignore)] ones, since every mode builds with --cfg=miri --
@@ -69,7 +76,7 @@
 # Per crate, inside the container:
 #   fetch         cargo fetch                                  (fetch_failed)
 #   compile       cargo <tool> test --tests --no-run, timed    (build_failed)
-#   list          as above                                     (list_failed)
+#   list          as above, unless the crate is in the list    (list_failed)
 #   per test      cargo <tool> test --tests -- --exact <test>, timed once
 #
 # Rows are STREAMED into a per-worker shard CSV as each test finishes (single
@@ -136,6 +143,7 @@ IGNORE_FILE=""
 ONLY_FILE=""
 SAFETY=""
 UNSAFE_SCAN=""
+LIST_CSV=""
 JOBS=""              # empty = auto: one per crate, capped at MAX_JOBS
 MAX_TASKS=""         # empty = auto: what fits NODE_CPUS / NODE_MEM
 CPUS_PER_TASK=1
@@ -155,6 +163,8 @@ while [[ $# -gt 0 ]]; do
         --safety=*)      SAFETY="${1#*=}"; shift ;;
         --unsafe-scan)   UNSAFE_SCAN="$2"; shift 2 ;;
         --unsafe-scan=*) UNSAFE_SCAN="${1#*=}"; shift ;;
+        --list)          LIST_CSV="$2"; shift 2 ;;
+        --list=*)        LIST_CSV="${1#*=}"; shift ;;
         --jobs)          JOBS="$2"; shift 2 ;;
         --jobs=*)        JOBS="${1#*=}"; shift ;;
         --max-tasks)     MAX_TASKS="$2"; shift 2 ;;
@@ -184,6 +194,7 @@ usage() {
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --ignore FILE --only FILE" >&2
     echo "           --safety safe,unsafe-deps,unsafe [--unsafe-scan FILE]" >&2
+    echo "           --list FILE (default <dataset>_list.csv, if present)" >&2
     echo "           --jobs N (<= $MAX_JOBS) --max-tasks N --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m)" >&2
@@ -280,6 +291,14 @@ fi
 [[ -d "$DATASET_DIR" ]] || { echo "Error: dataset dir not found: $DATASET_DIR" >&2; exit 1; }
 command -v sbatch >/dev/null || { echo "Error: sbatch not found (run on a login node)." >&2; exit 1; }
 
+if [[ -n "$LIST_CSV" ]]; then
+    [[ -f "$LIST_CSV" ]] || { echo "Error: test list not found: $LIST_CSV" >&2; exit 1; }
+else
+    for f in "$OUTPUTS_DIR/${DATASET}_list.csv" "$DATASET_DIR/_logs/${DATASET}_list.csv"; do
+        [[ -f "$f" ]] && { LIST_CSV="$f"; break; }
+    done
+fi
+
 # ── Crate filters ────────────────────────────────────────────────────────────
 read_name_list() {   # <file> <assoc array name>
     local -n _set="$2"
@@ -355,7 +374,26 @@ fi
 (( JOBS > NCRATES )) && JOBS=$NCRATES
 
 RUNDIR="$OUTPUTS_DIR/eval-runs/$(date +%Y%m%d-%H%M%S)-$$"
-mkdir -p "$RUNDIR/queues" "$RUNDIR/shards" "$RUNDIR/done"
+mkdir -p "$RUNDIR/queues" "$RUNDIR/shards" "$RUNDIR/done" "$RUNDIR/lists"
+
+# Per-crate test lists from LIST_CSV, one name per line, for the selected
+# crates (first row per crate wins, as for every consumer of these CSVs).
+nlisted=0
+if [[ -n "$LIST_CSV" ]]; then
+    declare -A SELECTED=()
+    for crate in "${CRATES[@]}"; do SELECTED["$crate"]=1; done
+    while IFS=, read -r crate tests || [[ -n "$crate" ]]; do
+        tests="${tests//$'\r'/}"
+        [[ -n "$crate" && "$crate" != "crate" && -n "${SELECTED[$crate]:-}" ]] || continue
+        [[ -f "$RUNDIR/lists/$crate.txt" ]] && continue
+        if [[ -n "$tests" ]]; then
+            tr ';' '\n' <<<"$tests" > "$RUNDIR/lists/$crate.txt"
+        else
+            : > "$RUNDIR/lists/$crate.txt"
+        fi
+        nlisted=$((nlisted + 1))
+    done < "$LIST_CSV"
+fi
 
 # Round-robin: job sizes differ by at most one crate.
 i=0
@@ -503,11 +541,15 @@ fi
 echo "compiled: $EV_CRATE in ${compile}s"
 
 # ── list ──
-# JSON lines on stdout, build noise on stderr. The tool's own listing reuses
+# From the dataset's test list when the crate has a row there; otherwise JSON
+# lines on stdout, build noise on stderr. The tool's own listing reuses
 # the build above; plain cargo is the fallback when it can't list (Miri
 # failing a binary's startup), at the cost of a native build.
 LIST_ARGS=(-- --list --format=json -Zunstable-options)
-if ! $RUN "${LIST_ARGS[@]}" < /dev/null > "$tmp/list" 2> "$tmp/listerr"; then
+if [ -f "$EV_TESTS" ]; then
+    sed '/^$/d' "$EV_TESTS" | LC_ALL=C sort -u > "$tmp/tests"
+    echo "list: from the dataset's test list"
+elif ! $RUN "${LIST_ARGS[@]}" < /dev/null > "$tmp/list" 2> "$tmp/listerr"; then
     cat "$tmp/listerr"
     if [ "$EV_MODE" != rust ]; then
         echo "list: $RUN failed to list; retrying with plain cargo"
@@ -525,8 +567,10 @@ if ! $RUN "${LIST_ARGS[@]}" < /dev/null > "$tmp/list" 2> "$tmp/listerr"; then
 fi
 # Runnable = discovered and not #[ignore]d. A name in several binaries is
 # listed once; --exact runs it in each of them.
-grep -a '"type": *"test"' "$tmp/list" | grep -a '"ignore": *false' \
-    | sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u > "$tmp/tests"
+if [ ! -f "$EV_TESTS" ]; then
+    grep -a '"type": *"test"' "$tmp/list" | grep -a '"ignore": *false' \
+        | sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u > "$tmp/tests"
+fi
 ntests=$(wc -l < "$tmp/tests" | tr -d ' ')
 echo "listed: $EV_CRATE -> $ntests runnable test(s)"
 if [ "$ntests" -eq 0 ]; then
@@ -656,6 +700,7 @@ worker() {
             --env EV_BUILD="$IMAGE" --env EV_MODE="$MODE" \
             --env EV_CRATE="$crate" \
             --env EV_SHARD="$shard" \
+            --env EV_TESTS="$RUNDIR/lists/$crate.txt" \
             --env EV_TEST_THREADS="$TEST_THREADS" \
             --env EV_TEST_TIMEOUT="$TEST_TIMEOUT" \
             --env EV_MIRIFLAGS="$MIRIFLAGS_ALL" \
@@ -678,7 +723,11 @@ JOB_EOF
 # ── Plan summary ─────────────────────────────────────────────────────────────
 echo "Mode:     $MODE   Image: $IMAGE"
 echo "Dataset:  $DATASET_DIR"
-echo "Crates:   $NCRATES (tests are listed per crate on the node)"
+if [[ -n "$LIST_CSV" ]]; then
+    echo "Crates:   $NCRATES ($nlisted with tests from $LIST_CSV, the rest listed on the node)"
+else
+    echo "Crates:   $NCRATES (no test list; tests are listed per crate on the node)"
+fi
 echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only${SAFETY:+ not-$SAFETY=$skip_safety}"
 echo "Shape:    $JOBS job(s), $(( NCRATES / JOBS ))-$PER_JOB_MAX crate(s) each, up to $TASKS worker(s)/job"
 echo "          x ${CPUS_PER_TASK} cpu, ${MEM_PER_TASK}G/worker, $WALLTIME walltime"

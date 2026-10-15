@@ -1,0 +1,49 @@
+﻿ID,Crate,Version,Error Category,Error Type,Error,Fix,Issue(s),Pull(s),Commit(s)
+1,jh-rs,0.1.0,Alignment,Invalid Transmutation,Rust,Rust,#1,,
+2,quickjs_regex,0.2.3,Cross-Language Free,–,LLVM,Rust,#2,,
+3,tree-sitter,0.20.3,Dangling Int Pointer,Null Pointer Dereference,LLVM,LLVM,#8,,4676cd4
+4,everrs,0.2.1,Incorrect Binding,Incorrect Integer Width,Binding,Binding,#1,,
+5,quickjs_regex,0.2.3,Incorrect Binding,Incorrect Integer Width,Binding,Binding,,#1,
+6,secp256k1,0.28.0,Incorrect Binding,Incorrect Integer Width,Binding,Binding,#669,#670,60a5e36
+7,dec-number-sys,0.0.25,Incorrect Binding,Missing Return Type,Binding,Binding,,#2,
+8,spritz_cipher,0.1.0,Incorrect Binding,Missing Return Type,Binding,Binding,,#1,
+9,special-fun,0.2.0,Incorrect Binding,Missing Return Type,Binding,Binding,#14,#13,ded37f8
+10,lcms2,6.0.0,Invalid Enum Tag,Logical Error,Rust,Rust,,,85218b6
+11,bchlib,0.2.1,Memory Leaked,Missing C Destructor,Rust,Rust,#1,,
+12,libcmark-sys,0.1.0,Memory Leaked,Missing C Destructor,Rust,Rust,#3,,
+13,tinyspline-sys,0.2.0,Memory Leaked,Missing C Destructor,Rust,Rust,#1,,
+14,tree-sitter-svelte,0.10.2,Memory Leaked,Missing C Destructor,Rust,Rust,#46,,
+15,x42ltc-sys,0.0.5,Memory Leaked,Missing C Destructor,Rust,Rust,#1,#2,1c594f2
+16,minimp3_ex-sys,0.1.1,Memory Leaked,Missing C Destructor,Rust,Rust,,#5,33bea0d
+17,fluidlite,0.2.1,Memory Leaked,Missing from_raw,Rust,Rust,#15,,
+18,ytnef,0.2.0,Memory Leaked,Missing from_raw,Rust,Rust,#1,,
+19,zmq,0.10.0,Memory Leaked,Missing from_raw,Rust,Rust,#387,#388,
+20,libhydrogen,0.4.1,Memory Leaked,Missing from_raw,Rust,Rust,#11,,bddff45
+21,crypto_pimitives,0.1.1,Out of Bounds Access,–,LLVM,Rust,#1,,
+22,dec,0.4.8,Out of Bounds Access,–,LLVM,LLVM,#76,,
+23,dec-number-sys,0.0.25,Out of Bounds Access,–,LLVM,LLVM,#76,,
+24,quickjs_regex,0.2.3,Out of Bounds Access,–,LLVM,Rust,,#1,
+25,mseed,0.5.0,Out of Bounds Access,–,LLVM,Rust,,,0cfede1
+26,bad64,0.6.0,Out of Bounds Access,–,LLVM,LLVM,,,6dbd961
+27,tectonic_engine_bibtex,0.2.1,Tree Borrows,Freeing Through &mut T,LLVM,Rust,,#1129,c64e524
+28,sgp4-rs,0.4.0,Tree Borrows,Incorrect Integer Width,LLVM,Binding,#29,,
+29,tetsy-secp256k1,0.7.0,Tree Borrows,Incorrect const,LLVM,Rust,#3,,
+30,lsmlite-rs,0.1.0,Tree Borrows,Incorrect const,LLVM,Binding,,#5,2e0cf90
+31,ms5837,0.2.1,Tree Borrows,Incorrect const,LLVM,Rust,,#26,7be05c1
+32,dec-number-sys,0.0.25,Tree Borrows,Incorrect const,LLVM,Binding,#1,#2,4a12cce
+33,foreign-types,0.5.0,Tree Borrows,Phantom UnsafeCell<T>,LLVM,Rust,#24,,
+34,bzip2,0.4.4,Tree Borrows,Sharing &mut T,LLVM,Rust,#94,,
+35,littlefs2,0.4.0,Tree Borrows,Sharing &mut T,LLVM,Rust,,#54,
+36,littlefs2,0.4.0,Tree Borrows,Sharing &mut T,LLVM,Rust,,#54,
+37,spng,0.2.0-alpha.2,Tree Borrows,Sharing &mut T,Rust,Rust,#11,#12,
+38,flate2,1.0.27,Tree Borrows,Sharing &mut T,LLVM,Rust,#392,#394,0a584f4
+39,librsync,0.2.3,Tree Borrows,&T as *mut T,Rust,Rust,#23,,
+40,blitsort-sys,0.1.0,Tree Borrows,&T as *mut T,LLVM,Rust,#1,#2,
+41,dec,0.4.8,Tree Borrows,&T as *mut T,LLVM,Rust,#74,#2,ece7d84
+42,lcms2,6.0.0,Tree Borrows,&T as *mut T,LLVM,Rust,,#18,28626ed
+43,lcms2,6.0.0,Tree Borrows,&T as *mut T,LLVM,Rust,,,5d3b648
+44,klu-rs,0.4.0,Tree Borrows,&T as *mut T,LLVM,Rust,,#1,c5e89d1
+45,minimap2-sys,0.1.16*,Uninitialized Memory,Erroneous Failure,Rust,Rust,,,2ac2a6d
+46,dec,0.4.8,Uninitialized Memory,Incomplete Initialization,Rust,Rust,#76,#77,3545623
+47,dec,0.4.8,Uninitialized Memory,Incomplete Initialization,LLVM,Rust,#76,#77,3545623
+48,xxhrs,2.0.0,Uninitialized Memory,Uninitialized Padding,Rust,Rust,,,
