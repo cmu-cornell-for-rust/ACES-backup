@@ -4,7 +4,8 @@
 #
 #   <mode>      miri | bsan | rust -- which tool runs the tests:
 #                 miri: MIRIFLAGS=<common+extra> cargo miri test
-#                 bsan: BSAN_OPTIONS=<common+extra> cargo bsan test
+#                 bsan: BSAN_OPTIONS=<common+extra> cargo bsan test, with
+#                       BSAN_SYMBOLIZER set (see below)
 #                 rust: plain cargo test (extra ignored)
 #   <image>     image/SIF name under the group containers dir (e.g. miri, bsan,
 #               rust). Mode and image are separate so variant images can still
@@ -38,6 +39,11 @@
 #   --cpus-per-task N cores per worker (default 1; also caps CARGO_BUILD_JOBS)
 #   --mem-per-task G  GB per worker (default 8, at most 16)
 #   --test-threads N  pass `--test-threads=N` to the test harness on every run
+# Environment:
+#   BSAN_SYMBOLIZER   llvm-symbolizer path inside the image, so BSAN reports
+#                     carry source locations (bsan mode). Default:
+#                     /root/.rustup/toolchains/bsan/bin/llvm-symbolizer
+#
 #   --test-timeout T  time limit per test invocation, in any form coreutils
 #                     `timeout` accepts (e.g. 300, 90s, 10m, 1.5h); a test that
 #                     hits it is recorded as `timeout`. Unset by default. Worth
@@ -137,6 +143,7 @@ MAX_JOBS=80
 # Built-in per-mode option sets (same as run_bench_dataset.sh).
 MIRI_COMMON="-Zmiri-disable-alignment-check -Zmiri-disable-data-race-detector -Zmiri-ignore-leaks -Zmiri-tree-borrows"
 BSAN_COMMON="stacktrace_max_len=32"
+BSAN_SYMBOLIZER="${BSAN_SYMBOLIZER:-/root/.rustup/toolchains/bsan/bin/llvm-symbolizer}"
 
 # ── Options ──────────────────────────────────────────────────────────────────
 IGNORE_FILE=""
@@ -417,6 +424,7 @@ TASKS=$PER_JOB_MAX
     printf 'TEST_TIMEOUT=%q\n'     "$TEST_TIMEOUT"
     printf 'MIRIFLAGS_ALL=%q\n'    "$MIRIFLAGS_ALL"
     printf 'BSAN_OPTIONS_ALL=%q\n' "$BSAN_OPTIONS_ALL"
+    printf 'BSAN_SYMBOLIZER=%q\n'  "$BSAN_SYMBOLIZER"
 } > "$RUNDIR/config.env"
 
 # ── inner.sh: runs INSIDE the container, once per crate, cwd = /work ─────────
@@ -430,7 +438,11 @@ set -u
 case "$EV_MODE" in
     rust) RUN="cargo test --tests" ;;
     miri) export MIRIFLAGS="$EV_MIRIFLAGS";   RUN="cargo miri test --tests" ;;
-    bsan) export BSAN_OPTIONS="$EV_BSAN_OPTIONS"; RUN="cargo bsan test --tests" ;;
+    bsan) export BSAN_OPTIONS="$EV_BSAN_OPTIONS"; RUN="cargo bsan test --tests"
+          # Source locations in BSAN reports.
+          export BSAN_SYMBOLIZER="$EV_BSAN_SYMBOLIZER"
+          [ -x "$BSAN_SYMBOLIZER" ] \
+              || echo "warning: BSAN_SYMBOLIZER $BSAN_SYMBOLIZER is not executable; reports will lack source locations" ;;
     *) echo "Error: bad EV_MODE '$EV_MODE'" >&2; exit 1 ;;
 esac
 
@@ -705,6 +717,7 @@ worker() {
             --env EV_TEST_TIMEOUT="$TEST_TIMEOUT" \
             --env EV_MIRIFLAGS="$MIRIFLAGS_ALL" \
             --env EV_BSAN_OPTIONS="$BSAN_OPTIONS_ALL" \
+            --env EV_BSAN_SYMBOLIZER="$BSAN_SYMBOLIZER" \
             --env EV_JOBID="${SLURM_JOB_ID}.${tid}" \
             --env http_proxy="${http_proxy:-}"   --env https_proxy="${https_proxy:-}" \
             --env HTTP_PROXY="${HTTP_PROXY:-}"   --env HTTPS_PROXY="${HTTPS_PROXY:-}" \
@@ -734,6 +747,7 @@ echo "          x ${CPUS_PER_TASK} cpu, ${MEM_PER_TASK}G/worker, $WALLTIME wallt
 echo "Timing:   one run per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}${TEST_TIMEOUT:+, --test-timeout=$TEST_TIMEOUT}"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
+[[ "$MODE" == "bsan" ]] && echo "BSAN_SYMBOLIZER: $BSAN_SYMBOLIZER"
 echo "Results:  $CSV"
 echo "Run dir:  $RUNDIR"
 echo
