@@ -189,8 +189,9 @@ if ! command -v singularity &>/dev/null; then
     exit 1
 fi
 
-# Writable per-job scratch under group space, bound at the SAME path in/out.
-JOBSCRATCH="/scratch/group/p.cis260229.000/cargo-temp-$USER/cargo-$SLURM_JOB_ID"
+# Writable per-job scratch on node-local $TMPDIR (/tmp/job.$SLURM_JOB_ID; much
+# lower small-file latency than /scratch), bound at the SAME path in/out.
+JOBSCRATCH="${TMPDIR:-/tmp}/cargo-$SLURM_JOB_ID"
 mkdir -p "$JOBSCRATCH/home" "$JOBSCRATCH/target"
 
 # Remove the per-job scratch when the node script exits, however it exits.

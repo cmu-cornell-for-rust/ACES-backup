@@ -506,7 +506,9 @@ fi
 # workaround -- see run_job.sh for the full story).
 ulimit -S -s 8192
 
-SCRATCH_BASE="$GROUP/cargo-temp-$USER"
+# Node-local $TMPDIR (/tmp/job.$SLURM_JOB_ID): much lower small-file latency
+# than /scratch for cargo builds. Only this node ever touches these dirs.
+SCRATCH_BASE="${TMPDIR:-/tmp}"
 mkdir -p "$SCRATCH_BASE"
 trap 'rm -rf "$SCRATCH_BASE/pf-$SLURM_JOB_ID-"* 2>/dev/null || true' EXIT
 

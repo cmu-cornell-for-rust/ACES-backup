@@ -821,7 +821,9 @@ fi
 ulimit -S -s 8192
 
 QUEUE="$RUNDIR/queues/job-$JOBIDX.txt"
-SCRATCH_BASE="$GROUP/cargo-temp-$USER"
+# Node-local $TMPDIR (/tmp/job.$SLURM_JOB_ID): much lower small-file latency
+# than /scratch for cargo builds. Only this node ever touches these dirs.
+SCRATCH_BASE="${TMPDIR:-/tmp}"
 NODE_TMP="${TMPDIR:-/tmp}/eval-$SLURM_JOB_ID"
 mkdir -p "$SCRATCH_BASE" "$NODE_TMP"
 echo 0 > "$NODE_TMP/next"
