@@ -83,7 +83,7 @@ ffi_hits() {
         "$RG" --no-config --no-messages -l -0 -g '*.rs' -e "$FFI_RE" -- "$1" 2>/dev/null
     else
         grep -rlE --null --include='*.rs' "$FFI_RE" "$1" 2>/dev/null
-    fi | perl "$FFI_SCAN"
+    fi | perl "$FFI_SCAN" "$1"
 }
 
 # Emit every FFI ABI literal found under $1, one per line.

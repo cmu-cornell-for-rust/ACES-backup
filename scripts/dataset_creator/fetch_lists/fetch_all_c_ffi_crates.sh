@@ -24,7 +24,9 @@
 #                              contain `unsafe extern "C++" { .. }`).
 #   Not counted: `extern "C"` blocks marked #[wasm_bindgen] or
 #   #[link(wasm_import_module = ..)] -- they import JavaScript / wasm host
-#   functions, not C (see ffi_scan.pl).
+#   functions, not C; and anything that isn't library code: comments (incl.
+#   doc examples), string literals, #[cfg(test)] items, and files under
+#   tests/, benches/, examples/ (see ffi_scan.pl).
 #
 #   Crates with C FFI are written to all_c_ffi_crates.csv, in the same shape
 #   as c_ffi_bindings.csv, one row per crate name:
@@ -38,7 +40,9 @@
 #     - rows for crates no longer in the list are left as they are.
 #   Every scanned name-version also leaves a verdict in OUTPUT_DIR/_state/, so
 #   crates WITHOUT C FFI aren't re-downloaded either. Delete a marker (or the
-#   whole _state dir) to force a re-scan. Per-crate failures never abort the run.
+#   whole _state dir) to force a re-scan, or set RESCAN=1 to re-scan every
+#   crate currently in the CSV (e.g. after ffi_scan.pl changes). Per-crate
+#   failures never abort the run.
 #
 #   The crate list is cached in OUTPUT_DIR/_crate_list.tsv and rebuilt from a
 #   fresh dump once it is older than LIST_MAX_AGE_HOURS (the dump is nightly,
@@ -62,6 +66,10 @@
 #                       it is older than this (0 = every run, -1 = never)
 #   SKIP_YANKED=0       1 = skip crates whose default version is yanked
 #   LIMIT=0             process at most N not-yet-done crates this run (0 = all)
+#   RESCAN=0            1 = re-scan the crates already in the CSV and drop the
+#                       ones that no longer match (only they can change when
+#                       the scanner gets stricter; crates not in the CSV are
+#                       left alone)
 #   DUMP_URL=...        db dump location (a file:// URL works for a local copy)
 #   USER_AGENT=...      sent to crates.io (keep a contact address in it)
 #
@@ -80,6 +88,7 @@ JOBS="${JOBS:-8}"
 SLEEP_BETWEEN="${SLEEP_BETWEEN:-1}"
 SKIP_YANKED="${SKIP_YANKED:-0}"
 LIMIT="${LIMIT:-0}"
+RESCAN="${RESCAN:-0}"
 LIST_MAX_AGE_HOURS="${LIST_MAX_AGE_HOURS:-24}"
 USER_AGENT="${USER_AGENT:-aces-c-ffi-dataset-builder (CMU systems research; mmaclare@andrew.cmu.edu)}"
 
@@ -103,7 +112,7 @@ ffi_hits() {
         "$RG" --no-config --no-messages -l -0 -g '*.rs' -e "$FFI_RE" -- "$1" 2>/dev/null
     else
         grep -rlE --null --include='*.rs' "$FFI_RE" "$1" 2>/dev/null
-    fi | perl "$FFI_SCAN"
+    fi | perl "$FFI_SCAN" "$1"
 }
 
 # Emit every FFI ABI literal found under $1, one per line.
@@ -299,15 +308,22 @@ fi
 # Skip a crate if the CSV already lists this exact name-version, or if this
 # name-version was already scanned (covers the crates WITHOUT C FFI, which
 # aren't in the CSV). Anything else is new, or a newer version of a CSV row.
+# RESCAN=1 drops the verdicts of the CSV rows so they are scanned again.
 todo="$(mktemp)"
 in_csv="$(mktemp)"
 # name<TAB>version of every existing row (name/version never need quoting).
 [ -f "$CSV_PATH" ] && awk -F, 'NR>1 && $2 != "" {print $2 "\t" $3}' "$CSV_PATH" > "$in_csv"
-awk -F'\t' -v state_dir="$STATE_DIR" -v skip_yanked="$SKIP_YANKED" '
+if [ "$RESCAN" = "1" ]; then
+    echo "==> RESCAN=1: re-scanning the $(wc -l < "$in_csv" | tr -d ' ') crates in the CSV"
+    while IFS=$'\t' read -r n v; do
+        rm -f "$STATE_DIR/$n-$v.tsv"
+    done < "$in_csv"
+fi
+awk -F'\t' -v state_dir="$STATE_DIR" -v skip_yanked="$SKIP_YANKED" -v rescan="$RESCAN" '
     FILENAME == ARGV[1] { listed[$1 "\t" $2] = 1; csv_ver[$1] = $2; next }
     $1 == "" { next }
     skip_yanked == "1" && $4 == "yanked" { next }
-    ($1 "\t" $2) in listed { next }
+    rescan != "1" && ($1 "\t" $2) in listed { next }
     { f = state_dir "/" $1 "-" $2 ".tsv"
       if ((getline _ < f) >= 0) { close(f); next }   # already scanned
       if ($1 in csv_ver) upd++; else new++
