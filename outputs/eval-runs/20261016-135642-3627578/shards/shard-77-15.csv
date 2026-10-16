@@ -1,0 +1,3 @@
+bsan,ellipsis-0.1.0,test::test_invalid_commands,success,110.603,8.440,2026-10-16T20:15:33Z,2222129.15,,
+bsan,ellipsis-0.1.0,test::test_valid_commands,success,110.603,7.989,2026-10-16T20:15:41Z,2222129.15,,
+bsan,ellipsis-0.1.0,test_config_command,test_failed,110.603,7.332,2026-10-16T20:15:49Z,2222129.15,panic,"thread 'test_config_command' (2283390) panicked at tests/integration_tests.rs:48:5: assertion failed: ellipsis::run(&matches).is_ok()"

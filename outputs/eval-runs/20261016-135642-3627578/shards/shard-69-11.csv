@@ -1,0 +1,12 @@
+bsan,ap_kcp-0.1.1,segment::test::encode_decode,success,281.053,2.347,2026-10-16T19:20:07Z,2222120.11,,
+bsan,ap_kcp-0.1.1,test::close,success,281.053,7.159,2026-10-16T19:20:14Z,2222120.11,,
+bsan,ap_kcp-0.1.1,test::drop_handle,success,281.053,2.514,2026-10-16T19:20:16Z,2222120.11,,
+bsan,ap_kcp-0.1.1,test::drop_stream,success,281.053,33.587,2026-10-16T19:20:50Z,2222120.11,,
+bsan,ap_kcp-0.1.1,test::horrible,test_failed,281.053,326.770,2026-10-16T19:26:17Z,2222120.11,panic,"thread 'test::horrible' (2777689) panicked at src/lib.rs:75:48: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: Shutdown(""poll_recv on a closing kcp core: 7"") }"
+bsan,ap_kcp-0.1.1,test::keep_alive,success,281.053,14.300,2026-10-16T19:26:31Z,2222120.11,,
+bsan,ap_kcp-0.1.1,test::laggy,test_failed,281.053,165.960,2026-10-16T19:29:17Z,2222120.11,panic,"thread 'test::laggy' (2779011) panicked at src/lib.rs:75:48: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: Shutdown(""poll_recv on a closing kcp core: 7"") }"
+bsan,ap_kcp-0.1.1,test::normal,test_failed,281.053,54.658,2026-10-16T19:30:12Z,2222120.11,panic,"thread 'test::normal' (2779733) panicked at src/lib.rs:75:48: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: Shutdown(""poll_recv on a closing kcp core: 7"") }"
+bsan,ap_kcp-0.1.1,test::packet_lost,test_failed,281.053,100.965,2026-10-16T19:31:53Z,2222120.11,panic,"thread 'test::packet_lost' (2779847) panicked at src/lib.rs:75:48: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: Shutdown(""poll_recv on a closing kcp core: 7"") }"
+bsan,ap_kcp-0.1.1,test::rexmit,success,281.053,8.258,2026-10-16T19:32:01Z,2222120.11,,
+bsan,ap_kcp-0.1.1,test::timeout,success,281.053,32.567,2026-10-16T19:32:34Z,2222120.11,,
+bsan,ap_kcp-0.1.1,test::udp,test_failed,281.053,498.748,2026-10-16T19:40:52Z,2222120.11,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."

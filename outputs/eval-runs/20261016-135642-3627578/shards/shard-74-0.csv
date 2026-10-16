@@ -1,0 +1,42 @@
+bsan,jointhedots-0.1.0,git::operations::tests::test_add_and_commit,test_failed,165.855,2.594,2026-10-16T20:15:21Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383904>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,git::operations::tests::test_ask_ssh_passphrase_with_cache,success,165.855,4.461,2026-10-16T20:15:25Z,2222126.0,,
+bsan,jointhedots-0.1.0,git::operations::tests::test_ask_user_password_with_cache,success,165.855,4.231,2026-10-16T20:15:30Z,2222126.0,,
+bsan,jointhedots-0.1.0,git::operations::tests::test_checkout_ref,test_failed,165.855,2.379,2026-10-16T20:15:32Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383872>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,git::operations::tests::test_clone_repo,test_failed,165.855,2.374,2026-10-16T20:15:34Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2379528>(unprotected) at alloc34613[0x0] is forbidden"
+bsan,jointhedots-0.1.0,git::operations::tests::test_generate_callbacks,test_failed,165.855,2.283,2026-10-16T20:15:37Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2356904>(unprotected) at alloc34277[0x0] is forbidden"
+bsan,jointhedots-0.1.0,git::operations::tests::test_generate_signature,test_failed,165.855,2.379,2026-10-16T20:15:39Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2360016>(unprotected) at alloc34272[0x0] is forbidden"
+bsan,jointhedots-0.1.0,git::operations::tests::test_get_commit,test_failed,165.855,2.380,2026-10-16T20:15:42Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383856>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,git::operations::tests::test_get_head,test_failed,165.855,2.238,2026-10-16T20:15:44Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383840>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,git::operations::tests::test_get_head_hash,test_failed,165.855,2.204,2026-10-16T20:15:46Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383872>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,git::operations::tests::test_normal_merge,test_failed,165.855,2.387,2026-10-16T20:15:48Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383904>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,git::remote::tests::test_connection_method_from_str_https,success,165.855,4.236,2026-10-16T20:15:53Z,2222126.0,,
+bsan,jointhedots-0.1.0,git::remote::tests::test_connection_method_from_str_invalid,success,165.855,4.227,2026-10-16T20:15:57Z,2222126.0,,
+bsan,jointhedots-0.1.0,git::remote::tests::test_connection_method_from_str_ssh,success,165.855,4.235,2026-10-16T20:16:01Z,2222126.0,,
+bsan,jointhedots-0.1.0,git::remote::tests::test_get_host_git_url_https_gitlab,success,165.855,4.209,2026-10-16T20:16:05Z,2222126.0,,
+bsan,jointhedots-0.1.0,git::remote::tests::test_get_host_git_url_ssh_github,success,165.855,4.213,2026-10-16T20:16:10Z,2222126.0,,
+bsan,jointhedots-0.1.0,git::remote::tests::test_repo_host_from_str_invalid,success,165.855,4.046,2026-10-16T20:16:14Z,2222126.0,,
+bsan,jointhedots-0.1.0,git::remote::tests::test_repo_host_name_from_str_github,success,165.855,4.296,2026-10-16T20:16:18Z,2222126.0,,
+bsan,jointhedots-0.1.0,git::remote::tests::test_repo_host_name_from_str_gitlab,success,165.855,4.284,2026-10-16T20:16:22Z,2222126.0,,
+bsan,jointhedots-0.1.0,structs::config::tests::test_generate_commit_message_multiple_dotfiles,success,165.855,4.254,2026-10-16T20:16:26Z,2222126.0,,
+bsan,jointhedots-0.1.0,structs::config::tests::test_generate_commit_message_single_dotfile,success,165.855,4.112,2026-10-16T20:16:31Z,2222126.0,,
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_abort_install_if_local_changes,test_failed,165.855,2.318,2026-10-16T20:16:33Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383904>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_has_changed_false,test_failed,165.855,2.319,2026-10-16T20:16:35Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2404520>(unprotected) at alloc34962[0x4] is forbidden"
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_has_changed_true,test_failed,165.855,2.121,2026-10-16T20:16:37Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2404536>(unprotected) at alloc34962[0x4] is forbidden"
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_has_unexecuted_run_stages_no_metadata,success,165.855,4.279,2026-10-16T20:16:42Z,2222126.0,,
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_has_unexecuted_run_stages_with_metadata_no_install_steps,success,165.855,4.249,2026-10-16T20:16:46Z,2222126.0,,
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_has_unexecuted_run_stages_with_metadata_with_install_steps_false,success,165.855,4.121,2026-10-16T20:16:50Z,2222126.0,,
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_has_unexecuted_run_stages_with_metadata_with_install_steps_true,success,165.855,4.110,2026-10-16T20:16:54Z,2222126.0,,
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_hash_empty_post_install,success,165.855,4.106,2026-10-16T20:16:58Z,2222126.0,,
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_hash_empty_pre_install,success,165.855,4.146,2026-10-16T20:17:02Z,2222126.0,,
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_hash_post_install,success,165.855,4.149,2026-10-16T20:17:07Z,2222126.0,,
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_hash_pre_install,success,165.855,4.151,2026-10-16T20:17:11Z,2222126.0,,
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_install_commands,test_failed,165.855,2.319,2026-10-16T20:17:13Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383968>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_install_no_metadata,test_failed,165.855,2.359,2026-10-16T20:17:15Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383728>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_sync_naive,test_failed,165.855,2.352,2026-10-16T20:17:18Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383888>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_sync_with_metadata,test_failed,165.855,2.178,2026-10-16T20:17:20Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383728>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,structs::dotfile::tests::test_sync_with_metadata_skip_if_no_changes,test_failed,165.855,2.236,2026-10-16T20:17:22Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383728>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,structs::manifest::tests::test_manifest_get,success,165.855,4.411,2026-10-16T20:17:27Z,2222126.0,,
+bsan,jointhedots-0.1.0,structs::manifest::tests::test_manifest_install,test_failed,165.855,2.346,2026-10-16T20:17:29Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383952>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,structs::manifest::tests::test_manifest_sync,test_failed,165.855,2.210,2026-10-16T20:17:31Z,2222126.0,bsan,"error: Undefined Behavior: write access through <2383920>(unprotected) at alloc34655[0x4] is forbidden"
+bsan,jointhedots-0.1.0,utils::tests::test_hash_command_vec,success,165.855,4.233,2026-10-16T20:17:35Z,2222126.0,,
+bsan,jointhedots-0.1.0,utils::tests::test_run_command_vec,success,165.855,4.090,2026-10-16T20:17:40Z,2222126.0,,

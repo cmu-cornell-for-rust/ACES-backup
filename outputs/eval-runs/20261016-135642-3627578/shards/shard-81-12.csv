@@ -1,0 +1,14 @@
+bsan,brasilapi-0.5.1,bank::bank_tests::get_bank_error,success,322.604,3.300,2026-10-16T20:36:30Z,2222133.12,,
+bsan,brasilapi-0.5.1,cep::cep_tests::get_cep_error,success,322.604,3.991,2026-10-16T20:36:34Z,2222133.12,,
+bsan,brasilapi-0.5.1,cep::cep_tests::get_cep_test,success,322.604,3.049,2026-10-16T20:36:37Z,2222133.12,,
+bsan,brasilapi-0.5.1,cep::cep_tests::get_cep_unexpected_error,test_failed,322.604,2.393,2026-10-16T20:36:39Z,2222133.12,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda15ce754a4a is out of bounds for alloc41618 of size e0b."
+bsan,brasilapi-0.5.1,cep::cep_tests::get_validate_unexpected_error,test_failed,322.604,2.119,2026-10-16T20:36:41Z,2222133.12,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda908bcc0a4a is out of bounds for alloc41618 of size e0b."
+bsan,brasilapi-0.5.1,cep::cep_tests::validate_test,success,322.604,2.954,2026-10-16T20:36:44Z,2222133.12,,
+bsan,brasilapi-0.5.1,cnpj::cnpj_tests::test_get_cnpj,success,322.604,90.184,2026-10-16T20:38:14Z,2222133.12,,
+bsan,brasilapi-0.5.1,ddd::ddd_tests::ddd_exists_test,success,322.604,2.967,2026-10-16T20:38:17Z,2222133.12,,
+bsan,brasilapi-0.5.1,ddd::ddd_tests::get_ddd_error,success,322.604,3.121,2026-10-16T20:38:21Z,2222133.12,,
+bsan,brasilapi-0.5.1,ddd::ddd_tests::get_ddd_test,success,322.604,3.215,2026-10-16T20:38:24Z,2222133.12,,
+bsan,brasilapi-0.5.1,holidays::holidays_tests::get_holiday_error_test,success,322.604,3.663,2026-10-16T20:38:27Z,2222133.12,,
+bsan,brasilapi-0.5.1,holidays::holidays_tests::get_holiday_test,success,322.604,3.558,2026-10-16T20:38:31Z,2222133.12,,
+bsan,brasilapi-0.5.1,holidays::holidays_tests::get_holidays_error_test,success,322.604,3.064,2026-10-16T20:38:34Z,2222133.12,,
+bsan,brasilapi-0.5.1,holidays::holidays_tests::get_holidays_test,success,322.604,4.953,2026-10-16T20:38:39Z,2222133.12,,

@@ -1,0 +1,10 @@
+bsan,introspector-gadget-0.2.2,blocking::client::tests::it_is_ok_on_empty_errors,success,317.106,1.961,2026-10-16T20:42:55Z,2222136.8,,
+bsan,introspector-gadget-0.2.2,blocking::client::tests::it_returns_malformed_key,success,317.106,2.019,2026-10-16T20:42:57Z,2222136.8,,
+bsan,introspector-gadget-0.2.2,blocking::client::tests::it_returns_random_graphql_error,success,317.106,2.024,2026-10-16T20:42:59Z,2222136.8,,
+bsan,introspector-gadget-0.2.2,blocking::client::tests::test_successful_response,test_failed,317.106,2.268,2026-10-16T20:43:01Z,2222136.8,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda616de0783a is out of bounds for alloc40929 of size e0b."
+bsan,introspector-gadget-0.2.2,blocking::client::tests::test_timeout_error,test_failed,317.106,2.193,2026-10-16T20:43:03Z,2222136.8,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdb05d36ab83a is out of bounds for alloc40929 of size e0b."
+bsan,introspector-gadget-0.2.2,blocking::client::tests::test_unrecoverable_client_error,test_failed,317.106,2.192,2026-10-16T20:43:05Z,2222136.8,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda4478fac83a is out of bounds for alloc40929 of size e0b."
+bsan,introspector-gadget-0.2.2,blocking::client::tests::test_unrecoverable_server_error,test_failed,317.106,2.238,2026-10-16T20:43:08Z,2222136.8,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda469c05883a is out of bounds for alloc40929 of size e0b."
+bsan,introspector-gadget-0.2.2,introspect::schema::tests::it_builds_schema_with_interfaces,success,317.106,34.480,2026-10-16T20:43:42Z,2222136.8,,
+bsan,introspector-gadget-0.2.2,introspect::schema::tests::it_builds_simple_schema,success,317.106,22.436,2026-10-16T20:44:04Z,2222136.8,,
+bsan,introspector-gadget-0.2.2,introspect::schema::tests::it_builds_swapi_schema,success,317.106,129.565,2026-10-16T20:46:14Z,2222136.8,,

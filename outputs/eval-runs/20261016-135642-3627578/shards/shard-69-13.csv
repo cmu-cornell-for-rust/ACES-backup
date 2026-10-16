@@ -1,0 +1,4 @@
+bsan,errno-no-std-0.1.5,posix::test::localized_msg_fmt_invalid_non_utf8_encoding,test_failed,62.243,2.588,2026-10-16T19:16:27Z,2222120.13,panic,"thread 'posix::test::localized_msg_fmt_invalid_non_utf8_encoding' (2759636) panicked at src/posix.rs:178:9: assertion `left == right` failed"
+bsan,errno-no-std-0.1.5,test::errno_after_set_errno,success,62.243,2.486,2026-10-16T19:16:30Z,2222120.13,,
+bsan,errno-no-std-0.1.5,test::error_display,success,62.243,2.842,2026-10-16T19:16:32Z,2222120.13,,
+bsan,errno-no-std-0.1.5,test_localization::localized_messages,test_failed,62.243,2.499,2026-10-16T19:16:35Z,2222120.13,panic,"thread 'test_localization::localized_messages' (2761075) panicked at src/lib.rs:183:13: assertion `left == right` failed"

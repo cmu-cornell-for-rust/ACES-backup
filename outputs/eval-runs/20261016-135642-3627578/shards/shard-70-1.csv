@@ -1,0 +1,4 @@
+bsan,fastdl-0.2.0,test::file_not_found,success,28.850,2.358,2026-10-16T19:56:09Z,2222121.1,,
+bsan,fastdl-0.2.0,test::libloading,test_failed,28.850,2.508,2026-10-16T19:56:11Z,2222121.1,panic,"thread 'test::libloading' (2803020) panicked at src/test.rs:35:56: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: ""libdltest.so: cannot open shared object file: No such file or directory"" }"
+bsan,fastdl-0.2.0,test::success,test_failed,28.850,2.403,2026-10-16T19:56:14Z,2222121.1,panic,"thread 'test::success' (2803552) panicked at src/lib.rs:15:9: This library is deprecated!, use libfastdl instead"
+bsan,fastdl-0.2.0,test::symbol_not_found,success,28.850,2.408,2026-10-16T19:56:16Z,2222121.1,,

@@ -1,0 +1,22 @@
+bsan,booru-rs-0.2.6,danbooru::get_post_by_id,test_failed,170.446,11.074,2026-10-16T20:15:37Z,2222128.1,panic,"thread 'danbooru::get_post_by_id' (9847) panicked at tests/danbooru_tests.rs:114:9: assertion failed: post.is_ok()"
+bsan,booru-rs-0.2.6,danbooru::get_posts_multiple_tags,test_failed,170.446,9.889,2026-10-16T20:15:47Z,2222128.1,panic,"thread 'danbooru::get_posts_multiple_tags' (11083) panicked at tests/danbooru_tests.rs:89:9: assertion failed: !posts.unwrap().is_empty()"
+bsan,booru-rs-0.2.6,danbooru::get_posts_with_blacklist_tag,test_failed,170.446,9.605,2026-10-16T20:15:57Z,2222128.1,panic,"thread 'danbooru::get_posts_with_blacklist_tag' (12105) panicked at tests/danbooru_tests.rs:60:9: assertion failed: !posts.unwrap().is_empty()"
+bsan,booru-rs-0.2.6,danbooru::get_posts_with_limit,test_failed,170.446,9.514,2026-10-16T20:16:06Z,2222128.1,panic,"thread 'danbooru::get_posts_with_limit' (13052) panicked at tests/danbooru_tests.rs:74:9: assertion failed: posts.unwrap().len() == 3"
+bsan,booru-rs-0.2.6,danbooru::get_posts_with_rating,test_failed,170.446,9.950,2026-10-16T20:16:16Z,2222128.1,panic,"thread 'danbooru::get_posts_with_rating' (14147) panicked at tests/danbooru_tests.rs:32:9: assertion failed: !posts.unwrap().is_empty()"
+bsan,booru-rs-0.2.6,danbooru::get_posts_with_sort,test_failed,170.446,9.732,2026-10-16T20:16:26Z,2222128.1,panic,"thread 'danbooru::get_posts_with_sort' (14978) panicked at tests/danbooru_tests.rs:46:9: assertion failed: !posts.unwrap().is_empty()"
+bsan,booru-rs-0.2.6,danbooru::get_posts_with_tag,test_failed,170.446,9.812,2026-10-16T20:16:36Z,2222128.1,panic,"thread 'danbooru::get_posts_with_tag' (15666) panicked at tests/danbooru_tests.rs:18:9: assertion failed: !posts.unwrap().is_empty()"
+bsan,booru-rs-0.2.6,danbooru::get_random_posts,test_failed,170.446,10.126,2026-10-16T20:16:46Z,2222128.1,panic,"thread 'danbooru::get_random_posts' (16536) panicked at tests/danbooru_tests.rs:103:9: assertion failed: !posts.unwrap().is_empty()"
+bsan,booru-rs-0.2.6,danbooru::parse_rating_tags,success,170.446,8.301,2026-10-16T20:16:54Z,2222128.1,,
+bsan,booru-rs-0.2.6,danbooru::parse_sort_tags,success,170.446,8.314,2026-10-16T20:17:03Z,2222128.1,,
+bsan,booru-rs-0.2.6,gelbooru::get_post_by_id,test_failed,170.446,6.973,2026-10-16T20:17:10Z,2222128.1,panic,"thread 'gelbooru::get_post_by_id' (17786) panicked at tests/gelbooru_tests.rs:103:9: assertion failed: post.is_ok()"
+bsan,booru-rs-0.2.6,gelbooru::get_posts_multiple_tags,test_failed,170.446,6.888,2026-10-16T20:17:17Z,2222128.1,panic,"thread 'gelbooru::get_posts_multiple_tags' (17916) panicked at tests/gelbooru_tests.rs:82:9: assertion failed: posts.is_ok()"
+bsan,booru-rs-0.2.6,gelbooru::get_posts_with_blacklist_tag,test_failed,170.446,6.811,2026-10-16T20:17:23Z,2222128.1,panic,"thread 'gelbooru::get_posts_with_blacklist_tag' (18129) panicked at tests/gelbooru_tests.rs:54:9: assertion failed: posts.is_ok()"
+bsan,booru-rs-0.2.6,gelbooru::get_posts_with_limit,test_failed,170.446,6.782,2026-10-16T20:17:30Z,2222128.1,panic,"thread 'gelbooru::get_posts_with_limit' (18417) panicked at tests/gelbooru_tests.rs:68:9: assertion failed: posts.is_ok()"
+bsan,booru-rs-0.2.6,gelbooru::get_posts_with_rating,test_failed,170.446,6.968,2026-10-16T20:17:37Z,2222128.1,panic,"thread 'gelbooru::get_posts_with_rating' (18608) panicked at tests/gelbooru_tests.rs:28:9: assertion failed: posts.is_ok()"
+bsan,booru-rs-0.2.6,gelbooru::get_posts_with_sort,test_failed,170.446,6.868,2026-10-16T20:17:44Z,2222128.1,panic,"thread 'gelbooru::get_posts_with_sort' (18762) panicked at tests/gelbooru_tests.rs:41:9: assertion failed: posts.is_ok()"
+bsan,booru-rs-0.2.6,gelbooru::get_posts_with_tag,test_failed,170.446,6.894,2026-10-16T20:17:51Z,2222128.1,panic,"thread 'gelbooru::get_posts_with_tag' (18893) panicked at tests/gelbooru_tests.rs:15:9: assertion failed: posts.is_ok()"
+bsan,booru-rs-0.2.6,gelbooru::get_random_posts,test_failed,170.446,6.910,2026-10-16T20:17:58Z,2222128.1,panic,"thread 'gelbooru::get_random_posts' (19063) panicked at tests/gelbooru_tests.rs:95:9: assertion failed: posts.is_ok()"
+bsan,booru-rs-0.2.6,gelbooru::parse_rating_tags,success,170.446,8.116,2026-10-16T20:18:06Z,2222128.1,,
+bsan,booru-rs-0.2.6,gelbooru::parse_sort_tags,success,170.446,8.227,2026-10-16T20:18:14Z,2222128.1,,
+bsan,booru-rs-0.2.6,safebooru::get_post_by_id,success,170.446,9.900,2026-10-16T20:18:24Z,2222128.1,,
+bsan,booru-rs-0.2.6,safebooru::get_posts_multiple_tags,success,170.446,12.342,2026-10-16T20:18:37Z,2222128.1,,

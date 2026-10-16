@@ -1,0 +1,4 @@
+bsan,flate2-crc-0.1.2,tests::prop,success,71.953,178.724,2026-10-16T20:16:43Z,2222125.4,,
+bsan,flate2-crc-0.1.2,tests::random_large,test_failed,71.953,175.291,2026-10-16T20:19:38Z,2222125.4,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+bsan,flate2-crc-0.1.2,tests::random_med,success,71.953,567.339,2026-10-16T20:29:06Z,2222125.4,,
+bsan,flate2-crc-0.1.2,tests::random_small,success,71.953,42.180,2026-10-16T20:29:48Z,2222125.4,,

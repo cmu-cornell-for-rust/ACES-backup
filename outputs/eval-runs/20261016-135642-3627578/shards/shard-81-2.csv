@@ -1,0 +1,7 @@
+bsan,cadical-0.1.14,tests::bad_limit,success,43.265,2.377,2026-10-16T20:31:50Z,2222133.2,,
+bsan,cadical-0.1.14,tests::conflict_limit,success,43.265,2.324,2026-10-16T20:31:52Z,2222133.2,,
+bsan,cadical-0.1.14,tests::decision_limit,success,43.265,2.299,2026-10-16T20:31:55Z,2222133.2,,
+bsan,cadical-0.1.14,tests::fileio,success,43.265,2.583,2026-10-16T20:31:57Z,2222133.2,,
+bsan,cadical-0.1.14,tests::moving,success,43.265,2.471,2026-10-16T20:32:00Z,2222133.2,,
+bsan,cadical-0.1.14,tests::solver,success,43.265,2.121,2026-10-16T20:32:02Z,2222133.2,,
+bsan,cadical-0.1.14,tests::timeout,test_failed,43.265,2.323,2026-10-16T20:32:04Z,2222133.2,bsan,"error: Undefined Behavior: reborrow through <3557928>(unprotected) at alloc82253[0x0] is forbidden"

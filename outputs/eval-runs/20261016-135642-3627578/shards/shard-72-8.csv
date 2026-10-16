@@ -1,0 +1,17 @@
+bsan,quick-js-0.4.1,tests::call_async,test_failed,24.917,2.372,2026-10-16T20:12:59Z,2222124.8,panic,"thread 'tests::call_async' (2919979) panicked at src/tests.rs:262:56: called `Result::unwrap()` on an `Err` value: Exception(String(""InternalError: stack overflow""))"
+bsan,quick-js-0.4.1,tests::context_reset,success,24.917,2.337,2026-10-16T20:13:01Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::eval_async,test_failed,24.917,2.364,2026-10-16T20:13:04Z,2222124.8,panic,"thread 'tests::eval_async' (2927978) panicked at src/tests.rs:144:10: called `Result::unwrap()` on an `Err` value: Exception(String(""InternalError: stack overflow""))"
+bsan,quick-js-0.4.1,tests::memory_limit_exceeded,success,24.917,2.232,2026-10-16T20:13:06Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::moved_context,success,24.917,2.223,2026-10-16T20:13:08Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::test_call,success,24.917,2.241,2026-10-16T20:13:11Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::test_call_large_string,success,24.917,2.350,2026-10-16T20:13:13Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::test_callback,success,24.917,2.222,2026-10-16T20:13:15Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::test_callback_argn_variants,success,24.917,2.238,2026-10-16T20:13:17Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::test_callback_invalid_argcount,success,24.917,2.207,2026-10-16T20:13:20Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::test_callback_varargs,success,24.917,2.258,2026-10-16T20:13:22Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::test_console,test_failed,24.917,2.341,2026-10-16T20:13:24Z,2222124.8,panic,"thread 'tests::test_console' (2953656) panicked at src/tests.rs:596:6: called `Result::unwrap()` on an `Err` value: Exception(String(""InternalError: stack overflow""))"
+bsan,quick-js-0.4.1,tests::test_eval_exception,success,24.917,2.203,2026-10-16T20:13:26Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::test_eval_pass,success,24.917,2.242,2026-10-16T20:13:29Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::test_eval_syntax_error,success,24.917,2.198,2026-10-16T20:13:31Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::test_global_setter,success,24.917,2.205,2026-10-16T20:13:33Z,2222124.8,,
+bsan,quick-js-0.4.1,tests::test_set_global,success,24.917,2.230,2026-10-16T20:13:35Z,2222124.8,,
