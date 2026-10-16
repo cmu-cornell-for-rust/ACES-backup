@@ -10,7 +10,8 @@
 #   <image>     image/SIF name under the group containers dir (e.g. miri, bsan,
 #               rust). Mode and image are separate so variant images can still
 #               be driven in a given mode.
-#   [walltime]  walltime per sbatch job, HH or HH:MM (default 48). (Recognized
+#   [walltime]  walltime per regular sbatch job, HH or HH:MM (default 4; the
+#               slow-list jobs use --slow-walltime instead). (Recognized
 #               positionally by shape, so a purely numeric dataset name would
 #               need the walltime spelled out.)
 #   <dataset>   folder under the group datasets dir holding crate subdirectories.
@@ -44,8 +45,16 @@
 #                     whenever it exists (tests known to hang or eat the
 #                     walltime). A crate left with no tests is skipped
 #   --no-skip-list    don't apply the default skip list
-#   --jobs N          sbatch jobs to spread the crates over (default: one per
-#                     crate, capped at 80)
+#   (slow list)       <group>/scripts/eval-slow-crates.csv, always applied when
+#                     it exists: crate names WITHOUT versions (crate column,
+#                     slowest first; any other columns are informational).
+#                     Listed crates are pulled out of the test-count balancing
+#                     and packed together into their own jobs, in list order,
+#                     MAX_TASKS to a job -- so the long-running crates share a
+#                     few nodes and the remaining jobs all finish early.
+#   --slow-walltime T walltime for the slow-list jobs, HH or HH:MM (default 24)
+#   --jobs N          sbatch jobs to spread the crates over, slow-list jobs
+#                     included (default: one per crate, capped at 90)
 #   --max-tasks N     ceiling on workers per job (default: as many as fit a
 #                     24-core / 488G slice of a node at --cpus-per-task and
 #                     --mem-per-task, i.e. 24 at the defaults)
@@ -77,11 +86,10 @@
 #   no warmup, no repeats -- and that run both classifies and times it.
 # * No slowlist / test-level lists: the crates are dealt over the jobs by test
 #   count (biggest crate first, to the job with the fewest tests so far; a
-#   crate is never split), and inside a job
-#   the workers PULL crates from a shared queue as they free up, so one slow
-#   crate never leaves the job's other workers idle behind a static deal.
-# * A worker keeps its CARGO_HOME across the crates it handles, so registry
-#   downloads are reused; the target dir is fresh per crate.
+#   crate is never split), and every crate gets a worker of its own -- a job
+#   holds at most --max-tasks crates, and a run with more crates than
+#   jobs x workers is refused. The workers still pull from the job's queue,
+#   but with one crate per worker each pulls exactly one.
 #
 # Every mode compiles with --cfg=miri and RUSTFLAGS="--cap-lints=warn", so all
 # three select the same cfg(miri) code and test set, and a crate's own
@@ -155,7 +163,7 @@ OUTPUTS_DIR="$GROUP/outputs"
 NODE_CPUS=24
 NODE_MEM=488
 MAX_MEM_PER_TASK=16
-MAX_JOBS=80
+MAX_JOBS=90
 
 # Built-in per-mode option sets (same as run_bench_dataset.sh).
 MIRI_COMMON="-Zmiri-disable-alignment-check -Zmiri-disable-data-race-detector -Zmiri-ignore-leaks -Zmiri-tree-borrows"
@@ -176,7 +184,8 @@ CPUS_PER_TASK=1
 MEM_PER_TASK=8
 TEST_THREADS=""
 TEST_TIMEOUT=""
-WALLTIME_ARG=48
+WALLTIME_ARG=4
+SLOW_WALLTIME_ARG=24
 
 # ── Shard merging (end of a run, or --merge) ─────────────────────────────────
 HEADER="build,crate,test,status,compile_seconds,run_seconds,timestamp,job_id,error_type,error"
@@ -241,6 +250,8 @@ while [[ $# -gt 0 ]]; do
         --merge=*)       MERGE_DIR="${1#*=}"; shift ;;
         --test-threads)  TEST_THREADS="$2"; shift 2 ;;
         --test-threads=*) TEST_THREADS="${1#*=}"; shift ;;
+        --slow-walltime) SLOW_WALLTIME_ARG="$2"; shift 2 ;;
+        --slow-walltime=*) SLOW_WALLTIME_ARG="${1#*=}"; shift ;;
         --test-timeout)  TEST_TIMEOUT="$2"; shift 2 ;;
         --test-timeout=*) TEST_TIMEOUT="${1#*=}"; shift ;;
         -*)
@@ -269,7 +280,7 @@ usage() {
     echo "Usage: $0 [options] <mode> <image> [walltime] <dataset> [extra]" >&2
     echo "  <mode>      miri | bsan | rust" >&2
     echo "  <image>     image/SIF name under $CONTAINERS_DIR" >&2
-    echo "  [walltime]  per-job walltime, HH or HH:MM (default 48)" >&2
+    echo "  [walltime]  per-job walltime, HH or HH:MM (default 4; slow-list jobs: --slow-walltime)" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT" >&2
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --ignore FILE --only FILE" >&2
@@ -279,6 +290,7 @@ usage() {
     echo "           --jobs N (<= $MAX_JOBS) --max-tasks N --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m)" >&2
+    echo "           --slow-walltime T (slow-list jobs, HH or HH:MM; default 24)" >&2
     exit 1
 }
 [[ $# -ge 3 && $# -le 5 ]] || usage
@@ -311,6 +323,7 @@ parse_walltime() {
     fi
 }
 WALLTIME=$(parse_walltime "$WALLTIME_ARG")
+SLOW_WALLTIME=$(parse_walltime "$SLOW_WALLTIME_ARG")
 
 MEM_PER_TASK="${MEM_PER_TASK%G}"
 for v in CPUS_PER_TASK MEM_PER_TASK; do
@@ -386,6 +399,11 @@ elif [[ -n "$SKIP_CSV" ]]; then
 else
     SKIP_CSV="$GROUP/scripts/skip_list.csv"
     [[ -f "$SKIP_CSV" ]] || SKIP_CSV=""
+fi
+SLOW_CSV="$GROUP/scripts/eval-slow-crates.csv"
+if [[ ! -f "$SLOW_CSV" ]]; then
+    echo "Warning: slow list $SLOW_CSV not found; slow crates will not be grouped." >&2
+    SLOW_CSV=""
 fi
 
 # ── Crate filters ────────────────────────────────────────────────────────────
@@ -529,28 +547,88 @@ fi
     exit 1
 }
 
-# ── Shape: spread the tests evenly over as many jobs as allowed ──────────────
-# Up to MAX_JOBS jobs (never more than one per crate), then each job is only
-# as wide as its number of crates, capped at MAX_TASKS. Many narrow jobs
-# backfill better than a few wide ones, and every crate starts at once until
-# crates outnumber JOBS x MAX_TASKS; past that, workers pull from the job's
-# queue as they free up.
-if [[ -z "$JOBS" ]]; then
-    JOBS=$NCRATES
-    (( JOBS > MAX_JOBS )) && JOBS=$MAX_JOBS
+# ── Slow list: crates packed into their own jobs ────────────────────────────
+# Matched on the dataset dir name minus its version (foo-1.2.3[-pre] -> foo).
+# SLOW_CRATES keeps the slow list's order (slowest first); REG_CRATES the rest.
+declare -A SLOW_RANK=()
+if [[ -n "$SLOW_CSV" ]]; then
+    n=0
+    while IFS=, read -r name _ || [[ -n "$name" ]]; do
+        name="${name//\"/}"; name="${name//$'\r'/}"; name="${name#$'\xef\xbb\xbf'}"
+        name="${name//[[:space:]]/}"
+        [[ -n "$name" && "$name" != crate && "$name" != \#* ]] || continue
+        [[ -n "${SLOW_RANK[$name]:-}" ]] || SLOW_RANK[$name]=$(( n++ ))
+    done < "$SLOW_CSV"
 fi
-(( JOBS > NCRATES )) && JOBS=$NCRATES
+SLOW_CRATES=(); REG_CRATES=()
+while IFS=$'\t' read -r _ crate; do
+    SLOW_CRATES+=("$crate")
+done < <(for crate in "${CRATES[@]}"; do
+             base="$crate"
+             [[ "$crate" =~ ^(.+)-[0-9]+\.[0-9]+\.[0-9]+([-+].*)?$ ]] && base="${BASH_REMATCH[1]}"
+             [[ -n "${SLOW_RANK[$base]:-}" ]] && printf '%d\t%s\n' "${SLOW_RANK[$base]}" "$crate"
+         done | sort -t$'\t' -k1,1n)
+declare -A IS_SLOW=()
+for crate in ${SLOW_CRATES[@]+"${SLOW_CRATES[@]}"}; do IS_SLOW[$crate]=1; done
+for crate in "${CRATES[@]}"; do
+    [[ -n "${IS_SLOW[$crate]:-}" ]] || REG_CRATES+=("$crate")
+done
+NSLOW=${#SLOW_CRATES[@]}
+NREG=${#REG_CRATES[@]}
 
-# Balance by test count (greedy longest-first): crates in decreasing order of
-# tests, each to the job with the fewest tests so far (ties: fewest crates,
-# then lowest index). Crates stay whole -- each is compiled once -- so one
-# huge crate can still outweigh a job's share. Each queue is thus biggest
-# crate first, which also keeps a job's long crates from starting last.
+# ── Shape: spread the tests evenly over as many jobs as allowed ──────────────
+# The slow crates fill the first SLOW_JOBS jobs, MAX_TASKS each in list order,
+# so the slowest share a node. The rest go to the remaining jobs: up to
+# MAX_JOBS in all (never more than one per crate), each only as wide as its
+# number of crates, capped at MAX_TASKS. Many narrow jobs backfill better than
+# a few wide ones. Every crate gets its own worker, so every crate starts at
+# once: a run that would need more than REG_JOBS x MAX_TASKS workers for the
+# regular crates is refused rather than queueing crates behind one another.
+SLOW_JOBS=$(( (NSLOW + MAX_TASKS - 1) / MAX_TASKS ))
+if [[ -z "$JOBS" ]]; then
+    REG_JOBS=$(( MAX_JOBS - SLOW_JOBS ))
+else
+    REG_JOBS=$(( JOBS - SLOW_JOBS ))
+fi
+(( REG_JOBS > NREG )) && REG_JOBS=$NREG
+(( REG_JOBS < 0 )) && REG_JOBS=0
+(( NREG == 0 || REG_JOBS > 0 )) || {
+    echo "Error: the $NSLOW slow-list crate(s) take $SLOW_JOBS job(s) at $MAX_TASKS worker(s) each," >&2
+    echo "leaving none of --jobs $JOBS for the other $NREG crate(s). Raise --jobs (<= $MAX_JOBS)." >&2
+    rm -rf "$RUNDIR"
+    exit 1
+}
+JOBS=$(( SLOW_JOBS + REG_JOBS ))
+(( NREG <= REG_JOBS * MAX_TASKS )) || {
+    echo "Error: $NREG crates need one worker each, but $REG_JOBS job(s) x $MAX_TASKS worker(s)" >&2
+    echo "(after $SLOW_JOBS slow-list job(s)) is only $(( REG_JOBS * MAX_TASKS )). Raise --jobs" >&2
+    echo "(<= $MAX_JOBS) / --max-tasks, lower --cpus-per-task / --mem-per-task, or split the" >&2
+    echo "crates over runs with --only." >&2
+    rm -rf "$RUNDIR"
+    exit 1
+}
+
 JOB_TESTS=(); JOB_CRATES=()
 for (( j = 0; j < JOBS; j++ )); do JOB_TESTS[j]=0; JOB_CRATES[j]=0; done
+# Slow crates: straight into jobs 0..SLOW_JOBS-1, slowest first.
+for (( k = 0; k < NSLOW; k++ )); do
+    crate="${SLOW_CRATES[k]}"
+    j=$(( k / MAX_TASKS ))
+    printf '%s\n' "$crate" >> "$RUNDIR/queues/job-$j.txt"
+    JOB_TESTS[j]=$(( JOB_TESTS[j] + NT[$crate] ))
+    JOB_CRATES[j]=$(( JOB_CRATES[j] + 1 ))
+done
+# Regular crates: balance by test count (greedy longest-first) over jobs
+# SLOW_JOBS..JOBS-1: crates in decreasing order of tests, each to the job with
+# the fewest tests so far (ties: fewest crates, then lowest index) among those
+# not yet holding MAX_TASKS crates -- one crate per worker. Crates stay whole
+# -- each is compiled once -- so one huge crate can still outweigh a job's
+# share. The check above guarantees a free slot.
 while IFS=$'\t' read -r cnt crate; do
-    best=0
-    for (( j = 1; j < JOBS; j++ )); do
+    best=-1
+    for (( j = SLOW_JOBS; j < JOBS; j++ )); do
+        (( JOB_CRATES[j] < MAX_TASKS )) || continue
+        (( best >= 0 )) || { best=$j; continue; }
         if (( JOB_TESTS[j] < JOB_TESTS[best] ||
               (JOB_TESTS[j] == JOB_TESTS[best] && JOB_CRATES[j] < JOB_CRATES[best]) )); then
             best=$j
@@ -559,7 +637,7 @@ while IFS=$'\t' read -r cnt crate; do
     printf '%s\n' "$crate" >> "$RUNDIR/queues/job-$best.txt"
     JOB_TESTS[best]=$(( JOB_TESTS[best] + cnt ))
     JOB_CRATES[best]=$(( JOB_CRATES[best] + 1 ))
-done < <(for crate in "${CRATES[@]}"; do printf '%d\t%s\n' "${NT[$crate]}" "$crate"; done \
+done < <(for crate in ${REG_CRATES[@]+"${REG_CRATES[@]}"}; do printf '%d\t%s\n' "${NT[$crate]}" "$crate"; done \
          | sort -t$'\t' -k1,1nr -k2,2)
 PER_JOB_MAX=0; PER_JOB_MIN=$NCRATES; TESTS_MAX=0; TESTS_MIN=$NTESTS
 for (( j = 0; j < JOBS; j++ )); do
@@ -904,8 +982,15 @@ if [[ -n "$SKIP_CSV" ]]; then
 else
     echo "          no skip list"
 fi
+if [[ -n "$SLOW_CSV" ]]; then
+    if (( NSLOW > 0 )); then
+        echo "Slow:     $NSLOW crate(s) from $SLOW_CSV packed into job(s) 0-$(( SLOW_JOBS - 1 )), $SLOW_WALLTIME walltime"
+    else
+        echo "Slow:     none of the ${#SLOW_RANK[@]} crate(s) in $SLOW_CSV are in this run"
+    fi
+fi
 echo "Shape:    $JOBS job(s), $TESTS_MIN-$TESTS_MAX test(s) / $PER_JOB_MIN-$PER_JOB_MAX crate(s) each, up to $TASKS worker(s)/job"
-echo "          x ${CPUS_PER_TASK} cpu, ${MEM_PER_TASK}G/worker, $WALLTIME walltime"
+echo "          x ${CPUS_PER_TASK} cpu, ${MEM_PER_TASK}G/worker, $WALLTIME walltime$( (( SLOW_JOBS > 0 )) && echo " (regular jobs)")"
 echo "Timing:   one run per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}${TEST_TIMEOUT:+, --test-timeout=$TEST_TIMEOUT}"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
@@ -921,10 +1006,12 @@ for (( j = 0; j < JOBS; j++ )); do
     [[ -s "$q" ]] || continue
     nt=$(wc -l < "$q")
     (( nt > TASKS )) && nt=$TASKS
+    wt=$WALLTIME
+    (( j < SLOW_JOBS )) && wt=$SLOW_WALLTIME
     if ! jid=$(sbatch --parsable \
         --job-name="ev-${IMAGE}-${DATASET}-$j" \
         --nodes=1 --ntasks-per-node="$nt" --cpus-per-task="$CPUS_PER_TASK" \
-        --mem="$(( nt * MEM_PER_TASK ))G" --time="$WALLTIME" \
+        --mem="$(( nt * MEM_PER_TASK ))G" --time="$wt" \
         --output="$RUNDIR/job-%j.out" \
         "$RUNDIR/job.sh" "$RUNDIR" "$j" "$nt"); then
         echo "Error: sbatch failed for job $j; cancelling ${JOBIDS[*]:-nothing}." >&2
@@ -933,7 +1020,7 @@ for (( j = 0; j < JOBS; j++ )); do
     fi
     jid="${jid%%;*}"
     JOBIDS+=("$jid")
-    echo "submitted job $j ($(wc -l < "$q") crates, ${JOB_TESTS[j]} tests, $nt workers) -> SLURM job $jid"
+    echo "submitted job $j ($(wc -l < "$q") crates, ${JOB_TESTS[j]} tests, $nt workers, $wt) -> SLURM job $jid"
 done
 
 # From here on, whatever ends the orchestrator merges the shards first:
