@@ -1,0 +1,9 @@
+bsan,vapkey-cli-0.1.0,tests::address,test_failed,122.938,218.976,2026-10-14T14:22:28Z,2216084.6,bsan,"error: Undefined Behavior: write access through <238801064>(unprotected) at alloc2085690[0x0] is forbidden"
+bsan,vapkey-cli-0.1.0,tests::brain,test_failed,122.938,217.213,2026-10-14T14:26:05Z,2216084.6,bsan,"error: Undefined Behavior: write access through <238729552>(unprotected) at alloc2084908[0x0] is forbidden"
+bsan,vapkey-cli-0.1.0,tests::info,test_failed,122.938,76.476,2026-10-14T14:27:21Z,2216084.6,bsan,"error: Undefined Behavior: write access through <103164216>(unprotected) at alloc1324181[0x0] is forbidden"
+bsan,vapkey-cli-0.1.0,tests::public,test_failed,122.938,199.214,2026-10-14T14:30:41Z,2216084.6,bsan,"error: Undefined Behavior: write access through <238856616>(unprotected) at alloc2086355[0x0] is forbidden"
+bsan,vapkey-cli-0.1.0,tests::secret,test_failed,122.938,217.590,2026-10-14T14:34:18Z,2216084.6,bsan,"error: Undefined Behavior: write access through <238852544>(unprotected) at alloc2086285[0x0] is forbidden"
+bsan,vapkey-cli-0.1.0,tests::sign,success,122.938,83.343,2026-10-14T14:35:42Z,2216084.6,,
+bsan,vapkey-cli-0.1.0,tests::verify_invalid,success,122.938,80.299,2026-10-14T14:37:02Z,2216084.6,,
+bsan,vapkey-cli-0.1.0,tests::verify_valid_address,test_failed,122.938,83.318,2026-10-14T14:38:25Z,2216084.6,bsan,"error: Undefined Behavior: write access through <103441000>(unprotected) at alloc1329887[0x0] is forbidden"
+bsan,vapkey-cli-0.1.0,tests::verify_valid_public,success,122.938,79.013,2026-10-14T14:39:44Z,2216084.6,,

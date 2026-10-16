@@ -1,0 +1,10 @@
+bsan,webdriver-downloader-0.13.6,driver_impls::chromedriver_info::trait_impls::tests::test_get_binary_version,test_failed,318.740,0.877,2026-10-15T00:54:27Z,2216122.9,panic,"thread 'driver_impls::chromedriver_info::trait_impls::tests::test_get_binary_version' (2240324) panicked at src/driver_impls/chromedriver_info/trait_impls.rs:88:14: Failed to get default browser path: BinaryNotFound"
+bsan,webdriver-downloader-0.13.6,driver_impls::geckodriver_info::trait_impls::tests::test_get_binary_version,test_failed,318.740,0.827,2026-10-15T00:54:28Z,2216122.9,panic,"thread 'driver_impls::geckodriver_info::trait_impls::tests::test_get_binary_version' (2240408) panicked at src/driver_impls/geckodriver_info/trait_impls.rs:109:14: Failed to get default browser path: Which(CannotFindBinaryPath)"
+bsan,webdriver-downloader-0.13.6,fails_when_0_max_tries,success,318.740,1.073,2026-10-15T00:54:29Z,2216122.9,,
+bsan,webdriver-downloader-0.13.6,fails_when_all_versions_fail,success,318.740,1.073,2026-10-15T00:54:30Z,2216122.9,,
+bsan,webdriver-downloader-0.13.6,fails_when_installation_fails,success,318.740,1.082,2026-10-15T00:54:31Z,2216122.9,,
+bsan,webdriver-downloader-0.13.6,passes_when_one_version_passes,success,318.740,1.099,2026-10-15T00:54:32Z,2216122.9,,
+bsan,webdriver-downloader-0.13.6,traits::verification_info::tests::test_get_random_available_port,success,318.740,1.001,2026-10-15T00:54:33Z,2216122.9,,
+bsan,webdriver-downloader-0.13.6,traits::version_req_url_info::tests::compare_successes_without_version_hint,success,318.740,1.102,2026-10-15T00:54:34Z,2216122.9,,
+bsan,webdriver-downloader-0.13.6,traits::version_req_url_info::tests::compare_version_prioritizes_same_major_version,success,318.740,0.998,2026-10-15T00:54:35Z,2216122.9,,
+bsan,webdriver-downloader-0.13.6,traits::version_req_url_info::tests::driver_urls_limit_works,success,318.740,1.080,2026-10-15T00:54:36Z,2216122.9,,

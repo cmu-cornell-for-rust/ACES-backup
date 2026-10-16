@@ -1,0 +1,25 @@
+bsan,rustympkglib-0.1.1,helpers::tests::empty_string_returns_empty_string,success,62.939,0.380,2026-10-15T04:00:46Z,2216157.14,,
+bsan,rustympkglib-0.1.1,helpers::tests::string_is_cleaned_as_expected,success,62.939,0.412,2026-10-15T04:00:47Z,2216157.14,,
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgbase_expected_should_work,success,62.939,0.444,2026-10-15T04:00:47Z,2216157.14,,
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgbase_starts_with_hyphen_should_fail,success,62.939,0.422,2026-10-15T04:00:48Z,2216157.14,,
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_complex_should_work,test_failed,62.939,0.573,2026-10-15T04:00:48Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_simple_should_work,test_failed,62.939,0.426,2026-10-15T04:00:49Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_key_gets_ignored_if_not_at_root_level,test_failed,62.939,0.416,2026-10-15T04:00:49Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_with_arch_missing_should_fail,test_failed,62.939,0.415,2026-10-15T04:00:50Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_with_invalid_epoch,test_failed,62.939,0.423,2026-10-15T04:00:50Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_with_invalid_pkgname,test_failed,62.939,0.428,2026-10-15T04:00:51Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_with_invalid_pkgrel,test_failed,62.939,0.427,2026-10-15T04:00:51Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_with_invalid_pkgver,test_failed,62.939,0.429,2026-10-15T04:00:51Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_with_pkgname_double_quote_array_should_work,test_failed,62.939,0.432,2026-10-15T04:00:52Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_with_pkgname_empty_array_should_fail,test_failed,62.939,0.450,2026-10-15T04:00:52Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_with_pkgname_missing_should_fail,test_failed,62.939,0.458,2026-10-15T04:00:53Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_with_pkgname_no_quote_array_should_work,test_failed,62.939,0.429,2026-10-15T04:00:53Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_with_pkgname_single_quote_array_should_work,test_failed,62.939,0.554,2026-10-15T04:00:54Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_with_pkgrel_missing_should_fail,test_failed,62.939,0.423,2026-10-15T04:00:54Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgdata_source_with_pkgver_missing_should_fail,test_failed,62.939,0.430,2026-10-15T04:00:55Z,2216157.14,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgname_expected_should_work,success,62.939,0.396,2026-10-15T04:00:55Z,2216157.14,,
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgname_starts_with_dot_should_fail,success,62.939,0.376,2026-10-15T04:00:55Z,2216157.14,,
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgname_starts_with_hyphen_should_fail,success,62.939,0.368,2026-10-15T04:00:56Z,2216157.14,,
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgname_with_uppercase_should_fail,success,62.939,0.366,2026-10-15T04:00:56Z,2216157.14,,
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgver_expected_should_work,success,62.939,0.375,2026-10-15T04:00:57Z,2216157.14,,
+bsan,rustympkglib-0.1.1,pkgdata::tests::pkgver_with_hyphen_should_fail,success,62.939,0.428,2026-10-15T04:00:57Z,2216157.14,,

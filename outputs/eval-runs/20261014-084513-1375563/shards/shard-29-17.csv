@@ -1,0 +1,4 @@
+bsan,lzokay-native-0.1.0,tests::check_lzo_decompress_compatibility,test_failed,68.056,774.237,2026-10-14T23:39:58Z,2216109.17,bsan,"error: Undefined Behavior: write access through <1015587544>(unprotected) at alloc155941[0x0] is forbidden"
+bsan,lzokay-native-0.1.0,tests::compress_decompress_test,timeout,68.056,3600.320,2026-10-15T00:39:59Z,2216109.17,other,"test tests::compress_decompress_test has been running for over 60 seconds"
+bsan,lzokay-native-0.1.0,tests::decompress_test,timeout,68.056,3600.005,2026-10-15T01:39:59Z,2216109.17,other,"test tests::decompress_test has been running for over 60 seconds"
+bsan,lzokay-native-0.1.0,tests::decompress_test_small,success,68.056,7.654,2026-10-15T01:40:06Z,2216109.17,,

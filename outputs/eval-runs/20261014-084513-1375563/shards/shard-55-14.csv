@@ -1,0 +1,16 @@
+bsan,rust-binary-install-0.0.1,cache::it_downloads_tarball,test_failed,78.563,16.333,2026-10-15T01:23:49Z,2216135.14,bsan,"error: Undefined Behavior: write access through <3283880>(StrongProtector) at alloc72929[0x128] is forbidden"
+bsan,rust-binary-install-0.0.1,cache::it_joins_path_with_destination,success,78.563,0.722,2026-10-15T01:23:50Z,2216135.14,,
+bsan,rust-binary-install-0.0.1,cache::it_panics_if_not_tarball_or_zip,test_failed,78.563,0.788,2026-10-15T01:23:50Z,2216135.14,bsan,"error: Undefined Behavior: write access through <1531496>(StrongProtector) at alloc33573[0x128] is forbidden"
+bsan,rust-binary-install-0.0.1,cache::it_returns_error_when_it_failed_to_download,test_failed,78.563,0.773,2026-10-15T01:23:51Z,2216135.14,bsan,"error: Undefined Behavior: write access through <1496696>(StrongProtector) at alloc32880[0x128] is forbidden"
+bsan,rust-binary-install-0.0.1,cache::it_returns_error_when_it_failed_to_extract_tarball,test_failed,78.563,0.763,2026-10-15T01:23:52Z,2216135.14,bsan,"error: Undefined Behavior: write access through <1530936>(StrongProtector) at alloc33563[0x128] is forbidden"
+bsan,rust-binary-install-0.0.1,cache::it_returns_error_when_it_failed_to_extract_zip,test_failed,78.563,0.774,2026-10-15T01:23:53Z,2216135.14,bsan,"error: Undefined Behavior: write access through <1530776>(StrongProtector) at alloc33562[0x128] is forbidden"
+bsan,rust-binary-install-0.0.1,cache::it_returns_none_if_install_is_not_permitted,success,78.563,0.700,2026-10-15T01:23:53Z,2216135.14,,
+bsan,rust-binary-install-0.0.1,download::it_bails_if_not_executable_for_unix,success,78.563,0.708,2026-10-15T01:23:54Z,2216135.14,,
+bsan,rust-binary-install-0.0.1,download::it_bails_if_not_file_for_unix,success,78.563,0.705,2026-10-15T01:23:55Z,2216135.14,,
+bsan,rust-binary-install-0.0.1,download::it_returns_binary_name_for_unix,success,78.563,0.703,2026-10-15T01:23:56Z,2216135.14,,
+bsan,rust-binary-install-0.0.1,tests::it_returns_cache_dir,success,78.563,0.708,2026-10-15T01:23:56Z,2216135.14,,
+bsan,rust-binary-install-0.0.1,tests::it_returns_destination_if_binary_already_exists,success,78.563,0.706,2026-10-15T01:23:57Z,2216135.14,,
+bsan,rust-binary-install-0.0.1,tests::it_returns_different_dirnames_for_different_versions,success,78.563,0.695,2026-10-15T01:23:58Z,2216135.14,,
+bsan,rust-binary-install-0.0.1,tests::it_returns_different_hashes_for_different_urls,success,78.563,0.698,2026-10-15T01:23:58Z,2216135.14,,
+bsan,rust-binary-install-0.0.1,tests::it_returns_same_dirname_for_same_name_and_version,success,78.563,0.691,2026-10-15T01:23:59Z,2216135.14,,
+bsan,rust-binary-install-0.0.1,tests::it_returns_same_hash_for_same_name_and_url,success,78.563,0.713,2026-10-15T01:24:00Z,2216135.14,,

@@ -1,0 +1,7 @@
+bsan,upversion-0.1.0,template::test_template::can_render,success,183.204,9.753,2026-10-15T04:03:17Z,2216157.19,,
+bsan,upversion-0.1.0,template::test_template::can_render_error,success,183.204,14.860,2026-10-15T04:03:32Z,2216157.19,,
+bsan,upversion-0.1.0,vendors::api::vendor_api_test::can_get_release_details,test_failed,183.204,0.726,2026-10-15T04:03:33Z,2216157.19,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,upversion-0.1.0,vendors::api::vendor_api_test::can_get_release_details_with_custom_response,test_failed,183.204,0.682,2026-10-15T04:03:33Z,2216157.19,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,upversion-0.1.0,vendors::api::vendor_api_test::can_get_value_with_error,success,183.204,1.041,2026-10-15T04:03:34Z,2216157.19,,
+bsan,upversion-0.1.0,vendors::github::vendor_github_github::can_get_release_details,test_failed,183.204,0.696,2026-10-15T04:03:35Z,2216157.19,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,upversion-0.1.0,vendors::github::vendor_github_github::can_get_release_details_without_releases,test_failed,183.204,0.682,2026-10-15T04:03:36Z,2216157.19,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."

@@ -1,0 +1,40 @@
+bsan,scotty-0.3.4,index::tests::get_best_score_clear_winner,success,153.553,201.678,2026-10-14T18:46:09Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::get_best_score_empty_input,success,153.553,203.228,2026-10-14T18:49:33Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::get_best_score_single_result,success,153.553,202.001,2026-10-14T18:52:55Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::get_best_score_timestamp_tiebreaker,test_failed,153.553,245.048,2026-10-14T18:57:00Z,2216099.16,bsan,"error: Undefined Behavior: deallocation through <328880600>(unprotected) at alloc1970928[0x0] is forbidden"
+bsan,scotty-0.3.4,index::tests::get_best_score_timestamp_tiebreaker_none,test_failed,153.553,220.396,2026-10-14T19:00:40Z,2216099.16,bsan,"error: Undefined Behavior: deallocation through <265050792>(unprotected) at alloc872846[0x0] is forbidden"
+bsan,scotty-0.3.4,index::tests::index_add_absolute_directory,test_failed,153.553,219.566,2026-10-14T19:04:20Z,2216099.16,bsan,"error: Undefined Behavior: deallocation through <264984688>(unprotected) at alloc872745[0x0] is forbidden"
+bsan,scotty-0.3.4,index::tests::index_add_file,success,153.553,201.307,2026-10-14T19:07:41Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::index_add_non_canonical_absolute_directory,test_failed,153.553,219.431,2026-10-14T19:11:20Z,2216099.16,bsan,"error: Undefined Behavior: deallocation through <265160016>(unprotected) at alloc879064[0x0] is forbidden"
+bsan,scotty-0.3.4,index::tests::index_add_non_existing_directory,success,153.553,203.095,2026-10-14T19:14:44Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::index_add_relative_directory,success,153.553,203.454,2026-10-14T19:18:07Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::index_delete_empty_index,success,153.553,202.421,2026-10-14T19:21:29Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::index_delete_indexed_path,test_failed,153.553,232.209,2026-10-14T19:25:22Z,2216099.16,bsan,"error: Undefined Behavior: deallocation through <296731504>(unprotected) at alloc1420937[0x0] is forbidden"
+bsan,scotty-0.3.4,index::tests::index_delete_non_indexed_path,test_failed,153.553,232.794,2026-10-14T19:29:15Z,2216099.16,bsan,"error: Undefined Behavior: deallocation through <296855696>(unprotected) at alloc1419908[0x0] is forbidden"
+bsan,scotty-0.3.4,index::tests::index_find_one_empty_index,success,153.553,214.410,2026-10-14T19:32:49Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::index_find_one_empty_index_empty_pattern,success,153.553,201.944,2026-10-14T19:36:11Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::index_find_one_non_empty_index_empty_pattern,test_failed,153.553,219.093,2026-10-14T19:39:50Z,2216099.16,bsan,"error: Undefined Behavior: deallocation through <264914832>(unprotected) at alloc871830[0x0] is forbidden"
+bsan,scotty-0.3.4,index::tests::index_find_one_non_empty_index_found,test_failed,153.553,259.069,2026-10-14T19:44:09Z,2216099.16,bsan,"error: Undefined Behavior: deallocation through <301183552>(unprotected) at alloc877618[0x0] is forbidden"
+bsan,scotty-0.3.4,index::tests::index_find_one_non_empty_index_found_excluded,test_failed,153.553,254.931,2026-10-14T19:48:24Z,2216099.16,bsan,"error: Undefined Behavior: deallocation through <299142760>(unprotected) at alloc878664[0x0] is forbidden"
+bsan,scotty-0.3.4,index::tests::index_find_one_non_empty_index_not_found,test_failed,153.553,223.587,2026-10-14T19:52:08Z,2216099.16,bsan,"error: Undefined Behavior: deallocation through <273898008>(unprotected) at alloc871345[0x0] is forbidden"
+bsan,scotty-0.3.4,index::tests::index_list_empty,success,153.553,201.165,2026-10-14T19:55:29Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::index_list_not_empty,test_failed,153.553,231.372,2026-10-14T19:59:20Z,2216099.16,bsan,"error: Undefined Behavior: deallocation through <297041000>(unprotected) at alloc1424921[0x0] is forbidden"
+bsan,scotty-0.3.4,index::tests::merge_fst_sets_both_empty,success,153.553,16.119,2026-10-14T19:59:36Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::merge_fst_sets_no_empty,success,153.553,17.248,2026-10-14T19:59:54Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::merge_fst_sets_one_empty,success,153.553,16.476,2026-10-14T20:00:10Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::remove_fst_set_both_empty,success,153.553,16.081,2026-10-14T20:00:26Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::remove_fst_set_first_empty,success,153.553,16.242,2026-10-14T20:00:42Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::remove_fst_set_no_empty_full_overlap,success,153.553,16.913,2026-10-14T20:00:59Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::remove_fst_set_no_empty_no_overlap,success,153.553,17.132,2026-10-14T20:01:16Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::remove_fst_set_no_empty_some_overlap,success,153.553,17.102,2026-10-14T20:01:34Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::remove_fst_set_second_empty,success,153.553,16.911,2026-10-14T20:01:50Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::score_result_empty_input,success,153.553,0.576,2026-10-14T20:01:51Z,2216099.16,,
+bsan,scotty-0.3.4,index::tests::score_result_equal_length,success,153.553,0.598,2026-10-14T20:01:52Z,2216099.16,,
+bsan,scotty-0.3.4,init::tests::only_replaces_specific_token,success,153.553,0.557,2026-10-14T20:01:52Z,2216099.16,,
+bsan,scotty-0.3.4,init::tests::shell_try_from_unknown_shell,success,153.553,0.576,2026-10-14T20:01:53Z,2216099.16,,
+bsan,scotty-0.3.4,init::tests::shell_try_from_with_lowercase,success,153.553,0.598,2026-10-14T20:01:53Z,2216099.16,,
+bsan,scotty-0.3.4,init::tests::shell_try_from_with_mixed_case,success,153.553,0.569,2026-10-14T20:01:54Z,2216099.16,,
+bsan,scotty-0.3.4,init::tests::shell_try_from_with_whitespace,success,153.553,0.556,2026-10-14T20:01:54Z,2216099.16,,
+bsan,scotty-0.3.4,init::tests::should_replace_in_multiline_script,success,153.553,0.605,2026-10-14T20:01:55Z,2216099.16,,
+bsan,scotty-0.3.4,init::tests::should_replace_token_with_value,success,153.553,0.582,2026-10-14T20:01:56Z,2216099.16,,
+bsan,scotty-0.3.4,init::tests::should_replace_token_with_value_whitespace,success,153.553,0.579,2026-10-14T20:01:56Z,2216099.16,,

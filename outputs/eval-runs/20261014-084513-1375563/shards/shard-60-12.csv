@@ -1,0 +1,10 @@
+bsan,ssdeep-0.2.0,compare_accepts_strings_as_bytes,success,28.244,0.472,2026-10-15T01:25:29Z,2216140.12,,
+bsan,ssdeep-0.2.0,compare_accepts_strs_as_bytes,success,28.244,0.467,2026-10-15T01:25:30Z,2216140.12,,
+bsan,ssdeep-0.2.0,compare_returns_none_when_hash_is_invalid,success,28.244,0.465,2026-10-15T01:25:30Z,2216140.12,,
+bsan,ssdeep-0.2.0,compare_returns_nonzero_score_when_hashes_are_similar,success,28.244,0.463,2026-10-15T01:25:31Z,2216140.12,,
+bsan,ssdeep-0.2.0,compare_returns_one_hundred_score_when_hashes_are_equal,success,28.244,0.449,2026-10-15T01:25:31Z,2216140.12,,
+bsan,ssdeep-0.2.0,compare_returns_zero_when_hashes_are_not_similar,success,28.244,0.489,2026-10-15T01:25:31Z,2216140.12,,
+bsan,ssdeep-0.2.0,hash_accepts_str_as_bytes,test_failed,28.244,0.734,2026-10-15T01:25:32Z,2216140.12,panic,"thread 'hash_accepts_str_as_bytes' (2590279) panicked at src/lib.rs:231:24: unsafe precondition(s) violated: slice::get_unchecked requires that the index is within the slice"
+bsan,ssdeep-0.2.0,hash_accepts_string_as_bytes,test_failed,28.244,0.698,2026-10-15T01:25:33Z,2216140.12,panic,"thread 'hash_accepts_string_as_bytes' (2590372) panicked at src/lib.rs:231:24: unsafe precondition(s) violated: slice::get_unchecked requires that the index is within the slice"
+bsan,ssdeep-0.2.0,hash_from_file_returns_correct_hash,test_failed,28.244,0.722,2026-10-15T01:25:34Z,2216140.12,panic,"thread 'hash_from_file_returns_correct_hash' (2590466) panicked at src/lib.rs:231:24: unsafe precondition(s) violated: slice::get_unchecked requires that the index is within the slice"
+bsan,ssdeep-0.2.0,hash_returns_correct_hash,test_failed,28.244,0.685,2026-10-15T01:25:34Z,2216140.12,panic,"thread 'hash_returns_correct_hash' (2590620) panicked at src/lib.rs:231:24: unsafe precondition(s) violated: slice::get_unchecked requires that the index is within the slice"

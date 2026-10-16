@@ -1,0 +1,1 @@
+bsan,gchdb-0.2.8,adapter::sqlite::test_chat_record,test_failed,265.753,44.579,2026-10-15T04:06:43Z,2216158.6,panic,"thread 'thrd-tantivy-index60' (1008164) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:2211:9: unsafe precondition(s) violated: Vec::set_len requires that new_len <= capacity()"

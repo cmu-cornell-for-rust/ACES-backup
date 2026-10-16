@@ -1,0 +1,100 @@
+bsan,oracle-0.5.7,app_context,test_failed,60.659,0.879,2026-10-14T19:51:59Z,2216103.17,other,"error: test failed, to rerun pass `--test connection`"
+bsan,oracle-0.5.7,batch::tests::batch_execute_twice,test_failed,60.659,0.518,2026-10-14T19:51:59Z,2216103.17,panic,"thread 'batch::tests::batch_execute_twice' (3588130) panicked at src/batch.rs:886:41: called `Result::unwrap()` on an `Err` value: DpiError(DbError { code: 0, offset: 0, message: ""DPI-1047: Cannot locate a 64-bit Oracle Client library: \""libclntsh.so: cannot open shared object file: No such file or "
+bsan,oracle-0.5.7,batch::tests::batch_insert,test_failed,60.659,0.499,2026-10-14T19:52:00Z,2216103.17,panic,"thread 'batch::tests::batch_insert' (3588626) panicked at src/batch.rs:871:41: called `Result::unwrap()` on an `Err` value: DpiError(DbError { code: 0, offset: 0, message: ""DPI-1047: Cannot locate a 64-bit Oracle Client library: \""libclntsh.so: cannot open shared object file: No such file or directo"
+bsan,oracle-0.5.7,batch::tests::batch_with_batch_errors,test_failed,60.659,0.454,2026-10-14T19:52:00Z,2216103.17,panic,"thread 'batch::tests::batch_with_batch_errors' (3589120) panicked at src/batch.rs:932:41: called `Result::unwrap()` on an `Err` value: DpiError(DbError { code: 0, offset: 0, message: ""DPI-1047: Cannot locate a 64-bit Oracle Client library: \""libclntsh.so: cannot open shared object file: No such file"
+bsan,oracle-0.5.7,batch::tests::batch_with_error,test_failed,60.659,0.530,2026-10-14T19:52:01Z,2216103.17,panic,"thread 'batch::tests::batch_with_error' (3589805) panicked at src/batch.rs:903:41: called `Result::unwrap()` on an `Err` value: DpiError(DbError { code: 0, offset: 0, message: ""DPI-1047: Cannot locate a 64-bit Oracle Client library: \""libclntsh.so: cannot open shared object file: No such file or dir"
+bsan,oracle-0.5.7,bind_named,test_failed,60.659,0.677,2026-10-14T19:52:01Z,2216103.17,other,"error: test failed, to rerun pass `--test bind`"
+bsan,oracle-0.5.7,bind_names,test_failed,60.659,1.807,2026-10-14T19:52:03Z,2216103.17,other,"error: test failed, to rerun pass `--test statement`"
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiAccessToken,success,60.659,1.781,2026-10-14T19:52:05Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiAppContext,success,60.659,1.768,2026-10-14T19:52:07Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiBytes,success,60.659,1.768,2026-10-14T19:52:09Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiCommonCreateParams,success,60.659,1.786,2026-10-14T19:52:10Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiConnCreateParams,success,60.659,1.753,2026-10-14T19:52:12Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiContextCreateParams,success,60.659,1.761,2026-10-14T19:52:14Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiData,success,60.659,1.740,2026-10-14T19:52:16Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiDataBuffer,success,60.659,1.799,2026-10-14T19:52:18Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiDataTypeInfo,success,60.659,1.774,2026-10-14T19:52:19Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiEncodingInfo,success,60.659,1.750,2026-10-14T19:52:21Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiErrorInfo,success,60.659,1.772,2026-10-14T19:52:23Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiIntervalDS,success,60.659,1.779,2026-10-14T19:52:25Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiIntervalYM,success,60.659,1.770,2026-10-14T19:52:26Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiJsonArray,success,60.659,1.967,2026-10-14T19:52:28Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiJsonNode,success,60.659,1.799,2026-10-14T19:52:30Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiJsonObject,success,60.659,1.751,2026-10-14T19:52:32Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiMsgRecipient,success,60.659,1.782,2026-10-14T19:52:34Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiObjectAttrInfo,success,60.659,1.773,2026-10-14T19:52:36Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiObjectTypeInfo,success,60.659,1.751,2026-10-14T19:52:37Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiPoolCreateParams,success,60.659,1.756,2026-10-14T19:52:39Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiQueryInfo,success,60.659,1.745,2026-10-14T19:52:41Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiShardingKeyColumn,success,60.659,1.750,2026-10-14T19:52:43Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiSodaCollNames,success,60.659,1.735,2026-10-14T19:52:44Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiSodaOperOptions,success,60.659,1.765,2026-10-14T19:52:46Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiStmtInfo,success,60.659,1.755,2026-10-14T19:52:48Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiSubscrCreateParams,success,60.659,1.737,2026-10-14T19:52:50Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiSubscrMessage,success,60.659,1.766,2026-10-14T19:52:51Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiSubscrMessageQuery,success,60.659,1.766,2026-10-14T19:52:53Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiSubscrMessageRow,success,60.659,1.754,2026-10-14T19:52:55Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiSubscrMessageTable,success,60.659,1.753,2026-10-14T19:52:57Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiTimestamp,success,60.659,1.751,2026-10-14T19:52:58Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiVersionInfo,success,60.659,1.824,2026-10-14T19:53:00Z,2216103.17,,
+bsan,oracle-0.5.7,binding::binding::bindgen_test_layout_dpiXid,success,60.659,1.838,2026-10-14T19:53:02Z,2216103.17,,
+bsan,oracle-0.5.7,collection_udt_nestedarray,test_failed,60.659,1.197,2026-10-14T19:53:03Z,2216103.17,other,"error: test failed, to rerun pass `--test object`"
+bsan,oracle-0.5.7,dml_returning,test_failed,60.659,2.799,2026-10-14T19:53:06Z,2216103.17,other,"error: test failed, to rerun pass `--test statement`"
+bsan,oracle-0.5.7,execute,test_failed,60.659,0.812,2026-10-14T19:53:07Z,2216103.17,other,"error: test failed, to rerun pass `--test connection`"
+bsan,oracle-0.5.7,from_string_in_rust_oracle,test_failed,60.659,0.605,2026-10-14T19:53:08Z,2216103.17,other,"error: test failed, to rerun pass `--test bind`"
+bsan,oracle-0.5.7,in_out_same_values,test_failed,60.659,0.607,2026-10-14T19:53:08Z,2216103.17,other,"error: test failed, to rerun pass `--test bind`"
+bsan,oracle-0.5.7,insert_and_fetch,test_failed,60.659,1.772,2026-10-14T19:53:10Z,2216103.17,other,"error: test failed, to rerun pass `--test statement`"
+bsan,oracle-0.5.7,interval_ds_from_sql,test_failed,60.659,1.018,2026-10-14T19:53:11Z,2216103.17,other,"error: test failed, to rerun pass `--test from_to_sql`"
+bsan,oracle-0.5.7,interval_ds_to_sql,test_failed,60.659,0.988,2026-10-14T19:53:12Z,2216103.17,other,"error: test failed, to rerun pass `--test from_to_sql`"
+bsan,oracle-0.5.7,interval_ym_from_sql,test_failed,60.659,0.982,2026-10-14T19:53:13Z,2216103.17,other,"error: test failed, to rerun pass `--test from_to_sql`"
+bsan,oracle-0.5.7,interval_ym_to_sql,test_failed,60.659,0.975,2026-10-14T19:53:14Z,2216103.17,other,"error: test failed, to rerun pass `--test from_to_sql`"
+bsan,oracle-0.5.7,invalid_obj,test_failed,60.659,1.361,2026-10-14T19:53:15Z,2216103.17,other,"error: test failed, to rerun pass `--test object_type`"
+bsan,oracle-0.5.7,iterate_rows_by_ref_and_check_fused,test_failed,60.659,1.740,2026-10-14T19:53:17Z,2216103.17,other,"error: test failed, to rerun pass `--test statement`"
+bsan,oracle-0.5.7,numeric_from_sql,test_failed,60.659,0.978,2026-10-14T19:53:18Z,2216103.17,other,"error: test failed, to rerun pass `--test from_to_sql`"
+bsan,oracle-0.5.7,numeric_to_sql,test_failed,60.659,0.988,2026-10-14T19:53:19Z,2216103.17,other,"error: test failed, to rerun pass `--test from_to_sql`"
+bsan,oracle-0.5.7,object_type_cache,test_failed,60.659,1.345,2026-10-14T19:53:20Z,2216103.17,other,"error: test failed, to rerun pass `--test object_type`"
+bsan,oracle-0.5.7,oci_attr::tests::read_write_server_str_attr,test_failed,60.659,0.413,2026-10-14T19:53:21Z,2216103.17,other,"error: test failed, to rerun pass `--lib`"
+bsan,oracle-0.5.7,oci_attr::tests::read_write_svcctx_u32_attr,test_failed,60.659,0.412,2026-10-14T19:53:21Z,2216103.17,other,"error: test failed, to rerun pass `--lib`"
+bsan,oracle-0.5.7,oci_attr::tests::write_session_str_attr,test_failed,60.659,0.411,2026-10-14T19:53:22Z,2216103.17,other,"error: test failed, to rerun pass `--lib`"
+bsan,oracle-0.5.7,pkg_testnumberarrays_udt_numberlist,test_failed,60.659,1.357,2026-10-14T19:53:23Z,2216103.17,other,"error: test failed, to rerun pass `--test object_type`"
+bsan,oracle-0.5.7,pkg_testrecords_udt_record,test_failed,60.659,1.371,2026-10-14T19:53:25Z,2216103.17,other,"error: test failed, to rerun pass `--test object_type`"
+bsan,oracle-0.5.7,procmacro_ok_shadow,success,60.659,1.713,2026-10-14T19:53:26Z,2216103.17,,
+bsan,oracle-0.5.7,query,test_failed,60.659,0.794,2026-10-14T19:53:27Z,2216103.17,other,"error: test failed, to rerun pass `--test connection`"
+bsan,oracle-0.5.7,query_row,test_failed,60.659,0.796,2026-10-14T19:53:28Z,2216103.17,other,"error: test failed, to rerun pass `--test connection`"
+bsan,oracle-0.5.7,raw_from_to_sql,test_failed,60.659,0.984,2026-10-14T19:53:29Z,2216103.17,other,"error: test failed, to rerun pass `--test from_to_sql`"
+bsan,oracle-0.5.7,row_count,test_failed,60.659,2.253,2026-10-14T19:53:31Z,2216103.17,other,"error: test failed, to rerun pass `--test statement`"
+bsan,oracle-0.5.7,sdo_geometry,test_failed,60.659,1.177,2026-10-14T19:53:32Z,2216103.17,other,"error: test failed, to rerun pass `--test object`"
+bsan,oracle-0.5.7,select_objects,test_failed,60.659,1.176,2026-10-14T19:53:33Z,2216103.17,other,"error: test failed, to rerun pass `--test object`"
+bsan,oracle-0.5.7,sql_type::interval_ds::tests::parse,success,60.659,1.723,2026-10-14T19:53:35Z,2216103.17,,
+bsan,oracle-0.5.7,sql_type::interval_ds::tests::to_string,success,60.659,1.726,2026-10-14T19:53:37Z,2216103.17,,
+bsan,oracle-0.5.7,sql_type::interval_ym::tests::parse,success,60.659,1.719,2026-10-14T19:53:39Z,2216103.17,,
+bsan,oracle-0.5.7,sql_type::interval_ym::tests::to_string,success,60.659,1.705,2026-10-14T19:53:40Z,2216103.17,,
+bsan,oracle-0.5.7,sql_type::lob::tests::query_blob,test_failed,60.659,0.415,2026-10-14T19:53:41Z,2216103.17,other,"error: test failed, to rerun pass `--lib`"
+bsan,oracle-0.5.7,sql_type::lob::tests::read_write_blob,test_failed,60.659,0.418,2026-10-14T19:53:41Z,2216103.17,other,"error: test failed, to rerun pass `--lib`"
+bsan,oracle-0.5.7,sql_type::lob::tests::read_write_clob,test_failed,60.659,0.425,2026-10-14T19:53:42Z,2216103.17,other,"error: test failed, to rerun pass `--lib`"
+bsan,oracle-0.5.7,sql_type::ref_cursor::tests::out_ref_cursor,test_failed,60.659,0.425,2026-10-14T19:53:42Z,2216103.17,other,"error: test failed, to rerun pass `--lib`"
+bsan,oracle-0.5.7,sql_type::ref_cursor::tests::out_ref_cursor_with_statement_builder_options,test_failed,60.659,0.418,2026-10-14T19:53:43Z,2216103.17,other,"error: test failed, to rerun pass `--lib`"
+bsan,oracle-0.5.7,sql_type::timestamp::tests::parse,success,60.659,1.770,2026-10-14T19:53:44Z,2216103.17,,
+bsan,oracle-0.5.7,sql_type::timestamp::tests::to_string,success,60.659,1.834,2026-10-14T19:53:46Z,2216103.17,,
+bsan,oracle-0.5.7,statement::tests::column_info,test_failed,60.659,0.414,2026-10-14T19:53:47Z,2216103.17,other,"error: test failed, to rerun pass `--lib`"
+bsan,oracle-0.5.7,statement_type,test_failed,60.659,1.800,2026-10-14T19:53:48Z,2216103.17,other,"error: test failed, to rerun pass `--test statement`"
+bsan,oracle-0.5.7,status,test_failed,60.659,0.815,2026-10-14T19:53:49Z,2216103.17,other,"error: test failed, to rerun pass `--test connection`"
+bsan,oracle-0.5.7,string_from_sql,test_failed,60.659,0.980,2026-10-14T19:53:50Z,2216103.17,other,"error: test failed, to rerun pass `--test from_to_sql`"
+bsan,oracle-0.5.7,test_autocommit,test_failed,60.659,0.785,2026-10-14T19:53:51Z,2216103.17,other,"error: test failed, to rerun pass `--test connection`"
+bsan,oracle-0.5.7,timestamp_from_sql,test_failed,60.659,0.996,2026-10-14T19:53:52Z,2216103.17,other,"error: test failed, to rerun pass `--test from_to_sql`"
+bsan,oracle-0.5.7,timestamp_to_sql,test_failed,60.659,1.077,2026-10-14T19:53:53Z,2216103.17,other,"error: test failed, to rerun pass `--test from_to_sql`"
+bsan,oracle-0.5.7,to_string_in_rust_oracle,test_failed,60.659,0.596,2026-10-14T19:53:54Z,2216103.17,other,"error: test failed, to rerun pass `--test bind`"
+bsan,oracle-0.5.7,udt_array,test_failed,60.659,1.148,2026-10-14T19:53:55Z,2216103.17,other,"error: test failed, to rerun pass `--test object`"
+bsan,oracle-0.5.7,udt_issue19,test_failed,60.659,1.346,2026-10-14T19:53:56Z,2216103.17,other,"error: test failed, to rerun pass `--test object_type`"
+bsan,oracle-0.5.7,udt_object,test_failed,60.659,1.159,2026-10-14T19:53:58Z,2216103.17,other,"error: test failed, to rerun pass `--test object`"
+bsan,oracle-0.5.7,udt_object_in_query,test_failed,60.659,1.342,2026-10-14T19:53:59Z,2216103.17,other,"error: test failed, to rerun pass `--test object_type`"
+bsan,oracle-0.5.7,udt_objectdatatypes,test_failed,60.659,1.301,2026-10-14T19:54:00Z,2216103.17,other,"error: test failed, to rerun pass `--test object_type`"
+bsan,oracle-0.5.7,udt_objectdatatypes_in_query,test_failed,60.659,1.345,2026-10-14T19:54:02Z,2216103.17,other,"error: test failed, to rerun pass `--test object_type`"
+bsan,oracle-0.5.7,udt_stringlist,test_failed,60.659,1.123,2026-10-14T19:54:03Z,2216103.17,other,"error: test failed, to rerun pass `--test object`"
+bsan,oracle-0.5.7,util::tests::test_check_number_format,success,60.659,1.676,2026-10-14T19:54:04Z,2216103.17,,
+bsan,oracle-0.5.7,util::tests::test_duration_to_msecs,success,60.659,1.712,2026-10-14T19:54:06Z,2216103.17,,
+bsan,oracle-0.5.7,util::tests::test_parse_str_into_raw,success,60.659,1.721,2026-10-14T19:54:08Z,2216103.17,,
+bsan,oracle-0.5.7,util::tests::test_scanner,success,60.659,1.729,2026-10-14T19:54:10Z,2216103.17,,
+bsan,oracle-0.5.7,version::tests::client_version,test_failed,60.659,0.472,2026-10-14T19:54:10Z,2216103.17,panic,"thread 'version::tests::client_version' (3639718) panicked at src/version.rs:183:37: called `Result::unwrap()` on an `Err` value: DpiError(DbError { code: 0, offset: 0, message: ""DPI-1047: Cannot locate a 64-bit Oracle Client library: \""libclntsh.so: cannot open shared object file: No such file or d"
+bsan,oracle-0.5.7,version::tests::from_str,success,60.659,1.744,2026-10-14T19:54:12Z,2216103.17,,
+bsan,oracle-0.5.7,version::tests::to_string,success,60.659,1.729,2026-10-14T19:54:13Z,2216103.17,,

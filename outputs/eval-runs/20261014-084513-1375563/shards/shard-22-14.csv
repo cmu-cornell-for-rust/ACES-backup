@@ -1,0 +1,5 @@
+bsan,zip-extract-0.1.2,invalid_archive,timeout,66.607,3600.327,2026-10-14T20:26:32Z,2216102.14,other,"test invalid_archive has been running for over 60 seconds"
+bsan,zip-extract-0.1.2,invalid_target,success,66.607,12.433,2026-10-14T20:26:44Z,2216102.14,,
+bsan,zip-extract-0.1.2,valid_archive,test_failed,66.607,1966.450,2026-10-14T20:59:30Z,2216102.14,panic,"thread 'valid_archive' (241475) panicked at tests/tests.rs:31:5: assertion failed: !dir_diff::is_different(target, ""tests/data/valid"").unwrap()"
+bsan,zip-extract-0.1.2,valid_archive_forbid_toplevel,test_failed,66.607,1962.385,2026-10-14T21:32:13Z,2216102.14,panic,"thread 'valid_archive_forbid_toplevel' (243050) panicked at tests/tests.rs:60:5: assertion failed: !dir_diff::is_different(target, ""tests/data/valid"").unwrap()"
+bsan,zip-extract-0.1.2,valid_archive_with_toplevel,test_failed,66.607,1993.581,2026-10-14T22:05:26Z,2216102.14,panic,"thread 'valid_archive_with_toplevel' (244362) panicked at tests/tests.rs:45:5: assertion failed: !dir_diff::is_different(target, ""tests/data/valid"").unwrap()"

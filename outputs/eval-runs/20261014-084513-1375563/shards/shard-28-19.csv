@@ -1,0 +1,8 @@
+bsan,ptth_relay-2.0.0,key_validity::tests::duration_negative,success,232.612,0.933,2026-10-14T23:14:17Z,2216108.19,,
+bsan,ptth_relay-2.0.0,key_validity::tests::key_valid_too_long,success,232.612,0.913,2026-10-14T23:14:18Z,2216108.19,,
+bsan,ptth_relay-2.0.0,key_validity::tests::normal_key,success,232.612,0.946,2026-10-14T23:14:19Z,2216108.19,,
+bsan,ptth_relay-2.0.0,key_validity::tests::wrong_key,success,232.612,0.942,2026-10-14T23:14:20Z,2216108.19,,
+bsan,ptth_relay-2.0.0,routing::tests::routing,success,232.612,0.932,2026-10-14T23:14:21Z,2216108.19,,
+bsan,ptth_relay-2.0.0,scraper_api::tests::auth,test_failed,232.612,2.914,2026-10-14T23:14:24Z,2216108.19,bsan,"error: Undefined Behavior: deallocation through <2152112>(unprotected) at alloc38343[0x11] is forbidden"
+bsan,ptth_relay-2.0.0,tests::scraper_endpoints,test_failed,232.612,1.729,2026-10-14T23:14:25Z,2216108.19,bsan,"error: Undefined Behavior: deallocation through <2152112>(unprotected) at alloc38343[0x11] is forbidden"
+bsan,ptth_relay-2.0.0,tests::test_pretty_print_last_seen,success,232.612,0.945,2026-10-14T23:14:26Z,2216108.19,,

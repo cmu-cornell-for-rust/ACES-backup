@@ -1,0 +1,10 @@
+bsan,cakerabbit-core-0.1.3,codec::decode,success,430.088,1.441,2026-10-14T19:12:42Z,2216101.5,,
+bsan,cakerabbit-core-0.1.3,message::test_decode_request,success,430.088,1.419,2026-10-14T19:12:44Z,2216101.5,,
+bsan,cakerabbit-core-0.1.3,reg::check_service_test,success,430.088,201.768,2026-10-14T19:16:06Z,2216101.5,,
+bsan,cakerabbit-core-0.1.3,reg::test_register_svc,test_failed,430.088,1.905,2026-10-14T19:16:08Z,2216101.5,bsan,"error: Undefined Behavior: deallocation through <2867016>(StrongProtector) at alloc40559[0x0] is forbidden"
+bsan,cakerabbit-core-0.1.3,reg_consul::test_get_service_nodes,test_failed,430.088,1.610,2026-10-14T19:16:09Z,2216101.5,bsan,"error: Undefined Behavior: deallocation through <2824104>(StrongProtector) at alloc40025[0x0] is forbidden"
+bsan,cakerabbit-core-0.1.3,selector::tests::test_random_selector,success,430.088,1.512,2026-10-14T19:16:11Z,2216101.5,,
+bsan,cakerabbit-core-0.1.3,selector::tests::test_roundrobin_selector,success,430.088,4.473,2026-10-14T19:16:15Z,2216101.5,,
+bsan,cakerabbit-core-0.1.3,test_comm,success,430.088,1.422,2026-10-14T19:16:17Z,2216101.5,,
+bsan,cakerabbit-core-0.1.3,test_struct_to_vec,success,430.088,1.496,2026-10-14T19:16:18Z,2216101.5,,
+bsan,cakerabbit-core-0.1.3,tests::test_add_two,success,430.088,1.376,2026-10-14T19:16:20Z,2216101.5,,

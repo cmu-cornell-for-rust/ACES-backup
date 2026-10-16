@@ -1,0 +1,12 @@
+bsan,ap_kcp-0.1.1,segment::test::encode_decode,success,290.151,0.781,2026-10-15T00:45:43Z,2216121.2,,
+bsan,ap_kcp-0.1.1,test::close,success,290.151,5.168,2026-10-15T00:45:48Z,2216121.2,,
+bsan,ap_kcp-0.1.1,test::drop_handle,success,290.151,0.883,2026-10-15T00:45:49Z,2216121.2,,
+bsan,ap_kcp-0.1.1,test::drop_stream,success,290.151,31.950,2026-10-15T00:46:21Z,2216121.2,,
+bsan,ap_kcp-0.1.1,test::horrible,test_failed,290.151,156.648,2026-10-15T00:48:57Z,2216121.2,panic,"thread 'test::horrible' (2837712) panicked at src/lib.rs:75:48: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: Shutdown(""poll_recv on a closing kcp core: 7"") }"
+bsan,ap_kcp-0.1.1,test::keep_alive,success,290.151,12.390,2026-10-15T00:49:10Z,2216121.2,,
+bsan,ap_kcp-0.1.1,test::laggy,test_failed,290.151,111.333,2026-10-15T00:51:01Z,2216121.2,panic,"thread 'test::laggy' (2842926) panicked at src/lib.rs:75:48: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: Shutdown(""poll_recv on a closing kcp core: 7"") }"
+bsan,ap_kcp-0.1.1,test::normal,test_failed,290.151,60.603,2026-10-15T00:52:02Z,2216121.2,panic,"thread 'test::normal' (2843161) panicked at src/lib.rs:75:48: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: Shutdown(""poll_recv on a closing kcp core: 7"") }"
+bsan,ap_kcp-0.1.1,test::packet_lost,test_failed,290.151,100.285,2026-10-15T00:53:42Z,2216121.2,panic,"thread 'test::packet_lost' (2844742) panicked at src/lib.rs:75:48: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: Shutdown(""poll_recv on a closing kcp core: 7"") }"
+bsan,ap_kcp-0.1.1,test::rexmit,success,290.151,6.651,2026-10-15T00:53:49Z,2216121.2,,
+bsan,ap_kcp-0.1.1,test::timeout,success,290.151,31.049,2026-10-15T00:54:20Z,2216121.2,,
+bsan,ap_kcp-0.1.1,test::udp,test_failed,290.151,356.801,2026-10-15T01:00:17Z,2216121.2,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."

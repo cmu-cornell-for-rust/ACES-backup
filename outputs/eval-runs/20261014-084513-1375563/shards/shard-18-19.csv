@@ -1,0 +1,26 @@
+bsan,rlink-0.6.16,channel::tests::bounded_test,success,496.179,2479.722,2026-10-14T19:21:00Z,2216098.19,,
+bsan,rlink-0.6.16,channel::tests::channel_sender_test,test_failed,496.179,37.734,2026-10-14T19:21:38Z,2216098.19,panic,"thread 'channel::tests::channel_sender_test' (790708) panicked at src/metrics/metric.rs:212:19: called `Option::unwrap()` on a `None` value"
+bsan,rlink-0.6.16,core::cluster::tests::ser_cluster_config_test,success,496.179,2.309,2026-10-14T19:21:41Z,2216098.19,,
+bsan,rlink-0.6.16,core::element::tests::serde_element_record_test,success,496.179,1.369,2026-10-14T19:21:42Z,2216098.19,,
+bsan,rlink-0.6.16,core::element::tests::serde_element_stream_status_test,success,496.179,1.381,2026-10-14T19:21:43Z,2216098.19,,
+bsan,rlink-0.6.16,core::element::tests::serde_element_watermark_test,success,496.179,1.127,2026-10-14T19:21:44Z,2216098.19,,
+bsan,rlink-0.6.16,core::properties::tests::row_properties,success,496.179,1.100,2026-10-14T19:21:46Z,2216098.19,,
+bsan,rlink-0.6.16,core::properties::tests::test_sub_properties,success,496.179,2.622,2026-10-14T19:21:48Z,2216098.19,,
+bsan,rlink-0.6.16,dag::tests::data_stream_connect_test,success,496.179,14.449,2026-10-14T19:22:03Z,2216098.19,,
+bsan,rlink-0.6.16,dag::tests::data_stream_reduce_test,success,496.179,7.388,2026-10-14T19:22:10Z,2216098.19,,
+bsan,rlink-0.6.16,dag::tests::data_stream_simple_test,success,496.179,2.103,2026-10-14T19:22:12Z,2216098.19,,
+bsan,rlink-0.6.16,dag::tests::data_stream_test,success,496.179,1.522,2026-10-14T19:22:14Z,2216098.19,,
+bsan,rlink-0.6.16,deployment::yarn::tests::command_json_test,success,496.179,1.128,2026-10-14T19:22:15Z,2216098.19,,
+bsan,rlink-0.6.16,functions::percentile::tests::percentile_test,success,496.179,1.491,2026-10-14T19:22:16Z,2216098.19,,
+bsan,rlink-0.6.16,functions::window::tests::window_assigner_test,success,496.179,1.088,2026-10-14T19:22:17Z,2216098.19,,
+bsan,rlink-0.6.16,macros::tests::loop_result_test,success,496.179,1.694,2026-10-14T19:22:19Z,2216098.19,,
+bsan,rlink-0.6.16,metrics::prometheus_exporter::builder::tests::test_buckets,success,496.179,3.394,2026-10-14T19:22:22Z,2216098.19,,
+bsan,rlink-0.6.16,metrics::prometheus_exporter::builder::tests::test_global_labels,success,496.179,1.952,2026-10-14T19:22:24Z,2216098.19,,
+bsan,rlink-0.6.16,metrics::prometheus_exporter::builder::tests::test_global_labels_overrides,success,496.179,1.564,2026-10-14T19:22:26Z,2216098.19,,
+bsan,rlink-0.6.16,metrics::prometheus_exporter::builder::tests::test_idle_timeout,success,496.179,1.982,2026-10-14T19:22:28Z,2216098.19,,
+bsan,rlink-0.6.16,metrics::prometheus_exporter::builder::tests::test_render,success,496.179,1.804,2026-10-14T19:22:30Z,2216098.19,,
+bsan,rlink-0.6.16,metrics::tests::install_test,timeout,496.179,3600.007,2026-10-14T20:22:30Z,2216098.19,other,"test metrics::tests::install_test has been running for over 60 seconds"
+bsan,rlink-0.6.16,pub_sub::network::client::tests::client_test,test_failed,496.179,43.412,2026-10-14T20:23:13Z,2216098.19,panic,"thread 'pub_sub::network::client::tests::client_test' (803463) panicked at src/metrics/metric.rs:212:19: called `Option::unwrap()` on a `None` value"
+bsan,rlink-0.6.16,runtime::worker::runnable::source_runnable::tests::watermark_manager_test,success,496.179,3.779,2026-10-14T20:23:17Z,2216098.19,,
+bsan,rlink-0.6.16,storage::checkpoint::mysql_checkpoint_storage::tests::mysql_storage_test,test_failed,496.179,2.398,2026-10-14T20:23:19Z,2216098.19,panic,"thread 'storage::checkpoint::mysql_checkpoint_storage::tests::mysql_storage_test' (803580) panicked at src/storage/checkpoint/mysql_checkpoint_storage.rs:269:14: called `Result::unwrap()` on an `Err` value: DriverError { Could not connect to address `localhost:3304': Connection refused (os error 111"
+bsan,rlink-0.6.16,utils::date_time::tests::fmt_date_time_test,success,496.179,5.504,2026-10-14T20:23:25Z,2216098.19,,

@@ -1,0 +1,3 @@
+bsan,lzfse-0.1.0,tests::decode_buffer_to_small,test_failed,17.898,0.669,2026-10-14T23:10:33Z,2216107.7,bsan,"error: Undefined Behavior: write access through <2305008>(unprotected) at alloc91870[0xc] is forbidden"
+bsan,lzfse-0.1.0,tests::encode_buffer_to_small,success,17.898,0.386,2026-10-14T23:10:33Z,2216107.7,,
+bsan,lzfse-0.1.0,tests::round_trip,test_failed,17.898,0.543,2026-10-14T23:10:34Z,2216107.7,bsan,"error: Undefined Behavior: write access through <2305008>(unprotected) at alloc91870[0xc] is forbidden"

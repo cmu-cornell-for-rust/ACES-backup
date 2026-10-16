@@ -1,0 +1,17 @@
+bsan,quick-js-0.4.1,tests::call_async,test_failed,33.206,0.471,2026-10-15T00:24:37Z,2216120.19,panic,"thread 'tests::call_async' (756204) panicked at src/tests.rs:262:56: called `Result::unwrap()` on an `Err` value: Exception(String(""InternalError: stack overflow""))"
+bsan,quick-js-0.4.1,tests::context_reset,success,33.206,0.411,2026-10-15T00:24:37Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::eval_async,test_failed,33.206,0.430,2026-10-15T00:24:38Z,2216120.19,panic,"thread 'tests::eval_async' (756878) panicked at src/tests.rs:144:10: called `Result::unwrap()` on an `Err` value: Exception(String(""InternalError: stack overflow""))"
+bsan,quick-js-0.4.1,tests::memory_limit_exceeded,success,33.206,0.388,2026-10-15T00:24:38Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::moved_context,success,33.206,0.387,2026-10-15T00:24:39Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::test_call,success,33.206,0.397,2026-10-15T00:24:39Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::test_call_large_string,success,33.206,0.500,2026-10-15T00:24:40Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::test_callback,success,33.206,0.393,2026-10-15T00:24:40Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::test_callback_argn_variants,success,33.206,0.387,2026-10-15T00:24:40Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::test_callback_invalid_argcount,success,33.206,0.383,2026-10-15T00:24:41Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::test_callback_varargs,success,33.206,0.387,2026-10-15T00:24:41Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::test_console,test_failed,33.206,0.412,2026-10-15T00:24:42Z,2216120.19,panic,"thread 'tests::test_console' (759545) panicked at src/tests.rs:596:6: called `Result::unwrap()` on an `Err` value: Exception(String(""InternalError: stack overflow""))"
+bsan,quick-js-0.4.1,tests::test_eval_exception,success,33.206,0.393,2026-10-15T00:24:42Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::test_eval_pass,success,33.206,0.413,2026-10-15T00:24:42Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::test_eval_syntax_error,success,33.206,0.426,2026-10-15T00:24:43Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::test_global_setter,success,33.206,0.390,2026-10-15T00:24:43Z,2216120.19,,
+bsan,quick-js-0.4.1,tests::test_set_global,success,33.206,0.381,2026-10-15T00:24:44Z,2216120.19,,

@@ -1,0 +1,14 @@
+bsan,speex-safe-0.6.0,bits::test::creates_and_drops,success,41.731,0.457,2026-10-14T21:42:33Z,2216106.6,,
+bsan,speex-safe-0.6.0,bits::test::encodes_value,success,41.731,0.557,2026-10-14T21:42:34Z,2216106.6,,
+bsan,speex-safe-0.6.0,bits::test::write_arbitrary_bytes,test_failed,41.731,0.479,2026-10-14T21:42:34Z,2216106.6,panic,"thread 'bits::test::write_arbitrary_bytes' (1627025) panicked at src/bits.rs:232:9: assertion `left == right` failed"
+bsan,speex-safe-0.6.0,mode::encoder::test::encodes_frame_without_segfault,success,41.731,0.505,2026-10-14T21:42:35Z,2216106.6,,
+bsan,speex-safe-0.6.0,mode::encoder::test::get_frame_size,success,41.731,0.443,2026-10-14T21:42:35Z,2216106.6,,
+bsan,speex-safe-0.6.0,mode::encoder::test::set_get_abr,success,41.731,0.531,2026-10-14T21:42:36Z,2216106.6,,
+bsan,speex-safe-0.6.0,mode::encoder::test::set_get_bitrate,success,41.731,0.534,2026-10-14T21:42:36Z,2216106.6,,
+bsan,speex-safe-0.6.0,mode::encoder::test::set_get_high_submode,test_failed,41.731,0.484,2026-10-14T21:42:37Z,2216106.6,panic,"thread 'mode::encoder::test::set_get_high_submode' (1628375) panicked at src/mode/encoder.rs:99:59: called `Result::unwrap()` on an `Err` value: UnknownRequest(11)"
+bsan,speex-safe-0.6.0,mode::encoder::test::set_get_sampling_rate,success,41.731,0.471,2026-10-14T21:42:37Z,2216106.6,,
+bsan,speex-safe-0.6.0,mode::encoder::test::set_get_vad,success,41.731,0.506,2026-10-14T21:42:38Z,2216106.6,,
+bsan,speex-safe-0.6.0,mode::encoder::test::set_get_vbr,success,41.731,0.550,2026-10-14T21:42:39Z,2216106.6,,
+bsan,speex-safe-0.6.0,mode::encoder::test::set_get_vbr_quality,success,41.731,0.575,2026-10-14T21:42:39Z,2216106.6,,
+bsan,speex-safe-0.6.0,mode::encoder::test::set_quality,success,41.731,0.468,2026-10-14T21:42:40Z,2216106.6,,
+bsan,speex-safe-0.6.0,test::correct_version_outputs,success,41.731,0.493,2026-10-14T21:42:40Z,2216106.6,,

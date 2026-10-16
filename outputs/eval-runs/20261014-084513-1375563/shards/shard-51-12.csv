@@ -1,0 +1,4 @@
+bsan,libtz-sys-0.2.2,tests::basic,test_failed,150.761,0.762,2026-10-15T01:20:08Z,2216131.12,bsan,"error: Undefined Behavior: write access through <1369512>(unprotected) at alloc31820[0x14] is forbidden"
+bsan,libtz-sys-0.2.2,tests::localtime_rz_test,test_failed,150.761,0.587,2026-10-15T01:20:09Z,2216131.12,bsan,"error: Undefined Behavior: write access through <1366800>(unprotected) at alloc31725[0x14] is forbidden"
+bsan,libtz-sys-0.2.2,tests::posix_conversions,test_failed,150.761,0.561,2026-10-15T01:20:09Z,2216131.12,panic,"thread 'tests::posix_conversions' (1303043) panicked at localtime.rs:288:9: assertion `left == right` failed"
+bsan,libtz-sys-0.2.2,tests::test_readme_deps,success,150.761,8.812,2026-10-15T01:20:18Z,2216131.12,,

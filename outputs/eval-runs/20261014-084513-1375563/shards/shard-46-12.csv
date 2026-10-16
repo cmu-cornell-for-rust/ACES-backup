@@ -1,0 +1,11 @@
+bsan,siquery-1.2.5,common::hosts::tests::test_etc_hosts,success,148.792,4.025,2026-10-15T01:20:45Z,2216126.12,,
+bsan,siquery-1.2.5,common::protocols::tests::test_etc_protocols,success,148.792,6.725,2026-10-15T01:20:52Z,2216126.12,,
+bsan,siquery-1.2.5,common::services::tests::test_etc_services,success,148.792,11.702,2026-10-15T01:21:03Z,2216126.12,,
+bsan,siquery-1.2.5,linux::os_version::tests::test_system_info,test_failed,148.792,0.584,2026-10-15T01:21:04Z,2216126.12,panic,"thread 'linux::os_version::tests::test_system_info' (3090477) panicked at src/linux/os_version.rs:113:9: assertion `left == right` failed"
+bsan,siquery-1.2.5,linux::system_info::tests::test_system_info,success,148.792,0.554,2026-10-15T01:21:05Z,2216126.12,,
+bsan,siquery-1.2.5,query::tests::test_schema_creation,success,148.792,0.551,2026-10-15T01:21:05Z,2216126.12,,
+bsan,siquery-1.2.5,tables::tests::test_get_by_id,success,148.792,0.552,2026-10-15T01:21:06Z,2216126.12,,
+bsan,siquery-1.2.5,tables::tests::test_get_by_name,success,148.792,0.556,2026-10-15T01:21:06Z,2216126.12,,
+bsan,siquery-1.2.5,tables::tests::test_get_id,success,148.792,0.545,2026-10-15T01:21:07Z,2216126.12,,
+bsan,siquery-1.2.5,tables::tests::test_table_properties,success,148.792,0.557,2026-10-15T01:21:07Z,2216126.12,,
+bsan,siquery-1.2.5,vtab::test_siquery_module,success,148.792,0.736,2026-10-15T01:21:08Z,2216126.12,,

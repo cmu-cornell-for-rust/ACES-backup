@@ -1,0 +1,237 @@
+bsan,infobip_sdk-0.5.2,api::tests::email::add_domain_valid,test_failed,478.680,1.257,2026-10-14T19:59:28Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda3cc0359b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::delete_domain_valid,test_failed,478.680,1.211,2026-10-14T19:59:29Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffd996f3d4db22 is out of bounds for alloc38953 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::get_bulks_invalid,success,478.680,1.528,2026-10-14T19:59:31Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::email::get_delivery_reports_valid,test_failed,478.680,1.252,2026-10-14T19:59:32Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda5fd3f86b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::get_domain_valid,test_failed,478.680,1.248,2026-10-14T19:59:33Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda2142bb6b22 is out of bounds for alloc38953 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::get_domains_valid,test_failed,478.680,1.232,2026-10-14T19:59:35Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdaf794911b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::get_logs_valid,test_failed,478.680,1.213,2026-10-14T19:59:36Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda23b8027b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::get_scheduled_status_valid,test_failed,478.680,1.185,2026-10-14T19:59:37Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda97ad569b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::reschedule_no_bulk_id,success,478.680,1.553,2026-10-14T19:59:39Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::email::reschedule_valid,test_failed,478.680,1.221,2026-10-14T19:59:40Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdb2dc1b02b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::test_get_bulks_valid,test_failed,478.680,1.230,2026-10-14T19:59:41Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdadb97bb5b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::test_send_invalid_request,success,478.680,1.582,2026-10-14T19:59:43Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::email::test_send_valid,test_failed,478.680,1.236,2026-10-14T19:59:44Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda09b2ee3b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::update_scheduled_status_valid,test_failed,478.680,1.224,2026-10-14T19:59:45Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda214071eb22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::update_tracking_valid,test_failed,478.680,1.226,2026-10-14T19:59:46Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffd9ebb6a6fb22 is out of bounds for alloc38953 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::validate_address_valid,test_failed,478.680,1.263,2026-10-14T19:59:48Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdab26ab84b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::email::verify_domain_valid,test_failed,478.680,1.199,2026-10-14T19:59:49Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdacd02f46b22 is out of bounds for alloc38953 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_blocking_preview_valid,test_failed,478.680,1.148,2026-10-14T19:59:50Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda3d18811b22 is out of bounds for alloc38117 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_create_tfa_application_no_name,success,478.680,1.615,2026-10-14T19:59:52Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_create_tfa_application_valid,test_failed,478.680,1.226,2026-10-14T19:59:53Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdabf2f403b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_create_tfa_message_template_empty_message_text,success,478.680,1.593,2026-10-14T19:59:55Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_create_tfa_message_template_valid,test_failed,478.680,1.210,2026-10-14T19:59:56Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffd9cfe5cacb22 is out of bounds for alloc38933 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_delivery_reports_bad_parameters,success,478.680,1.565,2026-10-14T19:59:57Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_delivery_reports_valid,test_failed,478.680,1.171,2026-10-14T19:59:58Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda839992eb22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_inbound_reports_big_limit,success,478.680,1.491,2026-10-14T20:00:00Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_inbound_reports_valid,test_failed,478.680,1.164,2026-10-14T20:00:01Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda86547ecb22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_logs_big_limit,timeout,478.680,3600.144,2026-10-14T21:00:01Z,2216103.5,other,"test api::tests::sms::test_get_logs_big_limit has been running for over 60 seconds"
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_logs_valid,test_failed,478.680,25.536,2026-10-14T21:00:27Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda11db76bb22 is out of bounds for alloc38813 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_scheduled_empty_bulk_id,success,478.680,28.963,2026-10-14T21:00:56Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_scheduled_status_empty_bulk_id,success,478.680,1.969,2026-10-14T21:00:58Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_scheduled_status_valid,test_failed,478.680,1.265,2026-10-14T21:00:59Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdaa07af2ab22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_scheduled_valid,test_failed,478.680,1.240,2026-10-14T21:01:00Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda07f8908b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_tfa_application_valid,test_failed,478.680,1.258,2026-10-14T21:01:02Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda6eb832cb22 is out of bounds for alloc38911 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_tfa_applications_valid,test_failed,478.680,1.264,2026-10-14T21:01:03Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda724fe97b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_tfa_message_template_valid,test_failed,478.680,1.235,2026-10-14T21:01:04Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda4aa0abdb22 is out of bounds for alloc39094 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_tfa_message_templates_valid,test_failed,478.680,1.239,2026-10-14T21:01:05Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda01b407eb22 is out of bounds for alloc38933 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_tfa_verification_status_empty_msisdn,timeout,478.680,3600.009,2026-10-14T22:01:06Z,2216103.5,other,"test api::tests::sms::test_get_tfa_verification_status_empty_msisdn has been running for over 60 seconds"
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_get_tfa_verification_status_valid,test_failed,478.680,26.524,2026-10-14T22:01:32Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda6767a80b22 is out of bounds for alloc38955 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_preview_bad_request,success,478.680,21.126,2026-10-14T22:01:53Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_preview_server_error,test_failed,478.680,1.151,2026-10-14T22:01:55Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda42df0e2b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_preview_valid,test_failed,478.680,1.172,2026-10-14T22:01:56Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda7081413b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_reschedule_empty_bulk_id,success,478.680,1.558,2026-10-14T22:01:57Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_reschedule_empty_send_at,success,478.680,1.636,2026-10-14T22:01:59Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_reschedule_valid,test_failed,478.680,1.126,2026-10-14T22:02:00Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda9494693b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_resend_pin_over_sms_valid,test_failed,478.680,1.131,2026-10-14T22:02:01Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffd9b707749b22 is out of bounds for alloc38923 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_resend_pin_over_voice_valid,test_failed,478.680,1.138,2026-10-14T22:02:02Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdad93f5fbb22 is out of bounds for alloc38926 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_send_binary_valid,test_failed,478.680,1.150,2026-10-14T22:02:04Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffd9fa92b06b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_send_over_query_parameters_valid,test_failed,478.680,1.146,2026-10-14T22:02:05Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffd9fc59f00b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_send_pin_over_sms_empty_app_id,success,478.680,1.591,2026-10-14T22:02:06Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_send_pin_over_sms_valid,test_failed,478.680,1.153,2026-10-14T22:02:08Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda13d86a4b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_send_pin_over_voice_empty_app_id,success,478.680,1.478,2026-10-14T22:02:09Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_send_pin_over_voice_valid,test_failed,478.680,1.146,2026-10-14T22:02:10Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda51e1eeab22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_send_valid,test_failed,478.680,1.118,2026-10-14T22:02:11Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda8da1bceb22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_update_scheduled_status_empty_bulk_id,success,478.680,1.578,2026-10-14T22:02:13Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_update_scheduled_status_valid,test_failed,478.680,1.126,2026-10-14T22:02:14Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda33718ffb22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_update_tfa_application_valid,test_failed,478.680,1.118,2026-10-14T22:02:15Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdaa942861b22 is out of bounds for alloc38911 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_update_tfa_message_template_valid,test_failed,478.680,1.179,2026-10-14T22:02:16Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffd9ec77d3eb22 is out of bounds for alloc39094 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_verify_phone_number_no_pin,success,478.680,1.499,2026-10-14T22:02:18Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,api::tests::sms::test_verify_phone_number_valid,test_failed,478.680,1.123,2026-10-14T22:02:19Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda6404f75b22 is out of bounds for alloc38922 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::create_template_valid,test_failed,478.680,7.004,2026-10-14T22:02:26Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda519868cb22 is out of bounds for alloc41543 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::delete_template_valid,test_failed,478.680,1.137,2026-10-14T22:02:27Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda4af8674b22 is out of bounds for alloc39161 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::get_templates_valid,test_failed,478.680,1.152,2026-10-14T22:02:28Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffd9e6fd320b22 is out of bounds for alloc38931 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::send_audio_valid,test_failed,478.680,1.562,2026-10-14T22:02:30Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdb23171b3b22 is out of bounds for alloc39867 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::send_contact_valid,test_failed,478.680,2.959,2026-10-14T22:02:33Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdaa418f0db22 is out of bounds for alloc52162 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::send_document_valid,test_failed,478.680,1.479,2026-10-14T22:02:34Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffd9f86d630b22 is out of bounds for alloc40115 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::send_image_valid,test_failed,478.680,1.358,2026-10-14T22:02:36Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda68f01d9b22 is out of bounds for alloc40014 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::send_location_valid,test_failed,478.680,1.332,2026-10-14T22:02:37Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdada9f474b22 is out of bounds for alloc40188 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::send_sticker_valid,test_failed,478.680,1.264,2026-10-14T22:02:38Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdaaa727f4b22 is out of bounds for alloc39883 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::send_template_valid,test_failed,478.680,2.549,2026-10-14T22:02:41Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda5f2c556b22 is out of bounds for alloc41051 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::send_text_api_error,test_failed,478.680,1.242,2026-10-14T22:02:42Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda166bc2db22 is out of bounds for alloc38838 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::send_text_api_error_401,test_failed,478.680,1.113,2026-10-14T22:02:43Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda0011b0fb22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::send_text_api_error_429,test_failed,478.680,1.120,2026-10-14T22:02:44Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda74cc695b22 is out of bounds for alloc38795 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::send_text_valid,test_failed,478.680,1.198,2026-10-14T22:02:46Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda35c0b22b22 is out of bounds for alloc39958 of size e0b."
+bsan,infobip_sdk-0.5.2,api::tests::whatsapp::send_video_valid,test_failed,478.680,1.422,2026-10-14T22:02:47Z,2216103.5,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffda14301fdb22 is out of bounds for alloc40014 of size e0b."
+bsan,infobip_sdk-0.5.2,model::tests::email::test_add_domain_request_body_no_domain,success,478.680,1.332,2026-10-14T22:02:48Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_add_domain_request_body_valid,success,478.680,1.312,2026-10-14T22:02:50Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_get_bulks_query_parameters_no_bulk_id,success,478.680,1.332,2026-10-14T22:02:51Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_get_bulks_query_parameters_valid,success,478.680,1.321,2026-10-14T22:02:52Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_get_domains_query_parameters_invalid_page,success,478.680,1.345,2026-10-14T22:02:54Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_get_domains_query_parameters_invalid_page_size,success,478.680,1.308,2026-10-14T22:02:55Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_get_domains_query_parameters_valid,success,478.680,1.313,2026-10-14T22:02:56Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_reschedule_query_parameters_no_bulk_id,success,478.680,1.312,2026-10-14T22:02:58Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_reschedule_query_parameters_valid,success,478.680,1.338,2026-10-14T22:02:59Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_reschedule_request_body_no_send_at,success,478.680,1.327,2026-10-14T22:03:00Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_reschedule_request_body_valid,success,478.680,1.341,2026-10-14T22:03:02Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_send_request_body_long_subject,success,478.680,1.390,2026-10-14T22:03:03Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_send_request_valid,success,478.680,1.391,2026-10-14T22:03:04Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_send_request_valid_full,success,478.680,1.354,2026-10-14T22:03:06Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_validate_address_request_body_no_to,success,478.680,1.340,2026-10-14T22:03:07Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::test_validate_address_request_body_valid,success,478.680,1.324,2026-10-14T22:03:09Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::email::tets_send_request_body_long_callback_data,success,478.680,1.341,2026-10-14T22:03:10Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::create_tfa_application_request_body_empty_name,success,478.680,1.355,2026-10-14T22:03:11Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::create_tfa_application_request_body_valid,success,478.680,1.367,2026-10-14T22:03:13Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::create_tfa_message_template_request_body_empty_name,success,478.680,1.446,2026-10-14T22:03:14Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::create_tfa_message_template_request_body_no_principal_entity_id,success,478.680,1.328,2026-10-14T22:03:15Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::create_tfa_message_template_request_body_valid,success,478.680,1.515,2026-10-14T22:03:17Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::get_delivery_reports_query_parameters_big_limit,success,478.680,1.324,2026-10-14T22:03:18Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::get_delivery_reports_query_parameters_valid,success,478.680,1.351,2026-10-14T22:03:20Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::get_inbound_reports_query_parameters_big_limit,success,478.680,1.324,2026-10-14T22:03:21Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::get_inbound_reports_query_parameters_valid,success,478.680,1.365,2026-10-14T22:03:22Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::get_scheduled_query_parameters_empty_bulk_id,success,478.680,1.330,2026-10-14T22:03:24Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::get_scheduled_query_parameters_valid,success,478.680,1.482,2026-10-14T22:03:25Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::message_from_str,success,478.680,1.334,2026-10-14T22:03:26Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::reschedule_request_body_empty_send_at,success,478.680,1.333,2026-10-14T22:03:28Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::reschedule_request_body_valid,success,478.680,1.381,2026-10-14T22:03:29Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_binary_request_body_empty_hex,success,478.680,1.685,2026-10-14T22:03:31Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_binary_request_body_long_to,success,478.680,1.311,2026-10-14T22:03:32Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_pin_over_sms_request_body_empty_app_id,success,478.680,1.415,2026-10-14T22:03:34Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_pin_over_sms_request_body_empty_message_id,success,478.680,1.315,2026-10-14T22:03:35Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_pin_over_sms_request_body_empty_to,success,478.680,1.310,2026-10-14T22:03:36Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_pin_over_sms_request_body_valid,success,478.680,1.309,2026-10-14T22:03:38Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_bad_turkey_recipient_type,success,478.680,1.814,2026-10-14T22:03:39Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_delivery_time_window_bad_from_hour,success,478.680,1.336,2026-10-14T22:03:41Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_delivery_time_window_bad_from_minute,success,478.680,1.311,2026-10-14T22:03:42Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_delivery_time_window_bad_to_hour,success,478.680,1.342,2026-10-14T22:03:43Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_delivery_time_window_bad_to_minute,success,478.680,1.333,2026-10-14T22:03:45Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_delivery_time_window_from_hour,success,478.680,1.308,2026-10-14T22:03:46Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_delivery_time_window_no_days,success,478.680,1.329,2026-10-14T22:03:47Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_delivery_time_window_to_hour,success,478.680,1.321,2026-10-14T22:03:49Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_long_callback_data,success,478.680,1.348,2026-10-14T22:03:50Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_no_destination,success,478.680,1.363,2026-10-14T22:03:51Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_no_destination_to,success,478.680,1.325,2026-10-14T22:03:53Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_no_messages,success,478.680,1.339,2026-10-14T22:03:54Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_no_principal_entity_id,success,478.680,1.321,2026-10-14T22:03:55Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_no_turkey_recipient_type,success,478.680,1.822,2026-10-14T22:03:57Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_speed_limit_time_unit,success,478.680,1.600,2026-10-14T22:03:59Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_valid,success,478.680,1.332,2026-10-14T22:04:00Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_with_delivery_time_window,success,478.680,1.309,2026-10-14T22:04:01Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::send_request_body_zero_speed_limit_amount,success,478.680,1.310,2026-10-14T22:04:03Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::sms_preview_request_body_invalid_language_code,success,478.680,1.922,2026-10-14T22:04:05Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::sms_preview_request_body_invalid_transliteration,success,478.680,2.816,2026-10-14T22:04:08Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::sms_preview_request_body_valid,success,478.680,3.591,2026-10-14T22:04:11Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::update_tfa_message_template_request_body_no_principal_entity_id,success,478.680,1.324,2026-10-14T22:04:12Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::verify_phone_number_request_body_empty_pin,success,478.680,1.384,2026-10-14T22:04:14Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::sms::verify_phone_number_request_body_valid,success,478.680,1.304,2026-10-14T22:04:15Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::create_template_request_body_full_valid,success,478.680,1.330,2026-10-14T22:04:16Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::create_template_request_body_no_name,success,478.680,1.329,2026-10-14T22:04:18Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::create_template_request_body_structure_body_no_text,success,478.680,1.312,2026-10-14T22:04:19Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::create_template_request_body_structure_long_footer_text,success,478.680,1.308,2026-10-14T22:04:20Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::create_template_request_body_structure_many_buttons,success,478.680,1.316,2026-10-14T22:04:22Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::create_template_request_body_valid,success,478.680,1.340,2026-10-14T22:04:23Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_audio_request_body_valid,success,478.680,1.297,2026-10-14T22:04:24Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_audio_request_content_invalid_media_url,success,478.680,8.214,2026-10-14T22:04:33Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_audio_request_content_no_media_url,success,478.680,1.304,2026-10-14T22:04:34Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_audio_request_full_valid,success,478.680,1.312,2026-10-14T22:04:35Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_contact_request_body_valid,success,478.680,1.321,2026-10-14T22:04:37Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_contact_request_content_no_contacts,success,478.680,1.408,2026-10-14T22:04:38Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_contact_request_full_valid,success,478.680,1.343,2026-10-14T22:04:39Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_document_request_content_invalid_media_url,success,478.680,8.716,2026-10-14T22:04:48Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_document_request_content_long_caption,success,478.680,1.349,2026-10-14T22:04:49Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_document_request_content_long_file_name,success,478.680,1.365,2026-10-14T22:04:51Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_document_request_content_no_media_url,success,478.680,1.317,2026-10-14T22:04:52Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_document_request_full_valid,success,478.680,1.330,2026-10-14T22:04:53Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_document_request_valid,success,478.680,1.313,2026-10-14T22:04:55Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_image_request_body_valid,success,478.680,1.320,2026-10-14T22:04:56Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_image_request_content_invalid_media_url,success,478.680,8.813,2026-10-14T22:05:05Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_image_request_content_long_caption,success,478.680,1.338,2026-10-14T22:05:06Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_image_request_content_no_media_url,success,478.680,1.335,2026-10-14T22:05:08Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_image_request_full_valid,success,478.680,1.321,2026-10-14T22:05:09Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_buttons_request_body_valid,success,478.680,1.329,2026-10-14T22:05:10Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_buttons_request_content_long_body_text,success,478.680,1.326,2026-10-14T22:05:12Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_buttons_request_content_long_footer_text,success,478.680,1.318,2026-10-14T22:05:13Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_buttons_request_content_no_body_text,success,478.680,1.319,2026-10-14T22:05:14Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_buttons_request_content_no_buttons,success,478.680,1.336,2026-10-14T22:05:16Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_buttons_request_content_no_footer_text,success,478.680,1.322,2026-10-14T22:05:17Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_buttons_request_full_valid,success,478.680,1.306,2026-10-14T22:05:18Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_body_valid,success,478.680,1.317,2026-10-14T22:05:20Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_long_action_title,success,478.680,1.345,2026-10-14T22:05:21Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_long_body_text,success,478.680,1.350,2026-10-14T22:05:22Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_long_footer_text,success,478.680,1.393,2026-10-14T22:05:24Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_long_row_description,success,478.680,1.347,2026-10-14T22:05:25Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_long_row_id,success,478.680,1.320,2026-10-14T22:05:26Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_long_row_title,success,478.680,1.337,2026-10-14T22:05:28Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_many_sections,success,478.680,1.363,2026-10-14T22:05:29Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_no_action_title,success,478.680,1.320,2026-10-14T22:05:30Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_no_body_text,success,478.680,1.336,2026-10-14T22:05:32Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_no_footer_text,success,478.680,1.322,2026-10-14T22:05:33Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_no_row_id,success,478.680,1.324,2026-10-14T22:05:34Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_no_row_title,success,478.680,1.336,2026-10-14T22:05:36Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_no_rows,success,478.680,1.324,2026-10-14T22:05:37Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_content_no_sections,success,478.680,1.321,2026-10-14T22:05:38Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_list_request_full_valid,success,478.680,1.317,2026-10-14T22:05:40Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_multiproduct_request_body_content_action_many_sections,success,478.680,1.419,2026-10-14T22:05:41Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_multiproduct_request_body_content_action_no_catalog_id,success,478.680,1.349,2026-10-14T22:05:42Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_multiproduct_request_body_content_action_no_sections,success,478.680,1.345,2026-10-14T22:05:44Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_multiproduct_request_body_content_action_section_long_title,success,478.680,1.349,2026-10-14T22:05:45Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_multiproduct_request_body_content_long_body_text,success,478.680,1.353,2026-10-14T22:05:46Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_multiproduct_request_body_content_no_body_text,success,478.680,1.430,2026-10-14T22:05:48Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_multiproduct_request_body_full_valid,success,478.680,1.361,2026-10-14T22:05:49Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_multiproduct_request_body_valid,success,478.680,1.311,2026-10-14T22:05:51Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_product_request_content_no_catalog_id,success,478.680,1.352,2026-10-14T22:05:52Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_product_request_content_no_footer_text,success,478.680,1.328,2026-10-14T22:05:53Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_product_request_content_no_product_retailer_id,success,478.680,1.336,2026-10-14T22:05:55Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_product_request_full_valid,success,478.680,1.320,2026-10-14T22:05:56Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_interactive_product_request_valid,success,478.680,1.294,2026-10-14T22:05:57Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_location_request_body_valid,success,478.680,1.296,2026-10-14T22:05:59Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_location_request_content_invalid_latitude,success,478.680,1.320,2026-10-14T22:06:00Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_location_request_content_invalid_longitude,success,478.680,1.305,2026-10-14T22:06:01Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_location_request_content_long_address,success,478.680,1.318,2026-10-14T22:06:02Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_location_request_content_long_name,success,478.680,1.304,2026-10-14T22:06:04Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_location_request_full_valid,success,478.680,1.298,2026-10-14T22:06:05Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_sticker_request_body_valid,success,478.680,1.314,2026-10-14T22:06:06Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_sticker_request_content_invalid_media_url,success,478.680,8.746,2026-10-14T22:06:15Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_sticker_request_content_no_media_url,success,478.680,1.721,2026-10-14T22:06:17Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_sticker_request_full_valid,success,478.680,1.324,2026-10-14T22:06:18Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_full_valid,success,478.680,1.316,2026-10-14T22:06:20Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_long_from,success,478.680,1.315,2026-10-14T22:06:21Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_long_to,success,478.680,1.322,2026-10-14T22:06:22Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_message_content_long_template_name,success,478.680,1.324,2026-10-14T22:06:23Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_message_content_no_template_name,success,478.680,1.320,2026-10-14T22:06:25Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_message_invalid_notify_url,success,478.680,8.681,2026-10-14T22:06:34Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_message_long_callback_data,success,478.680,1.325,2026-10-14T22:06:35Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_message_long_id,success,478.680,1.327,2026-10-14T22:06:36Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_message_no_from,success,478.680,1.409,2026-10-14T22:06:38Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_message_no_to,success,478.680,1.348,2026-10-14T22:06:39Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_message_sms_fallback_long_from,success,478.680,1.337,2026-10-14T22:06:40Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_message_sms_fallback_long_text,success,478.680,1.346,2026-10-14T22:06:42Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_message_sms_fallback_no_from,success,478.680,1.349,2026-10-14T22:06:43Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_message_sms_fallback_no_text,success,478.680,1.348,2026-10-14T22:06:44Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_no_messages,success,478.680,1.323,2026-10-14T22:06:46Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_template_request_body_valid,success,478.680,1.309,2026-10-14T22:06:47Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_text_request_body_valid,success,478.680,1.310,2026-10-14T22:06:48Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_text_request_full_valid,success,478.680,1.322,2026-10-14T22:06:50Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_text_request_invalid_notify_url,success,478.680,8.847,2026-10-14T22:06:58Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_text_request_long_callback_data,success,478.680,1.782,2026-10-14T22:07:00Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_text_request_long_from,success,478.680,1.333,2026-10-14T22:07:02Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_text_request_long_id,success,478.680,1.367,2026-10-14T22:07:03Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_text_request_long_to,success,478.680,1.335,2026-10-14T22:07:04Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_text_request_no_from,success,478.680,1.331,2026-10-14T22:07:06Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_text_request_no_to,success,478.680,1.318,2026-10-14T22:07:07Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_text_request_sms_content_long_text,success,478.680,1.342,2026-10-14T22:07:08Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_text_request_sms_content_no_text,success,478.680,1.321,2026-10-14T22:07:10Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_video_request_body_valid,success,478.680,1.341,2026-10-14T22:07:11Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_video_request_content_invalid_media_url,success,478.680,8.678,2026-10-14T22:07:20Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_video_request_content_long_caption,success,478.680,1.342,2026-10-14T22:07:21Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_video_request_content_no_media_url,success,478.680,1.349,2026-10-14T22:07:22Z,2216103.5,,
+bsan,infobip_sdk-0.5.2,model::tests::whatsapp::send_video_request_full_valid,success,478.680,1.339,2026-10-14T22:07:24Z,2216103.5,,

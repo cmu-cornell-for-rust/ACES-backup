@@ -1,0 +1,7 @@
+bsan,http-muncher-0.3.2,tests::test_catch_error,test_failed,17.114,0.605,2026-10-14T14:59:02Z,2216089.4,bsan,"error: Undefined Behavior: write access through <1361192>(unprotected) at alloc31655[0x4] is forbidden"
+bsan,http-muncher-0.3.2,tests::test_error_status,test_failed,17.114,0.435,2026-10-14T14:59:02Z,2216089.4,bsan,"error: Undefined Behavior: write access through <1360800>(unprotected) at alloc31653[0x4] is forbidden"
+bsan,http-muncher-0.3.2,tests::test_request_parser,test_failed,17.114,0.426,2026-10-14T14:59:03Z,2216089.4,bsan,"error: Undefined Behavior: write access through <1360976>(unprotected) at alloc31652[0x4] is forbidden"
+bsan,http-muncher-0.3.2,tests::test_response_parser,test_failed,17.114,0.429,2026-10-14T14:59:03Z,2216089.4,bsan,"error: Undefined Behavior: write access through <1361400>(unprotected) at alloc31655[0x4] is forbidden"
+bsan,http-muncher-0.3.2,tests::test_streaming,test_failed,17.114,0.431,2026-10-14T14:59:04Z,2216089.4,bsan,"error: Undefined Behavior: write access through <1361368>(unprotected) at alloc31655[0x4] is forbidden"
+bsan,http-muncher-0.3.2,tests::test_version,success,17.114,0.334,2026-10-14T14:59:04Z,2216089.4,,
+bsan,http-muncher-0.3.2,tests::test_ws_upgrade,test_failed,17.114,0.429,2026-10-14T14:59:05Z,2216089.4,bsan,"error: Undefined Behavior: write access through <1361456>(unprotected) at alloc31655[0x4] is forbidden"

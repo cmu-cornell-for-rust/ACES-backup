@@ -1,0 +1,3 @@
+bsan,adbutils-0.1.1,client::test::test_connect,test_failed,38.795,0.445,2026-10-14T14:59:28Z,2216089.0,bsan,"error: Undefined Behavior: reborrow through <1429760>(unprotected) at alloc32598[0xb0] is forbidden"
+bsan,adbutils-0.1.1,client::test::test_devices,test_failed,38.795,0.425,2026-10-14T14:59:29Z,2216089.0,panic,"thread 'client::test::test_devices' (2756452) panicked at src/client.rs:134:50: get _connect error: StartAdbFailed { source: Os { code: 13, kind: PermissionDenied, message: ""Permission denied"" } }"
+bsan,adbutils-0.1.1,client::test::test_path,success,38.795,0.437,2026-10-14T14:59:29Z,2216089.0,,

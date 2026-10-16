@@ -1,0 +1,32 @@
+bsan,cargo-cache-0.8.3,CARGO_HOME_subdirs_are_known,test_failed,238.679,1.121,2026-10-14T23:14:32Z,2216108.3,panic,"thread 'CARGO_HOME_subdirs_are_known' (1928625) panicked at tests/all_cargo_cache_paths_are_known.rs:64:5: fake cargo home was not created!"
+bsan,cargo-cache-0.8.3,alternative_registry_works,test_failed,238.679,1.292,2026-10-14T23:14:33Z,2216108.3,panic,"thread 'alternative_registry_works' (1928802) panicked at tests/alternative_registry_cloudsmith.rs:91:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,cargo-cache-0.8.3,build_and_check_size_test,test_failed,238.679,2.215,2026-10-14T23:14:35Z,2216108.3,panic,"thread 'build_and_check_size_test' (1929004) panicked at tests/size_test.rs:34:5: fetching deps of dummy crate did not succeed"
+bsan,cargo-cache-0.8.3,cargo_new_and_run_local,timeout,238.679,3600.006,2026-10-15T00:14:35Z,2216108.3,other,"test cargo_new_and_run_local has been running for over 60 seconds"
+bsan,cargo-cache-0.8.3,clean_unref::clitests::crate_name_crate_none,success,238.679,223.820,2026-10-15T00:18:19Z,2216108.3,,
+bsan,cargo-cache-0.8.3,clean_unref::clitests::crate_name_crate_some,success,238.679,2.507,2026-10-15T00:18:22Z,2216108.3,,
+bsan,cargo-cache-0.8.3,clean_unref::clitests::crate_name_git_none,success,238.679,2.283,2026-10-15T00:18:24Z,2216108.3,,
+bsan,cargo-cache-0.8.3,clean_unref::clitests::crate_name_git_some,success,238.679,2.311,2026-10-15T00:18:26Z,2216108.3,,
+bsan,cargo-cache-0.8.3,clean_unref::clitests::sourcekind_inner,success,238.679,2.322,2026-10-15T00:18:29Z,2216108.3,,
+bsan,cargo-cache-0.8.3,cli::clitests::all_versions_are_equal,timeout,238.679,3600.005,2026-10-15T01:18:29Z,2216108.3,other,"test cli::clitests::all_versions_are_equal has been running for over 60 seconds"
+bsan,cargo-cache-0.8.3,cli::clitests::bare_dry_run_warns,timeout,238.679,3600.007,2026-10-15T02:18:29Z,2216108.3,other,"test cli::clitests::bare_dry_run_warns has been running for over 60 seconds"
+bsan,cargo-cache-0.8.3,cli::clitests::run_help,timeout,238.679,3600.005,2026-10-15T03:18:29Z,2216108.3,other,"test cli::clitests::run_help has been running for over 60 seconds"
+bsan,cargo-cache-0.8.3,cli::clitests::run_help_query,timeout,238.679,3600.006,2026-10-15T04:18:29Z,2216108.3,other,"test cli::clitests::run_help_query has been running for over 60 seconds"
+bsan,cargo-cache-0.8.3,cli::clitests::run_help_subcommand,timeout,238.679,3600.007,2026-10-15T05:18:29Z,2216108.3,other,"test cli::clitests::run_help_subcommand has been running for over 60 seconds"
+bsan,cargo-cache-0.8.3,commands::query::query_tests::query_subcmd_hyphen_long,timeout,238.679,3600.004,2026-10-15T06:18:29Z,2216108.3,other,"test commands::query::query_tests::query_subcmd_hyphen_long has been running for over 60 seconds"
+bsan,cargo-cache-0.8.3,commands::query::query_tests::query_subcmd_hyphen_short,timeout,238.679,3600.007,2026-10-15T07:18:29Z,2216108.3,other,"test commands::query::query_tests::query_subcmd_hyphen_short has been running for over 60 seconds"
+bsan,cargo-cache-0.8.3,commands::query::query_tests::query_subcmd_long,timeout,238.679,3600.006,2026-10-15T08:18:29Z,2216108.3,other,"test commands::query::query_tests::query_subcmd_long has been running for over 60 seconds"
+bsan,cargo-cache-0.8.3,commands::query::query_tests::query_subcmd_short,timeout,238.679,3600.006,2026-10-15T09:18:29Z,2216108.3,other,"test commands::query::query_tests::query_subcmd_short has been running for over 60 seconds"
+bsan,cargo-cache-0.8.3,commands::trim::parse_size_limit::size_limit,success,238.679,30.910,2026-10-15T09:19:00Z,2216108.3,,
+bsan,cargo-cache-0.8.3,commands::trim::parse_size_limit::size_limit_none_panics,success,238.679,2.717,2026-10-15T09:19:03Z,2216108.3,,
+bsan,cargo-cache-0.8.3,date::libtests::parse_dates,success,238.679,117.460,2026-10-15T09:21:00Z,2216108.3,,
+bsan,cargo-cache-0.8.3,date::libtests::parse_dates_panic1,success,238.679,15.691,2026-10-15T09:21:16Z,2216108.3,,
+bsan,cargo-cache-0.8.3,date::libtests::parse_dates_panic2,success,238.679,15.309,2026-10-15T09:21:31Z,2216108.3,,
+bsan,cargo-cache-0.8.3,date::libtests::parse_dates_panic3,success,238.679,15.207,2026-10-15T09:21:46Z,2216108.3,,
+bsan,cargo-cache-0.8.3,dirsizes::libtests::test_DirSizes,success,238.679,2.376,2026-10-15T09:21:49Z,2216108.3,,
+bsan,cargo-cache-0.8.3,dirsizes::libtests::test_DirSizes_actually_empty,success,238.679,2.228,2026-10-15T09:21:51Z,2216108.3,,
+bsan,cargo-cache-0.8.3,dirsizes::libtests::test_DirSizes_almost_empty,success,238.679,2.203,2026-10-15T09:21:53Z,2216108.3,,
+bsan,cargo-cache-0.8.3,dirsizes::libtests::test_DirSizes_gigs,success,238.679,2.209,2026-10-15T09:21:55Z,2216108.3,,
+bsan,cargo-cache-0.8.3,git::gittest::test_fsck_repo,test_failed,238.679,2.045,2026-10-15T09:21:57Z,2216108.3,bsan,"error: Undefined Behavior: write access through <1537328>(unprotected) at alloc34596[0x0] is forbidden"
+bsan,cargo-cache-0.8.3,git::gittest::test_gc_repo,test_failed,238.679,3.701,2026-10-15T09:22:01Z,2216108.3,bsan,"error: Undefined Behavior: write access through <18084400>(unprotected) at alloc293627[0x0] is forbidden"
+bsan,cargo-cache-0.8.3,library::libtests::test_CargoCachePaths_gen,success,238.679,2.196,2026-10-15T09:22:03Z,2216108.3,,
+bsan,cargo-cache-0.8.3,library::libtests::test_CargoCachePaths_paths,timeout,238.679,3600.005,2026-10-15T10:22:03Z,2216108.3,other,"test library::libtests::test_CargoCachePaths_paths has been running for over 60 seconds"

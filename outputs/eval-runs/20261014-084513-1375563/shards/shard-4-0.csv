@@ -1,0 +1,15 @@
+bsan,brasilapi-0.5.1,bank::bank_tests::get_bank_error,success,350.874,5.330,2026-10-14T14:23:07Z,2216084.0,,
+bsan,brasilapi-0.5.1,bank::bank_tests::get_bank_test,timeout,350.874,3600.005,2026-10-14T15:23:07Z,2216084.0,other,"test bank::bank_tests::get_bank_test has been running for over 60 seconds"
+bsan,brasilapi-0.5.1,cep::cep_tests::get_cep_error,success,350.874,21.318,2026-10-14T15:23:28Z,2216084.0,,
+bsan,brasilapi-0.5.1,cep::cep_tests::get_cep_test,success,350.874,4.335,2026-10-14T15:23:33Z,2216084.0,,
+bsan,brasilapi-0.5.1,cep::cep_tests::get_cep_unexpected_error,test_failed,350.874,7.545,2026-10-14T15:23:40Z,2216084.0,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdaeeb7ada3c7 is out of bounds for alloc39142 of size e0b."
+bsan,brasilapi-0.5.1,cep::cep_tests::get_validate_unexpected_error,test_failed,350.874,1.099,2026-10-14T15:23:41Z,2216084.0,bsan,"error: Undefined Behavior: an access of size 1b at offset 0xffffdafd4f7283c7 is out of bounds for alloc39142 of size e0b."
+bsan,brasilapi-0.5.1,cep::cep_tests::validate_test,success,350.874,1.574,2026-10-14T15:23:43Z,2216084.0,,
+bsan,brasilapi-0.5.1,cnpj::cnpj_tests::test_get_cnpj,success,350.874,93.620,2026-10-14T15:25:16Z,2216084.0,,
+bsan,brasilapi-0.5.1,ddd::ddd_tests::ddd_exists_test,success,350.874,8.149,2026-10-14T15:25:25Z,2216084.0,,
+bsan,brasilapi-0.5.1,ddd::ddd_tests::get_ddd_error,success,350.874,3.904,2026-10-14T15:25:29Z,2216084.0,,
+bsan,brasilapi-0.5.1,ddd::ddd_tests::get_ddd_test,success,350.874,2.382,2026-10-14T15:25:31Z,2216084.0,,
+bsan,brasilapi-0.5.1,holidays::holidays_tests::get_holiday_error_test,success,350.874,2.595,2026-10-14T15:25:34Z,2216084.0,,
+bsan,brasilapi-0.5.1,holidays::holidays_tests::get_holiday_test,success,350.874,2.129,2026-10-14T15:25:36Z,2216084.0,,
+bsan,brasilapi-0.5.1,holidays::holidays_tests::get_holidays_error_test,success,350.874,1.667,2026-10-14T15:25:37Z,2216084.0,,
+bsan,brasilapi-0.5.1,holidays::holidays_tests::get_holidays_test,success,350.874,3.480,2026-10-14T15:25:41Z,2216084.0,,

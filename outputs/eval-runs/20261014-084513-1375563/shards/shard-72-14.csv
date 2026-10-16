@@ -1,0 +1,10 @@
+bsan,playbook-0.4.2,test_closure_deserialize00,success,132.018,0.878,2026-10-15T03:26:37Z,2216152.14,,
+bsan,playbook-0.4.2,test_closure_deserialize01,success,132.018,0.896,2026-10-15T03:26:38Z,2216152.14,,
+bsan,playbook-0.4.2,test_closure_deserialize02,success,132.018,0.874,2026-10-15T03:26:39Z,2216152.14,,
+bsan,playbook-0.4.2,test_containers::docker_start00,test_failed,132.018,263.157,2026-10-15T03:31:02Z,2216152.14,panic,"thread 'test_containers::docker_start00' (3495933) panicked at tests/ci.rs:52:25: Failed to identify the user."
+bsan,playbook-0.4.2,test_containers::docker_start01,test_failed,132.018,241.591,2026-10-15T03:35:04Z,2216152.14,panic,"thread 'test_containers::docker_start01' (3521101) panicked at tests/ci.rs:68:25: Failed to identify the user."
+bsan,playbook-0.4.2,test_containers::docker_start02,test_failed,132.018,252.373,2026-10-15T03:39:16Z,2216152.14,panic,"thread 'test_containers::docker_start02' (3522916) panicked at tests/ci.rs:85:25: Failed to identify the user."
+bsan,playbook-0.4.2,test_containers::docker_startn0,success,132.018,255.766,2026-10-15T03:43:32Z,2216152.14,,
+bsan,playbook-0.4.2,test_containers::full_play01,test_failed,132.018,323.356,2026-10-15T03:48:56Z,2216152.14,panic,"thread 'test_containers::full_play01' (3524492) panicked at tests/ci.rs:103:25: Error: exit_code = 4"
+bsan,playbook-0.4.2,test_containers::full_play02_test_sys_vars,test_failed,132.018,393.258,2026-10-15T03:55:29Z,2216152.14,panic,"thread 'test_containers::full_play02_test_sys_vars' (3524949) panicked at tests/ci.rs:121:25: Error: exit_code = 4"
+bsan,playbook-0.4.2,test_parallelism::sys_fork_nolimit,success,132.018,3.597,2026-10-15T03:55:32Z,2216152.14,,

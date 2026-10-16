@@ -1,0 +1,23 @@
+bsan,codealong-0.1.1,analyzed_diff::tests::test_add_stats,success,227.541,0.709,2026-10-14T17:59:26Z,2216096.3,,
+bsan,codealong-0.1.1,analyzed_diff::tests::test_addition,success,227.541,0.674,2026-10-14T17:59:26Z,2216096.3,,
+bsan,codealong-0.1.1,commit_analyzer::tests::test_initial_commit,test_failed,227.541,0.886,2026-10-14T17:59:27Z,2216096.3,bsan,"error: Undefined Behavior: write access through <1392376>(unprotected) at alloc32270[0x0] is forbidden"
+bsan,codealong-0.1.1,commit_analyzer::tests::test_merge_commit,test_failed,227.541,0.855,2026-10-14T17:59:28Z,2216096.3,bsan,"error: Undefined Behavior: write access through <1392376>(unprotected) at alloc32270[0x0] is forbidden"
+bsan,codealong-0.1.1,commit_analyzer::tests::test_with_config,test_failed,227.541,0.731,2026-10-14T17:59:29Z,2216096.3,bsan,"error: Undefined Behavior: write access through <1392392>(unprotected) at alloc32270[0x0] is forbidden"
+bsan,codealong-0.1.1,config::tests::test_base,success,227.541,1.449,2026-10-14T17:59:30Z,2216096.3,,
+bsan,codealong-0.1.1,config::tests::test_config_for_file,success,227.541,2.165,2026-10-14T17:59:32Z,2216096.3,,
+bsan,codealong-0.1.1,config::tests::test_config_for_identity,success,227.541,6.983,2026-10-14T17:59:39Z,2216096.3,,
+bsan,codealong-0.1.1,config::tests::test_deserialization,success,227.541,2.186,2026-10-14T17:59:42Z,2216096.3,,
+bsan,codealong-0.1.1,config::tests::test_merge,success,227.541,0.602,2026-10-14T17:59:42Z,2216096.3,,
+bsan,codealong-0.1.1,config::tests::test_overlapping_globs,success,227.541,0.653,2026-10-14T17:59:43Z,2216096.3,,
+bsan,codealong-0.1.1,git_blame::tests::it_works,test_failed,227.541,0.723,2026-10-14T17:59:44Z,2216096.3,bsan,"error: Undefined Behavior: write access through <1392424>(unprotected) at alloc32270[0x0] is forbidden"
+bsan,codealong-0.1.1,hunk_analyzer::tests::test_impact,success,227.541,0.638,2026-10-14T17:59:44Z,2216096.3,,
+bsan,codealong-0.1.1,identity::tests::test_parse,success,227.541,4.312,2026-10-14T17:59:49Z,2216096.3,,
+bsan,codealong-0.1.1,repo::tests::test_clone,test_failed,227.541,0.926,2026-10-14T17:59:50Z,2216096.3,bsan,"error: Undefined Behavior: write access through <1530288>(unprotected) at alloc32887[0x0] is forbidden"
+bsan,codealong-0.1.1,repo_analyzer::tests::test_analyze,test_failed,227.541,0.913,2026-10-14T17:59:51Z,2216096.3,bsan,"error: Undefined Behavior: write access through <1392424>(unprotected) at alloc32272[0x0] is forbidden"
+bsan,codealong-0.1.1,repo_analyzer::tests::test_ignore_unknown_authors,test_failed,227.541,0.925,2026-10-14T17:59:52Z,2216096.3,bsan,"error: Undefined Behavior: write access through <1392392>(unprotected) at alloc32272[0x0] is forbidden"
+bsan,codealong-0.1.1,repo_config::tests::test_from_dir_with_config,test_failed,227.541,0.704,2026-10-14T17:59:52Z,2216096.3,bsan,"error: Undefined Behavior: write access through <1392416>(unprotected) at alloc32229[0x0] is forbidden"
+bsan,codealong-0.1.1,repo_config::tests::test_from_dir_without_config,test_failed,227.541,0.689,2026-10-14T17:59:53Z,2216096.3,bsan,"error: Undefined Behavior: write access through <1392384>(unprotected) at alloc32229[0x0] is forbidden"
+bsan,codealong-0.1.1,repo_config::tests::test_from_repository,test_failed,227.541,0.804,2026-10-14T17:59:54Z,2216096.3,bsan,"error: Undefined Behavior: write access through <1392424>(unprotected) at alloc32272[0x0] is forbidden"
+bsan,codealong-0.1.1,repo_info::tests::test_from_url,success,227.541,5.886,2026-10-14T18:00:00Z,2216096.3,,
+bsan,codealong-0.1.1,work_stats::tests::new_work,success,227.541,0.799,2026-10-14T18:00:01Z,2216096.3,,
+bsan,codealong-0.1.1,workspace::tests::test_discover,success,227.541,29.668,2026-10-14T18:00:30Z,2216096.3,,

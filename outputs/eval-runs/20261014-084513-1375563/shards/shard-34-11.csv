@@ -1,0 +1,3 @@
+bsan,multisafepay-0.2.4,tests::endpoint_test::test_endpoint_url,success,37.811,0.379,2026-10-14T23:26:34Z,2216114.11,,
+bsan,multisafepay-0.2.4,tests::http_test::test_endpoint_url,test_failed,37.811,0.579,2026-10-14T23:26:35Z,2216114.11,bsan,"error: Undefined Behavior: write access through <1451160>(StrongProtector) at alloc31960[0x128] is forbidden"
+bsan,multisafepay-0.2.4,tests::utils_test::test_restful_url,success,37.811,0.379,2026-10-14T23:26:35Z,2216114.11,,

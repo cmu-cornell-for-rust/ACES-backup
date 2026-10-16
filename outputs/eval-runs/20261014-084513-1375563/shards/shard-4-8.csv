@@ -1,0 +1,14 @@
+bsan,lcms2-6.0.0,context::context,success,30.228,0.466,2026-10-14T14:16:58Z,2216084.8,,
+bsan,lcms2-6.0.0,ext::temp,success,30.228,0.396,2026-10-14T14:16:58Z,2216084.8,,
+bsan,lcms2-6.0.0,flags::flags,success,30.228,0.443,2026-10-14T14:16:59Z,2216084.8,,
+bsan,lcms2-6.0.0,locale::locale,success,30.228,0.440,2026-10-14T14:16:59Z,2216084.8,,
+bsan,lcms2-6.0.0,mlu::mlu,test_failed,30.228,0.601,2026-10-14T14:17:00Z,2216084.8,bsan,"error: Undefined Behavior: write access through <1385616>(unprotected) at alloc31949[0x20] is forbidden"
+bsan,lcms2-6.0.0,namedcolorlist::named,test_failed,30.228,0.466,2026-10-14T14:17:00Z,2216084.8,bsan,"error: Undefined Behavior: write access through <1381264>(unprotected) at alloc32019[0x0] is forbidden"
+bsan,lcms2-6.0.0,pipeline::pipeline,success,30.228,0.378,2026-10-14T14:17:01Z,2216084.8,,
+bsan,lcms2-6.0.0,profile::bad_icc,success,30.228,0.629,2026-10-14T14:17:01Z,2216084.8,,
+bsan,lcms2-6.0.0,profile::icc,success,30.228,0.499,2026-10-14T14:17:02Z,2216084.8,,
+bsan,lcms2-6.0.0,profile::setters,success,30.228,0.377,2026-10-14T14:17:02Z,2216084.8,,
+bsan,lcms2-6.0.0,profile::tags_read,success,30.228,0.376,2026-10-14T14:17:03Z,2216084.8,,
+bsan,lcms2-6.0.0,profile::tags_write,test_failed,30.228,0.629,2026-10-14T14:17:03Z,2216084.8,bsan,"error: Undefined Behavior: write access through <1380320>(unprotected) at alloc31973[0x20] is forbidden"
+bsan,lcms2-6.0.0,profile::unwind_safety,success,30.228,0.653,2026-10-14T14:17:04Z,2216084.8,,
+bsan,lcms2-6.0.0,tonecurve::tones,success,30.228,0.548,2026-10-14T14:17:05Z,2216084.8,,

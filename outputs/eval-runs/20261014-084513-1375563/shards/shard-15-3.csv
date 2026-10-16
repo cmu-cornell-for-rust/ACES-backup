@@ -1,0 +1,22 @@
+bsan,molconv-0.2.0,cli::tests::test_file_exists,success,59.300,0.769,2026-10-14T17:19:09Z,2216095.3,,
+bsan,molconv-0.2.0,cli::tests::test_is_trajectory_file,success,59.300,0.738,2026-10-14T17:19:10Z,2216095.3,,
+bsan,molconv-0.2.0,cli::tests::test_read_index_file,success,59.300,0.670,2026-10-14T17:19:11Z,2216095.3,,
+bsan,molconv-0.2.0,cli::tests::test_trajectory_exists,success,59.300,0.720,2026-10-14T17:19:11Z,2216095.3,,
+bsan,molconv-0.2.0,tests::test_frame_default_capacity,success,59.300,0.686,2026-10-14T17:19:12Z,2216095.3,,
+bsan,molconv-0.2.0,tests::test_frame_filter_atoms,success,59.300,0.710,2026-10-14T17:19:13Z,2216095.3,,
+bsan,molconv-0.2.0,tests::test_frame_with_capacity,success,59.300,0.745,2026-10-14T17:19:13Z,2216095.3,,
+bsan,molconv-0.2.0,trajectory::tests::test_trajectory_iterator,success,59.300,0.782,2026-10-14T17:19:14Z,2216095.3,,
+bsan,molconv-0.2.0,trajectory::tests::test_trajectory_num_atoms,success,59.300,0.768,2026-10-14T17:19:15Z,2216095.3,,
+bsan,molconv-0.2.0,trajectory::tests::test_trajectory_read,success,59.300,0.711,2026-10-14T17:19:16Z,2216095.3,,
+bsan,molconv-0.2.0,trajectory::tests::test_trajectory_write,success,59.300,0.774,2026-10-14T17:19:17Z,2216095.3,,
+bsan,molconv-0.2.0,trajectory::tests::test_trajecvtory_type,success,59.300,0.714,2026-10-14T17:19:17Z,2216095.3,,
+bsan,molconv-0.2.0,xdr::c_abi::xdr_seek::tests::test_xdr_seek,success,59.300,0.694,2026-10-14T17:19:18Z,2216095.3,,
+bsan,molconv-0.2.0,xdr::c_abi::xdr_seek::tests::test_xdr_tell,test_failed,59.300,0.875,2026-10-14T17:19:19Z,2216095.3,bsan,"error: Undefined Behavior: write access through <1368936>(unprotected) at alloc31721[0x0] is forbidden"
+bsan,molconv-0.2.0,xdr::c_abi::xdrfile_trr::tests::test_read_trr_natoms,success,59.300,0.676,2026-10-14T17:19:20Z,2216095.3,,
+bsan,molconv-0.2.0,xdr::c_abi::xdrfile_trr::tests::test_read_trr_nframes,success,59.300,0.797,2026-10-14T17:19:20Z,2216095.3,,
+bsan,molconv-0.2.0,xdr::c_abi::xdrfile_trr::tests::test_read_write_trr,test_failed,59.300,0.620,2026-10-14T17:19:21Z,2216095.3,bsan,"error: Undefined Behavior: write access through <1426944>(unprotected) at alloc34844[0x0] is forbidden"
+bsan,molconv-0.2.0,xdr::c_abi::xdrfile_xtc::tests::test_read_write_xtc,test_failed,59.300,0.606,2026-10-14T17:19:22Z,2216095.3,bsan,"error: Undefined Behavior: write access through <1430160>(unprotected) at alloc34963[0x0] is forbidden"
+bsan,molconv-0.2.0,xdr::c_abi::xdrfile_xtc::tests::test_read_xtc_natoms,success,59.300,0.685,2026-10-14T17:19:22Z,2216095.3,,
+bsan,molconv-0.2.0,xdr::c_abi::xdrfile_xtc::tests::test_read_xtc_nframes,success,59.300,0.749,2026-10-14T17:19:23Z,2216095.3,,
+bsan,molconv-0.2.0,xdr::tests::test_read_write_trr,test_failed,59.300,0.579,2026-10-14T17:19:24Z,2216095.3,bsan,"error: Undefined Behavior: write access through <1427256>(unprotected) at alloc34815[0x24] is forbidden"
+bsan,molconv-0.2.0,xdr::tests::test_read_write_xtc,success,59.300,0.721,2026-10-14T17:19:25Z,2216095.3,,

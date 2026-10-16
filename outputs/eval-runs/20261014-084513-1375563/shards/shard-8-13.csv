@@ -1,0 +1,13 @@
+bsan,office-0.8.1,error_file,success,35.969,419.828,2026-10-14T15:05:56Z,2216088.13,,
+bsan,office-0.8.1,issue_2,success,35.969,383.364,2026-10-14T15:12:19Z,2216088.13,,
+bsan,office-0.8.1,issue_3,success,35.969,336.441,2026-10-14T15:17:56Z,2216088.13,,
+bsan,office-0.8.1,issue_4,success,35.969,371.167,2026-10-14T15:24:07Z,2216088.13,,
+bsan,office-0.8.1,issue_6,success,35.969,382.682,2026-10-14T15:30:30Z,2216088.13,,
+bsan,office-0.8.1,issue_9,success,35.969,367.264,2026-10-14T15:36:37Z,2216088.13,,
+bsan,office-0.8.1,special_chrs_xlsb,test_failed,35.969,293.903,2026-10-14T15:41:31Z,2216088.13,panic,"thread 'special_chrs_xlsb' (634779) panicked at src/utils.rs:8:14: unsafe precondition(s) violated: slice::from_raw_parts requires the pointer to be aligned and non-null, and the total size of the slice not to exceed `isize::MAX`"
+bsan,office-0.8.1,special_chrs_xlsx,success,35.969,375.321,2026-10-14T15:47:46Z,2216088.13,,
+bsan,office-0.8.1,test_dimensions,success,35.969,2.185,2026-10-14T15:47:49Z,2216088.13,,
+bsan,office-0.8.1,test_parse_error,success,35.969,0.542,2026-10-14T15:47:49Z,2216088.13,,
+bsan,office-0.8.1,vba,success,35.969,1169.529,2026-10-14T16:07:19Z,2216088.13,,
+bsan,office-0.8.1,xls,success,35.969,5.049,2026-10-14T16:07:24Z,2216088.13,,
+bsan,office-0.8.1,xlsb,test_failed,35.969,265.119,2026-10-14T16:11:49Z,2216088.13,panic,"thread 'xlsb' (643515) panicked at src/utils.rs:8:14: unsafe precondition(s) violated: slice::from_raw_parts requires the pointer to be aligned and non-null, and the total size of the slice not to exceed `isize::MAX`"

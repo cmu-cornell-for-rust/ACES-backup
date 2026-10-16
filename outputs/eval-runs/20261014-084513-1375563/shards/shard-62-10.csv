@@ -1,0 +1,5 @@
+bsan,rust-locale-0.1.4,ctype::tests::is_always_space,success,15.991,0.370,2026-10-15T01:29:55Z,2216142.10,,
+bsan,rust-locale-0.1.4,ctype::tests::is_blank,test_failed,15.991,0.563,2026-10-15T01:29:56Z,2216142.10,crash,"BorrowSanitizer:DEADLYSIGNAL"
+bsan,rust-locale-0.1.4,ctype::tests::is_space_i18n,test_failed,15.991,0.422,2026-10-15T01:29:56Z,2216142.10,panic,"thread 'ctype::tests::is_space_i18n' (3889414) panicked at src/ctype.rs:180:14: iswspace_native failed. error=No such file or directory"
+bsan,rust-locale-0.1.4,ctype::tests::to_lowercase,test_failed,15.991,0.456,2026-10-15T01:29:57Z,2216142.10,crash,"BorrowSanitizer:DEADLYSIGNAL"
+bsan,rust-locale-0.1.4,ctype::tests::to_uppercase,test_failed,15.991,0.543,2026-10-15T01:29:58Z,2216142.10,crash,"BorrowSanitizer:DEADLYSIGNAL"

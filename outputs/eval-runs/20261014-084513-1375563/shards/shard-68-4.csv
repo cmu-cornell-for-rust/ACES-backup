@@ -1,0 +1,60 @@
+bsan,daas-0.2.2,doc::tests::test_doc_attributes_ok,success,502.422,1.031,2026-10-15T02:40:58Z,2216148.4,,
+bsan,daas-0.2.2,doc::tests::test_doc_binary_data_ok,test_failed,502.422,1.098,2026-10-15T02:40:59Z,2216148.4,panic,"thread 'doc::tests::test_doc_binary_data_ok' (2676161) panicked at src/doc.rs:783:17: Cannot read the audio file: No such file or directory (os error 2)"
+bsan,daas-0.2.2,doc::tests::test_doc_data_ok,success,502.422,1.077,2026-10-15T02:41:00Z,2216148.4,,
+bsan,daas-0.2.2,doc::tests::test_doc_id_ok,success,502.422,1.069,2026-10-15T02:41:01Z,2216148.4,,
+bsan,daas-0.2.2,doc::tests::test_doc_rev_empty,success,502.422,1.069,2026-10-15T02:41:02Z,2216148.4,,
+bsan,daas-0.2.2,doc::tests::test_from_serialize,success,502.422,1.080,2026-10-15T02:41:03Z,2216148.4,,
+bsan,daas-0.2.2,doc::tests::test_has_tag_ok,success,502.422,1.065,2026-10-15T02:41:04Z,2216148.4,,
+bsan,daas-0.2.2,doc::tests::test_meta_data_ok,success,502.422,1.074,2026-10-15T02:41:05Z,2216148.4,,
+bsan,daas-0.2.2,doc::tests::test_new_obj_ok,success,502.422,1.065,2026-10-15T02:41:06Z,2216148.4,,
+bsan,daas-0.2.2,doc::tests::test_tagging_ok,success,502.422,1.072,2026-10-15T02:41:08Z,2216148.4,,
+bsan,daas-0.2.2,doc::tests::test_validate_doc_fake_dtc,success,502.422,1.078,2026-10-15T02:41:09Z,2216148.4,,
+bsan,daas-0.2.2,doc::tests::test_validate_doc_ok,success,502.422,1.095,2026-10-15T02:41:10Z,2216148.4,,
+bsan,daas-0.2.2,doc::tests::test_validate_doc_tampered_dtc,success,502.422,1.045,2026-10-15T02:41:11Z,2216148.4,,
+bsan,daas-0.2.2,errors::tests::test_error_01,success,502.422,1.037,2026-10-15T02:41:12Z,2216148.4,,
+bsan,daas-0.2.2,errors::tests::test_error_02,success,502.422,1.042,2026-10-15T02:41:13Z,2216148.4,,
+bsan,daas-0.2.2,errors::tests::test_error_03,success,502.422,1.010,2026-10-15T02:41:14Z,2216148.4,,
+bsan,daas-0.2.2,errors::tests::test_error_04,success,502.422,1.045,2026-10-15T02:41:15Z,2216148.4,,
+bsan,daas-0.2.2,errors::tests::test_error_05,success,502.422,1.036,2026-10-15T02:41:16Z,2216148.4,,
+bsan,daas-0.2.2,errors::tests::test_error_06,success,502.422,1.039,2026-10-15T02:41:17Z,2216148.4,,
+bsan,daas-0.2.2,errors::tests::test_error_07,success,502.422,1.035,2026-10-15T02:41:18Z,2216148.4,,
+bsan,daas-0.2.2,errors::tests::test_error_08,success,502.422,1.038,2026-10-15T02:41:19Z,2216148.4,,
+bsan,daas-0.2.2,errors::tests::test_error_09,success,502.422,1.041,2026-10-15T02:41:20Z,2216148.4,,
+bsan,daas-0.2.2,errors::tests::test_error_10,success,502.422,1.042,2026-10-15T02:41:21Z,2216148.4,,
+bsan,daas-0.2.2,errors::tests::test_error_11,success,502.422,1.046,2026-10-15T02:41:22Z,2216148.4,,
+bsan,daas-0.2.2,errors::tests::test_error_12,success,502.422,1.034,2026-10-15T02:41:23Z,2216148.4,,
+bsan,daas-0.2.2,eventing::broker::tests::test_make_topic,success,502.422,1.068,2026-10-15T02:41:24Z,2216148.4,,
+bsan,daas-0.2.2,eventing::broker::tests::test_send_message,test_failed,502.422,1.099,2026-10-15T02:41:25Z,2216148.4,panic,"thread 'eventing::broker::tests::test_send_message' (2677403) panicked at src/eventing/broker.rs:164:17: assertion failed: false"
+bsan,daas-0.2.2,macros::tests::test_author,success,502.422,1.041,2026-10-15T02:41:27Z,2216148.4,,
+bsan,daas-0.2.2,macros::tests::test_get_unix_now,success,502.422,2.048,2026-10-15T02:41:29Z,2216148.4,,
+bsan,daas-0.2.2,service::extractor::tests::test_base64auth_display,success,502.422,1.042,2026-10-15T02:41:30Z,2216148.4,,
+bsan,daas-0.2.2,service::extractor::tests::test_base64auth_from_request_missing,test_failed,502.422,1.265,2026-10-15T02:41:31Z,2216148.4,bsan,"error: Undefined Behavior: deallocation through <1476000>(unprotected) at alloc31970[0x11] is forbidden"
+bsan,daas-0.2.2,service::extractor::tests::test_base64auth_from_request_noencode,test_failed,502.422,1.231,2026-10-15T02:41:32Z,2216148.4,bsan,"error: Undefined Behavior: deallocation through <1475984>(unprotected) at alloc31970[0x11] is forbidden"
+bsan,daas-0.2.2,service::extractor::tests::test_base64auth_from_request_pass,test_failed,502.422,1.193,2026-10-15T02:41:33Z,2216148.4,bsan,"error: Undefined Behavior: deallocation through <1476000>(unprotected) at alloc31970[0x11] is forbidden"
+bsan,daas-0.2.2,service::extractor::tests::test_base64auth_new,success,502.422,1.045,2026-10-15T02:41:34Z,2216148.4,,
+bsan,daas-0.2.2,service::extractor::tests::test_base64auth_set_name,success,502.422,1.043,2026-10-15T02:41:35Z,2216148.4,,
+bsan,daas-0.2.2,service::listener::test::test_health,success,502.422,1.046,2026-10-15T02:41:37Z,2216148.4,,
+bsan,daas-0.2.2,service::listener::test::test_health_path,success,502.422,1.038,2026-10-15T02:41:38Z,2216148.4,,
+bsan,daas-0.2.2,service::listener::test::test_process_data,success,502.422,11.157,2026-10-15T02:41:49Z,2216148.4,,
+bsan,daas-0.2.2,service::listener::test::test_process_data_tampered_with,success,502.422,11.107,2026-10-15T02:42:00Z,2216148.4,,
+bsan,daas-0.2.2,service::listener::test::test_service_path,success,502.422,1.065,2026-10-15T02:42:01Z,2216148.4,,
+bsan,daas-0.2.2,service::processor::test::test_default_topics,success,502.422,1.100,2026-10-15T02:42:02Z,2216148.4,,
+bsan,daas-0.2.2,service::processor::test::test_process_data,test_failed,502.422,1.117,2026-10-15T02:42:03Z,2216148.4,panic,"thread 'service::processor::test::test_process_data' (2680290) panicked at src/service/processor.rs:341:9: assertion failed: my_broker.broker_message(&mut my_doc, &topic).is_ok()"
+bsan,daas-0.2.2,storage::local::tests::test_default,success,502.422,1.045,2026-10-15T02:42:04Z,2216148.4,,
+bsan,daas-0.2.2,storage::local::tests::test_doc_exists,test_failed,502.422,1.065,2026-10-15T02:42:05Z,2216148.4,panic,"thread 'storage::local::tests::test_doc_exists' (2680405) panicked at src/storage/local.rs:488:9: assertion failed: loc.doc_exists(""test~doc~exists~0001~0.test"".to_string())"
+bsan,daas-0.2.2,storage::local::tests::test_ensure_dir_path,success,502.422,1.036,2026-10-15T02:42:06Z,2216148.4,,
+bsan,daas-0.2.2,storage::local::tests::test_get_dir_path,success,502.422,1.042,2026-10-15T02:42:07Z,2216148.4,,
+bsan,daas-0.2.2,storage::local::tests::test_get_doc_by_id_latest,test_failed,502.422,1.115,2026-10-15T02:42:08Z,2216148.4,panic,"thread 'storage::local::tests::test_get_doc_by_id_latest' (2680569) panicked at src/storage/local.rs:509:25: Could not find the latest document. Error:Unable to retrieve the DaaS document."
+bsan,daas-0.2.2,storage::local::tests::test_get_doc_by_id_rev_found,test_failed,502.422,1.096,2026-10-15T02:42:10Z,2216148.4,panic,"thread 'storage::local::tests::test_get_doc_by_id_rev_found' (2680635) panicked at src/storage/local.rs:526:9: assertion failed: rslt"
+bsan,daas-0.2.2,storage::local::tests::test_get_doc_by_id_rev_not_found,success,502.422,1.058,2026-10-15T02:42:11Z,2216148.4,,
+bsan,daas-0.2.2,storage::local::tests::test_get_doc_path,success,502.422,1.020,2026-10-15T02:42:12Z,2216148.4,,
+bsan,daas-0.2.2,storage::local::tests::test_get_local_storage_path_env_set,success,502.422,1.014,2026-10-15T02:42:13Z,2216148.4,,
+bsan,daas-0.2.2,storage::local::tests::test_get_local_storage_path_env_unset,success,502.422,1.021,2026-10-15T02:42:14Z,2216148.4,,
+bsan,daas-0.2.2,storage::local::tests::test_make_doc_uuid,success,502.422,1.025,2026-10-15T02:42:15Z,2216148.4,,
+bsan,daas-0.2.2,storage::local::tests::test_new_ok,success,502.422,1.029,2026-10-15T02:42:16Z,2216148.4,,
+bsan,daas-0.2.2,storage::local::tests::test_next_rev,success,502.422,1.023,2026-10-15T02:42:17Z,2216148.4,,
+bsan,daas-0.2.2,storage::local::tests::test_upsert_bad_revision,success,502.422,1.060,2026-10-15T02:42:18Z,2216148.4,,
+bsan,daas-0.2.2,storage::local::tests::test_upsert_binary_new,test_failed,502.422,1.075,2026-10-15T02:42:19Z,2216148.4,panic,"thread 'storage::local::tests::test_upsert_binary_new' (2681093) panicked at src/storage/local.rs:611:17: Cannot read the audio file: No such file or directory (os error 2)"
+bsan,daas-0.2.2,storage::local::tests::test_upsert_new,test_failed,502.422,1.148,2026-10-15T02:42:20Z,2216148.4,panic,"thread 'storage::local::tests::test_upsert_new' (2681159) panicked at src/storage/local.rs:590:9: assertion failed: Path::new(&format!(""{}/order/clothing/iStore/6000/{}"", loc.path,"
+bsan,daas-0.2.2,storage::s3::tests::test_from_arn,success,502.422,1.018,2026-10-15T02:42:21Z,2216148.4,,
+bsan,daas-0.2.2,storage::s3::tests::test_new_s3bucketmngr,success,502.422,1.011,2026-10-15T02:42:22Z,2216148.4,,

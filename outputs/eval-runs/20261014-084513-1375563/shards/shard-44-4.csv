@@ -1,0 +1,15 @@
+bsan,dura-0.2.0,change_single_file,test_failed,252.462,1.437,2026-10-15T01:13:21Z,2216124.4,bsan,"error: Undefined Behavior: write access through <1914432>(unprotected) at alloc40365[0x0] is forbidden"
+bsan,dura-0.2.0,during_merge_conflicts,test_failed,252.462,1.390,2026-10-15T01:13:23Z,2216124.4,bsan,"error: Undefined Behavior: write access through <2585480>(unprotected) at alloc50741[0x0] is forbidden"
+bsan,dura-0.2.0,metrics::tests::scrape_log_happy_path,success,252.462,1.499,2026-10-15T01:13:24Z,2216124.4,,
+bsan,dura-0.2.0,metrics::tests::scrape_log_no_snapshot,success,252.462,1.428,2026-10-15T01:13:25Z,2216124.4,,
+bsan,dura-0.2.0,no_changes,test_failed,252.462,1.239,2026-10-15T01:13:27Z,2216124.4,bsan,"error: Undefined Behavior: write access through <1901864>(unprotected) at alloc40180[0x0] is forbidden"
+bsan,dura-0.2.0,start_serve,test_failed,252.462,9.385,2026-10-15T01:13:36Z,2216124.4,panic,"thread 'start_serve' (3911514) panicked at tests/util/daemon.rs:72:14: called `Result::unwrap()` on an `Err` value: Timeout"
+bsan,dura-0.2.0,start_serve_with_invalid_json,test_failed,252.462,9.419,2026-10-15T01:13:46Z,2216124.4,panic,"thread 'start_serve_with_invalid_json' (3911610) panicked at tests/util/daemon.rs:72:14: called `Result::unwrap()` on an `Err` value: Timeout"
+bsan,dura-0.2.0,start_serve_with_null_pid_in_config,test_failed,252.462,9.387,2026-10-15T01:13:55Z,2216124.4,panic,"thread 'start_serve_with_null_pid_in_config' (3911737) panicked at tests/util/daemon.rs:72:14: called `Result::unwrap()` on an `Err` value: Timeout"
+bsan,dura-0.2.0,start_serve_with_other_pid_in_config,test_failed,252.462,9.614,2026-10-15T01:14:05Z,2216124.4,panic,"thread 'start_serve_with_other_pid_in_config' (3911879) panicked at tests/util/daemon.rs:72:14: called `Result::unwrap()` on an `Err` value: Timeout"
+bsan,dura-0.2.0,test_commit_signature_exclude_git_config,test_failed,252.462,1.224,2026-10-15T01:14:06Z,2216124.4,bsan,"error: Undefined Behavior: write access through <2091584>(unprotected) at alloc43481[0x0] is forbidden"
+bsan,dura-0.2.0,test_commit_signature_using_dura_config,test_failed,252.462,1.244,2026-10-15T01:14:07Z,2216124.4,bsan,"error: Undefined Behavior: write access through <2123952>(unprotected) at alloc44188[0x0] is forbidden"
+bsan,dura-0.2.0,test_commit_signature_using_git_config,test_failed,252.462,1.273,2026-10-15T01:14:08Z,2216124.4,bsan,"error: Undefined Behavior: write access through <2091616>(unprotected) at alloc43481[0x0] is forbidden"
+bsan,dura-0.2.0,watch_1_dir_with_2_repos,test_failed,252.462,3.769,2026-10-15T01:14:12Z,2216124.4,bsan,"error: Undefined Behavior: write access through <4698200>(unprotected) at alloc84041[0x0] is forbidden"
+bsan,dura-0.2.0,watch_dir_with_repo_nested_3_folders_deep,test_failed,252.462,3.716,2026-10-15T01:14:16Z,2216124.4,bsan,"error: Undefined Behavior: write access through <4504632>(unprotected) at alloc81334[0x0] is forbidden"
+bsan,dura-0.2.0,watch_repo,test_failed,252.462,3.684,2026-10-15T01:14:20Z,2216124.4,bsan,"error: Undefined Behavior: write access through <4196376>(unprotected) at alloc75452[0x0] is forbidden"

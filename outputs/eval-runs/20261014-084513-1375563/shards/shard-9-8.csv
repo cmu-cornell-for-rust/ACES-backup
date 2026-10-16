@@ -1,0 +1,55 @@
+bsan,cli-diary-0.7.0,commands::open::test::test_date_provided,success,176.572,2.159,2026-10-14T15:01:56Z,2216089.8,,
+bsan,cli-diary-0.7.0,commands::test::test_bad_command,success,176.572,2.112,2026-10-14T15:01:58Z,2216089.8,,
+bsan,cli-diary-0.7.0,config::tests::config_manager_with_location,success,176.572,2.110,2026-10-14T15:02:00Z,2216089.8,,
+bsan,cli-diary-0.7.0,config::tests::full_config_build,success,176.572,2.083,2026-10-14T15:02:03Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::add::test::add_empty_string,success,176.572,2.119,2026-10-14T15:02:05Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::add::test::add_no_tag,success,176.572,2.089,2026-10-14T15:02:07Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::add::test::add_to_nonexistent_file,success,176.572,1.970,2026-10-14T15:02:09Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::add::test::add_with_tag,success,176.572,2.071,2026-10-14T15:02:11Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::commit::test::commit_and_fail_to_push,test_failed,176.572,0.814,2026-10-14T15:02:12Z,2216089.8,bsan,"error: Undefined Behavior: write access through <1505416>(unprotected) at alloc34255[0x4] is forbidden"
+bsan,cli-diary-0.7.0,ops::commit::test::commit_multiple,test_failed,176.572,0.686,2026-10-14T15:02:12Z,2216089.8,bsan,"error: Undefined Behavior: write access through <1505464>(unprotected) at alloc34255[0x4] is forbidden"
+bsan,cli-diary-0.7.0,ops::commit::test::commit_no_entry,test_failed,176.572,0.690,2026-10-14T15:02:13Z,2216089.8,bsan,"error: Undefined Behavior: write access through <1505432>(unprotected) at alloc34255[0x4] is forbidden"
+bsan,cli-diary-0.7.0,ops::commit::test::commit_today,test_failed,176.572,0.688,2026-10-14T15:02:14Z,2216089.8,bsan,"error: Undefined Behavior: write access through <1505496>(unprotected) at alloc34255[0x4] is forbidden"
+bsan,cli-diary-0.7.0,ops::init::tests::blank_config_invalid_path,success,176.572,1.958,2026-10-14T15:02:16Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::init::tests::blank_config_valid_path,success,176.572,2.037,2026-10-14T15:02:18Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::init::tests::blank_config_valid_path_git_repo,test_failed,176.572,0.689,2026-10-14T15:02:18Z,2216089.8,bsan,"error: Undefined Behavior: write access through <1465368>(unprotected) at alloc33502[0x4] is forbidden"
+bsan,cli-diary-0.7.0,ops::init::tests::filled_config_existing_path,success,176.572,1.987,2026-10-14T15:02:20Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::init::tests::filled_config_existing_path_git_repo,success,176.572,2.116,2026-10-14T15:02:23Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::init::tests::filled_config_non_existing_path,success,176.572,2.025,2026-10-14T15:02:25Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::init::tests::filled_config_non_existing_path_git_repo,test_failed,176.572,0.690,2026-10-14T15:02:25Z,2216089.8,bsan,"error: Undefined Behavior: write access through <1505912>(unprotected) at alloc34266[0x4] is forbidden"
+bsan,cli-diary-0.7.0,ops::new::test::new_fail_second_time,success,176.572,2.044,2026-10-14T15:02:27Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::new::test::new_not_init,success,176.572,2.166,2026-10-14T15:02:30Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::new::test::new_not_init_default_config,success,176.572,2.139,2026-10-14T15:02:32Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::new::test::new_open_file_success,success,176.572,2.164,2026-10-14T15:02:34Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::new::test::new_success,success,176.572,2.281,2026-10-14T15:02:36Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::open::test::open_bad_config,success,176.572,2.154,2026-10-14T15:02:38Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::open::test::open_no_entry,success,176.572,2.164,2026-10-14T15:02:40Z,2216089.8,,
+bsan,cli-diary-0.7.0,ops::open::test::open_success,success,176.572,2.135,2026-10-14T15:02:43Z,2216089.8,,
+bsan,cli-diary-0.7.0,test_add_failure_no_init,success,176.572,2.441,2026-10-14T15:02:45Z,2216089.8,,
+bsan,cli-diary-0.7.0,test_add_failure_no_new,success,176.572,3.045,2026-10-14T15:02:48Z,2216089.8,,
+bsan,cli-diary-0.7.0,test_bad_command,success,176.572,2.388,2026-10-14T15:02:51Z,2216089.8,,
+bsan,cli-diary-0.7.0,test_commit_given_date,test_failed,176.572,2.354,2026-10-14T15:02:53Z,2216089.8,panic,"thread 'test_commit_given_date' (2821747) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+bsan,cli-diary-0.7.0,test_commit_no_file,test_failed,176.572,2.327,2026-10-14T15:02:55Z,2216089.8,panic,"thread 'test_commit_no_file' (2821850) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected stderr, failed var.contains(No such file or directory)"
+bsan,cli-diary-0.7.0,test_commit_no_options,test_failed,176.572,2.803,2026-10-14T15:02:58Z,2216089.8,panic,"thread 'test_commit_no_options' (2822737) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+bsan,cli-diary-0.7.0,test_default_init_success,success,176.572,2.429,2026-10-14T15:03:00Z,2216089.8,,
+bsan,cli-diary-0.7.0,test_help_text,success,176.572,2.647,2026-10-14T15:03:03Z,2216089.8,,
+bsan,cli-diary-0.7.0,test_init_failure,success,176.572,2.901,2026-10-14T15:03:06Z,2216089.8,,
+bsan,cli-diary-0.7.0,test_init_success_with_git_repo,test_failed,176.572,797.442,2026-10-14T15:16:23Z,2216089.8,bsan,"stderr=```""error: Undefined Behavior: write access through <1179024>(unprotected) at alloc25109[0x4] is forbidden\n --> /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/ev-2216089-8/home/registry/src/index.crates.io-1949cf8c6b5b557f/libgit2-sys-0.12.26+1.3.0/libgit2/src/repository.c:2132:15\n |\"
+bsan,cli-diary-0.7.0,test_init_success_with_options,success,176.572,6.312,2026-10-14T15:16:30Z,2216089.8,,
+bsan,cli-diary-0.7.0,test_new_success,success,176.572,2.570,2026-10-14T15:16:32Z,2216089.8,,
+bsan,cli-diary-0.7.0,test_new_without_init,success,176.572,2.085,2026-10-14T15:16:34Z,2216089.8,,
+bsan,cli-diary-0.7.0,test_open_failure_no_init,success,176.572,2.148,2026-10-14T15:16:37Z,2216089.8,,
+bsan,cli-diary-0.7.0,test_open_failure_no_new,success,176.572,2.563,2026-10-14T15:16:39Z,2216089.8,,
+bsan,cli-diary-0.7.0,test_version_text,success,176.572,2.078,2026-10-14T15:16:41Z,2216089.8,,
+bsan,cli-diary-0.7.0,tests::diary_file_from_config,success,176.572,1.795,2026-10-14T15:16:43Z,2216089.8,,
+bsan,cli-diary-0.7.0,tests::get_extension,success,176.572,1.780,2026-10-14T15:16:45Z,2216089.8,,
+bsan,cli-diary-0.7.0,tests::markdown_tag,success,176.572,1.805,2026-10-14T15:16:47Z,2216089.8,,
+bsan,cli-diary-0.7.0,tests::md_title,success,176.572,1.796,2026-10-14T15:16:48Z,2216089.8,,
+bsan,cli-diary-0.7.0,tests::rst_tag,success,176.572,1.793,2026-10-14T15:16:50Z,2216089.8,,
+bsan,cli-diary-0.7.0,tests::rst_title,success,176.572,1.796,2026-10-14T15:16:52Z,2216089.8,,
+bsan,cli-diary-0.7.0,tests::unsupported_file_extension,success,176.572,1.796,2026-10-14T15:16:54Z,2216089.8,,
+bsan,cli-diary-0.7.0,utils::date::tests::date_superscript_nd,success,176.572,1.788,2026-10-14T15:16:56Z,2216089.8,,
+bsan,cli-diary-0.7.0,utils::date::tests::date_superscript_rd,success,176.572,1.782,2026-10-14T15:16:57Z,2216089.8,,
+bsan,cli-diary-0.7.0,utils::date::tests::date_superscript_st,success,176.572,1.776,2026-10-14T15:16:59Z,2216089.8,,
+bsan,cli-diary-0.7.0,utils::date::tests::date_superscript_th,success,176.572,1.789,2026-10-14T15:17:01Z,2216089.8,,
+bsan,cli-diary-0.7.0,utils::git::test::no_commit,test_failed,176.572,0.627,2026-10-14T15:17:02Z,2216089.8,bsan,"error: Undefined Behavior: write access through <1413456>(unprotected) at alloc32480[0x4] is forbidden"

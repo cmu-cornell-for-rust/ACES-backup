@@ -1,0 +1,9 @@
+bsan,cargo-clone-core-0.2.0,test_dir_path,test_failed,605.543,2.502,2026-10-14T23:36:36Z,2216109.6,bsan,"error: Undefined Behavior: write access through <3590712>(unprotected) at alloc63781[0x0] is forbidden"
+bsan,cargo-clone-core-0.2.0,test_from_registry,test_failed,605.543,2.320,2026-10-14T23:36:39Z,2216109.6,bsan,"error: Undefined Behavior: write access through <3603056>(unprotected) at alloc64007[0x0] is forbidden"
+bsan,cargo-clone-core-0.2.0,test_from_registry_in_dir,test_failed,605.543,2.117,2026-10-14T23:36:41Z,2216109.6,bsan,"error: Undefined Behavior: write access through <3572248>(unprotected) at alloc63516[0x0] is forbidden"
+bsan,cargo-clone-core-0.2.0,test_multi_crates,test_failed,605.543,1.976,2026-10-14T23:36:43Z,2216109.6,bsan,"error: Undefined Behavior: write access through <3592664>(unprotected) at alloc63824[0x0] is forbidden"
+bsan,cargo-clone-core-0.2.0,tests::test_clone_directory,test_failed,605.543,1.465,2026-10-14T23:36:44Z,2216109.6,panic,"thread 'tests::test_clone_directory' (1762703) panicked at src/lib.rs:230:27: called `Result::unwrap()` on an `Err` value: Error { depth: 0, inner: Io { path: Some(""/work/tests/data""), err: Os { code: 2, kind: NotFound, message: ""No such file or directory"" } } }"
+bsan,cargo-clone-core-0.2.0,tests::test_clone_repo,success,605.543,3.350,2026-10-14T23:36:48Z,2216109.6,,
+bsan,cargo-clone-core-0.2.0,tests::test_parse_name_and_version,success,605.543,0.861,2026-10-14T23:36:48Z,2216109.6,,
+bsan,cargo-clone-core-0.2.0,tests::test_parse_version_req,success,605.543,0.842,2026-10-14T23:36:49Z,2216109.6,,
+bsan,cargo-clone-core-0.2.0,tests::test_parse_version_req_invalid_req,success,605.543,0.842,2026-10-14T23:36:50Z,2216109.6,,

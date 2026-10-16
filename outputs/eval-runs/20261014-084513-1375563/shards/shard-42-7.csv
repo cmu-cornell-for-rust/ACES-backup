@@ -1,0 +1,175 @@
+bsan,parquet2-0.17.2,bloom_filter::tests::basics,success,272.152,1.190,2026-10-15T00:53:35Z,2216122.7,,
+bsan,parquet2-0.17.2,bloom_filter::tests::binary,success,272.152,1.155,2026-10-15T00:53:37Z,2216122.7,,
+bsan,parquet2-0.17.2,compression::tests::test_codec_brotli_default,timeout,272.152,3600.005,2026-10-15T01:53:37Z,2216122.7,other,"test compression::tests::test_codec_brotli_default has been running for over 60 seconds"
+bsan,parquet2-0.17.2,compression::tests::test_codec_brotli_high_compression,timeout,272.152,3600.004,2026-10-15T02:53:37Z,2216122.7,other,"test compression::tests::test_codec_brotli_high_compression has been running for over 60 seconds"
+bsan,parquet2-0.17.2,compression::tests::test_codec_brotli_low_compression,timeout,272.152,3600.005,2026-10-15T03:53:37Z,2216122.7,other,"test compression::tests::test_codec_brotli_low_compression has been running for over 60 seconds"
+bsan,parquet2-0.17.2,compression::tests::test_codec_gzip_default,timeout,272.152,3600.006,2026-10-15T04:53:37Z,2216122.7,other,"test compression::tests::test_codec_gzip_default has been running for over 60 seconds"
+bsan,parquet2-0.17.2,compression::tests::test_codec_gzip_high_compression,timeout,272.152,3600.006,2026-10-15T05:53:37Z,2216122.7,other,"test compression::tests::test_codec_gzip_high_compression has been running for over 60 seconds"
+bsan,parquet2-0.17.2,compression::tests::test_codec_gzip_low_compression,timeout,272.152,3600.005,2026-10-15T06:53:37Z,2216122.7,other,"test compression::tests::test_codec_gzip_low_compression has been running for over 60 seconds"
+bsan,parquet2-0.17.2,compression::tests::test_codec_lz4_raw,success,272.152,29.085,2026-10-15T06:54:06Z,2216122.7,,
+bsan,parquet2-0.17.2,compression::tests::test_codec_snappy,success,272.152,2758.675,2026-10-15T07:40:05Z,2216122.7,,
+bsan,parquet2-0.17.2,compression::tests::test_codec_zstd_default,success,272.152,10.270,2026-10-15T07:40:15Z,2216122.7,,
+bsan,parquet2-0.17.2,compression::tests::test_codec_zstd_high_compression,success,272.152,13.538,2026-10-15T07:40:28Z,2216122.7,,
+bsan,parquet2-0.17.2,compression::tests::test_codec_zstd_low_compression,success,272.152,8.870,2026-10-15T07:40:37Z,2216122.7,,
+bsan,parquet2-0.17.2,deserialize::utils::test::basic,success,272.152,0.771,2026-10-15T07:40:38Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::bitpacked::decode::tests::decode_large,success,272.152,0.821,2026-10-15T07:40:39Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::bitpacked::decode::tests::even_case,success,272.152,1.085,2026-10-15T07:40:40Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::bitpacked::decode::tests::odd_case,success,272.152,0.672,2026-10-15T07:40:41Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::bitpacked::decode::tests::test_decode_bool,success,272.152,0.738,2026-10-15T07:40:41Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::bitpacked::decode::tests::test_decode_rle,success,272.152,0.666,2026-10-15T07:40:42Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::bitpacked::decode::tests::test_decode_u64,success,272.152,0.789,2026-10-15T07:40:43Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::bitpacked::decode::tests::test_errors,success,272.152,0.784,2026-10-15T07:40:44Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::bitpacked::pack::tests::test_basic,success,272.152,0.705,2026-10-15T07:40:44Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::bitpacked::pack::tests::test_u32,success,272.152,1.544,2026-10-15T07:40:46Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::bitpacked::tests::encode_large,success,272.152,0.750,2026-10-15T07:40:47Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::bitpacked::tests::test_encode,success,272.152,0.672,2026-10-15T07:40:47Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::bitpacked::unpack::tests::test_basic,success,272.152,6.726,2026-10-15T07:40:54Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_bitpacked::decoder::tests::case2,success,272.152,0.680,2026-10-15T07:40:55Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_bitpacked::decoder::tests::multiple_miniblocks,success,272.152,0.705,2026-10-15T07:40:55Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_bitpacked::decoder::tests::single_value,success,272.152,0.664,2026-10-15T07:40:56Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_bitpacked::decoder::tests::test_from_spec,success,272.152,0.672,2026-10-15T07:40:57Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_bitpacked::encoder::tests::constant_delta,success,272.152,0.693,2026-10-15T07:40:57Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_bitpacked::encoder::tests::negative_min_delta,success,272.152,0.790,2026-10-15T07:40:58Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_bitpacked::tests::basic,success,272.152,0.710,2026-10-15T07:40:59Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_bitpacked::tests::more_than_one_block,success,272.152,0.829,2026-10-15T07:41:00Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_bitpacked::tests::negative_value,success,272.152,0.696,2026-10-15T07:41:01Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_bitpacked::tests::some,success,272.152,0.733,2026-10-15T07:41:01Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_bitpacked::tests::test_another,success,272.152,0.724,2026-10-15T07:41:02Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_byte_array::decoder::tests::test_bla,success,272.152,0.688,2026-10-15T07:41:03Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_byte_array::decoder::tests::test_with_prefix,success,272.152,0.668,2026-10-15T07:41:03Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_byte_array::tests::basic,success,272.152,0.807,2026-10-15T07:41:04Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_length_byte_array::tests::basic,success,272.152,0.702,2026-10-15T07:41:05Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::delta_length_byte_array::tests::many_numbers,success,272.152,1.704,2026-10-15T07:41:07Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::decoder::tests::basics_1,success,272.152,0.675,2026-10-15T07:41:07Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::decoder::tests::basics_2,success,272.152,0.671,2026-10-15T07:41:08Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::decoder::tests::basics_3,success,272.152,0.663,2026-10-15T07:41:09Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::encoder::tests::bool_basics_1,success,272.152,0.693,2026-10-15T07:41:09Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::encoder::tests::bool_from_iter,success,272.152,0.681,2026-10-15T07:41:10Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::encoder::tests::test_encode_u32,success,272.152,0.669,2026-10-15T07:41:11Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::encoder::tests::test_encode_u32_large,success,272.152,0.684,2026-10-15T07:41:11Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::encoder::tests::test_u32_other,success,272.152,0.671,2026-10-15T07:41:12Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::tests::empty_values,success,272.152,0.681,2026-10-15T07:41:13Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::tests::pyarrow_integration,success,272.152,2.628,2026-10-15T07:41:15Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::tests::roundtrip,success,272.152,3.943,2026-10-15T07:41:19Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::tests::small,success,272.152,0.668,2026-10-15T07:41:20Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::hybrid_rle::tests::zero_bit_width,success,272.152,0.663,2026-10-15T07:41:21Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::uleb128::tests::decode_1,success,272.152,0.675,2026-10-15T07:41:21Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::uleb128::tests::decode_2,success,272.152,0.668,2026-10-15T07:41:22Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::uleb128::tests::max_value,success,272.152,0.666,2026-10-15T07:41:23Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::uleb128::tests::min_value,success,272.152,0.669,2026-10-15T07:41:23Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::uleb128::tests::round_trip,success,272.152,0.672,2026-10-15T07:41:24Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::zigzag_leb128::tests::test_decode,success,272.152,0.668,2026-10-15T07:41:25Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::zigzag_leb128::tests::test_encode,success,272.152,0.666,2026-10-15T07:41:25Z,2216122.7,,
+bsan,parquet2-0.17.2,encoding::zigzag_leb128::tests::test_roundtrip,success,272.152,0.664,2026-10-15T07:41:26Z,2216122.7,,
+bsan,parquet2-0.17.2,indexes::tests::test_basic,success,272.152,0.667,2026-10-15T07:41:27Z,2216122.7,,
+bsan,parquet2-0.17.2,indexes::tests::test_multiple,success,272.152,0.674,2026-10-15T07:41:27Z,2216122.7,,
+bsan,parquet2-0.17.2,indexes::tests::test_other_column,success,272.152,0.673,2026-10-15T07:41:28Z,2216122.7,,
+bsan,parquet2-0.17.2,indexes::tests::test_other_column2,success,272.152,0.668,2026-10-15T07:41:29Z,2216122.7,,
+bsan,parquet2-0.17.2,indexes::tests::test_other_interval_in_middle,success,272.152,0.670,2026-10-15T07:41:29Z,2216122.7,,
+bsan,parquet2-0.17.2,parquet_bridge::tests::round_compression,success,272.152,0.669,2026-10-15T07:41:30Z,2216122.7,,
+bsan,parquet2-0.17.2,parquet_bridge::tests::round_trip_encoding,success,272.152,0.682,2026-10-15T07:41:31Z,2216122.7,,
+bsan,parquet2-0.17.2,parquet_bridge::tests::round_trip_primitive,success,272.152,0.669,2026-10-15T07:41:31Z,2216122.7,,
+bsan,parquet2-0.17.2,read::bigint_col,success,272.152,7.086,2026-10-15T07:41:39Z,2216122.7,,
+bsan,parquet2-0.17.2,read::bool,success,272.152,3.217,2026-10-15T07:41:42Z,2216122.7,,
+bsan,parquet2-0.17.2,read::date_string_col,success,272.152,3.344,2026-10-15T07:41:45Z,2216122.7,,
+bsan,parquet2-0.17.2,read::deserialize::bitmap_complete,success,272.152,0.916,2026-10-15T07:41:46Z,2216122.7,,
+bsan,parquet2-0.17.2,read::deserialize::bitmap_incomplete,success,272.152,0.668,2026-10-15T07:41:47Z,2216122.7,,
+bsan,parquet2-0.17.2,read::deserialize::bitmap_interval_incomplete,success,272.152,0.672,2026-10-15T07:41:47Z,2216122.7,,
+bsan,parquet2-0.17.2,read::deserialize::bitmap_interval_run_incomplete,success,272.152,0.674,2026-10-15T07:41:48Z,2216122.7,,
+bsan,parquet2-0.17.2,read::deserialize::bitmap_interval_run_offset_skipped,success,272.152,0.665,2026-10-15T07:41:49Z,2216122.7,,
+bsan,parquet2-0.17.2,read::deserialize::bitmap_interval_run_skipped,success,272.152,0.671,2026-10-15T07:41:49Z,2216122.7,,
+bsan,parquet2-0.17.2,read::deserialize::repeated_complete,success,272.152,0.670,2026-10-15T07:41:50Z,2216122.7,,
+bsan,parquet2-0.17.2,read::deserialize::repeated_incomplete,success,272.152,0.667,2026-10-15T07:41:51Z,2216122.7,,
+bsan,parquet2-0.17.2,read::deserialize::repeated_interval_incomplete,success,272.152,0.670,2026-10-15T07:41:51Z,2216122.7,,
+bsan,parquet2-0.17.2,read::deserialize::repeated_interval_run_incomplete,success,272.152,0.672,2026-10-15T07:41:52Z,2216122.7,,
+bsan,parquet2-0.17.2,read::deserialize::repeated_interval_run_offset_skipped,success,272.152,0.674,2026-10-15T07:41:53Z,2216122.7,,
+bsan,parquet2-0.17.2,read::deserialize::repeated_interval_run_skipped,success,272.152,0.674,2026-10-15T07:41:53Z,2216122.7,,
+bsan,parquet2-0.17.2,read::double_col,success,272.152,3.386,2026-10-15T07:41:57Z,2216122.7,,
+bsan,parquet2-0.17.2,read::float_col,success,272.152,3.432,2026-10-15T07:42:00Z,2216122.7,,
+bsan,parquet2-0.17.2,read::indexes::test,success,272.152,1.569,2026-10-15T07:42:02Z,2216122.7,,
+bsan,parquet2-0.17.2,read::int32,success,272.152,3.178,2026-10-15T07:42:05Z,2216122.7,,
+bsan,parquet2-0.17.2,read::int_col,success,272.152,3.029,2026-10-15T07:42:08Z,2216122.7,,
+bsan,parquet2-0.17.2,read::levels::tests::test_get_bit_width,success,272.152,0.666,2026-10-15T07:42:09Z,2216122.7,,
+bsan,parquet2-0.17.2,read::lz4_legacy::test_lz4_inference,success,272.152,4.205,2026-10-15T07:42:13Z,2216122.7,,
+bsan,parquet2-0.17.2,read::lz4_legacy::test_lz4_large_file,timeout,272.152,3600.005,2026-10-15T08:42:13Z,2216122.7,other,"test read::lz4_legacy::test_lz4_large_file has been running for over 60 seconds"
+bsan,parquet2-0.17.2,read::pyarrow_v1_boolean_optional,test_failed,272.152,13.278,2026-10-15T08:42:26Z,2216122.7,panic,"thread 'read::pyarrow_v1_boolean_optional' (2669886) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_boolean_required,test_failed,272.152,0.701,2026-10-15T08:42:27Z,2216122.7,panic,"thread 'read::pyarrow_v1_boolean_required' (2669961) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_dict_fixed_binary_optional,test_failed,272.152,0.736,2026-10-15T08:42:28Z,2216122.7,panic,"thread 'read::pyarrow_v1_dict_fixed_binary_optional' (2670036) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_dict_fixed_binary_required,test_failed,272.152,0.705,2026-10-15T08:42:28Z,2216122.7,panic,"thread 'read::pyarrow_v1_dict_fixed_binary_required' (2670107) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_dict_int64_optional,test_failed,272.152,0.690,2026-10-15T08:42:29Z,2216122.7,panic,"thread 'read::pyarrow_v1_dict_int64_optional' (2670182) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_dict_int64_required,test_failed,272.152,0.691,2026-10-15T08:42:30Z,2216122.7,panic,"thread 'read::pyarrow_v1_dict_int64_required' (2670253) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_dict_list_optional,test_failed,272.152,0.699,2026-10-15T08:42:31Z,2216122.7,panic,"thread 'read::pyarrow_v1_dict_list_optional' (2670324) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_dict_string_optional,test_failed,272.152,0.696,2026-10-15T08:42:31Z,2216122.7,panic,"thread 'read::pyarrow_v1_dict_string_optional' (2670399) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_dict_string_required,test_failed,272.152,0.688,2026-10-15T08:42:32Z,2216122.7,panic,"thread 'read::pyarrow_v1_dict_string_required' (2670470) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_non_dict_fixed_binary_optional,test_failed,272.152,0.691,2026-10-15T08:42:33Z,2216122.7,panic,"thread 'read::pyarrow_v1_non_dict_fixed_binary_optional' (2670545) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_non_dict_fixed_binary_required,test_failed,272.152,0.692,2026-10-15T08:42:33Z,2216122.7,panic,"thread 'read::pyarrow_v1_non_dict_fixed_binary_required' (2670616) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_non_dict_int64_optional,test_failed,272.152,0.701,2026-10-15T08:42:34Z,2216122.7,panic,"thread 'read::pyarrow_v1_non_dict_int64_optional' (2670691) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_non_dict_int64_optional_brotli,test_failed,272.152,0.695,2026-10-15T08:42:35Z,2216122.7,panic,"thread 'read::pyarrow_v1_non_dict_int64_optional_brotli' (2670762) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_non_dict_int64_optional_gzip,test_failed,272.152,0.695,2026-10-15T08:42:36Z,2216122.7,panic,"thread 'read::pyarrow_v1_non_dict_int64_optional_gzip' (2670833) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_non_dict_int64_optional_lz4,test_failed,272.152,0.698,2026-10-15T08:42:36Z,2216122.7,panic,"thread 'read::pyarrow_v1_non_dict_int64_optional_lz4' (2670908) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_non_dict_int64_optional_snappy,test_failed,272.152,0.692,2026-10-15T08:42:37Z,2216122.7,panic,"thread 'read::pyarrow_v1_non_dict_int64_optional_snappy' (2670979) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_non_dict_int64_optional_zstd,test_failed,272.152,0.691,2026-10-15T08:42:38Z,2216122.7,panic,"thread 'read::pyarrow_v1_non_dict_int64_optional_zstd' (2671054) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_non_dict_int64_required,test_failed,272.152,0.703,2026-10-15T08:42:38Z,2216122.7,panic,"thread 'read::pyarrow_v1_non_dict_int64_required' (2671125) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_non_dict_list_optional,test_failed,272.152,0.698,2026-10-15T08:42:39Z,2216122.7,panic,"thread 'read::pyarrow_v1_non_dict_list_optional' (2671196) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_non_dict_string_optional,test_failed,272.152,0.696,2026-10-15T08:42:40Z,2216122.7,panic,"thread 'read::pyarrow_v1_non_dict_string_optional' (2671271) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_non_dict_string_required,test_failed,272.152,0.698,2026-10-15T08:42:40Z,2216122.7,panic,"thread 'read::pyarrow_v1_non_dict_string_required' (2671342) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_struct_optional,test_failed,272.152,0.705,2026-10-15T08:42:41Z,2216122.7,panic,"thread 'read::pyarrow_v1_struct_optional' (2671417) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v1_struct_required,test_failed,272.152,0.693,2026-10-15T08:42:42Z,2216122.7,panic,"thread 'read::pyarrow_v1_struct_required' (2671488) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v2_dict_int64_optional,test_failed,272.152,0.703,2026-10-15T08:42:43Z,2216122.7,panic,"thread 'read::pyarrow_v2_dict_int64_optional' (2671563) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v2_non_dict_int64_optional,test_failed,272.152,0.698,2026-10-15T08:42:43Z,2216122.7,panic,"thread 'read::pyarrow_v2_non_dict_int64_optional' (2671634) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v2_non_dict_int64_optional_compressed,test_failed,272.152,0.687,2026-10-15T08:42:44Z,2216122.7,panic,"thread 'read::pyarrow_v2_non_dict_int64_optional_compressed' (2671705) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v2_non_dict_int64_required,test_failed,272.152,0.699,2026-10-15T08:42:45Z,2216122.7,panic,"thread 'read::pyarrow_v2_non_dict_int64_required' (2671780) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v2_struct_optional,test_failed,272.152,0.700,2026-10-15T08:42:45Z,2216122.7,panic,"thread 'read::pyarrow_v2_struct_optional' (2671851) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::pyarrow_v2_struct_required,test_failed,272.152,0.692,2026-10-15T08:42:46Z,2216122.7,panic,"thread 'read::pyarrow_v2_struct_required' (2671926) panicked at tests/it/read/mod.rs:284:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+bsan,parquet2-0.17.2,read::smallint_col,success,272.152,3.594,2026-10-15T08:42:50Z,2216122.7,,
+bsan,parquet2-0.17.2,read::string_col,success,272.152,3.089,2026-10-15T08:42:53Z,2216122.7,,
+bsan,parquet2-0.17.2,read::test_metadata,success,272.152,2.944,2026-10-15T08:42:56Z,2216122.7,,
+bsan,parquet2-0.17.2,read::tests::basic,success,272.152,4.365,2026-10-15T08:43:00Z,2216122.7,,
+bsan,parquet2-0.17.2,read::tests::basics_column_iterator,success,272.152,3.110,2026-10-15T08:43:03Z,2216122.7,,
+bsan,parquet2-0.17.2,read::tests::column_iter,success,272.152,3.015,2026-10-15T08:43:06Z,2216122.7,,
+bsan,parquet2-0.17.2,read::tests::reuse_buffer,success,272.152,2.882,2026-10-15T08:43:09Z,2216122.7,,
+bsan,parquet2-0.17.2,read::tests::reuse_buffer_decompress,success,272.152,2.946,2026-10-15T08:43:12Z,2216122.7,,
+bsan,parquet2-0.17.2,read::timestamp_col,success,272.152,3.036,2026-10-15T08:43:15Z,2216122.7,,
+bsan,parquet2-0.17.2,read::tinyint_col,success,272.152,3.022,2026-10-15T08:43:18Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_assert_token,success,272.152,0.674,2026-10-15T08:43:19Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_parse_decimal_wrong,success,272.152,0.800,2026-10-15T08:43:20Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_parse_message_type_compare_1,success,272.152,0.749,2026-10-15T08:43:20Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_parse_message_type_compare_2,success,272.152,0.753,2026-10-15T08:43:21Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_parse_message_type_compare_3,success,272.152,0.725,2026-10-15T08:43:22Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_parse_message_type_compare_4,success,272.152,0.795,2026-10-15T08:43:23Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_parse_message_type_decimal,success,272.152,0.723,2026-10-15T08:43:23Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_parse_message_type_fixed_byte_array,success,272.152,0.700,2026-10-15T08:43:24Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_parse_message_type_invalid,success,272.152,0.664,2026-10-15T08:43:25Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_parse_message_type_no_name,success,272.152,0.672,2026-10-15T08:43:26Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_tokenize_backtrack,success,272.152,0.666,2026-10-15T08:43:26Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_tokenize_delimiters,success,272.152,0.666,2026-10-15T08:43:27Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_tokenize_delimiters_with_whitespaces,success,272.152,0.674,2026-10-15T08:43:28Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_tokenize_empty_string,success,272.152,0.690,2026-10-15T08:43:28Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_tokenize_message_type,success,272.152,0.791,2026-10-15T08:43:29Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_message::from_message::tests::test_tokenize_words,success,272.152,0.683,2026-10-15T08:43:30Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_thrift::tests::test_schema_type_thrift_conversion,success,272.152,1.153,2026-10-15T08:43:31Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::io_thrift::tests::test_schema_type_thrift_conversion_decimal,success,272.152,0.731,2026-10-15T08:43:32Z,2216122.7,,
+bsan,parquet2-0.17.2,schema::types::converted_type::tests::round_trip,success,272.152,0.670,2026-10-15T08:43:32Z,2216122.7,,
+bsan,parquet2-0.17.2,write::basic,success,272.152,0.823,2026-10-15T08:43:33Z,2216122.7,,
+bsan,parquet2-0.17.2,write::bigint_col,success,272.152,0.864,2026-10-15T08:43:34Z,2216122.7,,
+bsan,parquet2-0.17.2,write::double_col,success,272.152,0.806,2026-10-15T08:43:35Z,2216122.7,,
+bsan,parquet2-0.17.2,write::file::tests::empty_file,success,272.152,3.154,2026-10-15T08:43:38Z,2216122.7,,
+bsan,parquet2-0.17.2,write::float_col,success,272.152,0.832,2026-10-15T08:43:39Z,2216122.7,,
+bsan,parquet2-0.17.2,write::indexes::read_indexed_page,success,272.152,0.814,2026-10-15T08:43:40Z,2216122.7,,
+bsan,parquet2-0.17.2,write::indexes::read_indexes_and_locations,success,272.152,0.813,2026-10-15T08:43:40Z,2216122.7,,
+bsan,parquet2-0.17.2,write::int32,success,272.152,0.808,2026-10-15T08:43:41Z,2216122.7,,
+bsan,parquet2-0.17.2,write::int32_brotli,success,272.152,2.982,2026-10-15T08:43:44Z,2216122.7,,
+bsan,parquet2-0.17.2,write::int32_lz4,success,272.152,0.878,2026-10-15T08:43:45Z,2216122.7,,
+bsan,parquet2-0.17.2,write::int32_lz4_short_i32_array,success,272.152,0.791,2026-10-15T08:43:46Z,2216122.7,,
+bsan,parquet2-0.17.2,write::int32_snappy,success,272.152,0.878,2026-10-15T08:43:47Z,2216122.7,,
+bsan,parquet2-0.17.2,write::int_col,success,272.152,0.807,2026-10-15T08:43:48Z,2216122.7,,
+bsan,parquet2-0.17.2,write::page::tests::dict_too_large,success,272.152,0.663,2026-10-15T08:43:48Z,2216122.7,,
+bsan,parquet2-0.17.2,write::page::tests::dict_too_many_values,success,272.152,0.669,2026-10-15T08:43:49Z,2216122.7,,
+bsan,parquet2-0.17.2,write::sidecar::basic,success,272.152,0.774,2026-10-15T08:43:50Z,2216122.7,,
+bsan,parquet2-0.17.2,write::smallint_col,success,272.152,0.806,2026-10-15T08:43:51Z,2216122.7,,
+bsan,parquet2-0.17.2,write::statistics::tests::binary,success,272.152,0.719,2026-10-15T08:43:51Z,2216122.7,,
+bsan,parquet2-0.17.2,write::statistics::tests::boolean,success,272.152,0.663,2026-10-15T08:43:52Z,2216122.7,,
+bsan,parquet2-0.17.2,write::statistics::tests::fixed_len_binary,success,272.152,0.676,2026-10-15T08:43:53Z,2216122.7,,
+bsan,parquet2-0.17.2,write::statistics::tests::primitive,success,272.152,0.672,2026-10-15T08:43:53Z,2216122.7,,
+bsan,parquet2-0.17.2,write::string_col,success,272.152,0.819,2026-10-15T08:43:54Z,2216122.7,,
+bsan,parquet2-0.17.2,write::tinyint,success,272.152,0.810,2026-10-15T08:43:55Z,2216122.7,,

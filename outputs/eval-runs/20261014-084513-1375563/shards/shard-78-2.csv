@@ -1,0 +1,15 @@
+bsan,nydus-service-0.3.0,blob_cache::tests::test_add_bootstrap,test_failed,421.470,0.730,2026-10-15T04:08:46Z,2216158.2,panic,"thread 'blob_cache::tests::test_add_bootstrap' (1012334) panicked at src/blob_cache.rs:735:36: called `Result::unwrap()` on an `Err` value: Os { code: 22, kind: InvalidInput, message: ""Invalid argument"" }"
+bsan,nydus-service-0.3.0,blob_cache::tests::test_blob_cache_entry,success,421.470,0.687,2026-10-15T04:08:47Z,2216158.2,,
+bsan,nydus-service-0.3.0,blob_cache::tests::test_blob_cache_list,success,421.470,0.699,2026-10-15T04:08:48Z,2216158.2,,
+bsan,nydus-service-0.3.0,blob_cache::tests::test_generate_blob_key,success,421.470,0.592,2026-10-15T04:08:48Z,2216158.2,,
+bsan,nydus-service-0.3.0,blob_cache::tests::test_invalid_blob_id,success,421.470,0.686,2026-10-15T04:08:49Z,2216158.2,,
+bsan,nydus-service-0.3.0,blob_cache::tests::test_meta_blob,test_failed,421.470,0.685,2026-10-15T04:08:50Z,2216158.2,panic,"thread 'blob_cache::tests::test_meta_blob' (1012647) panicked at /scratch/group/p.cis260229.000/cargo-temp-u.mm346025/ev-2216158-2/home/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-uring-0.4.0/src/lib.rs:145:48: called `Result::unwrap()` on an `Err` value: Os { code: 38, kind: Unsupported, me"
+bsan,nydus-service-0.3.0,daemon::tests::it_should_convert_int_to_daemonstate,success,421.470,0.625,2026-10-15T04:08:50Z,2216158.2,,
+bsan,nydus-service-0.3.0,daemon::tests::it_should_convert_str_to_fsbackendtype,success,421.470,0.616,2026-10-15T04:08:51Z,2216158.2,,
+bsan,nydus-service-0.3.0,fs_cache::tests::test_msg_header,success,421.470,0.595,2026-10-15T04:08:51Z,2216158.2,,
+bsan,nydus-service-0.3.0,fs_cache::tests::test_op_code,success,421.470,0.602,2026-10-15T04:08:52Z,2216158.2,,
+bsan,nydus-service-0.3.0,fs_service::tests::it_should_add_new_backend,success,421.470,0.657,2026-10-15T04:08:53Z,2216158.2,,
+bsan,nydus-service-0.3.0,fs_service::tests::it_should_create_rafs_backend,test_failed,421.470,0.783,2026-10-15T04:08:54Z,2216158.2,panic,"thread 'fs_service::tests::it_should_create_rafs_backend' (1012960) panicked at src/fs_service.rs:368:10: called `Result::unwrap()` on an `Err` value: Rafs(FillSuperblock(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+bsan,nydus-service-0.3.0,fs_service::tests::it_should_verify_prefetch_files,success,421.470,0.611,2026-10-15T04:08:54Z,2216158.2,,
+bsan,nydus-service-0.3.0,tests::test_backend_fs_type,success,421.470,0.617,2026-10-15T04:08:55Z,2216158.2,,
+bsan,nydus-service-0.3.0,tests::test_validate_thread_configuration,success,421.470,0.598,2026-10-15T04:08:55Z,2216158.2,,

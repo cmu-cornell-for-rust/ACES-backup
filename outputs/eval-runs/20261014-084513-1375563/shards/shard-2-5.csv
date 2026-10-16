@@ -1,0 +1,31 @@
+bsan,eureka-2.0.0,config_manager::tests::test_config_manager__config_dir_create,success,142.554,0.720,2026-10-14T14:02:23Z,2216082.5,,
+bsan,eureka-2.0.0,config_manager::tests::test_config_manager__config_dir_exists__failure,success,142.554,0.720,2026-10-14T14:02:24Z,2216082.5,,
+bsan,eureka-2.0.0,config_manager::tests::test_config_manager__config_dir_exists__success,success,142.554,0.724,2026-10-14T14:02:24Z,2216082.5,,
+bsan,eureka-2.0.0,config_manager::tests::test_config_manager__config_dir_path,success,142.554,0.720,2026-10-14T14:02:25Z,2216082.5,,
+bsan,eureka-2.0.0,config_manager::tests::test_config_manager__config_dir_path__when__xdg_config_home_env_var_set,success,142.554,0.713,2026-10-14T14:02:26Z,2216082.5,,
+bsan,eureka-2.0.0,config_manager::tests::test_config_manager__config_read__file_is_empty__default_config,success,142.554,0.729,2026-10-14T14:02:26Z,2216082.5,,
+bsan,eureka-2.0.0,config_manager::tests::test_config_manager__config_read__success,success,142.554,0.727,2026-10-14T14:02:27Z,2216082.5,,
+bsan,eureka-2.0.0,config_manager::tests::test_config_manager__config_read__when__file_does_not_exist__failure,success,142.554,0.725,2026-10-14T14:02:28Z,2216082.5,,
+bsan,eureka-2.0.0,config_manager::tests::test_config_manager__config_rm__file_does_not_exist__failure,success,142.554,0.730,2026-10-14T14:02:29Z,2216082.5,,
+bsan,eureka-2.0.0,config_manager::tests::test_config_manager__config_rm__success,success,142.554,0.715,2026-10-14T14:02:29Z,2216082.5,,
+bsan,eureka-2.0.0,config_manager::tests::test_config_manager__config_write__config_file_already_exists__success,success,142.554,0.730,2026-10-14T14:02:30Z,2216082.5,,
+bsan,eureka-2.0.0,config_manager::tests::test_config_manager__config_write__config_file_does_not_already_exist__success,success,142.554,0.727,2026-10-14T14:02:31Z,2216082.5,,
+bsan,eureka-2.0.0,git::tests::test_git__add__success,test_failed,142.554,0.746,2026-10-14T14:02:32Z,2216082.5,bsan,"error: Undefined Behavior: write access through <1416488>(unprotected) at alloc32588[0x4] is forbidden"
+bsan,eureka-2.0.0,git::tests::test_git__checkout_branch__missing_branch,test_failed,142.554,0.617,2026-10-14T14:02:32Z,2216082.5,bsan,"error: Undefined Behavior: write access through <1416440>(unprotected) at alloc32588[0x4] is forbidden"
+bsan,eureka-2.0.0,git::tests::test_git__checkout_branch__success,test_failed,142.554,0.650,2026-10-14T14:02:33Z,2216082.5,bsan,"error: Undefined Behavior: write access through <1416440>(unprotected) at alloc32588[0x4] is forbidden"
+bsan,eureka-2.0.0,git::tests::test_git__commit__success,test_failed,142.554,0.645,2026-10-14T14:02:34Z,2216082.5,bsan,"error: Undefined Behavior: write access through <1416488>(unprotected) at alloc32588[0x4] is forbidden"
+bsan,eureka-2.0.0,git::tests::test_git__init__invalid_repo,test_failed,142.554,0.645,2026-10-14T14:02:34Z,2216082.5,bsan,"error: Undefined Behavior: write access through <1414416>(unprotected) at alloc32570[0x0] is forbidden"
+bsan,eureka-2.0.0,git::tests::test_git__init__valid_repo,test_failed,142.554,0.645,2026-10-14T14:02:35Z,2216082.5,bsan,"error: Undefined Behavior: write access through <1416472>(unprotected) at alloc32588[0x4] is forbidden"
+bsan,eureka-2.0.0,printer::tests::test_printer__error__success,success,142.554,0.712,2026-10-14T14:02:36Z,2216082.5,,
+bsan,eureka-2.0.0,printer::tests::test_printer__fts_banner__success,success,142.554,0.776,2026-10-14T14:02:36Z,2216082.5,,
+bsan,eureka-2.0.0,printer::tests::test_printer__input_header__success,success,142.554,0.712,2026-10-14T14:02:37Z,2216082.5,,
+bsan,eureka-2.0.0,printer::tests::test_printer__print__success,success,142.554,0.697,2026-10-14T14:02:38Z,2216082.5,,
+bsan,eureka-2.0.0,printer::tests::test_printer__println__success,success,142.554,0.713,2026-10-14T14:02:38Z,2216082.5,,
+bsan,eureka-2.0.0,printer::tests::test_printer__println_styled__success,success,142.554,0.713,2026-10-14T14:02:39Z,2216082.5,,
+bsan,eureka-2.0.0,program_access::tests::test_program_access__get_if_available__failure,success,142.554,0.728,2026-10-14T14:02:40Z,2216082.5,,
+bsan,eureka-2.0.0,program_access::tests::test_program_access__get_if_available__success,success,142.554,0.729,2026-10-14T14:02:41Z,2216082.5,,
+bsan,eureka-2.0.0,program_access::tests::test_program_access__open_editor__success,success,142.554,0.770,2026-10-14T14:02:41Z,2216082.5,,
+bsan,eureka-2.0.0,program_access::tests::test_program_access__open_pager__success,success,142.554,0.714,2026-10-14T14:02:42Z,2216082.5,,
+bsan,eureka-2.0.0,program_access::tests::test_program_access__open_with_fallback__success,success,142.554,0.713,2026-10-14T14:02:43Z,2216082.5,,
+bsan,eureka-2.0.0,program_access::tests::test_program_access__open_with_fallback__uses_fallback,success,142.554,0.732,2026-10-14T14:02:44Z,2216082.5,,
+bsan,eureka-2.0.0,reader::tests::test_reader__read_input__success,success,142.554,0.719,2026-10-14T14:02:44Z,2216082.5,,

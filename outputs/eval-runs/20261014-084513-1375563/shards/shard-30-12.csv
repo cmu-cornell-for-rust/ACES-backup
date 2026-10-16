@@ -1,0 +1,15 @@
+bsan,mugle_keychain-5.2.0-alpha.5,base58::tests::test_base58_decode,success,135.100,0.724,2026-10-14T23:28:28Z,2216110.12,,
+bsan,mugle_keychain-5.2.0-alpha.5,base58::tests::test_base58_encode,success,135.100,0.699,2026-10-14T23:28:28Z,2216110.12,,
+bsan,mugle_keychain-5.2.0-alpha.5,base58::tests::test_base58_roundtrip,success,135.100,4.117,2026-10-14T23:28:33Z,2216110.12,,
+bsan,mugle_keychain-5.2.0-alpha.5,extkey_bip32::tests::test_vector_1,test_failed,135.100,2.729,2026-10-14T23:28:35Z,2216110.12,bsan,"error: Undefined Behavior: write access through <5019920>(unprotected) at alloc325280[0x1] is forbidden"
+bsan,mugle_keychain-5.2.0-alpha.5,extkey_bip32::tests::test_vector_2,test_failed,135.100,2.763,2026-10-14T23:28:38Z,2216110.12,bsan,"error: Undefined Behavior: write access through <5052976>(unprotected) at alloc325803[0x1] is forbidden"
+bsan,mugle_keychain-5.2.0-alpha.5,extkey_bip32::tests::test_vector_3,test_failed,135.100,2.708,2026-10-14T23:28:41Z,2216110.12,bsan,"error: Undefined Behavior: write access through <5052976>(unprotected) at alloc325803[0x1] is forbidden"
+bsan,mugle_keychain-5.2.0-alpha.5,keychain::test::secret_key_addition,success,135.100,6.362,2026-10-14T23:28:47Z,2216110.12,,
+bsan,mugle_keychain-5.2.0-alpha.5,keychain::test::test_key_derivation,test_failed,135.100,6.685,2026-10-14T23:28:54Z,2216110.12,bsan,"error: Undefined Behavior: write access through <5100560>(unprotected) at alloc305257[0x1] is forbidden"
+bsan,mugle_keychain-5.2.0-alpha.5,mnemonic::tests::test_bip39,timeout,135.100,3600.115,2026-10-15T00:28:54Z,2216110.12,other,"test mnemonic::tests::test_bip39 has been running for over 60 seconds"
+bsan,mugle_keychain-5.2.0-alpha.5,mnemonic::tests::test_bip39_random,success,135.100,13.213,2026-10-15T00:29:08Z,2216110.12,,
+bsan,mugle_keychain-5.2.0-alpha.5,mnemonic::tests::test_invalid,success,135.100,2.279,2026-10-15T00:29:10Z,2216110.12,,
+bsan,mugle_keychain-5.2.0-alpha.5,types::test::blinding_factor_clear_on_drop,test_failed,135.100,1.034,2026-10-15T00:29:11Z,2216110.12,bsan,"error: Undefined Behavior: trying to access an allocation that has been freed."
+bsan,mugle_keychain-5.2.0-alpha.5,types::test::path_identifier,success,135.100,0.564,2026-10-15T00:29:11Z,2216110.12,,
+bsan,mugle_keychain-5.2.0-alpha.5,types::test::split_blinding_factor,success,135.100,5.740,2026-10-15T00:29:17Z,2216110.12,,
+bsan,mugle_keychain-5.2.0-alpha.5,types::test::zero_key_addition,success,135.100,5.702,2026-10-15T00:29:23Z,2216110.12,,

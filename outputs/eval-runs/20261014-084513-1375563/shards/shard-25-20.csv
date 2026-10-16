@@ -1,0 +1,13 @@
+bsan,scylla-rs-0.1.6,app::access::tests::test_batch,success,125.210,0.716,2026-10-14T21:13:04Z,2216105.20,,
+bsan,scylla-rs-0.1.6,app::ring::generate_and_compute_fake_ring,timeout,125.210,3600.006,2026-10-14T22:13:04Z,2216105.20,other,"test app::ring::generate_and_compute_fake_ring has been running for over 60 seconds"
+bsan,scylla-rs-0.1.6,cql::frame::batch::tests::simple_query_builder_test,success,125.210,13.287,2026-10-14T22:13:17Z,2216105.20,,
+bsan,scylla-rs-0.1.6,cql::frame::options::tests::simple_options_builder_test,success,125.210,0.795,2026-10-14T22:13:18Z,2216105.20,,
+bsan,scylla-rs-0.1.6,cql::frame::prepare::tests::simple_prepare_builder_test,success,125.210,0.603,2026-10-14T22:13:18Z,2216105.20,,
+bsan,scylla-rs-0.1.6,cql::frame::query::tests::simple_query_builder_test,success,125.210,0.605,2026-10-14T22:13:19Z,2216105.20,,
+bsan,scylla-rs-0.1.6,cql::frame::startup::tests::simple_startup_builder_test,success,125.210,0.570,2026-10-14T22:13:20Z,2216105.20,,
+bsan,scylla-rs-0.1.6,cql::murmur3::tests::perf_test,timeout,125.210,3600.005,2026-10-14T23:13:20Z,2216105.20,other,"test cql::murmur3::tests::perf_test has been running for over 60 seconds"
+bsan,scylla-rs-0.1.6,cql::murmur3::tests::test_1000,success,125.210,47.875,2026-10-14T23:14:08Z,2216105.20,,
+bsan,scylla-rs-0.1.6,cql::murmur3::tests::test_address_murmur3_token_generation,success,125.210,0.563,2026-10-14T23:14:08Z,2216105.20,,
+bsan,scylla-rs-0.1.6,cql::murmur3::tests::test_tx_murmur3_token_generation,success,125.210,0.558,2026-10-14T23:14:09Z,2216105.20,,
+bsan,scylla-rs-0.1.6,cql::tests::connection::establish_connection_with_regular_cql_port,test_failed,125.210,2.463,2026-10-14T23:14:11Z,2216105.20,bsan,"error: Undefined Behavior: deallocation through <1472968>(unprotected) at alloc31743[0x15] is forbidden"
+bsan,scylla-rs-0.1.6,cql::tests::connection::establish_connection_with_shard_aware_port,test_failed,125.210,0.663,2026-10-14T23:14:12Z,2216105.20,bsan,"error: Undefined Behavior: deallocation through <1472968>(unprotected) at alloc31743[0x15] is forbidden"

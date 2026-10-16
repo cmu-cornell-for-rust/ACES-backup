@@ -1,0 +1,9 @@
+bsan,ryml-0.3.2,inner::tests::check_tree,success,506.988,2.421,2026-10-14T13:54:36Z,2216080.12,,
+bsan,ryml-0.3.2,inner::tests::emit_into_buffer,success,506.988,5.229,2026-10-14T13:54:41Z,2216080.12,,
+bsan,ryml-0.3.2,inner::tests::mut_tree,success,506.988,13.793,2026-10-14T13:54:56Z,2216080.12,,
+bsan,ryml-0.3.2,inner::tests::test_exceptions,success,506.988,7.953,2026-10-14T13:55:04Z,2216080.12,,
+bsan,ryml-0.3.2,inner::tests::val_types,success,506.988,9.757,2026-10-14T13:55:15Z,2216080.12,,
+bsan,ryml-0.3.2,tests::construct_tree,success,506.988,15.287,2026-10-14T13:55:32Z,2216080.12,,
+bsan,ryml-0.3.2,tests::empties,success,506.988,13.799,2026-10-14T13:55:46Z,2216080.12,,
+bsan,ryml-0.3.2,tests::node_ref,test_failed,506.988,15.662,2026-10-14T13:56:04Z,2216080.12,panic,"thread 'tests::node_ref' (1177262) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/fmt/mod.rs:2957:26: end byte index 0 is out of bounds for string of length 0"
+bsan,ryml-0.3.2,tests::parse,success,506.988,12.202,2026-10-14T13:56:17Z,2216080.12,,
