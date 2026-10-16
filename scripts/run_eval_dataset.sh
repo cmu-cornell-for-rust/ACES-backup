@@ -27,10 +27,23 @@
 #                     are skipped. See --unsafe-scan
 #   --unsafe-scan FILE  unsafe_scan.csv from dataset_creator/filter_unsafe.sh.
 #                     Default: <dataset dir>/_logs/unsafe_scan.csv
-#   --list FILE       per-crate test list (crate,tests with ';'-joined names, as
-#                     build_dataset.sh / list_tests.sh write). Default:
-#                     <outputs>/<dataset>_list.csv, else
-#                     <dataset dir>/_logs/<dataset>_list.csv, if either exists
+#   --tests FILE      tests CSV: which crates to run, and which of their tests.
+#                     Default: <group>/scripts/<dataset>-tests.csv (an error if
+#                     that doesn't exist either). Needs a crate column and a
+#                     test or tests column, found by header name (else
+#                     columns 1 and 2); either form works:
+#                       crate,tests,...   ';'-joined names per crate, as
+#                                         list_tests.sh / build_dataset.sh
+#                                         write (first row per crate wins)
+#                       ...,crate,test,...  one test per row, e.g. a previous
+#                                         eval CSV filtered to the tests to
+#                                         rerun (all rows count)
+#                     Fields may be double-quoted; a UTF-8 BOM is ignored.
+#   --skip-list FILE  (crate, test) pairs never to run, in any format --tests
+#                     takes. Default: <group>/scripts/skip_list.csv, applied
+#                     whenever it exists (tests known to hang or eat the
+#                     walltime). A crate left with no tests is skipped
+#   --no-skip-list    don't apply the default skip list
 #   --jobs N          sbatch jobs to spread the crates over (default: one per
 #                     crate, capped at 80)
 #   --max-tasks N     ceiling on workers per job (default: as many as fit a
@@ -38,6 +51,8 @@
 #                     --mem-per-task, i.e. 24 at the defaults)
 #   --cpus-per-task N cores per worker (default 1; also caps CARGO_BUILD_JOBS)
 #   --mem-per-task G  GB per worker (default 8, at most 16)
+#   --merge RUNDIR    don't run anything: merge RUNDIR's shards into its master
+#                     CSV (see the end of this comment) and print the summary
 #   --test-threads N  pass `--test-threads=N` to the test harness on every run
 # Environment:
 #   BSAN_SYMBOLIZER   llvm-symbolizer path inside the image, so BSAN reports
@@ -52,21 +67,17 @@
 #
 # How it differs from run_bench_dataset.sh
 # ----------------------------------------
-# * Tests come from <dataset>_list.csv (build_dataset.sh's listing; see
-#   --list) when there is one: a crate with a row there runs exactly those
-#   tests (none: no_tests). Any other crate -- or every crate, without a list
-#   -- is listed by its worker after compiling, with
-#   `cargo <tool> test --tests -- --list --format=json -Zunstable-options`
-#   (the same listing as list_tests.sh, but under the run's own tool so it
-#   reuses the build just made). Ignored tests -- including
-#   #[cfg_attr(miri, ignore)] ones, since every mode builds with --cfg=miri --
-#   are dropped, as list_tests.sh drops them. If the tool's listing fails
-#   (e.g. Miri can't interpret a binary's startup), plain cargo lists instead.
+# * Like run_bench_dataset.sh, the crates and tests come from the tests CSV
+#   (--tests, see above), not from listing on the node: each crate runs
+#   exactly the tests named there, in file order. Crates must also have a dir
+#   in the dataset; ones with no tests named are skipped. --ignore/--only/
+#   --safety filter the CSV's crates.
 # * No hyperfine: like run_bsan_dataset.sh, each phase is ONE invocation timed
 #   with `date +%s%3N` around it. Each test is run exactly once -- no pre-run,
 #   no warmup, no repeats -- and that run both classifies and times it.
-# * No slowlist / test-level lists: the crates are dealt evenly over the jobs
-#   (round-robin, so job sizes differ by at most one crate), and inside a job
+# * No slowlist / test-level lists: the crates are dealt over the jobs by test
+#   count (biggest crate first, to the job with the fewest tests so far; a
+#   crate is never split), and inside a job
 #   the workers PULL crates from a shared queue as they free up, so one slow
 #   crate never leaves the job's other workers idle behind a static deal.
 # * A worker keeps its CARGO_HOME across the crates it handles, so registry
@@ -82,8 +93,9 @@
 # Per crate, inside the container:
 #   fetch         cargo fetch                                  (fetch_failed)
 #   compile       cargo <tool> test --tests --no-run, timed    (build_failed)
-#   list          as above, unless the crate is in the list    (list_failed)
 #   per test      cargo <tool> test --tests -- --exact <test>, timed once
+#                 (a doc:<...> test, from a --doc listing: cargo <tool> test --doc
+#                 -- <filter> --skip <skip>..., see inner.sh)
 #
 # Rows are STREAMED into a per-worker shard CSV as each test finishes (single
 # writer per shard; a walltime kill loses only the in-flight test):
@@ -93,8 +105,7 @@
 #
 # status: success, test_failed (exited non-zero), no_match (the filter ran 0
 # tests), timeout (hit --test-timeout), and test-less crate rows:
-# fetch_failed, build_failed, list_failed, no_tests (listing found no runnable
-# tests). run_seconds is the wall time of the test's single invocation,
+# fetch_failed, build_failed. run_seconds is the wall time of the test's single invocation,
 # including cargo's freshness check and every test binary's startup.
 #
 # error_type/error are set on every row whose command exited non-zero, with
@@ -108,6 +119,8 @@
 #   bsan    error: Undefined Behavior:        (BSAN/Miri UB report)
 #   panic   panicked at                       (ordinary test failure)
 #   other   none of the above
+#   timeout set on every status=timeout row instead of the above, with error
+#           "test timed out after <T> (--test-timeout; killed by SIGTERM|SIGKILL)"
 # error is the matching line (for panic, plus the message line after it; for
 # other, the last error:/non-empty line), one line, at most 300 chars,
 # double-quoted. The full output of every failing / no_match test (last 200
@@ -118,8 +131,12 @@
 # merges the shards into <outputs>/<image>[-<extra-slug>]-<dataset>-eval.csv
 # and prints a status breakdown. Queues/shards/job logs live under
 # <outputs>/eval-runs/<runid>/. If this script is killed the jobs keep running
-# (Ctrl-C cancels them first); shards survive and can be merged by hand:
-#   cat <rundir>/shards/*.csv >> <master csv>
+# (Ctrl-C cancels them first). The shards are merged whenever the
+# orchestrator exits -- done, Ctrl-C, hangup, error -- and merging only adds
+# rows the master CSV doesn't already have, so it's safe to repeat. If the
+# orchestrator was killed outright (SIGKILL, node reboot), merge by hand:
+#   run_eval_dataset.sh --merge <rundir>
+# which appends the run's missing rows to the master CSV it was writing.
 set -euo pipefail
 
 if (( BASH_VERSINFO[0] < 4 )); then
@@ -150,7 +167,9 @@ IGNORE_FILE=""
 ONLY_FILE=""
 SAFETY=""
 UNSAFE_SCAN=""
-LIST_CSV=""
+TESTS_CSV=""
+SKIP_CSV=""
+NO_SKIP=0
 JOBS=""              # empty = auto: one per crate, capped at MAX_JOBS
 MAX_TASKS=""         # empty = auto: what fits NODE_CPUS / NODE_MEM
 CPUS_PER_TASK=1
@@ -159,6 +178,41 @@ TEST_THREADS=""
 TEST_TIMEOUT=""
 WALLTIME_ARG=48
 
+# ── Shard merging (end of a run, or --merge) ─────────────────────────────────
+HEADER="build,crate,test,status,compile_seconds,run_seconds,timestamp,job_id,error_type,error"
+# merge_shards <rundir> <csv>: append the shard rows <csv> doesn't have yet
+# (whole-line match, so a repeat merge adds nothing), creating it with the
+# header if needed. Prints how many rows it added.
+merge_shards() {
+    local rundir="$1" csv="$2" added
+    mkdir -p "$(dirname "$csv")"
+    [[ -s "$csv" ]] || echo "$HEADER" > "$csv"
+    added=$({ cat "$rundir"/shards/*.csv 2>/dev/null || true; } \
+        | awk 'NR == FNR { have[$0] = 1; next } !($0 in have) { have[$0] = 1; print }' "$csv" - \
+        | tee -a "$csv" | wc -l | tr -d ' ')
+    echo "Merged $added new row(s) from $rundir/shards into $csv"
+}
+# summarize_run <rundir> <ncrates>: status counts of the run's rows, and the
+# crates it never finished.
+summarize_run() {
+    local rundir="$1" ncrates="$2" done_crates
+    # Status is field 4; test names never contain commas, and the only quoted
+    # field (error) comes after it.
+    cat "$rundir"/shards/*.csv 2>/dev/null | awk -F, '
+        { c[$4]++; total++ }
+        END {
+            for (s in c) printf "  %s: %d\n", s, c[s]
+            printf "  total rows: %d\n", total + 0
+        }' || true
+    done_crates=$(cat "$rundir"/done/*.txt 2>/dev/null | wc -l || true)
+    if (( done_crates < ncrates )); then
+        echo "  NOTE: $(( ncrates - done_crates )) crate(s) never finished (walltime / job failure)."
+        echo "  Re-run them with --only: comm -23 <(sort $rundir/queues/*.txt) <(sort $rundir/done/*.txt)"
+        echo "  See $rundir/job-*.out and the crates' eval-<image>.log"
+    fi
+}
+
+MERGE_DIR=""
 POS=()
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -170,8 +224,11 @@ while [[ $# -gt 0 ]]; do
         --safety=*)      SAFETY="${1#*=}"; shift ;;
         --unsafe-scan)   UNSAFE_SCAN="$2"; shift 2 ;;
         --unsafe-scan=*) UNSAFE_SCAN="${1#*=}"; shift ;;
-        --list)          LIST_CSV="$2"; shift 2 ;;
-        --list=*)        LIST_CSV="${1#*=}"; shift ;;
+        --skip-list)     SKIP_CSV="$2"; shift 2 ;;
+        --skip-list=*)   SKIP_CSV="${1#*=}"; shift ;;
+        --no-skip-list)  NO_SKIP=1; shift ;;
+        --tests)         TESTS_CSV="$2"; shift 2 ;;
+        --tests=*)       TESTS_CSV="${1#*=}"; shift ;;
         --jobs)          JOBS="$2"; shift 2 ;;
         --jobs=*)        JOBS="${1#*=}"; shift ;;
         --max-tasks)     MAX_TASKS="$2"; shift 2 ;;
@@ -180,6 +237,8 @@ while [[ $# -gt 0 ]]; do
         --cpus-per-task=*) CPUS_PER_TASK="${1#*=}"; shift ;;
         --mem-per-task)  MEM_PER_TASK="$2"; shift 2 ;;
         --mem-per-task=*) MEM_PER_TASK="${1#*=}"; shift ;;
+        --merge)         MERGE_DIR="$2"; shift 2 ;;
+        --merge=*)       MERGE_DIR="${1#*=}"; shift ;;
         --test-threads)  TEST_THREADS="$2"; shift 2 ;;
         --test-threads=*) TEST_THREADS="${1#*=}"; shift ;;
         --test-timeout)  TEST_TIMEOUT="$2"; shift 2 ;;
@@ -192,6 +251,20 @@ while [[ $# -gt 0 ]]; do
 done
 set -- ${POS[@]+"${POS[@]}"}
 
+# --merge RUNDIR: the master CSV comes from the run's config.env (MASTER_CSV;
+# runs from before it was recorded: <outputs>/<image>-<dataset>-eval.csv).
+if [[ -n "$MERGE_DIR" ]]; then
+    MERGE_DIR="${MERGE_DIR%/}"
+    [[ -f "$MERGE_DIR/config.env" ]] || { echo "Error: $MERGE_DIR/config.env not found -- not an eval run dir?" >&2; exit 1; }
+    MASTER_CSV=""
+    # shellcheck disable=SC1091
+    source "$MERGE_DIR/config.env"
+    [[ -n "$MASTER_CSV" ]] || MASTER_CSV="$OUTPUTS_DIR/${IMAGE}-$(basename "$DATASET_DIR")-eval.csv"
+    merge_shards "$MERGE_DIR" "$MASTER_CSV"
+    summarize_run "$MERGE_DIR" "$(cat "$MERGE_DIR"/queues/*.txt 2>/dev/null | wc -l)"
+    exit 0
+fi
+
 usage() {
     echo "Usage: $0 [options] <mode> <image> [walltime] <dataset> [extra]" >&2
     echo "  <mode>      miri | bsan | rust" >&2
@@ -201,7 +274,8 @@ usage() {
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --ignore FILE --only FILE" >&2
     echo "           --safety safe,unsafe-deps,unsafe [--unsafe-scan FILE]" >&2
-    echo "           --list FILE (default <dataset>_list.csv, if present)" >&2
+    echo "           --tests FILE (default $GROUP/scripts/<dataset>-tests.csv)" >&2
+    echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
     echo "           --jobs N (<= $MAX_JOBS) --max-tasks N --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m)" >&2
@@ -298,12 +372,20 @@ fi
 [[ -d "$DATASET_DIR" ]] || { echo "Error: dataset dir not found: $DATASET_DIR" >&2; exit 1; }
 command -v sbatch >/dev/null || { echo "Error: sbatch not found (run on a login node)." >&2; exit 1; }
 
-if [[ -n "$LIST_CSV" ]]; then
-    [[ -f "$LIST_CSV" ]] || { echo "Error: test list not found: $LIST_CSV" >&2; exit 1; }
+[[ -n "$TESTS_CSV" ]] || TESTS_CSV="$GROUP/scripts/${DATASET}-tests.csv"
+[[ -f "$TESTS_CSV" ]] || {
+    echo "Error: tests CSV not found: $TESTS_CSV" >&2
+    echo "  (pass --tests FILE; build_dataset.sh writes <dataset>_list.csv, list_tests.sh tests-<dataset>.csv)" >&2
+    exit 1
+}
+# Skip list: an explicit one must exist; the default is used if it's there.
+if (( NO_SKIP )); then
+    SKIP_CSV=""
+elif [[ -n "$SKIP_CSV" ]]; then
+    [[ -f "$SKIP_CSV" ]] || { echo "Error: skip list not found: $SKIP_CSV" >&2; exit 1; }
 else
-    for f in "$OUTPUTS_DIR/${DATASET}_list.csv" "$DATASET_DIR/_logs/${DATASET}_list.csv"; do
-        [[ -f "$f" ]] && { LIST_CSV="$f"; break; }
-    done
+    SKIP_CSV="$GROUP/scripts/skip_list.csv"
+    [[ -f "$SKIP_CSV" ]] || SKIP_CSV=""
 fi
 
 # ── Crate filters ────────────────────────────────────────────────────────────
@@ -352,25 +434,104 @@ if [[ -n "$SAFETY" ]]; then
     (( ${#SAFETY_OF[@]} > 0 )) || { echo "Error: unsafe scan $UNSAFE_SCAN has no rows." >&2; exit 1; }
 fi
 
-# ── Select crates: every dataset dir holding a Cargo.toml ────────────────────
-CRATES=()
-skip_ignored=0; skip_only=0; skip_safety=0
-for d in "$DATASET_DIR"/*/; do
-    d="${d%/}"
-    crate="$(basename "$d")"
-    case "$crate" in _*) continue ;; esac
-    [[ -f "$d/Cargo.toml" ]] || continue
-    if [[ -n "${IGNORE[$crate]:-}" ]]; then skip_ignored=$((skip_ignored+1)); continue; fi
-    if (( ${#ONLY[@]} > 0 )) && [[ -z "${ONLY[$crate]:-}" ]]; then skip_only=$((skip_only+1)); continue; fi
-    if [[ -n "$SAFETY" && -z "${WANT_STATUS[${SAFETY_OF[$crate]:-unknown}]:-}" ]]; then skip_safety=$((skip_safety+1)); continue; fi
-    CRATES+=("$crate")
-done
-NCRATES=${#CRATES[@]}
-(( NCRATES > 0 )) || { echo "Error: no crates left to run in $DATASET_DIR after filtering." >&2; exit 1; }
+# ── Select crates and tests from the tests CSV ───────────────────────────────
+# parse_tests_csv <file>: one "crate<TAB>test" line per (crate, test), in file
+# order, deduplicated. Columns by header name -- crate, and test (one per row,
+# every row counts) or tests (';'-joined, first row per crate wins) -- else
+# columns 1 and 2 as crate,tests. Fields may be double-quoted (with "" for a
+# quote, but not spanning lines).
+parse_tests_csv() {
+    LC_ALL=C awk '
+        function splitcsv(line, f,    n, i, c, q, cur) {
+            n = 0; cur = ""; q = 0
+            for (i = 1; i <= length(line); i++) {
+                c = substr(line, i, 1)
+                if (q) {
+                    if (c == "\"") {
+                        if (substr(line, i + 1, 1) == "\"") { cur = cur "\""; i++ } else q = 0
+                    } else cur = cur c
+                } else if (c == "\"") q = 1
+                else if (c == ",") { f[++n] = cur; cur = "" }
+                else cur = cur c
+            }
+            f[++n] = cur
+            return n
+        }
+        function trim(x) { gsub(/^[[:space:]]+|[[:space:]]+$/, "", x); return x }
+        BEGIN { bom = sprintf("%c%c%c", 239, 187, 191); cc = 1; tc = 2; per_row = 0 }
+        {
+            line = $0
+            sub(/\r$/, "", line)
+            if (NR == 1 && index(line, bom) == 1) line = substr(line, 4)
+            n = splitcsv(line, f)
+            if (NR == 1) {
+                hc = 0; ht = 0
+                for (i = 1; i <= n; i++) {
+                    h = tolower(trim(f[i]))
+                    if (h == "crate" && !hc) hc = i
+                    else if (h == "test" && !ht) { ht = i; per_row = 1 }
+                    else if (h == "tests" && !ht) ht = i
+                }
+                if (hc) { cc = hc; if (ht) tc = ht; else tc = 0; next }
+            }
+            if (!tc) next
+            crate = trim(f[cc]); tests = trim(f[tc])
+            if (crate == "" || tests == "") next
+            if (!per_row) { if (crate in done) next; done[crate] = 1 }
+            k = split(tests, t, ";")
+            for (j = 1; j <= k; j++) {
+                t[j] = trim(t[j])
+                if (t[j] != "" && !seen[crate SUBSEP t[j]]++) printf "%s\t%s\n", crate, t[j]
+            }
+        }' "$1"
+}
 
-# ── Shape: spread the crates evenly over as many jobs as allowed ─────────────
+RUNDIR="$OUTPUTS_DIR/eval-runs/$(date +%Y%m%d-%H%M%S)-$$"
+mkdir -p "$RUNDIR/queues" "$RUNDIR/shards" "$RUNDIR/done" "$RUNDIR/lists"
+
+# Each crate's tests go to $RUNDIR/lists/<crate>.txt, one per line, which the
+# worker runs in that order. KEEP caches each crate's verdict (1 = run it).
+CRATES=()
+declare -A KEEP=()
+declare -A NT=()          # tests per kept crate
+declare -A SKIP=()        # "crate<TAB>test" pairs from the skip list
+if [[ -n "$SKIP_CSV" ]]; then
+    while IFS= read -r pair; do SKIP["$pair"]=1; done < <(parse_tests_csv "$SKIP_CSV")
+fi
+MISSING=()
+skip_ignored=0; skip_only=0; skip_safety=0; skip_tests=0; NTESTS=0
+while IFS=$'\t' read -r crate test; do
+    if [[ -z "${KEEP[$crate]+x}" ]]; then
+        KEEP[$crate]=0
+        if [[ -n "${IGNORE[$crate]:-}" ]]; then skip_ignored=$((skip_ignored+1))
+        elif (( ${#ONLY[@]} > 0 )) && [[ -z "${ONLY[$crate]:-}" ]]; then skip_only=$((skip_only+1))
+        elif [[ -n "$SAFETY" && -z "${WANT_STATUS[${SAFETY_OF[$crate]:-unknown}]:-}" ]]; then skip_safety=$((skip_safety+1))
+        elif [[ ! -f "$DATASET_DIR/$crate/Cargo.toml" ]]; then MISSING+=("$crate")
+        else KEEP[$crate]=1
+        fi
+    fi
+    [[ "${KEEP[$crate]}" == 1 ]] || continue
+    if [[ -n "${SKIP[$crate$'\t'$test]:-}" ]]; then skip_tests=$((skip_tests+1)); continue; fi
+    # Added on its first unskipped test, so a fully skipped crate drops out.
+    if [[ -z "${NT[$crate]:-}" ]]; then CRATES+=("$crate"); : > "$RUNDIR/lists/$crate.txt"; fi
+    printf '%s\n' "$test" >> "$RUNDIR/lists/$crate.txt"
+    NT[$crate]=$(( ${NT[$crate]:-0} + 1 ))
+    NTESTS=$((NTESTS + 1))
+done < <(parse_tests_csv "$TESTS_CSV")
+NCRATES=${#CRATES[@]}
+if (( ${#MISSING[@]} > 0 )); then
+    echo "Warning: ${#MISSING[@]} crate(s) in $TESTS_CSV have no dir under $DATASET_DIR (skipped):" >&2
+    printf '  %s\n' "${MISSING[@]}" >&2
+fi
+(( NCRATES > 0 )) || {
+    echo "Error: no crates with tests left to run from $TESTS_CSV after filtering." >&2
+    rm -rf "$RUNDIR"
+    exit 1
+}
+
+# ── Shape: spread the tests evenly over as many jobs as allowed ──────────────
 # Up to MAX_JOBS jobs (never more than one per crate), then each job is only
-# as wide as its share of crates, capped at MAX_TASKS. Many narrow jobs
+# as wide as its number of crates, capped at MAX_TASKS. Many narrow jobs
 # backfill better than a few wide ones, and every crate starts at once until
 # crates outnumber JOBS x MAX_TASKS; past that, workers pull from the job's
 # queue as they free up.
@@ -380,35 +541,33 @@ if [[ -z "$JOBS" ]]; then
 fi
 (( JOBS > NCRATES )) && JOBS=$NCRATES
 
-RUNDIR="$OUTPUTS_DIR/eval-runs/$(date +%Y%m%d-%H%M%S)-$$"
-mkdir -p "$RUNDIR/queues" "$RUNDIR/shards" "$RUNDIR/done" "$RUNDIR/lists"
-
-# Per-crate test lists from LIST_CSV, one name per line, for the selected
-# crates (first row per crate wins, as for every consumer of these CSVs).
-nlisted=0
-if [[ -n "$LIST_CSV" ]]; then
-    declare -A SELECTED=()
-    for crate in "${CRATES[@]}"; do SELECTED["$crate"]=1; done
-    while IFS=, read -r crate tests || [[ -n "$crate" ]]; do
-        tests="${tests//$'\r'/}"
-        [[ -n "$crate" && "$crate" != "crate" && -n "${SELECTED[$crate]:-}" ]] || continue
-        [[ -f "$RUNDIR/lists/$crate.txt" ]] && continue
-        if [[ -n "$tests" ]]; then
-            tr ';' '\n' <<<"$tests" > "$RUNDIR/lists/$crate.txt"
-        else
-            : > "$RUNDIR/lists/$crate.txt"
+# Balance by test count (greedy longest-first): crates in decreasing order of
+# tests, each to the job with the fewest tests so far (ties: fewest crates,
+# then lowest index). Crates stay whole -- each is compiled once -- so one
+# huge crate can still outweigh a job's share. Each queue is thus biggest
+# crate first, which also keeps a job's long crates from starting last.
+JOB_TESTS=(); JOB_CRATES=()
+for (( j = 0; j < JOBS; j++ )); do JOB_TESTS[j]=0; JOB_CRATES[j]=0; done
+while IFS=$'\t' read -r cnt crate; do
+    best=0
+    for (( j = 1; j < JOBS; j++ )); do
+        if (( JOB_TESTS[j] < JOB_TESTS[best] ||
+              (JOB_TESTS[j] == JOB_TESTS[best] && JOB_CRATES[j] < JOB_CRATES[best]) )); then
+            best=$j
         fi
-        nlisted=$((nlisted + 1))
-    done < "$LIST_CSV"
-fi
-
-# Round-robin: job sizes differ by at most one crate.
-i=0
-for crate in "${CRATES[@]}"; do
-    printf '%s\n' "$crate" >> "$RUNDIR/queues/job-$(( i % JOBS )).txt"
-    i=$((i + 1))
+    done
+    printf '%s\n' "$crate" >> "$RUNDIR/queues/job-$best.txt"
+    JOB_TESTS[best]=$(( JOB_TESTS[best] + cnt ))
+    JOB_CRATES[best]=$(( JOB_CRATES[best] + 1 ))
+done < <(for crate in "${CRATES[@]}"; do printf '%d\t%s\n' "${NT[$crate]}" "$crate"; done \
+         | sort -t$'\t' -k1,1nr -k2,2)
+PER_JOB_MAX=0; PER_JOB_MIN=$NCRATES; TESTS_MAX=0; TESTS_MIN=$NTESTS
+for (( j = 0; j < JOBS; j++ )); do
+    (( JOB_CRATES[j] > PER_JOB_MAX )) && PER_JOB_MAX=${JOB_CRATES[j]}
+    (( JOB_CRATES[j] < PER_JOB_MIN )) && PER_JOB_MIN=${JOB_CRATES[j]}
+    (( JOB_TESTS[j] > TESTS_MAX )) && TESTS_MAX=${JOB_TESTS[j]}
+    (( JOB_TESTS[j] < TESTS_MIN )) && TESTS_MIN=${JOB_TESTS[j]}
 done
-PER_JOB_MAX=$(( (NCRATES + JOBS - 1) / JOBS ))
 TASKS=$PER_JOB_MAX
 (( TASKS > MAX_TASKS )) && TASKS=$MAX_TASKS
 
@@ -425,6 +584,7 @@ TASKS=$PER_JOB_MAX
     printf 'MIRIFLAGS_ALL=%q\n'    "$MIRIFLAGS_ALL"
     printf 'BSAN_OPTIONS_ALL=%q\n' "$BSAN_OPTIONS_ALL"
     printf 'BSAN_SYMBOLIZER=%q\n'  "$BSAN_SYMBOLIZER"
+    printf 'MASTER_CSV=%q\n'       "$CSV"
 } > "$RUNDIR/config.env"
 
 # ── inner.sh: runs INSIDE the container, once per crate, cwd = /work ─────────
@@ -463,7 +623,22 @@ else
     export RUSTC="$(dirname "$0")/rustc-cfg-miri.sh"
     export BSAN_ORIG_RUSTC="$RUSTC"
 fi
+# rustdoc takes RUSTDOCFLAGS, not RUSTFLAGS, and only for the crate under
+# test, so doc tests get --cfg=miri there in every mode.
+export RUSTDOCFLAGS="--cfg=miri --cap-lints=warn"
 echo "RUSTFLAGS=[$RUSTFLAGS]${RUSTC:+ RUSTC=[$RUSTC]}"
+
+# Doc tests (only from a test list made with build_dataset.sh / list_tests.sh
+# --doc) arrive as "doc:<name>#<filter>[#<skip>...]", every part with
+# % , ; space ' " # percent-encoded. rustdoc splits test args on whitespace,
+# so one can't be picked by its full name with --exact; `<filter> --skip
+# <skip>...` (substring matches) selects exactly it instead. As in
+# run_bench_dataset.sh.
+DOC_RUN="${RUN% --tests} --doc"
+pct_decode() {
+    printf '%s' "$1" | sed -e 's/%2C/,/g' -e 's/%3B/;/g' -e 's/%20/ /g' \
+        -e "s/%27/'/g" -e 's/%22/"/g' -e 's/%23/#/g' -e 's/%25/%/g'
+}
 
 HARNESS=()
 [ -n "${EV_TEST_THREADS:-}" ] && HARNESS=(--test-threads="$EV_TEST_THREADS")
@@ -552,49 +727,26 @@ if [ "$rc" -ne 0 ]; then
 fi
 echo "compiled: $EV_CRATE in ${compile}s"
 
-# ── list ──
-# From the dataset's test list when the crate has a row there; otherwise JSON
-# lines on stdout, build noise on stderr. The tool's own listing reuses
-# the build above; plain cargo is the fallback when it can't list (Miri
-# failing a binary's startup), at the cost of a native build.
-LIST_ARGS=(-- --list --format=json -Zunstable-options)
-if [ -f "$EV_TESTS" ]; then
-    sed '/^$/d' "$EV_TESTS" | LC_ALL=C sort -u > "$tmp/tests"
-    echo "list: from the dataset's test list"
-elif ! $RUN "${LIST_ARGS[@]}" < /dev/null > "$tmp/list" 2> "$tmp/listerr"; then
-    cat "$tmp/listerr"
-    if [ "$EV_MODE" != rust ]; then
-        echo "list: $RUN failed to list; retrying with plain cargo"
-        cargo test --tests "${LIST_ARGS[@]}" < /dev/null > "$tmp/list" 2> "$tmp/listerr"; rc=$?
-    else
-        rc=1
-    fi
-    if [ "$rc" -ne 0 ]; then
-        cat "$tmp/listerr"
-        cat "$tmp/list" "$tmp/listerr" > "$tmp/out"
-        classify "$tmp/out"
-        row "" list_failed "$compile" "" "$ekind" "$emsg"
-        exit 1
-    fi
-fi
-# Runnable = discovered and not #[ignore]d. A name in several binaries is
-# listed once; --exact runs it in each of them.
-if [ ! -f "$EV_TESTS" ]; then
-    grep -a '"type": *"test"' "$tmp/list" | grep -a '"ignore": *false' \
-        | sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u > "$tmp/tests"
-fi
-ntests=$(wc -l < "$tmp/tests" | tr -d ' ')
-echo "listed: $EV_CRATE -> $ntests runnable test(s)"
-if [ "$ntests" -eq 0 ]; then
-    row "" no_tests "$compile" ""
-    exit 0
-fi
+# ── tests: from the tests CSV, in its order ──
+cp "$EV_TESTS" "$tmp/tests"
+echo "tests: $EV_CRATE -> $(wc -l < "$tmp/tests" | tr -d ' ') from the tests CSV"
 
 # ── each test, once ──
 while IFS= read -r t; do
     [ -n "$t" ] || continue
+    if [ "${t#doc:}" != "$t" ]; then
+        # The run includes rustdoc collecting the crate's doc tests and
+        # compiling this one's snippet: neither is built by --no-run.
+        IFS='#' read -ra dparts <<< "${t#doc:}"
+        targs=( "$(pct_decode "${dparts[1]}")" )
+        for sk in "${dparts[@]:2}"; do targs+=( --skip "$(pct_decode "$sk")" ); done
+        trun=$DOC_RUN
+    else
+        targs=( --exact "$t" )
+        trun=$RUN
+    fi
     rstart=$(now_ms)
-    ${LIMIT[@]+"${LIMIT[@]}"} $RUN -- ${HARNESS[@]+"${HARNESS[@]}"} --exact "$t" \
+    ${LIMIT[@]+"${LIMIT[@]}"} $trun -- ${HARNESS[@]+"${HARNESS[@]}"} "${targs[@]}" \
         < /dev/null > "$tmp/out" 2>&1; rc=$?
     run=$(secs $(( $(now_ms) - rstart )))
     nrun=$(ntests_ran "$tmp/out")
@@ -609,6 +761,13 @@ while IFS= read -r t; do
         status=success
     fi
     [ "$rc" -ne 0 ] && classify "$tmp/out"
+    if [ "$status" = timeout ]; then
+        # A fixed message, not whatever the killed run last printed (which
+        # classify could mistake for e.g. a panic, or oom on the -k SIGKILL).
+        ekind=timeout
+        emsg="test timed out after $EV_TEST_TIMEOUT (--test-timeout; killed by $([ "$rc" -eq 137 ] && echo SIGKILL || echo SIGTERM))"
+        echo "$emsg" >> "$tmp/out"
+    fi
     [ "$status" != success ] && dump_output "$t" "$rc" "$tmp/out"
     echo "result: $EV_CRATE :: $t -> $status (${run}s)${ekind:+ [$ekind]}"
     row "$t" "$status" "$compile" "$run" "$ekind" "$emsg"
@@ -736,13 +895,14 @@ JOB_EOF
 # ── Plan summary ─────────────────────────────────────────────────────────────
 echo "Mode:     $MODE   Image: $IMAGE"
 echo "Dataset:  $DATASET_DIR"
-if [[ -n "$LIST_CSV" ]]; then
-    echo "Crates:   $NCRATES ($nlisted with tests from $LIST_CSV, the rest listed on the node)"
+echo "Tests:    $NTESTS across $NCRATES crate(s) (from $TESTS_CSV)"
+echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only${SAFETY:+ not-$SAFETY=$skip_safety} no-dir=${#MISSING[@]}"
+if [[ -n "$SKIP_CSV" ]]; then
+    echo "          $skip_tests test(s) from skip list $SKIP_CSV (${#SKIP[@]} listed)"
 else
-    echo "Crates:   $NCRATES (no test list; tests are listed per crate on the node)"
+    echo "          no skip list"
 fi
-echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only${SAFETY:+ not-$SAFETY=$skip_safety}"
-echo "Shape:    $JOBS job(s), $(( NCRATES / JOBS ))-$PER_JOB_MAX crate(s) each, up to $TASKS worker(s)/job"
+echo "Shape:    $JOBS job(s), $TESTS_MIN-$TESTS_MAX test(s) / $PER_JOB_MIN-$PER_JOB_MAX crate(s) each, up to $TASKS worker(s)/job"
 echo "          x ${CPUS_PER_TASK} cpu, ${MEM_PER_TASK}G/worker, $WALLTIME walltime"
 echo "Timing:   one run per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}${TEST_TIMEOUT:+, --test-timeout=$TEST_TIMEOUT}"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
@@ -771,16 +931,30 @@ for (( j = 0; j < JOBS; j++ )); do
     fi
     jid="${jid%%;*}"
     JOBIDS+=("$jid")
-    echo "submitted job $j ($(wc -l < "$q") crates, $nt workers) -> SLURM job $jid"
+    echo "submitted job $j ($(wc -l < "$q") crates, ${JOB_TESTS[j]} tests, $nt workers) -> SLURM job $jid"
 done
 
+# From here on, whatever ends the orchestrator merges the shards first:
+# Ctrl-C / TERM cancel the jobs, then merge what they wrote; a hangup (SSH
+# dropped) leaves them running and merges what's there so far -- rerun
+# --merge once they finish. Normal completion merges below.
+MERGED=0
+merge_on_exit() {
+    (( MERGED )) && return
+    MERGED=1
+    echo
+    merge_shards "$RUNDIR" "$CSV" || true
+    echo "  (more rows later? run_eval_dataset.sh --merge $RUNDIR)"
+}
 cancel_jobs() {
-    trap - INT TERM
+    trap - INT TERM HUP
     echo; echo "Cancelling jobs: ${JOBIDS[*]}"
     scancel "${JOBIDS[@]}" 2>/dev/null || true
     exit 130
 }
+trap merge_on_exit EXIT
 trap cancel_jobs INT TERM
+trap 'exit 129' HUP
 
 # ── Poll until every job leaves the queue ────────────────────────────────────
 IDLIST=$(IFS=,; echo "${JOBIDS[*]}")
@@ -792,27 +966,11 @@ while :; do
     (( left == 0 )) && break
     sleep 60
 done
-trap - INT TERM
+trap - INT TERM HUP
 
 # ── Merge shards into the master CSV and summarize ───────────────────────────
-mkdir -p "$OUTPUTS_DIR"
-HEADER="build,crate,test,status,compile_seconds,run_seconds,timestamp,job_id,error_type,error"
-[[ -f "$CSV" ]] || echo "$HEADER" > "$CSV"
-cat "$RUNDIR"/shards/*.csv >> "$CSV" 2>/dev/null || true
-
 echo
+MERGED=1
+merge_shards "$RUNDIR" "$CSV"
 echo "Done. Results CSV: $CSV"
-# Status is field 4; test names never contain commas, and the only quoted
-# field (error) comes after it.
-cat "$RUNDIR"/shards/*.csv 2>/dev/null | awk -F, '
-    { c[$4]++; total++ }
-    END {
-        for (s in c) printf "  %s: %d\n", s, c[s]
-        printf "  total rows: %d\n", total + 0
-    }' || true
-done_crates=$(cat "$RUNDIR"/done/*.txt 2>/dev/null | wc -l || true)
-if (( done_crates < NCRATES )); then
-    echo "  NOTE: $(( NCRATES - done_crates )) crate(s) never finished (walltime / job failure)."
-    echo "  Re-run them with --only: comm -23 <(sort $RUNDIR/queues/*.txt) <(sort $RUNDIR/done/*.txt)"
-    echo "  See $RUNDIR/job-*.out and the crates' eval-${IMAGE}.log"
-fi
+summarize_run "$RUNDIR" "$NCRATES"

@@ -27,6 +27,16 @@
 #   them to <dataset>_list.csv (see Output), which run_eval_dataset.sh uses in
 #   place of listing on the node when it exists.
 #
+#   --doc also lists doc tests, with
+#     cargo test --doc -- --list --format=json -Zunstable-options
+#   (RUSTDOCFLAGS = BUILD_RUSTFLAGS + PRIMARY_RUSTFLAGS, as rustdoc ignores
+#   RUSTFLAGS and only documents the crate under test), as list_tests.sh --doc
+#   does and in its format: "doc:<name>#<filter>[#<skip>...]", percent-encoded
+#   -- see "Doc tests" in list_tests.sh. They count towards `tests`. A crate
+#   whose doc-test listing fails (most often: no lib target) keeps its binary
+#   tests; the log says so. Doc tests aren't built by --no-run, so
+#   compile_seconds doesn't include them.
+#
 #   Where it runs: from the login node the crates are dealt round-robin into
 #   ceil(crates / -n) parts (so part sizes differ by at most one crate, and
 #   none holds more than -n), and each part is built by its own job via
@@ -41,8 +51,8 @@
 #   <DATASET_DIR>/_logs/_build_parts/job-K.log.
 #
 # Usage:
-#   ./build_dataset.sh [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] <DATASET>
-#   ./build_dataset.sh --local [--image IMG] [--whole] <DATASET_DIR>   # no job
+#   ./build_dataset.sh [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] <DATASET>
+#   ./build_dataset.sh --local [--image IMG] [--whole] [--doc] <DATASET_DIR>   # no job
 #
 #   DATASET       a dataset name under $GROUP/datasets/ (e.g. top_500), or a path
 #
@@ -55,6 +65,7 @@
 #                 instrumented; in bsan, cargo is the image's default toolchain
 #   --whole       compile with `cargo test --no-run` (all targets cargo test
 #                 builds), not `cargo test --tests --no-run`
+#   --doc         also list doc tests (off by default; see above)
 #   --local       skip the job: build on this machine / inside an image shell
 #   --part K      with --local: build only the crates in part K's list
 #                 (_logs/_build_parts/part-K.txt); set by the launcher
@@ -139,6 +150,43 @@ classify() {
 # CSV-quote a field (empty stays empty).
 csvq() { [ -n "$1" ] && printf '"%s"' "${1//\"/\"\"}"; }
 
+# doc_names <all names> <runnable names>: each runnable doc test as
+# doc:<name>#<filter>[#<skip>...] -- the same encoding and filter choice as
+# list_tests.sh --doc (see "Doc tests" there); keep the two in sync. A doc
+# test that can't be isolated is left out, with a warning on stderr.
+doc_names() {
+    awk '
+        function enc(s) {
+            gsub(/%/, "%25", s); gsub(/,/, "%2C", s); gsub(/;/, "%3B", s)
+            gsub(/ /, "%20", s); gsub(/\047/, "%27", s); gsub(/"/, "%22", s)
+            gsub(/#/, "%23", s); return s
+        }
+        NR == FNR { all[++n] = $0; next }
+        {
+            k = split($0, tok, " "); best = ""; bestn = -1
+            for (j = 0; j <= k; j++) {
+                i = (j == 0) ? 3 : j
+                f = tok[i]
+                if (f == "" || f == "-") continue
+                skips = ""; cnt = 0; ok = 1
+                for (m = 1; m <= n; m++) {
+                    o = all[m]
+                    if (o == $0 || !index(o, f)) continue
+                    ko = split(o, otok, " "); sk = ""
+                    for (q = 1; q <= ko; q++)
+                        if (otok[q] != "-" && !index($0, otok[q])) { sk = otok[q]; break }
+                    if (sk == "") { ok = 0; break }
+                    skips = skips "#" enc(sk); cnt++
+                }
+                if (ok && (bestn < 0 || cnt < bestn)) { best = enc(f) skips; bestn = cnt }
+                if (bestn == 0) break
+            }
+            if (bestn < 0) { print "warning: cannot isolate, skipped doc test: " $0 > "/dev/stderr"; next }
+            print "doc:" enc($0) "#" best
+        }
+    ' "$1" "$2"
+}
+
 # ------------------------------- worker mode ------------------------------- #
 # Invoked by xargs, one crate per call. argv: --worker <crate_dir>
 # Writes the crate's CSV row to $STATE_DIR/<crate>.csv and, when it built and
@@ -178,6 +226,24 @@ if [ "${1:-}" = "--worker" ]; then
                 > "$list" 2>> "$log"; then
             names=$(grep -a '"type": *"test"' "$list" | grep -a '"ignore": *false' \
                 | sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u)
+            if [ "$DOC" -eq 1 ]; then
+                doclog="$STATE_DIR/$crate.doc.json"
+                if ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" \
+                        RUSTDOCFLAGS="$BUILD_RUSTFLAGS${PRIMARY_RUSTFLAGS:+ $PRIMARY_RUSTFLAGS}" \
+                        cargo test --doc -- --list --format=json -Zunstable-options ) \
+                        > "$doclog" 2>> "$log"; then
+                    namesof() { sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u; }
+                    grep -a '"type": *"test"' "$doclog" | namesof > "$doclog.all"
+                    grep -a '"type": *"test"' "$doclog" | grep -a '"ignore": *false' | namesof > "$doclog.run"
+                    docs=$(doc_names "$doclog.all" "$doclog.run" 2>> "$log")
+                    [ -n "$docs" ] && names="${names:+$names
+}$docs"
+                    rm -f "$doclog.all" "$doclog.run"
+                else
+                    echo "build_dataset: doc-test listing failed (no lib target?); binary tests only" >> "$log"
+                fi
+                rm -f "$doclog"
+            fi
             ntests=$(printf '%s' "$names" | grep -c . || true)
             printf '%s,%s\n' "$crate" "$(printf '%s' "$names" | paste -sd';' -)" \
                 > "$STATE_DIR/$crate.list"
@@ -204,12 +270,13 @@ fi
 GROUP="/scratch/group/p.cis260229.000"
 RUN_JOB="$GROUP/scripts/run_job.sh"
 OUTPUTS_DIR="$GROUP/outputs"
-LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=bsan; WHOLE=0; PER_JOB=100; PART=""; POS=()
+LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=bsan; WHOLE=0; DOC=0; PER_JOB=100; PART=""; POS=()
 MAX_PARALLEL=40   # jobs in flight at once (QOS limit)
 while [ "$#" -gt 0 ]; do
     case "$1" in
         --local)    LOCAL=1; shift ;;
         --whole)    WHOLE=1; shift ;;
+        --doc)      DOC=1; shift ;;
         --part)     PART="$2"; shift 2 ;;
         -n|--per-job) PER_JOB="$2"; shift 2 ;;
         -c|--cpus)  CPUS="$2"; shift 2 ;;
@@ -221,7 +288,7 @@ while [ "$#" -gt 0 ]; do
     esac
 done
 [ "${#POS[@]}" -eq 1 ] && [ -n "${POS[0]}" ] \
-    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--local] <DATASET>" >&2; exit 1; }
+    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] [--local] <DATASET>" >&2; exit 1; }
 # A bare dataset name under the group datasets dir, or a path.
 DATASET_DIR="$(cd "$GROUP/datasets/${POS[0]}" 2>/dev/null && pwd -P)" \
     || DATASET_DIR="$(cd "${POS[0]}" 2>/dev/null && pwd -P)" \
@@ -272,6 +339,7 @@ if [ "$LOCAL" -eq 0 ]; then
     done
     cp "$SELF" "$DATASET_DIR/_logs/.build_dataset.sh"
     WHOLE_FLAG=""; [ "$WHOLE" -eq 1 ] && WHOLE_FLAG="--whole"
+    [ "$DOC" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --doc"
     echo "==> Building $n crates in the '$IMAGE' image as $NPARTS job(s) of" \
          "$(( n / NPARTS ))-$(( (n + NPARTS - 1) / NPARTS )) crates" \
          "($CPUS cpus, $JOBS crates at a time, $MEM, ${WALLTIME}h each; at most $MAX_PARALLEL at once)"
@@ -362,7 +430,7 @@ fi
 rm -rf "$STATE_DIR"                         # fresh check every run
 mkdir -p "$STATE_DIR"
 
-export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE
+export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC
 
 # ------------------------------ build each crate ---------------------------- #
 crates="$(mktemp)"
@@ -380,7 +448,7 @@ fi > "$crates"
 n="$(tr -cd '\0' < "$crates" | wc -c | tr -d ' ')"
 echo "==> Building $n crates in $DATASET_DIR with $JOBS worker(s):" \
      "$COMPILE --no-run (RUSTFLAGS=\"$BUILD_RUSTFLAGS\"," \
-     "crate under test +\"$PRIMARY_RUSTFLAGS\"), then list tests ..."
+     "crate under test +\"$PRIMARY_RUSTFLAGS\"), then list tests$([ "$DOC" -eq 1 ] && echo ' (with doc tests)') ..."
 xargs -0 -n 1 -P "$JOBS" "$SELF" --worker < "$crates"
 rm -f "$crates"
 
