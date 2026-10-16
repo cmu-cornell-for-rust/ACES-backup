@@ -308,7 +308,8 @@ fi
 # Skip a crate if the CSV already lists this exact name-version, or if this
 # name-version was already scanned (covers the crates WITHOUT C FFI, which
 # aren't in the CSV). Anything else is new, or a newer version of a CSV row.
-# RESCAN=1 drops the verdicts of the CSV rows so they are scanned again.
+# RESCAN=1 drops the verdicts of the CSV rows so they are scanned again, and
+# scans nothing else (so it works without the old _state dir).
 todo="$(mktemp)"
 in_csv="$(mktemp)"
 # name<TAB>version of every existing row (name/version never need quoting).
@@ -324,6 +325,7 @@ awk -F'\t' -v state_dir="$STATE_DIR" -v skip_yanked="$SKIP_YANKED" -v rescan="$R
     $1 == "" { next }
     skip_yanked == "1" && $4 == "yanked" { next }
     rescan != "1" && ($1 "\t" $2) in listed { next }
+    rescan == "1" && !($1 in csv_ver) { next }       # RESCAN: CSV crates only
     { f = state_dir "/" $1 "-" $2 ".tsv"
       if ((getline _ < f) >= 0) { close(f); next }   # already scanned
       if ($1 in csv_ver) upd++; else new++
