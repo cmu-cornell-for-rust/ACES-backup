@@ -25,7 +25,7 @@ A folder that already exists is skipped, so reruns are cheap.
 Lookups use the crates.io sparse index (index.crates.io) and downloads use
 static.crates.io; both are CDNs, so neither is subject to the crates.io API
 rate limit. Crates that can't be found get an empty latest_version and are
-listed in DATASET_DIR/_latest_failures.log. Requirements: python3 (stdlib).
+listed in DATASET_DIR/_latest_failures.log. Requirements: python3 >= 3.6 (stdlib).
 """
 import argparse
 import csv
@@ -101,7 +101,8 @@ def download(name, version, out_dir):
         else:  # python < 3.12 without the backport: refuse paths escaping out_dir
             root = out_dir.resolve()
             for m in tar.getmembers():
-                if not (root / m.name).resolve().is_relative_to(root) or m.issym() or m.islnk():
+                target = (root / m.name).resolve()
+                if (target != root and root not in target.parents) or m.issym() or m.islnk():
                     raise ValueError(f"unsafe tar member {m.name}")
             tar.extractall(out_dir)
     return "downloaded"
@@ -118,7 +119,10 @@ def main():
 
     out_dir = args.dataset_dir
     if out_dir is None:
-        out_dir = HERE.parent.parent / "datasets" / args.csv.stem.removesuffix("-dataset")
+        stem = args.csv.stem
+        if stem.endswith("-dataset"):
+            stem = stem[: -len("-dataset")]
+        out_dir = HERE.parent.parent / "datasets" / stem
 
     with open(args.csv, newline="") as f:
         reader = csv.DictReader(f)
