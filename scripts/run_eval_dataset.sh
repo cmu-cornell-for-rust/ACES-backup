@@ -55,9 +55,9 @@
 #   --slow-walltime T walltime for the slow-list jobs, HH or HH:MM (default 24)
 #   --jobs N          sbatch jobs to spread the crates over, slow-list jobs
 #                     included (default: one per crate, capped at 90)
-#   --max-tasks N     ceiling on workers per job (default: as many as fit a
-#                     24-core / 488G slice of a node at --cpus-per-task and
-#                     --mem-per-task, i.e. 24 at the defaults)
+#   --max-tasks N     ceiling on workers per job, at most 16 (default: 16, or
+#                     fewer if 16 don't fit a 24-core / 488G slice of a node
+#                     at --cpus-per-task and --mem-per-task)
 #   --cpus-per-task N cores per worker (default 1; also caps CARGO_BUILD_JOBS)
 #   --mem-per-task G  GB per worker (default 8, at most 16)
 #   --merge RUNDIR    don't run anything: merge RUNDIR's shards into its master
@@ -159,10 +159,12 @@ DATASETS_ROOT="$GROUP/datasets"
 OUTPUTS_DIR="$GROUP/outputs"
 
 # Node slice a job may ask for (a hard cap of 24 cpus per job), the
-# per-worker memory ceiling, and the most jobs submitted at once.
+# per-worker memory ceiling, the most workers per job, and the most jobs
+# submitted at once.
 NODE_CPUS=24
 NODE_MEM=488
 MAX_MEM_PER_TASK=16
+MAX_TASKS_PER_JOB=16
 MAX_JOBS=90
 
 # Built-in per-mode option sets (same as run_bench_dataset.sh).
@@ -287,7 +289,7 @@ usage() {
     echo "           --safety safe,unsafe-deps,unsafe [--unsafe-scan FILE]" >&2
     echo "           --tests FILE (default $GROUP/scripts/<dataset>-tests.csv)" >&2
     echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
-    echo "           --jobs N (<= $MAX_JOBS) --max-tasks N --cpus-per-task N" >&2
+    echo "           --jobs N (<= $MAX_JOBS) --max-tasks N (<= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m)" >&2
     echo "           --slow-walltime T (slow-list jobs, HH or HH:MM; default 24)" >&2
@@ -340,11 +342,12 @@ fi
 # The largest worker count a job may hold at this cpu/mem per worker.
 FIT_TASKS=$(( NODE_CPUS / CPUS_PER_TASK ))
 (( NODE_MEM / MEM_PER_TASK < FIT_TASKS )) && FIT_TASKS=$(( NODE_MEM / MEM_PER_TASK ))
+(( FIT_TASKS > MAX_TASKS_PER_JOB )) && FIT_TASKS=$MAX_TASKS_PER_JOB
 if [[ -n "$MAX_TASKS" ]]; then
     [[ "$MAX_TASKS" =~ ^[1-9][0-9]*$ ]] || { echo "Error: --max-tasks must be a positive integer." >&2; exit 1; }
     (( MAX_TASKS <= FIT_TASKS )) || {
         echo "Error: --max-tasks $MAX_TASKS needs $(( MAX_TASKS * CPUS_PER_TASK )) cpus / $(( MAX_TASKS * MEM_PER_TASK ))G;" >&2
-        echo "a job may use at most $NODE_CPUS cpus / ${NODE_MEM}G, i.e. $FIT_TASKS workers here." >&2
+        echo "a job may use at most $NODE_CPUS cpus / ${NODE_MEM}G and $MAX_TASKS_PER_JOB workers, i.e. $FIT_TASKS workers here." >&2
         exit 1
     }
 else

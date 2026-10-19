@@ -1,6 +1,0 @@
-bsan,alexcrichton-cranelift-wasm-0.53.0,func_translator::tests::infloop,success,130.166,0.785,2026-10-14T19:53:04Z,2216104.3,,
-bsan,alexcrichton-cranelift-wasm-0.53.0,func_translator::tests::small1,success,130.166,0.779,2026-10-14T19:53:05Z,2216104.3,,
-bsan,alexcrichton-cranelift-wasm-0.53.0,func_translator::tests::small2,success,130.166,0.742,2026-10-14T19:53:06Z,2216104.3,,
-bsan,alexcrichton-cranelift-wasm-0.53.0,testsuite,test_failed,130.166,0.642,2026-10-14T19:53:07Z,2216104.3,panic,"thread 'testsuite' (3623351) panicked at tests/wasm_testsuite.rs:18:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
-bsan,alexcrichton-cranelift-wasm-0.53.0,use_fallthrough_return,test_failed,130.166,0.657,2026-10-14T19:53:07Z,2216104.3,panic,"thread 'use_fallthrough_return' (3623726) panicked at tests/wasm_testsuite.rs:91:43: error reading wat file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
-bsan,alexcrichton-cranelift-wasm-0.53.0,use_name_section,test_failed,130.166,0.631,2026-10-14T19:53:08Z,2216104.3,panic,"thread 'use_name_section' (3623952) panicked at tests/wasm_testsuite.rs:62:35: called `Result::unwrap()` on an `Err` value: SupportDisabled"

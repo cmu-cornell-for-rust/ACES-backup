@@ -50,6 +50,7 @@ From: ubuntu:25.04
         gdb \
         ca-certificates \
         jq \
+        python3 \
         libfontconfig1-dev \
         libfreetype6-dev \
     && rm -rf /var/lib/apt/lists/*
@@ -127,7 +128,10 @@ From: ubuntu:25.04
     # (see %environment). This is the bsan analogue of pre-building MIRI_SYSROOT:
     # jobs then reuse it instead of rebuilding per run on read-only/ephemeral FS.
     export BSAN_SYSROOT=/opt/bsan-sysroot
-    cargo bsan setup
+    # --build-libcxx also builds an instrumented libc++ into $BSAN_SYSROOT/libcxx
+    # (used automatically for crates with C++ deps). Needs a bsan with libcxx
+    # support (e.g. the experimental branch).
+    cargo bsan setup --build-libcxx
     # Guard: fail the build loudly if the sysroot wasn't actually populated.
     test -d "$BSAN_SYSROOT" && [ -n "$(ls -A "$BSAN_SYSROOT")" ] || \
         { echo "ERROR: bsan sysroot was not built at $BSAN_SYSROOT"; exit 1; }

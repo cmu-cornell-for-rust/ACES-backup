@@ -1,4 +1,0 @@
-bsan,fastqc-rs-0.3.2,process::test::test_quartiles1,success,236.307,3.952,2026-10-16T20:06:17Z,2222122.5,,
-bsan,fastqc-rs-0.3.2,process::test::test_quartiles2,success,236.307,3.863,2026-10-16T20:06:21Z,2222122.5,,
-bsan,fastqc-rs-0.3.2,process::test::test_quartiles3,success,236.307,3.850,2026-10-16T20:06:25Z,2222122.5,,
-bsan,fastqc-rs-0.3.2,test_report,test_failed,236.307,3.923,2026-10-16T20:06:29Z,2222122.5,panic,"thread 'test_report' (3195748) panicked at tests/lib.rs:8:5: assertion failed: Command::new(""bash"").arg(""-c"").arg(""target/debug/fqc -q tests/resources/example.fastq > /tmp/report.html"").spawn().unwrap().wait().unwrap().success()"

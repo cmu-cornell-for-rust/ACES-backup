@@ -1,1 +1,0 @@
-bsan,seqcomplexity-0.1.2,test_report,test_failed,294.608,1.215,2026-10-14T23:35:39Z,2216117.14,panic,"thread 'test_report' (700385) panicked at tests/lib.rs:7:5: assertion failed: Command::new(""bash"").arg(""-c"").arg(""target/debug/seqcomplexity -q tests/resources/example.fastqsanger > /tmp/report.json"").spawn().unwrap().wait().unwrap().success()"

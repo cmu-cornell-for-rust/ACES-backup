@@ -1,9 +1,0 @@
-bsan,git-absorb-0.6.10,commute::tests::test_commute,success,125.237,0.714,2026-10-14T17:57:34Z,2216096.11,,
-bsan,git-absorb-0.6.10,commute::tests::test_commute_patch,success,125.237,0.949,2026-10-14T17:57:35Z,2216096.11,,
-bsan,git-absorb-0.6.10,commute::tests::test_commute_trivial_add,success,125.237,1.048,2026-10-14T17:57:36Z,2216096.11,,
-bsan,git-absorb-0.6.10,commute::tests::test_commute_trivial_remove,success,125.237,0.864,2026-10-14T17:57:37Z,2216096.11,,
-bsan,git-absorb-0.6.10,stack::tests::test_stack_hides_other_branches,test_failed,125.237,0.865,2026-10-14T17:57:38Z,2216096.11,bsan,"error: Undefined Behavior: write access through <1435896>(unprotected) at alloc35173[0x4] is forbidden"
-bsan,git-absorb-0.6.10,stack::tests::test_stack_stops_at_configured_limit,test_failed,125.237,0.631,2026-10-14T17:57:39Z,2216096.11,bsan,"error: Undefined Behavior: write access through <1435848>(unprotected) at alloc35173[0x4] is forbidden"
-bsan,git-absorb-0.6.10,stack::tests::test_stack_stops_at_foreign_author,test_failed,125.237,0.675,2026-10-14T17:57:40Z,2216096.11,bsan,"error: Undefined Behavior: write access through <1435880>(unprotected) at alloc35173[0x4] is forbidden"
-bsan,git-absorb-0.6.10,stack::tests::test_stack_stops_at_merges,test_failed,125.237,0.659,2026-10-14T17:57:40Z,2216096.11,bsan,"error: Undefined Behavior: write access through <1435960>(unprotected) at alloc35173[0x4] is forbidden"
-bsan,git-absorb-0.6.10,stack::tests::test_stack_uses_custom_base,test_failed,125.237,0.666,2026-10-14T17:57:41Z,2216096.11,bsan,"error: Undefined Behavior: write access through <1435912>(unprotected) at alloc35173[0x4] is forbidden"
