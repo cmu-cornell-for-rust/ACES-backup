@@ -6,8 +6,9 @@ Usage: update_latest.py CSV [DATASET_DIR] [--no-download] [--prerelease] [-j N]
 Reads CSV (a header with a column containing "name" and one containing
 "version", e.g. mirilli-dataset.csv: crate_name,version), looks up each
 crate's latest version on crates.io, and writes it back to CSV in a
-`latest_version` column (added after the version column, or refreshed if it
-already exists). Every other column is kept as-is.
+`latest_version` column plus a `version_differs` column (true/false; empty if
+the lookup failed), added after the version column or refreshed if they
+already exist. Every other column is kept as-is.
 
 For each crate whose latest version differs from the listed one, the
 crates.io tarball of the latest version is extracted into
@@ -25,7 +26,7 @@ A folder that already exists is skipped, so reruns are cheap.
 Lookups use the crates.io sparse index (index.crates.io) and downloads use
 static.crates.io; both are CDNs, so neither is subject to the crates.io API
 rate limit. Crates that can't be found get an empty latest_version and are
-listed in DATASET_DIR/_latest_failures.log. Requirements: python3 (stdlib).
+listed in DATASET_DIR/_latest_failures.log. Requirements: python3 >= 3.6 (stdlib).
 """
 import argparse
 import csv
@@ -41,6 +42,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 UA = "crate-downloader (CMU systems research; via crates.io)"
 COLUMN = "latest_version"
+DIFF_COLUMN = "version_differs"
 
 
 def fetch(url):
@@ -101,7 +103,8 @@ def download(name, version, out_dir):
         else:  # python < 3.12 without the backport: refuse paths escaping out_dir
             root = out_dir.resolve()
             for m in tar.getmembers():
-                if not (root / m.name).resolve().is_relative_to(root) or m.issym() or m.islnk():
+                target = (root / m.name).resolve()
+                if (target != root and root not in target.parents) or m.issym() or m.islnk():
                     raise ValueError(f"unsafe tar member {m.name}")
             tar.extractall(out_dir)
     return "downloaded"
@@ -118,7 +121,10 @@ def main():
 
     out_dir = args.dataset_dir
     if out_dir is None:
-        out_dir = HERE.parent.parent / "datasets" / args.csv.stem.removesuffix("-dataset")
+        stem = args.csv.stem
+        if stem.endswith("-dataset"):
+            stem = stem[: -len("-dataset")]
+        out_dir = HERE.parent.parent / "datasets" / stem
 
     with open(args.csv, newline="") as f:
         reader = csv.DictReader(f)
@@ -127,11 +133,13 @@ def main():
 
     lower = [h.lower() for h in fields]
     name_col = next((h for h, l in zip(fields, lower) if "name" in l), None)
-    ver_col = next((h for h, l in zip(fields, lower) if "version" in l and h != COLUMN), None)
+    ver_col = next((h for h, l in zip(fields, lower) if "version" in l and h not in (COLUMN, DIFF_COLUMN)), None)
     if not name_col or not ver_col:
         sys.exit(f"ERROR: no \"name\" and/or \"version\" column in header: {fields}")
     if COLUMN not in fields:
         fields.insert(fields.index(ver_col) + 1, COLUMN)
+    if DIFF_COLUMN not in fields:
+        fields.insert(fields.index(COLUMN) + 1, DIFF_COLUMN)
 
     names = sorted({r[name_col].strip() for r in rows if r[name_col].strip()})
     print(f"==> looking up {len(names)} crates (name: {name_col}, version: {ver_col})")
@@ -155,14 +163,16 @@ def main():
     for r in rows:
         name, cur = r[name_col].strip(), r[ver_col].strip()
         r[COLUMN] = latest.get(name, "")
-        if r[COLUMN] and r[COLUMN] != cur:
+        differs = bool(r[COLUMN]) and r[COLUMN] != cur
+        r[DIFF_COLUMN] = str(differs).lower() if r[COLUMN] else ""
+        if differs:
             changed.append((name, cur, r[COLUMN]))
 
     with open(args.csv, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields)
         w.writeheader()
         w.writerows(rows)
-    print(f"==> wrote {COLUMN} to {args.csv}: {len(changed)} of {len(rows)} rows have a newer version")
+    print(f"==> wrote {COLUMN},{DIFF_COLUMN} to {args.csv}: {len(changed)} of {len(rows)} rows have a newer version")
 
     ok = skip = 0
     if changed and not args.no_download:
