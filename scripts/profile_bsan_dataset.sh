@@ -316,17 +316,28 @@ fi
 # with a short walltime. Slowlist crates not selected for this run are simply
 # ignored, so the list works across datasets.
 SLOWLIST_FILE="$GROUP/scripts/slowlist"
+# Crate name minus its version (foo-1.2.3[-pre|+build] -> foo), so slowlist
+# entries match any version of a crate, with or without one written.
+crate_base() {
+    if [[ "$1" =~ ^(.+)-[0-9]+\.[0-9]+\.[0-9]+([-+].*)?$ ]]; then
+        REPLY="${BASH_REMATCH[1]}"
+    else
+        REPLY="$1"
+    fi
+}
 declare -A SLOWLIST=()
 if [[ -f "$SLOWLIST_FILE" ]]; then
     while IFS= read -r line || [[ -n "$line" ]]; do
         line="${line%%#*}"; line="${line//[[:space:]]/}"
-        [[ -n "$line" ]] && SLOWLIST["$line"]=1
+        [[ -n "$line" ]] || continue
+        crate_base "$line"; SLOWLIST["$REPLY"]=1
     done < "$SLOWLIST_FILE"
 fi
 
 FAST_SEL=(); SLOW_SEL=()
 for line in "${SELECTED[@]}"; do
-    if [[ -n "${SLOWLIST[${line#*$'\t'}]:-}" ]]; then
+    crate_base "${line#*$'\t'}"
+    if [[ -n "${SLOWLIST[$REPLY]:-}" ]]; then
         SLOW_SEL+=("$line")
     else
         FAST_SEL+=("$line")

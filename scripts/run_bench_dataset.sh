@@ -840,33 +840,50 @@ fi
 # individual tests are slow, so the crates holding them keep their remaining
 # tests in the regular dealing instead of being pulled out wholesale.
 SLOWLIST_FILE="$GROUP/scripts/slowlist"
+# Crate name minus its version (foo-1.2.3[-pre|+build] -> foo), so slowlist
+# entries match any version of a crate, with or without one written.
+crate_base() {
+    if [[ "$1" =~ ^(.+)-[0-9]+\.[0-9]+\.[0-9]+([-+].*)?$ ]]; then
+        REPLY="${BASH_REMATCH[1]}"
+    else
+        REPLY="$1"
+    fi
+}
 declare -A SLOWLIST=()
 SLOW_ORDER=()
 if (( ! USE_TEST_LISTS )) && [[ -f "$SLOWLIST_FILE" ]]; then
     while IFS= read -r line || [[ -n "$line" ]]; do
         line="${line%%#*}"; line="${line//[[:space:]]/}"
         [[ -n "$line" ]] || continue
-        [[ -n "${SLOWLIST[$line]:-}" ]] && continue
-        SLOWLIST["$line"]=1
-        SLOW_ORDER+=("$line")
+        crate_base "$line"
+        [[ -n "${SLOWLIST[$REPLY]:-}" ]] && continue
+        SLOWLIST["$REPLY"]=1
+        SLOW_ORDER+=("$REPLY")
     done < "$SLOWLIST_FILE"
 fi
 
 FAST_SEL=()
 declare -A SEL_COUNT=()
+declare -A SLOW_BY_BASE=()   # slowlist name -> selected crate dir(s), tab-separated
 for line in "${SELECTED[@]}"; do
     crate="${line#*$'\t'}"
     SEL_COUNT["$crate"]="${line%%$'\t'*}"
     (( ALL_SLOW )) && continue      # --all-slow deals tests, not crates
     # With a test-level list the SLOWLIST array is empty, so every crate that
     # still has tests is a regular one.
-    [[ -z "${SLOWLIST[$crate]:-}" ]] && FAST_SEL+=("$line")
+    crate_base "$crate"
+    if [[ -n "${SLOWLIST[$REPLY]:-}" ]]; then
+        SLOW_BY_BASE["$REPLY"]+="$crate"$'\t'
+    else
+        FAST_SEL+=("$line")
+    fi
 done
 
 SLOW_CRATES=()
 if (( ! ALL_SLOW )); then
-    for crate in ${SLOW_ORDER[@]+"${SLOW_ORDER[@]}"}; do
-        [[ -n "${SEL_COUNT[$crate]:-}" ]] && SLOW_CRATES+=("$crate")
+    for name in ${SLOW_ORDER[@]+"${SLOW_ORDER[@]}"}; do
+        IFS=$'\t' read -r -a dirs <<< "${SLOW_BY_BASE[$name]:-}"
+        for crate in ${dirs[@]+"${dirs[@]}"}; do SLOW_CRATES+=("$crate"); done
     done
 fi
 
