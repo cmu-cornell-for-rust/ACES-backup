@@ -17,7 +17,7 @@ A folder that already exists is skipped, so reruns are cheap.
 
   DATASET_DIR    default: ../../datasets/<csv name minus "-dataset">, i.e.
                  datasets/mirilli for mirilli-dataset.csv on ACES
-  --no-download  only fill in the column
+  --no-download  only fill in the column; DATASET_DIR is not used or created
   --prerelease   allow pre-release versions (1.0.0-rc.1) as "latest";
                  by default the newest non-yanked stable version is used,
                  falling back to the newest pre-release if there is no stable
@@ -26,7 +26,8 @@ A folder that already exists is skipped, so reruns are cheap.
 Lookups use the crates.io sparse index (index.crates.io) and downloads use
 static.crates.io; both are CDNs, so neither is subject to the crates.io API
 rate limit. Crates that can't be found get an empty latest_version and are
-listed in DATASET_DIR/_latest_failures.log. Requirements: python3 >= 3.6 (stdlib).
+listed in DATASET_DIR/_latest_failures.log (printed instead with
+--no-download). Requirements: python3 >= 3.6 (stdlib).
 """
 import argparse
 import csv
@@ -197,7 +198,11 @@ def main():
                     ok += status == "downloaded"
                     skip += status == "already present"
 
-    if failures:
+    if failures and args.no_download:
+        print(f"==> {len(failures)} failures:")
+        for line in failures:
+            print(f"    {line}")
+    elif failures:
         out_dir.mkdir(parents=True, exist_ok=True)
         log = out_dir / "_latest_failures.log"
         log.write_text("\n".join(failures) + "\n")
