@@ -51,8 +51,9 @@
 #   <DATASET_DIR>/_logs/_build_parts/job-K.log.
 #
 # Usage:
-#   ./build_dataset.sh [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] <DATASET>
-#   ./build_dataset.sh --local [--image IMG] [--whole] [--doc] <DATASET_DIR>   # no job
+#   ./build_dataset.sh [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc]
+#                      [--latest | --only-latest | --all] [--versions-csv FILE] <DATASET>
+#   ./build_dataset.sh --local [--image IMG] [--whole] [--doc] [version flags] <DATASET_DIR>   # no job
 #
 #   DATASET       a dataset name under $GROUP/datasets/ (e.g. top_500), or a path
 #
@@ -66,11 +67,25 @@
 #   --whole       compile with `cargo test --no-run` (all targets cargo test
 #                 builds), not `cargo test --tests --no-run`
 #   --doc         also list doc tests (off by default; see above)
+#   (versions)    which crate versions to build, from the versions CSV
+#                 (dataset_creator/update_latest.py adds its latest_version /
+#                 version_differs columns; dataset_creator/select_versions.sh
+#                 does the selecting). Default, or --first: each crate's first
+#                 (listed) version if the versions CSV exists, else every dir.
+#   --latest      every crate at its latest version (first where unchanged)
+#   --only-latest only the crates whose latest version differs, at the latest
+#                 --latest/--only-latest write *-latest outputs (see Output)
+#                 and also <group>/scripts/<dataset>-tests-latest.csv, the
+#                 list to pass to run_eval_dataset.sh --tests
+#                 (an existing one is kept as .bak)
+#   --all         every dir in the dataset, whatever its version
+#   --versions-csv FILE  default <group>/scripts/<dataset>-dataset.csv
 #   --local       skip the job: build on this machine / inside an image shell
 #   --part K      with --local: build only the crates in part K's list
 #                 (_logs/_build_parts/part-K.txt); set by the launcher
 #
-# Output:
+# Output (with --latest/--only-latest every name below gets a "-latest"
+# suffix before .csv, and the parts dir is _build_parts-latest):
 #   <DATASET_DIR>/_logs/build-<image>.csv, and (when launched as a job) a copy
 #   at $GROUP/outputs/<image>-<dataset>-build.csv, columns:
 #     build,crate,status,compile_seconds,tests,error_type,error,timestamp
@@ -271,12 +286,18 @@ GROUP="/scratch/group/p.cis260229.000"
 RUN_JOB="$GROUP/scripts/run_job.sh"
 OUTPUTS_DIR="$GROUP/outputs"
 LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=bsan; WHOLE=0; DOC=0; PER_JOB=100; PART=""; POS=()
+VERSIONS=""; VERSIONS_CSV=""
 MAX_PARALLEL=40   # jobs in flight at once (QOS limit)
 while [ "$#" -gt 0 ]; do
     case "$1" in
         --local)    LOCAL=1; shift ;;
         --whole)    WHOLE=1; shift ;;
         --doc)      DOC=1; shift ;;
+        --first|--latest|--only-latest|--all)
+                    [ -z "$VERSIONS" ] || [ "$VERSIONS" = "${1#--}" ] \
+                        || die "--$VERSIONS and $1 are mutually exclusive"
+                    VERSIONS="${1#--}"; shift ;;
+        --versions-csv) VERSIONS_CSV="$2"; shift 2 ;;
         --part)     PART="$2"; shift 2 ;;
         -n|--per-job) PER_JOB="$2"; shift 2 ;;
         -c|--cpus)  CPUS="$2"; shift 2 ;;
@@ -288,16 +309,49 @@ while [ "$#" -gt 0 ]; do
     esac
 done
 [ "${#POS[@]}" -eq 1 ] && [ -n "${POS[0]}" ] \
-    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] [--local] <DATASET>" >&2; exit 1; }
+    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] [--local] [--latest | --only-latest | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
 # A bare dataset name under the group datasets dir, or a path.
 DATASET_DIR="$(cd "$GROUP/datasets/${POS[0]}" 2>/dev/null && pwd -P)" \
     || DATASET_DIR="$(cd "${POS[0]}" 2>/dev/null && pwd -P)" \
     || die "${POS[0]} is neither a dataset under $GROUP/datasets nor a directory"
 BUILD_RUSTFLAGS="${BUILD_RUSTFLAGS:---cap-lints=warn}"
 PRIMARY_RUSTFLAGS="${PRIMARY_RUSTFLAGS---cfg=miri}"   # set but empty: off
-RESULTS_CSV="$DATASET_DIR/_logs/build-$IMAGE.csv"
-LIST_CSV="$DATASET_DIR/_logs/$(basename "$DATASET_DIR")_list.csv"
-PARTS_DIR="$DATASET_DIR/_logs/_build_parts"
+DS_NAME="$(basename "$DATASET_DIR")"
+SUFFIX=""
+case "$VERSIONS" in latest|only-latest) SUFFIX="-latest" ;; esac
+RESULTS_CSV="$DATASET_DIR/_logs/build-$IMAGE$SUFFIX.csv"
+LIST_CSV="$DATASET_DIR/_logs/${DS_NAME}_list$SUFFIX.csv"
+PARTS_DIR="$DATASET_DIR/_logs/_build_parts$SUFFIX"
+
+# Version selection: ALLOW holds the <name>-<version> dirs to build
+# (VERSION_FILTER=0: every dir). A --part job builds its part list as given.
+declare -A ALLOW=()
+VERSION_FILTER=0
+if [ -z "$PART" ] && [ "$VERSIONS" != all ]; then
+    if [ -n "$VERSIONS_CSV" ]; then
+        [ -f "$VERSIONS_CSV" ] || die "versions CSV not found: $VERSIONS_CSV"
+    else
+        VERSIONS_CSV="$GROUP/scripts/$DS_NAME-dataset.csv"
+        if [ ! -f "$VERSIONS_CSV" ]; then
+            [ -z "$VERSIONS" ] || die "--$VERSIONS needs a versions CSV; $VERSIONS_CSV not found (pass --versions-csv FILE)"
+            VERSIONS_CSV=""
+        fi
+    fi
+    if [ -n "$VERSIONS_CSV" ]; then
+        selected=$("$(dirname "$SELF")/dataset_creator/select_versions.sh" "${VERSIONS:-first}" "$VERSIONS_CSV") || exit 1
+        while IFS= read -r d; do [ -n "$d" ] && ALLOW["$d"]=1; done <<<"$selected"
+        VERSION_FILTER=1
+        missing=()
+        for d in "${!ALLOW[@]}"; do [ -f "$DATASET_DIR/$d/Cargo.toml" ] || missing+=("$d"); done
+        echo "==> Versions: ${VERSIONS:-first} -- ${#ALLOW[@]} crate dir(s) selected from $VERSIONS_CSV"
+        if [ "${#missing[@]}" -gt 0 ]; then
+            echo "    warning: ${#missing[@]} selected dir(s) not in $DATASET_DIR (skipped; download them with dataset_creator/update_latest.py):" >&2
+            printf '      %s\n' "${missing[@]}" | LC_ALL=C sort >&2
+        fi
+    fi
+fi
+# want_crate <dir name>: whether the version selection keeps it.
+want_crate() { [ "$VERSION_FILTER" -eq 0 ] || [ -n "${ALLOW[$1]:-}" ]; }
 
 # summarize <csv>: status / error_type counts.
 summarize() {
@@ -323,7 +377,7 @@ if [ "$LOCAL" -eq 0 ]; then
     for d in "$DATASET_DIR"/*/; do
         d="${d%/}"
         case "$(basename "$d")" in _*) continue ;; esac
-        [ -f "$d/Cargo.toml" ] && CRATES+=("$(basename "$d")")
+        [ -f "$d/Cargo.toml" ] && want_crate "$(basename "$d")" && CRATES+=("$(basename "$d")")
     done
     n=${#CRATES[@]}
     [ "$n" -gt 0 ] || die "no crates (dirs with a Cargo.toml) in $DATASET_DIR"
@@ -340,6 +394,8 @@ if [ "$LOCAL" -eq 0 ]; then
     cp "$SELF" "$DATASET_DIR/_logs/.build_dataset.sh"
     WHOLE_FLAG=""; [ "$WHOLE" -eq 1 ] && WHOLE_FLAG="--whole"
     [ "$DOC" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --doc"
+    # The part jobs only need it for the -latest output names.
+    [ -n "$SUFFIX" ] && WHOLE_FLAG="$WHOLE_FLAG --$VERSIONS"
     echo "==> Building $n crates in the '$IMAGE' image as $NPARTS job(s) of" \
          "$(( n / NPARTS ))-$(( (n + NPARTS - 1) / NPARTS )) crates" \
          "($CPUS cpus, $JOBS crates at a time, $MEM, ${WALLTIME}h each; at most $MAX_PARALLEL at once)"
@@ -400,10 +456,15 @@ if [ "$LOCAL" -eq 0 ]; then
         echo "    $(( n - rows )) crate(s) have no row (job killed / walltime); see $PARTS_DIR/job-*.log"
     fi
     [ "$failed" -eq 0 ] || echo "    $failed job(s) exited non-zero; see $PARTS_DIR/job-*.log"
-    out="$OUTPUTS_DIR/$IMAGE-$(basename "$DATASET_DIR")-build.csv"
+    out="$OUTPUTS_DIR/$IMAGE-$DS_NAME-build$SUFFIX.csv"
     mkdir -p "$OUTPUTS_DIR" && cp "$RESULTS_CSV" "$out" && echo "    copied to:     $out"
-    out="$OUTPUTS_DIR/$(basename "$DATASET_DIR")_list.csv"
+    out="$OUTPUTS_DIR/${DS_NAME}_list$SUFFIX.csv"
     cp "$LIST_CSV" "$out" && echo "    copied to:     $out"
+    if [ -n "$SUFFIX" ]; then
+        out="$GROUP/scripts/$DS_NAME-tests-latest.csv"
+        [ -f "$out" ] && cp "$out" "$out.bak" && echo "    previous kept: $out.bak"
+        cp "$LIST_CSV" "$out" && echo "    tests list:    $out  (run_eval_dataset.sh --tests $out ...)"
+    fi
     [ "$failed" -eq 0 ]
     exit $?
 fi
@@ -442,7 +503,7 @@ else
     for d in "$DATASET_DIR"/*/; do
         d="${d%/}"
         case "$(basename "$d")" in _*) continue ;; esac
-        [ -f "$d/Cargo.toml" ] && printf '%s\0' "$d"
+        [ -f "$d/Cargo.toml" ] && want_crate "$(basename "$d")" && printf '%s\0' "$d"
     done
 fi > "$crates"
 n="$(tr -cd '\0' < "$crates" | wc -c | tr -d ' ')"

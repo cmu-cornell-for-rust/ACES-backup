@@ -28,9 +28,11 @@
 #                     are skipped. See --unsafe-scan
 #   --unsafe-scan FILE  unsafe_scan.csv from dataset_creator/filter_unsafe.sh.
 #                     Default: <dataset dir>/_logs/unsafe_scan.csv
-#   --tests FILE      tests CSV: which crates to run, and which of their tests.
-#                     Default: <group>/scripts/<dataset>-tests.csv (an error if
-#                     that doesn't exist either). Needs a crate column and a
+#   --tests FILE      REQUIRED. tests CSV: which crates to run, and which of
+#                     their tests -- so it also picks the crate versions, e.g.
+#                     <group>/scripts/<dataset>-tests.csv (first versions) or
+#                     <dataset>-tests-latest.csv (build_dataset.sh --latest /
+#                     --only-latest). Needs a crate column and a
 #                     test or tests column, found by header name (else
 #                     columns 1 and 2); either form works:
 #                       crate,tests,...   ';'-joined names per crate, as
@@ -147,7 +149,8 @@
 # "--- output: <crate> :: <test> ..." markers.
 #
 # The orchestrator submits the jobs, polls squeue with a progress line, then
-# merges the shards into <outputs>/<image>[-<extra-slug>]-<dataset>-eval.csv
+# merges the shards into <outputs>/<image>[-<extra-slug>]-<tests>-eval.csv
+# (<tests>: the --tests file's name, see "Master CSV" below)
 # and prints a status breakdown. Queues/shards/job logs live under
 # <outputs>/eval-runs/<runid>/. If this script is killed the jobs keep running
 # (Ctrl-C cancels them first). The shards are merged whenever the
@@ -299,7 +302,7 @@ usage() {
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --ignore FILE --only FILE" >&2
     echo "           --safety safe,unsafe-deps,unsafe [--unsafe-scan FILE]" >&2
-    echo "           --tests FILE (default $GROUP/scripts/<dataset>-tests.csv)" >&2
+    echo "           --tests FILE (required; e.g. $GROUP/scripts/<dataset>-tests.csv)" >&2
     echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
     echo "           --jobs N --max-tasks N (<= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
@@ -386,22 +389,32 @@ case "$MODE" in
     bsan) BSAN_OPTIONS_ALL="$BSAN_COMMON${EXTRA:+:$EXTRA}" ;;
 esac
 
-# Master CSV: <image>[-<slug>]-<dataset>-eval.csv (slug as in the other run_*
-# scripts, so different flag sets land in different files).
-CSV="$OUTPUTS_DIR/${IMAGE}-${DATASET}-eval.csv"
+# Master CSV: <image>[-<slug>]-<tests>-eval.csv -- <image> the container build
+# (SIF name), <tests> the --tests file's name minus .csv and its "-tests" /
+# "tests-" part (mirilli-tests.csv -> mirilli, mirilli-tests-latest.csv ->
+# mirilli-latest), so each tests list gets its own file. Slug as in the other
+# run_* scripts, so different flag sets land in different files.
+TESTS_NAME="$(basename "${TESTS_CSV:-$DATASET}" .csv)"
+TESTS_NAME="${TESTS_NAME/-tests/}"; TESTS_NAME="${TESTS_NAME#tests-}"
+CSV="$OUTPUTS_DIR/${IMAGE}-${TESTS_NAME}-eval.csv"
 SLUG=""
 if [[ -n "$EXTRA" && "$MODE" != "rust" ]]; then
     SLUG="$(printf '%s' "$EXTRA" | tr -c '[:alnum:]' '-' | sed 's/-\{1,\}/-/g; s/^-//; s/-$//')"
 fi
 [[ -n "$TEST_THREADS" ]] && SLUG="${SLUG:+$SLUG-}tt${TEST_THREADS}"
-[[ -n "$SLUG" ]] && CSV="$OUTPUTS_DIR/${IMAGE}-${SLUG}-${DATASET}-eval.csv"
+[[ -n "$SLUG" ]] && CSV="$OUTPUTS_DIR/${IMAGE}-${SLUG}-${TESTS_NAME}-eval.csv"
 
 # ── Validate ──────────────────────────────────────────────────────────────--
 [[ -f "$SIF_ABS" ]]    || { echo "Error: image not found at $SIF_ABS" >&2; exit 1; }
 [[ -d "$DATASET_DIR" ]] || { echo "Error: dataset dir not found: $DATASET_DIR" >&2; exit 1; }
 command -v sbatch >/dev/null || { echo "Error: sbatch not found (run on a login node)." >&2; exit 1; }
 
-[[ -n "$TESTS_CSV" ]] || TESTS_CSV="$GROUP/scripts/${DATASET}-tests.csv"
+[[ -n "$TESTS_CSV" ]] || {
+    echo "Error: --tests FILE is required: the tests CSV naming the crates (<name>-<version> dirs) and tests to run," >&2
+    echo "  e.g. --tests $GROUP/scripts/${DATASET}-tests.csv (first versions) or" >&2
+    echo "  $GROUP/scripts/${DATASET}-tests-latest.csv (build_dataset.sh --latest / --only-latest)." >&2
+    exit 1
+}
 [[ -f "$TESTS_CSV" ]] || {
     echo "Error: tests CSV not found: $TESTS_CSV" >&2
     echo "  (pass --tests FILE; build_dataset.sh writes <dataset>_list.csv, list_tests.sh tests-<dataset>.csv)" >&2
