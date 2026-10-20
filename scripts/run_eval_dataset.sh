@@ -161,7 +161,8 @@
 # other, the last error:/non-empty line), one line, at most 300 chars,
 # double-quoted. For bsan it is instead the whole UB report, from the
 # "error: Undefined Behavior:" line through cargo's "error: test failed, ..."
-# line (at most BSAN_REPORT_LINES lines), with each line break written as a
+# line (at most BSAN_REPORT_LINES lines of at most BSAN_LINE_CHARS chars,
+# BSAN_REPORT_CHARS chars in all), with each line break written as a
 # literal \n so the row stays on one line. The full output of every failing / no_match test (last 200
 # lines) is written to <crate>/eval-<image>.log between
 # "--- output: <crate> :: <test> ..." markers.
@@ -807,6 +808,10 @@ LIMIT=()
 
 FAIL_LOG_LINES=200
 BSAN_REPORT_LINES=200   # cap on a bsan error cell, in report lines
+BSAN_LINE_CHARS=400     # ... on each report line (generic-heavy backtrace
+                        # frames, e.g. chumsky's, run to tens of KB)
+BSAN_REPORT_CHARS=16000 # ... and on the whole cell, so every row stays
+                        # under editors' 20k-char line limit
 
 ts() { date -u +'%Y-%m-%dT%H:%M:%SZ'; }
 now_ms() { date +%s%3N; }
@@ -832,15 +837,23 @@ classify() {
         # The whole report: from the UB line through cargo's "error: test
         # failed" (or the first "error: N targets failed"), after the
         # stack trace and its "note: stack trace was truncated" line.
-        emsg=$(awk -v max="$BSAN_REPORT_LINES" '
+        emsg=$(awk -v max="$BSAN_REPORT_LINES" -v width="$BSAN_LINE_CHARS" '
             !on && /error: Undefined Behavior:/ { on = 1 }
             on {
                 gsub(/\033\[[0-9;]*[A-Za-z]/, ""); sub(/\r$/, "")
                 if (++n > max) { print "[... report truncated after " max " lines ...]"; exit }
+                if (length($0) > width)
+                    $0 = substr($0, 1, width) " [... " length($0) - width " more chars]"
                 print
                 if (/^error: (test failed|[0-9]+ targets? failed)/) exit
             }' "$1" | awk 'NF { for (; blank; blank--) print ""; print; next } { blank++ }' \
-            | awk '{ gsub(/\\/, "\\\\"); gsub(/\t/, "    ") } NR > 1 { printf "\\n" } { printf "%s", $0 }')
+            | awk -v max="$BSAN_REPORT_CHARS" '
+                { gsub(/\\/, "\\\\"); gsub(/\t/, "    ") }
+                { sep = NR > 1 ? "\\n" : "" }
+                total + length(sep $0) > max {
+                    printf "\\n[... report truncated at %d chars ...]", max; exit
+                }
+                { printf "%s%s", sep, $0; total += length(sep $0) }')
         return
     fi
     [ -n "$emsg" ] || emsg=$(grep -aE '^error' "$1" | tail -n1)
