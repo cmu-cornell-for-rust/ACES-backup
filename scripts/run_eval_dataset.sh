@@ -22,6 +22,24 @@
 #   --ignore FILE     crate names to skip, one per line (#-comments ok)
 #   --only FILE       run ONLY the crates listed in FILE (same format;
 #                     --ignore/--safety still apply on top)
+#   --first | --latest | --only-latest | --only-first
+#                     only run the crate versions this selects from the
+#                     versions CSV, as build_dataset.sh's flags do (via
+#                     dataset_creator/select_versions.sh):
+#                       --first        every crate at its first version
+#                       --latest       every crate at its latest version
+#                       --only-latest  crates whose latest version differs,
+#                                      at the latest
+#                       --only-first   crates whose latest version differs,
+#                                      at the first (the --only-latest
+#                                      crates' old versions)
+#                     A filter on --tests, like --only: the tests CSV must
+#                     name those versions (e.g. --only-latest with
+#                     <dataset>-tests-latest.csv, --only-first with
+#                     <dataset>-tests.csv). Default: no version filter
+#   --versions-csv FILE  versions CSV for the flags above (update_latest.py's
+#                     latest_version / version_differs columns). Default:
+#                     <group>/scripts/<dataset>-dataset.csv
 #   --safety LIST     only run crates whose unsafe-scan status is in LIST, a
 #                     comma-separated subset of safe, unsafe-deps, unsafe (or
 #                     the symbols :) ? !). Crates "unknown" or never scanned
@@ -190,6 +208,8 @@ BSAN_SYMBOLIZER="${BSAN_SYMBOLIZER:-/root/.rustup/toolchains/bsan/bin/llvm-symbo
 # ── Options ──────────────────────────────────────────────────────────────────
 IGNORE_FILE=""
 ONLY_FILE=""
+VERSIONS=""          # first | latest | only-latest | only-first; empty = no version filter
+VERSIONS_CSV=""
 SAFETY=""
 UNSAFE_SCAN=""
 TESTS_CSV=""
@@ -246,6 +266,12 @@ while [[ $# -gt 0 ]]; do
         --ignore=*)      IGNORE_FILE="${1#*=}"; shift ;;
         --only)          ONLY_FILE="$2"; shift 2 ;;
         --only=*)        ONLY_FILE="${1#*=}"; shift ;;
+        --first|--latest|--only-latest|--only-first)
+                         [[ -z "$VERSIONS" || "$VERSIONS" == "${1#--}" ]] \
+                             || { echo "Error: --$VERSIONS and $1 are mutually exclusive." >&2; exit 1; }
+                         VERSIONS="${1#--}"; shift ;;
+        --versions-csv)  VERSIONS_CSV="$2"; shift 2 ;;
+        --versions-csv=*) VERSIONS_CSV="${1#*=}"; shift ;;
         --safety)        SAFETY="$2"; shift 2 ;;
         --safety=*)      SAFETY="${1#*=}"; shift ;;
         --unsafe-scan)   UNSAFE_SCAN="$2"; shift 2 ;;
@@ -301,6 +327,7 @@ usage() {
     echo "  <dataset>   folder under $DATASETS_ROOT" >&2
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --ignore FILE --only FILE" >&2
+    echo "           --first | --latest | --only-latest | --only-first [--versions-csv FILE]" >&2
     echo "           --safety safe,unsafe-deps,unsafe [--unsafe-scan FILE]" >&2
     echo "           --tests FILE (required; e.g. $GROUP/scripts/<dataset>-tests.csv)" >&2
     echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
@@ -456,6 +483,18 @@ if [[ -n "$ONLY_FILE" ]]; then
     (( ${#ONLY[@]} > 0 )) || { echo "Error: --only list $ONLY_FILE is empty." >&2; exit 1; }
 fi
 
+# Version flags: VERSION_OK holds the <name>-<version> dirs select_versions.sh
+# keeps from the versions CSV.
+declare -A VERSION_OK=()
+if [[ -n "$VERSIONS" ]]; then
+    [[ -n "$VERSIONS_CSV" ]] || VERSIONS_CSV="$GROUP/scripts/$(basename "$DATASET_DIR")-dataset.csv"
+    [[ -f "$VERSIONS_CSV" ]] \
+        || { echo "Error: --$VERSIONS needs a versions CSV; $VERSIONS_CSV not found (pass --versions-csv FILE)." >&2; exit 1; }
+    _selected=$("$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/dataset_creator/select_versions.sh" \
+        "$VERSIONS" "$VERSIONS_CSV") || exit 1
+    while IFS= read -r _dir; do [[ -n "$_dir" ]] && VERSION_OK["$_dir"]=1; done <<<"$_selected"
+fi
+
 # --safety: unsafe_scan.csv (from filter_unsafe.sh, fields double-quoted) maps
 # crate -> !/?/:)/unknown; WANT_STATUS holds the statuses selected.
 declare -A SAFETY_OF=()
@@ -546,12 +585,13 @@ if [[ -n "$SKIP_CSV" ]]; then
     while IFS= read -r pair; do SKIP["$pair"]=1; done < <(parse_tests_csv "$SKIP_CSV")
 fi
 MISSING=()
-skip_ignored=0; skip_only=0; skip_safety=0; skip_tests=0; NTESTS=0
+skip_ignored=0; skip_only=0; skip_version=0; skip_safety=0; skip_tests=0; NTESTS=0
 while IFS=$'\t' read -r crate test; do
     if [[ -z "${KEEP[$crate]+x}" ]]; then
         KEEP[$crate]=0
         if [[ -n "${IGNORE[$crate]:-}" ]]; then skip_ignored=$((skip_ignored+1))
         elif (( ${#ONLY[@]} > 0 )) && [[ -z "${ONLY[$crate]:-}" ]]; then skip_only=$((skip_only+1))
+        elif [[ -n "$VERSIONS" && -z "${VERSION_OK[$crate]:-}" ]]; then skip_version=$((skip_version+1))
         elif [[ -n "$SAFETY" && -z "${WANT_STATUS[${SAFETY_OF[$crate]:-unknown}]:-}" ]]; then skip_safety=$((skip_safety+1))
         elif [[ ! -f "$DATASET_DIR/$crate/Cargo.toml" ]]; then MISSING+=("$crate")
         else KEEP[$crate]=1
@@ -572,6 +612,10 @@ if (( ${#MISSING[@]} > 0 )); then
 fi
 (( NCRATES > 0 )) || {
     echo "Error: no crates with tests left to run from $TESTS_CSV after filtering." >&2
+    if [[ -n "$VERSIONS" ]] && (( skip_version > 0 )); then
+        echo "  --$VERSIONS dropped $skip_version crate(s): does $TESTS_CSV list the versions it selects?" >&2
+        echo "  (--latest / --only-latest go with ${DATASET}-tests-latest.csv, --first / --only-first with ${DATASET}-tests.csv)" >&2
+    fi
     rm -rf "$RUNDIR"
     exit 1
 }
@@ -1027,7 +1071,7 @@ JOB_EOF
 echo "Mode:     $MODE   Image: $IMAGE"
 echo "Dataset:  $DATASET_DIR"
 echo "Tests:    $NTESTS across $NCRATES crate(s) (from $TESTS_CSV)"
-echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only${SAFETY:+ not-$SAFETY=$skip_safety} no-dir=${#MISSING[@]}"
+echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only${VERSIONS:+ not-$VERSIONS=$skip_version}${SAFETY:+ not-$SAFETY=$skip_safety} no-dir=${#MISSING[@]}"
 if [[ -n "$SKIP_CSV" ]]; then
     echo "          $skip_tests test(s) from skip list $SKIP_CSV (${#SKIP[@]} listed)"
 else
