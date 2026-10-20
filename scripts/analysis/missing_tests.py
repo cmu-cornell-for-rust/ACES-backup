@@ -45,6 +45,9 @@ import sys
 DONE_DEFAULT = "success,test_failed,no_match"
 CRATE_FAILURES = {"build_failed", "fetch_failed", "list_failed"}
 
+# Captured output columns can be huge; lift the 128 KiB default field limit.
+csv.field_size_limit(sys.maxsize)
+
 ap = argparse.ArgumentParser()
 ap.add_argument("-o", "--output", help="write the tests CSV here (default: stdout)")
 ap.add_argument("--done-status", default=DONE_DEFAULT,
