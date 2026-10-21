@@ -44,7 +44,7 @@
 #   under test (this script then stands in as BSAN_ORIG_RUSTC, as
 #   rustc-cfg-miri.sh does for run_eval_dataset.sh). The crates that fail only
 #   there go to a separate CSV (see Output); the main CSV doesn't depend on
-#   it. Needs cargo-bsan, i.e. the bsan image (or one built from it).
+#   it. Needs cargo-bsan, i.e. the experimental-bsan image (or one built from it).
 #
 #   The bsan compiles are a second pass, after every crate (of a job's part,
 #   as a job) has had its plain build and listing, and the results CSV and
@@ -66,13 +66,14 @@
 #   Where it runs: from the login node the crates are dealt round-robin into
 #   ceil(crates / -n) parts (so part sizes differ by at most one crate, and
 #   none holds more than -n), and each part is built by its own job via
-#   run_job.sh in the `bsan` image (--image to change), with the dataset dir
+#   run_job.sh in the `experimental-bsan` image (--image to change), with the dataset dir
 #   bound at /work. At most 40 jobs (the QOS limit) run at once; the rest
 #   start as earlier ones finish. Each job runs this script again with
 #   --local --part K, which builds that part's crates. A copy of the script is
 #   placed in <DATASET_DIR>/_logs/ for that, since only the dataset dir is
 #   visible inside the container. The launcher waits for every job, merges the
-#   parts' CSVs and copies the result to the outputs dir; run it under
+#   parts' CSVs, copies the results to the outputs dir and merges the
+#   bsan-only rows into <group>/scripts/bsan_build_fails.csv; run it under
 #   tmux/nohup for big datasets. Each job's run_job.sh output goes to
 #   <DATASET_DIR>/_logs/_build_parts/job-K.log.
 #
@@ -103,8 +104,8 @@
 #   -c CPUS       cores per job (default 16)
 #   -t HH[:MM]    walltime per job (default 8)
 #   -m MEM        memory per job (default 64G)
-#   --image IMG   container image (default bsan); also the CSV's build column.
-#                 The main build is plain cargo (in bsan, the image's default
+#   --image IMG   container image (default experimental-bsan); also the CSV's
+#                 build column. The main build is plain cargo (the image's default
 #                 toolchain), so nothing is instrumented; the second compile
 #                 is `cargo bsan`, so the image must have cargo-bsan
 #   --whole       compile with `cargo test --no-run` (all targets cargo test
@@ -165,14 +166,19 @@
 #   one row per crate with status ok, tests its runnable test names joined by
 #   ';' (empty when it has none) -- the same format as list_tests.sh's CSV.
 #
-#   <DATASET_DIR>/_logs/build-<image>-bsan-only.csv, and (when
-#   launched as a job) a copy at $GROUP/outputs/<image>-<dataset>-bsan-only.csv,
-#   columns:
+#   <DATASET_DIR>/_logs/build-<image>-bsan-only.csv, columns:
 #     build,crate,compile_seconds,bsan_compile_seconds,error_type,error,timestamp
 #   one row per crate whose plain compile succeeded but whose cargo bsan
 #   compile failed; compile_seconds is the plain compile's, error_type/error
 #   are classified from the bsan compile's output as above. Its full output
 #   goes to <crate>/build-<image>-bsan.log.
+#
+#   $GROUP/scripts/bsan_build_fails.csv (when launched as a job; not in the
+#   outputs dir): the running list of bsan-only build failures across
+#   datasets and runs, same columns, which run_eval_dataset.sh skips in bsan
+#   mode. Each run drops the rows of every crate it got through the cargo bsan
+#   compile (a crate that now builds leaves the list) and appends its own
+#   bsan-only rows; other crates' rows are kept as they are.
 #
 #   <DATASET_DIR>/_logs/build-<image>-bsan-unchecked.txt, only when a job died:
 #   the plain-compiled crates whose cargo bsan compile never ran (see above),
@@ -461,7 +467,9 @@ fi
 GROUP="/scratch/group/p.cis260229.000"
 RUN_JOB="$GROUP/scripts/run_job.sh"
 OUTPUTS_DIR="$GROUP/outputs"
-LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=bsan; WHOLE=0; DOC=0; RERUN=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
+# Bsan-only build failures of every run, for run_eval_dataset.sh (see Output).
+BSAN_FAILS_CSV="$GROUP/scripts/bsan_build_fails.csv"
+LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=experimental-bsan; WHOLE=0; DOC=0; RERUN=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
 VERSIONS=""; VERSIONS_CSV=""
 MAX_PARALLEL=40   # jobs in flight at once (QOS limit)
 while [ "$#" -gt 0 ]; do
@@ -632,6 +640,22 @@ finish_rerun() {
     bsan_types "$BSAN_CSV"
     echo "    bsan-only:     $BSAN_CSV  (previous: $BSAN_CSV.bak)"
 }
+# record_fails <checked crates file>: merge BSAN_CSV into BSAN_FAILS_CSV --
+# drop the rows of the crates that got their cargo bsan compile this run (one
+# per line in the file), then append this run's bsan-only rows.
+record_fails() {
+    local merged
+    merged="$(mktemp)"
+    {
+        echo "$BSAN_HEADER"
+        [ -f "$BSAN_FAILS_CSV" ] && tail -n +2 "$BSAN_FAILS_CSV" \
+            | awk -F, 'FILENAME == ARGV[1] { c[$0] = 1; next } !($2 in c)' "$1" -
+        tail -n +2 "$BSAN_CSV"
+    } > "$merged"
+    mkdir -p "$(dirname "$BSAN_FAILS_CSV")" && cat "$merged" > "$BSAN_FAILS_CSV" \
+        && echo "    appended to:   $BSAN_FAILS_CSV  ($(( $(wc -l < "$BSAN_CSV") - 1 )) row(s))"
+    rm -f "${merged:?}"
+}
 
 # ------------------------ launcher: submit the jobs ------------------------ #
 if [ "$LOCAL" -eq 0 ]; then
@@ -755,6 +779,18 @@ if [ "$LOCAL" -eq 0 ]; then
     } > "$BSAN_CSV"
     rm -f "${bsan_rows:?}"
     rm -f "${UNCHECKED_TXT:?}"
+    # checked_crates: the crates that got their cargo bsan compile -- every
+    # part's crates but the unchecked ones, and (not a rerun) only those whose
+    # plain compile succeeded.
+    checked_crates() {
+        local k
+        for (( k = 0; k < NPARTS; k++ )); do cat "$PARTS_DIR/part-$k.txt"; done \
+            | grep -vxF -f <(printf '%s\n' ${UNCHECKED[@]+"${UNCHECKED[@]}"}) \
+            | if [ "$RERUN" -eq 1 ]; then cat; else
+                awk -F, 'FILENAME == ARGV[1] { if ($3 == "ok" || $3 == "list_failed") ok[$2] = 1; next }
+                         $0 in ok' "$RESULTS_CSV" -
+              fi
+    }
     # report_recovery: what came from dead jobs' state dirs, after the summary.
     report_recovery() {
         [ "${#RECOVERED[@]}" -gt 0 ] || [ "${#UNCHECKED[@]}" -gt 0 ] || return 0
@@ -777,8 +813,7 @@ if [ "$LOCAL" -eq 0 ]; then
         finish_rerun "$n"
         report_recovery
         [ "$failed" -eq 0 ] || echo "    $failed job(s) exited non-zero; see $PARTS_DIR/job-*.log"
-        out="$OUTPUTS_DIR/$IMAGE-$DS_NAME-bsan-only$SUFFIX.csv"
-        mkdir -p "$OUTPUTS_DIR" && cp "$BSAN_CSV" "$out" && echo "    copied to:     $out"
+        checked="$(mktemp)"; checked_crates > "$checked"; record_fails "$checked"; rm -f "${checked:?}"
         [ "$failed" -eq 0 ]
         exit $?
     fi
@@ -811,8 +846,7 @@ if [ "$LOCAL" -eq 0 ]; then
     mkdir -p "$OUTPUTS_DIR" && cp "$RESULTS_CSV" "$out" && echo "    copied to:     $out"
     out="$OUTPUTS_DIR/${DS_NAME}_list$SUFFIX.csv"
     cp "$LIST_CSV" "$out" && echo "    copied to:     $out"
-    out="$OUTPUTS_DIR/$IMAGE-$DS_NAME-bsan-only$SUFFIX.csv"
-    cp "$BSAN_CSV" "$out" && echo "    copied to:     $out"
+    checked="$(mktemp)"; checked_crates > "$checked"; record_fails "$checked"; rm -f "${checked:?}"
     if [ "$SUFFIX" = -latest ]; then
         out="$GROUP/scripts/$DS_NAME-tests-latest.csv"
         [ -f "$out" ] && cp "$out" "$out.bak" && echo "    previous kept: $out.bak"
@@ -824,7 +858,7 @@ fi
 
 # ---------------------------- --local: do builds ---------------------------- #
 command -v cargo >/dev/null || die "cargo is required"
-command -v cargo-bsan >/dev/null || die "cargo-bsan is required (run in the bsan image)"
+command -v cargo-bsan >/dev/null || die "cargo-bsan is required (run in the experimental-bsan image)"
 if [ "$DOWNLOAD" -eq 1 ]; then
     command -v curl >/dev/null && command -v tar >/dev/null || die "downloading crates needs curl and tar"
     mkdir -p "$CRATE_ROOT" || die "can't create $CRATE_ROOT"

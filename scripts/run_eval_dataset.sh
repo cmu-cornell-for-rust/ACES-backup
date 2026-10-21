@@ -72,13 +72,11 @@
 #                     build_dataset.sh (crates that build with plain cargo but
 #                     not with cargo bsan; matched by crate column, version
 #                     included). Repeatable; applies in any mode. Default, in
-#                     bsan mode only: every
-#                     <outputs>/<image>-<dataset>-bsan-only*.csv and
-#                     <dataset dir>/_logs/build-<image>-bsan-only*.csv that
-#                     exists (else the same with image "bsan", build_dataset.sh's
-#                     default), so a bsan run doesn't spend a worker on a crate
-#                     known not to build
-#   --no-bsan-build-fails  don't apply the default bsan build-fail lists
+#                     bsan mode only: <group>/scripts/bsan_build_fails.csv, the
+#                     list build_dataset.sh appends to, when it exists, so a
+#                     bsan run doesn't spend a worker on a crate known not to
+#                     build
+#   --no-bsan-build-fails  don't apply the default bsan build-fail list
 #   (slow list)       <group>/scripts/eval-slow-crates.csv, always applied when
 #                     it exists: crate names, matched against any version
 #                     (crate column, a version there is ignored; slowest
@@ -365,8 +363,8 @@ usage() {
     echo "           --safety safe,unsafe-deps,unsafe [--unsafe-scan FILE]" >&2
     echo "           --tests FILE (required; e.g. $GROUP/scripts/<dataset>-tests.csv)" >&2
     echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
-    echo "           --bsan-build-fails FILE (repeatable; default in bsan mode: build_dataset.sh's" >&2
-    echo "             <image>-<dataset>-bsan-only*.csv) | --no-bsan-build-fails" >&2
+    echo "           --bsan-build-fails FILE (repeatable; default in bsan mode:" >&2
+    echo "             $GROUP/scripts/bsan_build_fails.csv) | --no-bsan-build-fails" >&2
     echo "           --jobs N --max-tasks N (<= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 1h, 0 = none)" >&2
@@ -524,7 +522,7 @@ if [[ -n "$IGNORE_FILE" ]]; then
     read_name_list "$IGNORE_FILE" IGNORE
 fi
 # Bsan build fails: crates build_dataset.sh found to build with plain cargo but
-# not with cargo bsan. Explicit lists must exist; the defaults are used if found.
+# not with cargo bsan. Explicit lists must exist; the default is used if found.
 declare -A BSAN_FAIL=()
 if (( NO_BSAN_FAILS )); then
     BSAN_FAIL_CSVS=()
@@ -532,14 +530,8 @@ elif (( ${#BSAN_FAIL_CSVS[@]} > 0 )); then
     for _f in "${BSAN_FAIL_CSVS[@]}"; do
         [[ -f "$_f" ]] || { echo "Error: bsan build-fail list not found: $_f" >&2; exit 1; }
     done
-elif [[ "$MODE" == bsan ]]; then
-    for _img in "$IMAGE" bsan; do
-        shopt -s nullglob
-        BSAN_FAIL_CSVS=("$OUTPUTS_DIR/$_img-$DATASET-bsan-only"*.csv
-                        "$DATASET_DIR/_logs/build-$_img-bsan-only"*.csv)
-        shopt -u nullglob
-        (( ${#BSAN_FAIL_CSVS[@]} > 0 )) && break
-    done
+elif [[ "$MODE" == bsan && -f "$GROUP/scripts/bsan_build_fails.csv" ]]; then
+    BSAN_FAIL_CSVS=("$GROUP/scripts/bsan_build_fails.csv")
 fi
 for _f in ${BSAN_FAIL_CSVS[@]+"${BSAN_FAIL_CSVS[@]}"}; do
     # build,crate,...: the crate is field 2 (a name-version, never quoted).
