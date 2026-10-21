@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cache crates.io download counts for every crate in the datasets.
+"""Cache crates.io download counts and newest releases for every crate in the datasets.
 
 Usage: fetch_downloads.py [--dataset NAME=CSV ...] [--dump DIR] [--keep-dump DIR] [-o CSV]
 
@@ -13,17 +13,22 @@ The datasets default to (paths relative to scripts/):
 each a CSV with a *name* column (crate_name, name); versions are ignored.
 Giving --dataset replaces the defaults.
 
-No crates are downloaded. Download counts come from the crates.io nightly
-database dump (crate_downloads table; total across all versions), streamed
-the same way as fetch_deps.py -- one ~2 GB download instead of a rate-limited
+No crates are downloaded. Everything comes from the crates.io nightly
+database dump (crates, crate_downloads and versions tables), streamed the
+same way as fetch_deps.py -- one ~2 GB download instead of a rate-limited
 API request per crate.
 
-Output (default: scripts/crate-downloads.csv), one row per crate name in any
+Output (default: scripts/analysis/crate-downloads.csv), one row per crate name in any
 dataset, sorted by name:
-    crate_name,downloads
-downloads is rounded: exact below 1,000, then to the nearest thousand (12k,
-132k), million (4M, 65M) or billion (9B). Crates not on crates.io (renamed,
-deleted) get an empty downloads.
+    crate_name,downloads,newest_version,last_released
+  downloads        total across all versions, rounded: exact below 1,000,
+                   then to the nearest thousand (12k, 132k), million (4M,
+                   65M) or billion (9B)
+  newest_version   newest unyanked stable release (newest unyanked release
+                   if none is stable), as crates.io's max_stable_version
+  last_released    date of the newest unyanked release, YYYY-MM-DD
+Crates not on crates.io (renamed, deleted) get empty columns. bug_report.py
+reads this file instead of querying crates.io.
 
   --dump DIR       read an already-extracted dump (DIR/data/*.csv)
   --keep-dump DIR  extract the downloaded tables to DIR and keep them
@@ -36,7 +41,7 @@ from pathlib import Path
 from fetch_deps import HERE, download_dump, rows
 
 SCRIPTS = HERE.parent.parent
-TABLES = ("crates", "crate_downloads")
+TABLES = ("crates", "crate_downloads", "versions")
 DEFAULT_DATASETS = [
     ("mirilli", SCRIPTS / "mirilli-dataset.csv"),
     ("capslock", SCRIPTS / "capslock-dataset.csv"),
@@ -55,6 +60,17 @@ def rounded(n):
             return f"{r}{suffix}"
 
 
+def semver_key(v):
+    """Semver precedence: 1.10.0 > 1.9.0 > 1.9.0-rc.10 > 1.9.0-rc.2."""
+    v = v.split("+", 1)[0]
+    core, _, pre = v.partition("-")
+    nums = tuple(int(x) if x.isdigit() else 0 for x in core.split("."))
+    if not pre:
+        return (nums, 1, ())
+    # numeric identifiers sort before alphanumeric ones, and by value
+    return (nums, 0, tuple((0, int(x), "") if x.isdigit() else (1, 0, x) for x in pre.split(".")))
+
+
 def dataset_names(path):
     # utf-8-sig: files saved from Excel start with a BOM.
     with open(path, newline="", encoding="utf-8-sig") as f:
@@ -71,7 +87,7 @@ def main():
                     help="a dataset to cover; repeatable, replaces the defaults")
     ap.add_argument("--dump", type=Path, help="already-extracted dump dir")
     ap.add_argument("--keep-dump", type=Path, help="extract the dump here and keep it")
-    ap.add_argument("-o", "--output", type=Path, default=SCRIPTS / "crate-downloads.csv")
+    ap.add_argument("-o", "--output", type=Path, default=SCRIPTS / "analysis" / "crate-downloads.csv")
     args = ap.parse_args()
 
     if args.dataset:
@@ -112,6 +128,19 @@ def main():
         ids = set(crate_id.values())
         downloads = {r["crate_id"]: int(r["downloads"]) for r in rows(data, "crate_downloads")
                      if r["crate_id"] in ids}
+        print("==> Reading versions ...", flush=True)
+        # crate id -> (newest stable, newest any, latest created_at), unyanked only
+        newest = {}
+        for r in rows(data, "versions"):
+            if r["crate_id"] not in ids or r["yanked"] == "t":
+                continue
+            stable, any_, released = newest.get(r["crate_id"], ("", "", ""))
+            num = r["num"]
+            if "-" not in num.split("+", 1)[0] and (not stable or semver_key(num) > semver_key(stable)):
+                stable = num
+            if not any_ or semver_key(num) > semver_key(any_):
+                any_ = num
+            newest[r["crate_id"]] = (stable, any_, max(released, r["created_at"]))
     finally:
         if tmp:
             tmp.cleanup()
@@ -120,11 +149,13 @@ def main():
     tmp_out = args.output.with_suffix(".csv.tmp")
     with open(tmp_out, "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["crate_name", "downloads"])
+        w.writerow(["crate_name", "downloads", "newest_version", "last_released"])
         for name in sorted(names):
-            n = downloads.get(crate_id.get(canon(name)))
-            missing += n is None
-            w.writerow([name, "" if n is None else rounded(n)])
+            cid = crate_id.get(canon(name))
+            n = downloads.get(cid)
+            stable, any_, released = newest.get(cid, ("", "", ""))
+            missing += cid is None
+            w.writerow([name, "" if n is None else rounded(n), stable or any_, released[:10]])
     tmp_out.replace(args.output)
     print(f"==> {len(names)} crates ({missing} not on crates.io) -> {args.output}")
 

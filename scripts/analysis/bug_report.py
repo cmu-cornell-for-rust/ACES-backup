@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Per-bug report CSV: eval CSVs' bsan rows joined with the datasets and crates.io.
 
-Usage: bug_report.py [-o OUT.csv] [--dataset NAME=CSV ...] <eval.csv> [more.csv ...]
+Usage: bug_report.py [-o OUT.csv] [--dataset NAME=CSV ...] [--downloads CSV]
+                     <eval.csv> [more.csv ...]
 
     bug_report.py ../outputs/experimental-bsan-mirilli-latest-eval.csv
 
@@ -26,9 +27,9 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
                     is "tag created at" for aliasing violations that have one
                     outside <std>, else "bug location" (a std helper like
                     slice::as_mut_ptr creates tags for unrelated bugs).
-                    Numbered by how many crates hit the bug (B1 the most), then
-                    by rows; renumbered every run, so use the locations as the
-                    stable key
+                    Numbered by first appearance, in input order, so appending
+                    an eval CSV (earlier ones unchanged, same order) keeps the
+                    old ids and numbers new bugs after them
   diagnosis         auto-filled where it can be, else left blank for review
                     (the other options are "False Positive" and "Rerun!"):
                       True Positive           an aliasing violation
@@ -46,7 +47,7 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
                     column lists the tested version, else <dataset>-updated
                     if the crate is in it at another version and the tested
                     version is up to date or is the dataset's latest_version
-  # downloads       all-time crates.io downloads of the crate
+  # downloads       all-time crates.io downloads of the crate, rounded (12k, 4M)
   container         the eval build (the image the test ran in)
   test timestamp    when the test finished
   runtime (s)       the test's run_seconds
@@ -69,8 +70,13 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
                     to <crate>-<version>/..., or <std>/... for the toolchain
   error             as in the bugs CSV
 
-crates.io is queried once per crate, at most one request a second (its
-crawler policy); a crate it can't be found on gets empty crates.io columns.
+The crates.io columns (last updated, up to date?, # downloads) come from
+--downloads (default analysis/crate-downloads.csv, as written by
+fetch_downloads.py from the crates.io database dump), so they are as fresh
+as its last run. Crates it doesn't list are looked up on crates.io instead,
+at most one request a second (its crawler policy), and cached in
+analysis/crates-io-cache.json for the day; --refresh looks them up again.
+A crate that isn't on crates.io gets empty crates.io columns.
 The output defaults to <first input minus .csv>-report.csv and is written with a
 UTF-8 BOM so Excel opens it cleanly. Requirements: python3 >= 3.6 (stdlib).
 """
@@ -95,12 +101,38 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-o", "--output", help="output CSV (default: <bugs minus .csv>-report.csv)")
 ap.add_argument("--dataset", action="append", metavar="NAME=CSV",
                 help="a dataset to tag crates with; repeatable, replaces the defaults")
+ap.add_argument("--downloads", metavar="CSV",
+                help="fetch_downloads.py output (default: analysis/crate-downloads.csv)")
+ap.add_argument("--refresh", action="store_true",
+                help="look crates missing from --downloads up on crates.io again, ignoring the cache")
 ap.add_argument("eval_csvs", nargs="+", help="run_eval_dataset.sh *-eval.csv files, whole or filtered")
 args = ap.parse_args()
 out_path = args.output or re.sub(r"\.csv$", "", args.eval_csvs[0]) + "-report.csv"
 
 # bsan error cells can be large; lift the 128 KiB default field limit.
 csv.field_size_limit(sys.maxsize)
+
+# (build, crate, test) -> its most recent bsan row; dicts keep first-seen order
+latest = {}
+nread = 0
+for path in args.eval_csvs:
+    with open(path, newline="", encoding="utf-8-sig") as f:
+        reader = csv.DictReader(f)
+        for col in ("build", "crate", "test", "timestamp", "run_seconds",
+                    "error_type", "error"):
+            if col not in (reader.fieldnames or []):
+                sys.exit(f"Error: {path} has no '{col}' column -- not an eval CSV?")
+        for r in reader:
+            if r["error_type"] != "bsan":
+                continue
+            nread += 1
+            key = (r["build"], r["crate"], r["test"])
+            # ISO 8601 UTC timestamps compare correctly as strings
+            if key not in latest or r["timestamp"] > latest[key]["timestamp"]:
+                latest[key] = r
+bugs = list(latest.values())
+print(f"{nread} bsan row(s) in {len(args.eval_csvs)} file(s), "
+      f"{nread - len(bugs)} duplicate(s) dropped", file=sys.stderr)
 
 SCRIPTS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_DATASETS = [
@@ -135,27 +167,27 @@ for ds, path in datasets:
                 latest.add(r["latest_version"])
 known = set().union(*members.values())
 
-# (build, crate, test) -> its most recent bsan row; dicts keep first-seen order
-latest = {}
-nread = 0
-for path in args.eval_csvs:
-    with open(path, newline="", encoding="utf-8-sig") as f:
+# crates.io names are unique up to case and -/_, so match on that
+canon = lambda n: n.lower().replace("_", "-")
+# canonical crate name -> lookup()-style info (None: not on crates.io), from
+# fetch_downloads.py
+dumped = {}
+downloads_path = args.downloads or os.path.join(SCRIPTS, "analysis", "crate-downloads.csv")
+if os.path.exists(downloads_path):
+    with open(downloads_path, newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
-        for col in ("build", "crate", "test", "timestamp", "run_seconds",
-                    "error_type", "error"):
-            if col not in (reader.fieldnames or []):
-                sys.exit(f"Error: {path} has no '{col}' column -- not an eval CSV?")
-        for r in reader:
-            if r["error_type"] != "bsan":
-                continue
-            nread += 1
-            key = (r["build"], r["crate"], r["test"])
-            # ISO 8601 UTC timestamps compare correctly as strings
-            if key not in latest or r["timestamp"] > latest[key]["timestamp"]:
-                latest[key] = r
-bugs = list(latest.values())
-print(f"{nread} bsan row(s) in {len(args.eval_csvs)} file(s), "
-      f"{nread - len(bugs)} duplicate(s) dropped", file=sys.stderr)
+        if "newest_version" not in (reader.fieldnames or []):
+            print(f"{downloads_path} predates newest_version; rerun fetch_downloads.py. "
+                  "Using crates.io instead", file=sys.stderr)
+        else:
+            for r in reader:
+                dumped[canon(r["crate_name"])] = r["newest_version"] and {
+                    "newest": r["newest_version"], "released": r["last_released"],
+                    "downloads": r["downloads"]} or None
+elif args.downloads:
+    sys.exit(f"Error: {downloads_path} not found")
+else:
+    print(f"{downloads_path} not found; using crates.io instead", file=sys.stderr)
 
 
 def split_crate(crate):
@@ -185,7 +217,17 @@ def lookup(name):
     versions = [v for v in data.get("versions", []) if not v.get("yanked")]
     released = max((v["created_at"] for v in versions), default="")
     return {"newest": c.get("max_stable_version") or c.get("max_version") or "",
-            "released": released[:10], "downloads": c.get("downloads", "")}
+            "released": released[:10], "downloads": rounded(c["downloads"])}
+
+
+def rounded(n):
+    """As fetch_downloads.py: 1234 -> 1k, 131_600 -> 132k, 999_700 -> 1M."""
+    if n < 1000:
+        return str(n)
+    for unit, suffix, nxt in ((10**3, "k", 10**6), (10**6, "M", 10**9), (10**9, "B", None)):
+        r = (n + unit // 2) // unit
+        if nxt is None or r * unit < nxt:
+            return f"{r}{suffix}"
 
 
 names = []
@@ -194,18 +236,39 @@ for r in bugs:
     if name not in names:
         names.append(name)
 
-info = {}
-for i, name in enumerate(names, 1):
-    print(f"[{i}/{len(names)}] {name}", file=sys.stderr)
+# crates fetch_downloads.py didn't cover: crate name -> {fetched: date, info:
+# lookup()}, reused for a day; saved after every lookup so an interrupted run
+# keeps them
+CACHE = os.path.join(SCRIPTS, "analysis", "crates-io-cache.json")
+try:
+    with open(CACHE) as f:
+        cache = json.load(f)
+except (OSError, ValueError):
+    cache = {}
+today = time.strftime("%Y-%m-%d")
+undumped = [n for n in names if canon(n) not in dumped]
+todo = [n for n in undumped if args.refresh or cache.get(n, {}).get("fetched") != today]
+print(f"{len(names) - len(undumped)} crate(s) from {downloads_path}, "
+      f"{len(undumped) - len(todo)} cached, {len(todo)} to look up on crates.io", file=sys.stderr)
+
+for i, name in enumerate(todo, 1):
+    print(f"[{i}/{len(todo)}] {name}", file=sys.stderr)
     try:
-        info[name] = lookup(name)
+        ci = lookup(name)
     except Exception as e:
         print(f"  crates.io error: {e}", file=sys.stderr)
-        info[name] = None
-    if info[name] is None:
-        print("  not found on crates.io", file=sys.stderr)
-    if i < len(names):
+    else:
+        if ci is None:
+            print("  not found on crates.io", file=sys.stderr)
+        cache[name] = {"fetched": today, "info": ci}
+        with open(CACHE + ".tmp", "w") as f:
+            json.dump(cache, f, indent=1, sort_keys=True)
+        os.replace(CACHE + ".tmp", CACHE)
+    if i < len(todo):
         time.sleep(1)
+info = {n: dumped[canon(n)] if canon(n) in dumped else cache[n]["info"] if n in cache else None
+        for n in names}
+
 
 def error_type(error):
     """Classify the first "Undefined Behavior:" line of the report (run_eval
@@ -280,14 +343,11 @@ for r in bugs:
     rows.append((r, name, version, ci, bool(ci) and version == ci["newest"],
                  etype, key, loc, created))
 
-# bug key -> id, by crates hit, then rows, then key
-crates_by_key, rows_by_key = {}, {}
-for r, *_, key, _, _ in rows:
-    if key:
-        crates_by_key.setdefault(key, set()).add(r["crate"])
-        rows_by_key[key] = rows_by_key.get(key, 0) + 1
-bug_id = {k: f"B{i}" for i, k in enumerate(
-    sorted(crates_by_key, key=lambda k: (-len(crates_by_key[k]), -rows_by_key[k], k)), 1)}
+# bug key -> id, by first appearance
+bug_id = {}
+for *_, key, _, _ in rows:
+    if key and key not in bug_id:
+        bug_id[key] = f"B{len(bug_id) + 1}"
 
 # (crate name, test) -> versions where that test is an aliasing violation
 aliasing_at = {}
