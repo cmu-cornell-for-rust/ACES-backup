@@ -1,0 +1,31 @@
+experimental-bsan,vsdb_core-17.0.9,basic::mapx_raw::test::test_meta_restore_then_mutate,timeout,341.891,3600.007,2026-10-21T03:57:32Z,2237688.0,timeout,"test timed out after 1h (--test-timeout; killed by SIGTERM)"
+experimental-bsan,vsdb_core-17.0.9,basic::mapx_raw::test::test_prefix_isolation_between_instances,timeout,341.891,3600.005,2026-10-21T04:57:32Z,2237688.0,timeout,"test timed out after 1h (--test-timeout; killed by SIGTERM)"
+experimental-bsan,vsdb_core-17.0.9,basic::mapx_raw::test::test_save_and_from_meta,timeout,341.891,3600.005,2026-10-21T05:57:32Z,2237688.0,timeout,"test timed out after 1h (--test-timeout; killed by SIGTERM)"
+experimental-bsan,vsdb_core-17.0.9,basic::mapx_raw::test::test_serde_roundtrip,timeout,341.891,3600.007,2026-10-21T06:57:32Z,2237688.0,timeout,"test timed out after 1h (--test-timeout; killed by SIGTERM)"
+experimental-bsan,vsdb_core-17.0.9,basic::mapx_raw::test::test_serde_size,success,341.891,28.989,2026-10-21T06:58:01Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,basic::mapx_raw::test::wal_sync_preserves_empty_keys_and_prefix_isolation,timeout,341.891,3600.006,2026-10-21T07:58:01Z,2237688.0,timeout,"test timed out after 1h (--test-timeout; killed by SIGTERM)"
+experimental-bsan,vsdb_core-17.0.9,basic_cases,success,341.891,77.367,2026-10-21T07:59:19Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,child,success,341.891,8.275,2026-10-21T07:59:27Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::ceiling_migration_take_max,success,341.891,8.179,2026-10-21T07:59:35Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::effective_mem_budget_semantics,success,341.891,8.404,2026-10-21T07:59:44Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::format_version_tripwire,success,341.891,8.393,2026-10-21T07:59:52Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::mmdb_basic_get_put_delete,success,341.891,17.527,2026-10-21T08:00:10Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::mmdb_prefix_iteration,success,341.891,17.584,2026-10-21T08:00:27Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::open_at_succeeds_when_sentinel_unremovable,success,341.891,12.973,2026-10-21T08:00:40Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::pending_window_guard_reclaims_entry_on_thread_exit,success,341.891,8.105,2026-10-21T08:00:48Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::prefix_allocator_multithread_uniqueness,success,341.891,66.913,2026-10-21T08:01:55Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::prefix_allocator_persisted_ceiling_covers_issued,success,341.891,28.815,2026-10-21T08:02:24Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::prefix_allocator_unique_and_monotonic_per_thread,success,341.891,29.686,2026-10-21T08:02:54Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::reserve_recovered_prefix_diverts_allocator_around_reservation,success,341.891,28.472,2026-10-21T08:03:22Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::reserve_recovered_prefix_ignores_already_issued_in_window_value,success,341.891,28.581,2026-10-21T08:03:51Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::shard_layout_lifecycle_states,success,341.891,8.449,2026-10-21T08:03:59Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::streaming_scans_surface_late_block_corruption,success,341.891,15.590,2026-10-21T08:04:15Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,common::engine::mmdb::tests::synchronous_batch_reports_closed_engine,success,341.891,27.149,2026-10-21T08:04:42Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,explicit_configuration_ignores_environment_default,success,341.891,15.900,2026-10-21T08:04:58Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,immutable_views_survive_concurrent_replacements_and_flushes,success,341.891,320.437,2026-10-21T08:10:18Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,independent_views_and_reader_clones_share_identity_not_state,timeout,341.891,3600.005,2026-10-21T09:10:18Z,2237688.0,timeout,"test timed out after 1h (--test-timeout; killed by SIGTERM)"
+experimental-bsan,vsdb_core-17.0.9,namespace_lifecycle,timeout,341.891,3600.006,2026-10-21T10:10:18Z,2237688.0,timeout,"test timed out after 1h (--test-timeout; killed by SIGTERM)"
+experimental-bsan,vsdb_core-17.0.9,read_only_completed_datasets_accept_stale_initialization_sentinels,success,341.891,61.858,2026-10-21T10:11:20Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,read_only_universe_reads_without_changing_store,success,341.891,55.053,2026-10-21T10:12:15Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,read_view_survives_publication_clear_and_flush,success,341.891,36.673,2026-10-21T10:12:52Z,2237688.0,,
+experimental-bsan,vsdb_core-17.0.9,synchronous_wipe_and_dropped_batch,timeout,341.891,3600.006,2026-10-21T11:12:52Z,2237688.0,timeout,"test timed out after 1h (--test-timeout; killed by SIGTERM)"
