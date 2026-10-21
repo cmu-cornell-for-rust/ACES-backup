@@ -82,9 +82,6 @@
 #   --max-tasks N     ceiling on workers per job, at most 24 (default: 24, or
 #                     fewer if 24 don't fit a 24-core / 488G slice of a node
 #                     at --cpus-per-task and --mem-per-task)
-#   --one-per-job     one crate per sbatch job (same as --max-tasks 1): every
-#                     crate, slow-list ones included, gets a single-worker job
-#                     of its own; jobs past 90 are staged as usual
 #   --cpus-per-task N cores per worker (default 1; also caps CARGO_BUILD_JOBS)
 #   --mem-per-task G  GB per worker (default 8, at most 16)
 #   --merge RUNDIR    don't run anything: merge RUNDIR's shards into its master
@@ -219,7 +216,6 @@ UNSAFE_SCAN=""
 TESTS_CSV=""
 SKIP_CSV=""
 NO_SKIP=0
-ONE_PER_JOB=""       # 1 = --one-per-job (MAX_TASKS forced to 1)
 JOBS=""              # empty = auto: one per crate, capped at MAX_JOBS unless more are needed
 MAX_TASKS=""         # empty = auto: what fits NODE_CPUS / NODE_MEM
 CPUS_PER_TASK=1
@@ -290,7 +286,6 @@ while [[ $# -gt 0 ]]; do
         --jobs=*)        JOBS="${1#*=}"; shift ;;
         --max-tasks)     MAX_TASKS="$2"; shift 2 ;;
         --max-tasks=*)   MAX_TASKS="${1#*=}"; shift ;;
-        --one-per-job)   ONE_PER_JOB=1; shift ;;
         --cpus-per-task) CPUS_PER_TASK="$2"; shift 2 ;;
         --cpus-per-task=*) CPUS_PER_TASK="${1#*=}"; shift ;;
         --mem-per-task)  MEM_PER_TASK="$2"; shift 2 ;;
@@ -337,8 +332,7 @@ usage() {
     echo "           --safety safe,unsafe-deps,unsafe [--unsafe-scan FILE]" >&2
     echo "           --tests FILE (required; e.g. $GROUP/scripts/<dataset>-tests.csv)" >&2
     echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
-    echo "           --jobs N --max-tasks N (<= $MAX_TASKS_PER_JOB) | --one-per-job" >&2
-    echo "           --cpus-per-task N" >&2
+    echo "           --jobs N --max-tasks N (<= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 1h, 0 = none)" >&2
     echo "           --slow-walltime T (slow-list jobs, HH or HH:MM; default 24)" >&2
@@ -391,11 +385,6 @@ fi
 FIT_TASKS=$(( NODE_CPUS / CPUS_PER_TASK ))
 (( NODE_MEM / MEM_PER_TASK < FIT_TASKS )) && FIT_TASKS=$(( NODE_MEM / MEM_PER_TASK ))
 (( FIT_TASKS > MAX_TASKS_PER_JOB )) && FIT_TASKS=$MAX_TASKS_PER_JOB
-if [[ -n "$ONE_PER_JOB" ]]; then
-    [[ -z "$MAX_TASKS" || "$MAX_TASKS" == 1 ]] \
-        || { echo "Error: --one-per-job conflicts with --max-tasks $MAX_TASKS." >&2; exit 1; }
-    MAX_TASKS=1
-fi
 if [[ -n "$MAX_TASKS" ]]; then
     [[ "$MAX_TASKS" =~ ^[1-9][0-9]*$ ]] || { echo "Error: --max-tasks must be a positive integer." >&2; exit 1; }
     (( MAX_TASKS <= FIT_TASKS )) || {
@@ -1124,10 +1113,14 @@ echo
 # SLURM takes at most MAX_JOBS jobs per user at once (running + pending, the
 # user's other jobs included). Every non-empty queue starts out staged; as
 # many as fit go in now, the rest from the poll loop as slots free up.
+# Staged fewest tests first (ties: lowest index), slow-list jobs included, so
+# the small crates are submitted -- and so usually start -- ahead of the big.
 STAGED=()
-for (( j = 0; j < JOBS; j++ )); do
-    [[ -s "$RUNDIR/queues/job-$j.txt" ]] && STAGED+=("$j")
-done
+while IFS=$'\t' read -r _ j; do
+    STAGED+=("$j")
+done < <(for (( j = 0; j < JOBS; j++ )); do
+             [[ -s "$RUNDIR/queues/job-$j.txt" ]] && printf '%d\t%d\n' "${JOB_TESTS[j]}" "$j"
+         done | sort -t$'\t' -k1,1n -k2,2n)
 JOBIDS=()
 SQ_USER="${USER:-$(id -un)}"
 
