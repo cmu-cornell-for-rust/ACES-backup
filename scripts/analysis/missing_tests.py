@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Tests CSV of everything a hyperfine run did NOT get to.
 
-Usage: missing_tests.py [-o OUT.csv] <tests.csv | hyperfine.csv> <hyperfine.csv> [more-hyperfine.csv ...]
+Usage: missing_tests.py [-o OUT.csv] [--exclude-bsan-build-fails BSAN_ONLY.csv]... <tests.csv | hyperfine.csv> <hyperfine.csv> [more-hyperfine.csv ...]
 
 Diffs a tests CSV (crate,tests,contains_ffi -- as produced by list_tests.sh)
 against one or more *-hyperfine.csv files and writes a tests CSV in the same
@@ -25,7 +25,11 @@ splitting in run_bench_dataset.sh strides the test list positionally.
 
 A crate that failed to build or fetch has one test-less row in the output, so
 every one of its tests looks missing; --skip-build-failed drops those crates
-instead (a rerun would just fail again). Giving several hyperfine CSVs unions
+instead (a rerun would just fail again). --exclude-bsan-build-fails (repeatable)
+takes a bsan-only CSV from build_dataset.sh (crates that build with plain
+cargo but not with cargo bsan) and leaves those crates out of the comparison
+altogether -- they are neither counted nor emitted -- e.g. to compare a bsan
+run against a miri one on the crates bsan can build at all. Giving several hyperfine CSVs unions
 their coverage: a test must be missing from all of them to be emitted.
 
 The first argument can also be a *-hyperfine.csv instead of a tests CSV, to
@@ -54,6 +58,10 @@ ap.add_argument("--done-status", default=DONE_DEFAULT,
                 help=f"comma-separated statuses that count as done (default: {DONE_DEFAULT})")
 ap.add_argument("--skip-build-failed", action="store_true",
                 help="omit crates whose only rows are build_failed/fetch_failed")
+ap.add_argument("--exclude-bsan-build-fails", action="append", default=[], metavar="BSAN_ONLY_CSV",
+                help="leave out the crates in this build_dataset.sh bsan-only CSV "
+                     "(build,crate,...): they build with plain cargo but not with cargo bsan. "
+                     "Repeatable")
 ap.add_argument("-q", "--quiet", action="store_true", help="no stderr summary")
 ap.add_argument("tests_csv", help="tests CSV from list_tests.sh (crate,tests,contains_ffi), "
                 "or a reference *-hyperfine.csv whose done tests form the list")
@@ -63,6 +71,15 @@ args = ap.parse_args()
 done_status = {s.strip() for s in args.done_status.split(",") if s.strip()}
 if not done_status:
     ap.error("--done-status needs at least one status")
+
+# ── Bsan build fails: crates to leave out of the comparison entirely ─────────
+bsan_fails = set()
+for path in args.exclude_bsan_build_fails:
+    with open(path, newline="") as f:
+        reader = csv.DictReader(f)
+        if "crate" not in (reader.fieldnames or []):
+            sys.exit(f"Error: {path} has no 'crate' column -- not a bsan-only CSV?")
+        bsan_fails.update(r["crate"] for r in reader if r["crate"])
 
 # ── Coverage: (crate, test) pairs that got a verdict, unioned over the inputs ─
 done = set()            # (crate, test)
@@ -95,6 +112,7 @@ if unknown and not args.quiet:
 # ── Diff against the tests list, preserving its order ────────────────────────
 out_rows = []       # (crate, [missing tests], contains_ffi, crate's test count)
 skipped_broken = []
+excluded_bsan = []  # (crate, its test count), from --exclude-bsan-build-fails
 total_tests = total_missing = 0
 def load_tests_list(path):
     """[(crate, [tests], contains_ffi)] in file order, from a tests CSV or --
@@ -118,6 +136,9 @@ def load_tests_list(path):
 
 for crate, tests, ffi in load_tests_list(args.tests_csv):
     if not tests:
+        continue
+    if crate in bsan_fails:
+        excluded_bsan.append((crate, len(tests)))
         continue
     total_tests += len(tests)
     missing = [t for t in tests if (crate, t) not in done]
@@ -149,6 +170,10 @@ if out_rows:
         print(f"{crate:<{width}}  {len(missing):>7}  {n:>3}{note}", file=e)
 print(f"\n{total_missing} missing test(s) across {len(out_rows)} crate(s) "
       f"(of {total_tests} tests in {args.tests_csv})", file=e)
+if excluded_bsan:
+    n = sum(k for _, k in excluded_bsan)
+    print(f"excluded {len(excluded_bsan)} bsan build-fail crate(s), {n} test(s): "
+          f"{', '.join(c for c, _ in excluded_bsan)}", file=e)
 if skipped_broken:
     n = sum(k for _, k in skipped_broken)
     print(f"skipped {len(skipped_broken)} build/fetch-failed crate(s), {n} test(s): "

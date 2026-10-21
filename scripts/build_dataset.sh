@@ -46,6 +46,13 @@
 #   there go to a separate CSV (see Output); the main CSV doesn't depend on
 #   it. Needs cargo-bsan, i.e. the bsan image (or one built from it).
 #
+#   --rerun-bsan-only reruns just that cargo bsan compile, for just the crates
+#   in the last bsan-only CSV -- no fetch, plain build or listing, and the
+#   main CSV and test list are left alone. The bsan-only CSV is rewritten with
+#   the crates that still fail (the previous one is kept as .bak), each keeping
+#   its compile_seconds from the previous one. Use it after a cargo-bsan / image
+#   fix. Version flags don't apply: the crates are the CSV's.
+#
 #   Where it runs: from the login node the crates are dealt round-robin into
 #   ceil(crates / -n) parts (so part sizes differ by at most one crate, and
 #   none holds more than -n), and each part is built by its own job via
@@ -59,12 +66,28 @@
 #   tmux/nohup for big datasets. Each job's run_job.sh output goes to
 #   <DATASET_DIR>/_logs/_build_parts/job-K.log.
 #
+#   No dataset dir: when DATASET is neither a dir under $GROUP/datasets/ nor a
+#   path, its versions CSV <group>/scripts/<DATASET>-dataset.csv (else the one
+#   next to this script, e.g. capslock-dataset.csv for capslock) stands in for
+#   it: the version selection (--all default, --first, --latest, --only-latest,
+#   --only-first) is made from the CSV, and each selected crate's crates.io tarball is
+#   downloaded and extracted under $TMP (else $TMPDIR, else /tmp) just before
+#   it builds (a download failure is a fetch_failed row). With --local, crates
+#   and _logs go to $TMP/build_dataset-<DATASET>/ (kept, so a rerun reuses the
+#   downloads and --rerun-bsan-only finds its CSV). As jobs, $TMP is node-local,
+#   so each job downloads its own part's crates into its node's scratch, and
+#   the shared dir that stands in for <DATASET_DIR> (_logs, part lists, CSVs)
+#   is $GROUP/outputs/build-<DATASET>/; each crate's logs land in its
+#   _logs/crate-logs/<crate>/, as the scratch is removed with the job.
+#
 # Usage:
 #   ./build_dataset.sh [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc]
-#                      [--latest | --only-latest | --all] [--versions-csv FILE] <DATASET>
+#                      [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>
 #   ./build_dataset.sh --local [--image IMG] [--whole] [--doc] [version flags] <DATASET_DIR>   # no job
+#   ./build_dataset.sh --rerun-bsan-only [--local] [-n N ...] [--image IMG] [--whole] [--latest] <DATASET>
 #
-#   DATASET       a dataset name under $GROUP/datasets/ (e.g. top_500), or a path
+#   DATASET       a dataset name under $GROUP/datasets/ (e.g. top_500), or a path;
+#                 else a name with a <name>-dataset.csv (see "No dataset dir")
 #
 #   -n N          at most N crates per job (default 100)
 #   -c CPUS       cores per job (default 16)
@@ -77,25 +100,34 @@
 #   --whole       compile with `cargo test --no-run` (all targets cargo test
 #                 builds), not `cargo test --tests --no-run`
 #   --doc         also list doc tests (off by default; see above)
+#   --rerun-bsan-only  only rerun cargo bsan on the last bsan-only CSV's
+#                 crates (see above); --whole and --latest/--only-latest pick
+#                 the same compile and CSV as the run being redone
 #   (versions)    which crate versions to build, from the versions CSV
 #                 (dataset_creator/update_latest.py adds its latest_version /
 #                 version_differs columns; dataset_creator/select_versions.sh
-#                 does the selecting). Default, or --first: each crate's first
-#                 (listed) version if the versions CSV exists, else every dir.
+#                 does the selecting). Default: --all.
+#   --first       every crate at its first (listed) version
 #   --latest      every crate at its latest version (first where unchanged)
 #   --only-latest only the crates whose latest version differs, at the latest
 #                 --latest/--only-latest write *-latest outputs (see Output)
 #                 and also <group>/scripts/<dataset>-tests-latest.csv, the
 #                 list to pass to run_eval_dataset.sh --tests
 #                 (an existing one is kept as .bak)
-#   --all         every dir in the dataset, whatever its version
+#   --only-first  only the crates whose latest version differs, at their
+#                 first (listed) version; writes *-only-first outputs, so the
+#                 full --first run's are kept
+#   --all         (default) every dir in the dataset, whatever its version;
+#                 with no dataset dir, every version the CSV lists (first and
+#                 latest, as download_dataset.sh would fetch)
 #   --versions-csv FILE  default <group>/scripts/<dataset>-dataset.csv
 #   --local       skip the job: build on this machine / inside an image shell
 #   --part K      with --local: build only the crates in part K's list
 #                 (_logs/_build_parts/part-K.txt); set by the launcher
 #
 # Output (with --latest/--only-latest every name below gets a "-latest"
-# suffix before .csv, and the parts dir is _build_parts-latest):
+# suffix before .csv, and the parts dir is _build_parts-latest; with
+# --only-first the suffix is "-only-first"):
 #   <DATASET_DIR>/_logs/build-<image>.csv, and (when launched as a job) a copy
 #   at $GROUP/outputs/<image>-<dataset>-build.csv, columns:
 #     build,crate,status,compile_seconds,tests,error_type,error,timestamp
@@ -193,6 +225,22 @@ classify() {
         | tr -d '\r' | tr '\n\t' '  ' | sed -e 's/^ *//' -e 's/  */ /g' | cut -c1-300)
 }
 
+# download_crate <name-version> <into dir>: fetch the crates.io tarball and
+# extract it to <into dir>/<name-version>/, as download_dataset.sh does. The
+# name is everything up to the last hyphen before a digit.
+download_crate() {
+    local c="$1" name tmp rc
+    name="${c%-[0-9]*}"
+    tmp="$(mktemp "$2/.$c.XXXXXX")" || return 1
+    curl -fsSL -A "crate-downloader (CMU systems research; via crates.io)" \
+            --retry 3 --retry-delay 2 -o "$tmp" \
+            "https://static.crates.io/crates/$name/$name-${c#"$name"-}.crate" \
+        && tar -xzf "$tmp" -C "$2" && [ -f "$2/$c/Cargo.toml" ]
+    rc=$?
+    rm -f "$tmp"
+    return "$rc"
+}
+
 # CSV-quote a field (empty stays empty).
 csvq() { [ -n "$1" ] && printf '"%s"' "${1//\"/\"\"}"; }
 
@@ -236,11 +284,29 @@ doc_names() {
 # ------------------------------- worker mode ------------------------------- #
 # Invoked by xargs, one crate per call. argv: --worker <crate_dir>
 # Writes the crate's CSV row to $STATE_DIR/<crate>.csv and, when it built and
-# listed, its <dataset>_list.csv row to $STATE_DIR/<crate>.list.
+# listed, its <dataset>_list.csv row to $STATE_DIR/<crate>.list (neither with
+# --rerun-bsan-only), and a bsan-only failure's row to $STATE_DIR/<crate>.bsan.
 if [ "${1:-}" = "--worker" ]; then
     dir="$2"
     crate="$(basename "$dir")"
-    log="$dir/build-$IMAGE.log"
+    logdir="$dir"
+    [ -n "$CRATE_LOG_DIR" ] && logdir="$CRATE_LOG_DIR/$crate"
+    log="$logdir/build-$IMAGE.log"
+    if [ "$DOWNLOAD" -eq 1 ] && [ ! -f "$dir/Cargo.toml" ]; then
+        mkdir -p "$logdir"
+        if ! download_crate "$crate" "$(dirname "$dir")" > "$log" 2>&1; then
+            echo "    download_failed: $crate"
+            if [ "$RERUN" -eq 1 ]; then
+                # Can't recheck it: keep its previous bsan-only row.
+                awk -F, -v c="$crate" '$2 == c' "$PREV_CSV" > "$STATE_DIR/$crate.bsan"
+            else
+                printf '%s,%s,fetch_failed,,,other,%s,%s\n' "$IMAGE" "$crate" \
+                    "$(csvq "crates.io download failed (see $log)")" \
+                    "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" > "$STATE_DIR/$crate.csv"
+            fi
+            exit 0
+        fi
+    fi
     had_lock=0; [ -f "$dir/Cargo.lock" ] && had_lock=1
     if [ -n "$TARGET_BASE" ]; then
         export CARGO_TARGET_DIR="$TARGET_BASE/build-$crate"
@@ -250,68 +316,73 @@ if [ "${1:-}" = "--worker" ]; then
     rm -rf "$CARGO_TARGET_DIR"
 
     status=ok; compile=""; ntests=""; ekind=""; emsg=""
-    wrap=()
-    [ -n "$PRIMARY_RUSTFLAGS" ] \
-        && wrap=(RUSTC_WRAPPER="$SELF" BUILD_DATASET_RUSTC_WRAPPER=1)
-    if ! ( cd "$dir" && cargo fetch ) > "$log" 2>&1; then
-        status=fetch_failed
+    if [ "$RERUN" -eq 1 ]; then
+        # --rerun-bsan-only: its plain compile passed last run; keep that time.
+        compile=$(awk -F, -v c="$crate" '$2 == c { print $3; exit }' "$PREV_CSV")
     else
-        cstart=$(date +%s%3N)
-        ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" $COMPILE --no-run ) >> "$log" 2>&1
-        brc=$?
-        cms=$(( $(date +%s%3N) - cstart ))
-        compile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
-        [ "$brc" -eq 0 ] || status=build_failed
-    fi
-    if [ "$status" = ok ]; then
-        # JSON lines on stdout, build noise on stderr (into the log). Same
-        # flags as the build, so the binaries it just made are reused.
-        list="$STATE_DIR/$crate.json"
-        if ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" \
-                cargo test --tests -- --list --format=json -Zunstable-options ) \
-                > "$list" 2>> "$log"; then
-            names=$(grep -a '"type": *"test"' "$list" | grep -a '"ignore": *false' \
-                | sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u)
-            if [ "$DOC" -eq 1 ]; then
-                doclog="$STATE_DIR/$crate.doc.json"
-                if ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" \
-                        RUSTDOCFLAGS="$BUILD_RUSTFLAGS${PRIMARY_RUSTFLAGS:+ $PRIMARY_RUSTFLAGS}" \
-                        cargo test --doc -- --list --format=json -Zunstable-options ) \
-                        > "$doclog" 2>> "$log"; then
-                    namesof() { sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u; }
-                    grep -a '"type": *"test"' "$doclog" | namesof > "$doclog.all"
-                    grep -a '"type": *"test"' "$doclog" | grep -a '"ignore": *false' | namesof > "$doclog.run"
-                    docs=$(doc_names "$doclog.all" "$doclog.run" 2>> "$log")
-                    [ -n "$docs" ] && names="${names:+$names
-}$docs"
-                    rm -f "$doclog.all" "$doclog.run"
-                else
-                    echo "build_dataset: doc-test listing failed (no lib target?); binary tests only" >> "$log"
-                fi
-                rm -f "$doclog"
-            fi
-            ntests=$(printf '%s' "$names" | grep -c . || true)
-            printf '%s,%s\n' "$crate" "$(printf '%s' "$names" | paste -sd';' -)" \
-                > "$STATE_DIR/$crate.list"
+        wrap=()
+        [ -n "$PRIMARY_RUSTFLAGS" ] \
+            && wrap=(RUSTC_WRAPPER="$SELF" BUILD_DATASET_RUSTC_WRAPPER=1)
+        if ! ( cd "$dir" && cargo fetch ) > "$log" 2>&1; then
+            status=fetch_failed
         else
-            status=list_failed
-            cat "$list" >> "$log"
+            cstart=$(date +%s%3N)
+            ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" $COMPILE --no-run ) >> "$log" 2>&1
+            brc=$?
+            cms=$(( $(date +%s%3N) - cstart ))
+            compile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
+            [ "$brc" -eq 0 ] || status=build_failed
         fi
-        rm -f "$list"
+        if [ "$status" = ok ]; then
+            # JSON lines on stdout, build noise on stderr (into the log). Same
+            # flags as the build, so the binaries it just made are reused.
+            list="$STATE_DIR/$crate.json"
+            if ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" \
+                    cargo test --tests -- --list --format=json -Zunstable-options ) \
+                    > "$list" 2>> "$log"; then
+                names=$(grep -a '"type": *"test"' "$list" | grep -a '"ignore": *false' \
+                    | sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u)
+                if [ "$DOC" -eq 1 ]; then
+                    doclog="$STATE_DIR/$crate.doc.json"
+                    if ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" \
+                            RUSTDOCFLAGS="$BUILD_RUSTFLAGS${PRIMARY_RUSTFLAGS:+ $PRIMARY_RUSTFLAGS}" \
+                            cargo test --doc -- --list --format=json -Zunstable-options ) \
+                            > "$doclog" 2>> "$log"; then
+                        namesof() { sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u; }
+                        grep -a '"type": *"test"' "$doclog" | namesof > "$doclog.all"
+                        grep -a '"type": *"test"' "$doclog" | grep -a '"ignore": *false' | namesof > "$doclog.run"
+                        docs=$(doc_names "$doclog.all" "$doclog.run" 2>> "$log")
+                        [ -n "$docs" ] && names="${names:+$names
+    }$docs"
+                        rm -f "$doclog.all" "$doclog.run"
+                    else
+                        echo "build_dataset: doc-test listing failed (no lib target?); binary tests only" >> "$log"
+                    fi
+                    rm -f "$doclog"
+                fi
+                ntests=$(printf '%s' "$names" | grep -c . || true)
+                printf '%s,%s\n' "$crate" "$(printf '%s' "$names" | paste -sd';' -)" \
+                    > "$STATE_DIR/$crate.list"
+            else
+                status=list_failed
+                cat "$list" >> "$log"
+            fi
+            rm -f "$list"
+        fi
+        if [ "$status" != ok ]; then
+            classify "$log"
+            echo "    $status: $crate [$ekind] $emsg"
+        fi
+        printf '%s,%s,%s,%s,%s,%s,%s,%s\n' "$IMAGE" "$crate" "$status" "$compile" \
+            "$ntests" "$ekind" "$(csvq "$emsg")" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+            > "$STATE_DIR/$crate.csv"
     fi
-    if [ "$status" != ok ]; then
-        classify "$log"
-        echo "    $status: $crate [$ekind] $emsg"
-    fi
-    printf '%s,%s,%s,%s,%s,%s,%s,%s\n' "$IMAGE" "$crate" "$status" "$compile" \
-        "$ntests" "$ekind" "$(csvq "$emsg")" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
-        > "$STATE_DIR/$crate.csv"
 
     # The same compile under cargo bsan, for crates whose plain
     # compile succeeded; a failure here is one only bsan has.
     bsan_target="$CARGO_TARGET_DIR-bsan"
     if [ "$status" = ok ] || [ "$status" = list_failed ]; then
-        blog="$dir/build-$IMAGE-bsan.log"
+        blog="$logdir/build-$IMAGE-bsan.log"
         bwrap=()
         [ -n "$PRIMARY_RUSTFLAGS" ] \
             && bwrap=(BSAN_ORIG_RUSTC="$SELF" BUILD_DATASET_BSAN_RUSTC=1
@@ -333,6 +404,9 @@ if [ "${1:-}" = "--worker" ]; then
     fi
 
     rm -rf "$CARGO_TARGET_DIR" "$bsan_target"
+    # A job's downloaded crate goes too (its logs are in CRATE_LOG_DIR);
+    # --local keeps its downloads for the next run.
+    if [ -n "$CRATE_LOG_DIR" ]; then rm -rf "$dir"; exit 0; fi
     [ "$had_lock" = 0 ] && rm -f "$dir/Cargo.lock"
     exit 0
 fi
@@ -341,7 +415,7 @@ fi
 GROUP="/scratch/group/p.cis260229.000"
 RUN_JOB="$GROUP/scripts/run_job.sh"
 OUTPUTS_DIR="$GROUP/outputs"
-LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=bsan; WHOLE=0; DOC=0; PER_JOB=100; PART=""; POS=()
+LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=bsan; WHOLE=0; DOC=0; RERUN=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
 VERSIONS=""; VERSIONS_CSV=""
 MAX_PARALLEL=40   # jobs in flight at once (QOS limit)
 while [ "$#" -gt 0 ]; do
@@ -349,7 +423,9 @@ while [ "$#" -gt 0 ]; do
         --local)    LOCAL=1; shift ;;
         --whole)    WHOLE=1; shift ;;
         --doc)      DOC=1; shift ;;
-        --first|--latest|--only-latest|--all)
+        --rerun-bsan-only) RERUN=1; shift ;;
+        --download) DOWNLOAD=1; shift ;;   # internal: set by the launcher for part jobs
+        --first|--latest|--only-latest|--only-first|--all)
                     [ -z "$VERSIONS" ] || [ "$VERSIONS" = "${1#--}" ] \
                         || die "--$VERSIONS and $1 are mutually exclusive"
                     VERSIONS="${1#--}"; shift ;;
@@ -364,44 +440,92 @@ while [ "$#" -gt 0 ]; do
         *)          POS+=("$1"); shift ;;
     esac
 done
+VERSIONS="${VERSIONS:-all}"
 [ "${#POS[@]}" -eq 1 ] && [ -n "${POS[0]}" ] \
-    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] [--local] [--latest | --only-latest | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
-# A bare dataset name under the group datasets dir, or a path.
-DATASET_DIR="$(cd "$GROUP/datasets/${POS[0]}" 2>/dev/null && pwd -P)" \
-    || DATASET_DIR="$(cd "${POS[0]}" 2>/dev/null && pwd -P)" \
-    || die "${POS[0]} is neither a dataset under $GROUP/datasets nor a directory"
+    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] [--rerun-bsan-only] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
+TMP_BASE="${TMP:-${TMPDIR:-/tmp}}"
+# A bare dataset name under the group datasets dir, or a path; else a dataset
+# name with a versions CSV, whose crates are downloaded (see "No dataset dir").
+# CRATE_ROOT holds the crate dirs; CRATE_LOG_DIR, when set, their logs.
+CRATE_LOG_DIR=""
+if DATASET_DIR="$(cd "$GROUP/datasets/${POS[0]}" 2>/dev/null && pwd -P)" \
+        || DATASET_DIR="$(cd "${POS[0]}" 2>/dev/null && pwd -P)"; then
+    DS_NAME="$(basename "$DATASET_DIR")"
+    CRATE_ROOT="$DATASET_DIR"
+    if [ "$DOWNLOAD" -eq 1 ]; then
+        # A part job of a CSV dataset: /work is the shared dir, the crates go
+        # to this node's scratch. --cleanenv drops TMP/TMPDIR in the container,
+        # so that's run_job.sh's (bound) scratch, the parent of CARGO_TARGET_DIR.
+        if [ -n "${TMP:-}${TMPDIR:-}" ]; then
+            CRATE_ROOT="$TMP_BASE/build_dataset-crates"
+        else
+            [ -n "${CARGO_TARGET_DIR:-}" ] || die "--download: no TMP, TMPDIR or CARGO_TARGET_DIR for the crates"
+            CRATE_ROOT="$(dirname "$CARGO_TARGET_DIR")/build_dataset-crates"
+        fi
+        CRATE_LOG_DIR="$DATASET_DIR/_logs/crate-logs"
+    fi
+else
+    DS_NAME="$(basename "${POS[0]%/}")"
+    DS_CSV=""
+    for f in "$GROUP/scripts/$DS_NAME-dataset.csv" "$(dirname "$SELF")/$DS_NAME-dataset.csv"; do
+        [ -f "$f" ] && { DS_CSV="$f"; break; }
+    done
+    [ -n "$DS_CSV" ] || die "${POS[0]} is neither a dataset under $GROUP/datasets, a directory, nor a dataset with a $DS_NAME-dataset.csv"
+    [ -n "$VERSIONS_CSV" ] || VERSIONS_CSV="$DS_CSV"
+    DOWNLOAD=1
+    if [ "$LOCAL" -eq 1 ]; then
+        DATASET_DIR="$TMP_BASE/build_dataset-$DS_NAME"
+    else
+        DATASET_DIR="$OUTPUTS_DIR/build-$DS_NAME"
+    fi
+    CRATE_ROOT="$DATASET_DIR"
+    mkdir -p "$DATASET_DIR/_logs" || die "can't create $DATASET_DIR/_logs"
+    echo "==> No dataset dir for ${POS[0]}: building from $VERSIONS_CSV, crates downloaded to" \
+         "$([ "$LOCAL" -eq 1 ] && echo "$CRATE_ROOT" || echo "each job's node-local scratch"); _logs in $DATASET_DIR/_logs"
+fi
 BUILD_RUSTFLAGS="${BUILD_RUSTFLAGS:---cap-lints=warn}"
 PRIMARY_RUSTFLAGS="${PRIMARY_RUSTFLAGS---cfg=miri}"   # set but empty: off
-DS_NAME="$(basename "$DATASET_DIR")"
 SUFFIX=""
-case "$VERSIONS" in latest|only-latest) SUFFIX="-latest" ;; esac
+case "$VERSIONS" in latest|only-latest) SUFFIX="-latest" ;; only-first) SUFFIX="-only-first" ;; esac
 RESULTS_CSV="$DATASET_DIR/_logs/build-$IMAGE$SUFFIX.csv"
 LIST_CSV="$DATASET_DIR/_logs/${DS_NAME}_list$SUFFIX.csv"
 BSAN_CSV="$DATASET_DIR/_logs/build-$IMAGE-bsan-only$SUFFIX.csv"
 BSAN_HEADER="build,crate,compile_seconds,bsan_compile_seconds,error_type,error,timestamp"
+# --rerun-bsan-only: the bsan-only CSV being redone, copied aside (in _logs, so
+# the part jobs see it at /work/_logs) since the run overwrites BSAN_CSV.
+PREV_CSV="$DATASET_DIR/_logs/.build-$IMAGE-bsan-only$SUFFIX.prev.csv"
 PARTS_DIR="$DATASET_DIR/_logs/_build_parts$SUFFIX"
 
 # Version selection: ALLOW holds the <name>-<version> dirs to build
-# (VERSION_FILTER=0: every dir). A --part job builds its part list as given.
+# (VERSION_FILTER=0: every dir, i.e. --all with a dataset dir). A --part job
+# builds its part list as given.
 declare -A ALLOW=()
 VERSION_FILTER=0
-if [ -z "$PART" ] && [ "$VERSIONS" != all ]; then
+if [ -z "$PART" ] && { [ "$VERSIONS" != all ] || [ "$DOWNLOAD" -eq 1 ]; } && [ "$RERUN" -eq 0 ]; then
     if [ -n "$VERSIONS_CSV" ]; then
         [ -f "$VERSIONS_CSV" ] || die "versions CSV not found: $VERSIONS_CSV"
     else
         VERSIONS_CSV="$GROUP/scripts/$DS_NAME-dataset.csv"
         if [ ! -f "$VERSIONS_CSV" ]; then
-            [ -z "$VERSIONS" ] || die "--$VERSIONS needs a versions CSV; $VERSIONS_CSV not found (pass --versions-csv FILE)"
-            VERSIONS_CSV=""
+            die "--$VERSIONS needs a versions CSV; $VERSIONS_CSV not found (pass --versions-csv FILE)"
         fi
     fi
     if [ -n "$VERSIONS_CSV" ]; then
-        selected=$("$(dirname "$SELF")/dataset_creator/select_versions.sh" "${VERSIONS:-first}" "$VERSIONS_CSV") || exit 1
+        select_versions() { "$(dirname "$SELF")/dataset_creator/select_versions.sh" "$1" "$VERSIONS_CSV"; }
+        if [ "$VERSIONS" = all ]; then
+            # No dataset dir: every version the CSV lists. A CSV without the
+            # latest columns has only its first versions.
+            selected=$(select_versions first) || exit 1
+            latest=$(select_versions latest 2>/dev/null) && selected="$selected"$'\n'"$latest"
+        else
+            selected=$(select_versions "$VERSIONS") || exit 1
+        fi
         while IFS= read -r d; do [ -n "$d" ] && ALLOW["$d"]=1; done <<<"$selected"
         VERSION_FILTER=1
         missing=()
-        for d in "${!ALLOW[@]}"; do [ -f "$DATASET_DIR/$d/Cargo.toml" ] || missing+=("$d"); done
-        echo "==> Versions: ${VERSIONS:-first} -- ${#ALLOW[@]} crate dir(s) selected from $VERSIONS_CSV"
+        [ "$DOWNLOAD" -eq 1 ] \
+            || for d in "${!ALLOW[@]}"; do [ -f "$DATASET_DIR/$d/Cargo.toml" ] || missing+=("$d"); done
+        echo "==> Versions: $VERSIONS -- ${#ALLOW[@]} crate dir(s) selected from $VERSIONS_CSV"
         if [ "${#missing[@]}" -gt 0 ]; then
             echo "    warning: ${#missing[@]} selected dir(s) not in $DATASET_DIR (skipped; download them with dataset_creator/update_latest.py):" >&2
             printf '      %s\n' "${missing[@]}" | LC_ALL=C sort >&2
@@ -410,6 +534,20 @@ if [ -z "$PART" ] && [ "$VERSIONS" != all ]; then
 fi
 # want_crate <dir name>: whether the version selection keeps it.
 want_crate() { [ "$VERSION_FILTER" -eq 0 ] || [ -n "${ALLOW[$1]:-}" ]; }
+
+# --rerun-bsan-only, launcher or whole --local run: the crates come from the
+# last bsan-only CSV, set aside as PREV_CSV.
+if [ "$RERUN" -eq 1 ] && [ -z "$PART" ]; then
+    [ -s "$BSAN_CSV" ] || die "--rerun-bsan-only: no bsan-only CSV at $BSAN_CSV"
+    cp "$BSAN_CSV" "$PREV_CSV" || die "can't copy $BSAN_CSV to $PREV_CSV"
+fi
+# rerun_crates: the PREV_CSV crates that are still in the dataset dir (all of
+# them, when they're downloaded).
+rerun_crates() {
+    tail -n +2 "$PREV_CSV" | cut -d, -f2 | while IFS= read -r c; do
+        [ -n "$c" ] && { [ "$DOWNLOAD" -eq 1 ] || [ -f "$DATASET_DIR/$c/Cargo.toml" ]; } && printf '%s\n' "$c"
+    done
+}
 
 # summarize <csv>: status / error_type counts.
 summarize() {
@@ -428,7 +566,19 @@ summarize_bsan() {
     local built
     built=$(tail -n +2 "$1" | awk -F, '$3 == "ok" || $3 == "list_failed"' | wc -l | tr -d ' ')
     echo "    bsan-only build failures: $(( $(wc -l < "$2") - 1 )) of $built plain-compiled crate(s)"
-    tail -n +2 "$2" | awk -F, '{ t[$5]++ } END { for (k in t) printf "      error_type %s: %d\n", k, t[k] }'
+    bsan_types "$2"
+}
+bsan_types() {
+    tail -n +2 "$1" | awk -F, '{ t[$5]++ } END { for (k in t) printf "      error_type %s: %d\n", k, t[k] }'
+}
+# finish_rerun <crates rerun>: keep the previous bsan-only CSV as .bak, and
+# summarize what the rerun fixed.
+finish_rerun() {
+    mv "$PREV_CSV" "$BSAN_CSV.bak"
+    local still=$(( $(wc -l < "$BSAN_CSV") - 1 ))
+    echo "    bsan-only build failures: $still of $1 rerun crate(s) still fail ($(( $1 - still )) now build)"
+    bsan_types "$BSAN_CSV"
+    echo "    bsan-only:     $BSAN_CSV  (previous: $BSAN_CSV.bak)"
 }
 
 # ------------------------ launcher: submit the jobs ------------------------ #
@@ -441,11 +591,17 @@ if [ "$LOCAL" -eq 0 ]; then
     JOBS="${JOBS:-$(( CPUS >= 4 ? CPUS / 4 : 1 ))}"
 
     CRATES=()
-    for d in "$DATASET_DIR"/*/; do
-        d="${d%/}"
-        case "$(basename "$d")" in _*) continue ;; esac
-        [ -f "$d/Cargo.toml" ] && want_crate "$(basename "$d")" && CRATES+=("$(basename "$d")")
-    done
+    if [ "$RERUN" -eq 1 ]; then
+        while IFS= read -r c; do CRATES+=("$c"); done < <(rerun_crates)
+    elif [ "$DOWNLOAD" -eq 1 ]; then
+        while IFS= read -r c; do CRATES+=("$c"); done < <(printf '%s\n' "${!ALLOW[@]}" | LC_ALL=C sort)
+    else
+        for d in "$DATASET_DIR"/*/; do
+            d="${d%/}"
+            case "$(basename "$d")" in _*) continue ;; esac
+            [ -f "$d/Cargo.toml" ] && want_crate "$(basename "$d")" && CRATES+=("$(basename "$d")")
+        done
+    fi
     n=${#CRATES[@]}
     [ "$n" -gt 0 ] || die "no crates (dirs with a Cargo.toml) in $DATASET_DIR"
     NPARTS=$(( (n + PER_JOB - 1) / PER_JOB ))
@@ -463,6 +619,8 @@ if [ "$LOCAL" -eq 0 ]; then
     [ "$DOC" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --doc"
     # The part jobs only need it for the -latest output names.
     [ -n "$SUFFIX" ] && WHOLE_FLAG="$WHOLE_FLAG --$VERSIONS"
+    [ "$RERUN" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --rerun-bsan-only"
+    [ "$DOWNLOAD" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --download"
     echo "==> Building $n crates in the '$IMAGE' image as $NPARTS job(s) of" \
          "$(( n / NPARTS ))-$(( (n + NPARTS - 1) / NPARTS )) crates" \
          "($CPUS cpus, $JOBS crates at a time, $MEM, ${WALLTIME}h each; at most $MAX_PARALLEL at once)"
@@ -501,6 +659,22 @@ if [ "$LOCAL" -eq 0 ]; then
     # Merge the parts' CSVs (inside a job the dataset was /work, so they
     # landed at the same _logs paths).
     {
+        echo "$BSAN_HEADER"
+        for f in "$PARTS_DIR"/bsan-only.part-*.csv; do
+            [ -f "$f" ] && tail -n +2 "$f"
+        done | LC_ALL=C sort -t, -k2,2
+    } > "$BSAN_CSV"
+    if [ "$RERUN" -eq 1 ]; then
+        echo
+        echo "==> Done (cargo bsan rerun of $n crates)."
+        finish_rerun "$n"
+        [ "$failed" -eq 0 ] || echo "    $failed job(s) exited non-zero (their crates' rows may be missing); see $PARTS_DIR/job-*.log"
+        out="$OUTPUTS_DIR/$IMAGE-$DS_NAME-bsan-only$SUFFIX.csv"
+        mkdir -p "$OUTPUTS_DIR" && cp "$BSAN_CSV" "$out" && echo "    copied to:     $out"
+        [ "$failed" -eq 0 ]
+        exit $?
+    fi
+    {
         echo "build,crate,status,compile_seconds,tests,error_type,error,timestamp"
         for f in "$PARTS_DIR"/build-"$IMAGE".part-*.csv; do
             [ -f "$f" ] && tail -n +2 "$f"
@@ -512,12 +686,6 @@ if [ "$LOCAL" -eq 0 ]; then
             [ -f "$f" ] && tail -n +2 "$f"
         done | LC_ALL=C sort -t, -k1,1
     } > "$LIST_CSV"
-    {
-        echo "$BSAN_HEADER"
-        for f in "$PARTS_DIR"/bsan-only.part-*.csv; do
-            [ -f "$f" ] && tail -n +2 "$f"
-        done | LC_ALL=C sort -t, -k2,2
-    } > "$BSAN_CSV"
     rows=$(( $(wc -l < "$RESULTS_CSV") - 1 ))
 
     echo
@@ -537,7 +705,7 @@ if [ "$LOCAL" -eq 0 ]; then
     cp "$LIST_CSV" "$out" && echo "    copied to:     $out"
     out="$OUTPUTS_DIR/$IMAGE-$DS_NAME-bsan-only$SUFFIX.csv"
     cp "$BSAN_CSV" "$out" && echo "    copied to:     $out"
-    if [ -n "$SUFFIX" ]; then
+    if [ "$SUFFIX" = -latest ]; then
         out="$GROUP/scripts/$DS_NAME-tests-latest.csv"
         [ -f "$out" ] && cp "$out" "$out.bak" && echo "    previous kept: $out.bak"
         cp "$LIST_CSV" "$out" && echo "    tests list:    $out  (run_eval_dataset.sh --tests $out ...)"
@@ -549,6 +717,10 @@ fi
 # ---------------------------- --local: do builds ---------------------------- #
 command -v cargo >/dev/null || die "cargo is required"
 command -v cargo-bsan >/dev/null || die "cargo-bsan is required (run in the bsan image)"
+if [ "$DOWNLOAD" -eq 1 ]; then
+    command -v curl >/dev/null && command -v tar >/dev/null || die "downloading crates needs curl and tar"
+    mkdir -p "$CRATE_ROOT" || die "can't create $CRATE_ROOT"
+fi
 JOBS="${JOBS:-1}"
 TARGET_BASE="${CARGO_TARGET_DIR:-}"
 COMPILE="cargo test --tests"
@@ -570,14 +742,21 @@ fi
 rm -rf "$STATE_DIR"                         # fresh check every run
 mkdir -p "$STATE_DIR"
 
-export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC
+export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC RERUN PREV_CSV \
+    DOWNLOAD CRATE_LOG_DIR
 
 # ------------------------------ build each crate ---------------------------- #
 crates="$(mktemp)"
 if [ -n "$PART" ]; then
     while IFS= read -r c; do
-        [ -n "$c" ] && [ -f "$DATASET_DIR/$c/Cargo.toml" ] && printf '%s\0' "$DATASET_DIR/$c"
+        [ -n "$c" ] && { [ "$DOWNLOAD" -eq 1 ] || [ -f "$CRATE_ROOT/$c/Cargo.toml" ]; } \
+            && printf '%s\0' "$CRATE_ROOT/$c"
     done < "$PART_LIST"
+elif [ "$RERUN" -eq 1 ]; then
+    rerun_crates | while IFS= read -r c; do printf '%s\0' "$CRATE_ROOT/$c"; done
+elif [ "$DOWNLOAD" -eq 1 ]; then
+    printf '%s\n' "${!ALLOW[@]}" | LC_ALL=C sort \
+        | while IFS= read -r c; do printf '%s\0' "$CRATE_ROOT/$c"; done
 else
     for d in "$DATASET_DIR"/*/; do
         d="${d%/}"
@@ -586,13 +765,31 @@ else
     done
 fi > "$crates"
 n="$(tr -cd '\0' < "$crates" | wc -c | tr -d ' ')"
+if [ "$RERUN" -eq 1 ]; then
+    echo "==> Rerunning cargo bsan ${COMPILE#cargo } --no-run on $n crates in $DATASET_DIR with $JOBS worker(s) ..."
+else
 echo "==> Building $n crates in $DATASET_DIR with $JOBS worker(s):" \
      "$COMPILE --no-run (RUSTFLAGS=\"$BUILD_RUSTFLAGS\"," \
      "crate under test +\"$PRIMARY_RUSTFLAGS\"), then list tests$([ "$DOC" -eq 1 ] && echo ' (with doc tests)'), then cargo bsan ${COMPILE#cargo } --no-run ..."
-xargs -0 -n 1 -P "$JOBS" "$SELF" --worker < "$crates"
+fi
+# (xargs runs the command once even on empty input.)
+[ "$n" -gt 0 ] && xargs -0 -n 1 -P "$JOBS" "$SELF" --worker < "$crates"
 rm -f "$crates"
 
 # ---------------------------------- outputs --------------------------------- #
+{
+    echo "$BSAN_HEADER"
+    find "$STATE_DIR" -maxdepth 1 -name '*.bsan' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k2,2
+} > "$BSAN_CSV"
+if [ "$RERUN" -eq 1 ]; then
+    rm -rf "$STATE_DIR"
+    # A part job leaves PREV_CSV and the summary to the launcher.
+    [ -n "$PART" ] && exit 0
+    echo
+    echo "==> Done."
+    finish_rerun "$n"
+    exit 0
+fi
 {
     echo "build,crate,status,compile_seconds,tests,error_type,error,timestamp"
     find "$STATE_DIR" -maxdepth 1 -name '*.csv' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k2,2
@@ -601,10 +798,6 @@ rm -f "$crates"
     echo "crate,tests"
     find "$STATE_DIR" -maxdepth 1 -name '*.list' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k1,1
 } > "$LIST_CSV"
-{
-    echo "$BSAN_HEADER"
-    find "$STATE_DIR" -maxdepth 1 -name '*.bsan' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k2,2
-} > "$BSAN_CSV"
 rm -rf "$STATE_DIR"
 
 echo

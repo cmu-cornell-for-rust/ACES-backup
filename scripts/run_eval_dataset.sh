@@ -14,7 +14,10 @@
 #               slow-list jobs use --slow-walltime instead). (Recognized
 #               positionally by shape, so a purely numeric dataset name would
 #               need the walltime spelled out.)
-#   <dataset>   folder under the group datasets dir holding crate subdirectories.
+#   <dataset>   folder under the group datasets dir holding crate subdirectories;
+#               else a name with a <group>/scripts/<dataset>-dataset.csv (or
+#               one next to this script), whose crates are downloaded instead
+#               (see "No dataset dir" below).
 #   [extra]     mode-specific extras: -Z Miri flags (miri) or colon-separated
 #               BSAN_OPTIONS (bsan), appended to the built-in set.
 #
@@ -65,6 +68,17 @@
 #                     whenever it exists (tests known to hang or eat the
 #                     walltime). A crate left with no tests is skipped
 #   --no-skip-list    don't apply the default skip list
+#   --bsan-build-fails FILE  skip the crates in FILE, a bsan-only CSV from
+#                     build_dataset.sh (crates that build with plain cargo but
+#                     not with cargo bsan; matched by crate column, version
+#                     included). Repeatable; applies in any mode. Default, in
+#                     bsan mode only: every
+#                     <outputs>/<image>-<dataset>-bsan-only*.csv and
+#                     <dataset dir>/_logs/build-<image>-bsan-only*.csv that
+#                     exists (else the same with image "bsan", build_dataset.sh's
+#                     default), so a bsan run doesn't spend a worker on a crate
+#                     known not to build
+#   --no-bsan-build-fails  don't apply the default bsan build-fail lists
 #   (slow list)       <group>/scripts/eval-slow-crates.csv, always applied when
 #                     it exists: crate names, matched against any version
 #                     (crate column, a version there is ignored; slowest
@@ -118,6 +132,20 @@
 #   the user's other jobs too). Jobs past that are staged by this script and
 #   submitted as earlier ones leave the queue, so the script must keep running
 #   (use tmux/screen) until every job has been submitted.
+#
+# No dataset dir
+# --------------
+# When <dataset> has no dir under the datasets dir but has a versions CSV
+# (<group>/scripts/<dataset>-dataset.csv, else next to this script), each
+# worker downloads its crate's crates.io tarball straight into its node-local
+# scratch ($TMPDIR, next to the crate's CARGO_TARGET_DIR) in place of copying
+# it from the dataset, and deletes it with the target dir once the crate is
+# done -- one crate on disk per worker at a time. The crates (and versions)
+# are still the --tests CSV's; the versions CSV only stands in for the dataset
+# (and is the default --versions-csv). A failed download is a fetch_failed
+# row. Each crate's eval-<image>.log, which would live in its dataset dir,
+# goes to <rundir>/crate-logs/<crate>/ instead. --safety needs --unsafe-scan
+# here, as there is no <dataset dir>/_logs/unsafe_scan.csv.
 #
 # Every mode compiles with --cfg=miri and RUSTFLAGS="--cap-lints=warn", so all
 # three select the same cfg(miri) code and test set, and a crate's own
@@ -216,6 +244,8 @@ UNSAFE_SCAN=""
 TESTS_CSV=""
 SKIP_CSV=""
 NO_SKIP=0
+BSAN_FAIL_CSVS=()
+NO_BSAN_FAILS=0
 JOBS=""              # empty = auto: one per crate, capped at MAX_JOBS unless more are needed
 MAX_TASKS=""         # empty = auto: what fits NODE_CPUS / NODE_MEM
 CPUS_PER_TASK=1
@@ -280,6 +310,9 @@ while [[ $# -gt 0 ]]; do
         --skip-list)     SKIP_CSV="$2"; shift 2 ;;
         --skip-list=*)   SKIP_CSV="${1#*=}"; shift ;;
         --no-skip-list)  NO_SKIP=1; shift ;;
+        --bsan-build-fails)   BSAN_FAIL_CSVS+=("$2"); shift 2 ;;
+        --bsan-build-fails=*) BSAN_FAIL_CSVS+=("${1#*=}"); shift ;;
+        --no-bsan-build-fails) NO_BSAN_FAILS=1; shift ;;
         --tests)         TESTS_CSV="$2"; shift 2 ;;
         --tests=*)       TESTS_CSV="${1#*=}"; shift ;;
         --jobs)          JOBS="$2"; shift 2 ;;
@@ -325,13 +358,15 @@ usage() {
     echo "  <mode>      miri | bsan | rust" >&2
     echo "  <image>     image/SIF name under $CONTAINERS_DIR" >&2
     echo "  [walltime]  per-job walltime, HH or HH:MM (default 4; slow-list jobs: --slow-walltime)" >&2
-    echo "  <dataset>   folder under $DATASETS_ROOT" >&2
+    echo "  <dataset>   folder under $DATASETS_ROOT, or a name with a <dataset>-dataset.csv (downloaded)" >&2
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --ignore FILE --only FILE" >&2
     echo "           --first | --latest | --only-latest | --only-first [--versions-csv FILE]" >&2
     echo "           --safety safe,unsafe-deps,unsafe [--unsafe-scan FILE]" >&2
     echo "           --tests FILE (required; e.g. $GROUP/scripts/<dataset>-tests.csv)" >&2
     echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
+    echo "           --bsan-build-fails FILE (repeatable; default in bsan mode: build_dataset.sh's" >&2
+    echo "             <image>-<dataset>-bsan-only*.csv) | --no-bsan-build-fails" >&2
     echo "           --jobs N --max-tasks N (<= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 1h, 0 = none)" >&2
@@ -409,6 +444,16 @@ fi
 IMAGE="$(basename "${IMAGE_ARG%.sif}")"
 SIF_ABS="$CONTAINERS_DIR/$IMAGE.sif"
 DATASET_DIR="$DATASETS_ROOT/$DATASET"
+# No dataset dir: download the crates on the nodes (see "No dataset dir").
+DOWNLOAD=0
+DS_CSV=""
+if [[ ! -d "$DATASET_DIR" ]]; then
+    for _f in "$GROUP/scripts/$DATASET-dataset.csv" \
+              "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$DATASET-dataset.csv"; do
+        [[ -f "$_f" ]] && { DS_CSV="$_f"; break; }
+    done
+    [[ -n "$DS_CSV" ]] && DOWNLOAD=1
+fi
 
 MIRIFLAGS_ALL=""
 BSAN_OPTIONS_ALL=""
@@ -434,7 +479,8 @@ fi
 
 # ── Validate ──────────────────────────────────────────────────────────────--
 [[ -f "$SIF_ABS" ]]    || { echo "Error: image not found at $SIF_ABS" >&2; exit 1; }
-[[ -d "$DATASET_DIR" ]] || { echo "Error: dataset dir not found: $DATASET_DIR" >&2; exit 1; }
+[[ -d "$DATASET_DIR" || "$DOWNLOAD" == 1 ]] \
+    || { echo "Error: dataset dir not found: $DATASET_DIR (and no $DATASET-dataset.csv to download it from)" >&2; exit 1; }
 command -v sbatch >/dev/null || { echo "Error: sbatch not found (run on a login node)." >&2; exit 1; }
 
 [[ -n "$TESTS_CSV" ]] || {
@@ -477,6 +523,30 @@ if [[ -n "$IGNORE_FILE" ]]; then
     [[ -f "$IGNORE_FILE" ]] || { echo "Error: ignorelist not found: $IGNORE_FILE" >&2; exit 1; }
     read_name_list "$IGNORE_FILE" IGNORE
 fi
+# Bsan build fails: crates build_dataset.sh found to build with plain cargo but
+# not with cargo bsan. Explicit lists must exist; the defaults are used if found.
+declare -A BSAN_FAIL=()
+if (( NO_BSAN_FAILS )); then
+    BSAN_FAIL_CSVS=()
+elif (( ${#BSAN_FAIL_CSVS[@]} > 0 )); then
+    for _f in "${BSAN_FAIL_CSVS[@]}"; do
+        [[ -f "$_f" ]] || { echo "Error: bsan build-fail list not found: $_f" >&2; exit 1; }
+    done
+elif [[ "$MODE" == bsan ]]; then
+    for _img in "$IMAGE" bsan; do
+        shopt -s nullglob
+        BSAN_FAIL_CSVS=("$OUTPUTS_DIR/$_img-$DATASET-bsan-only"*.csv
+                        "$DATASET_DIR/_logs/build-$_img-bsan-only"*.csv)
+        shopt -u nullglob
+        (( ${#BSAN_FAIL_CSVS[@]} > 0 )) && break
+    done
+fi
+for _f in ${BSAN_FAIL_CSVS[@]+"${BSAN_FAIL_CSVS[@]}"}; do
+    # build,crate,...: the crate is field 2 (a name-version, never quoted).
+    while IFS=, read -r _ _crate _; do
+        [[ -n "$_crate" && "$_crate" != crate ]] && BSAN_FAIL["$_crate"]=1
+    done < "$_f"
+done
 declare -A ONLY=()
 if [[ -n "$ONLY_FILE" ]]; then
     [[ -f "$ONLY_FILE" ]] || { echo "Error: --only list not found: $ONLY_FILE" >&2; exit 1; }
@@ -488,7 +558,7 @@ fi
 # keeps from the versions CSV.
 declare -A VERSION_OK=()
 if [[ -n "$VERSIONS" ]]; then
-    [[ -n "$VERSIONS_CSV" ]] || VERSIONS_CSV="$GROUP/scripts/$(basename "$DATASET_DIR")-dataset.csv"
+    [[ -n "$VERSIONS_CSV" ]] || VERSIONS_CSV="${DS_CSV:-$GROUP/scripts/$(basename "$DATASET_DIR")-dataset.csv}"
     [[ -f "$VERSIONS_CSV" ]] \
         || { echo "Error: --$VERSIONS needs a versions CSV; $VERSIONS_CSV not found (pass --versions-csv FILE)." >&2; exit 1; }
     _selected=$("$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/dataset_creator/select_versions.sh" \
@@ -586,15 +656,16 @@ if [[ -n "$SKIP_CSV" ]]; then
     while IFS= read -r pair; do SKIP["$pair"]=1; done < <(parse_tests_csv "$SKIP_CSV")
 fi
 MISSING=()
-skip_ignored=0; skip_only=0; skip_version=0; skip_safety=0; skip_tests=0; NTESTS=0
+skip_ignored=0; skip_bsanfail=0; skip_only=0; skip_version=0; skip_safety=0; skip_tests=0; NTESTS=0
 while IFS=$'\t' read -r crate test; do
     if [[ -z "${KEEP[$crate]+x}" ]]; then
         KEEP[$crate]=0
         if [[ -n "${IGNORE[$crate]:-}" ]]; then skip_ignored=$((skip_ignored+1))
+        elif [[ -n "${BSAN_FAIL[$crate]:-}" ]]; then skip_bsanfail=$((skip_bsanfail+1))
         elif (( ${#ONLY[@]} > 0 )) && [[ -z "${ONLY[$crate]:-}" ]]; then skip_only=$((skip_only+1))
         elif [[ -n "$VERSIONS" && -z "${VERSION_OK[$crate]:-}" ]]; then skip_version=$((skip_version+1))
         elif [[ -n "$SAFETY" && -z "${WANT_STATUS[${SAFETY_OF[$crate]:-unknown}]:-}" ]]; then skip_safety=$((skip_safety+1))
-        elif [[ ! -f "$DATASET_DIR/$crate/Cargo.toml" ]]; then MISSING+=("$crate")
+        elif [[ "$DOWNLOAD" == 0 && ! -f "$DATASET_DIR/$crate/Cargo.toml" ]]; then MISSING+=("$crate")
         else KEEP[$crate]=1
         fi
     fi
@@ -736,6 +807,7 @@ TASKS=$PER_JOB_MAX
     printf 'IMAGE=%q\n'            "$IMAGE"
     printf 'SIF_ABS=%q\n'          "$SIF_ABS"
     printf 'DATASET_DIR=%q\n'      "$DATASET_DIR"
+    printf 'DOWNLOAD=%q\n'         "$DOWNLOAD"
     printf 'CPUS_PER_TASK=%q\n'    "$CPUS_PER_TASK"
     printf 'TEST_THREADS=%q\n'     "$TEST_THREADS"
     printf 'TEST_TIMEOUT=%q\n'     "$TEST_TIMEOUT"
@@ -1015,6 +1087,29 @@ mkdir -p "$SCRATCH_BASE" "$NODE_TMP"
 echo 0 > "$NODE_TMP/next"
 trap 'rm -rf "$SCRATCH_BASE/ev-$SLURM_JOB_ID-"* "$NODE_TMP" 2>/dev/null || true' EXIT
 
+# download_crate <name-version> <into dir>: fetch the crates.io tarball and
+# extract it to <into dir>/<name-version>/, as download_dataset.sh does. The
+# name is everything up to the last hyphen before a digit. curl from the node,
+# else from the image (which has it).
+download_crate() {
+    local c="$1" name url tmp rc
+    name="${c%-[0-9]*}"
+    url="https://static.crates.io/crates/$name/$name-${c#"$name"-}.crate"
+    tmp="$2/.$c.crate"
+    if command -v curl >/dev/null; then
+        curl -fsSL -A "crate-downloader (CMU systems research; via crates.io)" \
+            --retry 3 --retry-delay 2 -o "$tmp" "$url"
+    else
+        singularity exec --cleanenv --bind "$2" \
+            --env https_proxy="${https_proxy:-}" --env HTTPS_PROXY="${HTTPS_PROXY:-}" \
+            "$SIF_ABS" curl -fsSL -A "crate-downloader (CMU systems research; via crates.io)" \
+            --retry 3 --retry-delay 2 -o "$tmp" "$url"
+    fi && tar -xzf "$tmp" -C "$2" && [ -f "$2/$c/Cargo.toml" ]
+    rc=$?
+    rm -f "$tmp"
+    return "$rc"
+}
+
 # Sets NEXT to the next crate in the queue, or "" once it is drained.
 next_crate() {
     local n
@@ -1041,15 +1136,29 @@ worker() {
         cdir="$DATASET_DIR/$crate"
         log="$cdir/eval-${IMAGE}.log"
         echo "[job $JOBIDX task $tid] $crate"
-        # Private copy of the crate as /work, minus any target/ and logs, so
-        # cargo's Cargo.lock write never touches the shared dataset dir.
-        rm -rf "$scr/work" "$scr/target"
-        mkdir -p "$scr/work" "$scr/target"
-        for e in "$cdir"/*; do
-            b="${e##*/}"
-            case "$b" in target|*.log) continue ;; esac
-            cp -a "$e" "$scr/work/"
-        done
+        rm -rf "$scr/work" "$scr/target" "$scr/$crate"
+        mkdir -p "$scr/target"
+        if [ "$DOWNLOAD" = 1 ]; then
+            # No dataset dir: the crate comes straight from crates.io into
+            # this worker's scratch, and is removed with it.
+            log="$RUNDIR/crate-logs/$crate/eval-${IMAGE}.log"
+            mkdir -p "${log%/*}"
+            if ! download_crate "$crate" "$scr" > "$log" 2>&1; then
+                echo "$IMAGE,$crate,,fetch_failed,,,$(date -u +'%Y-%m-%dT%H:%M:%SZ'),${SLURM_JOB_ID}.${tid},other,\"crates.io download failed (see $log)\"" >> "$shard"
+                echo "$crate" >> "$RUNDIR/done/done-${JOBIDX}-${tid}.txt"
+                continue
+            fi
+            mv "$scr/$crate" "$scr/work"
+        else
+            # Private copy of the crate as /work, minus any target/ and logs, so
+            # cargo's Cargo.lock write never touches the shared dataset dir.
+            mkdir -p "$scr/work"
+            for e in "$cdir"/*; do
+                b="${e##*/}"
+                case "$b" in target|*.log) continue ;; esac
+                cp -a "$e" "$scr/work/"
+            done
+        fi
         singularity exec --cleanenv --pwd /work \
             --bind "$scr" --bind "$RUNDIR" --bind "$scr/work:/work" \
             --env CARGO_HOME="$scr/home" \
@@ -1069,6 +1178,7 @@ worker() {
             --env http_proxy="${http_proxy:-}"   --env https_proxy="${https_proxy:-}" \
             --env HTTP_PROXY="${HTTP_PROXY:-}"   --env HTTPS_PROXY="${HTTPS_PROXY:-}" \
             "$SIF_ABS" bash "$RUNDIR/inner.sh" > "$log" 2>&1
+        rm -rf "$scr/work" "$scr/target"
         echo "$crate" >> "$RUNDIR/done/done-${JOBIDX}-${tid}.txt"
     done
     rm -rf "$scr"
@@ -1082,9 +1192,16 @@ JOB_EOF
 
 # ── Plan summary ─────────────────────────────────────────────────────────────
 echo "Mode:     $MODE   Image: $IMAGE"
-echo "Dataset:  $DATASET_DIR"
+if [[ "$DOWNLOAD" == 1 ]]; then
+    echo "Dataset:  none at $DATASET_DIR -- crates downloaded from crates.io on the nodes ($DS_CSV)"
+else
+    echo "Dataset:  $DATASET_DIR"
+fi
 echo "Tests:    $NTESTS across $NCRATES crate(s) (from $TESTS_CSV)"
-echo "Skipped:  ignored=$skip_ignored not-in-only=$skip_only${VERSIONS:+ not-$VERSIONS=$skip_version}${SAFETY:+ not-$SAFETY=$skip_safety} no-dir=${#MISSING[@]}"
+echo "Skipped:  ignored=$skip_ignored$( (( ${#BSAN_FAIL_CSVS[@]} > 0 )) && echo " bsan-build-fail=$skip_bsanfail") not-in-only=$skip_only${VERSIONS:+ not-$VERSIONS=$skip_version}${SAFETY:+ not-$SAFETY=$skip_safety} no-dir=${#MISSING[@]}"
+for _f in ${BSAN_FAIL_CSVS[@]+"${BSAN_FAIL_CSVS[@]}"}; do
+    echo "          bsan build-fail list: $_f"
+done
 if [[ -n "$SKIP_CSV" ]]; then
     echo "          $skip_tests test(s) from skip list $SKIP_CSV (${#SKIP[@]} listed)"
 else
