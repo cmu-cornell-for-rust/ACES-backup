@@ -27,7 +27,8 @@ dataset, sorted by name:
   newest_version   newest unyanked stable release (newest unyanked release
                    if none is stable), as crates.io's max_stable_version
   last_released    date of the newest unyanked release, YYYY-MM-DD
-Crates not on crates.io (renamed, deleted) get empty columns. bug_report.py
+Crates whose every version is yanked fall back to their yanked releases for
+newest_version and last_released. Crates not on crates.io (renamed, deleted) get empty columns. bug_report.py
 reads this file instead of querying crates.io.
 
   --dump DIR       read an already-extracted dump (DIR/data/*.csv)
@@ -129,18 +130,21 @@ def main():
         downloads = {r["crate_id"]: int(r["downloads"]) for r in rows(data, "crate_downloads")
                      if r["crate_id"] in ids}
         print("==> Reading versions ...", flush=True)
-        # crate id -> (newest stable, newest any, latest created_at), unyanked only
-        newest = {}
+        # crate id -> (newest stable, newest any, latest created_at), unyanked
+        # in newest; yanked in newest_yanked, used only if a crate has no
+        # unyanked release
+        newest, newest_yanked = {}, {}
         for r in rows(data, "versions"):
-            if r["crate_id"] not in ids or r["yanked"] == "t":
+            if r["crate_id"] not in ids:
                 continue
-            stable, any_, released = newest.get(r["crate_id"], ("", "", ""))
+            table = newest_yanked if r["yanked"] == "t" else newest
+            stable, any_, released = table.get(r["crate_id"], ("", "", ""))
             num = r["num"]
             if "-" not in num.split("+", 1)[0] and (not stable or semver_key(num) > semver_key(stable)):
                 stable = num
             if not any_ or semver_key(num) > semver_key(any_):
                 any_ = num
-            newest[r["crate_id"]] = (stable, any_, max(released, r["created_at"]))
+            table[r["crate_id"]] = (stable, any_, max(released, r["created_at"]))
     finally:
         if tmp:
             tmp.cleanup()
@@ -153,7 +157,7 @@ def main():
         for name in sorted(names):
             cid = crate_id.get(canon(name))
             n = downloads.get(cid)
-            stable, any_, released = newest.get(cid, ("", "", ""))
+            stable, any_, released = newest.get(cid) or newest_yanked.get(cid, ("", "", ""))
             missing += cid is None
             w.writerow([name, "" if n is None else rounded(n), stable or any_, released[:10]])
     tmp_out.replace(args.output)

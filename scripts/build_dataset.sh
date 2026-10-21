@@ -37,6 +37,15 @@
 #   tests; the log says so. Doc tests aren't built by --no-run, so
 #   compile_seconds doesn't include them.
 #
+#   Every crate whose plain compile succeeded (status ok or list_failed) is
+#   then compiled a second time with
+#     cargo bsan test --tests --no-run      (cargo bsan test --no-run with --whole)
+#   in its own target dir, with the same RUSTFLAGS and --cfg=miri on the crate
+#   under test (this script then stands in as BSAN_ORIG_RUSTC, as
+#   rustc-cfg-miri.sh does for run_eval_dataset.sh). The crates that fail only
+#   there go to a separate CSV (see Output); the main CSV doesn't depend on
+#   it. Needs cargo-bsan, i.e. the bsan image (or one built from it).
+#
 #   Where it runs: from the login node the crates are dealt round-robin into
 #   ceil(crates / -n) parts (so part sizes differ by at most one crate, and
 #   none holds more than -n), and each part is built by its own job via
@@ -62,8 +71,9 @@
 #   -t HH[:MM]    walltime per job (default 8)
 #   -m MEM        memory per job (default 64G)
 #   --image IMG   container image (default bsan); also the CSV's build column.
-#                 Plain cargo either way -- no `cargo bsan`, so nothing is
-#                 instrumented; in bsan, cargo is the image's default toolchain
+#                 The main build is plain cargo (in bsan, the image's default
+#                 toolchain), so nothing is instrumented; the second compile
+#                 is `cargo bsan`, so the image must have cargo-bsan
 #   --whole       compile with `cargo test --no-run` (all targets cargo test
 #                 builds), not `cargo test --tests --no-run`
 #   --doc         also list doc tests (off by default; see above)
@@ -113,6 +123,15 @@
 #   one row per crate with status ok, tests its runnable test names joined by
 #   ';' (empty when it has none) -- the same format as list_tests.sh's CSV.
 #
+#   <DATASET_DIR>/_logs/build-<image>-bsan-only.csv, and (when
+#   launched as a job) a copy at $GROUP/outputs/<image>-<dataset>-bsan-only.csv,
+#   columns:
+#     build,crate,compile_seconds,bsan_compile_seconds,error_type,error,timestamp
+#   one row per crate whose plain compile succeeded but whose cargo bsan
+#   compile failed; compile_seconds is the plain compile's, error_type/error
+#   are classified from the bsan compile's output as above. Its full output
+#   goes to <crate>/build-<image>-bsan.log.
+#
 # Environment knobs:
 #   JOBS                crates built in parallel (default: CPUS/4 in a job,
 #                       1 with --local); each cargo gets CPUS/JOBS cores
@@ -136,6 +155,18 @@ if [ -n "${BUILD_DATASET_RUSTC_WRAPPER:-}" ]; then
     # shellcheck disable=SC2086  # PRIMARY_RUSTFLAGS splits into flags
     [ "${CARGO_PRIMARY_PACKAGE:-}" = 1 ] && exec "$@" $PRIMARY_RUSTFLAGS
     exec "$@"
+fi
+# As cargo bsan's BSAN_ORIG_RUSTC (set by the worker's bsan build; cargo bsan
+# overrides RUSTC and RUSTC_WRAPPER but runs this as its rustc): argv is
+# rustc's args only. The manifest check keeps out a sysroot build, where std
+# is the primary package.
+if [ -n "${BUILD_DATASET_BSAN_RUSTC:-}" ]; then
+    if [ "${CARGO_PRIMARY_PACKAGE:-}" = 1 ] \
+            && [[ "${CARGO_MANIFEST_DIR:-}" == "$BUILD_DATASET_CRATE_DIR"* ]]; then
+        # shellcheck disable=SC2086  # PRIMARY_RUSTFLAGS splits into flags
+        exec "$BUILD_DATASET_REAL_RUSTC" "$@" $PRIMARY_RUSTFLAGS
+    fi
+    exec "$BUILD_DATASET_REAL_RUSTC" "$@"
 fi
 
 # classify <output file>: sets ekind/emsg from a failed command's output. Same
@@ -276,7 +307,32 @@ if [ "${1:-}" = "--worker" ]; then
         "$ntests" "$ekind" "$(csvq "$emsg")" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
         > "$STATE_DIR/$crate.csv"
 
-    rm -rf "$CARGO_TARGET_DIR"
+    # The same compile under cargo bsan, for crates whose plain
+    # compile succeeded; a failure here is one only bsan has.
+    bsan_target="$CARGO_TARGET_DIR-bsan"
+    if [ "$status" = ok ] || [ "$status" = list_failed ]; then
+        blog="$dir/build-$IMAGE-bsan.log"
+        bwrap=()
+        [ -n "$PRIMARY_RUSTFLAGS" ] \
+            && bwrap=(BSAN_ORIG_RUSTC="$SELF" BUILD_DATASET_BSAN_RUSTC=1
+                      BUILD_DATASET_REAL_RUSTC="$(command -v rustc)" BUILD_DATASET_CRATE_DIR="$dir")
+        rm -rf "$bsan_target"
+        cstart=$(date +%s%3N)
+        ( cd "$dir" && env ${bwrap[@]+"${bwrap[@]}"} CARGO_TARGET_DIR="$bsan_target" \
+                RUSTFLAGS="$BUILD_RUSTFLAGS" cargo bsan ${COMPILE#cargo } --no-run ) > "$blog" 2>&1
+        brc=$?
+        cms=$(( $(date +%s%3N) - cstart ))
+        bcompile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
+        if [ "$brc" -ne 0 ]; then
+            classify "$blog"
+            echo "    bsan_build_failed: $crate [$ekind] $emsg"
+            printf '%s,%s,%s,%s,%s,%s,%s\n' "$IMAGE" "$crate" "$compile" "$bcompile" \
+                "$ekind" "$(csvq "$emsg")" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+                > "$STATE_DIR/$crate.bsan"
+        fi
+    fi
+
+    rm -rf "$CARGO_TARGET_DIR" "$bsan_target"
     [ "$had_lock" = 0 ] && rm -f "$dir/Cargo.lock"
     exit 0
 fi
@@ -321,6 +377,8 @@ SUFFIX=""
 case "$VERSIONS" in latest|only-latest) SUFFIX="-latest" ;; esac
 RESULTS_CSV="$DATASET_DIR/_logs/build-$IMAGE$SUFFIX.csv"
 LIST_CSV="$DATASET_DIR/_logs/${DS_NAME}_list$SUFFIX.csv"
+BSAN_CSV="$DATASET_DIR/_logs/build-$IMAGE-bsan-only$SUFFIX.csv"
+BSAN_HEADER="build,crate,compile_seconds,bsan_compile_seconds,error_type,error,timestamp"
 PARTS_DIR="$DATASET_DIR/_logs/_build_parts$SUFFIX"
 
 # Version selection: ALLOW holds the <name>-<version> dirs to build
@@ -362,6 +420,15 @@ summarize() {
             for (k in t) printf "      error_type %s: %d\n", k, t[k]
             printf "    tests (ok crates): %d\n", n
         }'
+}
+
+# summarize_bsan <results csv> <bsan-only csv>: how many plain-compiled crates
+# fail only under cargo bsan, by error_type.
+summarize_bsan() {
+    local built
+    built=$(tail -n +2 "$1" | awk -F, '$3 == "ok" || $3 == "list_failed"' | wc -l | tr -d ' ')
+    echo "    bsan-only build failures: $(( $(wc -l < "$2") - 1 )) of $built plain-compiled crate(s)"
+    tail -n +2 "$2" | awk -F, '{ t[$5]++ } END { for (k in t) printf "      error_type %s: %d\n", k, t[k] }'
 }
 
 # ------------------------ launcher: submit the jobs ------------------------ #
@@ -445,13 +512,21 @@ if [ "$LOCAL" -eq 0 ]; then
             [ -f "$f" ] && tail -n +2 "$f"
         done | LC_ALL=C sort -t, -k1,1
     } > "$LIST_CSV"
+    {
+        echo "$BSAN_HEADER"
+        for f in "$PARTS_DIR"/bsan-only.part-*.csv; do
+            [ -f "$f" ] && tail -n +2 "$f"
+        done | LC_ALL=C sort -t, -k2,2
+    } > "$BSAN_CSV"
     rows=$(( $(wc -l < "$RESULTS_CSV") - 1 ))
 
     echo
     echo "==> Done ($rows/$n crates have a row)."
     summarize "$RESULTS_CSV"
+    summarize_bsan "$RESULTS_CSV" "$BSAN_CSV"
     echo "    results:       $RESULTS_CSV"
     echo "    test list:     $LIST_CSV"
+    echo "    bsan-only:     $BSAN_CSV"
     if [ "$rows" -lt "$n" ]; then
         echo "    $(( n - rows )) crate(s) have no row (job killed / walltime); see $PARTS_DIR/job-*.log"
     fi
@@ -460,6 +535,8 @@ if [ "$LOCAL" -eq 0 ]; then
     mkdir -p "$OUTPUTS_DIR" && cp "$RESULTS_CSV" "$out" && echo "    copied to:     $out"
     out="$OUTPUTS_DIR/${DS_NAME}_list$SUFFIX.csv"
     cp "$LIST_CSV" "$out" && echo "    copied to:     $out"
+    out="$OUTPUTS_DIR/$IMAGE-$DS_NAME-bsan-only$SUFFIX.csv"
+    cp "$BSAN_CSV" "$out" && echo "    copied to:     $out"
     if [ -n "$SUFFIX" ]; then
         out="$GROUP/scripts/$DS_NAME-tests-latest.csv"
         [ -f "$out" ] && cp "$out" "$out.bak" && echo "    previous kept: $out.bak"
@@ -471,6 +548,7 @@ fi
 
 # ---------------------------- --local: do builds ---------------------------- #
 command -v cargo >/dev/null || die "cargo is required"
+command -v cargo-bsan >/dev/null || die "cargo-bsan is required (run in the bsan image)"
 JOBS="${JOBS:-1}"
 TARGET_BASE="${CARGO_TARGET_DIR:-}"
 COMPILE="cargo test --tests"
@@ -487,6 +565,7 @@ if [ -n "$PART" ]; then
     STATE_DIR="$PARTS_DIR/_state-$PART"
     RESULTS_CSV="$PARTS_DIR/build-$IMAGE.part-$PART.csv"
     LIST_CSV="$PARTS_DIR/list.part-$PART.csv"
+    BSAN_CSV="$PARTS_DIR/bsan-only.part-$PART.csv"
 fi
 rm -rf "$STATE_DIR"                         # fresh check every run
 mkdir -p "$STATE_DIR"
@@ -509,7 +588,7 @@ fi > "$crates"
 n="$(tr -cd '\0' < "$crates" | wc -c | tr -d ' ')"
 echo "==> Building $n crates in $DATASET_DIR with $JOBS worker(s):" \
      "$COMPILE --no-run (RUSTFLAGS=\"$BUILD_RUSTFLAGS\"," \
-     "crate under test +\"$PRIMARY_RUSTFLAGS\"), then list tests$([ "$DOC" -eq 1 ] && echo ' (with doc tests)') ..."
+     "crate under test +\"$PRIMARY_RUSTFLAGS\"), then list tests$([ "$DOC" -eq 1 ] && echo ' (with doc tests)'), then cargo bsan ${COMPILE#cargo } --no-run ..."
 xargs -0 -n 1 -P "$JOBS" "$SELF" --worker < "$crates"
 rm -f "$crates"
 
@@ -522,10 +601,16 @@ rm -f "$crates"
     echo "crate,tests"
     find "$STATE_DIR" -maxdepth 1 -name '*.list' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k1,1
 } > "$LIST_CSV"
+{
+    echo "$BSAN_HEADER"
+    find "$STATE_DIR" -maxdepth 1 -name '*.bsan' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k2,2
+} > "$BSAN_CSV"
 rm -rf "$STATE_DIR"
 
 echo
 echo "==> Done."
 summarize "$RESULTS_CSV"
+summarize_bsan "$RESULTS_CSV" "$BSAN_CSV"
 echo "    results:       $RESULTS_CSV"
 echo "    test list:     $LIST_CSV"
+echo "    bsan-only:     $BSAN_CSV"
