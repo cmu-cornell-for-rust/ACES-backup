@@ -63,6 +63,12 @@
 #   its compile_seconds from the previous one. Use it after a cargo-bsan / image
 #   fix. Version flags don't apply: the crates are the CSV's.
 #
+#   --bsan-only runs just the cargo bsan compile, for every selected crate (the
+#   version flags apply as usual) -- no plain build or listing, so no results
+#   CSV or test list, and compile_seconds is empty. Every crate whose cargo
+#   bsan compile fails gets a bsan-only row, including any that would fail a
+#   plain build too.
+#
 #   Where it runs: from the login node the crates are dealt round-robin into
 #   ceil(crates / -n) parts (so part sizes differ by at most one crate, and
 #   none holds more than -n), and each part is built by its own job via
@@ -96,6 +102,7 @@
 #                      [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>
 #   ./build_dataset.sh --local [--image IMG] [--whole] [--doc] [version flags] <DATASET_DIR>   # no job
 #   ./build_dataset.sh --rerun-bsan-only [--local] [-n N ...] [--image IMG] [--whole] [--latest] <DATASET>
+#   ./build_dataset.sh --bsan-only [--local] [-n N ...] [--image IMG] [--whole] [version flags] <DATASET>
 #
 #   DATASET       a dataset name under $GROUP/datasets/ (e.g. top_500), or a path;
 #                 else a name with a <name>-dataset.csv (see "No dataset dir")
@@ -114,6 +121,8 @@
 #   --rerun-bsan-only  only rerun cargo bsan on the last bsan-only CSV's
 #                 crates (see above); --whole and --latest/--only-latest pick
 #                 the same compile and CSV as the run being redone
+#   --bsan-only   only the cargo bsan compile, no plain build or listing
+#                 (see above)
 #   (versions)    which crate versions to build, from the versions CSV
 #                 (dataset_creator/update_latest.py adds its latest_version /
 #                 version_differs columns; dataset_creator/select_versions.sh
@@ -315,7 +324,8 @@ doc_names() {
 # The plain pass finishes for every crate first, so cargo bsan's extra memory
 # can't OOM-kill a neighbouring crate's build or listing, and the test list is
 # written before any bsan compile starts. --rerun-bsan-only runs only the
-# second pass (which then downloads, when the crates are downloaded).
+# second pass (which then downloads, when the crates are downloaded), as does
+# --bsan-only, for every crate.
 if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
     phase="$1"
     dir="$2"
@@ -333,7 +343,7 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
     # The pass that starts with the crate: download it if needed, and note
     # whether it shipped a Cargo.lock (one the build generates is removed at
     # the end of the bsan pass).
-    if [ "$phase" = --worker ] || [ "$RERUN" -eq 1 ]; then
+    if [ "$phase" = --worker ] || [ "$RERUN" -eq 1 ] || [ "$BSAN_ONLY" -eq 1 ]; then
         if [ "$DOWNLOAD" -eq 1 ] && [ ! -f "$dir/Cargo.toml" ]; then
             mkdir -p "$logdir"
             if ! download_crate "$crate" "$(dirname "$dir")" > "$log" 2>&1; then
@@ -342,6 +352,8 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
                     # Can't recheck it: keep its previous bsan-only row.
                     awk -F, -v c="$crate" '$2 == c' "$PREV_CSV" > "$STATE_DIR/$crate.bsan"
                     : > "$STATE_DIR/$crate.bsandone"
+                elif [ "$BSAN_ONLY" -eq 1 ]; then
+                    :   # no .bsandone: the launcher lists it as unchecked
                 else
                     printf '%s,%s,fetch_failed,,,other,%s,%s\n' "$IMAGE" "$crate" \
                         "$(csvq "crates.io download failed (see $log)")" \
@@ -425,6 +437,8 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
         # An unchecked crate has no previous bsan-only row: the results' time.
         [ -n "$compile" ] \
             || compile=$(awk -F, -v c="$crate" '$2 == c { print $4; exit }' "$MAIN_RESULTS_CSV" 2>/dev/null)
+    elif [ "$BSAN_ONLY" -eq 1 ]; then
+        status=ok; compile=""   # no plain compile to go by
     else
         # build,crate,status,compile_seconds,...: none of these is quoted.
         status=$(cut -d, -f3 "$STATE_DIR/$crate.csv" 2>/dev/null)
@@ -469,7 +483,7 @@ RUN_JOB="$GROUP/scripts/run_job.sh"
 OUTPUTS_DIR="$GROUP/outputs"
 # Bsan-only build failures of every run, for run_eval_dataset.sh (see Output).
 BSAN_FAILS_CSV="$GROUP/scripts/bsan_build_fails.csv"
-LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=experimental-bsan; WHOLE=0; DOC=0; RERUN=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
+LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=experimental-bsan; WHOLE=0; DOC=0; RERUN=0; BSAN_ONLY=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
 VERSIONS=""; VERSIONS_CSV=""
 MAX_PARALLEL=40   # jobs in flight at once (QOS limit)
 while [ "$#" -gt 0 ]; do
@@ -478,6 +492,7 @@ while [ "$#" -gt 0 ]; do
         --whole)    WHOLE=1; shift ;;
         --doc)      DOC=1; shift ;;
         --rerun-bsan-only) RERUN=1; shift ;;
+        --bsan-only) BSAN_ONLY=1; shift ;;
         --download) DOWNLOAD=1; shift ;;   # internal: set by the launcher for part jobs
         --first|--latest|--only-latest|--only-first|--all)
                     [ -z "$VERSIONS" ] || [ "$VERSIONS" = "${1#--}" ] \
@@ -495,8 +510,9 @@ while [ "$#" -gt 0 ]; do
     esac
 done
 VERSIONS="${VERSIONS:-all}"
+[ "$RERUN" -eq 1 ] && [ "$BSAN_ONLY" -eq 1 ] && die "--rerun-bsan-only and --bsan-only are mutually exclusive"
 [ "${#POS[@]}" -eq 1 ] && [ -n "${POS[0]}" ] \
-    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] [--rerun-bsan-only] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
+    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] [--rerun-bsan-only | --bsan-only] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
 TMP_BASE="${TMP:-${TMPDIR:-/tmp}}"
 # A bare dataset name under the group datasets dir, or a path; else a dataset
 # name with a versions CSV, whose crates are downloaded (see "No dataset dir").
@@ -696,6 +712,7 @@ if [ "$LOCAL" -eq 0 ]; then
     # The part jobs only need it for the -latest output names.
     [ -n "$SUFFIX" ] && WHOLE_FLAG="$WHOLE_FLAG --$VERSIONS"
     [ "$RERUN" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --rerun-bsan-only"
+    [ "$BSAN_ONLY" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --bsan-only"
     [ "$DOWNLOAD" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --download"
     echo "==> Building $n crates in the '$IMAGE' image as $NPARTS job(s) of" \
          "$(( n / NPARTS ))-$(( (n + NPARTS - 1) / NPARTS )) crates" \
@@ -749,14 +766,15 @@ if [ "$LOCAL" -eq 0 ]; then
     }
     # Crates a dead job never got through the bsan pass: in a part with no
     # bsan-only CSV, listed but without a .bsandone. For a full run only the
-    # ones that compiled matter; a rerun keeps their previous rows.
+    # ones that compiled matter (with --bsan-only, all of them); a rerun keeps
+    # their previous rows.
     declare -A RECOVERED=()
     UNCHECKED=()
     for (( k = 0; k < NPARTS; k++ )); do
         [ -f "$PARTS_DIR/bsan-only.part-$k.csv" ] && continue
         while IFS= read -r c; do
             [ -n "$c" ] && [ ! -f "$PARTS_DIR/_state-$k/$c.bsandone" ] || continue
-            if [ "$RERUN" -eq 1 ]; then
+            if [ "$RERUN" -eq 1 ] || [ "$BSAN_ONLY" -eq 1 ]; then
                 UNCHECKED+=("$c")
             else
                 st=$(cut -d, -f3 "$PARTS_DIR/_state-$k/$c.csv" 2>/dev/null)
@@ -780,13 +798,13 @@ if [ "$LOCAL" -eq 0 ]; then
     rm -f "${bsan_rows:?}"
     rm -f "${UNCHECKED_TXT:?}"
     # checked_crates: the crates that got their cargo bsan compile -- every
-    # part's crates but the unchecked ones, and (not a rerun) only those whose
-    # plain compile succeeded.
+    # part's crates but the unchecked ones, and (in a full run) only those
+    # whose plain compile succeeded.
     checked_crates() {
         local k
         for (( k = 0; k < NPARTS; k++ )); do cat "$PARTS_DIR/part-$k.txt"; done \
             | grep -vxF -f <(printf '%s\n' ${UNCHECKED[@]+"${UNCHECKED[@]}"}) \
-            | if [ "$RERUN" -eq 1 ]; then cat; else
+            | if [ "$RERUN" -eq 1 ] || [ "$BSAN_ONLY" -eq 1 ]; then cat; else
                 awk -F, 'FILENAME == ARGV[1] { if ($3 == "ok" || $3 == "list_failed") ok[$2] = 1; next }
                          $0 in ok' "$RESULTS_CSV" -
               fi
@@ -799,7 +817,10 @@ if [ "$LOCAL" -eq 0 ]; then
                     "writing all its CSVs): $(printf '%s\n' "${!RECOVERED[@]}" | sort -n | paste -sd' ' -)"
         if [ "${#UNCHECKED[@]}" -gt 0 ]; then
             printf '%s\n' "${UNCHECKED[@]}" | LC_ALL=C sort > "$UNCHECKED_TXT"
-            if [ "$RERUN" -eq 1 ]; then
+            if [ "$BSAN_ONLY" -eq 1 ]; then
+                echo "    ${#UNCHECKED[@]} crate(s) never got their cargo bsan compile (job died or download"
+                echo "    failed); listed in $UNCHECKED_TXT"
+            elif [ "$RERUN" -eq 1 ]; then
                 echo "    ${#UNCHECKED[@]} crate(s) never rechecked: kept their previous rows; listed in $UNCHECKED_TXT"
             else
                 echo "    ${#UNCHECKED[@]} plain-compiled crate(s) never got their cargo bsan compile, so the"
@@ -811,6 +832,18 @@ if [ "$LOCAL" -eq 0 ]; then
         echo
         echo "==> Done (cargo bsan rerun of $n crates)."
         finish_rerun "$n"
+        report_recovery
+        [ "$failed" -eq 0 ] || echo "    $failed job(s) exited non-zero; see $PARTS_DIR/job-*.log"
+        checked="$(mktemp)"; checked_crates > "$checked"; record_fails "$checked"; rm -f "${checked:?}"
+        [ "$failed" -eq 0 ]
+        exit $?
+    fi
+    if [ "$BSAN_ONLY" -eq 1 ]; then
+        echo
+        echo "==> Done (cargo bsan only, $n crates)."
+        echo "    bsan build failures: $(( $(wc -l < "$BSAN_CSV") - 1 )) of $n crate(s)"
+        bsan_types "$BSAN_CSV"
+        echo "    bsan-only:     $BSAN_CSV"
         report_recovery
         [ "$failed" -eq 0 ] || echo "    $failed job(s) exited non-zero; see $PARTS_DIR/job-*.log"
         checked="$(mktemp)"; checked_crates > "$checked"; record_fails "$checked"; rm -f "${checked:?}"
@@ -884,7 +917,7 @@ fi
 rm -rf "$STATE_DIR"                         # fresh check every run
 mkdir -p "$STATE_DIR"
 
-export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC RERUN PREV_CSV \
+export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC RERUN BSAN_ONLY PREV_CSV \
     DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV
 
 # ------------------------------ build each crate ---------------------------- #
@@ -909,16 +942,18 @@ fi > "$crates"
 n="$(tr -cd '\0' < "$crates" | wc -c | tr -d ' ')"
 if [ "$RERUN" -eq 1 ]; then
     echo "==> Rerunning cargo bsan ${COMPILE#cargo } --no-run on $n crates in $DATASET_DIR with $JOBS worker(s) ..."
+elif [ "$BSAN_ONLY" -eq 1 ]; then
+    echo "==> cargo bsan ${COMPILE#cargo } --no-run only, on $n crates in $DATASET_DIR with $JOBS worker(s) ..."
 else
 echo "==> Building $n crates in $DATASET_DIR with $JOBS worker(s):" \
      "$COMPILE --no-run (RUSTFLAGS=\"$BUILD_RUSTFLAGS\"," \
      "crate under test +\"$PRIMARY_RUSTFLAGS\"), then list tests$([ "$DOC" -eq 1 ] && echo ' (with doc tests)'), then cargo bsan ${COMPILE#cargo } --no-run ..."
 fi
-# Pass 1, plain (not with --rerun-bsan-only), then its outputs, so the
+# Pass 1, plain (not with --rerun-bsan-only or --bsan-only), then its outputs, so the
 # results and test list are written before any cargo bsan compile starts and
 # survive a job killed during pass 2. (xargs runs the command once even on
 # empty input.)
-if [ "$RERUN" -eq 0 ]; then
+if [ "$RERUN" -eq 0 ] && [ "$BSAN_ONLY" -eq 0 ]; then
     [ "$n" -gt 0 ] && xargs -0 -n 1 -P "$JOBS" "$SELF" --worker < "$crates"
     {
         echo "build,crate,status,compile_seconds,tests,error_type,error,timestamp"
@@ -950,6 +985,15 @@ if [ "$RERUN" -eq 1 ]; then
     exit 0
 fi
 rm -rf "$STATE_DIR"
+if [ "$BSAN_ONLY" -eq 1 ]; then
+    [ -n "$PART" ] && exit 0
+    echo
+    echo "==> Done."
+    echo "    bsan build failures: $(( $(wc -l < "$BSAN_CSV") - 1 )) of $n crate(s)"
+    bsan_types "$BSAN_CSV"
+    echo "    bsan-only:     $BSAN_CSV"
+    exit 0
+fi
 
 echo
 echo "==> Done."
