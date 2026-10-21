@@ -13,9 +13,13 @@
 #
 #   The list can also be a CSV (detected by a comma in its first line, which
 #   is then the header): the crate name comes from the FIRST column whose
-#   header contains "name" and the version from the first containing
-#   "version" (case-insensitive), e.g. mirilli/stage3.csv (crate_name,version)
-#   or c_ffi_bindings.csv (crate,name,version,...). Quoted fields are handled.
+#   header contains "name", and a crate is downloaded once for EVERY column
+#   whose header contains "version" (case-insensitive), e.g.
+#   mirilli/stage3.csv (crate_name,version), c_ffi_bindings.csv
+#   (crate,name,version,...) or capslock-dataset.csv (crate_name,version,
+#   latest_version,...). Values that don't start with a digit (blank, or e.g.
+#   version_differs' true/false) are ignored, and duplicate name-version
+#   pairs are emitted once. Quoted fields are handled.
 #
 #   Idempotent: a crate whose folder already exists is skipped. Failures are
 #   recorded and never abort the run.
@@ -62,19 +66,26 @@ if head -n1 "$LIST_FILE" | grep -q ','; then
         { sub(/\r$/, "") }
         NR == 1 {
             n = parse($0, h)
+            nv = 0; vcols = ""
             for (i = 1; i <= n; i++) {
                 col = tolower(h[i])
-                if (!ni && index(col, "name"))    ni = i
-                if (!vi && index(col, "version")) vi = i
+                if (!ni && index(col, "name")) ni = i
+                if (index(col, "version")) { vi[++nv] = i; vcols = vcols (nv > 1 ? ", " : "") "\"" h[i] "\"" }
             }
-            if (!ni || !vi) { print "no \"name\" and/or \"version\" column in header: " $0 > "/dev/stderr"; exit 1 }
-            printf "    (CSV: name from column \"%s\", version from \"%s\")\n", h[ni], h[vi] > "/dev/stderr"
+            if (!ni || !nv) { print "no \"name\" and/or \"version\" column in header: " $0 > "/dev/stderr"; exit 1 }
+            printf "    (CSV: name from column \"%s\", versions from %s)\n", h[ni], vcols > "/dev/stderr"
             next
         }
         {
             parse($0, f)
-            name = trim(f[ni]); ver = trim(f[vi])
-            if (name != "" && ver != "") print name "-" ver
+            name = trim(f[ni])
+            if (name == "") next
+            for (j = 1; j <= nv; j++) {
+                ver = trim(f[vi[j]])
+                if (ver !~ /^[0-9]/) continue
+                key = name "-" ver
+                if (!(key in seen)) { seen[key] = 1; print key }
+            }
         }
     ' "$LIST_FILE" > "$csv_entries" || die "could not read $LIST_FILE as a CSV"
     LIST_FILE_ORIG="$LIST_FILE"
