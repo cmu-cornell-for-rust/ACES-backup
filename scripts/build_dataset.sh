@@ -46,8 +46,18 @@
 #   there go to a separate CSV (see Output); the main CSV doesn't depend on
 #   it. Needs cargo-bsan, i.e. the bsan image (or one built from it).
 #
+#   The bsan compiles are a second pass, after every crate (of a job's part,
+#   as a job) has had its plain build and listing, and the results CSV and
+#   test list are written in between: cargo bsan's extra memory can then
+#   neither OOM-kill a neighbouring crate's plain build or listing nor cost
+#   the test list if it kills the job. If a job dies anyway, the launcher
+#   rebuilds its rows from the per-crate files in its _build_parts/_state-K
+#   dir, and lists the plain-compiled crates that never got their bsan
+#   compile in _logs/build-<image>-bsan-unchecked.txt (they can't be counted
+#   either way).
+#
 #   --rerun-bsan-only reruns just that cargo bsan compile, for just the crates
-#   in the last bsan-only CSV -- no fetch, plain build or listing, and the
+#   in the last bsan-only CSV and in bsan-unchecked.txt -- no fetch, plain build or listing, and the
 #   main CSV and test list are left alone. The bsan-only CSV is rewritten with
 #   the crates that still fail (the previous one is kept as .bak), each keeping
 #   its compile_seconds from the previous one. Use it after a cargo-bsan / image
@@ -163,6 +173,10 @@
 #   compile failed; compile_seconds is the plain compile's, error_type/error
 #   are classified from the bsan compile's output as above. Its full output
 #   goes to <crate>/build-<image>-bsan.log.
+#
+#   <DATASET_DIR>/_logs/build-<image>-bsan-unchecked.txt, only when a job died:
+#   the plain-compiled crates whose cargo bsan compile never ran (see above),
+#   one per line; --rerun-bsan-only picks them up.
 #
 # Environment knobs:
 #   JOBS                crates built in parallel (default: CPUS/4 in a job,
@@ -282,105 +296,134 @@ doc_names() {
 }
 
 # ------------------------------- worker mode ------------------------------- #
-# Invoked by xargs, one crate per call. argv: --worker <crate_dir>
-# Writes the crate's CSV row to $STATE_DIR/<crate>.csv and, when it built and
-# listed, its <dataset>_list.csv row to $STATE_DIR/<crate>.list (neither with
-# --rerun-bsan-only), and a bsan-only failure's row to $STATE_DIR/<crate>.bsan.
-if [ "${1:-}" = "--worker" ]; then
+# Invoked by xargs, one crate per call, in two passes over the crates (each
+# pass over all of them before the next starts):
+#   --worker <crate_dir>       plain fetch, compile and test listing: the
+#                              crate's CSV row to $STATE_DIR/<crate>.csv and,
+#                              when it built and listed, its <dataset>_list.csv
+#                              row to $STATE_DIR/<crate>.list
+#   --worker-bsan <crate_dir>  the cargo bsan compile, for a crate the first
+#                              pass compiled (ok / list_failed): a failure's
+#                              row to $STATE_DIR/<crate>.bsan, and, checked or
+#                              not needed, $STATE_DIR/<crate>.bsandone
+# The plain pass finishes for every crate first, so cargo bsan's extra memory
+# can't OOM-kill a neighbouring crate's build or listing, and the test list is
+# written before any bsan compile starts. --rerun-bsan-only runs only the
+# second pass (which then downloads, when the crates are downloaded).
+if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
+    phase="$1"
     dir="$2"
     crate="$(basename "$dir")"
     logdir="$dir"
     [ -n "$CRATE_LOG_DIR" ] && logdir="$CRATE_LOG_DIR/$crate"
     log="$logdir/build-$IMAGE.log"
-    if [ "$DOWNLOAD" -eq 1 ] && [ ! -f "$dir/Cargo.toml" ]; then
-        mkdir -p "$logdir"
-        if ! download_crate "$crate" "$(dirname "$dir")" > "$log" 2>&1; then
-            echo "    download_failed: $crate"
-            if [ "$RERUN" -eq 1 ]; then
-                # Can't recheck it: keep its previous bsan-only row.
-                awk -F, -v c="$crate" '$2 == c' "$PREV_CSV" > "$STATE_DIR/$crate.bsan"
-            else
-                printf '%s,%s,fetch_failed,,,other,%s,%s\n' "$IMAGE" "$crate" \
-                    "$(csvq "crates.io download failed (see $log)")" \
-                    "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" > "$STATE_DIR/$crate.csv"
-            fi
-            exit 0
-        fi
-    fi
-    had_lock=0; [ -f "$dir/Cargo.lock" ] && had_lock=1
     if [ -n "$TARGET_BASE" ]; then
         export CARGO_TARGET_DIR="$TARGET_BASE/build-$crate"
     else
         export CARGO_TARGET_DIR="$dir/target"
     fi
-    rm -rf "$CARGO_TARGET_DIR"
+    bsan_target="$CARGO_TARGET_DIR-bsan"
 
-    status=ok; compile=""; ntests=""; ekind=""; emsg=""
-    if [ "$RERUN" -eq 1 ]; then
-        # --rerun-bsan-only: its plain compile passed last run; keep that time.
-        compile=$(awk -F, -v c="$crate" '$2 == c { print $3; exit }' "$PREV_CSV")
-    else
-        wrap=()
-        [ -n "$PRIMARY_RUSTFLAGS" ] \
-            && wrap=(RUSTC_WRAPPER="$SELF" BUILD_DATASET_RUSTC_WRAPPER=1)
-        if ! ( cd "$dir" && cargo fetch ) > "$log" 2>&1; then
-            status=fetch_failed
-        else
-            cstart=$(date +%s%3N)
-            ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" $COMPILE --no-run ) >> "$log" 2>&1
-            brc=$?
-            cms=$(( $(date +%s%3N) - cstart ))
-            compile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
-            [ "$brc" -eq 0 ] || status=build_failed
-        fi
-        if [ "$status" = ok ]; then
-            # JSON lines on stdout, build noise on stderr (into the log). Same
-            # flags as the build, so the binaries it just made are reused.
-            list="$STATE_DIR/$crate.json"
-            if ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" \
-                    cargo test --tests -- --list --format=json -Zunstable-options ) \
-                    > "$list" 2>> "$log"; then
-                names=$(grep -a '"type": *"test"' "$list" | grep -a '"ignore": *false' \
-                    | sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u)
-                if [ "$DOC" -eq 1 ]; then
-                    doclog="$STATE_DIR/$crate.doc.json"
-                    if ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" \
-                            RUSTDOCFLAGS="$BUILD_RUSTFLAGS${PRIMARY_RUSTFLAGS:+ $PRIMARY_RUSTFLAGS}" \
-                            cargo test --doc -- --list --format=json -Zunstable-options ) \
-                            > "$doclog" 2>> "$log"; then
-                        namesof() { sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u; }
-                        grep -a '"type": *"test"' "$doclog" | namesof > "$doclog.all"
-                        grep -a '"type": *"test"' "$doclog" | grep -a '"ignore": *false' | namesof > "$doclog.run"
-                        docs=$(doc_names "$doclog.all" "$doclog.run" 2>> "$log")
-                        [ -n "$docs" ] && names="${names:+$names
-    }$docs"
-                        rm -f "$doclog.all" "$doclog.run"
-                    else
-                        echo "build_dataset: doc-test listing failed (no lib target?); binary tests only" >> "$log"
-                    fi
-                    rm -f "$doclog"
+    # The pass that starts with the crate: download it if needed, and note
+    # whether it shipped a Cargo.lock (one the build generates is removed at
+    # the end of the bsan pass).
+    if [ "$phase" = --worker ] || [ "$RERUN" -eq 1 ]; then
+        if [ "$DOWNLOAD" -eq 1 ] && [ ! -f "$dir/Cargo.toml" ]; then
+            mkdir -p "$logdir"
+            if ! download_crate "$crate" "$(dirname "$dir")" > "$log" 2>&1; then
+                echo "    download_failed: $crate"
+                if [ "$RERUN" -eq 1 ]; then
+                    # Can't recheck it: keep its previous bsan-only row.
+                    awk -F, -v c="$crate" '$2 == c' "$PREV_CSV" > "$STATE_DIR/$crate.bsan"
+                    : > "$STATE_DIR/$crate.bsandone"
+                else
+                    printf '%s,%s,fetch_failed,,,other,%s,%s\n' "$IMAGE" "$crate" \
+                        "$(csvq "crates.io download failed (see $log)")" \
+                        "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" > "$STATE_DIR/$crate.csv"
                 fi
-                ntests=$(printf '%s' "$names" | grep -c . || true)
-                printf '%s,%s\n' "$crate" "$(printf '%s' "$names" | paste -sd';' -)" \
-                    > "$STATE_DIR/$crate.list"
-            else
-                status=list_failed
-                cat "$list" >> "$log"
+                exit 0
             fi
-            rm -f "$list"
         fi
-        if [ "$status" != ok ]; then
-            classify "$log"
-            echo "    $status: $crate [$ekind] $emsg"
-        fi
-        printf '%s,%s,%s,%s,%s,%s,%s,%s\n' "$IMAGE" "$crate" "$status" "$compile" \
-            "$ntests" "$ekind" "$(csvq "$emsg")" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
-            > "$STATE_DIR/$crate.csv"
+        [ -f "$dir/Cargo.lock" ] || : > "$STATE_DIR/$crate.nolock"
     fi
 
-    # The same compile under cargo bsan, for crates whose plain
+    if [ "$phase" = --worker ]; then
+        rm -rf "${CARGO_TARGET_DIR:?}"
+        status=ok; compile=""; ntests=""; ekind=""; emsg=""
+    wrap=()
+    [ -n "$PRIMARY_RUSTFLAGS" ] \
+        && wrap=(RUSTC_WRAPPER="$SELF" BUILD_DATASET_RUSTC_WRAPPER=1)
+    if ! ( cd "$dir" && cargo fetch ) > "$log" 2>&1; then
+        status=fetch_failed
+    else
+        cstart=$(date +%s%3N)
+        ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" $COMPILE --no-run ) >> "$log" 2>&1
+        brc=$?
+        cms=$(( $(date +%s%3N) - cstart ))
+        compile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
+        [ "$brc" -eq 0 ] || status=build_failed
+    fi
+    if [ "$status" = ok ]; then
+        # JSON lines on stdout, build noise on stderr (into the log). Same
+        # flags as the build, so the binaries it just made are reused.
+        list="$STATE_DIR/$crate.json"
+        if ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" \
+                cargo test --tests -- --list --format=json -Zunstable-options ) \
+                > "$list" 2>> "$log"; then
+            names=$(grep -a '"type": *"test"' "$list" | grep -a '"ignore": *false' \
+                | sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u)
+            if [ "$DOC" -eq 1 ]; then
+                doclog="$STATE_DIR/$crate.doc.json"
+                if ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" \
+                        RUSTDOCFLAGS="$BUILD_RUSTFLAGS${PRIMARY_RUSTFLAGS:+ $PRIMARY_RUSTFLAGS}" \
+                        cargo test --doc -- --list --format=json -Zunstable-options ) \
+                        > "$doclog" 2>> "$log"; then
+                    namesof() { sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u; }
+                    grep -a '"type": *"test"' "$doclog" | namesof > "$doclog.all"
+                    grep -a '"type": *"test"' "$doclog" | grep -a '"ignore": *false' | namesof > "$doclog.run"
+                    docs=$(doc_names "$doclog.all" "$doclog.run" 2>> "$log")
+                    [ -n "$docs" ] && names="${names:+$names
+}$docs"
+                    rm -f "$doclog.all" "$doclog.run"
+                else
+                    echo "build_dataset: doc-test listing failed (no lib target?); binary tests only" >> "$log"
+                fi
+                rm -f "$doclog"
+            fi
+            ntests=$(printf '%s' "$names" | grep -c . || true)
+            printf '%s,%s\n' "$crate" "$(printf '%s' "$names" | paste -sd';' -)" \
+                > "$STATE_DIR/$crate.list"
+        else
+            status=list_failed
+            cat "$list" >> "$log"
+        fi
+        rm -f "$list"
+    fi
+    if [ "$status" != ok ]; then
+        classify "$log"
+        echo "    $status: $crate [$ekind] $emsg"
+    fi
+    printf '%s,%s,%s,%s,%s,%s,%s,%s\n' "$IMAGE" "$crate" "$status" "$compile" \
+        "$ntests" "$ekind" "$(csvq "$emsg")" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+        > "$STATE_DIR/$crate.csv"
+        rm -rf "${CARGO_TARGET_DIR:?}"
+        exit 0
+    fi
+
+    # --worker-bsan: the same compile under cargo bsan, for crates whose plain
     # compile succeeded; a failure here is one only bsan has.
-    bsan_target="$CARGO_TARGET_DIR-bsan"
+    if [ "$RERUN" -eq 1 ]; then
+        # --rerun-bsan-only: its plain compile passed last run; keep that time.
+        status=ok
+        compile=$(awk -F, -v c="$crate" '$2 == c { print $3; exit }' "$PREV_CSV")
+        # An unchecked crate has no previous bsan-only row: the results' time.
+        [ -n "$compile" ] \
+            || compile=$(awk -F, -v c="$crate" '$2 == c { print $4; exit }' "$MAIN_RESULTS_CSV" 2>/dev/null)
+    else
+        # build,crate,status,compile_seconds,...: none of these is quoted.
+        status=$(cut -d, -f3 "$STATE_DIR/$crate.csv" 2>/dev/null)
+        compile=$(cut -d, -f4 "$STATE_DIR/$crate.csv" 2>/dev/null)
+    fi
     if [ "$status" = ok ] || [ "$status" = list_failed ]; then
         blog="$logdir/build-$IMAGE-bsan.log"
         bwrap=()
@@ -402,12 +445,15 @@ if [ "${1:-}" = "--worker" ]; then
                 > "$STATE_DIR/$crate.bsan"
         fi
     fi
+    : > "$STATE_DIR/$crate.bsandone"
 
-    rm -rf "$CARGO_TARGET_DIR" "$bsan_target"
+    rm -rf "${CARGO_TARGET_DIR:?}" "${bsan_target:?}"
     # A job's downloaded crate goes too (its logs are in CRATE_LOG_DIR);
     # --local keeps its downloads for the next run.
-    if [ -n "$CRATE_LOG_DIR" ]; then rm -rf "$dir"; exit 0; fi
-    [ "$had_lock" = 0 ] && rm -f "$dir/Cargo.lock"
+    if [ -n "$CRATE_LOG_DIR" ]; then rm -rf "${dir:?}"; exit 0; fi
+    if [ -f "$STATE_DIR/$crate.nolock" ]; then
+        rm -f "${dir:?}/Cargo.lock" "${STATE_DIR:?}/${crate:?}.nolock"
+    fi
     exit 0
 fi
 
@@ -494,6 +540,11 @@ BSAN_HEADER="build,crate,compile_seconds,bsan_compile_seconds,error_type,error,t
 # --rerun-bsan-only: the bsan-only CSV being redone, copied aside (in _logs, so
 # the part jobs see it at /work/_logs) since the run overwrites BSAN_CSV.
 PREV_CSV="$DATASET_DIR/_logs/.build-$IMAGE-bsan-only$SUFFIX.prev.csv"
+# Plain-compiled crates a dead job never got through the bsan pass.
+UNCHECKED_TXT="$DATASET_DIR/_logs/build-$IMAGE-bsan-unchecked$SUFFIX.txt"
+# The whole run's results (a part job's RESULTS_CSV is its part's), for a
+# rerun's compile_seconds of a crate that was unchecked rather than failing.
+MAIN_RESULTS_CSV="$RESULTS_CSV"
 PARTS_DIR="$DATASET_DIR/_logs/_build_parts$SUFFIX"
 
 # Version selection: ALLOW holds the <name>-<version> dirs to build
@@ -541,10 +592,11 @@ if [ "$RERUN" -eq 1 ] && [ -z "$PART" ]; then
     [ -s "$BSAN_CSV" ] || die "--rerun-bsan-only: no bsan-only CSV at $BSAN_CSV"
     cp "$BSAN_CSV" "$PREV_CSV" || die "can't copy $BSAN_CSV to $PREV_CSV"
 fi
-# rerun_crates: the PREV_CSV crates that are still in the dataset dir (all of
-# them, when they're downloaded).
+# rerun_crates: the PREV_CSV and UNCHECKED_TXT crates that are still in the
+# dataset dir (all of them, when they're downloaded).
 rerun_crates() {
-    tail -n +2 "$PREV_CSV" | cut -d, -f2 | while IFS= read -r c; do
+    { tail -n +2 "$PREV_CSV" | cut -d, -f2; cat "$UNCHECKED_TXT" 2>/dev/null; } \
+            | LC_ALL=C sort -u | while IFS= read -r c; do
         [ -n "$c" ] && { [ "$DOWNLOAD" -eq 1 ] || [ -f "$DATASET_DIR/$c/Cargo.toml" ]; } && printf '%s\n' "$c"
     done
 }
@@ -657,35 +709,90 @@ if [ "$LOCAL" -eq 0 ]; then
     rm -f "$DATASET_DIR/_logs/.build_dataset.sh"
 
     # Merge the parts' CSVs (inside a job the dataset was /work, so they
-    # landed at the same _logs paths).
+    # landed at the same _logs paths). A part whose job died before writing
+    # one is recovered from the per-crate rows in its _state-K dir instead.
+    # part_rows <part CSV name> <state file ext>: every part's rows.
+    part_rows() {
+        local k
+        for (( k = 0; k < NPARTS; k++ )); do
+            if [ -f "$PARTS_DIR/$1.part-$k.csv" ]; then
+                tail -n +2 "$PARTS_DIR/$1.part-$k.csv"
+            elif [ -d "$PARTS_DIR/_state-$k" ]; then
+                RECOVERED[$k]=1
+                find "$PARTS_DIR/_state-$k" -maxdepth 1 -name "*.$2" -exec cat {} + 2>/dev/null
+            fi
+        done
+    }
+    # Crates a dead job never got through the bsan pass: in a part with no
+    # bsan-only CSV, listed but without a .bsandone. For a full run only the
+    # ones that compiled matter; a rerun keeps their previous rows.
+    declare -A RECOVERED=()
+    UNCHECKED=()
+    for (( k = 0; k < NPARTS; k++ )); do
+        [ -f "$PARTS_DIR/bsan-only.part-$k.csv" ] && continue
+        while IFS= read -r c; do
+            [ -n "$c" ] && [ ! -f "$PARTS_DIR/_state-$k/$c.bsandone" ] || continue
+            if [ "$RERUN" -eq 1 ]; then
+                UNCHECKED+=("$c")
+            else
+                st=$(cut -d, -f3 "$PARTS_DIR/_state-$k/$c.csv" 2>/dev/null)
+                { [ "$st" = ok ] || [ "$st" = list_failed ]; } && UNCHECKED+=("$c")
+            fi
+        done < "$PARTS_DIR/part-$k.txt"
+    done
+    # Not in a pipeline, so part_rows' RECOVERED entries stick.
+    bsan_rows="$(mktemp)"
+    part_rows bsan-only bsan > "$bsan_rows"
+    # A rerun's unchecked crates are still failing as far as anyone knows.
+    if [ "$RERUN" -eq 1 ]; then
+        for c in ${UNCHECKED[@]+"${UNCHECKED[@]}"}; do
+            awk -F, -v c="$c" '$2 == c' "$PREV_CSV"
+        done >> "$bsan_rows"
+    fi
     {
         echo "$BSAN_HEADER"
-        for f in "$PARTS_DIR"/bsan-only.part-*.csv; do
-            [ -f "$f" ] && tail -n +2 "$f"
-        done | LC_ALL=C sort -t, -k2,2
+        LC_ALL=C sort -t, -k2,2 "$bsan_rows"
     } > "$BSAN_CSV"
+    rm -f "${bsan_rows:?}"
+    rm -f "${UNCHECKED_TXT:?}"
+    # report_recovery: what came from dead jobs' state dirs, after the summary.
+    report_recovery() {
+        [ "${#RECOVERED[@]}" -gt 0 ] || [ "${#UNCHECKED[@]}" -gt 0 ] || return 0
+        [ "${#RECOVERED[@]}" -gt 0 ] \
+            && echo "    ${#RECOVERED[@]} part(s) recovered from their _state dirs (job died before" \
+                    "writing all its CSVs): $(printf '%s\n' "${!RECOVERED[@]}" | sort -n | paste -sd' ' -)"
+        if [ "${#UNCHECKED[@]}" -gt 0 ]; then
+            printf '%s\n' "${UNCHECKED[@]}" | LC_ALL=C sort > "$UNCHECKED_TXT"
+            if [ "$RERUN" -eq 1 ]; then
+                echo "    ${#UNCHECKED[@]} crate(s) never rechecked: kept their previous rows; listed in $UNCHECKED_TXT"
+            else
+                echo "    ${#UNCHECKED[@]} plain-compiled crate(s) never got their cargo bsan compile, so the"
+                echo "    bsan-only CSV can't say whether they fail; listed in $UNCHECKED_TXT"
+            fi
+        fi
+    }
     if [ "$RERUN" -eq 1 ]; then
         echo
         echo "==> Done (cargo bsan rerun of $n crates)."
         finish_rerun "$n"
-        [ "$failed" -eq 0 ] || echo "    $failed job(s) exited non-zero (their crates' rows may be missing); see $PARTS_DIR/job-*.log"
+        report_recovery
+        [ "$failed" -eq 0 ] || echo "    $failed job(s) exited non-zero; see $PARTS_DIR/job-*.log"
         out="$OUTPUTS_DIR/$IMAGE-$DS_NAME-bsan-only$SUFFIX.csv"
         mkdir -p "$OUTPUTS_DIR" && cp "$BSAN_CSV" "$out" && echo "    copied to:     $out"
         [ "$failed" -eq 0 ]
         exit $?
     fi
-    {
-        echo "build,crate,status,compile_seconds,tests,error_type,error,timestamp"
-        for f in "$PARTS_DIR"/build-"$IMAGE".part-*.csv; do
-            [ -f "$f" ] && tail -n +2 "$f"
-        done | LC_ALL=C sort -t, -k2,2
-    } > "$RESULTS_CSV"
-    {
-        echo "crate,tests"
-        for f in "$PARTS_DIR"/list.part-*.csv; do
-            [ -f "$f" ] && tail -n +2 "$f"
-        done | LC_ALL=C sort -t, -k1,1
-    } > "$LIST_CSV"
+    for kind in "build-$IMAGE:csv:$RESULTS_CSV:2" "list:list:$LIST_CSV:1"; do
+        IFS=: read -r pname ext out key <<<"$kind"
+        rows_tmp="$(mktemp)"
+        part_rows "$pname" "$ext" > "$rows_tmp"
+        {
+            if [ "$pname" = list ]; then echo "crate,tests"
+            else echo "build,crate,status,compile_seconds,tests,error_type,error,timestamp"; fi
+            LC_ALL=C sort -t, -k"$key","$key" "$rows_tmp"
+        } > "$out"
+        rm -f "${rows_tmp:?}"
+    done
     rows=$(( $(wc -l < "$RESULTS_CSV") - 1 ))
 
     echo
@@ -695,6 +802,7 @@ if [ "$LOCAL" -eq 0 ]; then
     echo "    results:       $RESULTS_CSV"
     echo "    test list:     $LIST_CSV"
     echo "    bsan-only:     $BSAN_CSV"
+    report_recovery
     if [ "$rows" -lt "$n" ]; then
         echo "    $(( n - rows )) crate(s) have no row (job killed / walltime); see $PARTS_DIR/job-*.log"
     fi
@@ -743,7 +851,7 @@ rm -rf "$STATE_DIR"                         # fresh check every run
 mkdir -p "$STATE_DIR"
 
 export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC RERUN PREV_CSV \
-    DOWNLOAD CRATE_LOG_DIR
+    DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV
 
 # ------------------------------ build each crate ---------------------------- #
 crates="$(mktemp)"
@@ -772,8 +880,24 @@ echo "==> Building $n crates in $DATASET_DIR with $JOBS worker(s):" \
      "$COMPILE --no-run (RUSTFLAGS=\"$BUILD_RUSTFLAGS\"," \
      "crate under test +\"$PRIMARY_RUSTFLAGS\"), then list tests$([ "$DOC" -eq 1 ] && echo ' (with doc tests)'), then cargo bsan ${COMPILE#cargo } --no-run ..."
 fi
-# (xargs runs the command once even on empty input.)
-[ "$n" -gt 0 ] && xargs -0 -n 1 -P "$JOBS" "$SELF" --worker < "$crates"
+# Pass 1, plain (not with --rerun-bsan-only), then its outputs, so the
+# results and test list are written before any cargo bsan compile starts and
+# survive a job killed during pass 2. (xargs runs the command once even on
+# empty input.)
+if [ "$RERUN" -eq 0 ]; then
+    [ "$n" -gt 0 ] && xargs -0 -n 1 -P "$JOBS" "$SELF" --worker < "$crates"
+    {
+        echo "build,crate,status,compile_seconds,tests,error_type,error,timestamp"
+        find "$STATE_DIR" -maxdepth 1 -name '*.csv' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k2,2
+    } > "$RESULTS_CSV"
+    {
+        echo "crate,tests"
+        find "$STATE_DIR" -maxdepth 1 -name '*.list' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k1,1
+    } > "$LIST_CSV"
+    echo "==> Plain pass done; results and test list written. Now cargo bsan ${COMPILE#cargo } --no-run ..."
+fi
+# Pass 2, cargo bsan.
+[ "$n" -gt 0 ] && xargs -0 -n 1 -P "$JOBS" "$SELF" --worker-bsan < "$crates"
 rm -f "$crates"
 
 # ---------------------------------- outputs --------------------------------- #
@@ -788,16 +912,9 @@ if [ "$RERUN" -eq 1 ]; then
     echo
     echo "==> Done."
     finish_rerun "$n"
+    rm -f "${UNCHECKED_TXT:?}"   # every one of them was just rechecked
     exit 0
 fi
-{
-    echo "build,crate,status,compile_seconds,tests,error_type,error,timestamp"
-    find "$STATE_DIR" -maxdepth 1 -name '*.csv' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k2,2
-} > "$RESULTS_CSV"
-{
-    echo "crate,tests"
-    find "$STATE_DIR" -maxdepth 1 -name '*.list' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k1,1
-} > "$LIST_CSV"
 rm -rf "$STATE_DIR"
 
 echo
