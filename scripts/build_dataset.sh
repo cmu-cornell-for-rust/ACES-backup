@@ -1078,12 +1078,15 @@ WORKER=("$SELF")
 if [ "$NODE" -eq 1 ]; then
     WORKER+=(--step)
     BD_ENV="$BD_SCRATCH/worker.env"
+    # Single-quoted: singularity's env-file parser keeps backslash escapes
+    # (bash's %q) literally, so COMPILE would become `cargo\ test\ --tests`.
     for v in SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC RERUN \
             BSAN_ONLY PREV_CSV DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV CARGO_TERM_COLOR \
             http_proxy https_proxy HTTP_PROXY HTTPS_PROXY; do
-        printf '%s=%q\n' "$v" "${!v:-}"
+        [[ "${!v:-}" != *\'* ]] || die "$v contains a single quote: $v=${!v}"
+        printf "%s='%s'\n" "$v" "${!v:-}"
     done > "$BD_ENV"
-    printf 'CARGO_HOME=%q\nCARGO_BUILD_JOBS=%q\n' "$BD_SCRATCH/home" "$BD_STEP_CPUS" >> "$BD_ENV"
+    printf "CARGO_HOME='%s'\nCARGO_BUILD_JOBS='%s'\n" "$BD_SCRATCH/home" "$BD_STEP_CPUS" >> "$BD_ENV"
     BD_DATASET_DIR="$DATASET_DIR"
     export BD_SIF BD_SCRATCH BD_ENV BD_STEP_CPUS BD_STEP_MEM BD_DATASET_DIR
 fi
