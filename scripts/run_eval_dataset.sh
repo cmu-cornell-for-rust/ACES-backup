@@ -166,7 +166,9 @@
 #   error_type,error
 #
 # status: success, test_failed (exited non-zero), no_match (the filter ran 0
-# tests), timeout (hit --test-timeout), and test-less crate rows:
+# tests), timeout (hit --test-timeout), skipped (not run: an earlier 3 tests
+# in a row in its module timed out; error_type timeout, run_seconds empty),
+# and test-less crate rows:
 # fetch_failed, build_failed. run_seconds is the wall time of the test's single invocation,
 # including cargo's freshness check and every test binary's startup.
 #
@@ -982,8 +984,29 @@ cp "$EV_TESTS" "$tmp/tests"
 echo "tests: $EV_CRATE -> $(wc -l < "$tmp/tests" | tr -d ' ') from the tests CSV"
 
 # ── each test, once ──
+# After TIMEOUT_STREAK timeouts in a row within one top-level module (the
+# test path's first segment, e.g. tests:: or lib::; for a doc test, its
+# source file), that module's remaining tests are skipped: they get
+# status=skipped rows, not runs, and the next module's tests still run.
+TIMEOUT_STREAK=3
+streak_mod=""; streak=0
+skip_mods=$'\n'
 while IFS= read -r t; do
     [ -n "$t" ] || continue
+    if [ "${t#doc:}" != "$t" ]; then
+        dname=$(pct_decode "${t#doc:}"); dname=${dname%%#*}
+        mod="doc:${dname%% - *}"
+    elif [ "${t%%::*}" != "$t" ]; then
+        mod=${t%%::*}
+    else
+        mod=""
+    fi
+    if [[ "$skip_mods" == *$'\n'"$mod"$'\n'* ]]; then
+        echo "result: $EV_CRATE :: $t -> skipped (${TIMEOUT_STREAK} timeouts in a row in ${mod:-<crate root>})"
+        row "$t" skipped "$compile" "" timeout \
+            "skipped: $TIMEOUT_STREAK consecutive timeouts in module ${mod:-<crate root>}"
+        continue
+    fi
     if [ "${t#doc:}" != "$t" ]; then
         # The run includes rustdoc collecting the crate's doc tests and
         # compiling this one's snippet: neither is built by --no-run.
@@ -1021,6 +1044,17 @@ while IFS= read -r t; do
     [ "$status" != success ] && dump_output "$t" "$rc" "$tmp/out"
     echo "result: $EV_CRATE :: $t -> $status (${run}s)${ekind:+ [$ekind]}"
     row "$t" "$status" "$compile" "$run" "$ekind" "$emsg"
+    if [ "$status" = timeout ]; then
+        [ "$mod" = "$streak_mod" ] || { streak_mod=$mod; streak=0; }
+        streak=$(( streak + 1 ))
+        if [ "$streak" -ge "$TIMEOUT_STREAK" ]; then
+            echo "skipping: $EV_CRATE module ${mod:-<crate root>} after $streak timeouts in a row"
+            skip_mods+="$mod"$'\n'
+            streak=0
+        fi
+    else
+        streak=0
+    fi
 done < "$tmp/tests"
 INNER_EOF
 
