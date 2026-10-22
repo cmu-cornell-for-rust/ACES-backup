@@ -861,15 +861,32 @@ if [ "$LOCAL" -eq 0 ]; then
         [ "$inflight" -lt "$MAX_PARALLEL" ] || reap_one
         # The part job runs this script with --node, on the node outside the
         # image; sbatch --wait returns once the job ends, with its exit code.
+        # The command goes in a batch script of its own, submitted without
+        # arguments: the site's sbatch wrapper re-splits its arguments, which
+        # breaks --wrap (and any script argument with a space in it).
         # shellcheck disable=SC2086  # WHOLE_FLAG splits into flags
+        printf '#!/bin/bash\n%s\n' "$(printf '%q ' env JOBS="$JOBS" BD_STEP_CPUS="$STEP_CPUS" \
+            BD_STEP_MEM="${STEP_MEM}M" BUILD_RUSTFLAGS="$BUILD_RUSTFLAGS" PRIMARY_RUSTFLAGS="$PRIMARY_RUSTFLAGS" \
+            bash "$DATASET_DIR/_logs/.build_dataset.sh" --node --part "$k" --image "$IMAGE" \
+            $WHOLE_FLAG "$DATASET_DIR")" > "$PARTS_DIR/job-$k.sh"
+        # A submission refused for the per-user queue limit (your other jobs
+        # count too) is retried every minute until there's room; once sbatch
+        # has printed a job id, its exit code is the job's.
         (
-            sbatch --wait --parsable --job-name="build-dataset-$k" \
-                --nodes=1 --ntasks="$JOBS" --cpus-per-task="$STEP_CPUS" \
-                --mem="${MEM_MB}M" --time="$SB_TIME" --output="$PARTS_DIR/job-$k.log" \
-                --wrap="$(printf '%q ' env JOBS="$JOBS" BD_STEP_CPUS="$STEP_CPUS" BD_STEP_MEM="${STEP_MEM}M" \
-                    BUILD_RUSTFLAGS="$BUILD_RUSTFLAGS" PRIMARY_RUSTFLAGS="$PRIMARY_RUSTFLAGS" \
-                    bash "$DATASET_DIR/_logs/.build_dataset.sh" --node --part "$k" --image "$IMAGE" \
-                    $WHOLE_FLAG "$DATASET_DIR")"
+            log="$PARTS_DIR/submit-$k.log"
+            while :; do
+                from=$(( $(wc -l < "$log") + 1 ))   # this attempt's output
+                sbatch --wait --parsable --job-name="build-dataset-$k" \
+                    --nodes=1 --ntasks="$JOBS" --cpus-per-task="$STEP_CPUS" \
+                    --mem="${MEM_MB}M" --time="$SB_TIME" --output="$PARTS_DIR/job-$k.log" \
+                    "$PARTS_DIR/job-$k.sh"
+                rc=$?
+                out=$(tail -n +"$from" "$log")
+                [ "$rc" -ne 0 ] && ! grep -qE '^[0-9]+' <<<"$out" \
+                    && grep -qiE 'MaxSubmitJob|job submit limit' <<<"$out" || exit "$rc"
+                echo "queue full; retrying in 60s"
+                sleep 60
+            done
         ) > "$PARTS_DIR/submit-$k.log" 2>&1 &
         pids+=("$!")
         inflight=$((inflight + 1))
