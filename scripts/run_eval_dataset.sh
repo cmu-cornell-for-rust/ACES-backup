@@ -87,10 +87,13 @@
 #                     few nodes and the remaining jobs all finish early.
 #   --slow-walltime T walltime for the slow-list jobs, HH or HH:MM (default 24)
 #   --jobs N          sbatch jobs to spread the crates over, slow-list jobs
-#                     included (default: one per crate, capped at 90; a run
-#                     with more crates than 90 jobs x --max-tasks workers uses
-#                     just enough full jobs instead, and the ones past 90 are
-#                     staged -- see below)
+#                     included (default: one per crate, capped at --max-jobs;
+#                     a run with more crates than --max-jobs x --max-tasks
+#                     workers uses just enough full jobs instead, and the
+#                     ones past --max-jobs are staged -- see below)
+#   --max-jobs N      most of your jobs in SLURM at once, running + pending
+#                     (default 90, the per-user submit limit); the rest are
+#                     staged
 #   --max-tasks N     ceiling on workers per job, at most 24 (default: 24, or
 #                     fewer if 24 don't fit a 24-core / 488G slice of a node
 #                     at --cpus-per-task and --mem-per-task)
@@ -127,7 +130,7 @@
 #   holds at most --max-tasks crates, and a run with more crates than an
 #   explicit --jobs x workers is refused. The workers still pull from the
 #   job's queue, but with one crate per worker each pulls exactly one.
-# * At most 90 jobs per user sit in SLURM at once (running + pending, counting
+# * At most --max-jobs (default 90) jobs per user sit in SLURM at once (running + pending, counting
 #   the user's other jobs too). Jobs past that are staged by this script and
 #   submitted as earlier ones leave the queue, so the script must keep running
 #   (use tmux/screen) until every job has been submitted.
@@ -224,7 +227,7 @@ OUTPUTS_DIR="$GROUP/outputs"
 
 # Node slice a job may ask for (a hard cap of 24 cpus per job), the
 # per-worker memory ceiling, the most workers per job, and the most jobs the
-# user may have in SLURM at once (the rest are staged).
+# user may have in SLURM at once (the rest are staged; --max-jobs overrides).
 NODE_CPUS=24
 NODE_MEM=488
 MAX_MEM_PER_TASK=16
@@ -320,6 +323,8 @@ while [[ $# -gt 0 ]]; do
         --tests=*)       TESTS_CSV="${1#*=}"; shift ;;
         --jobs)          JOBS="$2"; shift 2 ;;
         --jobs=*)        JOBS="${1#*=}"; shift ;;
+        --max-jobs)      MAX_JOBS="$2"; shift 2 ;;
+        --max-jobs=*)    MAX_JOBS="${1#*=}"; shift ;;
         --max-tasks)     MAX_TASKS="$2"; shift 2 ;;
         --max-tasks=*)   MAX_TASKS="${1#*=}"; shift ;;
         --cpus-per-task) CPUS_PER_TASK="$2"; shift 2 ;;
@@ -370,7 +375,7 @@ usage() {
     echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
     echo "           --bsan-build-fails FILE (repeatable; default in bsan mode:" >&2
     echo "             $GROUP/scripts/bsan_build_fails.csv) | --no-bsan-build-fails" >&2
-    echo "           --jobs N --max-tasks N (<= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
+    echo "           --jobs N --max-jobs N (default 90) --max-tasks N (<= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 1h, 0 = none)" >&2
     echo "           --slow-walltime T (slow-list jobs, HH or HH:MM; default 24)" >&2
@@ -409,7 +414,7 @@ WALLTIME=$(parse_walltime "$WALLTIME_ARG")
 SLOW_WALLTIME=$(parse_walltime "$SLOW_WALLTIME_ARG")
 
 MEM_PER_TASK="${MEM_PER_TASK%G}"
-for v in CPUS_PER_TASK MEM_PER_TASK; do
+for v in CPUS_PER_TASK MEM_PER_TASK MAX_JOBS; do
     [[ "${!v}" =~ ^[1-9][0-9]*$ ]] || { echo "Error: $v must be a positive integer." >&2; exit 1; }
 done
 (( MEM_PER_TASK <= MAX_MEM_PER_TASK )) \
@@ -806,6 +811,7 @@ TASKS=$PER_JOB_MAX
     printf 'DATASET_DIR=%q\n'      "$DATASET_DIR"
     printf 'DOWNLOAD=%q\n'         "$DOWNLOAD"
     printf 'CPUS_PER_TASK=%q\n'    "$CPUS_PER_TASK"
+    printf 'MEM_PER_TASK=%q\n'     "$MEM_PER_TASK"
     printf 'TEST_THREADS=%q\n'     "$TEST_THREADS"
     printf 'TEST_TIMEOUT=%q\n'     "$TEST_TIMEOUT"
     printf 'MIRIFLAGS_ALL=%q\n'    "$MIRIFLAGS_ALL"
