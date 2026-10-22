@@ -30,13 +30,9 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
                     Numbered by first appearance, in input order, so appending
                     an eval CSV (earlier ones unchanged, same order) keeps the
                     old ids and numbers new bugs after them
-  diagnosis         auto-filled where it can be, else left blank for review
-                    (the other options are "False Positive" and "Rerun!"):
-                      True Positive           an aliasing violation
-                      Duplicate TP (see new)  an aliasing violation on an
-                                              out-of-date version, when the
-                                              same test on a newer version of
-                                              the crate (in bugs.csv) is one too
+  diagnosis         B2 holds an ARRAYFORMULA that looks each bug id up on the
+                    Bugs sheet (C -> E); the rest of the column is left
+                    blank so it can spill
   crate             crate name (the bugs CSV's crate column is <name>-<version>)
   version           the version that was tested
   last updated      date of the crate's newest release on crates.io
@@ -298,14 +294,6 @@ def in_datasets(name, version, up_to_date):
     return ", ".join(tags)
 
 
-def version_key(v):
-    """Release order, roughly: 1.2.10 > 1.2.9 > 1.2.9-rc.1."""
-    m = re.match(r"(\d+(?:\.\d+)*)(.*)", v)
-    if not m:
-        return ((), 0, v)
-    return (tuple(int(x) for x in m.group(1).split(".")), not m.group(2), m.group(2))
-
-
 def norm_path(path, crate):
     """Cut the eval job's absolute paths down to <crate>-<version>/..."""
     path = re.sub(r"^.*?/home/registry/src/[^/]+/", "", path)
@@ -349,30 +337,18 @@ for *_, key, _, _ in rows:
     if key and key not in bug_id:
         bug_id[key] = f"B{len(bug_id) + 1}"
 
-# (crate name, test) -> versions where that test is an aliasing violation
-aliasing_at = {}
-for r, name, version, _, _, etype, *_ in rows:
-    if etype == "aliasing violation":
-        aliasing_at.setdefault((name, r["test"]), []).append(version)
-
-
-def diagnosis(r, name, version, up_to_date, etype):
-    if etype != "aliasing violation":
-        return ""
-    if not up_to_date and any(version_key(v) > version_key(version)
-                              for v in aliasing_at[(name, r["test"])]):
-        return "Duplicate TP (see new)"
-    return "True Positive"
-
+# B2 looks up each row's bug id on the Bugs sheet and spills down the column,
+# so every other diagnosis cell stays empty
+DIAGNOSIS_FORMULA = '=ARRAYFORMULA(IF(A2:A="", , XLOOKUP(A2:A, Bugs!C2:C, Bugs!E2:E, "")))'
 
 yn = lambda b: "yes" if b else "no"
 with open(out_path, "w", newline="", encoding="utf-8-sig") as f:
     w = csv.writer(f)
     w.writerow(HEADER)
-    for r, name, version, ci, up_to_date, etype, key, loc, created in rows:
+    for i, (r, name, version, ci, up_to_date, etype, key, loc, created) in enumerate(rows):
         w.writerow([
             bug_id.get(key, ""),
-            diagnosis(r, name, version, up_to_date, etype),
+            DIAGNOSIS_FORMULA if i == 0 else "",
             name, version,
             ci["released"] if ci else "",
             yn(up_to_date) if ci else "",

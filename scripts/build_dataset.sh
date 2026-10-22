@@ -71,17 +71,23 @@
 #
 #   Where it runs: from the login node the crates are dealt round-robin into
 #   ceil(crates / -n) parts (so part sizes differ by at most one crate, and
-#   none holds more than -n), and each part is built by its own job via
-#   run_job.sh in the `experimental-bsan` image (--image to change), with the dataset dir
-#   bound at /work. At most 40 jobs (the QOS limit) run at once; the rest
-#   start as earlier ones finish. Each job runs this script again with
-#   --local --part K, which builds that part's crates. A copy of the script is
-#   placed in <DATASET_DIR>/_logs/ for that, since only the dataset dir is
-#   visible inside the container. The launcher waits for every job, merges the
+#   none holds more than -n), and each part is built by its own sbatch job.
+#   At most 40 jobs (the QOS limit) run at once; the rest start as earlier
+#   ones finish. Each job runs this script again with --node --part K, on the
+#   node outside the image, which builds that part's crates JOBS at a time:
+#   each crate's worker is its own srun step in the `experimental-bsan` image
+#   (--image to change), with an equal share of the job's cores and a hard cap
+#   of (-m - 512M) / JOBS memory. A crate that runs out of memory is killed
+#   alone -- it can't starve or take down the job's other crates -- and gets a
+#   build_failed (or bsan-only) row with error_type oom if its worker didn't
+#   get to write one. A copy of the script is placed in <DATASET_DIR>/_logs/
+#   for the jobs, and the dataset dir is bound into every step at its own
+#   path. The launcher waits for every job, merges the
 #   parts' CSVs, copies the results to the outputs dir and merges the
 #   bsan-only rows into <group>/scripts/bsan_build_fails.csv; run it under
-#   tmux/nohup for big datasets. Each job's run_job.sh output goes to
-#   <DATASET_DIR>/_logs/_build_parts/job-K.log.
+#   tmux/nohup for big datasets (Ctrl-C cancels the jobs). Each job's output
+#   goes to <DATASET_DIR>/_logs/_build_parts/job-K.log, its sbatch
+#   submission's to submit-K.log.
 #
 #   No dataset dir: when DATASET is neither a dir under $GROUP/datasets/ nor a
 #   path, its versions CSV <group>/scripts/<DATASET>-dataset.csv (else the one
@@ -110,7 +116,10 @@
 #   -n N          at most N crates per job (default 100)
 #   -c CPUS       cores per job (default 16)
 #   -t HH[:MM]    walltime per job (default 8)
-#   -m MEM        memory per job (default 64G)
+#   -m MEM        memory per job (default 64G; bare number = GB), split evenly
+#                 into a hard per-crate cap over the JOBS crates it builds at
+#                 once (16G less a little at the defaults); raise it if crates
+#                 hit their cap (error_type oom)
 #   --image IMG   container image (default experimental-bsan); also the CSV's
 #                 build column. The main build is plain cargo (the image's default
 #                 toolchain), so nothing is instrumented; the second compile
@@ -195,7 +204,8 @@
 #
 # Environment knobs:
 #   JOBS                crates built in parallel (default: CPUS/4 in a job,
-#                       1 with --local); each cargo gets CPUS/JOBS cores
+#                       1 with --local); each cargo gets CPUS/JOBS cores and,
+#                       in a job, (-m - 512M)/JOBS memory
 #   BUILD_RUSTFLAGS="--cap-lints=warn"   RUSTFLAGS for the build (every crate)
 #   PRIMARY_RUSTFLAGS="--cfg=miri"       extra rustc flags for the crate under
 #                       test only; set it empty and BUILD_RUSTFLAGS to
@@ -477,13 +487,76 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
     exit 0
 fi
 
+# -------------------------------- step mode -------------------------------- #
+# Invoked by xargs on a part job (--node) in place of the worker:
+#   --step <--worker|--worker-bsan> <crate_dir>
+# runs that worker call in the image as its own srun step, with its own cgroup
+# capped at the job's per-crate share of -m, so a crate that runs out of
+# memory is killed alone -- it can neither starve nor take down the others.
+# If the step dies before the worker wrote its row (OOM-killed as a whole,
+# signal), the row is written here: a build_failed row in the first pass, a
+# bsan-only row in the second. Always exits 0, so xargs keeps going.
+if [ "${1:-}" = "--step" ]; then
+    phase="$2"
+    dir="$3"
+    crate="$(basename "$dir")"
+    errf="$BD_SCRATCH/step-$crate.err"
+    srun --exact --nodes=1 --ntasks=1 \
+        --cpus-per-task="$BD_STEP_CPUS" --mem="$BD_STEP_MEM" \
+        --kill-on-bad-exit=0 --job-name="$crate" \
+        singularity exec --cleanenv --pwd "$BD_DATASET_DIR" \
+            --bind "$BD_DATASET_DIR" --bind "$BD_SCRATCH" --env-file "$BD_ENV" \
+            "$BD_SIF" bash "$SELF" "$phase" "$dir" 2> "$errf"
+    rc=$?
+    cat "$errf" >&2
+    # The worker exits 0 whenever it wrote what it had to; a missing row after
+    # a failed step means the step was killed under it.
+    missing=0
+    if [ "$phase" = --worker ]; then
+        [ -f "$STATE_DIR/$crate.csv" ] || missing=1
+    else
+        [ -f "$STATE_DIR/$crate.bsandone" ] || missing=1
+    fi
+    if [ "$rc" -ne 0 ] && [ "$missing" -eq 1 ]; then
+        if grep -q 'oom[-_]kill' "$errf"; then
+            ekind=oom; why="srun step OOM-killed at its $BD_STEP_MEM share of -m"
+        else
+            ekind=other; why="srun step exited $rc"
+        fi
+        logdir="$dir"
+        [ -n "$CRATE_LOG_DIR" ] && logdir="$CRATE_LOG_DIR/$crate"
+        mkdir -p "$logdir"
+        ts="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+        if [ "$phase" = --worker ]; then
+            echo "--- build_dataset: $why ---" >> "$logdir/build-$IMAGE.log"
+            echo "    build_failed: $crate [$ekind] $why"
+            printf '%s,%s,build_failed,,,%s,%s,%s\n' "$IMAGE" "$crate" "$ekind" \
+                "$(csvq "$why")" "$ts" > "$STATE_DIR/$crate.csv"
+        else
+            echo "--- build_dataset: $why ---" >> "$logdir/build-$IMAGE-bsan.log"
+            echo "    bsan_build_failed: $crate [$ekind] $why"
+            if [ "$RERUN" -eq 1 ]; then
+                compile=$(awk -F, -v c="$crate" '$2 == c { print $3; exit }' "$PREV_CSV")
+            else
+                compile=$(cut -d, -f4 "$STATE_DIR/$crate.csv" 2>/dev/null)
+            fi
+            printf '%s,%s,%s,,%s,%s,%s\n' "$IMAGE" "$crate" "$compile" "$ekind" \
+                "$(csvq "$why")" "$ts" > "$STATE_DIR/$crate.bsan"
+            : > "$STATE_DIR/$crate.bsandone"
+        fi
+    fi
+    # What the killed worker left behind on the node.
+    rm -rf "${TARGET_BASE:?}/build-$crate" "${TARGET_BASE:?}/build-$crate-bsan" "$errf"
+    exit 0
+fi
+
 # ------------------------------- arguments --------------------------------- #
 GROUP="/scratch/group/p.cis260229.000"
-RUN_JOB="$GROUP/scripts/run_job.sh"
+CONTAINERS_DIR="$GROUP/containers"
 OUTPUTS_DIR="$GROUP/outputs"
 # Bsan-only build failures of every run, for run_eval_dataset.sh (see Output).
 BSAN_FAILS_CSV="$GROUP/scripts/bsan_build_fails.csv"
-LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=experimental-bsan; WHOLE=0; DOC=0; RERUN=0; BSAN_ONLY=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
+LOCAL=0; NODE=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=experimental-bsan; WHOLE=0; DOC=0; RERUN=0; BSAN_ONLY=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
 VERSIONS=""; VERSIONS_CSV=""
 MAX_PARALLEL=40   # jobs in flight at once (QOS limit)
 while [ "$#" -gt 0 ]; do
@@ -494,6 +567,7 @@ while [ "$#" -gt 0 ]; do
         --rerun-bsan-only) RERUN=1; shift ;;
         --bsan-only) BSAN_ONLY=1; shift ;;
         --download) DOWNLOAD=1; shift ;;   # internal: set by the launcher for part jobs
+        --node)     NODE=1; LOCAL=1; shift ;;   # internal: a part job, on the node outside the image
         --first|--latest|--only-latest|--only-first|--all)
                     [ -z "$VERSIONS" ] || [ "$VERSIONS" = "${1#--}" ] \
                         || die "--$VERSIONS and $1 are mutually exclusive"
@@ -513,6 +587,30 @@ VERSIONS="${VERSIONS:-all}"
 [ "$RERUN" -eq 1 ] && [ "$BSAN_ONLY" -eq 1 ] && die "--rerun-bsan-only and --bsan-only are mutually exclusive"
 [ "${#POS[@]}" -eq 1 ] && [ -n "${POS[0]}" ] \
     || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] [--rerun-bsan-only | --bsan-only] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
+# --node: a part job's batch script, on the compute node outside the image. It
+# loads singularity and sets up node-local scratch (bound into every step at
+# the same path): CARGO_HOME, the target dirs and, when downloading, the crates.
+if [ "$NODE" -eq 1 ]; then
+    [ -n "${SLURM_JOB_ID:-}" ] || die "--node is for part jobs (set by the launcher)"
+    if ! command -v module &>/dev/null; then
+        source /etc/profile.d/lmod.sh    2>/dev/null || \
+        source /etc/profile.d/modules.sh 2>/dev/null || true
+    fi
+    module load WebProxy
+    command -v singularity &>/dev/null || \
+        module load Singularity 2>/dev/null || \
+        module load singularity 2>/dev/null || true
+    command -v singularity &>/dev/null || die "'singularity' not found on this node"
+    BD_SIF="$CONTAINERS_DIR/$IMAGE.sif"
+    [ -f "$BD_SIF" ] || die "image not found: $BD_SIF"
+    BD_SCRATCH="${TMPDIR:-/tmp}/build-$SLURM_JOB_ID"
+    mkdir -p "$BD_SCRATCH/home" "$BD_SCRATCH/target"
+    trap 'rm -rf "$BD_SCRATCH" 2>/dev/null || true' EXIT
+    export TMP="$BD_SCRATCH" CARGO_TARGET_DIR="$BD_SCRATCH/target"
+    # Finite stack before srun propagates it into the steps (bsan shadow-memory
+    # layout workaround -- see run_job.sh).
+    ulimit -S -s 8192
+fi
 TMP_BASE="${TMP:-${TMPDIR:-/tmp}}"
 # A bare dataset name under the group datasets dir, or a path; else a dataset
 # name with a versions CSV, whose crates are downloaded (see "No dataset dir").
@@ -523,9 +621,9 @@ if DATASET_DIR="$(cd "$GROUP/datasets/${POS[0]}" 2>/dev/null && pwd -P)" \
     DS_NAME="$(basename "$DATASET_DIR")"
     CRATE_ROOT="$DATASET_DIR"
     if [ "$DOWNLOAD" -eq 1 ]; then
-        # A part job of a CSV dataset: /work is the shared dir, the crates go
-        # to this node's scratch. --cleanenv drops TMP/TMPDIR in the container,
-        # so that's run_job.sh's (bound) scratch, the parent of CARGO_TARGET_DIR.
+        # A part job of a CSV dataset: DATASET_DIR is the shared dir, the
+        # crates go to this node's scratch (--node sets TMP to it; it's bound
+        # into every step at the same path).
         if [ -n "${TMP:-}${TMPDIR:-}" ]; then
             CRATE_ROOT="$TMP_BASE/build_dataset-crates"
         else
@@ -562,7 +660,7 @@ LIST_CSV="$DATASET_DIR/_logs/${DS_NAME}_list$SUFFIX.csv"
 BSAN_CSV="$DATASET_DIR/_logs/build-$IMAGE-bsan-only$SUFFIX.csv"
 BSAN_HEADER="build,crate,compile_seconds,bsan_compile_seconds,error_type,error,timestamp"
 # --rerun-bsan-only: the bsan-only CSV being redone, copied aside (in _logs, so
-# the part jobs see it at /work/_logs) since the run overwrites BSAN_CSV.
+# the part jobs see it) since the run overwrites BSAN_CSV.
 PREV_CSV="$DATASET_DIR/_logs/.build-$IMAGE-bsan-only$SUFFIX.prev.csv"
 # Plain-compiled crates a dead job never got through the bsan pass.
 UNCHECKED_TXT="$DATASET_DIR/_logs/build-$IMAGE-bsan-unchecked$SUFFIX.txt"
@@ -677,10 +775,32 @@ record_fails() {
 if [ "$LOCAL" -eq 0 ]; then
     (( BASH_VERSINFO[0] > 4 || (BASH_VERSINFO[0] == 4 && BASH_VERSINFO[1] >= 3) )) \
         || die "the launcher needs bash >= 4.3 (wait -n)"
-    [ -x "$RUN_JOB" ] || die "run_job.sh not found at $RUN_JOB (or use --local)"
+    command -v sbatch >/dev/null || die "sbatch not found (run on a login node, or use --local)"
+    [ -f "$CONTAINERS_DIR/$IMAGE.sif" ] || die "image not found: $CONTAINERS_DIR/$IMAGE.sif"
     [[ "$CPUS" =~ ^[1-9][0-9]*$ ]] || die "-c must be a positive integer"
     [[ "$PER_JOB" =~ ^[1-9][0-9]*$ ]] || die "-n must be a positive integer"
     JOBS="${JOBS:-$(( CPUS >= 4 ? CPUS / 4 : 1 ))}"
+    [[ "$JOBS" =~ ^[1-9][0-9]*$ ]] || die "JOBS must be a positive integer"
+    # -t / -m as run_job.sh takes them: HH or HH:MM; a bare number is GB.
+    if [[ "$WALLTIME" =~ ^[0-9]{1,2}$ ]]; then
+        SB_TIME="$(( 10#$WALLTIME )):00:00"
+    elif [[ "$WALLTIME" =~ ^([0-9]{1,2}):([0-5][0-9])$ ]]; then
+        SB_TIME="$(( 10#${BASH_REMATCH[1]} )):${BASH_REMATCH[2]}:00"
+    else
+        die "-t must be HH or HH:MM (e.g. 8 or 8:30)"
+    fi
+    [[ "$MEM" =~ ^([0-9]+)([KMGT]?)$ ]] || die "-m must be like 64G, 512M or a bare number (GB)"
+    case "${BASH_REMATCH[2]}" in
+        K) MEM_MB=$(( 10#${BASH_REMATCH[1]} / 1024 )) ;;
+        M) MEM_MB=$(( 10#${BASH_REMATCH[1]} )) ;;
+        T) MEM_MB=$(( 10#${BASH_REMATCH[1]} * 1024 * 1024 )) ;;
+        *) MEM_MB=$(( 10#${BASH_REMATCH[1]} * 1024 )) ;;
+    esac
+    # Each of a job's JOBS crates at a time is an srun step with an equal share
+    # of its cores and of -m (less 512M for the batch script itself).
+    STEP_CPUS=$(( CPUS / JOBS > 0 ? CPUS / JOBS : 1 ))
+    STEP_MEM=$(( (MEM_MB - 512) / JOBS ))
+    (( STEP_MEM >= 512 )) || die "-m $MEM leaves under 512M per crate at $JOBS crates at a time"
 
     CRATES=()
     if [ "$RERUN" -eq 1 ]; then
@@ -717,11 +837,17 @@ if [ "$LOCAL" -eq 0 ]; then
     echo "==> Building $n crates in the '$IMAGE' image as $NPARTS job(s) of" \
          "$(( n / NPARTS ))-$(( (n + NPARTS - 1) / NPARTS )) crates" \
          "($CPUS cpus, $JOBS crates at a time, $MEM, ${WALLTIME}h each; at most $MAX_PARALLEL at once)"
+    echo "    each crate is its own srun step: $STEP_CPUS cpu(s), capped at ${STEP_MEM}M"
 
     pids=()
     cleanup() {
         trap - INT TERM
-        # The run_job.sh launchers (and their srun) are the subshells' children.
+        # Killing sbatch --wait leaves its job running: cancel what was
+        # submitted (each submit log starts with its job id), then the waiters.
+        local ids
+        ids=$(cat "$PARTS_DIR"/submit-*.log 2>/dev/null | grep -oE '^[0-9]+' || true)
+        # shellcheck disable=SC2086  # one id per word
+        [ -n "$ids" ] && scancel $ids 2>/dev/null
         for p in ${pids[@]+"${pids[@]}"}; do pkill -TERM -P "$p" 2>/dev/null; kill "$p" 2>/dev/null; done
         exit 130
     }
@@ -733,14 +859,18 @@ if [ "$LOCAL" -eq 0 ]; then
     }
     for (( k = 0; k < NPARTS; k++ )); do
         [ "$inflight" -lt "$MAX_PARALLEL" ] || reap_one
-        # Single-quoted pieces survive run_job.sh's space-join + `bash -c`.
+        # The part job runs this script with --node, on the node outside the
+        # image; sbatch --wait returns once the job ends, with its exit code.
+        # shellcheck disable=SC2086  # WHOLE_FLAG splits into flags
         (
-            cd "$DATASET_DIR" || exit 1
-            "$RUN_JOB" -J "build-dataset-$k" -c "$CPUS" "$IMAGE" "$WALLTIME" "$MEM" -- \
-                "JOBS=$JOBS CARGO_BUILD_JOBS=$(( CPUS / JOBS > 0 ? CPUS / JOBS : 1 ))" \
-                "BUILD_RUSTFLAGS='$BUILD_RUSTFLAGS' PRIMARY_RUSTFLAGS='$PRIMARY_RUSTFLAGS'" \
-                "bash _logs/.build_dataset.sh --local --part $k --image $IMAGE $WHOLE_FLAG /work"
-        ) > "$PARTS_DIR/job-$k.log" 2>&1 &
+            sbatch --wait --parsable --job-name="build-dataset-$k" \
+                --nodes=1 --ntasks="$JOBS" --cpus-per-task="$STEP_CPUS" \
+                --mem="${MEM_MB}M" --time="$SB_TIME" --output="$PARTS_DIR/job-$k.log" \
+                --wrap="$(printf '%q ' env JOBS="$JOBS" BD_STEP_CPUS="$STEP_CPUS" BD_STEP_MEM="${STEP_MEM}M" \
+                    BUILD_RUSTFLAGS="$BUILD_RUSTFLAGS" PRIMARY_RUSTFLAGS="$PRIMARY_RUSTFLAGS" \
+                    bash "$DATASET_DIR/_logs/.build_dataset.sh" --node --part "$k" --image "$IMAGE" \
+                    $WHOLE_FLAG "$DATASET_DIR")"
+        ) > "$PARTS_DIR/submit-$k.log" 2>&1 &
         pids+=("$!")
         inflight=$((inflight + 1))
         echo "    [$((k + 1))/$NPARTS] launched part $k ($(wc -l < "$PARTS_DIR/part-$k.txt") crates)"
@@ -749,8 +879,8 @@ if [ "$LOCAL" -eq 0 ]; then
     trap - INT TERM
     rm -f "$DATASET_DIR/_logs/.build_dataset.sh"
 
-    # Merge the parts' CSVs (inside a job the dataset was /work, so they
-    # landed at the same _logs paths). A part whose job died before writing
+    # Merge the parts' CSVs (the jobs see the dataset dir at its own path, so
+    # they landed at the same _logs paths). A part whose job died before writing
     # one is recovered from the per-crate rows in its _state-K dir instead.
     # part_rows <part CSV name> <state file ext>: every part's rows.
     part_rows() {
@@ -890,10 +1020,15 @@ if [ "$LOCAL" -eq 0 ]; then
 fi
 
 # ---------------------------- --local: do builds ---------------------------- #
-command -v cargo >/dev/null || die "cargo is required"
-command -v cargo-bsan >/dev/null || die "cargo-bsan is required (run in the experimental-bsan image)"
+# (On a part job these run in the image, where the workers will.)
+in_image() {
+    if [ "$NODE" -eq 1 ]; then singularity exec --cleanenv "$BD_SIF" sh -c "$1" >/dev/null 2>&1
+    else sh -c "$1" >/dev/null 2>&1; fi
+}
+in_image 'command -v cargo' || die "cargo is required"
+in_image 'command -v cargo-bsan' || die "cargo-bsan is required (run in the experimental-bsan image)"
 if [ "$DOWNLOAD" -eq 1 ]; then
-    command -v curl >/dev/null && command -v tar >/dev/null || die "downloading crates needs curl and tar"
+    in_image 'command -v curl && command -v tar' || die "downloading crates needs curl and tar"
     mkdir -p "$CRATE_ROOT" || die "can't create $CRATE_ROOT"
 fi
 JOBS="${JOBS:-1}"
@@ -919,6 +1054,22 @@ mkdir -p "$STATE_DIR"
 
 export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC RERUN BSAN_ONLY PREV_CSV \
     DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV
+
+# Workers: here directly, or on a part job each as its own srun step (see
+# step mode), which needs the worker environment written out for the image.
+WORKER=("$SELF")
+if [ "$NODE" -eq 1 ]; then
+    WORKER+=(--step)
+    BD_ENV="$BD_SCRATCH/worker.env"
+    for v in SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC RERUN \
+            BSAN_ONLY PREV_CSV DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV CARGO_TERM_COLOR \
+            http_proxy https_proxy HTTP_PROXY HTTPS_PROXY; do
+        printf '%s=%q\n' "$v" "${!v:-}"
+    done > "$BD_ENV"
+    printf 'CARGO_HOME=%q\nCARGO_BUILD_JOBS=%q\n' "$BD_SCRATCH/home" "$BD_STEP_CPUS" >> "$BD_ENV"
+    BD_DATASET_DIR="$DATASET_DIR"
+    export BD_SIF BD_SCRATCH BD_ENV BD_STEP_CPUS BD_STEP_MEM BD_DATASET_DIR
+fi
 
 # ------------------------------ build each crate ---------------------------- #
 crates="$(mktemp)"
@@ -954,7 +1105,7 @@ fi
 # survive a job killed during pass 2. (xargs runs the command once even on
 # empty input.)
 if [ "$RERUN" -eq 0 ] && [ "$BSAN_ONLY" -eq 0 ]; then
-    [ "$n" -gt 0 ] && xargs -0 -n 1 -P "$JOBS" "$SELF" --worker < "$crates"
+    [ "$n" -gt 0 ] && xargs -0 -n 1 -P "$JOBS" "${WORKER[@]}" --worker < "$crates"
     {
         echo "build,crate,status,compile_seconds,tests,error_type,error,timestamp"
         find "$STATE_DIR" -maxdepth 1 -name '*.csv' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k2,2
@@ -966,7 +1117,7 @@ if [ "$RERUN" -eq 0 ] && [ "$BSAN_ONLY" -eq 0 ]; then
     echo "==> Plain pass done; results and test list written. Now cargo bsan ${COMPILE#cargo } --no-run ..."
 fi
 # Pass 2, cargo bsan.
-[ "$n" -gt 0 ] && xargs -0 -n 1 -P "$JOBS" "$SELF" --worker-bsan < "$crates"
+[ "$n" -gt 0 ] && xargs -0 -n 1 -P "$JOBS" "${WORKER[@]}" --worker-bsan < "$crates"
 rm -f "$crates"
 
 # ---------------------------------- outputs --------------------------------- #
