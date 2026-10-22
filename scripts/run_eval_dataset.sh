@@ -95,7 +95,8 @@
 #                     fewer if 24 don't fit a 24-core / 488G slice of a node
 #                     at --cpus-per-task and --mem-per-task)
 #   --cpus-per-task N cores per worker (default 1; also caps CARGO_BUILD_JOBS)
-#   --mem-per-task G  GB per worker (default 8, at most 16)
+#   --mem-per-task G  GB per worker (default 8, at most 16); a hard cap: each
+#                     crate runs as its own srun step with --mem=G
 #   --merge RUNDIR    don't run anything: merge RUNDIR's shards into its master
 #                     CSV (see the end of this comment) and print the summary
 #   --test-threads N  pass `--test-threads=N` to the test harness on every run
@@ -168,7 +169,9 @@
 # status: success, test_failed (exited non-zero), no_match (the filter ran 0
 # tests), timeout (hit --test-timeout), skipped (not run: an earlier 3 tests
 # in a row in its module timed out; error_type timeout, run_seconds empty),
-# and test-less crate rows:
+# killed (no row before the crate's srun step was killed -- usually OOM past
+# --mem-per-task, error_type oom; compile/run_seconds empty), and test-less
+# crate rows:
 # fetch_failed, build_failed. run_seconds is the wall time of the test's single invocation,
 # including cargo's freshness check and every test binary's startup.
 #
@@ -1147,11 +1150,31 @@ next_crate() {
     NEXT=$(sed -n "$(( n + 1 ))p" "$QUEUE")
 }
 
+# killed_rows <crate> <shard> <rc> <log> <job id>: a status=killed row for each
+# of the crate's tests that has no row yet, once its srun step was killed
+# outright (step OOM, signal) and took inner.sh down with it. When only the
+# test process was OOM-killed, inner.sh recorded it and this adds nothing.
+killed_rows() {
+    local etype=other why="srun step exited $3" ts
+    if grep -q 'oom[-_]kill' "$4"; then
+        etype=oom
+        why="srun step OOM-killed at --mem-per-task ${MEM_PER_TASK}G"
+    fi
+    echo "--- step killed: $1 ($why) ---" >> "$4"
+    ts=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+    # FILENAME, not NR == FNR: the shard may be empty.
+    awk -F, -v b="$IMAGE" -v c="$1" \
+        -v tail=",killed,,,$ts,$5,$etype,\"$why before this test got a row\"" '
+        FILENAME == ARGV[1] { if ($1 == b && $2 == c) have[$3] = 1; next }
+        !($0 in have) { print b "," c "," $0 tail }' \
+        "$2" "$RUNDIR/lists/$1.txt" >> "$2"
+}
+
 worker() {
     local tid="$1"
     local shard="$RUNDIR/shards/shard-${JOBIDX}-${tid}.csv"
     local scr="$SCRATCH_BASE/ev-${SLURM_JOB_ID}-${tid}"
-    local crate cdir log e b
+    local crate cdir log e b rc
     # CARGO_HOME lives as long as the worker, so registry downloads carry over
     # from crate to crate; the source copy and target dir are per crate.
     rm -rf "$scr"
@@ -1185,6 +1208,12 @@ worker() {
                 cp -a "$e" "$scr/work/"
             done
         fi
+        # Each crate is its own job step, so it gets its own cgroup capped at
+        # --mem-per-task: an OOM kills this crate only, never its neighbours
+        # (which a shared job-wide pool would let it starve or take down).
+        srun --exact --nodes=1 --ntasks=1 \
+            --cpus-per-task="$CPUS_PER_TASK" --mem="${MEM_PER_TASK}G" \
+            --kill-on-bad-exit=0 --job-name="$crate" \
         singularity exec --cleanenv --pwd /work \
             --bind "$scr" --bind "$RUNDIR" --bind "$scr/work:/work" \
             --env CARGO_HOME="$scr/home" \
@@ -1204,6 +1233,12 @@ worker() {
             --env http_proxy="${http_proxy:-}"   --env https_proxy="${https_proxy:-}" \
             --env HTTP_PROXY="${HTTP_PROXY:-}"   --env HTTPS_PROXY="${HTTPS_PROXY:-}" \
             "$SIF_ABS" bash "$RUNDIR/inner.sh" > "$log" 2>&1
+        rc=$?
+        # inner.sh itself exits 0, or 1 after its fetch/build_failed row; past
+        # 128, or with slurmstepd's oom_kill report, the step was killed.
+        if (( rc > 128 )) || grep -q 'oom[-_]kill' "$log"; then
+            killed_rows "$crate" "$shard" "$rc" "$log" "${SLURM_JOB_ID}.${tid}"
+        fi
         rm -rf "$scr/work" "$scr/target"
         echo "$crate" >> "$RUNDIR/done/done-${JOBIDX}-${tid}.txt"
     done
