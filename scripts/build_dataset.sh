@@ -912,6 +912,27 @@ if [ "$LOCAL" -eq 0 ]; then
         exit 130
     }
     trap cleanup INT TERM
+    # Job names unique to this launch, so a lost submission is found by name
+    # (and an old run's job never is).
+    RUN_TAG="$(date +%s)-$$"
+    LAUNCH_START="$(date +%Y-%m-%dT%H:%M:%S)"
+    # job_by_name <name>: the id of this launch's job of that name, if any.
+    job_by_name() {
+        sacct -n -X -P --name="$1" -S "$LAUNCH_START" -o JobID 2>/dev/null | grep -oE '^[0-9]+' | head -1
+    }
+    # wait_job <id>: until sacct says the job ended; 0 if it COMPLETED. sbatch
+    # --wait alone isn't trusted: a slurmctld timeout can end it early.
+    wait_job() {
+        local st
+        while :; do
+            st=$(sacct -n -X -P -j "$1" -o State 2>/dev/null | head -1)
+            case "$st" in
+                ""|PENDING|RUNNING|REQUEUED|RESIZING|SUSPENDED|CONFIGURING|COMPLETING) sleep 60 ;;
+                COMPLETED) return 0 ;;
+                *) echo "job $1 ended $st"; return 1 ;;
+            esac
+        done
+    }
     inflight=0; failed=0
     reap_one() {
         wait -n; [ $? -eq 0 ] || failed=$((failed + 1))
@@ -931,21 +952,40 @@ if [ "$LOCAL" -eq 0 ]; then
             bash "$DATASET_DIR/_logs/.build_dataset.sh" --node --part "$k" --image "$IMAGE" \
             $WHOLE_FLAG "$DATASET_DIR")" > "$PARTS_DIR/job-$k.sh"
         # A submission refused for the per-user queue limit (your other jobs
-        # count too) is retried every minute until there's room; once sbatch
-        # has printed a job id, its exit code is the job's.
+        # count too) is retried every minute until there's room. Once there's
+        # a job id, the job's own end state (from sacct) is the result. With
+        # no id, sbatch may still have submitted it (a slurmctld timeout loses
+        # the reply): it's looked up by name before submitting again.
         (
             log="$PARTS_DIR/submit-$k.log"
+            name="build-dataset-$RUN_TAG-$k"
+            tries=0
             while :; do
                 from=$(( $(wc -l < "$log") + 1 ))   # this attempt's output
-                sbatch --wait --parsable --job-name="build-dataset-$k" \
+                sbatch --wait --parsable --job-name="$name" \
                     --nodes=1 --ntasks="$JOBS" --cpus-per-task="$STEP_CPUS" \
                     --mem="${MEM_MB}M" --time="$SB_TIME" --output="$PARTS_DIR/job-$k.log" \
                     "$PARTS_DIR/job-$k.sh"
                 rc=$?
                 out=$(tail -n +"$from" "$log")
-                [ "$rc" -ne 0 ] && ! grep -qE '^[0-9]+' <<<"$out" \
-                    && grep -qiE 'MaxSubmitJob|job submit limit' <<<"$out" || exit "$rc"
-                echo "queue full; retrying in 60s"
+                id=$(grep -oE '^[0-9]+' <<<"$out" | head -1)
+                if [ -z "$id" ] && grep -qiE 'MaxSubmitJob|job submit limit' <<<"$out"; then
+                    echo "queue full; retrying in 60s"
+                    sleep 60
+                    continue
+                fi
+                if [ -z "$id" ]; then
+                    sleep 30   # let accounting catch up with a lost submission
+                    id=$(job_by_name "$name")
+                    [ -n "$id" ] && echo "$id" && echo "sbatch lost the reply (rc $rc), but job $id was submitted"
+                fi
+                if [ -n "$id" ]; then
+                    wait_job "$id"
+                    exit $?
+                fi
+                tries=$((tries + 1))
+                [ "$tries" -lt 5 ] || { echo "no job after $tries submission attempts; giving up"; exit 1; }
+                echo "submission failed (rc $rc), no job found; retrying in 60s"
                 sleep 60
             done
         ) > "$PARTS_DIR/submit-$k.log" 2>&1 &

@@ -20,6 +20,7 @@ HERE = Path(__file__).resolve().parent
 LISTS = [
     HERE / "all_c_ffi_crates.csv",
     HERE / "all_c_ffi_crates_dependents.csv",
+    HERE / "all_c_ffi_crates_dependents_dependents.csv"
 ]
 
 
