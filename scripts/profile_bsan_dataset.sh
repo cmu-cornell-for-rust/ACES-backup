@@ -413,6 +413,8 @@ echo "BSAN_OPTIONS=[$BSAN_OPTIONS]"
 # RUSTFLAGS, which cargo-bsan forwards to rustc for target crates.
 export RUSTFLAGS="--cfg=miri"
 echo "RUSTFLAGS=[$RUSTFLAGS]"
+# Beats a crate's rust-toolchain(.toml) pinning stock stable/nightly.
+export RUSTUP_TOOLCHAIN=bsan
 RUN="cargo bsan test --tests"
 PROFILE_LOG="$PF_PROFILE_DIR/$PF_CRATE.log"
 

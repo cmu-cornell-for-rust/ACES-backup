@@ -491,8 +491,10 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
                       BUILD_DATASET_REAL_RUSTC="$(command -v rustc)" BUILD_DATASET_CRATE_DIR="$dir")
         rm -rf "$bsan_target"
         cstart=$(date +%s%3N)
+        # RUSTUP_TOOLCHAIN beats a crate's rust-toolchain(.toml), which would
+        # otherwise swap in stock stable/nightly (no bsan, no matching clang).
         ( cd "$dir" && timeout -k 60 "$BUILD_TIMEOUT" env ${bwrap[@]+"${bwrap[@]}"} \
-                CARGO_TARGET_DIR="$bsan_target" RUSTFLAGS="$BUILD_RUSTFLAGS" \
+                RUSTUP_TOOLCHAIN=bsan CARGO_TARGET_DIR="$bsan_target" RUSTFLAGS="$BUILD_RUSTFLAGS" \
                 cargo bsan ${COMPILE#cargo } --no-run ) > "$blog" 2>&1
         brc=$?
         cms=$(( $(date +%s%3N) - cstart ))

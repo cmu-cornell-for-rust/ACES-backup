@@ -1184,7 +1184,8 @@ set -u
 case "$HF_MODE" in
     rust) RUN="cargo test --tests" ;;
     miri) export MIRIFLAGS="$HF_MIRIFLAGS";   RUN="cargo miri test --tests" ;;
-    bsan) export BSAN_OPTIONS="$HF_BSAN_OPTIONS"; RUN="cargo bsan test --tests" ;;
+    # RUSTUP_TOOLCHAIN beats a crate's rust-toolchain(.toml) pinning stock stable/nightly.
+    bsan) export BSAN_OPTIONS="$HF_BSAN_OPTIONS" RUSTUP_TOOLCHAIN=bsan; RUN="cargo bsan test --tests" ;;
     *) echo "Error: bad HF_MODE '$HF_MODE'" >&2; exit 1 ;;
 esac
 

@@ -842,6 +842,8 @@ case "$EV_MODE" in
     rust) RUN="cargo test --tests" ;;
     miri) export MIRIFLAGS="$EV_MIRIFLAGS";   RUN="cargo miri test --tests" ;;
     bsan) export BSAN_OPTIONS="$EV_BSAN_OPTIONS"; RUN="cargo bsan test --tests"
+          # Beats a crate's rust-toolchain(.toml) pinning stock stable/nightly.
+          export RUSTUP_TOOLCHAIN=bsan
           # Source locations in BSAN reports.
           export BSAN_SYMBOLIZER="$EV_BSAN_SYMBOLIZER"
           [ -x "$BSAN_SYMBOLIZER" ] \

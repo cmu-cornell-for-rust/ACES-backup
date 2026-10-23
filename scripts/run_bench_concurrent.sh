@@ -564,6 +564,8 @@ cat > "$RUNDIR/inner.sh" << 'INNER_EOF'
 set -uf
 
 export BSAN_OPTIONS="$HF_BSAN_OPTIONS"
+# Beats a crate's rust-toolchain(.toml) pinning stock stable/nightly.
+export RUSTUP_TOOLCHAIN=bsan
 RUN="cargo bsan test --tests"
 
 # --cfg=miri so this run selects the same cfg(miri) code and the same test set
