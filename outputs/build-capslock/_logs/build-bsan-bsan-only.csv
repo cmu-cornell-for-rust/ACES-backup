@@ -1,0 +1,12 @@
+build,crate,compile_seconds,bsan_compile_seconds,error_type,error,timestamp
+bsan,antimatter-2.0.10,102.207,3803.927,linker,"= note: rust-lld: error: /opt/bsan-sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libgimli-3e8c4e948427ac11.rlib(gimli-3e8c4e948427ac11.gimli.2276da51640ced98-cgu.5.rcgu.o):(function <core::result::Result<u64, gimli::read::Error> as core::ops::try_trait::Try>::branch: .text._RNvXsp_NtCsDMkMGELIj6_",2026-10-21T20:46:18Z
+bsan,easy-imgui-filechooser-0.1.4,36.848,116.844,rustc,"error[E0080]: attempt to compute `1_usize - 16_usize`, which would overflow",2026-10-21T19:49:30Z
+bsan,flowc-0.142.0,17.319,33.986,other,"error: could not parse/generate dep info at: /tmp/job.2242267/cargo-2242267/target/build-flowc-0.142.0-bsan/bsan/x86_64-unknown-linux-gnu/debug/build/serde_yaml/a7bba6eb70f9e4bb/out/serde_yaml-a7bba6eb70f9e4bb.d",2026-10-21T21:30:25Z
+bsan,getifaddrs-0.1.4,18.159,0.090,other,"failed to find `clang-23`",2026-10-21T20:35:37Z
+bsan,git-branchless-navigation-0.11.1,55.966,20.528,other,"error: could not parse/generate dep info at: /tmp/job.2242267/cargo-2242267/target/build-git-branchless-navigation-0.11.1-bsan/bsan/x86_64-unknown-linux-gnu/debug/build/regex-automata/d8c1ed33e64c5f8d/out/regex_automata-d8c1ed33e64c5f8d.d",2026-10-21T21:30:24Z
+bsan,gloo-net-0.7.0,12.714,1.967,other,"error: could not parse/generate dep info at: /tmp/job.2242267/cargo-2242267/target/build-gloo-net-0.7.0-bsan/bsan/x86_64-unknown-linux-gnu/debug/build/memchr/1c48c666358145fa/out/memchr-1c48c666358145fa.d",2026-10-21T21:30:24Z
+bsan,om-fork-miniaudio-0.12.1,11.771,17.180,rustc,"error[E0425]: cannot find type `ma_device_config__bindgen_ty_2` in crate `sys`",2026-10-21T20:40:08Z
+bsan,pprof2-0.13.1,13.737,2765.333,oom,"process didn't exit successfully: `/opt/rust/cargo/bin/cargo-bsan /work/_logs/.build_dataset.sh --crate-name cpp_demangle --edition=2018 /tmp/job.2241757/cargo-2241757/home/registry/src/index.crates.io-1949cf8c6b5b557f/cpp_demangle-0.4.4/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi",2026-10-21T21:26:11Z
+bsan,ruwren-0.4.10,15.932,36.233,rustc,"error[E0560]: struct `WrenLoadModuleResult` has no field named `source`",2026-10-21T21:28:16Z
+bsan,scallop-0.0.16,46.074,50.233,rustc,"error[E0609]: no field `value` on type `variable`",2026-10-21T21:11:13Z
+bsan,tbunread-0.0.12,17.803,0.050,other,"failed to find `clang-23`",2026-10-21T21:28:20Z
