@@ -21,9 +21,7 @@ API request per crate.
 Output (default: scripts/analysis/crate-downloads.csv), one row per crate name in any
 dataset, sorted by name:
     crate_name,downloads,newest_version,last_released
-  downloads        total across all versions, rounded: exact below 1,000,
-                   then to the nearest thousand (12k, 132k), million (4M,
-                   65M) or billion (9B)
+  downloads        total across all versions
   newest_version   newest unyanked stable release (newest unyanked release
                    if none is stable), as crates.io's max_stable_version
   last_released    date of the newest unyanked release, YYYY-MM-DD
@@ -49,16 +47,6 @@ DEFAULT_DATASETS = [
     ("treeborrows", SCRIPTS / "treeborrows-dataset.csv"),
     ("extern-c", HERE / "all_c_ffi_crates.csv"),
 ]
-
-
-def rounded(n):
-    """1234 -> 1k, 131_600 -> 132k, 999_700 -> 1M, 4_200_000 -> 4M."""
-    if n < 1000:
-        return str(n)
-    for unit, suffix, nxt in ((10**3, "k", 10**6), (10**6, "M", 10**9), (10**9, "B", None)):
-        r = (n + unit // 2) // unit
-        if nxt is None or r * unit < nxt:
-            return f"{r}{suffix}"
 
 
 def semver_key(v):
@@ -159,7 +147,7 @@ def main():
             n = downloads.get(cid)
             stable, any_, released = newest.get(cid) or newest_yanked.get(cid, ("", "", ""))
             missing += cid is None
-            w.writerow([name, "" if n is None else rounded(n), stable or any_, released[:10]])
+            w.writerow([name, "" if n is None else n, stable or any_, released[:10]])
     tmp_out.replace(args.output)
     print(f"==> {len(names)} crates ({missing} not on crates.io) -> {args.output}")
 

@@ -23,7 +23,7 @@ each a CSV with a *name* column (crate_name, name) and a version column, plus
 optionally latest_version as written by update_latest.py. Giving --dataset
 replaces the defaults. Writes one row per bug, in input order, with columns:
 
-  bug id            B1, B2, ...: rows with the same bug key share an id. The key
+  bug id            1, 2, ...: rows with the same bug key share an id. The key
                     is "tag created at" for aliasing violations that have one
                     outside <std>, else "bug location" (a std helper like
                     slice::as_mut_ptr creates tags for unrelated bugs), with
@@ -46,7 +46,7 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
                     column lists the tested version, else <dataset>-updated
                     if the crate is in it at another version and the tested
                     version is up to date or is the dataset's latest_version
-  # downloads       all-time crates.io downloads of the crate, rounded (12k, 4M)
+  # downloads       all-time crates.io downloads of the crate
   container         the eval build (the image the test ran in)
   test timestamp    when the test finished
   runtime (s)       the test's run_seconds
@@ -216,17 +216,7 @@ def lookup(name):
     versions = [v for v in data.get("versions", []) if not v.get("yanked")]
     released = max((v["created_at"] for v in versions), default="")
     return {"newest": c.get("max_stable_version") or c.get("max_version") or "",
-            "released": released[:10], "downloads": rounded(c["downloads"])}
-
-
-def rounded(n):
-    """As fetch_downloads.py: 1234 -> 1k, 131_600 -> 132k, 999_700 -> 1M."""
-    if n < 1000:
-        return str(n)
-    for unit, suffix, nxt in ((10**3, "k", 10**6), (10**6, "M", 10**9), (10**9, "B", None)):
-        r = (n + unit // 2) // unit
-        if nxt is None or r * unit < nxt:
-            return f"{r}{suffix}"
+            "released": released[:10], "downloads": c["downloads"]}
 
 
 names = []
@@ -352,7 +342,7 @@ for r in bugs:
 bug_id = {}
 for *_, key, _, _ in rows:
     if key and key not in bug_id:
-        bug_id[key] = f"B{len(bug_id) + 1}"
+        bug_id[key] = len(bug_id) + 1
 
 # B2 looks up each row's bug id on the Bugs sheet and spills down the column,
 # so every other diagnosis cell stays empty

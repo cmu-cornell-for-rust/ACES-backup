@@ -1250,6 +1250,13 @@ worker() {
             --env HTTP_PROXY="${HTTP_PROXY:-}"   --env HTTPS_PROXY="${HTTPS_PROXY:-}" \
             "$SIF_ABS" bash "$RUNDIR/inner.sh" > "$log" 2>&1
         rc=$?
+        # 143 (SIGTERM) without an OOM report is SLURM ending the job
+        # (walltime, scancel): the crate was interrupted, not at fault, so it
+        # gets no rows and stays out of done/ for the re-run list to pick up.
+        if (( rc == 143 )) && ! grep -q 'oom[-_]kill' "$log"; then
+            echo "--- step interrupted: $crate (srun step exited 143; not recorded) ---" >> "$log"
+            break
+        fi
         # inner.sh itself exits 0, or 1 after its fetch/build_failed row; past
         # 128, or with slurmstepd's oom_kill report, the step was killed.
         if (( rc > 128 )) || grep -q 'oom[-_]kill' "$log"; then
