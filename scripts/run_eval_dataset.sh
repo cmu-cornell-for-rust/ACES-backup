@@ -110,7 +110,7 @@
 #
 #   --test-timeout T  time limit per test invocation, in any form coreutils
 #                     `timeout` accepts (e.g. 300, 90s, 10m, 1.5h); a test that
-#                     hits it is recorded as `timeout`. Default 1h; 0 turns it
+#                     hits it is recorded as `timeout`. Default 30m; 0 turns it
 #                     off. Without one, a test that hangs holds its worker --
 #                     and every crate still queued behind it -- until walltime.
 #
@@ -170,7 +170,7 @@
 #   error_type,error
 #
 # status: success, test_failed (exited non-zero), no_match (the filter ran 0
-# tests), timeout (hit --test-timeout), skipped (not run: an earlier 3 tests
+# tests), timeout (hit --test-timeout), skipped (not run: an earlier 5 tests
 # in a row in its module timed out; error_type timeout, run_seconds empty),
 # killed (no row before the crate's srun step was killed -- usually OOM past
 # --mem-per-task, error_type oom; compile/run_seconds empty), and test-less
@@ -257,7 +257,7 @@ MAX_TASKS=""         # empty = auto: what fits NODE_CPUS / NODE_MEM
 CPUS_PER_TASK=1
 MEM_PER_TASK=8
 TEST_THREADS=""
-TEST_TIMEOUT="1h"     # 0 = no limit
+TEST_TIMEOUT="30m"    # 0 = no limit
 WALLTIME_ARG=4
 SLOW_WALLTIME_ARG=24
 
@@ -377,7 +377,7 @@ usage() {
     echo "             $GROUP/scripts/bsan_build_fails.csv) | --no-bsan-build-fails" >&2
     echo "           --jobs N --max-jobs N (default 90) --max-tasks N (<= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
-    echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 1h, 0 = none)" >&2
+    echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 30m, 0 = none)" >&2
     echo "           --slow-walltime T (slow-list jobs, HH or HH:MM; default 24)" >&2
     exit 1
 }
@@ -830,8 +830,13 @@ set -u
 
 # Finite stack again: srun steps don't inherit the job script's ulimit, and a
 # huge stack rlimit puts the mmap base inside bsan's shadow range (see
-# run_job.sh). Every binary exec'd from here gets the compatible layout.
+# run_job.sh). Every binary exec'd from here gets the compatible layout. The
+# hard limit too, so nothing below (cargo bsan, its runner) can raise the soft
+# one back up; thread stacks are mmapped, not bound by it.
+echo "stack limit on entry: soft=$(ulimit -S -s) hard=$(ulimit -H -s)"
 ulimit -S -s 8192
+ulimit -H -s 8192 2>/dev/null || true
+echo "stack limit now: soft=$(ulimit -S -s) hard=$(ulimit -H -s) (randomize_va_space=$(cat /proc/sys/kernel/randomize_va_space 2>/dev/null))"
 
 case "$EV_MODE" in
     rust) RUN="cargo test --tests" ;;
@@ -1002,7 +1007,7 @@ echo "tests: $EV_CRATE -> $(wc -l < "$tmp/tests" | tr -d ' ') from the tests CSV
 # test path's first segment, e.g. tests:: or lib::; for a doc test, its
 # source file), that module's remaining tests are skipped: they get
 # status=skipped rows, not runs, and the next module's tests still run.
-TIMEOUT_STREAK=3
+TIMEOUT_STREAK=5
 streak_mod=""; streak=0
 skip_mods=$'\n'
 while IFS= read -r t; do

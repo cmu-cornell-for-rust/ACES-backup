@@ -26,7 +26,10 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
   bug id            B1, B2, ...: rows with the same bug key share an id. The key
                     is "tag created at" for aliasing violations that have one
                     outside <std>, else "bug location" (a std helper like
-                    slice::as_mut_ptr creates tags for unrelated bugs).
+                    slice::as_mut_ptr creates tags for unrelated bugs), with
+                    the crate version and line:col dropped, so the same file
+                    in any version of a crate is one bug
+                    (git2-0.20.4/src/call.rs:78:13 = git2-0.7.5/src/call.rs:72:39)
                     Numbered by first appearance, in input order, so appending
                     an eval CSV (earlier ones unchanged, same order) keeps the
                     old ids and numbers new bugs after them
@@ -266,10 +269,16 @@ info = {n: dumped[canon(n)] if canon(n) in dumped else cache[n]["info"] if n in 
         for n in names}
 
 
+def report_lines(error):
+    """run_eval writes line breaks as a literal \\n, and a report quoted inside
+    a panic message (e.g. a CLI test's captured stderr) is escaped again as
+    \\\\n, so split on any run of backslashes before the n."""
+    return re.split(r"\\+n", error)
+
+
 def error_type(error):
-    """Classify the first "Undefined Behavior:" line of the report (run_eval
-    writes line breaks as a literal \\n)."""
-    for l in error.split("\\n"):
+    """Classify the first "Undefined Behavior:" line of the report."""
+    for l in report_lines(error):
         if "Undefined Behavior:" not in l:
             continue
         l = l.rstrip()
@@ -306,7 +315,7 @@ def norm_path(path, crate):
 
 def locations(error, crate):
     """(bug location, tag created at) from the report; either may be ""."""
-    lines = error.split("\\n")
+    lines = report_lines(error)
     found, created = "", ""
     for i, l in enumerate(lines):
         if not found and "Undefined Behavior:" in l:
@@ -320,6 +329,13 @@ def locations(error, crate):
             norm_path(created, crate) if created else "")
 
 
+def bug_key(path):
+    """<crate>-<version>/file:line:col -> <crate>/file"""
+    path = re.sub(r":\d+:\d+$", "", path)
+    top, _, rest = path.partition("/")
+    return re.sub(r"-\d+\.\d+\.\d+\S*$", "", top) + "/" + rest
+
+
 rows = []
 for r in bugs:
     name, version = split_crate(r["crate"])
@@ -328,6 +344,7 @@ for r in bugs:
     loc, created = locations(r["error"], r["crate"])
     key = (created if etype == "aliasing violation" and created
            and not created.startswith("<std>/") else loc)
+    key = bug_key(key) if key else ""
     rows.append((r, name, version, ci, bool(ci) and version == ci["newest"],
                  etype, key, loc, created))
 
