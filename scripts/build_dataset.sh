@@ -69,6 +69,18 @@
 #   bsan compile fails gets a bsan-only row, including any that would fail a
 #   plain build too.
 #
+#   --rerun-missing builds just the selected crates the last run left without
+#   a row in the results CSV (a job killed or out of walltime before it got to
+#   them), as jobs, and merges their rows into the existing results CSV, test
+#   list and bsan-only CSV (the previous ones are kept as .bak); the other
+#   crates' rows are kept as they are. Pass the same version flags, --whole
+#   and --image as the run being finished, so it picks the same CSVs. Rerun
+#   it until every crate has a row.
+#
+#   Each compile -- the plain one and cargo bsan's -- is stopped after
+#   BUILD_TIMEOUT seconds (default 3600), and the crate gets a build_failed
+#   (or bsan-only) row with error_type timeout.
+#
 #   Where it runs: from the login node the crates are dealt round-robin into
 #   ceil(crates / -n) parts (so part sizes differ by at most one crate, and
 #   none holds more than -n), and each part is built by its own sbatch job.
@@ -109,6 +121,7 @@
 #   ./build_dataset.sh --local [--image IMG] [--whole] [--doc] [version flags] <DATASET_DIR>   # no job
 #   ./build_dataset.sh --rerun-bsan-only [--local] [-n N ...] [--image IMG] [--whole] [--latest] <DATASET>
 #   ./build_dataset.sh --bsan-only [--local] [-n N ...] [--image IMG] [--whole] [version flags] <DATASET>
+#   ./build_dataset.sh --rerun-missing [-n N ...] [--image IMG] [--whole] [--doc] [version flags] <DATASET>
 #
 #   DATASET       a dataset name under $GROUP/datasets/ (e.g. top_500), or a path;
 #                 else a name with a <name>-dataset.csv (see "No dataset dir")
@@ -132,6 +145,8 @@
 #                 the same compile and CSV as the run being redone
 #   --bsan-only   only the cargo bsan compile, no plain build or listing
 #                 (see above)
+#   --rerun-missing  only the crates with no row in the last results CSV,
+#                 merged into the existing outputs (see above; not --local)
 #   (versions)    which crate versions to build, from the versions CSV
 #                 (dataset_creator/update_latest.py adds its latest_version /
 #                 version_differs columns; dataset_creator/select_versions.sh
@@ -174,6 +189,8 @@
 #                      bsan    error: Undefined Behavior:
 #                      panic   panicked at   (e.g. a build script panicking)
 #                      other   none of the above
+#                    or timeout: the compile ran past BUILD_TIMEOUT (set by
+#                    this script, ahead of the patterns)
 #   error            the matching line (else the last error:/non-empty line),
 #                    one line, at most 300 chars
 #   Each crate's full fetch+build output goes to <crate>/build-<image>.log.
@@ -211,6 +228,8 @@
 #                       test only; set it empty and BUILD_RUSTFLAGS to
 #                       "--cfg=miri --cap-lints=warn" for the old behaviour
 #   CARGO_TARGET_DIR    if set, per-crate target dirs go under it
+#   BUILD_TIMEOUT=3600  seconds each compile (plain or cargo bsan) may take
+#                       before it's killed (error_type timeout); 0: no limit
 #
 # Requirements: bash 4+; cargo (in the image, or here with --local).
 
@@ -279,6 +298,10 @@ download_crate() {
     rm -f "$tmp"
     return "$rc"
 }
+
+# timed_out <exit code> <elapsed ms>: whether a compile under
+# `timeout $BUILD_TIMEOUT` failed because it ran out of time.
+timed_out() { [ "$1" -ne 0 ] && [ "$BUILD_TIMEOUT" -gt 0 ] && [ "$2" -ge $(( BUILD_TIMEOUT * 1000 )) ]; }
 
 # CSV-quote a field (empty stays empty).
 csvq() { [ -n "$1" ] && printf '"%s"' "${1//\"/\"\"}"; }
@@ -377,7 +400,7 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
 
     if [ "$phase" = --worker ]; then
         rm -rf "${CARGO_TARGET_DIR:?}"
-        status=ok; compile=""; ntests=""; ekind=""; emsg=""
+        status=ok; compile=""; ntests=""; ekind=""; emsg=""; tout=0
     wrap=()
     [ -n "$PRIMARY_RUSTFLAGS" ] \
         && wrap=(RUSTC_WRAPPER="$SELF" BUILD_DATASET_RUSTC_WRAPPER=1)
@@ -385,11 +408,16 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
         status=fetch_failed
     else
         cstart=$(date +%s%3N)
-        ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" $COMPILE --no-run ) >> "$log" 2>&1
+        ( cd "$dir" && timeout -k 60 "$BUILD_TIMEOUT" env ${wrap[@]+"${wrap[@]}"} \
+                RUSTFLAGS="$BUILD_RUSTFLAGS" $COMPILE --no-run ) >> "$log" 2>&1
         brc=$?
         cms=$(( $(date +%s%3N) - cstart ))
         compile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
         [ "$brc" -eq 0 ] || status=build_failed
+        if timed_out "$brc" "$cms"; then
+            tout=1
+            echo "--- build_dataset: compile timed out after ${BUILD_TIMEOUT}s ---" >> "$log"
+        fi
     fi
     if [ "$status" = ok ]; then
         # JSON lines on stdout, build noise on stderr (into the log). Same
@@ -429,6 +457,7 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
     fi
     if [ "$status" != ok ]; then
         classify "$log"
+        [ "$tout" -eq 1 ] && { ekind=timeout; emsg="compile timed out after ${BUILD_TIMEOUT}s"; }
         echo "    $status: $crate [$ekind] $emsg"
     fi
     printf '%s,%s,%s,%s,%s,%s,%s,%s\n' "$IMAGE" "$crate" "$status" "$compile" \
@@ -462,13 +491,18 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
                       BUILD_DATASET_REAL_RUSTC="$(command -v rustc)" BUILD_DATASET_CRATE_DIR="$dir")
         rm -rf "$bsan_target"
         cstart=$(date +%s%3N)
-        ( cd "$dir" && env ${bwrap[@]+"${bwrap[@]}"} CARGO_TARGET_DIR="$bsan_target" \
-                RUSTFLAGS="$BUILD_RUSTFLAGS" cargo bsan ${COMPILE#cargo } --no-run ) > "$blog" 2>&1
+        ( cd "$dir" && timeout -k 60 "$BUILD_TIMEOUT" env ${bwrap[@]+"${bwrap[@]}"} \
+                CARGO_TARGET_DIR="$bsan_target" RUSTFLAGS="$BUILD_RUSTFLAGS" \
+                cargo bsan ${COMPILE#cargo } --no-run ) > "$blog" 2>&1
         brc=$?
         cms=$(( $(date +%s%3N) - cstart ))
         bcompile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
         if [ "$brc" -ne 0 ]; then
             classify "$blog"
+            if timed_out "$brc" "$cms"; then
+                ekind=timeout; emsg="cargo bsan compile timed out after ${BUILD_TIMEOUT}s"
+                echo "--- build_dataset: $emsg ---" >> "$blog"
+            fi
             echo "    bsan_build_failed: $crate [$ekind] $emsg"
             printf '%s,%s,%s,%s,%s,%s,%s\n' "$IMAGE" "$crate" "$compile" "$bcompile" \
                 "$ekind" "$(csvq "$emsg")" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
@@ -556,7 +590,7 @@ CONTAINERS_DIR="$GROUP/containers"
 OUTPUTS_DIR="$GROUP/outputs"
 # Bsan-only build failures of every run, for run_eval_dataset.sh (see Output).
 BSAN_FAILS_CSV="$GROUP/scripts/bsan_build_fails.csv"
-LOCAL=0; NODE=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=experimental-bsan; WHOLE=0; DOC=0; RERUN=0; BSAN_ONLY=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
+LOCAL=0; NODE=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=experimental-bsan; WHOLE=0; DOC=0; RERUN=0; BSAN_ONLY=0; MISSING=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
 VERSIONS=""; VERSIONS_CSV=""
 MAX_PARALLEL=40   # jobs in flight at once (QOS limit)
 while [ "$#" -gt 0 ]; do
@@ -566,6 +600,7 @@ while [ "$#" -gt 0 ]; do
         --doc)      DOC=1; shift ;;
         --rerun-bsan-only) RERUN=1; shift ;;
         --bsan-only) BSAN_ONLY=1; shift ;;
+        --rerun-missing) MISSING=1; shift ;;
         --download) DOWNLOAD=1; shift ;;   # internal: set by the launcher for part jobs
         --node)     NODE=1; LOCAL=1; shift ;;   # internal: a part job, on the node outside the image
         --first|--latest|--only-latest|--only-first|--all)
@@ -585,8 +620,11 @@ while [ "$#" -gt 0 ]; do
 done
 VERSIONS="${VERSIONS:-all}"
 [ "$RERUN" -eq 1 ] && [ "$BSAN_ONLY" -eq 1 ] && die "--rerun-bsan-only and --bsan-only are mutually exclusive"
+[ "$MISSING" -eq 1 ] && { [ "$RERUN" -eq 1 ] || [ "$BSAN_ONLY" -eq 1 ]; } \
+    && die "--rerun-missing doesn't go with --rerun-bsan-only or --bsan-only"
+[ "$MISSING" -eq 1 ] && [ "$LOCAL" -eq 1 ] && die "--rerun-missing is for job runs, not --local"
 [ "${#POS[@]}" -eq 1 ] && [ -n "${POS[0]}" ] \
-    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] [--rerun-bsan-only | --bsan-only] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
+    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] [--rerun-bsan-only | --bsan-only | --rerun-missing] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
 # --node: a part job's batch script, on the compute node outside the image. It
 # loads singularity and sets up node-local scratch (bound into every step at
 # the same path): CARGO_HOME, the target dirs and, when downloading, the crates.
@@ -653,6 +691,8 @@ else
 fi
 BUILD_RUSTFLAGS="${BUILD_RUSTFLAGS:---cap-lints=warn}"
 PRIMARY_RUSTFLAGS="${PRIMARY_RUSTFLAGS---cfg=miri}"   # set but empty: off
+BUILD_TIMEOUT="${BUILD_TIMEOUT:-3600}"
+[[ "$BUILD_TIMEOUT" =~ ^[0-9]+$ ]] || die "BUILD_TIMEOUT must be a number of seconds (0: no limit)"
 SUFFIX=""
 case "$VERSIONS" in latest|only-latest) SUFFIX="-latest" ;; only-first) SUFFIX="-only-first" ;; esac
 RESULTS_CSV="$DATASET_DIR/_logs/build-$IMAGE$SUFFIX.csv"
@@ -756,14 +796,16 @@ finish_rerun() {
 }
 # record_fails <checked crates file>: merge BSAN_CSV into BSAN_FAILS_CSV --
 # drop the rows of the crates that got their cargo bsan compile this run (one
-# per line in the file), then append this run's bsan-only rows.
+# per line in the file) or are in BSAN_CSV (--rerun-missing carries the last
+# run's rows over), then append BSAN_CSV's rows.
 record_fails() {
     local merged
     merged="$(mktemp)"
     {
         echo "$BSAN_HEADER"
         [ -f "$BSAN_FAILS_CSV" ] && tail -n +2 "$BSAN_FAILS_CSV" \
-            | awk -F, 'FILENAME == ARGV[1] { c[$0] = 1; next } !($2 in c)' "$1" -
+            | awk -F, 'FILENAME == ARGV[1] { c[$0] = 1; next }
+                       FILENAME == ARGV[2] { c[$2] = 1; next } !($2 in c)' "$1" "$BSAN_CSV" -
         tail -n +2 "$BSAN_CSV"
     } > "$merged"
     mkdir -p "$(dirname "$BSAN_FAILS_CSV")" && cat "$merged" > "$BSAN_FAILS_CSV" \
@@ -813,6 +855,24 @@ if [ "$LOCAL" -eq 0 ]; then
             case "$(basename "$d")" in _*) continue ;; esac
             [ -f "$d/Cargo.toml" ] && want_crate "$(basename "$d")" && CRATES+=("$(basename "$d")")
         done
+    fi
+    PREV_UNCHECKED=()
+    if [ "$MISSING" -eq 1 ]; then
+        # --rerun-missing: just the crates with no row yet. The previous
+        # outputs are kept as .bak, and their rows merged back in below.
+        [ -s "$RESULTS_CSV" ] || die "--rerun-missing: no results CSV at $RESULTS_CSV"
+        mapfile -t CRATES < <(printf '%s\n' ${CRATES[@]+"${CRATES[@]}"} | sed '/^$/d' \
+            | grep -vxF -f <(tail -n +2 "$RESULTS_CSV" | cut -d, -f2))
+        if [ "${#CRATES[@]}" -eq 0 ]; then
+            echo "==> Every selected crate already has a row in $RESULTS_CSV; nothing to do."
+            exit 0
+        fi
+        for f in "$RESULTS_CSV" "$LIST_CSV" "$BSAN_CSV"; do
+            if [ -f "$f" ]; then cp "$f" "$f.bak"; else rm -f "$f.bak"; fi
+        done
+        # The last run's unchecked crates aren't rebuilt, so they stay unchecked.
+        [ -f "$UNCHECKED_TXT" ] && mapfile -t PREV_UNCHECKED < <(sed '/^$/d' "$UNCHECKED_TXT")
+        echo "==> --rerun-missing: ${#CRATES[@]} crate(s) have no row in $RESULTS_CSV"
     fi
     n=${#CRATES[@]}
     [ "$n" -gt 0 ] || die "no crates (dirs with a Cargo.toml) in $DATASET_DIR"
@@ -867,6 +927,7 @@ if [ "$LOCAL" -eq 0 ]; then
         # shellcheck disable=SC2086  # WHOLE_FLAG splits into flags
         printf '#!/bin/bash\n%s\n' "$(printf '%q ' env JOBS="$JOBS" BD_STEP_CPUS="$STEP_CPUS" \
             BD_STEP_MEM="${STEP_MEM}M" BUILD_RUSTFLAGS="$BUILD_RUSTFLAGS" PRIMARY_RUSTFLAGS="$PRIMARY_RUSTFLAGS" \
+            BUILD_TIMEOUT="$BUILD_TIMEOUT" \
             bash "$DATASET_DIR/_logs/.build_dataset.sh" --node --part "$k" --image "$IMAGE" \
             $WHOLE_FLAG "$DATASET_DIR")" > "$PARTS_DIR/job-$k.sh"
         # A submission refused for the per-user queue limit (your other jobs
@@ -911,6 +972,13 @@ if [ "$LOCAL" -eq 0 ]; then
             fi
         done
     }
+    # prev_rows <previous CSV> <crate column>: with --rerun-missing, the
+    # previous run's rows but those of the crates this run built.
+    prev_rows() {
+        { [ "$MISSING" -eq 1 ] && [ -f "$1" ]; } || return 0
+        tail -n +2 "$1" | awk -F, -v k="$2" 'FILENAME == ARGV[1] { c[$0] = 1; next } !($k in c)' \
+            <(printf '%s\n' "${CRATES[@]}") -
+    }
     # Crates a dead job never got through the bsan pass: in a part with no
     # bsan-only CSV, listed but without a .bsandone. For a full run only the
     # ones that compiled matter (with --bsan-only, all of them); a rerun keeps
@@ -929,9 +997,11 @@ if [ "$LOCAL" -eq 0 ]; then
             fi
         done < "$PARTS_DIR/part-$k.txt"
     done
+    UNCHECKED+=(${PREV_UNCHECKED[@]+"${PREV_UNCHECKED[@]}"})
     # Not in a pipeline, so part_rows' RECOVERED entries stick.
     bsan_rows="$(mktemp)"
     part_rows bsan-only bsan > "$bsan_rows"
+    prev_rows "$BSAN_CSV.bak" 2 >> "$bsan_rows"
     # A rerun's unchecked crates are still failing as far as anyone knows.
     if [ "$RERUN" -eq 1 ]; then
         for c in ${UNCHECKED[@]+"${UNCHECKED[@]}"}; do
@@ -1001,6 +1071,7 @@ if [ "$LOCAL" -eq 0 ]; then
         IFS=: read -r pname ext out key <<<"$kind"
         rows_tmp="$(mktemp)"
         part_rows "$pname" "$ext" > "$rows_tmp"
+        prev_rows "$out.bak" "$key" >> "$rows_tmp"
         {
             if [ "$pname" = list ]; then echo "crate,tests"
             else echo "build,crate,status,compile_seconds,tests,error_type,error,timestamp"; fi
@@ -1008,10 +1079,16 @@ if [ "$LOCAL" -eq 0 ]; then
         } > "$out"
         rm -f "${rows_tmp:?}"
     done
-    rows=$(( $(wc -l < "$RESULTS_CSV") - 1 ))
+    # This run's rows (with --rerun-missing the CSV has the last run's too).
+    rows=$(( $(wc -l < "$RESULTS_CSV") - 1 - $(prev_rows "$RESULTS_CSV.bak" 2 | wc -l) ))
 
     echo
-    echo "==> Done ($rows/$n crates have a row)."
+    if [ "$MISSING" -eq 1 ]; then
+        echo "==> Done ($rows/$n missing crates now have a row; merged into the previous" \
+             "results, kept as .bak: $(( $(wc -l < "$RESULTS_CSV") - 1 )) rows in all)."
+    else
+        echo "==> Done ($rows/$n crates have a row)."
+    fi
     summarize "$RESULTS_CSV"
     summarize_bsan "$RESULTS_CSV" "$BSAN_CSV"
     echo "    results:       $RESULTS_CSV"
@@ -1044,6 +1121,7 @@ in_image() {
 }
 in_image 'command -v cargo' || die "cargo is required"
 in_image 'command -v cargo-bsan' || die "cargo-bsan is required (run in the experimental-bsan image)"
+in_image 'command -v timeout' || die "timeout (coreutils) is required, for BUILD_TIMEOUT"
 if [ "$DOWNLOAD" -eq 1 ]; then
     in_image 'command -v curl && command -v tar' || die "downloading crates needs curl and tar"
     mkdir -p "$CRATE_ROOT" || die "can't create $CRATE_ROOT"
@@ -1070,7 +1148,7 @@ rm -rf "$STATE_DIR"                         # fresh check every run
 mkdir -p "$STATE_DIR"
 
 export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC RERUN BSAN_ONLY PREV_CSV \
-    DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV
+    DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV BUILD_TIMEOUT
 
 # Workers: here directly, or on a part job each as its own srun step (see
 # step mode), which needs the worker environment written out for the image.
@@ -1081,7 +1159,7 @@ if [ "$NODE" -eq 1 ]; then
     # Single-quoted: singularity's env-file parser keeps backslash escapes
     # (bash's %q) literally, so COMPILE would become `cargo\ test\ --tests`.
     for v in SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC RERUN \
-            BSAN_ONLY PREV_CSV DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV CARGO_TERM_COLOR \
+            BSAN_ONLY PREV_CSV DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV BUILD_TIMEOUT CARGO_TERM_COLOR \
             http_proxy https_proxy HTTP_PROXY HTTPS_PROXY; do
         [[ "${!v:-}" != *\'* ]] || die "$v contains a single quote: $v=${!v}"
         printf "%s='%s'\n" "$v" "${!v:-}"
