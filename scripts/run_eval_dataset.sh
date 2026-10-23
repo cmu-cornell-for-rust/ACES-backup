@@ -828,6 +828,11 @@ cat > "$RUNDIR/inner.sh" << 'INNER_EOF'
 # that far) straight into $EV_SHARD.
 set -u
 
+# Finite stack again: srun steps don't inherit the job script's ulimit, and a
+# huge stack rlimit puts the mmap base inside bsan's shadow range (see
+# run_job.sh). Every binary exec'd from here gets the compatible layout.
+ulimit -S -s 8192
+
 case "$EV_MODE" in
     rust) RUN="cargo test --tests" ;;
     miri) export MIRIFLAGS="$EV_MIRIFLAGS";   RUN="cargo miri test --tests" ;;
