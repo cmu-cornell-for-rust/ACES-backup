@@ -842,8 +842,6 @@ case "$EV_MODE" in
     rust) RUN="cargo test --tests" ;;
     miri) export MIRIFLAGS="$EV_MIRIFLAGS";   RUN="cargo miri test --tests" ;;
     bsan) export BSAN_OPTIONS="$EV_BSAN_OPTIONS"; RUN="cargo bsan test --tests"
-          # Beats a crate's rust-toolchain(.toml) pinning stock stable/nightly.
-          export RUSTUP_TOOLCHAIN=bsan
           # Source locations in BSAN reports.
           export BSAN_SYMBOLIZER="$EV_BSAN_SYMBOLIZER"
           [ -x "$BSAN_SYMBOLIZER" ] \
@@ -991,6 +989,16 @@ fi
 # ── compile ──
 cstart=$(now_ms)
 $RUN --no-run < /dev/null > "$tmp/out" 2>&1; rc=$?
+# A crate's rust-toolchain(.toml) can swap in stock stable/nightly (no bsan,
+# no matching clang). Only then is RUSTUP_TOOLCHAIN=bsan, which beats that
+# file, exported -- for the recompile and every test run after it.
+if [ "$rc" -ne 0 ] && [ "$EV_MODE" = bsan ] && grep -qF 'failed to find `clang-23`' "$tmp/out"; then
+    cat "$tmp/out"
+    echo "compile: $EV_CRATE failed to find clang-23; retrying with RUSTUP_TOOLCHAIN=bsan"
+    export RUSTUP_TOOLCHAIN=bsan
+    cstart=$(now_ms)
+    $RUN --no-run < /dev/null > "$tmp/out" 2>&1; rc=$?
+fi
 compile=$(secs $(( $(now_ms) - cstart )))
 cat "$tmp/out"
 if [ "$rc" -ne 0 ]; then

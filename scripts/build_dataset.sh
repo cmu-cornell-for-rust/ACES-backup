@@ -489,15 +489,26 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
         [ -n "$PRIMARY_RUSTFLAGS" ] \
             && bwrap=(BSAN_ORIG_RUSTC="$SELF" BUILD_DATASET_BSAN_RUSTC=1
                       BUILD_DATASET_REAL_RUSTC="$(command -v rustc)" BUILD_DATASET_CRATE_DIR="$dir")
-        rm -rf "$bsan_target"
-        cstart=$(date +%s%3N)
-        # RUSTUP_TOOLCHAIN beats a crate's rust-toolchain(.toml), which would
-        # otherwise swap in stock stable/nightly (no bsan, no matching clang).
-        ( cd "$dir" && timeout -k 60 "$BUILD_TIMEOUT" env ${bwrap[@]+"${bwrap[@]}"} \
-                RUSTUP_TOOLCHAIN=bsan CARGO_TARGET_DIR="$bsan_target" RUSTFLAGS="$BUILD_RUSTFLAGS" \
-                cargo bsan ${COMPILE#cargo } --no-run ) > "$blog" 2>&1
-        brc=$?
-        cms=$(( $(date +%s%3N) - cstart ))
+        # A crate's rust-toolchain(.toml) can swap in stock stable/nightly (no
+        # bsan, no matching clang: "failed to find `clang-23`"). Only then is
+        # the compile redone with RUSTUP_TOOLCHAIN=bsan, which beats that file.
+        tc=()
+        while :; do
+            rm -rf "$bsan_target"
+            cstart=$(date +%s%3N)
+            ( cd "$dir" && timeout -k 60 "$BUILD_TIMEOUT" env ${bwrap[@]+"${bwrap[@]}"} ${tc[@]+"${tc[@]}"} \
+                    CARGO_TARGET_DIR="$bsan_target" RUSTFLAGS="$BUILD_RUSTFLAGS" \
+                    cargo bsan ${COMPILE#cargo } --no-run ) > "$blog" 2>&1
+            brc=$?
+            cms=$(( $(date +%s%3N) - cstart ))
+            if [ "$brc" -eq 0 ] || [ ${#tc[@]} -gt 0 ] \
+                    || ! grep -qF 'failed to find `clang-23`' "$blog"; then
+                break
+            fi
+            echo "    $crate: cargo bsan failed to find clang-23; retrying with RUSTUP_TOOLCHAIN=bsan"
+            tc=(RUSTUP_TOOLCHAIN=bsan)
+        done
+        [ ${#tc[@]} -gt 0 ] && echo "--- build_dataset: retried with RUSTUP_TOOLCHAIN=bsan after failed to find clang-23 ---" >> "$blog"
         bcompile=$(printf '%d.%03d' $(( cms / 1000 )) $(( cms % 1000 )))
         if [ "$brc" -ne 0 ]; then
             classify "$blog"

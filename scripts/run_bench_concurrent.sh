@@ -564,8 +564,6 @@ cat > "$RUNDIR/inner.sh" << 'INNER_EOF'
 set -uf
 
 export BSAN_OPTIONS="$HF_BSAN_OPTIONS"
-# Beats a crate's rust-toolchain(.toml) pinning stock stable/nightly.
-export RUSTUP_TOOLCHAIN=bsan
 RUN="cargo bsan test --tests"
 
 # --cfg=miri so this run selects the same cfg(miri) code and the same test set
@@ -611,7 +609,20 @@ if ! cargo fetch; then
 fi
 
 cstart=$(date +%s%3N)
-if ! $RUN --no-run; then
+buildlog=$(mktemp)
+$RUN --no-run 2>&1 | tee "$buildlog"
+brc=${PIPESTATUS[0]}
+# A crate's rust-toolchain(.toml) can swap in stock stable/nightly (no bsan,
+# no matching clang). Only then is RUSTUP_TOOLCHAIN=bsan, which beats that
+# file, exported -- for the recompile and every run after it.
+if [ "$brc" -ne 0 ] && grep -qF 'failed to find `clang-23`' "$buildlog"; then
+    echo "compile: $HF_CRATE failed to find clang-23; retrying with RUSTUP_TOOLCHAIN=bsan"
+    export RUSTUP_TOOLCHAIN=bsan
+    cstart=$(date +%s%3N)
+    $RUN --no-run; brc=$?
+fi
+rm -f "$buildlog"
+if [ "$brc" -ne 0 ]; then
     row "__concurrent__" build_failed "" "" "" "" "" "" "$NREQ" 0 0
     exit 1
 fi

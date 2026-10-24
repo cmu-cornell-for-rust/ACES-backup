@@ -413,8 +413,6 @@ echo "BSAN_OPTIONS=[$BSAN_OPTIONS]"
 # RUSTFLAGS, which cargo-bsan forwards to rustc for target crates.
 export RUSTFLAGS="--cfg=miri"
 echo "RUSTFLAGS=[$RUSTFLAGS]"
-# Beats a crate's rust-toolchain(.toml) pinning stock stable/nightly.
-export RUSTUP_TOOLCHAIN=bsan
 RUN="cargo bsan test --tests"
 PROFILE_LOG="$PF_PROFILE_DIR/$PF_CRATE.log"
 
@@ -438,7 +436,20 @@ fi
 # setup and build scripts would otherwise pollute the profile with nodes that
 # have nothing to do with the tests.
 cstart=$(date +%s%3N)
-if ! $RUN --no-run; then
+buildlog=$(mktemp)
+$RUN --no-run 2>&1 | tee "$buildlog"
+brc=${PIPESTATUS[0]}
+# A crate's rust-toolchain(.toml) can swap in stock stable/nightly (no bsan,
+# no matching clang). Only then is RUSTUP_TOOLCHAIN=bsan, which beats that
+# file, exported -- for the recompile and every test run after it.
+if [ "$brc" -ne 0 ] && grep -qF 'failed to find `clang-23`' "$buildlog"; then
+    echo "compile: $PF_CRATE failed to find clang-23; retrying with RUSTUP_TOOLCHAIN=bsan"
+    export RUSTUP_TOOLCHAIN=bsan
+    cstart=$(date +%s%3N)
+    $RUN --no-run; brc=$?
+fi
+rm -f "$buildlog"
+if [ "$brc" -ne 0 ]; then
     row "" build_failed "" ""
     exit 1
 fi

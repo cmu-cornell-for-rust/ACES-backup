@@ -1184,8 +1184,7 @@ set -u
 case "$HF_MODE" in
     rust) RUN="cargo test --tests" ;;
     miri) export MIRIFLAGS="$HF_MIRIFLAGS";   RUN="cargo miri test --tests" ;;
-    # RUSTUP_TOOLCHAIN beats a crate's rust-toolchain(.toml) pinning stock stable/nightly.
-    bsan) export BSAN_OPTIONS="$HF_BSAN_OPTIONS" RUSTUP_TOOLCHAIN=bsan; RUN="cargo bsan test --tests" ;;
+    bsan) export BSAN_OPTIONS="$HF_BSAN_OPTIONS"; RUN="cargo bsan test --tests" ;;
     *) echo "Error: bad HF_MODE '$HF_MODE'" >&2; exit 1 ;;
 esac
 
@@ -1305,6 +1304,16 @@ fi
 cstart=$(date +%s%3N)
 $COMPILE --no-run 2>&1 | tee "$buildlog"
 brc=${PIPESTATUS[0]}
+# A crate's rust-toolchain(.toml) can swap in stock stable/nightly (no bsan,
+# no matching clang). Only then is RUSTUP_TOOLCHAIN=bsan, which beats that
+# file, exported -- for the recompile and every run after it.
+if [ "$brc" -ne 0 ] && [ "$HF_MODE" = bsan ] && grep -qF 'failed to find `clang-23`' "$buildlog"; then
+    echo "compile: $HF_CRATE failed to find clang-23; retrying with RUSTUP_TOOLCHAIN=bsan"
+    export RUSTUP_TOOLCHAIN=bsan
+    cstart=$(date +%s%3N)
+    $COMPILE --no-run 2>&1 | tee "$buildlog"
+    brc=${PIPESTATUS[0]}
+fi
 cms=$(( $(date +%s%3N) - cstart ))
 if [ "$brc" -ne 0 ]; then
     classify "$buildlog"
