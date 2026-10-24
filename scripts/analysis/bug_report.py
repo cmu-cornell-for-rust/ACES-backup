@@ -24,17 +24,21 @@ optionally latest_version as written by update_latest.py. Giving --dataset
 replaces the defaults. Writes one row per bug, in input order, with columns:
 
   bug id            1, 2, ...: rows with the same bug key share an id. The key
-                    is "tag created at" for aliasing violations that have one
+                    is the error type plus a location: "tag created at" for
+                    aliasing violations that have one
                     outside <std>, else "bug location" (a std helper like
                     slice::as_mut_ptr creates tags for unrelated bugs), with
                     the crate version and line:col dropped, so the same file
                     in any version of a crate is one bug
-                    (git2-0.20.4/src/call.rs:78:13 = git2-0.7.5/src/call.rs:72:39)
+                    (git2-0.20.4/src/call.rs:78:13 = git2-0.7.5/src/call.rs:72:39).
+                    A report with no file in either (a bare address, or an
+                    unsymbolized cargo.<hash>-cgu.08:0:0) is keyed on the
+                    function in its first stack backtrace frame instead
                     Numbered by first appearance, in input order, so appending
                     an eval CSV (earlier ones unchanged, same order) keeps the
                     old ids and numbers new bugs after them
   diagnosis         B2 holds an ARRAYFORMULA that looks each bug id up on the
-                    Bugs sheet (C -> E); the rest of the column is left
+                    Bugs sheet (A -> C); the rest of the column is left
                     blank so it can spill
   crate             crate name (the bugs CSV's crate column is <name>-<version>)
   version           the version that was tested
@@ -51,15 +55,37 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
   test timestamp    when the test finished
   runtime (s)       the test's run_seconds
   test              as in the bugs CSV
-  error type        from the first UB report line in the error:
-                      aliasing violation     "Undefined Behavior: {read access,
-                                             write access,reborrow,deallocation}
-                                             through {tag} at {alloc}[{offset}]
-                                             is forbidden"
-                      use after free         "... trying to access an
-                                             allocation that has been freed"
-                      access out of bounds   "... an access of size ..."
-                      other                  none of the above
+  error type        from the first UB report line in the error and, for an
+                    aliasing violation ("Undefined Behavior: {read access,
+                    write access,reborrow,deallocation} through {tag} at
+                    {alloc}[{offset}] is forbidden"), the Tree Borrows help
+                    lines under it:
+                      Aliasing - Protection    a protector was violated: "...
+                                               the protected tag ... to become
+                                               Disabled" or "the strongly
+                                               protected tag ... disallows
+                                               deallocations"
+                      Aliasing - Invalid       the tag (accessed or conflicting)
+                                               "has state Disabled which
+                                               forbids ...": a foreign access
+                                               revoked it; also a <wildcard>
+                                               access with "no exposed tags
+                                               which may perform this access"
+                      Aliasing - Insufficient  the tag "has state {Frozen,
+                                               Reserved (conflicted), ...}
+                                               which forbids ...": still valid,
+                                               but too weak for the access
+                                               (e.g. a write through a Frozen
+                                               shared reference)
+                      Use-After-Free           "... trying to access an
+                                               allocation that has been freed"
+                      Access Out-of-Bound      "... an access of size ..."
+                      Null Pointer Dereference "null pointer" (bsan has no such
+                                               report yet; kept for when it does)
+                      other                    none of the above
+  wildcard          yes if the error mentions a <wildcard> tag (an access
+                    through, or a tag built from, a pointer cast from an
+                    integer), else no
   bug location      file:line:col of the bad access, the --> under the UB line
   tag created at    aliasing violations: where the accessed tag was created
                     (help: the accessed tag ... was created here) -- usually
@@ -94,7 +120,7 @@ USER_AGENT = "aces-bug-report (CMU systems research; via crates.io)"
 API = "https://crates.io/api/v1/crates"
 HEADER = ["bug id", "diagnosis", "crate", "version", "last updated", "up to date?", "datasets",
           "# downloads", "container", "test timestamp", "runtime (s)", "test",
-          "error type", "bug location", "tag created at", "error"]
+          "error type", "wildcard", "bug location", "tag created at", "error"]
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-o", "--output", help="output CSV (default: <bugs minus .csv>-report.csv)")
@@ -266,18 +292,40 @@ def report_lines(error):
     return re.split(r"\\+n", error)
 
 
+def aliasing_type(lines):
+    """Tree Borrows violation kind from the help lines after the UB line --
+    bsan-rt's TransitionError: ProtectedDisabled / ProtectedDealloc,
+    ChildAccessForbidden(perm), or a wildcard access no exposed tag may do."""
+    for l in lines:
+        if "Undefined Behavior:" in l:
+            break  # the next report: these lines aren't about this one
+        if (re.search(r"the protected tag \S+ \(currently .+\) to become Disabled", l)
+                or "protected tags must never be Disabled" in l
+                or re.search(r"the strongly protected tag \S+ disallows deallocations", l)):
+            return "Aliasing - Protection"
+        m = re.search(r"the (?:accessed|conflicting) tag .+? has state (.+?) which forbids", l)
+        if m:
+            return "Aliasing - Invalid" if m.group(1) == "Disabled" else "Aliasing - Insufficient"
+        if "there are no exposed tags which may perform this access here" in l:
+            return "Aliasing - Invalid"
+    return "Aliasing - other"
+
+
 def error_type(error):
-    """Classify the first "Undefined Behavior:" line of the report."""
-    for l in report_lines(error):
+    """Classify the first "Undefined Behavior:" report."""
+    lines = report_lines(error)
+    for i, l in enumerate(lines):
         if "Undefined Behavior:" not in l:
             continue
         l = l.rstrip()
         if " through " in l and l.endswith(" is forbidden"):
-            return "aliasing violation"
+            return aliasing_type(lines[i + 1:])
         if "trying to access an allocation that has been freed" in l:
-            return "use after free"
+            return "Use-After-Free"
         if "an access of size" in l:
-            return "access out of bounds"
+            return "Access Out-of-Bound"
+        if "null pointer" in l.lower():
+            return "Null Pointer Dereference"
         return "other"
     return "other"
 
@@ -319,6 +367,22 @@ def locations(error, crate):
             norm_path(created, crate) if created else "")
 
 
+def has_file(path):
+    """Whether a location names a source file, not a bare address (0x5626...,
+    different every run) or an unsymbolized codegen unit (cargo.<hash>-cgu.08:0:0)."""
+    return bool(path) and "/" in path and not re.fullmatch(r"0x[0-9a-f]+", path)
+
+
+def top_frame(error):
+    """The function in the report's first stack backtrace frame, or ""."""
+    lines = report_lines(error)
+    for i, l in enumerate(lines):
+        if l.strip() == "stack backtrace:":
+            m = next((re.match(r"\s*0: (.+)", n) for n in lines[i + 1:i + 2]), None)
+            return m.group(1).strip() if m else ""
+    return ""
+
+
 def bug_key(path):
     """<crate>-<version>/file:line:col -> <crate>/file"""
     path = re.sub(r":\d+:\d+$", "", path)
@@ -332,9 +396,15 @@ for r in bugs:
     ci = info.get(name)
     etype = error_type(r["error"])
     loc, created = locations(r["error"], r["crate"])
-    key = (created if etype == "aliasing violation" and created
-           and not created.startswith("<std>/") else loc)
-    key = bug_key(key) if key else ""
+    if etype.startswith("Aliasing") and has_file(created) and not created.startswith("<std>/"):
+        key = bug_key(created)
+    elif has_file(loc):
+        key = bug_key(loc)
+    else:
+        # no file to go by: the function the report stopped in
+        key = top_frame(r["error"]) and "fn " + top_frame(r["error"])
+    # two kinds of bug in one file (blst's pippenger.rs) are two bugs
+    key = (etype, key) if key else ""
     rows.append((r, name, version, ci, bool(ci) and version == ci["newest"],
                  etype, key, loc, created))
 
@@ -346,7 +416,7 @@ for *_, key, _, _ in rows:
 
 # B2 looks up each row's bug id on the Bugs sheet and spills down the column,
 # so every other diagnosis cell stays empty
-DIAGNOSIS_FORMULA = '=ARRAYFORMULA(IF(A2:A="", , XLOOKUP(A2:A, Bugs!C2:C, Bugs!E2:E, "")))'
+DIAGNOSIS_FORMULA = '=ARRAYFORMULA(IF(A2:A="", , XLOOKUP(A2:A, Bugs!A2:A, Bugs!C2:C, "")))'
 
 yn = lambda b: "yes" if b else "no"
 with open(out_path, "w", newline="", encoding="utf-8-sig") as f:
@@ -362,7 +432,7 @@ with open(out_path, "w", newline="", encoding="utf-8-sig") as f:
             in_datasets(name, version, up_to_date),
             ci["downloads"] if ci else "",
             r["build"], r["timestamp"], r["run_seconds"], r["test"], etype,
-            loc, created, r["error"],
+            yn("<wildcard>" in r["error"]), loc, created, r["error"],
         ])
 
 print(f"Wrote {len(bugs)} row(s) for {len(info)} crate(s) to {out_path}", file=sys.stderr)
