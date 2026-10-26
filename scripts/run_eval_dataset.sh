@@ -10,7 +10,7 @@
 #   <image>     image/SIF name under the group containers dir (e.g. miri, bsan,
 #               rust). Mode and image are separate so variant images can still
 #               be driven in a given mode.
-#   [walltime]  walltime per regular sbatch job, HH or HH:MM (default 4; the
+#   [walltime]  walltime per regular sbatch job, HH or HH:MM (default 12; the
 #               slow-list jobs use --slow-walltime instead). (Recognized
 #               positionally by shape, so a purely numeric dataset name would
 #               need the walltime spelled out.)
@@ -94,8 +94,8 @@
 #   --max-jobs N      most of your jobs in SLURM at once, running + pending
 #                     (default 90, the per-user submit limit); the rest are
 #                     staged
-#   --max-tasks N     ceiling on workers per job, at most 24 (default: 24, or
-#                     fewer if 24 don't fit a 24-core / 488G slice of a node
+#   --max-tasks N     ceiling on workers per job, at most 24 (default: 16, or
+#                     fewer if 16 don't fit a 24-core / 488G slice of a node
 #                     at --cpus-per-task and --mem-per-task)
 #   --cpus-per-task N cores per worker (default 1; also caps CARGO_BUILD_JOBS)
 #   --mem-per-task G  GB per worker (default 8, at most 16); a hard cap: each
@@ -232,6 +232,7 @@ NODE_CPUS=24
 NODE_MEM=488
 MAX_MEM_PER_TASK=16
 MAX_TASKS_PER_JOB=24
+DEFAULT_MAX_TASKS=16
 MAX_JOBS=90
 
 # Built-in per-mode option sets (Miri's same as run_bench_dataset.sh; BSAN's
@@ -258,7 +259,7 @@ CPUS_PER_TASK=1
 MEM_PER_TASK=8
 TEST_THREADS=""
 TEST_TIMEOUT="30m"    # 0 = no limit
-WALLTIME_ARG=4
+WALLTIME_ARG=12
 SLOW_WALLTIME_ARG=24
 
 # ── Shard merging (end of a run, or --merge) ─────────────────────────────────
@@ -365,7 +366,7 @@ usage() {
     echo "Usage: $0 [options] <mode> <image> [walltime] <dataset> [extra]" >&2
     echo "  <mode>      miri | bsan | rust" >&2
     echo "  <image>     image/SIF name under $CONTAINERS_DIR" >&2
-    echo "  [walltime]  per-job walltime, HH or HH:MM (default 4; slow-list jobs: --slow-walltime)" >&2
+    echo "  [walltime]  per-job walltime, HH or HH:MM (default 12; slow-list jobs: --slow-walltime)" >&2
     echo "  <dataset>   folder under $DATASETS_ROOT, or a name with a <dataset>-dataset.csv (downloaded)" >&2
     echo "  [extra]     extra MIRIFLAGS (miri) or BSAN_OPTIONS (bsan)" >&2
     echo "  options: --ignore FILE --only FILE" >&2
@@ -375,7 +376,7 @@ usage() {
     echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
     echo "           --bsan-build-fails FILE (repeatable; default in bsan mode:" >&2
     echo "             $GROUP/scripts/bsan_build_fails.csv) | --no-bsan-build-fails" >&2
-    echo "           --jobs N --max-jobs N (default 90) --max-tasks N (<= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
+    echo "           --jobs N --max-jobs N (default 90) --max-tasks N (default $DEFAULT_MAX_TASKS, <= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 30m, 0 = none)" >&2
     echo "           --slow-walltime T (slow-list jobs, HH or HH:MM; default 24)" >&2
@@ -437,6 +438,7 @@ if [[ -n "$MAX_TASKS" ]]; then
     }
 else
     MAX_TASKS=$FIT_TASKS
+    (( MAX_TASKS > DEFAULT_MAX_TASKS )) && MAX_TASKS=$DEFAULT_MAX_TASKS
 fi
 if [[ -n "$TEST_THREADS" ]]; then
     [[ "$TEST_THREADS" =~ ^[1-9][0-9]*$ ]] \
