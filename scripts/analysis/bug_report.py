@@ -33,11 +33,19 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
                     (git2-0.20.4/src/call.rs:78:13 = git2-0.7.5/src/call.rs:72:39).
                     A report with no file in either (a bare address, or an
                     unsymbolized cargo.<hash>-cgu.08:0:0) is keyed on the
-                    function in its first stack backtrace frame instead
+                    function in its first stack backtrace frame instead, or
+                    if that's a bare address too (no symbolizer), on the
+                    crate name alone
                     Numbered by first appearance, in input order, so appending
                     an eval CSV (earlier ones unchanged, same order) keeps the
                     old ids and numbers new bugs after them
-  diagnosis         B2 holds an ARRAYFORMULA that looks each bug id up on the
+  found by          the earlier bug lists that have this crate and test, e.g.
+                    "mirilli, capslock": mirilli_bugs.csv (crate, version,
+                    test; an empty test matches every test of the crate),
+                    capslock_bugs.csv (crate as <name>-<version>, tests split
+                    on ;) and treeborrows_bugs.csv (crate, version, test), in
+                    scripts/
+  diagnosis         C2 holds an ARRAYFORMULA that looks each bug id up on the
                     Bugs sheet (A -> C); the rest of the column is left
                     blank so it can spill
   crate             crate name (the bugs CSV's crate column is <name>-<version>)
@@ -118,7 +126,7 @@ import urllib.request
 
 USER_AGENT = "aces-bug-report (CMU systems research; via crates.io)"
 API = "https://crates.io/api/v1/crates"
-HEADER = ["bug id", "diagnosis", "crate", "version", "last updated", "up to date?", "datasets",
+HEADER = ["bug id", "found by", "diagnosis", "crate", "version", "last updated", "up to date?", "datasets",
           "# downloads", "container", "test timestamp", "runtime (s)", "test",
           "error type", "wildcard", "bug location", "tag created at", "error"]
 
@@ -174,6 +182,25 @@ if args.dataset:
         datasets.append(tuple(d.split("=", 1)))
 else:
     datasets = DEFAULT_DATASETS
+
+# (<name>-<version>, test) -> the bug lists that have it; test "" is any test
+found = {}
+with open(os.path.join(SCRIPTS, "mirilli_bugs.csv"), newline="", encoding="utf-8-sig") as f:
+    for r in csv.DictReader(f):
+        found.setdefault((f"{r['crate']}-{r['version']}", r["test"]), set()).add("mirilli")
+with open(os.path.join(SCRIPTS, "capslock_bugs.csv"), newline="", encoding="utf-8-sig") as f:
+    for r in csv.DictReader(f):
+        for t in r["tests"].split(";"):
+            found.setdefault((r["crate"], t), set()).add("capslock")
+with open(os.path.join(SCRIPTS, "treeborrows_bugs.csv"), newline="", encoding="utf-8-sig") as f:
+    for r in csv.DictReader(f):
+        found.setdefault((f"{r['crate']}-{r['version']}", r["test"]), set()).add("treeborrows")
+
+
+def found_by(crate, test):
+    hits = found.get((crate, test), set()) | found.get((crate, ""), set())
+    return ", ".join(s for s in ("mirilli", "capslock", "treeborrows") if s in hits)
+
 
 # dataset name -> {crate name -> (versions, latest_versions) listed for it}
 members = {}
@@ -400,9 +427,13 @@ for r in bugs:
         key = bug_key(created)
     elif has_file(loc):
         key = bug_key(loc)
-    else:
+    elif not re.fullmatch(r"0x[0-9a-f]+|", top_frame(r["error"])):
         # no file to go by: the function the report stopped in
-        key = top_frame(r["error"]) and "fn " + top_frame(r["error"])
+        key = "fn " + top_frame(r["error"])
+    else:
+        # unsymbolized: the addresses are randomized every run, so all that's
+        # left is the crate
+        key = "crate " + name
     # two kinds of bug in one file (blst's pippenger.rs) are two bugs
     key = (etype, key) if key else ""
     rows.append((r, name, version, ci, bool(ci) and version == ci["newest"],
@@ -414,7 +445,7 @@ for *_, key, _, _ in rows:
     if key and key not in bug_id:
         bug_id[key] = len(bug_id) + 1
 
-# B2 looks up each row's bug id on the Bugs sheet and spills down the column,
+# C2 looks up each row's bug id on the Bugs sheet and spills down the column,
 # so every other diagnosis cell stays empty
 DIAGNOSIS_FORMULA = '=ARRAYFORMULA(IF(A2:A="", , XLOOKUP(A2:A, Bugs!A2:A, Bugs!C2:C, "")))'
 
@@ -425,6 +456,7 @@ with open(out_path, "w", newline="", encoding="utf-8-sig") as f:
     for i, (r, name, version, ci, up_to_date, etype, key, loc, created) in enumerate(rows):
         w.writerow([
             bug_id.get(key, ""),
+            found_by(r["crate"], r["test"]),
             DIAGNOSIS_FORMULA if i == 0 else "",
             name, version,
             ci["released"] if ci else "",

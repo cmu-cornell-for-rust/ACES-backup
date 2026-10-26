@@ -289,6 +289,8 @@
 #   oom     SIGKILL
 #   gc      ERROR: BorrowSanitizer: garbage collection
 #   crash   BorrowSanitizer:DEADLYSIGNAL
+#   unsupported  error: unsupported operation:  (Miri can't run it: FFI,
+#           a syscall, or host access under isolation)
 #   bsan    error: Undefined Behavior:        (BSAN/Miri UB report)
 #   panic   panicked at                       (ordinary test failure)
 #   other   none of the above
@@ -1251,6 +1253,7 @@ classify() {
     for kp in 'rustc|error\[E[0-9]+\]' 'linker|rust-lld' 'oom|SIGKILL' \
               'gc|ERROR: BorrowSanitizer: garbage collection' \
               'crash|BorrowSanitizer:DEADLYSIGNAL' \
+              'unsupported|error: unsupported operation:' \
               'bsan|error: Undefined Behavior:' 'panic|panicked at'; do
         # panic takes the line after too: newer libtest prints the message there.
         if [ "${kp%%|*}" = panic ]; then

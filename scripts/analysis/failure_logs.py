@@ -32,6 +32,7 @@ error_type classifies the extracted output, first match winning:
   oom     SIGKILL
   gc      ERROR: BorrowSanitizer: garbage collection
   crash   BorrowSanitizer:DEADLYSIGNAL
+  unsupported  error: unsupported operation:
   bsan    error: Undefined Behavior:
   panic   panicked at
 and "other" when none match ("" when no output was found).
@@ -95,6 +96,7 @@ ERROR_TYPES = [
     ("oom", re.compile(re.escape("SIGKILL"))),
     ("gc", re.compile(re.escape("ERROR: BorrowSanitizer: garbage collection"))),
     ("crash", re.compile(re.escape("BorrowSanitizer:DEADLYSIGNAL"))),
+    ("unsupported", re.compile(re.escape("error: unsupported operation:"))),
     ("bsan", re.compile(re.escape("error: Undefined Behavior:"))),
     ("panic", re.compile(re.escape("panicked at"))),
 ]
