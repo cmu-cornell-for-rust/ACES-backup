@@ -19,7 +19,9 @@
 #               one next to this script), whose crates are downloaded instead
 #               (see "No dataset dir" below).
 #   [extra]     mode-specific extras: -Z Miri flags (miri) or colon-separated
-#               BSAN_OPTIONS (bsan), appended to the built-in set.
+#               BSAN_OPTIONS (bsan), appended to the built-in set. Miri flags
+#               start with '-', so put the positionals after `--`:
+#                 run_eval_dataset.sh [options] -- miri <image> <dataset> "-Zmiri-..."
 #
 # Options:
 #   --ignore FILE     crate names to skip, one per line (#-comments ok)
@@ -342,6 +344,7 @@ while [[ $# -gt 0 ]]; do
         --slow-walltime=*) SLOW_WALLTIME_ARG="${1#*=}"; shift ;;
         --test-timeout)  TEST_TIMEOUT="$2"; shift 2 ;;
         --test-timeout=*) TEST_TIMEOUT="${1#*=}"; shift ;;
+        --)              shift; POS+=("$@"); break ;;
         -*)
             echo "Error: unknown option '$1'." >&2; exit 1 ;;
         *)
@@ -365,7 +368,7 @@ if [[ -n "$MERGE_DIR" ]]; then
 fi
 
 usage() {
-    echo "Usage: $0 [options] <mode> <image> [walltime] <dataset> [extra]" >&2
+    echo "Usage: $0 [options] [--] <mode> <image> [walltime] <dataset> [extra]" >&2
     echo "  <mode>      miri | bsan | rust" >&2
     echo "  <image>     image/SIF name under $CONTAINERS_DIR" >&2
     echo "  [walltime]  per-job walltime, HH or HH:MM (default 12; slow-list jobs: --slow-walltime)" >&2

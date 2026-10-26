@@ -18,7 +18,7 @@
 #                               (run_eval_dataset.sh's "No dataset dir")
 #
 # and runs
-#   run_eval_dataset.sh [opts] --tests scripts/<name>-tests.csv miri <image> <name> [extra]
+#   run_eval_dataset.sh [opts] --tests scripts/<name>-tests.csv -- miri <image> 6 <name> -Zmiri-disable-isolation [extra]
 # whose results land in <group>/outputs/<image>[-<extra-slug>]-<name>-eval.csv.
 #
 # Options:
@@ -105,4 +105,4 @@ print(f"  -> {tests_out}\n  -> {versions_out}")
 PY_EOF
 
 exec "$SCRIPT_DIR/run_eval_dataset.sh" ${PASS[@]+"${PASS[@]}"} --tests "$TESTS_OUT" \
-    miri "$IMAGE" "$WALLTIME" "$NAME" "$EXTRA"
+    -- miri "$IMAGE" "$WALLTIME" "$NAME" "$EXTRA"
