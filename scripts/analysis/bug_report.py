@@ -2,7 +2,7 @@
 """Per-bug report CSV: eval CSVs' bsan rows joined with the datasets and crates.io.
 
 Usage: bug_report.py [-o OUT.csv] [--dataset NAME=CSV ...] [--downloads CSV]
-                     <eval.csv> [more.csv ...]
+                     [--miri CSV ...] <eval.csv> [more.csv ...]
 
     bug_report.py ../outputs/experimental-bsan-mirilli-latest-eval.csv
 
@@ -102,6 +102,14 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
                     Locations are path:line:col with the eval job's paths cut
                     to <crate>-<version>/..., or <std>/... for the toolchain
   error             as in the bugs CSV
+  miri              how the same crate version and test did under Miri, from
+                    run_eval_bugs.sh's eval CSV (--miri): "success", else its
+                    error_type (unsupported, panic, timeout, rustc, ...; the
+                    status for a no_match), except that a Miri UB report (error
+                    type bsan there) is just "UB". A fetch_failed /
+                    build_failed crate row counts for all its tests. Empty if
+                    Miri hasn't run it
+  miri error        that row's error, unless it's a success
 
 The crates.io columns (last updated, up to date?, # downloads) come from
 --downloads (default analysis/crate-downloads.csv, as written by
@@ -110,6 +118,9 @@ as its last run. Crates it doesn't list are looked up on crates.io instead,
 at most one request a second (its crawler policy), and cached in
 analysis/crates-io-cache.json for the day; --refresh looks them up again.
 A crate that isn't on crates.io gets empty crates.io columns.
+--miri defaults to <repo>/outputs/master-miri-Zmiri-disable-isolation-bugs-eval.csv
+(run_eval_bugs.sh's default output), used when it exists; repeatable, the
+most recent row for a (crate, test) wins.
 The output defaults to <first input minus .csv>-report.csv and is written with a
 UTF-8 BOM so Excel opens it cleanly. Requirements: python3 >= 3.6 (stdlib).
 """
@@ -128,7 +139,8 @@ USER_AGENT = "aces-bug-report (CMU systems research; via crates.io)"
 API = "https://crates.io/api/v1/crates"
 HEADER = ["bug id", "found by", "diagnosis", "crate", "version", "last updated", "up to date?", "datasets",
           "# downloads", "container", "test timestamp", "runtime (s)", "test",
-          "error type", "wildcard", "bug location", "tag created at", "error"]
+          "error type", "wildcard", "bug location", "tag created at", "error",
+          "miri", "miri error"]
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-o", "--output", help="output CSV (default: <bugs minus .csv>-report.csv)")
@@ -138,6 +150,9 @@ ap.add_argument("--downloads", metavar="CSV",
                 help="fetch_downloads.py output (default: analysis/crate-downloads.csv)")
 ap.add_argument("--refresh", action="store_true",
                 help="look crates missing from --downloads up on crates.io again, ignoring the cache")
+ap.add_argument("--miri", action="append", metavar="CSV",
+                help="run_eval_bugs.sh eval CSV for the miri columns; repeatable "
+                     "(default: outputs/master-miri-Zmiri-disable-isolation-bugs-eval.csv if it exists)")
 ap.add_argument("eval_csvs", nargs="+", help="run_eval_dataset.sh *-eval.csv files, whole or filtered")
 args = ap.parse_args()
 out_path = args.output or re.sub(r"\.csv$", "", args.eval_csvs[0]) + "-report.csv"
@@ -195,6 +210,21 @@ with open(os.path.join(SCRIPTS, "capslock_bugs.csv"), newline="", encoding="utf-
 with open(os.path.join(SCRIPTS, "treeborrows_bugs.csv"), newline="", encoding="utf-8-sig") as f:
     for r in csv.DictReader(f):
         found.setdefault((f"{r['crate']}-{r['version']}", r["test"]), set()).add("treeborrows")
+
+
+# (<name>-<version>, test) -> its most recent Miri row from run_eval_bugs.sh;
+# test "" is a crate-level fetch_failed / build_failed row
+miri_paths = args.miri or [p for p in [os.path.join(os.path.dirname(SCRIPTS), "outputs",
+                                                    "master-miri-Zmiri-disable-isolation-bugs-eval.csv")]
+                           if os.path.exists(p)]
+miri = {}
+for path in miri_paths:
+    with open(path, newline="", encoding="utf-8-sig") as f:
+        for r in csv.DictReader(f):
+            key = (r["crate"], r["test"])
+            if key not in miri or r["timestamp"] > miri[key]["timestamp"]:
+                miri[key] = r
+print(f"Miri results: {len(miri)} test(s) from {', '.join(miri_paths) or 'none'}", file=sys.stderr)
 
 
 def found_by(crate, test):
@@ -357,6 +387,18 @@ def error_type(error):
     return "other"
 
 
+def miri_result(crate, test):
+    """(miri, miri error) columns for a crate and test."""
+    r = miri.get((crate, test)) or miri.get((crate, ""))
+    if not r:
+        return "", ""
+    if r["status"] == "success":
+        return "success", ""
+    if r["error_type"] == "bsan":
+        return "UB", r["error"]
+    return r["error_type"] or r["status"], r["error"]
+
+
 def in_datasets(name, version, up_to_date):
     tags = []
     for ds, crates in members.items():
@@ -445,9 +487,9 @@ for *_, key, _, _ in rows:
     if key and key not in bug_id:
         bug_id[key] = len(bug_id) + 1
 
-# C2 looks up each row's bug id on the Bugs sheet and spills down the column,
+# E2 looks up each row's bug id on the Bugs sheet and spills down the column,
 # so every other diagnosis cell stays empty
-DIAGNOSIS_FORMULA = '=ARRAYFORMULA(IF(A2:A="", , XLOOKUP(A2:A, Bugs!A2:A, Bugs!C2:C, "")))'
+DIAGNOSIS_FORMULA = '=ARRAYFORMULA(IF(A2:A="", , XLOOKUP(A2:A, Bugs!A2:A, Bugs!E2:E, "")))'
 
 yn = lambda b: "yes" if b else "no"
 with open(out_path, "w", newline="", encoding="utf-8-sig") as f:
@@ -465,6 +507,7 @@ with open(out_path, "w", newline="", encoding="utf-8-sig") as f:
             ci["downloads"] if ci else "",
             r["build"], r["timestamp"], r["run_seconds"], r["test"], etype,
             yn("<wildcard>" in r["error"]), loc, created, r["error"],
+            *miri_result(r["crate"], r["test"]),
         ])
 
 print(f"Wrote {len(bugs)} row(s) for {len(info)} crate(s) to {out_path}", file=sys.stderr)

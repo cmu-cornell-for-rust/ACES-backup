@@ -18,7 +18,7 @@
 #                               (run_eval_dataset.sh's "No dataset dir")
 #
 # and runs
-#   run_eval_dataset.sh [opts] --tests scripts/<name>-tests.csv -- miri <image> 6 <name> -Zmiri-disable-isolation [extra]
+#   run_eval_dataset.sh [opts] --no-slow-list --tests scripts/<name>-tests.csv -- miri <image> 6 <name> -Zmiri-disable-isolation [extra]
 # whose results land in <group>/outputs/<image>[-<extra-slug>]-<name>-eval.csv.
 #
 # Only what that CSV doesn't have yet is run: tests with a row there (any
@@ -153,5 +153,5 @@ if [[ $(( $(wc -l < "$TESTS_OUT") - 1 )) -eq 0 ]]; then
 fi
 echo "Results append to $MASTER_CSV"
 
-exec "$SCRIPT_DIR/run_eval_dataset.sh" ${PASS[@]+"${PASS[@]}"} --tests "$TESTS_OUT" \
+exec "$SCRIPT_DIR/run_eval_dataset.sh" ${PASS[@]+"${PASS[@]}"} --no-slow-list --tests "$TESTS_OUT" \
     -- miri "$IMAGE" "$WALLTIME" "$NAME" "$EXTRA"

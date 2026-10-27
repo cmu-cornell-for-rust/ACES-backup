@@ -87,6 +87,8 @@
 #                     and packed together into their own jobs, in list order,
 #                     MAX_TASKS to a job -- so the long-running crates share a
 #                     few nodes and the remaining jobs all finish early.
+#   --no-slow-list    don't apply the slow list: every crate is balanced by
+#                     test count like the rest, at the regular walltime
 #   --slow-walltime T walltime for the slow-list jobs, HH or HH:MM (default 24)
 #   --jobs N          sbatch jobs to spread the crates over, slow-list jobs
 #                     included (default: one per crate, capped at --max-jobs;
@@ -255,6 +257,7 @@ UNSAFE_SCAN=""
 TESTS_CSV=""
 SKIP_CSV=""
 NO_SKIP=0
+NO_SLOW=0
 BSAN_FAIL_CSVS=()
 NO_BSAN_FAILS=0
 JOBS=""              # empty = auto: one per crate, capped at MAX_JOBS unless more are needed
@@ -321,6 +324,7 @@ while [[ $# -gt 0 ]]; do
         --skip-list)     SKIP_CSV="$2"; shift 2 ;;
         --skip-list=*)   SKIP_CSV="${1#*=}"; shift ;;
         --no-skip-list)  NO_SKIP=1; shift ;;
+        --no-slow-list)  NO_SLOW=1; shift ;;
         --bsan-build-fails)   BSAN_FAIL_CSVS+=("$2"); shift 2 ;;
         --bsan-build-fails=*) BSAN_FAIL_CSVS+=("${1#*=}"); shift ;;
         --no-bsan-build-fails) NO_BSAN_FAILS=1; shift ;;
@@ -384,7 +388,7 @@ usage() {
     echo "           --jobs N --max-jobs N (default 90) --max-tasks N (default $DEFAULT_MAX_TASKS, <= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 30m, 0 = none)" >&2
-    echo "           --slow-walltime T (slow-list jobs, HH or HH:MM; default 24)" >&2
+    echo "           --slow-walltime T (slow-list jobs, HH or HH:MM; default 24) | --no-slow-list" >&2
     exit 1
 }
 [[ $# -ge 3 && $# -le 5 ]] || usage
@@ -519,7 +523,9 @@ else
     [[ -f "$SKIP_CSV" ]] || SKIP_CSV=""
 fi
 SLOW_CSV="$GROUP/scripts/eval-slow-crates.csv"
-if [[ ! -f "$SLOW_CSV" ]]; then
+if (( NO_SLOW )); then
+    SLOW_CSV=""
+elif [[ ! -f "$SLOW_CSV" ]]; then
     echo "Warning: slow list $SLOW_CSV not found; slow crates will not be grouped." >&2
     SLOW_CSV=""
 fi
