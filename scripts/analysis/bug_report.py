@@ -57,7 +57,9 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
                     capslock-updated": <dataset> if the dataset's version
                     column lists the tested version, else <dataset>-updated
                     if the crate is in it at another version and the tested
-                    version is up to date or is the dataset's latest_version
+                    version is up to date or is the dataset's latest_version.
+                    extern-c is just "extern-c" for any version of a crate in
+                    it, since it lists every C-FFI crate, not fixed versions
   # downloads       all-time crates.io downloads of the crate
   container         the eval build (the image the test ran in)
   test timestamp    when the test finished
@@ -106,10 +108,14 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
                     run_eval_bugs.sh's eval CSV (--miri): "success", else its
                     error_type (unsupported, panic, timeout, rustc, ...; the
                     status for a no_match), except that a Miri UB report (error
-                    type bsan there) is just "UB". A fetch_failed /
-                    build_failed crate row counts for all its tests. Empty if
-                    Miri hasn't run it
+                    type bsan there) is just "UB", and unsupported is split
+                    into "unsupported - FFI" (can't call foreign function)
+                    and "unsupported - other" (syscalls, inline asm, ...).
+                    A fetch_failed / build_failed crate row counts for all
+                    its tests. Empty if Miri hasn't run it
   miri error        that row's error, unless it's a success
+  miri runtime (s)  that row's run_seconds (empty for a fetch_failed /
+                    build_failed crate row)
 
 The crates.io columns (last updated, up to date?, # downloads) come from
 --downloads (default analysis/crate-downloads.csv, as written by
@@ -140,7 +146,7 @@ API = "https://crates.io/api/v1/crates"
 HEADER = ["bug id", "found by", "diagnosis", "crate", "version", "last updated", "up to date?", "datasets",
           "# downloads", "container", "test timestamp", "runtime (s)", "test",
           "error type", "wildcard", "bug location", "tag created at", "error",
-          "miri", "miri error"]
+          "miri", "miri error", "miri runtime (s)"]
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-o", "--output", help="output CSV (default: <bugs minus .csv>-report.csv)")
@@ -388,22 +394,25 @@ def error_type(error):
 
 
 def miri_result(crate, test):
-    """(miri, miri error) columns for a crate and test."""
+    """(miri, miri error, miri runtime (s)) columns for a crate and test."""
     r = miri.get((crate, test)) or miri.get((crate, ""))
     if not r:
-        return "", ""
+        return "", "", ""
     if r["status"] == "success":
-        return "success", ""
+        return "success", "", r["run_seconds"]
     if r["error_type"] == "bsan":
-        return "UB", r["error"]
-    return r["error_type"] or r["status"], r["error"]
+        return "UB", r["error"], r["run_seconds"]
+    if r["error_type"] == "unsupported":
+        kind = "FFI" if "can't call foreign function" in r["error"] else "other"
+        return f"unsupported - {kind}", r["error"], r["run_seconds"]
+    return r["error_type"] or r["status"], r["error"], r["run_seconds"]
 
 
 def in_datasets(name, version, up_to_date):
     tags = []
     for ds, crates in members.items():
         vs, latest = crates.get(name, ((), ()))
-        if version in vs:
+        if version in vs or (ds == "extern-c" and name in crates):
             tags.append(ds)
         elif name in crates and (up_to_date or version in latest):
             tags.append(f"{ds}-updated")
