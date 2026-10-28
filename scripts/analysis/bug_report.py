@@ -46,8 +46,8 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
                     on ;) and treeborrows_bugs.csv (crate, version, test), in
                     scripts/
   diagnosis         C2 holds an ARRAYFORMULA that looks each bug id up on the
-                    Bugs sheet (A -> C); the rest of the column is left
-                    blank so it can spill
+                    Bugs sheet (A -> its "diagnosis" column); the rest of
+                    the column is left blank so it can spill
   crate             crate name (the bugs CSV's crate column is <name>-<version>)
   version           the version that was tested
   last updated      date of the crate's newest release on crates.io
@@ -108,8 +108,13 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
                     run_eval_bugs.sh's eval CSV (--miri): "success", else its
                     error_type (unsupported, panic, timeout, rustc, ...; the
                     status for a no_match), except that a Miri UB report (error
-                    type bsan there) is just "UB", and unsupported is split
-                    into "unsupported - FFI" (can't call foreign function)
+                    type bsan there) is "UB - same" if Miri's UB is
+                    at the bug location's file and line (or, for UB inside
+                    <std>, its first caller outside <std> is) -- the same bug --
+                    else "UB - other": Miri stopped at a different
+                    bug (e.g. a mem::uninitialized() struct, which BSan
+                    doesn't check) and never reached BSan's. unsupported is
+                    split into "unsupported - FFI" (can't call foreign function)
                     and "unsupported - other" (syscalls, inline asm, ...).
                     A fetch_failed / build_failed crate row counts for all
                     its tests. Empty if Miri hasn't run it
@@ -393,15 +398,28 @@ def error_type(error):
     return "other"
 
 
-def miri_result(crate, test):
-    """(miri, miri error, miri runtime (s)) columns for a crate and test."""
+def miri_result(crate, test, loc):
+    """(miri, miri error, miri runtime (s)) columns for a crate and test whose
+    BSan report has bug location loc."""
     r = miri.get((crate, test)) or miri.get((crate, ""))
     if not r:
         return "", "", ""
     if r["status"] == "success":
         return "success", "", r["run_seconds"]
     if r["error_type"] == "bsan":
-        return "UB", r["error"], r["run_seconds"]
+        miri_loc, _ = locations(r["error"], crate)
+        if miri_loc.startswith("<std>/"):
+            # UB in a std helper (ptr::NonNull::as_ref): its caller is what
+            # BSan would report
+            frames = [norm_path(m, crate) for m in
+                      re.findall(r"\bat (\S+?:\d+:\d+)", r["error"])]
+            miri_loc = next((f for f in frames if not f.startswith("<std>/")), miri_loc)
+        # Miri gives the crate's own files relative to its root (src/ffi.rs)
+        if miri_loc and not re.match(r"/|<std>/|[^/]+-\d+\.\d+\.\d+", miri_loc):
+            miri_loc = f"{crate}/{miri_loc}"
+        file_line = lambda l: re.sub(r":\d+$", "", l)
+        same = has_file(loc) and file_line(miri_loc) == file_line(loc)
+        return ("UB - same" if same else "UB - other"), r["error"], r["run_seconds"]
     if r["error_type"] == "unsupported":
         kind = "FFI" if "can't call foreign function" in r["error"] else "other"
         return f"unsupported - {kind}", r["error"], r["run_seconds"]
@@ -496,9 +514,9 @@ for *_, key, _, _ in rows:
     if key and key not in bug_id:
         bug_id[key] = len(bug_id) + 1
 
-# E2 looks up each row's bug id on the Bugs sheet and spills down the column,
+# F2 looks up each row's bug id on the Bugs sheet and spills down the column,
 # so every other diagnosis cell stays empty
-DIAGNOSIS_FORMULA = '=ARRAYFORMULA(IF(A2:A="", , XLOOKUP(A2:A, Bugs!A2:A, Bugs!E2:E, "")))'
+DIAGNOSIS_FORMULA = '=ARRAYFORMULA(IF(A2:A="", , XLOOKUP(A2:A, Bugs!A2:A, Bugs!F2:F, "")))'
 
 yn = lambda b: "yes" if b else "no"
 with open(out_path, "w", newline="", encoding="utf-8-sig") as f:
@@ -516,7 +534,8 @@ with open(out_path, "w", newline="", encoding="utf-8-sig") as f:
             ci["downloads"] if ci else "",
             r["build"], r["timestamp"], r["run_seconds"], r["test"], etype,
             yn("<wildcard>" in r["error"]), loc, created, r["error"],
-            *miri_result(r["crate"], r["test"]),
+            *miri_result(r["crate"], r["test"], loc),
         ])
 
-print(f"Wrote {len(bugs)} row(s) for {len(info)} crate(s) to {out_path}", file=sys.stderr)
+print(f"Wrote {len(bugs)} row(s), {len(bug_id)} bug id(s), for {len(info)} crate(s) to {out_path}",
+      file=sys.stderr)

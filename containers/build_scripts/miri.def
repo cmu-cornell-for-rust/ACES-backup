@@ -26,15 +26,41 @@ From: ubuntu:22.04
     # Pre-built Miri std sysroot baked into the image, so the first `cargo miri test`
     # at run time doesn't need to write anything (important on read-only Apptainer FS).
     export MIRI_SYSROOT=/opt/miri-sysroot
+    # clang-sys/bindgen (pulled in by crates with C bindings) need llvm-config +
+    # libclang at RUN time; same LLVM 19 install and env vars as bsan.def, so a
+    # crate that builds under BSan also builds here.
+    export LLVM_CONFIG_PATH=/usr/lib/llvm-19/bin/llvm-config
+    export LIBCLANG_PATH=/usr/lib/llvm-19/lib
 
 %post
     set -eux
 
+    export DEBIAN_FRONTEND=noninteractive
+
+    # --- System packages (same as bsan.def) ----------------------------------
     apt-get update && apt-get install -y \
-        curl build-essential ca-certificates \
-        git pkg-config libssl-dev \
+        build-essential \
+        cmake \
+        clang \
+        clang-tidy \
+        clang-format \
+        ninja-build \
+        curl \
+        vim \
+        pkg-config \
+        libssl-dev \
+        sudo \
+        git \
+        gdb \
+        ca-certificates \
         jq \
-        libfontconfig1-dev libfreetype6-dev
+        python3 \
+        libfontconfig1-dev \
+        libfreetype6-dev
+
+    # Use clang as the default C/C++ compiler (as bsan.def does).
+    update-alternatives --install /usr/bin/cc  cc  /usr/bin/clang   100
+    update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
 
     export RUSTUP_HOME=/opt/rust/rustup
     export CARGO_HOME=/opt/rust/cargo
@@ -138,6 +164,20 @@ SH
     test -d /opt/miri-sysroot && [ -n "$(ls -A /opt/miri-sysroot)" ] || \
         { echo "ERROR: Miri sysroot was not built at /opt/miri-sysroot"; exit 1; }
 
+    # --- LLVM / Clang for RUN-TIME crate builds ------------------------------
+    # Same as bsan.def: bindgen-based crates pull in clang-sys, which needs
+    # llvm-config + libclang, and some build scripts invoke a versioned clang
+    # (clang-19 .. clang-22) by name. Installed after Miri is built so it can't
+    # affect that build; the env vars are in %environment.
+    apt-get update && apt-get install -y wget gnupg lsb-release software-properties-common
+    wget -qO /tmp/llvm.sh https://apt.llvm.org/llvm.sh
+    chmod +x /tmp/llvm.sh
+    for v in 19 20 21 22; do
+        /tmp/llvm.sh "$v" || echo "WARN: LLVM $v unavailable from apt.llvm.org; skipping"
+    done
+    apt-get install -y llvm-19-dev libclang-19-dev
+    rm -f /tmp/llvm.sh
+
     # --- Cleanup -------------------------------------------------------------
     # Drop build artifacts (the binaries already live in the toolchain sysroot).
     rm -rf /opt/miri/target /opt/miri/miri-script/target
@@ -151,6 +191,7 @@ SH
 
 %test
     cargo miri --version
+    test -f "$LIBCLANG_PATH/libclang.so" || { echo "ERROR: no libclang at $LIBCLANG_PATH"; exit 1; }
     cargo miri setup --print-sysroot
     cargo scan --version
     hyperfine --version
