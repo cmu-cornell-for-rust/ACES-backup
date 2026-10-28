@@ -1349,10 +1349,19 @@ done < <(for (( j = 0; j < JOBS; j++ )); do
 JOBIDS=()
 SQ_USER="${USER:-$(id -un)}"
 
+# Job states that hold a slot against the per-user limit. Spelled out so a
+# site/profile SQUEUE_STATES (e.g. "all") can't pull finished jobs into the
+# count; -r counts each pending array task, as SLURM's limit does.
+LIVE_STATES="PENDING,RUNNING,SUSPENDED,COMPLETING,CONFIGURING,REQUEUED,RESIZING"
+NQUEUED="?"
+
 # Sets NQUEUED to the user's job count in SLURM; fails if squeue does.
 count_queued() {
     local out
-    out=$(squeue -h -u "$SQ_USER" -o '%i' 2>/dev/null) || return 1
+    out=$(squeue -h -r -u "$SQ_USER" -t "$LIVE_STATES" -o '%i' 2>&1) || {
+        echo "warning: squeue failed, not submitting this round: ${out%%$'\n'*}" >&2
+        return 1
+    }
     NQUEUED=$(grep -c . <<< "$out" || true)
 }
 
@@ -1439,11 +1448,12 @@ while :; do
     left=0
     if (( ${#JOBIDS[@]} )); then
         IDLIST=$(IFS=,; echo "${JOBIDS[*]}")
-        left=$(squeue -h -o '%T' -j "$IDLIST" 2>/dev/null | grep -c . || true)
+        # -j alone also lists recently finished jobs, so filter states here too.
+        left=$(squeue -h -o '%T' -t "$LIVE_STATES" -j "$IDLIST" 2>/dev/null | grep -c . || true)
     fi
     done_crates=$(cat "$RUNDIR"/done/*.txt 2>/dev/null | wc -l || true)
     rows=$(cat "$RUNDIR"/shards/*.csv 2>/dev/null | wc -l || true)
-    echo "$(date +%H:%M:%S)  jobs in queue: $left   staged: ${#STAGED[@]}   crates done: $done_crates/$NCRATES   result rows: $rows"
+    echo "$(date +%H:%M:%S)  jobs in queue: $left   staged: ${#STAGED[@]}   all yours: $NQUEUED/$MAX_JOBS   crates done: $done_crates/$NCRATES   result rows: $rows"
     (( left == 0 && ${#STAGED[@]} == 0 )) && break
     sleep 60
 done
