@@ -126,7 +126,7 @@
 #   _logs/crate-logs/<crate>/, as the scratch is removed with the job.
 #
 # Usage:
-#   ./build_dataset.sh [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--max-jobs N] [--max-tasks N] [--image IMG] [--whole] [--doc | --doc-only] [--no-bsan]
+#   ./build_dataset.sh [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--max-jobs N] [--max-tasks N [--cpus-per-task N] [--mem-per-task G]] [--image IMG] [--whole] [--doc | --doc-only] [--no-bsan]
 #                      [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>
 #   ./build_dataset.sh --local [--image IMG] [--whole] [--doc | --doc-only] [--no-bsan] [version flags] <DATASET_DIR>   # no job
 #   ./build_dataset.sh --rerun-bsan-only [--local] [-n N ...] [--image IMG] [--whole] [--latest] <DATASET>
@@ -137,13 +137,21 @@
 #                 else a name with a <name>-dataset.csv (see "No dataset dir")
 #
 #   -n N          at most N crates per job (default 100)
-#   -c CPUS       cores per job (default 16)
+#   -c CPUS       cores per job (default 16; with --max-tasks, tasks x
+#                 --cpus-per-task)
 #   -t HH[:MM]    walltime per job (default 8)
 #   --max-jobs N  most of this run's jobs in SLURM at once (default 90)
-#   --max-tasks N crates each job builds at once, each its own srun task with
-#                 a 1/N share of -c and -m (default: CPUS/4 in a job, 1 with
-#                 --local; same as the JOBS knob below, which it overrides)
-#   -m MEM        memory per job (default 64G; bare number = GB), split evenly
+#   --max-tasks N crates each job builds at once, each its own srun task
+#                 (default: CPUS/4 in a job, 1 with --local; same as the JOBS
+#                 knob below, which it overrides). With it, a job is sized
+#                 from the tasks, as in run_eval_dataset.sh: N x
+#                 --cpus-per-task cores and N x --mem-per-task memory (plus
+#                 512M for the batch script), unless -c / -m say otherwise
+#   --cpus-per-task N  cores per crate with --max-tasks (default 1; also caps
+#                 CARGO_BUILD_JOBS)
+#   --mem-per-task G   GB per crate with --max-tasks (default 8); a hard cap
+#   -m MEM        memory per job (default 64G; bare number = GB; with
+#                 --max-tasks, tasks x --mem-per-task + 512M), split evenly
 #                 into a hard per-crate cap over the JOBS crates it builds at
 #                 once (16G less a little at the defaults); raise it if crates
 #                 hit their cap (error_type oom)
@@ -644,10 +652,11 @@ CONTAINERS_DIR="$GROUP/containers"
 OUTPUTS_DIR="$GROUP/outputs"
 # Bsan-only build failures of every run, for run_eval_dataset.sh (see Output).
 BSAN_FAILS_CSV="$GROUP/scripts/bsan_build_fails.csv"
-LOCAL=0; NODE=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=experimental-bsan; WHOLE=0; DOC=0; DOC_ONLY=0; NO_BSAN=0; RERUN=0; BSAN_ONLY=0; MISSING=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
+LOCAL=0; NODE=0; CPUS=""; WALLTIME=8; MEM=""; IMAGE=experimental-bsan; WHOLE=0; DOC=0; DOC_ONLY=0; NO_BSAN=0; RERUN=0; BSAN_ONLY=0; MISSING=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
 VERSIONS=""; VERSIONS_CSV=""
 MAX_JOBS=90   # jobs in SLURM at once, running + pending (per-user submit limit)
 MAX_TASKS=""  # crates built at once per job; empty = JOBS, else its default
+CPUS_PER_TASK=""; MEM_PER_TASK=""   # with --max-tasks: 1 core, 8G
 while [ "$#" -gt 0 ]; do
     case "$1" in
         --local)    LOCAL=1; shift ;;
@@ -672,6 +681,8 @@ while [ "$#" -gt 0 ]; do
         -m|--mem)   MEM="$2"; shift 2 ;;
         --max-jobs) MAX_JOBS="$2"; shift 2 ;;
         --max-tasks) MAX_TASKS="$2"; shift 2 ;;
+        --cpus-per-task) CPUS_PER_TASK="$2"; shift 2 ;;
+        --mem-per-task)  MEM_PER_TASK="$2"; shift 2 ;;
         --image)    IMAGE="$2"; shift 2 ;;
         -*)         die "unknown option $1" ;;
         *)          POS+=("$1"); shift ;;
@@ -689,13 +700,25 @@ if [ "$DOC_ONLY" -eq 1 ]; then
 fi
 [ "$NO_BSAN" -eq 1 ] && { [ "$RERUN" -eq 1 ] || [ "$BSAN_ONLY" -eq 1 ]; } \
     && die "--no-bsan doesn't go with --rerun-bsan-only or --bsan-only"
+# Job size: -c / -m as given; else, with --max-tasks, from the tasks (as
+# run_eval_dataset.sh sizes its jobs); else 16 cores / 64G.
 if [ -n "$MAX_TASKS" ]; then
     [[ "$MAX_TASKS" =~ ^[1-9][0-9]*$ ]] || die "--max-tasks must be a positive integer"
     JOBS="$MAX_TASKS"
+    [ -n "$CPUS" ] && [ -n "$CPUS_PER_TASK" ] && die "give -c or --cpus-per-task, not both"
+    [ -n "$MEM" ] && [ -n "$MEM_PER_TASK" ] && die "give -m or --mem-per-task, not both"
+    CPUS_PER_TASK="${CPUS_PER_TASK:-1}"; MEM_PER_TASK="${MEM_PER_TASK:-8}"
+    [[ "$CPUS_PER_TASK" =~ ^[1-9][0-9]*$ ]] || die "--cpus-per-task must be a positive integer"
+    [[ "$MEM_PER_TASK" =~ ^[1-9][0-9]*$ ]] || die "--mem-per-task must be a whole number of GB"
+    CPUS="${CPUS:-$(( MAX_TASKS * CPUS_PER_TASK ))}"
+    MEM="${MEM:-$(( MAX_TASKS * MEM_PER_TASK * 1024 + 512 ))M}"
+else
+    [ -z "$CPUS_PER_TASK$MEM_PER_TASK" ] || die "--cpus-per-task / --mem-per-task go with --max-tasks"
 fi
+CPUS="${CPUS:-16}"; MEM="${MEM:-64G}"
 [ "$MISSING" -eq 1 ] && [ "$LOCAL" -eq 1 ] && die "--rerun-missing is for job runs, not --local"
 [ "${#POS[@]}" -eq 1 ] && [ -n "${POS[0]}" ] \
-    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--max-jobs N] [--max-tasks N] [--image IMG] [--whole] [--doc | --doc-only] [--no-bsan | --rerun-bsan-only | --bsan-only] [--rerun-missing] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
+    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--max-jobs N] [--max-tasks N [--cpus-per-task N] [--mem-per-task G]] [--image IMG] [--whole] [--doc | --doc-only] [--no-bsan | --rerun-bsan-only | --bsan-only] [--rerun-missing] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
 # --node: a part job's batch script, on the compute node outside the image. It
 # loads singularity and sets up node-local scratch (bound into every step at
 # the same path): CARGO_HOME, the target dirs and, when downloading, the crates.
