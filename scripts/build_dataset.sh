@@ -45,6 +45,7 @@
 #   rustc-cfg-miri.sh does for run_eval_dataset.sh). The crates that fail only
 #   there go to a separate CSV (see Output); the main CSV doesn't depend on
 #   it. Needs cargo-bsan, i.e. the experimental-bsan image (or one built from it).
+#   --no-bsan skips this second compile (and needs no cargo-bsan).
 #
 #   The bsan compiles are a second pass, after every crate (of a job's part,
 #   as a job) has had its plain build and listing, and the results CSV and
@@ -84,8 +85,10 @@
 #   Where it runs: from the login node the crates are dealt round-robin into
 #   ceil(crates / -n) parts (so part sizes differ by at most one crate, and
 #   none holds more than -n), and each part is built by its own sbatch job.
-#   At most 40 jobs (the QOS limit) run at once; the rest start as earlier
-#   ones finish. Each job runs this script again with --node --part K, on the
+#   At most --max-jobs (default 90, the per-user submit limit) are in SLURM
+#   at once, running + pending; the rest are submitted as earlier ones
+#   finish (a submission refused for the limit, which your other jobs count
+#   towards too, is retried every minute). Each job runs this script again with --node --part K, on the
 #   node outside the image, which builds that part's crates JOBS at a time:
 #   each crate's worker is its own srun step in the `experimental-bsan` image
 #   (--image to change), with an equal share of the job's cores and a hard cap
@@ -116,12 +119,12 @@
 #   _logs/crate-logs/<crate>/, as the scratch is removed with the job.
 #
 # Usage:
-#   ./build_dataset.sh [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc]
+#   ./build_dataset.sh [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--max-jobs N] [--image IMG] [--whole] [--doc] [--no-bsan]
 #                      [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>
-#   ./build_dataset.sh --local [--image IMG] [--whole] [--doc] [version flags] <DATASET_DIR>   # no job
+#   ./build_dataset.sh --local [--image IMG] [--whole] [--doc] [--no-bsan] [version flags] <DATASET_DIR>   # no job
 #   ./build_dataset.sh --rerun-bsan-only [--local] [-n N ...] [--image IMG] [--whole] [--latest] <DATASET>
 #   ./build_dataset.sh --bsan-only [--local] [-n N ...] [--image IMG] [--whole] [version flags] <DATASET>
-#   ./build_dataset.sh --rerun-missing [-n N ...] [--image IMG] [--whole] [--doc] [version flags] <DATASET>
+#   ./build_dataset.sh --rerun-missing [-n N ...] [--image IMG] [--whole] [--doc] [--no-bsan] [version flags] <DATASET>
 #
 #   DATASET       a dataset name under $GROUP/datasets/ (e.g. top_500), or a path;
 #                 else a name with a <name>-dataset.csv (see "No dataset dir")
@@ -129,6 +132,7 @@
 #   -n N          at most N crates per job (default 100)
 #   -c CPUS       cores per job (default 16)
 #   -t HH[:MM]    walltime per job (default 8)
+#   --max-jobs N  most of this run's jobs in SLURM at once (default 90)
 #   -m MEM        memory per job (default 64G; bare number = GB), split evenly
 #                 into a hard per-crate cap over the JOBS crates it builds at
 #                 once (16G less a little at the defaults); raise it if crates
@@ -140,6 +144,10 @@
 #   --whole       compile with `cargo test --no-run` (all targets cargo test
 #                 builds), not `cargo test --tests --no-run`
 #   --doc         also list doc tests (off by default; see above)
+#   --no-bsan     skip the cargo bsan compile: just the plain build and
+#                 listing. The bsan-only CSV, bsan-unchecked.txt and
+#                 <group>/scripts/bsan_build_fails.csv are left untouched,
+#                 and the image needn't have cargo-bsan
 #   --rerun-bsan-only  only rerun cargo bsan on the last bsan-only CSV's
 #                 crates (see above); --whole and --latest/--only-latest pick
 #                 the same compile and CSV as the run being redone
@@ -372,6 +380,17 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
         export CARGO_TARGET_DIR="$dir/target"
     fi
     bsan_target="$CARGO_TARGET_DIR-bsan"
+    # finish_crate: drop the crate's target dirs, and, at the end of its last
+    # pass, a job's downloaded crate (its logs are in CRATE_LOG_DIR; --local
+    # keeps its downloads for the next run) or a Cargo.lock the build made.
+    finish_crate() {
+        rm -rf "${CARGO_TARGET_DIR:?}" "${bsan_target:?}"
+        if [ -n "$CRATE_LOG_DIR" ]; then rm -rf "${dir:?}"; exit 0; fi
+        if [ -f "$STATE_DIR/$crate.nolock" ]; then
+            rm -f "${dir:?}/Cargo.lock" "${STATE_DIR:?}/${crate:?}.nolock"
+        fi
+        exit 0
+    }
 
     # The pass that starts with the crate: download it if needed, and note
     # whether it shipped a Cargo.lock (one the build generates is removed at
@@ -463,6 +482,8 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
     printf '%s,%s,%s,%s,%s,%s,%s,%s\n' "$IMAGE" "$crate" "$status" "$compile" \
         "$ntests" "$ekind" "$(csvq "$emsg")" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
         > "$STATE_DIR/$crate.csv"
+        # --no-bsan: no second pass, so this one is the crate's last.
+        [ "$NO_BSAN" -eq 1 ] && finish_crate
         rm -rf "${CARGO_TARGET_DIR:?}"
         exit 0
     fi
@@ -523,15 +544,7 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
         fi
     fi
     : > "$STATE_DIR/$crate.bsandone"
-
-    rm -rf "${CARGO_TARGET_DIR:?}" "${bsan_target:?}"
-    # A job's downloaded crate goes too (its logs are in CRATE_LOG_DIR);
-    # --local keeps its downloads for the next run.
-    if [ -n "$CRATE_LOG_DIR" ]; then rm -rf "${dir:?}"; exit 0; fi
-    if [ -f "$STATE_DIR/$crate.nolock" ]; then
-        rm -f "${dir:?}/Cargo.lock" "${STATE_DIR:?}/${crate:?}.nolock"
-    fi
-    exit 0
+    finish_crate
 fi
 
 # -------------------------------- step mode -------------------------------- #
@@ -603,14 +616,15 @@ CONTAINERS_DIR="$GROUP/containers"
 OUTPUTS_DIR="$GROUP/outputs"
 # Bsan-only build failures of every run, for run_eval_dataset.sh (see Output).
 BSAN_FAILS_CSV="$GROUP/scripts/bsan_build_fails.csv"
-LOCAL=0; NODE=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=experimental-bsan; WHOLE=0; DOC=0; RERUN=0; BSAN_ONLY=0; MISSING=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
+LOCAL=0; NODE=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=experimental-bsan; WHOLE=0; DOC=0; NO_BSAN=0; RERUN=0; BSAN_ONLY=0; MISSING=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
 VERSIONS=""; VERSIONS_CSV=""
-MAX_PARALLEL=40   # jobs in flight at once (QOS limit)
+MAX_JOBS=90   # jobs in SLURM at once, running + pending (per-user submit limit)
 while [ "$#" -gt 0 ]; do
     case "$1" in
         --local)    LOCAL=1; shift ;;
         --whole)    WHOLE=1; shift ;;
         --doc)      DOC=1; shift ;;
+        --no-bsan)  NO_BSAN=1; shift ;;
         --rerun-bsan-only) RERUN=1; shift ;;
         --bsan-only) BSAN_ONLY=1; shift ;;
         --rerun-missing) MISSING=1; shift ;;
@@ -626,6 +640,7 @@ while [ "$#" -gt 0 ]; do
         -c|--cpus)  CPUS="$2"; shift 2 ;;
         -t|--time)  WALLTIME="$2"; shift 2 ;;
         -m|--mem)   MEM="$2"; shift 2 ;;
+        --max-jobs) MAX_JOBS="$2"; shift 2 ;;
         --image)    IMAGE="$2"; shift 2 ;;
         -*)         die "unknown option $1" ;;
         *)          POS+=("$1"); shift ;;
@@ -635,9 +650,11 @@ VERSIONS="${VERSIONS:-all}"
 [ "$RERUN" -eq 1 ] && [ "$BSAN_ONLY" -eq 1 ] && die "--rerun-bsan-only and --bsan-only are mutually exclusive"
 [ "$MISSING" -eq 1 ] && { [ "$RERUN" -eq 1 ] || [ "$BSAN_ONLY" -eq 1 ]; } \
     && die "--rerun-missing doesn't go with --rerun-bsan-only or --bsan-only"
+[ "$NO_BSAN" -eq 1 ] && { [ "$RERUN" -eq 1 ] || [ "$BSAN_ONLY" -eq 1 ]; } \
+    && die "--no-bsan doesn't go with --rerun-bsan-only or --bsan-only"
 [ "$MISSING" -eq 1 ] && [ "$LOCAL" -eq 1 ] && die "--rerun-missing is for job runs, not --local"
 [ "${#POS[@]}" -eq 1 ] && [ -n "${POS[0]}" ] \
-    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--image IMG] [--whole] [--doc] [--rerun-bsan-only | --bsan-only | --rerun-missing] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
+    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--max-jobs N] [--image IMG] [--whole] [--doc] [--no-bsan | --rerun-bsan-only | --bsan-only] [--rerun-missing] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
 # --node: a part job's batch script, on the compute node outside the image. It
 # loads singularity and sets up node-local scratch (bound into every step at
 # the same path): CARGO_HOME, the target dirs and, when downloading, the crates.
@@ -834,6 +851,7 @@ if [ "$LOCAL" -eq 0 ]; then
     [ -f "$CONTAINERS_DIR/$IMAGE.sif" ] || die "image not found: $CONTAINERS_DIR/$IMAGE.sif"
     [[ "$CPUS" =~ ^[1-9][0-9]*$ ]] || die "-c must be a positive integer"
     [[ "$PER_JOB" =~ ^[1-9][0-9]*$ ]] || die "-n must be a positive integer"
+    [[ "$MAX_JOBS" =~ ^[1-9][0-9]*$ ]] || die "--max-jobs must be a positive integer"
     JOBS="${JOBS:-$(( CPUS >= 4 ? CPUS / 4 : 1 ))}"
     [[ "$JOBS" =~ ^[1-9][0-9]*$ ]] || die "JOBS must be a positive integer"
     # -t / -m as run_job.sh takes them: HH or HH:MM; a bare number is GB.
@@ -902,6 +920,7 @@ if [ "$LOCAL" -eq 0 ]; then
     cp "$SELF" "$DATASET_DIR/_logs/.build_dataset.sh"
     WHOLE_FLAG=""; [ "$WHOLE" -eq 1 ] && WHOLE_FLAG="--whole"
     [ "$DOC" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --doc"
+    [ "$NO_BSAN" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --no-bsan"
     # The part jobs only need it for the -latest output names.
     [ -n "$SUFFIX" ] && WHOLE_FLAG="$WHOLE_FLAG --$VERSIONS"
     [ "$RERUN" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --rerun-bsan-only"
@@ -909,7 +928,7 @@ if [ "$LOCAL" -eq 0 ]; then
     [ "$DOWNLOAD" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --download"
     echo "==> Building $n crates in the '$IMAGE' image as $NPARTS job(s) of" \
          "$(( n / NPARTS ))-$(( (n + NPARTS - 1) / NPARTS )) crates" \
-         "($CPUS cpus, $JOBS crates at a time, $MEM, ${WALLTIME}h each; at most $MAX_PARALLEL at once)"
+         "($CPUS cpus, $JOBS crates at a time, $MEM, ${WALLTIME}h each; at most $MAX_JOBS at once)"
     echo "    each crate is its own srun step: $STEP_CPUS cpu(s), capped at ${STEP_MEM}M"
 
     pids=()
@@ -952,7 +971,7 @@ if [ "$LOCAL" -eq 0 ]; then
         inflight=$((inflight - 1))
     }
     for (( k = 0; k < NPARTS; k++ )); do
-        [ "$inflight" -lt "$MAX_PARALLEL" ] || reap_one
+        [ "$inflight" -lt "$MAX_JOBS" ] || reap_one
         # The part job runs this script with --node, on the node outside the
         # image; sbatch --wait returns once the job ends, with its exit code.
         # The command goes in a batch script of its own, submitted without
@@ -1036,9 +1055,10 @@ if [ "$LOCAL" -eq 0 ]; then
     # bsan-only CSV, listed but without a .bsandone. For a full run only the
     # ones that compiled matter (with --bsan-only, all of them); a rerun keeps
     # their previous rows.
+    # (--no-bsan: there is no bsan pass, and the bsan outputs are left alone.)
     declare -A RECOVERED=()
     UNCHECKED=()
-    for (( k = 0; k < NPARTS; k++ )); do
+    [ "$NO_BSAN" -eq 0 ] && for (( k = 0; k < NPARTS; k++ )); do
         [ -f "$PARTS_DIR/bsan-only.part-$k.csv" ] && continue
         while IFS= read -r c; do
             [ -n "$c" ] && [ ! -f "$PARTS_DIR/_state-$k/$c.bsandone" ] || continue
@@ -1050,6 +1070,7 @@ if [ "$LOCAL" -eq 0 ]; then
             fi
         done < "$PARTS_DIR/part-$k.txt"
     done
+    if [ "$NO_BSAN" -eq 0 ]; then
     UNCHECKED+=(${PREV_UNCHECKED[@]+"${PREV_UNCHECKED[@]}"})
     # Not in a pipeline, so part_rows' RECOVERED entries stick.
     bsan_rows="$(mktemp)"
@@ -1067,6 +1088,7 @@ if [ "$LOCAL" -eq 0 ]; then
     } > "$BSAN_CSV"
     rm -f "${bsan_rows:?}"
     rm -f "${UNCHECKED_TXT:?}"
+    fi
     # checked_crates: the crates that got their cargo bsan compile -- every
     # part's crates but the unchecked ones, and (in a full run) only those
     # whose plain compile succeeded.
@@ -1143,10 +1165,10 @@ if [ "$LOCAL" -eq 0 ]; then
         echo "==> Done ($rows/$n crates have a row)."
     fi
     summarize "$RESULTS_CSV"
-    summarize_bsan "$RESULTS_CSV" "$BSAN_CSV"
+    [ "$NO_BSAN" -eq 0 ] && summarize_bsan "$RESULTS_CSV" "$BSAN_CSV"
     echo "    results:       $RESULTS_CSV"
     echo "    test list:     $LIST_CSV"
-    echo "    bsan-only:     $BSAN_CSV"
+    [ "$NO_BSAN" -eq 0 ] && echo "    bsan-only:     $BSAN_CSV"
     report_recovery
     if [ "$rows" -lt "$n" ]; then
         echo "    $(( n - rows )) crate(s) have no row (job killed / walltime); see $PARTS_DIR/job-*.log"
@@ -1156,7 +1178,9 @@ if [ "$LOCAL" -eq 0 ]; then
     mkdir -p "$OUTPUTS_DIR" && cp "$RESULTS_CSV" "$out" && echo "    copied to:     $out"
     out="$OUTPUTS_DIR/${DS_NAME}_list$SUFFIX.csv"
     cp "$LIST_CSV" "$out" && echo "    copied to:     $out"
-    checked="$(mktemp)"; checked_crates > "$checked"; record_fails "$checked"; rm -f "${checked:?}"
+    if [ "$NO_BSAN" -eq 0 ]; then
+        checked="$(mktemp)"; checked_crates > "$checked"; record_fails "$checked"; rm -f "${checked:?}"
+    fi
     if [ "$SUFFIX" = -latest ]; then
         out="$GROUP/scripts/$DS_NAME-tests-latest.csv"
         [ -f "$out" ] && cp "$out" "$out.bak" && echo "    previous kept: $out.bak"
@@ -1173,7 +1197,7 @@ in_image() {
     else sh -c "$1" >/dev/null 2>&1; fi
 }
 in_image 'command -v cargo' || die "cargo is required"
-in_image 'command -v cargo-bsan' || die "cargo-bsan is required (run in the experimental-bsan image)"
+[ "$NO_BSAN" -eq 1 ] || in_image 'command -v cargo-bsan' || die "cargo-bsan is required (run in the experimental-bsan image)"
 in_image 'command -v timeout' || die "timeout (coreutils) is required, for BUILD_TIMEOUT"
 if [ "$DOWNLOAD" -eq 1 ]; then
     in_image 'command -v curl && command -v tar' || die "downloading crates needs curl and tar"
@@ -1200,7 +1224,7 @@ fi
 rm -rf "$STATE_DIR"                         # fresh check every run
 mkdir -p "$STATE_DIR"
 
-export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC RERUN BSAN_ONLY PREV_CSV \
+export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC NO_BSAN RERUN BSAN_ONLY PREV_CSV \
     DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV BUILD_TIMEOUT
 
 # Workers: here directly, or on a part job each as its own srun step (see
@@ -1211,7 +1235,7 @@ if [ "$NODE" -eq 1 ]; then
     BD_ENV="$BD_SCRATCH/worker.env"
     # Single-quoted: singularity's env-file parser keeps backslash escapes
     # (bash's %q) literally, so COMPILE would become `cargo\ test\ --tests`.
-    for v in SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC RERUN \
+    for v in SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC NO_BSAN RERUN \
             BSAN_ONLY PREV_CSV DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV BUILD_TIMEOUT CARGO_TERM_COLOR \
             http_proxy https_proxy HTTP_PROXY HTTPS_PROXY; do
         [[ "${!v:-}" != *\'* ]] || die "$v contains a single quote: $v=${!v}"
@@ -1249,7 +1273,7 @@ elif [ "$BSAN_ONLY" -eq 1 ]; then
 else
 echo "==> Building $n crates in $DATASET_DIR with $JOBS worker(s):" \
      "$COMPILE --no-run (RUSTFLAGS=\"$BUILD_RUSTFLAGS\"," \
-     "crate under test +\"$PRIMARY_RUSTFLAGS\"), then list tests$([ "$DOC" -eq 1 ] && echo ' (with doc tests)'), then cargo bsan ${COMPILE#cargo } --no-run ..."
+     "crate under test +\"$PRIMARY_RUSTFLAGS\"), then list tests$([ "$DOC" -eq 1 ] && echo ' (with doc tests)')$([ "$NO_BSAN" -eq 0 ] && echo ", then cargo bsan ${COMPILE#cargo } --no-run") ..."
 fi
 # Pass 1, plain (not with --rerun-bsan-only or --bsan-only), then its outputs, so the
 # results and test list are written before any cargo bsan compile starts and
@@ -1265,11 +1289,22 @@ if [ "$RERUN" -eq 0 ] && [ "$BSAN_ONLY" -eq 0 ]; then
         echo "crate,tests"
         find "$STATE_DIR" -maxdepth 1 -name '*.list' -exec cat {} + 2>/dev/null | LC_ALL=C sort -t, -k1,1
     } > "$LIST_CSV"
-    echo "==> Plain pass done; results and test list written. Now cargo bsan ${COMPILE#cargo } --no-run ..."
+    [ "$NO_BSAN" -eq 0 ] \
+        && echo "==> Plain pass done; results and test list written. Now cargo bsan ${COMPILE#cargo } --no-run ..."
 fi
-# Pass 2, cargo bsan.
-[ "$n" -gt 0 ] && xargs -0 -n 1 -P "$JOBS" "${WORKER[@]}" --worker-bsan < "$crates"
+# Pass 2, cargo bsan (not with --no-bsan).
+[ "$n" -gt 0 ] && [ "$NO_BSAN" -eq 0 ] && xargs -0 -n 1 -P "$JOBS" "${WORKER[@]}" --worker-bsan < "$crates"
 rm -f "$crates"
+if [ "$NO_BSAN" -eq 1 ]; then
+    rm -rf "$STATE_DIR"
+    [ -n "$PART" ] && exit 0
+    echo
+    echo "==> Done."
+    summarize "$RESULTS_CSV"
+    echo "    results:       $RESULTS_CSV"
+    echo "    test list:     $LIST_CSV"
+    exit 0
+fi
 
 # ---------------------------------- outputs --------------------------------- #
 {
