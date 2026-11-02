@@ -22,6 +22,22 @@
 #   RUSTC_WRAPPER, because dependencies like backtrace link against Miri-only
 #   symbols (miri_backtrace_size, ...) under cfg(miri).
 #
+#   Cargo features: every cargo call -- the compile, both listings and the
+#   cargo bsan compile -- gets the crate's features as crater-at-home's
+#   get-args derives them (github.com/saethlin/crater-at-home): from its
+#   [package.metadata.playground], [package.metadata."docs.rs"] and
+#   [package.metadata.docs.rs] tables, merged -- --no-default-features if any
+#   sets no-default-features, --all-features if any sets all-features, and
+#   --features=<every listed feature, sorted>. That's the feature set the
+#   maintainers have docs.rs build, so tests behind it are built and listed.
+#   A crate with none of those tables gets the default features.
+#   --default-features turns this off: every crate gets its default features
+#   (as MiriLLI's pipeline built them), and every output name gets a
+#   "-default-features" suffix (see Output) so the docs.rs-feature results
+#   and test list are kept.
+#   run_eval_dataset.sh derives them the same way, so a test list made here
+#   runs there with the same features. Needs jq in the image.
+#
 #   The listing keeps "type": "test" entries with "ignore": false (the tests
 #   that actually run, as list_tests.sh and run_eval_dataset.sh do), and writes
 #   them to <dataset>_list.csv (see Output), which run_eval_dataset.sh uses in
@@ -126,7 +142,7 @@
 #   _logs/crate-logs/<crate>/, as the scratch is removed with the job.
 #
 # Usage:
-#   ./build_dataset.sh [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--max-jobs N] [--max-tasks N [--cpus-per-task N] [--mem-per-task G]] [--image IMG] [--whole] [--doc | --doc-only] [--no-bsan]
+#   ./build_dataset.sh [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--max-jobs N] [--max-tasks N [--cpus-per-task N] [--mem-per-task G]] [--image IMG] [--whole] [--doc | --doc-only] [--no-bsan] [--default-features]
 #                      [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>
 #   ./build_dataset.sh --local [--image IMG] [--whole] [--doc | --doc-only] [--no-bsan] [version flags] <DATASET_DIR>   # no job
 #   ./build_dataset.sh --rerun-bsan-only [--local] [-n N ...] [--image IMG] [--whole] [--latest] <DATASET>
@@ -164,6 +180,11 @@
 #   --doc         also list doc tests (off by default; see above)
 #   --doc-only    list only the doc tests, after a `cargo build --lib`
 #                 (see above); implies --no-bsan, writes "-doc" outputs
+#   --default-features  build every crate with its default features, not its
+#                 docs.rs ones (see "Cargo features"); writes
+#                 "-default-features" outputs and leaves
+#                 <group>/scripts/bsan_build_fails.csv untouched, as that
+#                 list is for docs.rs-feature runs
 #   --no-bsan     skip the cargo bsan compile: just the plain build and
 #                 listing. The bsan-only CSV, bsan-unchecked.txt and
 #                 <group>/scripts/bsan_build_fails.csv are left untouched,
@@ -201,7 +222,8 @@
 # suffix before .csv, and the parts dir is _build_parts-latest; with
 # --only-first the suffix is "-only-first"; --doc-only puts "-doc" before
 # either, e.g. <dataset>_list-doc-latest.csv and
-# <group>/scripts/<dataset>-doc-tests-latest.csv):
+# <group>/scripts/<dataset>-doc-tests-latest.csv, and --default-features puts
+# "-default-features" before that, e.g. <dataset>_list-default-features.csv):
 #   <DATASET_DIR>/_logs/build-<image>.csv, and (when launched as a job) a copy
 #   at $GROUP/outputs/<image>-<dataset>-build.csv, columns:
 #     build,crate,status,compile_seconds,tests,error_type,error,timestamp
@@ -336,6 +358,26 @@ timed_out() { [ "$1" -ne 0 ] && [ "$BUILD_TIMEOUT" -gt 0 ] && [ "$2" -ge $(( BUI
 # CSV-quote a field (empty stays empty).
 csvq() { [ -n "$1" ] && printf '"%s"' "${1//\"/\"\"}"; }
 
+# crate_features <name-version>, in the crate's dir: its cargo feature flags,
+# as crater-at-home's get-args derives them (see "Cargo features"); a table
+# that doesn't parse as get-args's Metadata is ignored, as there. Same as
+# inner.sh's crate_features in run_eval_dataset.sh -- keep the two in sync.
+crate_features() {
+    command -v jq > /dev/null || { echo "warning: no jq; building with default features" >&2; return 0; }
+    cargo metadata --no-deps --format-version 1 2> /dev/null | jq -r --arg n "${1%-[0-9]*}" '
+        def valid: type == "object"
+            and ((has("features") | not) or (.features | type == "array" and all(type == "string")))
+            and ((has("no-default-features") | not) or (.["no-default-features"] | type == "boolean"))
+            and ((has("all-features") | not) or (.["all-features"] | type == "boolean"));
+        first(.packages[] | select(.name == $n)) | (.metadata // {})
+        | [objects | .playground, .["docs.rs"], (.docs | objects | .rs)] | map(select(valid))
+        | [ (if any(.["no-default-features"] == true) then "--no-default-features" else empty end),
+            (if any(.["all-features"] == true) then "--all-features" else empty end),
+            ([.[].features // [] | .[]] | unique
+             | if length > 0 then "--features=" + join(",") else empty end) ]
+        | join(" ")'
+}
+
 # doc_names <all names> <runnable names>: each runnable doc test as
 # doc:<name>#<filter>[#<skip>...] -- the same encoding and filter choice as
 # list_tests.sh --doc (see "Doc tests" there); keep the two in sync. A doc
@@ -439,17 +481,23 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
         [ -f "$dir/Cargo.lock" ] || : > "$STATE_DIR/$crate.nolock"
     fi
 
+    # The crate's cargo features (see "Cargo features"), on every cargo call.
+    feat=()
+    [ "$DEFAULT_FEATURES" -eq 1 ] || read -ra feat <<< "$(cd "$dir" && crate_features "$crate")"
+
     if [ "$phase" = --worker ]; then
         rm -rf "${CARGO_TARGET_DIR:?}"
         status=ok; compile=""; ntests=""; ekind=""; emsg=""; tout=0
     wrap=()
     [ -n "$PRIMARY_RUSTFLAGS" ] \
         && wrap=(RUSTC_WRAPPER="$SELF" BUILD_DATASET_RUSTC_WRAPPER=1)
-    if ! ( cd "$dir" && cargo fetch ) > "$log" 2>&1; then
+    { echo "build_dataset: features: ${feat[*]:-(defaults)}"
+      ( cd "$dir" && cargo fetch ); } > "$log" 2>&1
+    if [ $? -ne 0 ]; then
         status=fetch_failed
     else
-        build=($COMPILE --no-run)
-        [ "$DOC_ONLY" -eq 1 ] && build=(cargo build --lib)
+        build=($COMPILE ${feat[@]+"${feat[@]}"} --no-run)
+        [ "$DOC_ONLY" -eq 1 ] && build=(cargo build --lib ${feat[@]+"${feat[@]}"})
         cstart=$(date +%s%3N)
         ( cd "$dir" && timeout -k 60 "$BUILD_TIMEOUT" env ${wrap[@]+"${wrap[@]}"} \
                 RUSTFLAGS="$BUILD_RUSTFLAGS" "${build[@]}" ) >> "$log" 2>&1
@@ -472,7 +520,7 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
             : > "$list"   # no binary tests, just the doc tests below
         else
             ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" \
-                cargo test --tests -- --list --format=json -Zunstable-options ) \
+                cargo test --tests ${feat[@]+"${feat[@]}"} -- --list --format=json -Zunstable-options ) \
                 > "$list" 2>> "$log"
         fi
         if [ $? -eq 0 ]; then
@@ -482,7 +530,7 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
                 doclog="$STATE_DIR/$crate.doc.json"
                 if ( cd "$dir" && env ${wrap[@]+"${wrap[@]}"} RUSTFLAGS="$BUILD_RUSTFLAGS" \
                         RUSTDOCFLAGS="$BUILD_RUSTFLAGS${PRIMARY_RUSTFLAGS:+ $PRIMARY_RUSTFLAGS}" \
-                        cargo test --doc -- --list --format=json -Zunstable-options ) \
+                        cargo test --doc ${feat[@]+"${feat[@]}"} -- --list --format=json -Zunstable-options ) \
                         > "$doclog" 2>> "$log"; then
                     namesof() { sed -E 's/.*"name": *"([^"]*)".*/\1/' | sed '/^$/d' | LC_ALL=C sort -u; }
                     grep -a '"type": *"test"' "$doclog" | namesof > "$doclog.all"
@@ -555,7 +603,7 @@ if [ "${1:-}" = "--worker" ] || [ "${1:-}" = "--worker-bsan" ]; then
             cstart=$(date +%s%3N)
             ( cd "$dir" && timeout -k 60 "$BUILD_TIMEOUT" env ${bwrap[@]+"${bwrap[@]}"} ${tc[@]+"${tc[@]}"} \
                     CARGO_TARGET_DIR="$bsan_target" RUSTFLAGS="$BUILD_RUSTFLAGS" \
-                    cargo bsan ${COMPILE#cargo } --no-run ) > "$blog" 2>&1
+                    cargo bsan ${COMPILE#cargo } ${feat[@]+"${feat[@]}"} --no-run ) > "$blog" 2>&1
             brc=$?
             cms=$(( $(date +%s%3N) - cstart ))
             if [ "$brc" -eq 0 ] || [ ${#tc[@]} -gt 0 ] \
@@ -652,7 +700,7 @@ CONTAINERS_DIR="$GROUP/containers"
 OUTPUTS_DIR="$GROUP/outputs"
 # Bsan-only build failures of every run, for run_eval_dataset.sh (see Output).
 BSAN_FAILS_CSV="$GROUP/scripts/bsan_build_fails.csv"
-LOCAL=0; NODE=0; CPUS=""; WALLTIME=8; MEM=""; IMAGE=experimental-bsan; WHOLE=0; DOC=0; DOC_ONLY=0; NO_BSAN=0; RERUN=0; BSAN_ONLY=0; MISSING=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
+LOCAL=0; NODE=0; CPUS=""; WALLTIME=8; MEM=""; IMAGE=experimental-bsan; WHOLE=0; DOC=0; DOC_ONLY=0; NO_BSAN=0; DEFAULT_FEATURES=0; RERUN=0; BSAN_ONLY=0; MISSING=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
 VERSIONS=""; VERSIONS_CSV=""
 MAX_JOBS=90   # jobs in SLURM at once, running + pending (per-user submit limit)
 MAX_TASKS=""  # crates built at once per job; empty = JOBS, else its default
@@ -664,6 +712,7 @@ while [ "$#" -gt 0 ]; do
         --doc)      DOC=1; shift ;;
         --doc-only) DOC_ONLY=1; shift ;;
         --no-bsan)  NO_BSAN=1; shift ;;
+        --default-features) DEFAULT_FEATURES=1; shift ;;
         --rerun-bsan-only) RERUN=1; shift ;;
         --bsan-only) BSAN_ONLY=1; shift ;;
         --rerun-missing) MISSING=1; shift ;;
@@ -718,7 +767,7 @@ fi
 CPUS="${CPUS:-16}"; MEM="${MEM:-64G}"
 [ "$MISSING" -eq 1 ] && [ "$LOCAL" -eq 1 ] && die "--rerun-missing is for job runs, not --local"
 [ "${#POS[@]}" -eq 1 ] && [ -n "${POS[0]}" ] \
-    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--max-jobs N] [--max-tasks N [--cpus-per-task N] [--mem-per-task G]] [--image IMG] [--whole] [--doc | --doc-only] [--no-bsan | --rerun-bsan-only | --bsan-only] [--rerun-missing] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
+    || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--max-jobs N] [--max-tasks N [--cpus-per-task N] [--mem-per-task G]] [--image IMG] [--whole] [--doc | --doc-only] [--default-features] [--no-bsan | --rerun-bsan-only | --bsan-only] [--rerun-missing] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
 # --node: a part job's batch script, on the compute node outside the image. It
 # loads singularity and sets up node-local scratch (bound into every step at
 # the same path): CARGO_HOME, the target dirs and, when downloading, the crates.
@@ -791,6 +840,7 @@ SUFFIX=""
 case "$VERSIONS" in latest|only-latest) SUFFIX="-latest" ;; only-first) SUFFIX="-only-first" ;; esac
 VERSIONS_SUFFIX="$SUFFIX"
 [ "$DOC_ONLY" -eq 1 ] && SUFFIX="-doc$SUFFIX"
+[ "$DEFAULT_FEATURES" -eq 1 ] && SUFFIX="-default-features$SUFFIX"
 RESULTS_CSV="$DATASET_DIR/_logs/build-$IMAGE$SUFFIX.csv"
 LIST_CSV="$DATASET_DIR/_logs/${DS_NAME}_list$SUFFIX.csv"
 BSAN_CSV="$DATASET_DIR/_logs/build-$IMAGE-bsan-only$SUFFIX.csv"
@@ -896,6 +946,10 @@ finish_rerun() {
 # run's rows over), then append BSAN_CSV's rows.
 record_fails() {
     local merged
+    if [ "$DEFAULT_FEATURES" -eq 1 ]; then
+        echo "    --default-features: $BSAN_FAILS_CSV left untouched (it's for docs.rs-feature runs)"
+        return 0
+    fi
     merged="$(mktemp)"
     {
         echo "$BSAN_HEADER"
@@ -987,6 +1041,7 @@ if [ "$LOCAL" -eq 0 ]; then
     WHOLE_FLAG=""; [ "$WHOLE" -eq 1 ] && WHOLE_FLAG="--whole"
     [ "$DOC" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --doc"
     [ "$NO_BSAN" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --no-bsan"
+    [ "$DEFAULT_FEATURES" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --default-features"
     [ "$DOC_ONLY" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --doc-only"
     # The part jobs only need it for the -latest output names.
     [ -n "$VERSIONS_SUFFIX" ] && WHOLE_FLAG="$WHOLE_FLAG --$VERSIONS"
@@ -1249,7 +1304,7 @@ if [ "$LOCAL" -eq 0 ]; then
         checked="$(mktemp)"; checked_crates > "$checked"; record_fails "$checked"; rm -f "${checked:?}"
     fi
     if [ "$VERSIONS_SUFFIX" = -latest ]; then
-        out="$GROUP/scripts/$DS_NAME$([ "$DOC_ONLY" -eq 1 ] && echo -doc)-tests-latest.csv"
+        out="$GROUP/scripts/$DS_NAME$([ "$DEFAULT_FEATURES" -eq 1 ] && echo -default-features)$([ "$DOC_ONLY" -eq 1 ] && echo -doc)-tests-latest.csv"
         [ -f "$out" ] && cp "$out" "$out.bak" && echo "    previous kept: $out.bak"
         cp "$LIST_CSV" "$out" && echo "    tests list:    $out  (run_eval_dataset.sh --tests $out ...)"
     fi
@@ -1292,7 +1347,7 @@ rm -rf "$STATE_DIR"                         # fresh check every run
 mkdir -p "$STATE_DIR"
 
 export SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC DOC_ONLY NO_BSAN RERUN BSAN_ONLY PREV_CSV \
-    DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV BUILD_TIMEOUT
+    DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV BUILD_TIMEOUT DEFAULT_FEATURES
 
 # Workers: here directly, or on a part job each as its own srun step (see
 # step mode), which needs the worker environment written out for the image.
@@ -1303,7 +1358,7 @@ if [ "$NODE" -eq 1 ]; then
     # Single-quoted: singularity's env-file parser keeps backslash escapes
     # (bash's %q) literally, so COMPILE would become `cargo\ test\ --tests`.
     for v in SELF BUILD_RUSTFLAGS PRIMARY_RUSTFLAGS TARGET_BASE STATE_DIR IMAGE COMPILE DOC DOC_ONLY NO_BSAN RERUN \
-            BSAN_ONLY PREV_CSV DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV BUILD_TIMEOUT CARGO_TERM_COLOR \
+            BSAN_ONLY PREV_CSV DOWNLOAD CRATE_LOG_DIR MAIN_RESULTS_CSV BUILD_TIMEOUT DEFAULT_FEATURES CARGO_TERM_COLOR \
             http_proxy https_proxy HTTP_PROXY HTTPS_PROXY; do
         [[ "${!v:-}" != *\'* ]] || die "$v contains a single quote: $v=${!v}"
         printf "%s='%s'\n" "$v" "${!v:-}"
