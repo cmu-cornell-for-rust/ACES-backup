@@ -96,7 +96,7 @@ if [[ -z "${SLURM_JOB_ID:-}" ]]; then
     if [[ "$no_lazy_alloc" -eq 1 ]]; then
         reexec_flags+=(--no-lazy-alloc)
     fi
-    exec srun --nodes=1 --ntasks-per-node=1 --mem=32G --time=02:00:00 \
+    exec srun --nodes=1 --ntasks-per-node=1 --mem=8G --time=02:00:00 \
         bash "$script" "${reexec_flags[@]+"${reexec_flags[@]}"}" "$name" "$ref"
 fi
 
