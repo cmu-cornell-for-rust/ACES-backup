@@ -108,6 +108,11 @@ fi
 # ACES needs WebProxy for internet on compute nodes; Bridges-2 has direct access.
 module load WebProxy 2>/dev/null || true
 
+# Finite stack, so bsan.def's %test (and anything else that runs bsan during
+# the build) can map its shadow memory: an unlimited stack, Bridges-2 compute
+# nodes' default, moves the mmap base into bsan's shadow range.
+ulimit -S -s 8192
+
 tmp_dir="${LOCAL:-/tmp/${USER}}/sif-build.$$"
 export SINGULARITY_TMPDIR="${tmp_dir}/tmp"
 mkdir -p "$SINGULARITY_TMPDIR"

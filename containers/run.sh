@@ -149,6 +149,9 @@ echo
 # Drop into an interactive shell INSIDE the container. Only
 # CARGO_HOME/CARGO_TARGET_DIR are redirected to writable scratch; RUSTUP_HOME
 # and PATH stay pointed at the read-only toolchain baked into the image.
+# Finite stack for bsan: an unlimited one (Bridges-2 compute nodes' default)
+# moves the mmap base into bsan's shadow range (see run_job.sh).
+ulimit -S -s 8192
 exec singularity shell --cleanenv --pwd /work \
     --bind "$JOBSCRATCH" --bind "$PWD:/work" \
     --bind "$GROUP/outputs" \

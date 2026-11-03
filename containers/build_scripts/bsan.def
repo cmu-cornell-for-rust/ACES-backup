@@ -191,6 +191,10 @@ From: ubuntu:25.04
     # here means the toolchain, runtime, plugin and pre-built sysroot all work;
     # a segfault here means the *install* is broken (not the crate under test).
     set -e
+    # Finite stack: with an unlimited one (Bridges-2 compute nodes' default) the
+    # kernel puts the mmap base at ~0x155555554000, inside bsan's shadow range
+    # (0x110000000000-0x1fffffffffff), and the runtime can't map its shadow.
+    ulimit -S -s 8192
     export BSAN_SYSROOT=/opt/bsan-sysroot
     rustup default bsan >/dev/null 2>&1 || true
     rustc -vV
