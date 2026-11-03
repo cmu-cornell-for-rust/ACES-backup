@@ -118,7 +118,7 @@
 # Environment:
 #   BSAN_SYMBOLIZER   llvm-symbolizer path inside the image, so BSAN reports
 #                     carry source locations (bsan mode). Default:
-#                     /root/.rustup/toolchains/bsan/bin/llvm-symbolizer
+#                     /opt/rust/rustup/toolchains/bsan/bin/llvm-symbolizer
 #
 #   --test-timeout T  time limit per test invocation, in any form coreutils
 #                     `timeout` accepts (e.g. 300, 90s, 10m, 1.5h); a test that
@@ -270,7 +270,7 @@ MAX_JOBS=4000
 # stack traces are shorter here, since the whole report goes in the CSV).
 MIRI_COMMON="-Zmiri-disable-alignment-check -Zmiri-disable-data-race-detector -Zmiri-ignore-leaks -Zmiri-tree-borrows"
 BSAN_COMMON="stacktrace_max_len=10"
-BSAN_SYMBOLIZER="${BSAN_SYMBOLIZER:-/root/.rustup/toolchains/bsan/bin/llvm-symbolizer}"
+BSAN_SYMBOLIZER="${BSAN_SYMBOLIZER:-/opt/rust/rustup/toolchains/bsan/bin/llvm-symbolizer}"
 
 # ── Options ──────────────────────────────────────────────────────────────────
 IGNORE_FILE=""

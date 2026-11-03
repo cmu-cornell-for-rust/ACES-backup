@@ -645,9 +645,13 @@ if [ "${1:-}" = "--step" ]; then
     dir="$3"
     crate="$(basename "$dir")"
     errf="$BD_SCRATCH/step-$crate.err"
+    # The finite stack is set inside the step: srun doesn't propagate the job
+    # script's (Bridges-2: PropagateResourceLimits=CORE), and the nodes'
+    # unlimited default puts the mmap base in bsan's shadow range.
     srun --exact --nodes=1 --ntasks=1 \
         --cpus-per-task="$BD_STEP_CPUS" --mem="$BD_STEP_MEM" \
         --kill-on-bad-exit=0 --job-name="$crate" \
+        bash -c 'ulimit -S -s 8192 && exec "$@"' bash \
         singularity exec --cleanenv --pwd "$BD_DATASET_DIR" \
             --bind "$BD_DATASET_DIR" --bind "$BD_SCRATCH" --env-file "$BD_ENV" \
             "$BD_SIF" bash "$SELF" "$phase" "$dir" 2> "$errf"
@@ -792,8 +796,8 @@ if [ "$NODE" -eq 1 ]; then
     mkdir -p "$BD_SCRATCH/home" "$BD_SCRATCH/target"
     trap 'rm -rf "$BD_SCRATCH" 2>/dev/null || true' EXIT
     export TMP="$BD_SCRATCH" CARGO_TARGET_DIR="$BD_SCRATCH/target"
-    # Finite stack before srun propagates it into the steps (bsan shadow-memory
-    # layout workaround -- see run_job.sh).
+    # Finite stack for this script (bsan shadow-memory layout workaround -- see
+    # run_job.sh); each srun step sets its own, as srun may not propagate it.
     ulimit -S -s 8192
 fi
 TMP_BASE="${TMP:-${LOCAL:-${TMPDIR:-/tmp}}}"
