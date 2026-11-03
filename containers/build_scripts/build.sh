@@ -98,7 +98,7 @@ if [[ -z "${SLURM_JOB_ID:-}" ]]; then
     fi
     GROUP="${GROUP:-$(cd "$(dirname "$script")/../.." && pwd)}"
     source "$GROUP/scripts/slurm_shape.sh"
-    slurm_shape 1 1 8000   # 8G; on Bridges-2 RM-shared that is 4 cores
+    slurm_shape 1 1 16000   # 16G; on Bridges-2 RM-shared that is 8 cores
     exec srun --nodes=1 "${SLURM_SHAPE[@]}" --time=02:00:00 \
         bash "$script" "${reexec_flags[@]+"${reexec_flags[@]}"}" "$name" "$ref"
 fi
@@ -138,6 +138,12 @@ fi
 # branch can be built either way.
 if [[ "$no_lazy_alloc" -eq 1 ]]; then
     build_args+=(--build-arg "MIRI_LAZY_ALLOC=0")
+fi
+# mksquashfs (packing the SIF) sizes its caches from the node's RAM (25% by
+# default: 64G on a 256G Bridges-2 node), not the job's limit, and gets
+# OOM-killed. Cap it to the job's share.
+if singularity build --help 2>&1 | grep -q -- --mksquashfs-args; then
+    build_args+=(--mksquashfs-args "-mem 2G -processors ${SLURM_CPUS_PER_TASK:-4}")
 fi
 singularity build --fakeroot "${build_args[@]+"${build_args[@]}"}" \
     "${tmp_dir}/${outname}.sif" "${name}.def"
