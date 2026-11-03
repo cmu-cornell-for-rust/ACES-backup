@@ -61,6 +61,9 @@ SH
     # Used by run_bench_dataset.sh to sample per-test runtimes.
     cargo +stable install --locked hyperfine --version 1.19.0
 
+    # Under Bridges-2's unprivileged --fakeroot, files the build creates don't
+    # look owned by the build user, so git refuses them ("dubious ownership").
+    git config --system --add safe.directory '*'
     git clone --depth 1 https://github.com/rust-lang/miri/ /opt/miri
     cd /opt/miri
 

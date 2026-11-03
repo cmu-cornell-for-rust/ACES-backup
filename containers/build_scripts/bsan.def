@@ -89,6 +89,9 @@ From: ubuntu:25.04
     # --- Clone & build BorrowSanitizer --------------------------------------
     # BSAN_REF is supplied by build.sh via --build-arg. When non-empty, check
     # out that branch/commit; otherwise build from the default branch (main).
+    # Under Bridges-2's unprivileged --fakeroot, files the build creates don't
+    # look owned by the build user, so git refuses them ("dubious ownership").
+    git config --system --add safe.directory '*'
     BSAN_REF="{{ BSAN_REF }}"
     if [ -n "$BSAN_REF" ]; then
         git clone https://github.com/BorrowSanitizer/bsan /opt/bsan

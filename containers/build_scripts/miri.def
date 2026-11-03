@@ -103,6 +103,9 @@ SH
     # --- Build & install the Miri fork ---------------------------------------
     # MIRI_REF is supplied by build.sh via --build-arg. When non-empty, check
     # out that branch/commit; otherwise build from the default branch.
+    # Under Bridges-2's unprivileged --fakeroot, files the build creates don't
+    # look owned by the build user, so git refuses them ("dubious ownership").
+    git config --system --add safe.directory '*'
     MIRI_REF="{{ MIRI_REF }}"
     MIRI_LAZY_ALLOC="{{ MIRI_LAZY_ALLOC }}"
     if [ -n "$MIRI_REF" ]; then
