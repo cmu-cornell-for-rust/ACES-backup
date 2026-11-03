@@ -107,6 +107,11 @@
 #   --merge RUNDIR    don't run anything: merge RUNDIR's shards into its master
 #                     CSV (see the end of this comment) and print the summary
 #   --test-threads N  pass `--test-threads=N` to the test harness on every run
+#   --default-features  build and run every crate with its default features,
+#                     not its docs.rs ones (see "Cargo features" below), e.g.
+#                     to match MiriLLI's runs; the master CSV gets a
+#                     "default-features" slug. Pair it with a test list made
+#                     by build_dataset.sh --default-features
 # Environment:
 #   BSAN_SYMBOLIZER   llvm-symbolizer path inside the image, so BSAN reports
 #                     carry source locations (bsan mode). Default:
@@ -159,6 +164,18 @@
 # bsan mode put --cfg=miri on the crate under test only (rustc-cfg-miri.sh), as
 # build_dataset.sh does, so dependencies that call Miri-only fns under
 # cfg(miri) still link.
+#
+# Cargo features: every compile and test run gets the crate's features as
+# crater-at-home's get-args derives them (github.com/saethlin/crater-at-home)
+# from its [package.metadata.playground], [package.metadata."docs.rs"] and
+# [package.metadata.docs.rs] tables, merged: --no-default-features if any
+# sets no-default-features, --all-features if any sets all-features, and
+# --features=<every listed feature, sorted>. That's the set the maintainers
+# have docs.rs build; without it, a test behind a non-default feature isn't
+# compiled and is a no_match. build_dataset.sh lists tests with the same
+# features. A crate with none of those tables gets the default features.
+# --default-features turns this off: every crate gets its default features,
+# as MiriLLI's pipeline ran them.
 #
 # Per crate, inside the container:
 #   fetch         cargo fetch                                  (fetch_failed)
@@ -266,6 +283,7 @@ CPUS_PER_TASK=1
 MEM_PER_TASK=8
 TEST_THREADS=""
 TEST_TIMEOUT="30m"    # 0 = no limit
+DEFAULT_FEATURES=0    # 1 = default features, not the docs.rs ones
 WALLTIME_ARG=12
 SLOW_WALLTIME_ARG=24
 
@@ -347,6 +365,7 @@ while [[ $# -gt 0 ]]; do
         --slow-walltime) SLOW_WALLTIME_ARG="$2"; shift 2 ;;
         --slow-walltime=*) SLOW_WALLTIME_ARG="${1#*=}"; shift ;;
         --test-timeout)  TEST_TIMEOUT="$2"; shift 2 ;;
+        --default-features) DEFAULT_FEATURES=1; shift ;;
         --test-timeout=*) TEST_TIMEOUT="${1#*=}"; shift ;;
         --)              shift; POS+=("$@"); break ;;
         -*)
@@ -388,6 +407,7 @@ usage() {
     echo "           --jobs N --max-jobs N (default 90) --max-tasks N (default $DEFAULT_MAX_TASKS, <= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 30m, 0 = none)" >&2
+    echo "           --default-features (default features, not the docs.rs ones)" >&2
     echo "           --slow-walltime T (slow-list jobs, HH or HH:MM; default 24) | --no-slow-list" >&2
     exit 1
 }
@@ -494,6 +514,7 @@ if [[ -n "$EXTRA" && "$MODE" != "rust" ]]; then
     SLUG="$(printf '%s' "$EXTRA" | tr -c '[:alnum:]' '-' | sed 's/-\{1,\}/-/g; s/^-//; s/-$//')"
 fi
 [[ -n "$TEST_THREADS" ]] && SLUG="${SLUG:+$SLUG-}tt${TEST_THREADS}"
+(( DEFAULT_FEATURES )) && SLUG="${SLUG:+$SLUG-}default-features"
 [[ -n "$SLUG" ]] && CSV="$OUTPUTS_DIR/${IMAGE}-${SLUG}-${TESTS_NAME}-eval.csv"
 
 # ── Validate ──────────────────────────────────────────────────────────────--
@@ -827,6 +848,7 @@ TASKS=$PER_JOB_MAX
     printf 'MEM_PER_TASK=%q\n'     "$MEM_PER_TASK"
     printf 'TEST_THREADS=%q\n'     "$TEST_THREADS"
     printf 'TEST_TIMEOUT=%q\n'     "$TEST_TIMEOUT"
+    printf 'DEFAULT_FEATURES=%q\n' "$DEFAULT_FEATURES"
     printf 'MIRIFLAGS_ALL=%q\n'    "$MIRIFLAGS_ALL"
     printf 'BSAN_OPTIONS_ALL=%q\n' "$BSAN_OPTIONS_ALL"
     printf 'BSAN_SYMBOLIZER=%q\n'  "$BSAN_SYMBOLIZER"
@@ -895,6 +917,34 @@ pct_decode() {
     printf '%s' "$1" | sed -e 's/%2C/,/g' -e 's/%3B/;/g' -e 's/%20/ /g' \
         -e "s/%27/'/g" -e 's/%22/"/g' -e 's/%23/#/g' -e 's/%25/%/g'
 }
+
+# crate_features <name-version>, in the crate's dir: its cargo feature flags,
+# as crater-at-home's get-args derives them (see "Cargo features" at the top
+# of run_eval_dataset.sh); a table that doesn't parse as get-args's Metadata
+# is ignored, as there. Same as build_dataset.sh's crate_features -- keep the
+# two in sync.
+crate_features() {
+    command -v jq > /dev/null || { echo "warning: no jq; building with default features" >&2; return 0; }
+    cargo metadata --no-deps --format-version 1 2> /dev/null | jq -r --arg n "${1%-[0-9]*}" '
+        def valid: type == "object"
+            and ((has("features") | not) or (.features | type == "array" and all(type == "string")))
+            and ((has("no-default-features") | not) or (.["no-default-features"] | type == "boolean"))
+            and ((has("all-features") | not) or (.["all-features"] | type == "boolean"));
+        first(.packages[] | select(.name == $n)) | (.metadata // {})
+        | [objects | .playground, .["docs.rs"], (.docs | objects | .rs)] | map(select(valid))
+        | [ (if any(.["no-default-features"] == true) then "--no-default-features" else empty end),
+            (if any(.["all-features"] == true) then "--all-features" else empty end),
+            ([.[].features // [] | .[]] | unique
+             | if length > 0 then "--features=" + join(",") else empty end) ]
+        | join(" ")'
+}
+# On every compile and test run (word-split on purpose).
+FEATURES=""
+[ "${EV_DEFAULT_FEATURES:-0}" = 1 ] || FEATURES=$(crate_features "$EV_CRATE")
+if [ -n "$FEATURES" ]; then
+    RUN="$RUN $FEATURES"; DOC_RUN="$DOC_RUN $FEATURES"
+fi
+echo "features: ${FEATURES:-(defaults)}"
 
 HARNESS=()
 [ -n "${EV_TEST_THREADS:-}" ] && HARNESS=(--test-threads="$EV_TEST_THREADS")
@@ -1266,6 +1316,7 @@ worker() {
             --env EV_TESTS="$RUNDIR/lists/$crate.txt" \
             --env EV_TEST_THREADS="$TEST_THREADS" \
             --env EV_TEST_TIMEOUT="$TEST_TIMEOUT" \
+            --env EV_DEFAULT_FEATURES="$DEFAULT_FEATURES" \
             --env EV_MIRIFLAGS="$MIRIFLAGS_ALL" \
             --env EV_BSAN_OPTIONS="$BSAN_OPTIONS_ALL" \
             --env EV_BSAN_SYMBOLIZER="$BSAN_SYMBOLIZER" \
@@ -1327,6 +1378,7 @@ echo "          x ${CPUS_PER_TASK} cpu, ${MEM_PER_TASK}G/worker, $WALLTIME wallt
 (( JOBS > MAX_JOBS )) && echo "Staging:  at most $MAX_JOBS of your jobs in SLURM at once; the rest are submitted
           as slots free up -- keep this script running (tmux/screen) until all are in"
 echo "Timing:   one run per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}${TEST_TIMEOUT:+, --test-timeout=$TEST_TIMEOUT}"
+echo "Features: $( (( DEFAULT_FEATURES )) && echo "default features (--default-features)" || echo "each crate's docs.rs features, else its defaults")"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_SYMBOLIZER: $BSAN_SYMBOLIZER"
