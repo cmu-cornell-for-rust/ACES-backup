@@ -6,7 +6,12 @@ From: ubuntu:22.04
     export CARGO_HOME=/opt/rust/cargo
     export PATH=/opt/rust/cargo/bin:$PATH
 
+%files
+    fakeroot-shim.sh /opt/fakeroot-shim.sh
+
 %post
+    # Lets packages add system users/groups under Bridges-2's --fakeroot.
+    sh /opt/fakeroot-shim.sh on
     apt-get update && apt-get install -y \
         curl build-essential ca-certificates \
         git pkg-config libssl-dev jq \
@@ -38,6 +43,7 @@ From: ubuntu:22.04
     rustup default miri
 
     chmod -R a+rX /opt/rust
+    sh /opt/fakeroot-shim.sh off
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 %labels

@@ -14,7 +14,12 @@ From: ubuntu:22.04
     # at run time doesn't need to write anything (important on read-only Apptainer FS).
     export MIRI_SYSROOT=/opt/miri-sysroot
 
+%files
+    fakeroot-shim.sh /opt/fakeroot-shim.sh
+
 %post
+    # Lets packages add system users/groups under Bridges-2's --fakeroot.
+    sh /opt/fakeroot-shim.sh on
     set -eux
 
     apt-get update && apt-get install -y \
@@ -91,6 +96,7 @@ SH
     rm -rf /opt/miri/target /opt/miri/miri-script/target
 
     chmod -R a+rX /opt/rust /opt/miri-sysroot /opt/miri
+    sh /opt/fakeroot-shim.sh off
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 %runscript

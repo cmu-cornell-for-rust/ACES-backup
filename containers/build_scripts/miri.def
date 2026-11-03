@@ -32,7 +32,12 @@ From: ubuntu:22.04
     export LLVM_CONFIG_PATH=/usr/lib/llvm-19/bin/llvm-config
     export LIBCLANG_PATH=/usr/lib/llvm-19/lib
 
+%files
+    fakeroot-shim.sh /opt/fakeroot-shim.sh
+
 %post
+    # Lets packages add system users/groups under Bridges-2's --fakeroot.
+    sh /opt/fakeroot-shim.sh on
     set -eux
 
     export DEBIAN_FRONTEND=noninteractive
@@ -172,20 +177,29 @@ SH
     # llvm-config + libclang, and some build scripts invoke a versioned clang
     # (clang-19 .. clang-22) by name. Installed after Miri is built so it can't
     # affect that build; the env vars are in %environment.
-    apt-get update && apt-get install -y wget gnupg lsb-release software-properties-common
-    wget -qO /tmp/llvm.sh https://apt.llvm.org/llvm.sh
-    chmod +x /tmp/llvm.sh
+    # The apt.llvm.org repos are added directly, as llvm.sh would: llvm.sh
+    # needs add-apt-repository (software-properties-common), which pulls in
+    # systemd, whose setup can't run under Bridges-2's --fakeroot (see
+    # fakeroot-shim.sh). Each version installs what llvm.sh did.
+    apt-get update && apt-get install -y --no-install-recommends wget gnupg lsb-release
+    wget -qO /etc/apt/trusted.gpg.d/apt.llvm.org.asc https://apt.llvm.org/llvm-snapshot.gpg.key
+    codename=$(lsb_release -cs)
     for v in 19 20 21 22; do
-        /tmp/llvm.sh "$v" || echo "WARN: LLVM $v unavailable from apt.llvm.org; skipping"
+        echo "deb http://apt.llvm.org/$codename/ llvm-toolchain-$codename-$v main" \
+            > /etc/apt/sources.list.d/llvm-$v.list
+        if ! { apt-get update && apt-get install -y clang-$v lldb-$v lld-$v clangd-$v; }; then
+            echo "WARN: LLVM $v unavailable from apt.llvm.org; skipping"
+            rm -f /etc/apt/sources.list.d/llvm-$v.list
+        fi
     done
     apt-get install -y llvm-19-dev libclang-19-dev
-    rm -f /tmp/llvm.sh
 
     # --- Cleanup -------------------------------------------------------------
     # Drop build artifacts (the binaries already live in the toolchain sysroot).
     rm -rf /opt/miri/target /opt/miri/miri-script/target
 
     chmod -R a+rX /opt/rust /opt/miri-sysroot /opt/miri
+    sh /opt/fakeroot-shim.sh off
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 %runscript
