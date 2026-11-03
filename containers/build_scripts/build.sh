@@ -96,7 +96,10 @@ if [[ -z "${SLURM_JOB_ID:-}" ]]; then
     if [[ "$no_lazy_alloc" -eq 1 ]]; then
         reexec_flags+=(--no-lazy-alloc)
     fi
-    exec srun --nodes=1 --ntasks-per-node=1 --mem=8G --time=02:00:00 \
+    GROUP="${GROUP:-$(cd "$(dirname "$script")/../.." && pwd)}"
+    source "$GROUP/scripts/slurm_shape.sh"
+    slurm_shape 1 1 8000   # 8G; on Bridges-2 RM-shared that is 4 cores
+    exec srun --nodes=1 "${SLURM_SHAPE[@]}" --time=02:00:00 \
         bash "$script" "${reexec_flags[@]+"${reexec_flags[@]}"}" "$name" "$ref"
 fi
 

@@ -97,6 +97,7 @@ fi
 # Exported so srun propagates it into the node script.
 GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
 export GROUP
+source "$GROUP/scripts/slurm_shape.sh"
 CONTAINERS_DIR="$GROUP/containers"
 IMG="$(basename "$SIF")"
 [[ "$IMG" == *.sif ]] || IMG="${IMG}.sif"
@@ -158,16 +159,15 @@ exec singularity shell --cleanenv --pwd /work \
     "$SIF_ABS"
 NODE_EOF
 
-# Assemble srun arguments, adding --job-name / --cpus-per-task only if given.
-SRUN_ARGS=(--nodes=1 --ntasks-per-node=1 --mem="${MEM}" --time="${WALLTIME}" --pty)
+# Assemble srun arguments, adding --job-name only if given. slurm_shape picks
+# the partition (RM-shared on Bridges-2, with cores raised to cover the memory).
+slurm_shape 1 "${CPUS:-1}" "$(mem_mb "$MEM")"
+SRUN_ARGS=(--nodes=1 "${SLURM_SHAPE[@]}" --time="${WALLTIME}" --pty)
 if [[ -n "$JOBNAME" ]]; then
     SRUN_ARGS=(--job-name="$JOBNAME" "${SRUN_ARGS[@]}")
 fi
-if [[ -n "$CPUS" ]]; then
-    SRUN_ARGS=(--cpus-per-task="$CPUS" "${SRUN_ARGS[@]}")
-fi
 
-echo "Requesting interactive node: 1 task, ${CPUS:+${CPUS} CPUs, }${MEM}, ${WALLTIME}${JOBNAME:+, job=${JOBNAME}}, image=${SIF_ABS}"
+echo "Requesting interactive node: ${SLURM_SHAPE[*]}, ${WALLTIME}${JOBNAME:+, job=${JOBNAME}}, image=${SIF_ABS}"
 
 # Land on the node and run the node script, which execs into the container.
 srun "${SRUN_ARGS[@]}" bash "$NODE_SCRIPT"

@@ -163,13 +163,13 @@
 #                 from the tasks, as in run_eval_dataset.sh: N x
 #                 --cpus-per-task cores and N x --mem-per-task memory (plus
 #                 512M for the batch script), unless -c / -m say otherwise
-#   --cpus-per-task N  cores per crate with --max-tasks (default 1; also caps
+#   --cpus-per-task N  cores per crate with --max-tasks (default 4; also caps
 #                 CARGO_BUILD_JOBS)
 #   --mem-per-task G   GB per crate with --max-tasks (default 8); a hard cap
-#   -m MEM        memory per job (default 64G; bare number = GB; with
-#                 --max-tasks, tasks x --mem-per-task + 512M), split evenly
+#   -m MEM        memory per job (default 32G; bare number = GB; G = 1000M; with
+#                 --max-tasks, tasks x --mem-per-task), split evenly
 #                 into a hard per-crate cap over the JOBS crates it builds at
-#                 once (16G less a little at the defaults); raise it if crates
+#                 once (8G less a little at the defaults); raise it if crates
 #                 hit their cap (error_type oom)
 #   --image IMG   container image (default experimental-bsan); also the CSV's
 #                 build column. The main build is plain cargo (the image's default
@@ -707,7 +707,7 @@ RUN_LOCAL=0; NODE=0; CPUS=""; WALLTIME=8; MEM=""; IMAGE=experimental-bsan; WHOLE
 VERSIONS=""; VERSIONS_CSV=""
 MAX_JOBS=90   # jobs in SLURM at once, running + pending (per-user submit limit)
 MAX_TASKS=""  # crates built at once per job; empty = JOBS, else its default
-CPUS_PER_TASK=""; MEM_PER_TASK=""   # with --max-tasks: 1 core, 8G
+CPUS_PER_TASK=""; MEM_PER_TASK=""   # with --max-tasks: 4 cores, 8G
 while [ "$#" -gt 0 ]; do
     case "$1" in
         --local)    RUN_LOCAL=1; shift ;;
@@ -759,15 +759,15 @@ if [ -n "$MAX_TASKS" ]; then
     JOBS="$MAX_TASKS"
     [ -n "$CPUS" ] && [ -n "$CPUS_PER_TASK" ] && die "give -c or --cpus-per-task, not both"
     [ -n "$MEM" ] && [ -n "$MEM_PER_TASK" ] && die "give -m or --mem-per-task, not both"
-    CPUS_PER_TASK="${CPUS_PER_TASK:-1}"; MEM_PER_TASK="${MEM_PER_TASK:-8}"
+    CPUS_PER_TASK="${CPUS_PER_TASK:-4}"; MEM_PER_TASK="${MEM_PER_TASK:-8}"
     [[ "$CPUS_PER_TASK" =~ ^[1-9][0-9]*$ ]] || die "--cpus-per-task must be a positive integer"
     [[ "$MEM_PER_TASK" =~ ^[1-9][0-9]*$ ]] || die "--mem-per-task must be a whole number of GB"
     CPUS="${CPUS:-$(( MAX_TASKS * CPUS_PER_TASK ))}"
-    MEM="${MEM:-$(( MAX_TASKS * MEM_PER_TASK * 1024 + 512 ))M}"
+    MEM="${MEM:-$(( MAX_TASKS * MEM_PER_TASK * 1000 ))M}"   # the 512M for the batch script comes out of each crate's share
 else
     [ -z "$CPUS_PER_TASK$MEM_PER_TASK" ] || die "--cpus-per-task / --mem-per-task go with --max-tasks"
 fi
-CPUS="${CPUS:-16}"; MEM="${MEM:-64G}"
+CPUS="${CPUS:-16}"; MEM="${MEM:-32G}"   # 4 crates x (4 cores, 8G): RM-shared's 2G/core exactly
 [ "$MISSING" -eq 1 ] && [ "$RUN_LOCAL" -eq 1 ] && die "--rerun-missing is for job runs, not --local"
 [ "${#POS[@]}" -eq 1 ] && [ -n "${POS[0]}" ] \
     || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--max-jobs N] [--max-tasks N [--cpus-per-task N] [--mem-per-task G]] [--image IMG] [--whole] [--doc | --doc-only] [--default-features] [--no-bsan | --rerun-bsan-only | --bsan-only] [--rerun-missing] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
@@ -986,12 +986,14 @@ if [ "$RUN_LOCAL" -eq 0 ]; then
     else
         die "-t must be HH or HH:MM (e.g. 8 or 8:30)"
     fi
+    # G = 1000M (not 1024M), so 32G is exactly 16 cores' worth on Bridges-2's
+    # RM-shared (2000M per core).
     [[ "$MEM" =~ ^([0-9]+)([KMGT]?)$ ]] || die "-m must be like 64G, 512M or a bare number (GB)"
     case "${BASH_REMATCH[2]}" in
-        K) MEM_MB=$(( 10#${BASH_REMATCH[1]} / 1024 )) ;;
+        K) MEM_MB=$(( 10#${BASH_REMATCH[1]} / 1000 )) ;;
         M) MEM_MB=$(( 10#${BASH_REMATCH[1]} )) ;;
-        T) MEM_MB=$(( 10#${BASH_REMATCH[1]} * 1024 * 1024 )) ;;
-        *) MEM_MB=$(( 10#${BASH_REMATCH[1]} * 1024 )) ;;
+        T) MEM_MB=$(( 10#${BASH_REMATCH[1]} * 1000 * 1000 )) ;;
+        *) MEM_MB=$(( 10#${BASH_REMATCH[1]} * 1000 )) ;;
     esac
     # Each of a job's JOBS crates at a time is an srun step with an equal share
     # of its cores and of -m (less 512M for the batch script itself).
@@ -1096,6 +1098,8 @@ if [ "$RUN_LOCAL" -eq 0 ]; then
         wait -n; [ $? -eq 0 ] || failed=$((failed + 1))
         inflight=$((inflight - 1))
     }
+    source "$GROUP/scripts/slurm_shape.sh"
+    slurm_shape "$JOBS" "$STEP_CPUS" "$MEM_MB"
     for (( k = 0; k < NPARTS; k++ )); do
         [ "$inflight" -lt "$MAX_JOBS" ] || reap_one
         # The part job runs this script with --node, on the node outside the
@@ -1121,8 +1125,7 @@ if [ "$RUN_LOCAL" -eq 0 ]; then
             while :; do
                 from=$(( $(wc -l < "$log") + 1 ))   # this attempt's output
                 sbatch --wait --parsable --job-name="$name" \
-                    --nodes=1 --ntasks="$JOBS" --cpus-per-task="$STEP_CPUS" \
-                    --mem="${MEM_MB}M" --time="$SB_TIME" --output="$PARTS_DIR/job-$k.log" \
+                    --nodes=1 "${SLURM_SHAPE[@]}" --time="$SB_TIME" --output="$PARTS_DIR/job-$k.log" \
                     "$PARTS_DIR/job-$k.sh"
                 rc=$?
                 out=$(tail -n +"$from" "$log")

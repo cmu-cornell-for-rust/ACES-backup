@@ -144,6 +144,7 @@ fi
 # Exported so srun propagates it into the node script.
 GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
 export GROUP
+source "$GROUP/scripts/slurm_shape.sh"
 CONTAINERS_DIR="$GROUP/containers"
 IMG="$(basename "$SIF")"
 [[ "$IMG" == *.sif ]] || IMG="${IMG}.sif"
@@ -238,13 +239,15 @@ NODE_EOF
 
 # Assemble srun arguments, adding --job-name only if one was given.
 # No --pty now: this is a one-shot batch-style command, not an interactive shell.
-SRUN_ARGS=(--nodes=1 --ntasks-per-node=1 --cpus-per-task="${CPUS}"
-           --mem="${MEM}" --time="${WALLTIME}")
+# slurm_shape picks the partition (RM-shared on Bridges-2, with cores raised
+# to cover the memory).
+slurm_shape 1 "${CPUS}" "$(mem_mb "$MEM")"
+SRUN_ARGS=(--nodes=1 "${SLURM_SHAPE[@]}" --time="${WALLTIME}")
 if [[ -n "$JOBNAME" ]]; then
     SRUN_ARGS=(--job-name="$JOBNAME" "${SRUN_ARGS[@]}")
 fi
 
-echo "Requesting node: 1 task, ${CPUS} cpu(s), ${MEM}, ${WALLTIME}${JOBNAME:+, job=${JOBNAME}}, image=${SIF_ABS}"
+echo "Requesting node: ${SLURM_SHAPE[*]}, ${WALLTIME}${JOBNAME:+, job=${JOBNAME}}, image=${SIF_ABS}"
 
 # Land on the node and run the node script, passing the command as ONE arg.
 # "${CMD[*]}" joins the post-`--` words with a single space into a command

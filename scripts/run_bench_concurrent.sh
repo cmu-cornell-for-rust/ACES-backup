@@ -64,9 +64,9 @@
 #   --jobs N          number of single-node sbatch jobs. Default: as many as
 #                     needed for full parallelism, ceil(crates / tasks),
 #                     capped at 40 (the QOS job limit)
-#   --tasks N         worker tasks per job. Default: auto -- one worker per
-#                     crate left after filtering and claiming, capped at
-#                     --max-tasks. Each job is submitted with only the workers
+#   --tasks N         worker tasks per job. Default 1: one crate per job
+#                     (empty/auto: one worker per crate left after filtering
+#                     and claiming, capped at --max-tasks). Each job is submitted with only the workers
 #                     it actually holds
 #   --max-tasks N     ceiling for the auto-sized worker count (default 6 --
 #                     at 4 cpus each that is a quarter node, 24 of its 96
@@ -85,9 +85,10 @@
 #                     contention separately from core count; the pair lands in
 #                     the CSV name (-c<cpus>tt<threads>) so runs of different
 #                     shapes can never append into one file
-#   --mem-per-task G  GB per worker (default 16 -- four concurrent bsan tests
-#                     hold rather more shadow memory than one; 6 x 16 = 96G,
-#                     well inside the 488G node cap)
+#   --mem-per-task G  GB per worker (default 8 -- 4 cpus x 2G, exactly
+#                     Bridges-2 RM-shared's ratio. Four concurrent bsan tests
+#                     hold more shadow memory than one: raise to 16 if workers
+#                     hit oom; that bills 8 cores per crate)
 #   --runs N          hyperfine timing runs per crate (default 3)
 #   --warmup N        hyperfine warmup runs per crate (default 0; the untimed
 #                     status pre-run already warms caches, so each crate's
@@ -170,6 +171,7 @@ fi
 # GROUP=...; defaults to the checkout this script lives in.
 GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
 export GROUP
+source "$GROUP/scripts/slurm_shape.sh"
 CONTAINERS_DIR="$GROUP/containers"
 DATASETS_ROOT="$GROUP/datasets"
 OUTPUTS_DIR="$GROUP/outputs"
@@ -182,12 +184,12 @@ TESTS_CSV=""
 NO_FFI=0
 IGNORE_FILE=""
 ONLY_FILE=""
-JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
-TASKS=""             # empty = auto: min(crates, MAX_TASKS)
+JOBS=""              # empty = auto: ceil(crates / tasks), capped at 4000
+TASKS=1              # workers per job: one crate per job (empty = auto: min(crates, MAX_TASKS))
 MAX_TASKS=6          # ceiling on auto-sized workers per job (24 cores at 4 cpus)
 CPUS_PER_TASK=4
 TEST_THREADS=""      # empty = follow CPUS_PER_TASK
-MEM_PER_TASK=16      # GB per worker (6*16=96G, well inside the 488G node cap)
+MEM_PER_TASK=8       # GB per worker (4 cpus x 2G: exactly RM-shared's ratio)
 RUNS=3
 WARMUP=0
 MAX_PRERUNS=3        # pre-run passes allowed while dropping failing tests
@@ -504,14 +506,14 @@ if [[ -z "$TASKS" ]]; then
 fi
 
 TOTAL_MEM=$(( TASKS * MEM_PER_TASK ))
-if (( TOTAL_MEM > 488 )); then
-    echo "Error: tasks*mem = ${TOTAL_MEM}G exceeds the 488G usable on an ACES node." >&2
+if (( TOTAL_MEM > 500 )); then
+    echo "Error: tasks*mem = ${TOTAL_MEM}G exceeds the 500G of the largest (RM-512) node." >&2
     echo "Lower --tasks/--max-tasks or --mem-per-task." >&2
     exit 1
 fi
 TOTAL_CPUS=$(( TASKS * CPUS_PER_TASK ))
-if (( TOTAL_CPUS > 96 )); then
-    echo "Error: tasks*cpus = ${TOTAL_CPUS} exceeds the 96 cores on an ACES node." >&2
+if (( TOTAL_CPUS > 128 )); then
+    echo "Error: tasks*cpus = ${TOTAL_CPUS} exceeds the 128 cores of one node." >&2
     echo "Lower --tasks/--max-tasks or --cpus-per-task." >&2
     exit 1
 fi
@@ -519,7 +521,7 @@ fi
 # ── Job count: auto-size unless --jobs was given ─────────────────────────────
 if [[ -z "$JOBS" ]]; then
     JOBS=$(( (${#SELECTED[@]} + TASKS - 1) / TASKS ))
-    (( JOBS > 40 )) && JOBS=40
+    (( JOBS > 4000 )) && JOBS=4000
 fi
 
 # ── Deal crates round-robin across jobs*tasks workers, biggest first ─────────
@@ -915,10 +917,10 @@ job_worker_count() {
 submit_one() {
     local j="$1" ntasks="$2" label="$3" wall="$4" jid
     compgen -G "$RUNDIR/chunks/chunk-$j-*.txt" >/dev/null || return 0
+    slurm_shape "$ntasks" "$CPUS_PER_TASK" "$(( ntasks * MEM_PER_TASK * 1000 ))"
     if ! jid=$(sbatch --parsable \
         --job-name="hfc-${IMAGE}-${DATASET}-${label}" \
-        --nodes=1 --ntasks-per-node="$ntasks" --cpus-per-task="$CPUS_PER_TASK" \
-        --mem="$(( ntasks * MEM_PER_TASK ))G" --time="$wall" \
+        --nodes=1 "${SLURM_SHAPE[@]}" --time="$wall" \
         --output="$RUNDIR/job-%j.out" \
         "$RUNDIR/job.sh" "$RUNDIR" "$j" "$ntasks"); then
         echo "Error: sbatch failed for job $label; cancelling ${JOBIDS[*]:-nothing}." >&2

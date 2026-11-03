@@ -51,22 +51,24 @@
 #                     slowlist) crates. Default: as many as needed for full
 #                     parallelism, ceil(crates / tasks), capped at 40 (the
 #                     QOS job limit)
-#   --tasks N         worker tasks per job. Default: auto -- one worker per
+#   --tasks N         worker tasks per job. Default 1: one crate per job.
+#                     Empty/auto: one worker per
 #                     REGULAR crate (the --tests CSV after --ignore/--only/
 #                     --no-ffi filtering, minus the slowlist), capped at
 #                     --max-tasks. Each job is then submitted with only the
 #                     workers it actually holds, so the tail job asks for its
 #                     9 crates rather than a full 24
-#   --max-tasks N     ceiling for the auto-sized worker count (default 24 --
-#                     a quarter node of cores, 192G). Narrow jobs backfill
+#   --max-tasks N     ceiling for the auto-sized worker count, and the width
+#                     of the medium/slow-test jobs (default 16 -- 16 x 8G =
+#                     128G, the most one Bridges-2 RM-shared job may have). Narrow jobs backfill
 #                     into scheduling gaps that wide ones never fit; raise it
 #                     only if the queue is empty and you want fewer, wider jobs
 #   --cpus-per-task N cores per worker (default 1; also caps cargo build jobs
 #                     via CARGO_BUILD_JOBS). One is enough: the timed command
 #                     is a single-threaded interpretation under miri/bsan, so
 #                     extra cores only speed the one-off compile
-#   --mem-per-task G  GB per worker (default 8; tasks*mem must fit 488G/node,
-#                     so 24 workers x 8G = 192G leaves ample headroom)
+#   --mem-per-task G  GB per worker (default 8; on Bridges-2 RM-shared that is
+#                     billed as 4 cores, so the job gets 4 even at 1 cpu/task)
 #   --slow-walltime T walltime for the slowlist jobs, HH or HH:MM (default 24).
 #                     SLURM bills elapsed time, not the request, and these jobs
 #                     are small, so generous is cheap
@@ -325,6 +327,7 @@ fi
 # GROUP=...; defaults to the checkout this script lives in.
 GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
 export GROUP
+source "$GROUP/scripts/slurm_shape.sh"
 CONTAINERS_DIR="$GROUP/containers"
 DATASETS_ROOT="$GROUP/datasets"
 OUTPUTS_DIR="$GROUP/outputs"
@@ -340,14 +343,14 @@ IGNORE_FILE=""
 ONLY_FILE=""
 SAFETY=""            # --safety LIST of safe|unsafe-deps|unsafe; empty = don't filter on unsafe
 UNSAFE_SCAN=""       # empty = <dataset dir>/_logs/unsafe_scan.csv
-JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
-TASKS=""            # empty = auto: min(fast crates, MAX_TASKS)
-MAX_TASKS=24         # ceiling on auto-sized workers per job (a quarter node)
+JOBS=""              # empty = auto: ceil(crates / tasks), capped at 4000
+TASKS=1             # workers per regular job: one crate per job (empty = auto: min(fast crates, MAX_TASKS))
+MAX_TASKS=16         # workers per medium/slow-test job (16*8G = 128G, the RM-shared max)
 CPUS_PER_TASK=1
-MEM_PER_TASK=8       # GB per worker (24*8=192G, well inside the 488G node cap)
+MEM_PER_TASK=8       # GB per worker (billed as 4 cores on Bridges-2 RM-shared)
 ALL_SLOW=0           # --all-slow: split every test evenly, no fast/slow split
 ALL_SLOW_JOBS=16     # its default job count (overridden by --jobs)
-ALL_SLOW_TASKS=24    # its default workers per job (overridden by --tasks)
+ALL_SLOW_TASKS=16    # its default workers per job (overridden by --tasks)
 RUNS_GIVEN=0         # was --runs passed? (--all-slow forces 1 otherwise)
 WALLTIME_GIVEN=0     # was the walltime positional passed?
 SLOW_GROUP=10        # slowlist crates per group
@@ -601,13 +604,13 @@ fi
 # jobs will actually be submitted -- --no-test-lists claims the same tests but
 # never builds them.
 if (( USE_TEST_LISTS && ! NO_TEST_LISTS )); then
-    if (( MAX_TASKS * MEM_PER_TASK > 488 )); then
-        echo "Error: max-tasks*mem = $(( MAX_TASKS * MEM_PER_TASK ))G exceeds the 488G usable on an ACES node." >&2
+    if (( MAX_TASKS * MEM_PER_TASK > 500 )); then
+        echo "Error: max-tasks*mem = $(( MAX_TASKS * MEM_PER_TASK ))G exceeds the 500G of the largest (RM-512) node." >&2
         echo "Lower --max-tasks or --mem-per-task." >&2
         exit 1
     fi
-    if (( MAX_TASKS * CPUS_PER_TASK > 96 )); then
-        echo "Error: max-tasks*cpus = $(( MAX_TASKS * CPUS_PER_TASK )) exceeds the 96 cores on an ACES node." >&2
+    if (( MAX_TASKS * CPUS_PER_TASK > 128 )); then
+        echo "Error: max-tasks*cpus = $(( MAX_TASKS * CPUS_PER_TASK )) exceeds the 128 cores of one node." >&2
         exit 1
     fi
 fi
@@ -982,39 +985,39 @@ fi
 # Node-capacity checks, now that TASKS is known. These bound the LARGEST job;
 # per-job right-sizing only ever shrinks the request from here.
 TOTAL_MEM=$(( TASKS * MEM_PER_TASK ))
-if (( TOTAL_MEM > 488 )); then
-    echo "Error: tasks*mem = ${TOTAL_MEM}G exceeds the 488G usable on an ACES node." >&2
+if (( TOTAL_MEM > 500 )); then
+    echo "Error: tasks*mem = ${TOTAL_MEM}G exceeds the 500G of the largest (RM-512) node." >&2
     echo "Lower --tasks/--max-tasks or --mem-per-task." >&2
     exit 1
 fi
 TOTAL_CPUS=$(( TASKS * CPUS_PER_TASK ))
-if (( TOTAL_CPUS > 96 )); then
-    echo "Error: tasks*cpus = ${TOTAL_CPUS} exceeds the 96 cores on an ACES node." >&2
+if (( TOTAL_CPUS > 128 )); then
+    echo "Error: tasks*cpus = ${TOTAL_CPUS} exceeds the 128 cores of one node." >&2
     exit 1
 fi
 
 # A slow job asks for one worker per crate in its group, so SLOW_GROUP -- not
 # TASKS -- bounds those. Only worth checking when slow jobs will be submitted.
 if (( ${#SLOW_CRATES[@]} > 0 )); then
-    if (( SLOW_GROUP * MEM_PER_TASK > 488 )); then
-        echo "Error: slow-group*mem = $(( SLOW_GROUP * MEM_PER_TASK ))G exceeds the 488G usable on an ACES node." >&2
+    if (( SLOW_GROUP * MEM_PER_TASK > 500 )); then
+        echo "Error: slow-group*mem = $(( SLOW_GROUP * MEM_PER_TASK ))G exceeds the 500G of the largest (RM-512) node." >&2
         echo "Lower --slow-group or --mem-per-task." >&2
         exit 1
     fi
-    if (( SLOW_GROUP * CPUS_PER_TASK > 96 )); then
-        echo "Error: slow-group*cpus = $(( SLOW_GROUP * CPUS_PER_TASK )) exceeds the 96 cores on an ACES node." >&2
+    if (( SLOW_GROUP * CPUS_PER_TASK > 128 )); then
+        echo "Error: slow-group*cpus = $(( SLOW_GROUP * CPUS_PER_TASK )) exceeds the 128 cores of one node." >&2
         exit 1
     fi
 fi
 
 # ── Job count: auto-size unless --jobs was given ─────────────────────────────
 # Enough single-node jobs that every non-slow crate gets its own worker from
-# the start (ceil(fast crates/tasks)), capped at the QOS's 40 concurrent jobs.
-# More jobs than crates/tasks would just sit idle; more than 40 would sit in
+# the start (ceil(fast crates/tasks)), capped at 4000 (Bridges-2 allows 5000 queued per user).
+# More jobs than crates/tasks would just sit idle; past the cap they would sit in
 # the queue anyway. The slow jobs are submitted on top of these.
 if [[ -z "$JOBS" ]]; then
     JOBS=$(( (${#FAST_SEL[@]} + TASKS - 1) / TASKS ))
-    (( JOBS > 40 )) && JOBS=40
+    (( JOBS > 4000 )) && JOBS=4000
 fi
 
 # ── Deal crates round-robin across jobs*tasks workers, biggest first ─────────
@@ -1658,10 +1661,10 @@ job_worker_count() {
 submit_one() {
     local j="$1" ntasks="$2" label="$3" wall="$4" jid
     compgen -G "$RUNDIR/chunks/chunk-$j-*.txt" >/dev/null || return 0
+    slurm_shape "$ntasks" "$CPUS_PER_TASK" "$(( ntasks * MEM_PER_TASK * 1000 ))"
     if ! jid=$(sbatch --parsable \
         --job-name="hf-${IMAGE}-${DATASET}-${label}" \
-        --nodes=1 --ntasks-per-node="$ntasks" --cpus-per-task="$CPUS_PER_TASK" \
-        --mem="$(( ntasks * MEM_PER_TASK ))G" --time="$wall" \
+        --nodes=1 "${SLURM_SHAPE[@]}" --time="$wall" \
         --output="$RUNDIR/job-%j.out" \
         "$RUNDIR/job.sh" "$RUNDIR" "$j" "$ntasks"); then
         echo "Error: sbatch failed for job $label; cancelling ${JOBIDS[*]:-nothing}." >&2

@@ -27,13 +27,13 @@
 #                     #-comments ok; --ignore/--no-ffi still apply on top)
 #   --jobs N          number of single-node sbatch jobs for the regular (non-
 #                     slowlist) crates. Default: as many as needed for full
-#                     parallelism, ceil(crates / tasks), capped at 40 (the
-#                     QOS job limit)
-#   --tasks N         worker tasks per node (default 12 -- so up to 12 crates
-#                     run concurrently on one node)
+#                     parallelism, ceil(crates / tasks), capped at 4000 (under
+#                     Bridges-2's 5000-job submit limit)
+#   --tasks N         worker tasks per job (default 1 -- one crate per job;
+#                     on Bridges-2 each job goes to RM-shared, see slurm_shape.sh)
 #   --cpus-per-task N cores per worker (default 4; also caps cargo build jobs
 #                     via CARGO_BUILD_JOBS)
-#   --mem-per-task G  GB per worker (default 8; tasks*mem must fit 488G/node)
+#   --mem-per-task G  GB per worker (default 8; tasks*mem must fit one node)
 #   --slow-walltime T walltime for the per-crate slowlist jobs, HH or HH:MM
 #                     (default 12)
 #
@@ -102,6 +102,7 @@ fi
 # GROUP=...; defaults to the checkout this script lives in.
 GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
 export GROUP
+source "$GROUP/scripts/slurm_shape.sh"
 CONTAINERS_DIR="$GROUP/containers"
 DATASETS_ROOT="$GROUP/datasets"
 OUTPUTS_DIR="$GROUP/outputs"
@@ -115,8 +116,8 @@ TESTS_CSV=""
 NO_FFI=0
 IGNORE_FILE=""
 ONLY_FILE=""
-JOBS=""              # empty = auto: ceil(crates / tasks), capped at 40
-TASKS=12
+JOBS=""              # empty = auto: ceil(crates / tasks), capped at 4000
+TASKS=1              # workers per job: one crate per job
 CPUS_PER_TASK=4
 MEM_PER_TASK=8       # GB per worker
 WALLTIME_ARG=2         # walltime for the regular jobs (positional overrides)
@@ -200,14 +201,14 @@ if [[ -n "$JOBS" ]]; then
 fi
 (( TASKS >= 1 )) || { echo "Error: --tasks must be >= 1." >&2; exit 1; }
 TOTAL_MEM=$(( TASKS * MEM_PER_TASK ))
-if (( TOTAL_MEM > 488 )); then
-    echo "Error: tasks*mem = ${TOTAL_MEM}G exceeds the 488G usable on an ACES node." >&2
+if (( TOTAL_MEM > 500 )); then
+    echo "Error: tasks*mem = ${TOTAL_MEM}G exceeds the 500G of the largest (RM-512) node." >&2
     echo "Lower --tasks or --mem-per-task." >&2
     exit 1
 fi
 TOTAL_CPUS=$(( TASKS * CPUS_PER_TASK ))
-if (( TOTAL_CPUS > 96 )); then
-    echo "Error: tasks*cpus = ${TOTAL_CPUS} exceeds the 96 cores on an ACES node." >&2
+if (( TOTAL_CPUS > 128 )); then
+    echo "Error: tasks*cpus = ${TOTAL_CPUS} exceeds the 128 cores of one node." >&2
     exit 1
 fi
 
@@ -349,10 +350,10 @@ done
 
 # ── Job count: auto-size unless --jobs was given ─────────────────────────────
 # Enough single-node jobs that every non-slow crate gets its own worker from
-# the start (ceil(fast crates/tasks)), capped at the QOS's 40 concurrent jobs.
+# the start (ceil(fast crates/tasks)), capped at 4000 (Bridges-2 allows 5000 queued per user).
 if [[ -z "$JOBS" ]]; then
     JOBS=$(( (${#FAST_SEL[@]} + TASKS - 1) / TASKS ))
-    (( JOBS > 40 )) && JOBS=40
+    (( JOBS > 4000 )) && JOBS=4000
 fi
 
 # ── Deal crates round-robin across jobs*tasks workers, biggest first ─────────
@@ -605,10 +606,10 @@ JOBIDS=()
 submit_one() {
     local j="$1" ntasks="$2" label="$3" wall="$4" jid
     compgen -G "$RUNDIR/chunks/chunk-$j-*.txt" >/dev/null || return 0
+    slurm_shape "$ntasks" "$CPUS_PER_TASK" "$(( ntasks * MEM_PER_TASK * 1000 ))"
     if ! jid=$(sbatch --parsable \
         --job-name="pf-${IMAGE}-${DATASET}-${label}" \
-        --nodes=1 --ntasks-per-node="$ntasks" --cpus-per-task="$CPUS_PER_TASK" \
-        --mem="$(( ntasks * MEM_PER_TASK ))G" --time="$wall" \
+        --nodes=1 "${SLURM_SHAPE[@]}" --time="$wall" \
         --output="$RUNDIR/job-%j.out" \
         "$RUNDIR/job.sh" "$RUNDIR" "$j" "$ntasks"); then
         echo "Error: sbatch failed for job $label; cancelling ${JOBIDS[*]:-nothing}." >&2
