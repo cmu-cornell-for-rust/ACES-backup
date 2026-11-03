@@ -42,6 +42,7 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
   found by          the earlier bug lists that have this crate and test, e.g.
                     "mirilli, capslock": mirilli_bugs.csv (crate, version,
                     test; an empty test matches every test of the crate),
+                    mirilli_bugs_reports.csv (crate_name, version, test_name),
                     capslock_bugs.csv (crate as <name>-<version>, tests split
                     on ;) and treeborrows_bugs.csv (crate, version, test), in
                     scripts/
@@ -214,6 +215,9 @@ found = {}
 with open(os.path.join(SCRIPTS, "mirilli_bugs.csv"), newline="", encoding="utf-8-sig") as f:
     for r in csv.DictReader(f):
         found.setdefault((f"{r['crate']}-{r['version']}", r["test"]), set()).add("mirilli")
+with open(os.path.join(SCRIPTS, "mirilli_bugs_reports.csv"), newline="", encoding="utf-8-sig") as f:
+    for r in csv.DictReader(f):
+        found.setdefault((f"{r['crate_name']}-{r['version']}", r["test_name"]), set()).add("mirilli")
 with open(os.path.join(SCRIPTS, "capslock_bugs.csv"), newline="", encoding="utf-8-sig") as f:
     for r in csv.DictReader(f):
         for t in r["tests"].split(";"):
