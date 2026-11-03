@@ -94,12 +94,15 @@ if [ "${1:-}" = "--worker" ]; then
 fi
 
 # ------------------------------- arguments --------------------------------- #
-GROUP="/scratch/group/p.cis260229.000"
+# Group root (datasets/, containers/, outputs/, scripts/). Override with
+# GROUP=...; defaults to the checkout this script lives in.
+GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/../.." && pwd)}"
+export GROUP
 RUN_JOB="$GROUP/scripts/run_job.sh"
-LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=bsan; POS=()
+RUN_LOCAL=0; CPUS=16; WALLTIME=8; MEM=64G; IMAGE=bsan; POS=()
 while [ "$#" -gt 0 ]; do
     case "$1" in
-        --local)    LOCAL=1; shift ;;
+        --local)    RUN_LOCAL=1; shift ;;
         -c|--cpus)  CPUS="$2"; shift 2 ;;
         -t|--time)  WALLTIME="$2"; shift 2 ;;
         -m|--mem)   MEM="$2"; shift 2 ;;
@@ -117,7 +120,7 @@ DATASET_DIR="$(cd "${POS[0]}" 2>/dev/null && pwd -P)" \
 BUILD_RUSTFLAGS="${BUILD_RUSTFLAGS:---cfg=miri --cap-lints=warn}"
 
 # ------------------------- launcher: submit the job ------------------------- #
-if [ "$LOCAL" -eq 0 ]; then
+if [ "$RUN_LOCAL" -eq 0 ]; then
     [ -x "$RUN_JOB" ] || die "run_job.sh not found at $RUN_JOB (or use --local)"
     [[ "$CPUS" =~ ^[1-9][0-9]*$ ]] || die "-c must be a positive integer"
     JOBS="${JOBS:-$(( CPUS >= 4 ? CPUS / 4 : 1 ))}"

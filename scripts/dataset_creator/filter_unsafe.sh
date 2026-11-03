@@ -31,7 +31,7 @@ set -uo pipefail   # no -e; per-crate failures are handled inline
 # ------------------------------ configuration ------------------------------ #
 if [ "$#" -lt 1 ] || [ -z "${1:-}" ]; then
     echo "Usage: $0 <downloaded_crates_dir>" >&2
-    echo "  e.g. $0 /scratch/group/p.cis260229.000/downloaded_crates" >&2
+    echo "  e.g. $0 $GROUP/downloaded_crates" >&2
     exit 1
 fi
 OUTPUT_DIR="$1"   # directory to filter (positional arg, required)

@@ -47,7 +47,9 @@ import os
 import re
 import sys
 
-DEFAULT_DATASETS = "/scratch/group/p.cis260229.000/datasets"
+# Group root: $GROUP, else the checkout this file lives in (scripts/analysis/../..).
+GROUP = os.environ.get("GROUP", os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+DEFAULT_DATASETS = os.path.join(GROUP, "datasets")
 DEFAULT_STATUS = "test_failed,no_match,timeout,bench_failed,build_failed,fetch_failed,list_failed"
 CRATE_FAILURES = {"build_failed", "fetch_failed", "list_failed"}
 

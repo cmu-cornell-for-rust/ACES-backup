@@ -170,7 +170,7 @@ if [ "${1:-}" = "--worker" ]; then
     state="$STATE_DIR/$crate.tsv"
     [ -f "$state" ] && exit 0                      # already processed
 
-    tmpdir="$(mktemp -d "${TMPDIR:-/tmp}/cffi.XXXXXX")" || exit 0
+    tmpdir="$(mktemp -d "${LOCAL:-${TMPDIR:-/tmp}}/cffi.XXXXXX")" || exit 0
     trap 'rm -rf "$tmpdir"' EXIT
 
     tarball="$tmpdir/$crate.crate"

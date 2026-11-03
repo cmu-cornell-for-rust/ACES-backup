@@ -695,19 +695,22 @@ if [ "${1:-}" = "--step" ]; then
 fi
 
 # ------------------------------- arguments --------------------------------- #
-GROUP="/scratch/group/p.cis260229.000"
+# Group root (datasets/, containers/, outputs/, scripts/). Override with
+# GROUP=...; defaults to the checkout this script lives in.
+GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
+export GROUP
 CONTAINERS_DIR="$GROUP/containers"
 OUTPUTS_DIR="$GROUP/outputs"
 # Bsan-only build failures of every run, for run_eval_dataset.sh (see Output).
 BSAN_FAILS_CSV="$GROUP/scripts/bsan_build_fails.csv"
-LOCAL=0; NODE=0; CPUS=""; WALLTIME=8; MEM=""; IMAGE=experimental-bsan; WHOLE=0; DOC=0; DOC_ONLY=0; NO_BSAN=0; DEFAULT_FEATURES=0; RERUN=0; BSAN_ONLY=0; MISSING=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
+RUN_LOCAL=0; NODE=0; CPUS=""; WALLTIME=8; MEM=""; IMAGE=experimental-bsan; WHOLE=0; DOC=0; DOC_ONLY=0; NO_BSAN=0; DEFAULT_FEATURES=0; RERUN=0; BSAN_ONLY=0; MISSING=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
 VERSIONS=""; VERSIONS_CSV=""
 MAX_JOBS=90   # jobs in SLURM at once, running + pending (per-user submit limit)
 MAX_TASKS=""  # crates built at once per job; empty = JOBS, else its default
 CPUS_PER_TASK=""; MEM_PER_TASK=""   # with --max-tasks: 1 core, 8G
 while [ "$#" -gt 0 ]; do
     case "$1" in
-        --local)    LOCAL=1; shift ;;
+        --local)    RUN_LOCAL=1; shift ;;
         --whole)    WHOLE=1; shift ;;
         --doc)      DOC=1; shift ;;
         --doc-only) DOC_ONLY=1; shift ;;
@@ -717,7 +720,7 @@ while [ "$#" -gt 0 ]; do
         --bsan-only) BSAN_ONLY=1; shift ;;
         --rerun-missing) MISSING=1; shift ;;
         --download) DOWNLOAD=1; shift ;;   # internal: set by the launcher for part jobs
-        --node)     NODE=1; LOCAL=1; shift ;;   # internal: a part job, on the node outside the image
+        --node)     NODE=1; RUN_LOCAL=1; shift ;;   # internal: a part job, on the node outside the image
         --first|--latest|--only-latest|--only-first|--all)
                     [ -z "$VERSIONS" ] || [ "$VERSIONS" = "${1#--}" ] \
                         || die "--$VERSIONS and $1 are mutually exclusive"
@@ -765,7 +768,7 @@ else
     [ -z "$CPUS_PER_TASK$MEM_PER_TASK" ] || die "--cpus-per-task / --mem-per-task go with --max-tasks"
 fi
 CPUS="${CPUS:-16}"; MEM="${MEM:-64G}"
-[ "$MISSING" -eq 1 ] && [ "$LOCAL" -eq 1 ] && die "--rerun-missing is for job runs, not --local"
+[ "$MISSING" -eq 1 ] && [ "$RUN_LOCAL" -eq 1 ] && die "--rerun-missing is for job runs, not --local"
 [ "${#POS[@]}" -eq 1 ] && [ -n "${POS[0]}" ] \
     || { echo "Usage: $0 [-n N] [-c CPUS] [-t HH[:MM]] [-m MEM] [--max-jobs N] [--max-tasks N [--cpus-per-task N] [--mem-per-task G]] [--image IMG] [--whole] [--doc | --doc-only] [--default-features] [--no-bsan | --rerun-bsan-only | --bsan-only] [--rerun-missing] [--local] [--latest | --only-latest | --only-first | --all] [--versions-csv FILE] <DATASET>" >&2; exit 1; }
 # --node: a part job's batch script, on the compute node outside the image. It
@@ -777,14 +780,15 @@ if [ "$NODE" -eq 1 ]; then
         source /etc/profile.d/lmod.sh    2>/dev/null || \
         source /etc/profile.d/modules.sh 2>/dev/null || true
     fi
-    module load WebProxy
+    # ACES needs WebProxy for internet on compute nodes; Bridges-2 has direct access.
+    module load WebProxy 2>/dev/null || true
     command -v singularity &>/dev/null || \
         module load Singularity 2>/dev/null || \
         module load singularity 2>/dev/null || true
     command -v singularity &>/dev/null || die "'singularity' not found on this node"
     BD_SIF="$CONTAINERS_DIR/$IMAGE.sif"
     [ -f "$BD_SIF" ] || die "image not found: $BD_SIF"
-    BD_SCRATCH="${TMPDIR:-/tmp}/build-$SLURM_JOB_ID"
+    BD_SCRATCH="${LOCAL:-${TMPDIR:-/tmp}}/build-$SLURM_JOB_ID"
     mkdir -p "$BD_SCRATCH/home" "$BD_SCRATCH/target"
     trap 'rm -rf "$BD_SCRATCH" 2>/dev/null || true' EXIT
     export TMP="$BD_SCRATCH" CARGO_TARGET_DIR="$BD_SCRATCH/target"
@@ -792,7 +796,7 @@ if [ "$NODE" -eq 1 ]; then
     # layout workaround -- see run_job.sh).
     ulimit -S -s 8192
 fi
-TMP_BASE="${TMP:-${TMPDIR:-/tmp}}"
+TMP_BASE="${TMP:-${LOCAL:-${TMPDIR:-/tmp}}}"
 # A bare dataset name under the group datasets dir, or a path; else a dataset
 # name with a versions CSV, whose crates are downloaded (see "No dataset dir").
 # CRATE_ROOT holds the crate dirs; CRATE_LOG_DIR, when set, their logs.
@@ -822,7 +826,7 @@ else
     [ -n "$DS_CSV" ] || die "${POS[0]} is neither a dataset under $GROUP/datasets, a directory, nor a dataset with a $DS_NAME-dataset.csv"
     [ -n "$VERSIONS_CSV" ] || VERSIONS_CSV="$DS_CSV"
     DOWNLOAD=1
-    if [ "$LOCAL" -eq 1 ]; then
+    if [ "$RUN_LOCAL" -eq 1 ]; then
         DATASET_DIR="$TMP_BASE/build_dataset-$DS_NAME"
     else
         DATASET_DIR="$OUTPUTS_DIR/build-$DS_NAME"
@@ -830,7 +834,7 @@ else
     CRATE_ROOT="$DATASET_DIR"
     mkdir -p "$DATASET_DIR/_logs" || die "can't create $DATASET_DIR/_logs"
     echo "==> No dataset dir for ${POS[0]}: building from $VERSIONS_CSV, crates downloaded to" \
-         "$([ "$LOCAL" -eq 1 ] && echo "$CRATE_ROOT" || echo "each job's node-local scratch"); _logs in $DATASET_DIR/_logs"
+         "$([ "$RUN_LOCAL" -eq 1 ] && echo "$CRATE_ROOT" || echo "each job's node-local scratch"); _logs in $DATASET_DIR/_logs"
 fi
 BUILD_RUSTFLAGS="${BUILD_RUSTFLAGS:---cap-lints=warn}"
 PRIMARY_RUSTFLAGS="${PRIMARY_RUSTFLAGS---cfg=miri}"   # set but empty: off
@@ -964,7 +968,7 @@ record_fails() {
 }
 
 # ------------------------ launcher: submit the jobs ------------------------ #
-if [ "$LOCAL" -eq 0 ]; then
+if [ "$RUN_LOCAL" -eq 0 ]; then
     (( BASH_VERSINFO[0] > 4 || (BASH_VERSINFO[0] == 4 && BASH_VERSINFO[1] >= 3) )) \
         || die "the launcher needs bash >= 4.3 (wait -n)"
     command -v sbatch >/dev/null || die "sbatch not found (run on a login node, or use --local)"

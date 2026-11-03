@@ -32,7 +32,7 @@
 #
 # NOTE: per-crate jobs read <crate_dir> by absolute path from inside the container.
 # This relies on the cluster's Singularity config auto-binding /scratch (true on
-# this HPC, where everything already lives under /scratch/group). The binary
+# ACES /scratch and Bridges-2 /ocean, /jet). The binary
 # itself is reached via /work (run_job binds the launch dir), so only the data
 # read depends on the auto-bind.
 set -euo pipefail
@@ -44,7 +44,10 @@ if (( BASH_VERSINFO[0] < 4 || (BASH_VERSINFO[0] == 4 && BASH_VERSINFO[1] < 3) ))
 fi
 
 # ── Layout (all absolute, so this can be run from anywhere) ───────────────────
-GROUP="/scratch/group/p.cis260229.000"
+# Group root (datasets/, containers/, outputs/, scripts/). Override with
+# GROUP=...; defaults to the checkout this script lives in.
+GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
+export GROUP
 RUN_JOB="$GROUP/scripts/run_job.sh"
 CONTAINERS_DIR="$GROUP/containers"
 OUTPUTS_DIR="$GROUP/outputs"

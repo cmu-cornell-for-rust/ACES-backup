@@ -65,7 +65,7 @@ import os
 import re
 import sys
 
-GROUP = os.environ.get("GROUP", "/scratch/group/p.cis260229.000")
+GROUP = os.environ.get("GROUP", os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 DATASETS_ROOT = os.environ.get("DATASETS_ROOT", os.path.join(GROUP, "datasets"))
 
 WARN_RE = re.compile(r"^warning: integer-to-pointer cast\s*$")

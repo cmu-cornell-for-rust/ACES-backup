@@ -126,7 +126,7 @@ if [ "${1:-}" = "--worker" ]; then
         exit 0
     fi
 
-    tmpdir="$(mktemp -d "${TMPDIR:-/tmp}/externc.XXXXXX")" || exit 0
+    tmpdir="$(mktemp -d "${LOCAL:-${TMPDIR:-/tmp}}/externc.XXXXXX")" || exit 0
     trap 'rm -rf "$tmpdir"' EXIT
 
     tarball="$tmpdir/$crate.crate"

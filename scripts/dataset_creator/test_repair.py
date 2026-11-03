@@ -33,7 +33,7 @@ Usage:
     python3 test_repair.py CRATES_DIR [options]
       CRATES_DIR  the dataset dir, where the <name-version>/ folders live: a
                   path, or just a dataset name under DATASETS_ROOT
-                  (/scratch/group/p.cis260229.000/datasets)
+                  ($GROUP/datasets; GROUP defaults to this checkout)
       --list FILE crates to repair: one name-version per line, or a
                   check_builds.sh build_check.csv (its build_failed rows).
                   Default: CRATES_DIR/_logs/build_check.csv, i.e. every crate
@@ -60,7 +60,8 @@ import urllib.request
 USER_AGENT   = "crate-fixture-fetcher (CMU systems research; via crates.io)"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 HTTP_TIMEOUT = 90
-DATASETS_ROOT = "/scratch/group/p.cis260229.000/datasets"
+GROUP = os.environ.get("GROUP", os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+DATASETS_ROOT = os.path.join(GROUP, "datasets")
 # directories (relative to the crate's package root) whose files are
 # treated as test fixtures and restored into the local crate folder
 FIXTURE_DIRS = ["tests", "testdata", "test", "src/unicode/data", "src/tests"]

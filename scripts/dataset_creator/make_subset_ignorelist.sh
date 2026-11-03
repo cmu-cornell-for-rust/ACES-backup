@@ -17,7 +17,10 @@
 set -euo pipefail
 
 # ── Layout (all absolute, so this can be run from anywhere) ───────────────────
-GROUP="/scratch/group/p.cis260229.000"
+# Group root (datasets/, containers/, outputs/, scripts/). Override with
+# GROUP=...; defaults to the checkout this script lives in.
+GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/../.." && pwd)}"
+export GROUP
 DATASETS_ROOT="$GROUP/datasets"
 
 # ── Args ──────────────────────────────────────────────────────────────────--

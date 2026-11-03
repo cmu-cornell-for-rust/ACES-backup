@@ -243,7 +243,10 @@ if (( BASH_VERSINFO[0] < 4 )); then
 fi
 
 # ── Layout (all absolute, so this can be run from anywhere) ───────────────────
-GROUP="/scratch/group/p.cis260229.000"
+# Group root (datasets/, containers/, outputs/, scripts/). Override with
+# GROUP=...; defaults to the checkout this script lives in.
+GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
+export GROUP
 CONTAINERS_DIR="$GROUP/containers"
 DATASETS_ROOT="$GROUP/datasets"
 OUTPUTS_DIR="$GROUP/outputs"
@@ -1179,7 +1182,8 @@ if ! command -v module &>/dev/null; then
     source /etc/profile.d/lmod.sh    2>/dev/null || \
     source /etc/profile.d/modules.sh 2>/dev/null || true
 fi
-module load WebProxy
+# ACES needs WebProxy for internet on compute nodes; Bridges-2 has direct access.
+module load WebProxy 2>/dev/null || true
 command -v singularity &>/dev/null || \
     module load Singularity 2>/dev/null || \
     module load singularity 2>/dev/null || true
@@ -1200,8 +1204,8 @@ ulimit -S -s 8192
 QUEUE="$RUNDIR/queues/job-$JOBIDX.txt"
 # Node-local $TMPDIR (/tmp/job.$SLURM_JOB_ID): much lower small-file latency
 # than /scratch for cargo builds. Only this node ever touches these dirs.
-SCRATCH_BASE="${TMPDIR:-/tmp}"
-NODE_TMP="${TMPDIR:-/tmp}/eval-$SLURM_JOB_ID"
+SCRATCH_BASE="${LOCAL:-${TMPDIR:-/tmp}}"
+NODE_TMP="${LOCAL:-${TMPDIR:-/tmp}}/eval-$SLURM_JOB_ID"
 mkdir -p "$SCRATCH_BASE" "$NODE_TMP"
 echo 0 > "$NODE_TMP/next"
 trap 'rm -rf "$SCRATCH_BASE/ev-$SLURM_JOB_ID-"* "$NODE_TMP" 2>/dev/null || true' EXIT

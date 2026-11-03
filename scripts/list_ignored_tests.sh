@@ -32,7 +32,7 @@
 # while binary test names are Rust paths and can never contain a comma.
 #
 # Appends one row per crate (crate,n_attr_ignored,n_cfg_out,ignored_tests) to
-# /scratch/group/p.cis260229.000/outputs/ignore_list-<dataset>.csv, with the
+# $GROUP/outputs/ignore_list-<dataset>.csv, with the
 # ignored test names in the last column joined by ';' (empty when Miri runs
 # every test). Names are deduplicated, so a test name appearing in two test
 # binaries counts once -- and if one copy is ignored under Miri while the other
@@ -63,7 +63,10 @@ if (( BASH_VERSINFO[0] < 4 || (BASH_VERSINFO[0] == 4 && BASH_VERSINFO[1] < 3) ))
 fi
 
 # ── Layout (all absolute, so this can be run from anywhere) ───────────────────
-GROUP="/scratch/group/p.cis260229.000"
+# Group root (datasets/, containers/, outputs/, scripts/). Override with
+# GROUP=...; defaults to the checkout this script lives in.
+GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
+export GROUP
 RUN_JOB="$GROUP/scripts/run_job.sh"
 CONTAINERS_DIR="$GROUP/containers"
 DATASETS_ROOT="$GROUP/datasets"

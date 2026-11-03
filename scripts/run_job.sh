@@ -142,7 +142,9 @@ fi
 # basename of the argument is used, and a ".sif" extension is added if absent,
 # so `rust`, `rust.sif`, or `/some/path/rust.sif` all resolve to the same file.
 # Exported so srun propagates it into the node script.
-CONTAINERS_DIR="/scratch/group/p.cis260229.000/containers"
+GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
+export GROUP
+CONTAINERS_DIR="$GROUP/containers"
 IMG="$(basename "$SIF")"
 [[ "$IMG" == *.sif ]] || IMG="${IMG}.sif"
 export SIF_ABS="$CONTAINERS_DIR/$IMG"
@@ -177,7 +179,8 @@ if ! command -v module &>/dev/null; then
 fi
 
 # Internet access on the compute node (sets http_proxy/https_proxy).
-module load WebProxy
+# ACES needs WebProxy for internet on compute nodes; Bridges-2 has direct access.
+module load WebProxy 2>/dev/null || true
 
 # Singularity only exists here on the node, not on the login node.
 command -v singularity &>/dev/null || \
@@ -191,7 +194,7 @@ fi
 
 # Writable per-job scratch on node-local $TMPDIR (/tmp/job.$SLURM_JOB_ID; much
 # lower small-file latency than /scratch), bound at the SAME path in/out.
-JOBSCRATCH="${TMPDIR:-/tmp}/cargo-$SLURM_JOB_ID"
+JOBSCRATCH="${LOCAL:-${TMPDIR:-/tmp}}/cargo-$SLURM_JOB_ID"
 mkdir -p "$JOBSCRATCH/home" "$JOBSCRATCH/target"
 
 # Remove the per-job scratch when the node script exits, however it exits.

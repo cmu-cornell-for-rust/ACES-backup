@@ -91,7 +91,7 @@ SH
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 %runscript
-    cd /scratch/group/p.cis260229.000/containers/ 2>/dev/null || cd "$HOME"
+    cd "${GROUP:-$HOME}/containers/" 2>/dev/null || cd "$HOME"
     exec "$@"
 
 %test

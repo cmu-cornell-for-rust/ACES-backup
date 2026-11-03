@@ -166,7 +166,10 @@ if (( BASH_VERSINFO[0] < 4 )); then
 fi
 
 # ── Layout (all absolute, so this can be run from anywhere) ───────────────────
-GROUP="/scratch/group/p.cis260229.000"
+# Group root (datasets/, containers/, outputs/, scripts/). Override with
+# GROUP=...; defaults to the checkout this script lives in.
+GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
+export GROUP
 CONTAINERS_DIR="$GROUP/containers"
 DATASETS_ROOT="$GROUP/datasets"
 OUTPUTS_DIR="$GROUP/outputs"
@@ -784,7 +787,8 @@ if ! command -v module &>/dev/null; then
 fi
 
 # Internet access on the compute node (sets http_proxy/https_proxy).
-module load WebProxy
+# ACES needs WebProxy for internet on compute nodes; Bridges-2 has direct access.
+module load WebProxy 2>/dev/null || true
 
 command -v singularity &>/dev/null || \
     module load Singularity 2>/dev/null || \
@@ -805,7 +809,7 @@ ulimit -S -s 8192
 
 # Node-local $TMPDIR (/tmp/job.$SLURM_JOB_ID): much lower small-file latency
 # than /scratch for cargo builds. Only this node ever touches these dirs.
-SCRATCH_BASE="${TMPDIR:-/tmp}"
+SCRATCH_BASE="${LOCAL:-${TMPDIR:-/tmp}}"
 mkdir -p "$SCRATCH_BASE"
 trap 'rm -rf "$SCRATCH_BASE/hfc-$SLURM_JOB_ID-"* 2>/dev/null || true' EXIT
 

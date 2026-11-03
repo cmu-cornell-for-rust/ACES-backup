@@ -102,9 +102,10 @@ fi
 
 # --- below runs on the compute node ---
 
-module load WebProxy
+# ACES needs WebProxy for internet on compute nodes; Bridges-2 has direct access.
+module load WebProxy 2>/dev/null || true
 
-tmp_dir="/tmp/${USER}/sif-build.$$"
+tmp_dir="${LOCAL:-/tmp/${USER}}/sif-build.$$"
 export SINGULARITY_TMPDIR="${tmp_dir}/tmp"
 mkdir -p "$SINGULARITY_TMPDIR"
 trap 'rm -rf "$tmp_dir"' EXIT

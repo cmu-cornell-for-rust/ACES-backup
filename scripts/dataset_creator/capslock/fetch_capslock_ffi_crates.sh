@@ -152,7 +152,7 @@ if [ "${1:-}" = "--worker" ]; then
         exit 0
     }
 
-    tmpdir="$(mktemp -d "${TMPDIR:-/tmp}/cffi.XXXXXX")" || exit 0
+    tmpdir="$(mktemp -d "${LOCAL:-${TMPDIR:-/tmp}}/cffi.XXXXXX")" || exit 0
     trap 'rm -rf "$tmpdir"' EXIT
 
     downloaded=0

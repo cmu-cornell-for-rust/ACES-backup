@@ -76,7 +76,7 @@
 # on the crate and checks its effect list for FFI effects ("[FFI Call]" /
 # "[FFI Declaration]" rows). Appends one row per crate
 # (crate,tests,contains_ffi) to
-# /scratch/group/p.cis260229.000/outputs/tests-<dataset>.csv (or --out), with the
+# $GROUP/outputs/tests-<dataset>.csv (or --out), with the
 # test names in the second column joined by ';' (empty when the crate has no
 # runnable tests) and contains_ffi one of true/false/scan_failed.
 # Crates whose listing fails (fetch/build error) get no row --
@@ -95,7 +95,10 @@ if (( BASH_VERSINFO[0] < 4 || (BASH_VERSINFO[0] == 4 && BASH_VERSINFO[1] < 3) ))
 fi
 
 # ── Layout (all absolute, so this can be run from anywhere) ───────────────────
-GROUP="/scratch/group/p.cis260229.000"
+# Group root (datasets/, containers/, outputs/, scripts/). Override with
+# GROUP=...; defaults to the checkout this script lives in.
+GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
+export GROUP
 RUN_JOB="$GROUP/scripts/run_job.sh"
 CONTAINERS_DIR="$GROUP/containers"
 DATASETS_ROOT="$GROUP/datasets"

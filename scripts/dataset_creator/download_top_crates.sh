@@ -9,14 +9,14 @@
 #   and removes the crates with no unsafe usage.
 #
 #   Usage: ./download_top_crates.sh <N> <downloaded_crates_dir>
-#     e.g. ./download_top_crates.sh 500 /scratch/group/p.cis260229.000/downloaded_crates
+#     e.g. ./download_top_crates.sh 500 $GROUP/downloaded_crates
 #
 # Requirements: bash, curl, jq, tar
 set -uo pipefail   # no -e; per-crate failures are handled inline
 # ------------------------------ configuration ------------------------------ #
 if [ "$#" -lt 2 ] || [ -z "${1:-}" ] || [ -z "${2:-}" ]; then
     echo "Usage: $0 <N> <downloaded_crates_dir>" >&2
-    echo "  e.g. $0 500 /scratch/group/p.cis260229.000/downloaded_crates" >&2
+    echo "  e.g. $0 500 $GROUP/downloaded_crates" >&2
     exit 1
 fi
 MAX_CRATES="$1"                                      # how many top crates (positional, required)

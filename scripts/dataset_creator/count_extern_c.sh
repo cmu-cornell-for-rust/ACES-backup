@@ -107,7 +107,7 @@ CRATES_DIR="${1%/}"
 OUT_CSV="${2:-$CRATES_DIR/_extern_c_counts.csv}"
 RG="$(command -v rg || true)"
 
-ROWS_DIR="$(mktemp -d "${TMPDIR:-/tmp}/count_extern_c.XXXXXX")" || die "mktemp failed"
+ROWS_DIR="$(mktemp -d "${LOCAL:-${TMPDIR:-/tmp}}/count_extern_c.XXXXXX")" || die "mktemp failed"
 trap 'rm -rf "$ROWS_DIR"' EXIT
 
 export SELF FFI_SCAN RG ROWS_DIR FFI_RE
