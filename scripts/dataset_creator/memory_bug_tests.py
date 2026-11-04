@@ -5,7 +5,8 @@ Usage: memory_bug_tests.py [DATASET_CSV] [OUT_CSV]
 
 Writes one row per crate (<name>-<version>) to OUT_CSV in the shape of
 mirilli-tests.csv (crate,tests), with the crate's failing tests joined by ';'.
-A test is kept when its "error type" is Use-After-Free or Access Out-of-Bound.
+A test is kept when its "error type" is Use-After-Free or Access Out-of-Bound,
+unless its "miri" result is "UB - same".
 Crates keep their first-seen order from DATASET_CSV; tests are sorted and deduplicated.
 
 Defaults: ../../outputs/dataset.csv ../memory-bugs-tests.csv
@@ -19,6 +20,7 @@ HERE = Path(__file__).resolve().parent
 csv.field_size_limit(sys.maxsize)  # error logs can be long
 
 ERROR_TYPES = {"Use-After-Free", "Access Out-of-Bound"}
+SKIP_MIRI = {"UB - same"}  # Miri already confirms these
 
 
 def main():
@@ -30,7 +32,8 @@ def main():
     tests = {}
     with open(args.dataset, newline="", encoding="utf-8-sig") as f:
         for r in csv.DictReader(f):
-            if r["error type"].strip() in ERROR_TYPES and r["test"].strip():
+            if (r["error type"].strip() in ERROR_TYPES and r["test"].strip()
+                    and r["miri"].strip() not in SKIP_MIRI):
                 crate = f"{r['crate'].strip()}-{r['version'].strip()}"
                 tests.setdefault(crate, set()).add(r["test"].strip())
 
