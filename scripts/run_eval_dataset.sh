@@ -96,7 +96,7 @@
 #                     workers uses just enough full jobs instead, and the
 #                     ones past --max-jobs are staged -- see below)
 #   --max-jobs N      most of your jobs in SLURM at once, running + pending
-#                     (default 4000; Bridges-2 allows 5000 per user); the rest are
+#                     (default 5000; Bridges-2 allows 5000 per user); the rest are
 #                     staged
 #   --max-tasks N     ceiling on workers per job, at most 24 (default: 16, or
 #                     fewer if 16 don't fit a 64-core / 128G RM-shared job
@@ -142,7 +142,7 @@
 #   holds at most --max-tasks crates, and a run with more crates than an
 #   explicit --jobs x workers is refused. The workers still pull from the
 #   job's queue, but with one crate per worker each pulls exactly one.
-# * At most --max-jobs (default 4000) jobs per user sit in SLURM at once (running + pending, counting
+# * At most --max-jobs (default 5000) jobs per user sit in SLURM at once (running + pending, counting
 #   the user's other jobs too). Jobs past that are staged by this script and
 #   submitted as earlier ones leave the queue, so the script must keep running
 #   (use tmux/screen) until every job has been submitted.
@@ -264,7 +264,7 @@ NODE_MEM=128
 MAX_MEM_PER_TASK=16
 MAX_TASKS_PER_JOB=24
 DEFAULT_MAX_TASKS=16
-MAX_JOBS=4000
+MAX_JOBS=5000
 
 # Built-in per-mode option sets (Miri's same as run_bench_dataset.sh; BSAN's
 # stack traces are shorter here, since the whole report goes in the CSV).
@@ -415,7 +415,7 @@ usage() {
     echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
     echo "           --bsan-build-fails FILE (repeatable; default in bsan mode:" >&2
     echo "             $GROUP/scripts/bsan_build_fails.csv) | --no-bsan-build-fails" >&2
-    echo "           --jobs N --max-jobs N (default 4000) --max-tasks N (default $DEFAULT_MAX_TASKS, <= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
+    echo "           --jobs N --max-jobs N (default 5000) --max-tasks N (default $DEFAULT_MAX_TASKS, <= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 30m, 0 = none)" >&2
     echo "           --default-features (default features, not the docs.rs ones)" >&2
