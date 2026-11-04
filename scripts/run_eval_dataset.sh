@@ -1449,14 +1449,15 @@ echo
 # SLURM takes at most MAX_JOBS jobs per user at once (running + pending, the
 # user's other jobs included). Every non-empty queue starts out staged; as
 # many as fit go in now, the rest from the poll loop as slots free up.
-# Staged fewest tests first (ties: lowest index), slow-list jobs included, so
-# the small crates are submitted -- and so usually start -- ahead of the big.
+# Staged most tests first (ties: lowest index), slow-list jobs included, so
+# the longest jobs are submitted -- and so usually start -- ahead of the short
+# ones, which then fill in around them instead of trailing at the end.
 STAGED=()
 while IFS=$'\t' read -r _ j; do
     STAGED+=("$j")
 done < <(for (( j = 0; j < JOBS; j++ )); do
              [[ -s "$RUNDIR/queues/job-$j.txt" ]] && printf '%d\t%d\n' "${JOB_TESTS[j]}" "$j"
-         done | sort -t$'\t' -k1,1n -k2,2n)
+         done | sort -t$'\t' -k1,1nr -k2,2n)
 JOBIDS=()
 SQ_USER="${USER:-$(id -un)}"
 

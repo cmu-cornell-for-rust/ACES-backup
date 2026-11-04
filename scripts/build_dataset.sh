@@ -1068,8 +1068,13 @@ if [ "$RUN_LOCAL" -eq 0 ]; then
         trap - INT TERM
         # Killing sbatch --wait leaves its job running: cancel what was
         # submitted (each submit log starts with its job id), then the waiters.
+        # Also every queued/running job of this launch by name, which catches
+        # one whose submission reply was lost.
         local ids
-        ids=$(cat "$PARTS_DIR"/submit-*.log 2>/dev/null | grep -oE '^[0-9]+' || true)
+        ids=$({ cat "$PARTS_DIR"/submit-*.log 2>/dev/null | grep -oE '^[0-9]+'
+                squeue -h -u "$USER" -o '%i %j' 2>/dev/null \
+                    | awk -v p="build-dataset-${RUN_TAG:-}-" 'index($2, p) == 1 { print $1 }'; } \
+                | sort -u || true)
         # shellcheck disable=SC2086  # one id per word
         [ -n "$ids" ] && scancel $ids 2>/dev/null
         for p in ${pids[@]+"${pids[@]}"}; do pkill -TERM -P "$p" 2>/dev/null; kill "$p" 2>/dev/null; done
@@ -1080,20 +1085,43 @@ if [ "$RUN_LOCAL" -eq 0 ]; then
     # (and an old run's job never is).
     RUN_TAG="$(date +%s)-$$"
     LAUNCH_START="$(date +%Y-%m-%dT%H:%M:%S)"
-    # job_by_name <name>: the id of this launch's job of that name, if any.
+    # job_by_name <name>: the id of this launch's (oldest) job of that name, if
+    # any: squeue first, which sees a job as soon as slurmctld has it, then
+    # sacct, which lags but also has jobs that already ended.
     job_by_name() {
-        sacct -n -X -P --name="$1" -S "$LAUNCH_START" -o JobID 2>/dev/null | grep -oE '^[0-9]+' | head -1
+        { squeue -h -u "$USER" -n "$1" -o %i 2>/dev/null
+          sacct -n -X -P --name="$1" -S "$LAUNCH_START" -o JobID 2>/dev/null; } \
+            | grep -oE '^[0-9]+' | sort -n | head -1
     }
-    # wait_job <id>: until sacct says the job ended; 0 if it COMPLETED. sbatch
-    # --wait alone isn't trusted: a slurmctld timeout can end it early.
+    # wait_job <name> <id>: until sacct says the part's job ended; 0 if it
+    # COMPLETED. sbatch --wait alone isn't trusted: a slurmctld timeout can end
+    # it early. A submission whose reply was lost (sbatch timed out, but the
+    # job went in) leaves a second job of the same name, and two jobs of one
+    # part wipe each other's _state dir: each round, the oldest queued or
+    # running job of the name is the one waited on and the others are
+    # cancelled (a part job also exits on its own when an older one exists).
     wait_job() {
-        local st
+        local name="$1" id="$2" st live older dups
         while :; do
-            st=$(sacct -n -X -P -j "$1" -o State 2>/dev/null | head -1)
+            if live=$(squeue -h -u "$USER" -n "$name" -o %i 2>/dev/null); then
+                live=$(grep -oE '^[0-9]+' <<<"$live" | sort -n)
+                older=$(awk -v id="$id" '$1 < id' <<<"$live" | head -1)
+                if [ -n "$older" ]; then
+                    echo "job $older is an earlier submission of $name; waiting on it instead of $id"
+                    id="$older"
+                fi
+                dups=$(awk -v id="$id" '$1 != id' <<<"$live")
+                if [ -n "$dups" ]; then
+                    echo "cancelling duplicate job(s) of $name: $(echo $dups)"
+                    # shellcheck disable=SC2086  # one id per word
+                    scancel $dups 2>/dev/null
+                fi
+            fi
+            st=$(sacct -n -X -P -j "$id" -o State 2>/dev/null | head -1)
             case "$st" in
                 ""|PENDING|RUNNING|REQUEUED|RESIZING|SUSPENDED|CONFIGURING|COMPLETING) sleep 60 ;;
                 COMPLETED) return 0 ;;
-                *) echo "job $1 ended $st"; return 1 ;;
+                *) echo "job $id ended $st"; return 1 ;;
             esac
         done
     }
@@ -1121,14 +1149,16 @@ if [ "$RUN_LOCAL" -eq 0 ]; then
         # count too) is retried every minute until there's room. Once there's
         # a job id, the job's own end state (from sacct) is the result. With
         # no id, sbatch may still have submitted it (a slurmctld timeout loses
-        # the reply): it's looked up by name before submitting again.
+        # the reply): it's looked up by name before submitting again, and if
+        # that misses it, wait_job and the part job's own check keep just one
+        # of the two (--open-mode=append so the other can't truncate job-K.log).
         (
             log="$PARTS_DIR/submit-$k.log"
             name="build-dataset-$RUN_TAG-$k"
             tries=0
             while :; do
                 from=$(( $(wc -l < "$log") + 1 ))   # this attempt's output
-                sbatch --wait --parsable --job-name="$name" \
+                sbatch --wait --parsable --job-name="$name" --open-mode=append \
                     --nodes=1 "${SLURM_SHAPE[@]}" --time="$SB_TIME" --output="$PARTS_DIR/job-$k.log" \
                     "$PARTS_DIR/job-$k.sh"
                 rc=$?
@@ -1145,7 +1175,7 @@ if [ "$RUN_LOCAL" -eq 0 ]; then
                     [ -n "$id" ] && echo "$id" && echo "sbatch lost the reply (rc $rc), but job $id was submitted"
                 fi
                 if [ -n "$id" ]; then
-                    wait_job "$id"
+                    wait_job "$name" "$id"
                     exit $?
                 fi
                 tries=$((tries + 1))
@@ -1353,6 +1383,18 @@ if [ -n "$PART" ]; then
     RESULTS_CSV="$PARTS_DIR/build-$IMAGE.part-$PART.csv"
     LIST_CSV="$PARTS_DIR/list.part-$PART.csv"
     BSAN_CSV="$PARTS_DIR/bsan-only.part-$PART.csv"
+    # A second job of this part (sbatch timed out but had submitted the first,
+    # so the launcher submitted again) would wipe the first's _state dir and
+    # overwrite its CSVs: if an older job of the same name is queued or
+    # running, leave the part to it. (The launcher waits on the oldest too.)
+    if [ "$NODE" -eq 1 ] && [ -n "${SLURM_JOB_ID:-}" ] && [ -n "${SLURM_JOB_NAME:-}" ]; then
+        older=$(squeue -h -u "${USER:-$(id -un)}" -n "$SLURM_JOB_NAME" -o %i 2>/dev/null \
+            | grep -oE '^[0-9]+' | awk -v me="$SLURM_JOB_ID" '$1 < me' | head -1)
+        if [ -n "$older" ]; then
+            echo "==> part $PART: job $older (an earlier submission of $SLURM_JOB_NAME) has it; exiting"
+            exit 0
+        fi
+    fi
 fi
 rm -rf "$STATE_DIR"                         # fresh check every run
 mkdir -p "$STATE_DIR"
