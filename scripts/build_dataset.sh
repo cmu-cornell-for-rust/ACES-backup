@@ -108,7 +108,7 @@
 #   Where it runs: from the login node the crates are dealt round-robin into
 #   ceil(crates / -n) parts (so part sizes differ by at most one crate, and
 #   none holds more than -n), and each part is built by its own sbatch job.
-#   At most --max-jobs (default 90, the per-user submit limit) are in SLURM
+#   At most --max-jobs (default 0: no cap) are in SLURM
 #   at once, running + pending; the rest are submitted as earlier ones
 #   finish (a submission refused for the limit, which your other jobs count
 #   towards too, is retried every minute). Each job runs this script again with --node --part K, on the
@@ -156,7 +156,7 @@
 #   -c CPUS       cores per job (default 16; with --max-tasks, tasks x
 #                 --cpus-per-task)
 #   -t HH[:MM]    walltime per job (default 8)
-#   --max-jobs N  most of this run's jobs in SLURM at once (default 90)
+#   --max-jobs N  most of this run's jobs in SLURM at once (default 0: no cap)
 #   --max-tasks N crates each job builds at once, each its own srun task
 #                 (default: CPUS/4 in a job, 1 with --local; same as the JOBS
 #                 knob below, which it overrides). With it, a job is sized
@@ -709,7 +709,7 @@ OUTPUTS_DIR="$GROUP/outputs"
 BSAN_FAILS_CSV="$GROUP/scripts/bsan_build_fails.csv"
 RUN_LOCAL=0; NODE=0; CPUS=""; WALLTIME=8; MEM=""; IMAGE=experimental-bsan; WHOLE=0; DOC=0; DOC_ONLY=0; NO_BSAN=0; DEFAULT_FEATURES=0; RERUN=0; BSAN_ONLY=0; MISSING=0; DOWNLOAD=0; PER_JOB=100; PART=""; POS=()
 VERSIONS=""; VERSIONS_CSV=""
-MAX_JOBS=90   # jobs in SLURM at once, running + pending (per-user submit limit)
+MAX_JOBS=0    # jobs in SLURM at once, running + pending; 0 = no cap (refused submissions are retried)
 MAX_TASKS=""  # crates built at once per job; empty = JOBS, else its default
 CPUS_PER_TASK=""; MEM_PER_TASK=""   # with --max-tasks: 4 cores, 8G
 while [ "$#" -gt 0 ]; do
@@ -979,7 +979,7 @@ if [ "$RUN_LOCAL" -eq 0 ]; then
     [ -f "$CONTAINERS_DIR/$IMAGE.sif" ] || die "image not found: $CONTAINERS_DIR/$IMAGE.sif"
     [[ "$CPUS" =~ ^[1-9][0-9]*$ ]] || die "-c must be a positive integer"
     [[ "$PER_JOB" =~ ^[1-9][0-9]*$ ]] || die "-n must be a positive integer"
-    [[ "$MAX_JOBS" =~ ^[1-9][0-9]*$ ]] || die "--max-jobs must be a positive integer"
+    [[ "$MAX_JOBS" =~ ^[0-9]+$ ]] || die "--max-jobs must be a non-negative integer (0: no cap)"
     JOBS="${JOBS:-$(( CPUS >= 4 ? CPUS / 4 : 1 ))}"
     [[ "$JOBS" =~ ^[1-9][0-9]*$ ]] || die "JOBS must be a positive integer"
     # -t / -m as run_job.sh takes them: HH or HH:MM; a bare number is GB.
@@ -1060,7 +1060,7 @@ if [ "$RUN_LOCAL" -eq 0 ]; then
     [ "$DOWNLOAD" -eq 1 ] && WHOLE_FLAG="$WHOLE_FLAG --download"
     echo "==> Building $n crates in the '$IMAGE' image as $NPARTS job(s) of" \
          "$(( n / NPARTS ))-$(( (n + NPARTS - 1) / NPARTS )) crates" \
-         "($CPUS cpus, $JOBS crates at a time, $MEM, ${WALLTIME}h each; at most $MAX_JOBS at once)"
+         "($CPUS cpus, $JOBS crates at a time, $MEM, ${WALLTIME}h each$([ "$MAX_JOBS" -gt 0 ] && echo "; at most $MAX_JOBS at once"))"
     echo "    each crate is its own srun step: $STEP_CPUS cpu(s), capped at ${STEP_MEM}M"
 
     pids=()
@@ -1105,14 +1105,14 @@ if [ "$RUN_LOCAL" -eq 0 ]; then
     source "$GROUP/scripts/slurm_shape.sh"
     slurm_shape "$JOBS" "$STEP_CPUS" "$MEM_MB"
     for (( k = 0; k < NPARTS; k++ )); do
-        [ "$inflight" -lt "$MAX_JOBS" ] || reap_one
+        { [ "$MAX_JOBS" -eq 0 ] || [ "$inflight" -lt "$MAX_JOBS" ]; } || reap_one
         # The part job runs this script with --node, on the node outside the
         # image; sbatch --wait returns once the job ends, with its exit code.
         # The command goes in a batch script of its own, submitted without
         # arguments: the site's sbatch wrapper re-splits its arguments, which
         # breaks --wrap (and any script argument with a space in it).
         # shellcheck disable=SC2086  # WHOLE_FLAG splits into flags
-        printf '#!/bin/bash\n%s\n' "$(printf '%q ' env JOBS="$JOBS" BD_STEP_CPUS="$STEP_CPUS" \
+        printf '#!/bin/bash\n%s\n' "$(printf '%q ' env GROUP="$GROUP" JOBS="$JOBS" BD_STEP_CPUS="$STEP_CPUS" \
             BD_STEP_MEM="${STEP_MEM}M" BUILD_RUSTFLAGS="$BUILD_RUSTFLAGS" PRIMARY_RUSTFLAGS="$PRIMARY_RUSTFLAGS" \
             BUILD_TIMEOUT="$BUILD_TIMEOUT" \
             bash "$DATASET_DIR/_logs/.build_dataset.sh" --node --part "$k" --image "$IMAGE" \
