@@ -45,7 +45,10 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-GROUP="/scratch/group/p.cis260229.000"   # as in run_eval_dataset.sh
+# Group root (datasets/, containers/, outputs/, scripts/). Override with
+# GROUP=...; defaults to the checkout this script lives in.
+GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
+export GROUP
 
 DATASET_CSV="$(dirname "$SCRIPT_DIR")/outputs/dataset.csv"
 NAME="bugs"

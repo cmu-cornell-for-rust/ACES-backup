@@ -96,12 +96,15 @@
 #                     workers uses just enough full jobs instead, and the
 #                     ones past --max-jobs are staged -- see below)
 #   --max-jobs N      most of your jobs in SLURM at once, running + pending
-#                     (default 90, the per-user submit limit); the rest are
+#                     (default 5000; Bridges-2 allows 5000 per user); the rest are
 #                     staged
 #   --max-tasks N     ceiling on workers per job, at most 24 (default: 16, or
-#                     fewer if 16 don't fit a 24-core / 488G slice of a node
+#                     fewer if 16 don't fit a 64-core / 128G RM-shared job
 #                     at --cpus-per-task and --mem-per-task)
-#   --cpus-per-task N cores per worker (default 1; also caps CARGO_BUILD_JOBS)
+#   --cpus-per-task N cores per worker (default 4; also caps CARGO_BUILD_JOBS)
+#   --parallel-tests N  tests of one crate run at once (default: --cpus-per-task;
+#                     1 = one at a time). Run times then include contention, and
+#                     the tests share the worker's --mem-per-task cap
 #   --mem-per-task G  GB per worker (default 8, at most 16); a hard cap: each
 #                     crate runs as its own srun step with --mem=G
 #   --merge RUNDIR    don't run anything: merge RUNDIR's shards into its master
@@ -115,7 +118,7 @@
 # Environment:
 #   BSAN_SYMBOLIZER   llvm-symbolizer path inside the image, so BSAN reports
 #                     carry source locations (bsan mode). Default:
-#                     /root/.rustup/toolchains/bsan/bin/llvm-symbolizer
+#                     /opt/rust/rustup/toolchains/bsan/bin/llvm-symbolizer
 #
 #   --test-timeout T  time limit per test invocation, in any form coreutils
 #                     `timeout` accepts (e.g. 300, 90s, 10m, 1.5h); a test that
@@ -139,7 +142,7 @@
 #   holds at most --max-tasks crates, and a run with more crates than an
 #   explicit --jobs x workers is refused. The workers still pull from the
 #   job's queue, but with one crate per worker each pulls exactly one.
-# * At most --max-jobs (default 90) jobs per user sit in SLURM at once (running + pending, counting
+# * At most --max-jobs (default 5000) jobs per user sit in SLURM at once (running + pending, counting
 #   the user's other jobs too). Jobs past that are staged by this script and
 #   submitted as earlier ones leave the queue, so the script must keep running
 #   (use tmux/screen) until every job has been submitted.
@@ -243,26 +246,31 @@ if (( BASH_VERSINFO[0] < 4 )); then
 fi
 
 # ── Layout (all absolute, so this can be run from anywhere) ───────────────────
-GROUP="/scratch/group/p.cis260229.000"
+# Group root (datasets/, containers/, outputs/, scripts/). Override with
+# GROUP=...; defaults to the checkout this script lives in.
+GROUP="${GROUP:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
+export GROUP
+source "$GROUP/scripts/slurm_shape.sh"
 CONTAINERS_DIR="$GROUP/containers"
 DATASETS_ROOT="$GROUP/datasets"
 OUTPUTS_DIR="$GROUP/outputs"
 
-# Node slice a job may ask for (a hard cap of 24 cpus per job), the
-# per-worker memory ceiling, the most workers per job, and the most jobs the
-# user may have in SLURM at once (the rest are staged; --max-jobs overrides).
-NODE_CPUS=24
-NODE_MEM=488
+# Node slice a job may ask for (Bridges-2 RM-shared: at most 64 cores and
+# 2G per core), the per-worker memory ceiling, the most workers per job, and
+# the most jobs the user may have in SLURM at once (the rest are staged;
+# --max-jobs overrides; Bridges-2's per-user submit limit is 5000).
+NODE_CPUS=64
+NODE_MEM=128
 MAX_MEM_PER_TASK=16
 MAX_TASKS_PER_JOB=24
 DEFAULT_MAX_TASKS=16
-MAX_JOBS=90
+MAX_JOBS=5000
 
 # Built-in per-mode option sets (Miri's same as run_bench_dataset.sh; BSAN's
 # stack traces are shorter here, since the whole report goes in the CSV).
 MIRI_COMMON="-Zmiri-disable-alignment-check -Zmiri-disable-data-race-detector -Zmiri-ignore-leaks -Zmiri-tree-borrows"
 BSAN_COMMON="stacktrace_max_len=10"
-BSAN_SYMBOLIZER="${BSAN_SYMBOLIZER:-/root/.rustup/toolchains/bsan/bin/llvm-symbolizer}"
+BSAN_SYMBOLIZER="${BSAN_SYMBOLIZER:-/opt/rust/rustup/toolchains/bsan/bin/llvm-symbolizer}"
 
 # ── Options ──────────────────────────────────────────────────────────────────
 IGNORE_FILE=""
@@ -279,8 +287,9 @@ BSAN_FAIL_CSVS=()
 NO_BSAN_FAILS=0
 JOBS=""              # empty = auto: one per crate, capped at MAX_JOBS unless more are needed
 MAX_TASKS=""         # empty = auto: what fits NODE_CPUS / NODE_MEM
-CPUS_PER_TASK=1
+CPUS_PER_TASK=4       # 8G per worker is billed as 4 cores on RM-shared anyway
 MEM_PER_TASK=8
+PARALLEL_TESTS=""     # empty = CPUS_PER_TASK
 TEST_THREADS=""
 TEST_TIMEOUT="30m"    # 0 = no limit
 DEFAULT_FEATURES=0    # 1 = default features, not the docs.rs ones
@@ -360,6 +369,8 @@ while [[ $# -gt 0 ]]; do
         --mem-per-task=*) MEM_PER_TASK="${1#*=}"; shift ;;
         --merge)         MERGE_DIR="$2"; shift 2 ;;
         --merge=*)       MERGE_DIR="${1#*=}"; shift ;;
+        --parallel-tests) PARALLEL_TESTS="$2"; shift 2 ;;
+        --parallel-tests=*) PARALLEL_TESTS="${1#*=}"; shift ;;
         --test-threads)  TEST_THREADS="$2"; shift 2 ;;
         --test-threads=*) TEST_THREADS="${1#*=}"; shift ;;
         --slow-walltime) SLOW_WALLTIME_ARG="$2"; shift 2 ;;
@@ -404,7 +415,7 @@ usage() {
     echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
     echo "           --bsan-build-fails FILE (repeatable; default in bsan mode:" >&2
     echo "             $GROUP/scripts/bsan_build_fails.csv) | --no-bsan-build-fails" >&2
-    echo "           --jobs N --max-jobs N (default 90) --max-tasks N (default $DEFAULT_MAX_TASKS, <= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
+    echo "           --jobs N --max-jobs N (default 5000) --max-tasks N (default $DEFAULT_MAX_TASKS, <= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 30m, 0 = none)" >&2
     echo "           --default-features (default features, not the docs.rs ones)" >&2
@@ -469,6 +480,9 @@ else
     MAX_TASKS=$FIT_TASKS
     (( MAX_TASKS > DEFAULT_MAX_TASKS )) && MAX_TASKS=$DEFAULT_MAX_TASKS
 fi
+PARALLEL_TESTS="${PARALLEL_TESTS:-$CPUS_PER_TASK}"
+[[ "$PARALLEL_TESTS" =~ ^[1-9][0-9]*$ ]] \
+    || { echo "Error: --parallel-tests must be a positive integer (got '$PARALLEL_TESTS')." >&2; exit 1; }
 if [[ -n "$TEST_THREADS" ]]; then
     [[ "$TEST_THREADS" =~ ^[1-9][0-9]*$ ]] \
         || { echo "Error: --test-threads must be a positive integer (got '$TEST_THREADS')." >&2; exit 1; }
@@ -847,6 +861,7 @@ TASKS=$PER_JOB_MAX
     printf 'CPUS_PER_TASK=%q\n'    "$CPUS_PER_TASK"
     printf 'MEM_PER_TASK=%q\n'     "$MEM_PER_TASK"
     printf 'TEST_THREADS=%q\n'     "$TEST_THREADS"
+    printf 'PARALLEL_TESTS=%q\n'   "$PARALLEL_TESTS"
     printf 'TEST_TIMEOUT=%q\n'     "$TEST_TIMEOUT"
     printf 'DEFAULT_FEATURES=%q\n' "$DEFAULT_FEATURES"
     printf 'MIRIFLAGS_ALL=%q\n'    "$MIRIFLAGS_ALL"
@@ -1077,29 +1092,30 @@ cp "$EV_TESTS" "$tmp/tests"
 echo "tests: $EV_CRATE -> $(wc -l < "$tmp/tests" | tr -d ' ') from the tests CSV"
 
 # ── each test, once ──
+# Up to EV_PARALLEL_TESTS tests run at once (--parallel-tests; 1 = one at a
+# time), each its own cargo invocation with its own output file. A finished
+# test's log lines are printed together, in completion order. With more than
+# one at once, a test's run time includes contention from the tests beside it,
+# and they all share the step's --mem cap.
 # After TIMEOUT_STREAK timeouts in a row within one top-level module (the
 # test path's first segment, e.g. tests:: or lib::; for a doc test, its
 # source file), that module's remaining tests are skipped: they get
 # status=skipped rows, not runs, and the next module's tests still run.
+# ("In a row" is in completion order; tests already started still finish.)
+PAR=${EV_PARALLEL_TESTS:-1}
 TIMEOUT_STREAK=5
 streak_mod=""; streak=0
 skip_mods=$'\n'
-while IFS= read -r t; do
-    [ -n "$t" ] || continue
-    if [ "${t#doc:}" != "$t" ]; then
-        dname=$(pct_decode "${t#doc:}"); dname=${dname%%#*}
-        mod="doc:${dname%% - *}"
-    elif [ "${t%%::*}" != "$t" ]; then
-        mod=${t%%::*}
-    else
-        mod=""
-    fi
-    if [[ "$skip_mods" == *$'\n'"$mod"$'\n'* ]]; then
-        echo "result: $EV_CRATE :: $t -> skipped (${TIMEOUT_STREAK} timeouts in a row in ${mod:-<crate root>})"
-        row "$t" skipped "$compile" "" timeout \
-            "skipped: $TIMEOUT_STREAK consecutive timeouts in module ${mod:-<crate root>}"
-        continue
-    fi
+mkdir -p "$tmp/t"
+running=0; n=0
+
+# run_test <index> <test> <module>: runs one test; its log goes to stdout
+# (redirected by the caller), then <index>.mod and <index>.status are written
+# for reap.
+run_test() {
+    local i=$1 t=$2 mod=$3 out="$tmp/t/$1.out" targs trun rstart rc run nrun status dname sk
+    local -a dparts
+    ekind=""; emsg=""
     if [ "${t#doc:}" != "$t" ]; then
         # The run includes rustdoc collecting the crate's doc tests and
         # compiling this one's snippet: neither is built by --no-run.
@@ -1113,10 +1129,9 @@ while IFS= read -r t; do
     fi
     rstart=$(now_ms)
     ${LIMIT[@]+"${LIMIT[@]}"} $trun -- ${HARNESS[@]+"${HARNESS[@]}"} "${targs[@]}" \
-        < /dev/null > "$tmp/out" 2>&1; rc=$?
+        < /dev/null > "$out" 2>&1; rc=$?
     run=$(secs $(( $(now_ms) - rstart )))
-    nrun=$(ntests_ran "$tmp/out")
-    ekind=""; emsg=""
+    nrun=$(ntests_ran "$out")
     if [ "${#LIMIT[@]}" -gt 0 ] && { [ "$rc" -eq 124 ] || [ "$rc" -eq 137 ]; }; then
         status=timeout
     elif [ "$nrun" -eq 0 ]; then
@@ -1126,29 +1141,71 @@ while IFS= read -r t; do
     else
         status=success
     fi
-    [ "$rc" -ne 0 ] && classify "$tmp/out"
+    [ "$rc" -ne 0 ] && classify "$out"
     if [ "$status" = timeout ]; then
         # A fixed message, not whatever the killed run last printed (which
         # classify could mistake for e.g. a panic, or oom on the -k SIGKILL).
         ekind=timeout
         emsg="test timed out after $EV_TEST_TIMEOUT (--test-timeout; killed by $([ "$rc" -eq 137 ] && echo SIGKILL || echo SIGTERM))"
-        echo "$emsg" >> "$tmp/out"
+        echo "$emsg" >> "$out"
     fi
-    [ "$status" != success ] && dump_output "$t" "$rc" "$tmp/out"
+    [ "$status" != success ] && dump_output "$t" "$rc" "$out"
     echo "result: $EV_CRATE :: $t -> $status (${run}s)${ekind:+ [$ekind]}"
     row "$t" "$status" "$compile" "$run" "$ekind" "$emsg"
-    if [ "$status" = timeout ]; then
-        [ "$mod" = "$streak_mod" ] || { streak_mod=$mod; streak=0; }
-        streak=$(( streak + 1 ))
-        if [ "$streak" -ge "$TIMEOUT_STREAK" ]; then
-            echo "skipping: $EV_CRATE module ${mod:-<crate root>} after $streak timeouts in a row"
-            skip_mods+="$mod"$'\n'
+    rm -f "$out"
+    printf '%s\n' "$mod" > "$tmp/t/$i.mod"
+    printf '%s\n' "$status" > "$tmp/t/$i.st"
+    mv "$tmp/t/$i.st" "$tmp/t/$i.status"
+}
+
+# reap: wait for one test to end, then print every finished test's log and
+# feed its result to the timeout streak.
+reap() {
+    local f i st m
+    wait -n
+    running=$(( running - 1 ))
+    for f in "$tmp"/t/*.status; do
+        [ -e "$f" ] || continue
+        i=${f##*/}; i=${i%.status}
+        st=$(cat "$f"); m=$(cat "$tmp/t/$i.mod")
+        cat "$tmp/t/$i.log"
+        rm -f "$tmp/t/$i".*
+        if [ "$st" = timeout ]; then
+            [ "$m" = "$streak_mod" ] || { streak_mod=$m; streak=0; }
+            streak=$(( streak + 1 ))
+            if [ "$streak" -ge "$TIMEOUT_STREAK" ]; then
+                echo "skipping: $EV_CRATE module ${m:-<crate root>} after $streak timeouts in a row"
+                skip_mods+="$m"$'\n'
+                streak=0
+            fi
+        else
             streak=0
         fi
+    done
+}
+
+while IFS= read -r t; do
+    [ -n "$t" ] || continue
+    if [ "${t#doc:}" != "$t" ]; then
+        dname=$(pct_decode "${t#doc:}"); dname=${dname%%#*}
+        mod="doc:${dname%% - *}"
+    elif [ "${t%%::*}" != "$t" ]; then
+        mod=${t%%::*}
     else
-        streak=0
+        mod=""
     fi
+    while [ "$running" -ge "$PAR" ]; do reap; done
+    if [[ "$skip_mods" == *$'\n'"$mod"$'\n'* ]]; then
+        echo "result: $EV_CRATE :: $t -> skipped (${TIMEOUT_STREAK} timeouts in a row in ${mod:-<crate root>})"
+        row "$t" skipped "$compile" "" timeout \
+            "skipped: $TIMEOUT_STREAK consecutive timeouts in module ${mod:-<crate root>}"
+        continue
+    fi
+    n=$(( n + 1 ))
+    run_test "$n" "$t" "$mod" < /dev/null > "$tmp/t/$n.log" 2>&1 &
+    running=$(( running + 1 ))
 done < "$tmp/tests"
+while [ "$running" -gt 0 ]; do reap; done
 INNER_EOF
 
 # ── rustc-cfg-miri.sh: inner.sh's rustc in rust/bsan mode ────────────────────
@@ -1179,7 +1236,8 @@ if ! command -v module &>/dev/null; then
     source /etc/profile.d/lmod.sh    2>/dev/null || \
     source /etc/profile.d/modules.sh 2>/dev/null || true
 fi
-module load WebProxy
+# ACES needs WebProxy for internet on compute nodes; Bridges-2 has direct access.
+module load WebProxy 2>/dev/null || true
 command -v singularity &>/dev/null || \
     module load Singularity 2>/dev/null || \
     module load singularity 2>/dev/null || true
@@ -1200,8 +1258,8 @@ ulimit -S -s 8192
 QUEUE="$RUNDIR/queues/job-$JOBIDX.txt"
 # Node-local $TMPDIR (/tmp/job.$SLURM_JOB_ID): much lower small-file latency
 # than /scratch for cargo builds. Only this node ever touches these dirs.
-SCRATCH_BASE="${TMPDIR:-/tmp}"
-NODE_TMP="${TMPDIR:-/tmp}/eval-$SLURM_JOB_ID"
+SCRATCH_BASE="${LOCAL:-${TMPDIR:-/tmp}}"
+NODE_TMP="${LOCAL:-${TMPDIR:-/tmp}}/eval-$SLURM_JOB_ID"
 mkdir -p "$SCRATCH_BASE" "$NODE_TMP"
 echo 0 > "$NODE_TMP/next"
 trap 'rm -rf "$SCRATCH_BASE/ev-$SLURM_JOB_ID-"* "$NODE_TMP" 2>/dev/null || true' EXIT
@@ -1302,7 +1360,7 @@ worker() {
         # --mem-per-task: an OOM kills this crate only, never its neighbours
         # (which a shared job-wide pool would let it starve or take down).
         srun --exact --nodes=1 --ntasks=1 \
-            --cpus-per-task="$CPUS_PER_TASK" --mem="${MEM_PER_TASK}G" \
+            --cpus-per-task="$CPUS_PER_TASK" --mem="$(( MEM_PER_TASK * 1000 ))M" \
             --kill-on-bad-exit=0 --job-name="$crate" \
         singularity exec --cleanenv --pwd /work \
             --bind "$scr" --bind "$RUNDIR" --bind "$scr/work:/work" \
@@ -1315,6 +1373,7 @@ worker() {
             --env EV_SHARD="$shard" \
             --env EV_TESTS="$RUNDIR/lists/$crate.txt" \
             --env EV_TEST_THREADS="$TEST_THREADS" \
+            --env EV_PARALLEL_TESTS="$PARALLEL_TESTS" \
             --env EV_TEST_TIMEOUT="$TEST_TIMEOUT" \
             --env EV_DEFAULT_FEATURES="$DEFAULT_FEATURES" \
             --env EV_MIRIFLAGS="$MIRIFLAGS_ALL" \
@@ -1424,10 +1483,10 @@ submit_job() {
     (( nt > TASKS )) && nt=$TASKS
     wt=$WALLTIME
     (( j < SLOW_JOBS )) && wt=$SLOW_WALLTIME
+    slurm_shape "$nt" "$CPUS_PER_TASK" "$(( nt * MEM_PER_TASK * 1000 ))"
     jid=$(sbatch --parsable \
         --job-name="ev-${IMAGE}-${DATASET}-$j" \
-        --nodes=1 --ntasks-per-node="$nt" --cpus-per-task="$CPUS_PER_TASK" \
-        --mem="$(( nt * MEM_PER_TASK ))G" --time="$wt" \
+        --nodes=1 "${SLURM_SHAPE[@]}" --time="$wt" \
         --output="$RUNDIR/job-%j.out" \
         "$RUNDIR/job.sh" "$RUNDIR" "$j" "$nt") || return 1
     jid="${jid%%;*}"
