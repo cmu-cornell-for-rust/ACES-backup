@@ -1050,10 +1050,12 @@ classify() {
 csvq() { [ -n "$1" ] && printf '"%s"' "${1//\"/\"\"}"; }
 
 # row <test> <status> <compile_s> <run_s> [<error_type> <error>]
-# Test names are Rust paths, so they never contain a comma.
+# Test names are Rust paths, so they never contain a comma. Appends to
+# ROW_FILE if set (a parallel test's own file; reap moves it to the shard), else
+# straight to the shard.
 row() {
     line="$EV_BUILD,$EV_CRATE,$1,$2,$3,$4,$(ts),$EV_JOBID,${5:-},$(csvq "${6:-}")"
-    echo "$line" >> "$EV_SHARD"
+    echo "$line" >> "${ROW_FILE:-$EV_SHARD}"
     echo "CSVROW:$line"
 }
 
@@ -1131,10 +1133,13 @@ mkdir -p "$tmp/t"
 running=0; n=0
 
 # run_test <index> <test> <module>: runs one test; its log goes to stdout
-# (redirected by the caller), then <index>.mod and <index>.status are written
-# for reap.
+# (redirected by the caller) and its CSV row to <index>.row, then <index>.mod
+# and <index>.status are written for reap. The row isn't appended to the shard
+# here: rows run to several KB, and appends that big from tests finishing
+# together interleave in 4 KB pieces.
 run_test() {
     local i=$1 t=$2 mod=$3 out="$tmp/t/$1.out" targs trun rstart rc run nrun status dname sk
+    local ROW_FILE="$tmp/t/$1.row"
     local -a dparts
     ekind=""; emsg=""
     if [ "${t#doc:}" != "$t" ]; then
@@ -1179,8 +1184,8 @@ run_test() {
     mv "$tmp/t/$i.st" "$tmp/t/$i.status"
 }
 
-# reap: wait for one test to end, then print every finished test's log and
-# feed its result to the timeout streak.
+# reap: wait for one test to end, then print every finished test's log, append
+# its row to the shard, and feed its result to the timeout streak.
 reap() {
     local f i st m
     wait -n
@@ -1190,6 +1195,7 @@ reap() {
         i=${f##*/}; i=${i%.status}
         st=$(cat "$f"); m=$(cat "$tmp/t/$i.mod")
         cat "$tmp/t/$i.log"
+        [ -e "$tmp/t/$i.row" ] && cat "$tmp/t/$i.row" >> "$EV_SHARD"
         rm -f "$tmp/t/$i".*
         if [ "$st" = timeout ]; then
             [ "$m" = "$streak_mod" ] || { streak_mod=$m; streak=0; }
