@@ -19,9 +19,8 @@ The datasets default to (paths relative to scripts/):
   treeborrows  treeborrows-dataset.csv
   extern-c     dataset_creator/fetch_lists/all_c_ffi_crates.csv
 
-each a CSV with a *name* column (crate_name, name) and a version column, plus
-optionally latest_version as written by update_latest.py. Giving --dataset
-replaces the defaults. Writes one row per bug, in input order, with columns:
+each a CSV with a *name* column (crate_name, name) and a version column.
+Giving --dataset replaces the defaults. Writes one row per bug, in input order, with columns:
 
   bug id            1, 2, ...: rows with the same bug key share an id. The key
                     is the error type plus a location: "tag created at" for
@@ -57,8 +56,7 @@ replaces the defaults. Writes one row per bug, in input order, with columns:
   datasets          the datasets the crate is in, e.g. "mirilli,
                     capslock-updated": <dataset> if the dataset's version
                     column lists the tested version, else <dataset>-updated
-                    if the crate is in it at another version and the tested
-                    version is up to date or is the dataset's latest_version.
+                    if the crate is in it at another version.
                     extern-c is just "extern-c" for any version of a crate in
                     it, since it lists every C-FFI crate, not fixed versions
   # downloads       all-time crates.io downloads of the crate
@@ -247,7 +245,7 @@ def found_by(crate, test):
     return ", ".join(s for s in ("mirilli", "capslock", "treeborrows") if s in hits)
 
 
-# dataset name -> {crate name -> (versions, latest_versions) listed for it}
+# dataset name -> {crate name -> versions listed for it}
 members = {}
 for ds, path in datasets:
     # utf-8-sig: files saved from Excel start with a BOM.
@@ -258,10 +256,7 @@ for ds, path in datasets:
             sys.exit(f"Error: {path} needs a *name* and a version column")
         crates = members[ds] = {}
         for r in reader:
-            vs, latest = crates.setdefault(r[name_col], (set(), set()))
-            vs.add(r["version"])
-            if r.get("latest_version"):
-                latest.add(r["latest_version"])
+            crates.setdefault(r[name_col], set()).add(r["version"])
 known = set().union(*members.values())
 
 # crates.io names are unique up to case and -/_, so match on that
@@ -430,13 +425,14 @@ def miri_result(crate, test, loc):
     return r["error_type"] or r["status"], r["error"], r["run_seconds"]
 
 
-def in_datasets(name, version, up_to_date):
+def in_datasets(name, version):
     tags = []
     for ds, crates in members.items():
-        vs, latest = crates.get(name, ((), ()))
-        if version in vs or (ds == "extern-c" and name in crates):
+        if name not in crates:
+            continue
+        if version in crates[name] or ds == "extern-c":
             tags.append(ds)
-        elif name in crates and (up_to_date or version in latest):
+        else:
             tags.append(f"{ds}-updated")
     return ", ".join(tags)
 
@@ -534,7 +530,7 @@ with open(out_path, "w", newline="", encoding="utf-8-sig") as f:
             name, version,
             ci["released"] if ci else "",
             yn(up_to_date) if ci else "",
-            in_datasets(name, version, up_to_date),
+            in_datasets(name, version),
             ci["downloads"] if ci else "",
             r["build"], r["timestamp"], r["run_seconds"], r["test"], etype,
             yn("<wildcard>" in r["error"]), loc, created, r["error"],
