@@ -125,6 +125,9 @@
 #                     hits it is recorded as `timeout`. Default 30m; 0 turns it
 #                     off. Without one, a test that hangs holds its worker --
 #                     and every crate still queued behind it -- until walltime.
+#   --no-timeout-skip run every listed test even after timeouts: by default,
+#                     after 5 timeouts in a row within one module, the rest of
+#                     that module's tests are skipped (status=skipped rows)
 #
 # How it differs from run_bench_dataset.sh
 # ----------------------------------------
@@ -292,6 +295,7 @@ MEM_PER_TASK=8
 PARALLEL_TESTS=""     # empty = CPUS_PER_TASK
 TEST_THREADS=""
 TEST_TIMEOUT="30m"    # 0 = no limit
+TIMEOUT_STREAK=5      # timeouts in a row in a module before its rest is skipped; 0 = never skip
 DEFAULT_FEATURES=0    # 1 = default features, not the docs.rs ones
 WALLTIME_ARG=12
 SLOW_WALLTIME_ARG=24
@@ -378,6 +382,7 @@ while [[ $# -gt 0 ]]; do
         --test-timeout)  TEST_TIMEOUT="$2"; shift 2 ;;
         --default-features) DEFAULT_FEATURES=1; shift ;;
         --test-timeout=*) TEST_TIMEOUT="${1#*=}"; shift ;;
+        --no-timeout-skip) TIMEOUT_STREAK=0; shift ;;
         --)              shift; POS+=("$@"); break ;;
         -*)
             echo "Error: unknown option '$1'." >&2; exit 1 ;;
@@ -418,6 +423,7 @@ usage() {
     echo "           --jobs N --max-jobs N (default 5000) --max-tasks N (default $DEFAULT_MAX_TASKS, <= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 30m, 0 = none)" >&2
+    echo "           --no-timeout-skip (don't skip a module's tests after 5 timeouts in a row)" >&2
     echo "           --default-features (default features, not the docs.rs ones)" >&2
     echo "           --slow-walltime T (slow-list jobs, HH or HH:MM; default 24) | --no-slow-list" >&2
     exit 1
@@ -863,6 +869,7 @@ TASKS=$PER_JOB_MAX
     printf 'TEST_THREADS=%q\n'     "$TEST_THREADS"
     printf 'PARALLEL_TESTS=%q\n'   "$PARALLEL_TESTS"
     printf 'TEST_TIMEOUT=%q\n'     "$TEST_TIMEOUT"
+    printf 'TIMEOUT_STREAK=%q\n'   "$TIMEOUT_STREAK"
     printf 'DEFAULT_FEATURES=%q\n' "$DEFAULT_FEATURES"
     printf 'MIRIFLAGS_ALL=%q\n'    "$MIRIFLAGS_ALL"
     printf 'BSAN_OPTIONS_ALL=%q\n' "$BSAN_OPTIONS_ALL"
@@ -1103,7 +1110,7 @@ echo "tests: $EV_CRATE -> $(wc -l < "$tmp/tests" | tr -d ' ') from the tests CSV
 # status=skipped rows, not runs, and the next module's tests still run.
 # ("In a row" is in completion order; tests already started still finish.)
 PAR=${EV_PARALLEL_TESTS:-1}
-TIMEOUT_STREAK=5
+TIMEOUT_STREAK=${EV_TIMEOUT_STREAK:-5}   # 0 (--no-timeout-skip): never skip
 streak_mod=""; streak=0
 skip_mods=$'\n'
 mkdir -p "$tmp/t"
@@ -1173,7 +1180,7 @@ reap() {
         if [ "$st" = timeout ]; then
             [ "$m" = "$streak_mod" ] || { streak_mod=$m; streak=0; }
             streak=$(( streak + 1 ))
-            if [ "$streak" -ge "$TIMEOUT_STREAK" ]; then
+            if [ "$TIMEOUT_STREAK" -gt 0 ] && [ "$streak" -ge "$TIMEOUT_STREAK" ]; then
                 echo "skipping: $EV_CRATE module ${m:-<crate root>} after $streak timeouts in a row"
                 skip_mods+="$m"$'\n'
                 streak=0
@@ -1375,6 +1382,7 @@ worker() {
             --env EV_TEST_THREADS="$TEST_THREADS" \
             --env EV_PARALLEL_TESTS="$PARALLEL_TESTS" \
             --env EV_TEST_TIMEOUT="$TEST_TIMEOUT" \
+            --env EV_TIMEOUT_STREAK="$TIMEOUT_STREAK" \
             --env EV_DEFAULT_FEATURES="$DEFAULT_FEATURES" \
             --env EV_MIRIFLAGS="$MIRIFLAGS_ALL" \
             --env EV_BSAN_OPTIONS="$BSAN_OPTIONS_ALL" \
@@ -1436,7 +1444,7 @@ echo "Shape:    $JOBS job(s), $TESTS_MIN-$TESTS_MAX test(s) / $PER_JOB_MIN-$PER_
 echo "          x ${CPUS_PER_TASK} cpu, ${MEM_PER_TASK}G/worker, $WALLTIME walltime$( (( SLOW_JOBS > 0 )) && echo " (regular jobs)")"
 (( JOBS > MAX_JOBS )) && echo "Staging:  at most $MAX_JOBS of your jobs in SLURM at once; the rest are submitted
           as slots free up -- keep this script running (tmux/screen) until all are in"
-echo "Timing:   one run per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}${TEST_TIMEOUT:+, --test-timeout=$TEST_TIMEOUT}"
+echo "Timing:   one run per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}${TEST_TIMEOUT:+, --test-timeout=$TEST_TIMEOUT}, $PARALLEL_TESTS at a time$( (( TIMEOUT_STREAK == 0 )) && echo ", no timeout skips")"
 echo "Features: $( (( DEFAULT_FEATURES )) && echo "default features (--default-features)" || echo "each crate's docs.rs features, else its defaults")"
 [[ "$MODE" == "miri" ]] && echo "MIRIFLAGS: $MIRIFLAGS_ALL"
 [[ "$MODE" == "bsan" ]] && echo "BSAN_OPTIONS: $BSAN_OPTIONS_ALL"
@@ -1449,14 +1457,15 @@ echo
 # SLURM takes at most MAX_JOBS jobs per user at once (running + pending, the
 # user's other jobs included). Every non-empty queue starts out staged; as
 # many as fit go in now, the rest from the poll loop as slots free up.
-# Staged fewest tests first (ties: lowest index), slow-list jobs included, so
-# the small crates are submitted -- and so usually start -- ahead of the big.
+# Staged most tests first (ties: lowest index), slow-list jobs included, so
+# the longest jobs are submitted -- and so usually start -- ahead of the short
+# ones, which then fill in around them instead of trailing at the end.
 STAGED=()
 while IFS=$'\t' read -r _ j; do
     STAGED+=("$j")
 done < <(for (( j = 0; j < JOBS; j++ )); do
              [[ -s "$RUNDIR/queues/job-$j.txt" ]] && printf '%d\t%d\n' "${JOB_TESTS[j]}" "$j"
-         done | sort -t$'\t' -k1,1n -k2,2n)
+         done | sort -t$'\t' -k1,1nr -k2,2n)
 JOBIDS=()
 SQ_USER="${USER:-$(id -un)}"
 
