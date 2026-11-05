@@ -2,6 +2,7 @@
 """Tests CSV of everything a hyperfine run did NOT get to.
 
 Usage: missing_tests.py [-o OUT.csv] [--exclude-bsan-build-fails BSAN_ONLY.csv]... <tests.csv | hyperfine.csv> <hyperfine.csv> [more-hyperfine.csv ...]
+       missing_tests.py [options] --tests A.csv [--tests B.csv ...] <hyperfine.csv> [more-hyperfine.csv ...]
 
 Diffs a tests CSV (crate,tests,contains_ffi -- as produced by list_tests.sh)
 against one or more *-hyperfine.csv files and writes a tests CSV in the same
@@ -40,6 +41,13 @@ contains_ffi left empty. E.g. what gc-opts-1-miri got to that miri did not:
     missing_tests.py outputs/gc-opts-1-miri-top_500-hyperfine.csv \\
         outputs/miri-top_500-hyperfine.csv
 
+To diff several tests lists at once, give each with --tests (repeatable);
+every positional argument is then a hyperfine CSV. The lists are merged in
+the order given: a crate keeps its first position, tests from later lists are
+appended to it with duplicates dropped, and contains_ffi is the first
+non-empty value seen. Each --tests file can be either kind (tests CSV or
+reference hyperfine CSV).
+
 The CSV goes to stdout (or -o FILE); a per-crate summary goes to stderr.
 """
 import argparse
@@ -63,10 +71,21 @@ ap.add_argument("--exclude-bsan-build-fails", action="append", default=[], metav
                      "(build,crate,...): they build with plain cargo but not with cargo bsan. "
                      "Repeatable")
 ap.add_argument("-q", "--quiet", action="store_true", help="no stderr summary")
-ap.add_argument("tests_csv", help="tests CSV from list_tests.sh (crate,tests,contains_ffi), "
-                "or a reference *-hyperfine.csv whose done tests form the list")
-ap.add_argument("hyperfine_csvs", nargs="+", help="one or more *-hyperfine.csv files")
+ap.add_argument("--tests", action="append", default=[], metavar="TESTS_CSV", dest="tests_csvs",
+                help="tests CSV (or reference *-hyperfine.csv) to diff; repeatable, lists are "
+                     "merged in order. When given, every positional argument is a hyperfine CSV")
+ap.add_argument("csvs", nargs="+", metavar="CSV",
+                help="without --tests: the tests CSV from list_tests.sh (crate,tests,contains_ffi) "
+                     "or a reference *-hyperfine.csv, then one or more *-hyperfine.csv files; "
+                     "with --tests: only the *-hyperfine.csv files")
 args = ap.parse_args()
+if args.tests_csvs:
+    args.hyperfine_csvs = args.csvs
+else:
+    if len(args.csvs) < 2:
+        ap.error("need a tests CSV and at least one hyperfine CSV (or use --tests)")
+    args.tests_csvs = args.csvs[:1]
+    args.hyperfine_csvs = args.csvs[1:]
 
 done_status = {s.strip() for s in args.done_status.split(",") if s.strip()}
 if not done_status:
@@ -134,7 +153,21 @@ def load_tests_list(path):
         return [(c, list(ts), "") for c, ts in by_crate.items()]
 
 
-for crate, tests, ffi in load_tests_list(args.tests_csv):
+def merge_tests_lists(paths):
+    """Union of the lists in order: a crate keeps its first-seen position,
+    later lists append their new tests, contains_ffi is the first non-empty."""
+    merged = {}         # crate -> [{test: None}, contains_ffi]
+    for path in paths:
+        for crate, tests, ffi in load_tests_list(path):
+            entry = merged.setdefault(crate, [{}, ""])
+            for t in tests:
+                entry[0][t] = None
+            if not entry[1] and ffi:
+                entry[1] = ffi
+    return [(c, list(ts), ffi) for c, (ts, ffi) in merged.items()]
+
+
+for crate, tests, ffi in merge_tests_lists(args.tests_csvs):
     if not tests:
         continue
     if crate in bsan_fails:
@@ -169,7 +202,7 @@ if out_rows:
         note = "" if crate in ran_crates else "  (never ran)"
         print(f"{crate:<{width}}  {len(missing):>7}  {n:>3}{note}", file=e)
 print(f"\n{total_missing} missing test(s) across {len(out_rows)} crate(s) "
-      f"(of {total_tests} tests in {args.tests_csv})", file=e)
+      f"(of {total_tests} tests in {', '.join(args.tests_csvs)})", file=e)
 if excluded_bsan:
     n = sum(k for _, k in excluded_bsan)
     print(f"excluded {len(excluded_bsan)} bsan build-fail crate(s), {n} test(s): "

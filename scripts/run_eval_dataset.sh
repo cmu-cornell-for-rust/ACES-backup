@@ -91,13 +91,11 @@
 #                     test count like the rest, at the regular walltime
 #   --slow-walltime T walltime for the slow-list jobs, HH or HH:MM (default 24)
 #   --jobs N          sbatch jobs to spread the crates over, slow-list jobs
-#                     included (default: one per crate, capped at --max-jobs;
-#                     a run with more crates than --max-jobs x --max-tasks
-#                     workers uses just enough full jobs instead, and the
+#                     included (default: one per crate, never packed; the
 #                     ones past --max-jobs are staged -- see below)
-#   --max-jobs N      most of your jobs in SLURM at once, running + pending
-#                     (default 5000; Bridges-2 allows 5000 per user); the rest are
-#                     staged
+#   --max-jobs N      most of your jobs in SLURM at once, running + pending;
+#                     the rest are staged (default 4999, one under Bridges-2's
+#                     5000-per-user limit; 0 = no limit)
 #   --max-tasks N     ceiling on workers per job, at most 24 (default: 16, or
 #                     fewer if 16 don't fit a 64-core / 128G RM-shared job
 #                     at --cpus-per-task and --mem-per-task)
@@ -145,10 +143,12 @@
 #   holds at most --max-tasks crates, and a run with more crates than an
 #   explicit --jobs x workers is refused. The workers still pull from the
 #   job's queue, but with one crate per worker each pulls exactly one.
-# * At most --max-jobs (default 5000) jobs per user sit in SLURM at once (running + pending, counting
-#   the user's other jobs too). Jobs past that are staged by this script and
-#   submitted as earlier ones leave the queue, so the script must keep running
-#   (use tmux/screen) until every job has been submitted.
+# * At most --max-jobs (default 4999) jobs per user sit in SLURM at once
+#   (running + pending, counting the user's other jobs too). Jobs past that are
+#   staged by this script and submitted as earlier ones leave the queue, so the
+#   script must keep running (use tmux/screen) until every job has been
+#   submitted. If sbatch refuses a job while some are queued (a site limit),
+#   it stays staged and is retried the same way.
 #
 # No dataset dir
 # --------------
@@ -261,13 +261,14 @@ OUTPUTS_DIR="$GROUP/outputs"
 # Node slice a job may ask for (Bridges-2 RM-shared: at most 64 cores and
 # 2G per core), the per-worker memory ceiling, the most workers per job, and
 # the most jobs the user may have in SLURM at once (the rest are staged;
-# --max-jobs overrides; Bridges-2's per-user submit limit is 5000).
+# --max-jobs overrides; 0 = no limit). Bridges-2 rejects submissions past
+# 5000 jobs per user, so the default stays one under.
 NODE_CPUS=64
 NODE_MEM=128
 MAX_MEM_PER_TASK=16
 MAX_TASKS_PER_JOB=24
 DEFAULT_MAX_TASKS=16
-MAX_JOBS=5000
+MAX_JOBS=4999
 
 # Built-in per-mode option sets (Miri's same as run_bench_dataset.sh; BSAN's
 # stack traces are shorter here, since the whole report goes in the CSV).
@@ -288,7 +289,7 @@ NO_SKIP=0
 NO_SLOW=0
 BSAN_FAIL_CSVS=()
 NO_BSAN_FAILS=0
-JOBS=""              # empty = auto: one per crate, capped at MAX_JOBS unless more are needed
+JOBS=""              # empty = auto: one per crate, never packed
 MAX_TASKS=""         # empty = auto: what fits NODE_CPUS / NODE_MEM
 CPUS_PER_TASK=4       # 8G per worker is billed as 4 cores on RM-shared anyway
 MEM_PER_TASK=8
@@ -420,7 +421,7 @@ usage() {
     echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
     echo "           --bsan-build-fails FILE (repeatable; default in bsan mode:" >&2
     echo "             $GROUP/scripts/bsan_build_fails.csv) | --no-bsan-build-fails" >&2
-    echo "           --jobs N --max-jobs N (default 5000) --max-tasks N (default $DEFAULT_MAX_TASKS, <= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
+    echo "           --jobs N --max-jobs N (default 4999; 0 = no limit) --max-tasks N (default $DEFAULT_MAX_TASKS, <= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 30m, 0 = none)" >&2
     echo "           --no-timeout-skip (don't skip a module's tests after 5 timeouts in a row)" >&2
@@ -461,9 +462,10 @@ WALLTIME=$(parse_walltime "$WALLTIME_ARG")
 SLOW_WALLTIME=$(parse_walltime "$SLOW_WALLTIME_ARG")
 
 MEM_PER_TASK="${MEM_PER_TASK%G}"
-for v in CPUS_PER_TASK MEM_PER_TASK MAX_JOBS; do
+for v in CPUS_PER_TASK MEM_PER_TASK; do
     [[ "${!v}" =~ ^[1-9][0-9]*$ ]] || { echo "Error: $v must be a positive integer." >&2; exit 1; }
 done
+[[ "$MAX_JOBS" =~ ^[0-9]+$ ]] || { echo "Error: --max-jobs must be a non-negative integer (0 = no limit)." >&2; exit 1; }
 (( MEM_PER_TASK <= MAX_MEM_PER_TASK )) \
     || { echo "Error: --mem-per-task is at most ${MAX_MEM_PER_TASK}G (got ${MEM_PER_TASK}G)." >&2; exit 1; }
 (( CPUS_PER_TASK <= NODE_CPUS )) \
@@ -791,9 +793,9 @@ NREG=${#REG_CRATES[@]}
 # crates is refused rather than queueing crates behind one another.
 SLOW_JOBS=$(( (NSLOW + MAX_TASKS - 1) / MAX_TASKS ))
 if [[ -z "$JOBS" ]]; then
-    REG_JOBS=$(( MAX_JOBS - SLOW_JOBS ))
-    MIN_REG_JOBS=$(( (NREG + MAX_TASKS - 1) / MAX_TASKS ))
-    (( REG_JOBS < MIN_REG_JOBS )) && REG_JOBS=$MIN_REG_JOBS
+    # Auto: one job per regular crate, never packed; jobs past MAX_JOBS are
+    # staged and submitted as slots free up.
+    REG_JOBS=$NREG
 else
     REG_JOBS=$(( JOBS - SLOW_JOBS ))
 fi
@@ -831,7 +833,19 @@ done
 # not yet holding MAX_TASKS crates -- one crate per worker. Crates stay whole
 # -- each is compiled once -- so one huge crate can still outweigh a job's
 # share. The check above guarantees a free slot.
+# Every crate has at least one test, so while an empty job is left the greedy
+# pick is always the lowest-index empty one: the first REG_JOBS crates go
+# straight to jobs SLOW_JOBS, SLOW_JOBS+1, ... without the O(jobs) scan (with
+# one crate per job, that's all of them).
+k=0
 while IFS=$'\t' read -r cnt crate; do
+    if (( k < REG_JOBS )); then
+        best=$(( SLOW_JOBS + k )); k=$(( k + 1 ))
+        printf '%s\n' "$crate" >> "$RUNDIR/queues/job-$best.txt"
+        JOB_TESTS[best]=$cnt
+        JOB_CRATES[best]=1
+        continue
+    fi
     best=-1
     for (( j = SLOW_JOBS; j < JOBS; j++ )); do
         (( JOB_CRATES[j] < MAX_TASKS )) || continue
@@ -1442,7 +1456,7 @@ if [[ -n "$SLOW_CSV" ]]; then
 fi
 echo "Shape:    $JOBS job(s), $TESTS_MIN-$TESTS_MAX test(s) / $PER_JOB_MIN-$PER_JOB_MAX crate(s) each, up to $TASKS worker(s)/job"
 echo "          x ${CPUS_PER_TASK} cpu, ${MEM_PER_TASK}G/worker, $WALLTIME walltime$( (( SLOW_JOBS > 0 )) && echo " (regular jobs)")"
-(( JOBS > MAX_JOBS )) && echo "Staging:  at most $MAX_JOBS of your jobs in SLURM at once; the rest are submitted
+(( MAX_JOBS > 0 && JOBS > MAX_JOBS )) && echo "Staging:  at most $MAX_JOBS of your jobs in SLURM at once; the rest are submitted
           as slots free up -- keep this script running (tmux/screen) until all are in"
 echo "Timing:   one run per test${TEST_THREADS:+, --test-threads=$TEST_THREADS}${TEST_TIMEOUT:+, --test-timeout=$TEST_TIMEOUT}, $PARALLEL_TESTS at a time$( (( TIMEOUT_STREAK == 0 )) && echo ", no timeout skips")"
 echo "Features: $( (( DEFAULT_FEATURES )) && echo "default features (--default-features)" || echo "each crate's docs.rs features, else its defaults")"
@@ -1504,24 +1518,30 @@ submit_job() {
 }
 
 # Submits staged jobs, in order, while the user has fewer than MAX_JOBS in
-# SLURM. Fails (leaving the job staged) if sbatch does; a failed squeue just
-# skips this round.
+# SLURM (no cap when MAX_JOBS is 0). Fails (leaving the job staged) if sbatch
+# does; a failed squeue just skips this round. STAGED_AT indexes the next
+# staged job (cheaper than shifting the array once per submission).
+STAGED_AT=0
+nstaged() { echo $(( ${#STAGED[@]} - STAGED_AT )); }
 submit_staged() {
-    (( ${#STAGED[@]} )) || return 0
+    (( STAGED_AT < ${#STAGED[@]} )) || return 0
     count_queued || return 0
-    while (( ${#STAGED[@]} && NQUEUED < MAX_JOBS )); do
-        submit_job "${STAGED[0]}" || return 1
-        STAGED=("${STAGED[@]:1}")
+    while (( STAGED_AT < ${#STAGED[@]} && (MAX_JOBS == 0 || NQUEUED < MAX_JOBS) )); do
+        submit_job "${STAGED[STAGED_AT]}" || return 1
+        STAGED_AT=$(( STAGED_AT + 1 ))
         NQUEUED=$(( NQUEUED + 1 ))
     done
 }
 
 if ! submit_staged; then
-    echo "Error: sbatch failed for job ${STAGED[0]}; cancelling ${JOBIDS[*]:-nothing}." >&2
-    (( ${#JOBIDS[@]} )) && scancel "${JOBIDS[@]}" 2>/dev/null || true
-    exit 1
+    if (( ${#JOBIDS[@]} == 0 )); then
+        echo "Error: sbatch failed for job ${STAGED[STAGED_AT]}; nothing submitted." >&2
+        exit 1
+    fi
+    echo "warning: sbatch refused job ${STAGED[STAGED_AT]} after ${#JOBIDS[@]} submitted (a site limit?);" >&2
+    echo "         staging the other $(nstaged) and retrying as jobs leave the queue." >&2
 fi
-(( ${#STAGED[@]} )) && echo "staged ${#STAGED[@]} job(s) until the queue has room (at most $MAX_JOBS of your jobs at once)"
+(( $(nstaged) )) && echo "staged $(nstaged) job(s) until the queue has room$( (( MAX_JOBS > 0 )) && echo " (at most $MAX_JOBS of your jobs at once)")"
 
 # From here on, whatever ends the orchestrator merges the shards first:
 # Ctrl-C / TERM cancel the jobs, then merge what they wrote; a hangup (SSH
@@ -1532,7 +1552,7 @@ merge_on_exit() {
     (( MERGED )) && return
     MERGED=1
     echo
-    (( ${#STAGED[@]} )) && echo "warning: ${#STAGED[@]} staged job(s) were never submitted (jobs ${STAGED[*]}); their crates have no results." >&2
+    (( $(nstaged) )) && echo "warning: $(nstaged) staged job(s) were never submitted (jobs ${STAGED[*]:STAGED_AT}); their crates have no results." >&2
     merge_shards "$RUNDIR" "$CSV" || true
     echo "  (more rows later? run_eval_dataset.sh --merge $RUNDIR)"
 }
@@ -1548,19 +1568,25 @@ trap 'exit 129' HUP
 
 # ── Poll until every job is submitted and has left the queue ───────────────
 # Each round first submits whatever staged jobs now fit. A sbatch failure
-# leaves the job staged for the next round; after SUBMIT_MAX_FAILS rounds in
-# a row, the run gives up and cancels what it submitted.
+# leaves the job staged for the next round. While the user still has jobs in
+# SLURM, a failure is taken as a site limit and just waits for room; only
+# SUBMIT_MAX_FAILS failing rounds in a row with none of the user's jobs
+# queued give up and cancel what was submitted.
 SUBMIT_FAILS=0
 SUBMIT_MAX_FAILS=5
 while :; do
+    q0=$(( ${#JOBIDS[@]} ))
     if submit_staged; then
         SUBMIT_FAILS=0
+    elif (( ${#JOBIDS[@]} > q0 || NQUEUED > 0 )); then
+        SUBMIT_FAILS=0
+        echo "warning: sbatch refused job ${STAGED[STAGED_AT]} with $NQUEUED of your jobs queued; retrying next round." >&2
     else
         SUBMIT_FAILS=$(( SUBMIT_FAILS + 1 ))
-        echo "warning: sbatch failed for job ${STAGED[0]} ($SUBMIT_FAILS/$SUBMIT_MAX_FAILS); retrying next round." >&2
+        echo "warning: sbatch failed for job ${STAGED[STAGED_AT]} ($SUBMIT_FAILS/$SUBMIT_MAX_FAILS); retrying next round." >&2
         if (( SUBMIT_FAILS >= SUBMIT_MAX_FAILS )); then
             trap - INT TERM HUP
-            echo "Error: giving up on the ${#STAGED[@]} staged job(s); cancelling ${JOBIDS[*]:-nothing}." >&2
+            echo "Error: giving up on the $(nstaged) staged job(s); cancelling ${JOBIDS[*]:-nothing}." >&2
             (( ${#JOBIDS[@]} )) && scancel "${JOBIDS[@]}" 2>/dev/null || true
             exit 1
         fi
@@ -1573,8 +1599,8 @@ while :; do
     fi
     done_crates=$(cat "$RUNDIR"/done/*.txt 2>/dev/null | wc -l || true)
     rows=$(cat "$RUNDIR"/shards/*.csv 2>/dev/null | wc -l || true)
-    echo "$(date +%H:%M:%S)  jobs in queue: $left   staged: ${#STAGED[@]}   all yours: $NQUEUED/$MAX_JOBS   crates done: $done_crates/$NCRATES   result rows: $rows"
-    (( left == 0 && ${#STAGED[@]} == 0 )) && break
+    echo "$(date +%H:%M:%S)  jobs in queue: $left   staged: $(nstaged)   all yours: $NQUEUED$( (( MAX_JOBS > 0 )) && echo "/$MAX_JOBS")   crates done: $done_crates/$NCRATES   result rows: $rows"
+    (( left == 0 && $(nstaged) == 0 )) && break
     sleep 60
 done
 trap - INT TERM HUP
