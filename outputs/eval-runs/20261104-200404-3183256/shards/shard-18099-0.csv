@@ -1,0 +1,3 @@
+experimental-bsan,shindan-maker-0.1.20,tests::test_get_html_str,test_failed,299.485,2.910,2026-11-05T08:35:33Z,50263116.0,panic,"thread 'tests::test_get_html_str' (62067) panicked at src/lib.rs:143:14: called `Result::unwrap()` on an `Err` value: Failed to extract session cookie"
+experimental-bsan,shindan-maker-0.1.20,tests::test_get_segments,test_failed,299.485,2.333,2026-11-05T08:35:35Z,50263116.0,panic,"thread 'tests::test_get_segments' (62142) panicked at src/lib.rs:130:14: called `Result::unwrap()` on an `Err` value: Failed to extract session cookie"
+experimental-bsan,shindan-maker-0.1.20,tests::test_get_title,timeout,299.485,150.025,2026-11-05T08:38:05Z,50263116.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

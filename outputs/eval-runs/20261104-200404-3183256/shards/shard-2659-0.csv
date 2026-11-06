@@ -1,0 +1,86 @@
+experimental-bsan,rust-argon2-3.0.0,argon2::tests::single_thread_verification_multi_lane_hash,timeout,14.316,150.018,2026-11-05T02:11:43Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,argon2::tests::test_argon2d_for_miri,timeout,14.316,150.021,2026-11-05T02:14:13Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,argon2::tests::test_argon2i_for_miri,timeout,14.316,150.011,2026-11-05T02:16:43Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,argon2::tests::test_argon2id_for_miri,timeout,14.316,150.018,2026-11-05T02:19:13Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,argon2::tests::test_argon2id_for_miri_2,timeout,14.316,150.020,2026-11-05T02:21:43Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,block::tests::as_u8_mut_returns_correct_slice,success,14.316,2.975,2026-11-05T02:21:46Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,block::tests::as_u8_returns_correct_slice,success,14.316,2.966,2026-11-05T02:21:49Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,block::tests::bitxor_assign_updates_lhs,success,14.316,3.007,2026-11-05T02:21:52Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,block::tests::clone_clones_block,success,14.316,2.997,2026-11-05T02:21:55Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,block::tests::copy_to_copies_block,success,14.316,3.010,2026-11-05T02:21:58Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,block::tests::zero_creates_block_will_all_zeros,success,14.316,2.988,2026-11-05T02:22:01Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,config::tests::default_returns_correct_instance,success,14.316,2.948,2026-11-05T02:22:04Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,config::tests::original_returns_correct_instance,success,14.316,2.957,2026-11-05T02:22:07Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,config::tests::owasp1_returns_correct_instance,success,14.316,2.922,2026-11-05T02:22:10Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,config::tests::owasp2_returns_correct_instance,success,14.316,2.917,2026-11-05T02:22:13Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,config::tests::owasp3_returns_correct_instance,success,14.316,2.926,2026-11-05T02:22:16Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,config::tests::owasp4_returns_correct_instance,success,14.316,2.985,2026-11-05T02:22:19Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,config::tests::owasp5_returns_correct_instance,success,14.316,2.964,2026-11-05T02:22:22Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,config::tests::rfc9106_low_mem_returns_correct_instance,success,14.316,2.970,2026-11-05T02:22:25Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,config::tests::rfc9106_returns_correct_instance,success,14.316,2.924,2026-11-05T02:22:28Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,context::tests::new_returns_correct_instance,success,14.316,2.918,2026-11-05T02:22:31Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,context::tests::new_with_less_than_8_x_lanes_mem_cost_returns_correct_error,success,14.316,2.935,2026-11-05T02:22:33Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,context::tests::new_with_too_few_lanes_returns_correct_error,success,14.316,2.945,2026-11-05T02:22:36Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,context::tests::new_with_too_little_mem_cost_returns_correct_error,success,14.316,2.945,2026-11-05T02:22:39Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,context::tests::new_with_too_many_lanes_returns_correct_error,success,14.316,2.919,2026-11-05T02:22:42Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,context::tests::new_with_too_short_hash_length_returns_correct_error,success,14.316,2.943,2026-11-05T02:22:45Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,context::tests::new_with_too_short_salt_returns_correct_error,success,14.316,2.948,2026-11-05T02:22:48Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,context::tests::new_with_too_small_time_cost_returns_correct_error,success,14.316,2.933,2026-11-05T02:22:51Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::base64_len_returns_correct_length,success,14.316,2.966,2026-11-05T02:22:54Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_with_empty_hash_returns_error_result,success,14.316,2.979,2026-11-05T02:22:57Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_with_empty_mem_cost_returns_error_result,success,14.316,2.982,2026-11-05T02:23:00Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_with_empty_parallelism_returns_error_result,success,14.316,2.982,2026-11-05T02:23:03Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_with_empty_time_cost_returns_error_result,success,14.316,2.965,2026-11-05T02:23:06Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_with_empty_variant_returns_error_result,success,14.316,2.949,2026-11-05T02:23:09Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_with_invalid_variant_returns_error_result,success,14.316,2.957,2026-11-05T02:23:12Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_with_non_numeric_mem_cost_returns_error_result,success,14.316,2.944,2026-11-05T02:23:15Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_with_non_numeric_parallelism_returns_error_result,success,14.316,2.961,2026-11-05T02:23:18Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_with_non_numeric_time_cost_returns_error_result,success,14.316,2.952,2026-11-05T02:23:21Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_with_version10_returns_correct_result,success,14.316,2.940,2026-11-05T02:23:24Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_with_version13_returns_correct_result,success,14.316,2.940,2026-11-05T02:23:27Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_without_hash_returns_error_result,success,14.316,2.967,2026-11-05T02:23:30Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_without_mem_cost_returns_error_result,success,14.316,2.940,2026-11-05T02:23:33Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_without_parallelism_returns_error_result,success,14.316,2.943,2026-11-05T02:23:36Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_without_salt_returns_error_result,success,14.316,2.948,2026-11-05T02:23:39Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_without_time_cost_returns_error_result,success,14.316,2.937,2026-11-05T02:23:42Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_without_variant_returns_error_result,success,14.316,2.942,2026-11-05T02:23:45Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::decode_string_without_version_returns_correct_result,success,14.316,2.947,2026-11-05T02:23:48Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::encode_string_returns_correct_string,success,14.316,2.945,2026-11-05T02:23:50Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,encoding::tests::num_len_returns_correct_length,success,14.316,2.941,2026-11-05T02:23:53Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,memory::tests::new_returns_correct_instance,success,14.316,2.971,2026-11-05T02:23:56Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,test_argon2d_version10_4,timeout,14.316,150.014,2026-11-05T02:26:26Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,test_argon2d_version10_5,timeout,14.316,150.015,2026-11-05T02:28:56Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,test_argon2d_version13_4,timeout,14.316,150.012,2026-11-05T02:31:27Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,test_argon2d_version13_5,timeout,14.316,150.015,2026-11-05T02:33:57Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,test_argon2i_version10_4,timeout,14.316,150.013,2026-11-05T02:36:27Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,test_argon2i_version10_5,timeout,14.316,150.015,2026-11-05T02:38:57Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,test_argon2i_version13_4,timeout,14.316,150.013,2026-11-05T02:41:27Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,test_argon2i_version13_5,timeout,14.316,150.016,2026-11-05T02:43:57Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,test_argon2id_version10_4,timeout,14.316,150.013,2026-11-05T02:46:27Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,test_argon2id_version10_5,timeout,14.316,150.013,2026-11-05T02:48:57Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,test_argon2id_version13_4,timeout,14.316,150.012,2026-11-05T02:51:27Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,test_argon2id_version13_5,timeout,14.316,150.016,2026-11-05T02:53:57Z,50239391.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust-argon2-3.0.0,test_encoded_len_returns_correct_length,success,14.316,2.908,2026-11-05T02:54:00Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,test_hash_raw_with_not_enough_memory,success,14.316,2.905,2026-11-05T02:54:03Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,test_hash_raw_with_too_short_salt,success,14.316,2.939,2026-11-05T02:54:06Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,test_verify_encoded_with_missing_dollar_before_hash_version10,success,14.316,2.930,2026-11-05T02:54:09Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,test_verify_encoded_with_missing_dollar_before_hash_version13,success,14.316,2.937,2026-11-05T02:54:12Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,test_verify_encoded_with_missing_dollar_before_salt_version10,success,14.316,2.930,2026-11-05T02:54:14Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,test_verify_encoded_with_missing_dollar_before_salt_version13,success,14.316,2.923,2026-11-05T02:54:17Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,test_verify_encoded_with_too_short_salt_version10,success,14.316,2.935,2026-11-05T02:54:20Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,test_verify_encoded_with_too_short_salt_version13,success,14.316,2.937,2026-11-05T02:54:23Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,thread_mode::tests::default_returns_correct_thread_mode,success,14.316,2.915,2026-11-05T02:54:26Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,thread_mode::tests::from_threads_returns_correct_thread_mode,success,14.316,2.938,2026-11-05T02:54:29Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,variant::tests::as_lowercase_str_returns_correct_str,success,14.316,2.939,2026-11-05T02:54:32Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,variant::tests::as_u32_returns_correct_u32,success,14.316,2.931,2026-11-05T02:54:35Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,variant::tests::as_u64_returns_correct_u64,success,14.316,2.946,2026-11-05T02:54:38Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,variant::tests::as_uppercase_str_returns_correct_str,success,14.316,2.949,2026-11-05T02:54:41Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,variant::tests::default_returns_correct_variant,success,14.316,2.943,2026-11-05T02:54:44Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,variant::tests::display_returns_correct_string,success,14.316,2.949,2026-11-05T02:54:47Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,variant::tests::from_str_returns_correct_result,success,14.316,2.944,2026-11-05T02:54:50Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,variant::tests::from_u32_returns_correct_result,success,14.316,2.951,2026-11-05T02:54:53Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,version::tests::as_u32_returns_correct_u32,success,14.316,2.947,2026-11-05T02:54:56Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,version::tests::default_returns_correct_version,success,14.316,2.943,2026-11-05T02:54:59Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,version::tests::display_returns_correct_string,success,14.316,2.946,2026-11-05T02:55:02Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,version::tests::from_str_returns_correct_result,success,14.316,2.954,2026-11-05T02:55:05Z,50239391.0,,
+experimental-bsan,rust-argon2-3.0.0,version::tests::from_u32_returns_correct_result,success,14.316,2.935,2026-11-05T02:55:08Z,50239391.0,,

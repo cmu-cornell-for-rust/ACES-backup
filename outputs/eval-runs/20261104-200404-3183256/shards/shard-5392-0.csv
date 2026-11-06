@@ -1,0 +1,41 @@
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::config::test_build_abs_dest,test_failed,605.746,1.835,2026-11-05T03:23:15Z,50245086.0,panic,"thread 'cobalt_model::config::test_build_abs_dest' (2025) panicked at src/cobalt_model/config.rs:180:92: called `Result::unwrap()` on an `Err` value: Status { inner: StatusDetails { kind: Unkind { inner: ""Failed to read config"" }, source: Public(Os { code: 2, kind: NotFound, message: ""No such file o"
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::config::test_build_default,timeout,605.746,150.023,2026-11-05T03:25:45Z,50245086.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::config::test_build_dest,test_failed,605.746,1.848,2026-11-05T03:25:47Z,50245086.0,panic,"thread 'cobalt_model::config::test_build_dest' (6551) panicked at src/cobalt_model/config.rs:166:88: called `Result::unwrap()` on an `Err` value: Status { inner: StatusDetails { kind: Unkind { inner: ""Failed to read config"" }, source: Public(Os { code: 2, kind: NotFound, message: ""No such file or di"
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::cleanup_path_current_dir,success,605.746,3.119,2026-11-05T03:25:50Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::cleanup_path_current_dir_child,success,605.746,3.074,2026-11-05T03:25:53Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::cleanup_path_current_dir_extreme,success,605.746,3.103,2026-11-05T03:25:56Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::cleanup_path_dot,success,605.746,3.088,2026-11-05T03:25:59Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::cleanup_path_empty,success,605.746,3.074,2026-11-05T03:26:02Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_excludes_dot_dir,success,605.746,84.615,2026-11-05T03:27:27Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_excludes_dot_dir_file,success,605.746,57.726,2026-11-05T03:28:25Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_excludes_dot_file,success,605.746,57.195,2026-11-05T03:29:22Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_excludes_hidden_dir,success,605.746,83.710,2026-11-05T03:30:46Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_excludes_hidden_dir_file,success,605.746,56.846,2026-11-05T03:31:42Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_excludes_hidden_file,success,605.746,57.034,2026-11-05T03:32:39Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_excludes_ignored_file,success,605.746,124.903,2026-11-05T03:34:44Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_includes_child_dir,success,605.746,29.856,2026-11-05T03:35:14Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_includes_child_dir_file,success,605.746,29.955,2026-11-05T03:35:44Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_includes_file,success,605.746,29.093,2026-11-05T03:36:13Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_includes_limit,success,605.746,15.902,2026-11-05T03:36:29Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_includes_limit_outside,success,605.746,15.799,2026-11-05T03:36:45Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_includes_overridden_dir,timeout,605.746,150.016,2026-11-05T03:39:15Z,50245086.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_includes_overridden_dir_file,timeout,605.746,150.017,2026-11-05T03:41:45Z,50245086.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_includes_overridden_file,success,605.746,61.797,2026-11-05T03:42:47Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_includes_root_dir,success,605.746,28.311,2026-11-05T03:43:15Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::files_iter_matches_include,test_failed,605.746,14.377,2026-11-05T03:43:30Z,50245086.0,panic,"thread 'cobalt_model::files::tests::files_iter_matches_include' (41858) panicked at src/cobalt_model/files.rs:714:9: assertion `left == right` failed"
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::find_project_file_doesnt_exist,success,605.746,3.164,2026-11-05T03:43:33Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::find_project_file_parent_dir,test_failed,605.746,1.786,2026-11-05T03:43:35Z,50245086.0,panic,"thread 'cobalt_model::files::tests::find_project_file_parent_dir' (42659) panicked at src/cobalt_model/files.rs:726:86: called `Option::unwrap()` on a `None` value"
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::files::tests::find_project_file_same_dir,test_failed,605.746,1.776,2026-11-05T03:43:36Z,50245086.0,panic,"thread 'cobalt_model::files::tests::find_project_file_same_dir' (42759) panicked at src/cobalt_model/files.rs:719:80: called `Option::unwrap()` on a `None` value"
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::permalink::test::explode_permalink_absolute,success,605.746,4.265,2026-11-05T03:43:41Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::permalink::test::explode_permalink_blank_substitution,success,605.746,5.020,2026-11-05T03:43:46Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::permalink::test::explode_permalink_relative,success,605.746,4.601,2026-11-05T03:43:50Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::permalink::test::format_url_as_file_absolute,success,605.746,3.151,2026-11-05T03:43:53Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::permalink::test::format_url_as_file_explode,success,605.746,3.140,2026-11-05T03:43:57Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::permalink::test::format_url_as_file_no_explode,success,605.746,3.139,2026-11-05T03:44:00Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::slug::test_slugify,success,605.746,9.046,2026-11-05T03:44:09Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::slug::test_slugify_unicode,success,605.746,9.162,2026-11-05T03:44:18Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,cobalt_model::slug::test_titleize_slug,success,605.746,3.114,2026-11-05T03:44:21Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,pagination::categories::test::compare_category_path_test,success,605.746,3.113,2026-11-05T03:44:24Z,50245086.0,,
+experimental-bsan,cobalt-bin-0.19.6,syntax_highlight::test_syntsx::highlight_block_renders_rust,timeout,605.746,150.030,2026-11-05T03:46:54Z,50245086.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cobalt-bin-0.19.6,syntax_highlight::test_syntsx::markdown_renders_rust,timeout,605.746,150.028,2026-11-05T03:49:24Z,50245086.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cobalt-bin-0.19.6,verify_app,success,605.746,6.985,2026-11-05T03:49:31Z,50245086.0,,

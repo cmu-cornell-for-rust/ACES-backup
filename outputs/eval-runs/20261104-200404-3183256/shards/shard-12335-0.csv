@@ -1,0 +1,11 @@
+experimental-bsan,text_io-0.1.13,calling_scan_in_submodule,success,6.114,5.820,2026-11-05T06:03:53Z,50255140.0,,
+experimental-bsan,text_io-0.1.13,file,success,6.114,5.854,2026-11-05T06:03:59Z,50255140.0,,
+experimental-bsan,text_io-0.1.13,file_scan,success,6.114,5.791,2026-11-05T06:04:05Z,50255140.0,,
+experimental-bsan,text_io-0.1.13,run_read,test_failed,6.114,5.888,2026-11-05T06:04:11Z,50255140.0,panic,"thread 'run_read' (64323) panicked at tests/tuple.rs:10:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,text_io-0.1.13,run_read_simple,test_failed,6.114,5.821,2026-11-05T06:04:17Z,50255140.0,panic,"thread 'run_read_simple' (64698) panicked at tests/tuple.rs:10:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,text_io-0.1.13,run_scan,test_failed,6.114,5.906,2026-11-05T06:04:22Z,50255140.0,panic,"thread 'run_scan' (64971) panicked at tests/tuple.rs:10:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,text_io-0.1.13,run_scan_simple,test_failed,6.114,5.838,2026-11-05T06:04:28Z,50255140.0,panic,"thread 'run_scan_simple' (65187) panicked at tests/tuple.rs:10:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,text_io-0.1.13,scan,success,6.114,5.824,2026-11-05T06:04:34Z,50255140.0,,
+experimental-bsan,text_io-0.1.13,simple,success,6.114,5.807,2026-11-05T06:04:40Z,50255140.0,,
+experimental-bsan,text_io-0.1.13,simple_spaces,success,6.114,5.809,2026-11-05T06:04:46Z,50255140.0,,
+experimental-bsan,text_io-0.1.13,tests::test_no_display,success,6.114,5.815,2026-11-05T06:04:52Z,50255140.0,,

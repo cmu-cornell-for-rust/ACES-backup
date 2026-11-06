@@ -1,0 +1,50 @@
+experimental-bsan,flatgeobuf-6.0.1,column_size,success,842.507,15.400,2026-11-05T03:09:04Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,feature_writer::test::collections,success,842.507,14.619,2026-11-05T03:09:19Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,feature_writer::test::feature,success,842.507,16.454,2026-11-05T03:09:35Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,feature_writer::test::feature_collection,success,842.507,16.905,2026-11-05T03:09:52Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,feature_writer::test::geometries,success,842.507,26.888,2026-11-05T03:10:19Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,feature_writer::test::geometries3d,success,842.507,15.357,2026-11-05T03:10:35Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,feature_writer::test::multipolygon,success,842.507,19.403,2026-11-05T03:10:54Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,feature_writer::test::promote_to_multi,success,842.507,18.759,2026-11-05T03:11:13Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,feature_writer::test::type_detection,success,842.507,16.250,2026-11-05T03:11:29Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,fgb_to_geojson,test_failed,842.507,4.657,2026-11-05T03:11:34Z,50243828.0,other,"error: test failed, to rerun pass `--test geojson`"
+experimental-bsan,flatgeobuf-6.0.1,fgb_to_svg,test_failed,842.507,12.328,2026-11-05T03:11:46Z,50243828.0,other,"error: test failed, to rerun pass `--test svg`"
+experimental-bsan,flatgeobuf-6.0.1,file_reader,test_failed,842.507,10.718,2026-11-05T03:11:57Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,file_reader::geozero_api::inspect::dump_index,test_failed,842.507,2.721,2026-11-05T03:12:00Z,50243828.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,flatgeobuf-6.0.1,filter,test_failed,842.507,10.710,2026-11-05T03:12:10Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,geozero_to_fgb,test_failed,842.507,15.649,2026-11-05T03:12:26Z,50243828.0,other,"error: test failed, to rerun pass `--test write`"
+experimental-bsan,flatgeobuf-6.0.1,http::http_bbox_big,success,842.507,75.428,2026-11-05T03:13:42Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,http::http_bbox_read,success,842.507,24.656,2026-11-05T03:14:06Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,http::http_bbox_read_last_feature,success,842.507,25.313,2026-11-05T03:14:32Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,http::http_err,success,842.507,18.124,2026-11-05T03:14:50Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,http::http_read,success,842.507,25.493,2026-11-05T03:15:15Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,http::http_read_unknown_feature_count,success,842.507,23.238,2026-11-05T03:15:39Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,http_json,success,842.507,30.378,2026-11-05T03:16:09Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,http_reader::tests::fgb_max_request_size,test_failed,842.507,2.821,2026-11-05T03:16:12Z,50243828.0,panic,"thread 'http_reader::tests::fgb_max_request_size' (25701) panicked at src/http_reader/mock_http_range_client.rs:78:69: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,flatgeobuf-6.0.1,http_svg,success,842.507,30.507,2026-11-05T03:16:42Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,json_to_fgb,success,842.507,18.343,2026-11-05T03:17:01Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,json_to_fgb_geometry_only,test_failed,842.507,11.306,2026-11-05T03:17:12Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,magic_byte,test_failed,842.507,11.228,2026-11-05T03:17:23Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,packed_r_tree::tests::tree_100_000_items_in_denmark,timeout,842.507,150.039,2026-11-05T03:19:53Z,50243828.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flatgeobuf-6.0.1,packed_r_tree::tests::tree_19items_roundtrip_stream_search,success,842.507,15.097,2026-11-05T03:20:09Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,packed_r_tree::tests::tree_2items,success,842.507,14.386,2026-11-05T03:20:23Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,packed_r_tree::tests::tree_processing,success,842.507,14.159,2026-11-05T03:20:37Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,point,success,842.507,14.046,2026-11-05T03:20:51Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,property_types,test_failed,842.507,10.301,2026-11-05T03:21:02Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,read_all,test_failed,842.507,10.563,2026-11-05T03:21:12Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,read_all_seq,test_failed,842.507,10.417,2026-11-05T03:21:23Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,read_bbox,test_failed,842.507,10.798,2026-11-05T03:21:33Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,read_bbox_including_first_feature,test_failed,842.507,11.105,2026-11-05T03:21:45Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,read_bbox_seq,test_failed,842.507,10.672,2026-11-05T03:21:55Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,read_empty_dataset,test_failed,842.507,10.702,2026-11-05T03:22:06Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,read_file_low_level,test_failed,842.507,10.832,2026-11-05T03:22:17Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,read_unchecked,test_failed,842.507,10.543,2026-11-05T03:22:27Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,read_unknown_feature_count,test_failed,842.507,10.294,2026-11-05T03:22:38Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,read_unknown_feature_count_seq,test_failed,842.507,10.342,2026-11-05T03:22:48Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,reader_headers_checked,test_failed,842.507,10.257,2026-11-05T03:22:58Z,50243828.0,panic,"thread 'reader_headers_checked' (46882) panicked at tests/read.rs:15:81: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,flatgeobuf-6.0.1,reader_type,test_failed,842.507,10.225,2026-11-05T03:23:09Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,single_ring,test_failed,842.507,10.517,2026-11-05T03:23:19Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,test_geozero_size_arg,test_failed,842.507,10.499,2026-11-05T03:23:30Z,50243828.0,other,"error: test failed, to rerun pass `--test read`"
+experimental-bsan,flatgeobuf-6.0.1,test_save_fgb_and_load,success,842.507,15.332,2026-11-05T03:23:45Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,verify_header,success,842.507,14.772,2026-11-05T03:24:00Z,50243828.0,,
+experimental-bsan,flatgeobuf-6.0.1,write_file,success,842.507,14.822,2026-11-05T03:24:15Z,50243828.0,,

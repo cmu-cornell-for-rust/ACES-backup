@@ -1,0 +1,14 @@
+experimental-bsan,actix-limitation-0.6.0,builder::tests::test_create_builder,success,473.313,3.197,2026-11-05T05:32:01Z,50252866.0,,
+experimental-bsan,actix-limitation-0.6.0,builder::tests::test_create_limiter,success,473.313,3.205,2026-11-05T05:32:04Z,50252866.0,,
+experimental-bsan,actix-limitation-0.6.0,builder::tests::test_create_limiter_error,success,473.313,3.207,2026-11-05T05:32:07Z,50252866.0,,
+experimental-bsan,actix-limitation-0.6.0,status::tests::test_build_status,success,473.313,3.207,2026-11-05T05:32:11Z,50252866.0,,
+experimental-bsan,actix-limitation-0.6.0,status::tests::test_build_status_limit,success,473.313,3.209,2026-11-05T05:32:14Z,50252866.0,,
+experimental-bsan,actix-limitation-0.6.0,status::tests::test_create_status,success,473.313,3.190,2026-11-05T05:32:17Z,50252866.0,,
+experimental-bsan,actix-limitation-0.6.0,status::tests::test_epoch_utc_plus,success,473.313,3.190,2026-11-05T05:32:20Z,50252866.0,,
+experimental-bsan,actix-limitation-0.6.0,status::tests::test_epoch_utc_plus_overflow,success,473.313,3.227,2026-11-05T05:32:24Z,50252866.0,,
+experimental-bsan,actix-limitation-0.6.0,status::tests::test_epoch_utc_plus_zero,success,473.313,3.169,2026-11-05T05:32:27Z,50252866.0,,
+experimental-bsan,actix-limitation-0.6.0,test_create_limiter_error,success,473.313,3.376,2026-11-05T05:32:30Z,50252866.0,,
+experimental-bsan,actix-limitation-0.6.0,test_limiter_count,test_failed,473.313,3.417,2026-11-05T05:32:34Z,50252866.0,other,"error: test failed, to rerun pass `--test tests`"
+experimental-bsan,actix-limitation-0.6.0,test_limiter_count_error,test_failed,473.313,3.415,2026-11-05T05:32:37Z,50252866.0,other,"error: test failed, to rerun pass `--test tests`"
+experimental-bsan,actix-limitation-0.6.0,test_limiter_key_by,test_failed,473.313,3.487,2026-11-05T05:32:40Z,50252866.0,panic,"thread 'test_limiter_key_by' (11519) panicked at tests/tests.rs:83:17: assertion failed: resp.status().is_success()"
+experimental-bsan,actix-limitation-0.6.0,tests::test_create_limiter,success,473.313,3.213,2026-11-05T05:32:44Z,50252866.0,,

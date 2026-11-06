@@ -1,0 +1,40 @@
+experimental-bsan,public-api-0.40.0,auto_traits,test_failed,155.948,3.850,2026-11-05T03:18:40Z,50245295.0,panic,"thread 'auto_traits' (45561) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""../test-apis/auto_traits"" (current dir: Ok(""/work""))"
+experimental-bsan,public-api-0.40.0,comprehensive_api,test_failed,155.948,3.127,2026-11-05T03:18:43Z,50245295.0,panic,"thread 'comprehensive_api' (46145) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""../test-apis/comprehensive_api"" (current dir: Ok(""/work""))"
+experimental-bsan,public-api-0.40.0,comprehensive_api_debug_sorting_no_stack_overflow,test_failed,155.948,3.122,2026-11-05T03:18:46Z,50245295.0,panic,"thread 'comprehensive_api_debug_sorting_no_stack_overflow' (46709) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""../test-apis/comprehensive_api"" (current dir: Ok(""/work""))"
+experimental-bsan,public-api-0.40.0,comprehensive_api_proc_macro,test_failed,155.948,3.125,2026-11-05T03:18:49Z,50245295.0,panic,"thread 'comprehensive_api_proc_macro' (47324) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""../test-apis/comprehensive_api_proc_macro"" (current dir: Ok(""/work""))"
+experimental-bsan,public-api-0.40.0,diff::tests::many_identical_items,success,155.948,3.190,2026-11-05T03:18:52Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,diff::tests::middle_item_added,success,155.948,3.004,2026-11-05T03:18:55Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,diff::tests::middle_item_removed,success,155.948,3.035,2026-11-05T03:18:58Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,diff::tests::no_diff_means_empty_diff,success,155.948,3.000,2026-11-05T03:19:01Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,diff::tests::no_off_by_one_diff_skewing,success,155.948,3.197,2026-11-05T03:19:05Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,diff::tests::single_and_only_item_added,success,155.948,2.998,2026-11-05T03:19:08Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,diff::tests::single_and_only_item_removed,success,155.948,2.998,2026-11-05T03:19:11Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,diff_empty_when_changing_inherent_impl_to_auto_derived_impl,test_failed,155.948,5.404,2026-11-05T03:19:16Z,50245295.0,panic,"thread 'diff_empty_when_changing_inherent_impl_to_auto_derived_impl' (52035) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""/tmp/.tmpJpDP4q"" (current dir: Ok(""/work""))"
+experimental-bsan,public-api-0.40.0,diff_empty_when_item_moved_between_inherent_impls,test_failed,155.948,3.582,2026-11-05T03:19:20Z,50245295.0,panic,"thread 'diff_empty_when_item_moved_between_inherent_impls' (52868) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""/tmp/.tmpmKA8hl"" (current dir: Ok(""/work""))"
+experimental-bsan,public-api-0.40.0,diff_with_added_items,test_failed,155.948,3.126,2026-11-05T03:19:23Z,50245295.0,panic,"thread 'diff_with_added_items' (53353) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""../test-apis/example_api-v0.1.0"" (current dir: Ok(""/work""))"
+experimental-bsan,public-api-0.40.0,diff_with_removed_items,test_failed,155.948,3.109,2026-11-05T03:19:26Z,50245295.0,panic,"thread 'diff_with_removed_items' (53844) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""../test-apis/example_api-v0.2.0"" (current dir: Ok(""/work""))"
+experimental-bsan,public-api-0.40.0,empty_diff,test_failed,155.948,3.109,2026-11-05T03:19:29Z,50245295.0,panic,"thread 'empty_diff' (54219) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""../test-apis/comprehensive_api"" (current dir: Ok(""/work""))"
+experimental-bsan,public-api-0.40.0,invalid_json,success,155.948,2.992,2026-11-05T03:19:32Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,not_simplified,test_failed,155.948,3.109,2026-11-05T03:19:35Z,50245295.0,panic,"thread 'not_simplified' (55097) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""../test-apis/example_api-v0.2.0"" (current dir: Ok(""/work""))"
+experimental-bsan,public-api-0.40.0,omit_auto_trait_impls,test_failed,155.948,3.128,2026-11-05T03:19:38Z,50245295.0,panic,"thread 'omit_auto_trait_impls' (57233) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""../test-apis/example_api-v0.2.0"" (current dir: Ok(""/work""))"
+experimental-bsan,public-api-0.40.0,omit_blanket_impls,test_failed,155.948,3.113,2026-11-05T03:19:41Z,50245295.0,panic,"thread 'omit_blanket_impls' (57832) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""../test-apis/example_api-v0.2.0"" (current dir: Ok(""/work""))"
+experimental-bsan,public-api-0.40.0,public_api,test_failed,155.948,28.829,2026-11-05T03:20:10Z,50245295.0,other,"error: test failed, to rerun pass `--test public-api-lib-tests`"
+experimental-bsan,public-api-0.40.0,render::test::test_type_array,success,155.948,2.974,2026-11-05T03:20:13Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_generic,success,155.948,2.972,2026-11-05T03:20:16Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_infer,success,155.948,2.985,2026-11-05T03:20:19Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_path,success,155.948,2.982,2026-11-05T03:20:22Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_pointer,success,155.948,2.985,2026-11-05T03:20:25Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_pointer_mut,success,155.948,2.984,2026-11-05T03:20:28Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_primitive,success,155.948,2.976,2026-11-05T03:20:31Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_ref,success,155.948,2.969,2026-11-05T03:20:34Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_ref_lt,success,155.948,2.980,2026-11-05T03:20:37Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_ref_lt_mut,success,155.948,2.980,2026-11-05T03:20:40Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_ref_mut,success,155.948,2.986,2026-11-05T03:20:43Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_resolved_crate_name,success,155.948,2.983,2026-11-05T03:20:46Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_resolved_long_name,success,155.948,2.983,2026-11-05T03:20:49Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_resolved_name_crate,success,155.948,2.982,2026-11-05T03:20:52Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_resolved_simple,success,155.948,2.991,2026-11-05T03:20:55Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_slice,success,155.948,2.985,2026-11-05T03:20:58Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_tuple,success,155.948,2.988,2026-11-05T03:21:01Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,render::test::test_type_tuple_empty,success,155.948,2.973,2026-11-05T03:21:04Z,50245295.0,,
+experimental-bsan,public-api-0.40.0,simplified_without_auto_derived_impls,test_failed,155.948,3.104,2026-11-05T03:21:07Z,50245295.0,panic,"thread 'simplified_without_auto_derived_impls' (71958) panicked at tests/common/mod.rs:43:13: Failed to build rustdoc JSON for ""../test-apis/example_api-v0.2.0"" (current dir: Ok(""/work""))"

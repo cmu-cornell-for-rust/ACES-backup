@@ -1,0 +1,4 @@
+experimental-bsan,little_exif-0.6.23,filetype::tests::str_parse,success,26.060,1.527,2026-11-05T07:48:31Z,50261245.0,,
+experimental-bsan,little_exif-0.6.23,metadata::tests::new_test_1,test_failed,26.060,1.601,2026-11-05T07:48:33Z,50261245.0,panic,"thread 'metadata::tests::new_test_1' (74885) panicked at src/metadata/mod.rs:359:56: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,little_exif-0.6.23,png::tests::parsing_test,test_failed,26.060,1.586,2026-11-05T07:48:35Z,50261245.0,panic,"thread 'png::tests::parsing_test' (74964) panicked at src/png/mod.rs:971:11: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Can't open file - File does not exist!"" }"
+experimental-bsan,little_exif-0.6.23,webp::file::tests::clear_metadata,test_failed,26.060,1.562,2026-11-05T07:48:36Z,50261245.0,other,"error: test failed, to rerun pass `--lib`"

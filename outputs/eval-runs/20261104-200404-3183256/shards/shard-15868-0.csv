@@ -1,0 +1,5 @@
+experimental-bsan,negicon-protocol-1.0.0,tests::detect_corruption,test_failed,50.662,1.605,2026-11-05T07:29:39Z,50260112.0,panic,"thread 'tests::detect_corruption' (85920) panicked at src/lib.rs:30:59: called `Result::unwrap_err()` on an `Ok` value: NegiconFrame { origin: 0, destination: 0, message_type: Nop, reserved: 0, message_data: [0, 0, 0, 0, 0, 0, 0, 0] }"
+experimental-bsan,negicon-protocol-1.0.0,tests::frame_de_serialize,success,50.662,1.544,2026-11-05T07:29:40Z,50260112.0,,
+experimental-bsan,negicon-protocol-1.0.0,tests::module_message_double,success,50.662,1.528,2026-11-05T07:29:42Z,50260112.0,,
+experimental-bsan,negicon-protocol-1.0.0,tests::nop,success,50.662,1.538,2026-11-05T07:29:43Z,50260112.0,,
+experimental-bsan,negicon-protocol-1.0.0,tests::ping,test_failed,50.662,1.626,2026-11-05T07:29:45Z,50260112.0,panic,"thread 'tests::ping' (86463) panicked at src/lib.rs:38:9: assertion `left == right` failed"

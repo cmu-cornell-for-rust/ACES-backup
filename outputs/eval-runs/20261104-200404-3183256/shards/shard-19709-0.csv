@@ -1,0 +1,2 @@
+experimental-bsan,x11-clipboard-0.9.3,it_work,test_failed,76.314,3.041,2026-11-05T09:11:44Z,50265278.0,panic,"thread 'it_work' (54245) panicked at tests/simple-test.rs:10:38: called `Result::unwrap()` on an `Err` value: XcbConnect(DisplayParsingError(DisplayNotSet))"
+experimental-bsan,x11-clipboard-0.9.3,tests::should_work_but_does_not,test_failed,76.314,4.433,2026-11-05T09:11:48Z,50265278.0,other,"error: test failed, to rerun pass `--test window-leak`"

@@ -1,0 +1,26 @@
+experimental-bsan,proksi-0.4.8,config::tests::test_load_config_from_hcl,test_failed,1279.716,2.933,2026-11-05T04:35:31Z,50248844.0,other,"error: test failed, to rerun pass `--bin proksi`"
+experimental-bsan,proksi-0.4.8,config::tests::test_load_config_from_yaml,test_failed,1279.716,2.745,2026-11-05T04:35:33Z,50248844.0,other,"error: test failed, to rerun pass `--bin proksi`"
+experimental-bsan,proksi-0.4.8,config::tests::test_load_config_from_yaml_and_env_vars,test_failed,1279.716,2.770,2026-11-05T04:35:36Z,50248844.0,other,"error: test failed, to rerun pass `--bin proksi`"
+experimental-bsan,proksi-0.4.8,config::tests::test_load_config_with_defaults_and_yaml,test_failed,1279.716,2.731,2026-11-05T04:35:39Z,50248844.0,other,"error: test failed, to rerun pass `--bin proksi`"
+experimental-bsan,proksi-0.4.8,config::tests::test_load_config_with_defaults_only,test_failed,1279.716,2.697,2026-11-05T04:35:42Z,50248844.0,other,"error: test failed, to rerun pass `--bin proksi`"
+experimental-bsan,proksi-0.4.8,plugins::jwt::tests::test_encode_jwt_with_secret,success,1279.716,1.753,2026-11-05T04:35:43Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::secure_cookie::tests::test_basic_domain,success,1279.716,1.734,2026-11-05T04:35:45Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::secure_cookie::tests::test_domain_with_longer_tld,success,1279.716,1.727,2026-11-05T04:35:47Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::secure_cookie::tests::test_domain_with_multiple_subdomains,success,1279.716,1.733,2026-11-05T04:35:49Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::secure_cookie::tests::test_domain_with_subdomain,success,1279.716,1.725,2026-11-05T04:35:50Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::secure_cookie::tests::test_domain_with_unusual_tld,success,1279.716,1.733,2026-11-05T04:35:52Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::secure_cookie::tests::test_edge_case_empty_string,success,1279.716,1.737,2026-11-05T04:35:54Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::secure_cookie::tests::test_edge_case_single_part_domain,success,1279.716,1.730,2026-11-05T04:35:56Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::shared::tests::test_invalid_validations,success,1279.716,1.733,2026-11-05T04:35:57Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::shared::tests::test_no_validations,success,1279.716,1.745,2026-11-05T04:35:59Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::shared::tests::test_query_params_to_map,success,1279.716,1.749,2026-11-05T04:36:01Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::shared::tests::test_query_params_to_map_with_empty_values,success,1279.716,1.757,2026-11-05T04:36:03Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::shared::tests::test_query_params_to_map_with_non_existent_keys,success,1279.716,1.737,2026-11-05T04:36:04Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::shared::tests::test_validations_no_match,success,1279.716,1.746,2026-11-05T04:36:06Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::shared::tests::test_validations_with_email,success,1279.716,1.740,2026-11-05T04:36:08Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::shared::tests::test_validations_with_org_id,success,1279.716,1.746,2026-11-05T04:36:10Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,plugins::oauth2::shared::tests::test_validations_with_team_id,success,1279.716,1.735,2026-11-05T04:36:11Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,services::discovery::test::test_domain_addr,test_failed,1279.716,1.802,2026-11-05T04:36:13Z,50248844.0,panic,"thread 'services::discovery::test::test_domain_addr' (64329) panicked at src/services/discovery/mod.rs:312:9: assertion `left == right` failed"
+experimental-bsan,proksi-0.4.8,services::discovery::test::test_socket_addr,success,1279.716,1.742,2026-11-05T04:36:15Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,stores::routes::tests::test_router_container_defaults_empty_pattern,success,1279.716,1.752,2026-11-05T04:36:17Z,50248844.0,,
+experimental-bsan,proksi-0.4.8,stores::routes::tests::test_router_container_works_with_valid_and_invalid_pattern,success,1279.716,1.755,2026-11-05T04:36:18Z,50248844.0,,

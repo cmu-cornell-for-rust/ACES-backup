@@ -1,0 +1,12 @@
+experimental-bsan,ra_ap_load-cargo-0.0.358,tests::ancestor_can_be_parent,success,1114.926,8.587,2026-11-05T06:06:12Z,50254316.0,,
+experimental-bsan,ra_ap_load-cargo-0.0.358,tests::ancestor_can_be_parent_2,success,1114.926,8.667,2026-11-05T06:06:21Z,50254316.0,,
+experimental-bsan,ra_ap_load-cargo-0.0.358,tests::basic_child_parent,success,1114.926,8.438,2026-11-05T06:06:29Z,50254316.0,,
+experimental-bsan,ra_ap_load-cargo-0.0.358,tests::basic_child_parent_with_unrelated_parents_sib,success,1114.926,8.364,2026-11-05T06:06:38Z,50254316.0,,
+experimental-bsan,ra_ap_load-cargo-0.0.358,tests::child_binds_ancestor_if_parent_nonlocal,success,1114.926,8.657,2026-11-05T06:06:46Z,50254316.0,,
+experimental-bsan,ra_ap_load-cargo-0.0.358,tests::circular_reference,success,1114.926,8.397,2026-11-05T06:06:55Z,50254316.0,,
+experimental-bsan,ra_ap_load-cargo-0.0.358,tests::deep_sources_with_parent_missing,success,1114.926,8.504,2026-11-05T06:07:03Z,50254316.0,,
+experimental-bsan,ra_ap_load-cargo-0.0.358,tests::non_locals_are_skipped,success,1114.926,8.666,2026-11-05T06:07:12Z,50254316.0,,
+experimental-bsan,ra_ap_load-cargo-0.0.358,tests::parents_with_identical_root_id,success,1114.926,8.527,2026-11-05T06:07:20Z,50254316.0,,
+experimental-bsan,ra_ap_load-cargo-0.0.358,tests::test_loading_rust_analyzer,test_failed,1114.926,1.872,2026-11-05T06:07:22Z,50254316.0,panic,"thread 'tests::test_loading_rust_analyzer' (71166) panicked at src/lib.rs:793:14: called `Option::unwrap()` on a `None` value"
+experimental-bsan,ra_ap_load-cargo-0.0.358,tests::unrelated_source_sharing_dirname,success,1114.926,8.525,2026-11-05T06:07:31Z,50254316.0,,
+experimental-bsan,ra_ap_load-cargo-0.0.358,tests::unrelated_sources,success,1114.926,8.387,2026-11-05T06:07:39Z,50254316.0,,

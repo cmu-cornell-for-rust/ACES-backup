@@ -1,0 +1,31 @@
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,codegen::tests::projection_replacement_does_not_recurse_into_its_arguments,success,156.404,1.636,2026-11-05T03:56:25Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,codegen::tests::qualified_self_replacement_is_applied_once,success,156.404,1.629,2026-11-05T03:56:27Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::desugar_impl_trait_rewrites_top_level_and_nested,success,156.404,1.706,2026-11-05T03:56:28Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::hoist_gate_accepts_bare_idents,success,156.404,1.600,2026-11-05T03:56:30Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::hoist_gate_accepts_nested_nominal,test_failed,156.404,1.773,2026-11-05T03:56:32Z,50247813.0,crash,"test generics::tests::hoist_gate_accepts_nested_nominal ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::hoist_gate_accepts_pointer_fn_and_trait_object_shapes,test_failed,156.404,1.696,2026-11-05T03:56:33Z,50247813.0,crash,"test generics::tests::hoist_gate_accepts_pointer_fn_and_trait_object_shapes ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::hoist_gate_accepts_when_param_absent,success,156.404,1.580,2026-11-05T03:56:35Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::hoist_gate_rejects_assoc_type_binding_rhs,test_failed,156.404,1.609,2026-11-05T03:56:37Z,50247813.0,crash,"test generics::tests::hoist_gate_rejects_assoc_type_binding_rhs ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::hoist_gate_rejects_bare_projection,success,156.404,1.598,2026-11-05T03:56:38Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::hoist_gate_rejects_fn_sugar,test_failed,156.404,1.619,2026-11-05T03:56:40Z,50247813.0,crash,"test generics::tests::hoist_gate_rejects_fn_sugar ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::hoist_gate_rejects_qself_projection,success,156.404,1.565,2026-11-05T03:56:42Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_associated_type_binding,success,156.404,1.599,2026-11-05T03:56:43Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_complex_reference_with_closure,test_failed,156.404,1.630,2026-11-05T03:56:45Z,50247813.0,crash,"test generics::tests::test_complex_reference_with_closure ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_fresh_lifetime_avoids_source_names,success,156.404,1.541,2026-11-05T03:56:46Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_generic_args_to_concrete,success,156.404,1.782,2026-11-05T03:56:48Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_generic_associated_type_replacement,success,156.404,2.052,2026-11-05T03:56:50Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_generic_name_visitor,success,156.404,1.684,2026-11-05T03:56:52Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_generic_to_concrete_with_lifetimes,success,156.404,1.720,2026-11-05T03:56:54Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_lifetime_params_with_bounds,success,156.404,1.599,2026-11-05T03:56:55Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_lifetime_visitor_respects_hrtb_binders,success,156.404,1.582,2026-11-05T03:56:57Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_mixed_usage,success,156.404,1.613,2026-11-05T03:56:58Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_nested_references,success,156.404,1.637,2026-11-05T03:57:00Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_ref_qself_trait_assoc_type,success,156.404,1.576,2026-11-05T03:57:02Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_staticize_specific_lifetimes,success,156.404,1.909,2026-11-05T03:57:04Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_where_predicate_assoc_type_binding,success,156.404,1.585,2026-11-05T03:57:05Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_where_predicate_assoc_type_binding_only_bounded,success,156.404,1.575,2026-11-05T03:57:07Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,generics::tests::test_where_predicate_assoc_type_binding_only_rhs,success,156.404,1.589,2026-11-05T03:57:08Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,parser::tests::js_namespace_absent_everywhere,success,156.404,1.598,2026-11-05T03:57:10Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,parser::tests::js_namespace_only_on_block,success,156.404,1.634,2026-11-05T03:57:12Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,parser::tests::js_namespace_only_on_item,success,156.404,1.646,2026-11-05T03:57:13Z,50247813.0,,
+experimental-bsan,wasm-bindgen-macro-support-0.2.129,parser::tests::test_try_unescape,success,156.404,1.547,2026-11-05T03:57:15Z,50247813.0,,

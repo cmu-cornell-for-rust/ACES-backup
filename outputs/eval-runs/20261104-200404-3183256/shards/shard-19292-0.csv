@@ -1,0 +1,2 @@
+experimental-bsan,rmk-0.4.1,via::keycode_convert::test::test_convert_key_action_to_via_keycode,success,95.054,1.613,2026-11-05T09:01:36Z,50264733.0,,
+experimental-bsan,rmk-0.4.1,via::keycode_convert::test::test_convert_via_keycode_to_key_action,test_failed,95.054,1.714,2026-11-05T09:01:37Z,50264733.0,panic,"thread 'via::keycode_convert::test::test_convert_via_keycode_to_key_action' (83321) panicked at src/via/keycode_convert.rs:222:9: assertion `left == right` failed"

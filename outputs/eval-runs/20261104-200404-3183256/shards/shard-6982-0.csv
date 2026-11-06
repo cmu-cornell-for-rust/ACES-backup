@@ -1,0 +1,30 @@
+experimental-bsan,bls_on_arkworks-0.3.0,serialization::test::test_arkworks_accepts_invalid_infinity_encoding,success,90.061,4.406,2026-11-05T03:55:19Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,serialization::test::test_octets_to_point_e1,success,90.061,6.676,2026-11-05T03:55:26Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,serialization::test::test_octets_to_point_e2,success,90.061,10.454,2026-11-05T03:55:37Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,serialization::test::test_point_to_octets_e1,success,90.061,4.393,2026-11-05T03:55:41Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,serialization::test::test_point_to_octets_e2,success,90.061,4.374,2026-11-05T03:55:45Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,serialization::test::test_point_to_octets_uncompressed_e1,success,90.061,4.401,2026-11-05T03:55:50Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,serialization::test::test_point_to_octets_uncompressed_e2,success,90.061,4.454,2026-11-05T03:55:54Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,serialization::test::test_this_library_does_not_accept_invalid_infinity_encoding,success,90.061,4.383,2026-11-05T03:55:59Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_hash_to_point_with_null_bytes,success,90.061,29.951,2026-11-05T03:56:29Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_i2osp,success,90.061,4.375,2026-11-05T03:56:33Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_keygen,success,90.061,4.566,2026-11-05T03:56:38Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_keygen_fails_with_short_ikm,success,90.061,4.412,2026-11-05T03:56:42Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_os2ip_parses_large_ints_correctly,success,90.061,4.415,2026-11-05T03:56:46Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_os2ip_performs_reduction_modulo_p,success,90.061,4.402,2026-11-05T03:56:51Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_pubkey_subgroup_check,success,90.061,5.331,2026-11-05T03:56:56Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_sign_against_noble_with_default_private_key,success,90.061,42.195,2026-11-05T03:57:38Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_sign_against_noble_with_random_private_key,success,90.061,36.525,2026-11-05T03:58:15Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_signature_aggregation,timeout,90.061,150.015,2026-11-05T04:00:45Z,50247858.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_signature_subgroup_check,success,90.061,6.793,2026-11-05T04:00:52Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_sk_to_pk_against_ian_coleman,success,90.061,7.623,2026-11-05T04:00:59Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_sk_to_pk_against_noble,success,90.061,7.604,2026-11-05T04:01:07Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_sk_to_pk_with_one,success,90.061,4.435,2026-11-05T04:01:11Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test::test_verify,success,90.061,113.881,2026-11-05T04:03:05Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test_aggregate,success,90.061,45.053,2026-11-05T04:03:50Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test_aggregate_verify,timeout,90.061,150.014,2026-11-05T04:06:20Z,50247858.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bls_on_arkworks-0.3.0,test_batch_verify,timeout,90.061,150.015,2026-11-05T04:08:50Z,50247858.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bls_on_arkworks-0.3.0,test_deserialization,success,90.061,18.142,2026-11-05T04:09:09Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test_fast_aggregate_verify,timeout,90.061,150.016,2026-11-05T04:11:39Z,50247858.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bls_on_arkworks-0.3.0,test_hash_to_g2,success,90.061,66.094,2026-11-05T04:12:45Z,50247858.0,,
+experimental-bsan,bls_on_arkworks-0.3.0,test_sign,timeout,90.061,150.014,2026-11-05T04:15:15Z,50247858.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

@@ -1,0 +1,559 @@
+experimental-bsan,satkit-0.24.1,add_utc_days_keeps_label,success,542.026,82.200,2026-11-05T01:28:17Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,approx_transforms_within_documented_accuracy,success,542.026,21.683,2026-11-05T01:28:38Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,calendar_roundtrip_and_format,success,542.026,118.966,2026-11-05T01:30:37Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,cislunar_full,timeout,542.026,150.033,2026-11-05T01:33:07Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,cislunar_gr,timeout,542.026,150.030,2026-11-05T01:35:37Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,cislunar_j2,timeout,542.026,150.034,2026-11-05T01:38:08Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,construction_paths_agree,timeout,542.026,150.018,2026-11-05T01:40:38Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,drag_gto_const,timeout,542.026,150.033,2026-11-05T01:43:08Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,drag_gto_sw,timeout,542.026,150.033,2026-11-05T01:45:38Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,drag_iss_const,timeout,542.026,150.034,2026-11-05T01:48:08Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,drag_iss_sw,timeout,542.026,150.033,2026-11-05T01:50:38Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,drag_leo300_const,timeout,542.026,150.021,2026-11-05T01:53:08Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,drag_leo300_sw,timeout,542.026,150.033,2026-11-05T01:55:38Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,drag_sso550_const,timeout,542.026,150.023,2026-11-05T01:58:08Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,drag_sso550_sw,timeout,542.026,150.034,2026-11-05T02:00:38Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,duration_arithmetic_exact_across_leap_seconds,success,542.026,98.716,2026-11-05T02:02:17Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::bad_copy_in_earlier_search_dir_does_not_poison_load,success,542.026,21.389,2026-11-05T02:02:38Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::celestrak_csv_is_rejected_with_a_clear_error,timeout,542.026,150.022,2026-11-05T02:05:08Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::checkinterp,timeout,542.026,150.020,2026-11-05T02:07:38Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::checkval,timeout,542.026,150.019,2026-11-05T02:10:08Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::coverage_and_status,timeout,542.026,150.020,2026-11-05T02:12:38Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::interp_across_leap_second,timeout,542.026,150.020,2026-11-05T02:15:08Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::last_row_epoch_is_inside_table,success,542.026,20.124,2026-11-05T02:15:29Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::loaded,timeout,542.026,150.020,2026-11-05T02:17:59Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::lookup_matches_reference,test_failed,542.026,1.806,2026-11-05T02:18:00Z,50232671.0,panic,"thread 'earth_orientation_params::tests::lookup_matches_reference' (104796) panicked at src/earth_orientation_params.rs:1667:14: finals2000A.all present in tests"
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::parse_finals_columns_flags_and_units,success,542.026,20.241,2026-11-05T02:18:21Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::parse_finals_dedup_rule,success,542.026,20.491,2026-11-05T02:18:41Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::parse_finals_duplicates_and_order_do_not_matter,success,542.026,21.452,2026-11-05T02:19:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::parse_finals_rejects_garbage_but_skips_blank_lines,success,542.026,20.377,2026-11-05T02:19:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::parse_finals_rejects_non_finite_and_out_of_range,success,542.026,20.252,2026-11-05T02:19:43Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::parse_real_finals_duplicated_and_reversed,test_failed,542.026,1.771,2026-11-05T02:19:45Z,50232671.0,panic,"thread 'earth_orientation_params::tests::parse_real_finals_duplicated_and_reversed' (2536) panicked at src/earth_orientation_params.rs:1183:14: finals2000A.all present in tests"
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::read_table_uses_finals_only,success,542.026,20.315,2026-11-05T02:20:05Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::stale_copy_in_earlier_search_dir_does_not_shadow_fresh_one,success,542.026,21.124,2026-11-05T02:20:27Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::stale_predictions_are_detected,test_failed,542.026,1.827,2026-11-05T02:20:28Z,50232671.0,panic,"thread 'earth_orientation_params::tests::stale_predictions_are_detected' (3487) panicked at src/earth_orientation_params.rs:1280:14: finals2000A.all present in tests"
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::table_starts_1973_and_ut1_is_utc_before,timeout,542.026,150.020,2026-11-05T02:22:58Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::test_time_bound,timeout,542.026,150.021,2026-11-05T02:25:29Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::too_early_advice_only_for_the_default_file,success,542.026,19.816,2026-11-05T02:25:48Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::truncated_file_is_rejected,test_failed,542.026,1.819,2026-11-05T02:25:50Z,50232671.0,panic,"thread 'earth_orientation_params::tests::truncated_file_is_rejected' (9304) panicked at src/earth_orientation_params.rs:1317:14: finals2000A.all present in tests"
+experimental-bsan,satkit-0.24.1,earth_orientation_params::tests::warnings_are_logged_outside_the_table_lock,success,542.026,20.909,2026-11-05T02:26:11Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earth_rotation_continuous_across_leap_seconds,success,542.026,23.121,2026-11-05T02:26:34Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earthgravity::tests::builtin_models_tide_systems,timeout,542.026,150.034,2026-11-05T02:29:04Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::degree_70_matches_reference_potential,timeout,542.026,150.033,2026-11-05T02:31:34Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::egm2008_agrees_with_egm96_at_low_degree,timeout,542.026,150.032,2026-11-05T02:34:04Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::embedded_models_hold_degree_70,timeout,542.026,150.033,2026-11-05T02:36:35Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::from_bytes_tolerates_latin1_header,success,542.026,20.727,2026-11-05T02:36:55Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earthgravity::tests::missing_gm_or_radius_is_an_error,success,542.026,20.427,2026-11-05T02:37:16Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earthgravity::tests::parse_fortran_d_exponents,success,542.026,21.190,2026-11-05T02:37:37Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earthgravity::tests::parse_icgem2_time_variable_rows,success,542.026,21.299,2026-11-05T02:37:58Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earthgravity::tests::test_custom_model_degree_clamped,success,542.026,20.996,2026-11-05T02:38:19Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earthgravity::tests::test_gravity,timeout,542.026,150.035,2026-11-05T02:40:49Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::test_gravity2,timeout,542.026,150.033,2026-11-05T02:43:19Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::test_gravity_increases_with_order,timeout,542.026,150.033,2026-11-05T02:45:49Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::test_gravity_models_agree_order1,timeout,542.026,150.033,2026-11-05T02:48:20Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::test_gravity_order_1,timeout,542.026,150.021,2026-11-05T02:50:50Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::test_order_equals_degree_matches_legacy,timeout,542.026,150.021,2026-11-05T02:53:20Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::test_order_less_than_degree,timeout,542.026,150.033,2026-11-05T02:55:50Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::test_parse_rejects_order_above_degree,success,542.026,19.852,2026-11-05T02:56:10Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earthgravity::tests::test_partials,timeout,542.026,150.033,2026-11-05T02:58:40Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::test_partials_with_order_less_than_degree,timeout,542.026,150.033,2026-11-05T03:01:10Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::test_zonal_only_differs_from_full,timeout,542.026,150.032,2026-11-05T03:03:40Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,earthgravity::tests::tide_system_classified_from_c20_without_header,success,542.026,22.607,2026-11-05T03:04:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earthgravity::tests::tide_system_from_header_spellings,success,542.026,22.079,2026-11-05T03:04:25Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earthgravity::tests::unnormalized_header_is_honoured,success,542.026,22.120,2026-11-05T03:04:47Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,earthgravity::tests::unrecognised_tide_header_falls_back_to_c20,success,542.026,27.062,2026-11-05T03:05:14Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,elapsed_time_across_leap_second,success,542.026,70.832,2026-11-05T03:06:25Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,every_case_file_has_a_test,success,542.026,19.931,2026-11-05T03:06:45Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,fixed_scale_offsets,success,542.026,83.901,2026-11-05T03:08:09Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frame_routes_agree,success,542.026,23.237,2026-11-05T03:08:32Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frames::tests::from_str_accepts_aliases,success,542.026,19.993,2026-11-05T03:08:52Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frames::tests::ric_rsw_are_aliases_for_rtn,success,542.026,19.490,2026-11-05T03:09:11Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::approx_matches_qitrf2gcrf_approx,timeout,542.026,150.021,2026-11-05T03:11:41Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::approx_rejects_intermediate_frames,success,542.026,19.743,2026-11-05T03:12:01Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::dispatch_teme_pairs_have_correct_direction,timeout,542.026,150.020,2026-11-05T03:14:31Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::eme2000_bias_matches_iers_2010,success,542.026,19.915,2026-11-05T03:14:51Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::icrf_eme2000_constant_bias,success,542.026,19.520,2026-11-05T03:15:11Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::identity_pairs,success,542.026,19.944,2026-11-05T03:15:31Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::matches_qgcrf2itrf,timeout,542.026,150.019,2026-11-05T03:18:01Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::matches_qitrf2gcrf,timeout,542.026,150.019,2026-11-05T03:20:31Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::matches_qitrf2tirs_direct_path,timeout,542.026,150.019,2026-11-05T03:23:01Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::matches_qteme2itrf,timeout,542.026,150.020,2026-11-05T03:25:31Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::orbit_frames_rejected,success,542.026,19.839,2026-11-05T03:25:51Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::rotation_with_state_unifies_both_front_doors,timeout,542.026,150.018,2026-11-05T03:28:21Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::roundtrip_all_pairs,timeout,542.026,150.020,2026-11-05T03:30:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::transform_state_all_non_orbit_pairs_roundtrip,timeout,542.026,150.018,2026-11-05T03:33:21Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::transform_state_approx_rejects_intermediates,success,542.026,19.724,2026-11-05T03:33:41Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::transform_state_inertial_pair_no_sweep,timeout,542.026,150.019,2026-11-05T03:36:11Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::transform_state_itrf_tirs_no_sweep,timeout,542.026,150.020,2026-11-05T03:38:41Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::transform_state_itrf_to_gcrf_matches_direct,timeout,542.026,150.021,2026-11-05T03:41:11Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::transform_state_orbit_frames_rejected,success,542.026,20.161,2026-11-05T03:41:31Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::transform_state_roundtrip_itrf_gcrf,timeout,542.026,150.019,2026-11-05T03:44:01Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::dispatch::tests::transform_state_tirs_via_itrf_chain,timeout,542.026,150.019,2026-11-05T03:46:31Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::ierstable::tests::corrupt_file_in_data_dir_falls_back_to_the_embedded_table,timeout,542.026,150.032,2026-11-05T03:49:01Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::ierstable::tests::load_table,timeout,542.026,150.030,2026-11-05T03:51:31Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::ierstable::tests::parse_accepts_a_minimal_table,success,542.026,19.855,2026-11-05T03:51:51Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frametransform::ierstable::tests::parse_rejects_a_truncated_table,success,542.026,20.121,2026-11-05T03:52:11Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frametransform::ierstable::tests::parse_rejects_text_with_no_table_header,success,542.026,19.911,2026-11-05T03:52:31Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frametransform::ierstable::tests::test_parse_bad_token_errors_not_panics,success,542.026,19.501,2026-11-05T03:52:50Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,frametransform::tests::test_approx_vs_full,timeout,542.026,150.019,2026-11-05T03:55:21Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::tests::test_earth_rotation_angle,timeout,542.026,150.020,2026-11-05T03:57:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::tests::test_gcrs2itrf,timeout,542.026,150.021,2026-11-05T04:00:21Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::tests::test_gmst,timeout,542.026,150.021,2026-11-05T04:02:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::tests::test_itrf_gcrf_state_approx_roundtrip,timeout,542.026,150.021,2026-11-05T04:05:21Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::tests::test_itrf_gcrf_state_approx_vs_full,timeout,542.026,150.018,2026-11-05T04:07:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::tests::test_itrf_gcrf_state_geo,timeout,542.026,150.020,2026-11-05T04:10:21Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::tests::test_itrf_gcrf_state_roundtrip,timeout,542.026,150.019,2026-11-05T04:12:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::tests::test_naive_itrf_rotation_is_wrong_by_470mps,timeout,542.026,150.018,2026-11-05T04:15:21Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::tests::test_qitrf2gcrf_roundtrip,timeout,542.026,150.018,2026-11-05T04:17:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::tests::test_qteme2gcrf,timeout,542.026,150.019,2026-11-05T04:20:21Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,frametransform::tests::test_vallado_3_14_state_single_call,timeout,542.026,150.018,2026-11-05T04:22:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,from_datetime_float_seconds_exact,success,542.026,95.801,2026-11-05T04:24:27Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,generator_calendar_matches_satkit,success,542.026,81.689,2026-11-05T04:25:49Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,geo_full,timeout,542.026,150.032,2026-11-05T04:28:19Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,geo_j2,timeout,542.026,150.034,2026-11-05T04:30:49Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,geocentric_moon_is_evaluated_at_tdb,timeout,542.026,150.020,2026-11-05T04:33:19Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,geodesic_distance_finite_nonnegative,success,542.026,26.953,2026-11-05T04:33:46Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,geodetic_roundtrip,success,542.026,25.893,2026-11-05T04:34:12Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,githash_is_hex_or_unknown,success,542.026,19.587,2026-11-05T04:34:31Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,gps_week_routes_agree,success,542.026,39.424,2026-11-05T04:35:11Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,init_all_three_tables_from_bytes_then_run_qcirs2gcrs,timeout,542.026,150.031,2026-11-05T04:37:41Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,init_from_bytes_replaces_and_query_works,success,542.026,19.948,2026-11-05T04:38:01Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,init_from_bytes_then_query_and_double_init_errors,timeout,542.026,150.033,2026-11-05T04:40:31Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,iso_label_monotonic,success,542.026,137.858,2026-11-05T04:42:49Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,iso_label_monotonic_at_every_leap_second,success,542.026,31.009,2026-11-05T04:43:20Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,itrfcoord::tests::geodetic,success,542.026,19.590,2026-11-05T04:43:39Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,itrfcoord::tests::test_antimeridian,success,542.026,19.645,2026-11-05T04:43:59Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,itrfcoord::tests::test_equator_prime_meridian,success,542.026,19.760,2026-11-05T04:44:19Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,itrfcoord::tests::test_geodesic,success,542.026,19.974,2026-11-05T04:44:39Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,itrfcoord::tests::test_geodesic_coincident,success,542.026,19.529,2026-11-05T04:44:58Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,itrfcoord::tests::test_geodesic_near_antipodal_is_finite,success,542.026,20.003,2026-11-05T04:45:18Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,itrfcoord::tests::test_geodetic_roundtrip_random,success,542.026,20.341,2026-11-05T04:45:39Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,itrfcoord::tests::test_ned_enu,success,542.026,19.694,2026-11-05T04:45:58Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,itrfcoord::tests::test_poles,success,542.026,19.961,2026-11-05T04:46:18Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,jplephem::tests::corrupt_pinned_ephemeris_is_refused_offline,success,542.026,21.123,2026-11-05T04:46:39Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,jplephem::tests::load_test,timeout,542.026,150.020,2026-11-05T04:49:09Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,jplephem::tests::microsecond_resolution,timeout,542.026,150.020,2026-11-05T04:51:39Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,jplephem::tests::rejects_non_ephemeris_bytes,success,542.026,19.899,2026-11-05T04:51:59Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,jplephem::tests::sun_state_moon_pos_matches_separate_calls,timeout,542.026,150.018,2026-11-05T04:54:29Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,jplephem::tests::test_parse_rejects_corrupt_files,success,542.026,19.795,2026-11-05T04:54:49Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,jplephem::tests::test_query_at_exact_end_epoch,timeout,542.026,150.019,2026-11-05T04:57:19Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,jplephem::tests::testvecs,timeout,542.026,150.019,2026-11-05T04:59:49Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,kepler::tests::test_angles_wrap_below_2pi,success,542.026,19.792,2026-11-05T05:00:09Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_anomaly_conversions,success,542.026,19.630,2026-11-05T05:00:29Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_circular_equatorial_orbit,success,542.026,19.870,2026-11-05T05:00:49Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_circular_orbit,success,542.026,19.784,2026-11-05T05:01:08Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_derived_helpers,success,542.026,19.838,2026-11-05T05:01:28Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_elliptical_equatorial_orbit,success,542.026,19.639,2026-11-05T05:01:48Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_equatorial_orbit,success,542.026,19.660,2026-11-05T05:02:08Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_from_pv_rejects_nonfinite,success,542.026,19.491,2026-11-05T05:02:27Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_from_pv_rejects_rectilinear,success,542.026,19.485,2026-11-05T05:02:47Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_from_pv_roundtrip_grid,success,542.026,26.725,2026-11-05T05:03:13Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_from_pv_tiny_inclination_precision,success,542.026,19.528,2026-11-05T05:03:33Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_frompv,success,542.026,19.641,2026-11-05T05:03:52Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_mean2eccentric_nan_returns,success,542.026,19.531,2026-11-05T05:04:12Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_mean_anomaly_setter_roundtrip_high_eccen,success,542.026,19.579,2026-11-05T05:04:32Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_mu_changes_dynamics_not_geometry,success,542.026,19.650,2026-11-05T05:04:51Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_polar_orbit,success,542.026,19.685,2026-11-05T05:05:11Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_propagate_period,success,542.026,19.517,2026-11-05T05:05:30Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_retrograde_equatorial_orbit,success,542.026,19.888,2026-11-05T05:05:50Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_serde_roundtrip_and_missing_mu_defaults_to_earth,success,542.026,19.659,2026-11-05T05:06:10Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_topv,success,542.026,19.740,2026-11-05T05:06:30Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler::tests::test_try_new_rejects_out_of_domain_elements,success,542.026,19.587,2026-11-05T05:06:49Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler_anomaly_roundtrip,success,542.026,25.108,2026-11-05T05:07:15Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler_period_closure,success,542.026,26.187,2026-11-05T05:07:41Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,kepler_pv_roundtrip,success,542.026,30.327,2026-11-05T05:08:11Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_180deg_follows_prograde_flag,success,542.026,19.854,2026-11-05T05:08:31Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_90deg_transfer,success,542.026,19.548,2026-11-05T05:08:50Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_battin_window,success,542.026,19.885,2026-11-05T05:09:10Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_curtis_example_5_2,success,542.026,19.518,2026-11-05T05:09:30Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_gto_to_geo,success,542.026,19.621,2026-11-05T05:09:50Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_hohmann,success,542.026,19.543,2026-11-05T05:10:09Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_inclined,success,542.026,19.516,2026-11-05T05:10:29Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_invalid_inputs,success,542.026,19.672,2026-11-05T05:10:48Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_large_transfer_angle,success,542.026,19.941,2026-11-05T05:11:08Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_long_way_equatorial,success,542.026,20.230,2026-11-05T05:11:28Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_long_way_inclined,success,542.026,19.657,2026-11-05T05:11:48Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_multirev_retrograde,success,542.026,20.071,2026-11-05T05:12:08Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_near_zero_angle_hyperbolic,success,542.026,20.126,2026-11-05T05:12:28Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_random_sweep,success,542.026,34.217,2026-11-05T05:13:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_rejects_nonfinite_and_coincident,success,542.026,19.962,2026-11-05T05:13:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_retrograde,success,542.026,20.046,2026-11-05T05:13:43Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_short_tof,success,542.026,19.648,2026-11-05T05:14:02Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_lambert_symmetry,success,542.026,20.099,2026-11-05T05:14:22Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lambert::tests::test_tof_equation_matches_lagrange,success,542.026,19.882,2026-11-05T05:14:42Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,leo_iss_full,timeout,542.026,150.032,2026-11-05T05:17:12Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,leo_iss_gr,timeout,542.026,150.032,2026-11-05T05:19:42Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,leo_iss_j2,timeout,542.026,150.034,2026-11-05T05:22:12Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::moon::tests::moonpos,success,542.026,19.593,2026-11-05T05:22:32Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::moon::tests::moonpos_vs_jplephem,timeout,542.026,150.020,2026-11-05T05:25:02Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::moon::tests::phase_times_2024,timeout,542.026,150.019,2026-11-05T05:27:32Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::moon::tests::phase_times_consistency,timeout,542.026,150.021,2026-11-05T05:30:02Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::moon::tests::riseset_edge_cases,timeout,542.026,150.020,2026-11-05T05:32:32Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::moon::tests::riseset_vs_skyfield,timeout,542.026,150.018,2026-11-05T05:35:02Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::moon::tests::riseset_vs_usno,timeout,542.026,150.019,2026-11-05T05:37:32Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::moon::tests::test_moon_ecliptic,success,542.026,19.972,2026-11-05T05:37:52Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::moon::tests::test_moon_phases,success,542.026,19.891,2026-11-05T05:38:12Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::moon::tests::test_phase,success,542.026,19.563,2026-11-05T05:38:32Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::moon::tests::test_phase_name_method,success,542.026,19.800,2026-11-05T05:38:52Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::planets::test::compare_with_jplephem_1800_2050,timeout,542.026,150.021,2026-11-05T05:41:22Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::planets::test::compare_with_jplephem_extended,timeout,542.026,150.021,2026-11-05T05:43:52Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::planets::test::invalid_bodies,success,542.026,19.895,2026-11-05T05:44:12Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::planets::test::zero_mean_anomaly_converges,success,542.026,19.531,2026-11-05T05:44:31Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::pos_mod_vs_jpl,timeout,542.026,150.019,2026-11-05T05:47:01Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::riseset_is_analytic_riseset_with,success,542.026,19.805,2026-11-05T05:47:21Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::riseset_jpl_out_of_range,timeout,542.026,150.020,2026-11-05T05:49:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::riseset_jpl_vs_skyfield,timeout,542.026,150.018,2026-11-05T05:52:21Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::riseset_polar_day_and_night,timeout,542.026,150.020,2026-11-05T05:54:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::riseset_stays_on_day,timeout,542.026,150.021,2026-11-05T05:57:21Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::riseset_uses_utc_date,timeout,542.026,150.021,2026-11-05T05:59:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::riseset_vs_skyfield,success,542.026,22.671,2026-11-05T06:00:14Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::riseset_vs_usno,timeout,542.026,150.018,2026-11-05T06:02:44Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::shadowfunc_edge_cases,success,542.026,19.997,2026-11-05T06:03:04Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::sunpos_gcrf,success,542.026,20.032,2026-11-05T06:03:24Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::sunpos_mod,success,542.026,19.588,2026-11-05T06:03:44Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::sunriseset,success,542.026,19.769,2026-11-05T06:04:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::test_ecliptic_longitude,success,542.026,19.711,2026-11-05T06:04:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,lpephem::sun::tests::test_webexample,success,542.026,19.863,2026-11-05T06:04:43Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,meo_gps_full,timeout,542.026,150.032,2026-11-05T06:07:13Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,meo_gps_j2,timeout,542.026,150.032,2026-11-05T06:09:43Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,missing_flux_keeps_the_rest_of_the_space_weather,success,542.026,52.459,2026-11-05T06:10:36Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,mjd_roundtrip,success,542.026,24.695,2026-11-05T06:11:00Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,molniya_full,timeout,542.026,150.033,2026-11-05T06:13:30Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,molniya_j2,timeout,542.026,150.032,2026-11-05T06:16:00Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,no_repository_reports_unknown,success,542.026,21.327,2026-11-05T06:16:22Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_against_c_reference,success,542.026,21.140,2026-11-05T06:16:43Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_altitude_sweep_monotonic,success,542.026,19.978,2026-11-05T06:17:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_ap_array_formulation_coincides_at_ap4,success,542.026,20.738,2026-11-05T06:17:24Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_ap_history_assembly,success,542.026,21.043,2026-11-05T06:17:45Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_ap_history_fallbacks,success,542.026,19.841,2026-11-05T06:18:05Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_exospheric_temperature,success,542.026,20.223,2026-11-05T06:18:25Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_low_altitude,success,542.026,21.160,2026-11-05T06:18:46Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_missing_previous_day_flux_is_decoupled,success,542.026,20.083,2026-11-05T06:19:06Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_no_spaceweather,success,542.026,20.449,2026-11-05T06:19:27Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_nrlmsise_basic,timeout,542.026,150.020,2026-11-05T06:21:57Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_nrlmsise_before_table_start_does_not_panic,timeout,542.026,150.034,2026-11-05T06:24:27Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_solar_activity_levels,success,542.026,21.120,2026-11-05T06:24:48Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_spaceweather_feed_conventions,timeout,542.026,150.021,2026-11-05T06:27:18Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,nrlmsise::tests::test_species_densities_positive,success,542.026,20.822,2026-11-05T06:27:39Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,offline_gravity_acceleration,timeout,542.026,150.021,2026-11-05T06:30:09Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,offline_iers_tables_and_precession_nutation,timeout,542.026,150.021,2026-11-05T06:32:39Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,offline_itu_grace16_is_typed_error,success,542.026,20.163,2026-11-05T06:32:59Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,offline_kepler_and_lambert,success,542.026,20.205,2026-11-05T06:33:19Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,offline_missing_ephemeris_is_typed_error,success,542.026,20.932,2026-11-05T06:33:40Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,offline_sgp4,success,542.026,20.785,2026-11-05T06:34:01Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,offline_time_scales,success,542.026,19.852,2026-11-05T06:34:21Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::tests::test_bare_object_and_array_parse_the_same,success,542.026,21.385,2026-11-05T06:34:42Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::tests::test_classification_round_trips_through_omm,success,542.026,20.617,2026-11-05T06:35:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::tests::test_day_of_year_epoch,success,542.026,20.197,2026-11-05T06:35:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::tests::test_from_mean_elements_propagates,success,542.026,20.856,2026-11-05T06:35:44Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::tests::test_from_text_detects_json,success,542.026,20.377,2026-11-05T06:36:04Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::tests::test_omm_matches_tle_lines,test_failed,542.026,1.725,2026-11-05T06:36:06Z,50232671.0,panic,"thread 'omm::tests::test_omm_matches_tle_lines' (10778) panicked at src/omm/mod.rs:962:49: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,satkit-0.24.1,omm::tests::test_omm_without_classification_type_defaults_to_u,success,542.026,20.219,2026-11-05T06:36:26Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::tests::test_parse_omm_celestrak_json,test_failed,542.026,1.734,2026-11-05T06:36:28Z,50232671.0,panic,"thread 'omm::tests::test_parse_omm_celestrak_json' (10906) panicked at src/omm/mod.rs:1024:49: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,satkit-0.24.1,omm::tests::test_parse_omm_spacetrack_json,test_failed,542.026,1.726,2026-11-05T06:36:30Z,50232671.0,panic,"thread 'omm::tests::test_parse_omm_spacetrack_json' (10961) panicked at src/omm/mod.rs:938:49: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,satkit-0.24.1,omm::tests::test_rejects_sgp4_xp_and_foreign_metadata,success,542.026,20.582,2026-11-05T06:36:50Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::tests::test_serialize_round_trip,success,542.026,20.313,2026-11-05T06:37:11Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::tests::test_sgp4xp_type4_rejected,success,542.026,20.438,2026-11-05T06:37:31Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::tests::test_tle_conversion_round_trip,success,542.026,21.023,2026-11-05T06:37:52Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::tests::test_tolerant_scalars,success,542.026,20.103,2026-11-05T06:38:12Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::xml::tests::test_parse_omm_celestrak_xml,success,542.026,22.785,2026-11-05T06:38:35Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,omm::xml::tests::test_spacetrack_xml_matches_json,test_failed,542.026,1.801,2026-11-05T06:38:37Z,50232671.0,panic,"thread 'omm::xml::tests::test_spacetrack_xml_matches_json' (11801) panicked at src/omm/xml.rs:448:74: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,satkit-0.24.1,orbitprop::drag::tests::test_drag_density_uses_degrees,success,542.026,20.638,2026-11-05T06:38:58Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::drag::tests::test_drag_force_direction,success,542.026,19.727,2026-11-05T06:39:17Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::drag::tests::test_drag_force_zero_at_high_alt,success,542.026,20.902,2026-11-05T06:39:38Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::ode::gauss_jackson::tests::gj8_damped_oscillator,success,542.026,24.887,2026-11-05T06:40:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::ode::gauss_jackson::tests::gj8_dense_interpolation_batch,success,542.026,20.318,2026-11-05T06:40:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::ode::gauss_jackson::tests::gj8_dense_interpolation_harmonic,success,542.026,22.077,2026-11-05T06:40:46Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::ode::gauss_jackson::tests::gj8_fewer_evals_than_rkv98,success,542.026,32.902,2026-11-05T06:41:18Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::ode::gauss_jackson::tests::gj8_harmonic_oscillator,success,542.026,22.537,2026-11-05T06:41:41Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::ode::gauss_jackson::tests::gj8_kepler_circular_10_orbits,success,542.026,33.136,2026-11-05T06:42:14Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::point_gravity::tests::test_point_gravity_known,success,542.026,20.681,2026-11-05T06:42:35Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::point_gravity::tests::test_point_gravity_partials,success,542.026,20.580,2026-11-05T06:42:55Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::point_gravity::tests::test_point_gravity_precision,success,542.026,19.914,2026-11-05T06:43:15Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::precomputed::tests::test_clone_shares_table,timeout,542.026,150.031,2026-11-05T06:45:45Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::precomputed::tests::test_interp_or_compute_out_of_range,timeout,542.026,150.029,2026-11-05T06:48:16Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::precomputed::tests::test_invalid_step_errors,success,542.026,19.787,2026-11-05T06:48:35Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::precomputed::tests::test_past_eop_coverage_builds,timeout,542.026,150.030,2026-11-05T06:51:05Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::precomputed::tests::test_size_cap_and_bad_inputs,timeout,542.026,150.019,2026-11-05T06:53:35Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::precomputed::tests::test_table_matches_full_transform,timeout,542.026,150.021,2026-11-05T06:56:05Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_continuous_thrust,timeout,542.026,150.033,2026-11-05T06:58:36Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_continuous_thrust_gcrf,timeout,542.026,150.021,2026-11-05T07:01:06Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_gauss_jackson8_geo_matches_rkv98,timeout,542.026,150.033,2026-11-05T07:03:36Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_gauss_jackson8_interp_matches_rkv98,timeout,542.026,150.021,2026-11-05T07:06:06Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_gauss_jackson8_precompute_bounds,timeout,542.026,150.024,2026-11-05T07:08:36Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_gauss_jackson8_rejects_stm,success,542.026,20.498,2026-11-05T07:08:56Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_gps,test_failed,542.026,1.735,2026-11-05T07:08:58Z,50232671.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_gravity_degree_above_max_errors,success,542.026,19.869,2026-11-05T07:09:18Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_gravity_degree_order_in_propagator,timeout,542.026,150.021,2026-11-05T07:11:48Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_initial_step_and_warm_start,timeout,542.026,150.033,2026-11-05T07:14:18Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_interp,timeout,542.026,150.034,2026-11-05T07:16:48Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_invalid_state_columns_errors,success,542.026,20.745,2026-11-05T07:17:09Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_propagate,timeout,542.026,150.020,2026-11-05T07:19:39Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_require_eop_coverage,timeout,542.026,150.035,2026-11-05T07:22:09Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_rkv98_uses_16_stage_tableau_without_interp,timeout,542.026,150.033,2026-11-05T07:24:39Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_rodas4_low_orbit,timeout,542.026,150.065,2026-11-05T07:27:09Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_rodas4_rejects_stm,success,542.026,21.263,2026-11-05T07:27:31Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_short_propagate,timeout,542.026,150.023,2026-11-05T07:30:01Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_solar_pressure_inverse_square,success,542.026,20.493,2026-11-05T07:30:21Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_solid_tides_perturb_orbit,timeout,542.026,150.022,2026-11-05T07:32:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_state_transition,timeout,542.026,150.022,2026-11-05T07:35:21Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_state_transition_drag,timeout,542.026,150.033,2026-11-05T07:37:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_state_transition_with_toggles,timeout,542.026,150.063,2026-11-05T07:40:22Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_sun_moon_toggles,timeout,542.026,150.034,2026-11-05T07:42:52Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::propagator::tests::test_zero_tide_model_with_tides_matches_tide_free,timeout,542.026,150.027,2026-11-05T07:45:22Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::relativity::tests::geodesic_accel_magnitude_and_direction,success,542.026,20.610,2026-11-05T07:45:42Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::relativity::tests::geodesic_rate_is_1_9_arcsec_per_century,success,542.026,20.006,2026-11-05T07:46:02Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::relativity::tests::lense_thirring_magnitude_at_leo,success,542.026,20.449,2026-11-05T07:46:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::relativity::tests::schwarzschild_at_geo_has_expected_magnitude,success,542.026,20.461,2026-11-05T07:46:43Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::relativity::tests::schwarzschild_at_leo_has_expected_magnitude,success,542.026,20.206,2026-11-05T07:47:04Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::relativity::tests::schwarzschild_points_outward_on_circular_orbit,success,542.026,20.842,2026-11-05T07:47:24Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::relativity::tests::total_at_high_altitude_is_geodesic_dominated,success,542.026,20.232,2026-11-05T07:47:45Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::relativity::tests::total_reduces_to_schwarzschild_without_sun_motion_and_spin,success,542.026,20.145,2026-11-05T07:48:05Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_impulsive_maneuver_backward,timeout,542.026,150.038,2026-11-05T07:50:35Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_impulsive_maneuver_gcrf,timeout,542.026,150.023,2026-11-05T07:53:05Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_impulsive_maneuver_ric,timeout,542.026,150.034,2026-11-05T07:55:35Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_impulsive_maneuver_unsupported_frame_errors,success,542.026,22.023,2026-11-05T07:55:57Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_lvlh_maneuver_end_to_end,timeout,542.026,150.032,2026-11-05T07:58:27Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_lvlh_matches_ric_with_sign_flips,success,542.026,19.628,2026-11-05T07:58:47Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_multiple_maneuvers,timeout,542.026,150.032,2026-11-05T08:01:17Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_ntw_vs_ric_eccentric_diverge,success,542.026,19.417,2026-11-05T08:01:36Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_ntw_vs_ric_perpendicular_state,success,542.026,19.442,2026-11-05T08:01:56Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_prograde_constructor_raises_perigee,timeout,542.026,150.021,2026-11-05T08:04:26Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_qgcrf2lvlh,timeout,542.026,150.032,2026-11-05T08:06:56Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_satcov,timeout,542.026,150.032,2026-11-05T08:09:26Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_satstate,timeout,542.026,150.032,2026-11-05T08:11:56Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_uncertainty_preserves_other_block,success,542.026,19.488,2026-11-05T08:12:16Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_uncertainty_rejects_unsupported_frames,success,542.026,19.471,2026-11-05T08:12:35Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_uncertainty_supported_frames,success,542.026,19.554,2026-11-05T08:12:55Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_zero_duration_propagation,success,542.026,19.359,2026-11-05T08:13:14Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::satstate::test::test_zero_duration_propagation_with_cov,success,542.026,19.518,2026-11-05T08:13:34Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::settings::test::set_gravity_rejects_degree_above_max,success,542.026,19.450,2026-11-05T08:13:53Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::settings::test::testdisplay,success,542.026,19.403,2026-11-05T08:14:13Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::settings::test::validate_gravity_catches_struct_literal,success,542.026,19.734,2026-11-05T08:14:32Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::srp::tests::all_axes_scaled_by_shadow,success,542.026,19.602,2026-11-05T08:14:52Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::srp::tests::argument_of_latitude_matches_kepler,success,542.026,19.492,2026-11-05T08:15:12Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::srp::tests::d0_only_is_constant_sun_direction,success,542.026,19.630,2026-11-05T08:15:31Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::srp::tests::d0_only_reproduces_cannonball,timeout,542.026,150.021,2026-11-05T08:18:01Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,orbitprop::srp::tests::delta_u_noon_and_midnight,success,542.026,19.676,2026-11-05T08:18:21Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::srp::tests::dyb_basis_sun_exactly_radial,success,542.026,20.014,2026-11-05T08:18:41Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::srp::tests::dyb_is_orthonormal_and_right_handed,success,542.026,19.930,2026-11-05T08:19:01Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::srp::tests::harmonics_are_periodic,success,542.026,19.511,2026-11-05T08:19:20Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::srp::tests::is_zero_and_constructors,success,542.026,19.804,2026-11-05T08:19:40Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::srp::tests::scaled_by_inverse_square_sun_distance,success,542.026,19.952,2026-11-05T08:20:00Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::thrust::tests::new_rejects_unsupported_frames,success,542.026,19.901,2026-11-05T08:20:20Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::tides::tests::body_over_pole_excites_only_zonal_terms,success,542.026,19.538,2026-11-05T08:20:40Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::tides::tests::cunningham_v00_is_re_over_r,success,542.026,19.761,2026-11-05T08:20:59Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::tides::tests::equator_x_body_gives_negative_dc20,success,542.026,19.752,2026-11-05T08:21:19Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::tides::tests::none_model_yields_empty_deltas,success,542.026,19.730,2026-11-05T08:21:39Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::tides::tests::permanent_tide_constant_matches_iers,success,542.026,19.572,2026-11-05T08:21:59Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::tides::tests::solid_full_currently_matches_step1,success,542.026,19.632,2026-11-05T08:22:18Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::tides::tests::tide_accel_magnitude_at_geo_is_reasonable,success,542.026,19.686,2026-11-05T08:22:38Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,orbitprop::tides::tests::zero_deltas_give_zero_accel,success,542.026,19.483,2026-11-05T08:22:57Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,own_checkout_reports_hash_and_is_reproducible,success,542.026,25.667,2026-11-05T08:23:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,quaternion_euler_roundtrip,success,542.026,25.515,2026-11-05T08:23:49Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,quaternion_rigid_rotation,success,542.026,28.174,2026-11-05T08:24:17Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,regression_from_datetime_truncates_microseconds,success,542.026,19.681,2026-11-05T08:24:36Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,regression_high_eccen_period_closure,success,542.026,19.544,2026-11-05T08:24:56Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,regression_rfc3339_offset_across_leap_second,success,542.026,19.484,2026-11-05T08:25:16Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,regression_strptime_z_offset_sign,success,542.026,19.507,2026-11-05T08:25:35Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,rfc3339_offset_matches_utc,success,542.026,104.642,2026-11-05T08:27:20Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,sgp4::sgp4_impl::tests::cache_follows_element_edits,success,542.026,19.989,2026-11-05T08:27:40Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,sgp4::sgp4_impl::tests::cache_follows_gravconst_and_opsmode,success,542.026,19.642,2026-11-05T08:27:59Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,sgp4::sgp4_impl::tests::default_is_wgs72_afspc,success,542.026,20.059,2026-11-05T08:28:19Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,sgp4::sgp4_impl::tests::epoch_passed_at_full_precision,success,542.026,19.983,2026-11-05T08:28:39Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,sgp4::sgp4_impl::tests::testsgp4,success,542.026,19.840,2026-11-05T08:28:59Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,sgp4::sgp4_impl::tests::tsince_is_physical_across_leap_second,success,542.026,19.526,2026-11-05T08:29:19Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,sgp4::sgp4_impl::tests::vallado_testvecs,test_failed,542.026,1.793,2026-11-05T08:29:21Z,50232671.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,satkit-0.24.1,spaceweather::assemble::tests::test_81day_average_convention,success,542.026,20.074,2026-11-05T08:29:41Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::assemble::tests::test_averages_skip_missing_leading_flux,success,542.026,20.315,2026-11-05T08:30:01Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::assemble::tests::test_averages_step_hold_across_monthly_rows,success,542.026,19.563,2026-11-05T08:30:21Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::assemble::tests::test_ordering_and_overlap,success,542.026,19.835,2026-11-05T08:30:40Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::gfz::tests::test_cp_c9_table,success,542.026,19.976,2026-11-05T08:31:00Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::gfz::tests::test_kp_encoding_round_trip,success,542.026,19.819,2026-11-05T08:31:20Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::gfz::tests::test_kp_sum_uses_thirds_not_tabulated_values,success,542.026,19.737,2026-11-05T08:31:40Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::gfz::tests::test_parse_row,success,542.026,19.606,2026-11-05T08:32:00Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::gfz::tests::test_preliminary_flag,success,542.026,19.741,2026-11-05T08:32:19Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::msafe::tests::test_empty_is_error,success,542.026,19.515,2026-11-05T08:32:39Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::msafe::tests::test_parse_and_sort,success,542.026,19.741,2026-11-05T08:32:59Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::msafe::tests::test_records_carry_ap,success,542.026,19.736,2026-11-05T08:33:18Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::swpc::tests::test_date_format,success,542.026,19.591,2026-11-05T08:33:38Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::swpc::tests::test_parse_joins_sections_by_date,success,542.026,19.644,2026-11-05T08:33:58Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::tests::test_assemble_from_dir_prefers_primary_sources,success,542.026,19.765,2026-11-05T08:34:17Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::tests::test_coverage_and_status_boundaries,success,542.026,20.220,2026-11-05T08:34:38Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::tests::test_coverage_with_no_predictions,success,542.026,19.982,2026-11-05T08:34:58Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::tests::test_data_type_parsed_from_column_27,success,542.026,20.169,2026-11-05T08:35:18Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::tests::test_get_uses_utc_day,timeout,542.026,150.019,2026-11-05T08:37:48Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,spaceweather::tests::test_load,timeout,542.026,150.018,2026-11-05T08:40:18Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,spaceweather::tests::test_parse_skips_blank_trailing_line,success,542.026,19.932,2026-11-05T08:40:38Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::tests::test_parse_truncated_line_errors_not_panics,success,542.026,20.085,2026-11-05T08:40:58Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,spaceweather::tests::warnings_are_logged_outside_the_table_lock,success,542.026,21.154,2026-11-05T08:41:19Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,sso_800_full,timeout,542.026,150.032,2026-11-05T08:43:49Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,sso_800_j2,timeout,542.026,150.033,2026-11-05T08:46:19Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,strptime_z_offset_sign,success,542.026,103.667,2026-11-05T08:48:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tai_minus_utc_matches_table,success,542.026,79.371,2026-11-05T08:49:22Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tai_minus_utc_nondecreasing,success,542.026,120.479,2026-11-05T08:51:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tdb_inverse,success,542.026,72.766,2026-11-05T08:52:36Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tdb_minus_tt_bounded_and_annual,success,542.026,41.078,2026-11-05T08:53:17Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tess_full,timeout,542.026,150.033,2026-11-05T08:55:47Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,tess_gr,timeout,542.026,150.032,2026-11-05T08:58:17Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,tess_j2,timeout,542.026,150.035,2026-11-05T09:00:47Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,time::instant::tests::leap_lookups_match_full_scan,success,542.026,29.662,2026-11-05T09:01:17Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::instant_ops::tests::overflow_saturates_or_is_reported,success,542.026,20.931,2026-11-05T09:01:37Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_1972_step,success,542.026,19.830,2026-11-05T09:01:57Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_as_datetime_roundtrip_exact,timeout,542.026,150.016,2026-11-05T09:04:27Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,time::tests::test_bounds,success,542.026,19.777,2026-11-05T09:04:47Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_calendar_far_past,success,542.026,21.728,2026-11-05T09:05:09Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_day_of_week_end_of_day,success,542.026,20.123,2026-11-05T09:05:29Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_day_of_year,success,542.026,19.500,2026-11-05T09:05:49Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_extreme_dates_error_not_panic,success,542.026,19.765,2026-11-05T09:06:08Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_float_to_microseconds_rounds,success,542.026,19.818,2026-11-05T09:06:28Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_from_string_keeps_year_sign,success,542.026,19.752,2026-11-05T09:06:48Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_from_string_offsets_and_short_times,success,542.026,19.834,2026-11-05T09:07:08Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_fromstring,success,542.026,19.644,2026-11-05T09:07:27Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_gps,success,542.026,19.795,2026-11-05T09:07:47Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_j2000,success,542.026,19.559,2026-11-05T09:08:07Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_jd,success,542.026,19.751,2026-11-05T09:08:27Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_leap_second_label_roundtrip,success,542.026,19.613,2026-11-05T09:08:46Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_leapsecond,success,542.026,19.488,2026-11-05T09:09:06Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_midnight_after_leap_second,success,542.026,19.595,2026-11-05T09:09:25Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_mjd_tdb_split,success,542.026,19.508,2026-11-05T09:09:45Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_ops,success,542.026,19.534,2026-11-05T09:10:04Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_parsed_fraction_rounds_and_carries,success,542.026,19.965,2026-11-05T09:10:24Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_pre_1970_datetime,success,542.026,20.571,2026-11-05T09:10:45Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_rfc3339,success,542.026,19.817,2026-11-05T09:11:05Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_rfc3339_non_ascii_errors_not_panics,success,542.026,19.954,2026-11-05T09:11:25Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_rfc3339_offset_never_dropped,success,542.026,19.670,2026-11-05T09:11:44Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_rfc3339_with_timezone_offset,success,542.026,19.793,2026-11-05T09:12:04Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_rfc3339_year_roundtrip,success,542.026,19.992,2026-11-05T09:12:24Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_rounding_up_at_end_of_minute,success,542.026,20.069,2026-11-05T09:12:44Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_strptime,success,542.026,19.645,2026-11-05T09:13:04Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_strptime_z_rejects_malformed_offsets,success,542.026,20.016,2026-11-05T09:13:24Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_tdb_minus_tt,success,542.026,19.855,2026-11-05T09:13:44Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_timescale_try_from,success,542.026,19.973,2026-11-05T09:14:04Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_unixtime,success,542.026,19.558,2026-11-05T09:14:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_ut1_across_every_leap_second,timeout,542.026,150.020,2026-11-05T09:16:53Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,time::tests::test_ut1_across_leap_second,timeout,542.026,150.022,2026-11-05T09:19:23Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,time::tests::test_utc_day_number_saturates,success,542.026,19.956,2026-11-05T09:19:43Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_utc_offset_applies_to_label,success,542.026,20.149,2026-11-05T09:20:04Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_weekday_try_from,success,542.026,19.655,2026-11-05T09:20:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::tests::test_year_beyond_range_is_an_error,success,542.026,19.766,2026-11-05T09:20:43Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::utc_pre1972::tests::dat_matches_erfa,success,542.026,19.660,2026-11-05T09:21:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::utc_pre1972::tests::inverse_is_exact,success,542.026,61.078,2026-11-05T09:22:04Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::utc_pre1972::tests::labels_match_erfa,success,542.026,19.758,2026-11-05T09:22:24Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::utc_pre1972::tests::negative_step_gap,success,542.026,20.079,2026-11-05T09:22:44Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::utc_pre1972::tests::raw_to_utc_matches_direct_evaluation,timeout,542.026,150.017,2026-11-05T09:25:14Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,time::utc_pre1972::tests::round_trip_and_monotonic,timeout,542.026,150.018,2026-11-05T09:27:44Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,time::utc_pre1972::tests::step_1961,success,542.026,21.296,2026-11-05T09:28:05Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,time::utc_pre1972::tests::steps,success,542.026,20.208,2026-11-05T09:28:25Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::fitting::tests::test_fit_circular_leo_eccentricity_nonnegative,timeout,542.026,150.033,2026-11-05T09:30:55Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,tle::fitting::tests::test_fit_from_states,timeout,542.026,150.033,2026-11-05T09:33:26Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,tle::fitting::tests::test_fit_from_states_with_drag,timeout,542.026,150.033,2026-11-05T09:35:56Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,tle::fitting::tests::test_fit_recovers_sgp4_states,timeout,542.026,150.018,2026-11-05T09:38:26Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,tle::fitting::tests::test_to_2line_rejects_negative_eccentricity,success,542.026,19.907,2026-11-05T09:38:46Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_2line_encoding,success,542.026,19.507,2026-11-05T09:39:05Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_2line_encoding_many_times,success,542.026,20.995,2026-11-05T09:39:26Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_2line_encoding_with_invalid_future_date,success,542.026,19.913,2026-11-05T09:39:46Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_2line_encoding_with_invalid_past_date,success,542.026,19.861,2026-11-05T09:40:06Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_2line_wraps_counters,success,542.026,19.768,2026-11-05T09:40:26Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_3line_encoding,success,542.026,20.006,2026-11-05T09:40:46Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_alpha5_to_int,success,542.026,19.874,2026-11-05T09:41:06Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_alpha5_to_int_accepts_leading_spaces,success,542.026,19.642,2026-11-05T09:41:25Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_alpha5_to_int_accepts_lowercase_letter,success,542.026,19.794,2026-11-05T09:41:45Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_alpha5_to_int_rejects_malformed_letter_form,success,542.026,19.860,2026-11-05T09:42:05Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_alpha5_to_int_rejects_sign,success,542.026,19.942,2026-11-05T09:42:25Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_alpha5_to_int_roundtrip_bounds,success,542.026,19.568,2026-11-05T09:42:44Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_checksum_validation,success,542.026,20.284,2026-11-05T09:43:05Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_classification_parses_u_c_s,success,542.026,19.682,2026-11-05T09:43:24Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_classification_rejects_non_letter,success,542.026,19.574,2026-11-05T09:43:44Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_classification_round_trips_through_to_2line,success,542.026,19.877,2026-11-05T09:44:04Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_default_ephem_type_is_a_digit_not_the_classification_letter,success,542.026,19.549,2026-11-05T09:44:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_display_never_panics_on_bad_satnum,success,542.026,19.571,2026-11-05T09:44:43Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_eq_ignores_sgp4_cache,success,542.026,19.502,2026-11-05T09:45:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_from_invalid_from_lines,success,542.026,19.834,2026-11-05T09:45:22Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_from_invalid_tle2,success,542.026,19.949,2026-11-05T09:45:42Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_from_invalid_tle3,success,542.026,19.895,2026-11-05T09:46:02Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_from_lines,success,542.026,20.114,2026-11-05T09:46:22Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_from_lines_crlf,success,542.026,19.989,2026-11-05T09:46:42Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_from_lines_strict,success,542.026,20.127,2026-11-05T09:47:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_hint_for_data_line_read_as_name,success,542.026,20.232,2026-11-05T09:47:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_int_to_alpha5,success,542.026,19.419,2026-11-05T09:47:42Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_int_to_alpha5_too_large_mentions_omm,success,542.026,19.911,2026-11-05T09:48:02Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_malformed_numeric_fields_error_not_panic,success,542.026,19.968,2026-11-05T09:48:22Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_non_ascii_line_errors_not_panics,success,542.026,19.947,2026-11-05T09:48:42Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_orphan_line1_is_an_error,success,542.026,19.653,2026-11-05T09:49:02Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_record_error_without_name_or_long_line,success,542.026,19.680,2026-11-05T09:49:21Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_records_locates_shifted_line,success,542.026,20.147,2026-11-05T09:49:42Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_satnum_mismatch_rejected,success,542.026,19.972,2026-11-05T09:50:02Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::test_sgp4xp_type4_rejected,success,542.026,19.570,2026-11-05T09:50:21Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle::tests::testload,success,542.026,19.689,2026-11-05T09:50:41Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle_format_roundtrip,success,542.026,69.949,2026-11-05T09:51:51Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,tle_fuzz_strategy_reaches_field_parsers,timeout,542.026,150.017,2026-11-05T09:54:21Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,tle_parser_never_panics,timeout,542.026,150.016,2026-11-05T09:56:51Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,ut1_inverse,success,542.026,31.676,2026-11-05T09:57:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,ut1_one_second_steps_at_every_leap_second,success,542.026,19.791,2026-11-05T09:57:43Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,ut1_rate_matches_si_rate,success,542.026,32.901,2026-11-05T09:58:16Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utc_day_length,timeout,542.026,150.016,2026-11-05T10:00:46Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,utils::datadir::tests::datadir_resolves,success,542.026,19.547,2026-11-05T10:01:05Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::datadir::tests::freshest_of_prefers_latest_last_row,success,542.026,19.564,2026-11-05T10:01:25Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::datadir::tests::no_writeable_error_mentions_satkit_data,success,542.026,19.465,2026-11-05T10:01:44Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::datadir::tests::offline_ephemeris_names,success,542.026,19.557,2026-11-05T10:02:04Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::datadir::tests::offline_read_only_dir_is_not_writable,success,542.026,19.605,2026-11-05T10:02:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::datadir::tests::offline_resolve_linux_xdg,success,542.026,19.556,2026-11-05T10:02:43Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::datadir::tests::offline_resolve_macos_order_and_write_dir,success,542.026,19.599,2026-11-05T10:03:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::datadir::tests::offline_resolve_no_home_means_no_write_dir,success,542.026,19.631,2026-11-05T10:03:22Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::datadir::tests::offline_resolve_precedence_of_overrides,success,542.026,19.783,2026-11-05T10:03:42Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::datadir::tests::offline_resolve_windows_localappdata,success,542.026,19.472,2026-11-05T10:04:01Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::diag::tests::deferred_records_arrive_after_the_region,success,542.026,19.481,2026-11-05T10:04:21Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::diag::tests::no_logger_falls_back_to_stderr,success,542.026,20.338,2026-11-05T10:04:41Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::diag::tests::warning_reaches_installed_logger,success,542.026,19.538,2026-11-05T10:05:01Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::agent_tests::agent_sends_descriptive_user_agent,success,542.026,19.411,2026-11-05T10:05:20Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::agent_tests::ca_bundle_env_can_select_the_compiled_in_roots,success,542.026,19.456,2026-11-05T10:05:40Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::agent_tests::ca_bundle_env_loads_every_certificate_in_the_file,success,542.026,19.820,2026-11-05T10:06:00Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::agent_tests::celestrak_throttle_hint_only_for_celestrak_503_403,success,542.026,19.551,2026-11-05T10:06:19Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::agent_tests::root_certs_default_to_the_platform_trust_store,success,542.026,19.442,2026-11-05T10:06:39Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::agent_tests::tls_trust_hint_only_for_certificate_failures,success,542.026,19.490,2026-11-05T10:06:58Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::agent_tests::unusable_ca_bundle_falls_back_to_the_platform_store,success,542.026,19.563,2026-11-05T10:07:18Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::tests::a_proxy_notice_page_never_replaces_a_good_data_file,success,542.026,19.740,2026-11-05T10:07:38Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::tests::part_paths_are_unique_per_call,success,542.026,19.485,2026-11-05T10:07:57Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::tests::rename_into_place_reports_typed_error,success,542.026,19.343,2026-11-05T10:08:16Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::tests::retry_io_retries_transient_failures_then_gives_up,success,542.026,19.478,2026-11-05T10:08:36Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::tests::write_atomic_renames_and_leaves_no_part_file,success,542.026,19.544,2026-11-05T10:08:55Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::download::tests::write_atomic_verified_rejects_bad_bytes,success,542.026,19.556,2026-11-05T10:09:15Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::embedded::tests::embedded_gravity_matches_full_file_to_degree_40,success,542.026,19.696,2026-11-05T10:09:35Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::embedded::tests::offline_embedded_blobs_match_sources_json,timeout,542.026,150.015,2026-11-05T10:12:05Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,utils::embedded::tests::offline_embedded_gravity_files_parse,timeout,542.026,150.033,2026-11-05T10:14:35Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,utils::embedded::tests::offline_embedded_iers_tables_parse,timeout,542.026,150.025,2026-11-05T10:17:05Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,utils::manifest::tests::embedded_manifest_is_valid,success,542.026,21.145,2026-11-05T10:17:26Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::manifest::tests::file_name_validation,success,542.026,20.560,2026-11-05T10:17:47Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::manifest::tests::mirror_env_is_tried_first,success,542.026,20.345,2026-11-05T10:18:07Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::manifest::tests::sha256_matches_known_vector,success,542.026,20.427,2026-11-05T10:18:27Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::manifest::tests::validation_rejects_bad_entries,success,542.026,20.561,2026-11-05T10:18:48Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::singleton::tests::panicking_loader_does_not_poison,success,542.026,20.038,2026-11-05T10:19:08Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::concurrent_fetches_of_one_file_yield_one_verified_copy,timeout,542.026,150.017,2026-11-05T10:21:38Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::eop_refresh_falls_through_mirrors,timeout,542.026,150.027,2026-11-05T10:24:08Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::existing_corrupt_file_is_replaced,success,542.026,50.400,2026-11-05T10:24:59Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::fetch_falls_through_404_to_next_url,success,542.026,82.412,2026-11-05T10:26:21Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::fetch_rejects_hash_mismatch_and_tries_next_url,success,542.026,81.945,2026-11-05T10:27:43Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::fetch_reports_every_failed_source,success,542.026,82.643,2026-11-05T10:29:06Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::fetch_success_is_verified_and_cached,success,542.026,79.442,2026-11-05T10:30:25Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::mirror_override_is_tried_before_manifest_urls,success,542.026,49.234,2026-11-05T10:31:14Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::msafe_refresh_reports_its_url,success,542.026,78.654,2026-11-05T10:32:33Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::not_writable_error_kinds,success,542.026,19.546,2026-11-05T10:32:53Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::offline_error_reports_the_actual_reason,success,542.026,20.691,2026-11-05T10:33:13Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::offline_mode_blocks_fetch_without_network_io,success,542.026,50.015,2026-11-05T10:34:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::offline_setter_overrides_environment,success,542.026,20.340,2026-11-05T10:34:24Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::on_disk_file_is_verified_once_via_sidecar_marker,success,542.026,19.823,2026-11-05T10:34:44Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::proxy_env_is_accepted_by_the_agent,success,542.026,19.510,2026-11-05T10:35:03Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::refresh_cadence_matches_publication,success,542.026,19.432,2026-11-05T10:35:23Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::refresh_failure_still_reloads_what_arrived,timeout,542.026,150.029,2026-11-05T10:37:53Z,50232671.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::refresh_inside_cadence_makes_no_request,success,542.026,78.585,2026-11-05T10:39:11Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::refresh_marker_in_the_future_is_ignored,success,542.026,78.779,2026-11-05T10:40:30Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::refresh_marker_is_ignored_when_the_file_changed_underneath,success,542.026,78.837,2026-11-05T10:41:49Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::refresh_offline_error_without_a_copy_says_not_present,success,542.026,19.451,2026-11-05T10:42:08Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::refresh_past_cadence_installs_changed_bytes,success,542.026,78.265,2026-11-05T10:43:27Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::refresh_past_cadence_is_conditional,success,542.026,107.309,2026-11-05T10:45:14Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::refresh_refetches_when_file_is_gone,success,542.026,79.641,2026-11-05T10:46:34Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::refresh_rejects_an_empty_body,success,542.026,82.505,2026-11-05T10:47:56Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::update_datafiles_offline_fails_before_touching_dir,success,542.026,21.179,2026-11-05T10:48:17Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,utils::update_data::tests::update_datafiles_unwritable_dir_is_named,success,542.026,20.830,2026-11-05T10:48:38Z,50232671.0,,
+experimental-bsan,satkit-0.24.1,vendored_copy_reports_unknown,success,542.026,22.841,2026-11-05T10:49:01Z,50232671.0,,

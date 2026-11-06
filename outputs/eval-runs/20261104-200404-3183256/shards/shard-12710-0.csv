@@ -1,0 +1,10 @@
+experimental-bsan,rapid-web-0.4.9,server::tests::test_server_and_router,success,792.983,3.761,2026-11-05T06:33:18Z,50255834.0,,
+experimental-bsan,rapid-web-0.4.9,shift::convert::tests::test_convert_primitive,success,792.983,2.426,2026-11-05T06:33:20Z,50255834.0,,
+experimental-bsan,rapid-web-0.4.9,shift::generate::tests::test_create_typescript_types,test_failed,792.983,2.041,2026-11-05T06:33:23Z,50255834.0,panic,"thread 'shift::generate::tests::test_create_typescript_types' (6461) panicked at src/shift/generate.rs:176:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,rapid-web-0.4.9,shift::generate::tests::test_generate_handler_types,test_failed,792.983,1.995,2026-11-05T06:33:25Z,50255834.0,panic,"thread 'shift::generate::tests::test_generate_handler_types' (6763) panicked at src/shift/generate.rs:430:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,rapid-web-0.4.9,shift::generate::tests::test_generate_routes,test_failed,792.983,4.968,2026-11-05T06:33:30Z,50255834.0,panic,"thread 'shift::generate::tests::test_generate_routes' (6958) panicked at src/shift/generate.rs:524:9: assertion `left == right` failed"
+experimental-bsan,rapid-web-0.4.9,shift::util::tests::test_is_dynamic_route,success,792.983,12.410,2026-11-05T06:33:42Z,50255834.0,,
+experimental-bsan,rapid-web-0.4.9,shift::util::tests::test_remove_last_occurrence,success,792.983,1.906,2026-11-05T06:33:44Z,50255834.0,,
+experimental-bsan,rapid-web-0.4.9,util::tests::test_check_for_invalid_handlers,test_failed,792.983,36.271,2026-11-05T06:34:20Z,50255834.0,crash,"test util::tests::test_check_for_invalid_handlers ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rapid-web-0.4.9,util::tests::test_is_valid_route_function,success,792.983,1.909,2026-11-05T06:34:22Z,50255834.0,,
+experimental-bsan,rapid-web-0.4.9,util::tests::test_validate_route_handler,success,792.983,3.927,2026-11-05T06:34:26Z,50255834.0,,

@@ -1,0 +1,23 @@
+experimental-bsan,cargo-release-1.1.6,config::test::resolve_config::doesnt_panic,timeout,974.397,150.021,2026-11-05T04:46:07Z,50249559.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-release-1.1.6,ops::cargo::test::set_package_version::succeeds,test_failed,974.397,1.826,2026-11-05T04:46:09Z,50249559.0,panic,"thread 'ops::cargo::test::set_package_version::succeeds' (14755) panicked at src/ops/cargo.rs:566:62: called `Result::unwrap()` on an `Err` value: FixtureError { kind: Walk, cause: Some(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }) }"
+experimental-bsan,cargo-release-1.1.6,ops::cargo::test::sort_workspace::circular_dev_dependency,test_failed,974.397,1.826,2026-11-05T04:46:11Z,50249559.0,panic,"thread 'ops::cargo::test::sort_workspace::circular_dev_dependency' (14894) panicked at src/ops/cargo.rs:657:64: called `Result::unwrap()` on an `Err` value: FixtureError { kind: Walk, cause: Some(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }) }"
+experimental-bsan,cargo-release-1.1.6,ops::cargo::test::update_lock::in_mixed_workspace,test_failed,974.397,1.817,2026-11-05T04:46:13Z,50249559.0,panic,"thread 'ops::cargo::test::update_lock::in_mixed_workspace' (15114) panicked at src/ops/cargo.rs:633:64: called `Result::unwrap()` on an `Err` value: FixtureError { kind: Walk, cause: Some(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }) }"
+experimental-bsan,cargo-release-1.1.6,ops::cargo::test::update_lock::in_pkg,test_failed,974.397,1.826,2026-11-05T04:46:15Z,50249559.0,panic,"thread 'ops::cargo::test::update_lock::in_pkg' (15239) panicked at src/ops/cargo.rs:593:62: called `Result::unwrap()` on an `Err` value: FixtureError { kind: Walk, cause: Some(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }) }"
+experimental-bsan,cargo-release-1.1.6,ops::cargo::test::update_lock::in_pure_workspace,test_failed,974.397,1.816,2026-11-05T04:46:16Z,50249559.0,panic,"thread 'ops::cargo::test::update_lock::in_pure_workspace' (15392) panicked at src/ops/cargo.rs:613:63: called `Result::unwrap()` on an `Err` value: FixtureError { kind: Walk, cause: Some(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }) }"
+experimental-bsan,cargo-release-1.1.6,ops::version::test::increment::alpha,success,974.397,3.142,2026-11-05T04:46:20Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::increment::beta,success,974.397,3.138,2026-11-05T04:46:23Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::increment::metadata,success,974.397,3.144,2026-11-05T04:46:26Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::increment::rc,success,974.397,3.139,2026-11-05T04:46:29Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::upgrade_requirement::caret_major,success,974.397,3.161,2026-11-05T04:46:32Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::upgrade_requirement::caret_minor,success,974.397,3.185,2026-11-05T04:46:35Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::upgrade_requirement::caret_patch,success,974.397,3.198,2026-11-05T04:46:39Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::upgrade_requirement::equal_major,success,974.397,3.126,2026-11-05T04:46:42Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::upgrade_requirement::equal_minor,success,974.397,3.165,2026-11-05T04:46:45Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::upgrade_requirement::equal_patch,success,974.397,3.149,2026-11-05T04:46:48Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::upgrade_requirement::tilde_major,success,974.397,3.140,2026-11-05T04:46:51Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::upgrade_requirement::tilde_minor,success,974.397,3.157,2026-11-05T04:46:54Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::upgrade_requirement::tilde_patch,success,974.397,3.168,2026-11-05T04:46:57Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::upgrade_requirement::wildcard_major,success,974.397,3.123,2026-11-05T04:47:01Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::upgrade_requirement::wildcard_minor,success,974.397,3.127,2026-11-05T04:47:04Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,ops::version::test::upgrade_requirement::wildcard_patch,success,974.397,3.148,2026-11-05T04:47:07Z,50249559.0,,
+experimental-bsan,cargo-release-1.1.6,verify_app,success,974.397,13.712,2026-11-05T04:47:21Z,50249559.0,,

@@ -1,0 +1,14 @@
+experimental-bsan,rocketmq-client-v4-0.4.2,connection::test::client_ip_test,success,182.345,1.643,2026-11-05T05:32:22Z,50253157.0,,
+experimental-bsan,rocketmq-client-v4-0.4.2,connection::test::connection_test,test_failed,182.345,132.840,2026-11-05T05:34:34Z,50253157.0,panic,"thread 'connection::test::connection_test' (33379) panicked at src/connection.rs:28:13: connection to mq failed, name_server_addr:192.168.3.49:9876, Err(Os { code: 110, kind: TimedOut, message: ""Connection timed out"" })"
+experimental-bsan,rocketmq-client-v4-0.4.2,connection::test::get_broker_conn,test_failed,182.345,131.049,2026-11-05T05:36:45Z,50253157.0,panic,"thread 'connection::test::get_broker_conn' (42161) panicked at src/connection.rs:28:13: connection to mq failed, name_server_addr:192.168.3.49:9876, Err(Os { code: 110, kind: TimedOut, message: ""Connection timed out"" })"
+experimental-bsan,rocketmq-client-v4-0.4.2,consumer::pull_consumer_v2::test::broadcast_consumer_test,success,182.345,7.854,2026-11-05T05:36:53Z,50253157.0,,
+experimental-bsan,rocketmq-client-v4-0.4.2,consumer::pull_consumer_v2::test::pull_message_test,timeout,182.345,150.016,2026-11-05T05:39:23Z,50253157.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rocketmq-client-v4-0.4.2,producer::send_test::send_message_test,test_failed,182.345,133.185,2026-11-05T05:41:37Z,50253157.0,panic,"thread 'producer::send_test::send_message_test' (101374) panicked at src/connection.rs:28:13: connection to mq failed, name_server_addr:192.168.3.49:9876, Err(Os { code: 110, kind: TimedOut, message: ""Connection timed out"" })"
+experimental-bsan,rocketmq-client-v4-0.4.2,producer::send_test::to_string_test,success,182.345,1.748,2026-11-05T05:41:38Z,50253157.0,,
+experimental-bsan,rocketmq-client-v4-0.4.2,protocols::body::get_consumer_status_body::test::test_map_to_json,success,182.345,1.579,2026-11-05T05:41:40Z,50253157.0,,
+experimental-bsan,rocketmq-client-v4-0.4.2,protocols::body::message_body::test::hex_bytes_convert_test,success,182.345,1.543,2026-11-05T05:41:42Z,50253157.0,,
+experimental-bsan,rocketmq-client-v4-0.4.2,protocols::header::get_route_info_request_header::test::test_serialize,success,182.345,1.582,2026-11-05T05:41:43Z,50253157.0,,
+experimental-bsan,rocketmq-client-v4-0.4.2,protocols::header::query_consumer_offset_response_header::test::i64_test,success,182.345,1.534,2026-11-05T05:41:45Z,50253157.0,,
+experimental-bsan,rocketmq-client-v4-0.4.2,protocols::mq_command::test::auto_incr_test,success,182.345,1.553,2026-11-05T05:41:46Z,50253157.0,,
+experimental-bsan,rocketmq-client-v4-0.4.2,protocols::test::calc_ascii,success,182.345,1.735,2026-11-05T05:41:48Z,50253157.0,,
+experimental-bsan,rocketmq-client-v4-0.4.2,protocols::test::calc_ascii_1,success,182.345,2.264,2026-11-05T05:41:50Z,50253157.0,,

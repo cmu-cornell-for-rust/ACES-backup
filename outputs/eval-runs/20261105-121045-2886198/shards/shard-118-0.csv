@@ -1,0 +1,9 @@
+experimental-bsan,zcash_client_sqlite-0.22.0,chain::tests::reorg_to_checkpoint_orchard,success,909.879,1644.307,2026-11-05T17:56:44Z,50276088.0,,
+experimental-bsan,zcash_client_sqlite-0.22.0,chain::tests::rewind_after_non_contiguous_scan_orchard,timeout,909.879,1800.020,2026-11-05T18:26:44Z,50276088.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zcash_client_sqlite-0.22.0,chain::tests::rewind_to_chain_state_deep_orchard,timeout,909.879,1800.018,2026-11-05T18:56:44Z,50276088.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zcash_client_sqlite-0.22.0,chain::tests::rewind_to_chain_state_shallow_orchard,timeout,909.879,1800.027,2026-11-05T19:26:44Z,50276088.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zcash_client_sqlite-0.22.0,chain::tests::truncate_to_chain_state_above_scanned_orchard,timeout,909.879,1800.022,2026-11-05T19:56:44Z,50276088.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zcash_client_sqlite-0.22.0,chain::tests::truncate_to_chain_state_below_birthday_orchard,timeout,909.879,1800.034,2026-11-05T20:26:44Z,50276088.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zcash_client_sqlite-0.22.0,chain::tests::truncate_to_chain_state_commitment_tree_error_sapling,skipped,909.879,,2026-11-05T20:26:44Z,50276088.0,timeout,"skipped: 5 consecutive timeouts in module chain"
+experimental-bsan,zcash_client_sqlite-0.22.0,chain::tests::truncate_to_chain_state_orchard,skipped,909.879,,2026-11-05T20:26:44Z,50276088.0,timeout,"skipped: 5 consecutive timeouts in module chain"
+experimental-bsan,zcash_client_sqlite-0.22.0,pool_migration::orchard_ironwood::tests::update_transaction_advances_state,timeout,909.879,1800.018,2026-11-05T20:56:44Z,50276088.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"

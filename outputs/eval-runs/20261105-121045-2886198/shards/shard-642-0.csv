@@ -1,0 +1,1 @@
+experimental-bsan,stgit-2.7.0,ext::time::tests::parse_time_relative_uses_local_offset,test_failed,381.621,14.418,2026-11-05T17:53:56Z,50276760.0,panic,"thread 'ext::time::tests::parse_time_relative_uses_local_offset' (67767) panicked at src/ext/time.rs:170:13: assertion `left == right` failed: `1 month ago` did not use the same UTC offset as `now`"

@@ -1,0 +1,3 @@
+experimental-bsan,fuel-core-upgradable-executor-0.40.0,executor::test::native::can_validate_block,success,332.712,2.142,2026-11-05T08:24:56Z,50262530.0,,
+experimental-bsan,fuel-core-upgradable-executor-0.40.0,executor::test::native::validation_fails_because_of_versions_mismatch,success,332.712,1.831,2026-11-05T08:24:58Z,50262530.0,,
+experimental-bsan,fuel-core-upgradable-executor-0.40.0,executor::test::version_check,test_failed,332.712,1.799,2026-11-05T08:25:00Z,50262530.0,panic,"thread 'executor::test::version_check' (64262) panicked at src/executor.rs:887:9: assertion `left == right` failed: The version of the executor should monotonically grow without gaps"

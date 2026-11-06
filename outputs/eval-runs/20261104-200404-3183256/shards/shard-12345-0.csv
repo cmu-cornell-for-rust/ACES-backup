@@ -1,0 +1,11 @@
+experimental-bsan,topological-sort-0.3.1,tests::add_dependency_returns_true_if_new_dependency_link_created,success,65.252,1.604,2026-11-05T06:04:48Z,50255151.0,,
+experimental-bsan,topological-sort-0.3.1,tests::add_link_can_create_a_cycle_that_blocks_remaining_elements,success,65.252,1.599,2026-11-05T06:04:50Z,50255151.0,,
+experimental-bsan,topological-sort-0.3.1,tests::add_link_returns_true_if_new_dependency_link_created,success,65.252,1.593,2026-11-05T06:04:52Z,50255151.0,,
+experimental-bsan,topological-sort-0.3.1,tests::items_and_into_items_iterate_all_remaining_items,success,65.252,1.604,2026-11-05T06:04:53Z,50255151.0,,
+experimental-bsan,topological-sort-0.3.1,tests::pop_batch_returns_all_currently_ready_items,success,65.252,1.618,2026-11-05T06:04:55Z,50255151.0,,
+experimental-bsan,topological-sort-0.3.1,tests::pop_iter_iterates_all_items_in_topological_order,success,65.252,1.612,2026-11-05T06:04:56Z,50255151.0,,
+experimental-bsan,topological-sort-0.3.1,tests::pop_iter_stops_on_a_cycle,success,65.252,1.597,2026-11-05T06:04:58Z,50255151.0,,
+experimental-bsan,topological-sort-0.3.1,tests::pop_returns_none_when_remaining_elements_are_cyclic,success,65.252,1.604,2026-11-05T06:05:00Z,50255151.0,,
+experimental-bsan,topological-sort-0.3.1,tests::quickcheck_topological_sort_invariants,timeout,65.252,150.021,2026-11-05T06:07:30Z,50255151.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,topological-sort-0.3.1,tests::remove_removes_item_only_if_exists_and_ready,success,65.252,1.583,2026-11-05T06:07:31Z,50255151.0,,
+experimental-bsan,topological-sort-0.3.1,tests::self_dependency_blocks_the_remaining_element,success,65.252,1.576,2026-11-05T06:07:33Z,50255151.0,,

@@ -1,0 +1,32 @@
+experimental-bsan,nanopub-0.2.0,check_nanopub_test_blank,success,604.064,42.056,2026-11-05T03:59:29Z,50247525.0,,
+experimental-bsan,nanopub-0.2.0,check_valid_unsigned,success,604.064,17.783,2026-11-05T03:59:47Z,50247525.0,,
+experimental-bsan,nanopub-0.2.0,default_profile_file,success,604.064,4.455,2026-11-05T03:59:51Z,50247525.0,,
+experimental-bsan,nanopub-0.2.0,fetch_nanopub,test_failed,604.064,14.183,2026-11-05T04:00:05Z,50247525.0,other,"error: test failed, to rerun pass `--test nanopub_test`"
+experimental-bsan,nanopub-0.2.0,load_profile_yml,timeout,604.064,150.022,2026-11-05T04:02:35Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,profile_fail,success,604.064,4.476,2026-11-05T04:02:40Z,50247525.0,,
+experimental-bsan,nanopub-0.2.0,publish_already_signed_no_profile,success,604.064,40.349,2026-11-05T04:03:20Z,50247525.0,,
+experimental-bsan,nanopub-0.2.0,publish_already_signed_with_profile,timeout,604.064,150.021,2026-11-05T04:05:50Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,publish_fail,timeout,604.064,150.023,2026-11-05T04:08:20Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,publish_from_scratch,timeout,604.064,150.022,2026-11-05T04:10:50Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,publish_jsonld,test_failed,604.064,8.002,2026-11-05T04:10:58Z,50247525.0,crash,"test publish_jsonld ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nanopub-0.2.0,publish_nanopub_simple_rsa,timeout,604.064,150.021,2026-11-05T04:13:28Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,publish_np_intro,timeout,604.064,150.021,2026-11-05T04:15:59Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,publish_proteinatlas,timeout,604.064,150.023,2026-11-05T04:18:29Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,publish_unsigned_no_profile_error,success,604.064,18.370,2026-11-05T04:18:47Z,50247525.0,,
+experimental-bsan,nanopub-0.2.0,sign_nanopub_blank,timeout,604.064,150.022,2026-11-05T04:21:17Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,test_gen_keys,timeout,604.064,150.018,2026-11-05T04:23:47Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,test_get_np_server,success,604.064,4.439,2026-11-05T04:23:51Z,50247525.0,,
+experimental-bsan,nanopub-0.2.0,test_normalize,success,604.064,4.562,2026-11-05T04:23:56Z,50247525.0,,
+experimental-bsan,nanopub-0.2.0,test_np_info,test_failed,604.064,4.614,2026-11-05T04:24:01Z,50247525.0,crash,"test test_np_info ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nanopub-0.2.0,testsuite_check_invalid_plain,success,604.064,91.399,2026-11-05T04:25:32Z,50247525.0,,
+experimental-bsan,nanopub-0.2.0,testsuite_check_invalid_signed,success,604.064,54.900,2026-11-05T04:26:27Z,50247525.0,,
+experimental-bsan,nanopub-0.2.0,testsuite_check_invalid_trusty,success,604.064,20.463,2026-11-05T04:26:48Z,50247525.0,,
+experimental-bsan,nanopub-0.2.0,testsuite_check_valid_signed,timeout,604.064,150.024,2026-11-05T04:29:18Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,testsuite_check_valid_trusty,timeout,604.064,150.023,2026-11-05T04:31:48Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,testsuite_publish_invalid_plain,timeout,604.064,150.021,2026-11-05T04:34:18Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,testsuite_publish_transform_signed_simple1,timeout,604.064,150.021,2026-11-05T04:36:48Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,testsuite_publish_transform_trusty_aida,timeout,604.064,150.021,2026-11-05T04:39:18Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,testsuite_publish_transform_trusty_simple1,timeout,604.064,150.020,2026-11-05T04:41:48Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,testsuite_publish_valid_plain,timeout,604.064,150.023,2026-11-05T04:44:18Z,50247525.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nanopub-0.2.0,unit_publish_np_fail,success,604.064,9.154,2026-11-05T04:44:27Z,50247525.0,,
+experimental-bsan,nanopub-0.2.0,wrong_rdf_file,success,604.064,5.634,2026-11-05T04:44:33Z,50247525.0,,

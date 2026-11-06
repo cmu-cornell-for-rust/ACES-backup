@@ -1,0 +1,36 @@
+experimental-bsan,infinitree-0.11.0,backends::directory::test::write_read_delete,test_failed,308.265,1.759,2026-11-05T03:39:41Z,50246616.0,panic,"thread 'backends::directory::test::write_read_delete' (3976) panicked at src/backends/directory.rs:229:50: called `Result::unwrap()` on an `Err` value: Io { source: Os { code: 30, kind: ReadOnlyFilesystem, message: ""Read-only file system"" } }"
+experimental-bsan,infinitree-0.11.0,chunks::tests::encode_and_decode_raw_pointer,success,308.265,1.638,2026-11-05T03:39:43Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,crypto::cryptobox::test::encrypt_decrypt,timeout,308.265,150.014,2026-11-05T03:42:13Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,crypto::cryptobox::test::keysource_encrypt_only,timeout,308.265,150.014,2026-11-05T03:44:43Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,crypto::cryptobox::test::keysource_with_secret_key,timeout,308.265,150.014,2026-11-05T03:47:13Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,crypto::cryptobox::test::test_chunk_encryption,success,308.265,1.641,2026-11-05T03:47:15Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,crypto::cryptobox::test::without_secret_key_decrypt_panics,success,308.265,1.655,2026-11-05T03:47:16Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,crypto::scheme::test::change_key,timeout,308.265,150.015,2026-11-05T03:49:46Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,crypto::symmetric::test::symmetric_decrypt_header,success,308.265,1.649,2026-11-05T03:49:48Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,crypto::symmetric::test::symmetric_encrypt_header,success,308.265,1.666,2026-11-05T03:49:50Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,crypto::symmetric::test::test_chunk_encryption,success,308.265,1.673,2026-11-05T03:49:52Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,crypto::symmetric::test::userpass_encrypt_decrypt,timeout,308.265,150.014,2026-11-05T03:52:22Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,fields::list::test::strategy_local_field,timeout,308.265,150.015,2026-11-05T03:54:52Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,fields::list::test::strategy_sparse_field,timeout,308.265,150.014,2026-11-05T03:57:22Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,fields::map::test::duplicate_insert_is_noop,success,308.265,1.637,2026-11-05T03:57:23Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,fields::map::test::store_then_confirm_then_remove,success,308.265,1.648,2026-11-05T03:57:25Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,fields::map::test::strategy_local_field,timeout,308.265,150.013,2026-11-05T03:59:55Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,fields::map::test::strategy_sparse_field,timeout,308.265,150.013,2026-11-05T04:02:25Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,fields::map::test::updating_empty_is_noop,success,308.265,1.627,2026-11-05T04:02:27Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,fields::serialized::test::strategy_local_field,timeout,308.265,150.013,2026-11-05T04:04:57Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,fields::versioned::list::test::strategy_local_field,timeout,308.265,150.014,2026-11-05T04:07:27Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,fields::versioned::list::test::strategy_sparse_field,timeout,308.265,150.014,2026-11-05T04:09:57Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,fields::versioned::map::test::bare_index_can_be_restored,timeout,308.265,150.013,2026-11-05T04:12:27Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,fields::versioned::map::test::commit_then_confirm_then_lengths,success,308.265,1.651,2026-11-05T04:12:29Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,fields::versioned::map::test::duplicate_insert_is_noop,success,308.265,1.639,2026-11-05T04:12:30Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,fields::versioned::map::test::store_then_confirm_then_remove,success,308.265,1.642,2026-11-05T04:12:32Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,fields::versioned::map::test::strategy_local_field,timeout,308.265,150.014,2026-11-05T04:15:02Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,fields::versioned::map::test::strategy_sparse_field,timeout,308.265,150.014,2026-11-05T04:17:32Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,fields::versioned::map::test::updating_empty_is_noop,success,308.265,1.629,2026-11-05T04:17:34Z,50246616.0,,
+experimental-bsan,infinitree-0.11.0,index::test::can_deserialize_fields,timeout,308.265,150.014,2026-11-05T04:20:04Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,object::bufferedstream::tests::large_buffer_write_then_read,timeout,308.265,150.014,2026-11-05T04:22:34Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,tree::tests::commit_filter_resolution_range,timeout,308.265,150.014,2026-11-05T04:25:04Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,tree::tests::commit_filter_resolution_single,timeout,308.265,150.014,2026-11-05T04:27:34Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,tree::tests::commit_filter_resolution_upto,timeout,308.265,150.014,2026-11-05T04:30:04Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,tree::tests::versioned_commits,timeout,308.265,150.013,2026-11-05T04:32:34Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,infinitree-0.11.0,tree::tests::versioned_commits_iter,timeout,308.265,150.014,2026-11-05T04:35:04Z,50246616.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

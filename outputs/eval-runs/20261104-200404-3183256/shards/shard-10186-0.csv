@@ -1,0 +1,16 @@
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,exporter::utils::tests::test_normalize_label_key,success,642.834,1.941,2026-11-05T05:21:55Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,gcp_authorizer::tests::test_normalize_label_key,success,642.834,100.996,2026-11-05T05:23:36Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_counter_float,success,642.834,17.487,2026-11-05T05:23:53Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_counter_int,success,642.834,17.908,2026-11-05T05:24:11Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_histogram_default_buckets,timeout,642.834,150.019,2026-11-05T05:26:41Z,50252176.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_histogram_single_bucket,test_failed,642.834,138.235,2026-11-05T05:28:59Z,50252176.0,panic,"thread 'tests::test_cloud_monitoring::tests::test_histogram_single_bucket' (42993) panicked at src/tests/test_cloud_monitoring.rs:488:9: assertion failed: `(left == right)`"
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_invalid_label_keys,success,642.834,13.996,2026-11-05T05:29:13Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_observable_counter_float,success,642.834,19.804,2026-11-05T05:29:33Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_observable_counter_int,success,642.834,19.879,2026-11-05T05:29:53Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_observable_gauge_float,success,642.834,20.019,2026-11-05T05:30:13Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_observable_gauge_int,success,642.834,19.736,2026-11-05T05:30:33Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_observable_up_down_counter_float,success,642.834,19.471,2026-11-05T05:30:52Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_observable_up_down_counter_int,success,642.834,19.573,2026-11-05T05:31:12Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_up_down_counter_float,success,642.834,20.460,2026-11-05T05:31:33Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_up_down_counter_int,success,642.834,20.287,2026-11-05T05:31:53Z,50252176.0,,
+experimental-bsan,opentelemetry_gcloud_monitoring_exporter-0.11.11,tests::test_cloud_monitoring::tests::test_with_resource,success,642.834,18.050,2026-11-05T05:32:11Z,50252176.0,,

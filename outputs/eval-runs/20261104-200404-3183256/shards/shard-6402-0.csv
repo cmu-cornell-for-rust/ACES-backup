@@ -1,0 +1,35 @@
+experimental-bsan,svm-rs-0.5.30,install::regression::nixos_cache_reuse_respects_patch_version_boundaries,success,372.000,5.669,2026-11-05T03:46:57Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::regression::orphaned_lock_is_not_current,success,372.000,4.413,2026-11-05T03:47:02Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::regression::permission_repair_does_not_trust_corrupt_contents,success,372.000,4.621,2026-11-05T03:47:06Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::regression::persistent_writer_is_not_published,success,372.000,4.848,2026-11-05T03:47:11Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::regression::prepared_binary_has_no_writable_handle,success,372.000,4.487,2026-11-05T03:47:16Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::regression::publication_with_forking_thread,success,372.000,9.783,2026-11-05T03:47:25Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::regression::publication_with_independent_readers,success,372.000,24.093,2026-11-05T03:47:50Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::regression::queued_lock_waiter_excludes_new_arrivals,success,372.000,4.395,2026-11-05T03:47:54Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::regression::repairs_permissions_while_binary_is_running,success,372.000,4.614,2026-11-05T03:47:59Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::regression::repairs_permissions_without_replacing_binary,success,372.000,5.012,2026-11-05T03:48:04Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::tests::can_install_parallel_async,timeout,372.000,150.023,2026-11-05T03:50:34Z,50246957.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svm-rs-0.5.30,install::tests::can_install_while_solc_is_running,timeout,372.000,150.021,2026-11-05T03:53:04Z,50246957.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svm-rs-0.5.30,install::tests::install_replaces_corrupt_binary,success,372.000,4.519,2026-11-05T03:53:08Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::tests::install_reuses_existing_binary_while_running,success,372.000,4.608,2026-11-05T03:53:13Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::tests::lock_file_is_not_removed,success,372.000,4.441,2026-11-05T03:53:17Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::tests::parse_install,success,372.000,4.510,2026-11-05T03:53:22Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,install::tests::test_install,timeout,372.000,150.021,2026-11-05T03:55:52Z,50246957.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svm-rs-0.5.30,install::tests::test_version,timeout,372.000,150.021,2026-11-05T03:58:22Z,50246957.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svm-rs-0.5.30,platform::tests::get_platform,success,372.000,4.413,2026-11-05T03:58:26Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,releases::tests::releases_roundtrip,timeout,372.000,150.020,2026-11-05T04:00:56Z,50246957.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svm-rs-0.5.30,releases::tests::test_all_releases_linux_aarch64,timeout,372.000,150.019,2026-11-05T04:03:26Z,50246957.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svm-rs-0.5.30,releases::tests::test_all_releases_linux_amd64,timeout,372.000,150.021,2026-11-05T04:05:56Z,50246957.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svm-rs-0.5.30,releases::tests::test_all_releases_macos_aarch64,timeout,372.000,150.020,2026-11-05T04:08:27Z,50246957.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svm-rs-0.5.30,releases::tests::test_all_releases_macos_amd64,timeout,372.000,150.022,2026-11-05T04:10:57Z,50246957.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svm-rs-0.5.30,releases::tests::test_all_releases_windows_aarch64,timeout,372.000,150.021,2026-11-05T04:13:27Z,50246957.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svm-rs-0.5.30,releases::tests::test_artifact_url,success,372.000,4.500,2026-11-05T04:13:31Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,releases::tests::test_macos_aarch64,timeout,372.000,150.020,2026-11-05T04:16:01Z,50246957.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svm-rs-0.5.30,releases::tests::test_old_releases_deser,success,372.000,4.527,2026-11-05T04:16:06Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,tests::busy_retries_are_bounded,success,372.000,4.717,2026-11-05T04:16:10Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,tests::compiler_failure_is_not_retried,success,372.000,4.397,2026-11-05T04:16:15Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,tests::exec_preserves_arguments_output_and_exit_status,success,372.000,6.333,2026-11-05T04:16:21Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,tests::installed_versions_ignores_auxiliary_entries,success,372.000,4.544,2026-11-05T04:16:26Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,tests::recovers_after_inherited_write_handle_is_closed,success,372.000,4.425,2026-11-05T04:16:30Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,tests::retries_only_busy_launches,success,372.000,4.423,2026-11-05T04:16:35Z,50246957.0,,
+experimental-bsan,svm-rs-0.5.30,tests::verify_cli,success,372.000,4.843,2026-11-05T04:16:39Z,50246957.0,,

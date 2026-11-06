@@ -1,0 +1,32 @@
+experimental-bsan,measureme-12.0.3,file_header::tests::empty_file,success,11.256,1.578,2026-11-05T03:48:53Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,file_header::tests::invalid_magic,success,11.256,1.590,2026-11-05T03:48:54Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,file_header::tests::other_version,success,11.256,1.589,2026-11-05T03:48:56Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,file_header::tests::roundtrip,success,11.256,1.586,2026-11-05T03:48:58Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,raw_event::tests::instant_count_decoding,success,11.256,1.574,2026-11-05T03:48:59Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,raw_event::tests::integer_decoding,success,11.256,1.577,2026-11-05T03:49:01Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,raw_event::tests::interval_count_decoding,success,11.256,1.575,2026-11-05T03:49:02Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,raw_event::tests::invalid_end_count,success,11.256,1.593,2026-11-05T03:49:04Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,raw_event::tests::invalid_end_count2,success,11.256,1.592,2026-11-05T03:49:06Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,raw_event::tests::invalid_instant_count,success,11.256,1.589,2026-11-05T03:49:07Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,raw_event::tests::invalid_start_count,success,11.256,1.591,2026-11-05T03:49:09Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,raw_event::tests::is_instant,success,11.256,1.576,2026-11-05T03:49:10Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,raw_event::tests::is_integer,success,11.256,1.576,2026-11-05T03:49:12Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,raw_event::tests::raw_event_has_expected_size,success,11.256,1.579,2026-11-05T03:49:13Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,raw_event::tests::start_equal_to_end_count,success,11.256,1.582,2026-11-05T03:49:15Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,raw_event::tests::start_greater_than_end_count,success,11.256,1.586,2026-11-05T03:49:17Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,serialization::tests::exactly_max_page_size::write_atomic,timeout,11.256,150.016,2026-11-05T03:51:47Z,50247519.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,measureme-12.0.3,serialization::tests::exactly_max_page_size::write_bytes_atomic,success,11.256,33.242,2026-11-05T03:52:20Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,serialization::tests::exactly_min_page_size::write_atomic,timeout,11.256,150.014,2026-11-05T03:54:50Z,50247519.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,measureme-12.0.3,serialization::tests::exactly_min_page_size::write_bytes_atomic,success,11.256,17.750,2026-11-05T03:55:08Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,serialization::tests::huge_data::write_atomic,timeout,11.256,150.017,2026-11-05T03:57:38Z,50247519.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,measureme-12.0.3,serialization::tests::huge_data::write_bytes_atomic,timeout,11.256,150.017,2026-11-05T04:00:08Z,50247519.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,measureme-12.0.3,serialization::tests::max_page_size_minus_one::write_atomic,timeout,11.256,150.018,2026-11-05T04:02:38Z,50247519.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,measureme-12.0.3,serialization::tests::max_page_size_minus_one::write_bytes_atomic,success,11.256,33.000,2026-11-05T04:03:11Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,serialization::tests::max_page_size_plus_one::write_atomic,success,11.256,32.904,2026-11-05T04:03:44Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,serialization::tests::max_page_size_plus_one::write_bytes_atomic,success,11.256,32.975,2026-11-05T04:04:17Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,serialization::tests::min_page_size_minus_one::write_atomic,timeout,11.256,150.015,2026-11-05T04:06:47Z,50247519.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,measureme-12.0.3,serialization::tests::min_page_size_minus_one::write_bytes_atomic,success,11.256,17.446,2026-11-05T04:07:04Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,serialization::tests::min_page_size_plus_one::write_atomic,timeout,11.256,150.013,2026-11-05T04:09:34Z,50247519.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,measureme-12.0.3,serialization::tests::min_page_size_plus_one::write_bytes_atomic,success,11.256,17.493,2026-11-05T04:09:52Z,50247519.0,,
+experimental-bsan,measureme-12.0.3,serialization::tests::small_data::write_atomic,timeout,11.256,150.014,2026-11-05T04:12:22Z,50247519.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,measureme-12.0.3,serialization::tests::small_data::write_bytes_atomic,timeout,11.256,150.015,2026-11-05T04:14:52Z,50247519.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

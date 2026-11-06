@@ -1,0 +1,9 @@
+experimental-bsan,apalis-cron-1.0.0,schedule::builder::tests::basic_worker,success,558.262,49.840,2026-11-05T06:34:10Z,50256114.0,,
+experimental-bsan,apalis-cron-1.0.0,schedule::builder::tests::test_schedule_examples,success,558.262,1.789,2026-11-05T06:34:11Z,50256114.0,,
+experimental-bsan,apalis-cron-1.0.0,schedule::cron::tests::basic_worker,success,558.262,8.176,2026-11-05T06:34:20Z,50256114.0,,
+experimental-bsan,apalis-cron-1.0.0,schedule::english::tests::basic_worker,success,558.262,65.987,2026-11-05T06:35:26Z,50256114.0,,
+experimental-bsan,apalis-cron-1.0.0,schedule::jiff::tests::basic_worker,test_failed,558.262,16.401,2026-11-05T06:35:42Z,50256114.0,panic,"thread 'schedule::jiff::tests::basic_worker' (64963) panicked at src/schedule/jiff.rs:61:28: called `Result::unwrap()` on an `Err` value: BackendError(OutOfRange { duration: 13.389898986s, tick: 1793860529 })"
+experimental-bsan,apalis-cron-1.0.0,schedule::tests::eager_worker,success,558.262,7.283,2026-11-05T06:35:49Z,50256114.0,,
+experimental-bsan,apalis-cron-1.0.0,tests::basic_worker,success,558.262,4.258,2026-11-05T06:35:54Z,50256114.0,,
+experimental-bsan,apalis-cron-1.0.0,tests::load_shedding_worker,test_failed,558.262,3.177,2026-11-05T06:35:57Z,50256114.0,panic,"thread 'tests::load_shedding_worker' (66863) panicked at src/lib.rs:108:28: called `Result::unwrap()` on an `Err` value: BackendError(OutOfRange { duration: 164.804014ms, tick: 1793860557 })"
+experimental-bsan,apalis-cron-1.0.0,tests::piped_worker,success,558.262,9.164,2026-11-05T06:36:06Z,50256114.0,,

@@ -1,0 +1,23 @@
+experimental-bsan,miden-tx-0.18.0,auth::tx_authenticator::test::serialize_auth_key,timeout,1946.107,150.021,2026-11-05T05:07:17Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,auth::tx_authenticator::test::serialize_deserialize_signing_inputs_arbitrary,success,1946.107,1.783,2026-11-05T05:07:19Z,50249667.0,,
+experimental-bsan,miden-tx-0.18.0,auth::tx_authenticator::test::serialize_deserialize_signing_inputs_blind,success,1946.107,1.775,2026-11-05T05:07:21Z,50249667.0,,
+experimental-bsan,miden-tx-0.18.0,pricer::tests::accumulated_price_above_max_asset_amount_is_rejected,timeout,1946.107,150.035,2026-11-05T05:09:51Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::basic_constant_fee_policy_manager_prices_every_root_in_the_native_fee_asset,timeout,1946.107,150.036,2026-11-05T05:12:21Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::basic_constant_fee_policy_rejects_unknown_roots,timeout,1946.107,150.036,2026-11-05T05:14:51Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::claim_price_includes_the_mint_and_p2id_legs,timeout,1946.107,150.026,2026-11-05T05:17:21Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::default_safety_margin_adds_one_verification_cycle,success,1946.107,1.801,2026-11-05T05:17:23Z,50249667.0,,
+experimental-bsan,miden-tx-0.18.0,pricer::tests::fee_exceeding_max_asset_amount_is_rejected,success,1946.107,1.791,2026-11-05T05:17:25Z,50249667.0,,
+experimental-bsan,miden-tx-0.18.0,pricer::tests::fee_implements_the_kernel_formula,success,1946.107,1.788,2026-11-05T05:17:27Z,50249667.0,,
+experimental-bsan,miden-tx-0.18.0,pricer::tests::individual_note_costs_can_be_supplied_one_at_a_time,timeout,1946.107,150.023,2026-11-05T05:19:57Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::out_of_range_cycle_costs_cannot_be_priced,timeout,1946.107,150.037,2026-11-05T05:22:27Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::overflowing_accumulated_price_is_rejected,timeout,1946.107,150.038,2026-11-05T05:24:57Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::price_includes_created_notes,timeout,1946.107,150.025,2026-11-05T05:27:27Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::self_recursive_notes_are_priced_at_one_level_of_nesting,timeout,1946.107,150.037,2026-11-05T05:29:57Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::sponsorship_defaults_to_zero_but_allows_a_cost_override,timeout,1946.107,150.037,2026-11-05T05:32:27Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::supplied_note_costs_extend_the_built_in_tables,timeout,1946.107,150.036,2026-11-05T05:34:57Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::supplied_note_costs_shadow_the_built_in_tables,timeout,1946.107,150.024,2026-11-05T05:37:27Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::swap_price_includes_the_p2id_payback_leg,timeout,1946.107,150.023,2026-11-05T05:39:57Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,pricer::tests::unknown_roots_cannot_be_priced,timeout,1946.107,150.024,2026-11-05T05:42:27Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,prover::mast_store::tests::fresh_stores_have_same_baseline_size,timeout,1946.107,150.036,2026-11-05T05:44:57Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,prover::mast_store::tests::insert_does_not_affect_other_stores,timeout,1946.107,150.035,2026-11-05T05:47:27Z,50249667.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,miden-tx-0.18.0,prover::tests::default_execution_options_are_used_unless_replaced,success,1946.107,1.797,2026-11-05T05:47:29Z,50249667.0,,

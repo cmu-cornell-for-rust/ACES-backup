@@ -1,0 +1,5 @@
+experimental-bsan,ast-grep-dynamic-0.51.0,custom_lang::test::test_custom_lang,success,154.904,1.955,2026-11-05T07:23:20Z,50259557.0,,
+experimental-bsan,ast-grep-dynamic-0.51.0,custom_lang::test::test_custom_lang_platform,success,154.904,2.061,2026-11-05T07:23:22Z,50259557.0,,
+experimental-bsan,ast-grep-dynamic-0.51.0,custom_lang::test::test_unsupport_platform,success,154.904,1.943,2026-11-05T07:23:24Z,50259557.0,,
+experimental-bsan,ast-grep-dynamic-0.51.0,test::test_load_parser,test_failed,154.904,1.624,2026-11-05T07:23:26Z,50259557.0,panic,"thread 'test::test_load_parser' (81188) panicked at src/lib.rs:322:90: called `Result::unwrap()` on an `Err` value: GetLibPath(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,ast-grep-dynamic-0.51.0,test::test_register_lang,test_failed,154.904,1.623,2026-11-05T07:23:27Z,50259557.0,panic,"thread 'test::test_register_lang' (81305) panicked at src/lib.rs:346:47: should succeed: GetLibPath(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"

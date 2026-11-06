@@ -1,0 +1,6 @@
+experimental-bsan,fast-counter-1.0.0,counter::tests::basic_test,success,149.675,1.689,2026-11-05T07:09:09Z,50258721.0,,
+experimental-bsan,fast-counter-1.0.0,counter::tests::debug_works_as_expected,timeout,149.675,150.020,2026-11-05T07:11:39Z,50258721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fast-counter-1.0.0,counter::tests::increment_multiple_times,success,149.675,1.707,2026-11-05T07:11:41Z,50258721.0,,
+experimental-bsan,fast-counter-1.0.0,counter::tests::multple_threads_incrementing_multiple_times_concurrently,timeout,149.675,150.016,2026-11-05T07:14:11Z,50258721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fast-counter-1.0.0,counter::tests::two_threads_incrementing_concurrently,success,149.675,1.665,2026-11-05T07:14:12Z,50258721.0,,
+experimental-bsan,fast-counter-1.0.0,counter::tests::two_threads_incrementing_multiple_times_concurrently,success,149.675,56.556,2026-11-05T07:15:09Z,50258721.0,,

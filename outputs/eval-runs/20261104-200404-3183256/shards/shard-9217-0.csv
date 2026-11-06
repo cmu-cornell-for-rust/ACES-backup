@@ -1,0 +1,19 @@
+experimental-bsan,lz4-1.28.0,block::test::decompress_truncate_test,success,21.001,1.807,2026-11-05T04:51:02Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,block::test::test_compress_to_buffer,success,21.001,1.787,2026-11-05T04:51:04Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,block::test::test_compression_with_prefix,success,21.001,14.705,2026-11-05T04:51:19Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,block::test::test_compression_without_prefix,success,21.001,14.855,2026-11-05T04:51:34Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,block::test::test_decompression_with_prefix,success,21.001,1.987,2026-11-05T04:51:36Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,block::test::test_empty_compress,success,21.001,1.816,2026-11-05T04:51:37Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,decoder::test::issue_45,success,21.001,1.827,2026-11-05T04:51:39Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,decoder::test::test_decoder_empty,success,21.001,1.793,2026-11-05T04:51:41Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,decoder::test::test_decoder_random,timeout,21.001,150.011,2026-11-05T04:54:11Z,50250976.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lz4-1.28.0,decoder::test::test_decoder_send,success,21.001,1.787,2026-11-05T04:54:13Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,decoder::test::test_decoder_smallest,success,21.001,1.808,2026-11-05T04:54:15Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,decoder::test::test_decoder_smoke,success,21.001,1.815,2026-11-05T04:54:16Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,decoder::test::test_retry_read,timeout,21.001,150.012,2026-11-05T04:56:46Z,50250976.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lz4-1.28.0,encoder::test::test_encoder_content_size,success,21.001,141.429,2026-11-05T04:59:08Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,encoder::test::test_encoder_random,success,21.001,144.936,2026-11-05T05:01:33Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,encoder::test::test_encoder_send,success,21.001,1.823,2026-11-05T05:01:35Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,encoder::test::test_encoder_smoke,success,21.001,1.810,2026-11-05T05:01:37Z,50250976.0,,
+experimental-bsan,lz4-1.28.0,encoder::test::test_favor_dec_speed,timeout,21.001,150.015,2026-11-05T05:04:07Z,50250976.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lz4-1.28.0,liblz4::test_version_number,success,21.001,1.817,2026-11-05T05:04:08Z,50250976.0,,

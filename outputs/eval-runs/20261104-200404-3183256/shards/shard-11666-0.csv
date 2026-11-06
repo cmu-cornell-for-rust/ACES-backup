@@ -1,0 +1,12 @@
+experimental-bsan,log-analysis-0.1.571,_write_to_file,test_failed,222.217,6.125,2026-11-05T05:49:17Z,50254216.0,panic,"thread '_write_to_file' (7645) panicked at tests/zeek_search.rs:49:5: assertion failed: res.is_ok()"
+experimental-bsan,log-analysis-0.1.571,test_add_field_entry,success,222.217,6.043,2026-11-05T05:49:23Z,50254216.0,,
+experimental-bsan,log-analysis-0.1.571,test_create_log,success,222.217,6.035,2026-11-05T05:50:04Z,50254216.0,,
+experimental-bsan,log-analysis-0.1.571,test_flate2,test_failed,222.217,6.323,2026-11-05T05:51:27Z,50254216.0,panic,"thread 'test_flate2' (13409) panicked at tests/zeek_search.rs:28:26: conn file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,log-analysis-0.1.571,test_new,success,222.217,6.197,2026-11-05T05:54:04Z,50254216.0,,
+experimental-bsan,log-analysis-0.1.571,test_search_000_fail,success,222.217,6.238,2026-11-05T05:55:08Z,50254216.0,,
+experimental-bsan,log-analysis-0.1.571,test_search_000_pass,test_failed,222.217,6.231,2026-11-05T05:55:15Z,50254216.0,panic,"thread 'test_search_000_pass' (18988) panicked at tests/zeek_search.rs:130:5: assertion failed: res.is_ok()"
+experimental-bsan,log-analysis-0.1.571,test_search_100_fail,test_failed,222.217,6.216,2026-11-05T05:55:21Z,50254216.0,panic,"thread 'test_search_100_fail' (19273) panicked at tests/zeek_search.rs:188:5: assertion failed: res.is_ok()"
+experimental-bsan,log-analysis-0.1.571,test_search_100_pass,test_failed,222.217,6.201,2026-11-05T05:55:27Z,50254216.0,panic,"thread 'test_search_100_pass' (20054) panicked at tests/zeek_search.rs:160:5: assertion failed: res.is_ok()"
+experimental-bsan,log-analysis-0.1.571,test_search_110_fail,success,222.217,6.154,2026-11-05T05:55:33Z,50254216.0,,
+experimental-bsan,log-analysis-0.1.571,test_search_110_pass,test_failed,222.217,6.216,2026-11-05T05:55:39Z,50254216.0,panic,"thread 'test_search_110_pass' (22711) panicked at tests/zeek_search.rs:203:5: assertion failed: res.is_ok()"
+experimental-bsan,log-analysis-0.1.571,test_search_params,success,222.217,6.157,2026-11-05T05:55:46Z,50254216.0,,

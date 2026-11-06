@@ -1,0 +1,8 @@
+experimental-bsan,async-sqlite-0.3.1,test_blocking_client,success,114.686,3.120,2026-11-05T06:41:08Z,50256827.0,,
+experimental-bsan,async-sqlite-0.3.1,test_blocking_pool,success,114.686,3.655,2026-11-05T06:41:12Z,50256827.0,,
+experimental-bsan,async-sqlite-0.3.1,test_concurrency_async_std,test_failed,114.686,14.007,2026-11-05T06:41:26Z,50256827.0,gc,"test test_concurrency_async_std ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-sqlite-0.3.1,test_concurrency_tokio,success,114.686,3.126,2026-11-05T06:41:29Z,50256827.0,,
+experimental-bsan,async-sqlite-0.3.1,test_journal_mode_async_std,test_failed,114.686,14.011,2026-11-05T06:41:43Z,50256827.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 7 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-sqlite-0.3.1,test_journal_mode_tokio,success,114.686,3.030,2026-11-05T06:41:46Z,50256827.0,,
+experimental-bsan,async-sqlite-0.3.1,test_pool_async_std,test_failed,114.686,14.016,2026-11-05T06:42:00Z,50256827.0,gc,"test test_pool_async_std ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-sqlite-0.3.1,test_pool_tokio,success,114.686,3.133,2026-11-05T06:42:03Z,50256827.0,,

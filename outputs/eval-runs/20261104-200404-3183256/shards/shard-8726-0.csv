@@ -1,0 +1,21 @@
+experimental-bsan,marc-3.1.1,directory::test::should_parse_directory,success,13.718,1.502,2026-11-05T04:40:43Z,50250238.0,,
+experimental-bsan,marc-3.1.1,directory::test::should_parse_empty_directory,success,13.718,1.501,2026-11-05T04:40:45Z,50250238.0,,
+experimental-bsan,marc-3.1.1,field::subfield::subfields::test::should_iterate_subfields,success,13.718,1.490,2026-11-05T04:40:46Z,50250238.0,,
+experimental-bsan,marc-3.1.1,field::subfield::test::should_find_subfields,success,13.718,1.499,2026-11-05T04:40:48Z,50250238.0,,
+experimental-bsan,marc-3.1.1,field::test::should_add_subfield,success,13.718,1.488,2026-11-05T04:40:49Z,50250238.0,,
+experimental-bsan,marc-3.1.1,field::test::should_filter_subfields,success,13.718,1.504,2026-11-05T04:40:51Z,50250238.0,,
+experimental-bsan,marc-3.1.1,field::test::should_panic_if_field_is_too_large,success,13.718,1.506,2026-11-05T04:40:52Z,50250238.0,,
+experimental-bsan,marc-3.1.1,tests::read::should_build_record,success,13.718,2.075,2026-11-05T04:40:54Z,50250238.0,,
+experimental-bsan,marc-3.1.1,tests::read::should_create_record_from_vec,success,13.718,1.522,2026-11-05T04:40:56Z,50250238.0,,
+experimental-bsan,marc-3.1.1,tests::read::should_display_record,success,13.718,1.558,2026-11-05T04:40:57Z,50250238.0,,
+experimental-bsan,marc-3.1.1,tests::read::should_get_field,success,13.718,1.512,2026-11-05T04:40:59Z,50250238.0,,
+experimental-bsan,marc-3.1.1,tests::read::should_get_fields,success,13.718,1.513,2026-11-05T04:41:00Z,50250238.0,,
+experimental-bsan,marc-3.1.1,tests::read::should_iterate_records,success,13.718,1.684,2026-11-05T04:41:02Z,50250238.0,,
+experimental-bsan,marc-3.1.1,tests::read::should_parse_record,success,13.718,1.501,2026-11-05T04:41:04Z,50250238.0,,
+experimental-bsan,marc-3.1.1,tests::read::should_read_record,success,13.718,1.690,2026-11-05T04:41:05Z,50250238.0,,
+experimental-bsan,marc-3.1.1,tests::write::should_write_record,success,13.718,1.531,2026-11-05T04:41:07Z,50250238.0,,
+experimental-bsan,marc-3.1.1,xml::tests::should_output_minified_xml_collection,test_failed,13.718,2.339,2026-11-05T04:41:09Z,50250238.0,panic,"thread 'xml::tests::should_output_minified_xml_collection' (11085) panicked at src/xml.rs:370:9: assertion `left == right` failed"
+experimental-bsan,marc-3.1.1,xml::tests::should_output_minified_xml_record,test_failed,13.718,2.318,2026-11-05T04:41:12Z,50250238.0,panic,"thread 'xml::tests::should_output_minified_xml_record' (11682) panicked at src/xml.rs:301:9: assertion `left == right` failed"
+experimental-bsan,marc-3.1.1,xml::tests::should_output_pretty_xml_collection,test_failed,13.718,2.486,2026-11-05T04:41:14Z,50250238.0,panic,"thread 'xml::tests::should_output_pretty_xml_collection' (12106) panicked at src/xml.rs:407:9: assertion `left == right` failed"
+experimental-bsan,marc-3.1.1,xml::tests::should_output_pretty_xml_record,test_failed,13.718,2.411,2026-11-05T04:41:17Z,50250238.0,panic,"thread 'xml::tests::should_output_pretty_xml_record' (12481) panicked at src/xml.rs:336:9: assertion `left == right` failed"
+experimental-bsan,marc-3.1.1,xml::tests::should_write_element,success,13.718,1.504,2026-11-05T04:41:18Z,50250238.0,,

@@ -1,0 +1,183 @@
+experimental-bsan,csv-1.4.0,byte_record::tests::empty_field_1,success,35.202,2.859,2026-11-05T01:36:31Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::empty_field_2,success,35.202,2.872,2026-11-05T01:36:34Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::empty_record,success,35.202,2.859,2026-11-05T01:36:36Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::empty_surround_1,success,35.202,2.881,2026-11-05T01:36:39Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::empty_surround_2,success,35.202,2.882,2026-11-05T01:36:42Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::eq_field_boundaries,success,35.202,2.884,2026-11-05T01:36:45Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::eq_record_len,success,35.202,2.882,2026-11-05T01:36:48Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::iter,success,35.202,2.889,2026-11-05T01:36:51Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::iter_forward_and_reverse,success,35.202,2.859,2026-11-05T01:36:54Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::iter_reverse,success,35.202,2.879,2026-11-05T01:36:57Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::record_1,success,35.202,2.904,2026-11-05T01:37:00Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::record_2,success,35.202,2.872,2026-11-05T01:37:02Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::trim_back,success,35.202,2.881,2026-11-05T01:37:05Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::trim_both,success,35.202,2.855,2026-11-05T01:37:08Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::trim_does_not_panic_on_empty_records_1,success,35.202,2.879,2026-11-05T01:37:11Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::trim_does_not_panic_on_empty_records_2,success,35.202,2.882,2026-11-05T01:37:14Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::trim_does_not_panic_on_empty_records_3,success,35.202,2.872,2026-11-05T01:37:17Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::trim_front,success,35.202,2.866,2026-11-05T01:37:20Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::trim_whitespace_only,success,35.202,2.886,2026-11-05T01:37:23Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::utf8_clear_ok,success,35.202,2.880,2026-11-05T01:37:26Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::utf8_error_1,success,35.202,2.893,2026-11-05T01:37:28Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::utf8_error_2,success,35.202,2.889,2026-11-05T01:37:31Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::utf8_error_3,success,35.202,2.864,2026-11-05T01:37:34Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::utf8_error_4,success,35.202,2.883,2026-11-05T01:37:37Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::utf8_error_5,success,35.202,2.886,2026-11-05T01:37:40Z,50233733.0,,
+experimental-bsan,csv-1.4.0,byte_record::tests::utf8_error_6,success,35.202,2.870,2026-11-05T01:37:43Z,50233733.0,,
+experimental-bsan,csv-1.4.0,cookbook_read_basic,test_failed,35.202,2.946,2026-11-05T01:37:46Z,50233733.0,panic,"thread 'cookbook_read_basic' (30231) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,cookbook_read_colon,test_failed,35.202,2.946,2026-11-05T01:37:49Z,50233733.0,panic,"thread 'cookbook_read_colon' (30713) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,cookbook_read_no_headers,test_failed,35.202,2.964,2026-11-05T01:37:52Z,50233733.0,panic,"thread 'cookbook_read_no_headers' (31246) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,cookbook_read_serde,test_failed,35.202,2.968,2026-11-05T01:37:55Z,50233733.0,panic,"thread 'cookbook_read_serde' (31734) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,cookbook_write_basic,test_failed,35.202,2.974,2026-11-05T01:37:58Z,50233733.0,panic,"thread 'cookbook_write_basic' (32040) panicked at tests/tests.rs:403:29: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,cookbook_write_serde,test_failed,35.202,2.954,2026-11-05T01:38:01Z,50233733.0,panic,"thread 'cookbook_write_serde' (32522) panicked at tests/tests.rs:403:29: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,deserializer::tests::adjacent_fixed_arrays,success,35.202,2.868,2026-11-05T01:38:04Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::bad_hex_seq,success,35.202,2.875,2026-11-05T01:38:06Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::borrowed,success,35.202,2.880,2026-11-05T01:38:09Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::borrowed_map,success,35.202,2.886,2026-11-05T01:38:12Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::borrowed_map_bytes,success,35.202,2.874,2026-11-05T01:38:15Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::bytes,success,35.202,2.868,2026-11-05T01:38:18Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::enum_label_simple_tagged,success,35.202,2.874,2026-11-05T01:38:21Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::enum_untagged,success,35.202,2.882,2026-11-05T01:38:24Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::flatten,success,35.202,2.891,2026-11-05T01:38:27Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::map_headers,success,35.202,2.899,2026-11-05T01:38:30Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::map_no_headers,success,35.202,2.879,2026-11-05T01:38:33Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::mixed_hex_seq,success,35.202,2.875,2026-11-05T01:38:35Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::no_chars,success,35.202,2.883,2026-11-05T01:38:38Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::no_fields,success,35.202,2.875,2026-11-05T01:38:41Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::one_char,success,35.202,2.875,2026-11-05T01:38:44Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::one_field,success,35.202,2.866,2026-11-05T01:38:47Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::one_field_128,success,35.202,2.884,2026-11-05T01:38:50Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::option_empty_field,success,35.202,2.890,2026-11-05T01:38:53Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::option_invalid_field,success,35.202,2.882,2026-11-05T01:38:56Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::partially_invalid_utf8,success,35.202,2.872,2026-11-05T01:38:58Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::seq_in_struct,success,35.202,2.873,2026-11-05T01:39:01Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::seq_in_struct_tail,success,35.202,2.882,2026-11-05T01:39:04Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::simple_hex_seq,success,35.202,2.892,2026-11-05T01:39:07Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::simple_seq,success,35.202,2.870,2026-11-05T01:39:10Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::too_many_chars,success,35.202,2.862,2026-11-05T01:39:13Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::two_fields,success,35.202,2.876,2026-11-05T01:39:16Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::two_fields_too_few,success,35.202,2.875,2026-11-05T01:39:19Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::two_fields_too_many,success,35.202,2.888,2026-11-05T01:39:22Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::with_header,success,35.202,2.882,2026-11-05T01:39:24Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::with_header_empty,success,35.202,2.864,2026-11-05T01:39:27Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::with_header_empty_ok,success,35.202,2.858,2026-11-05T01:39:30Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::with_header_missing,success,35.202,2.869,2026-11-05T01:39:33Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::with_header_missing_ok,success,35.202,2.883,2026-11-05T01:39:36Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::with_header_no_fields,success,35.202,2.882,2026-11-05T01:39:39Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::with_header_unknown,success,35.202,2.900,2026-11-05T01:39:42Z,50233733.0,,
+experimental-bsan,csv-1.4.0,deserializer::tests::without_header,success,35.202,2.879,2026-11-05T01:39:45Z,50233733.0,,
+experimental-bsan,csv-1.4.0,no_infinite_loop_on_io_errors,success,35.202,4.894,2026-11-05T01:39:50Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::headers_on_empty_data,success,35.202,4.913,2026-11-05T01:39:55Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::no_headers_on_empty_data,success,35.202,4.997,2026-11-05T01:40:00Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::no_headers_on_empty_data_after_headers,success,35.202,4.912,2026-11-05T01:40:04Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::positions_headers,success,35.202,5.090,2026-11-05T01:40:10Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::positions_no_headers,success,35.202,5.094,2026-11-05T01:40:15Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_byte_record,success,35.202,5.008,2026-11-05T01:40:20Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_record_headers,success,35.202,4.996,2026-11-05T01:40:25Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_record_headers_invalid_utf8,success,35.202,5.100,2026-11-05T01:40:30Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_record_no_headers_after,success,35.202,5.162,2026-11-05T01:40:35Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_record_no_headers_before,success,35.202,4.985,2026-11-05T01:40:40Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_record_unequal_continue,success,35.202,4.982,2026-11-05T01:40:45Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_record_unequal_fails,success,35.202,5.093,2026-11-05T01:40:50Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_record_unequal_ok,success,35.202,5.016,2026-11-05T01:40:55Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_trimed_header_invalid_utf8,success,35.202,4.911,2026-11-05T01:41:00Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_trimmed_header,success,35.202,5.102,2026-11-05T01:41:05Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_trimmed_records,success,35.202,5.065,2026-11-05T01:41:10Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_trimmed_records_and_headers,success,35.202,5.021,2026-11-05T01:41:15Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::read_trimmed_records_without_headers,success,35.202,4.936,2026-11-05T01:41:20Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::seek,success,35.202,5.031,2026-11-05T01:41:25Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::seek_headers_after,success,35.202,5.038,2026-11-05T01:41:30Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::seek_headers_before_after,success,35.202,5.105,2026-11-05T01:41:35Z,50233733.0,,
+experimental-bsan,csv-1.4.0,reader::tests::seek_headers_no_actual_seek,success,35.202,4.927,2026-11-05T01:41:40Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::bool,success,35.202,2.863,2026-11-05T01:41:43Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::bytes,success,35.202,2.884,2026-11-05T01:41:46Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::char,success,35.202,2.893,2026-11-05T01:41:49Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::enum_newtypes,success,35.202,2.899,2026-11-05T01:41:52Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::enum_struct_variant,success,35.202,2.882,2026-11-05T01:41:55Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::enum_units,success,35.202,2.905,2026-11-05T01:41:58Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::float,success,35.202,2.873,2026-11-05T01:42:01Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::float_nan,success,35.202,2.863,2026-11-05T01:42:03Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::integer,success,35.202,2.869,2026-11-05T01:42:06Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::integer_i128,success,35.202,2.882,2026-11-05T01:42:09Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::integer_u128,success,35.202,2.861,2026-11-05T01:42:12Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::option,success,35.202,2.876,2026-11-05T01:42:15Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::seq,success,35.202,2.871,2026-11-05T01:42:18Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::str,success,35.202,2.877,2026-11-05T01:42:21Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::struct_headers,success,35.202,2.886,2026-11-05T01:42:24Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::struct_headers_inside_nested_tuple_seq,success,35.202,2.890,2026-11-05T01:42:26Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::struct_headers_inside_seq,success,35.202,2.905,2026-11-05T01:42:29Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::struct_headers_inside_tuple,success,35.202,2.899,2026-11-05T01:42:32Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::struct_headers_inside_tuple_scalar_after,success,35.202,2.890,2026-11-05T01:42:35Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::struct_headers_inside_tuple_scalar_before,success,35.202,2.864,2026-11-05T01:42:38Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::struct_headers_nested,success,35.202,2.889,2026-11-05T01:42:41Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::struct_headers_nested_seq,success,35.202,2.888,2026-11-05T01:42:44Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::struct_newtype,success,35.202,2.868,2026-11-05T01:42:47Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::struct_no_headers,success,35.202,2.854,2026-11-05T01:42:50Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::struct_no_headers_128,success,35.202,2.870,2026-11-05T01:42:53Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::struct_unit,success,35.202,2.872,2026-11-05T01:42:55Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::tuple,success,35.202,2.874,2026-11-05T01:42:58Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::tuple_struct,success,35.202,2.893,2026-11-05T01:43:01Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::tuple_variant,success,35.202,2.891,2026-11-05T01:43:04Z,50233733.0,,
+experimental-bsan,csv-1.4.0,serializer::tests::unit,success,35.202,2.880,2026-11-05T01:43:07Z,50233733.0,,
+experimental-bsan,csv-1.4.0,string_record::tests::eq_field_boundaries,success,35.202,2.886,2026-11-05T01:43:10Z,50233733.0,,
+experimental-bsan,csv-1.4.0,string_record::tests::eq_record_len,success,35.202,2.862,2026-11-05T01:43:13Z,50233733.0,,
+experimental-bsan,csv-1.4.0,string_record::tests::trim_back,success,35.202,2.874,2026-11-05T01:43:16Z,50233733.0,,
+experimental-bsan,csv-1.4.0,string_record::tests::trim_both,success,35.202,2.869,2026-11-05T01:43:18Z,50233733.0,,
+experimental-bsan,csv-1.4.0,string_record::tests::trim_does_not_panic_on_empty_records_1,success,35.202,2.876,2026-11-05T01:43:21Z,50233733.0,,
+experimental-bsan,csv-1.4.0,string_record::tests::trim_does_not_panic_on_empty_records_2,success,35.202,2.883,2026-11-05T01:43:24Z,50233733.0,,
+experimental-bsan,csv-1.4.0,string_record::tests::trim_does_not_panic_on_empty_records_3,success,35.202,2.863,2026-11-05T01:43:27Z,50233733.0,,
+experimental-bsan,csv-1.4.0,string_record::tests::trim_front,success,35.202,2.900,2026-11-05T01:43:30Z,50233733.0,,
+experimental-bsan,csv-1.4.0,string_record::tests::trim_whitespace_only,success,35.202,2.904,2026-11-05T01:43:33Z,50233733.0,,
+experimental-bsan,csv-1.4.0,tutorial_error_01,test_failed,35.202,2.985,2026-11-05T01:43:36Z,50233733.0,panic,"thread 'tutorial_error_01' (74412) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_error_01_errored,test_failed,35.202,2.964,2026-11-05T01:43:39Z,50233733.0,panic,"thread 'tutorial_error_01_errored' (75136) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_error_02,test_failed,35.202,2.959,2026-11-05T01:43:42Z,50233733.0,panic,"thread 'tutorial_error_02' (75302) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_error_02_errored,test_failed,35.202,2.966,2026-11-05T01:43:45Z,50233733.0,panic,"thread 'tutorial_error_02_errored' (75657) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_error_03,test_failed,35.202,2.951,2026-11-05T01:43:48Z,50233733.0,panic,"thread 'tutorial_error_03' (75749) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_error_03_errored,test_failed,35.202,2.945,2026-11-05T01:43:51Z,50233733.0,panic,"thread 'tutorial_error_03_errored' (75931) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_error_04,test_failed,35.202,2.939,2026-11-05T01:43:54Z,50233733.0,panic,"thread 'tutorial_error_04' (76096) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_error_04_errored,test_failed,35.202,2.972,2026-11-05T01:43:57Z,50233733.0,panic,"thread 'tutorial_error_04_errored' (76407) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_perf_alloc_01,test_failed,35.202,2.954,2026-11-05T01:44:00Z,50233733.0,panic,"thread 'tutorial_perf_alloc_01' (76794) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_perf_alloc_02,test_failed,35.202,2.944,2026-11-05T01:44:03Z,50233733.0,panic,"thread 'tutorial_perf_alloc_02' (76985) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_perf_alloc_03,test_failed,35.202,2.963,2026-11-05T01:44:06Z,50233733.0,panic,"thread 'tutorial_perf_alloc_03' (77210) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_perf_core_01,test_failed,35.202,2.977,2026-11-05T01:44:09Z,50233733.0,panic,"thread 'tutorial_perf_core_01' (77444) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_perf_serde_01,test_failed,35.202,2.963,2026-11-05T01:44:12Z,50233733.0,panic,"thread 'tutorial_perf_serde_01' (77663) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_perf_serde_02,test_failed,35.202,2.967,2026-11-05T01:44:15Z,50233733.0,panic,"thread 'tutorial_perf_serde_02' (77844) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_perf_serde_03,test_failed,35.202,2.962,2026-11-05T01:44:18Z,50233733.0,panic,"thread 'tutorial_perf_serde_03' (78099) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_pipeline_pop_01,test_failed,35.202,2.974,2026-11-05T01:44:21Z,50233733.0,panic,"thread 'tutorial_pipeline_pop_01' (78382) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_pipeline_search_01,test_failed,35.202,2.953,2026-11-05T01:44:24Z,50233733.0,panic,"thread 'tutorial_pipeline_search_01' (78600) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_pipeline_search_01_errored,test_failed,35.202,2.984,2026-11-05T01:44:27Z,50233733.0,panic,"thread 'tutorial_pipeline_search_01_errored' (78810) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_pipeline_search_02,test_failed,35.202,2.973,2026-11-05T01:44:30Z,50233733.0,panic,"thread 'tutorial_pipeline_search_02' (79228) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_read_01,test_failed,35.202,2.964,2026-11-05T01:44:33Z,50233733.0,panic,"thread 'tutorial_read_01' (79429) panicked at tests/tests.rs:403:29: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_read_delimiter_01,test_failed,35.202,2.974,2026-11-05T01:44:36Z,50233733.0,panic,"thread 'tutorial_read_delimiter_01' (79710) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_read_headers_01,test_failed,35.202,2.961,2026-11-05T01:44:39Z,50233733.0,panic,"thread 'tutorial_read_headers_01' (79837) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_read_headers_02,test_failed,35.202,2.948,2026-11-05T01:44:42Z,50233733.0,panic,"thread 'tutorial_read_headers_02' (80043) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_read_serde_01,test_failed,35.202,2.953,2026-11-05T01:44:45Z,50233733.0,panic,"thread 'tutorial_read_serde_01' (80219) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_read_serde_02,test_failed,35.202,2.958,2026-11-05T01:44:48Z,50233733.0,panic,"thread 'tutorial_read_serde_02' (80643) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_read_serde_03,test_failed,35.202,2.977,2026-11-05T01:44:51Z,50233733.0,panic,"thread 'tutorial_read_serde_03' (80836) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_read_serde_04,test_failed,35.202,2.972,2026-11-05T01:44:54Z,50233733.0,panic,"thread 'tutorial_read_serde_04' (80991) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_read_serde_05_invalid,test_failed,35.202,2.967,2026-11-05T01:44:57Z,50233733.0,panic,"thread 'tutorial_read_serde_05_invalid' (81163) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_read_serde_05_invalid_errored,test_failed,35.202,2.977,2026-11-05T01:45:00Z,50233733.0,panic,"thread 'tutorial_read_serde_05_invalid_errored' (81554) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_read_serde_invalid_06,test_failed,35.202,2.952,2026-11-05T01:45:02Z,50233733.0,panic,"thread 'tutorial_read_serde_invalid_06' (81761) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_setup_01,test_failed,35.202,2.962,2026-11-05T01:45:05Z,50233733.0,panic,"thread 'tutorial_setup_01' (82006) panicked at tests/tests.rs:412:33: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_write_01,test_failed,35.202,2.982,2026-11-05T01:45:08Z,50233733.0,panic,"thread 'tutorial_write_01' (82234) panicked at tests/tests.rs:403:29: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_write_delimiter_01,test_failed,35.202,2.963,2026-11-05T01:45:11Z,50233733.0,panic,"thread 'tutorial_write_delimiter_01' (82372) panicked at tests/tests.rs:403:29: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_write_serde_01,test_failed,35.202,2.973,2026-11-05T01:45:14Z,50233733.0,panic,"thread 'tutorial_write_serde_01' (82591) panicked at tests/tests.rs:403:29: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,tutorial_write_serde_02,test_failed,35.202,2.942,2026-11-05T01:45:17Z,50233733.0,panic,"thread 'tutorial_write_serde_02' (82797) panicked at tests/tests.rs:403:29: command spawns successfully: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,csv-1.4.0,writer::tests::comment_char_is_automatically_quoted,success,35.202,2.880,2026-11-05T01:45:20Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::full_buffer_should_not_flush_underlying,success,35.202,2.882,2026-11-05T01:45:23Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::one_byte_record,success,35.202,2.863,2026-11-05T01:45:26Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::one_empty_record,success,35.202,2.868,2026-11-05T01:45:29Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::one_record,success,35.202,2.859,2026-11-05T01:45:32Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::one_string_record,success,35.202,2.869,2026-11-05T01:45:35Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::raw_one_byte_record,success,35.202,2.880,2026-11-05T01:45:38Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::raw_one_empty_record,success,35.202,2.859,2026-11-05T01:45:40Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::raw_two_empty_records,success,35.202,2.859,2026-11-05T01:45:43Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::raw_unequal_records_bad,success,35.202,2.870,2026-11-05T01:45:46Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::raw_unequal_records_ok,success,35.202,2.876,2026-11-05T01:45:49Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::serialize_no_headers,success,35.202,2.886,2026-11-05T01:45:52Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::serialize_no_headers_128,success,35.202,2.867,2026-11-05T01:45:55Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::serialize_tuple,success,35.202,2.863,2026-11-05T01:45:58Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::serialize_with_headers,success,35.202,2.854,2026-11-05T01:46:01Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::two_empty_records,success,35.202,2.859,2026-11-05T01:46:03Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::unequal_records_bad,success,35.202,2.853,2026-11-05T01:46:06Z,50233733.0,,
+experimental-bsan,csv-1.4.0,writer::tests::unequal_records_ok,success,35.202,2.876,2026-11-05T01:46:09Z,50233733.0,,

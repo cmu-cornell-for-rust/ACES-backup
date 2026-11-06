@@ -1,0 +1,9 @@
+experimental-bsan,unix_mode-0.1.4,existing_file_perms,success,25.027,4.496,2026-11-05T06:39:37Z,50256726.0,,
+experimental-bsan,unix_mode-0.1.4,permissions_to_type,success,25.027,4.413,2026-11-05T06:39:41Z,50256726.0,,
+experimental-bsan,unix_mode-0.1.4,stat_created_fifo,success,25.027,4.436,2026-11-05T06:39:46Z,50256726.0,,
+experimental-bsan,unix_mode-0.1.4,stat_created_socket,success,25.027,4.429,2026-11-05T06:39:50Z,50256726.0,,
+experimental-bsan,unix_mode-0.1.4,stat_created_symlink,success,25.027,4.410,2026-11-05T06:39:55Z,50256726.0,,
+experimental-bsan,unix_mode-0.1.4,stat_existing_files,test_failed,25.027,4.512,2026-11-05T06:39:59Z,50256726.0,panic,"thread 'stat_existing_files' (96385) panicked at tests/on_unix.rs:41:5: assertion failed: is_sticky(file_mode(""/tmp/""))"
+experimental-bsan,unix_mode-0.1.4,to_string::extrabits,success,25.027,4.700,2026-11-05T06:40:04Z,50256726.0,,
+experimental-bsan,unix_mode-0.1.4,to_string::nothing_with_left_beef,success,25.027,4.460,2026-11-05T06:40:08Z,50256726.0,,
+experimental-bsan,unix_mode-0.1.4,to_string::rwx,success,25.027,4.620,2026-11-05T06:40:13Z,50256726.0,,

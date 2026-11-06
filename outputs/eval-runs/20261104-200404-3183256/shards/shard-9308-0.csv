@@ -1,0 +1,19 @@
+experimental-bsan,shadow-rs-0.35.2,date_time::tests::human_format_validate::test_parse,success,155.168,1.701,2026-11-05T04:54:17Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,date_time::tests::test_local_now_human_format,test_failed,155.168,1.752,2026-11-05T04:54:19Z,50251086.0,panic,"thread 'date_time::tests::test_local_now_human_format' (90132) panicked at src/date_time.rs:188:42: called `Result::unwrap()` on an `Err` value: TimeZone(IoError(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,shadow-rs-0.35.2,date_time::tests::test_source_date_epoch,success,155.168,1.709,2026-11-05T04:54:20Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,date_time::tests::test_timestamp_2_utc,success,155.168,1.717,2026-11-05T04:54:22Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,env::tests::test_filter_dep_source_git,success,155.168,1.645,2026-11-05T04:54:24Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,env::tests::test_filter_dep_source_git_http,success,155.168,1.644,2026-11-05T04:54:25Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,env::tests::test_filter_dep_source_git_https,success,155.168,1.646,2026-11-05T04:54:27Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,env::tests::test_filter_dep_source_multi,success,155.168,1.653,2026-11-05T04:54:29Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,env::tests::test_filter_dep_source_none,success,155.168,1.644,2026-11-05T04:54:30Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,env::tests::test_filter_dep_source_path,success,155.168,1.651,2026-11-05T04:54:32Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,env::tests::test_filter_dep_source_registry,success,155.168,1.657,2026-11-05T04:54:34Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,env::tests::test_filter_dep_windows_path,success,155.168,1.646,2026-11-05T04:54:35Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,gen_const::tests::test_version_fn,success,155.168,1.815,2026-11-05T04:54:37Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,git::tests::test_command_last_tag,success,155.168,1.686,2026-11-05T04:54:39Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,git::tests::test_current_branch,test_failed,155.168,2.147,2026-11-05T04:54:41Z,50251086.0,panic,"thread 'git::tests::test_current_branch' (91188) panicked at src/git.rs:606:13: assertion failed: git2_branch.is_some()"
+experimental-bsan,shadow-rs-0.35.2,git::tests::test_git,test_failed,155.168,2.413,2026-11-05T04:54:44Z,50251086.0,panic,"thread 'git::tests::test_git' (91305) panicked at src/git.rs:579:17: assertion failed: !v.v.is_empty()"
+experimental-bsan,shadow-rs-0.35.2,tests::test_build,success,155.168,125.695,2026-11-05T04:56:49Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,tests::test_build_deny,success,155.168,130.998,2026-11-05T04:59:00Z,50251086.0,,
+experimental-bsan,shadow-rs-0.35.2,tests::test_env,success,155.168,1.782,2026-11-05T04:59:02Z,50251086.0,,

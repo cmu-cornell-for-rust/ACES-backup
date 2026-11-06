@@ -1,0 +1,2 @@
+experimental-bsan,hm-0.7.5,config::config_test::dependencies_is_array,success,178.596,3.022,2026-11-05T08:51:45Z,50264164.0,,
+experimental-bsan,hm-0.7.5,config::config_test::test_mo_deserialization,test_failed,178.596,1.636,2026-11-05T08:51:47Z,50264164.0,panic,"thread 'config::config_test::test_mo_deserialization' (56541) panicked at src/lib/config.rs:399:67: called `Result::unwrap()` on an `Err` value: Other(""No such file or directory (os error 2)"")"

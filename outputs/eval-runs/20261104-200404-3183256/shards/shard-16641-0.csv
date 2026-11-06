@@ -1,0 +1,4 @@
+experimental-bsan,iana-time-zone-0.1.61,ffi_utils::tests::test_android_timezone_property_name_getter,success,3.868,1.623,2026-11-05T07:46:12Z,50261119.0,,
+experimental-bsan,iana-time-zone-0.1.61,ffi_utils::tests::test_android_timezone_property_name_is_valid_cstr,success,3.868,1.613,2026-11-05T07:46:14Z,50261119.0,,
+experimental-bsan,iana-time-zone-0.1.61,platform::openwrt::test_read_word,success,3.868,1.616,2026-11-05T07:46:15Z,50261119.0,,
+experimental-bsan,iana-time-zone-0.1.61,tests::get_current,test_failed,3.868,1.695,2026-11-05T07:46:17Z,50261119.0,panic,"thread 'tests::get_current' (26527) panicked at src/lib.rs:112:48: called `Result::unwrap()` on an `Err` value: IoError(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"

@@ -1,0 +1,14 @@
+experimental-bsan,actix-governor-0.10.0,tests::builder_test,success,348.242,1.669,2026-11-05T05:29:55Z,50252862.0,,
+experimental-bsan,actix-governor-0.10.0,tests::test_forbidden_response_error,success,348.242,2.648,2026-11-05T05:29:58Z,50252862.0,,
+experimental-bsan,actix-governor-0.10.0,tests::test_html_error_response,success,348.242,2.703,2026-11-05T05:30:00Z,50252862.0,,
+experimental-bsan,actix-governor-0.10.0,tests::test_json_error_response,success,348.242,2.705,2026-11-05T05:30:03Z,50252862.0,,
+experimental-bsan,actix-governor-0.10.0,tests::test_key_extraction_unwhitelisted_key_with_header,success,348.242,2.812,2026-11-05T05:30:06Z,50252862.0,,
+experimental-bsan,actix-governor-0.10.0,tests::test_key_extraction_whitelisted_key,success,348.242,2.815,2026-11-05T05:30:09Z,50252862.0,,
+experimental-bsan,actix-governor-0.10.0,tests::test_key_extraction_whitelisted_key_with_header,success,348.242,2.830,2026-11-05T05:30:12Z,50252862.0,,
+experimental-bsan,actix-governor-0.10.0,tests::test_method_filter,success,348.242,2.705,2026-11-05T05:30:14Z,50252862.0,,
+experimental-bsan,actix-governor-0.10.0,tests::test_method_filter_use_headers,success,348.242,2.778,2026-11-05T05:30:17Z,50252862.0,,
+experimental-bsan,actix-governor-0.10.0,tests::test_network_authentication_required_response_error,success,348.242,2.643,2026-11-05T05:30:20Z,50252862.0,,
+experimental-bsan,actix-governor-0.10.0,tests::test_server,success,348.242,2.808,2026-11-05T05:30:23Z,50252862.0,,
+experimental-bsan,actix-governor-0.10.0,tests::test_server_per_second,success,348.242,2.845,2026-11-05T05:30:25Z,50252862.0,,
+experimental-bsan,actix-governor-0.10.0,tests::test_server_permissive,test_failed,348.242,3.024,2026-11-05T05:30:28Z,50252862.0,panic,"thread 'tests::test_server_permissive' (71420) panicked at src/tests.rs:1125:5: assertion `left == right` failed"
+experimental-bsan,actix-governor-0.10.0,tests::test_server_use_headers,test_failed,348.242,3.057,2026-11-05T05:30:32Z,50252862.0,panic,"thread 'tests::test_server_use_headers' (71540) panicked at src/tests.rs:478:5: assertion `left == right` failed"

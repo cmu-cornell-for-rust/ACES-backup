@@ -1,0 +1,10 @@
+experimental-bsan,citationberg-0.7.0,test::locale_in_style_file,success,117.241,1.933,2026-11-05T06:16:48Z,50255520.0,,
+experimental-bsan,citationberg-0.7.0,test::page_range,success,117.241,1.586,2026-11-05T06:16:50Z,50255520.0,,
+experimental-bsan,citationberg-0.7.0,test::page_range_prefix,success,117.241,1.522,2026-11-05T06:16:51Z,50255520.0,,
+experimental-bsan,citationberg-0.7.0,test::roundtrip_cbor_all,test_failed,117.241,1.577,2026-11-05T06:16:53Z,50255520.0,panic,"thread 'test::roundtrip_cbor_all' (81678) panicked at src/lib.rs:3704:40: please check out the CSL styles repo: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,citationberg-0.7.0,test::roundtrip_cbor_all_locales,test_failed,117.241,1.583,2026-11-05T06:16:54Z,50255520.0,panic,"thread 'test::roundtrip_cbor_all_locales' (81905) panicked at src/lib.rs:3745:41: please check out the CSL locales repo: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,citationberg-0.7.0,test::test_bug_hayagriva_115,success,117.241,1.494,2026-11-05T06:16:56Z,50255520.0,,
+experimental-bsan,citationberg-0.7.0,test::test_dependent,success,117.241,2.801,2026-11-05T06:16:59Z,50255520.0,,
+experimental-bsan,citationberg-0.7.0,test::test_independent,timeout,117.241,150.017,2026-11-05T06:19:29Z,50255520.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,citationberg-0.7.0,test::test_locale,timeout,117.241,150.023,2026-11-05T06:21:59Z,50255520.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,citationberg-0.7.0,test::test_string_trimming,timeout,117.241,150.019,2026-11-05T06:24:29Z,50255520.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

@@ -1,0 +1,80 @@
+experimental-bsan,oracle-0.6.3,app_context,test_failed,93.769,4.292,2026-11-05T02:14:43Z,50239800.0,other,"error: test failed, to rerun pass `--test connection`"
+experimental-bsan,oracle-0.6.3,batch::tests::batch_execute_twice,test_failed,93.769,1.647,2026-11-05T02:14:45Z,50239800.0,panic,"thread 'batch::tests::batch_execute_twice' (66589) panicked at src/batch.rs:888:41: called `Result::unwrap()` on an `Err` value: DpiError(DbError { code: 0, offset: 962584776, message: ""DPI-1047: Cannot locate a 64-bit Oracle Client library: \""libclntsh.so: cannot open shared object file: No such fi"
+experimental-bsan,oracle-0.6.3,batch::tests::batch_insert,test_failed,93.769,1.643,2026-11-05T02:14:46Z,50239800.0,panic,"thread 'batch::tests::batch_insert' (66744) panicked at src/batch.rs:873:41: called `Result::unwrap()` on an `Err` value: DpiError(DbError { code: 0, offset: 3126845672, message: ""DPI-1047: Cannot locate a 64-bit Oracle Client library: \""libclntsh.so: cannot open shared object file: No such file or "
+experimental-bsan,oracle-0.6.3,batch::tests::batch_with_batch_errors,test_failed,93.769,1.650,2026-11-05T02:14:48Z,50239800.0,panic,"thread 'batch::tests::batch_with_batch_errors' (66893) panicked at src/batch.rs:933:41: called `Result::unwrap()` on an `Err` value: DpiError(DbError { code: 0, offset: 1047519272, message: ""DPI-1047: Cannot locate a 64-bit Oracle Client library: \""libclntsh.so: cannot open shared object file: No su"
+experimental-bsan,oracle-0.6.3,batch::tests::batch_with_error,test_failed,93.769,1.650,2026-11-05T02:14:50Z,50239800.0,panic,"thread 'batch::tests::batch_with_error' (67080) panicked at src/batch.rs:905:41: called `Result::unwrap()` on an `Err` value: DpiError(DbError { code: 0, offset: 2015354936, message: ""DPI-1047: Cannot locate a 64-bit Oracle Client library: \""libclntsh.so: cannot open shared object file: No such file"
+experimental-bsan,oracle-0.6.3,bind_named,test_failed,93.769,2.930,2026-11-05T02:14:53Z,50239800.0,other,"error: test failed, to rerun pass `--test bind`"
+experimental-bsan,oracle-0.6.3,bind_names,test_failed,93.769,11.021,2026-11-05T02:15:04Z,50239800.0,other,"error: test failed, to rerun pass `--test statement`"
+experimental-bsan,oracle-0.6.3,chrono::date_from_sql,test_failed,93.769,5.625,2026-11-05T02:15:09Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,chrono::date_to_sql,test_failed,93.769,5.598,2026-11-05T02:15:15Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,chrono::datetime_from_sql,test_failed,93.769,5.606,2026-11-05T02:15:21Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,chrono::datetime_to_sql,test_failed,93.769,5.627,2026-11-05T02:15:26Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,chrono::duration_from_sql,test_failed,93.769,5.617,2026-11-05T02:15:32Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,chrono::duration_to_sql,test_failed,93.769,5.625,2026-11-05T02:15:38Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,chrono::naive_date_from_sql,test_failed,93.769,5.602,2026-11-05T02:15:43Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,chrono::naive_date_to_sql,test_failed,93.769,5.613,2026-11-05T02:15:49Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,chrono::naive_datetime_from_sql,test_failed,93.769,5.615,2026-11-05T02:15:55Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,chrono::naive_datetime_to_sql,test_failed,93.769,5.623,2026-11-05T02:16:00Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,collection_udt_nestedarray,test_failed,93.769,6.971,2026-11-05T02:16:07Z,50239800.0,other,"error: test failed, to rerun pass `--test object`"
+experimental-bsan,oracle-0.6.3,dml_returning,test_failed,93.769,12.016,2026-11-05T02:16:19Z,50239800.0,other,"error: test failed, to rerun pass `--test statement`"
+experimental-bsan,oracle-0.6.3,error::tests::new_and_add_source,success,93.769,10.899,2026-11-05T02:16:30Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,error::tests::test_dpi_error_in_message,success,93.769,10.910,2026-11-05T02:16:41Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,error::tests::with_source,success,93.769,10.912,2026-11-05T02:16:52Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,execute,test_failed,93.769,4.272,2026-11-05T02:16:56Z,50239800.0,other,"error: test failed, to rerun pass `--test connection`"
+experimental-bsan,oracle-0.6.3,from_string_in_rust_oracle,test_failed,93.769,2.925,2026-11-05T02:16:59Z,50239800.0,other,"error: test failed, to rerun pass `--test bind`"
+experimental-bsan,oracle-0.6.3,in_out_same_values,test_failed,93.769,2.924,2026-11-05T02:17:02Z,50239800.0,other,"error: test failed, to rerun pass `--test bind`"
+experimental-bsan,oracle-0.6.3,insert_and_fetch,test_failed,93.769,11.009,2026-11-05T02:17:13Z,50239800.0,other,"error: test failed, to rerun pass `--test statement`"
+experimental-bsan,oracle-0.6.3,interval_ds_from_sql,test_failed,93.769,5.617,2026-11-05T02:17:19Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,interval_ds_to_sql,test_failed,93.769,5.624,2026-11-05T02:17:24Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,interval_ym_from_sql,test_failed,93.769,5.644,2026-11-05T02:17:30Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,interval_ym_to_sql,test_failed,93.769,5.619,2026-11-05T02:17:36Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,invalid_obj,test_failed,93.769,8.323,2026-11-05T02:17:44Z,50239800.0,other,"error: test failed, to rerun pass `--test object_type`"
+experimental-bsan,oracle-0.6.3,iterate_rows_by_ref_and_check_fused,test_failed,93.769,11.041,2026-11-05T02:17:55Z,50239800.0,other,"error: test failed, to rerun pass `--test statement`"
+experimental-bsan,oracle-0.6.3,numeric_from_sql,test_failed,93.769,5.612,2026-11-05T02:18:01Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,numeric_to_sql,test_failed,93.769,5.616,2026-11-05T02:18:06Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,object_type_cache,test_failed,93.769,8.418,2026-11-05T02:18:15Z,50239800.0,other,"error: test failed, to rerun pass `--test object_type`"
+experimental-bsan,oracle-0.6.3,oci_attr::tests::read_write_server_str_attr,test_failed,93.769,1.610,2026-11-05T02:18:17Z,50239800.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,oracle-0.6.3,oci_attr::tests::read_write_svcctx_u32_attr,test_failed,93.769,1.622,2026-11-05T02:18:18Z,50239800.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,oracle-0.6.3,oci_attr::tests::write_session_str_attr,test_failed,93.769,1.618,2026-11-05T02:18:20Z,50239800.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,oracle-0.6.3,pkg_testnumberarrays_udt_numberlist,test_failed,93.769,8.376,2026-11-05T02:18:28Z,50239800.0,other,"error: test failed, to rerun pass `--test object_type`"
+experimental-bsan,oracle-0.6.3,pkg_testrecords_udt_record,test_failed,93.769,8.390,2026-11-05T02:18:37Z,50239800.0,other,"error: test failed, to rerun pass `--test object_type`"
+experimental-bsan,oracle-0.6.3,procmacro_ok_shadow,success,93.769,10.978,2026-11-05T02:18:48Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,query,test_failed,93.769,4.303,2026-11-05T02:18:52Z,50239800.0,other,"error: test failed, to rerun pass `--test connection`"
+experimental-bsan,oracle-0.6.3,query_row,test_failed,93.769,4.303,2026-11-05T02:18:56Z,50239800.0,other,"error: test failed, to rerun pass `--test connection`"
+experimental-bsan,oracle-0.6.3,raw_from_to_sql,test_failed,93.769,5.674,2026-11-05T02:19:02Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,row_count,test_failed,93.769,11.619,2026-11-05T02:19:14Z,50239800.0,other,"error: test failed, to rerun pass `--test statement`"
+experimental-bsan,oracle-0.6.3,sdo_geometry,test_failed,93.769,6.994,2026-11-05T02:19:21Z,50239800.0,other,"error: test failed, to rerun pass `--test object`"
+experimental-bsan,oracle-0.6.3,select_objects,test_failed,93.769,7.021,2026-11-05T02:19:28Z,50239800.0,other,"error: test failed, to rerun pass `--test object`"
+experimental-bsan,oracle-0.6.3,sql_type::interval_ds::tests::parse,success,93.769,10.958,2026-11-05T02:19:39Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,sql_type::interval_ds::tests::to_string,success,93.769,10.994,2026-11-05T02:19:50Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,sql_type::interval_ym::tests::parse,success,93.769,10.888,2026-11-05T02:20:01Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,sql_type::interval_ym::tests::to_string,success,93.769,10.945,2026-11-05T02:20:11Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,sql_type::lob::tests::query_blob,test_failed,93.769,1.601,2026-11-05T02:20:13Z,50239800.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,oracle-0.6.3,sql_type::lob::tests::read_write_blob,test_failed,93.769,1.595,2026-11-05T02:20:15Z,50239800.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,oracle-0.6.3,sql_type::lob::tests::read_write_clob,test_failed,93.769,1.606,2026-11-05T02:20:16Z,50239800.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,oracle-0.6.3,sql_type::ref_cursor::tests::out_ref_cursor,test_failed,93.769,1.601,2026-11-05T02:20:18Z,50239800.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,oracle-0.6.3,sql_type::ref_cursor::tests::out_ref_cursor_with_statement_builder_options,test_failed,93.769,1.606,2026-11-05T02:20:20Z,50239800.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,oracle-0.6.3,sql_type::timestamp::tests::parse,success,93.769,10.970,2026-11-05T02:20:31Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,sql_type::timestamp::tests::to_string,success,93.769,10.965,2026-11-05T02:20:42Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,statement::tests::column_info,test_failed,93.769,1.592,2026-11-05T02:20:43Z,50239800.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,oracle-0.6.3,statement::tests::fetch_rows_to_vec,test_failed,93.769,1.595,2026-11-05T02:20:45Z,50239800.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,oracle-0.6.3,statement_type,test_failed,93.769,11.003,2026-11-05T02:20:56Z,50239800.0,other,"error: test failed, to rerun pass `--test statement`"
+experimental-bsan,oracle-0.6.3,status,test_failed,93.769,4.270,2026-11-05T02:21:00Z,50239800.0,other,"error: test failed, to rerun pass `--test connection`"
+experimental-bsan,oracle-0.6.3,string_from_sql,test_failed,93.769,5.605,2026-11-05T02:21:06Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,test_autocommit,test_failed,93.769,4.283,2026-11-05T02:21:10Z,50239800.0,other,"error: test failed, to rerun pass `--test connection`"
+experimental-bsan,oracle-0.6.3,timestamp_from_sql,test_failed,93.769,5.628,2026-11-05T02:21:16Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,timestamp_to_sql,test_failed,93.769,5.622,2026-11-05T02:21:21Z,50239800.0,other,"error: test failed, to rerun pass `--test from_to_sql`"
+experimental-bsan,oracle-0.6.3,to_string_in_rust_oracle,test_failed,93.769,2.929,2026-11-05T02:21:24Z,50239800.0,other,"error: test failed, to rerun pass `--test bind`"
+experimental-bsan,oracle-0.6.3,udt_array,test_failed,93.769,6.988,2026-11-05T02:21:31Z,50239800.0,other,"error: test failed, to rerun pass `--test object`"
+experimental-bsan,oracle-0.6.3,udt_issue19,test_failed,93.769,8.398,2026-11-05T02:21:40Z,50239800.0,other,"error: test failed, to rerun pass `--test object_type`"
+experimental-bsan,oracle-0.6.3,udt_object,test_failed,93.769,7.025,2026-11-05T02:21:47Z,50239800.0,other,"error: test failed, to rerun pass `--test object`"
+experimental-bsan,oracle-0.6.3,udt_object_in_query,test_failed,93.769,8.414,2026-11-05T02:21:55Z,50239800.0,other,"error: test failed, to rerun pass `--test object_type`"
+experimental-bsan,oracle-0.6.3,udt_objectdatatypes,test_failed,93.769,8.375,2026-11-05T02:22:04Z,50239800.0,other,"error: test failed, to rerun pass `--test object_type`"
+experimental-bsan,oracle-0.6.3,udt_objectdatatypes_in_query,test_failed,93.769,8.362,2026-11-05T02:22:12Z,50239800.0,other,"error: test failed, to rerun pass `--test object_type`"
+experimental-bsan,oracle-0.6.3,udt_stringlist,test_failed,93.769,7.009,2026-11-05T02:22:19Z,50239800.0,other,"error: test failed, to rerun pass `--test object`"
+experimental-bsan,oracle-0.6.3,util::tests::test_check_number_format,success,93.769,10.993,2026-11-05T02:22:30Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,util::tests::test_parse_str_into_raw,success,93.769,10.936,2026-11-05T02:22:41Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,util::tests::test_scanner,success,93.769,10.925,2026-11-05T02:22:52Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,version::tests::client_version,test_failed,93.769,1.645,2026-11-05T02:22:54Z,50239800.0,panic,"thread 'version::tests::client_version' (9701) panicked at src/version.rs:183:37: called `Result::unwrap()` on an `Err` value: DpiError(DbError { code: 0, offset: 1689248184, message: ""DPI-1047: Cannot locate a 64-bit Oracle Client library: \""libclntsh.so: cannot open shared object file: No such fil"
+experimental-bsan,oracle-0.6.3,version::tests::from_str,success,93.769,10.936,2026-11-05T02:23:05Z,50239800.0,,
+experimental-bsan,oracle-0.6.3,version::tests::to_string,success,93.769,10.931,2026-11-05T02:23:15Z,50239800.0,,

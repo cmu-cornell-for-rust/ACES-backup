@@ -1,0 +1,2 @@
+experimental-bsan,dustdata-2.0.0-beta.0,dustdata_tests::sstable_test,timeout,97.765,1800.016,2026-11-05T18:18:52Z,50276411.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dustdata-2.0.0-beta.0,dustdata_tests::memtable_test,test_failed,97.765,1.665,2026-11-05T18:18:54Z,50276411.0,panic,"thread 'dustdata_tests::memtable_test' (23063) panicked at src/storage/lsm/filter/mod.rs:62:35: called `Result::unwrap()` on an `Err` value: DeserializationError { message: ""malformed value: \""document too short\"""" }"

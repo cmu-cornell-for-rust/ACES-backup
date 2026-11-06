@@ -1,0 +1,8 @@
+experimental-bsan,epub-2.1.2,archive_entry,test_failed,72.719,2.957,2026-11-05T06:40:32Z,50256955.0,panic,"thread 'archive_entry' (77998) panicked at tests/archive.rs:17:5: assertion failed: archive.is_ok()"
+experimental-bsan,epub-2.1.2,archive_entry_percent_encoding,test_failed,72.719,2.955,2026-11-05T06:40:35Z,50256955.0,panic,"thread 'archive_entry_percent_encoding' (78446) panicked at tests/archive.rs:26:5: assertion failed: archive.is_ok()"
+experimental-bsan,epub-2.1.2,archive_open,test_failed,72.719,2.960,2026-11-05T06:40:38Z,50256955.0,panic,"thread 'archive_open' (78848) panicked at tests/archive.rs:8:5: assertion failed: archive.is_ok()"
+experimental-bsan,epub-2.1.2,archive_root_file,test_failed,72.719,2.947,2026-11-05T06:40:41Z,50256955.0,panic,"thread 'archive_root_file' (79195) panicked at tests/archive.rs:37:5: assertion failed: archive.is_ok()"
+experimental-bsan,epub-2.1.2,bad_epub,success,72.719,72.726,2026-11-05T06:41:53Z,50256955.0,,
+experimental-bsan,epub-2.1.2,doc_open,test_failed,72.719,4.313,2026-11-05T06:41:58Z,50256955.0,panic,"thread 'doc_open' (100490) panicked at tests/doc.rs:7:5: assertion failed: doc.is_ok()"
+experimental-bsan,epub-2.1.2,read_doc,timeout,72.719,150.031,2026-11-05T06:44:28Z,50256955.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,epub-2.1.2,toc_test,test_failed,72.719,4.256,2026-11-05T06:44:32Z,50256955.0,panic,"thread 'toc_test' (103247) panicked at tests/doc.rs:72:5: assertion failed: doc.is_ok()"

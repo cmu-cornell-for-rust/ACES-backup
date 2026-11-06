@@ -1,0 +1,62 @@
+experimental-bsan,rustypaste-0.18.1,auth::tests::test_extract_tokens,success,690.511,3.552,2026-11-05T02:42:54Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,config::tests::test_get_tokens,test_failed,690.511,1.898,2026-11-05T02:42:56Z,50242227.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,rustypaste-0.18.1,config::tests::test_parse_config,test_failed,690.511,1.891,2026-11-05T02:42:57Z,50242227.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,rustypaste-0.18.1,config::tests::test_parse_deprecated_config,test_failed,690.511,1.884,2026-11-05T02:42:59Z,50242227.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,rustypaste-0.18.1,config::tests::test_space_handling,success,690.511,3.287,2026-11-05T02:43:03Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,file::tests::test_file_checksum,test_failed,690.511,1.943,2026-11-05T02:43:05Z,50242227.0,panic,"thread 'file::tests::test_file_checksum' (78492) panicked at src/file.rs:70:14: cannot get file with checksum"
+experimental-bsan,rustypaste-0.18.1,header::tests::test_content_disposition,success,690.511,3.290,2026-11-05T02:43:08Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,header::tests::test_expiry_date,success,690.511,3.307,2026-11-05T02:43:11Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,mime::tests::test_match_mime_type,success,690.511,22.479,2026-11-05T02:43:34Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,password::tests::test_password_file_path,success,690.511,3.284,2026-11-05T02:43:37Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,password::tests::test_password_file_path_invalid_utf8,success,690.511,3.288,2026-11-05T02:43:40Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,password::tests::test_password_hashing,timeout,690.511,150.020,2026-11-05T02:46:10Z,50242227.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustypaste-0.18.1,password::tests::test_store_and_verify_password,timeout,690.511,150.023,2026-11-05T02:48:40Z,50242227.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustypaste-0.18.1,paste::tests::test_paste_data,success,690.511,29.415,2026-11-05T02:49:10Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,random::tests::test_generate_url,success,690.511,3.310,2026-11-05T02:49:13Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_auth,success,690.511,20.282,2026-11-05T02:49:34Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_delete_file,success,690.511,32.437,2026-11-05T02:50:06Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_delete_file_without_token_in_config,success,690.511,20.256,2026-11-05T02:50:26Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_delete_protected_file,timeout,690.511,150.031,2026-11-05T02:52:56Z,50242227.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustypaste-0.18.1,server::tests::test_index,success,690.511,3.497,2026-11-05T02:53:00Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_index_with_landing_page,success,690.511,3.498,2026-11-05T02:53:03Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_index_with_landing_page_file,success,690.511,3.513,2026-11-05T02:53:07Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_index_with_landing_page_file_not_found,success,690.511,3.498,2026-11-05T02:53:10Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_is_text_like_mime_defaults,success,690.511,3.308,2026-11-05T02:53:14Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_is_text_like_mime_overrides,success,690.511,3.321,2026-11-05T02:53:17Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_list,success,690.511,32.272,2026-11-05T02:53:49Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_list_excludes_password_files,timeout,690.511,150.029,2026-11-05T02:56:19Z,50242227.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustypaste-0.18.1,server::tests::test_list_expired,success,690.511,32.770,2026-11-05T02:56:52Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_list_item_type,success,690.511,33.326,2026-11-05T02:57:25Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_payload_limit,success,690.511,20.355,2026-11-05T02:57:46Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_protected_file_enumeration_prevention,timeout,690.511,150.028,2026-11-05T03:00:16Z,50242227.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustypaste-0.18.1,server::tests::test_upload_duplicate_file,success,690.511,32.354,2026-11-05T03:00:48Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_upload_expiring_file,test_failed,690.511,31.674,2026-11-05T03:01:20Z,50242227.0,panic,"thread 'server::tests::test_upload_expiring_file' (89841) panicked at src/server.rs:1478:9: assertion `left == right` failed"
+experimental-bsan,rustypaste-0.18.1,server::tests::test_upload_file,success,690.511,33.353,2026-11-05T03:01:53Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_upload_file_override_filename,success,690.511,33.169,2026-11-05T03:02:27Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_upload_oneshot,success,690.511,33.471,2026-11-05T03:03:00Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_upload_oneshot_url,success,690.511,33.399,2026-11-05T03:03:33Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_upload_protected_file,timeout,690.511,150.028,2026-11-05T03:06:03Z,50242227.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustypaste-0.18.1,server::tests::test_upload_remote_file,success,690.511,40.724,2026-11-05T03:06:44Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_upload_remote_file_override_filename,success,690.511,39.488,2026-11-05T03:07:24Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_upload_same_filename,success,690.511,32.298,2026-11-05T03:07:56Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_upload_url,success,690.511,32.392,2026-11-05T03:08:28Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_version,success,690.511,20.305,2026-11-05T03:08:49Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_version_without_auth,success,690.511,19.973,2026-11-05T03:09:09Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,server::tests::test_version_without_config,success,690.511,20.149,2026-11-05T03:09:29Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_get_expired_files,test_failed,690.511,2.487,2026-11-05T03:09:31Z,50242227.0,panic,"thread 'util::tests::test_get_expired_files' (96649) panicked at src/util.rs:396:9: assertion `left == right` failed"
+experimental-bsan,rustypaste-0.18.1,util::tests::test_get_extension_from_filename,success,690.511,3.248,2026-11-05T03:09:35Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_get_orphaned_password_files,success,690.511,3.571,2026-11-05T03:09:38Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_glob_match,test_failed,690.511,12.563,2026-11-05T03:09:51Z,50242227.0,panic,"thread 'util::tests::test_glob_match' (97034) panicked at src/util.rs:365:9: assertion `left == right` failed"
+experimental-bsan,rustypaste-0.18.1,util::tests::test_is_disallowed_ipv4,success,690.511,3.199,2026-11-05T03:09:54Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_is_disallowed_ipv6,success,690.511,3.193,2026-11-05T03:09:57Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_safe_join_path,success,690.511,3.284,2026-11-05T03:10:01Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_sha256sum,success,690.511,3.221,2026-11-05T03:10:04Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_system_time,success,690.511,3.187,2026-11-05T03:10:07Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_validate_remote_url_rejects_file_scheme,success,690.511,3.191,2026-11-05T03:10:10Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_validate_remote_url_rejects_ftp,success,690.511,3.197,2026-11-05T03:10:13Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_validate_remote_url_rejects_localhost,success,690.511,3.190,2026-11-05T03:10:17Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_validate_remote_url_rejects_loopback,success,690.511,3.212,2026-11-05T03:10:20Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_validate_remote_url_rejects_subdomain_localhost,success,690.511,3.184,2026-11-05T03:10:23Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_validate_remote_url_rejects_unresolvable,success,690.511,3.234,2026-11-05T03:10:26Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_validate_remote_url_valid_http,success,690.511,3.200,2026-11-05T03:10:29Z,50242227.0,,
+experimental-bsan,rustypaste-0.18.1,util::tests::test_validate_remote_url_valid_https,success,690.511,3.185,2026-11-05T03:10:33Z,50242227.0,,

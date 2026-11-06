@@ -1,0 +1,7 @@
+experimental-bsan,tokio-context-0.1.3,context::tests::cancel_handle_cancels_context,success,28.971,1.743,2026-11-05T07:01:02Z,50258366.0,,
+experimental-bsan,tokio-context-0.1.3,context::tests::cancelling_child_ctx_doesnt_cancel_parent,success,28.971,1.740,2026-11-05T07:01:04Z,50258366.0,,
+experimental-bsan,tokio-context-0.1.3,context::tests::cancelling_parent_ctx_cancels_child,success,28.971,1.750,2026-11-05T07:01:06Z,50258366.0,,
+experimental-bsan,tokio-context-0.1.3,context::tests::duration_cancels_context,success,28.971,1.753,2026-11-05T07:01:08Z,50258366.0,,
+experimental-bsan,tokio-context-0.1.3,context::tests::parent_timeout_cancels_child,success,28.971,1.761,2026-11-05T07:01:10Z,50258366.0,,
+experimental-bsan,tokio-context-0.1.3,task::tests::cancel_handle_cancels_task,test_failed,28.971,1.831,2026-11-05T07:01:11Z,50258366.0,panic,"thread 'task::tests::cancel_handle_cancels_task' (52236) panicked at src/task.rs:121:65: assertion failed: false"
+experimental-bsan,tokio-context-0.1.3,task::tests::duration_cancels_task,test_failed,28.971,1.828,2026-11-05T07:01:13Z,50258366.0,panic,"thread 'task::tests::duration_cancels_task' (52321) panicked at src/task.rs:132:66: assertion failed: false"

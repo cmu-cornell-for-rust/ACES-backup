@@ -1,0 +1,54 @@
+experimental-bsan,minifb-0.29.0,error::tests::display_includes_payload,success,183.055,3.352,2026-11-05T02:46:33Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,key_handler::tests::every_index_below_count_round_trips,success,183.055,3.330,2026-11-05T02:46:36Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,key_handler::tests::state_array_covers_every_key,success,183.055,3.360,2026-11-05T02:46:40Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,mouse_mode_tests::clamp_handles_sub_pixel_window_sizes,success,183.055,3.343,2026-11-05T02:46:43Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,mouse_mode_tests::clamp_still_clamps_normal_sizes,success,183.055,3.332,2026-11-05T02:46:46Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::common::scaler_tests::aspect_fill_centers_the_image,success,183.055,29.984,2026-11-05T02:47:16Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::common::scaler_tests::aspect_fill_handles_large_source_dimensions,timeout,183.055,150.021,2026-11-05T02:49:46Z,50243158.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,minifb-0.29.0,os::posix::common::scaler_tests::center_does_not_overflow,success,183.055,16.836,2026-11-05T02:50:03Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::common::scaler_tests::resize_linear_handles_large_source_dimensions,timeout,183.055,150.025,2026-11-05T02:52:33Z,50243158.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,minifb-0.29.0,os::posix::common::scaler_tests::resize_linear_indexes_exactly,timeout,183.055,150.016,2026-11-05T02:55:03Z,50243158.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,minifb-0.29.0,os::posix::common::scaler_tests::scalers_accept_degenerate_sizes,success,183.055,3.351,2026-11-05T02:55:07Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::common::scaler_tests::upper_left_does_not_overflow_when_source_is_taller,success,183.055,16.711,2026-11-05T02:55:23Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::common::scaler_tests::upper_left_is_anchored_top_left,success,183.055,3.315,2026-11-05T02:55:27Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::aspect_ratio_keeps_a_collapsed_axis_visible,success,183.055,3.290,2026-11-05T02:55:30Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::aspect_ratio_letterboxes_a_wide_buffer,success,183.055,3.323,2026-11-05T02:55:33Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::aspect_ratio_pillarboxes_a_narrow_buffer,success,183.055,3.307,2026-11-05T02:55:37Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::aspect_ratio_puts_the_odd_letterbox_row_at_the_bottom,success,183.055,3.341,2026-11-05T02:55:40Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::center_overhangs_a_large_buffer,success,183.055,3.336,2026-11-05T02:55:43Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::center_places_a_small_buffer_in_the_middle,success,183.055,3.329,2026-11-05T02:55:47Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::center_puts_the_odd_row_below_the_image,success,183.055,3.300,2026-11-05T02:55:50Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::dest_rect_survives_degenerate_sizes,success,183.055,3.342,2026-11-05T02:55:53Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::empty_frames_follow_the_scalers,success,183.055,3.329,2026-11-05T02:55:57Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::gl_error_messages_name_the_failure,success,183.055,3.326,2026-11-05T02:56:00Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::nearest_sampling_tracks_the_software_scaler,timeout,183.055,150.024,2026-11-05T02:58:30Z,50243158.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::quad_maps_a_centered_rect_into_clip_space,success,183.055,3.303,2026-11-05T02:58:34Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::quad_puts_texture_row_zero_at_the_top,success,183.055,3.326,2026-11-05T02:58:37Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::repack_drops_row_padding,success,183.055,3.278,2026-11-05T02:58:40Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::repack_is_a_plain_copy_when_there_is_no_padding,success,183.055,3.309,2026-11-05T02:58:43Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::repack_reuses_its_scratch_without_leaking_rows,success,183.055,3.316,2026-11-05T02:58:47Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::software_renderers_are_told_from_hardware,success,183.055,3.330,2026-11-05T02:58:50Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::stretch_fills_the_window,success,183.055,3.290,2026-11-05T02:58:53Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::upper_left_anchors_to_the_top_left,success,183.055,3.310,2026-11-05T02:58:57Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::gl::tests::upper_left_keeps_the_top_left_visible_when_oversized,success,183.055,3.303,2026-11-05T02:59:00Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::a_total_larger_than_i32_is_rejected,success,183.055,3.289,2026-11-05T02:59:03Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::a_zero_configure_axis_keeps_the_current_value,success,183.055,3.304,2026-11-05T02:59:07Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::all_busy_at_cap_waits,success,183.055,3.298,2026-11-05T02:59:10Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::all_busy_under_cap_grows,success,183.055,3.308,2026-11-05T02:59:13Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::an_unusable_configure_is_rejected,success,183.055,3.313,2026-11-05T02:59:17Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::byte_count_is_width_times_height_times_four,success,183.055,3.307,2026-11-05T02:59:20Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::empty_pool_grows,success,183.055,3.308,2026-11-05T02:59:23Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::lowest_released_index_wins,success,183.055,3.313,2026-11-05T02:59:27Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::non_positive_dimensions_are_rejected,success,183.055,3.306,2026-11-05T02:59:30Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::release_at_cap_is_preferred_over_waiting,success,183.055,3.305,2026-11-05T02:59:33Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::released_buffer_is_reused,success,183.055,3.303,2026-11-05T02:59:37Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::scale_multiply_is_checked,success,183.055,3.268,2026-11-05T02:59:40Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::buffer_pool_tests::the_largest_dimensions_do_not_overflow_the_check,success,183.055,3.326,2026-11-05T02:59:43Z,50243158.0,,
+experimental-bsan,minifb-0.29.0,os::posix::wayland::key_level_tests::char_input_follows_the_active_shift_level,test_failed,183.055,1.847,2026-11-05T02:59:45Z,50243158.0,panic,"thread 'os::posix::wayland::key_level_tests::char_input_follows_the_active_shift_level' (15064) panicked at src/os/posix/xkb_ffi.rs:91:35: Library libxkbcommon.so could not be loaded."
+experimental-bsan,minifb-0.29.0,os::posix::wayland::key_level_tests::fixture_has_a_layout_specific_shifted_level,test_failed,183.055,1.852,2026-11-05T02:59:47Z,50243158.0,panic,"thread 'os::posix::wayland::key_level_tests::fixture_has_a_layout_specific_shifted_level' (15157) panicked at src/os/posix/xkb_ffi.rs:91:35: Library libxkbcommon.so could not be loaded."
+experimental-bsan,minifb-0.29.0,os::posix::wayland::key_level_tests::group_change_while_held_leaves_no_key_held,test_failed,183.055,1.843,2026-11-05T02:59:49Z,50243158.0,panic,"thread 'os::posix::wayland::key_level_tests::group_change_while_held_leaves_no_key_held' (15325) panicked at src/os/posix/xkb_ffi.rs:91:35: Library libxkbcommon.so could not be loaded."
+experimental-bsan,minifb-0.29.0,os::posix::wayland::key_level_tests::keypad_decimal_registers,test_failed,183.055,1.854,2026-11-05T02:59:51Z,50243158.0,panic,"thread 'os::posix::wayland::key_level_tests::keypad_decimal_registers' (15441) panicked at src/os/posix/xkb_ffi.rs:91:35: Library libxkbcommon.so could not be loaded."
+experimental-bsan,minifb-0.29.0,os::posix::wayland::key_level_tests::numpad_registers_with_numlock_on,test_failed,183.055,1.847,2026-11-05T02:59:53Z,50243158.0,panic,"thread 'os::posix::wayland::key_level_tests::numpad_registers_with_numlock_on' (15535) panicked at src/os/posix/xkb_ffi.rs:91:35: Library libxkbcommon.so could not be loaded."
+experimental-bsan,minifb-0.29.0,os::posix::wayland::key_level_tests::shift_does_not_change_the_reported_key,test_failed,183.055,1.864,2026-11-05T02:59:54Z,50243158.0,panic,"thread 'os::posix::wayland::key_level_tests::shift_does_not_change_the_reported_key' (15610) panicked at src/os/posix/xkb_ffi.rs:91:35: Library libxkbcommon.so could not be loaded."
+experimental-bsan,minifb-0.29.0,os::posix::wayland::key_level_tests::shift_rollover_leaves_no_key_held,test_failed,183.055,1.847,2026-11-05T02:59:56Z,50243158.0,panic,"thread 'os::posix::wayland::key_level_tests::shift_rollover_leaves_no_key_held' (15694) panicked at src/os/posix/xkb_ffi.rs:91:35: Library libxkbcommon.so could not be loaded."
+experimental-bsan,minifb-0.29.0,os::posix::wayland::key_level_tests::undeclared_keycode_is_ignored,test_failed,183.055,1.850,2026-11-05T02:59:58Z,50243158.0,panic,"thread 'os::posix::wayland::key_level_tests::undeclared_keycode_is_ignored' (15815) panicked at src/os/posix/xkb_ffi.rs:91:35: Library libxkbcommon.so could not be loaded."

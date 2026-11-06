@@ -1,0 +1,10 @@
+experimental-bsan,func_wrap-0.1.3,default_method,test_failed,173.411,5.288,2026-11-05T06:18:53Z,50255621.0,crash,"test default_method ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,func_wrap-0.1.3,downstream_example,test_failed,173.411,3.162,2026-11-05T06:18:57Z,50255621.0,panic,"thread 'downstream_example' (56347) panicked at tests/downstream.rs:9:35: Command `cd ""downstream"" && ""/opt/rust/rustup/toolchains/bsan/bin/cargo"" ""check"" ""--example"" ""user"" ""-q""` failed: No such file or directory (os error 2)"
+experimental-bsan,func_wrap-0.1.3,impls::inherent,test_failed,173.411,5.188,2026-11-05T06:19:02Z,50255621.0,crash,"test impls::inherent ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,func_wrap-0.1.3,impls::trait_for,test_failed,173.411,5.253,2026-11-05T06:19:07Z,50255621.0,crash,"test impls::trait_for ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,func_wrap-0.1.3,simple_fn,test_failed,173.411,5.023,2026-11-05T06:19:12Z,50255621.0,crash,"test simple_fn ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,func_wrap-0.1.3,tests::default_method,test_failed,173.411,2.248,2026-11-05T06:19:14Z,50255621.0,crash,"test tests::default_method ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,func_wrap-0.1.3,tests::impls::inherent,test_failed,173.411,2.360,2026-11-05T06:19:17Z,50255621.0,crash,"test tests::impls::inherent ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,func_wrap-0.1.3,tests::impls::trait_for,test_failed,173.411,2.313,2026-11-05T06:19:19Z,50255621.0,crash,"test tests::impls::trait_for ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,func_wrap-0.1.3,tests::missing_enscoping,success,173.411,4.658,2026-11-05T06:19:24Z,50255621.0,,
+experimental-bsan,func_wrap-0.1.3,tests::simple_fn,test_failed,173.411,2.163,2026-11-05T06:19:26Z,50255621.0,crash,"test tests::simple_fn ... BorrowSanitizer:DEADLYSIGNAL"

@@ -1,0 +1,58 @@
+experimental-bsan,candle-nn-0.11.0,adamw_linear_regression,timeout,731.744,150.020,2026-11-05T02:51:02Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,adamw_linear_regression_varmap,timeout,731.744,150.017,2026-11-05T02:53:32Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,batch_norm_test,success,731.744,18.459,2026-11-05T02:53:50Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,binary_cross_entropy_with_logit,success,731.744,18.081,2026-11-05T02:54:09Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,causal_decode_b1,timeout,731.744,150.016,2026-11-05T02:56:39Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,causal_decode_gqa,timeout,731.744,150.012,2026-11-05T02:59:09Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,causal_prefill_b1,timeout,731.744,150.014,2026-11-05T03:01:39Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,causal_prefill_with_offset,timeout,731.744,150.017,2026-11-05T03:04:09Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,group_norm,success,731.744,18.114,2026-11-05T03:04:27Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,gru,timeout,731.744,150.017,2026-11-05T03:06:57Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,huber_loss,success,731.744,18.073,2026-11-05T03:07:15Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,interleaved_kv_decode,timeout,731.744,150.013,2026-11-05T03:09:45Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,kv_cache,success,731.744,17.933,2026-11-05T03:10:03Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,kv_cache::tests::test_concat_cache_basic,success,731.744,17.926,2026-11-05T03:10:21Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,kv_cache::tests::test_concat_cache_different_dim,success,731.744,17.951,2026-11-05T03:10:39Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,kv_cache::tests::test_concat_cache_multiple_appends,success,731.744,18.039,2026-11-05T03:10:57Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,kv_cache::tests::test_concat_cache_reset,success,731.744,17.886,2026-11-05T03:11:15Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,kv_cache::tests::test_scattered_kv_cache,success,731.744,18.041,2026-11-05T03:11:33Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,layer_norm,success,731.744,18.678,2026-11-05T03:11:52Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,ln_cpu,success,731.744,18.653,2026-11-05T03:12:10Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,lnl_cpu,timeout,731.744,150.021,2026-11-05T03:14:40Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,lstm,timeout,731.744,150.016,2026-11-05T03:17:10Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,nll_and_cross_entropy,success,731.744,17.988,2026-11-05T03:17:28Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,rms_norm_cpu,success,731.744,17.978,2026-11-05T03:17:46Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,rms_norm_large_magnitude_cpu,success,731.744,53.434,2026-11-05T03:18:40Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,rms_norml_cpu,timeout,731.744,150.025,2026-11-05T03:21:10Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,rope_cpu,success,731.744,22.356,2026-11-05T03:21:32Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,rope_thd_cpu,success,731.744,22.237,2026-11-05T03:21:54Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,ropei_cpu,success,731.744,25.725,2026-11-05T03:22:20Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,rotating_kv_cache,success,731.744,18.106,2026-11-05T03:22:38Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,sgd_linear_regression,timeout,731.744,150.017,2026-11-05T03:25:08Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,sgd_optim,success,731.744,23.151,2026-11-05T03:25:32Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,sigmoid_cpu,success,731.744,17.929,2026-11-05T03:25:49Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,softmax_cpu,success,731.744,18.681,2026-11-05T03:26:08Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,softmax_numerical_stability,success,731.744,17.919,2026-11-05T03:26:26Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,standard_no_mask_b1,success,731.744,85.401,2026-11-05T03:27:51Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,standard_with_mask_b1,success,731.744,83.311,2026-11-05T03:29:15Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,test_i64_one_hot,success,731.744,17.877,2026-11-05T03:29:33Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,test_iter,success,731.744,17.899,2026-11-05T03:29:51Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,test_rank_3_one_hot,success,731.744,17.904,2026-11-05T03:30:09Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,test_u8_one_cold,success,731.744,17.907,2026-11-05T03:30:26Z,50242737.0,,
+experimental-bsan,candle-nn-0.11.0,tests::test_fused_vs_unfused_causal_f16,timeout,731.744,150.014,2026-11-05T03:32:56Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_fused_vs_unfused_causal_f32,timeout,731.744,150.031,2026-11-05T03:35:27Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_fused_vs_unfused_noncausal_f16,timeout,731.744,150.015,2026-11-05T03:37:57Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_fused_vs_unfused_noncausal_f32,timeout,731.744,150.025,2026-11-05T03:40:27Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_prefill_causal_cpu_flash_f16,timeout,731.744,150.011,2026-11-05T03:42:57Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_prefill_causal_cpu_flash_f32,timeout,731.744,150.019,2026-11-05T03:45:27Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_prefill_causal_unfused_f16,timeout,731.744,150.014,2026-11-05T03:47:57Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_prefill_causal_unfused_f32,timeout,731.744,150.013,2026-11-05T03:50:27Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_prefill_gqa_causal_cpu_flash_f32,timeout,731.744,150.022,2026-11-05T03:52:57Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_prefill_gqa_causal_unfused_f32,timeout,731.744,150.012,2026-11-05T03:55:27Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_prefill_gqa_cpu_flash_f32,timeout,731.744,150.029,2026-11-05T03:57:57Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_prefill_gqa_unfused_f32,timeout,731.744,150.016,2026-11-05T04:00:27Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_prefill_noncausal_cpu_flash_f16,timeout,731.744,150.012,2026-11-05T04:02:57Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_prefill_noncausal_cpu_flash_f32,timeout,731.744,150.022,2026-11-05T04:05:27Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_prefill_noncausal_unfused_f16,timeout,731.744,150.014,2026-11-05T04:07:57Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,tests::test_prefill_noncausal_unfused_f32,timeout,731.744,150.012,2026-11-05T04:10:27Z,50242737.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,candle-nn-0.11.0,train_batch_norm,success,731.744,17.959,2026-11-05T04:10:45Z,50242737.0,,

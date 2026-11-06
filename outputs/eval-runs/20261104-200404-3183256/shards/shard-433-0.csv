@@ -1,0 +1,365 @@
+experimental-bsan,rustradio-0.19.6,add::tests::add_float,timeout,366.623,150.022,2026-11-05T01:30:40Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,agc::tests::clamps_gain,timeout,366.623,150.020,2026-11-05T01:33:10Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,agc::tests::propagates_tags,success,366.623,124.717,2026-11-05T01:35:15Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,agc::tests::scales_complex_samples,success,366.623,123.545,2026-11-05T01:37:19Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,agc::tests::separate_attack_and_decay_rates,success,366.623,122.701,2026-11-05T01:39:21Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,agc::tests::validates_configuration,timeout,366.623,150.018,2026-11-05T01:41:51Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,au::tests::encoder_waits_for_a_complete_sample,timeout,366.623,150.018,2026-11-05T01:44:21Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,block::tests::blockret_fmt,success,366.623,21.720,2026-11-05T01:44:43Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,blockchain_arguments_accept_metadata,timeout,366.623,150.019,2026-11-05T01:47:13Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,blocks_with_copying_nocopy_and_mixed_ports_are_unwind_safe,success,366.623,21.728,2026-11-05T01:47:35Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,builtins_append_little_endian_bytes_without_reallocating,success,366.623,21.684,2026-11-05T01:47:57Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,burst_tagger::tests::tag_it,timeout,366.623,150.019,2026-11-05T01:50:27Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,canary::tests::canary,timeout,366.623,150.017,2026-11-05T01:52:57Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,cma::tests::complex_dot_product,success,366.623,123.773,2026-11-05T01:55:00Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,cma::tests::output_window_slides,success,366.623,122.719,2026-11-05T01:57:03Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,cma::tests::rejects_invalid_configuration_before_processing,timeout,366.623,150.019,2026-11-05T01:59:33Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,complex_streams_accept_real_coefficients,success,366.623,123.096,2026-11-05T02:01:36Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,complex_to_mag2::tests::magnitudes,timeout,366.623,150.020,2026-11-05T02:04:06Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,concurrent_names_remain_unique_and_inventory_is_sorted,timeout,366.623,150.018,2026-11-05T02:06:36Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,convert::tests::ncmap_append,success,366.623,21.843,2026-11-05T02:06:58Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,convert::tests::ncmap_convert,success,366.623,21.841,2026-11-05T02:07:20Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,convert::tests::ncmap_doesnt_drop_when_dst_full,success,366.623,23.343,2026-11-05T02:07:43Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,convert::tests::ncmap_double,success,366.623,21.854,2026-11-05T02:08:05Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,convert::tests::ncmap_double_inplace,success,366.623,21.829,2026-11-05T02:08:27Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,convert::tests::ncmap_drop,success,366.623,21.900,2026-11-05T02:08:49Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,convert::tests::ncmap_identity,success,366.623,21.918,2026-11-05T02:09:11Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,convert::tests::ncmap_multipacket,success,366.623,21.911,2026-11-05T02:09:33Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,convert::tests::parse_waits_for_full_sample,timeout,366.623,150.021,2026-11-05T02:12:03Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,correlate_access_code::tests::rejects_empty_code,timeout,366.623,150.021,2026-11-05T02:14:33Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,correlate_access_code::tests::tagged_rejects_empty_code,timeout,366.623,150.020,2026-11-05T02:17:03Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,correlate_access_code::tests::tagged_waits_for_full_code_before_match,timeout,366.623,150.020,2026-11-05T02:19:33Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,correlate_access_code::tests::waits_for_full_code_before_match,timeout,366.623,150.019,2026-11-05T02:22:03Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,custom_encoding_round_trips_through_file_blocks,timeout,366.623,150.020,2026-11-05T02:24:33Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,custom_sample_supports_allocating_and_append_serialization,success,366.623,21.886,2026-11-05T02:24:55Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,custom_sample_without_encoding_flows_through_processing_blocks,timeout,366.623,150.020,2026-11-05T02:27:25Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,debug_sink::tests::debug_filter_waits_for_output_when_output_fills,timeout,366.623,150.018,2026-11-05T02:29:55Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,debug_sink::tests::nocopy_messages_need_no_default,success,366.623,21.886,2026-11-05T02:30:17Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,delay::tests::delay_change,timeout,366.623,150.022,2026-11-05T02:32:47Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,delay::tests::delay_decrease_before_work_reduces_remaining_delay,timeout,366.623,150.022,2026-11-05T02:35:17Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,delay::tests::delay_increase_before_work_extends_remaining_delay,timeout,366.623,150.022,2026-11-05T02:37:47Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,delay::tests::delay_one,timeout,366.623,150.021,2026-11-05T02:40:17Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,delay::tests::delay_reduced_twice_accumulates_pending_skip,timeout,366.623,150.021,2026-11-05T02:42:47Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,delay::tests::delay_zero,timeout,366.623,150.021,2026-11-05T02:45:17Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,delay::tests::eof_waits_for_pending_delay,timeout,366.623,150.022,2026-11-05T02:47:47Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,delay::tests::restoring_delay_cancels_pending_skip,timeout,366.623,150.021,2026-11-05T02:50:17Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,descrambler::tests::known_good_ones,success,366.623,21.878,2026-11-05T02:50:39Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,descrambler::tests::known_good_test1,success,366.623,21.928,2026-11-05T02:51:01Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,descrambler::tests::long_random,success,366.623,23.936,2026-11-05T02:51:25Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,descrambler::tests::long_random_nrzi_g3ruh,timeout,366.623,150.019,2026-11-05T02:53:55Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,f32_operations,success,366.623,21.834,2026-11-05T02:54:17Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,f64_operations,success,366.623,21.784,2026-11-05T02:54:39Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fft::tests::rejects_wrong_size,success,366.623,21.824,2026-11-05T02:55:01Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fft::tests::zeroes,success,366.623,22.780,2026-11-05T02:55:24Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fft_filter::tests::batched_rounds_preserve_partial_input_and_tags,success,366.623,123.921,2026-11-05T02:57:27Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fft_filter::tests::batched_rounds_respect_output_backpressure,timeout,366.623,150.021,2026-11-05T02:59:58Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fft_filter::tests::engine_failure_is_reported_without_publishing_output,timeout,366.623,150.020,2026-11-05T03:02:28Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fft_filter::tests::filter_a_signal,timeout,366.623,150.017,2026-11-05T03:04:58Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fft_filter::tests::rejects_empty_taps_and_overflow_before_planning,timeout,366.623,150.021,2026-11-05T03:07:28Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fft_filter::tests::rejects_invalid_custom_engine_layouts,timeout,366.623,150.021,2026-11-05T03:09:58Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fft_filter::tests::rustfft_engine_reports_invalid_lengths,success,366.623,21.931,2026-11-05T03:10:20Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fft_filter::tests::tag_propagation,success,366.623,128.900,2026-11-05T03:12:29Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fft_filter::tests::work_uses_one_input_snapshot,success,366.623,124.448,2026-11-05T03:14:33Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fft_stream::tests::adds_frame_tags,success,366.623,123.864,2026-11-05T03:16:37Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fft_stream::tests::output_can_be_batched_by_stream_to_pdu,success,366.623,124.610,2026-11-05T03:18:42Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fft_stream::tests::rejects_invalid_frame_sizes_before_planning,success,366.623,124.487,2026-11-05T03:20:46Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,file_sink::tests::append,success,366.623,128.045,2026-11-05T03:22:54Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,file_sink::tests::fail_create,success,366.623,127.882,2026-11-05T03:25:02Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,file_sink::tests::overwrite,success,366.623,127.747,2026-11-05T03:27:10Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,file_sink::tests::sink_c32,success,366.623,73.918,2026-11-05T03:28:24Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,file_sink::tests::sink_f32,success,366.623,130.520,2026-11-05T03:30:34Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,file_sink_serializes_multiple_batches,timeout,366.623,150.017,2026-11-05T03:33:04Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,file_source::tests::fast_path_parses_only_bytes_read,timeout,366.623,150.018,2026-11-05T03:35:34Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,file_source::tests::fast_path_returns_parse_errors,timeout,366.623,150.019,2026-11-05T03:38:04Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,file_source::tests::source_c32,success,366.623,73.466,2026-11-05T03:39:18Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,file_source::tests::source_dst_full,timeout,366.623,150.018,2026-11-05T03:41:48Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,file_source::tests::source_f32,success,366.623,129.515,2026-11-05T03:43:57Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,file_source::tests::source_f32_partial_tail,success,366.623,130.250,2026-11-05T03:46:08Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,file_source::tests::source_f32_twice,success,366.623,131.008,2026-11-05T03:48:19Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,file_source::tests::source_repeat_discards_partial_tail,success,366.623,130.171,2026-11-05T03:50:29Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,file_source::tests::zero_repeats_produces_nothing,timeout,366.623,150.020,2026-11-05T03:52:59Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fir::tests::blocked_output_does_not_apply_or_advance_translation,timeout,366.623,150.020,2026-11-05T03:55:29Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fir::tests::hilbert_generates_normalized_antisymmetric_taps,success,366.623,21.794,2026-11-05T03:55:51Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fir::tests::hilbert_rejects_invalid_windows,success,366.623,21.804,2026-11-05T03:56:12Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fir::tests::low_pass_accepts_nyquist_and_large_finite_rates,success,366.623,21.755,2026-11-05T03:56:34Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fir::tests::low_pass_rejects_invalid_design_parameters,success,366.623,21.797,2026-11-05T03:56:56Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fir::tests::moving_avg,timeout,366.623,150.019,2026-11-05T03:59:26Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fir::tests::multiband_full_band_is_centered_impulse,success,366.623,21.828,2026-11-05T03:59:48Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fir::tests::multiband_rejects_invalid_ranges,success,366.623,21.783,2026-11-05T04:00:10Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fir::tests::owned_taps_keep_their_allocation,timeout,366.623,150.020,2026-11-05T04:02:40Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fir::tests::rejects_invalid_configuration_before_processing,timeout,366.623,150.019,2026-11-05T04:05:10Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fir::tests::test_complex,success,366.623,21.754,2026-11-05T04:05:32Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fir::tests::test_filter_generator,success,366.623,21.720,2026-11-05T04:05:53Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,fir::tests::test_identity,timeout,366.623,150.019,2026-11-05T04:08:23Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fir::tests::test_invert,timeout,366.623,150.018,2026-11-05T04:10:53Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fir::tests::translate_matches_mixed_input,timeout,366.623,150.021,2026-11-05T04:13:23Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fir::tests::translated_dc_is_rejected_by_low_pass,timeout,366.623,150.015,2026-11-05T04:15:54Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fir::tests::translated_offset_tone_passes_low_pass,timeout,366.623,150.015,2026-11-05T04:18:24Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,fir_needs_only_algebraic_add_and_mul,success,366.623,21.706,2026-11-05T04:18:45Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,full_buffer_consumption_removes_all_tags,timeout,366.623,150.018,2026-11-05T04:21:15Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,graph::eof_tests::completed_source_closes_stream_before_graph_returns,success,366.623,127.344,2026-11-05T04:23:23Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,graph::tests::canceller,success,366.623,21.686,2026-11-05T04:23:44Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,graph::tests::default_graph,success,366.623,21.709,2026-11-05T04:24:06Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,graph::tests::small_test,timeout,366.623,150.018,2026-11-05T04:26:36Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,graph_reuses_names_for_work_and_stats,success,366.623,21.932,2026-11-05T04:26:58Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,hasher::tests::emits_hash_when_dropped,timeout,366.623,150.018,2026-11-05T04:29:28Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,hasher::tests::emits_hash_when_input_closes,timeout,366.623,150.018,2026-11-05T04:31:58Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,hdlc_deframer::tests::bitstuffed1,timeout,366.623,150.018,2026-11-05T04:34:28Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,hdlc_deframer::tests::bitstuffed2,timeout,366.623,150.018,2026-11-05T04:36:58Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,hdlc_deframer::tests::check_crc,timeout,366.623,150.020,2026-11-05T04:39:28Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,hdlc_deframer::tests::crc_bitfix,success,366.623,21.806,2026-11-05T04:39:50Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,hdlc_deframer::tests::find_simple_frame,timeout,366.623,150.018,2026-11-05T04:42:20Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,hdlc_deframer::tests::find_simple_frames,timeout,366.623,150.019,2026-11-05T04:44:50Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,hdlc_deframer::tests::too_long,timeout,366.623,150.018,2026-11-05T04:47:20Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,hdlc_deframer::tests::too_short,timeout,366.623,150.019,2026-11-05T04:49:50Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,hdlc_framer::tests::fcs,success,366.623,21.876,2026-11-05T04:50:12Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,hdlc_framer::tests::various,success,366.623,22.458,2026-11-05T04:50:35Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,head::tests::head,timeout,366.623,150.021,2026-11-05T04:53:05Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,hilbert::tests::rejects_invalid_tap_counts,timeout,366.623,150.019,2026-11-05T04:55:35Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,hilbert::tests::valid_transform_outputs_one_sample_per_input,timeout,366.623,150.019,2026-11-05T04:58:05Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,iir_filter::tests::fill_replaces_existing_history,success,366.623,21.550,2026-11-05T04:58:26Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,iir_filter::tests::filled,success,366.623,21.535,2026-11-05T04:58:48Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,iir_filter::tests::multi_pole,success,366.623,21.603,2026-11-05T04:59:10Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,iir_filter::tests::rejects_empty_taps_and_reuses_owned_storage,success,366.623,21.604,2026-11-05T04:59:31Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,iir_filter::tests::single_pole,success,366.623,21.586,2026-11-05T04:59:53Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,iir_filter::tests::single_pole_clamped,success,366.623,21.578,2026-11-05T05:00:14Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,iir_filter::tests::zero_pole,success,366.623,21.640,2026-11-05T05:00:36Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,il2p_deframer::tests::test_header_decode,timeout,366.623,150.018,2026-11-05T05:03:06Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,invalid_rates_are_rejected_without_overwriting_metadata,timeout,366.623,150.019,2026-11-05T05:05:36Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,invalid_retunes_leave_valid_pending_settings_unchanged,success,366.623,122.708,2026-11-05T05:07:39Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,inventory_includes_custom_message_types_without_retaining_them,success,366.623,21.525,2026-11-05T05:08:00Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,inventory_lifetime_follows_outstanding_windows,timeout,366.623,150.017,2026-11-05T05:10:30Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,inventory_tracks_metadata_updates_and_completion,success,366.623,127.818,2026-11-05T05:12:38Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,iq_balance::tests::accepts_endpoint_coefficients,timeout,366.623,150.020,2026-11-05T05:15:08Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,iq_balance::tests::keeps_dc_offset_quickly_with_small_alpha,success,366.623,121.948,2026-11-05T05:17:10Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,iq_balance::tests::rejects_invalid_settings_instead_of_substituting_defaults,timeout,366.623,150.019,2026-11-05T05:19:40Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,iq_balance::tests::removes_dc_offset_quickly_with_huge_alpha,success,366.623,123.437,2026-11-05T05:21:44Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,iq_balance::tests::removes_dc_offset_quickly_with_large_alpha,success,366.623,122.827,2026-11-05T05:23:46Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,kiss::tests::decode_empty,success,366.623,21.520,2026-11-05T05:24:08Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,kiss::tests::decode_nothing,success,366.623,21.529,2026-11-05T05:24:30Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,kiss::tests::decode_some_data,success,366.623,21.504,2026-11-05T05:24:51Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,kiss::tests::encode_empty,success,366.623,21.487,2026-11-05T05:25:13Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,kiss::tests::encode_nothing,success,366.623,21.509,2026-11-05T05:25:34Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,kiss::tests::encode_some_data,success,366.623,21.553,2026-11-05T05:25:56Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,kiss::tests::find_packet,timeout,366.623,150.017,2026-11-05T05:28:26Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,kiss::tests::frame_accepts_exact_max_len,timeout,366.623,150.017,2026-11-05T05:30:56Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,kiss::tests::frame_rejects_over_max_len,timeout,366.623,150.017,2026-11-05T05:33:26Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,message_sinks_use_append_serialization,success,366.623,21.549,2026-11-05T05:33:47Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,metadata_preserves_data_tags_and_eof,timeout,366.623,150.017,2026-11-05T05:36:17Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,mixed_outputs_are_fallible_and_nocopy_outputs_remain_infallible,timeout,366.623,150.017,2026-11-05T05:38:47Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,morse_encode::tests::simple,success,366.623,21.495,2026-11-05T05:39:09Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,mtgraph::tests::default_graph,success,366.623,21.536,2026-11-05T05:39:30Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,mtgraph::tests::small_test,timeout,366.623,150.019,2026-11-05T05:42:01Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,multiply::tests::mul_float,timeout,366.623,150.019,2026-11-05T05:44:31Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,names_are_shared_and_duplicates_are_disambiguated,timeout,366.623,150.017,2026-11-05T05:47:01Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,nocopy_payloads_need_not_be_ref_unwind_safe,success,366.623,21.484,2026-11-05T05:47:22Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::circ_circular,success,366.623,21.553,2026-11-05T05:47:44Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::circ_past_end,success,366.623,21.536,2026-11-05T05:48:05Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::circ_reqlen,success,366.623,21.552,2026-11-05T05:48:27Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::circ_reqlen_too_big,success,366.623,21.556,2026-11-05T05:48:48Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::circ_reqlen_too_big_beginning,success,366.623,21.517,2026-11-05T05:49:10Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::circ_reqlen_too_big_half,success,366.623,21.540,2026-11-05T05:49:31Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::circ_reqlen_too_big_middle,success,366.623,21.541,2026-11-05T05:49:53Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::exact_overflow,success,366.623,21.867,2026-11-05T05:50:15Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::initializes_types_that_cannot_contain_zero_bits,success,366.623,22.263,2026-11-05T05:50:37Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::map_empty_file,success,366.623,21.511,2026-11-05T05:50:59Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::rejects_invalid_buffer_layouts,success,366.623,21.509,2026-11-05T05:51:20Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::two_writes,success,366.623,21.901,2026-11-05T05:51:42Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::typical,success,366.623,23.217,2026-11-05T05:52:05Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nowasm::circular_buffer::tests::with_float,success,366.623,23.538,2026-11-05T05:52:29Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,nrzi::tests::decode,timeout,366.623,150.017,2026-11-05T05:54:59Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,nrzi::tests::encode,timeout,366.623,150.018,2026-11-05T05:57:29Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,nrzi::tests::long,timeout,366.623,150.018,2026-11-05T05:59:59Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,one_capability_can_have_distinct_operand_and_output_types,success,366.623,21.553,2026-11-05T06:00:21Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,oscillator::tests::batch_mixing_stays_stable_across_unaligned_normalization_boundaries,timeout,366.623,150.014,2026-11-05T06:02:51Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,oscillator::tests::extreme_frequency_ratios_remain_finite,success,366.623,21.533,2026-11-05T06:03:12Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,oscillator::tests::first_phase_signed_frequencies_and_aliases,success,366.623,27.357,2026-11-05T06:03:39Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,oscillator::tests::invalid_settings_leave_iteration_unchanged,success,366.623,21.535,2026-11-05T06:04:01Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,oscillator::tests::mismatched_mixing_lengths_leave_output_and_phase_unchanged,success,366.623,21.536,2026-11-05T06:04:23Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,oscillator::tests::mixing_matches_iteration_across_batches_and_retuning,success,366.623,36.775,2026-11-05T06:04:59Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,oscillator::tests::normalization_preserves_amplitude_and_phase_over_long_runs,timeout,366.623,150.017,2026-11-05T06:07:29Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,oscillator::tests::retuning_preserves_next_phase_and_phase_can_be_reset,success,366.623,21.520,2026-11-05T06:07:51Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,owned_callback_tags_keep_positions_and_order_across_batches,timeout,366.623,150.017,2026-11-05T06:10:21Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,owned_production_rejects_an_out_of_range_tag,success,366.623,126.185,2026-11-05T06:12:27Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,owned_production_rejects_an_oversized_write_and_releases_the_window,success,366.623,126.202,2026-11-05T06:14:33Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,owned_tags_mix_with_borrowed_batches_across_wraparound,timeout,366.623,150.018,2026-11-05T06:17:03Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pdu_average::tests::averages_full_batches,success,366.623,21.510,2026-11-05T06:17:25Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pdu_average::tests::rejects_mismatched_lengths,success,366.623,21.512,2026-11-05T06:17:46Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pdu_average::tests::waits_for_full_batch,success,366.623,21.498,2026-11-05T06:18:08Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pdu_to_stream::tests::carries_tags_across_partial_output_writes,timeout,366.623,150.018,2026-11-05T06:20:38Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pdu_to_stream::tests::empty_input,timeout,366.623,150.018,2026-11-05T06:23:08Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pdu_to_stream::tests::empty_vec,timeout,366.623,150.021,2026-11-05T06:25:38Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pdu_to_stream::tests::one_sample_preserves_equal_position_tag_order,timeout,366.623,150.018,2026-11-05T06:28:08Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pdu_to_stream::tests::out_of_range_tags_are_rejected,timeout,366.623,150.020,2026-11-05T06:30:38Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pdu_to_stream::tests::two,timeout,366.623,150.018,2026-11-05T06:33:08Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,plain_sync_discards_tags_from_other_inputs,timeout,366.623,150.018,2026-11-05T06:35:38Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,plain_sync_forwards_first_input_tags_across_batches,timeout,366.623,150.018,2026-11-05T06:38:08Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::builder_validates_settings,timeout,366.623,150.019,2026-11-05T06:40:38Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::distinct_frame_limit_bounds_transmission_state,success,366.623,126.675,2026-11-05T06:42:45Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::eof_flushes_completed_frames_but_not_a_partial_frame,success,366.623,126.332,2026-11-05T06:44:51Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::fixed_frames_are_matched_and_repeated,success,366.623,126.506,2026-11-05T06:46:58Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::fixed_length_rejects_other_lengths,success,366.623,127.869,2026-11-05T06:49:06Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::gap_pulse_can_be_data_or_a_delimiter,timeout,366.623,150.020,2026-11-05T06:51:36Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::gap_thresholds_are_strict,success,366.623,21.747,2026-11-05T06:51:58Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::input_tags_are_intentionally_dropped,success,366.623,130.237,2026-11-05T06:54:08Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::pending_output_obeys_backpressure_and_drains_before_eof,timeout,366.623,150.018,2026-11-05T06:56:38Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::pulse_polarity_can_be_inverted,success,366.623,128.834,2026-11-05T06:58:47Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::reports_power_and_snr_for_accepted_repeats,success,366.623,128.298,2026-11-05T07:00:55Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::unavailable_snr_is_not_tagged,success,366.623,127.329,2026-11-05T07:03:02Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_decoder::tests::variable_frames_end_at_the_frame_gap,success,366.623,128.039,2026-11-05T07:05:10Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_encoder::tests::data_gap_waveform,success,366.623,130.304,2026-11-05T07:07:21Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_encoder::tests::delimiter_frames_round_trip_with_repeats,timeout,366.623,150.021,2026-11-05T07:09:51Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pwm_encoder::tests::empty_input_waits_then_reaches_eof,success,366.623,126.790,2026-11-05T07:11:58Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_encoder::tests::inverted_pulse_polarity,timeout,366.623,150.019,2026-11-05T07:14:28Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pwm_encoder::tests::output_backpressure_preserves_long_runs,timeout,366.623,150.021,2026-11-05T07:16:58Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pwm_encoder::tests::runtime_repeat_change_applies_to_next_packet,timeout,366.623,150.020,2026-11-05T07:19:28Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pwm_encoder::tests::runtime_repeat_change_validates_count_and_gaps,timeout,366.623,150.020,2026-11-05T07:21:58Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pwm_encoder::tests::runtime_repeat_change_waits_for_active_packet,timeout,366.623,150.019,2026-11-05T07:24:28Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,pwm_encoder::tests::tags_follow_first_repeat_bits,success,366.623,129.040,2026-11-05T07:26:37Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,pwm_encoder::tests::validates_settings_and_packets,timeout,366.623,150.018,2026-11-05T07:29:07Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,quadrature_demod::tests::fill_out,timeout,366.623,150.018,2026-11-05T07:31:37Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,quadrature_demod::tests::gain_scales_phase_difference,timeout,366.623,150.018,2026-11-05T07:34:07Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,quadrature_demod::tests::quad_ccw,timeout,366.623,150.019,2026-11-05T07:36:37Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,quadrature_demod::tests::quad_cw,timeout,366.623,150.019,2026-11-05T07:39:07Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,quadrature_demod::tests::quad_nulls,timeout,366.623,150.018,2026-11-05T07:41:37Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rational_resampler::tests::chained,timeout,366.623,150.019,2026-11-05T07:44:07Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rational_resampler::tests::deci,timeout,366.623,150.019,2026-11-05T07:46:37Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rational_resampler::tests::example128,timeout,366.623,150.018,2026-11-05T07:49:07Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rational_resampler::tests::example64,timeout,366.623,150.019,2026-11-05T07:51:37Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rational_resampler::tests::interpolation_survives_full_output_buffer,timeout,366.623,150.019,2026-11-05T07:54:07Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rational_resampler::tests::rates,timeout,366.623,150.018,2026-11-05T07:56:38Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,reader_source::tests::big,success,366.623,130.408,2026-11-05T07:58:48Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,reader_source::tests::ints,success,366.623,126.677,2026-11-05T08:00:55Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,reader_source::tests::reader_source,timeout,366.623,150.018,2026-11-05T08:03:25Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,reader_source::tests::retries_interrupted_reads,success,366.623,21.561,2026-11-05T08:03:46Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,rotator::tests::frequency_and_phase_can_be_changed_while_holding_the_block,success,366.623,122.990,2026-11-05T08:05:49Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,rotator::tests::output_backpressure_preserves_input_and_phase,timeout,366.623,150.019,2026-11-05T08:08:19Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rotator::tests::partial_output_preserves_remaining_samples_and_tags,timeout,366.623,150.019,2026-11-05T08:10:49Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rotator::tests::rejects_invalid_configuration,timeout,366.623,150.018,2026-11-05T08:13:19Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rotator::tests::signed_rotation_continues_across_batches_and_empty_work_calls,timeout,366.623,150.019,2026-11-05T08:15:49Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rotator::tests::zero_frequency_is_identity_and_preserves_tags,success,366.623,122.833,2026-11-05T08:17:52Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,rtlsdr_decode::tests::empty,timeout,366.623,150.019,2026-11-05T08:20:22Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rtlsdr_decode::tests::overflow,timeout,366.623,150.017,2026-11-05T08:22:52Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rtlsdr_decode::tests::some_input,timeout,366.623,150.017,2026-11-05T08:25:22Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rtlsdr_decode::tests::uneven,timeout,366.623,150.017,2026-11-05T08:27:52Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rtlsdr_encode::tests::clips_to_byte_range,timeout,366.623,150.018,2026-11-05T08:30:22Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rtlsdr_encode::tests::empty,timeout,366.623,150.018,2026-11-05T08:32:53Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,rtlsdr_encode::tests::some_input,timeout,366.623,150.018,2026-11-05T08:35:23Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,runtime_retuning_preserves_phase_and_original_complex_coefficients,success,366.623,122.346,2026-11-05T08:37:25Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,runtime_retuning_preserves_phase_and_original_real_coefficients,success,366.623,122.418,2026-11-05T08:39:27Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,sample_rates_are_optional_and_shared_by_all_endpoints,success,366.623,123.229,2026-11-05T08:41:31Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,send_only_messages_pass_through_blocks,success,366.623,21.516,2026-11-05T08:41:52Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,sigmf::tests::repeated_empty_recording_reaches_eof,success,366.623,125.943,2026-11-05T08:43:58Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,sigmf::tests::repeated_recording_preserves_samples,success,366.623,127.063,2026-11-05T08:46:05Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,sigmf::tests::source_partial_tail_makes_progress_to_eof,success,366.623,126.680,2026-11-05T08:48:12Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,sigmf::tests::source_propagates_sample_parse_errors,timeout,366.623,150.018,2026-11-05T08:50:42Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,sigmf::tests::source_short_read_without_full_sample_is_pending,success,366.623,128.448,2026-11-05T08:52:50Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,sigmf::tests::zero_repeats_produces_nothing,success,366.623,126.109,2026-11-05T08:54:56Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,signal_source::tests::complex_oscillator_matches_waveform_and_aliases,timeout,366.623,150.017,2026-11-05T08:57:26Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,signal_source::tests::complex_oscillator_preserves_amplitude_and_phase_over_long_runs,timeout,366.623,150.017,2026-11-05T08:59:57Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,signal_source::tests::complex_oscillator_preserves_phase_under_backpressure,success,366.623,135.216,2026-11-05T09:02:12Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,signal_source::tests::explicit_phase_and_frequency_changes_use_the_shared_iterator,success,366.623,71.620,2026-11-05T09:03:23Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,signal_source::tests::rejects_invalid_signal_parameters,success,366.623,21.511,2026-11-05T09:03:45Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,signal_source::tests::supports_signed_frequency_and_zero_amplitude,timeout,366.623,150.019,2026-11-05T09:06:15Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,single_pole_iir_filter::tests::iir_cc,success,366.623,121.623,2026-11-05T09:08:17Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,single_pole_iir_filter::tests::iir_ff,timeout,366.623,150.018,2026-11-05T09:10:47Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,single_pole_iir_filter::tests::reject_bad_alpha,timeout,366.623,150.019,2026-11-05T09:13:17Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,skip::tests::skip,timeout,366.623,150.019,2026-11-05T09:15:47Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,skip::tests::skip_count_can_exceed_a_32_bit_sample_index,timeout,366.623,150.017,2026-11-05T09:18:17Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,slice_kernel_needs_neither_storage_nor_encoding_traits,success,366.623,21.463,2026-11-05T09:18:38Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream::tests::copy_read_wait_distinguishes_readiness_timeout_and_closure,timeout,366.623,150.017,2026-11-05T09:21:08Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream::tests::copy_write_wait_distinguishes_readiness_timeout_and_closure,timeout,366.623,150.017,2026-11-05T09:23:38Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream::tests::nocopy_producer_completion_precedes_queue_drain,success,366.623,21.445,2026-11-05T09:24:00Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream::tests::nocopy_push_rejects_unsorted_tags_in_debug_builds,success,366.623,21.439,2026-11-05T09:24:21Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream::tests::nocopy_tags_preserve_nondecreasing_position_order,success,366.623,21.474,2026-11-05T09:24:43Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream::tests::nocopy_waits_distinguish_outcomes_and_preserve_advisory_capacity,success,366.623,23.097,2026-11-05T09:25:06Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream::tests::observer_access_does_not_change_copying_endpoint_counts,timeout,366.623,150.016,2026-11-05T09:27:36Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream::tests::observer_access_does_not_mask_nocopy_endpoint_closure,success,366.623,21.377,2026-11-05T09:27:57Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream::tests::observer_controls_do_not_retain_primary_storage,timeout,366.623,150.016,2026-11-05T09:30:27Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream::tests::producer_completion_does_not_wait_for_buffered_data_or_read_windows,timeout,366.623,150.016,2026-11-05T09:32:58Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream::tests::producer_completion_requires_writer_drop,timeout,366.623,150.017,2026-11-05T09:35:28Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream::tests::producer_completion_survives_write_window_unwinding,timeout,366.623,150.017,2026-11-05T09:37:58Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream::tests::producer_completion_waits_for_dropped_or_zero_length_write_windows,timeout,366.623,150.016,2026-11-05T09:40:28Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream::tests::reader_cannot_consume_samples_produced_after_checkout,timeout,366.623,150.017,2026-11-05T09:42:58Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream::tests::too_many_references_to_buffer,timeout,366.623,150.017,2026-11-05T09:45:28Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream::tests::windows_are_exclusive_per_endpoint_and_released_on_drop,timeout,366.623,150.018,2026-11-05T09:47:58Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream::tests::writer_cannot_produce_space_freed_after_checkout,timeout,366.623,150.015,2026-11-05T09:50:28Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_chunks::tests::even,success,366.623,73.579,2026-11-05T09:51:41Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_chunks::tests::not_even,success,366.623,74.252,2026-11-05T09:52:56Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_chunks::tests::rejects_chunks_larger_than_input_capacity,success,366.623,128.988,2026-11-05T09:55:05Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_chunks::tests::rejects_zero_chunk_size,timeout,366.623,150.018,2026-11-05T09:57:35Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_chunks::tests::tags_at_chunk_boundaries_stay_with_their_samples,timeout,366.623,150.016,2026-11-05T10:00:05Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_endpoints_are_unwind_safe,success,366.623,21.557,2026-11-05T10:00:26Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_metadata::tests::explicit_names_cannot_claim_another_streams_generated_name,success,366.623,21.597,2026-11-05T10:00:48Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_observer::tests::dropped_and_zero_length_windows_only_emit_completion,timeout,366.623,150.020,2026-11-05T10:03:18Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_observer::tests::invalid_commit_unwinds_with_completion_and_no_sample_callback,timeout,366.623,150.017,2026-11-05T10:05:48Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_observer::tests::lookup_rejects_wrong_sample_type,timeout,366.623,150.024,2026-11-05T10:08:18Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_observer::tests::numeric_callbacks_follow_producer_batches_and_preserve_primary_data,timeout,366.623,150.021,2026-11-05T10:10:48Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_observer::tests::removal_and_expired_subscriptions_do_not_receive_more_callbacks,timeout,366.623,150.023,2026-11-05T10:13:18Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_observer::tests::string_callbacks_preserve_empty_messages_tags_and_primary_queue,success,366.623,22.925,2026-11-05T10:13:41Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_observer::tests::unsupported_types_remain_discoverable_without_subscription_controls,success,366.623,75.485,2026-11-05T10:14:57Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_tags::tests::absolute_position_cannot_silently_wrap,success,366.623,22.977,2026-11-05T10:15:20Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_tags::tests::owned_tag_cannot_overlap_the_next_batch,success,366.623,22.974,2026-11-05T10:15:43Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_tags::tests::owned_tags_move_string_allocations_and_preserve_stable_order,success,366.623,23.052,2026-11-05T10:16:06Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_tags::tests::tag_cannot_overlap_the_next_batch,success,366.623,23.039,2026-11-05T10:16:29Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_tags::tests::tags_beyond_32_bit_positions_remain_relative_to_the_reader,success,366.623,23.030,2026-11-05T10:16:52Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::ended_too_soon,timeout,366.623,150.019,2026-11-05T10:19:22Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::full_output_preserves_input_and_resumes_between_bursts,timeout,366.623,150.020,2026-11-05T10:21:52Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::it_ends_with_both,timeout,366.623,150.021,2026-11-05T10:24:22Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::just_end,timeout,366.623,150.023,2026-11-05T10:26:52Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::mid_pdu,timeout,366.623,150.021,2026-11-05T10:29:22Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::no_pdu,success,366.623,76.398,2026-11-05T10:30:38Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::ordered_spans_preserve_metadata_and_ignore_repeated_starts,timeout,366.623,150.021,2026-11-05T10:33:08Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::simultaneous_markers_complete_at_eof_and_before_next_burst,timeout,366.623,150.019,2026-11-05T10:35:39Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::single,timeout,366.623,150.025,2026-11-05T10:38:09Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::size,timeout,366.623,150.024,2026-11-05T10:40:39Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::size_limit_resumes_after_the_offending_sample,timeout,366.623,150.022,2026-11-05T10:43:09Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::spans_and_tail_cross_input_windows,timeout,366.623,150.022,2026-11-05T10:45:39Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,stream_to_pdu::tests::tags_in_tail,timeout,366.623,150.022,2026-11-05T10:48:09Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,streaming_custom_samples_need_no_encoding_or_translation_hooks,timeout,366.623,150.025,2026-11-05T10:50:39Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,strobe::tests::maximal_period_does_not_overflow,success,366.623,22.915,2026-11-05T10:51:02Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,symbol_sync::tests::full_output_still_advances_stream_position,timeout,366.623,150.024,2026-11-05T10:53:32Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,symbol_sync::tests::nominal_period_does_not_start_with_clock_deviation,timeout,366.623,150.023,2026-11-05T10:56:02Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,symbol_sync::tests::rejects_invalid_clock_configuration,timeout,366.623,150.025,2026-11-05T10:58:32Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,symbol_sync::tests::repeated_clock_creation_preserves_the_existing_output,timeout,366.623,150.022,2026-11-05T11:01:02Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,symbol_sync::tests::starts_at_middle_of_first_symbol,timeout,366.623,150.021,2026-11-05T11:03:32Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,tagged_sync_can_generate_tags_without_input_tags,timeout,366.623,150.021,2026-11-05T11:06:02Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,tagged_sync_groups_each_input_and_preserves_output_tag_order,timeout,366.623,150.022,2026-11-05T11:08:32Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,tags_survive_wraparound_partial_consumption_and_unsorted_batches,timeout,366.623,150.020,2026-11-05T11:11:02Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,tcp_source::tests::partials,success,366.623,131.071,2026-11-05T11:13:13Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,tee::tests::plain_tee_respects_short_output_windows_and_preserves_tags,timeout,366.623,150.027,2026-11-05T11:15:43Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,tee::tests::simple,timeout,366.623,150.022,2026-11-05T11:18:13Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,tests::check_env,success,366.623,22.970,2026-11-05T11:18:36Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,tests::error_wrap,success,366.623,22.941,2026-11-05T11:18:59Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,tests::frequency,success,366.623,22.894,2026-11-05T11:19:22Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,tests::repeat_does_not_wrap_at_maximum,success,366.623,22.826,2026-11-05T11:19:45Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,tests::repeat_test_infinite,success,366.623,22.845,2026-11-05T11:20:08Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,tests::repeat_test_none,success,366.623,22.769,2026-11-05T11:20:31Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,tests::repeat_test_one,success,366.623,22.884,2026-11-05T11:20:54Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,tests::repeat_test_three,success,366.623,22.904,2026-11-05T11:21:16Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,to_text::tests::eof_when_one_input_closes,timeout,366.623,150.025,2026-11-05T11:23:46Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,translated_real_coefficients_match_explicit_input_mixing,success,366.623,126.282,2026-11-05T11:25:53Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,translation_settings_preserve_builder_and_filter_types,success,366.623,126.110,2026-11-05T11:27:59Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,unsupported_layout_returns_an_error_through_every_constructor,success,366.623,23.002,2026-11-05T11:28:22Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,vco::tests::large_phase_steps_remain_normalized,timeout,366.623,150.024,2026-11-05T11:30:52Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,vco::tests::negative,timeout,366.623,150.025,2026-11-05T11:33:22Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,vco::tests::positive,timeout,366.623,150.024,2026-11-05T11:35:52Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,vector_sink::tests::maxed_out,success,366.623,130.185,2026-11-05T11:38:02Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,vector_sink::tests::only_data,success,366.623,130.195,2026-11-05T11:40:12Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,vector_source::tests::empty,timeout,366.623,150.024,2026-11-05T11:42:43Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,vector_source::tests::max,timeout,366.623,150.023,2026-11-05T11:45:13Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,vector_source::tests::repeat0,timeout,366.623,150.022,2026-11-05T11:47:43Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,vector_source::tests::repeat1,timeout,366.623,150.024,2026-11-05T11:50:13Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,vector_source::tests::repeat2,timeout,366.623,150.023,2026-11-05T11:52:43Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,vector_source::tests::repeat_infinite,timeout,366.623,150.020,2026-11-05T11:55:13Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,vector_source::tests::some,timeout,366.623,150.021,2026-11-05T11:57:43Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,vector_source::tests::very_large,timeout,366.623,150.022,2026-11-05T12:00:13Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,window::tests::one_tap_windows_are_unity,success,366.623,22.572,2026-11-05T12:00:35Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,wpcr::tests::frequency_uses_transition_fft_length,success,366.623,22.626,2026-11-05T12:00:58Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,wpcr::tests::low_symbol_rate_does_not_overallocate_output,success,366.623,33.176,2026-11-05T12:01:31Z,50232918.0,,
+experimental-bsan,rustradio-0.19.6,writer_sink::tests::retries_interrupted_writes,timeout,366.623,150.020,2026-11-05T12:04:01Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,writer_sink::tests::writer_sink,timeout,366.623,150.023,2026-11-05T12:06:31Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,writer_sink_serializes_and_drains_partial_writes,timeout,366.623,150.023,2026-11-05T12:09:01Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,zero_crossing::tests::full_output_still_updates_crossing_state,timeout,366.623,150.023,2026-11-05T12:11:31Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,zero_crossing::tests::rejects_invalid_clock_configuration,timeout,366.623,150.023,2026-11-05T12:14:02Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustradio-0.19.6,zero_crossing::tests::repeated_clock_creation_preserves_the_existing_output,timeout,366.623,150.025,2026-11-05T12:16:32Z,50232918.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

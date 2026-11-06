@@ -1,0 +1,61 @@
+experimental-bsan,libmake-0.2.6,generate_from_toml,test_failed,468.146,26.299,2026-11-05T02:40:15Z,50242275.0,panic,"thread 'generate_from_toml' (4929) panicked at tests/test_generator.rs:95:45: called `Result::unwrap()` on an `Err` value: ""Failed to generate files from TOML at: ./tests/data/mylibrary.toml - Error: Failed to generate files with parameters: FileGenerationParams { author: Some(\""Me\""), build: Some(\"
+experimental-bsan,libmake-0.2.6,macros::test_ascii_macros::tests::test_macro_ascii_empty_input,success,468.146,11.000,2026-11-05T02:40:26Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_ascii_macros::tests::test_macro_ascii_invalid_input,success,468.146,15.345,2026-11-05T02:40:41Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_ascii_macros::tests::test_macro_ascii_success,success,468.146,15.308,2026-11-05T02:40:57Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_directory_macros::tests::test_macro_check_directory,success,468.146,10.865,2026-11-05T02:41:08Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_directory_macros::tests::test_macro_cleanup_directories,success,468.146,10.863,2026-11-05T02:41:19Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_directory_macros::tests::test_macro_create_directories,success,468.146,10.793,2026-11-05T02:41:29Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_file_macros::tests::test_generate_file_empty_value,success,468.146,10.715,2026-11-05T02:41:40Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_file_macros::tests::test_generate_file_error,success,468.146,10.923,2026-11-05T02:41:51Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_file_macros::tests::test_generate_file_success,success,468.146,11.044,2026-11-05T02:42:02Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_generator_macros::tests::test_create_directory,success,468.146,11.037,2026-11-05T02:42:13Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_generator_macros::tests::test_generate_files,test_failed,468.146,5.267,2026-11-05T02:42:18Z,50242275.0,other,"error: test failed, to rerun pass `--test mod`"
+experimental-bsan,libmake-0.2.6,macros::test_generator_macros::tests::test_generate_from_config,test_failed,468.146,5.378,2026-11-05T02:42:24Z,50242275.0,other,"error: test failed, to rerun pass `--test mod`"
+experimental-bsan,libmake-0.2.6,macros::test_generator_macros::tests::test_generate_from_csv,test_failed,468.146,7.279,2026-11-05T02:42:31Z,50242275.0,other,"error: test failed, to rerun pass `--test mod`"
+experimental-bsan,libmake-0.2.6,macros::test_generator_macros::tests::test_generate_from_json,test_failed,468.146,5.290,2026-11-05T02:42:36Z,50242275.0,other,"error: test failed, to rerun pass `--test mod`"
+experimental-bsan,libmake-0.2.6,macros::test_generator_macros::tests::test_generate_from_yaml,test_failed,468.146,5.334,2026-11-05T02:42:42Z,50242275.0,other,"error: test failed, to rerun pass `--test mod`"
+experimental-bsan,libmake-0.2.6,macros::test_generator_macros::tests::test_macro_create_directories,success,468.146,10.979,2026-11-05T02:42:53Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_generator_macros::tests::test_macro_generate_from_csv,test_failed,468.146,7.240,2026-11-05T02:43:00Z,50242275.0,other,"error: test failed, to rerun pass `--test mod`"
+experimental-bsan,libmake-0.2.6,macros::test_generator_macros::tests::test_macro_generate_from_json,test_failed,468.146,5.265,2026-11-05T02:43:05Z,50242275.0,other,"error: test failed, to rerun pass `--test mod`"
+experimental-bsan,libmake-0.2.6,macros::test_generator_macros::tests::test_macro_generate_from_yaml,test_failed,468.146,5.324,2026-11-05T02:43:11Z,50242275.0,other,"error: test failed, to rerun pass `--test mod`"
+experimental-bsan,libmake-0.2.6,macros::test_log_macros::tests::test_macro_log_info,success,468.146,10.984,2026-11-05T02:43:22Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_utility_macros::tests::test_macro_get_field_field_not_found,success,468.146,11.054,2026-11-05T02:43:33Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_utility_macros::tests::test_macro_get_field_no_file_path,success,468.146,11.001,2026-11-05T02:43:44Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,macros::test_utility_macros::tests::test_macro_get_field_success,success,468.146,10.996,2026-11-05T02:43:55Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,models::test_error_ascii_art::tests::test_ascii_art_error_clone,success,468.146,11.033,2026-11-05T02:44:06Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,models::test_error_ascii_art::tests::test_ascii_art_error_conversion_error,success,468.146,11.133,2026-11-05T02:44:17Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,models::test_error_ascii_art::tests::test_ascii_art_error_debug,success,468.146,11.098,2026-11-05T02:44:28Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,models::test_error_ascii_art::tests::test_ascii_art_error_font_load_error,success,468.146,11.084,2026-11-05T02:44:39Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,models::test_error_ascii_art::tests::test_ascii_art_error_partial_eq,success,468.146,11.046,2026-11-05T02:44:50Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,models::test_error_ascii_art::tests::test_ascii_art_error_source,success,468.146,11.004,2026-11-05T02:45:01Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,models::test_model_params::tests::test_deserialize_name,success,468.146,11.006,2026-11-05T02:45:12Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,models::test_model_params::tests::test_file_generation_params_default,success,468.146,11.024,2026-11-05T02:45:23Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,models::test_model_params::tests::test_file_generation_params_from_args_missing_arg_name,success,468.146,11.022,2026-11-05T02:45:34Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,models::test_model_params::tests::test_file_generation_params_from_args_missing_arg_value,success,468.146,10.987,2026-11-05T02:45:45Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,models::test_model_params::tests::test_file_generation_params_new,success,468.146,10.877,2026-11-05T02:45:56Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,test_create_directory_error,success,468.146,10.842,2026-11-05T02:46:07Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,test_from_args,test_failed,468.146,8.093,2026-11-05T02:46:15Z,50242275.0,panic,"thread 'test_from_args' (6805) panicked at tests/test_generator.rs:141:5: assertion failed: result.is_ok()"
+experimental-bsan,libmake-0.2.6,test_generate_files,test_failed,468.146,8.239,2026-11-05T02:46:23Z,50242275.0,other,"error: test failed, to rerun pass `--test test_generator`"
+experimental-bsan,libmake-0.2.6,test_generate_from_args,test_failed,468.146,7.927,2026-11-05T02:46:31Z,50242275.0,panic,"thread 'test_generate_from_args' (7005) panicked at tests/test_generator.rs:111:5: assertion failed: result.is_ok()"
+experimental-bsan,libmake-0.2.6,test_generate_from_config,test_failed,468.146,8.330,2026-11-05T02:46:40Z,50242275.0,panic,"thread 'test_generate_from_config' (7069) panicked at tests/test_generator.rs:59:48: called `Result::unwrap()` on an `Err` value: ""Failed to generate files from YAML at: ./tests/data/mylibrary.yaml - Error: Failed to generate files with parameters: FileGenerationParams { author: Some(\""Me\""), build:"
+experimental-bsan,libmake-0.2.6,test_generate_from_csv,test_failed,468.146,10.283,2026-11-05T02:46:50Z,50242275.0,panic,"thread 'test_generate_from_csv' (7128) panicked at tests/test_generator.rs:68:44: called `Result::unwrap()` on an `Err` value: ""Failed to generate files from CSV at: ./tests/data/mylibrary.csv - Error: Failed to generate files with parameters: FileGenerationParams { author: Some(\""Me\""), build: Some"
+experimental-bsan,libmake-0.2.6,test_generate_from_json,test_failed,468.146,8.280,2026-11-05T02:46:58Z,50242275.0,panic,"thread 'test_generate_from_json' (7193) panicked at tests/test_generator.rs:77:45: called `Result::unwrap()` on an `Err` value: ""Failed to generate files from JSON at: ./tests/data/mylibrary.json - Error: Failed to generate files with parameters: FileGenerationParams { author: Some(\""Me\""), build: S"
+experimental-bsan,libmake-0.2.6,test_generate_from_yaml,test_failed,468.146,8.334,2026-11-05T02:47:07Z,50242275.0,panic,"thread 'test_generate_from_yaml' (7253) panicked at tests/test_generator.rs:86:35: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: ""Failed to generate files with parameters: FileGenerationParams { author: Some(\""Me\""), build: Some(\""build.rs\""), categories: Some(\""'category"
+experimental-bsan,libmake-0.2.6,test_get_csv_field,success,468.146,13.075,2026-11-05T02:47:20Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,test_get_json_field,success,468.146,11.232,2026-11-05T02:47:31Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,test_get_yaml_field,success,468.146,11.318,2026-11-05T02:47:42Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,test_macro_generate_files,success,468.146,11.050,2026-11-05T02:47:53Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_build_manual_subcommand,test_failed,468.146,8.287,2026-11-05T02:48:02Z,50242275.0,panic,"thread 'tests::test_build_manual_subcommand' (7525) panicked at tests/test_cli.rs:8:9: assertion failed: matches.is_ok()"
+experimental-bsan,libmake-0.2.6,tests::test_create_arg,success,468.146,11.126,2026-11-05T02:48:13Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_empty_template_file,success,468.146,11.177,2026-11-05T02:48:24Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_file_read_error,success,468.146,11.102,2026-11-05T02:48:35Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_file_write_error,success,468.146,11.053,2026-11-05T02:48:46Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_get_config_field_existing,success,468.146,11.616,2026-11-05T02:48:58Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_get_csv_field,success,468.146,15.609,2026-11-05T02:49:14Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_get_csv_fields,success,468.146,51.321,2026-11-05T02:50:05Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_get_json_field_existing,success,468.146,11.401,2026-11-05T02:50:16Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_get_yaml_field_existing,success,468.146,11.511,2026-11-05T02:50:28Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_large_file,success,468.146,21.915,2026-11-05T02:50:50Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_missing_placeholders,success,468.146,11.261,2026-11-05T02:51:01Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_no_placeholders,success,468.146,11.201,2026-11-05T02:51:12Z,50242275.0,,
+experimental-bsan,libmake-0.2.6,tests::test_successful_replacement,success,468.146,11.238,2026-11-05T02:51:23Z,50242275.0,,

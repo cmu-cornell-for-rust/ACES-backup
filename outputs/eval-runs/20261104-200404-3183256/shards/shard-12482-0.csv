@@ -1,0 +1,10 @@
+experimental-bsan,cosmrs-0.22.0,base::account_id::tests::parse,success,482.807,3.119,2026-11-05T06:22:58Z,50255536.0,,
+experimental-bsan,cosmrs-0.22.0,base::account_id::tests::to_string,success,482.807,3.137,2026-11-05T06:23:01Z,50255536.0,,
+experimental-bsan,cosmrs-0.22.0,base::account_id::tests::with_digit,success,482.807,3.124,2026-11-05T06:23:04Z,50255536.0,,
+experimental-bsan,cosmrs-0.22.0,base::account_id::tests::with_uppercase,success,482.807,3.127,2026-11-05T06:23:07Z,50255536.0,,
+experimental-bsan,cosmrs-0.22.0,base::coin::tests::new,success,482.807,3.065,2026-11-05T06:23:10Z,50255536.0,,
+experimental-bsan,cosmrs-0.22.0,base::coin::tests::zero_value_coin_with_empty_denom,success,482.807,3.065,2026-11-05T06:23:14Z,50255536.0,,
+experimental-bsan,cosmrs-0.22.0,base::denom::tests::parse,success,482.807,3.070,2026-11-05T06:23:17Z,50255536.0,,
+experimental-bsan,cosmrs-0.22.0,crypto::legacy_amino::tests::any_round_trip,success,482.807,3.485,2026-11-05T06:23:20Z,50255536.0,,
+experimental-bsan,cosmrs-0.22.0,crypto::public_key::tests::json_round_trip,success,482.807,3.121,2026-11-05T06:23:23Z,50255536.0,,
+experimental-bsan,cosmrs-0.22.0,msg_send,test_failed,482.807,6.135,2026-11-05T06:23:29Z,50255536.0,panic,"thread 'msg_send' (58293) panicked at src/dev.rs:66:31: error invoking `docker run`: No such file or directory (os error 2)"

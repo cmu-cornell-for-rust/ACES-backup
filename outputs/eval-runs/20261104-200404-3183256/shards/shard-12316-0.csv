@@ -1,0 +1,11 @@
+experimental-bsan,sql-parse-0.21.0,expression::tests::expressions,success,44.964,1.561,2026-11-05T06:04:27Z,50255112.0,,
+experimental-bsan,sql-parse-0.21.0,parse_create_index_sql_with_schema,success,44.964,1.696,2026-11-05T06:04:29Z,50255112.0,,
+experimental-bsan,sql-parse-0.21.0,parse_create_view_sql_with_schema,success,44.964,1.729,2026-11-05T06:04:31Z,50255112.0,,
+experimental-bsan,sql-parse-0.21.0,parse_drop_index_sql_with_schema,success,44.964,1.701,2026-11-05T06:04:33Z,50255112.0,,
+experimental-bsan,sql-parse-0.21.0,parse_drop_view_sql_with_schema,success,44.964,1.620,2026-11-05T06:04:34Z,50255112.0,,
+experimental-bsan,sql-parse-0.21.0,parse_rename_table_sql_with_schema,success,44.964,1.684,2026-11-05T06:04:36Z,50255112.0,,
+experimental-bsan,sql-parse-0.21.0,parse_truncate_table_sql_with_schema,success,44.964,1.650,2026-11-05T06:04:38Z,50255112.0,,
+experimental-bsan,sql-parse-0.21.0,parse_use_index,success,44.964,1.658,2026-11-05T06:04:39Z,50255112.0,,
+experimental-bsan,sql-parse-0.21.0,parse_with_statement,test_failed,44.964,1.782,2026-11-05T06:04:41Z,50255112.0,crash,"test parse_with_statement ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sql-parse-0.21.0,test_parse_alter_sql,success,44.964,1.724,2026-11-05T06:04:43Z,50255112.0,,
+experimental-bsan,sql-parse-0.21.0,test_parse_delete_sql_with_schema,success,44.964,1.625,2026-11-05T06:04:44Z,50255112.0,,

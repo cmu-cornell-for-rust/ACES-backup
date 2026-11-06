@@ -1,0 +1,65 @@
+experimental-bsan,cvss-3.0.0,bad_prefix,success,25.974,8.824,2026-11-05T02:25:49Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2008_1447,success,25.974,8.967,2026-11-05T02:25:58Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2009_0658,success,25.974,8.980,2026-11-05T02:26:07Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2009_0783,success,25.974,8.890,2026-11-05T02:26:16Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2010_0467,success,25.974,8.865,2026-11-05T02:26:25Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2011_1265,success,25.974,8.813,2026-11-05T02:26:34Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2012_0384,success,25.974,8.837,2026-11-05T02:26:43Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2012_1342,success,25.974,8.829,2026-11-05T02:26:51Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2012_1516,success,25.974,8.807,2026-11-05T02:27:00Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2012_5376,success,25.974,8.832,2026-11-05T02:27:09Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2013_0375,success,25.974,8.786,2026-11-05T02:27:18Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2013_1937,success,25.974,8.834,2026-11-05T02:27:27Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2013_6014,success,25.974,8.835,2026-11-05T02:27:36Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2014_0160,success,25.974,8.923,2026-11-05T02:27:45Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2014_0224,success,25.974,8.822,2026-11-05T02:27:53Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2014_2005,success,25.974,8.720,2026-11-05T02:28:02Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2014_2019,success,25.974,8.924,2026-11-05T02:28:11Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2014_3566,success,25.974,8.858,2026-11-05T02:28:20Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2014_6271,success,25.974,8.906,2026-11-05T02:28:29Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2014_9253,success,25.974,8.883,2026-11-05T02:28:38Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2015_0970,success,25.974,8.838,2026-11-05T02:28:47Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2015_1098,success,25.974,8.832,2026-11-05T02:28:55Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cve_2025_47273,success,25.974,8.972,2026-11-05T02:29:04Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cvss_v2_calculator,test_failed,25.974,4.529,2026-11-05T02:29:09Z,50241266.0,panic,"thread 'cvss_v2_calculator' (54910) panicked at tests/redhat-v2.rs:31:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cvss-3.0.0,cvss_v2_cvsslib,test_failed,25.974,4.580,2026-11-05T02:29:14Z,50241266.0,panic,"thread 'cvss_v2_cvsslib' (57731) panicked at tests/redhat-v2.rs:31:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cvss-3.0.0,cvss_v2_random,test_failed,25.974,4.555,2026-11-05T02:29:18Z,50241266.0,panic,"thread 'cvss_v2_random' (58070) panicked at tests/redhat-v2.rs:31:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cvss-3.0.0,cvss_v2_simple,test_failed,25.974,4.596,2026-11-05T02:29:23Z,50241266.0,panic,"thread 'cvss_v2_simple' (58335) panicked at tests/redhat-v2.rs:31:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cvss-3.0.0,cvss_v3_0_prefix,success,25.974,8.853,2026-11-05T02:29:32Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,cvss_v3_random,test_failed,25.974,6.087,2026-11-05T02:29:38Z,50241266.0,panic,"thread 'cvss_v3_random' (59253) panicked at tests/redhat-v3.rs:9:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cvss-3.0.0,cvss_v3_simple,test_failed,25.974,6.072,2026-11-05T02:29:44Z,50241266.0,panic,"thread 'cvss_v3_simple' (59824) panicked at tests/redhat-v3.rs:9:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cvss-3.0.0,cvss_v4_base,test_failed,25.974,7.428,2026-11-05T02:29:51Z,50241266.0,panic,"thread 'cvss_v4_base' (60386) panicked at tests/redhat-v4.rs:10:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cvss-3.0.0,cvss_v4_modified,test_failed,25.974,7.444,2026-11-05T02:29:59Z,50241266.0,panic,"thread 'cvss_v4_modified' (62255) panicked at tests/redhat-v4.rs:10:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cvss-3.0.0,cvss_v4_random,test_failed,25.974,7.445,2026-11-05T02:30:06Z,50241266.0,panic,"thread 'cvss_v4_random' (62570) panicked at tests/redhat-v4.rs:10:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cvss-3.0.0,cvss_v4_security,test_failed,25.974,7.420,2026-11-05T02:30:14Z,50241266.0,panic,"thread 'cvss_v4_security' (62948) panicked at tests/redhat-v4.rs:10:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cvss-3.0.0,cvss_v4_supplemental,test_failed,25.974,7.406,2026-11-05T02:30:21Z,50241266.0,panic,"thread 'cvss_v4_supplemental' (63159) panicked at tests/redhat-v4.rs:10:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cvss-3.0.0,cvss_v4_threat,test_failed,25.974,7.463,2026-11-05T02:30:29Z,50241266.0,panic,"thread 'cvss_v4_threat' (63441) panicked at tests/redhat-v4.rs:10:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cvss-3.0.0,duplicate_metric_rejected,success,25.974,8.806,2026-11-05T02:30:37Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,low_scope_changed,success,25.974,8.826,2026-11-05T02:30:46Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,low_scope_unchanged,success,25.974,8.803,2026-11-05T02:30:55Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,no_impact_scope_changed,success,25.974,8.841,2026-11-05T02:31:04Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,no_impact_scope_unchanged,success,25.974,8.802,2026-11-05T02:31:13Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,tests::test_parse_invalid,success,25.974,8.836,2026-11-05T02:31:22Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,tests::test_parse_v3,success,25.974,8.819,2026-11-05T02:31:30Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,tests::test_parse_v4,success,25.974,8.779,2026-11-05T02:31:39Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v2::score::tests::roundup_epsilon_magnitude,success,25.974,8.780,2026-11-05T02:31:48Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v2::vector::tests::environmental_tie_rounds_half_up,success,25.974,8.761,2026-11-05T02:31:57Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v2::vector::tests::published_scores_clamp_at_zero_but_intermediates_do_not,success,25.974,8.649,2026-11-05T02:32:05Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v2::vector::tests::spec_cve_2002_0392,success,25.974,8.638,2026-11-05T02:32:14Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v2::vector::tests::spec_cve_2003_0062,success,25.974,8.798,2026-11-05T02:32:23Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v2::vector::tests::spec_cve_2003_0818,success,25.974,9.024,2026-11-05T02:32:32Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v2::vector::tests::temporal_tie_rounds_half_up,success,25.974,8.991,2026-11-05T02:32:41Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v3::score::tests::roundup_exact_tenth_unchanged,success,25.974,8.970,2026-11-05T02:32:50Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v3::score::tests::roundup_rounds_up,success,25.974,8.916,2026-11-05T02:32:59Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v3::score::tests::severity_boundaries,success,25.974,8.914,2026-11-05T02:33:08Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v3::vector::tests::cvss30_vs_cvss31,success,25.974,8.973,2026-11-05T02:33:17Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v3::vector::tests::parse_full_cvss3,success,25.974,8.936,2026-11-05T02:33:26Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v4::score::tests::display_score,success,25.974,8.973,2026-11-05T02:33:35Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v4::score::tests::into_severity,success,25.974,8.895,2026-11-05T02:33:44Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v4::score::tests::new_score,success,25.974,8.898,2026-11-05T02:33:52Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v4::score::tests::round_v4_epsilon_magnitude,success,25.974,8.987,2026-11-05T02:34:01Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v4::score::tests::round_v4_round,success,25.974,8.945,2026-11-05T02:34:10Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v4::scoring::max_composed::tests::all_combination_are_valid_scoring_vectors,timeout,25.974,150.017,2026-11-05T02:36:40Z,50241266.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cvss-3.0.0,v4::vector::tests::fails_to_parse_invalid_cvss4,success,25.974,8.947,2026-11-05T02:36:49Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v4::vector::tests::parse_base_cvss4,success,25.974,8.864,2026-11-05T02:36:58Z,50241266.0,,
+experimental-bsan,cvss-3.0.0,v4::vector::tests::parse_full_cvss4,success,25.974,9.029,2026-11-05T02:37:07Z,50241266.0,,

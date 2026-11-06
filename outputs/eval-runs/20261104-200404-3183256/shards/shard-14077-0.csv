@@ -1,0 +1,7 @@
+experimental-bsan,checkpwn-0.5.6,test_cli_acc_breach,test_failed,101.354,36.467,2026-11-05T06:51:37Z,50257663.0,panic,"thread 'test_cli_acc_breach' (89662) panicked at /local/ev-50257663-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/assert_cmd-2.0.4/src/output.rs:65:25: command=""cargo"" ""run"" ""acc"" ""test@example.com"""
+experimental-bsan,checkpwn-0.5.6,test_cli_acc_no_breach,test_failed,101.354,2.155,2026-11-05T06:51:39Z,50257663.0,panic,"thread 'test_cli_acc_no_breach' (96033) panicked at /local/ev-50257663-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/assert_cmd-2.0.4/src/output.rs:65:25: command=""cargo"" ""run"" ""acc"" ""\""\\u{79d3c}\\u{d632d}\\u{8e033}\\u{e868b}\\u{f6630}廤\\u{636d4}\\u{cec34}\""@\""\\u{35834}𲴪\\u{b5fa6}\\u{7"
+experimental-bsan,checkpwn-0.5.6,test_cli_arg_fail,success,101.354,1.796,2026-11-05T06:51:41Z,50257663.0,,
+experimental-bsan,checkpwn-0.5.6,test_cli_arg_fail_2,success,101.354,1.779,2026-11-05T06:51:43Z,50257663.0,,
+experimental-bsan,checkpwn-0.5.6,test_cli_arg_fail_3,success,101.354,1.806,2026-11-05T06:51:44Z,50257663.0,,
+experimental-bsan,checkpwn-0.5.6,test_cli_arg_ok,test_failed,101.354,1.949,2026-11-05T06:51:46Z,50257663.0,panic,"thread 'test_cli_arg_ok' (97259) panicked at /local/ev-50257663-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/assert_cmd-2.0.4/src/output.rs:65:25: command=""cargo"" ""run"" ""acc"" ""test@example.com"""
+experimental-bsan,checkpwn-0.5.6,test_strip_white_new,success,101.354,1.587,2026-11-05T06:51:48Z,50257663.0,,

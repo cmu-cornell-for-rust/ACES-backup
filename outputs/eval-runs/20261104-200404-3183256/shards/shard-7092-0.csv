@@ -1,0 +1,30 @@
+experimental-bsan,sqlx-ledger-0.11.14,account::entity::tests::accepts_metadata,success,486.146,8.618,2026-11-05T04:04:14Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,account::entity::tests::fails_when_mandatory_fields_are_missing,success,486.146,8.581,2026-11-05T04:04:23Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,account::entity::tests::it_builds,success,486.146,8.588,2026-11-05T04:04:31Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,after_id_catches_up_on_many_events,test_failed,486.146,34.665,2026-11-05T04:05:06Z,50247990.0,other,"error: test failed, to rerun pass `--test event_subscription`"
+experimental-bsan,sqlx-ledger-0.11.14,close_on_lag_closes_subscriber,test_failed,486.146,34.606,2026-11-05T04:05:41Z,50247990.0,other,"error: test failed, to rerun pass `--test event_subscription`"
+experimental-bsan,sqlx-ledger-0.11.14,concurrent_producers_events_ordered,test_failed,486.146,34.575,2026-11-05T04:06:15Z,50247990.0,other,"error: test failed, to rerun pass `--test event_subscription`"
+experimental-bsan,sqlx-ledger-0.11.14,event::tests::backoff_delay_caps_at_32_seconds,success,486.146,8.524,2026-11-05T04:06:24Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,event::tests::notification_received_data_field_missing_error_string,success,486.146,8.545,2026-11-05T04:06:32Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,event::tests::notification_received_detects_gap_when_ignore_gap_false,success,486.146,8.537,2026-11-05T04:06:41Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,event::tests::notification_received_errors_when_no_receivers,success,486.146,8.548,2026-11-05T04:06:49Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,event::tests::notification_received_handles_transaction_event,success,486.146,8.541,2026-11-05T04:06:58Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,event::tests::notification_received_ignores_gap_when_flag_set,success,486.146,8.536,2026-11-05T04:07:06Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,event::tests::notification_received_propagates_deserialization_error,success,486.146,8.546,2026-11-05T04:07:15Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,event::tests::notification_received_sends_event_and_updates_last_id,success,486.146,8.537,2026-11-05T04:07:23Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,event::tests::notification_received_sequential_ids,success,486.146,8.521,2026-11-05T04:07:32Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,event::tests::notification_received_skips_duplicate_id,success,486.146,8.530,2026-11-05T04:07:41Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,event::tests::notification_received_skips_older_id,success,486.146,8.555,2026-11-05T04:07:49Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,journal::entity::tests::fails_when_mandatory_fields_are_missing,success,486.146,8.522,2026-11-05T04:07:58Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,journal::entity::tests::it_builds,success,486.146,8.561,2026-11-05T04:08:06Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,large_payload_triggers_reload,test_failed,486.146,34.613,2026-11-05T04:08:41Z,50247990.0,other,"error: test failed, to rerun pass `--test event_subscription`"
+experimental-bsan,sqlx-ledger-0.11.14,live_gap_triggers_reload_and_recovers,test_failed,486.146,34.612,2026-11-05T04:09:16Z,50247990.0,other,"error: test failed, to rerun pass `--test event_subscription`"
+experimental-bsan,sqlx-ledger-0.11.14,paginated_reload_fetches_multiple_batches,test_failed,486.146,34.625,2026-11-05T04:09:50Z,50247990.0,other,"error: test failed, to rerun pass `--test event_subscription`"
+experimental-bsan,sqlx-ledger-0.11.14,pg_listener_error_triggers_reload_and_recovers,test_failed,486.146,34.611,2026-11-05T04:10:25Z,50247990.0,other,"error: test failed, to rerun pass `--test event_subscription`"
+experimental-bsan,sqlx-ledger-0.11.14,post_transaction,test_failed,486.146,37.328,2026-11-05T04:11:02Z,50247990.0,other,"error: test failed, to rerun pass `--test post_transactions`"
+experimental-bsan,sqlx-ledger-0.11.14,reload_to_live_transition_receives_new_events,test_failed,486.146,34.628,2026-11-05T04:11:37Z,50247990.0,other,"error: test failed, to rerun pass `--test event_subscription`"
+experimental-bsan,sqlx-ledger-0.11.14,test_account,test_failed,486.146,33.242,2026-11-05T04:12:10Z,50247990.0,other,"error: test failed, to rerun pass `--test account`"
+experimental-bsan,sqlx-ledger-0.11.14,test_tx_template,test_failed,486.146,38.703,2026-11-05T04:12:49Z,50247990.0,other,"error: test failed, to rerun pass `--test tx_template`"
+experimental-bsan,sqlx-ledger-0.11.14,tx_template::entity::tests::fails_when_mandatory_fields_are_missing,success,486.146,8.503,2026-11-05T04:12:57Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,tx_template::entity::tests::it_builds,success,486.146,79.318,2026-11-05T04:14:17Z,50247990.0,,
+experimental-bsan,sqlx-ledger-0.11.14,tx_template::param_definition::tests::build_param_definition,success,486.146,17.926,2026-11-05T04:14:35Z,50247990.0,,

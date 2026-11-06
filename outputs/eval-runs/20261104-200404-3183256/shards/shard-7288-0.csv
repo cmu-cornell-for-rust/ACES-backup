@@ -1,0 +1,29 @@
+experimental-bsan,zbus_polkit-6.0.0,backend_properties,test_failed,525.871,13.168,2026-11-05T04:08:54Z,50248207.0,gc,"test backend_properties ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,zbus_polkit-6.0.0,changed_signal,test_failed,525.871,13.136,2026-11-05T04:09:08Z,50248207.0,gc,"test changed_signal ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,zbus_polkit-6.0.0,check_authorization,test_failed,525.871,13.170,2026-11-05T04:09:21Z,50248207.0,gc,"test check_authorization ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,zbus_polkit-6.0.0,enumerate_actions,test_failed,525.871,13.145,2026-11-05T04:09:34Z,50248207.0,gc,"test enumerate_actions ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,zbus_polkit-6.0.0,enumerate_temporary_authorizations,test_failed,525.871,13.110,2026-11-05T04:09:47Z,50248207.0,gc,"test enumerate_temporary_authorizations ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::start_time_is_field_22_counted_from_the_last_paren,success,525.871,3.010,2026-11-05T04:09:50Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::start_time_rejects_malformed_stat,success,525.871,2.991,2026-11-05T04:09:53Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::subject_decodes_the_details_of_the_kind_it_was_sent_as,success,525.871,3.086,2026-11-05T04:09:56Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::subject_for_message_header_requires_a_sender,success,525.871,3.044,2026-11-05T04:09:59Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::subject_for_message_header_uses_the_sender_bus_name,success,525.871,3.087,2026-11-05T04:10:02Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::subject_for_owner_sends_pidfd_and_uid,success,525.871,3.015,2026-11-05T04:10:05Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::subject_for_pid_fails_for_a_missing_process,success,525.871,2.993,2026-11-05T04:10:08Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::subject_for_pid_looks_up_the_process_in_proc,success,525.871,3.081,2026-11-05T04:10:11Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::subject_for_pid_uses_polkit_wire_types,success,525.871,3.015,2026-11-05T04:10:14Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::subject_keeps_a_kind_it_does_not_know_as_it_arrived,success,525.871,3.020,2026-11-05T04:10:17Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::subject_keeps_a_known_kind_whose_details_do_not_decode,success,525.871,3.012,2026-11-05T04:10:20Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::subject_of_an_unknown_kind_round_trips_through_a_self_describing_format,success,525.871,3.085,2026-11-05T04:10:24Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::subject_round_trips_through_a_self_describing_format,success,525.871,3.240,2026-11-05T04:10:27Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::uid_is_the_real_uid_from_status,success,525.871,2.986,2026-11-05T04:10:30Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::uid_rejects_malformed_status,success,525.871,2.986,2026-11-05T04:10:33Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::subject::tests::wire_signatures_match_polkit,success,525.871,3.013,2026-11-05T04:10:36Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::tests::authority_features_decode_from_their_bits,success,525.871,3.012,2026-11-05T04:10:39Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::tests::enums_serialize_as_their_u32_discriminant,success,525.871,3.015,2026-11-05T04:10:42Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::tests::flags_can_be_dictionary_keys,success,525.871,3.025,2026-11-05T04:10:45Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::tests::flags_convert_from_borrowed_values,success,525.871,3.011,2026-11-05T04:10:48Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::tests::flags_convert_to_and_from_values,success,525.871,2.996,2026-11-05T04:10:51Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::tests::flags_debug_output_names_the_flags,success,525.871,2.989,2026-11-05T04:10:54Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::tests::flags_default_to_the_empty_set,success,525.871,2.967,2026-11-05T04:10:57Z,50248207.0,,
+experimental-bsan,zbus_polkit-6.0.0,policykit1::tests::wire_signatures_match_polkit,success,525.871,2.987,2026-11-05T04:11:00Z,50248207.0,,

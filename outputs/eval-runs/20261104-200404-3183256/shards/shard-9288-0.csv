@@ -1,0 +1,19 @@
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,a_later_limit_cannot_relax_an_earlier_one,success,216.721,9.492,2026-11-05T04:54:27Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,adapted_is_exact,test_failed,216.721,7.757,2026-11-05T04:54:35Z,50251062.0,panic,"thread '<unnamed>' (58898) panicked at tests/exact_concurrency.rs:58:13: assertion `left == right` failed: map with limit 2"
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,all,success,216.721,43.808,2026-11-05T04:55:18Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,any,success,216.721,45.540,2026-11-05T04:56:04Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,composes_with_any_method,success,216.721,6.977,2026-11-05T04:56:11Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,consuming_is_exact,test_failed,216.721,9.522,2026-11-05T04:56:21Z,50251062.0,panic,"thread '<unnamed>' (63020) panicked at tests/exact_concurrency.rs:38:13: assertion `left == right` failed: for_each with limit 3"
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,empty_iterator,success,216.721,6.938,2026-11-05T04:56:27Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,every_item_visited_once,success,216.721,7.174,2026-11-05T04:56:35Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,filter,success,216.721,46.266,2026-11-05T04:57:21Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,filter_map,success,216.721,42.562,2026-11-05T04:58:03Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,for_each,success,216.721,45.946,2026-11-05T04:58:49Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,limit_is_upper_bound_through_indexed_chaining,success,216.721,13.840,2026-11-05T04:59:03Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,map,success,216.721,38.351,2026-11-05T04:59:42Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,output_is_indexed,success,216.721,6.915,2026-11-05T04:59:49Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,readme,timeout,216.721,150.007,2026-11-05T05:02:19Z,50251062.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,short_circuit_still_applies,success,216.721,6.923,2026-11-05T05:02:26Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,try_for_each,success,216.721,48.251,2026-11-05T05:03:14Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,update,success,216.721,46.142,2026-11-05T05:04:00Z,50251062.0,,
+experimental-bsan,rayon_iter_concurrent_limit-0.3.0,upstream_with_min_len_caps_the_limit,test_failed,216.721,8.273,2026-11-05T05:04:08Z,50251062.0,panic,"thread '<unnamed>' (72022) panicked at tests/exact_concurrency.rs:204:13: assertion `left == right` failed: with_min_len(8) then a limit of 12 over 32 items"

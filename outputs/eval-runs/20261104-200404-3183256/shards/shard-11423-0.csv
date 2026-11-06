@@ -1,0 +1,13 @@
+experimental-bsan,tui-logger-0.18.3,circular::tests::circular_buffer,success,163.831,12.551,2026-11-05T05:43:24Z,50253865.0,,
+experimental-bsan,tui-logger-0.18.3,circular::tests::circular_buffer_rev,success,163.831,12.556,2026-11-05T05:43:36Z,50253865.0,,
+experimental-bsan,tui-logger-0.18.3,circular::tests::has_wrapped,success,163.831,12.538,2026-11-05T05:43:49Z,50253865.0,,
+experimental-bsan,tui-logger-0.18.3,circular::tests::take,success,163.831,12.535,2026-11-05T05:44:01Z,50253865.0,,
+experimental-bsan,tui-logger-0.18.3,circular::tests::total_elements,success,163.831,12.517,2026-11-05T05:44:14Z,50253865.0,,
+experimental-bsan,tui-logger-0.18.3,test_panic_on_empty_log,success,163.831,12.709,2026-11-05T05:44:27Z,50253865.0,,
+experimental-bsan,tui-logger-0.18.3,tests::test_formatter,test_failed,163.831,15.224,2026-11-05T05:44:42Z,50253865.0,panic,"thread 'tests::test_formatter' (39599) panicked at tests/envfilter.rs:52:28: buffer contents not equal"
+experimental-bsan,tui-logger-0.18.3,tests::test_scroll,test_failed,163.831,8.694,2026-11-05T05:44:51Z,50253865.0,panic,"thread 'tests::test_scroll' (40916) panicked at tests/scroll.rs:81:28: buffer contents not equal"
+experimental-bsan,tui-logger-0.18.3,tests::test_simple,test_failed,163.831,11.684,2026-11-05T05:45:02Z,50253865.0,panic,"thread 'tests::test_simple' (41945) panicked at tests/simple.rs:63:28: buffer contents not equal"
+experimental-bsan,tui-logger-0.18.3,wait_returns_increasing_indices_across_two_bursts,test_failed,163.831,13.125,2026-11-05T05:45:16Z,50253865.0,panic,"thread 'wait_returns_increasing_indices_across_two_bursts' (43886) panicked at tests/wait_signal.rs:111:10: expected Some after first burst"
+experimental-bsan,tui-logger-0.18.3,wait_timeout_returns_none_quickly_when_idle,success,163.831,12.491,2026-11-05T05:45:28Z,50253865.0,,
+experimental-bsan,tui-logger-0.18.3,wait_timeout_returns_some_after_move_events,test_failed,163.831,14.586,2026-11-05T05:45:43Z,50253865.0,panic,"thread 'wait_timeout_returns_some_after_move_events' (44407) panicked at tests/wait_signal.rs:72:5: expected Some after move_events, got None"
+experimental-bsan,tui-logger-0.18.3,wait_wakes_when_new_events_are_moved,test_failed,163.831,14.586,2026-11-05T05:45:57Z,50253865.0,panic,"thread 'wait_wakes_when_new_events_are_moved' (44931) panicked at tests/wait_signal.rs:52:10: wait() did not return in time: Timeout"

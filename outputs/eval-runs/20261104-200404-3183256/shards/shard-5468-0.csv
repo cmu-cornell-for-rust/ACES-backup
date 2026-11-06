@@ -1,0 +1,41 @@
+experimental-bsan,taos-optin-0.12.4,into_c_str::test_into_c_str::c_str_to_c_str,success,306.859,1.657,2026-11-05T03:20:12Z,50245212.0,,
+experimental-bsan,taos-optin-0.12.4,into_c_str::test_into_c_str::c_string_to_c_str,success,306.859,1.652,2026-11-05T03:20:13Z,50245212.0,,
+experimental-bsan,taos-optin-0.12.4,into_c_str::test_into_c_str::str_to_c_str,success,306.859,1.669,2026-11-05T03:20:15Z,50245212.0,,
+experimental-bsan,taos-optin-0.12.4,into_c_str::test_into_c_str::string_to_c_str,success,306.859,1.658,2026-11-05T03:20:17Z,50245212.0,,
+experimental-bsan,taos-optin-0.12.4,raw::tests::test_raw_taos,test_failed,306.859,1.759,2026-11-05T03:20:19Z,50245212.0,panic,"thread 'raw::tests::test_raw_taos' (37497) panicked at src/raw/mod.rs:1785:51: called `Result::unwrap()` on an `Err` value: OpeningLibraryError(Custom { kind: Other, error: ""libtaos.so: cannot open shared object file: No such file or directory"" })"
+experimental-bsan,taos-optin-0.12.4,stmt::async_tests::test_stmt_with_req_id,timeout,306.859,150.015,2026-11-05T03:22:49Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,stmt::bind::tests_v2::bind_bool,success,306.859,1.659,2026-11-05T03:22:50Z,50245212.0,,
+experimental-bsan,taos-optin-0.12.4,stmt::bind::tests_v2::bind_i8,success,306.859,1.663,2026-11-05T03:22:52Z,50245212.0,,
+experimental-bsan,taos-optin-0.12.4,stmt::bind::tests_v2::bind_var_char,success,306.859,1.657,2026-11-05T03:22:54Z,50245212.0,,
+experimental-bsan,taos-optin-0.12.4,stmt::bind::tests_v3::bind_bool,success,306.859,1.733,2026-11-05T03:22:55Z,50245212.0,,
+experimental-bsan,taos-optin-0.12.4,stmt::bind::tests_v3::bind_i8,success,306.859,1.727,2026-11-05T03:22:57Z,50245212.0,,
+experimental-bsan,taos-optin-0.12.4,stmt::multi::tests::bind_bool,success,306.859,1.662,2026-11-05T03:22:59Z,50245212.0,,
+experimental-bsan,taos-optin-0.12.4,stmt::multi::tests::bind_i8,success,306.859,1.661,2026-11-05T03:23:00Z,50245212.0,,
+experimental-bsan,taos-optin-0.12.4,stmt::tests::test_bindable,timeout,306.859,150.015,2026-11-05T03:25:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,stmt::tests::test_stmt_with_req_id,timeout,306.859,150.015,2026-11-05T03:28:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,stmt::tests::test_tbname_tags,timeout,306.859,150.014,2026-11-05T03:30:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,stmt::tests::test_tbname_tags_json,timeout,306.859,150.014,2026-11-05T03:33:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::error_async,timeout,306.859,150.014,2026-11-05T03:35:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::error_fetch_async,timeout,306.859,150.015,2026-11-05T03:38:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::error_sync,timeout,306.859,150.014,2026-11-05T03:40:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::long_query,timeout,306.859,150.015,2026-11-05T03:43:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::long_query_async,timeout,306.859,150.015,2026-11-05T03:45:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::show_databases,timeout,306.859,150.014,2026-11-05T03:48:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::show_databases_async,timeout,306.859,150.014,2026-11-05T03:50:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::show_databases_async_v2,timeout,306.859,150.014,2026-11-05T03:53:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::show_databases_v2,timeout,306.859,150.014,2026-11-05T03:55:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::test_error_details,timeout,306.859,150.014,2026-11-05T03:58:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::test_put_json,timeout,306.859,150.014,2026-11-05T04:00:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::test_put_line,timeout,306.859,150.014,2026-11-05T04:03:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tests::test_put_telnet,timeout,306.859,150.014,2026-11-05T04:05:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tmq::async_tests::test_tmq,timeout,306.859,150.015,2026-11-05T04:08:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tmq::async_tests::test_tmq_committed,timeout,306.859,150.014,2026-11-05T04:10:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tmq::async_tests::test_tmq_meta,timeout,306.859,150.014,2026-11-05T04:13:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tmq::async_tests::test_tmq_offset,timeout,306.859,150.014,2026-11-05T04:15:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tmq::async_tests::test_tmq_records,timeout,306.859,150.014,2026-11-05T04:18:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tmq::async_tests::test_write_raw_block_with_req_id,timeout,306.859,150.015,2026-11-05T04:20:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tmq::tests::meta,timeout,306.859,150.014,2026-11-05T04:23:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tmq::tests::metadata,timeout,306.859,150.014,2026-11-05T04:25:31Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tmq::tests::test_tmq_committed,timeout,306.859,150.014,2026-11-05T04:28:01Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tmq::tests::test_tmq_meta_sync,timeout,306.859,150.014,2026-11-05T04:30:32Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taos-optin-0.12.4,tmq::tests::test_write_raw_block_with_req_id,timeout,306.859,150.014,2026-11-05T04:33:02Z,50245212.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

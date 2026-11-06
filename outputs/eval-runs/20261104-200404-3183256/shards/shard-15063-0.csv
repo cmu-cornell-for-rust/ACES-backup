@@ -1,0 +1,6 @@
+experimental-bsan,mysql_quick-2.0.1,method::test::test_myset,test_failed,165.260,2.346,2026-11-05T07:14:28Z,50259039.0,panic,"thread 'method::test::test_myset' (60978) panicked at src/method/mod.rs:67:9: assertion `left == right` failed"
+experimental-bsan,mysql_quick-2.0.1,method::test::test_myupdate,test_failed,165.260,2.349,2026-11-05T07:14:31Z,50259039.0,panic,"thread 'method::test::test_myupdate' (61093) panicked at src/method/mod.rs:89:9: assertion `left == right` failed"
+experimental-bsan,mysql_quick-2.0.1,test::test_complex,success,165.260,6.548,2026-11-05T07:14:37Z,50259039.0,,
+experimental-bsan,mysql_quick-2.0.1,test::test_one,test_failed,165.260,2.018,2026-11-05T07:14:39Z,50259039.0,panic,"thread 'test::test_one' (64085) panicked at src/lib.rs:19:51: called `Result::unwrap()` on an `Err` value: DriverError { Could not connect to address `localhost:3306': Connection refused (os error 111) }"
+experimental-bsan,mysql_quick-2.0.1,test::test_option,success,165.260,1.835,2026-11-05T07:14:41Z,50259039.0,,
+experimental-bsan,mysql_quick-2.0.1,test::test_set,success,165.260,1.610,2026-11-05T07:14:43Z,50259039.0,,

@@ -1,0 +1,13 @@
+experimental-bsan,proc-macro-crate-3.2.0,tests::crate_not_found,success,70.201,2.994,2026-11-05T05:37:31Z,50253643.0,,
+experimental-bsan,proc-macro-crate-3.2.0,tests::deps_empty,success,70.201,2.949,2026-11-05T05:37:34Z,50253643.0,,
+experimental-bsan,proc-macro-crate-3.2.0,tests::deps_with_crate,success,70.201,2.999,2026-11-05T05:37:37Z,50253643.0,,
+experimental-bsan,proc-macro-crate-3.2.0,tests::deps_with_crate_renamed,success,70.201,3.106,2026-11-05T05:37:40Z,50253643.0,,
+experimental-bsan,proc-macro-crate-3.2.0,tests::deps_with_crate_renamed_second,success,70.201,3.105,2026-11-05T05:37:43Z,50253643.0,,
+experimental-bsan,proc-macro-crate-3.2.0,tests::dev_deps_with_crate,success,70.201,2.993,2026-11-05T05:37:46Z,50253643.0,,
+experimental-bsan,proc-macro-crate-3.2.0,tests::multiple_times,success,70.201,3.203,2026-11-05T05:37:50Z,50253643.0,,
+experimental-bsan,proc-macro-crate-3.2.0,tests::own_crate,success,70.201,2.959,2026-11-05T05:37:53Z,50253643.0,,
+experimental-bsan,proc-macro-crate-3.2.0,tests::own_crate_and_in_deps,success,70.201,3.042,2026-11-05T05:37:56Z,50253643.0,,
+experimental-bsan,proc-macro-crate-3.2.0,tests::target_dependency,success,70.201,2.993,2026-11-05T05:37:59Z,50253643.0,,
+experimental-bsan,proc-macro-crate-3.2.0,tests::target_dependency2,success,70.201,3.002,2026-11-05T05:38:02Z,50253643.0,,
+experimental-bsan,proc-macro-crate-3.2.0,tests::workspace_deps,success,70.201,3.159,2026-11-05T05:38:05Z,50253643.0,,
+experimental-bsan,proc-macro-crate-3.2.0,workspace_deps_working,test_failed,70.201,2.967,2026-11-05T05:38:08Z,50253643.0,panic,"thread 'workspace_deps_working' (31403) panicked at tests/workspace_deps.rs:8:5: assertion failed: Command::new(""cargo"").arg(""build"").arg(""--all"").arg(format!(""--manifest-path={}"","

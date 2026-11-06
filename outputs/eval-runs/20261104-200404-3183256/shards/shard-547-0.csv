@@ -1,0 +1,307 @@
+experimental-bsan,recrypt-0.13.1,api::test::decrypt_known_value,timeout,371.752,150.018,2026-11-05T01:33:23Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api::test::derive_known_symmetric_key,success,371.752,7.390,2026-11-05T01:33:30Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::derive_known_symmetric_key_not_same_bytes_as_private_key,success,371.752,7.428,2026-11-05T01:33:37Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::encrypt_decrypt_roundtrip,timeout,371.752,150.016,2026-11-05T01:36:07Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api::test::encrypt_decrypt_roundtrip_augmented_keys,timeout,371.752,150.014,2026-11-05T01:38:37Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api::test::encrypt_decrypt_roundtrip_unaugmented_keys,timeout,371.752,150.014,2026-11-05T01:41:08Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api::test::gen_plaintext_len,success,371.752,131.016,2026-11-05T01:43:19Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::gen_random_fp12_not_same,timeout,371.752,150.017,2026-11-05T01:45:49Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api::test::generate_ed25519_key_pair,success,371.752,7.546,2026-11-05T01:45:56Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::hashedvalue_new_from_slice,timeout,371.752,150.013,2026-11-05T01:48:26Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api::test::new_byte_type_from_slice,success,371.752,3.009,2026-11-05T01:48:29Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::plaintexts_equal,success,371.752,11.470,2026-11-05T01:48:41Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::plaintexts_not_equal,success,371.752,11.339,2026-11-05T01:48:52Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::private_key_augment_minus,success,371.752,3.008,2026-11-05T01:48:55Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::private_key_augment_plus,success,371.752,2.998,2026-11-05T01:48:58Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::private_key_clear,success,371.752,36.673,2026-11-05T01:49:35Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::private_key_new_from_slice,success,371.752,2.952,2026-11-05T01:49:38Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::private_key_roundtrip_json_bytes,success,371.752,36.809,2026-11-05T01:50:15Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::private_key_roundtrip_with_internal,success,371.752,37.187,2026-11-05T01:50:52Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::private_keys_equal,success,371.752,3.013,2026-11-05T01:50:55Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::private_keys_not_equal,success,371.752,3.005,2026-11-05T01:50:58Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::public_key_roundtrip_json_bytes,success,371.752,37.515,2026-11-05T01:51:35Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::public_key_roundtrip_with_internal,success,371.752,36.859,2026-11-05T01:52:12Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::publickey_new_from_slice,success,371.752,36.992,2026-11-05T01:52:49Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::roundtrip_encrypted_temp_key,timeout,371.752,150.013,2026-11-05T01:55:19Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api::test::roundtrip_hashedvalue,timeout,371.752,150.012,2026-11-05T01:57:49Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api::test::roundtrip_transform_block,timeout,371.752,150.015,2026-11-05T02:00:19Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api::test::schnorr_signing_roundtrip_augmented,timeout,371.752,150.015,2026-11-05T02:02:49Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api::test::schnorr_signing_roundtrip_unaugmented,success,371.752,126.523,2026-11-05T02:04:56Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::test_compute_public_key,success,371.752,67.033,2026-11-05T02:06:03Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::test_generate_key_pair_max_private_key,success,371.752,36.851,2026-11-05T02:06:40Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::test_handle_zero_point,success,371.752,36.613,2026-11-05T02:07:16Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api::test::transform_to_same_key,timeout,371.752,150.014,2026-11-05T02:09:46Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api::test::two_level_transform_roundtrip,timeout,371.752,150.015,2026-11-05T02:12:16Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api_480::test::derive_private_key_is_known_value,success,371.752,13.187,2026-11-05T02:12:30Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::encrypt_decrypt_roundtrip,timeout,371.752,150.016,2026-11-05T02:15:00Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api_480::test::encrypt_decrypt_roundtrip_augmented_keys,timeout,371.752,150.014,2026-11-05T02:17:30Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api_480::test::encrypt_decrypt_roundtrip_unaugmented_keys,timeout,371.752,150.015,2026-11-05T02:20:00Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api_480::test::gen_plaintext_len,timeout,371.752,150.016,2026-11-05T02:22:30Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api_480::test::hashedvalue_new_from_slice,timeout,371.752,150.016,2026-11-05T02:25:00Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api_480::test::new_byte_type_from_slice,success,371.752,3.099,2026-11-05T02:25:03Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::plaintexts_equal,success,371.752,22.384,2026-11-05T02:25:25Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::plaintexts_not_equal,success,371.752,22.234,2026-11-05T02:25:48Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::private_key_augment_minus,success,371.752,3.201,2026-11-05T02:25:51Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::private_key_augment_plus,success,371.752,3.197,2026-11-05T02:25:54Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::private_key_clear,success,371.752,138.430,2026-11-05T02:28:12Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::private_key_new_from_slice,success,371.752,3.296,2026-11-05T02:28:16Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::private_key_roundtrip_with_internal,success,371.752,137.900,2026-11-05T02:30:34Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::private_keys_equal,success,371.752,3.139,2026-11-05T02:30:37Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::private_keys_not_equal,success,371.752,3.167,2026-11-05T02:30:40Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::public_key_roundtrip_with_internal,success,371.752,137.576,2026-11-05T02:32:58Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::publickey_new_from_slice,success,371.752,137.976,2026-11-05T02:35:16Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::roundtrip_encrypted_temp_key,timeout,371.752,150.017,2026-11-05T02:37:46Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api_480::test::roundtrip_hashedvalue,timeout,371.752,150.017,2026-11-05T02:40:16Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api_480::test::roundtrip_transform_block,timeout,371.752,150.016,2026-11-05T02:42:46Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api_480::test::schnorr_signing_roundtrip_augmented,timeout,371.752,150.017,2026-11-05T02:45:16Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api_480::test::schnorr_signing_roundtrip_unaugmented,timeout,371.752,150.018,2026-11-05T02:47:46Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api_480::test::test_generate_key_pair_max_private_key,success,371.752,137.310,2026-11-05T02:50:03Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::test_handle_zero_point,success,371.752,136.935,2026-11-05T02:52:20Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,api_480::test::transform_to_same_key,timeout,371.752,150.017,2026-11-05T02:54:50Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,api_480::test::two_level_transform_roundtrip,timeout,371.752,150.017,2026-11-05T02:57:20Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,generate_plaintexts,timeout,371.752,150.022,2026-11-05T02:59:50Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::curve::test::generator_times_2,success,371.752,33.263,2026-11-05T03:00:23Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::ed25519::test::real_ed25519_matches_verify_good_message,success,371.752,3.673,2026-11-05T03:00:27Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::ed25519::test::signing_keypair_from_bytes,success,371.752,3.256,2026-11-05T03:00:30Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::ed25519::test::signing_keypair_into_bytes,success,371.752,3.250,2026-11-05T03:00:34Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::ed25519::test::signing_keypairs_equal,success,371.752,3.096,2026-11-05T03:00:37Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::ed25519::test::signing_keypairs_not_equal,success,371.752,3.115,2026-11-05T03:00:40Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::bytes_hashable_decode_roundtrip,timeout,371.752,150.020,2026-11-05T03:03:10Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_add_assoc,timeout,371.752,150.019,2026-11-05T03:05:40Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_add_commutative,timeout,371.752,150.021,2026-11-05T03:08:10Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_eq_reflexive,timeout,371.752,150.021,2026-11-05T03:10:40Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_inv,timeout,371.752,150.021,2026-11-05T03:13:10Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_monoid_identity,timeout,371.752,150.020,2026-11-05T03:15:40Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_mul_assoc,timeout,371.752,150.019,2026-11-05T03:18:10Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_mul_commutative,timeout,371.752,150.019,2026-11-05T03:20:40Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_mul_distributive,timeout,371.752,150.018,2026-11-05T03:23:10Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_one_is_mul_identity,timeout,371.752,150.021,2026-11-05T03:25:40Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_pow_is_mul,timeout,371.752,150.020,2026-11-05T03:28:10Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_semigroup,timeout,371.752,150.018,2026-11-05T03:30:40Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_square2_same_as_pow4,timeout,371.752,150.020,2026-11-05T03:33:11Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_square_same_as_mul_self,timeout,371.752,150.019,2026-11-05T03:35:41Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_sub_same_as_neg_add,timeout,371.752,150.019,2026-11-05T03:38:11Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256::fp12::prop_zero_is_add_identity,timeout,371.752,150.022,2026-11-05T03:40:41Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp256_pow_test,timeout,371.752,150.020,2026-11-05T03:43:11Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_add_assoc,timeout,371.752,150.020,2026-11-05T03:45:41Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_add_commutative,timeout,371.752,150.020,2026-11-05T03:48:11Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_eq_reflexive,timeout,371.752,150.019,2026-11-05T03:50:41Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_inv,timeout,371.752,150.021,2026-11-05T03:53:11Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_monoid_identity,timeout,371.752,150.019,2026-11-05T03:55:41Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_mul_assoc,timeout,371.752,150.021,2026-11-05T03:58:11Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_mul_commutative,timeout,371.752,150.020,2026-11-05T04:00:41Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_mul_distributive,timeout,371.752,150.019,2026-11-05T04:03:11Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_one_is_mul_identity,timeout,371.752,150.021,2026-11-05T04:05:41Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_pow_is_mul,timeout,371.752,150.022,2026-11-05T04:08:11Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_semigroup,timeout,371.752,150.019,2026-11-05T04:10:41Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_square2_same_as_pow4,timeout,371.752,150.024,2026-11-05T04:13:11Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_square_same_as_mul_self,timeout,371.752,150.020,2026-11-05T04:15:41Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_sub_same_as_neg_add,timeout,371.752,150.022,2026-11-05T04:18:11Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480::fp12::prop_zero_is_add_identity,timeout,371.752,150.021,2026-11-05T04:20:41Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp12elem::test::fp480_roundtrip_hashable_bytesdecoder,timeout,371.752,150.021,2026-11-05T04:23:12Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_add_assoc,timeout,371.752,150.022,2026-11-05T04:25:42Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_add_commutative,timeout,371.752,150.020,2026-11-05T04:28:12Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_eq_reflexive,timeout,371.752,150.021,2026-11-05T04:30:42Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_inv,timeout,371.752,150.021,2026-11-05T04:33:12Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_monoid_identity,success,371.752,107.045,2026-11-05T04:34:59Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_mul_assoc,timeout,371.752,150.021,2026-11-05T04:37:29Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_mul_commutative,timeout,371.752,150.020,2026-11-05T04:39:59Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_mul_distributive,timeout,371.752,150.021,2026-11-05T04:42:29Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_one_is_mul_identity,success,371.752,111.710,2026-11-05T04:44:21Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_pow_is_mul,success,371.752,130.466,2026-11-05T04:46:31Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_semigroup,timeout,371.752,150.020,2026-11-05T04:49:01Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_square2_same_as_pow4,success,371.752,117.228,2026-11-05T04:50:58Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_square_same_as_mul_self,success,371.752,110.915,2026-11-05T04:52:49Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_sub_same_as_neg_add,timeout,371.752,150.021,2026-11-05T04:55:19Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp256::fp2::prop_zero_is_add_identity,success,371.752,105.047,2026-11-05T04:57:04Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_add_assoc,timeout,371.752,150.020,2026-11-05T04:59:34Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_add_commutative,timeout,371.752,150.018,2026-11-05T05:02:05Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_eq_reflexive,timeout,371.752,150.019,2026-11-05T05:04:35Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_inv,timeout,371.752,150.020,2026-11-05T05:07:05Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_monoid_identity,timeout,371.752,150.019,2026-11-05T05:09:35Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_mul_assoc,timeout,371.752,150.019,2026-11-05T05:12:05Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_mul_commutative,timeout,371.752,150.020,2026-11-05T05:14:35Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_mul_distributive,timeout,371.752,150.020,2026-11-05T05:17:05Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_one_is_mul_identity,timeout,371.752,150.019,2026-11-05T05:19:35Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_pow_is_mul,timeout,371.752,150.019,2026-11-05T05:22:05Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_semigroup,timeout,371.752,150.020,2026-11-05T05:24:35Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_square2_same_as_pow4,timeout,371.752,150.020,2026-11-05T05:27:05Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_square_same_as_mul_self,timeout,371.752,150.019,2026-11-05T05:29:35Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_sub_same_as_neg_add,timeout,371.752,150.019,2026-11-05T05:32:05Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::fp480::fp2::prop_zero_is_add_identity,timeout,371.752,150.019,2026-11-05T05:34:35Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::hashable,success,371.752,3.029,2026-11-05T05:34:38Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::mul_same_monty,success,371.752,3.159,2026-11-05T05:34:41Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::pow_by_five_should_be_five_muls,success,371.752,3.144,2026-11-05T05:34:44Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::pow_by_five_should_be_same_monty,success,371.752,3.098,2026-11-05T05:34:48Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::round_trip_bytes,success,371.752,3.032,2026-11-05T05:34:51Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp2elem::test::test_add_fixed,success,371.752,3.016,2026-11-05T05:34:54Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::bytes_hashable_decode_roundtrip,timeout,371.752,150.020,2026-11-05T05:37:24Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_add_assoc,timeout,371.752,150.019,2026-11-05T05:39:54Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_add_commutative,timeout,371.752,150.019,2026-11-05T05:42:24Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_eq_reflexive,timeout,371.752,150.018,2026-11-05T05:44:54Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_inv,timeout,371.752,150.018,2026-11-05T05:47:24Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_monoid_identity,timeout,371.752,150.018,2026-11-05T05:49:54Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_mul_assoc,timeout,371.752,150.019,2026-11-05T05:52:24Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_mul_commutative,timeout,371.752,150.019,2026-11-05T05:54:54Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_mul_distributive,timeout,371.752,150.019,2026-11-05T05:57:24Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_one_is_mul_identity,timeout,371.752,150.018,2026-11-05T05:59:54Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_pow_is_mul,timeout,371.752,150.018,2026-11-05T06:02:24Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_semigroup,timeout,371.752,150.019,2026-11-05T06:04:54Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_square2_same_as_pow4,timeout,371.752,150.019,2026-11-05T06:07:24Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_square_same_as_mul_self,timeout,371.752,150.018,2026-11-05T06:09:54Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_sub_same_as_neg_add,timeout,371.752,150.019,2026-11-05T06:12:24Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp256::fp6::prop_zero_is_add_identity,timeout,371.752,150.017,2026-11-05T06:14:54Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_add_assoc,timeout,371.752,150.020,2026-11-05T06:17:24Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_add_commutative,timeout,371.752,150.017,2026-11-05T06:19:54Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_eq_reflexive,timeout,371.752,150.018,2026-11-05T06:22:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_inv,timeout,371.752,150.018,2026-11-05T06:24:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_monoid_identity,timeout,371.752,150.018,2026-11-05T06:27:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_mul_assoc,timeout,371.752,150.018,2026-11-05T06:29:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_mul_commutative,timeout,371.752,150.018,2026-11-05T06:32:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_mul_distributive,timeout,371.752,150.018,2026-11-05T06:34:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_one_is_mul_identity,timeout,371.752,150.017,2026-11-05T06:37:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_pow_is_mul,timeout,371.752,150.018,2026-11-05T06:39:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_semigroup,timeout,371.752,150.019,2026-11-05T06:42:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_square2_same_as_pow4,timeout,371.752,150.018,2026-11-05T06:44:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_square_same_as_mul_self,timeout,371.752,150.019,2026-11-05T06:47:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_sub_same_as_neg_add,timeout,371.752,150.017,2026-11-05T06:49:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::fp480::fp6::prop_zero_is_add_identity,timeout,371.752,150.019,2026-11-05T06:52:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::hashable,success,371.752,3.041,2026-11-05T06:52:28Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp6elem::test::pow_test_1,timeout,371.752,150.018,2026-11-05T06:54:58Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::add_equals_mult,success,371.752,13.273,2026-11-05T06:55:12Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::associative,success,371.752,17.844,2026-11-05T06:55:29Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::commutative,success,371.752,14.409,2026-11-05T06:55:44Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::default_is_zero,success,371.752,3.015,2026-11-05T06:55:47Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::distributive,success,371.752,23.387,2026-11-05T06:56:10Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::div_by_zero_should_panic,success,371.752,12.969,2026-11-05T06:56:23Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::div_zero_by_anything_should_be_zero,success,371.752,29.418,2026-11-05T06:56:53Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::double_end_iter_next_back_bounds,success,371.752,3.009,2026-11-05T06:56:56Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::from_bytes_roundtrip,success,371.752,11.854,2026-11-05T06:57:08Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::from_u32,success,371.752,10.264,2026-11-05T06:57:18Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::identity,success,371.752,34.194,2026-11-05T06:57:52Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::monty_add_assign_works,success,371.752,13.736,2026-11-05T06:58:06Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::monty_add_works,success,371.752,13.883,2026-11-05T06:58:20Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::monty_div_same_as_div,success,371.752,51.944,2026-11-05T06:59:12Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::monty_inv_same_as_div,success,371.752,51.417,2026-11-05T07:00:03Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::monty_mult_equals_normal,success,371.752,14.447,2026-11-05T07:00:18Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::monty_neg_works,success,371.752,12.573,2026-11-05T07:00:30Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::monty_one_is_mul_ident,success,371.752,15.067,2026-11-05T07:00:45Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::monty_sub_assign_works,success,371.752,13.494,2026-11-05T07:00:59Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::monty_sub_works,success,371.752,13.497,2026-11-05T07:01:12Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::monty_times_normal_equals_normal,success,371.752,13.657,2026-11-05T07:01:26Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::monty_zero_is_additive_ident,success,371.752,14.165,2026-11-05T07:01:40Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::mul_equals_div,success,371.752,50.012,2026-11-05T07:02:30Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::mul_equals_div_numerator_can_be_zero,success,371.752,31.257,2026-11-05T07:03:01Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::neg,success,371.752,19.640,2026-11-05T07:03:21Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::normal_times_monty_equals_normal,success,371.752,13.543,2026-11-05T07:03:35Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::pow_equals_mult,success,371.752,25.129,2026-11-05T07:04:00Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::pow_for_class_equals_pow_u32,timeout,371.752,150.018,2026-11-05T07:06:30Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::swap_if_constant_false,success,371.752,2.987,2026-11-05T07:06:33Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::swap_if_constant_true,success,371.752,2.995,2026-11-05T07:06:36Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::to_monty_roundtrip_to_norm,success,371.752,11.802,2026-11-05T07:06:48Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_256::tests::zero,success,371.752,13.288,2026-11-05T07:07:01Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::add_equals_mult,success,371.752,16.048,2026-11-05T07:07:17Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::associative,success,371.752,27.435,2026-11-05T07:07:44Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::commutative,success,371.752,19.370,2026-11-05T07:08:04Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::default_is_zero,success,371.752,2.997,2026-11-05T07:08:07Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::distributive,success,371.752,42.274,2026-11-05T07:08:49Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::div_by_zero_should_panic,success,371.752,13.472,2026-11-05T07:09:03Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::div_zero_by_anything_should_be_zero,success,371.752,72.958,2026-11-05T07:10:15Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::double_end_iter_next_back_bounds,success,371.752,2.999,2026-11-05T07:10:18Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::from_bytes_roundtrip,success,371.752,13.622,2026-11-05T07:10:32Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::from_u32,success,371.752,10.405,2026-11-05T07:10:43Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::identity,success,371.752,83.321,2026-11-05T07:12:06Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::monty_add_assign_works,success,371.752,18.030,2026-11-05T07:12:24Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::monty_add_works,success,371.752,18.214,2026-11-05T07:12:42Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::monty_div_same_as_div,success,371.752,141.662,2026-11-05T07:15:04Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::monty_inv_same_as_div,success,371.752,141.155,2026-11-05T07:17:25Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::monty_mult_equals_normal,success,371.752,20.444,2026-11-05T07:17:45Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::monty_neg_works,success,371.752,15.606,2026-11-05T07:18:01Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::monty_one_is_mul_ident,success,371.752,21.791,2026-11-05T07:18:23Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::monty_sub_assign_works,success,371.752,17.515,2026-11-05T07:18:40Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::monty_sub_works,success,371.752,17.489,2026-11-05T07:18:58Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::monty_times_normal_equals_normal,success,371.752,17.680,2026-11-05T07:19:16Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::monty_zero_is_additive_ident,success,371.752,18.822,2026-11-05T07:19:34Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::mul_equals_div,success,371.752,138.101,2026-11-05T07:21:53Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::mul_equals_div_numerator_can_be_zero,success,371.752,75.574,2026-11-05T07:23:08Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::neg,success,371.752,31.128,2026-11-05T07:23:39Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::normal_times_monty_equals_normal,success,371.752,17.830,2026-11-05T07:23:57Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::pow_equals_mult,success,371.752,48.940,2026-11-05T07:24:46Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::pow_for_class_equals_pow_u32,timeout,371.752,150.018,2026-11-05T07:27:16Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::swap_if_constant_false,success,371.752,3.013,2026-11-05T07:27:19Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::swap_if_constant_true,success,371.752,3.001,2026-11-05T07:27:22Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::to_monty_roundtrip_to_norm,success,371.752,13.972,2026-11-05T07:27:36Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::fr_480::tests::zero,success,371.752,16.983,2026-11-05T07:27:53Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::fp::test::fp480_unsafe_from_known_value,success,371.752,3.030,2026-11-05T07:27:56Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::hashable::test::byte_hashable,success,371.752,10.314,2026-11-05T07:28:06Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::hashable::test::bytevector_hashable,success,371.752,14.437,2026-11-05T07:28:21Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::hashable::test::bytevector_of_bytevector_hashable,success,371.752,20.084,2026-11-05T07:28:41Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::addition_to_self_laws,success,371.752,33.230,2026-11-05T07:29:14Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::double_same_as_add,success,371.752,3.679,2026-11-05T07:29:18Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::double_zero_is_zero,success,371.752,3.269,2026-11-05T07:29:21Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::eq_will_divide_by_z,success,371.752,3.031,2026-11-05T07:29:24Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::add_equals_mult,timeout,371.752,150.019,2026-11-05T07:31:54Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::associative,timeout,371.752,150.018,2026-11-05T07:34:24Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::commutative,timeout,371.752,150.019,2026-11-05T07:36:54Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::distributive,timeout,371.752,150.019,2026-11-05T07:39:24Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::double_is_mul_2_fp2,timeout,371.752,150.019,2026-11-05T07:41:54Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::double_is_mul_2_fp256,timeout,371.752,150.018,2026-11-05T07:44:24Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::double_twice_is_mul_4_fp2,timeout,371.752,150.019,2026-11-05T07:46:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::identity,timeout,371.752,150.019,2026-11-05T07:49:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::normalize_return_none_if_zero,timeout,371.752,150.018,2026-11-05T07:51:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::roundtrip_bytes,timeout,371.752,150.018,2026-11-05T07:54:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::twisted_add_equals_mult,timeout,371.752,150.019,2026-11-05T07:56:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::twisted_associative,timeout,371.752,150.019,2026-11-05T07:59:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::twisted_commutative,timeout,371.752,150.018,2026-11-05T08:01:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::twisted_distributive,timeout,371.752,150.019,2026-11-05T08:04:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::twisted_identity,timeout,371.752,150.019,2026-11-05T08:06:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::twisted_normalize_return_none_if_zero,timeout,371.752,150.018,2026-11-05T08:09:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::twisted_z_zero_means_none_normalize,timeout,371.752,150.019,2026-11-05T08:11:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp256::z_zero_means_none_normalize,timeout,371.752,150.018,2026-11-05T08:14:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::add_equals_mult,timeout,371.752,150.019,2026-11-05T08:16:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::associative,timeout,371.752,150.019,2026-11-05T08:19:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::commutative,timeout,371.752,150.018,2026-11-05T08:21:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::distributive,timeout,371.752,150.019,2026-11-05T08:24:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::double_is_mul_2_fp2,timeout,371.752,150.019,2026-11-05T08:26:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::double_is_mul_2_fp256,timeout,371.752,150.019,2026-11-05T08:29:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::double_twice_is_mul_4_fp2,timeout,371.752,150.020,2026-11-05T08:31:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::identity,timeout,371.752,150.019,2026-11-05T08:34:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::normalize_return_none_if_zero,timeout,371.752,150.019,2026-11-05T08:36:55Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::roundtrip_bytes,timeout,371.752,150.019,2026-11-05T08:39:25Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::twisted_add_equals_mult,timeout,371.752,150.018,2026-11-05T08:41:56Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::twisted_associative,timeout,371.752,150.019,2026-11-05T08:44:26Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::twisted_commutative,timeout,371.752,150.020,2026-11-05T08:46:56Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::twisted_distributive,timeout,371.752,150.020,2026-11-05T08:49:26Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::twisted_identity,timeout,371.752,150.019,2026-11-05T08:51:56Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::twisted_normalize_return_none_if_zero,timeout,371.752,150.019,2026-11-05T08:54:26Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::twisted_z_zero_means_none_normalize,timeout,371.752,150.019,2026-11-05T08:56:56Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::fp480::z_zero_means_none_normalize,timeout,371.752,150.019,2026-11-05T08:59:26Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::g1_times_order_is_reasonable,timeout,371.752,150.018,2026-11-05T09:01:56Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::generator_times_order_is_reasonable,success,371.752,92.661,2026-11-05T09:03:29Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::point_minus_self_is_zero,success,371.752,3.319,2026-11-05T09:03:32Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::homogeneouspoint::test::roundtrip_known_bytes,success,371.752,3.269,2026-11-05T09:03:35Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::pairing::test::add_line_match_known_good_value_1,success,371.752,8.048,2026-11-05T09:03:43Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::pairing::test::add_line_match_known_good_value_2,success,371.752,8.489,2026-11-05T09:03:52Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::pairing::test::double_line_match_known_good_value,success,371.752,7.527,2026-11-05T09:03:59Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::pairing::test::fp480_law_bilinearity,timeout,371.752,150.018,2026-11-05T09:06:29Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::pairing::test::frobenius_match_good_value,success,371.752,7.291,2026-11-05T09:06:37Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::pairing::test::law_bilinearity,timeout,371.752,150.019,2026-11-05T09:09:07Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::pairing::test::monty_pair_match_known_good_value,timeout,371.752,150.017,2026-11-05T09:11:37Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::pairing::test::pair_match_known_good_value,timeout,371.752,150.018,2026-11-05T09:14:07Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::schnorr::test::schnorr_sign_matches_known_value,success,371.752,32.987,2026-11-05T09:14:40Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::schnorr::test::schnorr_sign_verify_roundtrip,timeout,371.752,150.018,2026-11-05T09:17:10Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::sha256::test::sha256_match_known_value,success,371.752,3.030,2026-11-05T09:17:13Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::test::array_concat_32_array_split_roundtrip,success,371.752,3.036,2026-11-05T09:17:16Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::test::create_transform_key_known_value,timeout,371.752,150.018,2026-11-05T09:19:46Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::test::encrypt_decrypt_roundtrip,timeout,371.752,150.019,2026-11-05T09:22:16Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::test::fail_when_auth_hash_does_not_match_wrong_priv_key,timeout,371.752,150.018,2026-11-05T09:24:46Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::test::fail_when_verify_fails,timeout,371.752,150.018,2026-11-05T09:27:16Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::test::fp480_pow_for_square_works,success,371.752,3.089,2026-11-05T09:27:19Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::test::generate_reencryption_key_sig_not_over_hashedk,timeout,371.752,150.019,2026-11-05T09:29:49Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::test::pow_for_square_works,success,371.752,3.075,2026-11-05T09:29:52Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,internal::test::reencrypt_2nd_level_roundtrip_with_known_keys_and_auth_hash_checks,timeout,371.752,150.018,2026-11-05T09:32:22Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::test::reencrypt_roundtrip_with_known_keys,timeout,371.752,150.019,2026-11-05T09:34:52Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::test::sign_verify_roundtrip,timeout,371.752,150.014,2026-11-05T09:37:22Z,50233054.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recrypt-0.13.1,internal::test::sum_n_is_times,success,371.752,10.300,2026-11-05T09:37:33Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,nonemptyvec::test::nonempty_construct_good,success,371.752,2.989,2026-11-05T09:37:36Z,50233054.0,,
+experimental-bsan,recrypt-0.13.1,nonemptyvec::test::nonempty_vec_to_vec,success,371.752,3.011,2026-11-05T09:37:39Z,50233054.0,,

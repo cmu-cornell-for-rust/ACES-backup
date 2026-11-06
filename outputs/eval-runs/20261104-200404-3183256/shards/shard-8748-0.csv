@@ -1,0 +1,21 @@
+experimental-bsan,nostro2-0.1.30,nips::nip_04::tests::second_test,success,254.867,4.519,2026-11-05T04:44:48Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,nips::nip_04::tests::test_nip_04,success,254.867,4.541,2026-11-05T04:44:52Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,nips::nip_04::tests::third_test,success,254.867,4.668,2026-11-05T04:44:57Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,nips::nip_44::tests::test_nip_44,success,254.867,4.871,2026-11-05T04:45:02Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,nips::nip_46::tests::test_nip46_ping_request,success,254.867,5.392,2026-11-05T04:45:07Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,nips::nip_46::tests::test_nip46_request,success,254.867,4.934,2026-11-05T04:45:12Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,nips::nip_46::tests::test_nip46_sign_event,success,254.867,6.840,2026-11-05T04:45:19Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,pool::tests::test_relay_pool,timeout,254.867,150.017,2026-11-05T04:47:49Z,50250264.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nostro2-0.1.30,relays::tests::test_close,test_failed,254.867,88.113,2026-11-05T04:49:17Z,50250264.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,nostro2-0.1.30,tests::fetch_events,test_failed,254.867,4.673,2026-11-05T04:49:22Z,50250264.0,panic,"thread 'tests::fetch_events' (22277) panicked at tests/main_async.rs:122:81: called `Result::unwrap()` on an `Err` value: IO error: failed to lookup address information: Name or service not known"
+experimental-bsan,nostro2-0.1.30,tests::send_note,test_failed,254.867,4.690,2026-11-05T04:49:26Z,50250264.0,panic,"thread 'tests::send_note' (22745) panicked at tests/main_async.rs:96:81: called `Result::unwrap()` on an `Err` value: IO error: failed to lookup address information: Name or service not known"
+experimental-bsan,nostro2-0.1.30,tests::test_create_note,success,254.867,4.664,2026-11-05T04:49:31Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,tests::test_create_tagged_note,success,254.867,4.563,2026-11-05T04:49:36Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,tests::test_not_user_key,success,254.867,4.432,2026-11-05T04:49:40Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,tests::test_try_p_and_e_tags,success,254.867,4.517,2026-11-05T04:49:45Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,tests::test_user_key,success,254.867,4.422,2026-11-05T04:49:49Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,tests::use_relay_on_threads,test_failed,254.867,4.672,2026-11-05T04:49:54Z,50250264.0,panic,"thread 'tests::use_relay_on_threads' (24733) panicked at tests/main_async.rs:148:81: called `Result::unwrap()` on an `Err` value: IO error: failed to lookup address information: Name or service not known"
+experimental-bsan,nostro2-0.1.30,userkeys::tests::test_encryption,success,254.867,5.319,2026-11-05T04:49:59Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,userkeys::tests::test_extractable,success,254.867,8.438,2026-11-05T04:50:08Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,userkeys::tests::test_mnemonic,success,254.867,8.568,2026-11-05T04:50:16Z,50250264.0,,
+experimental-bsan,nostro2-0.1.30,userkeys::tests::test_user_keys,success,254.867,4.510,2026-11-05T04:50:21Z,50250264.0,,

@@ -1,0 +1,41 @@
+experimental-bsan,halo2_proofs-0.4.0,arithmetic::test_lagrange_interpolate,success,525.185,4.654,2026-11-05T03:22:39Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,arithmetic::test_multiexp,timeout,525.185,150.016,2026-11-05T03:25:09Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,circuit::floor_planner::single_pass::tests::not_enough_columns_for_constants,success,525.185,4.395,2026-11-05T03:25:14Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,circuit::floor_planner::v1::strategy::test_slot_in,success,525.185,4.405,2026-11-05T03:25:18Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,circuit::floor_planner::v1::tests::not_enough_columns_for_constants,success,525.185,4.394,2026-11-05T03:25:22Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,circuit::table_layouter::tests::table_no_default,success,525.185,4.408,2026-11-05T03:25:27Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,circuit::table_layouter::tests::table_overwrite_default,success,525.185,4.433,2026-11-05T03:25:31Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,circuit::table_layouter::tests::table_reuse_column,success,525.185,4.429,2026-11-05T03:25:36Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,circuit::table_layouter::tests::table_uneven_columns,success,525.185,4.423,2026-11-05T03:25:40Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,dev::cost::tests::circuit_cost_without_permutation,success,525.185,4.420,2026-11-05T03:25:45Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,dev::tests::bad_lookup,success,525.185,4.589,2026-11-05T03:25:49Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,dev::tests::unassigned_cell,success,525.185,4.463,2026-11-05T03:25:54Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,exports_accepting_fixture,timeout,525.185,150.021,2026-11-05T03:28:24Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,exports_match_only_fixture_for_non_identity_capture,timeout,525.185,150.019,2026-11-05T03:30:54Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,exports_proof_bytes_and_refuses_mismatched_ones,timeout,525.185,150.020,2026-11-05T03:33:24Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,match_only_export_rejects_identity_capture,timeout,525.185,150.020,2026-11-05T03:35:54Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,plonk::assigned::proptests::operation_commutativity,success,525.185,70.493,2026-11-05T03:37:04Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,plonk::assigned::tests::add_rational_to_inv0_rational,success,525.185,4.509,2026-11-05T03:37:09Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,plonk::assigned::tests::add_trivial_to_inv0_rational,success,525.185,4.383,2026-11-05T03:37:13Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,plonk::assigned::tests::mul_rational_by_inv0_rational,success,525.185,4.487,2026-11-05T03:37:18Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,plonk::assigned::tests::sub_rational_from_inv0_rational,success,525.185,4.486,2026-11-05T03:37:22Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,plonk::assigned::tests::sub_trivial_from_inv0_rational,success,525.185,4.415,2026-11-05T03:37:27Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,plonk::circuit::compress_selectors::tests::test_selector_combination,timeout,525.185,150.015,2026-11-05T03:39:57Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,plonk::fingerprint::vesta_lean::tests::lean_identifier_grammar,success,525.185,4.383,2026-11-05T03:40:01Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,plonk::fingerprint::vesta_lean::tests::proof_reads_reserialize_as_the_prover_writes,success,525.185,4.412,2026-11-05T03:40:06Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,plonk::fingerprint::vesta_lean::tests::transcript_schedule_records_squeeze_before_first_proof_read,success,525.185,4.425,2026-11-05T03:40:10Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,plonk::prover::test_create_proof,timeout,525.185,150.017,2026-11-05T03:42:40Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,plonk_api,timeout,525.185,150.019,2026-11-05T03:45:10Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,poly::commitment::msm::tests::msm_arithmetic,timeout,525.185,150.017,2026-11-05T03:47:40Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,poly::commitment::test_commit_lagrange_epaffine,success,525.185,134.768,2026-11-05T03:49:55Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,poly::commitment::test_commit_lagrange_eqaffine,success,525.185,134.618,2026-11-05T03:52:10Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,poly::commitment::test_opening_proof,timeout,525.185,150.019,2026-11-05T03:54:40Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,poly::domain::test_get_chunk_of_rotated_extended,success,525.185,17.475,2026-11-05T03:54:57Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,poly::domain::test_l_i,success,525.185,7.129,2026-11-05T03:55:04Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,poly::domain::test_rotate,success,525.185,5.158,2026-11-05T03:55:09Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,poly::evaluator::tests::short_chunk_regression_test,success,525.185,5.010,2026-11-05T03:55:14Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,poly::multiopen::proptests::test_intermediate_sets,timeout,525.185,150.019,2026-11-05T03:57:44Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,poly::multiopen::test_identical_queries,timeout,525.185,150.018,2026-11-05T04:00:15Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,poly::multiopen::test_roundtrip,timeout,525.185,150.018,2026-11-05T04:02:45Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,halo2_proofs-0.4.0,poly::tests::test_get_chunk_of_rotated,success,525.185,10.401,2026-11-05T04:02:55Z,50245144.0,,
+experimental-bsan,halo2_proofs-0.4.0,rejects_non_identity_capture,timeout,525.185,150.020,2026-11-05T04:05:25Z,50245144.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

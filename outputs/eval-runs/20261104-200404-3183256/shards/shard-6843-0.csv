@@ -1,0 +1,31 @@
+experimental-bsan,compact_jwt-0.6.0,crypto::a128gcm::tests::a128kw_outer_a128gcm_inner,success,213.511,3.181,2026-11-05T03:57:21Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::a256gcm::tests::a256kw_outer_a256gcm_inner,success,213.511,3.624,2026-11-05T03:57:24Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::ecdhes_a256kw::tests::ecdh_a256kw_outer_a256gcm_inner,success,213.511,17.618,2026-11-05T03:57:42Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::es256::tests::es256_key_generate_cycle,success,213.511,21.014,2026-11-05T03:58:03Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::es256::tests::rfc7515_es256_signature_example,success,213.511,18.393,2026-11-05T03:58:22Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::es256::tests::rfc7515_es256_validation_example,success,213.511,5.778,2026-11-05T03:58:27Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::hs256::tests::hs256_shortform,success,213.511,2.722,2026-11-05T03:58:30Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::hs256::tests::rfc7519_hs256_validation_example,success,213.511,2.716,2026-11-05T03:58:33Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::hs256::tests::rfc7519_hs256_validation_example_legacy,success,213.511,2.577,2026-11-05T03:58:35Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::ms_oapxbc::tests::ms_oapxbc_3_2_5_1_3_3_exchange_request_response,success,213.511,45.550,2026-11-05T03:59:21Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::ms_oapxbc::tests::ms_oapxbc_reflexive_encryption_test,timeout,213.511,150.014,2026-11-05T04:01:51Z,50247666.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,compact_jwt-0.6.0,crypto::ms_oapxbc::tests::ms_oapxbc_reflexive_signature_test,timeout,213.511,150.013,2026-11-05T04:04:21Z,50247666.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,compact_jwt-0.6.0,crypto::rs256::tests::rfc7515_rs256_validation_example,success,213.511,3.591,2026-11-05T04:04:25Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::rs256::tests::rs256_key_generate_cycle,timeout,213.511,150.014,2026-11-05T04:06:55Z,50247666.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,compact_jwt-0.6.0,crypto::rsaes_oaep::tests::reflexive_rsa_oaep_validation,timeout,213.511,150.012,2026-11-05T04:09:25Z,50247666.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,compact_jwt-0.6.0,crypto::rsaes_oaep::tests::rfc7516_rsa_oaep_validation_example,success,213.511,79.290,2026-11-05T04:10:44Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::tpm_es256::tests::tpm_dyn_trait_object_cycle,success,213.511,15.676,2026-11-05T04:11:00Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::tpm_es256::tests::tpm_key_generate_cycle,success,213.511,15.556,2026-11-05T04:11:15Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,crypto::tpm_rs256::tests::tpm_dyn_trait_object_cycle,timeout,213.511,150.014,2026-11-05T04:13:45Z,50247666.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,compact_jwt-0.6.0,crypto::tpm_rs256::tests::tpm_key_generate_cycle,timeout,213.511,150.014,2026-11-05T04:16:15Z,50247666.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,compact_jwt-0.6.0,dangernoverify::tests::test_unsafe_release_without_verification,success,213.511,2.444,2026-11-05T04:16:18Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,jws::tests::test_sign_and_validate_es256,success,213.511,15.116,2026-11-05T04:16:33Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,jws::tests::test_sign_and_validate_hs256,success,213.511,2.602,2026-11-05T04:16:36Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,jws::tests::test_verification_jws_embedded,success,213.511,5.835,2026-11-05T04:16:41Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,jws::tests::test_verification_jws_x5c,success,213.511,31.202,2026-11-05T04:17:13Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,jwt::tests::test_sign_and_validate,success,213.511,2.633,2026-11-05T04:17:15Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,oidc::tests::test_nbf_and_exp,success,213.511,21.512,2026-11-05T04:17:37Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,oidc::tests::test_serde_oidc_claims,success,213.511,2.625,2026-11-05T04:17:39Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,oidc::tests::test_serialize_oidc_date,success,213.511,1.646,2026-11-05T04:17:41Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,oidc::tests::test_sign_and_validate,success,213.511,15.285,2026-11-05T04:17:56Z,50247666.0,,
+experimental-bsan,compact_jwt-0.6.0,oidc::tests::test_without_nbf_and_exp,success,213.511,21.722,2026-11-05T04:18:18Z,50247666.0,,

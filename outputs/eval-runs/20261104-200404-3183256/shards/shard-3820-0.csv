@@ -1,0 +1,60 @@
+experimental-bsan,mel_spec-0.5.0,fbank::tests::debug_compute_steps,test_failed,337.496,1.669,2026-11-05T02:39:22Z,50242513.0,panic,"thread 'fbank::tests::debug_compute_steps' (63438) panicked at src/fbank.rs:745:67: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,fbank::tests::debug_filterbank,success,337.496,9.475,2026-11-05T02:39:31Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,fbank::tests::fbank_matches_frame_by_frame_dense_reference,timeout,337.496,150.014,2026-11-05T02:42:01Z,50242513.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mel_spec-0.5.0,fbank::tests::fuzz_fbank_matches_frame_by_frame_dense_reference,timeout,337.496,150.013,2026-11-05T02:44:32Z,50242513.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mel_spec-0.5.0,fbank::tests::test_fbank_basic,success,337.496,96.047,2026-11-05T02:46:08Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,fbank::tests::test_fbank_config_defaults,success,337.496,5.705,2026-11-05T02:46:13Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,fbank::tests::test_fbank_vs_kaldi_golden,success,337.496,5.734,2026-11-05T02:46:19Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,fbank::tests::test_hz_to_mel,success,337.496,5.728,2026-11-05T02:46:25Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,fbank::tests::test_mel_to_hz,success,337.496,5.713,2026-11-05T02:46:31Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,fbank::tests::test_sparse_projection_matches_dense_filterbank,success,337.496,12.457,2026-11-05T02:46:43Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,fbank_matches_v0_4_1,test_failed,337.496,4.384,2026-11-05T02:46:47Z,50242513.0,panic,"thread 'fbank_matches_v0_4_1' (85616) panicked at tests/regression_v0_4_1.rs:15:59: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,mel::tests::batch_log_mel_matches_frame_by_frame_reference,timeout,337.496,150.013,2026-11-05T02:49:17Z,50242513.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mel_spec-0.5.0,mel::tests::batch_mel_helper_matches_streaming_mel_frames,timeout,337.496,150.014,2026-11-05T02:51:47Z,50242513.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mel_spec-0.5.0,mel::tests::batch_scratch_from_other_settings_is_resized,success,337.496,72.963,2026-11-05T02:53:00Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::downmix_interleaved_averages_each_sample_frame,success,337.496,5.685,2026-11-05T02:53:06Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::downmix_interleaved_rejects_incomplete_sample_frames,success,337.496,5.686,2026-11-05T02:53:12Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::fuzz_batch_log_mel_matches_frame_by_frame_reference,timeout,337.496,150.017,2026-11-05T02:55:42Z,50242513.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mel_spec-0.5.0,mel::tests::fuzz_interleave_frames_matches_reference,success,337.496,68.483,2026-11-05T02:56:50Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::fuzz_sparse_projection_matches_dense_reference,timeout,337.496,150.012,2026-11-05T02:59:20Z,50242513.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mel_spec-0.5.0,mel::tests::fuzz_whisper_mel_paths_match_reference,timeout,337.496,150.014,2026-11-05T03:01:50Z,50242513.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mel_spec-0.5.0,mel::tests::interleave_frames_pads_odd_counts_and_min_width,success,337.496,5.706,2026-11-05T03:01:56Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::interleaved_batch_matches_mono_batch,success,337.496,39.627,2026-11-05T03:02:36Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::test_batch_log_mel_config_produces_feature_major_shape,success,337.496,93.819,2026-11-05T03:04:10Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::test_fft_frequencies,success,337.496,5.708,2026-11-05T03:04:15Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::test_hz_to_mel,success,337.496,5.699,2026-11-05T03:04:21Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::test_mel,test_failed,337.496,1.653,2026-11-05T03:04:23Z,50242513.0,panic,"thread 'mel::tests::test_mel' (19621) panicked at src/mel.rs:1105:39: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,mel::tests::test_mel_frequencies,success,337.496,5.786,2026-11-05T03:04:29Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::test_mel_to_hz,success,337.496,5.797,2026-11-05T03:04:34Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::test_mels_to_hz,success,337.496,5.758,2026-11-05T03:04:40Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::test_nemo_mel_filters,test_failed,337.496,1.655,2026-11-05T03:04:42Z,50242513.0,panic,"thread 'mel::tests::test_nemo_mel_filters' (20977) panicked at src/mel.rs:1120:82: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,mel::tests::test_sparse_filterbank_matches_dense_projection,success,337.496,51.155,2026-11-05T03:05:33Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::test_sparse_mel_spectrogram_matches_dense_api,success,337.496,47.685,2026-11-05T03:06:21Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,mel::tests::test_spectrogram,success,337.496,21.395,2026-11-05T03:06:42Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,parakeet_batch_log_mel_is_within_fft_rounding_of_v0_4_1,test_failed,337.496,4.434,2026-11-05T03:06:46Z,50242513.0,panic,"thread 'parakeet_batch_log_mel_is_within_fft_rounding_of_v0_4_1' (25164) panicked at tests/regression_v0_4_1.rs:15:59: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,rb::tests::fuzz_ringbuffer_matches_streaming_model,timeout,337.496,150.016,2026-11-05T03:09:17Z,50242513.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mel_spec-0.5.0,rb::tests::oversized_write_retains_newest_samples,success,337.496,5.845,2026-11-05T03:09:22Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,rb::tests::single_sample_write_discards_oldest_sample,success,337.496,5.808,2026-11-05T03:09:28Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,rb::tests::test_ringbuffer,test_failed,337.496,22.535,2026-11-05T03:09:51Z,50242513.0,panic,"thread 'rb::tests::test_ringbuffer' (33874) panicked at src/rb.rs:158:63: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,readme_direct_fft_to_mel_example_runs,success,337.496,23.507,2026-11-05T03:10:14Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,readme_fbank_example_runs,success,337.496,96.330,2026-11-05T03:11:51Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,readme_interleaved_batch_example_runs,success,337.496,82.274,2026-11-05T03:13:13Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,readme_mel_and_stft_examples_run,success,337.496,39.147,2026-11-05T03:13:52Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,readme_quick_start_cpu_mel_pipeline_runs,success,337.496,62.097,2026-11-05T03:14:54Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,readme_tga_example_runs,success,337.496,5.829,2026-11-05T03:15:00Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,readme_vad_timestamp_example_runs,success,337.496,5.755,2026-11-05T03:15:06Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,stft::tests::full_spectrum_matches_complex_fft,success,337.496,27.381,2026-11-05T03:15:33Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,stft::tests::fuzz_compute_all_cpu_matches_complex_fft,timeout,337.496,150.015,2026-11-05T03:18:03Z,50242513.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mel_spec-0.5.0,stft::tests::fuzz_streaming_spectrogram_matches_model,timeout,337.496,150.013,2026-11-05T03:20:33Z,50242513.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mel_spec-0.5.0,stft::tests::test_spectrogram_add,success,337.496,5.700,2026-11-05T03:20:39Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,streaming_vad_can_return_stft_timestamps,test_failed,337.496,5.772,2026-11-05T03:20:45Z,50242513.0,panic,"thread 'streaming_vad_can_return_stft_timestamps' (70688) panicked at tests/vad_regression.rs:238:80: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,streaming_vad_decisions_match_v0_4_1,test_failed,337.496,4.380,2026-11-05T03:20:49Z,50242513.0,panic,"thread 'streaming_vad_decisions_match_v0_4_1' (71050) panicked at tests/regression_v0_4_1.rs:15:59: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,streaming_vad_matches_legacy_on_quantized_fixture,test_failed,337.496,5.736,2026-11-05T03:20:55Z,50242513.0,panic,"thread 'streaming_vad_matches_legacy_on_quantized_fixture' (71387) panicked at tests/vad_regression.rs:211:80: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,streaming_vad_matches_window_boundaries_for_all_frame_shapes,test_failed,337.496,5.756,2026-11-05T03:21:01Z,50242513.0,panic,"thread 'streaming_vad_matches_window_boundaries_for_all_frame_shapes' (71684) panicked at tests/vad_regression.rs:290:80: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,vad::tests::fuzz_streaming_vad_matches_window_boundaries,timeout,337.496,150.014,2026-11-05T03:23:31Z,50242513.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mel_spec-0.5.0,vad::tests::fuzz_vad_boundaries_frame_split_does_not_change_result,success,337.496,60.594,2026-11-05T03:24:31Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,vad::tests::test_detection_settings_default,success,337.496,5.697,2026-11-05T03:24:37Z,50242513.0,,
+experimental-bsan,mel_spec-0.5.0,vad::tests::test_speech_detection,test_failed,337.496,1.635,2026-11-05T03:24:39Z,50242513.0,panic,"thread 'vad::tests::test_speech_detection' (83780) panicked at src/vad.rs:748:61: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,vad::tests::test_vad_boundaries,test_failed,337.496,1.614,2026-11-05T03:24:40Z,50242513.0,panic,"thread 'vad::tests::test_vad_boundaries' (83871) panicked at src/vad.rs:810:56: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,vad_boundaries_matches_legacy_on_reference_fixtures,test_failed,337.496,5.769,2026-11-05T03:24:46Z,50242513.0,panic,"thread 'vad_boundaries_matches_legacy_on_reference_fixtures' (84101) panicked at tests/vad_regression.rs:185:51: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.5.0,whisper_batch_mel_matches_v0_4_1,test_failed,337.496,4.370,2026-11-05T03:24:50Z,50242513.0,panic,"thread 'whisper_batch_mel_matches_v0_4_1' (84312) panicked at tests/regression_v0_4_1.rs:15:59: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

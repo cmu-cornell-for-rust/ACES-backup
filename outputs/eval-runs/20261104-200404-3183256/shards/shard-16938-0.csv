@@ -1,0 +1,4 @@
+experimental-bsan,ratelimit-0.10.0,tests::capacity,success,21.348,1.640,2026-11-05T07:52:29Z,50261476.0,,
+experimental-bsan,ratelimit-0.10.0,tests::idle,success,21.348,1.569,2026-11-05T07:52:30Z,50261476.0,,
+experimental-bsan,ratelimit-0.10.0,tests::rate,success,21.348,1.542,2026-11-05T07:52:32Z,50261476.0,,
+experimental-bsan,ratelimit-0.10.0,tests::wait,test_failed,21.348,1.599,2026-11-05T07:52:33Z,50261476.0,panic,"thread 'tests::wait' (57906) panicked at src/lib.rs:467:9: assertion failed: count >= 600"

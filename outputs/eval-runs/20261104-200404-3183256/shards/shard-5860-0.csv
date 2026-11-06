@@ -1,0 +1,38 @@
+experimental-bsan,wechat-vendor-sdk-0.4.0,at,test_failed,291.458,7.511,2026-11-05T03:32:25Z,50245993.0,panic,"thread 'at' (2923) panicked at tests/wxmini.rs:23:10: called `Result::unwrap()` on an `Err` value: ApiCodeNotOk(Object {""errcode"": Number(40013), ""errmsg"": String(""invalid appid rid: 6aebf8c8-5a9ded06-2b158a24"")})"
+experimental-bsan,wechat-vendor-sdk-0.4.0,get_id_by_auth_code,success,291.458,8.826,2026-11-05T03:32:33Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,get_user_info,success,291.458,8.404,2026-11-05T03:32:42Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,jsticket,success,291.458,8.188,2026-11-05T03:32:50Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,menu,success,291.458,8.223,2026-11-05T03:32:58Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,message_template_send,success,291.458,8.256,2026-11-05T03:33:07Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,qcode,success,291.458,8.194,2026-11-05T03:33:15Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,request_code2session,success,291.458,9.089,2026-11-05T03:33:24Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,request_createwxaqrcode,success,291.458,9.014,2026-11-05T03:33:33Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,request_external_contact_get,success,291.458,8.406,2026-11-05T03:33:41Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,request_external_contact_group_chat_get,success,291.458,8.357,2026-11-05T03:33:50Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,request_external_contact_group_chat_list,success,291.458,8.316,2026-11-05T03:33:58Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,request_external_contact_list,success,291.458,8.375,2026-11-05T03:34:06Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,request_generatescheme,success,291.458,9.021,2026-11-05T03:34:15Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,request_genwxashortlink,success,291.458,9.006,2026-11-05T03:34:24Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,request_getwxacodeunlimit,success,291.458,9.015,2026-11-05T03:34:33Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,request_scan_qrcode,success,291.458,9.155,2026-11-05T03:34:43Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,send,success,291.458,8.389,2026-11-05T03:34:51Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,stable_at,test_failed,291.458,6.864,2026-11-05T03:34:58Z,50245993.0,panic,"thread 'stable_at' (10633) panicked at tests/wxmini.rs:38:10: called `Result::unwrap()` on an `Err` value: ApiCodeNotOk(Object {""errcode"": Number(40013), ""errmsg"": String(""invalid appid rid: 6aebf961-57aab760-7a0788bb"")})"
+experimental-bsan,wechat-vendor-sdk-0.4.0,tags_batch_tagging,success,291.458,8.254,2026-11-05T03:35:06Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,tags_create,success,291.458,8.251,2026-11-05T03:35:14Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,tags_get,success,291.458,8.223,2026-11-05T03:35:23Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,test_batch_transfer,test_failed,291.458,7.369,2026-11-05T03:35:30Z,50245993.0,panic,"thread 'test_batch_transfer' (14730) panicked at tests/wxpay.rs:43:26: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,wechat-vendor-sdk-0.4.0,test_batch_transfer_detail_by_out_batch_no,test_failed,291.458,7.364,2026-11-05T03:35:37Z,50245993.0,panic,"thread 'test_batch_transfer_detail_by_out_batch_no' (15482) panicked at tests/wxpay.rs:152:26: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,wechat-vendor-sdk-0.4.0,test_close_order,test_failed,291.458,7.345,2026-11-05T03:35:45Z,50245993.0,panic,"thread 'test_close_order' (16175) panicked at tests/wxpay.rs:98:20: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,wechat-vendor-sdk-0.4.0,test_jsapi_order,test_failed,291.458,7.374,2026-11-05T03:35:52Z,50245993.0,panic,"thread 'test_jsapi_order' (16784) panicked at tests/wxpay.rs:74:26: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,wechat-vendor-sdk-0.4.0,test_order_detail,test_failed,291.458,7.381,2026-11-05T03:36:00Z,50245993.0,panic,"thread 'test_order_detail' (17358) panicked at tests/wxpay.rs:86:26: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,wechat-vendor-sdk-0.4.0,test_refund_detail,test_failed,291.458,7.365,2026-11-05T03:36:07Z,50245993.0,panic,"thread 'test_refund_detail' (17796) panicked at tests/wxpay.rs:138:26: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,wechat-vendor-sdk-0.4.0,test_refund_order,test_failed,291.458,7.379,2026-11-05T03:36:14Z,50245993.0,panic,"thread 'test_refund_order' (19414) panicked at tests/wxpay.rs:126:26: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,wechat-vendor-sdk-0.4.0,test_transfer_detail_by_out_detail_no,test_failed,291.458,7.393,2026-11-05T03:36:22Z,50245993.0,panic,"thread 'test_transfer_detail_by_out_detail_no' (20619) panicked at tests/wxpay.rs:165:26: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,wechat-vendor-sdk-0.4.0,user_info,success,291.458,8.299,2026-11-05T03:36:30Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,user_list,success,291.458,8.272,2026-11-05T03:36:38Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,webhook_send,success,291.458,8.735,2026-11-05T03:36:47Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,without_https,success,291.458,7.261,2026-11-05T03:36:54Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,wxpay::callback::test_decrypt_wxpay_callback_resource,success,291.458,7.164,2026-11-05T03:37:02Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,wxpay::callback::test_timestamp_diff,success,291.458,7.214,2026-11-05T03:37:09Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,wxpay::callback::test_verify_wxpay_callback_signature,success,291.458,7.225,2026-11-05T03:37:16Z,50245993.0,,
+experimental-bsan,wechat-vendor-sdk-0.4.0,wxpay::utils::test_generate_wxpay_signature,success,291.458,7.292,2026-11-05T03:37:23Z,50245993.0,,

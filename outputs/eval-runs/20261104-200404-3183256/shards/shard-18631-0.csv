@@ -1,0 +1,2 @@
+experimental-bsan,dabih-2.2.15,config::test_invalid_token,test_failed,488.420,2.349,2026-11-05T08:50:53Z,50263840.0,panic,"thread 'config::test_invalid_token' (11539) panicked at src/config.rs:157:5: assertion failed: matches!(result, Err(CliError::AuthenticationError))"
+experimental-bsan,dabih-2.2.15,config::test_invalid_url,success,488.420,3.680,2026-11-05T08:50:57Z,50263840.0,,

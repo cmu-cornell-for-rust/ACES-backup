@@ -1,0 +1,13 @@
+experimental-bsan,libsql_replication-0.10.0,bootstrap,test_failed,356.803,3.379,2026-11-05T05:42:18Z,50253571.0,panic,"thread 'bootstrap' (54966) panicked at tests/bootstrap.rs:26:10: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Could not find `protoc`. If `protoc` is installed, try setting the `PROTOC` environment variable to the path of the `protoc` binary. To install it on Debian,"
+experimental-bsan,libsql_replication-0.10.0,injector::sqlite_injector::test::test_inject_frames_split_txn,success,356.803,3.543,2026-11-05T05:42:22Z,50253571.0,,
+experimental-bsan,libsql_replication-0.10.0,injector::sqlite_injector::test::test_inject_partial_txn_isolated,success,356.803,3.237,2026-11-05T05:42:25Z,50253571.0,,
+experimental-bsan,libsql_replication-0.10.0,injector::sqlite_injector::test::test_simple_inject_frames,success,356.803,3.482,2026-11-05T05:42:29Z,50253571.0,,
+experimental-bsan,libsql_replication-0.10.0,replicator::test::handshake_error_namespace_doesnt_exist,success,356.803,3.350,2026-11-05T05:42:32Z,50253571.0,,
+experimental-bsan,libsql_replication-0.10.0,replicator::test::load_snapshot_returns_need_handshake,success,356.803,3.391,2026-11-05T05:42:36Z,50253571.0,,
+experimental-bsan,libsql_replication-0.10.0,replicator::test::load_snapshot_stream_returns_need_handshake,success,356.803,3.372,2026-11-05T05:42:39Z,50253571.0,,
+experimental-bsan,libsql_replication-0.10.0,replicator::test::next_frames_returns_need_snapshot,success,356.803,3.333,2026-11-05T05:42:42Z,50253571.0,,
+experimental-bsan,libsql_replication-0.10.0,replicator::test::no_handshake_error_in_next_frame,success,356.803,3.347,2026-11-05T05:42:46Z,50253571.0,,
+experimental-bsan,libsql_replication-0.10.0,replicator::test::receive_handshake_error_while_handshaking,success,356.803,3.340,2026-11-05T05:42:49Z,50253571.0,,
+experimental-bsan,libsql_replication-0.10.0,replicator::test::stream_frame_returns_handshake_error,success,356.803,3.346,2026-11-05T05:42:52Z,50253571.0,,
+experimental-bsan,libsql_replication-0.10.0,replicator::test::stream_frame_returns_need_snapshot,success,356.803,3.376,2026-11-05T05:42:56Z,50253571.0,,
+experimental-bsan,libsql_replication-0.10.0,replicator::test::transaction_interupted_by_error_and_resumed,success,356.803,3.526,2026-11-05T05:42:59Z,50253571.0,,

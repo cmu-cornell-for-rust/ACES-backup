@@ -1,0 +1,4 @@
+experimental-bsan,sanitise-file-name-1.0.0,matrix,test_failed,7.745,1.731,2026-11-05T07:53:21Z,50261542.0,panic,"thread 'matrix' (41310) panicked at src/lib.rs:1056:79: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,sanitise-file-name-1.0.0,test_length_limit_things,success,7.745,1.695,2026-11-05T07:53:23Z,50261542.0,,
+experimental-bsan,sanitise-file-name-1.0.0,test_tinyvec_string_max_alloc_size,success,7.745,2.086,2026-11-05T07:53:25Z,50261542.0,,
+experimental-bsan,sanitise-file-name-1.0.0,test_tinyvec_string_panic,success,7.745,1.657,2026-11-05T07:53:26Z,50261542.0,,

@@ -1,0 +1,7 @@
+experimental-bsan,uhyve-0.3.0,arch::x86_64::tests::test_detect_freq_from_cpuid,success,261.813,8.585,2026-11-05T07:06:00Z,50258402.0,,
+experimental-bsan,uhyve-0.3.0,arch::x86_64::tests::test_get_cpu_frequency_from_os,success,261.813,7.549,2026-11-05T07:06:07Z,50258402.0,,
+experimental-bsan,uhyve-0.3.0,arch::x86_64::tests::test_pagetable_initialization,success,261.813,7.740,2026-11-05T07:06:15Z,50258402.0,,
+experimental-bsan,uhyve-0.3.0,arch::x86_64::tests::test_virt_to_phys,success,261.813,7.556,2026-11-05T07:06:23Z,50258402.0,,
+experimental-bsan,uhyve-0.3.0,gdb,test_failed,261.813,7.645,2026-11-05T07:06:30Z,50258402.0,panic,"thread 'gdb' (76150) panicked at tests/common.rs:28:10: failed to execute `cargo build`: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,uhyve-0.3.0,mem::tests::test_mmap_memory_readwrite,success,261.813,7.598,2026-11-05T07:06:38Z,50258402.0,,
+experimental-bsan,uhyve-0.3.0,new_file_test,test_failed,261.813,6.222,2026-11-05T07:06:44Z,50258402.0,panic,"thread 'new_file_test' (76932) panicked at tests/common.rs:28:10: failed to execute `cargo build`: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

@@ -1,0 +1,31 @@
+experimental-bsan,dump_syms-2.3.4,action::tests::test_elf_dbg_stripped,success,622.944,37.918,2026-11-05T04:04:58Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,action::tests::test_elf_dwz_with_inlines,success,622.944,29.246,2026-11-05T04:05:28Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,action::tests::test_elf_full,success,622.944,35.015,2026-11-05T04:06:03Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,action::tests::test_elf_full_with_inlines,success,622.944,36.842,2026-11-05T04:06:40Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,action::tests::test_elf_minidebuginfo,success,622.944,28.942,2026-11-05T04:07:08Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,action::tests::test_elf_stripped_dbg,success,622.944,48.546,2026-11-05T04:07:57Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,action::tests::test_missing_cfi,timeout,622.944,150.021,2026-11-05T04:10:27Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,action::tests::test_missing_pe,timeout,622.944,150.020,2026-11-05T04:12:57Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,action::tests::test_missing_pe_but_in_dir,timeout,622.944,150.020,2026-11-05T04:15:27Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,common::tests::test_fix_symbol_name,success,622.944,20.220,2026-11-05T04:15:47Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,common::tests::test_normalize_anonymous_namespace,success,622.944,2.992,2026-11-05T04:15:50Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,inline_origins::test::test_bad_chars,success,622.944,18.442,2026-11-05T04:16:09Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,inline_origins::test::test_demangle,test_failed,622.944,18.007,2026-11-05T04:16:27Z,50247675.0,crash,"test inline_origins::test::test_demangle ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,dump_syms-2.3.4,line::test::no_overflow_when_lines_spill_out_of_function,success,622.944,3.000,2026-11-05T04:16:30Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,mapping::tests::test_path_mapping_file,success,622.944,42.491,2026-11-05T04:17:12Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,mapping::tests::test_path_mapping_generator,success,622.944,10.704,2026-11-05T04:17:23Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,platform::test::test_linux,success,622.944,2.992,2026-11-05T04:17:26Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,platform::test::test_win,success,622.944,3.001,2026-11-05T04:17:29Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,verify_cli,success,622.944,3.636,2026-11-05T04:17:33Z,50247675.0,,
+experimental-bsan,dump_syms-2.3.4,windows::pdb::tests::test_basic32,timeout,622.944,150.033,2026-11-05T04:20:03Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,windows::pdb::tests::test_basic32_dwarf,timeout,622.944,150.029,2026-11-05T04:22:33Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,windows::pdb::tests::test_basic32_min,timeout,622.944,150.021,2026-11-05T04:25:03Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,windows::pdb::tests::test_basic64,timeout,622.944,150.020,2026-11-05T04:27:33Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,windows::pdb::tests::test_basic64_dwarf,timeout,622.944,150.027,2026-11-05T04:30:03Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,windows::pdb::tests::test_basic_opt32,timeout,622.944,150.021,2026-11-05T04:32:33Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,windows::pdb::tests::test_basic_opt64,timeout,622.944,150.020,2026-11-05T04:35:03Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,windows::pdb::tests::test_dump_syms_regtest64,timeout,622.944,150.026,2026-11-05T04:37:33Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,windows::pdb::tests::test_mozwer,timeout,622.944,150.022,2026-11-05T04:40:03Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,windows::pdb::tests::test_ntdll,timeout,622.944,150.021,2026-11-05T04:42:33Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,windows::pdb::tests::test_oleaut32,timeout,622.944,150.022,2026-11-05T04:45:03Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dump_syms-2.3.4,windows::pdb::tests::test_win_mapping,timeout,622.944,150.032,2026-11-05T04:47:33Z,50247675.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

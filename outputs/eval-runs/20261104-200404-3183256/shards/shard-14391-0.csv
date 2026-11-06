@@ -1,0 +1,7 @@
+experimental-bsan,pingora-http-0.4.0,case_header_name::tests::test_case_header_name,success,10.922,1.590,2026-11-05T06:56:37Z,50258120.0,,
+experimental-bsan,pingora-http-0.4.0,tests::header_map_upper_bound,success,10.922,1.589,2026-11-05T06:56:38Z,50258120.0,,
+experimental-bsan,pingora-http-0.4.0,tests::set_test_send_end_stream,success,10.922,1.584,2026-11-05T06:56:40Z,50258120.0,,
+experimental-bsan,pingora-http-0.4.0,tests::test_multiple_header,test_failed,10.922,1.655,2026-11-05T06:56:42Z,50258120.0,panic,"thread 'tests::test_multiple_header' (41054) panicked at src/lib.rs:680:64: called `Result::unwrap()` on an `Err` value: Error { etype: InvalidHTTPHeader, esource: Unset, retry: Decided(false), cause: None, context: Some(Owned(""invalid uri \\"")) }"
+experimental-bsan,pingora-http-0.4.0,tests::test_reason_phrase,success,10.922,1.554,2026-11-05T06:56:43Z,50258120.0,,
+experimental-bsan,pingora-http-0.4.0,tests::test_single_header,test_failed,10.922,1.663,2026-11-05T06:56:45Z,50258120.0,panic,"thread 'tests::test_single_header' (41231) panicked at src/lib.rs:646:64: called `Result::unwrap()` on an `Err` value: Error { etype: InvalidHTTPHeader, esource: Unset, retry: Decided(false), cause: None, context: Some(Owned(""invalid uri \\"")) }"
+experimental-bsan,pingora-http-0.4.0,tests::test_single_header_no_case,success,10.922,1.564,2026-11-05T06:56:47Z,50258120.0,,

@@ -1,0 +1,4 @@
+experimental-bsan,nel-0.1.6,error::reqwest::tests::expired_cert,success,202.529,2.843,2026-11-05T07:53:35Z,50261350.0,,
+experimental-bsan,nel-0.1.6,error::reqwest::tests::invalid_name,test_failed,202.529,2.301,2026-11-05T07:53:37Z,50261350.0,panic,"thread 'error::reqwest::tests::invalid_name' (48842) panicked at src/error/reqwest.rs:144:13: assertion `left == right` failed"
+experimental-bsan,nel-0.1.6,error::reqwest::tests::no_dns,success,202.529,1.939,2026-11-05T07:53:39Z,50261350.0,,
+experimental-bsan,nel-0.1.6,error::reqwest::tests::untrusted_cert,test_failed,202.529,2.284,2026-11-05T07:53:42Z,50261350.0,panic,"thread 'error::reqwest::tests::untrusted_cert' (49153) panicked at src/error/reqwest.rs:130:13: assertion `left == right` failed"

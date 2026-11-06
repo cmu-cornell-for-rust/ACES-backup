@@ -1,0 +1,268 @@
+experimental-bsan,yaxpeax-x86-2.2.0,behavior::test_exception_info,success,168.523,2.909,2026-11-05T01:28:56Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::E_decode::test,success,168.523,2.926,2026-11-05T01:28:59Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::_0f01::test,success,168.523,3.229,2026-11-05T01:29:02Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::_0fae::test,success,168.523,3.367,2026-11-05T01:29:06Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::_3dnow::test,success,168.523,3.046,2026-11-05T01:29:09Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::adx::test,success,168.523,2.945,2026-11-05T01:29:12Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::aesni::test,success,168.523,3.110,2026-11-05T01:29:15Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::arithmetic::test,success,168.523,2.972,2026-11-05T01:29:18Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::bad_instructions::test,success,168.523,2.892,2026-11-05T01:29:21Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::behavior_verify_kvm_0f_,test_failed,168.523,3.277,2026-11-05T01:29:24Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::behavior_verify_kvm_0f_' (88663) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::behavior_verify_kvm_avx,test_failed,168.523,3.262,2026-11-05T01:29:27Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::behavior_verify_kvm_avx' (88883) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::behavior_verify_kvm_avx_imm8,test_failed,168.523,3.258,2026-11-05T01:29:30Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::behavior_verify_kvm_avx_imm8' (89135) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::behavior_verify_kvm_evex_imm,test_failed,168.523,3.261,2026-11-05T01:29:34Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::behavior_verify_kvm_evex_imm' (89613) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::behavior_verify_kvm_evex_noimm,test_failed,168.523,3.272,2026-11-05T01:29:37Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::behavior_verify_kvm_evex_noimm' (89899) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::behavior_verify_kvm_general,test_failed,168.523,3.269,2026-11-05T01:29:40Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::behavior_verify_kvm_general' (90135) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::behavior_verify_kvm_misc,test_failed,168.523,3.270,2026-11-05T01:29:44Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::behavior_verify_kvm_misc' (90390) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::behavior_verify_kvm_vex,test_failed,168.523,3.261,2026-11-05T01:29:47Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::behavior_verify_kvm_vex' (90742) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::behavior_verify_kvm_vex_imm8,test_failed,168.523,3.268,2026-11-05T01:29:50Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::behavior_verify_kvm_vex_imm8' (91145) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::kvm_verify_inc,test_failed,168.523,3.271,2026-11-05T01:29:53Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::kvm_verify_inc' (91507) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::kvm_verify_popmem,test_failed,168.523,3.262,2026-11-05T01:29:57Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::kvm_verify_popmem' (91750) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::kvm_verify_push,test_failed,168.523,3.268,2026-11-05T01:30:00Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::kvm_verify_push' (92114) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::kvm_verify_ret,test_failed,168.523,3.262,2026-11-05T01:30:03Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::kvm_verify_ret' (92674) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::kvm_verify_xor_reg_mem,test_failed,168.523,3.257,2026-11-05T01:30:07Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::kvm_verify_xor_reg_mem' (93221) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::table_instrs::verify_lgdt,test_failed,168.523,3.272,2026-11-05T01:30:10Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::table_instrs::verify_lgdt' (93444) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::table_instrs::verify_lidt,test_failed,168.523,3.281,2026-11-05T01:30:13Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::table_instrs::verify_lidt' (93722) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::table_instrs::verify_lldt,test_failed,168.523,3.280,2026-11-05T01:30:16Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::table_instrs::verify_lldt' (94078) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::kvm::table_instrs::verify_table_stores,test_failed,168.523,3.321,2026-11-05T01:30:20Z,50233157.0,panic,"thread 'long_mode::behavior::kvm::table_instrs::verify_table_stores' (94498) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::test::access_visitor_works,success,168.523,2.882,2026-11-05T01:30:23Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::behavior::test::operand_iter_basically_works,success,168.523,2.900,2026-11-05T01:30:26Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::bitwise::test,success,168.523,2.976,2026-11-05T01:30:29Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::bmi1::test,success,168.523,3.123,2026-11-05T01:30:32Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::bmi2::test,success,168.523,3.248,2026-11-05T01:30:35Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::cet::test,success,168.523,2.975,2026-11-05T01:30:38Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::cmpxchg8b::test,success,168.523,2.966,2026-11-05T01:30:41Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::control_flow::test,success,168.523,3.154,2026-11-05T01:30:44Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::cvt::test,success,168.523,3.052,2026-11-05T01:30:47Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::descriptions::test_modrm_decode,success,168.523,3.047,2026-11-05T01:30:50Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::direct_stores::test,success,168.523,2.934,2026-11-05T01:30:53Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::display::display_rules::test_absolute_addr,success,168.523,2.911,2026-11-05T01:30:56Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::display::display_rules::test_symbolication,success,168.523,3.010,2026-11-05T01:30:59Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::display::masm::test_leading_0,success,168.523,2.896,2026-11-05T01:31:02Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::display::test_instructions_c,success,168.523,3.099,2026-11-05T01:31:05Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::enqcmd::test,success,168.523,2.935,2026-11-05T01:31:08Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::evex::test,success,168.523,3.100,2026-11-05T01:31:11Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::evex_generated::tests_66_0f,success,168.523,33.135,2026-11-05T01:31:44Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::evex_generated::tests_66_0f38,success,168.523,68.100,2026-11-05T01:32:52Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::evex_generated::tests_66_0f3a,success,168.523,21.491,2026-11-05T01:33:14Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::evex_generated::tests_None_0f,success,168.523,12.820,2026-11-05T01:33:27Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::evex_generated::tests_f2_0f,success,168.523,8.727,2026-11-05T01:33:36Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::evex_generated::tests_f2_0f38,success,168.523,7.604,2026-11-05T01:33:43Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::evex_generated::tests_f3_0f,success,168.523,7.815,2026-11-05T01:33:51Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::evex_generated::tests_f3_0f38,success,168.523,3.720,2026-11-05T01:33:55Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::from_llvm::test,success,168.523,2.904,2026-11-05T01:33:58Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::from_reports::test,success,168.523,2.941,2026-11-05T01:34:01Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::gfni::test,success,168.523,2.962,2026-11-05T01:34:04Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::key_locker::test,success,168.523,2.933,2026-11-05T01:34:06Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::keylocker::test,success,168.523,2.918,2026-11-05T01:34:09Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::lzcnt::test,success,168.523,2.917,2026-11-05T01:34:12Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::misc::test,success,168.523,3.404,2026-11-05T01:34:16Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::mishegos_finds::test,success,168.523,3.322,2026-11-05T01:34:19Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::mmx::test,success,168.523,3.420,2026-11-05T01:34:22Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::modrm_decode::test,success,168.523,3.540,2026-11-05T01:34:26Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::mov::test,success,168.523,3.330,2026-11-05T01:34:29Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::movbe::test,success,168.523,2.940,2026-11-05T01:34:32Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::only_64bit::test,success,168.523,3.018,2026-11-05T01:34:35Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::opcode::conditional_instructions,success,168.523,2.903,2026-11-05T01:34:38Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::operand::memory_widths,success,168.523,2.904,2026-11-05T01:34:41Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::operand::register_widths,success,168.523,2.899,2026-11-05T01:34:44Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::operand::test_implied_memory_width,success,168.523,2.887,2026-11-05T01:34:47Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::operand_size,success,168.523,2.890,2026-11-05T01:34:50Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::popcnt::test,success,168.523,2.946,2026-11-05T01:34:53Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::prefetchw::test,success,168.523,2.915,2026-11-05T01:34:56Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::prefixed_0f::test,success,168.523,3.701,2026-11-05T01:34:59Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::prefixed_660f::test,success,168.523,2.949,2026-11-05T01:35:02Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::prefixed_f20f::test,success,168.523,2.892,2026-11-05T01:35:05Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::prefixed_f30f::test,success,168.523,2.930,2026-11-05T01:35:08Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::prefixes::test,success,168.523,3.013,2026-11-05T01:35:11Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::push_pop::test,success,168.523,2.957,2026-11-05T01:35:14Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::rdpid::test,success,168.523,2.903,2026-11-05T01:35:17Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::reg_specs::invalid_byte_reg_panics,success,168.523,2.914,2026-11-05T01:35:20Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::reg_specs::invalid_dword_reg_panics,success,168.523,2.901,2026-11-05T01:35:23Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::reg_specs::invalid_mask_reg_panics,success,168.523,2.901,2026-11-05T01:35:26Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::reg_specs::invalid_qword_reg_panics,success,168.523,2.895,2026-11-05T01:35:29Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::reg_specs::invalid_rex_byte_reg_panics,success,168.523,2.905,2026-11-05T01:35:32Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::reg_specs::invalid_word_reg_panics,success,168.523,2.891,2026-11-05T01:35:35Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::reg_specs::invalid_x87_reg_panics,success,168.523,2.909,2026-11-05T01:35:38Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::reg_specs::invalid_xmm_reg_panics,success,168.523,2.904,2026-11-05T01:35:40Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::reg_specs::invalid_ymm_reg_panics,success,168.523,2.901,2026-11-05T01:35:43Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::reg_specs::invalid_zmm_reg_panics,success,168.523,2.911,2026-11-05T01:35:46Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::reg_specs::reg_specs_are_correct,success,168.523,2.969,2026-11-05T01:35:49Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::register_synonyms_use_old_bank,success,168.523,2.911,2026-11-05T01:35:52Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::regspec::match_bank_kind,success,168.523,2.896,2026-11-05T01:35:55Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::regspec::test_bank_names,success,168.523,2.895,2026-11-05T01:35:58Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::regspec::test_hash,success,168.523,2.889,2026-11-05T01:36:01Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::regspec::test_labels,success,168.523,2.893,2026-11-05T01:36:04Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::regspec::test_ord,success,168.523,2.885,2026-11-05T01:36:07Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::reuse_test::test_against_leftover_data,timeout,168.523,150.013,2026-11-05T01:38:37Z,50233157.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::sevsnp::test,success,168.523,2.918,2026-11-05T01:38:40Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::sha::test,success,168.523,2.971,2026-11-05T01:38:43Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::sse2::test,success,168.523,8.900,2026-11-05T01:38:52Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::sse3::test,success,168.523,3.423,2026-11-05T01:38:55Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::sse4_1::test,success,168.523,4.034,2026-11-05T01:38:59Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::sse4_2::test,success,168.523,3.224,2026-11-05T01:39:02Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::sse4a::test,success,168.523,3.025,2026-11-05T01:39:05Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::sse::test,success,168.523,3.558,2026-11-05T01:39:09Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::ssse3::test,success,168.523,3.515,2026-11-05T01:39:12Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::stack::test,success,168.523,2.896,2026-11-05T01:39:15Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::strange_prefixing::test,success,168.523,2.912,2026-11-05T01:39:18Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::svm::test,success,168.523,2.960,2026-11-05T01:39:21Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::system::test,success,168.523,3.073,2026-11-05T01:39:24Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::tdx::test,success,168.523,2.908,2026-11-05T01:39:27Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::test_cmp::test,success,168.523,2.931,2026-11-05T01:39:30Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::tsx::test,success,168.523,2.919,2026-11-05T01:39:33Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::tsxldtrk::test,success,168.523,2.883,2026-11-05T01:39:36Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::uintr::test,success,168.523,2.933,2026-11-05T01:39:39Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::vex::test,success,168.523,18.856,2026-11-05T01:39:58Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::vmx::test,success,168.523,3.001,2026-11-05T01:40:01Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::x86_rand::test,success,168.523,2.924,2026-11-05T01:40:04Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::x87::test,success,168.523,3.804,2026-11-05T01:40:08Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,long_mode::xchg::test,success,168.523,2.934,2026-11-05T01:40:10Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::E_decode::test,success,168.523,2.910,2026-11-05T01:40:13Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::_0f01::test,success,168.523,3.182,2026-11-05T01:40:17Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::_0fae::test,success,168.523,3.304,2026-11-05T01:40:20Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::_3dnow::test,success,168.523,3.048,2026-11-05T01:40:23Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::adx::test,success,168.523,2.924,2026-11-05T01:40:26Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::aesni::test,success,168.523,3.113,2026-11-05T01:40:29Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::arithmetic::test,success,168.523,2.951,2026-11-05T01:40:32Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::bad_instructions::test,success,168.523,2.893,2026-11-05T01:40:35Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::behavior_verify_kvm_0f_,test_failed,168.523,3.284,2026-11-05T01:40:38Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::behavior_verify_kvm_0f_' (64077) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::behavior_verify_kvm_avx,test_failed,168.523,3.291,2026-11-05T01:40:41Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::behavior_verify_kvm_avx' (64482) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::behavior_verify_kvm_avx_imm8,test_failed,168.523,3.289,2026-11-05T01:40:45Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::behavior_verify_kvm_avx_imm8' (64837) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::behavior_verify_kvm_evex_imm,test_failed,168.523,3.280,2026-11-05T01:40:48Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::behavior_verify_kvm_evex_imm' (65224) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::behavior_verify_kvm_evex_noimm,test_failed,168.523,3.270,2026-11-05T01:40:51Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::behavior_verify_kvm_evex_noimm' (65630) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::behavior_verify_kvm_general,test_failed,168.523,3.267,2026-11-05T01:40:55Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::behavior_verify_kvm_general' (65983) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::behavior_verify_kvm_misc,test_failed,168.523,3.268,2026-11-05T01:40:58Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::behavior_verify_kvm_misc' (66366) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::behavior_verify_kvm_vex,test_failed,168.523,3.264,2026-11-05T01:41:01Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::behavior_verify_kvm_vex' (66743) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::behavior_verify_kvm_vex_imm8,test_failed,168.523,3.286,2026-11-05T01:41:05Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::behavior_verify_kvm_vex_imm8' (67130) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::kvm_run_vex,test_failed,168.523,3.272,2026-11-05T01:41:08Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::kvm_run_vex' (67535) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::kvm_verify_inc,test_failed,168.523,3.284,2026-11-05T01:41:11Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::kvm_verify_inc' (68121) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::kvm_verify_popmem,test_failed,168.523,3.274,2026-11-05T01:41:14Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::kvm_verify_popmem' (68563) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::kvm_verify_push,test_failed,168.523,3.276,2026-11-05T01:41:18Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::kvm_verify_push' (68958) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::kvm_verify_ret,test_failed,168.523,3.257,2026-11-05T01:41:21Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::kvm_verify_ret' (69207) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::kvm_verify_xor_reg_mem,test_failed,168.523,3.269,2026-11-05T01:41:24Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::kvm_verify_xor_reg_mem' (69550) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::table_instrs::verify_lgdt,test_failed,168.523,3.292,2026-11-05T01:41:28Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::table_instrs::verify_lgdt' (69907) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::table_instrs::verify_lidt,test_failed,168.523,3.301,2026-11-05T01:41:31Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::table_instrs::verify_lidt' (70211) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::table_instrs::verify_lldt,test_failed,168.523,3.292,2026-11-05T01:41:34Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::table_instrs::verify_lldt' (70566) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::kvm::table_instrs::verify_table_stores,test_failed,168.523,3.331,2026-11-05T01:41:38Z,50233157.0,panic,"thread 'protected_mode::behavior::kvm::table_instrs::verify_table_stores' (70874) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::test::access_visitor_works,success,168.523,2.901,2026-11-05T01:41:41Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::behavior::test::operand_iter_basically_works,success,168.523,2.895,2026-11-05T01:41:43Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::bitwise::test,success,168.523,2.952,2026-11-05T01:41:46Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::bmi1::test,success,168.523,3.125,2026-11-05T01:41:50Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::bmi2::test,success,168.523,3.259,2026-11-05T01:41:53Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::cet::test,success,168.523,2.966,2026-11-05T01:41:56Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::cmpxchg8b::test,success,168.523,2.912,2026-11-05T01:41:59Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::control_flow::test,success,168.523,3.128,2026-11-05T01:42:02Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::cvt::test,success,168.523,2.948,2026-11-05T01:42:05Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::direct_stores::test,success,168.523,2.943,2026-11-05T01:42:08Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::display::display_rules::test_absolute_addr,success,168.523,2.902,2026-11-05T01:42:11Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::display::display_rules::test_symbolication,success,168.523,2.897,2026-11-05T01:42:14Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::display::masm::test_leading_0,success,168.523,2.888,2026-11-05T01:42:16Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::display::test_instructions_c,success,168.523,3.017,2026-11-05T01:42:19Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::enqcmd::test,success,168.523,2.908,2026-11-05T01:42:22Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::evex::test,success,168.523,2.962,2026-11-05T01:42:25Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::evex_generated::tests_66_0f,success,168.523,54.071,2026-11-05T01:43:19Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::evex_generated::tests_66_0f38,success,168.523,110.104,2026-11-05T01:45:10Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::evex_generated::tests_66_0f3a,success,168.523,34.528,2026-11-05T01:45:44Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::evex_generated::tests_None_0f,success,168.523,19.683,2026-11-05T01:46:04Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::evex_generated::tests_f2_0f,success,168.523,11.249,2026-11-05T01:46:15Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::evex_generated::tests_f2_0f38,success,168.523,10.222,2026-11-05T01:46:25Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::evex_generated::tests_f3_0f,success,168.523,9.536,2026-11-05T01:46:35Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::evex_generated::tests_f3_0f38,success,168.523,4.547,2026-11-05T01:46:39Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::from_reports::test,success,168.523,2.929,2026-11-05T01:46:42Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::gfni::test,success,168.523,2.953,2026-11-05T01:46:45Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::key_locker::test,success,168.523,2.909,2026-11-05T01:46:48Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::keylocker::test,success,168.523,2.887,2026-11-05T01:46:51Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::llvm::test,success,168.523,2.904,2026-11-05T01:46:54Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::lzcnt::test,success,168.523,2.913,2026-11-05T01:46:57Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::misc::test,success,168.523,3.273,2026-11-05T01:47:00Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::mishegos_finds::test,success,168.523,3.224,2026-11-05T01:47:03Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::mmx::test,success,168.523,3.344,2026-11-05T01:47:07Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::modrm_decode::test,success,168.523,3.120,2026-11-05T01:47:10Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::mov::test,success,168.523,3.266,2026-11-05T01:47:13Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::movbe::test,success,168.523,2.921,2026-11-05T01:47:16Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::only_32bit::test,success,168.523,3.170,2026-11-05T01:47:19Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::opcode::conditional_instructions,success,168.523,2.888,2026-11-05T01:47:22Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::operand::memory_widths,success,168.523,2.891,2026-11-05T01:47:25Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::operand::register_widths,success,168.523,2.880,2026-11-05T01:47:28Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::operand::test_implied_memory_width,success,168.523,2.889,2026-11-05T01:47:31Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::operand_size,success,168.523,2.883,2026-11-05T01:47:34Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::popcnt::test,success,168.523,2.914,2026-11-05T01:47:37Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::prefetchw::test,success,168.523,2.908,2026-11-05T01:47:40Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::prefixed_0f::test,success,168.523,3.574,2026-11-05T01:47:43Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::prefixed_660f::test,success,168.523,2.909,2026-11-05T01:47:46Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::prefixed_f20f::test,success,168.523,2.886,2026-11-05T01:47:49Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::prefixed_f30f::test,success,168.523,2.914,2026-11-05T01:47:52Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::prefixes::test,success,168.523,2.996,2026-11-05T01:47:55Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::push_pop::test,success,168.523,2.939,2026-11-05T01:47:58Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::rand::test,success,168.523,2.907,2026-11-05T01:48:01Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::rdpid::test,success,168.523,2.894,2026-11-05T01:48:04Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::reg_specs::invalid_byte_reg_panics,success,168.523,2.893,2026-11-05T01:48:07Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::reg_specs::invalid_dword_reg_panics,success,168.523,2.912,2026-11-05T01:48:10Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::reg_specs::invalid_mask_reg_panics,success,168.523,2.920,2026-11-05T01:48:12Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::reg_specs::invalid_word_reg_panics,success,168.523,2.905,2026-11-05T01:48:15Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::reg_specs::invalid_x87_reg_panics,success,168.523,2.910,2026-11-05T01:48:18Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::reg_specs::invalid_xmm_reg_panics,success,168.523,2.923,2026-11-05T01:48:21Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::reg_specs::invalid_ymm_reg_panics,success,168.523,2.903,2026-11-05T01:48:24Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::reg_specs::invalid_zmm_reg_panics,success,168.523,2.906,2026-11-05T01:48:27Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::reg_specs::reg_specs_are_correct,success,168.523,2.924,2026-11-05T01:48:30Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::regspec::match_bank_kind,success,168.523,2.893,2026-11-05T01:48:33Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::regspec::test_bank_names,success,168.523,2.900,2026-11-05T01:48:36Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::regspec::test_hash,success,168.523,2.898,2026-11-05T01:48:39Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::regspec::test_labels,success,168.523,2.902,2026-11-05T01:48:42Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::regspec::test_ord,success,168.523,2.909,2026-11-05T01:48:45Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::sevsnp::test,success,168.523,2.909,2026-11-05T01:48:47Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::sha::test,success,168.523,2.969,2026-11-05T01:48:50Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::sse2::test,success,168.523,8.331,2026-11-05T01:48:59Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::sse3::test,success,168.523,3.254,2026-11-05T01:49:02Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::sse4_1::test,success,168.523,3.958,2026-11-05T01:49:06Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::sse4_2::test,success,168.523,3.193,2026-11-05T01:49:09Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::sse4a::test,success,168.523,3.019,2026-11-05T01:49:12Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::sse::test,success,168.523,3.419,2026-11-05T01:49:16Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::ssse3::test,success,168.523,3.531,2026-11-05T01:49:19Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::stack::test,success,168.523,2.908,2026-11-05T01:49:22Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::strange_prefixing::test,success,168.523,2.910,2026-11-05T01:49:25Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::svm::test,success,168.523,2.959,2026-11-05T01:49:28Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::system::test,success,168.523,3.025,2026-11-05T01:49:31Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::tdx::test,success,168.523,2.893,2026-11-05T01:49:34Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::test_cmp::test,success,168.523,2.927,2026-11-05T01:49:37Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::tsx::test,success,168.523,2.931,2026-11-05T01:49:40Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::tsxldtrk::test,success,168.523,2.898,2026-11-05T01:49:43Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::uintr::test,success,168.523,2.887,2026-11-05T01:49:46Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::vex::test,success,168.523,15.611,2026-11-05T01:50:01Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::vmx::test,success,168.523,2.978,2026-11-05T01:50:04Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::x87::test,success,168.523,3.774,2026-11-05T01:50:08Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,protected_mode::xchg::test,success,168.523,2.910,2026-11-05T01:50:11Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::behavior_verify_kvm_0f_,test_failed,168.523,3.277,2026-11-05T01:50:14Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::behavior_verify_kvm_0f_' (7606) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::behavior_verify_kvm_avx,test_failed,168.523,3.281,2026-11-05T01:50:18Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::behavior_verify_kvm_avx' (7786) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::behavior_verify_kvm_avx_imm8,test_failed,168.523,3.269,2026-11-05T01:50:21Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::behavior_verify_kvm_avx_imm8' (7935) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::behavior_verify_kvm_general,test_failed,168.523,3.274,2026-11-05T01:50:24Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::behavior_verify_kvm_general' (8236) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::behavior_verify_kvm_misc,test_failed,168.523,3.293,2026-11-05T01:50:27Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::behavior_verify_kvm_misc' (8474) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::kvm_verify_inc,test_failed,168.523,3.279,2026-11-05T01:50:31Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::kvm_verify_inc' (8733) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::kvm_verify_popmem,test_failed,168.523,3.273,2026-11-05T01:50:34Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::kvm_verify_popmem' (8920) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::kvm_verify_push,test_failed,168.523,3.280,2026-11-05T01:50:37Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::kvm_verify_push' (9380) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::kvm_verify_ret,test_failed,168.523,3.275,2026-11-05T01:50:41Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::kvm_verify_ret' (9608) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::kvm_verify_xor_reg_mem,test_failed,168.523,3.284,2026-11-05T01:50:44Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::kvm_verify_xor_reg_mem' (9851) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::table_instrs::verify_lgdt,test_failed,168.523,3.290,2026-11-05T01:50:47Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::table_instrs::verify_lgdt' (10114) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::table_instrs::verify_lidt,test_failed,168.523,3.282,2026-11-05T01:50:51Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::table_instrs::verify_lidt' (10319) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::behavior::kvm::table_instrs::verify_table_stores,test_failed,168.523,3.327,2026-11-05T01:50:54Z,50233157.0,panic,"thread 'real_mode::behavior::kvm::table_instrs::verify_table_stores' (10637) panicked at /local/ev-50233157-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/asmlinator-2.1.0/src/x86_64.rs:1132:31: can push: SizeLimitExceeded"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::display::display_rules::test_absolute_addr,success,168.523,2.914,2026-11-05T01:50:57Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::display::display_rules::test_symbolication,success,168.523,2.914,2026-11-05T01:51:00Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::display::masm::test_leading_0,success,168.523,2.892,2026-11-05T01:51:03Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::from_llvm::test,success,168.523,2.901,2026-11-05T01:51:06Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::from_reports::test,success,168.523,2.932,2026-11-05T01:51:09Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::invalid_sequences::test,success,168.523,3.121,2026-11-05T01:51:12Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::only_16bit::test,success,168.523,3.017,2026-11-05T01:51:15Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::opcode::conditional_instructions,success,168.523,2.878,2026-11-05T01:51:18Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::operand::test_implied_memory_width,success,168.523,2.900,2026-11-05T01:51:20Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::operand_size,success,168.523,2.891,2026-11-05T01:51:23Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::real_mode::test,timeout,168.523,150.012,2026-11-05T01:53:53Z,50233157.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::reg_specs::invalid_byte_reg_panics,success,168.523,2.893,2026-11-05T01:53:56Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::reg_specs::invalid_dword_reg_panics,success,168.523,2.900,2026-11-05T01:53:59Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::reg_specs::invalid_mask_reg_panics,success,168.523,2.909,2026-11-05T01:54:02Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::reg_specs::invalid_word_reg_panics,success,168.523,2.919,2026-11-05T01:54:05Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::reg_specs::invalid_x87_reg_panics,success,168.523,2.898,2026-11-05T01:54:08Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::reg_specs::invalid_xmm_reg_panics,success,168.523,2.900,2026-11-05T01:54:11Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::reg_specs::invalid_ymm_reg_panics,success,168.523,2.897,2026-11-05T01:54:14Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::reg_specs::invalid_zmm_reg_panics,success,168.523,2.885,2026-11-05T01:54:17Z,50233157.0,,
+experimental-bsan,yaxpeax-x86-2.2.0,real_mode::reg_specs::reg_specs_are_correct,success,168.523,2.903,2026-11-05T01:54:20Z,50233157.0,,

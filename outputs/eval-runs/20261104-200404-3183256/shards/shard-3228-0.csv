@@ -1,0 +1,70 @@
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_all_zeros,success,190.106,1.624,2026-11-05T02:24:46Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_average_too_high,success,190.106,1.611,2026-11-05T02:24:47Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_average_too_low,success,190.106,1.611,2026-11-05T02:24:49Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_center_size,success,190.106,1.593,2026-11-05T02:24:51Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_logarithm2,success,190.106,1.593,2026-11-05T02:24:52Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_mask,success,190.106,1.603,2026-11-05T02:24:54Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_mask_high,success,190.106,1.613,2026-11-05T02:24:55Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_mask_low,success,190.106,1.613,2026-11-05T02:24:57Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_maximum_too_high,success,190.106,1.608,2026-11-05T02:24:59Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_maximum_too_low,success,190.106,1.613,2026-11-05T02:25:00Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_minimum_too_high,success,190.106,1.613,2026-11-05T02:25:02Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_minimum_too_low,success,190.106,1.612,2026-11-05T02:25:04Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_sekien_16k_chunks,test_failed,190.106,1.653,2026-11-05T02:25:05Z,50240489.0,panic,"thread 'ronomon::tests::test_sekien_16k_chunks' (41820) panicked at src/ronomon/mod.rs:411:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_sekien_16k_chunks_streaming,test_failed,190.106,1.661,2026-11-05T02:25:07Z,50240489.0,panic,"thread 'ronomon::tests::test_sekien_16k_chunks_streaming' (43886) panicked at src/ronomon/mod.rs:440:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_sekien_32k_chunks,test_failed,190.106,1.648,2026-11-05T02:25:09Z,50240489.0,panic,"thread 'ronomon::tests::test_sekien_32k_chunks' (44031) panicked at src/ronomon/mod.rs:489:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_sekien_64k_chunks,test_failed,190.106,1.654,2026-11-05T02:25:10Z,50240489.0,panic,"thread 'ronomon::tests::test_sekien_64k_chunks' (44790) panicked at src/ronomon/mod.rs:508:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,ronomon::tests::test_size_hint_short_tail,success,190.106,1.593,2026-11-05T02:25:12Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_average_too_high,success,190.106,1.617,2026-11-05T02:25:14Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_average_too_low,success,190.106,1.607,2026-11-05T02:25:15Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_cut_all_zeros,success,190.106,1.607,2026-11-05T02:25:17Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_cut_sekien_16k_chunks,test_failed,190.106,1.640,2026-11-05T02:25:18Z,50240489.0,panic,"thread 'v2016::tests::test_cut_sekien_16k_chunks' (45983) panicked at src/v2016/mod.rs:749:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_cut_sekien_16k_nc_0,test_failed,190.106,1.644,2026-11-05T02:25:20Z,50240489.0,panic,"thread 'v2016::tests::test_cut_sekien_16k_nc_0' (46268) panicked at src/v2016/mod.rs:875:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_cut_sekien_16k_nc_3,test_failed,190.106,1.638,2026-11-05T02:25:22Z,50240489.0,panic,"thread 'v2016::tests::test_cut_sekien_16k_nc_3' (46365) panicked at src/v2016/mod.rs:900:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_cut_sekien_32k_chunks,test_failed,190.106,1.637,2026-11-05T02:25:23Z,50240489.0,panic,"thread 'v2016::tests::test_cut_sekien_32k_chunks' (46511) panicked at src/v2016/mod.rs:774:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_cut_sekien_64k_chunks,test_failed,190.106,1.652,2026-11-05T02:25:25Z,50240489.0,panic,"thread 'v2016::tests::test_cut_sekien_64k_chunks' (46755) panicked at src/v2016/mod.rs:794:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_error_fmt,success,190.106,1.578,2026-11-05T02:25:27Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_iter_sekien_16k_chunks,test_failed,190.106,1.664,2026-11-05T02:25:28Z,50240489.0,panic,"thread 'v2016::tests::test_iter_sekien_16k_chunks' (48570) panicked at src/v2016/mod.rs:820:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_logarithm2,success,190.106,1.645,2026-11-05T02:25:30Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_masks,success,190.106,1.659,2026-11-05T02:25:32Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_maximum_too_high,success,190.106,1.618,2026-11-05T02:25:33Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_maximum_too_low,success,190.106,1.608,2026-11-05T02:25:35Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_minimum_too_high,success,190.106,1.634,2026-11-05T02:25:37Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_minimum_too_low,success,190.106,1.622,2026-11-05T02:25:38Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_size_hint_short_tail,success,190.106,1.612,2026-11-05T02:25:40Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2016::tests::test_stream_sekien_16k_chunks,test_failed,190.106,1.682,2026-11-05T02:25:42Z,50240489.0,panic,"thread 'v2016::tests::test_stream_sekien_16k_chunks' (49858) panicked at src/v2016/mod.rs:932:9: assertion failed: file_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2020::async_stream_cdc::tests::test_average_too_high,success,190.106,1.644,2026-11-05T02:25:43Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::async_stream_cdc::tests::test_average_too_low,success,190.106,1.628,2026-11-05T02:25:45Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::async_stream_cdc::tests::test_iter_sekien_16k_chunks,test_failed,190.106,1.696,2026-11-05T02:25:47Z,50240489.0,panic,"thread 'v2020::async_stream_cdc::tests::test_iter_sekien_16k_chunks' (50178) panicked at src/v2020/async_stream_cdc.rs:334:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2020::async_stream_cdc::tests::test_masks,success,190.106,1.619,2026-11-05T02:25:48Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::async_stream_cdc::tests::test_maximum_too_high,success,190.106,1.626,2026-11-05T02:25:50Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::async_stream_cdc::tests::test_maximum_too_low,success,190.106,1.619,2026-11-05T02:25:51Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::async_stream_cdc::tests::test_minimum_too_high,success,190.106,1.608,2026-11-05T02:25:53Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::async_stream_cdc::tests::test_minimum_too_low,success,190.106,1.607,2026-11-05T02:25:55Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_average_too_high,success,190.106,1.604,2026-11-05T02:25:56Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_average_too_low,success,190.106,1.603,2026-11-05T02:25:58Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_avg_size_odd,success,190.106,1.608,2026-11-05T02:26:00Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_cut_all_zeros,success,190.106,1.624,2026-11-05T02:26:01Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_cut_sekien_16k_chunks,test_failed,190.106,1.643,2026-11-05T02:26:03Z,50240489.0,panic,"thread 'v2020::tests::test_cut_sekien_16k_chunks' (51809) panicked at src/v2020/mod.rs:1104:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_cut_sekien_16k_chunks_seed_666,test_failed,190.106,1.651,2026-11-05T02:26:04Z,50240489.0,panic,"thread 'v2020::tests::test_cut_sekien_16k_chunks_seed_666' (51979) panicked at src/v2020/mod.rs:1129:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_cut_sekien_16k_nc_0,test_failed,190.106,1.640,2026-11-05T02:26:06Z,50240489.0,panic,"thread 'v2020::tests::test_cut_sekien_16k_nc_0' (52137) panicked at src/v2020/mod.rs:1272:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_cut_sekien_16k_nc_3,test_failed,190.106,1.651,2026-11-05T02:26:08Z,50240489.0,panic,"thread 'v2020::tests::test_cut_sekien_16k_nc_3' (52309) panicked at src/v2020/mod.rs:1297:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_cut_sekien_32k_chunks,test_failed,190.106,1.646,2026-11-05T02:26:09Z,50240489.0,panic,"thread 'v2020::tests::test_cut_sekien_32k_chunks' (52440) panicked at src/v2020/mod.rs:1156:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_cut_sekien_64k_chunks,test_failed,190.106,1.645,2026-11-05T02:26:11Z,50240489.0,panic,"thread 'v2020::tests::test_cut_sekien_64k_chunks' (52579) panicked at src/v2020/mod.rs:1176:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_error_fmt,success,190.106,1.596,2026-11-05T02:26:13Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_fastcdc_covers_every_byte,test_failed,190.106,1.668,2026-11-05T02:26:14Z,50240489.0,panic,"thread 'v2020::tests::test_fastcdc_covers_every_byte' (52864) panicked at src/v2020/mod.rs:1369:68: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_iter_sekien_16k_chunks,test_failed,190.106,1.629,2026-11-05T02:26:16Z,50240489.0,panic,"thread 'v2020::tests::test_iter_sekien_16k_chunks' (52967) panicked at src/v2020/mod.rs:1217:9: assertion failed: read_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_logarithm2,success,190.106,1.585,2026-11-05T02:26:18Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_masks,success,190.106,1.581,2026-11-05T02:26:19Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_max_size_odd,success,190.106,1.599,2026-11-05T02:26:21Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_maximum_too_high,success,190.106,1.602,2026-11-05T02:26:23Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_maximum_too_low,success,190.106,1.668,2026-11-05T02:26:24Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_min_size_odd,success,190.106,1.663,2026-11-05T02:26:26Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_minimum_too_high,success,190.106,1.620,2026-11-05T02:26:27Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_minimum_too_low,success,190.106,1.609,2026-11-05T02:26:29Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_odd_tail_hash_not_stale,success,190.106,1.626,2026-11-05T02:26:31Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_rechunk_matches_new,test_failed,190.106,1.692,2026-11-05T02:26:32Z,50240489.0,panic,"thread 'v2020::tests::test_rechunk_matches_new' (54068) panicked at src/v2020/mod.rs:1331:69: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_rechunk_seed_matches_new,test_failed,190.106,1.705,2026-11-05T02:26:34Z,50240489.0,panic,"thread 'v2020::tests::test_rechunk_seed_matches_new' (54195) panicked at src/v2020/mod.rs:1346:69: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_size_hint_short_tail,success,190.106,1.615,2026-11-05T02:26:36Z,50240489.0,,
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_stream_sekien_16k_chunks,test_failed,190.106,1.668,2026-11-05T02:26:37Z,50240489.0,panic,"thread 'v2020::tests::test_stream_sekien_16k_chunks' (54424) panicked at src/v2020/mod.rs:1391:9: assertion failed: file_result.is_ok()"
+experimental-bsan,fastcdc-5.0.0,v2020::tests::test_stream_sekien_16k_chunks_seed_666,test_failed,190.106,1.677,2026-11-05T02:26:39Z,50240489.0,panic,"thread 'v2020::tests::test_stream_sekien_16k_chunks_seed_666' (54555) panicked at src/v2020/mod.rs:1446:9: assertion failed: file_result.is_ok()"

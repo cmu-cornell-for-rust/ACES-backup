@@ -1,0 +1,22 @@
+experimental-bsan,uuid7-1.8.0,generator::tests::core_fns_do_not_change_rollback_allowance,success,57.096,1.742,2026-11-05T04:41:27Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,generator::tests::handle_clock_rollback,timeout,57.096,150.019,2026-11-05T04:43:57Z,50250048.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,uuid7-1.8.0,generator::tests::is_iterable_with_for_in_loop,success,57.096,1.836,2026-11-05T04:43:59Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,generator::tests::reads_timestamp_from_time_source,success,57.096,1.756,2026-11-05T04:44:00Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,global_gen::tests_v4::fallible::sets_constant_bits_and_random_bits_properly,timeout,57.096,150.032,2026-11-05T04:46:30Z,50250048.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,uuid7-1.8.0,global_gen::tests_v4::generates_100k_identifiers_without_collision,timeout,57.096,150.021,2026-11-05T04:49:00Z,50250048.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,uuid7-1.8.0,global_gen::tests_v4::generates_canonical_string,timeout,57.096,150.021,2026-11-05T04:51:30Z,50250048.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,uuid7-1.8.0,global_gen::tests_v4::sets_correct_variant_and_version_bits,success,57.096,2.521,2026-11-05T04:51:33Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,global_gen::tests_v7::encodes_unique_sortable_pair_of_timestamp_and_counter,success,57.096,107.453,2026-11-05T04:53:20Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,global_gen::tests_v7::encodes_up_to_date_timestamp,success,57.096,8.352,2026-11-05T04:53:29Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,global_gen::tests_v7::fallible::sets_constant_bits_and_random_bits_properly,timeout,57.096,150.034,2026-11-05T04:55:59Z,50250048.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,uuid7-1.8.0,global_gen::tests_v7::generates_100k_identifiers_without_collision,timeout,57.096,150.022,2026-11-05T04:58:29Z,50250048.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,uuid7-1.8.0,global_gen::tests_v7::generates_canonical_string,timeout,57.096,150.022,2026-11-05T05:00:59Z,50250048.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,uuid7-1.8.0,global_gen::tests_v7::generates_no_ids_sharing_same_timestamp_and_counters_under_multithreading,success,57.096,101.557,2026-11-05T05:02:41Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,global_gen::tests_v7::generates_sortable_string_representation_by_creation_time,success,57.096,129.919,2026-11-05T05:04:51Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,global_gen::tests_v7::sets_correct_variant_and_version_bits,success,57.096,2.081,2026-11-05T05:04:53Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,id::tests::encodes_and_decodes_prepared_cases_correctly,success,57.096,2.983,2026-11-05T05:04:56Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,id::tests::has_symmetric_converters,success,57.096,2.540,2026-11-05T05:04:58Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,id::tests::reports_variant_and_version_fields,success,57.096,6.250,2026-11-05T05:05:04Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,id::tests::returns_error_to_invalid_string_representation,success,57.096,1.696,2026-11-05T05:05:06Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,id::tests::returns_nil_and_max_uuids,success,57.096,1.686,2026-11-05T05:05:08Z,50250048.0,,
+experimental-bsan,uuid7-1.8.0,id::with_serde::serializes_and_deserializes_prepared_cases_correctly,success,57.096,5.572,2026-11-05T05:05:13Z,50250048.0,,

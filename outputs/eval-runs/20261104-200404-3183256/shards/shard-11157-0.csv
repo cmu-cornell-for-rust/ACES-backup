@@ -1,0 +1,13 @@
+experimental-bsan,fliplru-0.3.0,a_working_set_of_five_times_the_capacity_is_much_too_small,success,9.291,142.725,2026-11-05T05:36:51Z,50253472.0,,
+experimental-bsan,fliplru-0.3.0,a_working_set_of_half_the_capacity_is_oversized_and_says_how_much_was_needed,success,9.291,59.134,2026-11-05T05:37:51Z,50253472.0,,
+experimental-bsan,fliplru-0.3.0,a_working_set_of_twenty_times_the_capacity_thrashes,success,9.291,134.739,2026-11-05T05:40:05Z,50253472.0,,
+experimental-bsan,fliplru-0.3.0,a_working_set_slightly_over_the_capacity_is_too_small,timeout,9.291,150.014,2026-11-05T05:42:36Z,50253472.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fliplru-0.3.0,skewed_traffic_on_a_reasonable_cache_fits,timeout,9.291,150.013,2026-11-05T05:45:06Z,50253472.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fliplru-0.3.0,tests::test_cache_over_capacity,success,9.291,4.643,2026-11-05T05:45:11Z,50253472.0,,
+experimental-bsan,fliplru-0.3.0,tests::test_cache_under_capacity,success,9.291,4.655,2026-11-05T05:45:15Z,50253472.0,,
+experimental-bsan,fliplru-0.3.0,tests::test_l2,success,9.291,4.662,2026-11-05T05:45:20Z,50253472.0,,
+experimental-bsan,fliplru-0.3.0,tests::test_max_cache_len,success,9.291,4.635,2026-11-05T05:45:25Z,50253472.0,,
+experimental-bsan,fliplru-0.3.0,tests::test_put_and_get,success,9.291,4.639,2026-11-05T05:45:30Z,50253472.0,,
+experimental-bsan,fliplru-0.3.0,tests::test_put_update,success,9.291,4.639,2026-11-05T05:45:35Z,50253472.0,,
+experimental-bsan,fliplru-0.3.0,the_cache_behaves_as_the_plain_model,timeout,9.291,150.016,2026-11-05T05:48:05Z,50253472.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fliplru-0.3.0,too_few_lookups_to_judge,success,9.291,8.629,2026-11-05T05:48:14Z,50253472.0,,

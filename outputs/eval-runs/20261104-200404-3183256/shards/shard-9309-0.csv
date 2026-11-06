@@ -1,0 +1,19 @@
+experimental-bsan,shadow-rs-2.0.0,date_time::tests::human_format_validate::test_parse,success,174.073,1.600,2026-11-05T04:54:36Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,date_time::tests::test_from_iso8601_string,success,174.073,1.588,2026-11-05T04:54:37Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,date_time::tests::test_source_date_epoch,success,174.073,1.587,2026-11-05T04:54:39Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,date_time::tests::test_timestamp_2_utc,success,174.073,1.588,2026-11-05T04:54:41Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,env::tests::test_filter_dep_source_git,success,174.073,1.579,2026-11-05T04:54:42Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,env::tests::test_filter_dep_source_git_http,success,174.073,1.569,2026-11-05T04:54:44Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,env::tests::test_filter_dep_source_git_https,success,174.073,1.562,2026-11-05T04:54:45Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,env::tests::test_filter_dep_source_multi,success,174.073,1.566,2026-11-05T04:54:47Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,env::tests::test_filter_dep_source_none,success,174.073,1.568,2026-11-05T04:54:48Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,env::tests::test_filter_dep_source_path,success,174.073,1.569,2026-11-05T04:54:50Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,env::tests::test_filter_dep_source_registry,success,174.073,1.574,2026-11-05T04:54:52Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,env::tests::test_filter_dep_windows_path,success,174.073,1.569,2026-11-05T04:54:53Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,gen_const::tests::test_metadata,success,174.073,1.795,2026-11-05T04:54:55Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,gen_const::tests::test_version_fn,success,174.073,1.663,2026-11-05T04:54:57Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,git::tests::test_commit_date_timezone_preservation,success,174.073,1.608,2026-11-05T04:54:58Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,git::tests::test_current_branch,test_failed,174.073,2.763,2026-11-05T04:55:01Z,50251087.0,panic,"thread 'git::tests::test_current_branch' (48092) panicked at src/git.rs:781:13: assertion failed: git2_branch.is_some()"
+experimental-bsan,shadow-rs-2.0.0,git::tests::test_git,test_failed,174.073,6.793,2026-11-05T04:55:08Z,50251087.0,panic,"thread 'git::tests::test_git' (48627) panicked at src/git.rs:754:17: assertion failed: !v.v.is_empty()"
+experimental-bsan,shadow-rs-2.0.0,git::tests::test_parse_git_describe,success,174.073,1.598,2026-11-05T04:55:10Z,50251087.0,,
+experimental-bsan,shadow-rs-2.0.0,shadow::tests::test_build,timeout,174.073,150.019,2026-11-05T04:57:40Z,50251087.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

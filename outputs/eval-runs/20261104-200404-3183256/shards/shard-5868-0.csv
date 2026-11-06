@@ -1,0 +1,37 @@
+experimental-bsan,async-fd-lock-0.2.0,blocking_try_read_blocking_try_read_lock,success,68.958,4.394,2026-11-05T03:28:37Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,blocking_try_read_blocking_try_write_lock,success,68.958,4.373,2026-11-05T03:28:42Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,blocking_try_read_timeout_read_lock,success,68.958,4.438,2026-11-05T03:28:46Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,blocking_try_read_timeout_write_lock,test_failed,68.958,14.381,2026-11-05T03:29:00Z,50246013.0,gc,"test blocking_try_read_timeout_write_lock ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-fd-lock-0.2.0,blocking_try_read_try_read_lock,success,68.958,4.415,2026-11-05T03:29:05Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,blocking_try_read_try_write_lock,success,68.958,4.451,2026-11-05T03:29:09Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,blocking_try_write_blocking_try_read_lock,success,68.958,4.320,2026-11-05T03:29:14Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,blocking_try_write_blocking_try_write_lock,success,68.958,4.358,2026-11-05T03:29:18Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,blocking_try_write_timeout_read_lock,test_failed,68.958,14.402,2026-11-05T03:29:32Z,50246013.0,gc,"test blocking_try_write_timeout_read_lock ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-fd-lock-0.2.0,blocking_try_write_timeout_write_lock,test_failed,68.958,14.362,2026-11-05T03:29:47Z,50246013.0,gc,"test blocking_try_write_timeout_write_lock ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-fd-lock-0.2.0,blocking_try_write_try_read_lock,success,68.958,4.415,2026-11-05T03:29:51Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,blocking_try_write_try_write_lock,success,68.958,4.435,2026-11-05T03:29:56Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,io_read,success,68.958,4.577,2026-11-05T03:30:00Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,timeout_read_blocking_try_read_lock,success,68.958,4.449,2026-11-05T03:30:05Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,timeout_read_blocking_try_write_lock,success,68.958,4.452,2026-11-05T03:30:09Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,timeout_read_timeout_read_lock,success,68.958,4.462,2026-11-05T03:30:14Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,timeout_read_timeout_write_lock,test_failed,68.958,14.453,2026-11-05T03:30:28Z,50246013.0,gc,"test timeout_read_timeout_write_lock ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-fd-lock-0.2.0,timeout_read_try_read_lock,success,68.958,4.456,2026-11-05T03:30:33Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,timeout_read_try_write_lock,success,68.958,4.437,2026-11-05T03:30:37Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,timeout_write_blocking_try_read_lock,success,68.958,4.428,2026-11-05T03:30:42Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,timeout_write_blocking_try_write_lock,success,68.958,4.468,2026-11-05T03:30:46Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,timeout_write_timeout_read_lock,test_failed,68.958,14.447,2026-11-05T03:31:00Z,50246013.0,gc,"test timeout_write_timeout_read_lock ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-fd-lock-0.2.0,timeout_write_timeout_write_lock,test_failed,68.958,14.409,2026-11-05T03:31:15Z,50246013.0,gc,"test timeout_write_timeout_write_lock ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-fd-lock-0.2.0,timeout_write_try_read_lock,success,68.958,4.505,2026-11-05T03:31:19Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,timeout_write_try_write_lock,success,68.958,4.441,2026-11-05T03:31:24Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,try_read_blocking_try_read_lock,success,68.958,4.414,2026-11-05T03:31:28Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,try_read_blocking_try_write_lock,success,68.958,4.405,2026-11-05T03:31:33Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,try_read_timeout_read_lock,success,68.958,4.445,2026-11-05T03:31:37Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,try_read_timeout_write_lock,test_failed,68.958,14.404,2026-11-05T03:31:52Z,50246013.0,gc,"test try_read_timeout_write_lock ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-fd-lock-0.2.0,try_read_try_read_lock,success,68.958,4.434,2026-11-05T03:31:56Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,try_read_try_write_lock,success,68.958,4.455,2026-11-05T03:32:00Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,try_write_blocking_try_read_lock,success,68.958,4.396,2026-11-05T03:32:05Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,try_write_blocking_try_write_lock,success,68.958,4.421,2026-11-05T03:32:09Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,try_write_timeout_read_lock,test_failed,68.958,14.409,2026-11-05T03:32:24Z,50246013.0,gc,"test try_write_timeout_read_lock ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-fd-lock-0.2.0,try_write_timeout_write_lock,test_failed,68.958,14.431,2026-11-05T03:32:38Z,50246013.0,gc,"test try_write_timeout_write_lock ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-fd-lock-0.2.0,try_write_try_read_lock,success,68.958,4.467,2026-11-05T03:32:43Z,50246013.0,,
+experimental-bsan,async-fd-lock-0.2.0,try_write_try_write_lock,success,68.958,4.455,2026-11-05T03:32:47Z,50246013.0,,

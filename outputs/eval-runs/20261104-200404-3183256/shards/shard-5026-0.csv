@@ -1,0 +1,45 @@
+experimental-bsan,schnorr_fun-0.13.0,adaptor::encrypted_signature::test::encrypted_signature_serialization_roundtrip,success,433.081,15.366,2026-11-05T03:12:39Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,adaptor::test::signing_tests_deterministic,timeout,433.081,150.034,2026-11-05T03:15:10Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,adaptor::test::signing_tests_synthetic,timeout,433.081,150.026,2026-11-05T03:17:40Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,bip340_test_vectors,success,433.081,39.269,2026-11-05T03:18:19Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,bip340_zero_mask_tagged_hash_is_correct,success,433.081,13.077,2026-11-05T03:18:32Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,deterministic_sigs_are_the_same,timeout,433.081,150.025,2026-11-05T03:21:02Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::certpedpop::certificate::test::test_certifier_with_vrf_cert_scheme_is_partial_eq,success,433.081,12.913,2026-11-05T03:21:15Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::certpedpop::test::cert_bytes_binds_aux_contributor_keys,success,433.081,105.534,2026-11-05T03:23:01Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::certpedpop::test::certified_keygen_new_rejects_unexpected_cert_entries,success,433.081,114.925,2026-11-05T03:24:56Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::certpedpop::test::certified_run_simulate_keygen,timeout,433.081,150.026,2026-11-05T03:27:26Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::certpedpop::test::gen_keygen_input_rejects_invalid_keysets,success,433.081,15.354,2026-11-05T03:27:41Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::certpedpop::test::verify_agg_input_rejects_wrong_certification_key,success,433.081,52.903,2026-11-05T03:28:34Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::certpedpop::test::vrf_certified_keygen_randomness_beacon,timeout,433.081,150.025,2026-11-05T03:31:04Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::encpedpop::test::cert_bytes_binds_receiver_keys,success,433.081,50.488,2026-11-05T03:31:55Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::encpedpop::test::deser_rejects_inconsistent_contributor_counts,success,433.081,13.089,2026-11-05T03:32:08Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::encpedpop::test::encpedpop_run_simulate_keygen,timeout,433.081,150.028,2026-11-05T03:34:38Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::encpedpop::test::encpedpop_simulate_keygen_with_fingerprint,timeout,433.081,150.023,2026-11-05T03:37:08Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::encpedpop::test::gen_keygen_input_rejects_duplicate_receiver_keys,success,433.081,14.892,2026-11-05T03:37:23Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::encpedpop::test::test_input_arrival_order,success,433.081,43.228,2026-11-05T03:38:06Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::encpedpop::test::verify_agg_input_rejects_count_mismatch,success,433.081,49.738,2026-11-05T03:38:56Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::simplepedpop::test::gen_keygen_input_rejects_threshold_above_n_receivers,success,433.081,13.086,2026-11-05T03:39:09Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::simplepedpop::test::pop_bound_to_slot_and_parity_rejects_replay,success,433.081,22.959,2026-11-05T03:39:32Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::simplepedpop::test::simplepedpop_run_simulate_keygen,timeout,433.081,150.030,2026-11-05T03:42:02Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::simplepedpop::test::verify_agg_input_rejects_padded_threshold,success,433.081,31.109,2026-11-05T03:42:33Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::chilldkg::simplepedpop::test::verify_agg_input_rejects_tampered_pop,success,433.081,32.499,2026-11-05T03:43:05Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::share::share_backup::test::share_backup_roundtrip,success,433.081,134.648,2026-11-05T03:45:20Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::share::share_backup::test::short_backup_length,success,433.081,87.425,2026-11-05T03:46:48Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::share::test::recover_secret,timeout,433.081,150.026,2026-11-05T03:49:18Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,frost::shared_key::test::bincode_encoding_decoding_roundtrip,success,433.081,22.126,2026-11-05T03:49:40Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::shared_key::test::fingerprint_grinding_respects_max_bits_total,success,433.081,21.128,2026-11-05T03:50:01Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::shared_key::test::to_bytes_from_slice_roudtrip,success,433.081,22.519,2026-11-05T03:50:23Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost::test::zero_agg_nonce_results_in_G,success,433.081,136.670,2026-11-05T03:52:40Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,frost_prop_test,timeout,433.081,150.027,2026-11-05T03:55:10Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,message::test::bip340_domain_separation,success,433.081,13.144,2026-11-05T03:55:23Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,message::test::message_new_fixed_key_signature,success,433.081,15.380,2026-11-05T03:55:39Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,musig::test::proptest_sign_verify,timeout,433.081,150.025,2026-11-05T03:58:09Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,musig::test::test_musig_adaptor,timeout,433.081,150.032,2026-11-05T04:00:39Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,musig_key_agg,success,433.081,32.931,2026-11-05T04:01:12Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,musig_sign_verify,success,433.081,89.296,2026-11-05T04:02:41Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,musig_tweak_tests,success,433.081,65.936,2026-11-05T04:03:47Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,schnorr::test::anticipated_signature_on_should_correspond_to_actual_signature,timeout,433.081,150.027,2026-11-05T04:06:17Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,schnorr::test::deterministic_nonces_for_different_message_kinds,success,433.081,20.228,2026-11-05T04:06:38Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,schnorr::test::sign_deterministic,timeout,433.081,150.024,2026-11-05T04:09:08Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorr_fun-0.13.0,signature::test::signature_serialization_roundtrip,success,433.081,15.635,2026-11-05T04:09:23Z,50244501.0,,
+experimental-bsan,schnorr_fun-0.13.0,verify_secp_sigs,timeout,433.081,150.021,2026-11-05T04:11:53Z,50244501.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

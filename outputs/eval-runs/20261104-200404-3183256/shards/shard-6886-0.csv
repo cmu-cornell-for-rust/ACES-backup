@@ -1,0 +1,31 @@
+experimental-bsan,kerberos_crypto-0.3.7,algorithms::aes_hmac_sha1::keys::test::test_generate_aes_128_key,timeout,47.508,150.016,2026-11-05T03:57:02Z,50247714.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,kerberos_crypto-0.3.7,algorithms::aes_hmac_sha1::keys::test::test_generate_aes_256_key,timeout,47.508,150.014,2026-11-05T03:59:32Z,50247714.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,kerberos_crypto-0.3.7,algorithms::aes_hmac_sha1::keys::test::test_generate_key_from_string,timeout,47.508,150.013,2026-11-05T04:02:02Z,50247714.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,kerberos_crypto-0.3.7,algorithms::aes_hmac_sha1::salt::test::test_generate_aes_host_salt,success,47.508,1.631,2026-11-05T04:02:04Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,algorithms::aes_hmac_sha1::salt::test::test_generate_aes_user_salt,success,47.508,1.628,2026-11-05T04:02:05Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,algorithms::rc4_hmac_md5::key::test::generate_rc4_key,success,47.508,1.718,2026-11-05T04:02:07Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,checksum::test::test_checksum_hmac_md5,success,47.508,1.744,2026-11-05T04:02:09Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,checksum::test::test_checksum_sha_aes128,success,47.508,1.703,2026-11-05T04:02:11Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,checksum::test::test_checksum_sha_aes256,success,47.508,1.716,2026-11-05T04:02:12Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,ciphers::aes::test::test_aes_128_hmac_sh1_decrypt,timeout,47.508,150.014,2026-11-05T04:04:42Z,50247714.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,kerberos_crypto-0.3.7,ciphers::aes::test::test_aes_128_hmac_sh1_encrypt,timeout,47.508,150.013,2026-11-05T04:07:12Z,50247714.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,kerberos_crypto-0.3.7,ciphers::aes::test::test_aes_256_hmac_sh1_decrypt,timeout,47.508,150.014,2026-11-05T04:09:43Z,50247714.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,kerberos_crypto-0.3.7,ciphers::aes::test::test_aes_256_hmac_sh1_encrypt,timeout,47.508,150.014,2026-11-05T04:12:13Z,50247714.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,kerberos_crypto-0.3.7,ciphers::rc4::test::test_decrypt_rc4_hmac_md5,success,47.508,3.836,2026-11-05T04:12:16Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,ciphers::rc4::test::test_encrypt_rc4_hmac_md5,success,47.508,3.857,2026-11-05T04:12:20Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,cryptography::hmac::test::test_hmac_md5,success,47.508,3.219,2026-11-05T04:12:24Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,cryptography::hmac::test::test_hmac_sha1,success,47.508,2.626,2026-11-05T04:12:26Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,cryptography::nfold_dk::test::test_n_fold,success,47.508,2.569,2026-11-05T04:12:29Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,cryptography::rc4::test::test_rc4_decrypt,success,47.508,2.596,2026-11-05T04:12:31Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,cryptography::rc4::test::test_rc4_encrypt,success,47.508,5.700,2026-11-05T04:12:37Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,helpers::test::supported_etypes,success,47.508,1.598,2026-11-05T04:12:39Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,key::test::hex_string_to_aes_128_key,success,47.508,1.599,2026-11-05T04:12:40Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,key::test::hex_string_to_aes_256_key,success,47.508,1.603,2026-11-05T04:12:42Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,key::test::hex_string_to_rc4_key,success,47.508,1.594,2026-11-05T04:12:43Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,key::test::invalid_chars_hex_string_to_aes_128_key,success,47.508,1.593,2026-11-05T04:12:45Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,key::test::invalid_chars_hex_string_to_aes_256_key,success,47.508,1.609,2026-11-05T04:12:47Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,key::test::invalid_chars_hex_string_to_rc4_key,success,47.508,1.592,2026-11-05T04:12:48Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,key::test::invalid_length_hex_string_to_aes_128_key,success,47.508,1.622,2026-11-05T04:12:50Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,key::test::invalid_length_hex_string_to_aes_256_key,success,47.508,1.624,2026-11-05T04:12:52Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,key::test::invalid_length_hex_string_to_rc4_key,success,47.508,1.625,2026-11-05T04:12:53Z,50247714.0,,
+experimental-bsan,kerberos_crypto-0.3.7,utils::tests::test_u16_array_to_le_bytes,success,47.508,1.618,2026-11-05T04:12:55Z,50247714.0,,

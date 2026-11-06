@@ -1,0 +1,102 @@
+experimental-bsan,sn_interface-0.22.4,messaging::data::tests::debug_format_functional,success,443.211,1.983,2026-11-05T02:06:24Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,messaging::data::tests::try_from,success,443.211,1.974,2026-11-05T02:06:26Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,messaging::data::tests::wire_msg_payload,success,443.211,13.143,2026-11-05T02:06:39Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,messaging::serialisation::wire_msg::tests::serialisation_client_msg,success,443.211,2.856,2026-11-05T02:06:42Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,messaging::serialisation::wire_msg::tests::serialisation_node_msg,success,443.211,2.012,2026-11-05T02:06:44Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,messaging::signature_aggregator::tests::invalid_share,success,443.211,2.018,2026-11-05T02:06:46Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,messaging::signature_aggregator::tests::repeated_voting,success,443.211,2.133,2026-11-05T02:06:48Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,messaging::signature_aggregator::tests::test_signature_aggregator,success,443.211,2.052,2026-11-05T02:06:50Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,messaging::signature_aggregator::tests::test_total_participation_aggregator,success,443.211,2.059,2026-11-05T02:06:52Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,messaging::system::section_sig::tests::verify_keyed_sig,success,443.211,1.811,2026-11-05T02:06:54Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_member_history::tests::archived_members_should_not_be_moved_to_members_list,success,443.211,25.175,2026-11-05T02:07:19Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_member_history::tests::members_should_be_archived_if_they_leave_or_relocate,success,443.211,7.662,2026-11-05T02:07:27Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_member_history::tests::retain_archived_members_of_the_latest_sections_while_pruning,success,443.211,12.056,2026-11-05T02:07:39Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::closest,timeout,443.211,150.016,2026-11-05T02:10:09Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::get_matching,timeout,443.211,150.015,2026-11-05T02:12:39Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::get_matching_prefix,timeout,443.211,150.015,2026-11-05T02:15:09Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::insert_ancestor_of_existing_prefix,timeout,443.211,150.014,2026-11-05T02:17:39Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::insert_direct_descendants_of_existing_prefix,timeout,443.211,150.015,2026-11-05T02:20:09Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::insert_existing_prefix,timeout,443.211,150.016,2026-11-05T02:22:39Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::insert_indirect_descendants_of_existing_prefix,timeout,443.211,150.015,2026-11-05T02:25:09Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::outdated_sap_result_in_no_update,timeout,443.211,150.015,2026-11-05T02:27:39Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::proof_chain_should_contain_a_single_branch_during_update,timeout,443.211,150.016,2026-11-05T02:30:09Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::proptest_section_tree_fields_should_stay_in_sync,timeout,443.211,150.026,2026-11-05T02:32:39Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::return_opposite_prefix_if_none_matching,timeout,443.211,150.014,2026-11-05T02:35:09Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::sap_with_same_parent_and_prefix_should_result_in_error_during_update,timeout,443.211,150.016,2026-11-05T02:37:39Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::section_tree::tests::updating_with_same_sap_should_return_false,timeout,443.211,150.016,2026-11-05T02:40:09Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::get_chain_from_genesis_to_last,success,443.211,4.897,2026-11-05T02:40:14Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::insert_duplicate_key,success,443.211,1.934,2026-11-05T02:40:16Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::insert_fork,success,443.211,2.305,2026-11-05T02:40:18Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::insert_last,success,443.211,2.682,2026-11-05T02:40:21Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::invalid_signature,success,443.211,1.853,2026-11-05T02:40:23Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::merge,success,443.211,3.522,2026-11-05T02:40:26Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::merge_fork,success,443.211,2.368,2026-11-05T02:40:29Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::merge_with_branches,success,443.211,3.401,2026-11-05T02:40:32Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::proptest_merge_sections_dag,timeout,443.211,150.022,2026-11-05T02:43:02Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::self_verify_invalid_sigs,success,443.211,2.251,2026-11-05T02:43:05Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::test_partial_dag_for_genesis_key,success,443.211,1.818,2026-11-05T02:43:06Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::verify_ancestors,success,443.211,2.085,2026-11-05T02:43:08Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::verify_children,success,443.211,2.058,2026-11-05T02:43:11Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::verify_leaves,success,443.211,2.063,2026-11-05T02:43:13Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::verify_parent_during_split,success,443.211,1.971,2026-11-05T02:43:15Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::verify_parents_during_churn,success,443.211,1.975,2026-11-05T02:43:17Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::verify_ser_de,success,443.211,5.018,2026-11-05T02:43:22Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::sections_dag::tests::wrong_parent_child_order,success,443.211,1.973,2026-11-05T02:43:24Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::tests::byte_slice_trailing_zeros,success,443.211,1.754,2026-11-05T02:43:25Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::tests::proptest_supermajority,success,443.211,10.009,2026-11-05T02:43:35Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::tests::signed_sap_field_should_not_be_changed_if_the_update_is_for_a_different_prefix,success,443.211,2.491,2026-11-05T02:43:38Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,network_knowledge::tests::supermajority_of_small_group,success,443.211,1.735,2026-11-05T02:43:40Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,op_cost::test::calculates_required_tokens,success,443.211,1.709,2026-11-05T02:43:41Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,op_cost::test::emptier_section_requires_fewer_tokens,success,443.211,1.769,2026-11-05T02:43:43Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,op_cost::test::fewer_tokens_required_in_larger_net,success,443.211,1.710,2026-11-05T02:43:45Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,op_cost::test::section_share_of_max_supply_decreases_as_network_grows,success,443.211,1.714,2026-11-05T02:43:47Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,op_cost::test::smaller_chunks_require_fewer_tokens,success,443.211,1.766,2026-11-05T02:43:48Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,op_cost::test::splitting_into_multiple_chunks_require_fewer_tokens_than_same_bytes_in_single_chunk,success,443.211,1.761,2026-11-05T02:43:50Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,op_cost::test::tokens,success,443.211,1.743,2026-11-05T02:43:52Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,op_cost::test::tokens_are_required_up_to_max_network_size,success,443.211,1.735,2026-11-05T02:43:54Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::item::tests::expired_when_duration_is_zero,success,443.211,2.474,2026-11-05T02:43:56Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::item::tests::not_expired_when_duration_is_none,success,443.211,2.470,2026-11-05T02:43:59Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::clear_not_expired_item,success,443.211,2.494,2026-11-05T02:44:01Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::drop_excess_entry_one_entry,success,443.211,2.498,2026-11-05T02:44:04Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::drop_excess_entry_zero_entry,success,443.211,2.494,2026-11-05T02:44:06Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::remove_expired_do_not_remove_not_expired_item,success,443.211,2.493,2026-11-05T02:44:09Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::remove_expired_item,success,443.211,2.491,2026-11-05T02:44:11Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::remove_remove_expired_item,success,443.211,2.489,2026-11-05T02:44:14Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::remove_return_none_if_not_found,success,443.211,2.484,2026-11-05T02:44:16Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::set_and_get_value_with_custom_duration,success,443.211,2.483,2026-11-05T02:44:19Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::set_and_get_value_with_default_duration,success,443.211,2.483,2026-11-05T02:44:21Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::set_and_get_value_without_duration,success,443.211,2.480,2026-11-05T02:44:24Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::set_do_not_get_expired_value,success,443.211,2.493,2026-11-05T02:44:26Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::set_do_not_return_expired_value,success,443.211,2.503,2026-11-05T02:44:29Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::cache::tests::set_replace_existing_value,success,443.211,2.489,2026-11-05T02:44:31Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::chunk::tests::deterministic_address,success,443.211,1.786,2026-11-05T02:44:33Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::chunk::tests::deterministic_name,success,443.211,1.731,2026-11-05T02:44:35Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::chunk::tests::deterministic_test,success,443.211,1.719,2026-11-05T02:44:36Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::chunk::tests::serialisation,success,443.211,2.555,2026-11-05T02:44:39Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::fees::tests::required_fee_can_be_read_by_client,success,443.211,1.899,2026-11-05T02:44:41Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::keys::keypair::tests::bls_from_hex_should_deserialize_hex_to_keypair,success,443.211,1.678,2026-11-05T02:44:43Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::keys::keypair::tests::should_serialise_a_bls_keypair,success,443.211,1.901,2026-11-05T02:44:44Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::keys::keypair::tests::should_serialise_a_bls_share,success,443.211,2.007,2026-11-05T02:44:46Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::keys::keypair::tests::should_serialise_an_ed25519_keypair,success,443.211,2.034,2026-11-05T02:44:49Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::keys::keypair::tests::to_hex_should_convert_bls_keypair_to_hex,success,443.211,1.816,2026-11-05T02:44:50Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::keys::keypair::tests::to_hex_should_convert_ed25519_keypair_to_hex,success,443.211,1.946,2026-11-05T02:44:52Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::keys::public_key::tests::serialisation_public_key,success,443.211,2.000,2026-11-05T02:44:54Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::keys::public_key::tests::zbase32_encode_decode_public_key,success,443.211,2.046,2026-11-05T02:44:56Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::keys::signature::tests::ed25519_rmp_roundtrip,success,443.211,2.767,2026-11-05T02:44:59Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::keys::test_utils::obtain_sk_set_from_shares,success,443.211,2.395,2026-11-05T02:45:02Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::register::reg_crdt::tests::creating_entry_hash,success,443.211,1.787,2026-11-05T02:45:03Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::register::tests::exceeding_max_reg_entries_errors,success,443.211,24.647,2026-11-05T02:45:28Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::register::tests::proptest_converge_with_shuffled_op_set_across_arbitrary_number_of_replicas,timeout,443.211,150.023,2026-11-05T02:47:58Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,types::register::tests::proptest_converge_with_shuffled_ops_from_many_replicas_across_arbitrary_number_of_replicas,timeout,443.211,150.013,2026-11-05T02:50:28Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,types::register::tests::proptest_converge_with_shuffled_ops_from_many_while_dropping_some_at_random,timeout,443.211,150.017,2026-11-05T02:52:58Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,types::register::tests::proptest_converge_with_shuffled_ops_including_bad_ops_which_error_and_are_not_applied,timeout,443.211,150.020,2026-11-05T02:55:28Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,types::register::tests::proptest_dropped_data_can_be_reapplied_and_we_converge,timeout,443.211,150.022,2026-11-05T02:57:58Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,types::register::tests::proptest_reg_converge_with_many_random_data,timeout,443.211,150.018,2026-11-05T03:00:28Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,types::register::tests::proptest_reg_converge_with_many_random_data_across_arbitrary_number_of_replicas,timeout,443.211,150.026,2026-11-05T03:02:58Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,types::register::tests::proptest_reg_converge_with_many_random_data_random_entry_children,timeout,443.211,150.018,2026-11-05T03:05:28Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,types::register::tests::proptest_reg_doesnt_crash_with_random_data,timeout,443.211,150.018,2026-11-05T03:07:58Z,50237445.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sn_interface-0.22.4,types::register::tests::register_concurrent_write_ops,success,443.211,3.139,2026-11-05T03:08:02Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::register::tests::register_create,success,443.211,2.251,2026-11-05T03:08:04Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::register::tests::register_generate_entry_hash,success,443.211,2.356,2026-11-05T03:08:06Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::register::tests::register_get_by_hash,success,443.211,2.308,2026-11-05T03:08:09Z,50237445.0,,
+experimental-bsan,sn_interface-0.22.4,types::register::tests::register_query_public_policy,success,443.211,2.720,2026-11-05T03:08:11Z,50237445.0,,

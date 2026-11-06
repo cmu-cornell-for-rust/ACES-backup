@@ -1,0 +1,6 @@
+experimental-bsan,hashring-0.3.6,tests::add_and_remove_nodes,success,5.999,1.644,2026-11-05T07:08:43Z,50258848.0,,
+experimental-bsan,hashring-0.3.6,tests::get_nodes,test_failed,5.999,1.701,2026-11-05T07:08:45Z,50258848.0,panic,"thread 'tests::get_nodes' (95141) panicked at src/lib.rs:379:9: assertion `left == right` failed"
+experimental-bsan,hashring-0.3.6,tests::get_nodes_with_replicas,test_failed,5.999,1.729,2026-11-05T07:08:46Z,50258848.0,panic,"thread 'tests::get_nodes_with_replicas' (95243) panicked at src/lib.rs:439:9: assertion `left == right` failed"
+experimental-bsan,hashring-0.3.6,tests::get_with_replicas_returns_too_many_replicas,test_failed,5.999,1.840,2026-11-05T07:08:48Z,50258848.0,panic,"thread 'tests::get_with_replicas_returns_too_many_replicas' (95363) panicked at src/lib.rs:471:9: assertion `left == right` failed: too high of replicas causes the count to shrink to ring length"
+experimental-bsan,hashring-0.3.6,tests::hash_ring_eq,success,5.999,1.622,2026-11-05T07:08:50Z,50258848.0,,
+experimental-bsan,hashring-0.3.6,tests::into_iter,test_failed,5.999,1.689,2026-11-05T07:08:52Z,50258848.0,panic,"thread 'tests::into_iter' (95626) panicked at src/lib.rs:494:9: assertion `left == right` failed"

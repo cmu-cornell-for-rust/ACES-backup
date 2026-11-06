@@ -1,0 +1,40 @@
+experimental-bsan,rooster-2.14.1,ffi::test::test_time,success,151.130,24.304,2026-11-05T03:19:23Z,50245310.0,,
+experimental-bsan,rooster-2.14.1,generate::test::test_default_password_size_is_32,success,151.130,24.264,2026-11-05T03:19:48Z,50245310.0,,
+experimental-bsan,rooster-2.14.1,generate::test::test_generate_password_alnum,success,151.130,24.343,2026-11-05T03:20:12Z,50245310.0,,
+experimental-bsan,rooster-2.14.1,list::test::password_list_has_right_format_with_numbers,success,151.130,24.313,2026-11-05T03:20:36Z,50245310.0,,
+experimental-bsan,rooster-2.14.1,list::test::password_list_has_right_format_without_numbers,success,151.130,24.319,2026-11-05T03:21:01Z,50245310.0,,
+experimental-bsan,rooster-2.14.1,password::v1::test::test_generate_encryption_key_is_256_bits,success,151.130,24.324,2026-11-05T03:21:25Z,50245310.0,,
+experimental-bsan,rooster-2.14.1,password::v2::test::test_add_password,timeout,151.130,150.011,2026-11-05T03:23:55Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,password::v2::test::test_change_password,timeout,151.130,150.010,2026-11-05T03:26:25Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,password::v2::test::test_create_password_store,timeout,151.130,150.011,2026-11-05T03:28:55Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,password::v2::test::test_delete_password,timeout,151.130,150.009,2026-11-05T03:31:25Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,password::v2::test::test_generate_encryption_key_returns_256_bits_key,timeout,151.130,150.010,2026-11-05T03:33:55Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,password::v2::test::test_generate_random_iv_has_right_length,success,151.130,24.219,2026-11-05T03:34:19Z,50245310.0,,
+experimental-bsan,rooster-2.14.1,password::v2::test::test_generate_random_salt_has_right_length,success,151.130,24.196,2026-11-05T03:34:44Z,50245310.0,,
+experimental-bsan,rooster-2.14.1,password::v2::test::test_get_password,timeout,151.130,150.010,2026-11-05T03:37:14Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,password::v2::test::test_has_password,timeout,151.130,150.010,2026-11-05T03:39:44Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,password::v2::test::test_sign_and_verify,timeout,151.130,150.010,2026-11-05T03:42:14Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,quale::tests::test_none,success,151.130,25.876,2026-11-05T03:42:40Z,50245310.0,,
+experimental-bsan,rooster-2.14.1,quale::tests::test_sh,success,151.130,24.811,2026-11-05T03:43:04Z,50245310.0,,
+experimental-bsan,rooster-2.14.1,shell_escape::unix::test_escape,success,151.130,24.599,2026-11-05T03:43:29Z,50245310.0,,
+experimental-bsan,rooster-2.14.1,shell_escape::windows::test_escape,success,151.130,24.480,2026-11-05T03:43:54Z,50245310.0,,
+experimental-bsan,rooster-2.14.1,test_command_add,timeout,151.130,150.012,2026-11-05T03:46:24Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_change,timeout,151.130,150.012,2026-11-05T03:48:54Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_delete,timeout,151.130,150.012,2026-11-05T03:51:24Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_export_1password,timeout,151.130,150.012,2026-11-05T03:53:54Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_export_csv,timeout,151.130,150.012,2026-11-05T03:56:24Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_export_json,timeout,151.130,150.011,2026-11-05T03:58:54Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_generate,timeout,151.130,150.013,2026-11-05T04:01:24Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_get,timeout,151.130,150.011,2026-11-05T04:03:54Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_import_1password,timeout,151.130,150.013,2026-11-05T04:06:24Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_import_csv,timeout,151.130,150.012,2026-11-05T04:08:54Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_import_json,timeout,151.130,150.012,2026-11-05T04:11:24Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_list,timeout,151.130,150.012,2026-11-05T04:13:54Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_regenerate,timeout,151.130,150.013,2026-11-05T04:16:24Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_rename,timeout,151.130,150.011,2026-11-05T04:18:54Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_set_master_password,timeout,151.130,150.012,2026-11-05T04:21:24Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_set_scrypt_params,timeout,151.130,150.011,2026-11-05T04:23:54Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_command_transfer,timeout,151.130,150.012,2026-11-05T04:26:24Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_corruption,timeout,151.130,150.011,2026-11-05T04:28:54Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_password_retry_nok,timeout,151.130,150.012,2026-11-05T04:31:24Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rooster-2.14.1,test_password_retry_ok,timeout,151.130,150.010,2026-11-05T04:33:54Z,50245310.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

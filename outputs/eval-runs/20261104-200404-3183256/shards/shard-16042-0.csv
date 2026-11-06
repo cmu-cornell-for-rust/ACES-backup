@@ -1,0 +1,5 @@
+experimental-bsan,seance-0.15.0,fs,success,158.314,8.920,2026-11-05T07:35:43Z,50260350.0,,
+experimental-bsan,seance-0.15.0,redis,test_failed,158.314,4.741,2026-11-05T07:35:48Z,50260350.0,panic,"thread 'redis' (68926) panicked at tests/redis.rs:22:67: called `Result::unwrap()` on an `Err` value: Connection refused (os error 111)"
+experimental-bsan,seance-0.15.0,value::tests::deserialize_value,success,158.314,4.518,2026-11-05T07:35:53Z,50260350.0,,
+experimental-bsan,seance-0.15.0,value::tests::serialize_value,success,158.314,4.544,2026-11-05T07:35:57Z,50260350.0,,
+experimental-bsan,seance-0.15.0,value::tests::serialize_value_ref,success,158.314,4.511,2026-11-05T07:36:02Z,50260350.0,,

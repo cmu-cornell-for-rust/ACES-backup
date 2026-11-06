@@ -1,0 +1,15 @@
+experimental-bsan,async_http_range_reader-0.12.0,lifetime_tests::cached_range_survives_failed_prefetch::case_1,success,246.330,3.294,2026-11-05T05:19:11Z,50252376.0,,
+experimental-bsan,async_http_range_reader-0.12.0,lifetime_tests::cached_range_survives_failed_prefetch::case_2,success,246.330,3.358,2026-11-05T05:19:15Z,50252376.0,,
+experimental-bsan,async_http_range_reader-0.12.0,lifetime_tests::cached_range_survives_streamer_cancellation,success,246.330,2.583,2026-11-05T05:19:17Z,50252376.0,,
+experimental-bsan,async_http_range_reader-0.12.0,sparse_range::test::test_sparse_range,success,246.330,1.797,2026-11-05T05:19:19Z,50252376.0,,
+experimental-bsan,async_http_range_reader-0.12.0,test::async_range_reader::case_1,test_failed,246.330,2.803,2026-11-05T05:19:22Z,50252376.0,panic,"thread 'test::async_range_reader::case_1' (44001) panicked at src/lib.rs:1000:10: bla: HttpError(Reqwest(reqwest::Error { kind: Status(404, None), url: ""http://localhost:45457/andes-1.8.3-pyhd8ed1ab_0.conda"" }))"
+experimental-bsan,async_http_range_reader-0.12.0,test::async_range_reader::case_2,test_failed,246.330,2.824,2026-11-05T05:19:25Z,50252376.0,panic,"thread 'test::async_range_reader::case_2' (44157) panicked at src/lib.rs:1000:10: bla: HttpError(Reqwest(reqwest::Error { kind: Status(404, None), url: ""http://localhost:46583/andes-1.8.3-pyhd8ed1ab_0.conda"" }))"
+experimental-bsan,async_http_range_reader-0.12.0,test::async_range_reader_zip::case_1,test_failed,246.330,2.051,2026-11-05T05:19:27Z,50252376.0,panic,"thread 'test::async_range_reader_zip::case_1' (44319) panicked at src/lib.rs:873:9: The conda package is not there yet. Did you run `git lfs pull`?"
+experimental-bsan,async_http_range_reader-0.12.0,test::async_range_reader_zip::case_2,test_failed,246.330,2.054,2026-11-05T05:19:29Z,50252376.0,panic,"thread 'test::async_range_reader_zip::case_2' (44468) panicked at src/lib.rs:873:9: The conda package is not there yet. Did you run `git lfs pull`?"
+experimental-bsan,async_http_range_reader-0.12.0,test::closed_download_stream_returns_terminal_error,success,246.330,1.916,2026-11-05T05:19:31Z,50252376.0,,
+experimental-bsan,async_http_range_reader-0.12.0,test::test_content_length_response_beyond_content_length,success,246.330,10.682,2026-11-05T05:19:41Z,50252376.0,,
+experimental-bsan,async_http_range_reader-0.12.0,test::test_file_length_too_large::case_1::length_1_1_u6463,success,246.330,1.880,2026-11-05T05:19:43Z,50252376.0,,
+experimental-bsan,async_http_range_reader-0.12.0,test::test_file_length_too_large::case_1::length_2__1_u6463__1,success,246.330,1.877,2026-11-05T05:19:45Z,50252376.0,,
+experimental-bsan,async_http_range_reader-0.12.0,test::test_file_length_too_large::case_2::length_1_1_u6463,success,246.330,1.863,2026-11-05T05:19:47Z,50252376.0,,
+experimental-bsan,async_http_range_reader-0.12.0,test::test_file_length_too_large::case_2::length_2__1_u6463__1,success,246.330,1.860,2026-11-05T05:19:49Z,50252376.0,,
+experimental-bsan,async_http_range_reader-0.12.0,test::test_not_found,success,246.330,2.511,2026-11-05T05:19:52Z,50252376.0,,

@@ -1,0 +1,24 @@
+experimental-bsan,dvb-gse-0.6.2,bbframe::proptests::bbframe_defrag_garbage,timeout,169.135,150.016,2026-11-05T04:24:37Z,50249242.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dvb-gse-0.6.2,bbframe::proptests::bbframe_recv_garbage,timeout,169.135,150.013,2026-11-05T04:27:07Z,50249242.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dvb-gse-0.6.2,bbframe::proptests::bbframe_stream_garbage,timeout,169.135,150.015,2026-11-05T04:29:37Z,50249242.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dvb-gse-0.6.2,bbframe::test::multiple_fragments_defrag,success,169.135,3.128,2026-11-05T04:29:40Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,bbframe::test::recv_one_bbframe,success,169.135,3.013,2026-11-05T04:29:43Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,bbframe::test::recv_one_bbframe_with_header,success,169.135,3.057,2026-11-05T04:29:46Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,bbframe::test::single_fragment_defrag,success,169.135,3.076,2026-11-05T04:29:50Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,bbframe::test::single_fragment_defrag_mis,success,169.135,3.125,2026-11-05T04:29:53Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,bbframe::test::stream_one_bbframe,success,169.135,3.031,2026-11-05T04:29:56Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,bbframe::test::validator,success,169.135,3.050,2026-11-05T04:29:59Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,bbheader::proptests::doesnt_panic,success,169.135,16.470,2026-11-05T04:30:15Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,bbheader::test::continuous_gse_header,success,169.135,3.135,2026-11-05T04:30:18Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,gseheader::proptests::random_header,success,169.135,15.277,2026-11-05T04:30:34Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,gseheader::test::first_fragment,success,169.135,2.964,2026-11-05T04:30:37Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,gseheader::test::intermediate_fragment,success,169.135,3.029,2026-11-05T04:30:40Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,gseheader::test::last_fragment,success,169.135,3.025,2026-11-05T04:30:43Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,gseheader::test::padding_packet,success,169.135,2.983,2026-11-05T04:30:46Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,gseheader::test::single_packet,success,169.135,2.954,2026-11-05T04:30:49Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,gseheader::test::single_packet_3byte_label,success,169.135,3.022,2026-11-05T04:30:52Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,gseheader::test::single_packet_broadcast_label,success,169.135,3.008,2026-11-05T04:30:55Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,gseheader::test::single_packet_label_reuse,success,169.135,2.997,2026-11-05T04:30:58Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,gseheader::test::too_short,success,169.135,2.907,2026-11-05T04:31:01Z,50249242.0,,
+experimental-bsan,dvb-gse-0.6.2,gsepacket::proptests::defrag_garbage,timeout,169.135,150.016,2026-11-05T04:33:31Z,50249242.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dvb-gse-0.6.2,gsepacket::test::defrag_single_packet,success,169.135,3.015,2026-11-05T04:33:34Z,50249242.0,,

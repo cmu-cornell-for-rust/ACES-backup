@@ -1,0 +1,15 @@
+experimental-bsan,esexpr-text-0.4.0,arbitrary_expressions_round_trip,timeout,184.409,150.027,2026-11-05T05:21:29Z,50252460.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,esexpr-text-0.4.0,canonical_output,success,184.409,5.333,2026-11-05T05:21:35Z,50252460.0,,
+experimental-bsan,esexpr-text-0.4.0,every_float16_bit_pattern_round_trips,timeout,184.409,150.020,2026-11-05T05:24:05Z,50252460.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,esexpr-text-0.4.0,float_boundaries_round_trip,success,184.409,5.100,2026-11-05T05:24:10Z,50252460.0,,
+experimental-bsan,esexpr-text-0.4.0,float_suffixes_signs_and_exponents,success,184.409,5.711,2026-11-05T05:24:16Z,50252460.0,,
+experimental-bsan,esexpr-text-0.4.0,indentation,success,184.409,4.625,2026-11-05T05:24:20Z,50252460.0,,
+experimental-bsan,esexpr-text-0.4.0,indentation_variants,success,184.409,4.560,2026-11-05T05:24:25Z,50252460.0,,
+experimental-bsan,esexpr-text-0.4.0,malformed_text_and_file_boundaries,success,184.409,4.592,2026-11-05T05:24:30Z,50252460.0,,
+experimental-bsan,esexpr-text-0.4.0,nan_signs_payloads_and_invalid_payloads,success,184.409,5.522,2026-11-05T05:24:35Z,50252460.0,,
+experimental-bsan,esexpr-text-0.4.0,parse_nan,success,184.409,4.464,2026-11-05T05:24:40Z,50252460.0,,
+experimental-bsan,esexpr-text-0.4.0,parse_tests,test_failed,184.409,3.098,2026-11-05T05:24:43Z,50252460.0,panic,"thread 'parse_tests' (34977) panicked at tests/parsing.rs:40:75: fixture directory should be readable: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,esexpr-text-0.4.0,sink_errors_are_propagated,success,184.409,4.412,2026-11-05T05:24:47Z,50252460.0,,
+experimental-bsan,esexpr-text-0.4.0,tab_indentation,success,184.409,8.374,2026-11-05T05:24:55Z,50252460.0,,
+experimental-bsan,esexpr-text-0.4.0,text_fixtures_round_trip,test_failed,184.409,4.506,2026-11-05T05:25:00Z,50252460.0,panic,"thread 'text_fixtures_round_trip' (36231) panicked at tests/printing.rs:105:10: fixture directory should be readable: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,esexpr-text-0.4.0,unsigned_integer_radices_boundaries_and_remainders,success,184.409,4.659,2026-11-05T05:25:05Z,50252460.0,,

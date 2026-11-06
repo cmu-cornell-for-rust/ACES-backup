@@ -1,0 +1,16 @@
+experimental-bsan,seshat-unicode-0.3.1,tests::code_point_gc,success,50.267,10.519,2026-11-05T05:13:52Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,tests::code_point_na,success,50.267,10.474,2026-11-05T05:14:03Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,tests::code_point_to_string,success,50.267,10.495,2026-11-05T05:14:13Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,tests::str_nfd,success,50.267,10.583,2026-11-05T05:14:24Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,tests::test_nfc,success,50.267,10.538,2026-11-05T05:14:34Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,tests::test_non_starter_decomposition,success,50.267,10.504,2026-11-05T05:14:45Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,tests::test_rdm,success,50.267,10.412,2026-11-05T05:14:55Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,tests::test_singleton,success,50.267,10.389,2026-11-05T05:15:05Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,tests::test_starter,success,50.267,10.571,2026-11-05T05:15:16Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,tests::version_check,success,50.267,10.587,2026-11-05T05:15:27Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,unicode::normalization::tests::test_blocked,success,50.267,10.543,2026-11-05T05:15:37Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,unicode::normalization::tests::test_canonical_ordering,success,50.267,10.572,2026-11-05T05:15:48Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,validate_grapheme_break,success,50.267,13.056,2026-11-05T05:16:01Z,50252251.0,,
+experimental-bsan,seshat-unicode-0.3.1,validate_normalizations,timeout,50.267,150.017,2026-11-05T05:18:31Z,50252251.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,seshat-unicode-0.3.1,validate_properties,test_failed,50.267,9.243,2026-11-05T05:18:40Z,50252251.0,panic,"thread 'validate_properties' (83606) panicked at tests/properties_test.rs:361:19: File not exists!"
+experimental-bsan,seshat-unicode-0.3.1,validate_segmentations,success,50.267,10.706,2026-11-05T05:18:51Z,50252251.0,,

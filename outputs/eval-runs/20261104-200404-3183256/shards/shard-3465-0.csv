@@ -1,0 +1,65 @@
+experimental-bsan,orc-rust-0.5.0,arrow_writer::tests::test_roundtrip_write,success,782.245,6.267,2026-11-05T02:39:32Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,arrow_writer::tests::test_roundtrip_write_large_type,success,782.245,6.003,2026-11-05T02:39:38Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,arrow_writer::tests::test_write_inconsistent_null_buffers,success,782.245,5.950,2026-11-05T02:39:44Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,arrow_writer::tests::test_write_small_stripes,timeout,782.245,150.019,2026-11-05T02:42:14Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,compression::tests::decode_compressed,success,782.245,5.832,2026-11-05T02:42:20Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,compression::tests::decode_uncompressed,success,782.245,5.828,2026-11-05T02:42:26Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::boolean::tests::another,success,782.245,5.837,2026-11-05T02:42:31Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::boolean::tests::basic,success,782.245,5.986,2026-11-05T02:42:37Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::boolean::tests::literals,success,782.245,5.839,2026-11-05T02:42:43Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::byte::tests::reader_test,success,782.245,5.831,2026-11-05T02:42:49Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::byte::tests::roundtrip_byte_rle_biased,timeout,782.245,150.025,2026-11-05T02:45:19Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::byte::tests::roundtrip_byte_rle_pure_random,success,782.245,31.794,2026-11-05T02:45:51Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::float::tests::roundtrip_f32,timeout,782.245,150.016,2026-11-05T02:48:21Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::float::tests::roundtrip_f64,timeout,782.245,150.018,2026-11-05T02:50:51Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::float::tests::test_float_edge_cases,success,782.245,5.802,2026-11-05T02:50:57Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::float::tests::test_float_many,success,782.245,5.786,2026-11-05T02:51:03Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v1::tests::test_literal,success,782.245,5.778,2026-11-05T02:51:08Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v1::tests::test_run,success,782.245,5.827,2026-11-05T02:51:14Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::delta::tests::test_fixed_delta_negative,success,782.245,5.827,2026-11-05T02:51:20Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::delta::tests::test_fixed_delta_positive,success,782.245,5.831,2026-11-05T02:51:26Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::delta::tests::test_varying_delta_negative,success,782.245,5.795,2026-11-05T02:51:32Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::delta::tests::test_varying_delta_positive,success,782.245,5.795,2026-11-05T02:51:38Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::direct::tests::roundtrip_direct_i16,timeout,782.245,150.014,2026-11-05T02:54:08Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::direct::tests::roundtrip_direct_i32,timeout,782.245,150.014,2026-11-05T02:56:38Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::direct::tests::roundtrip_direct_i64,timeout,782.245,150.014,2026-11-05T02:59:08Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::direct::tests::roundtrip_direct_i64_unsigned,timeout,782.245,150.014,2026-11-05T03:01:38Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::direct::tests::test_direct_edge_case,success,782.245,5.811,2026-11-05T03:01:44Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::patched_base::tests::roundtrip_patched_base_i64,timeout,782.245,150.015,2026-11-05T03:04:14Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::short_repeat::tests::roundtrip_short_repeat_i16,success,782.245,13.105,2026-11-05T03:04:27Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::short_repeat::tests::roundtrip_short_repeat_i32,success,782.245,13.161,2026-11-05T03:04:40Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::short_repeat::tests::roundtrip_short_repeat_i64,success,782.245,13.652,2026-11-05T03:04:54Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::short_repeat::tests::roundtrip_short_repeat_i64_unsigned,success,782.245,13.467,2026-11-05T03:05:07Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::tests::delta,success,782.245,5.803,2026-11-05T03:05:13Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::tests::direct,success,782.245,5.796,2026-11-05T03:05:19Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::tests::direct_signed,success,782.245,5.821,2026-11-05T03:05:25Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::tests::patched_base,success,782.245,5.822,2026-11-05T03:05:30Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::tests::patched_base_1,success,782.245,5.993,2026-11-05T03:05:36Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::tests::reader_test,success,782.245,5.808,2026-11-05T03:05:42Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::tests::roundtrip_i16,timeout,782.245,150.013,2026-11-05T03:08:12Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::tests::roundtrip_i32,timeout,782.245,150.014,2026-11-05T03:10:42Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::tests::roundtrip_i64,timeout,782.245,150.013,2026-11-05T03:13:12Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::tests::roundtrip_i64_unsigned,timeout,782.245,150.015,2026-11-05T03:15:42Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::integer::rle_v2::tests::short_repeat,success,782.245,5.753,2026-11-05T03:15:48Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_msb_edge_cases,success,782.245,5.736,2026-11-05T03:15:54Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_msb_i16,success,782.245,13.402,2026-11-05T03:16:07Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_msb_i32,success,782.245,13.371,2026-11-05T03:16:21Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_msb_i64,success,782.245,13.548,2026-11-05T03:16:34Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_packed_ints_serde_i16,timeout,782.245,150.016,2026-11-05T03:19:04Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_packed_ints_serde_i32,timeout,782.245,150.017,2026-11-05T03:21:34Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_packed_ints_serde_i64,timeout,782.245,150.016,2026-11-05T03:24:04Z,50241389.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_varint_edge_cases,success,782.245,5.849,2026-11-05T03:24:10Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_varint_i128,success,782.245,15.752,2026-11-05T03:24:26Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_varint_i16,success,782.245,13.354,2026-11-05T03:24:39Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_varint_i32,success,782.245,13.388,2026-11-05T03:24:53Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_varint_i64,success,782.245,13.946,2026-11-05T03:25:07Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_varint_u64,success,782.245,13.966,2026-11-05T03:25:21Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_zigzag_edge_cases,success,782.245,5.844,2026-11-05T03:25:26Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_zigzag_i16,success,782.245,13.199,2026-11-05T03:25:40Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_zigzag_i32,success,782.245,12.714,2026-11-05T03:25:52Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::roundtrip_zigzag_i64,success,782.245,12.816,2026-11-05T03:26:05Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::test_read_varint,success,782.245,5.818,2026-11-05T03:26:11Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::test_zigzag_decode,success,782.245,5.822,2026-11-05T03:26:17Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::integer::util::tests::test_zigzag_encode,success,782.245,5.825,2026-11-05T03:26:23Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::tests::decode_spaced_edge_cases,success,782.245,5.822,2026-11-05T03:26:29Z,50241389.0,,
+experimental-bsan,orc-rust-0.5.0,encoding::tests::decode_spaced_proptest,success,782.245,34.019,2026-11-05T03:27:03Z,50241389.0,,

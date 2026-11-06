@@ -1,0 +1,5 @@
+experimental-bsan,stabby-36.1.1,tests::enums::enums,success,223.705,1.613,2026-11-05T07:38:47Z,50260423.0,,
+experimental-bsan,stabby-36.1.1,tests::layouts::layouts,success,223.705,1.602,2026-11-05T07:38:49Z,50260423.0,,
+experimental-bsan,stabby-36.1.1,tests::traits::arc_traits,success,223.705,1.566,2026-11-05T07:38:50Z,50260423.0,,
+experimental-bsan,stabby-36.1.1,tests::traits::async_trait,test_failed,223.705,11.813,2026-11-05T07:39:02Z,50260423.0,gc,"test tests::traits::async_trait ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,stabby-36.1.1,tests::traits::dyn_traits,success,223.705,1.554,2026-11-05T07:39:04Z,50260423.0,,

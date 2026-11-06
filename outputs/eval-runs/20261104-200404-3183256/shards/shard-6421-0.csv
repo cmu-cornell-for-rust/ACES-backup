@@ -1,0 +1,35 @@
+experimental-bsan,watchexec-supervisor-6.0.0,command::conversions::tests::assignment_prefixed_commands_are_not_execable,success,85.470,3.064,2026-11-05T03:42:07Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,command::conversions::tests::compound_commands_are_not_execable,success,85.470,3.050,2026-11-05T03:42:10Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,command::conversions::tests::empty_commands_are_not_execable,success,85.470,2.996,2026-11-05T03:42:13Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,command::conversions::tests::quoted_args_exec_prefix_for_simple_command,success,85.470,3.051,2026-11-05T03:42:16Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,command::conversions::tests::quoted_args_no_exec_prefix_for_compound_command,success,85.470,3.067,2026-11-05T03:42:19Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,command::conversions::tests::shell_construct_commands_are_not_execable,success,85.470,3.056,2026-11-05T03:42:22Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,command::conversions::tests::simple_commands_are_execable,success,85.470,3.074,2026-11-05T03:42:25Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,custom_child_spawn_preserves_job_api,success,85.470,3.343,2026-11-05T03:42:28Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,existing_spawn_fn_remains_compatible,success,85.470,3.296,2026-11-05T03:42:32Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::async_error_handler,success,85.470,3.242,2026-11-05T03:42:35Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::async_func,success,85.470,3.211,2026-11-05T03:42:38Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::graceful_restart,success,85.470,3.515,2026-11-05T03:42:42Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::graceful_restart_beyond_grace,test_failed,85.470,2.344,2026-11-05T03:42:44Z,50246999.0,panic,"thread 'job::test::graceful_restart_beyond_grace' (21550) panicked at src/job/test.rs:640:9: expected Some(CommandState::Running { .. }), got Some(Finished { status: ExitError(1), started: Instant { tv_sec: 4604326, tv_nsec: 209703266 }, finished: Instant { tv_sec: 4604326, tv_nsec: 284811792 } }) ("
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::graceful_stop,success,85.470,3.414,2026-11-05T03:42:47Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::graceful_stop_beyond_grace,test_failed,85.470,2.251,2026-11-05T03:42:50Z,50246999.0,panic,"thread 'job::test::graceful_stop_beyond_grace' (21823) panicked at src/job/test.rs:596:9: expected Some(CommandState::Running { .. }), got Some(Finished { status: Success, started: Instant { tv_sec: 4604331, tv_nsec: 996158684 }, finished: Instant { tv_sec: 4604332, tv_nsec: 70105784 } }) (after USR"
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::graceful_stop_with_job_dropped,success,85.470,3.381,2026-11-05T03:42:53Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::queue_ordering,success,85.470,3.276,2026-11-05T03:42:56Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::restart,success,85.470,3.563,2026-11-05T03:43:00Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::signal_unix,success,85.470,3.297,2026-11-05T03:43:03Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::start,success,85.470,3.297,2026-11-05T03:43:07Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::stop,success,85.470,3.398,2026-11-05T03:43:10Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::stop_fail,success,85.470,3.380,2026-11-05T03:43:13Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::stop_when_running,success,85.470,3.342,2026-11-05T03:43:17Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::sync_error_handler,success,85.470,3.223,2026-11-05T03:43:20Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::sync_func,success,85.470,3.178,2026-11-05T03:43:23Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::try_graceful_restart,test_failed,85.470,2.424,2026-11-05T03:43:26Z,50246999.0,panic,"thread 'job::test::try_graceful_restart' (23074) panicked at src/job/test.rs:748:5: expected Some(CommandState::Running { .. }), got Some(Finished { status: ExitError(1), started: Instant { tv_sec: 4604367, tv_nsec: 750870335 }, finished: Instant { tv_sec: 4604367, tv_nsec: 835705703 } })"
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::try_graceful_restart_beyond_grace,test_failed,85.470,2.354,2026-11-05T03:43:28Z,50246999.0,panic,"thread 'job::test::try_graceful_restart_beyond_grace' (23260) panicked at src/job/test.rs:863:5: expected Some(CommandState::Running { .. }), got Some(Finished { status: ExitError(1), started: Instant { tv_sec: 4604370, tv_nsec: 194143678 }, finished: Instant { tv_sec: 4604370, tv_nsec: 269709089 } "
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::try_restart,timeout,85.470,150.019,2026-11-05T03:45:58Z,50246999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::try_restart_beyond_grace,test_failed,85.470,2.350,2026-11-05T03:46:00Z,50246999.0,panic,"thread 'job::test::try_restart_beyond_grace' (34721) panicked at src/job/test.rs:805:5: expected Some(CommandState::Running { .. }), got Some(Finished { status: ExitError(1), started: Instant { tv_sec: 4604522, tv_nsec: 629510698 }, finished: Instant { tv_sec: 4604522, tv_nsec: 704198985 } })"
+experimental-bsan,watchexec-supervisor-6.0.0,job::test::unset_error_handler,success,85.470,3.244,2026-11-05T03:46:04Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,restart_with_signal_waits_for_the_actual_command_to_exit,success,85.470,4.410,2026-11-05T03:46:08Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,unix_shell_alternate,success,85.470,3.209,2026-11-05T03:46:11Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,unix_shell_alternate_shopts,success,85.470,3.184,2026-11-05T03:46:14Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,unix_shell_none,success,85.470,3.190,2026-11-05T03:46:18Z,50246999.0,,
+experimental-bsan,watchexec-supervisor-6.0.0,unix_shell_sh,success,85.470,3.190,2026-11-05T03:46:21Z,50246999.0,,

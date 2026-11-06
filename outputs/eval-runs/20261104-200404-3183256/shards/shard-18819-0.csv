@@ -1,0 +1,2 @@
+experimental-bsan,github-device-flow-0.2.0,tests::credential_expiry_is_expired_returns_false_when_expiry_is_in_the_future,test_failed,225.099,1.842,2026-11-05T08:51:34Z,50264090.0,panic,"thread 'tests::credential_expiry_is_expired_returns_false_when_expiry_is_in_the_future' (89377) panicked at src/lib.rs:279:9: assertion `left == right` failed"
+experimental-bsan,github-device-flow-0.2.0,tests::credential_expiry_is_expired_returns_true_when_expiry_is_in_the_past,success,225.099,3.199,2026-11-05T08:51:37Z,50264090.0,,

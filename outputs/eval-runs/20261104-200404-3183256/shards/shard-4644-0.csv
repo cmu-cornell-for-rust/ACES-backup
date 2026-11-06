@@ -1,0 +1,49 @@
+experimental-bsan,inspect-cert-chain-0.0.43,check_input_errors_use_unknown_exit_code_and_json,success,469.453,8.075,2026-11-05T03:12:59Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,check_reports_certificates_that_are_not_yet_valid,success,469.453,9.819,2026-11-05T03:13:09Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,check_reports_expired_certificates,success,469.453,8.173,2026-11-05T03:13:17Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,check_returns_warning_within_warning_threshold,success,469.453,10.034,2026-11-05T03:13:27Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,check_succeeds_when_all_dates_are_valid,success,469.453,9.892,2026-11-05T03:13:37Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,closed_tls_handshake_returns_an_error_without_certificates,test_failed,469.453,8.312,2026-11-05T03:13:45Z,50243980.0,panic,"thread '<unnamed>' (44684) panicked at tests/remote_timeout.rs:76:25: Server stopped before accepting"
+experimental-bsan,inspect-cert-chain-0.0.43,critical_status_takes_precedence_over_warning_across_the_chain,success,469.453,10.228,2026-11-05T03:13:55Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,dump_errors_produce_one_json_error_document,test_failed,469.453,8.609,2026-11-05T03:14:04Z,50243980.0,panic,"thread '<unnamed>' (45902) panicked at tests/remote_timeout.rs:76:25: Server stopped before accepting"
+experimental-bsan,inspect-cert-chain-0.0.43,ext::tests::edi_party_name_formats_assigner_and_bmp_party,success,469.453,4.562,2026-11-05T03:14:09Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,ext::tests::edi_party_name_formats_party_without_assigner,success,469.453,4.563,2026-11-05T03:14:13Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,ext::tests::other_name_formats_text_values,success,469.453,4.844,2026-11-05T03:14:18Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,ext::tests::other_name_formats_unknown_values_as_tagged_hex,success,469.453,4.698,2026-11-05T03:14:23Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,ext::tests::other_name_preserves_invalid_text_as_tagged_hex,success,469.453,4.613,2026-11-05T03:14:27Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,ext::tests::other_name_resolves_known_oid,success,469.453,4.619,2026-11-05T03:14:32Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,fetch::tests::malformed_intermediate_is_an_error_instead_of_a_partial_chain,success,469.453,5.026,2026-11-05T03:14:37Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,field_selection_limits_text_output,success,469.453,6.654,2026-11-05T03:14:44Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,field_selection_omits_other_json_fields_for_each_certificate,success,469.453,7.457,2026-11-05T03:14:51Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,help_and_version_succeed_without_an_input_source,success,469.453,6.939,2026-11-05T03:14:58Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,inspection_does_not_fail_for_expired_certificates_without_check,success,469.453,10.000,2026-11-05T03:15:08Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,inspection_dumps_the_server_certificate_chain,test_failed,469.453,8.729,2026-11-05T03:15:17Z,50243980.0,panic,"thread 'inspection_dumps_the_server_certificate_chain' (54327) panicked at tests/remote_timeout.rs:440:5: Inspection failed: "
+experimental-bsan,inspect-cert-chain-0.0.43,inspection_sends_the_hostname_as_sni,test_failed,469.453,8.458,2026-11-05T03:15:25Z,50243980.0,panic,"thread 'inspection_sends_the_hostname_as_sni' (54861) panicked at tests/remote_timeout.rs:402:5: Inspection failed: "
+experimental-bsan,inspect-cert-chain-0.0.43,invalid_options_are_rejected_before_reading_input,success,469.453,13.770,2026-11-05T03:15:39Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,invalid_server_names_are_rejected,success,469.453,10.302,2026-11-05T03:15:50Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,invalid_tls_handshake_returns_an_error_without_certificates,test_failed,469.453,8.301,2026-11-05T03:15:58Z,50243980.0,panic,"thread '<unnamed>' (57168) panicked at tests/remote_timeout.rs:76:25: Server stopped before accepting"
+experimental-bsan,inspect-cert-chain-0.0.43,ip_connection_uses_the_chosen_server_name,test_failed,469.453,8.453,2026-11-05T03:16:06Z,50243980.0,panic,"thread 'ip_connection_uses_the_chosen_server_name' (57903) panicked at tests/remote_timeout.rs:555:5: Inspection failed: "
+experimental-bsan,inspect-cert-chain-0.0.43,ipv6_connection_uses_the_chosen_server_name,test_failed,469.453,8.418,2026-11-05T03:16:15Z,50243980.0,panic,"thread 'ipv6_connection_uses_the_chosen_server_name' (58558) panicked at tests/remote_timeout.rs:589:5: Inspection failed: "
+experimental-bsan,inspect-cert-chain-0.0.43,json_contains_structured_certificate_data,success,469.453,8.721,2026-11-05T03:16:24Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,local_file_inspection_still_works_with_the_timeout_option,success,469.453,13.111,2026-11-05T03:16:37Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,remote_json_output_remains_valid_with_verbose_logs,test_failed,469.453,8.759,2026-11-05T03:16:45Z,50243980.0,panic,"thread 'remote_json_output_remains_valid_with_verbose_logs' (64067) panicked at tests/remote_timeout.rs:154:5: CLI exceeded the 4s harness limit: INFO inspect_cert_chain: fetching certificate chain from remote host host=127.0.0.1 server_name=127.0.0.1"
+experimental-bsan,inspect-cert-chain-0.0.43,remote_timeout_in_check_mode_has_unknown_status,test_failed,469.453,7.254,2026-11-05T03:16:53Z,50243980.0,panic,"thread '<unnamed>' (65464) panicked at tests/remote_timeout.rs:76:25: Server stopped before accepting"
+experimental-bsan,inspect-cert-chain-0.0.43,repeated_field_options_keep_the_requested_text_order,success,469.453,7.130,2026-11-05T03:17:00Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,repeated_handshake_data_does_not_extend_the_deadline,test_failed,469.453,7.308,2026-11-05T03:17:07Z,50243980.0,panic,"thread '<unnamed>' (67884) panicked at tests/remote_timeout.rs:76:25: Server stopped before accepting"
+experimental-bsan,inspect-cert-chain-0.0.43,report::tests::expiry_thresholds_include_the_exact_boundary,success,469.453,4.584,2026-11-05T03:17:12Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,report::tests::expiry_thresholds_keep_subsecond_precision,success,469.453,4.609,2026-11-05T03:17:16Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,report::tests::inverted_validity_period_is_critical,success,469.453,4.612,2026-11-05T03:17:21Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,report::tests::validity_includes_both_endpoints,success,469.453,4.580,2026-11-05T03:17:26Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,server_first_application_data_does_not_delay_inspection,test_failed,469.453,7.453,2026-11-05T03:17:33Z,50243980.0,panic,"thread 'server_first_application_data_does_not_delay_inspection' (72231) panicked at tests/remote_timeout.rs:263:5: Inspection failed: "
+experimental-bsan,inspect-cert-chain-0.0.43,server_name_conflicts_with_local_file_inspection,success,469.453,5.594,2026-11-05T03:17:39Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,server_name_requires_a_connection_host,success,469.453,5.701,2026-11-05T03:17:44Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,stalled_tls_handshake_uses_a_subsecond_timeout,test_failed,469.453,6.976,2026-11-05T03:17:51Z,50243980.0,panic,"thread '<unnamed>' (73133) panicked at tests/remote_timeout.rs:76:25: Server stopped before accepting"
+experimental-bsan,inspect-cert-chain-0.0.43,stalled_tls_handshake_uses_the_default_ten_second_timeout,test_failed,469.453,16.497,2026-11-05T03:18:08Z,50243980.0,panic,"thread '<unnamed>' (73380) panicked at tests/remote_timeout.rs:76:25: Server stopped before accepting"
+experimental-bsan,inspect-cert-chain-0.0.43,text_escapes_general_name_controls_and_json_preserves_them,success,469.453,9.721,2026-11-05T03:18:18Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,text_formats_issuer_unique_id_with_its_bit_length,success,469.453,10.936,2026-11-05T03:18:29Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,text_omits_absent_issuer_unique_id,success,469.453,7.258,2026-11-05T03:18:36Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,text_omits_trailing_colon_for_exact_width_issuer_unique_id,success,469.453,7.851,2026-11-05T03:18:44Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,tls12_inspection_finishes_without_application_data_or_server_close,test_failed,469.453,8.473,2026-11-05T03:18:52Z,50243980.0,panic,"thread 'tls12_inspection_finishes_without_application_data_or_server_close' (77902) panicked at tests/remote_timeout.rs:350:5: Inspection failed: "
+experimental-bsan,inspect-cert-chain-0.0.43,tls13_inspection_finishes_without_application_data_or_server_close,test_failed,469.453,8.456,2026-11-05T03:19:01Z,50243980.0,panic,"thread 'tls13_inspection_finishes_without_application_data_or_server_close' (78439) panicked at tests/remote_timeout.rs:350:5: Inspection failed: "
+experimental-bsan,inspect-cert-chain-0.0.43,util::tests::openssl_hex_formats_partial_and_complete_chunks,success,469.453,4.607,2026-11-05T03:19:05Z,50243980.0,,
+experimental-bsan,inspect-cert-chain-0.0.43,zero_timeout_is_rejected,success,469.453,6.894,2026-11-05T03:19:12Z,50243980.0,,

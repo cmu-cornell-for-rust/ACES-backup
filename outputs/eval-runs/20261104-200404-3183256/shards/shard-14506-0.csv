@@ -1,0 +1,7 @@
+experimental-bsan,simuldb-0.12.3,db::json::test::test_round_trip,success,331.713,12.978,2026-11-05T07:04:18Z,50258266.0,,
+experimental-bsan,simuldb-0.12.3,db::neo4j::test::can_connect,test_failed,331.713,17.525,2026-11-05T07:04:36Z,50258266.0,panic,"thread 'db::neo4j::test::can_connect' (5352) panicked at src/db/neo4j/test.rs:34:10: Failure to run query: Neo4j(IOError { detail: Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" } })"
+experimental-bsan,simuldb-0.12.3,db::neo4j::test::test_round_trip,test_failed,331.713,18.022,2026-11-05T07:04:54Z,50258266.0,panic,"thread 'db::neo4j::test::test_round_trip' (5573) panicked at src/db/neo4j/test.rs:40:10: called `Result::unwrap()` on an `Err` value: Neo4j(IOError { detail: Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" } })"
+experimental-bsan,simuldb-0.12.3,testutils::can_load_config,success,331.713,2.041,2026-11-05T07:04:56Z,50258266.0,,
+experimental-bsan,simuldb-0.12.3,value::test::test_serde_json_round_trip,success,331.713,12.252,2026-11-05T07:05:08Z,50258266.0,,
+experimental-bsan,simuldb-0.12.3,value::test::test_serialize_complex_struct,success,331.713,18.165,2026-11-05T07:05:26Z,50258266.0,,
+experimental-bsan,simuldb-0.12.3,value::test::test_struct_round_trip,success,331.713,14.645,2026-11-05T07:05:41Z,50258266.0,,

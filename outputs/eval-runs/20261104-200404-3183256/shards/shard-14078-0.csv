@@ -1,0 +1,7 @@
+experimental-bsan,checkpwn-0.6.2,test_cli_acc_breach,test_failed,166.932,45.555,2026-11-05T06:52:51Z,50257664.0,panic,"thread 'test_cli_acc_breach' (99743) panicked at src/main.rs:192:10: command=""cargo"" ""run"" ""acc"" ""test@example.com"""
+experimental-bsan,checkpwn-0.6.2,test_cli_acc_no_breach,test_failed,166.932,2.057,2026-11-05T06:52:53Z,50257664.0,panic,"thread 'test_cli_acc_no_breach' (14313) panicked at src/main.rs:210:10: command=""cargo"" ""run"" ""acc"" ""\""r1a2zn2w\""@\""FBkhKKcF\"".com"""
+experimental-bsan,checkpwn-0.6.2,test_cli_arg_fail,success,166.932,1.869,2026-11-05T06:52:55Z,50257664.0,,
+experimental-bsan,checkpwn-0.6.2,test_cli_arg_fail_2,success,166.932,1.850,2026-11-05T06:52:57Z,50257664.0,,
+experimental-bsan,checkpwn-0.6.2,test_cli_arg_fail_3,success,166.932,1.880,2026-11-05T06:52:59Z,50257664.0,,
+experimental-bsan,checkpwn-0.6.2,test_cli_arg_ok,test_failed,166.932,2.011,2026-11-05T06:53:01Z,50257664.0,panic,"thread 'test_cli_arg_ok' (15162) panicked at src/main.rs:253:10: command=""cargo"" ""run"" ""acc"" ""test@example.com"""
+experimental-bsan,checkpwn-0.6.2,test_strip_white_new,success,166.932,1.653,2026-11-05T06:53:03Z,50257664.0,,

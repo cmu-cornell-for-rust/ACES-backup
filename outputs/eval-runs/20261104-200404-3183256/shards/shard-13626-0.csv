@@ -1,0 +1,8 @@
+experimental-bsan,image-colorizer-1.1.9,config::tests::generate_input_output_pairs_handles_missing_extension,success,748.038,1.754,2026-11-05T06:52:47Z,50257030.0,,
+experimental-bsan,image-colorizer-1.1.9,config::tests::parse_f32_between_rejects_out_of_range_and_non_finite_values,success,748.038,1.659,2026-11-05T06:52:49Z,50257030.0,,
+experimental-bsan,image-colorizer-1.1.9,config::tests::parse_positive_f32_rejects_zero,success,748.038,1.798,2026-11-05T06:52:51Z,50257030.0,,
+experimental-bsan,image-colorizer-1.1.9,server::tests::normalizes_plain_colorscheme_lines,success,748.038,1.869,2026-11-05T06:52:52Z,50257030.0,,
+experimental-bsan,image-colorizer-1.1.9,server::tests::parses_base16_yaml_into_ordered_plain_colors,success,748.038,1.855,2026-11-05T06:52:54Z,50257030.0,,
+experimental-bsan,image-colorizer-1.1.9,server::tests::web_preview_resize_allows_super_ultrawide_1440p,success,748.038,1.832,2026-11-05T06:52:56Z,50257030.0,,
+experimental-bsan,image-colorizer-1.1.9,server::tests::web_preview_resize_caps_large_images,timeout,748.038,150.021,2026-11-05T06:55:26Z,50257030.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,image-colorizer-1.1.9,server::tests::web_preview_resize_keeps_small_images_unchanged,success,748.038,2.010,2026-11-05T06:55:28Z,50257030.0,,

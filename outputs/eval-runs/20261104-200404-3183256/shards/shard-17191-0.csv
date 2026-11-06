@@ -1,0 +1,4 @@
+experimental-bsan,uiuifree-elastic-0.2.33,case01,test_failed,275.451,4.074,2026-11-05T08:19:01Z,50262029.0,panic,"thread 'case01' (65546) panicked at tests/integration_test.rs:84:5: Index作成"
+experimental-bsan,uiuifree-elastic-0.2.33,case02,test_failed,275.451,4.727,2026-11-05T08:19:06Z,50262029.0,panic,"thread 'case02' (65759) panicked at tests/integration_test2.rs:27:9: assertion failed: api2.indices().exists(""test_case"").await.is_ok()"
+experimental-bsan,uiuifree-elastic-0.2.33,case03,test_failed,275.451,3.390,2026-11-05T08:19:09Z,50262029.0,panic,"thread 'case03' (65868) panicked at tests/integration_test.rs:34:5: error sending request for url (http://localhost:9200/test_case/_doc/25?refresh=true): error trying to connect: tcp connect error: Connection refused (os error 111)"
+experimental-bsan,uiuifree-elastic-0.2.33,case04,success,275.451,4.438,2026-11-05T08:19:14Z,50262029.0,,

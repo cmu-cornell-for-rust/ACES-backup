@@ -1,0 +1,4 @@
+experimental-bsan,gcd-cli-1.2.0,db::test::add_existing_project,test_failed,143.183,1.871,2026-11-05T17:49:33Z,50276195.0,panic,"thread 'db::test::add_existing_project' (61049) panicked at src/db.rs:351:9: assertion failed: result.is_ok()"
+experimental-bsan,gcd-cli-1.2.0,db::test::alias,test_failed,143.183,1.865,2026-11-05T17:49:35Z,50276195.0,panic,"thread 'db::test::alias' (61135) panicked at src/db.rs:351:9: assertion failed: result.is_ok()"
+experimental-bsan,gcd-cli-1.2.0,db::test::add_new_existing_project,test_failed,143.183,1.877,2026-11-05T17:49:37Z,50276195.0,panic,"thread 'db::test::add_new_existing_project' (61222) panicked at src/db.rs:351:9: assertion failed: result.is_ok()"
+experimental-bsan,gcd-cli-1.2.0,projectsfinder::tests::test_find_projects,test_failed,143.183,3.106,2026-11-05T17:49:40Z,50276195.0,panic,"thread 'projectsfinder::tests::test_find_projects' (61299) panicked at src/projectsfinder.rs:33:9: assertion `left == right` failed"

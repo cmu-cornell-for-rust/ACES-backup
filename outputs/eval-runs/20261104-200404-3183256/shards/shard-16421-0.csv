@@ -1,0 +1,4 @@
+experimental-bsan,cling-0.1.2,anymap::tests::test_anymap,success,285.716,6.033,2026-11-05T07:46:54Z,50260825.0,,
+experimental-bsan,cling-0.1.2,handler_tests,success,285.716,6.033,2026-11-05T07:47:00Z,50260825.0,,
+experimental-bsan,cling-0.1.2,trycmd,test_failed,285.716,3.837,2026-11-05T07:47:04Z,50260825.0,panic,"thread 'trycmd' (6697) panicked at tests/examples_tests.rs:4:57: called `Result::unwrap()` on an `Err` value: Error { inner: ""Cargo command failed: The cargo subcommand returned an error.\nerror: can't find example `bad-practice` at path `/work/../examples/bad-practice.rs`\n --> /work/Cargo.toml\ner"
+experimental-bsan,cling-0.1.2,ui,timeout,285.716,150.061,2026-11-05T07:49:34Z,50260825.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

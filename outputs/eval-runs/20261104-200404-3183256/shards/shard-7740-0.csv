@@ -1,0 +1,26 @@
+experimental-bsan,proc-quote-0.4.0,test_advanced,success,38.001,7.384,2026-11-05T04:14:51Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_append_tokens,success,38.001,7.074,2026-11-05T04:14:58Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_box_str,success,38.001,7.089,2026-11-05T04:15:05Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_char,test_failed,38.001,7.144,2026-11-05T04:15:12Z,50248843.0,panic,"thread 'test_char' (61203) panicked at tests/types.rs:71:5: assertion `left == right` failed"
+experimental-bsan,proc-quote-0.4.0,test_closure,success,38.001,7.086,2026-11-05T04:15:19Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_cow,success,38.001,7.068,2026-11-05T04:15:27Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_duplicate,success,38.001,7.061,2026-11-05T04:15:34Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_empty_quote,success,38.001,7.076,2026-11-05T04:15:41Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_floating,success,38.001,7.089,2026-11-05T04:15:48Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_ident,success,38.001,7.157,2026-11-05T04:15:55Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_integer,success,38.001,7.081,2026-11-05T04:16:02Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_quote_impl,success,38.001,7.141,2026-11-05T04:16:09Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_raw_ident,success,38.001,7.082,2026-11-05T04:16:16Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_repetition_iterators,success,38.001,7.065,2026-11-05T04:16:23Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_repetition_nested,test_failed,38.001,4.386,2026-11-05T04:16:28Z,50248843.0,panic,"thread 'test_repetition_nested' (70199) panicked at tests/repetition.rs:50:5: assertion `left == right` failed"
+experimental-bsan,proc-quote-0.4.0,test_repetition_same_iter_twice,success,38.001,7.152,2026-11-05T04:16:35Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_repetition_simple,test_failed,38.001,4.367,2026-11-05T04:16:39Z,50248843.0,panic,"thread 'test_repetition_simple' (72068) panicked at tests/repetition.rs:23:5: assertion `left == right` failed"
+experimental-bsan,proc-quote-0.4.0,test_repetition_slices,success,38.001,7.082,2026-11-05T04:16:46Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_repetition_totokens,success,38.001,7.085,2026-11-05T04:16:54Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_repetition_trait_name_collision,success,38.001,7.053,2026-11-05T04:17:01Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_repetition_two_vars,test_failed,38.001,4.373,2026-11-05T04:17:05Z,50248843.0,panic,"thread 'test_repetition_two_vars' (75179) panicked at tests/repetition.rs:36:5: assertion `left == right` failed"
+experimental-bsan,proc-quote-0.4.0,test_repetition_without_consuming,success,38.001,7.067,2026-11-05T04:17:12Z,50248843.0,,
+experimental-bsan,proc-quote-0.4.0,test_str,test_failed,38.001,7.136,2026-11-05T04:17:19Z,50248843.0,panic,"thread 'test_str' (77183) panicked at tests/types.rs:79:5: assertion `left == right` failed"
+experimental-bsan,proc-quote-0.4.0,test_string,test_failed,38.001,7.119,2026-11-05T04:17:26Z,50248843.0,panic,"thread 'test_string' (77904) panicked at tests/types.rs:87:5: assertion `left == right` failed"
+experimental-bsan,proc-quote-0.4.0,test_substitution,test_failed,38.001,2.949,2026-11-05T04:17:29Z,50248843.0,panic,"thread 'test_substitution' (78209) panicked at tests/interpolation.rs:41:5: assertion `left == right` failed"
+experimental-bsan,proc-quote-0.4.0,test_var_name_conflict,test_failed,38.001,4.347,2026-11-05T04:17:34Z,50248843.0,panic,"thread 'test_var_name_conflict' (78730) panicked at tests/repetition.rs:62:5: assertion `left == right` failed"

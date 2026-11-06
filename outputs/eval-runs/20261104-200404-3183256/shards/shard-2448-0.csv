@@ -1,0 +1,93 @@
+experimental-bsan,oxide-auth-0.6.1,code_grant::accesstoken::tests::bearer_token_encoding,success,225.349,1.684,2026-11-05T02:08:05Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,code_grant::accesstoken::tests::no_refresh_encoding,success,225.349,1.700,2026-11-05T02:08:07Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::accesstoken::test::test_client_id_and_secret,success,225.349,1.715,2026-11-05T02:08:09Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::accesstoken::test::test_client_id_only,success,225.349,1.720,2026-11-05T02:08:10Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_equivalent_url,success,225.349,1.889,2026-11-05T02:08:12Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_empty_password,timeout,225.349,150.013,2026-11-05T02:10:42Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_invalid_basic,timeout,225.349,150.014,2026-11-05T02:13:12Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_invalid_redirection,timeout,225.349,150.012,2026-11-05T02:15:42Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_multiple_client_indications,timeout,225.349,150.012,2026-11-05T02:18:12Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_multiple_codes,timeout,225.349,150.014,2026-11-05T02:20:42Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_no_code,timeout,225.349,150.013,2026-11-05T02:23:12Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_public_authorization,success,225.349,1.717,2026-11-05T02:23:14Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_public_missing_client,success,225.349,1.711,2026-11-05T02:23:16Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_unknown_client,timeout,225.349,150.012,2026-11-05T02:25:46Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_wrong_authentication,timeout,225.349,150.014,2026-11-05T02:28:16Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_wrong_grant_type,timeout,225.349,150.014,2026-11-05T02:30:46Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_wrong_password,timeout,225.349,150.011,2026-11-05T02:33:16Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_request_wrong_redirection,timeout,225.349,150.012,2026-11-05T02:35:46Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_valid_private,timeout,225.349,150.013,2026-11-05T02:38:16Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_valid_public,success,225.349,1.785,2026-11-05T02:38:18Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_valid_public_duplicate_secret,success,225.349,1.735,2026-11-05T02:38:20Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::access_valid_public_empty_secret,success,225.349,1.778,2026-11-05T02:38:21Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::private_duplicate_authentication,timeout,225.349,150.014,2026-11-05T02:40:52Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::private_in_body,timeout,225.349,150.014,2026-11-05T02:43:22Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::regression_case_insensitive_basic,timeout,225.349,150.013,2026-11-05T02:45:52Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::access_token::unwanted_private_in_body_fails,timeout,225.349,150.013,2026-11-05T02:48:22Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::authorization::auth_request_error_denied,timeout,225.349,150.015,2026-11-05T02:50:52Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::authorization::auth_request_error_malformed_scope,timeout,225.349,150.014,2026-11-05T02:53:22Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::authorization::auth_request_error_unsupported_method,timeout,225.349,150.015,2026-11-05T02:55:52Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::authorization::auth_request_silent_invalid_redirect,timeout,225.349,150.014,2026-11-05T02:58:22Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::authorization::auth_request_silent_mismatching_literal_redirect,timeout,225.349,150.014,2026-11-05T03:00:52Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::authorization::auth_request_silent_mismatching_redirect,timeout,225.349,150.015,2026-11-05T03:03:22Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::authorization::auth_request_silent_missing_client,timeout,225.349,150.013,2026-11-05T03:05:52Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::authorization::auth_request_silent_unknown_client,timeout,225.349,150.015,2026-11-05T03:08:22Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::authorization::auth_success,timeout,225.349,150.013,2026-11-05T03:10:52Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_body_credentials,timeout,225.349,150.013,2026-11-05T03:13:22Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_credentials_deny_body_missing_password,timeout,225.349,150.014,2026-11-05T03:15:52Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_credentials_deny_body_unknown_client,timeout,225.349,150.014,2026-11-05T03:18:22Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_credentials_deny_incorrect_credentials,timeout,225.349,150.014,2026-11-05T03:20:52Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_credentials_deny_missing_credentials,timeout,225.349,150.013,2026-11-05T03:23:22Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_credentials_deny_public_client,success,225.349,1.710,2026-11-05T03:23:24Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_credentials_deny_unknown_client,timeout,225.349,150.014,2026-11-05T03:25:54Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_credentials_deny_unknown_client_missing_password,timeout,225.349,150.014,2026-11-05T03:28:24Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_credentials_request_error_denied,timeout,225.349,150.012,2026-11-05T03:30:54Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_credentials_request_error_malformed_scope,timeout,225.349,150.014,2026-11-05T03:33:24Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_credentials_request_error_unsupported_grant_type,timeout,225.349,150.013,2026-11-05T03:35:54Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_credentials_success,timeout,225.349,150.014,2026-11-05T03:38:24Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_credentials_success_changed_owner,timeout,225.349,150.014,2026-11-05T03:40:54Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::client_credentials::client_duplicate_credentials_denied,timeout,225.349,150.012,2026-11-05T03:43:24Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::pkce::pkce_correct_verifier,success,225.349,1.825,2026-11-05T03:43:26Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::pkce::pkce_failed_verifier,success,225.349,1.779,2026-11-05T03:43:28Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::refresh::access_valid_private,timeout,225.349,150.014,2026-11-05T03:45:58Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::refresh::access_valid_public,success,225.349,1.800,2026-11-05T03:46:00Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::refresh::invalid_request,timeout,225.349,150.011,2026-11-05T03:48:30Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::refresh::private_invalid_token,timeout,225.349,150.011,2026-11-05T03:51:00Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::refresh::private_wrong_client_fails,timeout,225.349,150.013,2026-11-05T03:53:30Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::refresh::public_invalid_token,success,225.349,1.712,2026-11-05T03:53:32Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::refresh::public_private_invalid_grant,timeout,225.349,150.012,2026-11-05T03:56:02Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::refresh::regression_case_insensitive_basic,timeout,225.349,150.012,2026-11-05T03:58:32Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::resource::resource_casing_success,success,225.349,1.648,2026-11-05T03:58:33Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::resource::resource_invalid_token,success,225.349,1.643,2026-11-05T03:58:35Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::resource::resource_no_authorization,success,225.349,1.629,2026-11-05T03:58:37Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::resource::resource_scope_too_small,success,225.349,1.643,2026-11-05T03:58:38Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::resource::resource_success,success,225.349,1.641,2026-11-05T03:58:40Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::resource::resource_wrong_method,success,225.349,1.628,2026-11-05T03:58:41Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,endpoint::tests::resource::resource_wrong_scope,success,225.349,1.641,2026-11-05T03:58:43Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::authorizer::tests::bad_generator,success,225.349,1.634,2026-11-05T03:58:45Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::authorizer::tests::random_test_suite,success,225.349,1.615,2026-11-05T03:58:46Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::authorizer::tests::signing_test_suite,success,225.349,1.720,2026-11-05T03:58:48Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::generator::tests::assert_send_sync_static,success,225.349,1.608,2026-11-05T03:58:50Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::grant::tests::iteration,success,225.349,1.598,2026-11-05T03:58:51Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::issuer::tests::bad_generator,success,225.349,1.622,2026-11-05T03:58:53Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::issuer::tests::random_has_refresh,success,225.349,1.598,2026-11-05T03:58:55Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::issuer::tests::random_refresh_rotation,success,225.349,1.607,2026-11-05T03:58:56Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::issuer::tests::random_test_suite,success,225.349,1.611,2026-11-05T03:58:58Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::issuer::tests::signer_no_default_refresh,success,225.349,1.704,2026-11-05T03:59:00Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::issuer::tests::signer_test_suite,success,225.349,2.101,2026-11-05T03:59:02Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::registrar::tests::client_map,timeout,225.349,150.014,2026-11-05T04:01:32Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,primitives::registrar::tests::confidential_client,timeout,225.349,150.011,2026-11-05T04:04:02Z,50238648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oxide-auth-0.6.1,primitives::registrar::tests::deserialize_invalid_exact_url,success,225.349,1.586,2026-11-05T04:04:03Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::registrar::tests::ignore_local_port_url_eq_local,success,225.349,1.707,2026-11-05T04:04:05Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::registrar::tests::ignore_local_port_url_eq_not_local,success,225.349,1.632,2026-11-05T04:04:07Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::registrar::tests::ignore_local_port_url_new,success,225.349,1.681,2026-11-05T04:04:08Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::registrar::tests::localhost_redirect_uris,success,225.349,1.911,2026-11-05T04:04:10Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::registrar::tests::public_client,success,225.349,1.590,2026-11-05T04:04:12Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::registrar::tests::roundtrip_serialization_exact_url,success,225.349,1.658,2026-11-05T04:04:14Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::registrar::tests::roundtrip_serialization_ignore_local_port_url,success,225.349,1.632,2026-11-05T04:04:15Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::registrar::tests::with_additional_redirect_uris,success,225.349,1.812,2026-11-05T04:04:17Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::scope::tests::deserialize_invalid_scope,success,225.349,1.616,2026-11-05T04:04:19Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::scope::tests::roundtrip_serialization_scope,success,225.349,1.611,2026-11-05T04:04:20Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::scope::tests::test_compare,success,225.349,1.667,2026-11-05T04:04:22Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::scope::tests::test_iterating,success,225.349,1.663,2026-11-05T04:04:24Z,50238648.0,,
+experimental-bsan,oxide-auth-0.6.1,primitives::scope::tests::test_parsing,success,225.349,1.701,2026-11-05T04:04:25Z,50238648.0,,

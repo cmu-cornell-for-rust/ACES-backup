@@ -1,0 +1,10 @@
+experimental-bsan,jwks_client_rs-0.6.10,client::test::decode_accepts_token_when_nbf_is_in_the_past,timeout,540.227,150.024,2026-11-05T06:29:25Z,50255712.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jwks_client_rs-0.6.10,client::test::decode_missing_kid_in_header,timeout,540.227,150.015,2026-11-05T06:31:56Z,50255712.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jwks_client_rs-0.6.10,client::test::decode_rejects_token_when_nbf_is_in_the_future,timeout,540.227,150.019,2026-11-05T06:34:26Z,50255712.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jwks_client_rs-0.6.10,client::test::get_key,success,540.227,93.677,2026-11-05T06:35:59Z,50255712.0,,
+experimental-bsan,jwks_client_rs-0.6.10,client::test::get_key_after_expiration_should_update,success,540.227,94.649,2026-11-05T06:37:34Z,50255712.0,,
+experimental-bsan,jwks_client_rs-0.6.10,client::test::get_key_fails_to_fetch_keys,success,540.227,92.158,2026-11-05T06:39:06Z,50255712.0,,
+experimental-bsan,jwks_client_rs-0.6.10,client::test::get_key_key_not_found,success,540.227,94.044,2026-11-05T06:40:40Z,50255712.0,,
+experimental-bsan,jwks_client_rs-0.6.10,keyset::tests::deserialize_public_ec_key_set,success,540.227,1.935,2026-11-05T06:40:42Z,50255712.0,,
+experimental-bsan,jwks_client_rs-0.6.10,keyset::tests::deserialize_public_okp_key_set,success,540.227,1.685,2026-11-05T06:40:44Z,50255712.0,,
+experimental-bsan,jwks_client_rs-0.6.10,keyset::tests::deserialize_public_rsa_key_set,success,540.227,1.710,2026-11-05T06:40:46Z,50255712.0,,

@@ -1,0 +1,74 @@
+experimental-bsan,agnostic-lite-0.3.16,async_io::delay::tests::test_delay,test_failed,166.324,11.725,2026-11-05T02:20:46Z,50240200.0,gc,"test async_io::delay::tests::test_delay ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_io::delay::tests::test_delay_abort,success,166.324,1.546,2026-11-05T02:20:48Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,async_io::delay::tests::test_delay_at,test_failed,166.324,11.688,2026-11-05T02:21:00Z,50240200.0,gc,"test async_io::delay::tests::test_delay_at ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_io::delay::tests::test_delay_cancel,success,166.324,1.549,2026-11-05T02:21:01Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,async_io::delay::tests::test_delay_reset,test_failed,166.324,11.706,2026-11-05T02:21:13Z,50240200.0,gc,"test async_io::delay::tests::test_delay_reset ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_io::delay::tests::test_delay_reset_at,test_failed,166.324,11.714,2026-11-05T02:21:25Z,50240200.0,gc,"test async_io::delay::tests::test_delay_reset_at ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_io::interval::tests::test_interval,test_failed,166.324,11.766,2026-11-05T02:21:36Z,50240200.0,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_io::interval::tests::test_interval_at,test_failed,166.324,11.696,2026-11-05T02:21:48Z,50240200.0,gc,"test async_io::interval::tests::test_interval_at ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_io::interval::tests::test_interval_reset,test_failed,166.324,11.774,2026-11-05T02:22:00Z,50240200.0,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_io::interval::tests::test_interval_reset_at,test_failed,166.324,11.766,2026-11-05T02:22:12Z,50240200.0,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_io::interval::tests::test_object_safe,success,166.324,1.540,2026-11-05T02:22:13Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,async_io::sleep::tests::test_asyncio_sleep,test_failed,166.324,12.539,2026-11-05T02:22:26Z,50240200.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 73 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_io::sleep::tests::test_asyncio_sleep_reset,test_failed,166.324,13.557,2026-11-05T02:22:39Z,50240200.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 73 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_io::sleep::tests::test_asyncio_sleep_reset2,test_failed,166.324,13.545,2026-11-05T02:22:53Z,50240200.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 73 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_io::sleep::tests::test_asyncio_sleep_until,test_failed,166.324,12.548,2026-11-05T02:23:05Z,50240200.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 73 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_io::sleep::tests::test_object_safe,success,166.324,1.537,2026-11-05T02:23:07Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,async_io::timeout::tests::test_timeout,success,166.324,1.750,2026-11-05T02:23:09Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,async_io::timeout::tests::test_timeout_at,success,166.324,1.779,2026-11-05T02:23:11Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,async_std::after::tests::test_after_abort,success,166.324,3.241,2026-11-05T02:23:14Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,async_std::after::tests::test_after_cancel,success,166.324,2.628,2026-11-05T02:23:16Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,async_std::after::tests::test_after_drop,success,166.324,3.237,2026-11-05T02:23:20Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,async_std::after::tests::test_after_handle,test_failed,166.324,12.632,2026-11-05T02:23:32Z,50240200.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 73 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,agnostic-lite-0.3.16,async_std::after::tests::test_after_reset_to_future,success,166.324,3.419,2026-11-05T02:23:36Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,async_std::after::tests::test_after_reset_to_pass,success,166.324,2.663,2026-11-05T02:23:38Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,smol::after::tests::test_after_abort,success,166.324,2.672,2026-11-05T02:23:41Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,smol::after::tests::test_after_cancel,success,166.324,2.087,2026-11-05T02:23:43Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,smol::after::tests::test_after_drop,success,166.324,2.667,2026-11-05T02:23:46Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,smol::after::tests::test_after_handle,success,166.324,2.562,2026-11-05T02:23:48Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,smol::after::tests::test_after_reset_to_future,success,166.324,2.840,2026-11-05T02:23:51Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,smol::after::tests::test_after_reset_to_pass,success,166.324,2.088,2026-11-05T02:23:53Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,time::delay::test_aborted_error,success,166.324,1.546,2026-11-05T02:23:55Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,time::timeout::test_elapsed_error,success,166.324,1.558,2026-11-05T02:23:57Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::after::tests::test_after_abort,success,166.324,2.789,2026-11-05T02:23:59Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::after::tests::test_after_cancel,success,166.324,2.182,2026-11-05T02:24:02Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::after::tests::test_after_drop,success,166.324,2.786,2026-11-05T02:24:04Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::after::tests::test_after_handle,success,166.324,2.709,2026-11-05T02:24:07Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::after::tests::test_after_reset_to_future,success,166.324,2.963,2026-11-05T02:24:10Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::after::tests::test_after_reset_to_pass,success,166.324,2.205,2026-11-05T02:24:12Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::delay::tests::test_delay,success,166.324,1.690,2026-11-05T02:24:14Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::delay::tests::test_delay_abort,success,166.324,1.677,2026-11-05T02:24:16Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::delay::tests::test_delay_at,success,166.324,1.685,2026-11-05T02:24:17Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::delay::tests::test_delay_cancel,success,166.324,1.659,2026-11-05T02:24:19Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::delay::tests::test_delay_reset,success,166.324,1.693,2026-11-05T02:24:21Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::delay::tests::test_delay_reset_at,success,166.324,1.685,2026-11-05T02:24:22Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::interval::tests::test_interval,success,166.324,1.976,2026-11-05T02:24:24Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::interval::tests::test_interval_at,success,166.324,2.582,2026-11-05T02:24:27Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::interval::tests::test_interval_reset,success,166.324,2.659,2026-11-05T02:24:30Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::interval::tests::test_interval_reset_at,success,166.324,2.668,2026-11-05T02:24:32Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::interval::tests::test_object_safe,success,166.324,1.665,2026-11-05T02:24:34Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::sleep::tests::test_object_safe,success,166.324,1.657,2026-11-05T02:24:36Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::sleep::tests::test_tokio_sleep,test_failed,166.324,2.756,2026-11-05T02:24:38Z,50240200.0,panic,"thread 'tokio::sleep::tests::test_tokio_sleep' (87984) panicked at src/tokio/sleep.rs:89:5: assertion failed: elapsed >= ORIGINAL && elapsed < ORIGINAL + BOUND"
+experimental-bsan,agnostic-lite-0.3.16,tokio::sleep::tests::test_tokio_sleep_reset,success,166.324,3.669,2026-11-05T02:24:42Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::sleep::tests::test_tokio_sleep_reset2,success,166.324,3.665,2026-11-05T02:24:46Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::sleep::tests::test_tokio_sleep_until,success,166.324,2.675,2026-11-05T02:24:48Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::timeout::tests::test_timeout,success,166.324,2.485,2026-11-05T02:24:51Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,tokio::timeout::tests::test_timeout_at,success,166.324,2.489,2026-11-05T02:24:53Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::delay::tests::test_delay,success,166.324,1.555,2026-11-05T02:24:55Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::delay::tests::test_delay_abort,success,166.324,1.545,2026-11-05T02:24:57Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::delay::tests::test_delay_at,success,166.324,1.559,2026-11-05T02:24:58Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::delay::tests::test_delay_cancel,success,166.324,1.555,2026-11-05T02:25:00Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::delay::tests::test_delay_reset,success,166.324,1.570,2026-11-05T02:25:01Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::delay::tests::test_delay_reset_at,success,166.324,1.570,2026-11-05T02:25:03Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::interval::tests::test_interval,success,166.324,1.863,2026-11-05T02:25:05Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::interval::tests::test_interval_at,success,166.324,1.862,2026-11-05T02:25:07Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::interval::tests::test_interval_reset,success,166.324,1.954,2026-11-05T02:25:09Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::interval::tests::test_interval_reset_at,success,166.324,1.955,2026-11-05T02:25:11Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::interval::tests::test_object_safe,success,166.324,1.549,2026-11-05T02:25:12Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::sleep::tests::test_object_safe,success,166.324,1.550,2026-11-05T02:25:14Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::sleep::tests::test_wasm_sleep,success,166.324,2.545,2026-11-05T02:25:16Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::sleep::tests::test_wasm_sleep_reset,success,166.324,3.539,2026-11-05T02:25:20Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::sleep::tests::test_wasm_sleep_reset2,success,166.324,3.555,2026-11-05T02:25:23Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::sleep::tests::test_wasm_sleep_until,success,166.324,2.542,2026-11-05T02:25:26Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::timeout::tests::test_timeout,success,166.324,1.757,2026-11-05T02:25:28Z,50240200.0,,
+experimental-bsan,agnostic-lite-0.3.16,wasm::timeout::tests::test_timeout_at,success,166.324,1.754,2026-11-05T02:25:29Z,50240200.0,,

@@ -1,0 +1,11 @@
+experimental-bsan,litime-3.4.0,formatter::test::issue_4,test_failed,106.052,3.391,2026-11-05T06:01:27Z,50254912.0,panic,"thread 'formatter::test::issue_4' (76914) panicked at src/formatter.rs:324:9: assertion `left == right` failed"
+experimental-bsan,litime-3.4.0,formatter::test::issue_6,test_failed,106.052,2.223,2026-11-05T06:01:30Z,50254912.0,panic,"thread 'formatter::test::issue_6' (77384) panicked at src/formatter.rs:356:9: assertion `left == right` failed"
+experimental-bsan,litime-3.4.0,formatter::test::no_end,test_failed,106.052,1.767,2026-11-05T06:01:31Z,50254912.0,panic,"thread 'formatter::test::no_end' (77813) panicked at src/formatter.rs:290:9: assertion `left == right` failed"
+experimental-bsan,litime-3.4.0,formatter::test::no_start,test_failed,106.052,1.768,2026-11-05T06:01:33Z,50254912.0,panic,"thread 'formatter::test::no_start' (78124) panicked at src/formatter.rs:263:9: assertion `left == right` failed"
+experimental-bsan,litime-3.4.0,formatter::test::short_quote,test_failed,106.052,1.785,2026-11-05T06:01:35Z,50254912.0,panic,"thread 'formatter::test::short_quote' (78355) panicked at src/formatter.rs:236:9: assertion `left == right` failed"
+experimental-bsan,litime-3.4.0,formatter::test::wrapped_quote,test_failed,106.052,1.972,2026-11-05T06:01:37Z,50254912.0,panic,"thread 'formatter::test::wrapped_quote' (79026) panicked at src/formatter.rs:208:9: assertion `left == right` failed"
+experimental-bsan,litime-3.4.0,test_get_minute_nsfw,timeout,106.052,150.017,2026-11-05T06:04:07Z,50254912.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,litime-3.4.0,test_get_minute_sfw,timeout,106.052,150.015,2026-11-05T06:06:37Z,50254912.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,litime-3.4.0,tests::tz_parse_local_and_utc,success,106.052,4.397,2026-11-05T06:06:41Z,50254912.0,,
+experimental-bsan,litime-3.4.0,tests::tz_parse_offsets,success,106.052,4.418,2026-11-05T06:06:46Z,50254912.0,,
+experimental-bsan,litime-3.4.0,tests::tz_parse_region,success,106.052,4.392,2026-11-05T06:06:50Z,50254912.0,,

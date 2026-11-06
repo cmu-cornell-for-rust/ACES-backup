@@ -1,0 +1,17 @@
+experimental-bsan,tokio-pipe-0.2.12,tests::test,success,50.714,140.453,2026-11-05T05:14:22Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_atomic_write_io_slices,timeout,50.714,150.016,2026-11-05T05:16:52Z,50251891.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tokio-pipe-0.2.12,tests::test_from_child_no_stdio,test_failed,50.714,1.857,2026-11-05T05:16:53Z,50251891.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,tokio-pipe-0.2.12,tests::test_from_child_stdio,test_failed,50.714,1.833,2026-11-05T05:16:55Z,50251891.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,tokio-pipe-0.2.12,tests::test_piperead_from_raw_fd_checked_failure_not_pipe,success,50.714,1.848,2026-11-05T05:16:57Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_piperead_from_raw_fd_checked_failure_not_read_end,success,50.714,1.854,2026-11-05T05:16:59Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_piperead_from_raw_fd_checked_success,success,50.714,1.857,2026-11-05T05:17:01Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_pipewrite_from_raw_fd_checked_failure_not_pipe,success,50.714,1.857,2026-11-05T05:17:03Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_pipewrite_from_raw_fd_checked_failure_not_write_end,success,50.714,1.867,2026-11-05T05:17:05Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_pipewrite_from_raw_fd_checked_success,success,50.714,1.866,2026-11-05T05:17:07Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_read_to_end,success,50.714,1.886,2026-11-05T05:17:08Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_splice,success,50.714,3.571,2026-11-05T05:17:12Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_splice_no_inf_loop,success,50.714,5.332,2026-11-05T05:17:17Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_tee,success,50.714,4.001,2026-11-05T05:17:21Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_tee_no_inf_loop,success,50.714,5.320,2026-11-05T05:17:27Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_write_after_shutdown,success,50.714,1.858,2026-11-05T05:17:29Z,50251891.0,,
+experimental-bsan,tokio-pipe-0.2.12,tests::test_writev,success,50.714,2.420,2026-11-05T05:17:31Z,50251891.0,,

@@ -1,0 +1,17 @@
+experimental-bsan,loro-common-1.16.0,error::tests::internal_encode_error_contains_caller_location,test_failed,52.601,1.671,2026-11-05T05:11:59Z,50251703.0,panic,"thread 'error::tests::internal_encode_error_contains_caller_location' (45471) panicked at src/error.rs:272:9: assertion failed: msg.contains(""crates/loro-common/src/error.rs"")"
+experimental-bsan,loro-common-1.16.0,error::tests::internal_loro_error_contains_caller_location,test_failed,52.601,1.667,2026-11-05T05:12:00Z,50251703.0,panic,"thread 'error::tests::internal_loro_error_contains_caller_location' (45862) panicked at src/error.rs:262:9: assertion failed: msg.contains(""crates/loro-common/src/error.rs"")"
+experimental-bsan,loro-common-1.16.0,internal_string::tests::test_long_string_cache,success,52.601,1.618,2026-11-05T05:12:02Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,internal_string::tests::test_long_string_cache_drop,success,52.601,1.611,2026-11-05T05:12:04Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,internal_string::tests::test_string_cache,success,52.601,1.597,2026-11-05T05:12:05Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,macros::test::test_value_macro,success,52.601,1.623,2026-11-05T05:12:07Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,span::test_id_span::merge,success,52.601,1.591,2026-11-05T05:12:08Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,test::container_id_try_from_bytes_rejects_trailing_bytes,success,52.601,1.602,2026-11-05T05:12:10Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,test::is_mergeable_rejects_prefix_only_roots,success,52.601,1.606,2026-11-05T05:12:12Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,test::mergeable_marker_exact_layout,success,52.601,1.594,2026-11-05T05:12:13Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,test::mergeable_marker_round_trips_every_kind,success,52.601,1.657,2026-11-05T05:12:15Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,test::parse_mergeable_marker_rejects_non_markers,success,52.601,1.625,2026-11-05T05:12:17Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,test::parse_mergeable_marker_rejects_unknown_kind,success,52.601,1.601,2026-11-05T05:12:18Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,test::parse_mergeable_rejects_malformed_path_payloads,success,52.601,1.718,2026-11-05T05:12:20Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,test::test_container_id_convert_to_and_from_str,success,52.601,1.609,2026-11-05T05:12:21Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,test::test_container_id_encode_and_decode,success,52.601,1.809,2026-11-05T05:12:23Z,50251703.0,,
+experimental-bsan,loro-common-1.16.0,test::test_convert_invalid_container_id_str,success,52.601,1.593,2026-11-05T05:12:25Z,50251703.0,,

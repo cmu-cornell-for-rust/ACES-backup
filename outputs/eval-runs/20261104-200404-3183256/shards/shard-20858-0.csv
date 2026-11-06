@@ -1,0 +1,1 @@
+experimental-bsan,octocrate-core-0.1.7,request::tests::test_request_builder,test_failed,241.750,2.047,2026-11-05T09:39:38Z,50266756.0,panic,"thread 'request::tests::test_request_builder' (23210) panicked at src/request.rs:153:67: called `Result::unwrap()` on an `Err` value: Error(""error sending request for url (https://api.github.com/repos/panghu-huang/octocrate?page=1)"")"

@@ -1,0 +1,7 @@
+experimental-bsan,obj-0.10.2,load_square_non_compliant,success,12.277,6.066,2026-11-05T06:55:47Z,50258058.0,,
+experimental-bsan,obj-0.10.2,obj::tests::load_error_on_zero_vertex_numbers,success,12.277,5.873,2026-11-05T06:55:53Z,50258058.0,,
+experimental-bsan,obj-0.10.2,round_trip_sponza_no_mtls,test_failed,12.277,5.916,2026-11-05T06:55:59Z,50258058.0,panic,"thread 'round_trip_sponza_no_mtls' (46468) panicked at tests/round_trip.rs:19:59: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,obj-0.10.2,round_trip_sponza_with_mtl,test_failed,12.277,5.927,2026-11-05T06:56:05Z,50258058.0,panic,"thread 'round_trip_sponza_with_mtl' (46746) panicked at tests/round_trip.rs:30:63: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,obj-0.10.2,test_load_cube_negative_nodeps,success,12.277,6.018,2026-11-05T06:56:11Z,50258058.0,,
+experimental-bsan,obj-0.10.2,test_load_cube_nodeps,success,12.277,5.909,2026-11-05T06:56:17Z,50258058.0,,
+experimental-bsan,obj-0.10.2,test_load_square_nodeps,success,12.277,5.814,2026-11-05T06:56:23Z,50258058.0,,

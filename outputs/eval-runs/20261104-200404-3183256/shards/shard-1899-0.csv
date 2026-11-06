@@ -1,0 +1,117 @@
+experimental-bsan,sns-sdk-2.0.0,bindings::name_registry::simulate::create_update_delete_record,test_failed,1449.723,2.426,2026-11-05T02:16:44Z,50234977.0,panic,"thread 'bindings::name_registry::simulate::create_update_delete_record' (53539) panicked at src/bindings/name_registry.rs:198:49: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,bindings::name_registry::simulate::transfer_domain,test_failed,1449.723,2.053,2026-11-05T02:16:46Z,50234977.0,panic,"thread 'bindings::name_registry::simulate::transfer_domain' (53711) panicked at src/bindings/name_registry.rs:198:49: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,bindings::name_registry::tests::create_encodes_create_and_derives_record_key,success,1449.723,2.229,2026-11-05T02:16:49Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,bindings::name_registry::tests::delete_encodes_delete,success,1449.723,1.905,2026-11-05T02:16:51Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,bindings::name_registry::tests::transfer_encodes_transfer,success,1449.723,1.923,2026-11-05T02:16:53Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,bindings::name_registry::tests::update_encodes_update,success,1449.723,2.029,2026-11-05T02:16:55Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::simulate::create_record,test_failed,1449.723,2.321,2026-11-05T02:16:57Z,50234977.0,panic,"thread 'bindings::record_v2::simulate::create_record' (54659) panicked at src/bindings/record_v2.rs:419:49: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::simulate::delete_record,test_failed,1449.723,2.577,2026-11-05T02:16:59Z,50234977.0,panic,"thread 'bindings::record_v2::simulate::delete_record' (54794) panicked at src/bindings/record_v2.rs:419:49: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::simulate::eth_verify,test_failed,1449.723,2.760,2026-11-05T02:17:02Z,50234977.0,panic,"thread 'bindings::record_v2::simulate::eth_verify' (55039) panicked at src/bindings/record_v2.rs:419:49: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::simulate::solana_verify,test_failed,1449.723,2.576,2026-11-05T02:17:05Z,50234977.0,panic,"thread 'bindings::record_v2::simulate::solana_verify' (55192) panicked at src/bindings/record_v2.rs:419:49: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::simulate::update_record,test_failed,1449.723,2.574,2026-11-05T02:17:07Z,50234977.0,panic,"thread 'bindings::record_v2::simulate::update_record' (55511) panicked at src/bindings/record_v2.rs:419:49: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::simulate::write_roa,test_failed,1449.723,2.587,2026-11-05T02:17:10Z,50234977.0,panic,"thread 'bindings::record_v2::simulate::write_roa' (55606) panicked at src/bindings/record_v2.rs:419:49: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::tests::create_record_v2_accepts_subdomains,success,1449.723,2.762,2026-11-05T02:17:13Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::tests::create_record_v2_tag_and_accounts,success,1449.723,2.611,2026-11-05T02:17:15Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::tests::delete_record_v2_tag_and_accounts,success,1449.723,2.381,2026-11-05T02:17:18Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::tests::eth_validate_record_v2_content_tag_and_accounts,success,1449.723,2.398,2026-11-05T02:17:20Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::tests::record_v2_write_apis_requires_sns,success,1449.723,1.871,2026-11-05T02:17:22Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::tests::update_record_v2_tag_and_accounts,success,1449.723,2.379,2026-11-05T02:17:25Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::tests::validate_record_v2_content_tag_and_accounts,success,1449.723,2.379,2026-11-05T02:17:27Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,bindings::record_v2::tests::write_roa_record_v2_tag_and_accounts,success,1449.723,2.381,2026-11-05T02:17:29Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,bindings::register_domain::test::test_registration,test_failed,1449.723,1.931,2026-11-05T02:17:31Z,50234977.0,panic,"thread 'bindings::register_domain::test::test_registration' (58338) panicked at src/bindings/register_domain.rs:367:62: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,bindings::register_domain::test::test_registration_ref,test_failed,1449.723,1.929,2026-11-05T02:17:33Z,50234977.0,panic,"thread 'bindings::register_domain::test::test_registration_ref' (58548) panicked at src/bindings/register_domain.rs:393:62: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,bindings::register_domain::test::test_registration_requires_top_level_sns,success,1449.723,2.378,2026-11-05T02:17:36Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,derivation::tests::sns_main_domain,success,1449.723,2.004,2026-11-05T02:17:38Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,derivation::tests::sns_reverse_key,success,1449.723,2.173,2026-11-05T02:17:40Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,derivation::tests::sns_sub_domain,success,1449.723,2.074,2026-11-05T02:17:42Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,derivation::tests::srs_constants_match_canonical_pdas,success,1449.723,2.018,2026-11-05T02:17:44Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,derivation::tests::srs_domain,success,1449.723,1.973,2026-11-05T02:17:46Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::domain::tests::test_get_sns_domains_for_owner,test_failed,1449.723,2.055,2026-11-05T02:17:48Z,50234977.0,panic,"thread 'non_blocking::domain::tests::test_get_sns_domains_for_owner' (59612) panicked at src/non_blocking/domain.rs:49:62: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::nft::tests::test_get_nft_records,test_failed,1449.723,2.051,2026-11-05T02:17:50Z,50234977.0,panic,"thread 'non_blocking::nft::tests::test_get_nft_records' (59831) panicked at src/non_blocking/nft.rs:195:62: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::nft::tests::test_get_record_from_mint,test_failed,1449.723,2.047,2026-11-05T02:17:52Z,50234977.0,panic,"thread 'non_blocking::nft::tests::test_get_record_from_mint' (60025) panicked at src/non_blocking/nft.rs:216:62: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::nft::tests::test_get_sns_nfts_for_owner,test_failed,1449.723,2.053,2026-11-05T02:17:54Z,50234977.0,panic,"thread 'non_blocking::nft::tests::test_get_sns_nfts_for_owner' (60248) panicked at src/non_blocking/nft.rs:174:62: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::nft::tests::test_resolve_nft_owner,test_failed,1449.723,2.049,2026-11-05T02:17:56Z,50234977.0,panic,"thread 'non_blocking::nft::tests::test_resolve_nft_owner' (60349) panicked at src/non_blocking/nft.rs:233:62: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::primary_domain::account_tests::primary_domain_account_absent_returns_none,success,1449.723,2.044,2026-11-05T02:17:58Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::primary_domain::account_tests::primary_domain_account_truncated_data_is_rejected,success,1449.723,2.140,2026-11-05T02:18:00Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::primary_domain::account_tests::primary_domain_account_valid_returns_name_account,success,1449.723,2.207,2026-11-05T02:18:03Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::primary_domain::account_tests::primary_domain_account_wrong_owner_is_rejected,success,1449.723,2.191,2026-11-05T02:18:05Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::primary_domain::account_tests::primary_domain_account_wrong_tag_is_rejected,success,1449.723,2.202,2026-11-05T02:18:07Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::primary_domain::tests::test_get_primary_domain,test_failed,1449.723,2.069,2026-11-05T02:18:09Z,50234977.0,panic,"thread 'non_blocking::primary_domain::tests::test_get_primary_domain' (61151) panicked at src/non_blocking/primary_domain.rs:127:62: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::record_v1::tests::test_get_record,test_failed,1449.723,2.061,2026-11-05T02:18:11Z,50234977.0,panic,"thread 'non_blocking::record_v1::tests::test_get_record' (61386) panicked at src/non_blocking/record_v1.rs:31:62: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::record_v2::tests::mainnet::test_get_multiple_records_v2,test_failed,1449.723,2.054,2026-11-05T02:18:13Z,50234977.0,panic,"thread 'non_blocking::record_v2::tests::mainnet::test_get_multiple_records_v2' (61477) panicked at src/non_blocking/record_v2.rs:69:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::record_v2::tests::mainnet::test_get_record_v2,test_failed,1449.723,2.061,2026-11-05T02:18:15Z,50234977.0,panic,"thread 'non_blocking::record_v2::tests::mainnet::test_get_record_v2' (61626) panicked at src/non_blocking/record_v2.rs:69:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::record_v2::tests::test_record_v2_getters_reject_bare_domains,success,1449.723,3.544,2026-11-05T02:18:19Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::name_registry::name_registry_resolvers_validate_accounts,success,1449.723,2.763,2026-11-05T02:18:22Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::reverse::resolve_reverse_with_parent_accepts_unmarked_child_payload,success,1449.723,2.214,2026-11-05T02:18:24Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::reverse::resolve_reverse_with_parent_preserves_legacy_top_level_behavior,success,1449.723,2.802,2026-11-05T02:18:27Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::reverse::resolve_reverse_with_parent_rejects_malformed_payloads,success,1449.723,2.768,2026-11-05T02:18:30Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::reverse::resolve_reverse_with_parent_returns_none_for_absent_account,success,1449.723,2.208,2026-11-05T02:18:32Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::reverse::resolve_reverse_with_parent_targets_child_and_strips_one_marker,success,1449.723,2.533,2026-11-05T02:18:34Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::routing::rejects_unsupported_tld,success,1449.723,1.965,2026-11-05T02:18:36Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::routing::safe_sns_uses_ordinary_sns_resolution,success,1449.723,2.729,2026-11-05T02:18:39Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::routing::safe_sol_applies_the_same_pda_policy_to_both_paths,success,1449.723,3.094,2026-11-05T02:18:42Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::routing::safe_sol_preserves_disabled_srs_routing,success,1449.723,2.754,2026-11-05T02:18:45Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::routing::safe_sol_propagates_resolution_errors,success,1449.723,2.198,2026-11-05T02:18:47Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::routing::safe_sol_rejects_mismatching_srs_and_sns_targets,success,1449.723,2.989,2026-11-05T02:18:50Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::routing::safe_sol_returns_matching_srs_and_sns_target,success,1449.723,3.009,2026-11-05T02:18:53Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::routing::sns_resolves_via_sns_regardless_of_srs_setting,success,1449.723,3.509,2026-11-05T02:18:57Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::routing::sol_is_not_resolved_after_cutoff_when_srs_is_disabled,success,1449.723,1.978,2026-11-05T02:18:59Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::routing::sol_resolves_via_sns_before_cutoff_when_srs_is_disabled,success,1449.723,2.747,2026-11-05T02:19:01Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::routing::sol_resolves_via_srs_when_srs_is_enabled,success,1449.723,2.243,2026-11-05T02:19:04Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::rpc::resolves_reverse_record_from_rpc,test_failed,1449.723,2.053,2026-11-05T02:19:06Z,50234977.0,panic,"thread 'non_blocking::resolve::tests::rpc::resolves_reverse_record_from_rpc' (65576) panicked at src/non_blocking/resolve/tests/rpc.rs:8:58: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::rpc::resolves_reverse_records_in_batch_from_rpc,test_failed,1449.723,2.066,2026-11-05T02:19:08Z,50234977.0,panic,"thread 'non_blocking::resolve::tests::rpc::resolves_reverse_records_in_batch_from_rpc' (65769) panicked at src/non_blocking/resolve/tests/rpc.rs:184:58: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::rpc::resolves_sns_domains_from_rpc,test_failed,1449.723,2.057,2026-11-05T02:19:10Z,50234977.0,panic,"thread 'non_blocking::resolve::tests::rpc::resolves_sns_domains_from_rpc' (65981) panicked at src/non_blocking/resolve/tests/rpc.rs:17:58: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::rpc::resolves_sns_ip_5_fixtures_from_rpc,test_failed,1449.723,2.067,2026-11-05T02:19:12Z,50234977.0,panic,"thread 'non_blocking::resolve::tests::rpc::resolves_sns_ip_5_fixtures_from_rpc' (66115) panicked at src/non_blocking/resolve/tests/rpc.rs:38:58: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::rpc::resolves_sns_ip_5_pda_fixtures_from_rpc,test_failed,1449.723,2.048,2026-11-05T02:19:14Z,50234977.0,panic,"thread 'non_blocking::resolve::tests::rpc::resolves_sns_ip_5_pda_fixtures_from_rpc' (66344) panicked at src/non_blocking/resolve/tests/rpc.rs:127:58: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::rpc::returns_expected_sns_ip_5_fixture_errors_from_rpc,test_failed,1449.723,2.072,2026-11-05T02:19:16Z,50234977.0,panic,"thread 'non_blocking::resolve::tests::rpc::returns_expected_sns_ip_5_fixture_errors_from_rpc' (66581) panicked at src/non_blocking/resolve/tests/rpc.rs:146:58: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::sns::rejects_active_sns_nft_without_holder,success,1449.723,2.962,2026-11-05T02:19:19Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::sns::rejects_missing_or_invalid_sns_registry_accounts,success,1449.723,3.215,2026-11-05T02:19:22Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::srs::applies_pda_policy_to_direct_srs_owner,success,1449.723,3.303,2026-11-05T02:19:26Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::srs::applies_pda_policy_to_srs_token_holder,success,1449.723,4.404,2026-11-05T02:19:30Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::srs::propagates_srs_token_holder_lookup_errors,success,1449.723,2.451,2026-11-05T02:19:32Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::srs::rejects_missing_srs_record,success,1449.723,2.182,2026-11-05T02:19:35Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::srs::rejects_missing_srs_token_holder,success,1449.723,2.555,2026-11-05T02:19:37Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::srs::rejects_missing_srs_token_mint,success,1449.723,2.308,2026-11-05T02:19:40Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::srs::rejects_noncanonical_srs_token_mint,success,1449.723,2.189,2026-11-05T02:19:42Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::srs::rejects_zero_or_multiple_srs_token_holders,success,1449.723,3.041,2026-11-05T02:19:45Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::resolve::tests::srs::resolves_initialized_and_frozen_srs_token_holders,success,1449.723,3.559,2026-11-05T02:19:48Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::subdomain::sub_registrar_tests::rejects_invalid_sub_registrar_accounts,success,1449.723,3.052,2026-11-05T02:19:51Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::subdomain::sub_registrar_tests::resolves_valid_sub_registrar,success,1449.723,2.215,2026-11-05T02:19:54Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::subdomain::tests::test_get_subdomains,test_failed,1449.723,2.076,2026-11-05T02:19:56Z,50234977.0,panic,"thread 'non_blocking::subdomain::tests::test_get_subdomains' (70007) panicked at src/non_blocking/subdomain.rs:79:62: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,sns-sdk-2.0.0,non_blocking::tld::tests::every_full_domain_read_gates_sol_before_account_rpcs,success,1449.723,2.029,2026-11-05T02:19:58Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::tld::tests::every_full_domain_read_skips_the_slot_for_sns,success,1449.723,3.223,2026-11-05T02:20:01Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::tld::tests::pre_cutoff_slots_and_rpc_failures_are_not_cached,success,1449.723,2.018,2026-11-05T02:20:03Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::tld::tests::sns_and_unsupported_tlds_do_not_request_a_slot,success,1449.723,1.973,2026-11-05T02:20:05Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,non_blocking::tld::tests::sol_cutoff_cache_is_endpoint_scoped,success,1449.723,2.007,2026-11-05T02:20:07Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v1::test::deserialize_fixed_width_records_preserves_legacy_text,success,1449.723,1.918,2026-11-05T02:20:09Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v1::test::deserialize_fixed_width_records_rejects_bad_lengths_without_panicking,success,1449.723,1.901,2026-11-05T02:20:11Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v1::test::deserialize_fixed_width_records_uses_exact_prefix,success,1449.723,2.811,2026-11-05T02:20:14Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v1::test::test_serialize_record,success,1449.723,1.879,2026-11-05T02:20:16Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v2::test::decode_record_v2_fields_accepts_unaligned_input,success,1449.723,1.852,2026-11-05T02:20:17Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v2::test::decode_record_v2_fields_reads_fields_in_order,success,1449.723,1.899,2026-11-05T02:20:19Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v2::test::decode_record_v2_fields_rejects_invalid_layouts,success,1449.723,1.859,2026-11-05T02:20:21Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v2::test::test_des_ser,success,1449.723,1.855,2026-11-05T02:20:23Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v2::test::test_deserialize_record_v2_content,success,1449.723,1.874,2026-11-05T02:20:25Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v2::test::test_serialize_record_v2_content,success,1449.723,1.869,2026-11-05T02:20:27Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v2::test::v2_record_key_for_subdomain_matches_domain_key_derivation,success,1449.723,2.411,2026-11-05T02:20:29Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v2::test::verify_roa_accepts_ethereum_self_signed_records,success,1449.723,1.872,2026-11-05T02:20:31Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v2::test::verify_roa_accepts_guardian_records,success,1449.723,1.855,2026-11-05T02:20:33Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v2::test::verify_roa_accepts_solana_self_signed_records,success,1449.723,1.884,2026-11-05T02:20:35Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::record_v2::test::verify_roa_rejects_wrong_self_signed_id,success,1449.723,1.869,2026-11-05T02:20:37Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::test::injective_serializers_require_canonical_addresses,success,1449.723,2.348,2026-11-05T02:20:39Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,record::test::test_get_record_key,success,1449.723,2.191,2026-11-05T02:20:41Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,resolve::tests::ignores_frozen_flag_and_trailing_bytes,success,1449.723,1.863,2026-11-05T02:20:43Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,resolve::tests::parses_direct_and_token_owners,success,1449.723,1.864,2026-11-05T02:20:45Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,resolve::tests::rejects_malformed_srs_records,success,1449.723,1.862,2026-11-05T02:20:47Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,resolve::tests::supports_zero_expiry_and_enforces_nonzero_boundary,success,1449.723,1.851,2026-11-05T02:20:49Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,resolve::tests::validates_extension_bearing_token_2022_holders,success,1449.723,1.889,2026-11-05T02:20:51Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,resolve::tests::validates_extension_bearing_token_2022_mints,success,1449.723,1.879,2026-11-05T02:20:53Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,tld::tests::parse_sns_domain_accepts_canonical_names,success,1449.723,1.848,2026-11-05T02:20:54Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,tld::tests::parse_sns_domain_rejects_malformed_labels,success,1449.723,1.854,2026-11-05T02:20:56Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,tld::tests::parse_sns_domain_rejects_non_canonical,success,1449.723,1.859,2026-11-05T02:20:58Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,tld::tests::parse_sns_domain_rejects_sol_and_bare,success,1449.723,1.846,2026-11-05T02:21:00Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,tld::tests::parse_sns_top_level_domain_accepts_top_level_only,success,1449.723,1.849,2026-11-05T02:21:02Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,tld::tests::parse_sns_top_level_domain_rejects_sol_bare_and_casing,success,1449.723,1.844,2026-11-05T02:21:04Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,tld::tests::parse_sns_top_level_domain_rejects_subdomains,success,1449.723,1.848,2026-11-05T02:21:06Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,tld::tests::parse_supported_tld_accepts_sns_and_sol,success,1449.723,1.833,2026-11-05T02:21:07Z,50234977.0,,
+experimental-bsan,sns-sdk-2.0.0,tld::tests::parse_supported_tld_rejects_bare_and_unknown,success,1449.723,1.848,2026-11-05T02:21:09Z,50234977.0,,

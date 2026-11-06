@@ -1,0 +1,42 @@
+experimental-bsan,forust-ml-0.4.8,binning::tests::test_bin_data,test_failed,68.902,1.520,2026-11-05T03:13:27Z,50244963.0,panic,"thread 'binning::tests::test_bin_data' (50900) panicked at src/binning.rs:137:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,data::tests::test_jaggedmatrix_get_col,success,68.902,1.451,2026-11-05T03:13:28Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,data::tests::test_matrix_get,success,68.902,1.447,2026-11-05T03:13:30Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,data::tests::test_matrix_get_col,success,68.902,1.454,2026-11-05T03:13:31Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,data::tests::test_matrix_get_col_slice,success,68.902,1.442,2026-11-05T03:13:33Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,data::tests::test_matrix_row,success,68.902,1.447,2026-11-05T03:13:34Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,data::tests::test_rowmatrix_append,success,68.902,1.443,2026-11-05T03:13:36Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,data::tests::test_rowmatrix_get,success,68.902,1.462,2026-11-05T03:13:37Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,gradientbooster::tests::test_booster_fit,test_failed,68.902,1.518,2026-11-05T03:13:39Z,50244963.0,panic,"thread 'gradientbooster::tests::test_booster_fit' (51660) panicked at src/gradientbooster.rs:1308:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,gradientbooster::tests::test_booster_fit_nofitted_base_score,test_failed,68.902,1.531,2026-11-05T03:13:40Z,50244963.0,panic,"thread 'gradientbooster::tests::test_booster_fit_nofitted_base_score' (51728) panicked at src/gradientbooster.rs:1340:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,gradientbooster::tests::test_booster_fit_subsample,test_failed,68.902,1.525,2026-11-05T03:13:42Z,50244963.0,panic,"thread 'gradientbooster::tests::test_booster_fit_subsample' (51792) panicked at src/gradientbooster.rs:1276:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,gradientbooster::tests::test_tree_save,test_failed,68.902,1.530,2026-11-05T03:13:43Z,50244963.0,panic,"thread 'gradientbooster::tests::test_tree_save' (51887) panicked at src/gradientbooster.rs:1371:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,histogram::tests::test_single_histogram,test_failed,68.902,1.517,2026-11-05T03:13:45Z,50244963.0,panic,"thread 'histogram::tests::test_single_histogram' (52048) panicked at src/histogram.rs:266:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,metric::tests::test_auc_generc,success,68.902,1.450,2026-11-05T03:13:46Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,metric::tests::test_auc_real_data,success,68.902,1.450,2026-11-05T03:13:48Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,metric::tests::test_log_loss,success,68.902,1.452,2026-11-05T03:13:49Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,metric::tests::test_root_mean_squared_error,success,68.902,1.447,2026-11-05T03:13:51Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,metric::tests::test_root_mean_squared_log_error,success,68.902,1.451,2026-11-05T03:13:52Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,objective::tests::test_logloss_grad,success,68.902,1.462,2026-11-05T03:13:54Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,objective::tests::test_logloss_hess,success,68.902,1.459,2026-11-05T03:13:55Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,objective::tests::test_logloss_init,success,68.902,1.450,2026-11-05T03:13:57Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,objective::tests::test_logloss_loss,success,68.902,1.448,2026-11-05T03:13:58Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,objective::tests::test_mse_init,success,68.902,1.444,2026-11-05T03:14:00Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,partial_dependence::tests::test_partial_dependence,test_failed,68.902,1.528,2026-11-05T03:14:01Z,50244963.0,panic,"thread 'partial_dependence::tests::test_partial_dependence' (53372) panicked at src/partial_dependence.rs:89:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,splitter::tests::test_best_feature_split,success,68.902,2.044,2026-11-05T03:14:03Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,splitter::tests::test_best_split,success,68.902,2.138,2026-11-05T03:14:05Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,splitter::tests::test_data_split,test_failed,68.902,1.527,2026-11-05T03:14:07Z,50244963.0,panic,"thread 'splitter::tests::test_data_split' (53727) panicked at src/splitter.rs:1157:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,tree::tests::test_tree_colsample,test_failed,68.902,1.521,2026-11-05T03:14:08Z,50244963.0,panic,"thread 'tree::tests::test_tree_colsample' (53789) panicked at src/tree.rs:716:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,tree::tests::test_tree_fit,test_failed,68.902,1.524,2026-11-05T03:14:10Z,50244963.0,panic,"thread 'tree::tests::test_tree_fit' (53887) panicked at src/tree.rs:631:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,tree::tests::test_tree_fit_lossguide,test_failed,68.902,1.531,2026-11-05T03:14:12Z,50244963.0,panic,"thread 'tree::tests::test_tree_fit_lossguide' (53951) panicked at src/tree.rs:852:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,tree::tests::test_tree_fit_monotone,test_failed,68.902,1.542,2026-11-05T03:14:13Z,50244963.0,panic,"thread 'tree::tests::test_tree_fit_monotone' (54091) panicked at src/tree.rs:765:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,tree::tests::test_tree_fit_with_subsample,test_failed,68.902,1.523,2026-11-05T03:14:15Z,50244963.0,panic,"thread 'tree::tests::test_tree_fit_with_subsample' (54239) panicked at src/tree.rs:582:14: Something went wrong reading the file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,forust-ml-0.4.8,utils::tests::test_fast_f64_sum,success,68.902,88.961,2026-11-05T03:15:44Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,utils::tests::test_fmt_vec_output,success,68.902,1.466,2026-11-05T03:15:45Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,utils::tests::test_map_bin_or_equal,success,68.902,1.455,2026-11-05T03:15:47Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,utils::tests::test_map_bin_or_equal_num_miss,success,68.902,1.447,2026-11-05T03:15:48Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,utils::tests::test_missing_compare,success,68.902,1.452,2026-11-05T03:15:49Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,utils::tests::test_percentiles,success,68.902,1.455,2026-11-05T03:15:51Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,utils::tests::test_percentiles_weighted,success,68.902,1.454,2026-11-05T03:15:52Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,utils::tests::test_pivot,success,68.902,3.445,2026-11-05T03:15:56Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,utils::tests::test_pivot_missing,success,68.902,2.448,2026-11-05T03:15:58Z,50244963.0,,
+experimental-bsan,forust-ml-0.4.8,utils::tests::test_round,success,68.902,1.448,2026-11-05T03:16:00Z,50244963.0,,

@@ -1,0 +1,13 @@
+experimental-bsan,eml-parser-0.1.6,parser::tests::basic_test,success,90.968,20.337,2026-11-05T05:35:10Z,50253447.0,,
+experimental-bsan,eml-parser-0.1.6,parser::tests::basic_test_with_truncated_body,success,90.968,20.322,2026-11-05T05:35:31Z,50253447.0,,
+experimental-bsan,eml-parser-0.1.6,parser::tests::basic_test_with_truncation_gt_body_length,success,90.968,20.353,2026-11-05T05:35:51Z,50253447.0,,
+experimental-bsan,eml-parser-0.1.6,parser::tests::body_truncated_in_multibyte_char,success,90.968,1.623,2026-11-05T05:35:53Z,50253447.0,,
+experimental-bsan,eml-parser-0.1.6,parser::tests::last_header_empty,success,90.968,1.627,2026-11-05T05:35:55Z,50253447.0,,
+experimental-bsan,eml-parser-0.1.6,parser::tests::last_header_get_full_value,success,90.968,1.657,2026-11-05T05:35:56Z,50253447.0,,
+experimental-bsan,eml-parser-0.1.6,parser::tests::nonascii,success,90.968,1.717,2026-11-05T05:35:58Z,50253447.0,,
+experimental-bsan,eml-parser-0.1.6,parser::tests::parse_and_display_emails,success,90.968,8.951,2026-11-05T05:36:07Z,50253447.0,,
+experimental-bsan,eml-parser-0.1.6,parser::tests::parse_emails,success,90.968,8.406,2026-11-05T05:36:15Z,50253447.0,,
+experimental-bsan,eml-parser-0.1.6,parser::tests::quoted_display_must_be_balanced,success,90.968,19.412,2026-11-05T05:36:35Z,50253447.0,,
+experimental-bsan,eml-parser-0.1.6,parser::tests::test_errors,success,90.968,1.597,2026-11-05T05:36:36Z,50253447.0,,
+experimental-bsan,eml-parser-0.1.6,parser::tests::test_parse_phishing_emails,test_failed,90.968,1.676,2026-11-05T05:36:38Z,50253447.0,panic,"thread 'parser::tests::test_parse_phishing_emails' (46069) panicked at src/parser.rs:770:57: Load file: IoError(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,eml-parser-0.1.6,parser::tests::test_parse_rfc2047,test_failed,90.968,1.678,2026-11-05T05:36:40Z,50253447.0,panic,"thread 'parser::tests::test_parse_rfc2047' (46138) panicked at src/parser.rs:777:69: called `Result::unwrap()` on an `Err` value: IoError(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"

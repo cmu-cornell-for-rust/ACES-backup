@@ -1,0 +1,8 @@
+experimental-bsan,feruca-0.10.0,arabic_script,success,146.424,32.163,2026-11-05T06:42:12Z,50256972.0,,
+experimental-bsan,feruca-0.10.0,bytes_auto,success,146.424,36.898,2026-11-05T06:42:49Z,50256972.0,,
+experimental-bsan,feruca-0.10.0,bytes_literal,success,146.424,35.589,2026-11-05T06:43:25Z,50256972.0,,
+experimental-bsan,feruca-0.10.0,capitalization,success,146.424,30.907,2026-11-05T06:43:56Z,50256972.0,,
+experimental-bsan,feruca-0.10.0,cldr_non_ignorable,test_failed,146.424,2.880,2026-11-05T06:43:59Z,50256972.0,panic,"thread 'cldr_non_ignorable' (102703) panicked at tests/conformance.rs:5:51: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,feruca-0.10.0,cldr_shifted,test_failed,146.424,2.876,2026-11-05T06:44:02Z,50256972.0,panic,"thread 'cldr_shifted' (102772) panicked at tests/conformance.rs:5:51: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,feruca-0.10.0,ducet_non_ignorable,test_failed,146.424,2.882,2026-11-05T06:44:05Z,50256972.0,panic,"thread 'ducet_non_ignorable' (102873) panicked at tests/conformance.rs:5:51: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,feruca-0.10.0,ducet_shifted,test_failed,146.424,2.863,2026-11-05T06:44:07Z,50256972.0,panic,"thread 'ducet_shifted' (102938) panicked at tests/conformance.rs:5:51: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

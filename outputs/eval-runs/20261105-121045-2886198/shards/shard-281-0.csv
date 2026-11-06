@@ -1,0 +1,3 @@
+experimental-bsan,pswatch-0.1.1,match_cond_seen::case_2,timeout,189.108,1800.020,2026-11-05T18:20:20Z,50276331.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"
+experimental-bsan,pswatch-0.1.1,match_cond_not_seen::case_1,timeout,189.108,1800.020,2026-11-05T18:50:21Z,50276331.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"
+experimental-bsan,pswatch-0.1.1,match_cond_not_seen_2::case_2,test_failed,189.108,394.297,2026-11-05T18:56:55Z,50276331.0,panic,"thread 'match_cond_not_seen_2::case_2' (103640) panicked at tests/process.rs:132:5: assertion failed: matches!(p.state(), ProcState::Seen)"

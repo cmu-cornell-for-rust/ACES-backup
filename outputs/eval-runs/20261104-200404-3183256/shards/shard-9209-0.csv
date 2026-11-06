@@ -1,0 +1,19 @@
+experimental-bsan,librqbit-core-4.0.1,hash_id::tests::test_id20_base32_encoded_from_str,success,120.782,1.574,2026-11-05T04:52:46Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,hash_id::tests::test_id32_from_str,success,120.782,1.576,2026-11-05T04:52:47Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,hash_id::tests::test_set_bit_range,success,120.782,1.569,2026-11-05T04:52:49Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,lengths::tests::test_chunk_infos,success,120.782,1.569,2026-11-05T04:52:51Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,lengths::tests::test_chunk_size,success,120.782,1.561,2026-11-05T04:52:52Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,lengths::tests::test_chunks_in_piece,success,120.782,1.577,2026-11-05T04:52:54Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,lengths::tests::test_iter_pieces_within,success,120.782,1.593,2026-11-05T04:52:55Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,lengths::tests::test_lengths_extensive,success,120.782,1.578,2026-11-05T04:52:57Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,lengths::tests::test_piece_length,success,120.782,1.574,2026-11-05T04:52:59Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,lengths::tests::test_size_of_piece_in_file,success,120.782,1.579,2026-11-05T04:53:00Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,lengths::tests::test_total_pieces,success,120.782,1.575,2026-11-05T04:53:02Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,lengths::tests::test_total_pieces_2,success,120.782,1.569,2026-11-05T04:53:03Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,magnet::tests::test_magnet_to_string,success,120.782,1.578,2026-11-05T04:53:05Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,magnet::tests::test_parse_magnet_as_url,success,120.782,1.679,2026-11-05T04:53:07Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,magnet::tests::test_parse_magnet_v2,success,120.782,1.641,2026-11-05T04:53:08Z,50250967.0,,
+experimental-bsan,librqbit-core-4.0.1,torrent_metainfo::tests::test_deserialize_torrent_borrowed,test_failed,120.782,1.644,2026-11-05T04:53:10Z,50250967.0,panic,"thread 'torrent_metainfo::tests::test_deserialize_torrent_borrowed' (45116) panicked at src/torrent_metainfo.rs:349:14: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,librqbit-core-4.0.1,torrent_metainfo::tests::test_deserialize_torrent_owned,test_failed,120.782,1.653,2026-11-05T04:53:12Z,50250967.0,panic,"thread 'torrent_metainfo::tests::test_deserialize_torrent_owned' (45331) panicked at src/torrent_metainfo.rs:337:14: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,librqbit-core-4.0.1,torrent_metainfo::tests::test_deserialize_torrent_with_info_hash,test_failed,120.782,1.647,2026-11-05T04:53:13Z,50250967.0,panic,"thread 'torrent_metainfo::tests::test_deserialize_torrent_with_info_hash' (45507) panicked at src/torrent_metainfo.rs:361:14: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,librqbit-core-4.0.1,torrent_metainfo::tests::test_serialize_then_deserialize_bencode,test_failed,120.782,1.652,2026-11-05T04:53:15Z,50250967.0,panic,"thread 'torrent_metainfo::tests::test_serialize_then_deserialize_bencode' (45654) panicked at src/torrent_metainfo.rs:376:14: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

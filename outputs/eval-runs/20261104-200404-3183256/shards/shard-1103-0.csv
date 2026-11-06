@@ -1,0 +1,180 @@
+experimental-bsan,rpm-0.30.2,correct_signature_tags::test_legacy_signature_tags,timeout,741.911,150.018,2026-11-05T01:51:09Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,correct_signature_tags::test_v4_signed_package_signature_tags,timeout,741.911,150.015,2026-11-05T01:53:39Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,correct_signature_tags::test_v6_signed_package_signature_tags,success,741.911,20.570,2026-11-05T01:53:59Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,file_languages_round_trip_in_header_order,success,741.911,9.627,2026-11-05T01:54:09Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,hardlinks::automatic_hardlinks_reject_metadata_mismatch,success,741.911,8.615,2026-11-05T01:54:18Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,hardlinks::empty_hardlink_member_reports_missing_payload,success,741.911,9.345,2026-11-05T01:54:27Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,hardlinks::explicit_hardlink_builder_rejects_content_mismatch,success,741.911,8.589,2026-11-05T01:54:35Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,hardlinks::explicit_hardlink_builder_rejects_metadata_mismatch,success,741.911,8.568,2026-11-05T01:54:44Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,hardlinks::explicit_hardlink_builder_rejects_partial_set,success,741.911,8.557,2026-11-05T01:54:53Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,hardlinks::explicit_hardlink_set_shares_header_identity_and_one_payload,success,741.911,9.368,2026-11-05T01:55:02Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,hardlinks::replacing_with_dir_file_does_not_preserve_stale_hardlink_identity,success,741.911,9.428,2026-11-05T01:55:11Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,hardlinks::reusing_source_path_does_not_detect_hardlinks,success,741.911,9.249,2026-11-05T01:55:21Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,hardlinks::with_dir_detects_automatic_hardlinks,success,741.911,9.846,2026-11-05T01:55:31Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,in_place_signing::test_apply_multiple_signatures_in_place,test_failed,741.911,8.580,2026-11-05T01:55:39Z,50233763.0,other,"error: test failed, to rerun pass `--test signatures`"
+experimental-bsan,rpm-0.30.2,in_place_signing::test_clear_signatures_in_place,test_failed,741.911,8.548,2026-11-05T01:55:48Z,50233763.0,other,"error: test failed, to rerun pass `--test signatures`"
+experimental-bsan,rpm-0.30.2,in_place_signing::test_resign_in_place_different_keys,test_failed,741.911,8.578,2026-11-05T01:55:56Z,50233763.0,other,"error: test failed, to rerun pass `--test signatures`"
+experimental-bsan,rpm-0.30.2,in_place_signing::test_resign_in_place_insufficient_space,test_failed,741.911,12.766,2026-11-05T01:56:09Z,50233763.0,other,"error: test failed, to rerun pass `--test signatures`"
+experimental-bsan,rpm-0.30.2,in_place_signing::test_resign_in_place_no_reserved_tag,test_failed,741.911,12.649,2026-11-05T01:56:22Z,50233763.0,other,"error: test failed, to rerun pass `--test signatures`"
+experimental-bsan,rpm-0.30.2,in_place_signing::test_resign_in_place_same_key,test_failed,741.911,8.567,2026-11-05T01:56:30Z,50233763.0,other,"error: test failed, to rerun pass `--test signatures`"
+experimental-bsan,rpm-0.30.2,in_place_signing::test_resign_in_place_unsigned,test_failed,741.911,8.576,2026-11-05T01:56:39Z,50233763.0,other,"error: test failed, to rerun pass `--test signatures`"
+experimental-bsan,rpm-0.30.2,keyring::test_sign_with_keyring_signer,timeout,741.911,150.014,2026-11-05T01:59:09Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,keyring::test_verify_with_key_matches_primary_when_subkey_signs,success,741.911,36.383,2026-11-05T01:59:45Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,keyring::test_verify_with_key_not_found,success,741.911,149.263,2026-11-05T02:02:15Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,keyring::test_verify_with_key_selection,timeout,741.911,150.014,2026-11-05T02:04:45Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,keyring::test_verify_with_key_selects_wrong_cert,timeout,741.911,150.016,2026-11-05T02:07:15Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,keyring::test_verify_with_keyring,timeout,741.911,150.014,2026-11-05T02:09:45Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,keyring::test_verify_with_keyring_wrong_key,timeout,741.911,150.013,2026-11-05T02:12:15Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,keyring::test_verify_with_loaded_keys,timeout,741.911,150.017,2026-11-05T02:14:45Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,parse_externally_signed_rpm_and_verify,timeout,741.911,150.014,2026-11-05T02:17:15Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,root_child_directories_use_canonical_header_and_payload_paths,success,741.911,9.219,2026-11-05T02:17:24Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::builder::hardlinks::tests::adds_automatic_groups_to_explicit_plan,success,741.911,8.662,2026-11-05T02:17:33Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::builder::hardlinks::tests::explicit_takes_precedence_over_automatic_detection,success,741.911,8.610,2026-11-05T02:17:41Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::builder::hardlinks::tests::plans_shared_identity_and_rpm_payload_order,success,741.911,8.649,2026-11-05T02:17:50Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::builder::hardlinks::tests::rejects_incomplete_or_conflicting_sets,success,741.911,8.604,2026-11-05T02:17:59Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_empty_package,success,741.911,8.923,2026-11-05T02:18:08Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_empty_source_package,success,741.911,9.291,2026-11-05T02:18:17Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_file_attrs,success,741.911,27.787,2026-11-05T02:18:45Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_file_types,success,741.911,9.425,2026-11-05T02:18:54Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_files_after_decompress_gzip,success,741.911,13.453,2026-11-05T02:19:08Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_files_after_decompress_noop,success,741.911,12.769,2026-11-05T02:19:20Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_files_after_decompress_xz,success,741.911,12.835,2026-11-05T02:19:33Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_files_after_decompress_zstd,success,741.911,12.756,2026-11-05T02:19:46Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_files_v4_uncompressed,success,741.911,13.710,2026-11-05T02:20:00Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_files_v6_gzip,success,741.911,14.643,2026-11-05T02:20:14Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_files_v6_uncompressed,success,741.911,12.729,2026-11-05T02:20:27Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_files_v6_xz,success,741.911,12.731,2026-11-05T02:20:40Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_files_v6_zstd,success,741.911,12.724,2026-11-05T02:20:53Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_ghost_record_in_payload,success,741.911,11.074,2026-11-05T02:21:04Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_hardlinks,success,741.911,9.567,2026-11-05T02:21:13Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_package_reader_after_decompress_roundtrip,success,741.911,10.213,2026-11-05T02:21:23Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_package_reader_finish_and_ghost,success,741.911,10.124,2026-11-05T02:21:34Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_package_reader_matches_files_api,success,741.911,17.619,2026-11-05T02:21:51Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_package_reader_partial_read_then_drop,success,741.911,10.087,2026-11-05T02:22:01Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_integration::test_special_files_are_not_extracted,success,741.911,9.241,2026-11-05T02:22:11Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_layout::ghosts_and_incomplete_identities_are_not_hardlink_members,success,741.911,8.511,2026-11-05T02:22:19Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::content::test_payload_layout::groups_by_device_and_inode_and_sizes_stripped_members,success,741.911,8.529,2026-11-05T02:22:28Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::filecaps::tests::test_validate_caps_text,success,741.911,8.597,2026-11-05T02:22:36Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::filecaps::tests::test_validate_capset,success,741.911,8.528,2026-11-05T02:22:45Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::filecaps::tests::test_validate_suffix,success,741.911,8.528,2026-11-05T02:22:53Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::headers::header::test::test_from_entries_sorts_tags,success,741.911,8.543,2026-11-05T02:23:02Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::headers::header::test::test_region_tag,success,741.911,8.510,2026-11-05T02:23:10Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::headers::types::test::test_file_mode,success,741.911,8.538,2026-11-05T02:23:19Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::headers::types::test::test_scriptlet_builder,success,741.911,8.517,2026-11-05T02:23:27Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::headers::types::test::test_verify_capabilities_invalid,success,741.911,8.538,2026-11-05T02:23:36Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::headers::types::test::test_verify_capabilities_valid,success,741.911,8.584,2026-11-05T02:23:45Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::payload::cpio_tests::test_cpio_roundtrip,success,741.911,8.560,2026-11-05T02:23:53Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::payload::cpio_tests::test_empty_file,success,741.911,8.548,2026-11-05T02:24:02Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::payload::cpio_tests::test_finish_with_short_write,success,741.911,8.533,2026-11-05T02:24:10Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::payload::cpio_tests::test_multi_file,success,741.911,8.614,2026-11-05T02:24:19Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::payload::cpio_tests::test_odd_size_padding,success,741.911,8.666,2026-11-05T02:24:28Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::payload::cpio_tests::test_write_beyond_file_size,success,741.911,8.523,2026-11-05T02:24:36Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::payload::stripped_cpio_tests::test_empty_file,success,741.911,8.509,2026-11-05T02:24:45Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::payload::stripped_cpio_tests::test_odd_size_padding,success,741.911,8.561,2026-11-05T02:24:53Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::payload::stripped_cpio_tests::test_out_of_range_file_index,success,741.911,8.480,2026-11-05T02:25:02Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::payload::stripped_cpio_tests::test_stripped_cpio_roundtrip,success,741.911,8.577,2026-11-05T02:25:10Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::basic_key_signer::sign_and_verify_with_signer_key,timeout,741.911,150.016,2026-11-05T02:27:40Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::basic_key_signer::sign_produces_parseable_signature,timeout,741.911,150.011,2026-11-05T02:30:10Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::binding_verification::signer_rejects_corrupted_subkey_binding,success,741.911,18.771,2026-11-05T02:30:29Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::binding_verification::verifier_rejects_corrupted_subkey_binding,success,741.911,17.667,2026-11-05T02:30:47Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::keyring::with_signing_key_signature_contains_correct_user_id,timeout,741.911,150.015,2026-11-05T02:33:17Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::keyring::with_signing_key_updates_user_id,timeout,741.911,150.015,2026-11-05T02:35:47Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::v4::sign_verify_roundtrip,timeout,741.911,150.014,2026-11-05T02:38:17Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::v4::uses_primary_key_without_subkeys,timeout,741.911,150.014,2026-11-05T02:40:47Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::v6::auto_selects_signing_subkey,success,741.911,32.379,2026-11-05T02:41:19Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::v6::sign_verify_roundtrip,success,741.911,35.327,2026-11-05T02:41:55Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::v6::user_id_included_in_signature,success,741.911,32.726,2026-11-05T02:42:27Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::v6::with_signing_key_not_found,success,741.911,32.348,2026-11-05T02:43:00Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::signature::pgp::test::v6::with_signing_key_primary_rejected_by_verifier,success,741.911,32.733,2026-11-05T02:43:33Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::checksumming_writer::test_checksumming_writer_empty,success,741.911,8.698,2026-11-05T02:43:41Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::checksumming_writer::test_checksumming_writer_short_writes,success,741.911,8.628,2026-11-05T02:43:50Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::checksumming_writer::test_checksumming_writer_with_data,success,741.911,8.672,2026-11-05T02:43:59Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::normalize_path::test_normalize_path_already_normalized,success,741.911,8.563,2026-11-05T02:44:07Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::normalize_path::test_normalize_path_collapse_and_strip,success,741.911,8.560,2026-11-05T02:44:16Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::normalize_path::test_normalize_path_collapse_slashes,success,741.911,8.580,2026-11-05T02:44:24Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::normalize_path::test_normalize_path_strip_trailing_slash,success,741.911,8.552,2026-11-05T02:44:33Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::reject_control_chars::test_reject_control_chars,success,741.911,8.592,2026-11-05T02:44:41Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::reject_control_chars::test_reject_control_chars_allows_normal_text,success,741.911,8.582,2026-11-05T02:44:50Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::reject_control_chars::test_reject_control_chars_allows_tab_and_newline,success,741.911,8.552,2026-11-05T02:44:59Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::validate_name::test_validate_name_empty,success,741.911,8.547,2026-11-05T02:45:07Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::validate_name::test_validate_name_invalid_chars,success,741.911,8.556,2026-11-05T02:45:16Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::validate_name::test_validate_name_invalid_first_char,success,741.911,8.550,2026-11-05T02:45:24Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::validate_name::test_validate_name_valid,success,741.911,8.531,2026-11-05T02:45:33Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::validate_version::test_validate_version_empty,success,741.911,8.516,2026-11-05T02:45:41Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::validate_version::test_validate_version_invalid_chars,success,741.911,8.524,2026-11-05T02:45:50Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::validate_version::test_validate_version_release,success,741.911,8.550,2026-11-05T02:45:58Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,rpm::util::tests::validate_version::test_validate_version_valid,success,741.911,8.540,2026-11-05T02:46:07Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,signature_roundtrip::test_multi_signature_roundtrip,timeout,741.911,150.013,2026-11-05T02:48:37Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,signature_roundtrip::test_signature_roundtrip,timeout,741.911,150.014,2026-11-05T02:51:07Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,tampering::test_tampered_decompressed_payload_detected,success,741.911,13.248,2026-11-05T02:51:20Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,tampering::test_tampered_header_detected,timeout,741.911,150.014,2026-11-05T02:53:50Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,tampering::test_tampered_payload_detected,timeout,741.911,150.014,2026-11-05T02:56:20Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,test_auto_provides_and_requires,success,741.911,11.767,2026-11-05T02:56:32Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_basic_package,success,741.911,10.470,2026-11-05T02:56:43Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_build_rpm_basic,test_failed,741.911,9.821,2026-11-05T02:56:52Z,50233763.0,panic,"thread 'test_build_rpm_basic' (7232) panicked at tests/compare.rs:390:5: ===== Header comparison failed (v4) ====="
+experimental-bsan,rpm-0.30.2,test_build_rpm_empty,success,741.911,10.528,2026-11-05T02:57:03Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_build_rpm_file_attrs,success,741.911,14.031,2026-11-05T02:57:17Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_build_rpm_file_types,test_failed,741.911,8.650,2026-11-05T02:57:26Z,50233763.0,panic,"thread 'test_build_rpm_file_types' (7505) panicked at tests/compare.rs:628:5: ===== Header comparison failed (v6) ====="
+experimental-bsan,rpm-0.30.2,test_build_rpm_hardlinks_explicit,success,741.911,11.001,2026-11-05T02:57:37Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_build_rpm_hardlinks_implicit,success,741.911,11.020,2026-11-05T02:57:48Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_build_rpm_rich_deps,success,741.911,10.713,2026-11-05T02:57:58Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_build_rpm_scriptlets,success,741.911,11.177,2026-11-05T02:58:10Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_build_rpm_special_files,success,741.911,10.370,2026-11-05T02:58:20Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_build_special_files,success,741.911,9.538,2026-11-05T02:58:30Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_build_with_new_file_api,success,741.911,11.308,2026-11-05T02:58:41Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_clear_package_signatures,timeout,741.911,150.016,2026-11-05T03:01:11Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,test_clear_signatures_preserves_digests_and_file_signatures,success,741.911,9.428,2026-11-05T03:01:20Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_clear_then_sign_replaces,timeout,741.911,150.015,2026-11-05T03:03:50Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,test_cross_version_resign,timeout,741.911,150.016,2026-11-05T03:06:20Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,test_decompress_payload_and_verify,success,741.911,15.307,2026-11-05T03:06:36Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_decompress_payload_formats,success,741.911,19.061,2026-11-05T03:06:55Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_decompress_payload_noop_for_uncompressed,success,741.911,10.507,2026-11-05T03:07:05Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_default_attrs_called_twice,success,741.911,10.873,2026-11-05T03:07:16Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_default_attrs_explicit_override,success,741.911,10.853,2026-11-05T03:07:27Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_default_attrs_file_vs_dir,success,741.911,11.029,2026-11-05T03:07:38Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_default_attrs_none_fields,success,741.911,10.909,2026-11-05T03:07:49Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_default_attrs_with_dir,success,741.911,9.687,2026-11-05T03:07:59Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_default_dir_attrs,success,741.911,9.350,2026-11-05T03:08:08Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_default_file_attrs,success,741.911,10.857,2026-11-05T03:08:19Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_empty_package,success,741.911,9.108,2026-11-05T03:08:28Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_empty_source_package,success,741.911,9.438,2026-11-05T03:08:38Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_entry_by_raw_u32,success,741.911,9.075,2026-11-05T03:08:47Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_entry_by_typed_tag,success,741.911,9.043,2026-11-05T03:08:56Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_entry_is_present,success,741.911,9.154,2026-11-05T03:09:05Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_entry_not_found,success,741.911,9.090,2026-11-05T03:09:14Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_epoch_handling,success,741.911,10.317,2026-11-05T03:09:24Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_file_attrs,success,741.911,9.958,2026-11-05T03:09:34Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_file_types,success,741.911,9.045,2026-11-05T03:09:43Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_find_file_entry,success,741.911,9.544,2026-11-05T03:09:53Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_hardlinks_package,success,741.911,9.108,2026-11-05T03:10:02Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_package_segment_boundaries,timeout,741.911,150.017,2026-11-05T03:12:32Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,test_rich_deps_package,success,741.911,9.073,2026-11-05T03:12:41Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_roundtrip_all_fixtures,success,741.911,23.391,2026-11-05T03:13:05Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_roundtrip_with_short_writes,success,741.911,14.193,2026-11-05T03:13:19Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_rpm_file_signatures_resign,timeout,741.911,150.014,2026-11-05T03:15:49Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,test_scriptlets_package,success,741.911,9.626,2026-11-05T03:15:58Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_sign_appends_signature,timeout,741.911,150.015,2026-11-05T03:18:28Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,test_sign_twice_with_same_key_replaces,timeout,741.911,150.016,2026-11-05T03:20:58Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,test_signatures,success,741.911,13.555,2026-11-05T03:21:12Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_special_files_package,success,741.911,8.907,2026-11-05T03:21:21Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_tag_not_found_display,success,741.911,9.151,2026-11-05T03:21:30Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_verify_digests_standalone,timeout,741.911,150.015,2026-11-05T03:24:00Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,test_verify_package_with_wrong_key_type,timeout,741.911,150.016,2026-11-05T03:26:30Z,50233763.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.30.2,test_verify_unsigned_package,success,741.911,112.358,2026-11-05T03:28:23Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_verify_with_empty_verifier,success,741.911,12.839,2026-11-05T03:28:35Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_with_dir_basic,success,741.911,9.694,2026-11-05T03:28:45Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_with_dir_explicit_override_after_bulk,success,741.911,9.715,2026-11-05T03:28:55Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_with_dir_explicit_override_before_bulk,success,741.911,9.764,2026-11-05T03:29:05Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_with_dir_overlapping_bulk_first_wins,success,741.911,9.869,2026-11-05T03:29:14Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,test_with_dir_strips_flags_from_dirs,success,741.911,9.815,2026-11-05T03:29:24Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,validation::test_builder_rejects_control_chars_in_changelogs,success,741.911,8.648,2026-11-05T03:29:33Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,validation::test_builder_rejects_control_chars_in_file_language,success,741.911,8.664,2026-11-05T03:29:42Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,validation::test_builder_rejects_control_chars_in_file_metadata,success,741.911,8.662,2026-11-05T03:29:50Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,validation::test_builder_rejects_control_chars_in_metadata,success,741.911,9.111,2026-11-05T03:29:59Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,validation::test_builder_rejects_double_build,success,741.911,9.133,2026-11-05T03:30:09Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,validation::test_builder_rejects_invalid_name,success,741.911,8.623,2026-11-05T03:30:17Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,validation::test_duplicate_explicit_add_still_errors,success,741.911,8.663,2026-11-05T03:30:26Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,validation::test_file_options_validation,success,741.911,8.692,2026-11-05T03:30:35Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,write_to::test_write_to_directory,success,741.911,9.322,2026-11-05T03:30:44Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,write_to::test_write_to_file,success,741.911,9.376,2026-11-05T03:30:53Z,50233763.0,,
+experimental-bsan,rpm-0.30.2,write_to::test_write_to_file_with_extension,success,741.911,9.241,2026-11-05T03:31:03Z,50233763.0,,

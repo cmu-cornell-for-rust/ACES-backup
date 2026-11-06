@@ -1,0 +1,146 @@
+experimental-bsan,diffutils-0.5.0,cmp::cmp_binary,success,112.863,4.335,2026-11-05T01:45:20Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::cmp_equal_files,success,112.863,4.317,2026-11-05T01:45:24Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::cmp_fast_paths,success,112.863,7.850,2026-11-05T01:45:32Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::cmp_immediate_difference,success,112.863,6.701,2026-11-05T01:45:39Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::cmp_incompatible_params,success,112.863,4.314,2026-11-05T01:45:43Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::cmp_max_bytes,success,112.863,4.559,2026-11-05T01:45:48Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::cmp_newline_difference,success,112.863,6.728,2026-11-05T01:45:54Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::cmp_one_file_empty,success,112.863,4.328,2026-11-05T01:45:59Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::cmp_skip,success,112.863,4.430,2026-11-05T01:46:03Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::cmp_skip_args_parsing,success,112.863,6.682,2026-11-05T01:46:10Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::cmp_skip_suffix_parsing,success,112.863,4.337,2026-11-05T01:46:14Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::cmp_stdin,success,112.863,4.898,2026-11-05T01:46:19Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::tests::execution_modes,success,112.863,4.380,2026-11-05T01:46:23Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::tests::max_bytes,success,112.863,4.331,2026-11-05T01:46:28Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::tests::positional,success,112.863,4.334,2026-11-05T01:46:32Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,cmp::tests::skips,success,112.863,4.919,2026-11-05T01:46:37Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,common::cannot_read_files,timeout,112.863,150.020,2026-11-05T01:49:07Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,common::unknown_param,success,112.863,41.268,2026-11-05T01:49:48Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,context_diff::tests::test_permutations,test_failed,112.863,1.782,2026-11-05T01:49:50Z,50234312.0,panic,"thread 'context_diff::tests::test_permutations' (71860) panicked at src/context_diff.rs:443:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,context_diff::tests::test_permutations_empty_lines,test_failed,112.863,1.774,2026-11-05T01:49:52Z,50234312.0,panic,"thread 'context_diff::tests::test_permutations_empty_lines' (72009) panicked at src/context_diff.rs:524:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,context_diff::tests::test_permutations_missing_lines,test_failed,112.863,1.788,2026-11-05T01:49:54Z,50234312.0,panic,"thread 'context_diff::tests::test_permutations_missing_lines' (72140) panicked at src/context_diff.rs:608:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,context_diff::tests::test_permutations_reverse,test_failed,112.863,1.761,2026-11-05T01:49:56Z,50234312.0,panic,"thread 'context_diff::tests::test_permutations_reverse' (72273) panicked at src/context_diff.rs:695:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,context_diff::tests::test_stop_early,success,112.863,148.362,2026-11-05T01:52:24Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,diff::compare_file_to_directory,timeout,112.863,150.027,2026-11-05T01:54:54Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,diff::differences,timeout,112.863,150.028,2026-11-05T01:57:24Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,diff::differences_brief,timeout,112.863,150.026,2026-11-05T01:59:54Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,diff::missing_newline,success,112.863,61.057,2026-11-05T02:00:55Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,diff::no_differences,timeout,112.863,150.026,2026-11-05T02:03:25Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,diff::no_differences_report_identical_files,timeout,112.863,150.021,2026-11-05T02:05:55Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,diff::read_from_stdin,timeout,112.863,150.020,2026-11-05T02:08:25Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,ed_diff::tests::test_basic,success,112.863,4.398,2026-11-05T02:08:30Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,ed_diff::tests::test_permutations,test_failed,112.863,1.667,2026-11-05T02:08:31Z,50234312.0,panic,"thread 'ed_diff::tests::test_permutations' (75766) panicked at src/ed_diff.rs:229:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,ed_diff::tests::test_permutations_empty_lines,test_failed,112.863,1.727,2026-11-05T02:08:33Z,50234312.0,panic,"thread 'ed_diff::tests::test_permutations_empty_lines' (76912) panicked at src/ed_diff.rs:303:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,ed_diff::tests::test_permutations_reverse,test_failed,112.863,1.632,2026-11-05T02:08:35Z,50234312.0,panic,"thread 'ed_diff::tests::test_permutations_reverse' (77143) panicked at src/ed_diff.rs:383:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,ed_diff::tests::test_stop_early,success,112.863,4.343,2026-11-05T02:08:39Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,normal_diff::tests::test_basic,success,112.863,4.295,2026-11-05T02:08:43Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,normal_diff::tests::test_permutations,test_failed,112.863,1.677,2026-11-05T02:08:45Z,50234312.0,panic,"thread 'normal_diff::tests::test_permutations' (78428) panicked at src/normal_diff.rs:279:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,normal_diff::tests::test_permutations_empty_lines,test_failed,112.863,1.667,2026-11-05T02:08:47Z,50234312.0,panic,"thread 'normal_diff::tests::test_permutations_empty_lines' (78643) panicked at src/normal_diff.rs:445:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,normal_diff::tests::test_permutations_missing_line_ending,test_failed,112.863,1.672,2026-11-05T02:08:49Z,50234312.0,panic,"thread 'normal_diff::tests::test_permutations_missing_line_ending' (78829) panicked at src/normal_diff.rs:371:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,normal_diff::tests::test_permutations_reverse,test_failed,112.863,1.639,2026-11-05T02:08:50Z,50234312.0,panic,"thread 'normal_diff::tests::test_permutations_reverse' (78912) panicked at src/normal_diff.rs:523:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,normal_diff::tests::test_stop_early,success,112.863,4.359,2026-11-05T02:08:55Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,params::tests::basics,timeout,112.863,150.015,2026-11-05T02:11:25Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::basics_ed,timeout,112.863,150.022,2026-11-05T02:13:55Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::brief,timeout,112.863,150.019,2026-11-05T02:16:25Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::conflicting_output_styles,timeout,112.863,150.012,2026-11-05T02:18:55Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::context_count,timeout,112.863,150.018,2026-11-05T02:21:25Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::context_invalid,timeout,112.863,150.019,2026-11-05T02:23:55Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::context_valid,timeout,112.863,150.013,2026-11-05T02:26:25Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::default_to_stdin,timeout,112.863,150.019,2026-11-05T02:28:55Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::double_dash,success,112.863,42.116,2026-11-05T02:29:37Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,params::tests::empty,success,112.863,4.312,2026-11-05T02:29:41Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,params::tests::expand_tabs,timeout,112.863,150.018,2026-11-05T02:32:11Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::missing_arguments,success,112.863,115.569,2026-11-05T02:34:07Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,params::tests::report_identical_files,timeout,112.863,150.019,2026-11-05T02:36:37Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::tabsize,timeout,112.863,150.015,2026-11-05T02:39:07Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::unified_invalid,timeout,112.863,150.013,2026-11-05T02:41:37Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::unified_valid,timeout,112.863,150.020,2026-11-05T02:44:07Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,params::tests::unknown_argument,timeout,112.863,150.018,2026-11-05T02:46:37Z,50234312.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,diffutils-0.5.0,side_diff::tests::config::test_full_width_30_tab_2,success,112.863,4.227,2026-11-05T02:46:41Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::config::test_full_width_40_tab_8,success,112.863,4.227,2026-11-05T02:46:46Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::config::test_full_width_80_tab_4,success,112.863,4.223,2026-11-05T02:46:50Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::config::test_minimal_width_3_tab_4,success,112.863,4.232,2026-11-05T02:46:54Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::config::test_odd_width_7_tab_3,success,112.863,4.236,2026-11-05T02:46:58Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::config::test_small_width_10_tab_4,success,112.863,4.237,2026-11-05T02:47:03Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::config::test_tab_size_larger_than_width,success,112.863,4.229,2026-11-05T02:47:07Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_added_line,success,112.863,4.286,2026-11-05T02:47:11Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_different_lines,success,112.863,4.315,2026-11-05T02:47:15Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_empty_files,success,112.863,4.247,2026-11-05T02:47:20Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_equal_lines,success,112.863,4.258,2026-11-05T02:47:24Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_gap_between_changes,success,112.863,5.015,2026-11-05T02:47:29Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_insert_remove_middle,success,112.863,4.674,2026-11-05T02:47:34Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_interleaved_add_remove,success,112.863,4.773,2026-11-05T02:47:38Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_mixed_operations_complex,success,112.863,4.587,2026-11-05T02:47:43Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_mixed_whitespace,success,112.863,4.294,2026-11-05T02:47:47Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_multiple_adjacent_changes,success,112.863,4.497,2026-11-05T02:47:52Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_multiple_changes,success,112.863,4.455,2026-11-05T02:47:56Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_partially_matching_lines,success,112.863,4.460,2026-11-05T02:48:01Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_removed_line,success,112.863,4.312,2026-11-05T02:48:05Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_swapped_lines,success,112.863,4.497,2026-11-05T02:48:10Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::diff::test_unicode_and_special_chars,success,112.863,4.402,2026-11-05T02:48:14Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::format_tabs_and_spaces::test_exact_tab_boundary_from_midpoint,success,112.863,4.269,2026-11-05T02:48:18Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::format_tabs_and_spaces::test_expanded_false_with_tab_at_end,success,112.863,4.244,2026-11-05T02:48:23Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::format_tabs_and_spaces::test_expanded_true_with_offset,success,112.863,4.251,2026-11-05T02:48:27Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::format_tabs_and_spaces::test_format_from_non_zero_position,success,112.863,4.234,2026-11-05T02:48:31Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::format_tabs_and_spaces::test_format_tabs_and_spaces_expanded_false,success,112.863,4.231,2026-11-05T02:48:35Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::format_tabs_and_spaces::test_format_tabs_and_spaces_expanded_true,success,112.863,4.251,2026-11-05T02:48:40Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::format_tabs_and_spaces::test_format_tabs_and_spaces_from_greater_than_to,success,112.863,4.239,2026-11-05T02:48:44Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::format_tabs_and_spaces::test_minimal_gap_with_tab,success,112.863,4.240,2026-11-05T02:48:48Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::format_tabs_and_spaces::test_mixed_tabs_and_spaces_edge_case,success,112.863,4.216,2026-11-05T02:48:52Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::format_tabs_and_spaces::test_multiple_full_tabs_needed,success,112.863,4.265,2026-11-05T02:48:57Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::format_tabs_and_spaces::test_uneven_tab_boundary_with_spaces,success,112.863,4.243,2026-11-05T02:49:01Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_break_if_invalid_max_width,success,112.863,4.266,2026-11-05T02:49:05Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_carriage_return,success,112.863,4.263,2026-11-05T02:49:09Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_empty_line_left_expanded_false,success,112.863,4.232,2026-11-05T02:49:14Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_exact_width_fit,success,112.863,4.267,2026-11-05T02:49:18Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_expanded_true,success,112.863,4.256,2026-11-05T02:49:22Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_expanded_true_with_gutter,success,112.863,4.244,2026-11-05T02:49:26Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_expanded_with_tabs,success,112.863,4.261,2026-11-05T02:49:31Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_expanded_with_tabs_and_space_gutter,success,112.863,4.249,2026-11-05T02:49:35Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_left_empty_white_space_gutter,success,112.863,4.272,2026-11-05T02:49:39Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_line_only_with_tabs,success,112.863,4.256,2026-11-05T02:49:44Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_max_width_zero,success,112.863,4.251,2026-11-05T02:49:48Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_mixed_invalid_utf8_with_valid,success,112.863,4.254,2026-11-05T02:49:52Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_mixed_tabs,success,112.863,4.260,2026-11-05T02:49:56Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_mixed_tabs_and_spaces_inversion,success,112.863,4.268,2026-11-05T02:50:01Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_mixed_tabs_expanded,success,112.863,4.273,2026-11-05T02:50:05Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_mixed_tabs_expanded_with_gutter,success,112.863,4.266,2026-11-05T02:50:09Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_mixed_tabs_spaces,success,112.863,4.260,2026-11-05T02:50:13Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_mixed_tabs_with_gutter,success,112.863,4.262,2026-11-05T02:50:18Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_multiple_carriage_returns,success,112.863,4.266,2026-11-05T02:50:22Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_multiple_carriage_returns_is_right_true,success,112.863,4.270,2026-11-05T02:50:26Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_new_line,success,112.863,4.265,2026-11-05T02:50:31Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_newline_handling,success,112.863,4.235,2026-11-05T02:50:35Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_non_utf8_bytes,success,112.863,4.238,2026-11-05T02:50:39Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_non_utf8_bytes_ignore_padding_bytes,success,112.863,4.255,2026-11-05T02:50:43Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_non_utf8_non_preserve_ascii_bytes_cut,success,112.863,4.283,2026-11-05T02:50:48Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_overflow_multibyte,success,112.863,4.257,2026-11-05T02:50:52Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_right_line_padding,success,112.863,4.265,2026-11-05T02:50:56Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_s_size_eq_max_width_p1,success,112.863,4.273,2026-11-05T02:51:00Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_tabs_expanded,success,112.863,4.258,2026-11-05T02:51:05Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_tabs_unexpanded,success,112.863,4.265,2026-11-05T02:51:09Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_utf8_multibyte,success,112.863,4.254,2026-11-05T02:51:13Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_white_space_gutter,success,112.863,4.267,2026-11-05T02:51:17Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_width0_chars,success,112.863,4.272,2026-11-05T02:51:22Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::process_half_line::test_zero_width_unicode_chars,success,112.863,4.262,2026-11-05T02:51:26Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::push_output::test_both_empty,success,112.863,4.249,2026-11-05T02:51:30Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::push_output::test_both_lines_non_empty_with_space_symbol_max_tabs,success,112.863,4.272,2026-11-05T02:51:35Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::push_output::test_left_empty_right_not_added,success,112.863,4.272,2026-11-05T02:51:39Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::push_output::test_lines_exceeding_half_width,success,112.863,4.485,2026-11-05T02:51:43Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::push_output::test_non_space_symbol_with_padding,success,112.863,4.258,2026-11-05T02:51:48Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::push_output::test_output_cut_with_maximization,success,112.863,4.421,2026-11-05T02:51:52Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::push_output::test_right_empty_left_not_del,success,112.863,4.263,2026-11-05T02:51:56Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::push_output::test_tabs_in_lines_expanded,success,112.863,4.280,2026-11-05T02:52:01Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,side_diff::tests::push_output::test_unicode_characters,success,112.863,4.267,2026-11-05T02:52:05Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,unified_diff::tests::test_permutations,test_failed,112.863,1.800,2026-11-05T02:52:07Z,50234312.0,panic,"thread 'unified_diff::tests::test_permutations' (46677) panicked at src/unified_diff.rs:470:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,unified_diff::tests::test_permutations_empty_lines,test_failed,112.863,1.797,2026-11-05T02:52:09Z,50234312.0,panic,"thread 'unified_diff::tests::test_permutations_empty_lines' (46747) panicked at src/unified_diff.rs:682:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,unified_diff::tests::test_permutations_missing_line_ending,test_failed,112.863,1.798,2026-11-05T02:52:10Z,50234312.0,panic,"thread 'unified_diff::tests::test_permutations_missing_line_ending' (46881) panicked at src/unified_diff.rs:586:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,unified_diff::tests::test_permutations_missing_lines,test_failed,112.863,1.802,2026-11-05T02:52:12Z,50234312.0,panic,"thread 'unified_diff::tests::test_permutations_missing_lines' (46978) panicked at src/unified_diff.rs:763:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,unified_diff::tests::test_permutations_reverse,test_failed,112.863,1.776,2026-11-05T02:52:14Z,50234312.0,panic,"thread 'unified_diff::tests::test_permutations_reverse' (47115) panicked at src/unified_diff.rs:849:38: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,diffutils-0.5.0,unified_diff::tests::test_stop_early,success,112.863,148.369,2026-11-05T02:54:42Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,utils::tests::expand_tabs::basics,success,112.863,4.286,2026-11-05T02:54:47Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,utils::tests::expand_tabs::invalid_utf8,success,112.863,4.257,2026-11-05T02:54:51Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,utils::tests::expand_tabs::multibyte_chars,success,112.863,4.276,2026-11-05T02:54:55Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,utils::tests::modification_time::invalid_file,success,112.863,4.541,2026-11-05T02:55:00Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,utils::tests::modification_time::set_time,success,112.863,4.514,2026-11-05T02:55:04Z,50234312.0,,
+experimental-bsan,diffutils-0.5.0,utils::tests::write_line::basics,success,112.863,4.286,2026-11-05T02:55:09Z,50234312.0,,

@@ -1,0 +1,23 @@
+experimental-bsan,sigi-3.8.0,assert_failure,success,138.217,11.509,2026-11-05T04:34:53Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,assert_stderr_empty,success,138.217,11.447,2026-11-05T04:35:05Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,assert_stdout_eq,success,138.217,11.471,2026-11-05T04:35:16Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,assert_stdout_line_eq,success,138.217,11.499,2026-11-05T04:35:28Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,assert_stdout_line_starts_with,success,138.217,11.464,2026-11-05T04:35:39Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,assert_stdout_lines_eq,success,138.217,11.484,2026-11-05T04:35:51Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,assert_success,success,138.217,11.503,2026-11-05T04:36:02Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,run_sigi::assert_failure,success,138.217,11.564,2026-11-05T04:36:14Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,run_sigi::assert_stderr_empty,success,138.217,11.555,2026-11-05T04:36:25Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,run_sigi::assert_stdout_eq,success,138.217,11.513,2026-11-05T04:36:37Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,run_sigi::assert_stdout_line_eq,success,138.217,11.530,2026-11-05T04:36:48Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,run_sigi::assert_stdout_line_starts_with,success,138.217,11.570,2026-11-05T04:37:00Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,run_sigi::assert_stdout_lines_eq,success,138.217,11.626,2026-11-05T04:37:12Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,run_sigi::assert_success,success,138.217,11.607,2026-11-05T04:37:23Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,run_sigi::sigi_piping_basic,test_failed,138.217,5.847,2026-11-05T04:37:29Z,50249750.0,panic,"thread 'run_sigi::sigi_piping_basic' (80645) panicked at tests/run_sigi.rs:135:9: sigi stdout had no line starting with: sigi 3.7"
+experimental-bsan,sigi-3.8.0,sigi_abcd_tests,test_failed,138.217,18.632,2026-11-05T04:37:48Z,50249750.0,panic,"thread 'sigi_abcd_tests' (80988) panicked at tests/run_sigi.rs:92:9: assertion `left == right` failed: sigi stdout did not exactly match expectation."
+experimental-bsan,sigi-3.8.0,sigi_empty_stack_ops,success,138.217,28.474,2026-11-05T04:38:16Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,sigi_interactive_basic,test_failed,138.217,10.278,2026-11-05T04:38:26Z,50249750.0,panic,"thread 'sigi_interactive_basic' (82919) panicked at tests/run_sigi.rs:135:9: sigi stdout had no line starting with: sigi 3.7"
+experimental-bsan,sigi-3.8.0,sigi_interactive_basic_semicolons,success,138.217,13.960,2026-11-05T04:38:40Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,sigi_interactive_preamble,test_failed,138.217,10.008,2026-11-05T04:38:50Z,50249750.0,panic,"thread 'sigi_interactive_preamble' (83668) panicked at tests/run_sigi.rs:135:9: sigi stdout had no line starting with: sigi 3.7"
+experimental-bsan,sigi-3.8.0,sigi_piping_basic,test_failed,138.217,11.409,2026-11-05T04:39:02Z,50249750.0,panic,"thread 'sigi_piping_basic' (84015) panicked at tests/run_sigi.rs:135:9: sigi stdout had no line starting with: sigi 3.7"
+experimental-bsan,sigi-3.8.0,sigi_single_item_ops,success,138.217,30.492,2026-11-05T04:39:32Z,50249750.0,,
+experimental-bsan,sigi-3.8.0,sigi_version,test_failed,138.217,6.891,2026-11-05T04:39:39Z,50249750.0,panic,"thread 'sigi_version' (84905) panicked at tests/run_sigi.rs:135:9: sigi stdout had no line starting with: sigi 3.7"

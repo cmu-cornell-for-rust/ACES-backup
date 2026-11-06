@@ -1,0 +1,25 @@
+experimental-bsan,thqm-0.6.0,basic_selection,test_failed,732.178,10.980,2026-11-05T04:27:38Z,50249143.0,panic,"thread 'basic_selection' (99951) panicked at tests/cli.rs:122:33: called `Result::unwrap()` on an `Err` value: reqwest::Error { kind: Request, url: ""http://10.8.9.5:8003/select/test"", source: hyper_util::client::legacy::Error(Connect, ConnectError(""tcp connect error"", Os { code: 111, kind: Connectio"
+experimental-bsan,thqm-0.6.0,basic_selection_oneshot,test_failed,732.178,11.261,2026-11-05T04:27:49Z,50249143.0,panic,"thread 'basic_selection_oneshot' (103356) panicked at tests/cli.rs:143:5: assertion failed: code.is_some()"
+experimental-bsan,thqm-0.6.0,cmd_shutdown,test_failed,732.178,11.030,2026-11-05T04:28:00Z,50249143.0,panic,"thread 'cmd_shutdown' (787) panicked at tests/cli.rs:159:5: assertion failed: code.is_some()"
+experimental-bsan,thqm-0.6.0,help_msg,success,732.178,12.260,2026-11-05T04:28:13Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,list_styles,test_failed,732.178,11.243,2026-11-05T04:28:24Z,50249143.0,panic,"thread 'list_styles' (4867) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+experimental-bsan,thqm-0.6.0,save_qrcode,test_failed,732.178,10.076,2026-11-05T04:28:34Z,50249143.0,panic,"thread 'save_qrcode' (6397) panicked at tests/cli.rs:108:5: assertion failed: image_file.is_file()"
+experimental-bsan,thqm-0.6.0,server::test::test_handle_auth,success,732.178,9.874,2026-11-05T04:28:44Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,server::test::test_handle_cmd,success,732.178,9.867,2026-11-05T04:28:54Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,server::test::test_handle_select,success,732.178,9.891,2026-11-05T04:29:04Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,stdout_url_auth,test_failed,732.178,10.153,2026-11-05T04:29:14Z,50249143.0,panic,"thread 'stdout_url_auth' (13433) panicked at tests/cli.rs:88:5: assertion `left == right` failed"
+experimental-bsan,thqm-0.6.0,stdout_url_basic,test_failed,732.178,10.153,2026-11-05T04:29:24Z,50249143.0,panic,"thread 'stdout_url_basic' (14927) panicked at tests/cli.rs:67:5: assertion `left == right` failed"
+experimental-bsan,thqm-0.6.0,styles::tests::style_set_option,success,732.178,9.867,2026-11-05T04:29:34Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,styles::tests::test_fetch,success,732.178,9.850,2026-11-05T04:29:44Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,styles::tests::test_fetch_bad_dir,success,732.178,9.885,2026-11-05T04:29:54Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,styles::tests::test_style_from_name,success,732.178,9.864,2026-11-05T04:30:04Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,styles::tests::test_style_panic,success,732.178,9.865,2026-11-05T04:30:14Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,styles::tests::test_style_render_missing_options,success,732.178,9.890,2026-11-05T04:30:24Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,styles::tests::test_style_template_path,success,732.178,9.861,2026-11-05T04:30:33Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,utils::tests::test_create_full_url,success,732.178,9.851,2026-11-05T04:30:43Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,utils::tests::test_create_svg_string,success,732.178,26.559,2026-11-05T04:31:10Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,utils::tests::test_create_url,success,732.178,9.868,2026-11-05T04:31:20Z,50249143.0,,
+experimental-bsan,thqm-0.6.0,utils::tests::test_download_styles_to_dir,timeout,732.178,150.033,2026-11-05T04:33:50Z,50249143.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,thqm-0.6.0,utils::tests::test_get_ip,no_match,732.178,5.979,2026-11-05T04:33:56Z,50249143.0,panic,"thread '<unnamed>' (53289) panicked at src/utils.rs:131:34: called `Result::unwrap()` on an `Err` value: Os { code: 17, kind: AlreadyExists, message: ""File exists"" }"
+experimental-bsan,thqm-0.6.0,utils::tests::test_print_qrcode,no_match,732.178,6.012,2026-11-05T04:34:02Z,50249143.0,panic,"thread '<unnamed>' (54817) panicked at src/utils.rs:131:34: called `Result::unwrap()` on an `Err` value: Os { code: 17, kind: AlreadyExists, message: ""File exists"" }"
+experimental-bsan,thqm-0.6.0,utils::tests::test_save_qrcode,no_match,732.178,5.958,2026-11-05T04:34:08Z,50249143.0,panic,"thread '<unnamed>' (56623) panicked at src/utils.rs:131:34: called `Result::unwrap()` on an `Err` value: Os { code: 17, kind: AlreadyExists, message: ""File exists"" }"

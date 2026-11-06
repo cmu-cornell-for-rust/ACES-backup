@@ -1,0 +1,184 @@
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::behavior_on_io_errors,test_failed,152.364,12.548,2026-11-05T01:38:37Z,50233726.0,gc,"test async_readers::ades_futures::tests::behavior_on_io_errors ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::headers_on_empty_data,test_failed,152.364,12.616,2026-11-05T01:38:50Z,50233726.0,gc,"test async_readers::ades_futures::tests::headers_on_empty_data ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::no_headers_on_empty_data,test_failed,152.364,12.536,2026-11-05T01:39:03Z,50233726.0,gc,"test async_readers::ades_futures::tests::no_headers_on_empty_data ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::no_headers_on_empty_data_after_headers,test_failed,152.364,12.586,2026-11-05T01:39:15Z,50233726.0,gc,"test async_readers::ades_futures::tests::no_headers_on_empty_data_after_headers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::positions_headers,test_failed,152.364,12.589,2026-11-05T01:39:28Z,50233726.0,gc,"test async_readers::ades_futures::tests::positions_headers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::positions_no_headers,test_failed,152.364,12.539,2026-11-05T01:39:40Z,50233726.0,gc,"test async_readers::ades_futures::tests::positions_no_headers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::read_byte_record,test_failed,152.364,12.542,2026-11-05T01:39:53Z,50233726.0,gc,"test async_readers::ades_futures::tests::read_byte_record ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::read_record_headers,test_failed,152.364,12.584,2026-11-05T01:40:05Z,50233726.0,gc,"test async_readers::ades_futures::tests::read_record_headers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::read_record_headers_invalid_utf8,test_failed,152.364,12.560,2026-11-05T01:40:18Z,50233726.0,gc,"test async_readers::ades_futures::tests::read_record_headers_invalid_utf8 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::read_record_no_headers_after,test_failed,152.364,12.537,2026-11-05T01:40:31Z,50233726.0,gc,"test async_readers::ades_futures::tests::read_record_no_headers_after ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::read_record_no_headers_before,test_failed,152.364,12.535,2026-11-05T01:40:43Z,50233726.0,gc,"test async_readers::ades_futures::tests::read_record_no_headers_before ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::read_record_unequal_continue,test_failed,152.364,12.527,2026-11-05T01:40:56Z,50233726.0,gc,"test async_readers::ades_futures::tests::read_record_unequal_continue ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::read_record_unequal_fails,test_failed,152.364,12.588,2026-11-05T01:41:08Z,50233726.0,gc,"test async_readers::ades_futures::tests::read_record_unequal_fails ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::read_record_unequal_ok,test_failed,152.364,12.553,2026-11-05T01:41:21Z,50233726.0,gc,"test async_readers::ades_futures::tests::read_record_unequal_ok ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::read_trimed_header_invalid_utf8,test_failed,152.364,12.541,2026-11-05T01:41:33Z,50233726.0,gc,"test async_readers::ades_futures::tests::read_trimed_header_invalid_utf8 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::read_trimmed_header,test_failed,152.364,12.542,2026-11-05T01:41:46Z,50233726.0,gc,"test async_readers::ades_futures::tests::read_trimmed_header ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::read_trimmed_records,test_failed,152.364,12.563,2026-11-05T01:41:59Z,50233726.0,gc,"test async_readers::ades_futures::tests::read_trimmed_records ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::read_trimmed_records_and_headers,test_failed,152.364,12.578,2026-11-05T01:42:11Z,50233726.0,gc,"test async_readers::ades_futures::tests::read_trimmed_records_and_headers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::seek,test_failed,152.364,12.531,2026-11-05T01:42:24Z,50233726.0,gc,"test async_readers::ades_futures::tests::seek ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::seek_headers_after,test_failed,152.364,12.540,2026-11-05T01:42:36Z,50233726.0,gc,"test async_readers::ades_futures::tests::seek_headers_after ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::seek_headers_before_after,test_failed,152.364,12.527,2026-11-05T01:42:49Z,50233726.0,gc,"test async_readers::ades_futures::tests::seek_headers_before_after ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ades_futures::tests::seek_headers_no_actual_seek,test_failed,152.364,12.597,2026-11-05T01:43:01Z,50233726.0,gc,"test async_readers::ades_futures::tests::seek_headers_no_actual_seek ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::behavior_on_io_errors,test_failed,152.364,12.535,2026-11-05T01:43:14Z,50233726.0,gc,"test async_readers::ardr_futures::tests::behavior_on_io_errors ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::headers_on_empty_data,test_failed,152.364,12.567,2026-11-05T01:43:27Z,50233726.0,gc,"test async_readers::ardr_futures::tests::headers_on_empty_data ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::no_headers_on_empty_data,test_failed,152.364,12.526,2026-11-05T01:43:39Z,50233726.0,gc,"test async_readers::ardr_futures::tests::no_headers_on_empty_data ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::no_headers_on_empty_data_after_headers,test_failed,152.364,12.517,2026-11-05T01:43:52Z,50233726.0,gc,"test async_readers::ardr_futures::tests::no_headers_on_empty_data_after_headers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::positions_headers,test_failed,152.364,12.559,2026-11-05T01:44:04Z,50233726.0,gc,"test async_readers::ardr_futures::tests::positions_headers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::positions_no_headers,test_failed,152.364,12.583,2026-11-05T01:44:17Z,50233726.0,gc,"test async_readers::ardr_futures::tests::positions_no_headers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::read_byte_record,test_failed,152.364,12.581,2026-11-05T01:44:29Z,50233726.0,gc,"test async_readers::ardr_futures::tests::read_byte_record ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::read_record_headers,test_failed,152.364,12.536,2026-11-05T01:44:42Z,50233726.0,gc,"test async_readers::ardr_futures::tests::read_record_headers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::read_record_headers_invalid_utf8,test_failed,152.364,12.565,2026-11-05T01:44:55Z,50233726.0,gc,"test async_readers::ardr_futures::tests::read_record_headers_invalid_utf8 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::read_record_no_headers_after,test_failed,152.364,12.518,2026-11-05T01:45:07Z,50233726.0,gc,"test async_readers::ardr_futures::tests::read_record_no_headers_after ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::read_record_no_headers_before,test_failed,152.364,12.533,2026-11-05T01:45:20Z,50233726.0,gc,"test async_readers::ardr_futures::tests::read_record_no_headers_before ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::read_record_unequal_continue,test_failed,152.364,12.575,2026-11-05T01:45:32Z,50233726.0,gc,"test async_readers::ardr_futures::tests::read_record_unequal_continue ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::read_record_unequal_fails,test_failed,152.364,12.542,2026-11-05T01:45:45Z,50233726.0,gc,"test async_readers::ardr_futures::tests::read_record_unequal_fails ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::read_record_unequal_ok,test_failed,152.364,12.538,2026-11-05T01:45:57Z,50233726.0,gc,"test async_readers::ardr_futures::tests::read_record_unequal_ok ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::read_trimed_header_invalid_utf8,test_failed,152.364,12.554,2026-11-05T01:46:10Z,50233726.0,gc,"test async_readers::ardr_futures::tests::read_trimed_header_invalid_utf8 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::read_trimmed_header,test_failed,152.364,12.567,2026-11-05T01:46:23Z,50233726.0,gc,"test async_readers::ardr_futures::tests::read_trimmed_header ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::read_trimmed_records,test_failed,152.364,12.511,2026-11-05T01:46:35Z,50233726.0,gc,"test async_readers::ardr_futures::tests::read_trimmed_records ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::read_trimmed_records_and_headers,test_failed,152.364,12.573,2026-11-05T01:46:48Z,50233726.0,gc,"test async_readers::ardr_futures::tests::read_trimmed_records_and_headers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::rewind,test_failed,152.364,12.546,2026-11-05T01:47:00Z,50233726.0,gc,"test async_readers::ardr_futures::tests::rewind ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::seek,test_failed,152.364,12.539,2026-11-05T01:47:13Z,50233726.0,gc,"test async_readers::ardr_futures::tests::seek ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::seek_headers_after,test_failed,152.364,12.573,2026-11-05T01:47:25Z,50233726.0,gc,"test async_readers::ardr_futures::tests::seek_headers_after ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::seek_headers_before_after,test_failed,152.364,12.529,2026-11-05T01:47:38Z,50233726.0,gc,"test async_readers::ardr_futures::tests::seek_headers_before_after ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_readers::ardr_futures::tests::seek_headers_no_actual_seek,test_failed,152.364,12.518,2026-11-05T01:47:50Z,50233726.0,gc,"test async_readers::ardr_futures::tests::seek_headers_no_actual_seek ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::full_buffer_should_not_flush_underlying,success,152.364,5.234,2026-11-05T01:47:56Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::one_byte_record,success,152.364,5.173,2026-11-05T01:48:01Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::one_empty_record,success,152.364,5.150,2026-11-05T01:48:06Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::one_record,success,152.364,5.179,2026-11-05T01:48:11Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::one_string_record,success,152.364,5.156,2026-11-05T01:48:16Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::raw_one_byte_record,success,152.364,5.174,2026-11-05T01:48:22Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::raw_one_empty_record,success,152.364,5.135,2026-11-05T01:48:27Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::raw_two_empty_records,success,152.364,5.137,2026-11-05T01:48:32Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::raw_unequal_records_bad,success,152.364,5.180,2026-11-05T01:48:37Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::raw_unequal_records_ok,success,152.364,5.193,2026-11-05T01:48:42Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::two_empty_records,success,152.364,5.125,2026-11-05T01:48:47Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::unequal_records_bad,success,152.364,5.162,2026-11-05T01:48:53Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::awtr_futures::tests::unequal_records_ok,success,152.364,5.182,2026-11-05T01:48:58Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::one_byte_record,success,152.364,4.310,2026-11-05T01:49:02Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::one_empty_record,success,152.364,4.291,2026-11-05T01:49:06Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::one_record,success,152.364,4.293,2026-11-05T01:49:11Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::one_string_record,success,152.364,4.294,2026-11-05T01:49:15Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::serialize_enum,success,152.364,4.306,2026-11-05T01:49:19Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::serialize_no_headers,success,152.364,4.290,2026-11-05T01:49:24Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::serialize_no_headers_128,success,152.364,4.316,2026-11-05T01:49:28Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::serialize_struct,success,152.364,4.333,2026-11-05T01:49:32Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::serialize_tuple,success,152.364,4.291,2026-11-05T01:49:37Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::serialize_vec,success,152.364,4.301,2026-11-05T01:49:41Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::serialize_with_headers,success,152.364,4.297,2026-11-05T01:49:45Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::two_empty_records,success,152.364,4.305,2026-11-05T01:49:50Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::unequal_records_bad,success,152.364,4.318,2026-11-05T01:49:54Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::unequal_records_ok,success,152.364,4.311,2026-11-05T01:49:58Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,async_writers::mwtr_serde::tests::write_field,success,152.364,4.298,2026-11-05T01:50:02Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::empty_field_1,success,152.364,4.295,2026-11-05T01:50:07Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::empty_field_2,success,152.364,4.290,2026-11-05T01:50:11Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::empty_record,success,152.364,4.272,2026-11-05T01:50:15Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::empty_surround_1,success,152.364,4.287,2026-11-05T01:50:20Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::empty_surround_2,success,152.364,4.282,2026-11-05T01:50:24Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::eq_field_boundaries,success,152.364,4.302,2026-11-05T01:50:28Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::eq_record_len,success,152.364,4.296,2026-11-05T01:50:33Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::iter,success,152.364,4.296,2026-11-05T01:50:37Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::iter_forward_and_reverse,success,152.364,4.295,2026-11-05T01:50:41Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::iter_reverse,success,152.364,4.325,2026-11-05T01:50:45Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::record_1,success,152.364,4.325,2026-11-05T01:50:50Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::record_2,success,152.364,4.366,2026-11-05T01:50:54Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::trim_back,success,152.364,4.316,2026-11-05T01:50:59Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::trim_both,success,152.364,4.317,2026-11-05T01:51:03Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::trim_does_not_panic_on_empty_records_1,success,152.364,4.325,2026-11-05T01:51:07Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::trim_does_not_panic_on_empty_records_2,success,152.364,4.301,2026-11-05T01:51:12Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::trim_does_not_panic_on_empty_records_3,success,152.364,4.300,2026-11-05T01:51:16Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::trim_front,success,152.364,4.288,2026-11-05T01:51:20Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::trim_whitespace_only,success,152.364,4.278,2026-11-05T01:51:24Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::utf8_clear_ok,success,152.364,4.300,2026-11-05T01:51:29Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::utf8_error_1,success,152.364,4.326,2026-11-05T01:51:33Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::utf8_error_2,success,152.364,4.304,2026-11-05T01:51:37Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::utf8_error_3,success,152.364,4.335,2026-11-05T01:51:42Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::utf8_error_4,success,152.364,4.320,2026-11-05T01:51:46Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::utf8_error_5,success,152.364,4.323,2026-11-05T01:51:50Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,byte_record::tests::utf8_error_6,success,152.364,4.316,2026-11-05T01:51:55Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::adjacent_fixed_arrays,success,152.364,4.327,2026-11-05T01:51:59Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::bad_hex_seq,success,152.364,4.323,2026-11-05T01:52:03Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::borrowed,success,152.364,4.320,2026-11-05T01:52:08Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::borrowed_map,success,152.364,4.331,2026-11-05T01:52:12Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::borrowed_map_bytes,success,152.364,4.334,2026-11-05T01:52:16Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::bytes,success,152.364,4.320,2026-11-05T01:52:21Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::enum_label_simple_tagged,success,152.364,4.316,2026-11-05T01:52:25Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::enum_untagged,success,152.364,4.351,2026-11-05T01:52:29Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::flatten,success,152.364,4.321,2026-11-05T01:52:34Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::map_headers,success,152.364,4.350,2026-11-05T01:52:38Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::map_no_headers,success,152.364,4.324,2026-11-05T01:52:42Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::mixed_hex_seq,success,152.364,4.316,2026-11-05T01:52:47Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::no_chars,success,152.364,4.318,2026-11-05T01:52:51Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::no_fields,success,152.364,4.337,2026-11-05T01:52:55Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::one_char,success,152.364,4.331,2026-11-05T01:53:00Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::one_field,success,152.364,4.327,2026-11-05T01:53:04Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::one_field_128,success,152.364,4.336,2026-11-05T01:53:08Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::option_empty_field,success,152.364,4.325,2026-11-05T01:53:13Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::partially_invalid_utf8,success,152.364,4.327,2026-11-05T01:53:17Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::seq_in_struct,success,152.364,4.343,2026-11-05T01:53:21Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::seq_in_struct_tail,success,152.364,4.344,2026-11-05T01:53:26Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::simple_hex_seq,success,152.364,4.349,2026-11-05T01:53:30Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::simple_seq,success,152.364,4.326,2026-11-05T01:53:35Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::too_many_chars,success,152.364,4.333,2026-11-05T01:53:39Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::two_fields,success,152.364,4.316,2026-11-05T01:53:43Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::two_fields_too_few,success,152.364,4.330,2026-11-05T01:53:48Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::two_fields_too_many,success,152.364,4.337,2026-11-05T01:53:52Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::with_header,success,152.364,4.337,2026-11-05T01:53:56Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::with_header_empty,success,152.364,4.316,2026-11-05T01:54:01Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::with_header_empty_ok,success,152.364,4.303,2026-11-05T01:54:05Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::with_header_missing,success,152.364,4.301,2026-11-05T01:54:09Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::with_header_missing_ok,success,152.364,4.337,2026-11-05T01:54:14Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::with_header_no_fields,success,152.364,4.315,2026-11-05T01:54:18Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::with_header_unknown,success,152.364,4.328,2026-11-05T01:54:22Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,deserializer::tests::without_header,success,152.364,4.300,2026-11-05T01:54:26Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,read_records_incomplete_row,test_failed,152.364,13.900,2026-11-05T01:54:40Z,50233726.0,gc,"test read_records_incomplete_row ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,read_records_non_utf8,test_failed,152.364,13.915,2026-11-05T01:54:54Z,50233726.0,gc,"test read_records_non_utf8 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,read_records_ok,test_failed,152.364,13.896,2026-11-05T01:55:08Z,50233726.0,gc,"test read_records_ok ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,read_serde_incomplete_row,test_failed,152.364,15.266,2026-11-05T01:55:24Z,50233726.0,gc,"test read_serde_incomplete_row ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,read_serde_invalid_date_time,test_failed,152.364,15.319,2026-11-05T01:55:39Z,50233726.0,gc,"test read_serde_invalid_date_time ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,read_serde_non_int,test_failed,152.364,15.254,2026-11-05T01:55:54Z,50233726.0,gc,"test read_serde_non_int ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,read_serde_non_utf8,test_failed,152.364,15.293,2026-11-05T01:56:09Z,50233726.0,gc,"test read_serde_non_utf8 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,read_serde_ok,test_failed,152.364,15.323,2026-11-05T01:56:25Z,50233726.0,gc,"test read_serde_ok ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,serializer::tests::bool,success,152.364,4.321,2026-11-05T01:56:29Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::bytes,success,152.364,4.297,2026-11-05T01:56:33Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::char,success,152.364,4.330,2026-11-05T01:56:38Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::enum_newtypes,success,152.364,4.327,2026-11-05T01:56:42Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::enum_struct_variant,success,152.364,4.296,2026-11-05T01:56:46Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::enum_units,success,152.364,4.313,2026-11-05T01:56:51Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::float,success,152.364,4.309,2026-11-05T01:56:55Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::float_nan,success,152.364,4.321,2026-11-05T01:56:59Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::integer,success,152.364,4.327,2026-11-05T01:57:04Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::integer_i128,success,152.364,4.348,2026-11-05T01:57:08Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::integer_u128,success,152.364,4.333,2026-11-05T01:57:12Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::option,success,152.364,4.313,2026-11-05T01:57:17Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::seq,success,152.364,4.319,2026-11-05T01:57:21Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::str,success,152.364,4.358,2026-11-05T01:57:25Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::struct_headers,success,152.364,4.339,2026-11-05T01:57:30Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::struct_headers_inside_nested_tuple_seq,success,152.364,4.353,2026-11-05T01:57:34Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::struct_headers_inside_seq,success,152.364,4.332,2026-11-05T01:57:39Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::struct_headers_inside_tuple,success,152.364,4.343,2026-11-05T01:57:43Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::struct_headers_inside_tuple_scalar_after,success,152.364,4.343,2026-11-05T01:57:47Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::struct_headers_inside_tuple_scalar_before,success,152.364,4.337,2026-11-05T01:57:52Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::struct_headers_nested,success,152.364,4.342,2026-11-05T01:57:56Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::struct_headers_nested_seq,success,152.364,4.356,2026-11-05T01:58:00Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::struct_newtype,success,152.364,4.359,2026-11-05T01:58:05Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::struct_no_headers,success,152.364,4.353,2026-11-05T01:58:09Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::struct_no_headers_128,success,152.364,4.339,2026-11-05T01:58:13Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::struct_unit,success,152.364,4.360,2026-11-05T01:58:18Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::tuple,success,152.364,4.366,2026-11-05T01:58:22Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::tuple_struct,success,152.364,4.343,2026-11-05T01:58:26Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::tuple_variant,success,152.364,4.343,2026-11-05T01:58:31Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,serializer::tests::unit,success,152.364,4.318,2026-11-05T01:58:35Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,string_record::tests::eq_field_boundaries,success,152.364,4.319,2026-11-05T01:58:39Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,string_record::tests::eq_record_len,success,152.364,4.349,2026-11-05T01:58:44Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,string_record::tests::trim_back,success,152.364,4.367,2026-11-05T01:58:48Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,string_record::tests::trim_both,success,152.364,4.342,2026-11-05T01:58:53Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,string_record::tests::trim_does_not_panic_on_empty_records_1,success,152.364,4.330,2026-11-05T01:58:57Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,string_record::tests::trim_does_not_panic_on_empty_records_2,success,152.364,4.334,2026-11-05T01:59:01Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,string_record::tests::trim_does_not_panic_on_empty_records_3,success,152.364,4.326,2026-11-05T01:59:06Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,string_record::tests::trim_front,success,152.364,4.339,2026-11-05T01:59:10Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,string_record::tests::trim_whitespace_only,success,152.364,4.353,2026-11-05T01:59:14Z,50233726.0,,
+experimental-bsan,csv-async-1.3.1,tests::test_on_files,test_failed,152.364,12.508,2026-11-05T01:59:27Z,50233726.0,gc,"test tests::test_on_files ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,tests::test_on_files_serde,test_failed,152.364,12.504,2026-11-05T01:59:39Z,50233726.0,gc,"test tests::test_on_files_serde ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,csv-async-1.3.1,tests::test_on_files_serde_send,test_failed,152.364,12.501,2026-11-05T01:59:52Z,50233726.0,gc,"test tests::test_on_files_serde_send ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."

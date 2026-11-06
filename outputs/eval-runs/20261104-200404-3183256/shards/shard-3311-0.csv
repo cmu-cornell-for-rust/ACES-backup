@@ -1,0 +1,68 @@
+experimental-bsan,sails-macros-core-2.0.0,custom_crate_path,success,203.858,20.572,2026-11-05T02:26:52Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,custom_crate_path_and_no_reflect_hash,success,203.858,20.305,2026-11-05T02:27:13Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,enum_basic,success,203.858,20.753,2026-11-05T02:27:33Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,event::args::tests::event_args_crate_and_scale,success,203.858,7.110,2026-11-05T02:27:41Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,event::args::tests::event_args_crate_path,success,203.858,7.154,2026-11-05T02:27:48Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,event::args::tests::event_args_crate_path_allows_trailing_comma,success,203.858,7.181,2026-11-05T02:27:55Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,event::args::tests::event_args_default,success,203.858,7.140,2026-11-05T02:28:02Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,event::args::tests::event_args_duplicate_crate_errors,success,203.858,7.172,2026-11-05T02:28:09Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,event::args::tests::event_args_duplicate_scale_errors,success,203.858,7.153,2026-11-05T02:28:16Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,event::args::tests::event_args_scale_allows_trailing_comma,success,203.858,7.116,2026-11-05T02:28:24Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,event::args::tests::event_args_scale_only,success,203.858,7.171,2026-11-05T02:28:31Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,event::args::tests::event_args_unknown_argument_errors,success,203.858,7.226,2026-11-05T02:28:38Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,event_basic,success,203.858,21.662,2026-11-05T02:29:00Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,event_sails_rename,success,203.858,24.251,2026-11-05T02:29:24Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,event_sort_by_name,success,203.858,24.353,2026-11-05T02:29:48Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,export::args::tests::export_parse_args,success,203.858,7.191,2026-11-05T02:29:55Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,export::args::tests::export_parse_args_default_is_both,success,203.858,7.099,2026-11-05T02:30:03Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,export::args::tests::export_parse_args_duplicate_scale_errors,success,203.858,7.128,2026-11-05T02:30:10Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,export::args::tests::export_parse_args_overrides,success,203.858,7.172,2026-11-05T02:30:17Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,export::args::tests::export_parse_args_scale_only,success,203.858,7.132,2026-11-05T02:30:24Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,export::args::tests::export_parse_args_unwrap_result,success,203.858,7.131,2026-11-05T02:30:31Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,export::args::tests::export_parse_args_unwrap_result_eq_false,success,203.858,7.113,2026-11-05T02:30:38Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,generates_async_ctor_with_service,test_failed,203.858,16.684,2026-11-05T02:30:55Z,50240610.0,crash,"test generates_async_ctor_with_service ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,generates_async_main_with_handle_reply,test_failed,203.858,13.854,2026-11-05T02:31:09Z,50240610.0,crash,"test generates_async_main_with_handle_reply ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,generates_ctors_meta_with_docs,test_failed,203.858,16.304,2026-11-05T02:31:25Z,50240610.0,crash,"test generates_ctors_meta_with_docs ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,generates_handle_for_multiple_services_with_non_empty_routes,test_failed,203.858,20.211,2026-11-05T02:31:45Z,50240610.0,crash,"test generates_handle_for_multiple_services_with_non_empty_routes ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,generates_handle_for_services_with_unwrap_result,test_failed,203.858,20.365,2026-11-05T02:32:06Z,50240610.0,crash,"test generates_handle_for_services_with_unwrap_result ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,generates_handle_for_single_service_with_non_empty_route,test_failed,203.858,16.714,2026-11-05T02:32:23Z,50240610.0,crash,"test generates_handle_for_single_service_with_non_empty_route ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,generates_handle_with_crate_path,test_failed,203.858,13.460,2026-11-05T02:32:36Z,50240610.0,crash,"test generates_handle_with_crate_path ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,generates_handle_with_gprogram_attributes,test_failed,203.858,13.486,2026-11-05T02:32:50Z,50240610.0,crash,"test generates_handle_with_gprogram_attributes ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,generates_handle_with_payable,test_failed,203.858,13.840,2026-11-05T02:33:03Z,50240610.0,crash,"test generates_handle_with_payable ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,generates_init_for_multiple_ctors,test_failed,203.858,15.702,2026-11-05T02:33:19Z,50240610.0,crash,"test generates_init_for_multiple_ctors ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,generates_init_for_no_ctor,test_failed,203.858,13.387,2026-11-05T02:33:32Z,50240610.0,crash,"test generates_init_for_no_ctor ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,generates_init_for_single_ctor,test_failed,203.858,13.666,2026-11-05T02:33:46Z,50240610.0,crash,"test generates_init_for_single_ctor ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,generates_init_with_unwrap_result,test_failed,203.858,16.480,2026-11-05T02:34:03Z,50240610.0,crash,"test generates_init_with_unwrap_result ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,no_reflect_hash_flag,success,203.858,20.211,2026-11-05T02:34:23Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,program::args::tests::gprogram_parse_attrs,success,203.858,7.111,2026-11-05T02:34:30Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,program::args::tests::gprogram_parse_crate,success,203.858,7.131,2026-11-05T02:34:37Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,program::args::tests::program_parse_payable,success,203.858,7.120,2026-11-05T02:34:44Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,program::tests::gprogram_discovers_public_associated_functions_returning_self_or_the_type_as_ctors,success,203.858,8.308,2026-11-05T02:34:53Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,program::tests::gprogram_discovers_public_methods_with_self_ref_only_and_some_return_as_service_funcs,success,203.858,7.695,2026-11-05T02:35:00Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,program::tests::is_mut_service_ctor_detects_only_public_mut_self_factories,success,203.858,7.419,2026-11-05T02:35:08Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,service::args::tests::gservice_parse_empty,success,203.858,7.193,2026-11-05T02:35:15Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,service::args::tests::gservice_parse_extends_array_path,success,203.858,7.163,2026-11-05T02:35:22Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,service::args::tests::gservice_parse_extends_array_path_with_args,success,203.858,7.212,2026-11-05T02:35:29Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,service::args::tests::gservice_parse_extends_path,success,203.858,7.125,2026-11-05T02:35:36Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,service::args::tests::gservice_parse_extends_path_with_args,success,203.858,7.116,2026-11-05T02:35:44Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,service::tests::discover_service_handlers_with_export,success,203.858,9.500,2026-11-05T02:35:53Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,struct_basic,success,203.858,20.743,2026-11-05T02:36:14Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,struct_with_generics,success,203.858,20.927,2026-11-05T02:36:35Z,50240610.0,,
+experimental-bsan,sails-macros-core-2.0.0,works_with_all_override_variants,test_failed,203.858,34.806,2026-11-05T02:37:10Z,50240610.0,crash,"test works_with_all_override_variants ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_allow_attrs,test_failed,203.858,25.946,2026-11-05T02:37:36Z,50240610.0,crash,"test works_with_allow_attrs ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_basics,test_failed,203.858,25.877,2026-11-05T02:38:01Z,50240610.0,crash,"test works_with_basics ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_crate_path,test_failed,203.858,25.644,2026-11-05T02:38:27Z,50240610.0,crash,"test works_with_crate_path ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_docs,test_failed,203.858,26.215,2026-11-05T02:38:53Z,50240610.0,crash,"test works_with_docs ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_events,test_failed,203.858,26.346,2026-11-05T02:39:20Z,50240610.0,crash,"test works_with_events ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_explicit_scale_transport,test_failed,203.858,26.009,2026-11-05T02:39:46Z,50240610.0,crash,"test works_with_explicit_scale_transport ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_export,test_failed,203.858,26.537,2026-11-05T02:40:12Z,50240610.0,crash,"test works_with_export ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_extends,test_failed,203.858,29.569,2026-11-05T02:40:42Z,50240610.0,crash,"test works_with_extends ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_extends_and_lifetimes,test_failed,203.858,30.850,2026-11-05T02:41:13Z,50240610.0,crash,"test works_with_extends_and_lifetimes ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_lifetimes_and_events,test_failed,203.858,23.173,2026-11-05T02:41:36Z,50240610.0,crash,"test works_with_lifetimes_and_events ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_lifetimes_and_generics,test_failed,203.858,22.550,2026-11-05T02:41:59Z,50240610.0,crash,"test works_with_lifetimes_and_generics ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_methods_with_lifetimes,test_failed,203.858,41.323,2026-11-05T02:42:40Z,50240610.0,crash,"test works_with_methods_with_lifetimes ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_mixed_methods,test_failed,203.858,35.717,2026-11-05T02:43:16Z,50240610.0,crash,"test works_with_mixed_methods ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_overrides,test_failed,203.858,32.663,2026-11-05T02:43:48Z,50240610.0,crash,"test works_with_overrides ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_reply_with_value,test_failed,203.858,26.382,2026-11-05T02:44:15Z,50240610.0,crash,"test works_with_reply_with_value ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_special_lifetimes_and_events,test_failed,203.858,23.519,2026-11-05T02:44:38Z,50240610.0,crash,"test works_with_special_lifetimes_and_events ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sails-macros-core-2.0.0,works_with_type_generics_used_only_by_impl,test_failed,203.858,29.797,2026-11-05T02:45:08Z,50240610.0,crash,"test works_with_type_generics_used_only_by_impl ... BorrowSanitizer:DEADLYSIGNAL"

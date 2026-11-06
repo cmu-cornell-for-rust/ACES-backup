@@ -1,0 +1,33 @@
+experimental-bsan,spamassassin-milter-0.5.0,authenticated_sender,success,163.117,15.403,2026-11-05T03:49:35Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,client::tests::client_process_invalid_response,success,163.117,14.736,2026-11-05T03:49:49Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,client::tests::client_process_reject_spam,success,163.117,14.805,2026-11-05T03:50:04Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,client::tests::client_process_rewrite_spam,success,163.117,14.855,2026-11-05T03:50:19Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,client::tests::client_process_skipped_body_not_replaced,success,163.117,14.825,2026-11-05T03:50:34Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,client::tests::client_send_envelope_addresses,success,163.117,14.765,2026-11-05T03:50:49Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,client::tests::client_send_writes_bytes,success,163.117,14.772,2026-11-05T03:51:03Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,collections::tests::map_contains_key,success,163.117,14.747,2026-11-05T03:51:18Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,collections::tests::map_get,success,163.117,14.732,2026-11-05T03:51:33Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,collections::tests::map_insert,success,163.117,14.722,2026-11-05T03:51:48Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,collections::tests::map_insert_if_absent,success,163.117,14.710,2026-11-05T03:52:02Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,collections::tests::set_insert,success,163.117,14.711,2026-11-05T03:52:17Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,config::tests::spamc_args_extends_args,success,163.117,14.703,2026-11-05T03:52:32Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,config::tests::trusted_networks_config,success,163.117,14.757,2026-11-05T03:52:47Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,email::tests::email_header_lines_empty,success,163.117,14.726,2026-11-05T03:53:01Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,email::tests::email_header_lines_multi,success,163.117,14.753,2026-11-05T03:53:16Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,email::tests::email_header_lines_simple,success,163.117,14.753,2026-11-05T03:53:31Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,email::tests::email_parse_header_line,success,163.117,14.858,2026-11-05T03:53:46Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,email::tests::email_split_at_eoh,success,163.117,14.971,2026-11-05T03:54:01Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,email::tests::ensure_crlf_ok,success,163.117,15.008,2026-11-05T03:54:16Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,email::tests::ensure_lf_ok,success,163.117,15.020,2026-11-05T03:54:31Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,email::tests::header_rewriter_adds_and_replaces_headers,success,163.117,14.936,2026-11-05T03:54:46Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,email::tests::header_rewriter_adds_appended_headers,success,163.117,15.090,2026-11-05T03:55:01Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,email::tests::header_rewriter_flags_spam,success,163.117,15.005,2026-11-05T03:55:16Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,email::tests::header_rewriter_processes_first_occurrence_only,success,163.117,15.003,2026-11-05T03:55:31Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,email::tests::spam_assassin_header_predicate,success,163.117,14.970,2026-11-05T03:55:46Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,ham_message,test_failed,163.117,6.555,2026-11-05T03:55:52Z,50247430.0,panic,"thread 'ham_message' (28473) panicked at tests/ham_message.rs:62:5: assertion `left == right` failed"
+experimental-bsan,spamassassin-milter-0.5.0,loopback_connection,success,163.117,15.894,2026-11-05T03:56:08Z,50247430.0,,
+experimental-bsan,spamassassin-milter-0.5.0,reject_spam,test_failed,163.117,10.640,2026-11-05T03:56:19Z,50247430.0,panic,"thread 'reject_spam' (32694) panicked at tests/reject_spam.rs:55:5: assertion `left == right` failed"
+experimental-bsan,spamassassin-milter-0.5.0,skip_oversized,test_failed,163.117,11.956,2026-11-05T03:56:31Z,50247430.0,panic,"thread 'skip_oversized' (34640) panicked at tests/skip_oversized.rs:50:5: assertion `left == right` failed"
+experimental-bsan,spamassassin-milter-0.5.0,spam_message,test_failed,163.117,13.260,2026-11-05T03:56:44Z,50247430.0,panic,"thread 'spam_message' (36615) panicked at tests/spam_message.rs:76:5: assertion `left == right` failed"
+experimental-bsan,spamassassin-milter-0.5.0,spamc_connection_error,test_failed,163.117,14.614,2026-11-05T03:56:59Z,50247430.0,panic,"thread 'spamc_connection_error' (40868) panicked at tests/spamc_connection_error.rs:49:5: assertion `left == right` failed"
+experimental-bsan,spamassassin-milter-0.5.0,trusted_network_connection,success,163.117,15.527,2026-11-05T03:57:14Z,50247430.0,,

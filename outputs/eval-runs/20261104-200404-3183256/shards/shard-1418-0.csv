@@ -1,0 +1,147 @@
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_bengali,success,521.513,1.628,2026-11-05T01:52:04Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_cyrillic,success,521.513,1.621,2026-11-05T01:52:06Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_ethiopic,success,521.513,1.603,2026-11-05T01:52:07Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_georgian,success,521.513,1.674,2026-11-05T01:52:09Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_greek,success,521.513,1.665,2026-11-05T01:52:11Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_gujarati,success,521.513,1.636,2026-11-05T01:52:12Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_gurmukhi,success,521.513,1.653,2026-11-05T01:52:14Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_hangul,success,521.513,1.665,2026-11-05T01:52:16Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_hebrew,success,521.513,1.600,2026-11-05T01:52:17Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_hiragana,success,521.513,1.595,2026-11-05T01:52:19Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_kannada,success,521.513,1.614,2026-11-05T01:52:21Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_katakana,success,521.513,1.624,2026-11-05T01:52:22Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_latin,success,521.513,1.667,2026-11-05T01:52:24Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_oriya,success,521.513,1.649,2026-11-05T01:52:26Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_persian,success,521.513,1.621,2026-11-05T01:52:27Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_tamil,success,521.513,1.672,2026-11-05T01:52:29Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_telugu,success,521.513,1.664,2026-11-05T01:52:31Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::chars::tests::test_is_thai,success,521.513,1.606,2026-11-05T01:52:32Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::script_language::test::from_into_language,success,521.513,1.611,2026-11-05T01:52:34Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,detection::script_language::test::from_into_script,success,521.513,1.639,2026-11-05T01:52:35Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::ae_oe_normalizer::test::global_normalize,success,521.513,2.914,2026-11-05T01:52:38Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::ae_oe_normalizer::test::normalizer_normalize,success,521.513,1.640,2026-11-05T01:52:40Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::ae_oe_normalizer::test::normalizer_not_panic_for_random_option,timeout,521.513,150.027,2026-11-05T01:55:10Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::arabic::test::global_normalize,success,521.513,2.955,2026-11-05T01:55:13Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::arabic::test::normalizer_normalize,success,521.513,1.711,2026-11-05T01:55:15Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::arabic::test::normalizer_not_panic_for_random_option,timeout,521.513,150.028,2026-11-05T01:57:45Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::chinese::test::global_normalize,success,521.513,99.678,2026-11-05T01:59:24Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::chinese::test::normalizer_normalize,success,521.513,100.627,2026-11-05T02:01:05Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::chinese::test::normalizer_not_panic_for_random_option,timeout,521.513,150.013,2026-11-05T02:03:35Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::classify::test::global_normalize,success,521.513,2.378,2026-11-05T02:03:38Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::classify::test::is_separator_if_separators_contain_lemma,success,521.513,138.722,2026-11-05T02:05:56Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::classify::test::is_stop_word_if_both_stop_works_and_separators_contain_lemma,timeout,521.513,150.024,2026-11-05T02:08:26Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::classify::test::is_stop_word_iff_stop_words_contain_lemma,timeout,521.513,150.020,2026-11-05T02:10:56Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::classify::test::normalizer_normalize,success,521.513,2.371,2026-11-05T02:10:59Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::classify::test::normalizer_not_panic_for_random_option,timeout,521.513,150.022,2026-11-05T02:13:29Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::classify::test::stop_words,success,521.513,8.595,2026-11-05T02:13:37Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::compatibility_decomposition::test::global_normalize,success,521.513,2.960,2026-11-05T02:13:40Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::compatibility_decomposition::test::normalizer_normalize,success,521.513,1.698,2026-11-05T02:13:42Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::compatibility_decomposition::test::normalizer_not_panic_for_random_option,timeout,521.513,150.026,2026-11-05T02:16:12Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::control_char::test::global_normalize,success,521.513,100.699,2026-11-05T02:17:53Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::control_char::test::normalizer_normalize,success,521.513,1.657,2026-11-05T02:17:55Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::control_char::test::normalizer_not_panic_for_random_option,timeout,521.513,150.017,2026-11-05T02:20:25Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::greek::test::global_normalize,success,521.513,2.938,2026-11-05T02:20:28Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::greek::test::normalizer_normalize,success,521.513,1.628,2026-11-05T02:20:29Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::greek::test::normalizer_not_panic_for_random_option,timeout,521.513,150.028,2026-11-05T02:22:59Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::japanese::test::global_normalize,success,521.513,2.244,2026-11-05T02:23:01Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::japanese::test::normalizer_normalize,success,521.513,1.690,2026-11-05T02:23:03Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::japanese::test::normalizer_not_panic_for_random_option,timeout,521.513,150.021,2026-11-05T02:25:33Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::lowercase::test::global_normalize,success,521.513,2.935,2026-11-05T02:25:36Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::lowercase::test::normalizer_normalize,success,521.513,1.642,2026-11-05T02:25:38Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::lowercase::test::normalizer_not_panic_for_random_option,timeout,521.513,150.020,2026-11-05T02:28:08Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::nonspacing_mark::test::global_normalize,success,521.513,2.933,2026-11-05T02:28:11Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::nonspacing_mark::test::normalizer_normalize,success,521.513,2.353,2026-11-05T02:28:13Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::nonspacing_mark::test::normalizer_not_panic_for_random_option,timeout,521.513,150.020,2026-11-05T02:30:43Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::persian::test::global_normalize,success,521.513,3.008,2026-11-05T02:30:46Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::persian::test::normalizer_normalize,success,521.513,1.715,2026-11-05T02:30:48Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::persian::test::normalizer_not_panic_for_random_option,timeout,521.513,150.020,2026-11-05T02:33:18Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::quote::test::global_normalize,success,521.513,2.901,2026-11-05T02:33:21Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::quote::test::normalizer_normalize,success,521.513,1.671,2026-11-05T02:33:23Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::quote::test::normalizer_not_panic_for_random_option,timeout,521.513,150.026,2026-11-05T02:35:53Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::swedish_recomposition::test::global_normalize,success,521.513,9.709,2026-11-05T02:36:02Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::swedish_recomposition::test::normalizer_normalize,success,521.513,8.129,2026-11-05T02:36:10Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::swedish_recomposition::test::normalizer_not_panic_for_random_option,timeout,521.513,150.016,2026-11-05T02:38:41Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::test::split_at,success,521.513,1.704,2026-11-05T02:38:42Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::turkish::test::global_normalize,success,521.513,3.390,2026-11-05T02:38:46Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::turkish::test::normalizer_normalize,success,521.513,1.732,2026-11-05T02:38:47Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::turkish::test::normalizer_not_panic_for_random_option,timeout,521.513,150.021,2026-11-05T02:41:17Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,normalizer::vietnamese::test::global_normalize,success,521.513,3.077,2026-11-05T02:41:21Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::vietnamese::test::normalizer_normalize,success,521.513,1.620,2026-11-05T02:41:22Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,normalizer::vietnamese::test::normalizer_not_panic_for_random_option,timeout,521.513,150.017,2026-11-05T02:43:52Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::arabic::test::segment,timeout,521.513,150.014,2026-11-05T02:46:22Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::arabic::test::segmenter_segment_number,success,521.513,7.151,2026-11-05T02:46:29Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::arabic::test::segmenter_segment_str,timeout,521.513,150.013,2026-11-05T02:48:59Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::arabic::test::segmentor_not_panic_for_random_input,success,521.513,3.504,2026-11-05T02:49:03Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::arabic::test::text_lang_script_assignment,timeout,521.513,150.015,2026-11-05T02:51:33Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::arabic::test::tokenize,timeout,521.513,150.014,2026-11-05T02:54:03Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::arabic::test::tokenize_number,timeout,521.513,150.015,2026-11-05T02:56:33Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::chinese::test::segment,timeout,521.513,150.015,2026-11-05T02:59:03Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::chinese::test::segmenter_segment_number,success,521.513,7.324,2026-11-05T02:59:10Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::chinese::test::segmenter_segment_str,timeout,521.513,150.016,2026-11-05T03:01:40Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::chinese::test::segmentor_not_panic_for_random_input,timeout,521.513,150.013,2026-11-05T03:04:10Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::chinese::test::test_mix_number_and_letter,timeout,521.513,150.012,2026-11-05T03:06:41Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::chinese::test::text_lang_script_assignment,timeout,521.513,150.014,2026-11-05T03:09:11Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::chinese::test::tokenize,timeout,521.513,150.014,2026-11-05T03:11:41Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::chinese::test::tokenize_number,timeout,521.513,150.016,2026-11-05T03:14:11Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::german::test::segment,timeout,521.513,150.015,2026-11-05T03:16:41Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::german::test::segmenter_segment_number,success,521.513,7.122,2026-11-05T03:16:48Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::segmenter_segment_str,timeout,521.513,150.015,2026-11-05T03:19:18Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::german::test::segmentor_not_panic_for_random_input,success,521.513,14.191,2026-11-05T03:19:32Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::text_lang_script_assignment,timeout,521.513,150.015,2026-11-05T03:22:02Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::german::test::tokenize,timeout,521.513,150.015,2026-11-05T03:24:32Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::german::test::tokenize_number,timeout,521.513,150.016,2026-11-05T03:27:02Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word1,success,521.513,1.698,2026-11-05T03:27:04Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word10,success,521.513,1.620,2026-11-05T03:27:06Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word11,success,521.513,1.630,2026-11-05T03:27:07Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word12,success,521.513,1.641,2026-11-05T03:27:09Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word13,success,521.513,1.669,2026-11-05T03:27:10Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word14,success,521.513,1.639,2026-11-05T03:27:12Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word15,success,521.513,1.650,2026-11-05T03:27:14Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word16,success,521.513,1.669,2026-11-05T03:27:15Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word17,success,521.513,1.685,2026-11-05T03:27:17Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word18,success,521.513,1.578,2026-11-05T03:27:19Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word2,success,521.513,1.605,2026-11-05T03:27:20Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word3,success,521.513,1.603,2026-11-05T03:27:22Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word4,success,521.513,1.689,2026-11-05T03:27:24Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word5,success,521.513,1.678,2026-11-05T03:27:25Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word6,success,521.513,1.637,2026-11-05T03:27:27Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word7,success,521.513,1.656,2026-11-05T03:27:29Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word8,success,521.513,1.682,2026-11-05T03:27:30Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::german::test::word9,success,521.513,1.596,2026-11-05T03:27:32Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::japanese::test::segment,timeout,521.513,150.014,2026-11-05T03:30:02Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::japanese::test::segmenter_segment_number,success,521.513,7.343,2026-11-05T03:30:09Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::japanese::test::segmenter_segment_str,timeout,521.513,150.014,2026-11-05T03:32:39Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::japanese::test::segmentor_not_panic_for_random_input,timeout,521.513,150.018,2026-11-05T03:35:09Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::japanese::test::text_lang_script_assignment,timeout,521.513,150.015,2026-11-05T03:37:39Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::japanese::test::tokenize,timeout,521.513,150.014,2026-11-05T03:40:10Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::japanese::test::tokenize_number,timeout,521.513,150.014,2026-11-05T03:42:40Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::khmer::test::segment,timeout,521.513,150.015,2026-11-05T03:45:10Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::khmer::test::segmenter_segment_number,success,521.513,7.209,2026-11-05T03:45:17Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::khmer::test::segmenter_segment_str,timeout,521.513,150.013,2026-11-05T03:47:47Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::khmer::test::segmentor_not_panic_for_random_input,success,521.513,46.714,2026-11-05T03:48:34Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::khmer::test::text_lang_script_assignment,timeout,521.513,150.015,2026-11-05T03:51:04Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::khmer::test::tokenize,timeout,521.513,150.014,2026-11-05T03:53:34Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::khmer::test::tokenize_number,timeout,521.513,150.015,2026-11-05T03:56:04Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::korean::test::segment,timeout,521.513,150.014,2026-11-05T03:58:34Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::korean::test::segmenter_segment_number,success,521.513,7.331,2026-11-05T03:58:41Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::korean::test::segmenter_segment_str,timeout,521.513,150.015,2026-11-05T04:01:11Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::korean::test::segmentor_not_panic_for_random_input,timeout,521.513,150.016,2026-11-05T04:03:41Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::korean::test::text_lang_script_assignment,timeout,521.513,150.014,2026-11-05T04:06:11Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::korean::test::tokenize,timeout,521.513,150.015,2026-11-05T04:08:41Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::korean::test::tokenize_number,timeout,521.513,150.015,2026-11-05T04:11:11Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::latin::test::segment,timeout,521.513,150.014,2026-11-05T04:13:41Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::latin::test::segmenter_segment_number,success,521.513,7.147,2026-11-05T04:13:49Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::latin::test::segmenter_segment_str,timeout,521.513,150.016,2026-11-05T04:16:19Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::latin::test::segmentor_not_panic_for_random_input,success,521.513,3.574,2026-11-05T04:16:22Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::latin::test::text_lang_script_assignment,timeout,521.513,150.016,2026-11-05T04:18:52Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::latin::test::tokenize,timeout,521.513,150.014,2026-11-05T04:21:22Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::latin::test::tokenize_number,timeout,521.513,150.014,2026-11-05T04:23:52Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::thai::test::segment,timeout,521.513,150.016,2026-11-05T04:26:22Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::thai::test::segmenter_segment_number,success,521.513,7.370,2026-11-05T04:26:30Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::thai::test::segmenter_segment_str,timeout,521.513,150.017,2026-11-05T04:29:00Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::thai::test::segmentor_not_panic_for_random_input,success,521.513,58.000,2026-11-05T04:29:58Z,50234257.0,,
+experimental-bsan,charabia-0.10.0,segmenter::thai::test::text_lang_script_assignment,timeout,521.513,150.016,2026-11-05T04:32:28Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::thai::test::tokenize,timeout,521.513,150.014,2026-11-05T04:34:58Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,segmenter::thai::test::tokenize_number,timeout,521.513,150.015,2026-11-05T04:37:28Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,tokenizer::test::check_lifetimes,timeout,521.513,150.015,2026-11-05T04:39:58Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,charabia-0.10.0,tokenizer::test::shorten_after_tokenized,timeout,521.513,150.016,2026-11-05T04:42:28Z,50234257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

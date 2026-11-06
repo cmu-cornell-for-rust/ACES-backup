@@ -1,0 +1,48 @@
+experimental-bsan,ethers-providers-2.0.14,ext::admin::tests::deserialize_node_info,success,534.760,3.601,2026-11-05T03:13:11Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,ext::admin::tests::deserialize_node_info_mainnet_full,success,534.760,3.955,2026-11-05T03:13:15Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,ext::admin::tests::deserialize_node_info_post_merge,success,534.760,3.626,2026-11-05T03:13:18Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,ext::admin::tests::deserialize_peer_info,success,534.760,1.771,2026-11-05T03:13:20Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,ext::admin::tests::deserialize_peer_info_handshake,success,534.760,1.756,2026-11-05T03:13:22Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,ext::ens::tests::test_namehash,success,534.760,1.775,2026-11-05T03:13:24Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,ext::ens::tests::test_parametershash,success,534.760,1.704,2026-11-05T03:13:26Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::add_second_geth_peer,test_failed,534.760,1.989,2026-11-05T03:13:28Z,50244127.0,panic,"thread 'rpc::provider::tests::add_second_geth_peer' (45160) panicked at src/rpc/provider.rs:1991:10: failed to spawn geth init: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::convert_h256_u256_quantity,success,534.760,1.730,2026-11-05T03:13:29Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::geth_admin_nodeinfo,test_failed,534.760,1.927,2026-11-05T03:13:31Z,50244127.0,panic,"thread 'rpc::provider::tests::geth_admin_nodeinfo' (45607) panicked at src/rpc/provider.rs:1991:10: couldnt start geth: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::mainnet_lookup_address,success,534.760,4.912,2026-11-05T03:13:36Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::mainnet_lookup_address_invalid_resolver,success,534.760,3.683,2026-11-05T03:13:40Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::mainnet_resolve_name,success,534.760,4.073,2026-11-05T03:13:44Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::parity_block_receipts,success,534.760,1.774,2026-11-05T03:13:46Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::receipt_on_unmined_tx,test_failed,534.760,1.878,2026-11-05T03:13:48Z,50244127.0,panic,"thread 'rpc::provider::tests::receipt_on_unmined_tx' (47037) panicked at src/rpc/provider.rs:1707:51: couldnt start anvil: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::test_fill_transaction_1559,success,534.760,1.843,2026-11-05T03:13:49Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::test_fill_transaction_legacy,success,534.760,1.801,2026-11-05T03:13:51Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::test_is_signer,test_failed,534.760,1.909,2026-11-05T03:13:53Z,50244127.0,panic,"thread 'rpc::provider::tests::test_is_signer' (47449) panicked at src/rpc/provider.rs:1660:34: couldnt start anvil: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::test_new_pending_txs_filter,test_failed,534.760,1.899,2026-11-05T03:13:55Z,50244127.0,panic,"thread 'rpc::provider::tests::test_new_pending_txs_filter' (47678) panicked at src/rpc/provider.rs:1682:50: couldnt start anvil: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::common::tests::deser_response,success,534.760,1.723,2026-11-05T03:13:57Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::common::tests::ser_request,success,534.760,1.702,2026-11-05T03:13:59Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::common::tests::test_roundtrip,success,534.760,1.789,2026-11-05T03:14:00Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::ipc::tests::request,test_failed,534.760,1.916,2026-11-05T03:14:02Z,50244127.0,panic,"thread 'rpc::transports::ipc::tests::request' (48286) panicked at src/rpc/transports/ipc.rs:522:65: couldnt start geth: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::legacy_ws::tests::deserialization_fails,test_failed,534.760,1.898,2026-11-05T03:14:04Z,50244127.0,panic,"thread 'rpc::transports::legacy_ws::tests::deserialization_fails' (48474) panicked at src/rpc/transports/legacy_ws.rs:566:51: couldnt start anvil: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::legacy_ws::tests::request,test_failed,534.760,1.902,2026-11-05T03:14:06Z,50244127.0,panic,"thread 'rpc::transports::legacy_ws::tests::request' (48707) panicked at src/rpc/transports/legacy_ws.rs:531:51: couldnt start anvil: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::mock::tests::composes_with_provider,success,534.760,1.793,2026-11-05T03:14:08Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::mock::tests::empty_requests,success,534.760,1.776,2026-11-05T03:14:10Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::mock::tests::empty_responses,success,534.760,1.793,2026-11-05T03:14:12Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::mock::tests::pushes_error_response,success,534.760,1.784,2026-11-05T03:14:13Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::mock::tests::pushes_request_and_response,success,534.760,1.785,2026-11-05T03:14:15Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::quorum::tests::all_quorum,success,534.760,1.796,2026-11-05T03:14:17Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::quorum::tests::count_quorum,success,534.760,1.800,2026-11-05T03:14:19Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::quorum::tests::majority_quorum,success,534.760,1.807,2026-11-05T03:14:21Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::quorum::tests::percentage_quorum,success,534.760,1.807,2026-11-05T03:14:22Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::quorum::tests::weight_quorum,success,534.760,1.794,2026-11-05T03:14:24Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::retry::tests::can_extract_backoff,success,534.760,1.704,2026-11-05T03:14:26Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::retry::tests::can_measure_unit_offset_1x_over_budget,success,534.760,1.697,2026-11-05T03:14:28Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::retry::tests::can_measure_unit_offset_2x_over_budget,success,534.760,1.701,2026-11-05T03:14:29Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::retry::tests::can_measure_unit_offset_single_request,success,534.760,1.694,2026-11-05T03:14:31Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::retry::tests::test_alchemy_ip_rate_limit,success,534.760,1.704,2026-11-05T03:14:33Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::retry::tests::test_rate_limit_omitted_id,success,534.760,1.718,2026-11-05T03:14:34Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,stream::tx_stream::tests::can_stream_pending_transactions,test_failed,534.760,1.908,2026-11-05T03:14:36Z,50244127.0,panic,"thread 'stream::tx_stream::tests::can_stream_pending_transactions' (52003) panicked at src/stream/tx_stream.rs:182:50: couldnt start anvil: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ethers-providers-2.0.14,stream::tx_stream::tests::can_stream_transactions,test_failed,534.760,1.916,2026-11-05T03:14:38Z,50244127.0,panic,"thread 'stream::tx_stream::tests::can_stream_transactions' (52139) panicked at src/stream/tx_stream.rs:240:51: couldnt start anvil: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ethers-providers-2.0.14,toolbox::call_raw::tests::test_serialize,success,534.760,2.072,2026-11-05T03:14:40Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,toolbox::call_raw::tests::test_state_overrides,test_failed,534.760,1.922,2026-11-05T03:14:42Z,50244127.0,panic,"thread 'toolbox::call_raw::tests::test_state_overrides' (52590) panicked at src/toolbox/call_raw.rs:302:32: couldnt start geth: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::fee_history,success,534.760,1.690,2026-11-05T03:14:44Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::provider::tests::test_new_block_filter,success,534.760,1.685,2026-11-05T03:14:46Z,50244127.0,,
+experimental-bsan,ethers-providers-2.0.14,rpc::transports::ws::types::test::it_desers_pubsub_items,no_match,534.760,1.667,2026-11-05T03:14:47Z,50244127.0,,

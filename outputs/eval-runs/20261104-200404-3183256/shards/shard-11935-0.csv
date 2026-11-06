@@ -1,0 +1,11 @@
+experimental-bsan,async_singleflight-0.6.2,tests::test_drop_leader,success,77.176,1.639,2026-11-05T05:55:52Z,50254613.0,,
+experimental-bsan,async_singleflight-0.6.2,tests::test_drop_leader_no_retry,success,77.176,1.622,2026-11-05T05:55:54Z,50254613.0,,
+experimental-bsan,async_singleflight-0.6.2,tests::test_fresh_caller_replaces_stale_entry,success,77.176,1.639,2026-11-05T05:55:56Z,50254613.0,,
+experimental-bsan,async_singleflight-0.6.2,tests::test_leader_drop_single_new_leader,test_failed,77.176,49.830,2026-11-05T05:56:46Z,50254613.0,panic,"thread 'tests::test_leader_drop_single_new_leader' (65530) panicked at src/lib.rs:380:13: assertion `left == right` failed: Iteration 12: Expected exactly 1 work execution after leader drop, but got 2. This indicates multiple followers became leaders (issue #12)."
+experimental-bsan,async_singleflight-0.6.2,tests::test_leader_drop_single_new_leader_unary,test_failed,77.176,15.709,2026-11-05T05:57:01Z,50254613.0,panic,"thread 'tests::test_leader_drop_single_new_leader_unary' (79329) panicked at src/lib.rs:489:13: assertion `left == right` failed: Iteration 6: Expected exactly 1 work execution after leader drop, but got 2. This indicates multiple followers became leaders (issue #12)."
+experimental-bsan,async_singleflight-0.6.2,tests::test_multiple_threads,success,77.176,1.986,2026-11-05T05:57:03Z,50254613.0,,
+experimental-bsan,async_singleflight-0.6.2,tests::test_multiple_threads_custom_type,success,77.176,1.988,2026-11-05T05:57:05Z,50254613.0,,
+experimental-bsan,async_singleflight-0.6.2,tests::test_multiple_threads_unary,success,77.176,1.971,2026-11-05T05:57:07Z,50254613.0,,
+experimental-bsan,async_singleflight-0.6.2,tests::test_purge_stale,success,77.176,1.634,2026-11-05T05:57:09Z,50254613.0,,
+experimental-bsan,async_singleflight-0.6.2,tests::test_purge_stale_unary,success,77.176,1.641,2026-11-05T05:57:11Z,50254613.0,,
+experimental-bsan,async_singleflight-0.6.2,tests::test_simple,success,77.176,1.583,2026-11-05T05:57:12Z,50254613.0,,

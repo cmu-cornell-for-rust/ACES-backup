@@ -1,0 +1,2 @@
+experimental-bsan,tokio-socketcan-0.3.1,tests::test_receive,test_failed,46.500,1.738,2026-11-05T09:07:14Z,50265080.0,panic,"thread 'tests::test_receive' (28338) panicked at src/lib.rs:262:48: called `Result::unwrap()` on an `Err` value: CANSocketOpen(LookupError(Sys(ENODEV)))"
+experimental-bsan,tokio-socketcan-0.3.1,tests::test_sink_stream,test_failed,46.500,1.737,2026-11-05T09:07:16Z,50265080.0,panic,"thread 'tests::test_sink_stream' (30487) panicked at src/lib.rs:280:48: called `Result::unwrap()` on an `Err` value: CANSocketOpen(LookupError(Sys(ENODEV)))"

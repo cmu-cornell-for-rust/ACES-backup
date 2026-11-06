@@ -1,0 +1,17 @@
+experimental-bsan,notify-rust-4.11.3,conversion::str_into_urgency,success,361.320,5.868,2026-11-05T05:17:18Z,50251762.0,,
+experimental-bsan,notify-rust-4.11.3,conversion::urgency_from_int,success,361.320,5.886,2026-11-05T05:17:24Z,50251762.0,,
+experimental-bsan,notify-rust-4.11.3,conversion::urgency_from_option_int,success,361.320,5.853,2026-11-05T05:17:30Z,50251762.0,,
+experimental-bsan,notify-rust-4.11.3,conversion::urgency_from_str,success,361.320,5.914,2026-11-05T05:17:36Z,50251762.0,,
+experimental-bsan,notify-rust-4.11.3,hints::test_hints_to_map,success,361.320,5.886,2026-11-05T05:17:42Z,50251762.0,,
+experimental-bsan,notify-rust-4.11.3,miniver::tests::version_comparison,success,361.320,5.882,2026-11-05T05:17:48Z,50251762.0,,
+experimental-bsan,notify-rust-4.11.3,miniver::tests::version_parsing,success,361.320,5.883,2026-11-05T05:17:54Z,50251762.0,,
+experimental-bsan,notify-rust-4.11.3,realworld::build_pattern,success,361.320,5.905,2026-11-05T05:18:00Z,50251762.0,,
+experimental-bsan,notify-rust-4.11.3,realworld::burst,test_failed,361.320,16.187,2026-11-05T05:18:16Z,50251762.0,gc,"test realworld::burst ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,notify-rust-4.11.3,realworld::capabilities,test_failed,361.320,16.193,2026-11-05T05:18:32Z,50251762.0,gc,"test realworld::capabilities ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,notify-rust-4.11.3,realworld::category,test_failed,361.320,16.145,2026-11-05T05:18:48Z,50251762.0,gc,"test realworld::category ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,notify-rust-4.11.3,realworld::closing,test_failed,361.320,16.150,2026-11-05T05:19:04Z,50251762.0,gc,"test realworld::closing ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,notify-rust-4.11.3,realworld::init,test_failed,361.320,16.112,2026-11-05T05:19:20Z,50251762.0,gc,"test realworld::init ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,notify-rust-4.11.3,realworld::persistent,test_failed,361.320,16.155,2026-11-05T05:19:37Z,50251762.0,gc,"test realworld::persistent ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,notify-rust-4.11.3,realworld::should_allow_timeout_with_duration,success,361.320,5.876,2026-11-05T05:19:42Z,50251762.0,,
+experimental-bsan,notify-rust-4.11.3,realworld::urgency,test_failed,361.320,16.136,2026-11-05T05:19:59Z,50251762.0,gc,"test realworld::urgency ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,notify-rust-4.11.3,timeout::timeout_from_i32,success,361.320,5.863,2026-11-05T05:20:05Z,50251762.0,,

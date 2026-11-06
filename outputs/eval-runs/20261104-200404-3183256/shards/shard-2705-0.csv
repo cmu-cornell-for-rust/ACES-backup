@@ -1,0 +1,84 @@
+experimental-bsan,differential-dataflow-0.25.1,algorithms::identifiers::tests::are_unique,success,607.942,44.713,2026-11-05T02:20:16Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,antijoin,success,607.942,13.297,2026-11-05T02:20:29Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,bfs_100_2000_1,success,607.942,138.984,2026-11-05T02:22:48Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,bfs_100_200_10,success,607.942,110.049,2026-11-05T02:24:39Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,bfs_10_20_1000,timeout,607.942,150.016,2026-11-05T02:27:09Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,bfs_15_40_30,success,607.942,54.053,2026-11-05T02:28:03Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,bfs_30_60_20,success,607.942,50.807,2026-11-05T02:28:53Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,bfs_sweep,timeout,607.942,150.020,2026-11-05T02:31:24Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,bfs_tiny_a,success,607.942,32.839,2026-11-05T02:31:56Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,bfs_tiny_b,success,607.942,29.496,2026-11-05T02:32:26Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::collection::container::test::recorded_updates_bytes_round_trip,success,607.942,11.377,2026-11-05T02:32:37Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::trace::chunk::test::advance_emits_complete_groups_eagerly,success,607.942,11.361,2026-11-05T02:32:49Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::trace::chunk::test::advance_matches_row_reference,success,607.942,97.048,2026-11-05T02:34:26Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::trace::chunk::test::advance_resumable_matches_oneshot,success,607.942,11.463,2026-11-05T02:34:37Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::trace::chunk::test::advance_single_key_spanning_pushes,success,607.942,11.768,2026-11-05T02:34:49Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::trace::chunk::test::batch_merger_resumable_matches_reference,timeout,607.942,150.013,2026-11-05T02:37:19Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,columnar::trace::chunk::test::cursor_handles_straddle,success,607.942,11.499,2026-11-05T02:37:31Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::trace::chunk::test::merge_matches_reference,timeout,607.942,150.012,2026-11-05T02:40:01Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,columnar::trace::chunk::test::settle_maximal_packing,timeout,607.942,150.032,2026-11-05T02:42:31Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,columnar::trace::chunk::test::settle_pages_and_round_trips,timeout,607.942,150.021,2026-11-05T02:45:01Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,columnar::updates::tests::test_cancellation,success,607.942,11.201,2026-11-05T02:45:12Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::updates::tests::test_empty,success,607.942,11.269,2026-11-05T02:45:23Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::updates::tests::test_first_key_cancels,success,607.942,11.249,2026-11-05T02:45:34Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::updates::tests::test_first_val_cancels,success,607.942,11.224,2026-11-05T02:45:46Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::updates::tests::test_interleaved_cancellations,success,607.942,11.247,2026-11-05T02:45:57Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::updates::tests::test_middle_time_cancels,success,607.942,11.238,2026-11-05T02:46:08Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::updates::tests::test_multiple_vals_and_times,success,607.942,11.235,2026-11-05T02:46:19Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::updates::tests::test_push_and_consolidate_basic,success,607.942,11.246,2026-11-05T02:46:31Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::updates::tests::test_total_cancellation,success,607.942,11.260,2026-11-05T02:46:42Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::updates::tests::test_unsorted_input,success,607.942,11.254,2026-11-05T02:46:53Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,columnar::updates::tests::test_val_cancellation_propagates,success,607.942,11.225,2026-11-05T02:47:05Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,consolidation::tests::test_consolidate,success,607.942,11.210,2026-11-05T02:47:16Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,consolidation::tests::test_consolidate_into,success,607.942,11.212,2026-11-05T02:47:27Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,consolidation::tests::test_consolidate_updates,success,607.942,11.270,2026-11-05T02:47:38Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,consolidation::tests::test_consolidating_container_builder,success,607.942,14.004,2026-11-05T02:47:52Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,consolidation::tests::test_consolidator_duration,success,607.942,33.656,2026-11-05T02:48:26Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,consolidation::tests::test_consolidator_duration_vec,success,607.942,23.987,2026-11-05T02:48:50Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,difference::vector::tests::test_semigroup_vec,success,607.942,11.229,2026-11-05T02:49:01Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,differential_count,timeout,607.942,150.016,2026-11-05T02:51:31Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,differential_min,timeout,607.942,150.017,2026-11-05T02:54:01Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,differential_sum,timeout,607.942,150.016,2026-11-05T02:56:31Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,join,success,607.942,12.333,2026-11-05T02:56:44Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,join_map,success,607.942,12.378,2026-11-05T02:56:56Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,join_scale_1,success,607.942,13.306,2026-11-05T02:57:09Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,join_scale_10,success,607.942,14.111,2026-11-05T02:57:23Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,join_scale_100,success,607.942,17.628,2026-11-05T02:57:41Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,join_scale_1000,success,607.942,72.290,2026-11-05T02:58:53Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,join_scale_10000,timeout,607.942,150.024,2026-11-05T03:01:23Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,join_scale_100000,timeout,607.942,150.015,2026-11-05T03:03:53Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,join_scale_1000000,timeout,607.942,150.023,2026-11-05T03:06:24Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,oracle_cursor_count,timeout,607.942,150.019,2026-11-05T03:08:54Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,oracle_reference_count,timeout,607.942,150.016,2026-11-05T03:11:24Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,oracle_reference_min,timeout,607.942,150.029,2026-11-05T03:13:54Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,oracle_reference_sum,timeout,607.942,150.016,2026-11-05T03:16:24Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,reduce,success,607.942,12.142,2026-11-05T03:16:36Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,reduce_scaling,timeout,607.942,150.016,2026-11-05T03:19:06Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,scc_100_2000_1,timeout,607.942,150.014,2026-11-05T03:21:36Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,scc_100_200_10,timeout,607.942,150.019,2026-11-05T03:24:06Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,scc_10_20_1000,timeout,607.942,150.019,2026-11-05T03:26:36Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,scc_12_24,timeout,607.942,150.031,2026-11-05T03:29:06Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,scc_at_100_2000_1,timeout,607.942,150.021,2026-11-05T03:31:36Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,scc_at_100_200_10,timeout,607.942,150.014,2026-11-05T03:34:06Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,scc_at_10_20_1000,timeout,607.942,150.019,2026-11-05T03:36:36Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,scc_sweep,timeout,607.942,150.031,2026-11-05T03:39:06Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,scc_tiny_a,success,607.942,131.889,2026-11-05T03:41:18Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,scc_tiny_b,timeout,607.942,150.031,2026-11-05T03:43:48Z,50239465.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,differential-dataflow-0.25.1,semijoin,success,607.942,12.393,2026-11-05T03:44:01Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,test_import_completed_dataflow,success,607.942,18.699,2026-11-05T03:44:20Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,test_import_stalled_dataflow,success,607.942,12.621,2026-11-05T03:44:32Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,test_import_vanilla,success,607.942,17.775,2026-11-05T03:44:50Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,test_trace,success,607.942,11.328,2026-11-05T03:45:01Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::chunk::vec::test::advance_emits_complete_groups_eagerly,success,607.942,11.232,2026-11-05T03:45:13Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::chunk::vec::test::advance_resumable_matches_oneshot,success,607.942,11.256,2026-11-05T03:45:24Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::chunk::vec::test::advance_single_key_spanning_pushes,success,607.942,11.427,2026-11-05T03:45:35Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::chunk::vec::test::batch_merger_resumable_matches_reference,success,607.942,119.964,2026-11-05T03:47:35Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::chunk::vec::test::cursor_handles_straddle,success,607.942,11.297,2026-11-05T03:47:47Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::chunk::vec::test::extract_partitions_and_grades,success,607.942,62.995,2026-11-05T03:48:50Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::chunk::vec::test::merge_chains_consolidates,success,607.942,11.317,2026-11-05T03:49:01Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::chunk::vec::test::merge_emits_graded_chunks,success,607.942,72.750,2026-11-05T03:50:14Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::chunk::vec::test::merge_matches_reference,success,607.942,112.347,2026-11-05T03:52:06Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::chunk::vec::test::seek_key_hint_is_direction_independent,success,607.942,18.868,2026-11-05T03:52:25Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::chunk::vec::test::settle_maximal_packing,success,607.942,38.528,2026-11-05T03:53:03Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::implementations::merge_batcher::test::frontier_is_post_consolidation,success,607.942,11.240,2026-11-05T03:53:15Z,50239465.0,,
+experimental-bsan,differential-dataflow-0.25.1,trace::implementations::merge_batcher::test::frontier_survivor_minimum,success,607.942,11.246,2026-11-05T03:53:26Z,50239465.0,,

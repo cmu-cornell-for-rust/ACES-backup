@@ -1,0 +1,30 @@
+experimental-bsan,apecs-0.8.4,async_run_and_return_resources,test_failed,241.686,14.902,2026-11-05T03:58:02Z,50247843.0,gc,"test async_run_and_return_resources ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,apecs-0.8.4,can_closure_system,success,241.686,6.524,2026-11-05T03:58:09Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,can_compile_write_without_trydefault,success,241.686,5.863,2026-11-05T03:58:15Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,can_create_entities_and_build_convenience,test_failed,241.686,14.765,2026-11-05T03:58:29Z,50247843.0,gc,"test can_create_entities_and_build_convenience ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,apecs-0.8.4,can_derive_moongraph_edges,success,241.686,5.762,2026-11-05T03:58:35Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,can_query_empty_ref_archetypes_in_same_batch,success,241.686,7.289,2026-11-05T03:58:43Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,can_tick_facades,test_failed,241.686,4.535,2026-11-05T03:58:47Z,50247843.0,panic,"thread 'can_tick_facades' (69400) panicked at tests/unit.rs:374:9: assertion `left == right` failed"
+experimental-bsan,apecs-0.8.4,deleted_entities,success,241.686,6.453,2026-11-05T03:58:54Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,entities_can_lazy_add_and_get,test_failed,241.686,14.725,2026-11-05T03:59:08Z,50247843.0,gc,"test entities_can_lazy_add_and_get ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,apecs-0.8.4,readme,success,241.686,5.765,2026-11-05T03:59:14Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::archetype::test::any_vec_into_iter_sanity,success,241.686,5.764,2026-11-05T03:59:20Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::archetype::test::archetype_can_match,success,241.686,5.806,2026-11-05T03:59:26Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::archetype::test::archetype_sanity,success,241.686,5.758,2026-11-05T03:59:31Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::archetype::test::new_archetype_has_ty,success,241.686,5.781,2026-11-05T03:59:37Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::bundle::test::basic_type_info,success,241.686,5.772,2026-11-05T03:59:43Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::bundle::test::bundle_type_info,success,241.686,5.768,2026-11-05T03:59:49Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::bundle::test::bundle_types_match_component_vec_types,success,241.686,5.755,2026-11-05T03:59:55Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::bundle::test::bundle_union_returns_prev,success,241.686,5.812,2026-11-05T04:00:00Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::bundle::test::empty_bundle_type_info,success,241.686,5.798,2026-11-05T04:00:06Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::components::test::all_archetypes_can_create_add_remove_get_mut,success,241.686,5.890,2026-11-05T04:00:12Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::components::test::all_archetypes_can_remove,timeout,241.686,150.019,2026-11-05T04:02:42Z,50247843.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,apecs-0.8.4,storage::archetype::components::test::all_archetypes_send_sync,success,241.686,5.762,2026-11-05T04:02:48Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::query::test::can_query_all,success,241.686,5.830,2026-11-05T04:02:54Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::query::test::can_query_maybe,success,241.686,6.410,2026-11-05T04:03:00Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::query::test::can_query_without,success,241.686,6.418,2026-11-05T04:03:07Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::query::test::iter_types,success,241.686,5.816,2026-11-05T04:03:12Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::query::test::query_one,success,241.686,5.832,2026-11-05T04:03:18Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,storage::archetype::query::test::sanity_query_iter,success,241.686,5.886,2026-11-05T04:03:24Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,system_barrier,success,241.686,15.098,2026-11-05T04:03:39Z,50247843.0,,
+experimental-bsan,apecs-0.8.4,system_batch_drops_resources_after_racing_asyncs,test_failed,241.686,13.413,2026-11-05T04:03:53Z,50247843.0,gc,"test system_batch_drops_resources_after_racing_asyncs ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."

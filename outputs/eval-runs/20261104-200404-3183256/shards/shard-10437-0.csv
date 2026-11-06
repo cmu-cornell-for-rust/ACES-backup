@@ -1,0 +1,15 @@
+experimental-bsan,intuicio-core-0.35.1,context::tests::test_async,success,82.836,1.628,2026-11-05T05:20:23Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,function::tests::test_function,success,82.836,1.885,2026-11-05T05:20:25Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,meta::tests::test_meta,success,82.836,1.737,2026-11-05T05:20:26Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,meta::tests::test_parser,success,82.836,7.259,2026-11-05T05:20:34Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,object::tests::test_drop,success,82.836,1.645,2026-11-05T05:20:35Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,object::tests::test_inner,success,82.836,1.742,2026-11-05T05:20:37Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,object::tests::test_object,success,82.836,1.758,2026-11-05T05:20:39Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,registry::tests::test_async,success,82.836,1.609,2026-11-05T05:20:41Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,tests::test_offset_of_enum,success,82.836,1.685,2026-11-05T05:20:42Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,tests::test_visibility,success,82.836,1.749,2026-11-05T05:20:44Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,transformer::tests::test_derive,success,82.836,2.163,2026-11-05T05:20:46Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,transformer::tests::test_managed_value_transformer,success,82.836,1.629,2026-11-05T05:20:48Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,transformer::tests::test_shared_value_transformer,success,82.836,1.713,2026-11-05T05:20:50Z,50252556.0,,
+experimental-bsan,intuicio-core-0.35.1,types::enum_type::test::test_enum_type,test_failed,82.836,1.874,2026-11-05T05:20:51Z,50252556.0,panic,"thread 'types::enum_type::test::test_enum_type' (14746) panicked at src/types/enum_type.rs:1002:9: assertion failed: enum_type.is_send()"
+experimental-bsan,intuicio-core-0.35.1,types::struct_type::tests::test_struct_type,test_failed,82.836,1.769,2026-11-05T05:20:53Z,50252556.0,panic,"thread 'types::struct_type::tests::test_struct_type' (14839) panicked at src/types/struct_type.rs:763:9: assertion failed: struct_type.is_send()"

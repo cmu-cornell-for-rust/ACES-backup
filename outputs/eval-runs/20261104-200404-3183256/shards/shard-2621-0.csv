@@ -1,0 +1,87 @@
+experimental-bsan,remoc-0.14.0,chmux::channel::basic,timeout,492.418,150.024,2026-11-05T02:19:00Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,chmux::channel::hangup,test_failed,492.418,8.611,2026-11-05T02:19:08Z,50239337.0,panic,"thread 'tokio-rt-worker' (50294) panicked at tests/chmux/channel.rs:253:31: called `Result::unwrap()` on an `Err` value: Timeout"
+experimental-bsan,remoc-0.14.0,chmux::channel::receiver_stream,success,492.418,51.427,2026-11-05T02:20:00Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,chmux::tcp::tcp_test,success,492.418,5.230,2026-11-05T02:20:05Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,chmux::unix::uds_test,success,492.418,5.247,2026-11-05T02:20:10Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,codec::bincode,success,492.418,3.162,2026-11-05T02:20:13Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,codec::ciborium,success,492.418,3.201,2026-11-05T02:20:17Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,codec::json_with_attr,success,492.418,3.298,2026-11-05T02:20:20Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,codec::json_without_attr,success,492.418,3.141,2026-11-05T02:20:23Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,codec::message_pack,success,492.418,3.227,2026-11-05T02:20:26Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,codec::postcard,success,492.418,3.132,2026-11-05T02:20:29Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::bin::double_forward,test_failed,492.418,72.846,2026-11-05T02:21:42Z,50239337.0,panic,"thread 'rch::bin::double_forward' (57479) panicked at tests/rch/bin.rs:184:40: called `Result::unwrap()` on an `Err` value: ChMux"
+experimental-bsan,remoc-0.14.0,rch::bin::forward,timeout,492.418,150.018,2026-11-05T02:24:12Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::bin::loopback,timeout,492.418,150.017,2026-11-05T02:26:42Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::broadcast::simple,timeout,492.418,150.021,2026-11-05T02:29:12Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::broadcast::simple_stream,timeout,492.418,150.023,2026-11-05T02:31:42Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::lr::send_receiver,success,492.418,146.675,2026-11-05T02:34:09Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::lr::send_sender,success,492.418,147.096,2026-11-05T02:36:36Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::mpsc::forward,timeout,492.418,150.020,2026-11-05T02:39:06Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::mpsc::max_item_size_exceeded,test_failed,492.418,100.544,2026-11-05T02:40:47Z,50239337.0,panic,"thread 'rch::mpsc::max_item_size_exceeded' (65087) panicked at tests/rch/mpsc.rs:418:32: called `Result::unwrap()` on an `Err` value: RemoteReceive(Receive(ChMux))"
+experimental-bsan,remoc-0.14.0,rch::mpsc::multiple,timeout,492.418,150.021,2026-11-05T02:43:17Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::mpsc::simple,timeout,492.418,150.020,2026-11-05T02:45:47Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::mpsc::simple_close,success,492.418,101.301,2026-11-05T02:47:28Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::mpsc::simple_conn_failure,timeout,492.418,150.021,2026-11-05T02:49:58Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::mpsc::simple_drop,timeout,492.418,150.021,2026-11-05T02:52:28Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::mpsc::simple_stream,timeout,492.418,150.021,2026-11-05T02:54:58Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::mpsc::two_sender_conn_failure,success,492.418,34.957,2026-11-05T02:55:33Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::oneshot::close,success,492.418,5.924,2026-11-05T02:55:39Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::oneshot::simple,success,492.418,6.308,2026-11-05T02:55:46Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::remote::big_msg,timeout,492.418,150.018,2026-11-05T02:58:16Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::remote::close_notify,success,492.418,5.704,2026-11-05T02:58:21Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::remote::negation,timeout,492.418,150.020,2026-11-05T03:00:51Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::remote::oversized_msg_recv_error,success,492.418,5.147,2026-11-05T03:00:57Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::remote::oversized_msg_send_error,timeout,492.418,150.021,2026-11-05T03:03:27Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::remote::tcp_big_msg,timeout,492.418,150.016,2026-11-05T03:05:57Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,rch::watch::close,success,492.418,5.765,2026-11-05T03:06:02Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::watch::conn_failure,success,492.418,5.278,2026-11-05T03:06:08Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::watch::max_item_size_exceeded,test_failed,492.418,98.708,2026-11-05T03:07:46Z,50239337.0,panic,"thread 'rch::watch::max_item_size_exceeded' (36329) panicked at tests/rch/watch.rs:244:48: called `Result::unwrap()` on an `Err` value: RemoteReceive(Receive(ChMux))"
+experimental-bsan,remoc-0.14.0,rch::watch::max_item_size_exceeded_check,test_failed,492.418,103.365,2026-11-05T03:09:30Z,50239337.0,panic,"thread 'rch::watch::max_item_size_exceeded_check' (41025) panicked at tests/rch/watch.rs:310:48: called `Result::unwrap()` on an `Err` value: RemoteReceive(Receive(ChMux))"
+experimental-bsan,remoc-0.14.0,rch::watch::modify_stream,success,492.418,8.714,2026-11-05T03:09:39Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::watch::simple,success,492.418,8.851,2026-11-05T03:09:47Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rch::watch::simple_stream,success,492.418,8.735,2026-11-05T03:09:56Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rfn::rfn_const::simple,success,492.418,7.311,2026-11-05T03:10:04Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rfn::rfn_mut::simple,success,492.418,7.344,2026-11-05T03:10:11Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rfn::rfn_once::simple,success,492.418,6.606,2026-11-05T03:10:17Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robj::handle::simple,success,492.418,5.881,2026-11-05T03:10:23Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robj::lazy::simple,success,492.418,6.267,2026-11-05T03:10:30Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robj::lazy_blob::simple,timeout,492.418,150.016,2026-11-05T03:13:00Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,robj::rw_lock::simple,success,492.418,18.702,2026-11-05T03:13:18Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::hash_map::events,success,492.418,3.234,2026-11-05T03:13:22Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::hash_map::events_incremental,success,492.418,3.288,2026-11-05T03:13:25Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::hash_map::incremental,timeout,492.418,150.034,2026-11-05T03:15:55Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,robs::hash_map::mirrored,timeout,492.418,150.020,2026-11-05T03:18:25Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,robs::hash_map::mirrored_disconnect,test_failed,492.418,6.469,2026-11-05T03:18:32Z,50239337.0,panic,"thread 'robs::hash_map::mirrored_disconnect' (68047) panicked at tests/robs/hash_map.rs:162:5: assertion failed: matches!(mirror.borrow().await, Err(RecvError::Closed))"
+experimental-bsan,remoc-0.14.0,robs::hash_map::mirrored_disconnect_after_done,timeout,492.418,150.020,2026-11-05T03:21:02Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,robs::hash_map::standalone,success,492.418,3.195,2026-11-05T03:21:05Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::hash_set::events,success,492.418,3.208,2026-11-05T03:21:08Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::hash_set::events_incremental,success,492.418,3.262,2026-11-05T03:21:11Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::hash_set::incremental,timeout,492.418,150.014,2026-11-05T03:23:41Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,robs::hash_set::mirrored,timeout,492.418,150.018,2026-11-05T03:26:11Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,robs::hash_set::mirrored_disconnect,test_failed,492.418,6.219,2026-11-05T03:26:18Z,50239337.0,panic,"thread 'robs::hash_set::mirrored_disconnect' (102248) panicked at tests/robs/hash_set.rs:162:5: assertion failed: matches!(mirror.borrow().await, Err(RecvError::Closed))"
+experimental-bsan,remoc-0.14.0,robs::hash_set::mirrored_disconnect_after_done,timeout,492.418,150.017,2026-11-05T03:28:48Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,robs::hash_set::standalone,success,492.418,3.201,2026-11-05T03:28:51Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::list::events,success,492.418,3.209,2026-11-05T03:28:54Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::list::events_incremental,success,492.418,3.282,2026-11-05T03:28:57Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::list::mirrored,success,492.418,36.747,2026-11-05T03:29:34Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::list::mirrored_disconnect,success,492.418,12.658,2026-11-05T03:29:47Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::list::mirrored_disconnect_after_done,success,492.418,17.791,2026-11-05T03:30:05Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::list::standalone,success,492.418,3.165,2026-11-05T03:30:08Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::vec::events,success,492.418,3.224,2026-11-05T03:30:11Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::vec::events_incremental,success,492.418,3.250,2026-11-05T03:30:14Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,robs::vec::incremental,timeout,492.418,150.018,2026-11-05T03:32:44Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,robs::vec::mirrored,timeout,492.418,150.017,2026-11-05T03:35:14Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,robs::vec::mirrored_disconnect,test_failed,492.418,5.501,2026-11-05T03:35:20Z,50239337.0,panic,"thread 'robs::vec::mirrored_disconnect' (15225) panicked at tests/robs/vec.rs:167:5: assertion failed: matches!(mirror.borrow().await, Err(RecvError::Closed))"
+experimental-bsan,remoc-0.14.0,robs::vec::mirrored_disconnect_after_done,timeout,492.418,150.017,2026-11-05T03:37:50Z,50239337.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-0.14.0,robs::vec::standalone,success,492.418,3.198,2026-11-05T03:37:53Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rtc::default::simple,success,492.418,10.032,2026-11-05T03:38:03Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rtc::generics::simple,success,492.418,16.574,2026-11-05T03:38:20Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rtc::readonly::closed,success,492.418,8.452,2026-11-05T03:38:28Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rtc::readonly::simple,success,492.418,8.096,2026-11-05T03:38:36Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rtc::simple::simple,success,492.418,16.552,2026-11-05T03:38:53Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rtc::simple::simple_spawn,success,492.418,15.893,2026-11-05T03:39:09Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rtc::simple_clone::simple_clone,success,492.418,16.465,2026-11-05T03:39:25Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rtc::simple_req::simple_req,success,492.418,15.283,2026-11-05T03:39:41Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rtc::value::simple,success,492.418,8.997,2026-11-05T03:39:50Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rtc::value::simple_plus,success,492.418,9.064,2026-11-05T03:39:59Z,50239337.0,,
+experimental-bsan,remoc-0.14.0,rtc::value::simple_spawn,success,492.418,13.829,2026-11-05T03:40:12Z,50239337.0,,

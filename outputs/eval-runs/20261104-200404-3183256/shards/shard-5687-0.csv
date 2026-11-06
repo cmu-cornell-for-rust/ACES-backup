@@ -1,0 +1,39 @@
+experimental-bsan,rustrict-0.7.39,censor::tests::analyze,success,53.240,118.286,2026-11-05T03:22:56Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,censor::tests::apis,success,53.240,118.029,2026-11-05T03:24:54Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,censor::tests::bandwidth,test_failed,53.240,1.643,2026-11-05T03:24:56Z,50245690.0,panic,"thread 'censor::tests::bandwidth' (34957) panicked at src/censor.rs:1292:43: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,rustrict-0.7.39,censor::tests::bidirectional,success,53.240,116.556,2026-11-05T03:26:53Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,censor::tests::censor,success,53.240,117.889,2026-11-05T03:28:51Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,censor::tests::curated,timeout,53.240,150.033,2026-11-05T03:31:21Z,50245690.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustrict-0.7.39,censor::tests::customize,test_failed,53.240,118.109,2026-11-05T03:33:19Z,50245690.0,panic,"thread 'censor::tests::customize' (78978) panicked at src/censor.rs:1345:9: assertion failed: test_profanity_issue_7.is(Type::PROFANE & Type::SEVERE)"
+experimental-bsan,rustrict-0.7.39,censor::tests::devanagari,success,53.240,1.577,2026-11-05T03:33:21Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,censor::tests::japanese_diacritics_preserved,success,53.240,117.635,2026-11-05T03:35:18Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,censor::tests::levels,success,53.240,119.902,2026-11-05T03:37:18Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,censor::tests::pancakes,success,53.240,117.721,2026-11-05T03:39:16Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,censor::tests::repetitions_non_safe,success,53.240,117.964,2026-11-05T03:41:14Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,censor::tests::short_replacement,success,53.240,117.890,2026-11-05T03:43:12Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,censor::tests::unicode_abuse,success,53.240,120.310,2026-11-05T03:45:12Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,censor::tests::unicode_whitespace,success,53.240,117.939,2026-11-05T03:47:10Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,context::tests::character_limit,success,53.240,148.762,2026-11-05T03:49:39Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,context::tests::context_empty,success,53.240,147.723,2026-11-05T03:52:06Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,context::tests::context_inappropriate,success,53.240,148.331,2026-11-05T03:54:35Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,context::tests::context_muted,timeout,53.240,150.020,2026-11-05T03:57:05Z,50245690.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustrict-0.7.39,context::tests::context_repetitious,test_failed,53.240,149.001,2026-11-05T03:59:34Z,50245690.0,panic,"thread 'context::tests::context_repetitious' (50794) panicked at src/context.rs:768:9: Ok(""onne"")"
+experimental-bsan,rustrict-0.7.39,context::tests::context_safe_mode,success,53.240,149.378,2026-11-05T04:02:03Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,context::tests::context_spam,test_failed,53.240,149.800,2026-11-05T04:04:33Z,50245690.0,panic,"thread 'context::tests::context_spam' (73167) panicked at src/context.rs:799:9: Ok(""four"")"
+experimental-bsan,rustrict-0.7.39,context::tests::context_spam_long_message,timeout,53.240,150.019,2026-11-05T04:07:03Z,50245690.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustrict-0.7.39,context::tests::context_unsafe,success,53.240,147.417,2026-11-05T04:09:31Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,tests::is_whitespace,success,53.240,1.551,2026-11-05T04:09:32Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,tests::trim_whitespace,success,53.240,1.559,2026-11-05T04:09:34Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,width::test::cjk,success,53.240,32.810,2026-11-05T04:10:07Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,width::test::cuneiform,success,53.240,33.006,2026-11-05T04:10:40Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,width::test::emoji,success,53.240,33.050,2026-11-05T04:11:13Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,width::test::fdfd,success,53.240,32.962,2026-11-05T04:11:46Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,width::test::javanese,success,53.240,33.172,2026-11-05T04:12:19Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,width::test::lattice,success,53.240,32.985,2026-11-05T04:12:52Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,width::test::m,success,53.240,32.563,2026-11-05T04:13:25Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,width::test::string,success,53.240,33.148,2026-11-05T04:13:58Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,width::test::tall,success,53.240,117.570,2026-11-05T04:15:55Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,width::test::tamil,success,53.240,33.262,2026-11-05T04:16:29Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,width::test::three_em_dash,success,53.240,32.861,2026-11-05T04:17:01Z,50245690.0,,
+experimental-bsan,rustrict-0.7.39,width::test::trim,timeout,53.240,150.011,2026-11-05T04:19:31Z,50245690.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rustrict-0.7.39,width::test::unbroken,success,53.240,32.688,2026-11-05T04:20:04Z,50245690.0,,

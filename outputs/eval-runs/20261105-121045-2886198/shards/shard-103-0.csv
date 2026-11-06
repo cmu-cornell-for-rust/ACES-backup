@@ -1,0 +1,10 @@
+experimental-bsan,duet-0.9.2,profile::tests::parses_include_exclude_markers_after_leading_whitespace,success,507.379,12.017,2026-11-05T17:22:27Z,50276073.0,,
+experimental-bsan,duet-0.9.2,rpc::tests::scope_changes_validate_paths_and_hard_exclude_remote_entries,success,507.379,13.887,2026-11-05T17:22:41Z,50276073.0,,
+experimental-bsan,duet-0.9.2,sync::tests::fallback_error_drops_pending_outputs_before_staging_area,success,507.379,11.841,2026-11-05T17:22:52Z,50276073.0,,
+experimental-bsan,duet-0.9.2,sync::tests::preflight_rejects_action_paths_that_escape_base,success,507.379,11.864,2026-11-05T17:23:04Z,50276073.0,,
+experimental-bsan,duet-0.9.2,sync::tests::preflight_rejects_removed_directory_with_untracked_child,success,507.379,11.796,2026-11-05T17:23:16Z,50276073.0,,
+experimental-bsan,duet-0.9.2,sync::tests::staging_waves_reject_multi_output_subtree_with_one_cow_candidate,success,507.379,11.789,2026-11-05T17:23:28Z,50276073.0,,
+experimental-bsan,duet-0.9.2,sync::tests::stream_diff_frames_coalesces_adjacent_copy_ops,success,507.379,14.632,2026-11-05T17:23:43Z,50276073.0,,
+experimental-bsan,duet-0.9.2,unfinished_local_apply_marker_blocks_next_sync,success,507.379,24.755,2026-11-05T17:24:07Z,50276073.0,,
+experimental-bsan,duet-0.9.2,sigint_after_staged_commit_finishes_state_and_exits_successfully,test_failed,507.379,34.135,2026-11-05T17:24:42Z,50276073.0,panic,"thread 'sigint_after_staged_commit_finishes_state_and_exits_successfully' (26379) panicked at tests/permission_failures.rs:188:5: timed out waiting for /tmp/.tmpAsTWu9/profile.remotes/.f1148b07d119e6973fea4b9e3e14f3ca.duet-apply to reach phase committed"
+experimental-bsan,duet-0.9.2,sigint_after_staged_prepare_aborts_without_mutating_targets,success,507.379,34.021,2026-11-05T17:25:16Z,50276073.0,,

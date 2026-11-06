@@ -1,0 +1,11 @@
+experimental-bsan,arrow-integration-test-53.2.0,datatype::tests::parse_int32_from_json,success,408.781,1.715,2026-11-05T06:01:24Z,50254604.0,,
+experimental-bsan,arrow-integration-test-53.2.0,datatype::tests::parse_utf8_from_json,success,408.781,1.644,2026-11-05T06:01:26Z,50254604.0,,
+experimental-bsan,arrow-integration-test-53.2.0,field::tests::map_field_to_json,success,408.781,2.014,2026-11-05T06:01:28Z,50254604.0,,
+experimental-bsan,arrow-integration-test-53.2.0,field::tests::parse_map_from_json,success,408.781,1.862,2026-11-05T06:01:29Z,50254604.0,,
+experimental-bsan,arrow-integration-test-53.2.0,field::tests::parse_struct_from_json,success,408.781,1.742,2026-11-05T06:01:31Z,50254604.0,,
+experimental-bsan,arrow-integration-test-53.2.0,field::tests::parse_union_from_json,success,408.781,1.792,2026-11-05T06:01:33Z,50254604.0,,
+experimental-bsan,arrow-integration-test-53.2.0,field::tests::primitive_field_to_json,success,408.781,1.678,2026-11-05T06:01:35Z,50254604.0,,
+experimental-bsan,arrow-integration-test-53.2.0,field::tests::struct_field_to_json,success,408.781,1.828,2026-11-05T06:01:37Z,50254604.0,,
+experimental-bsan,arrow-integration-test-53.2.0,schema::tests::schema_json,success,408.781,8.754,2026-11-05T06:01:45Z,50254604.0,,
+experimental-bsan,arrow-integration-test-53.2.0,tests::test_arrow_data_equality,test_failed,408.781,2.166,2026-11-05T06:01:48Z,50254604.0,panic,"thread 'tests::test_arrow_data_equality' (99024) panicked at src/lib.rs:1313:60: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-integration-test-53.2.0,tests::test_schema_equality,success,408.781,1.977,2026-11-05T06:01:50Z,50254604.0,,

@@ -1,0 +1,5 @@
+experimental-bsan,ssi-json-ld-0.3.0,contexts::test::context_loader,success,255.654,2.929,2026-11-05T07:38:23Z,50260419.0,,
+experimental-bsan,ssi-json-ld-0.3.0,tests::accept_defined_property,test_failed,255.654,12.590,2026-11-05T07:38:35Z,50260419.0,gc,"test tests::accept_defined_property ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ssi-json-ld-0.3.0,tests::accept_defined_type,test_failed,255.654,12.579,2026-11-05T07:38:48Z,50260419.0,gc,"test tests::accept_defined_type ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ssi-json-ld-0.3.0,tests::reject_undefined_property,success,255.654,2.536,2026-11-05T07:38:50Z,50260419.0,,
+experimental-bsan,ssi-json-ld-0.3.0,tests::reject_undefined_type,success,255.654,2.568,2026-11-05T07:38:53Z,50260419.0,,

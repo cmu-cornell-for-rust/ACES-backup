@@ -1,0 +1,10 @@
+experimental-bsan,cargo-supply-chain-0.3.3,cli::tests::test_accepted_query_options,success,126.684,3.932,2026-11-05T06:17:01Z,50255510.0,,
+experimental-bsan,cargo-supply-chain-0.3.3,cli::tests::test_accepted_update_options,success,126.684,2.508,2026-11-05T06:17:03Z,50255510.0,,
+experimental-bsan,cargo-supply-chain-0.3.3,cli::tests::test_cache_max_age_parser,success,126.684,3.743,2026-11-05T06:17:07Z,50255510.0,,
+experimental-bsan,cargo-supply-chain-0.3.3,cli::tests::test_invocation_through_cargo,success,126.684,2.488,2026-11-05T06:17:09Z,50255510.0,,
+experimental-bsan,cargo-supply-chain-0.3.3,cli::tests::test_json_schema_option,success,126.684,4.116,2026-11-05T06:17:14Z,50255510.0,,
+experimental-bsan,cargo-supply-chain-0.3.3,common::tests::cargo,test_failed,126.684,1.613,2026-11-05T06:17:15Z,50255510.0,panic,"thread 'common::tests::cargo' (12337) panicked at src/common.rs:306:45: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cargo-supply-chain-0.3.3,common::tests::cargo_no_dev,test_failed,126.684,1.614,2026-11-05T06:17:17Z,50255510.0,panic,"thread 'common::tests::cargo_no_dev' (12444) panicked at src/common.rs:306:45: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cargo-supply-chain-0.3.3,common::tests::deps,test_failed,126.684,1.620,2026-11-05T06:17:18Z,50255510.0,panic,"thread 'common::tests::deps' (12541) panicked at src/common.rs:244:44: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cargo-supply-chain-0.3.3,common::tests::snapbox,test_failed,126.684,1.613,2026-11-05T06:17:20Z,50255510.0,panic,"thread 'common::tests::snapbox' (12674) panicked at src/common.rs:306:45: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cargo-supply-chain-0.3.3,subcommands::json_schema::tests::test_json_schema,success,126.684,1.862,2026-11-05T06:17:22Z,50255510.0,,

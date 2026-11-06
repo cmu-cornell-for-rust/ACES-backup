@@ -1,0 +1,27 @@
+experimental-bsan,ckb-rich-indexer-1.1.4,indexer::remove::tests::empty_transaction_list_skips_spent_cell_reset,success,2125.180,3.837,2026-11-05T04:39:32Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,indexer::remove::tests::test_script_exists_in_output_finds_type_script_reference,success,2125.180,4.233,2026-11-05T04:39:36Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,indexer_handle::async_indexer_handle::tests::test_get_binary_upper_boundary_all_ff_overflow,success,2125.180,1.832,2026-11-05T04:39:38Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,indexer_handle::async_indexer_handle::tests::test_get_binary_upper_boundary_empty,success,2125.180,1.848,2026-11-05T04:39:40Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,indexer_handle::async_indexer_handle::tests::test_get_binary_upper_boundary_hex_input,success,2125.180,1.863,2026-11-05T04:39:42Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,indexer_handle::async_indexer_handle::tests::test_get_binary_upper_boundary_leading_zeros,success,2125.180,1.861,2026-11-05T04:39:43Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,indexer_handle::async_indexer_handle::tests::test_get_binary_upper_boundary_multiple_leading_zeros,success,2125.180,1.857,2026-11-05T04:39:45Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,indexer_handle::async_indexer_handle::tests::test_get_binary_upper_boundary_short_prefix_with_leading_zero,success,2125.180,1.861,2026-11-05T04:39:47Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,indexer_handle::async_indexer_handle::tests::test_get_binary_upper_boundary_single_zero_byte,success,2125.180,1.860,2026-11-05T04:39:49Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,indexer_handle::async_indexer_handle::tests::test_get_binary_upper_boundary_trailing_ff_carry,success,2125.180,1.854,2026-11-05T04:39:51Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::insert::test_append_block_0,timeout,2125.180,150.033,2026-11-05T04:42:21Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::insert::with_custom_block_filter,success,2125.180,27.630,2026-11-05T04:42:49Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::insert::with_custom_cell_filter,success,2125.180,19.787,2026-11-05T04:43:08Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::query::get_cells,timeout,2125.180,150.030,2026-11-05T04:45:39Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::query::get_cells_by_cursor,timeout,2125.180,150.030,2026-11-05T04:48:09Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::query::get_cells_capacity,timeout,2125.180,150.025,2026-11-05T04:50:39Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::query::get_cells_filter_data,timeout,2125.180,150.032,2026-11-05T04:53:09Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::query::get_cells_with_pool_overlay_and_filter,success,2125.180,10.832,2026-11-05T04:53:20Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::query::get_transactions_grouped,timeout,2125.180,150.031,2026-11-05T04:55:50Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::query::get_transactions_ungrouped,timeout,2125.180,150.023,2026-11-05T04:58:20Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::query::output_data_filter_mode_rpc,success,2125.180,12.223,2026-11-05T04:58:32Z,50248476.0,,
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::query::rpc,timeout,2125.180,150.022,2026-11-05T05:01:02Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::query::script_search_mode_rpc,timeout,2125.180,150.025,2026-11-05T05:03:32Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::query::test_query_tip,timeout,2125.180,150.033,2026-11-05T05:06:02Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::rollback::test_block_filter_and_rollback_block,timeout,2125.180,150.032,2026-11-05T05:08:32Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::rollback::test_rollback_block_0,timeout,2125.180,150.035,2026-11-05T05:11:02Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ckb-rich-indexer-1.1.4,tests::rollback::test_rollback_block_9,timeout,2125.180,150.036,2026-11-05T05:13:32Z,50248476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

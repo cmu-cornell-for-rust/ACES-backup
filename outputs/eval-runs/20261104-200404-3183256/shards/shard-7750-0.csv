@@ -1,0 +1,26 @@
+experimental-bsan,rlink-0.6.16,channel::tests::bounded_test,timeout,437.089,150.279,2026-11-05T04:23:55Z,50248853.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rlink-0.6.16,channel::tests::channel_sender_test,test_failed,437.089,1.718,2026-11-05T04:23:57Z,50248853.0,panic,"thread 'channel::tests::channel_sender_test' (8681) panicked at src/metrics/metric.rs:212:19: called `Option::unwrap()` on a `None` value"
+experimental-bsan,rlink-0.6.16,core::cluster::tests::ser_cluster_config_test,success,437.089,2.159,2026-11-05T04:23:59Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,core::element::tests::serde_element_record_test,success,437.089,1.654,2026-11-05T04:24:01Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,core::element::tests::serde_element_stream_status_test,success,437.089,1.647,2026-11-05T04:24:02Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,core::element::tests::serde_element_watermark_test,success,437.089,1.656,2026-11-05T04:24:04Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,core::properties::tests::row_properties,success,437.089,1.658,2026-11-05T04:24:06Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,core::properties::tests::test_sub_properties,success,437.089,1.670,2026-11-05T04:24:07Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,dag::tests::data_stream_connect_test,success,437.089,20.136,2026-11-05T04:24:27Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,dag::tests::data_stream_reduce_test,success,437.089,13.720,2026-11-05T04:24:41Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,dag::tests::data_stream_simple_test,success,437.089,3.604,2026-11-05T04:24:45Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,dag::tests::data_stream_test,success,437.089,2.433,2026-11-05T04:24:47Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,deployment::yarn::tests::command_json_test,success,437.089,1.659,2026-11-05T04:24:49Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,functions::percentile::tests::percentile_test,success,437.089,2.267,2026-11-05T04:24:51Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,functions::window::tests::window_assigner_test,success,437.089,1.663,2026-11-05T04:24:53Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,macros::tests::loop_result_test,success,437.089,2.221,2026-11-05T04:24:55Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,metrics::prometheus_exporter::builder::tests::test_buckets,success,437.089,2.813,2026-11-05T04:24:58Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,metrics::prometheus_exporter::builder::tests::test_global_labels,success,437.089,2.281,2026-11-05T04:25:00Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,metrics::prometheus_exporter::builder::tests::test_global_labels_overrides,success,437.089,2.283,2026-11-05T04:25:02Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,metrics::prometheus_exporter::builder::tests::test_idle_timeout,success,437.089,2.122,2026-11-05T04:25:05Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,metrics::prometheus_exporter::builder::tests::test_render,success,437.089,2.369,2026-11-05T04:25:07Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,metrics::tests::install_test,timeout,437.089,150.021,2026-11-05T04:27:37Z,50248853.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rlink-0.6.16,pub_sub::network::client::tests::client_test,test_failed,437.089,1.857,2026-11-05T04:27:39Z,50248853.0,panic,"thread 'pub_sub::network::client::tests::client_test' (31797) panicked at src/metrics/metric.rs:212:19: called `Option::unwrap()` on a `None` value"
+experimental-bsan,rlink-0.6.16,runtime::worker::runnable::source_runnable::tests::watermark_manager_test,success,437.089,1.683,2026-11-05T04:27:41Z,50248853.0,,
+experimental-bsan,rlink-0.6.16,storage::checkpoint::mysql_checkpoint_storage::tests::mysql_storage_test,test_failed,437.089,1.838,2026-11-05T04:27:42Z,50248853.0,panic,"thread 'storage::checkpoint::mysql_checkpoint_storage::tests::mysql_storage_test' (32023) panicked at src/storage/checkpoint/mysql_checkpoint_storage.rs:269:14: called `Result::unwrap()` on an `Err` value: DriverError { Could not connect to address `localhost:3304': Connection refused (os error 111)"
+experimental-bsan,rlink-0.6.16,utils::date_time::tests::fmt_date_time_test,success,437.089,1.788,2026-11-05T04:27:44Z,50248853.0,,

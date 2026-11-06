@@ -1,0 +1,461 @@
+experimental-bsan,metallic-0.3.0,f128_::acoshq::test_acoshq_corpus,test_failed,240.694,3.092,2026-11-05T01:23:27Z,50232757.0,panic,"thread 'f128_::acoshq::test_acoshq_corpus' (94239) panicked at tests/all/common/f128_invhyp.rs:57:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::acoshq::test_acoshq_special,success,240.694,3.018,2026-11-05T01:23:30Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::acoshq::test_acoshq_symmetry_and_monotonicity,success,240.694,21.590,2026-11-05T01:23:52Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::acoshq::test_acoshq_vs_f64,success,240.694,48.810,2026-11-05T01:24:41Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::acospiq::test_acospiq_corpus,test_failed,240.694,3.074,2026-11-05T01:24:44Z,50232757.0,panic,"thread 'f128_::acospiq::test_acospiq_corpus' (6829) panicked at tests/all/f128_/acospiq.rs:13:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::acospiq::test_acospiq_special,success,240.694,3.026,2026-11-05T01:24:47Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::acospiq::test_acospiq_vs_f64,success,240.694,22.513,2026-11-05T01:25:09Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::acosq::test_acosq,timeout,240.694,150.017,2026-11-05T01:27:39Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::acosq::test_acosq_special,success,240.694,2.980,2026-11-05T01:27:42Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::acosq::test_acosq_worst_cases,success,240.694,3.013,2026-11-05T01:27:45Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::acosq::test_parser,test_failed,240.694,3.087,2026-11-05T01:27:49Z,50232757.0,panic,"thread 'f128_::acosq::test_parser' (46906) panicked at tests/all/f128_/acosq.rs:8:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::asin::frame_residual::newton_step_has_headroom,timeout,240.694,150.015,2026-11-05T01:30:19Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::asin::tests::endpoints_and_specials,success,240.694,3.016,2026-11-05T01:30:22Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::asin::tests::known_values,success,240.694,3.017,2026-11-05T01:30:25Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::asin::tests::mul_hi_192_runs_short_by_under_2_66,success,240.694,31.147,2026-11-05T01:30:56Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::asin::tests::root_band_fallback_rate,timeout,240.694,150.017,2026-11-05T01:33:26Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::asin::tests::tiny_and_subnormal,success,240.694,3.010,2026-11-05T01:33:29Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::asinhq::test_asinhq_corpus,test_failed,240.694,3.076,2026-11-05T01:33:32Z,50232757.0,panic,"thread 'f128_::asinhq::test_asinhq_corpus' (10770) panicked at tests/all/common/f128_invhyp.rs:57:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::asinhq::test_asinhq_special,success,240.694,3.022,2026-11-05T01:33:35Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::asinhq::test_asinhq_symmetry_and_monotonicity,success,240.694,33.843,2026-11-05T01:34:09Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::asinhq::test_asinhq_vs_f64,success,240.694,59.182,2026-11-05T01:35:08Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::asinpiq::test_asinpiq_corpus,test_failed,240.694,3.042,2026-11-05T01:35:11Z,50232757.0,panic,"thread 'f128_::asinpiq::test_asinpiq_corpus' (28726) panicked at tests/all/f128_/asinpiq.rs:13:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::asinpiq::test_asinpiq_special,success,240.694,3.000,2026-11-05T01:35:14Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::asinpiq::test_asinpiq_vs_f64,success,240.694,22.102,2026-11-05T01:35:36Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::asinq::test_asinq,timeout,240.694,150.019,2026-11-05T01:38:06Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::asinq::test_asinq_special,success,240.694,3.090,2026-11-05T01:38:09Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::asinq::test_asinq_worst_cases,success,240.694,3.069,2026-11-05T01:38:12Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::asinq::test_parser,test_failed,240.694,3.089,2026-11-05T01:38:16Z,50232757.0,panic,"thread 'f128_::asinq::test_parser' (65920) panicked at tests/all/f128_/asinq.rs:8:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::atan2::tests::known_values,success,240.694,3.054,2026-11-05T01:38:19Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atan2::tests::quadrant_constants,success,240.694,3.089,2026-11-05T01:38:22Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atan2::tests::tiny_and_subnormal,success,240.694,3.064,2026-11-05T01:38:25Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atan2piq::test_atan2piq_corpus,test_failed,240.694,3.148,2026-11-05T01:38:28Z,50232757.0,panic,"thread 'f128_::atan2piq::test_atan2piq_corpus' (68617) panicked at tests/all/f128_/atan2piq.rs:11:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::atan2piq::test_atan2piq_special,success,240.694,3.117,2026-11-05T01:38:31Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atan2piq::test_atan2piq_vs_f64,success,240.694,29.567,2026-11-05T01:39:01Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atan2q::test_atan2q,success,240.694,142.969,2026-11-05T01:41:24Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atan2q::test_atan2q_special,success,240.694,3.026,2026-11-05T01:41:27Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atan2q::test_atan2q_worst_cases,success,240.694,3.011,2026-11-05T01:41:30Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atan2q::test_parser,test_failed,240.694,3.070,2026-11-05T01:41:33Z,50232757.0,panic,"thread 'f128_::atan2q::test_parser' (1600) panicked at tests/all/f128_/atan2q.rs:91:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::atanhq::test_atanhq_corpus,test_failed,240.694,3.082,2026-11-05T01:41:36Z,50232757.0,panic,"thread 'f128_::atanhq::test_atanhq_corpus' (2470) panicked at tests/all/common/f128_invhyp.rs:57:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::atanhq::test_atanhq_special,success,240.694,3.018,2026-11-05T01:41:39Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atanhq::test_atanhq_symmetry_and_monotonicity,success,240.694,45.225,2026-11-05T01:42:24Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atanhq::test_atanhq_vs_f64,success,240.694,49.588,2026-11-05T01:43:14Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atanpiq::test_atanpiq_corpus,test_failed,240.694,3.088,2026-11-05T01:43:17Z,50232757.0,panic,"thread 'f128_::atanpiq::test_atanpiq_corpus' (24071) panicked at tests/all/f128_/atanpiq.rs:10:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::atanpiq::test_atanpiq_matches_atan2piq,timeout,240.694,150.015,2026-11-05T01:45:47Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::atanpiq::test_atanpiq_special,success,240.694,3.078,2026-11-05T01:45:50Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atanpiq::test_atanpiq_vs_f64,success,240.694,21.697,2026-11-05T01:46:12Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atanq::test_atanq,timeout,240.694,150.016,2026-11-05T01:48:42Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::atanq::test_atanq_special,success,240.694,3.018,2026-11-05T01:48:45Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atanq::test_atanq_worst_cases,success,240.694,3.017,2026-11-05T01:48:48Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::atanq::test_parser,test_failed,240.694,3.091,2026-11-05T01:48:51Z,50232757.0,panic,"thread 'f128_::atanq::test_parser' (99969) panicked at tests/all/f128_/atanq.rs:8:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::cbrtq::test_cbrtq,success,240.694,91.213,2026-11-05T01:50:22Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::cbrtq::test_cbrtq_special,success,240.694,3.006,2026-11-05T01:50:25Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::cbrtq::test_cbrtq_worst_cases,success,240.694,3.025,2026-11-05T01:50:28Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::cbrtq::test_parser,test_failed,240.694,3.062,2026-11-05T01:50:31Z,50232757.0,panic,"thread 'f128_::cbrtq::test_parser' (16609) panicked at tests/all/f128_/cbrtq.rs:21:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::compoundq::test_compoundq_corpus,test_failed,240.694,3.082,2026-11-05T01:50:34Z,50232757.0,panic,"thread 'f128_::compoundq::test_compoundq_corpus' (16950) panicked at tests/all/f128_/compoundq.rs:134:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::compoundq::test_compoundq_exact,success,240.694,3.044,2026-11-05T01:50:37Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::compoundq::test_compoundq_special,success,240.694,3.018,2026-11-05T01:50:40Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::compoundq::test_compoundq_vs_f32,success,240.694,71.643,2026-11-05T01:51:52Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::compoundq::test_compoundq_vs_powq,timeout,240.694,150.017,2026-11-05T01:54:22Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::coshq::test_coshq_corpus,test_failed,240.694,3.223,2026-11-05T01:54:25Z,50232757.0,panic,"thread 'f128_::coshq::test_coshq_corpus' (54978) panicked at tests/all/common/f128_hyp.rs:44:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::coshq::test_coshq_special,success,240.694,3.019,2026-11-05T01:54:28Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::coshq::test_coshq_symmetry_and_monotonicity,success,240.694,14.389,2026-11-05T01:54:43Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::coshq::test_coshq_vs_f64,success,240.694,21.908,2026-11-05T01:55:05Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::cospiq::test_cospiq_corpus,test_failed,240.694,3.095,2026-11-05T01:55:08Z,50232757.0,panic,"thread 'f128_::cospiq::test_cospiq_corpus' (62382) panicked at tests/all/common/f128_trigpi.rs:111:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::cospiq::test_cospiq_symmetry,success,240.694,18.408,2026-11-05T01:55:26Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::cospiq::test_cospiq_vs_f64,success,240.694,21.464,2026-11-05T01:55:48Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::cosq::test_cosq,timeout,240.694,150.017,2026-11-05T01:58:18Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::cosq::test_cosq_corpus,test_failed,240.694,3.086,2026-11-05T01:58:21Z,50232757.0,panic,"thread 'f128_::cosq::test_cosq_corpus' (90743) panicked at tests/all/f128_/cosq.rs:55:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::cosq::test_cosq_even,success,240.694,134.742,2026-11-05T02:00:36Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::cosq::test_cosq_special,success,240.694,3.011,2026-11-05T02:00:39Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::cosq::test_cosq_vs_f64,success,240.694,134.535,2026-11-05T02:02:53Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::cosq::test_cosq_worst_cases,success,240.694,3.040,2026-11-05T02:02:56Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::cosq::test_parser,test_failed,240.694,3.073,2026-11-05T02:03:00Z,50232757.0,panic,"thread 'f128_::cosq::test_parser' (33771) panicked at tests/all/f128_/cosq.rs:17:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::erfcq::test_erfcq_corpus,test_failed,240.694,3.076,2026-11-05T02:03:03Z,50232757.0,panic,"thread 'f128_::erfcq::test_erfcq_corpus' (34097) panicked at tests/all/common/f128_special.rs:92:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::erfcq::test_erfcq_identities,success,240.694,11.906,2026-11-05T02:03:15Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::erfcq::test_erfcq_special,success,240.694,3.003,2026-11-05T02:03:18Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::erfcq::test_erfcq_vs_f64,success,240.694,15.562,2026-11-05T02:03:33Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::erfq::test_erfq_corpus,test_failed,240.694,3.101,2026-11-05T02:03:36Z,50232757.0,panic,"thread 'f128_::erfq::test_erfq_corpus' (39631) panicked at tests/all/common/f128_special.rs:92:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::erfq::test_erfq_identities,success,240.694,11.071,2026-11-05T02:03:47Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::erfq::test_erfq_special,success,240.694,3.010,2026-11-05T02:03:50Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::erfq::test_erfq_vs_f64,success,240.694,13.626,2026-11-05T02:04:04Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp10m1q::test_exp10m1q_corpus,test_failed,240.694,3.057,2026-11-05T02:04:07Z,50232757.0,panic,"thread 'f128_::exp10m1q::test_exp10m1q_corpus' (44295) panicked at tests/all/f128_/exp2m1q.rs:10:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::exp10m1q::test_exp10m1q_exact,success,240.694,3.016,2026-11-05T02:04:10Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp10m1q::test_exp10m1q_special,success,240.694,3.005,2026-11-05T02:04:13Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp10m1q::test_exp10m1q_vs_f64,success,240.694,22.086,2026-11-05T02:04:35Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp10q::test_exp10q,success,240.694,88.788,2026-11-05T02:06:04Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp10q::test_exp10q_special,success,240.694,2.998,2026-11-05T02:06:07Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp10q::test_exp10q_worst_cases,success,240.694,3.014,2026-11-05T02:06:10Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp10q::test_parser,test_failed,240.694,3.051,2026-11-05T02:06:13Z,50232757.0,panic,"thread 'f128_::exp10q::test_parser' (60341) panicked at tests/all/f128_/exp10q.rs:9:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::exp2m1q::test_exp2m1q_corpus,test_failed,240.694,3.058,2026-11-05T02:06:16Z,50232757.0,panic,"thread 'f128_::exp2m1q::test_exp2m1q_corpus' (60768) panicked at tests/all/f128_/exp2m1q.rs:10:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::exp2m1q::test_exp2m1q_exact_and_midpoint,success,240.694,3.059,2026-11-05T02:06:19Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp2m1q::test_exp2m1q_special,success,240.694,2.995,2026-11-05T02:06:22Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp2m1q::test_exp2m1q_vs_f64,success,240.694,22.205,2026-11-05T02:06:44Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp2q::test_exp2q,success,240.694,89.182,2026-11-05T02:08:14Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp2q::test_exp2q_special,success,240.694,3.022,2026-11-05T02:08:17Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp2q::test_exp2q_worst_cases,success,240.694,3.026,2026-11-05T02:08:20Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp2q::test_parser,test_failed,240.694,3.064,2026-11-05T02:08:23Z,50232757.0,panic,"thread 'f128_::exp2q::test_parser' (79999) panicked at tests/all/f128_/exp2q.rs:9:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::exp::tests::exact_and_special,success,240.694,3.010,2026-11-05T02:08:26Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::exp::tests::known_values,success,240.694,3.007,2026-11-05T02:08:29Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::expm1q::test_expm1q,timeout,240.694,150.018,2026-11-05T02:10:59Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::expm1q::test_expm1q_special,success,240.694,3.025,2026-11-05T02:11:02Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::expm1q::test_expm1q_worst_cases,success,240.694,3.042,2026-11-05T02:11:05Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::expm1q::test_parser,test_failed,240.694,3.075,2026-11-05T02:11:08Z,50232757.0,panic,"thread 'f128_::expm1q::test_parser' (101813) panicked at tests/all/f128_/expm1q.rs:9:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::expq::test_expq,success,240.694,90.320,2026-11-05T02:12:38Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::expq::test_expq_special,success,240.694,3.065,2026-11-05T02:12:41Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::expq::test_expq_worst_cases,success,240.694,3.088,2026-11-05T02:12:45Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::expq::test_parser,test_failed,240.694,3.115,2026-11-05T02:12:48Z,50232757.0,panic,"thread 'f128_::expq::test_parser' (10447) panicked at tests/all/f128_/expq.rs:9:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::fmaq::single_rounding,success,240.694,3.019,2026-11-05T02:12:51Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::fmaq::two_product,success,240.694,40.679,2026-11-05T02:13:31Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::frexpq::edges,success,240.694,3.010,2026-11-05T02:13:34Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::frexpq::powers_of_two,success,240.694,7.603,2026-11-05T02:13:42Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::frexpq::test_frexpq,success,240.694,28.317,2026-11-05T02:14:10Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::hypot::tests::pythagorean_and_specials,success,240.694,3.082,2026-11-05T02:14:13Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::hypotq::test_hypotq,success,240.694,135.171,2026-11-05T02:16:29Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::hypotq::test_hypotq_special,success,240.694,3.099,2026-11-05T02:16:32Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::hypotq::test_hypotq_worst_cases,success,240.694,3.049,2026-11-05T02:16:35Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::hypotq::test_parser,test_failed,240.694,3.116,2026-11-05T02:16:38Z,50232757.0,panic,"thread 'f128_::hypotq::test_parser' (44204) panicked at tests/all/f128_/hypotq.rs:90:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::ldexpq::exponent_field,timeout,240.694,150.017,2026-11-05T02:19:08Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::ldexpq::nonfinite,success,240.694,3.076,2026-11-05T02:19:11Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::ldexpq::round_trip,success,240.694,6.414,2026-11-05T02:19:18Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::ldexpq::subnormal_ladder,success,240.694,3.033,2026-11-05T02:19:21Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::ldexpq::underflow_and_overflow,success,240.694,3.022,2026-11-05T02:19:24Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::lgammaq::test_lgammaq_corpus,test_failed,240.694,3.077,2026-11-05T02:19:27Z,50232757.0,panic,"thread 'f128_::lgammaq::test_lgammaq_corpus' (63864) panicked at tests/all/common/f128_special.rs:92:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::lgammaq::test_lgammaq_identities,timeout,240.694,150.015,2026-11-05T02:21:57Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::lgammaq::test_lgammaq_special,success,240.694,3.144,2026-11-05T02:22:00Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::lgammaq::test_lgammaq_vs_f64,timeout,240.694,150.017,2026-11-05T02:24:30Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::log10p1q::test_log10p1q_corpus,test_failed,240.694,3.103,2026-11-05T02:24:33Z,50232757.0,panic,"thread 'f128_::log10p1q::test_log10p1q_corpus' (1444) panicked at tests/all/f128_/log10p1q.rs:13:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::log10p1q::test_log10p1q_exact,success,240.694,3.040,2026-11-05T02:24:36Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log10p1q::test_log10p1q_special,success,240.694,3.007,2026-11-05T02:24:39Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log10p1q::test_log10p1q_vs_f64,success,240.694,42.719,2026-11-05T02:25:22Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log10q::test_log10q_corpus,test_failed,240.694,3.062,2026-11-05T02:25:25Z,50232757.0,panic,"thread 'f128_::log10q::test_log10q_corpus' (6899) panicked at tests/all/f128_/log10q.rs:52:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::log10q::test_log10q_exact,success,240.694,3.033,2026-11-05T02:25:28Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log10q::test_log10q_special,success,240.694,3.009,2026-11-05T02:25:31Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log10q::test_log10q_vs_f64,success,240.694,94.152,2026-11-05T02:27:05Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log1pq::test_log1pq_corpus,test_failed,240.694,3.177,2026-11-05T02:27:08Z,50232757.0,panic,"thread 'f128_::log1pq::test_log1pq_corpus' (19165) panicked at tests/all/f128_/log1pq.rs:62:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::log1pq::test_log1pq_special,success,240.694,3.024,2026-11-05T02:27:11Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log1pq::test_log1pq_tiny,success,240.694,14.739,2026-11-05T02:27:26Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log1pq::test_log1pq_vs_f64,success,240.694,36.211,2026-11-05T02:28:02Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log2p1q::test_log2p1q_corpus,test_failed,240.694,3.082,2026-11-05T02:28:05Z,50232757.0,panic,"thread 'f128_::log2p1q::test_log2p1q_corpus' (29471) panicked at tests/all/f128_/log2p1q.rs:13:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::log2p1q::test_log2p1q_exact,success,240.694,3.145,2026-11-05T02:28:09Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log2p1q::test_log2p1q_special,success,240.694,3.013,2026-11-05T02:28:12Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log2p1q::test_log2p1q_vs_f64,success,240.694,42.245,2026-11-05T02:28:54Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log2q::test_log2q_corpus,test_failed,240.694,3.117,2026-11-05T02:28:57Z,50232757.0,panic,"thread 'f128_::log2q::test_log2q_corpus' (36491) panicked at tests/all/f128_/log2q.rs:52:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::log2q::test_log2q_exact,success,240.694,17.244,2026-11-05T02:29:14Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log2q::test_log2q_special,success,240.694,3.004,2026-11-05T02:29:17Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log2q::test_log2q_vs_f64,success,240.694,93.712,2026-11-05T02:30:51Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log::tests::exact_and_special,success,240.694,3.022,2026-11-05T02:30:54Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log::tests::known_values,success,240.694,3.027,2026-11-05T02:30:57Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log::tests::log10_exact_and_special,success,240.694,3.045,2026-11-05T02:31:00Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log::tests::log10_known_values,success,240.694,3.022,2026-11-05T02:31:03Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log::tests::log1p_exact_and_special,success,240.694,3.021,2026-11-05T02:31:06Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log::tests::log1p_known_values,success,240.694,3.027,2026-11-05T02:31:09Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log::tests::log2_exact_and_special,success,240.694,18.686,2026-11-05T02:31:28Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log::tests::log2_known_values,success,240.694,3.010,2026-11-05T02:31:31Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::log::tests::near_reciprocal,success,240.694,3.025,2026-11-05T02:31:34Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::logq::test_logq,timeout,240.694,150.018,2026-11-05T02:34:04Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::logq::test_logq_special,success,240.694,3.030,2026-11-05T02:34:07Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::logq::test_logq_worst_cases,success,240.694,3.034,2026-11-05T02:34:10Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::logq::test_parser,test_failed,240.694,3.068,2026-11-05T02:34:13Z,50232757.0,panic,"thread 'f128_::logq::test_parser' (69716) panicked at tests/all/f128_/logq.rs:8:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::misc::tests::frexp_round_trip,success,240.694,3.020,2026-11-05T02:34:16Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::misc::tests::split_magnitudes,success,240.694,3.014,2026-11-05T02:34:19Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::pow::tests::exact_values,success,240.694,3.027,2026-11-05T02:34:22Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::pow::tests::known_values,success,240.694,3.023,2026-11-05T02:34:25Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::pow::tests::special_values,success,240.694,3.037,2026-11-05T02:34:28Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::pow::tests::wide_tier_agrees,success,240.694,117.032,2026-11-05T02:36:25Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::powq::test_powq_corpus,test_failed,240.694,3.091,2026-11-05T02:36:29Z,50232757.0,panic,"thread 'f128_::powq::test_powq_corpus' (79884) panicked at tests/all/f128_/powq.rs:83:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::powq::test_powq_exact,success,240.694,3.052,2026-11-05T02:36:32Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::powq::test_powq_special,success,240.694,3.050,2026-11-05T02:36:35Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::powq::test_powq_vs_f64,success,240.694,135.880,2026-11-05T02:38:51Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::roots::tests::roots_and_wide_product,success,240.694,3.026,2026-11-05T02:38:54Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::roundq::below_one,success,240.694,5.326,2026-11-05T02:38:59Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::roundq::halfway_cases,success,240.694,3.060,2026-11-05T02:39:02Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::roundq::integral_and_nonfinite,success,240.694,12.736,2026-11-05T02:39:15Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::roundq::test_roundq,success,240.694,19.858,2026-11-05T02:39:35Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::rsqrtq::test_parser,test_failed,240.694,3.061,2026-11-05T02:39:38Z,50232757.0,panic,"thread 'f128_::rsqrtq::test_parser' (100285) panicked at tests/all/f128_/rsqrtq.rs:21:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::rsqrtq::test_rsqrtq,success,240.694,89.784,2026-11-05T02:41:07Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::rsqrtq::test_rsqrtq_special,success,240.694,3.037,2026-11-05T02:41:11Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::rsqrtq::test_rsqrtq_worst_cases,success,240.694,3.018,2026-11-05T02:41:14Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sincosq::test_sincosq_agrees,timeout,240.694,150.016,2026-11-05T02:43:44Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::sincosq::test_sincosq_cos_corpus,test_failed,240.694,3.066,2026-11-05T02:43:47Z,50232757.0,panic,"thread 'f128_::sincosq::test_sincosq_cos_corpus' (19877) panicked at tests/all/f128_/sincosq.rs:83:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::sincosq::test_sincosq_parity,success,240.694,140.973,2026-11-05T02:46:08Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sincosq::test_sincosq_sin_corpus,test_failed,240.694,3.269,2026-11-05T02:46:11Z,50232757.0,panic,"thread 'f128_::sincosq::test_sincosq_sin_corpus' (39970) panicked at tests/all/f128_/sincosq.rs:66:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::sincosq::test_sincosq_special,success,240.694,3.048,2026-11-05T02:46:14Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sincosq::test_sincosq_vs_f64,timeout,240.694,150.016,2026-11-05T02:48:44Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::sincosq::test_sincosq_worst_cases,success,240.694,3.028,2026-11-05T02:48:47Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sinhq::test_sinhq_corpus,test_failed,240.694,3.086,2026-11-05T02:48:50Z,50232757.0,panic,"thread 'f128_::sinhq::test_sinhq_corpus' (59171) panicked at tests/all/common/f128_hyp.rs:44:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::sinhq::test_sinhq_special,success,240.694,3.020,2026-11-05T02:48:53Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sinhq::test_sinhq_symmetry_and_monotonicity,success,240.694,14.694,2026-11-05T02:49:08Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sinhq::test_sinhq_vs_f64,success,240.694,21.413,2026-11-05T02:49:29Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sinpiq::test_sinpiq_corpus,test_failed,240.694,3.065,2026-11-05T02:49:32Z,50232757.0,panic,"thread 'f128_::sinpiq::test_sinpiq_corpus' (64192) panicked at tests/all/common/f128_trigpi.rs:111:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::sinpiq::test_sinpiq_symmetry,success,240.694,22.038,2026-11-05T02:49:54Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sinpiq::test_sinpiq_vs_f64,success,240.694,22.767,2026-11-05T02:50:17Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sinq::test_parser,test_failed,240.694,3.031,2026-11-05T02:50:20Z,50232757.0,panic,"thread 'f128_::sinq::test_parser' (68638) panicked at tests/all/f128_/sinq.rs:17:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::sinq::test_sinq,timeout,240.694,150.016,2026-11-05T02:52:50Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::sinq::test_sinq_corpus,test_failed,240.694,3.043,2026-11-05T02:52:53Z,50232757.0,panic,"thread 'f128_::sinq::test_sinq_corpus' (76183) panicked at tests/all/f128_/sinq.rs:55:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::sinq::test_sinq_odd,success,240.694,133.473,2026-11-05T02:55:07Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sinq::test_sinq_special,success,240.694,2.987,2026-11-05T02:55:10Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sinq::test_sinq_vs_f64,success,240.694,134.263,2026-11-05T02:57:24Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sinq::test_sinq_worst_cases,success,240.694,3.011,2026-11-05T02:57:27Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sqrtq::test_parser,test_failed,240.694,3.105,2026-11-05T02:57:30Z,50232757.0,panic,"thread 'f128_::sqrtq::test_parser' (12213) panicked at tests/all/f128_/sqrtq.rs:54:5: assertion `left == right` failed"
+experimental-bsan,metallic-0.3.0,f128_::sqrtq::test_sqrtq,success,240.694,87.440,2026-11-05T02:58:58Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sqrtq::test_sqrtq_special,success,240.694,2.973,2026-11-05T02:59:01Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::sqrtq::test_sqrtq_worst_cases,success,240.694,2.980,2026-11-05T02:59:04Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tan::tests::known_values,success,240.694,2.975,2026-11-05T02:59:07Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tan::tests::specials,success,240.694,2.955,2026-11-05T02:59:10Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tan::tests::symmetry,success,240.694,2.953,2026-11-05T02:59:13Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tanhq::test_tanhq_corpus,test_failed,240.694,3.010,2026-11-05T02:59:16Z,50232757.0,panic,"thread 'f128_::tanhq::test_tanhq_corpus' (23990) panicked at tests/all/common/f128_hyp.rs:44:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::tanhq::test_tanhq_special,success,240.694,2.957,2026-11-05T02:59:19Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tanhq::test_tanhq_symmetry_and_monotonicity,success,240.694,16.480,2026-11-05T02:59:35Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tanhq::test_tanhq_vs_f64,success,240.694,21.572,2026-11-05T02:59:57Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tanpiq::test_tanpiq_corpus,test_failed,240.694,3.020,2026-11-05T03:00:00Z,50232757.0,panic,"thread 'f128_::tanpiq::test_tanpiq_corpus' (26263) panicked at tests/all/common/f128_trigpi.rs:111:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::tanpiq::test_tanpiq_symmetry,success,240.694,22.322,2026-11-05T03:00:22Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tanpiq::test_tanpiq_vs_f64,success,240.694,23.840,2026-11-05T03:00:46Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tanq::test_tanq_corpus,test_failed,240.694,3.021,2026-11-05T03:00:49Z,50232757.0,panic,"thread 'f128_::tanq::test_tanq_corpus' (28490) panicked at tests/all/f128_/tanq.rs:48:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f128_::tanq::test_tanq_odd,success,240.694,137.008,2026-11-05T03:03:06Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tanq::test_tanq_special,success,240.694,2.959,2026-11-05T03:03:09Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tanq::test_tanq_vs_f64,success,240.694,133.182,2026-11-05T03:05:22Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tgammaq::test_tgammaq_corpus,test_failed,240.694,3.021,2026-11-05T03:05:25Z,50232757.0,panic,"thread 'f128_::tgammaq::test_tgammaq_corpus' (38989) panicked at tests/all/common/f128_special.rs:92:5: assertion `left == right` failed: corpus size changed; update the count"
+experimental-bsan,metallic-0.3.0,f128_::tgammaq::test_tgammaq_identities,timeout,240.694,150.016,2026-11-05T03:07:55Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::tgammaq::test_tgammaq_special,success,240.694,3.051,2026-11-05T03:07:58Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::tgammaq::test_tgammaq_vs_f64,timeout,240.694,150.016,2026-11-05T03:10:28Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f128_::trig::tests::known_values,success,240.694,3.002,2026-11-05T03:10:31Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::trig::tests::specials,success,240.694,2.957,2026-11-05T03:10:34Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::trig::tests::symmetry,success,240.694,2.963,2026-11-05T03:10:37Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::trigpi::tests::specials,success,240.694,3.245,2026-11-05T03:10:41Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::uint::tests::saturating_shifts,success,240.694,2.968,2026-11-05T03:10:44Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::uint::tests::wide_extract,success,240.694,2.958,2026-11-05T03:10:47Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::uint::tests::wide_multiply,success,240.694,2.953,2026-11-05T03:10:49Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::uint::tests::wide_product,success,240.694,3.016,2026-11-05T03:10:52Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::uint::tests::wide_shift_and_add,success,240.694,2.945,2026-11-05T03:10:55Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f128_::uint::tests::wide_subtract,success,240.694,2.962,2026-11-05T03:10:58Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f32_::acosf::test_acos,timeout,240.694,150.017,2026-11-05T03:13:28Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::acoshf::test_acosh,timeout,240.694,150.016,2026-11-05T03:15:59Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::acospif::test_acospif,timeout,240.694,150.016,2026-11-05T03:18:29Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::asinf::test_asin,timeout,240.694,150.015,2026-11-05T03:20:59Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::asinhf::test_asinh,timeout,240.694,150.014,2026-11-05T03:23:29Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::asinpif::test_asinpif,timeout,240.694,150.015,2026-11-05T03:25:59Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::atan2f::test_atan2,success,240.694,3.096,2026-11-05T03:26:02Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f32_::atan2f::test_atan2_grid_and_full_range,timeout,240.694,150.016,2026-11-05T03:28:32Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::atan2f::test_atan2_quadrants_and_extreme_ratios,success,240.694,142.760,2026-11-05T03:30:55Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f32_::atan2pif::test_atan2pif,timeout,240.694,150.014,2026-11-05T03:33:25Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::atan2pif::test_atan2pif_worst_cases,success,240.694,2.956,2026-11-05T03:33:28Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f32_::atan2pif::test_atan2pif_worst_faithful,success,240.694,2.957,2026-11-05T03:33:31Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f32_::atanf::test_atan,timeout,240.694,150.017,2026-11-05T03:36:01Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::atanhf::test_atanh,timeout,240.694,150.015,2026-11-05T03:38:31Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::atanpif::test_atanpif,timeout,240.694,150.015,2026-11-05T03:41:01Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::cbrtf::test_cbrt,timeout,240.694,150.015,2026-11-05T03:43:31Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::compoundf::test_compoundf,success,240.694,2.949,2026-11-05T03:43:34Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f32_::compoundf::test_parser,test_failed,240.694,3.007,2026-11-05T03:43:37Z,50232757.0,panic,"thread 'f32_::compoundf::test_parser' (79473) panicked at tests/all/f32_/compoundf.rs:5:5: assertion failed: common::parse_case_file(""compoundf.wc"", common::parse_f32_pair).count() =="
+experimental-bsan,metallic-0.3.0,f32_::cosf::test_cos,timeout,240.694,150.015,2026-11-05T03:46:07Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::coshf::test_cosh,timeout,240.694,150.015,2026-11-05T03:48:37Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::cospif::test_cospif,timeout,240.694,150.015,2026-11-05T03:51:07Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::erfcf::test_erfc,timeout,240.694,150.015,2026-11-05T03:53:37Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::erff::test_erf,timeout,240.694,150.015,2026-11-05T03:56:07Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::exp10f::test_exp10,timeout,240.694,150.016,2026-11-05T03:58:37Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::exp10m1f::test_exp10m1f,timeout,240.694,150.016,2026-11-05T04:01:07Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::exp2f::test_exp2,timeout,240.694,150.015,2026-11-05T04:03:37Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::exp2m1f::test_exp2m1f,timeout,240.694,150.015,2026-11-05T04:06:07Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::expf::test_exp,timeout,240.694,150.017,2026-11-05T04:08:37Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::expm1f::test_exp_m1,timeout,240.694,150.015,2026-11-05T04:11:07Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::frexpf::frexp,timeout,240.694,150.015,2026-11-05T04:13:37Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::hypotf::test_hypot,success,240.694,2.952,2026-11-05T04:13:40Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f32_::hypotf::test_parser,test_failed,240.694,3.023,2026-11-05T04:13:43Z,50232757.0,panic,"thread 'f32_::hypotf::test_parser' (5334) panicked at tests/all/f32_/hypotf.rs:5:5: assertion failed: common::parse_case_file(""hypotf.wc"", common::parse_f32_pair).count() == 7244"
+experimental-bsan,metallic-0.3.0,f32_::ldexpf::test_finite_negative_down,timeout,240.694,150.013,2026-11-05T04:16:13Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::ldexpf::test_finite_negative_up,timeout,240.694,150.014,2026-11-05T04:18:43Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::ldexpf::test_finite_positive_down,timeout,240.694,150.015,2026-11-05T04:21:13Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::ldexpf::test_finite_positive_up,timeout,240.694,150.015,2026-11-05T04:23:43Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::ldexpf::test_infinite,timeout,240.694,150.015,2026-11-05T04:26:13Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::lgammaf::test_lgamma,timeout,240.694,150.015,2026-11-05T04:28:43Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::log10f::test_log10,timeout,240.694,150.016,2026-11-05T04:31:14Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::log10p1f::test_log10p1f,timeout,240.694,150.014,2026-11-05T04:33:44Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::log1pf::test_ln_1p,timeout,240.694,150.015,2026-11-05T04:36:14Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::log2f::test_log2,timeout,240.694,150.015,2026-11-05T04:38:44Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::log2p1f::test_log2p1f,timeout,240.694,150.016,2026-11-05T04:41:14Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::logf::test_ln,timeout,240.694,150.015,2026-11-05T04:43:44Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::powf::test_parser,test_failed,240.694,3.020,2026-11-05T04:43:47Z,50232757.0,panic,"thread 'f32_::powf::test_parser' (31551) panicked at tests/all/f32_/powf.rs:5:5: assertion failed: common::parse_case_file(""powf.wc"", common::parse_f32_pair).count() == 404_160"
+experimental-bsan,metallic-0.3.0,f32_::powf::test_powf,success,240.694,2.957,2026-11-05T04:43:50Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f32_::roundf::test_round,timeout,240.694,150.015,2026-11-05T04:46:20Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::rsqrtf::test_rsqrtf,timeout,240.694,150.016,2026-11-05T04:48:50Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::sincosf::test_sin_cos,timeout,240.694,150.016,2026-11-05T04:51:20Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::sinf::test_sin,timeout,240.694,150.016,2026-11-05T04:53:50Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::sinhf::test_sinh,timeout,240.694,150.013,2026-11-05T04:56:20Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::sinpif::test_sinpif,timeout,240.694,150.015,2026-11-05T04:58:50Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::tanf::test_tan,timeout,240.694,150.016,2026-11-05T05:01:20Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::tanhf::test_tanh,timeout,240.694,150.016,2026-11-05T05:03:50Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::tanpif::test_tanpif,timeout,240.694,150.015,2026-11-05T05:06:20Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f32_::tgammaf::test_tgamma,timeout,240.694,150.015,2026-11-05T05:08:50Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::acos::test_acos,timeout,240.694,150.015,2026-11-05T05:11:20Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::acos::test_acos_worst_cases,success,240.694,2.971,2026-11-05T05:11:23Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::acos::test_acos_worst_faithful,success,240.694,2.979,2026-11-05T05:11:26Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::acosh::test_acosh,timeout,240.694,150.014,2026-11-05T05:13:56Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::acosh::test_acosh_worst_cases,success,240.694,2.957,2026-11-05T05:13:59Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::acosh::test_acosh_worst_faithful,success,240.694,2.960,2026-11-05T05:14:02Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::acospi::test_acospi,timeout,240.694,150.011,2026-11-05T05:16:32Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::acospi::test_acospi_dense_band,timeout,240.694,150.015,2026-11-05T05:19:02Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::acospi::test_acospi_worst_cases,success,240.694,2.933,2026-11-05T05:19:05Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::acospi::test_acospi_worst_faithful,success,240.694,2.937,2026-11-05T05:19:08Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::acospi::test_parser,test_failed,240.694,2.968,2026-11-05T05:19:11Z,50232757.0,panic,"thread 'f64_::acospi::test_parser' (65388) panicked at tests/all/f64_/acospi.rs:6:5: parsed 0 cases"
+experimental-bsan,metallic-0.3.0,f64_::asin::test_asin,timeout,240.694,150.013,2026-11-05T05:21:41Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::asin::test_asin_worst_cases,success,240.694,2.921,2026-11-05T05:21:44Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::asinh::test_asinh,timeout,240.694,150.011,2026-11-05T05:24:14Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::asinh::test_asinh_worst_cases,success,240.694,2.916,2026-11-05T05:24:17Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::asinh::test_asinh_worst_faithful,success,240.694,2.935,2026-11-05T05:24:20Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::asinpi::test_asinpi,timeout,240.694,150.012,2026-11-05T05:26:50Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::asinpi::test_asinpi_dense_band,timeout,240.694,150.013,2026-11-05T05:29:20Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::asinpi::test_asinpi_worst_cases,success,240.694,2.926,2026-11-05T05:29:23Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::asinpi::test_asinpi_worst_faithful,success,240.694,2.913,2026-11-05T05:29:26Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::asinpi::test_parser,test_failed,240.694,2.960,2026-11-05T05:29:29Z,50232757.0,panic,"thread 'f64_::asinpi::test_parser' (73063) panicked at tests/all/f64_/asinpi.rs:6:5: parsed 0 cases"
+experimental-bsan,metallic-0.3.0,f64_::atan2::test_atan2,timeout,240.694,150.014,2026-11-05T05:31:59Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::atan2::test_atan2_issue_11,success,240.694,52.629,2026-11-05T05:32:52Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atan2::test_atan2_worst_cases,success,240.694,2.927,2026-11-05T05:32:54Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atan2::test_atan2_worst_faithful,success,240.694,2.912,2026-11-05T05:32:57Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atan2pi::test_atan2pi,timeout,240.694,150.013,2026-11-05T05:35:27Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::atan2pi::test_atan2pi_worst_cases,success,240.694,2.933,2026-11-05T05:35:30Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atan2pi::test_atan2pi_worst_faithful,success,240.694,2.925,2026-11-05T05:35:33Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atan::fold_ordering::asin_offsets,success,240.694,2.919,2026-11-05T05:35:36Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atan::fold_ordering::atan2_offsets,success,240.694,2.924,2026-11-05T05:35:39Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atan::fold_ordering::atan_cell,success,240.694,2.925,2026-11-05T05:35:42Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atan::test_atan,timeout,240.694,150.013,2026-11-05T05:38:12Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::atan::test_atan_worst_cases,success,240.694,2.937,2026-11-05T05:38:15Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atan::test_atan_worst_faithful,success,240.694,2.934,2026-11-05T05:38:18Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atanh::test_atanh,timeout,240.694,150.011,2026-11-05T05:40:48Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::atanh::test_atanh_worst_cases,success,240.694,2.917,2026-11-05T05:40:51Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atanh::test_atanh_worst_faithful,success,240.694,2.919,2026-11-05T05:40:54Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atanpi::test_atanpi,timeout,240.694,150.009,2026-11-05T05:43:24Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::atanpi::test_atanpi_dense_band,timeout,240.694,150.008,2026-11-05T05:45:54Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::atanpi::test_atanpi_worst_cases,success,240.694,2.927,2026-11-05T05:45:57Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atanpi::test_atanpi_worst_faithful,success,240.694,2.934,2026-11-05T05:46:00Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::atanpi::test_parser,test_failed,240.694,2.981,2026-11-05T05:46:03Z,50232757.0,panic,"thread 'f64_::atanpi::test_parser' (86490) panicked at tests/all/f64_/atanpi.rs:6:5: parsed 0 cases"
+experimental-bsan,metallic-0.3.0,f64_::cbrt::test_cbrt,timeout,240.694,150.009,2026-11-05T05:48:33Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::cbrt::test_cbrt_exponent_seams,success,240.694,8.683,2026-11-05T05:48:42Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::cbrt::test_parser,test_failed,240.694,2.991,2026-11-05T05:48:45Z,50232757.0,panic,"thread 'f64_::cbrt::test_parser' (89543) panicked at tests/all/f64_/cbrt.rs:5:5: assertion failed: common::parse_case_file(""cbrt.wc"", common::parse_f64).count() == 106_254"
+experimental-bsan,metallic-0.3.0,f64_::compound::test_compound_corpus,test_failed,240.694,2.993,2026-11-05T05:48:48Z,50232757.0,panic,"thread 'f64_::compound::test_compound_corpus' (89620) panicked at tests/all/f64_/compound.rs:106:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f64_::compound::test_compound_exact,success,240.694,2.935,2026-11-05T05:48:51Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::compound::test_compound_vs_pow,timeout,240.694,150.009,2026-11-05T05:51:21Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::cos::test_cos,timeout,240.694,150.009,2026-11-05T05:53:51Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::cos::test_cos_worst_cases,success,240.694,2.939,2026-11-05T05:53:54Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::cos::test_cos_worst_faithful,success,240.694,2.925,2026-11-05T05:53:57Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::cosh::test_cosh,timeout,240.694,150.012,2026-11-05T05:56:27Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::cosh::test_cosh_worst_cases,success,240.694,2.933,2026-11-05T05:56:29Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::cosh::test_cosh_worst_faithful,success,240.694,2.933,2026-11-05T05:56:32Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::cospi::test_cospi,timeout,240.694,150.012,2026-11-05T05:59:02Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::cospi::test_cospi_dense_band,timeout,240.694,150.013,2026-11-05T06:01:33Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::cospi::test_cospi_worst_cases,success,240.694,2.925,2026-11-05T06:01:35Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::cospi::test_cospi_worst_faithful,success,240.694,2.929,2026-11-05T06:01:38Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::cospi::test_parser,test_failed,240.694,2.964,2026-11-05T06:01:41Z,50232757.0,panic,"thread 'f64_::cospi::test_parser' (99511) panicked at tests/all/f64_/cospi.rs:6:5: parsed 0 cases"
+experimental-bsan,metallic-0.3.0,f64_::dint::tests::accurate_matches_oracle,timeout,240.694,150.011,2026-11-05T06:04:11Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::dint::tests::to_f64_general_round_trips,timeout,240.694,150.013,2026-11-05T06:06:41Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::erf::fold_ordering::erf_table,success,240.694,2.951,2026-11-05T06:06:44Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::erf::fold_ordering::q_fast,success,240.694,2.926,2026-11-05T06:06:47Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::erf::test_erf,timeout,240.694,150.013,2026-11-05T06:09:17Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::erf::test_erf_worst_cases,success,240.694,2.929,2026-11-05T06:09:20Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::erf::test_erf_worst_faithful,success,240.694,2.921,2026-11-05T06:09:23Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::erfc::test_erfc,timeout,240.694,150.009,2026-11-05T06:11:53Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::erfc::test_erfc_worst_cases,success,240.694,2.924,2026-11-05T06:11:56Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::erfc::test_erfc_worst_faithful,success,240.694,2.925,2026-11-05T06:11:59Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::exp10::test_exp10,timeout,240.694,150.011,2026-11-05T06:14:29Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::exp10::test_exp10_subnormal_band,timeout,240.694,150.012,2026-11-05T06:16:59Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::exp10::test_exp10_worst_cases,success,240.694,2.929,2026-11-05T06:17:02Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::exp10::test_exp10_worst_faithful,success,240.694,2.927,2026-11-05T06:17:05Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::exp10m1::test_exp10m1,timeout,240.694,150.014,2026-11-05T06:19:35Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::exp10m1::test_exp10m1_dense_band,timeout,240.694,150.009,2026-11-05T06:22:05Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::exp10m1::test_exp10m1_worst_cases,success,240.694,2.922,2026-11-05T06:22:08Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::exp10m1::test_exp10m1_worst_faithful,success,240.694,2.920,2026-11-05T06:22:11Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::exp10m1::test_parser,test_failed,240.694,2.961,2026-11-05T06:22:14Z,50232757.0,panic,"thread 'f64_::exp10m1::test_parser' (16859) panicked at tests/all/f64_/exp10m1.rs:6:5: parsed 0 cases"
+experimental-bsan,metallic-0.3.0,f64_::exp2::test_exp2,timeout,240.694,150.011,2026-11-05T06:24:44Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::exp2::test_exp2_subnormal_band,timeout,240.694,150.012,2026-11-05T06:27:14Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::exp2::test_exp2_worst_cases,success,240.694,2.940,2026-11-05T06:27:17Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::exp2::test_exp2_worst_faithful,success,240.694,2.930,2026-11-05T06:27:20Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::exp2m1::test_exp2m1,timeout,240.694,150.012,2026-11-05T06:29:50Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::exp2m1::test_exp2m1_dense_band,timeout,240.694,150.013,2026-11-05T06:32:20Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::exp2m1::test_exp2m1_worst_cases,success,240.694,2.919,2026-11-05T06:32:23Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::exp2m1::test_exp2m1_worst_faithful,success,240.694,2.926,2026-11-05T06:32:26Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::exp2m1::test_parser,test_failed,240.694,2.961,2026-11-05T06:32:29Z,50232757.0,panic,"thread 'f64_::exp2m1::test_parser' (25992) panicked at tests/all/f64_/exp2m1.rs:6:5: parsed 0 cases"
+experimental-bsan,metallic-0.3.0,f64_::exp::test_exp,timeout,240.694,150.010,2026-11-05T06:34:59Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::exp::test_exp_subnormal_band,timeout,240.694,150.009,2026-11-05T06:37:29Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::exp::test_exp_worst_cases,success,240.694,2.928,2026-11-05T06:37:32Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::expm1::test_exp_m1,timeout,240.694,150.010,2026-11-05T06:40:02Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::expm1::test_expm1_worst_cases,success,240.694,2.923,2026-11-05T06:40:05Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::expm1::test_expm1_worst_faithful,success,240.694,2.926,2026-11-05T06:40:08Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::frexp::test_frexp,timeout,240.694,150.011,2026-11-05T06:42:38Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::gamma::fold_ordering::lgamma_stirling,success,240.694,5.151,2026-11-05T06:42:43Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::gamma::mid_tier_soundness::lgamma_mid_leg_is_sound,timeout,240.694,150.009,2026-11-05T06:45:13Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::hyp::fold_ordering::tanh_fast_combine,success,240.694,15.526,2026-11-05T06:45:29Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::hypot::test_hypot,timeout,240.694,150.014,2026-11-05T06:47:59Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::hypot::test_hypot_worst_cases,success,240.694,2.921,2026-11-05T06:48:02Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::hypot::test_hypot_worst_faithful,success,240.694,2.916,2026-11-05T06:48:05Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::ldexp::finite,timeout,240.694,150.013,2026-11-05T06:50:35Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::ldexp::nonfinite,success,240.694,3.116,2026-11-05T06:50:38Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::lgamma::test_lgamma_corpus,test_failed,240.694,2.990,2026-11-05T06:50:41Z,50232757.0,panic,"thread 'f64_::lgamma::test_lgamma_corpus' (39846) panicked at tests/all/f64_/lgamma.rs:40:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f64_::lgamma::test_lgamma_exact,success,240.694,3.050,2026-11-05T06:50:44Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::lgamma::test_lgamma_worst_cases,success,240.694,2.911,2026-11-05T06:50:47Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::lgamma::test_lgamma_worst_faithful,success,240.694,2.929,2026-11-05T06:50:50Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log10::test_log10,timeout,240.694,150.014,2026-11-05T06:53:20Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::log10::test_log10_worst_cases,success,240.694,2.925,2026-11-05T06:53:23Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log10::test_log10_worst_faithful,success,240.694,2.911,2026-11-05T06:53:26Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log10p1::test_log10p1,timeout,240.694,150.013,2026-11-05T06:55:56Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::log10p1::test_log10p1_exact_cases,success,240.694,2.915,2026-11-05T06:55:59Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log10p1::test_log10p1_wide_band,timeout,240.694,150.013,2026-11-05T06:58:29Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::log10p1::test_log10p1_worst_cases,success,240.694,2.917,2026-11-05T06:58:32Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log10p1::test_log10p1_worst_faithful,success,240.694,2.923,2026-11-05T06:58:34Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log1p::test_ln_1p,timeout,240.694,150.013,2026-11-05T07:01:05Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::log1p::test_log1p_wide_band,timeout,240.694,150.013,2026-11-05T07:03:35Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::log1p::test_log1p_worst_cases,success,240.694,2.919,2026-11-05T07:03:37Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log1p::test_log1p_worst_faithful,success,240.694,2.921,2026-11-05T07:03:40Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log2::test_log2,timeout,240.694,150.013,2026-11-05T07:06:10Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::log2::test_log2_worst_cases,success,240.694,2.924,2026-11-05T07:06:13Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log2::test_log2_worst_faithful,success,240.694,2.929,2026-11-05T07:06:16Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log2p1::test_log2p1,timeout,240.694,150.014,2026-11-05T07:08:46Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::log2p1::test_log2p1_exact_cases,success,240.694,2.945,2026-11-05T07:08:49Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log2p1::test_log2p1_wide_band,timeout,240.694,150.013,2026-11-05T07:11:19Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::log2p1::test_log2p1_worst_cases,success,240.694,2.931,2026-11-05T07:11:22Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log2p1::test_log2p1_worst_faithful,success,240.694,2.922,2026-11-05T07:11:25Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::log::test_ln,timeout,240.694,150.010,2026-11-05T07:13:55Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::log::test_log_worst_cases,success,240.694,2.923,2026-11-05T07:13:58Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::pow::test_pow_worst_cases,success,240.694,2.922,2026-11-05T07:14:01Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::pow::test_pow_worst_faithful,success,240.694,2.923,2026-11-05T07:14:04Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::pow::test_powf,timeout,240.694,150.011,2026-11-05T07:16:34Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::qint::tests::add_basic,success,240.694,2.916,2026-11-05T07:16:37Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::qint::tests::from_f64_round_trip_small,success,240.694,2.926,2026-11-05T07:16:40Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::qint::tests::log2_q_value,success,240.694,2.922,2026-11-05T07:16:43Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::qint::tests::mul_11_basic,success,240.694,2.919,2026-11-05T07:16:46Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::qint::tests::one_q_is_one,success,240.694,2.916,2026-11-05T07:16:49Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::rsqrt::test_parser,test_failed,240.694,2.993,2026-11-05T07:16:52Z,50232757.0,panic,"thread 'f64_::rsqrt::test_parser' (57000) panicked at tests/all/f64_/rsqrt.rs:5:5: assertion failed: common::parse_case_file(""rsqrt.wc"", common::parse_f64).count() == 9922"
+experimental-bsan,metallic-0.3.0,f64_::rsqrt::test_rsqrt,timeout,240.694,150.011,2026-11-05T07:19:22Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::rsqrt::test_rsqrt_dense_band,timeout,240.694,150.009,2026-11-05T07:21:52Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::rsqrt::test_rsqrt_worst_cases,success,240.694,2.918,2026-11-05T07:21:55Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::rsqrt::test_rsqrt_worst_faithful,success,240.694,2.923,2026-11-05T07:21:58Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::sin::test_sin,timeout,240.694,150.011,2026-11-05T07:24:28Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::sin::test_sin_worst_cases,success,240.694,2.913,2026-11-05T07:24:31Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::sin::test_sin_worst_faithful,success,240.694,2.922,2026-11-05T07:24:34Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::sincos::test_parser,test_failed,240.694,2.989,2026-11-05T07:24:37Z,50232757.0,panic,"thread 'f64_::sincos::test_parser' (61706) panicked at tests/all/f64_/sincos.rs:5:5: assertion failed: common::parse_case_file(""sincos.wc"", common::parse_f64).count() == 81_551"
+experimental-bsan,metallic-0.3.0,f64_::sincos::test_sin_cos,timeout,240.694,150.014,2026-11-05T07:27:07Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::sincos::test_sincos_worst_cases,success,240.694,2.931,2026-11-05T07:27:10Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::sincos::test_sincos_worst_faithful,success,240.694,2.914,2026-11-05T07:27:12Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::sinh::test_sinh,timeout,240.694,150.012,2026-11-05T07:29:42Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::sinh::test_sinh_worst_cases,success,240.694,2.918,2026-11-05T07:29:45Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::sinh::test_sinh_worst_faithful,success,240.694,2.920,2026-11-05T07:29:48Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::sinpi::test_parser,test_failed,240.694,2.967,2026-11-05T07:29:51Z,50232757.0,panic,"thread 'f64_::sinpi::test_parser' (66423) panicked at tests/all/f64_/sinpi.rs:6:5: parsed 0 cases"
+experimental-bsan,metallic-0.3.0,f64_::sinpi::test_sinpi,timeout,240.694,150.013,2026-11-05T07:32:21Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::sinpi::test_sinpi_dense_band,timeout,240.694,150.009,2026-11-05T07:34:51Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::sinpi::test_sinpi_worst_cases,success,240.694,2.915,2026-11-05T07:34:54Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::sinpi::test_sinpi_worst_faithful,success,240.694,2.916,2026-11-05T07:34:57Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::tan::test_tan,timeout,240.694,150.009,2026-11-05T07:37:27Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::tan::test_tan_worst_cases,success,240.694,2.912,2026-11-05T07:37:30Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::tan::test_tan_worst_faithful,success,240.694,2.922,2026-11-05T07:37:33Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::tanh::test_tanh,timeout,240.694,150.012,2026-11-05T07:40:03Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::tanh::test_tanh_worst_cases,success,240.694,2.924,2026-11-05T07:40:06Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::tanh::test_tanh_worst_faithful,success,240.694,2.914,2026-11-05T07:40:09Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::tanpi::test_parser,test_failed,240.694,2.962,2026-11-05T07:40:12Z,50232757.0,panic,"thread 'f64_::tanpi::test_parser' (77375) panicked at tests/all/f64_/tanpi.rs:6:5: parsed 0 cases"
+experimental-bsan,metallic-0.3.0,f64_::tanpi::test_tanpi,timeout,240.694,150.012,2026-11-05T07:42:42Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::tanpi::test_tanpi_dense_band,timeout,240.694,150.011,2026-11-05T07:45:12Z,50232757.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,metallic-0.3.0,f64_::tanpi::test_tanpi_worst_cases,success,240.694,2.928,2026-11-05T07:45:15Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::tanpi::test_tanpi_worst_faithful,success,240.694,2.920,2026-11-05T07:45:18Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::tgamma::test_tgamma_corpus,test_failed,240.694,2.989,2026-11-05T07:45:21Z,50232757.0,panic,"thread 'f64_::tgamma::test_tgamma_corpus' (80192) panicked at tests/all/f64_/tgamma.rs:45:5: assertion `left == right` failed: corpus size changed; update this count"
+experimental-bsan,metallic-0.3.0,f64_::tgamma::test_tgamma_exact,success,240.694,2.914,2026-11-05T07:45:24Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::tgamma::test_tgamma_worst_cases,success,240.694,2.919,2026-11-05T07:45:27Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::tgamma::test_tgamma_worst_faithful,success,240.694,2.919,2026-11-05T07:45:30Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::trig::fold_ordering::sin_cos_leads,success,240.694,2.908,2026-11-05T07:45:33Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::trig::fold_ordering::sinpi_table_leads,success,240.694,2.932,2026-11-05T07:45:36Z,50232757.0,,
+experimental-bsan,metallic-0.3.0,f64_::trig::fold_ordering::tan_leads,success,240.694,2.923,2026-11-05T07:45:39Z,50232757.0,,

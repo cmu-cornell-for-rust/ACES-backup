@@ -1,0 +1,12 @@
+experimental-bsan,qcms-0.3.0,gtest::test::D50,success,7.204,3.207,2026-11-05T05:47:36Z,50254309.0,,
+experimental-bsan,qcms-0.3.0,gtest::test::cmyk,test_failed,7.204,1.650,2026-11-05T05:47:38Z,50254309.0,panic,"thread 'gtest::test::cmyk' (55993) panicked at src/gtest.rs:917:50: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,qcms-0.3.0,gtest::test::identity,success,7.204,3.342,2026-11-05T05:47:41Z,50254309.0,,
+experimental-bsan,qcms-0.3.0,gtest::test::parametric_threshold,test_failed,7.204,1.658,2026-11-05T05:47:43Z,50254309.0,panic,"thread 'gtest::test::parametric_threshold' (56512) panicked at src/gtest.rs:917:50: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,qcms-0.3.0,gtest::test::sRGB_parametric,success,7.204,1.884,2026-11-05T05:47:45Z,50254309.0,,
+experimental-bsan,qcms-0.3.0,iccread::bt2020_10bit_transfer_characteristics,test_failed,7.204,1.628,2026-11-05T05:47:46Z,50254309.0,panic,"thread 'iccread::bt2020_10bit_transfer_characteristics' (56896) panicked at src/iccread.rs:1407:48: called `Option::unwrap()` on a `None` value"
+experimental-bsan,qcms-0.3.0,iccread::bt2020_12bit_transfer_characteristics,test_failed,7.204,1.632,2026-11-05T05:47:48Z,50254309.0,panic,"thread 'iccread::bt2020_12bit_transfer_characteristics' (57144) panicked at src/iccread.rs:1407:48: called `Option::unwrap()` on a `None` value"
+experimental-bsan,qcms-0.3.0,iccread::bt709_transfer_characteristics,test_failed,7.204,1.625,2026-11-05T05:47:50Z,50254309.0,panic,"thread 'iccread::bt709_transfer_characteristics' (57308) panicked at src/iccread.rs:1407:48: called `Option::unwrap()` on a `None` value"
+experimental-bsan,qcms-0.3.0,iccread::colour_primaries,success,7.204,1.580,2026-11-05T05:47:51Z,50254309.0,,
+experimental-bsan,qcms-0.3.0,iccread::srgb_transfer_characteristics,test_failed,7.204,1.753,2026-11-05T05:47:53Z,50254309.0,panic,"thread 'iccread::srgb_transfer_characteristics' (57634) panicked at src/iccread.rs:1407:48: called `Option::unwrap()` on a `None` value"
+experimental-bsan,qcms-0.3.0,iccread::transfer_characteristics,success,7.204,1.597,2026-11-05T05:47:55Z,50254309.0,,
+experimental-bsan,qcms-0.3.0,transform_util::param_invert,success,7.204,1.627,2026-11-05T05:47:56Z,50254309.0,,

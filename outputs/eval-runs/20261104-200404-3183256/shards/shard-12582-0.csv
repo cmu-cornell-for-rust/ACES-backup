@@ -1,0 +1,10 @@
+experimental-bsan,ipinfo-3.0.1,bogon::tests::test_is_bogon,success,158.634,1.732,2026-11-05T06:20:35Z,50255686.0,,
+experimental-bsan,ipinfo-3.0.1,error::tests::iperror_new,success,158.634,1.534,2026-11-05T06:20:36Z,50255686.0,,
+experimental-bsan,ipinfo-3.0.1,error::tests::iperrorkind_convert_to_iperror,success,158.634,1.539,2026-11-05T06:20:38Z,50255686.0,,
+experimental-bsan,ipinfo-3.0.1,error::tests::iperrorkind_string_values,success,158.634,1.540,2026-11-05T06:20:39Z,50255686.0,,
+experimental-bsan,ipinfo-3.0.1,ipinfo::tests::ipinfo_config_defaults_reasonable,success,158.634,1.536,2026-11-05T06:20:41Z,50255686.0,,
+experimental-bsan,ipinfo-3.0.1,ipinfo::tests::request_cache_miss_and_hit,test_failed,158.634,1.704,2026-11-05T06:20:43Z,50255686.0,panic,"thread 'ipinfo::tests::request_cache_miss_and_hit' (22352) panicked at src/ipinfo.rs:477:50: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,ipinfo-3.0.1,ipinfo::tests::request_headers_are_canonical,success,158.634,1.569,2026-11-05T06:20:44Z,50255686.0,,
+experimental-bsan,ipinfo-3.0.1,ipinfo::tests::request_multiple_ip,test_failed,158.634,1.719,2026-11-05T06:20:46Z,50255686.0,panic,"thread 'ipinfo::tests::request_multiple_ip' (22598) panicked at src/ipinfo.rs:477:50: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,ipinfo-3.0.1,ipinfo::tests::request_no_token,success,158.634,8.119,2026-11-05T06:20:54Z,50255686.0,,
+experimental-bsan,ipinfo-3.0.1,ipinfo::tests::request_single_ip,test_failed,158.634,1.688,2026-11-05T06:20:56Z,50255686.0,panic,"thread 'ipinfo::tests::request_single_ip' (26779) panicked at src/ipinfo.rs:477:50: called `Result::unwrap()` on an `Err` value: NotPresent"

@@ -1,0 +1,77 @@
+experimental-bsan,turmoil-0.6.4,accept_front_of_line_blocking,timeout,265.885,150.019,2026-11-05T02:22:56Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,bind_addr_in_use,success,265.885,10.265,2026-11-05T02:23:06Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,bind_ipv4_socket,success,265.885,9.418,2026-11-05T02:23:15Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,bind_ipv4_version_missmatch,success,265.885,9.490,2026-11-05T02:23:25Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,bind_ipv6_socket,success,265.885,9.395,2026-11-05T02:23:34Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,bind_ipv6_version_missmatch,success,265.885,9.481,2026-11-05T02:23:44Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,bounce,success,265.885,41.321,2026-11-05T02:24:25Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,builder::tests::invalid_latency,success,265.885,8.893,2026-11-05T02:24:34Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,bulk_transfer,timeout,265.885,150.016,2026-11-05T02:27:04Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,client_hangup_on_connect,timeout,265.885,150.016,2026-11-05T02:29:34Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,dns::tests::parse_str,success,265.885,8.882,2026-11-05T02:29:43Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,dns::tests::raw_value_parsing,success,265.885,8.823,2026-11-05T02:29:52Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,drop_listener,timeout,265.885,150.017,2026-11-05T02:32:22Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,drop_listener_with_non_empty_queue,success,265.885,10.596,2026-11-05T02:32:32Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,ephemeral_port,success,265.885,9.480,2026-11-05T02:32:42Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,ephemeral_port_does_not_leak_on_client_shutdown,timeout,265.885,150.015,2026-11-05T02:35:12Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,ephemeral_port_does_not_leak_on_server_shutdown,timeout,265.885,150.015,2026-11-05T02:37:42Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,exhaust_ephemeral_ports,test_failed,265.885,8.340,2026-11-05T02:37:50Z,50240106.0,panic,"thread 'exhaust_ephemeral_ports' (46869) panicked at src/host.rs:76:9: Host ports exhausted"
+experimental-bsan,turmoil-0.6.4,hangup,timeout,265.885,150.016,2026-11-05T02:40:20Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,hold_and_release,timeout,265.885,150.016,2026-11-05T02:42:50Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,hold_and_release_once_connected,timeout,265.885,150.017,2026-11-05T02:45:20Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,host::test::recycle_ports,success,265.885,9.018,2026-11-05T02:45:29Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,ip::tests::ip_version_v4,success,265.885,9.341,2026-11-05T02:45:39Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,ip::tests::ip_version_v6,success,265.885,9.367,2026-11-05T02:45:48Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,ipv6_connectivity,success,265.885,13.866,2026-11-05T02:46:02Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,localhost_ping_pong,success,265.885,9.963,2026-11-05T02:46:12Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,loopback_delivery,success,265.885,10.107,2026-11-05T02:46:22Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,loopback_localhost_public_v4,success,265.885,9.602,2026-11-05T02:46:32Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,loopback_localhost_public_v6,success,265.885,9.623,2026-11-05T02:46:41Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,loopback_to_localhost_v4,success,265.885,10.064,2026-11-05T02:46:51Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,loopback_to_localhost_v6,success,265.885,10.020,2026-11-05T02:47:01Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,loopback_to_wildcard_v4,success,265.885,10.026,2026-11-05T02:47:11Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,loopback_to_wildcard_v6,success,265.885,10.039,2026-11-05T02:47:22Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,loopback_wildcard_public_v4,success,265.885,10.011,2026-11-05T02:47:32Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,loopback_wildcard_public_v6,success,265.885,10.020,2026-11-05T02:47:42Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,n_responses,success,265.885,18.689,2026-11-05T02:48:00Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,network_partition,timeout,265.885,150.018,2026-11-05T02:50:30Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,network_partition_once_connected,timeout,265.885,150.017,2026-11-05T02:53:00Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,network_partitions_during_connect,timeout,265.885,150.017,2026-11-05T02:55:30Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,non_zero_bind,success,265.885,9.551,2026-11-05T02:55:40Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,ping_pong,success,265.885,11.521,2026-11-05T02:55:52Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,read_buf_smaller_than_msg,success,265.885,25.014,2026-11-05T02:56:17Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,read_with_empty_buffer,success,265.885,10.194,2026-11-05T02:56:27Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,recv_buf_is_clipped,success,265.885,11.677,2026-11-05T02:56:38Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,recycle_server_socket_bind,success,265.885,9.275,2026-11-05T02:56:48Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,remote_dropped,success,265.885,89.072,2026-11-05T02:58:17Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,remote_to_localhost_dropped,timeout,265.885,150.017,2026-11-05T03:00:47Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,remote_to_localhost_refused,success,265.885,9.865,2026-11-05T03:00:57Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,send_upon_accept,success,265.885,10.340,2026-11-05T03:01:07Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,server_concurrency,success,265.885,61.920,2026-11-05T03:02:09Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,shutdown_write,success,265.885,48.337,2026-11-05T03:02:57Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::client_error,success,265.885,9.138,2026-11-05T03:03:06Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::crash_blocks_until_complete,success,265.885,9.274,2026-11-05T03:03:16Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::elapsed_time,success,265.885,93.876,2026-11-05T03:04:50Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::elapsed_time_across_restarts,success,265.885,9.703,2026-11-05T03:04:59Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::hold_release_peers,success,265.885,9.973,2026-11-05T03:05:09Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::host_finishes_with_error,success,265.885,9.300,2026-11-05T03:05:19Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::is_host_running,success,265.885,9.615,2026-11-05T03:05:28Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::manual_message_delivery,success,265.885,9.620,2026-11-05T03:05:38Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::multiple_clients_all_finish,success,265.885,11.585,2026-11-05T03:05:50Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::override_link_latency,success,265.885,13.454,2026-11-05T03:06:03Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::partition_peers,success,265.885,9.434,2026-11-05T03:06:12Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::partition_peers_oneway,timeout,265.885,150.016,2026-11-05T03:08:42Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,sim::test::partition_peers_oneway_many_cases,timeout,265.885,150.016,2026-11-05T03:11:13Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,sim::test::restart_host_after_crash,success,265.885,9.463,2026-11-05T03:11:22Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::run_after_host_crashes,success,265.885,9.226,2026-11-05T03:11:31Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::sim_elapsed_time,success,265.885,9.000,2026-11-05T03:11:40Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,sim::test::timeout,timeout,265.885,150.015,2026-11-05T03:14:10Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,socket_capacity,timeout,265.885,150.016,2026-11-05T03:16:40Z,50240106.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,turmoil-0.6.4,socket_to_nonexistent_node,success,265.885,9.577,2026-11-05T03:16:50Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,split,success,265.885,17.056,2026-11-05T03:17:07Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,test_tokio_with_io_disabled,success,265.885,9.284,2026-11-05T03:17:16Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,test_tokio_with_io_enabled,success,265.885,9.387,2026-11-05T03:17:26Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,tracing_subscriber_does_not_crash_direct_binds,success,265.885,10.201,2026-11-05T03:17:36Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,try_ping_pong,success,265.885,24.516,2026-11-05T03:18:00Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,try_write,success,265.885,9.554,2026-11-05T03:18:10Z,50240106.0,,
+experimental-bsan,turmoil-0.6.4,write_zero_bytes,success,265.885,12.022,2026-11-05T03:18:22Z,50240106.0,,

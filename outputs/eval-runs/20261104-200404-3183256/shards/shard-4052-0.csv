@@ -1,0 +1,57 @@
+experimental-bsan,rqlite-rs-0.6.2,client::tests::unit_rqlite_client_builder_auth,success,351.910,5.850,2026-11-05T02:45:01Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,client::tests::unit_rqlite_client_builder_default_query_params,success,351.910,5.841,2026-11-05T02:45:07Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,client::tests::unit_rqlite_client_builder_default_scheme,success,351.910,5.821,2026-11-05T02:45:12Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,client::tests::unit_rqlite_client_builder_duplicate_host,success,351.910,5.824,2026-11-05T02:45:18Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,client::tests::unit_rqlite_client_builder_fallback_strategy,success,351.910,5.830,2026-11-05T02:45:24Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,client::tests::unit_rqlite_client_builder_https,success,351.910,5.809,2026-11-05T02:45:30Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,client::tests::unit_rqlite_client_builder_no_hosts,success,351.910,5.781,2026-11-05T02:45:36Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,client::tests::unit_rqlite_client_builder_success,success,351.910,5.822,2026-11-05T02:45:41Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,client::tests::unit_rqllite_client_builder_fallback_count,success,351.910,5.798,2026-11-05T02:45:47Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,client::tests::unit_rqllite_client_builder_fallback_persistence,success,351.910,5.837,2026-11-05T02:45:53Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,config::tests::unit_config_fallback_count,success,351.910,5.845,2026-11-05T02:45:59Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,config::tests::unit_config_fallback_persistence,success,351.910,5.828,2026-11-05T02:46:05Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,config::tests::unit_config_fallback_strategy,success,351.910,5.813,2026-11-05T02:46:11Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,config::tests::unit_rqlite_client_config,success,351.910,5.806,2026-11-05T02:46:16Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,config::tests::unit_rqlite_client_config_builder,success,351.910,5.796,2026-11-05T02:46:22Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,config::tests::unit_scheme,success,351.910,5.790,2026-11-05T02:46:28Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,fallback::strategy::priority::tests::unit_fallback_non_existing_host,success,351.910,5.833,2026-11-05T02:46:34Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,fallback::strategy::priority::tests::unit_fallback_priority,success,351.910,5.823,2026-11-05T02:46:40Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,fallback::strategy::priority::tests::unit_fallback_priority_without_hosts,success,351.910,5.835,2026-11-05T02:46:46Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,fallback::strategy::round_robin::tests::unit_fallback_round_robin,success,351.910,5.853,2026-11-05T02:46:51Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,fallback::tests::unit_fallback_count,success,351.910,5.791,2026-11-05T02:46:57Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,integration_default_query_params,test_failed,351.910,3.544,2026-11-05T02:47:01Z,50242917.0,panic,"thread 'integration_default_query_params' (71972) panicked at tests/integration_client.rs:208:5: assertion failed: result.is_ok()"
+experimental-bsan,rqlite-rs-0.6.2,integration_derive_from_row_named,success,351.910,5.789,2026-11-05T02:47:07Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,integration_derive_from_row_unnamed,success,351.910,5.766,2026-11-05T02:47:12Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,integration_exec,test_failed,351.910,3.536,2026-11-05T02:47:16Z,50242917.0,panic,"thread 'integration_exec' (72362) panicked at tests/common/mod.rs:40:38: called `Result::unwrap()` on an `Err` value: NoAvailableHosts"
+experimental-bsan,rqlite-rs-0.6.2,integration_execute_batch,test_failed,351.910,3.507,2026-11-05T02:47:19Z,50242917.0,panic,"thread 'integration_execute_batch' (72529) panicked at tests/common/mod.rs:40:38: called `Result::unwrap()` on an `Err` value: NoAvailableHosts"
+experimental-bsan,rqlite-rs-0.6.2,integration_fetch,test_failed,351.910,3.541,2026-11-05T02:47:23Z,50242917.0,panic,"thread 'integration_fetch' (72748) panicked at tests/common/mod.rs:40:38: called `Result::unwrap()` on an `Err` value: NoAvailableHosts"
+experimental-bsan,rqlite-rs-0.6.2,integration_fetch_typed_struct_named,test_failed,351.910,3.535,2026-11-05T02:47:27Z,50242917.0,panic,"thread 'integration_fetch_typed_struct_named' (72977) panicked at tests/common/mod.rs:40:38: called `Result::unwrap()` on an `Err` value: NoAvailableHosts"
+experimental-bsan,rqlite-rs-0.6.2,integration_fetch_typed_struct_unnamed,test_failed,351.910,3.525,2026-11-05T02:47:30Z,50242917.0,panic,"thread 'integration_fetch_typed_struct_unnamed' (73074) panicked at tests/common/mod.rs:40:38: called `Result::unwrap()` on an `Err` value: NoAvailableHosts"
+experimental-bsan,rqlite-rs-0.6.2,integration_fetch_typed_tuple,test_failed,351.910,3.514,2026-11-05T02:47:34Z,50242917.0,panic,"thread 'integration_fetch_typed_tuple' (73228) panicked at tests/common/mod.rs:40:38: called `Result::unwrap()` on an `Err` value: NoAvailableHosts"
+experimental-bsan,rqlite-rs-0.6.2,integration_leader,test_failed,351.910,3.512,2026-11-05T02:47:37Z,50242917.0,panic,"thread 'integration_leader' (73452) panicked at tests/integration_client.rs:37:40: called `Result::unwrap()` on an `Err` value: NoAvailableHosts"
+experimental-bsan,rqlite-rs-0.6.2,integration_nodes,test_failed,351.910,3.503,2026-11-05T02:47:41Z,50242917.0,panic,"thread 'integration_nodes' (73657) panicked at tests/integration_client.rs:28:38: called `Result::unwrap()` on an `Err` value: NoAvailableHosts"
+experimental-bsan,rqlite-rs-0.6.2,integration_queue,test_failed,351.910,3.507,2026-11-05T02:47:44Z,50242917.0,panic,"thread 'integration_queue' (73855) panicked at tests/common/mod.rs:40:38: called `Result::unwrap()` on an `Err` value: NoAvailableHosts"
+experimental-bsan,rqlite-rs-0.6.2,integration_ready,test_failed,351.910,3.493,2026-11-05T02:47:48Z,50242917.0,panic,"thread 'integration_ready' (74086) panicked at tests/integration_client.rs:21:5: assertion failed: ready"
+experimental-bsan,rqlite-rs-0.6.2,integration_request_fail,success,351.910,6.160,2026-11-05T02:47:54Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,integration_transaction,success,351.910,5.822,2026-11-05T02:48:00Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,integration_with_axum,test_failed,351.910,4.931,2026-11-05T02:48:05Z,50242917.0,panic,"thread 'integration_with_axum' (75031) panicked at tests/integration_ecosystem.rs:38:5: assertion `left == right` failed"
+experimental-bsan,rqlite-rs-0.6.2,query::arguments::tests::unit_rqlite_argument,success,351.910,5.728,2026-11-05T02:48:10Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,query::tests::unit_query_macro_correct_query_types,success,351.910,5.769,2026-11-05T02:48:16Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,query::tests::unit_query_macro_incorrect_query_types,success,351.910,5.778,2026-11-05T02:48:22Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,query::tests::unit_query_macro_query_args,success,351.910,5.801,2026-11-05T02:48:28Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,query::tests::unit_query_macro_query_args_from_query,success,351.910,5.759,2026-11-05T02:48:34Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,query::tests::unit_query_macro_query_args_from_query_vec,success,351.910,5.749,2026-11-05T02:48:39Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,query::tests::unit_query_macro_query_endpoint,success,351.910,5.750,2026-11-05T02:48:45Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,query::tests::unit_query_macro_query_to_json,success,351.910,5.764,2026-11-05T02:48:51Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,query::tests::unit_query_macro_try_into_from_result_err,success,351.910,5.735,2026-11-05T02:48:57Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,query::tests::unit_query_macro_try_into_from_string,success,351.910,5.802,2026-11-05T02:49:02Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,query::tests::unit_query_macro_try_into_from_string_slice,success,351.910,5.781,2026-11-05T02:49:08Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,query_result::tests::unit_query_result,success,351.910,5.782,2026-11-05T02:49:14Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,request::tests::unit_freshness_level_to_string,success,351.910,5.772,2026-11-05T02:49:20Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,request::tests::unit_request_merge,success,351.910,5.792,2026-11-05T02:49:26Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,request::tests::unit_request_options_default,success,351.910,5.772,2026-11-05T02:49:31Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,request::tests::unit_request_options_merge_default_query_params,test_failed,351.910,1.742,2026-11-05T02:49:33Z,50242917.0,panic,"thread 'request::tests::unit_request_options_merge_default_query_params' (80688) panicked at src/request.rs:360:9: assertion `left == right` failed"
+experimental-bsan,rqlite-rs-0.6.2,request::tests::unit_request_options_to_reqwest_request,success,351.910,5.917,2026-11-05T02:49:39Z,50242917.0,,
+experimental-bsan,rqlite-rs-0.6.2,request::tests::unit_request_query_params,test_failed,351.910,1.726,2026-11-05T02:49:41Z,50242917.0,panic,"thread 'request::tests::unit_request_query_params' (81002) panicked at src/request.rs:284:9: assertion `left == right` failed"
+experimental-bsan,rqlite-rs-0.6.2,request::tests::unit_request_query_params_into_reqwest_query,test_failed,351.910,1.724,2026-11-05T02:49:43Z,50242917.0,panic,"thread 'request::tests::unit_request_query_params_into_reqwest_query' (81117) panicked at src/request.rs:297:9: assertion `left == right` failed"
+experimental-bsan,rqlite-rs-0.6.2,select::tests::unit_rqlite_select_results,success,351.910,5.737,2026-11-05T02:49:48Z,50242917.0,,

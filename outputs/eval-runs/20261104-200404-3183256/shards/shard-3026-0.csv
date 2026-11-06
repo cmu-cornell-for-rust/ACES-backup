@@ -1,0 +1,76 @@
+experimental-bsan,rsa-0.9.10,algorithms::generate::tests::key_generation_1024,timeout,119.179,150.016,2026-11-05T02:21:36Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,algorithms::generate::tests::key_generation_128,timeout,119.179,150.014,2026-11-05T02:24:06Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,algorithms::generate::tests::key_generation_multi_16_1024,timeout,119.179,150.014,2026-11-05T02:26:36Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,algorithms::generate::tests::key_generation_multi_3_256,timeout,119.179,150.014,2026-11-05T02:29:06Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,algorithms::generate::tests::key_generation_multi_4_64,timeout,119.179,150.016,2026-11-05T02:31:37Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,algorithms::generate::tests::key_generation_multi_5_64,timeout,119.179,150.013,2026-11-05T02:34:07Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,algorithms::generate::tests::key_generation_multi_8_576,timeout,119.179,150.013,2026-11-05T02:36:37Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,algorithms::generate::tests::test_impossible_keys,timeout,119.179,150.013,2026-11-05T02:39:07Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,algorithms::pad::tests::test_left_pad,success,119.179,7.090,2026-11-05T02:39:14Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,algorithms::pkcs1v15::tests::test_encrypt_tiny_no_crash,success,119.179,7.070,2026-11-05T02:39:21Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,algorithms::pkcs1v15::tests::test_non_zero_bytes,success,119.179,11.345,2026-11-05T02:39:32Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,algorithms::rsa::tests::recover_primes_works,success,119.179,9.168,2026-11-05T02:39:41Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,decode_rsa2048_priv_der,success,119.179,13.054,2026-11-05T02:39:54Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,decode_rsa2048_priv_pem,success,119.179,15.460,2026-11-05T02:40:10Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,decode_rsa2048_pub_der,success,119.179,7.358,2026-11-05T02:40:17Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,decode_rsa2048_pub_pem,success,119.179,7.801,2026-11-05T02:40:25Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,decode_rsa4096_priv_der,success,119.179,12.522,2026-11-05T02:40:38Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,decode_rsa4096_priv_pem,success,119.179,13.994,2026-11-05T02:40:52Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,decode_rsa4096_pub_der,success,119.179,7.281,2026-11-05T02:40:59Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,decode_rsa4096_pub_pem,success,119.179,7.493,2026-11-05T02:41:06Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,encode_rsa2048_priv_der,success,119.179,19.286,2026-11-05T02:41:26Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,encode_rsa2048_priv_pem,success,119.179,18.705,2026-11-05T02:41:44Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,encode_rsa2048_pub_der,success,119.179,7.618,2026-11-05T02:41:52Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,encode_rsa2048_pub_pem,success,119.179,7.940,2026-11-05T02:42:00Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,encode_rsa4096_priv_der,success,119.179,18.146,2026-11-05T02:42:18Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,encode_rsa4096_priv_pem,success,119.179,21.458,2026-11-05T02:42:40Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,encode_rsa4096_pub_der,success,119.179,7.427,2026-11-05T02:42:47Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,encode_rsa4096_pub_pem,success,119.179,7.885,2026-11-05T02:42:55Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,key::tests::build_key_from_p_q,success,119.179,12.156,2026-11-05T02:43:07Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,key::tests::build_key_from_primes,success,119.179,11.829,2026-11-05T02:43:19Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,key::tests::invalid_coeff_private_key_regression,success,119.179,9.488,2026-11-05T02:43:28Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,key::tests::key_generation_1024,timeout,119.179,150.013,2026-11-05T02:45:58Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,key::tests::key_generation_128,timeout,119.179,150.014,2026-11-05T02:48:28Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,key::tests::key_generation_multi_16_1024,timeout,119.179,150.012,2026-11-05T02:50:59Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,key::tests::key_generation_multi_3_256,timeout,119.179,150.014,2026-11-05T02:53:29Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,key::tests::key_generation_multi_4_64,timeout,119.179,150.014,2026-11-05T02:55:59Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,key::tests::key_generation_multi_5_64,timeout,119.179,150.014,2026-11-05T02:58:29Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,key::tests::key_generation_multi_8_576,timeout,119.179,150.014,2026-11-05T03:00:59Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,key::tests::reject_oversized_private_key,success,119.179,7.401,2026-11-05T03:01:06Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,key::tests::test_from_into,success,119.179,7.106,2026-11-05T03:01:13Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,key::tests::test_key_invalid_primes,success,119.179,7.105,2026-11-05T03:01:20Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,key::tests::test_negative_decryption_value,timeout,119.179,150.014,2026-11-05T03:03:50Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,key::tests::test_serde,success,119.179,17.798,2026-11-05T03:04:08Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,oaep::tests::test_decrypt_oaep_invalid_hash,timeout,119.179,150.013,2026-11-05T03:06:38Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,oaep::tests::test_decrypt_oaep_invalid_hash_traits,timeout,119.179,150.011,2026-11-05T03:09:08Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,oaep::tests::test_encrypt_decrypt_oaep,timeout,119.179,150.013,2026-11-05T03:11:38Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,oaep::tests::test_encrypt_decrypt_oaep_traits,timeout,119.179,150.012,2026-11-05T03:14:08Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_decrypt_pkcs1v15,success,119.179,35.260,2026-11-05T03:14:44Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_decrypt_pkcs1v15_traits,success,119.179,35.291,2026-11-05T03:15:19Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_encrypt_decrypt_pkcs1v15,timeout,119.179,150.014,2026-11-05T03:17:49Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_encrypt_decrypt_pkcs1v15_traits,timeout,119.179,150.013,2026-11-05T03:20:19Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_sign_pkcs1v15,success,119.179,23.745,2026-11-05T03:20:43Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_sign_pkcs1v15_digest_signer,success,119.179,23.902,2026-11-05T03:21:07Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_sign_pkcs1v15_signer,success,119.179,23.954,2026-11-05T03:21:31Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_sign_pkcs1v15_signer_sha2_256,success,119.179,24.015,2026-11-05T03:21:55Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_sign_pkcs1v15_signer_sha3_256,success,119.179,23.962,2026-11-05T03:22:19Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_unpadded_signature,success,119.179,16.321,2026-11-05T03:22:35Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_unpadded_signature_hazmat,success,119.179,16.403,2026-11-05T03:22:51Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_verify_pkcs1v15,success,119.179,11.390,2026-11-05T03:23:03Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_verify_pkcs1v15_digest_signer,success,119.179,11.416,2026-11-05T03:23:14Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pkcs1v15::tests::test_verify_pkcs1v15_signer,success,119.179,11.414,2026-11-05T03:23:26Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pkcs1v15_sign_roundtrip,timeout,119.179,150.013,2026-11-05T03:25:56Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,pss::test::test_sign_and_verify_2049bit_key,timeout,119.179,150.010,2026-11-05T03:28:26Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rsa-0.9.10,pss::test::test_sign_and_verify_pss_blinded_hazmat,success,119.179,19.040,2026-11-05T03:28:45Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pss::test::test_sign_and_verify_pss_hazmat,success,119.179,16.452,2026-11-05T03:29:01Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pss::test::test_sign_and_verify_roundtrip,success,119.179,16.458,2026-11-05T03:29:18Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pss::test::test_sign_and_verify_roundtrip_blinded_digest_signer,success,119.179,19.041,2026-11-05T03:29:37Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pss::test::test_sign_and_verify_roundtrip_blinded_signer,success,119.179,18.985,2026-11-05T03:29:56Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pss::test::test_sign_and_verify_roundtrip_digest_signer,success,119.179,16.518,2026-11-05T03:30:12Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pss::test::test_sign_and_verify_roundtrip_signer,success,119.179,16.491,2026-11-05T03:30:29Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pss::test::test_sign_blinded_and_verify_roundtrip,success,119.179,19.018,2026-11-05T03:30:48Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pss::test::test_verify_pss,success,119.179,11.504,2026-11-05T03:30:59Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pss::test::test_verify_pss_digest_signer,success,119.179,11.471,2026-11-05T03:31:11Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pss::test::test_verify_pss_hazmat,success,119.179,11.490,2026-11-05T03:31:22Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,pss::test::test_verify_pss_signer,success,119.179,11.490,2026-11-05T03:31:34Z,50240159.0,,
+experimental-bsan,rsa-0.9.10,signature_stringify,timeout,119.179,150.012,2026-11-05T03:34:04Z,50240159.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

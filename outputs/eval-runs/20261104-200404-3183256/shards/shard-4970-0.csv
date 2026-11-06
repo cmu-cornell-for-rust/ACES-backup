@@ -1,0 +1,45 @@
+experimental-bsan,askama_derive-0.16.1,config::tests::add_syntax,success,327.357,1.926,2026-11-05T03:10:28Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::add_syntax_two,success,327.357,1.895,2026-11-05T03:10:30Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::duplicated_syntax_name_on_list,success,327.357,1.827,2026-11-05T03:10:32Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::escape_modes,success,327.357,1.778,2026-11-05T03:10:34Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::find_absolute,success,327.357,1.725,2026-11-05T03:10:36Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::find_relative,success,327.357,1.741,2026-11-05T03:10:37Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::find_relative_nonexistent,success,327.357,1.718,2026-11-05T03:10:39Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::find_relative_sub,success,327.357,1.733,2026-11-05T03:10:41Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::illegal_delimiters,success,327.357,1.999,2026-11-05T03:10:43Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::is_not_exist_default_syntax,success,327.357,1.762,2026-11-05T03:10:45Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::longer_delimiters,success,327.357,2.008,2026-11-05T03:10:47Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::test_config_dirs,success,327.357,1.734,2026-11-05T03:10:48Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::test_config_dirs_glob,success,327.357,2.160,2026-11-05T03:10:51Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::test_default_config,success,327.357,1.675,2026-11-05T03:10:52Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::test_whitespace_in_template,success,327.357,1.732,2026-11-05T03:10:54Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::test_whitespace_parsing,success,327.357,1.879,2026-11-05T03:10:56Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,config::tests::use_default_at_syntax_name,success,327.357,1.748,2026-11-05T03:10:58Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,generator::helpers::paths::test_diff_paths,success,327.357,1.712,2026-11-05T03:10:59Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,html::test_simple_html_string_escaping,success,327.357,1.677,2026-11-05T03:11:01Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,input::get_source,success,327.357,1.702,2026-11-05T03:11:03Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,tests::check_bool_conditions,test_failed,327.357,43.870,2026-11-05T03:11:47Z,50244438.0,crash,"test tests::check_bool_conditions ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::check_escaping_at_compile_time,success,327.357,36.604,2026-11-05T03:12:23Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,tests::check_expr_ungrouping,test_failed,327.357,24.370,2026-11-05T03:12:48Z,50244438.0,crash,"test tests::check_expr_ungrouping ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::check_if_let,test_failed,327.357,6.225,2026-11-05T03:12:54Z,50244438.0,crash,"test tests::check_if_let ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::check_if_let_chain,test_failed,327.357,9.034,2026-11-05T03:13:03Z,50244438.0,crash,"test tests::check_if_let_chain ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::check_includes_only_once,test_failed,327.357,4.304,2026-11-05T03:13:07Z,50244438.0,crash,"test tests::check_includes_only_once ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::check_is_defined,test_failed,327.357,82.814,2026-11-05T03:14:30Z,50244438.0,crash,"test tests::check_is_defined ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::check_size_hint,success,327.357,15.025,2026-11-05T03:14:45Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,tests::extends_with_whitespace_control,test_failed,327.357,2.897,2026-11-05T03:14:48Z,50244438.0,crash,"test tests::extends_with_whitespace_control ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::fuzzed_0b85,test_failed,327.357,3.641,2026-11-05T03:14:52Z,50244438.0,crash,"test tests::fuzzed_0b85 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::fuzzed_comparator_chain,test_failed,327.357,4.359,2026-11-05T03:14:56Z,50244438.0,crash,"test tests::fuzzed_comparator_chain ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::regression_tests_span_change,test_failed,327.357,3.326,2026-11-05T03:15:00Z,50244438.0,crash,"test tests::regression_tests_span_change ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::test_bare_cr_doc_comment,test_failed,327.357,3.011,2026-11-05T03:15:03Z,50244438.0,crash,"test tests::test_bare_cr_doc_comment ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::test_code_in_comment,success,327.357,5.803,2026-11-05T03:15:08Z,50244438.0,,
+experimental-bsan,askama_derive-0.16.1,tests::test_compound_assignment,test_failed,327.357,9.221,2026-11-05T03:15:18Z,50244438.0,crash,"test tests::test_compound_assignment ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::test_concat,test_failed,327.357,4.401,2026-11-05T03:15:22Z,50244438.0,crash,"test tests::test_concat ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::test_filter_with_path,test_failed,327.357,3.345,2026-11-05T03:15:25Z,50244438.0,crash,"test tests::test_filter_with_path ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::test_generated_with_error,test_failed,327.357,2.630,2026-11-05T03:15:28Z,50244438.0,crash,"test tests::test_generated_with_error ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::test_macro_call_raw_prefix_without_data,test_failed,327.357,2.972,2026-11-05T03:15:31Z,50244438.0,crash,"test tests::test_macro_call_raw_prefix_without_data ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::test_macro_call_reserved_prefix,test_failed,327.357,2.977,2026-11-05T03:15:34Z,50244438.0,crash,"test tests::test_macro_call_reserved_prefix ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::test_macro_call_valid_raw_cstring,test_failed,327.357,2.843,2026-11-05T03:15:37Z,50244438.0,crash,"test tests::test_macro_call_valid_raw_cstring ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::test_macro_calls_need_proper_tokens,test_failed,327.357,3.117,2026-11-05T03:15:40Z,50244438.0,crash,"test tests::test_macro_calls_need_proper_tokens ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::test_macro_names_that_need_escaping,test_failed,327.357,3.094,2026-11-05T03:15:43Z,50244438.0,crash,"test tests::test_macro_names_that_need_escaping ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::test_pluralize,test_failed,327.357,3.663,2026-11-05T03:15:47Z,50244438.0,crash,"test tests::test_pluralize ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,askama_derive-0.16.1,tests::test_with_config,test_failed,327.357,2.722,2026-11-05T03:15:50Z,50244438.0,crash,"test tests::test_with_config ... BorrowSanitizer:DEADLYSIGNAL"

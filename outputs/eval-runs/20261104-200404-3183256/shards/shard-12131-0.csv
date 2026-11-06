@@ -1,0 +1,11 @@
+experimental-bsan,junit-report-0.8.3,reference_report,success,66.720,9.299,2026-11-05T06:00:53Z,50254881.0,,
+experimental-bsan,junit-report-0.8.3,tests::add_empty_testsuite_batch,success,66.720,2.946,2026-11-05T06:00:56Z,50254881.0,,
+experimental-bsan,junit-report-0.8.3,tests::add_empty_testsuite_single,success,66.720,2.948,2026-11-05T06:00:59Z,50254881.0,,
+experimental-bsan,junit-report-0.8.3,tests::add_empty_testsuite_single_with_syserror,success,66.720,2.931,2026-11-05T06:01:02Z,50254881.0,,
+experimental-bsan,junit-report-0.8.3,tests::add_empty_testsuite_single_with_sysout,success,66.720,2.940,2026-11-05T06:01:05Z,50254881.0,,
+experimental-bsan,junit-report-0.8.3,tests::count_tests,success,66.720,2.924,2026-11-05T06:01:08Z,50254881.0,,
+experimental-bsan,junit-report-0.8.3,tests::empty_testsuites,success,66.720,2.902,2026-11-05T06:01:11Z,50254881.0,,
+experimental-bsan,junit-report-0.8.3,tests::test_cases_with_sysout_and_syserr,success,66.720,3.049,2026-11-05T06:01:14Z,50254881.0,,
+experimental-bsan,junit-report-0.8.3,tests::testcases_no_stdout_stderr,success,66.720,2.978,2026-11-05T06:01:17Z,50254881.0,,
+experimental-bsan,junit-report-0.8.3,validate_generated_xml_schema,test_failed,66.720,3.014,2026-11-05T06:01:20Z,50254881.0,panic,"thread 'validate_generated_xml_schema' (53639) panicked at tests/integration_test.rs:108:54: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,junit-report-0.8.3,validate_reference_xml_schema,test_failed,66.720,2.992,2026-11-05T06:01:23Z,50254881.0,panic,"thread 'validate_reference_xml_schema' (53982) panicked at tests/integration_test.rs:76:10: reference.xml does not validate against XML Schema: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

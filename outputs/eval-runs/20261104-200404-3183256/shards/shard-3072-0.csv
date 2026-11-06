@@ -1,0 +1,74 @@
+experimental-bsan,l1_ir-0.0.52,accept_function,success,201.292,19.349,2026-11-05T02:21:53Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,accept_nominal,success,201.292,19.483,2026-11-05T02:22:12Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,accepts_any,success,201.292,19.431,2026-11-05T02:22:32Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,bug_nested_flatmap,test_failed,201.292,20.290,2026-11-05T02:22:52Z,50240217.0,panic,"thread 'bug_nested_flatmap' (74319) panicked at src/opt.rs:679:7: attempt to apply undefined function, fn range:(U64)->U64[]"
+experimental-bsan,l1_ir-0.0.52,eq_functions,success,201.292,19.310,2026-11-05T02:23:12Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eq_heterogenous,success,201.292,19.453,2026-11-05T02:23:31Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eq_literals,success,201.292,19.405,2026-11-05T02:23:50Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eq_tuples,success,201.292,19.422,2026-11-05T02:24:10Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eq_unary,success,201.292,19.461,2026-11-05T02:24:29Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_add,test_failed,201.292,10.608,2026-11-05T02:24:40Z,50240217.0,panic,"thread 'eval_add' (87708) panicked at src/opt.rs:50:14: not implemented: type_by_name(Value)"
+experimental-bsan,l1_ir-0.0.52,eval_div,timeout,201.292,150.021,2026-11-05T02:27:10Z,50240217.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,l1_ir-0.0.52,eval_echo,test_failed,201.292,10.346,2026-11-05T02:27:20Z,50240217.0,panic,"thread 'eval_echo' (100283) panicked at src/opt.rs:50:14: not implemented: type_by_name(Value)"
+experimental-bsan,l1_ir-0.0.52,eval_empty,success,201.292,19.360,2026-11-05T02:27:40Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_eq,timeout,201.292,150.020,2026-11-05T02:30:10Z,50240217.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,l1_ir-0.0.52,eval_failure,success,201.292,19.361,2026-11-05T02:30:29Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_fibonacci,test_failed,201.292,10.758,2026-11-05T02:30:40Z,50240217.0,panic,"thread 'eval_fibonacci' (9962) panicked at src/opt.rs:50:14: not implemented: type_by_name(Value)"
+experimental-bsan,l1_ir-0.0.52,eval_flatmap1,test_failed,201.292,16.125,2026-11-05T02:30:56Z,50240217.0,panic,"thread 'eval_flatmap1' (11272) panicked at src/opt.rs:679:7: attempt to apply undefined function, fn range:(U64)->U64[]"
+experimental-bsan,l1_ir-0.0.52,eval_flatmap2,test_failed,201.292,16.162,2026-11-05T02:31:12Z,50240217.0,panic,"thread 'eval_flatmap2' (13237) panicked at src/opt.rs:679:7: attempt to apply undefined function, fn range:(U64)->U64[]"
+experimental-bsan,l1_ir-0.0.52,eval_flatmap3,test_failed,201.292,16.124,2026-11-05T02:31:28Z,50240217.0,panic,"thread 'eval_flatmap3' (14284) panicked at src/opt.rs:679:7: attempt to apply undefined function, fn range:(U64)->U64[]"
+experimental-bsan,l1_ir-0.0.52,eval_flatmap4,test_failed,201.292,16.177,2026-11-05T02:31:45Z,50240217.0,panic,"thread 'eval_flatmap4' (15949) panicked at src/opt.rs:679:7: attempt to apply undefined function, fn range:(U64)->U64[]"
+experimental-bsan,l1_ir-0.0.52,eval_flatmap6,test_failed,201.292,16.347,2026-11-05T02:32:01Z,50240217.0,panic,"thread 'eval_flatmap6' (17192) panicked at src/opt.rs:679:7: attempt to apply undefined function, fn range:(U64)->U64[]"
+experimental-bsan,l1_ir-0.0.52,eval_flatmap7,test_failed,201.292,16.440,2026-11-05T02:32:17Z,50240217.0,panic,"thread 'eval_flatmap7' (18759) panicked at src/opt.rs:679:7: attempt to apply undefined function, fn range:(U64)->U64[]"
+experimental-bsan,l1_ir-0.0.52,eval_free_var1,test_failed,201.292,16.249,2026-11-05T02:32:34Z,50240217.0,panic,"thread 'eval_free_var1' (20093) panicked at src/opt.rs:679:7: attempt to apply undefined function, fn range:(U64)->U64[]"
+experimental-bsan,l1_ir-0.0.52,eval_function,success,201.292,19.370,2026-11-05T02:32:53Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_functions,success,201.292,19.295,2026-11-05T02:33:12Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_gt,timeout,201.292,150.021,2026-11-05T02:35:42Z,50240217.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,l1_ir-0.0.52,eval_gte,timeout,201.292,150.020,2026-11-05T02:38:12Z,50240217.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,l1_ir-0.0.52,eval_heterogenous,success,201.292,19.251,2026-11-05T02:38:32Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_li,success,201.292,19.347,2026-11-05T02:38:51Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_literals,success,201.292,19.250,2026-11-05T02:39:10Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_lt,timeout,201.292,150.021,2026-11-05T02:41:40Z,50240217.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,l1_ir-0.0.52,eval_lte,timeout,201.292,150.021,2026-11-05T02:44:10Z,50240217.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,l1_ir-0.0.52,eval_match1,test_failed,201.292,10.492,2026-11-05T02:44:21Z,50240217.0,panic,"thread 'eval_match1' (95045) panicked at src/opt.rs:50:14: not implemented: type_by_name(Value)"
+experimental-bsan,l1_ir-0.0.52,eval_match2,test_failed,201.292,10.480,2026-11-05T02:44:31Z,50240217.0,panic,"thread 'eval_match2' (97027) panicked at src/opt.rs:50:14: not implemented: type_by_name(Value)"
+experimental-bsan,l1_ir-0.0.52,eval_match3,test_failed,201.292,10.592,2026-11-05T02:44:42Z,50240217.0,panic,"thread 'eval_match3' (97831) panicked at src/opt.rs:50:14: not implemented: type_by_name(Value)"
+experimental-bsan,l1_ir-0.0.52,eval_mul,timeout,201.292,150.016,2026-11-05T02:47:12Z,50240217.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,l1_ir-0.0.52,eval_ne,timeout,201.292,150.021,2026-11-05T02:49:42Z,50240217.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,l1_ir-0.0.52,eval_pattern,success,201.292,19.253,2026-11-05T02:50:01Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_range1,test_failed,201.292,14.542,2026-11-05T02:50:16Z,50240217.0,panic,"thread 'eval_range1' (25197) panicked at src/opt.rs:679:7: attempt to apply undefined function, fn range:(U64)->U64[]"
+experimental-bsan,l1_ir-0.0.52,eval_range2,test_failed,201.292,14.579,2026-11-05T02:50:31Z,50240217.0,panic,"thread 'eval_range2' (25674) panicked at src/opt.rs:679:7: attempt to apply undefined function, fn range:(U64,U64)->U64[]"
+experimental-bsan,l1_ir-0.0.52,eval_range3,test_failed,201.292,14.577,2026-11-05T02:50:45Z,50240217.0,panic,"thread 'eval_range3' (26569) panicked at src/opt.rs:679:7: attempt to apply undefined function, fn range:(U64,U64,U64)->U64[]"
+experimental-bsan,l1_ir-0.0.52,eval_recursive_loop,timeout,201.292,150.016,2026-11-05T02:53:15Z,50240217.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,l1_ir-0.0.52,eval_rem,timeout,201.292,150.017,2026-11-05T02:55:45Z,50240217.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,l1_ir-0.0.52,eval_string,success,201.292,24.423,2026-11-05T02:56:10Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_string_introduction,test_failed,201.292,11.586,2026-11-05T02:56:21Z,50240217.0,panic,"thread 'eval_string_introduction' (42030) panicked at src/opt.rs:50:14: not implemented: type_by_name(Value)"
+experimental-bsan,l1_ir-0.0.52,eval_sub,timeout,201.292,150.021,2026-11-05T02:58:51Z,50240217.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,l1_ir-0.0.52,eval_ti,success,201.292,19.205,2026-11-05T02:59:11Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_tuple1,success,201.292,24.641,2026-11-05T02:59:35Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_tuples,success,201.292,19.225,2026-11-05T02:59:54Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,eval_two_pow_n,test_failed,201.292,10.631,2026-11-05T03:00:05Z,50240217.0,panic,"thread 'eval_two_pow_n' (47115) panicked at src/opt.rs:50:14: not implemented: type_by_name(Value)"
+experimental-bsan,l1_ir-0.0.52,eval_unit1,success,201.292,21.383,2026-11-05T03:00:26Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,reject_function,success,201.292,19.169,2026-11-05T03:00:46Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,reject_nominal,success,201.292,19.132,2026-11-05T03:01:05Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,rejects_any,success,201.292,19.087,2026-11-05T03:01:24Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_nil,success,201.292,19.074,2026-11-05T03:01:43Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_number_f32,success,201.292,19.109,2026-11-05T03:02:02Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_number_f64,success,201.292,19.058,2026-11-05T03:02:21Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_number_i16,success,201.292,19.077,2026-11-05T03:02:40Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_number_i32,success,201.292,19.106,2026-11-05T03:02:59Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_number_i64,success,201.292,19.130,2026-11-05T03:03:19Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_number_i8,success,201.292,19.140,2026-11-05T03:03:38Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_number_u16,success,201.292,19.086,2026-11-05T03:03:57Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_number_u32,success,201.292,19.188,2026-11-05T03:04:16Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_number_u64,success,201.292,19.158,2026-11-05T03:04:35Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_number_u8,success,201.292,19.207,2026-11-05T03:04:54Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_numbers_f32s,success,201.292,19.241,2026-11-05T03:05:14Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_numbers_i16s,success,201.292,19.278,2026-11-05T03:05:33Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_numbers_i32s,success,201.292,19.298,2026-11-05T03:05:52Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_numbers_i8s,success,201.292,19.283,2026-11-05T03:06:11Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_numbers_u16s,success,201.292,19.309,2026-11-05T03:06:31Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_numbers_u32s,success,201.292,19.264,2026-11-05T03:06:50Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_numbers_u8s,success,201.292,19.285,2026-11-05T03:07:09Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_string,success,201.292,19.326,2026-11-05T03:07:29Z,50240217.0,,
+experimental-bsan,l1_ir-0.0.52,value_tuple,success,201.292,19.378,2026-11-05T03:07:48Z,50240217.0,,

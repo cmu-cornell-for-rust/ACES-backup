@@ -1,0 +1,17 @@
+experimental-bsan,rusty_math-0.7.0,clustering::tests::test_kmeans,success,22.102,1.658,2026-11-05T05:11:31Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,knn::tests::test_knn_fit,success,22.102,1.579,2026-11-05T05:11:33Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,knn::tests::test_knn_knearest,success,22.102,1.583,2026-11-05T05:11:35Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,knn::tests::test_knn_new,success,22.102,1.579,2026-11-05T05:11:36Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,knn::tests::test_knn_predict,success,22.102,1.585,2026-11-05T05:11:38Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,knn::tests::test_knn_predict_proba,success,22.102,1.581,2026-11-05T05:11:39Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,knn::tests::test_knn_regressor,test_failed,22.102,1.666,2026-11-05T05:11:41Z,50251818.0,panic,"thread 'knn::tests::test_knn_regressor' (87884) panicked at src/knn.rs:562:9: assertion `left == right` failed"
+experimental-bsan,rusty_math-0.7.0,linear::tests::test_lasso_regression,success,22.102,6.033,2026-11-05T05:11:47Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,linear::tests::test_linear_regression,success,22.102,6.021,2026-11-05T05:11:53Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,linear::tests::test_logistic_regression,success,22.102,12.452,2026-11-05T05:12:06Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,linear::tests::test_polynomial_regression,success,22.102,7.654,2026-11-05T05:12:13Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,linear::tests::test_ridge_regression,success,22.102,6.082,2026-11-05T05:12:19Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,metrics::tests::test_accuracy,success,22.102,1.596,2026-11-05T05:12:21Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,metrics::tests::test_confusion_matrix,success,22.102,1.603,2026-11-05T05:12:23Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,metrics::tests::test_mse,test_failed,22.102,1.641,2026-11-05T05:12:24Z,50251818.0,panic,"thread 'metrics::tests::test_mse' (94211) panicked at src/metrics.rs:319:9: assertion `left == right` failed"
+experimental-bsan,rusty_math-0.7.0,metrics::tests::test_r2_score,success,22.102,1.598,2026-11-05T05:12:26Z,50251818.0,,
+experimental-bsan,rusty_math-0.7.0,naive_bayes::tests::test_naive_bayes,test_failed,22.102,1.701,2026-11-05T05:12:28Z,50251818.0,panic,"thread 'naive_bayes::tests::test_naive_bayes' (94705) panicked at src/naive_bayes.rs:279:9: assertion `left == right` failed"

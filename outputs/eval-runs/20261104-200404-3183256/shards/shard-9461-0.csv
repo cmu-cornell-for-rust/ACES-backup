@@ -1,0 +1,18 @@
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_accepts_escape_with_payload,timeout,121.358,150.023,2026-11-05T05:15:34Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_accepts_fast_path_escape_with_payload,timeout,121.358,150.019,2026-11-05T05:18:04Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_accepts_max_symbol_length,timeout,121.358,150.019,2026-11-05T05:20:34Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_rejects_corrupt_offsets_when_switch_off,success,121.358,8.719,2026-11-05T05:20:43Z,50251291.0,,
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_rejects_corrupt_symbol_length,timeout,121.358,150.018,2026-11-05T05:23:13Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_rejects_dangling_escape_in_fast_path,timeout,121.358,150.018,2026-11-05T05:25:43Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_rejects_dangling_escape_in_scalar_tail,timeout,121.358,150.019,2026-11-05T05:28:13Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_rejects_decreasing_offset,timeout,121.358,150.020,2026-11-05T05:30:43Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_rejects_escape_payload_from_next_value,timeout,121.358,150.017,2026-11-05T05:33:13Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_rejects_negative_offset,timeout,121.358,150.020,2026-11-05T05:35:43Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_rejects_out_of_range_offset,timeout,121.358,150.019,2026-11-05T05:38:13Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_rejects_undersized_output_buffer,timeout,121.358,150.018,2026-11-05T05:40:43Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_rejects_zero_declared_symbol_length,timeout,121.358,150.019,2026-11-05T05:43:13Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_decompress_switch_off_accepts_valid_offsets,success,121.358,8.611,2026-11-05T05:43:22Z,50251291.0,,
+experimental-bsan,fsst-13.0.0,fsst::tests::test_fsst,timeout,121.358,150.021,2026-11-05T05:45:52Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_fsst_64_bit_offsets,timeout,121.358,150.019,2026-11-05T05:48:22Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fsst-13.0.0,fsst::tests::test_symbol_new,success,121.358,8.886,2026-11-05T05:48:31Z,50251291.0,,
+experimental-bsan,fsst-13.0.0,fsst::tests::test_undeclared_code_does_not_overflow,timeout,121.358,150.019,2026-11-05T05:51:01Z,50251291.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

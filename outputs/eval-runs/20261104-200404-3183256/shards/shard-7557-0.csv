@@ -1,0 +1,27 @@
+experimental-bsan,p384_rs-0.1.10,arithmetic::affine::tests::affine_negation,success,117.861,1.782,2026-11-05T04:07:55Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::affine::tests::compressed_round_trip,success,117.861,2.387,2026-11-05T04:07:57Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::affine::tests::compressed_to_uncompressed,success,117.861,2.381,2026-11-05T04:08:00Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::affine::tests::identity_encoding,success,117.861,1.996,2026-11-05T04:08:02Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::affine::tests::uncompressed_round_trip,success,117.861,1.867,2026-11-05T04:08:04Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::affine::tests::uncompressed_to_compressed,success,117.861,1.867,2026-11-05T04:08:06Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::field::invert,success,117.861,3.647,2026-11-05T04:08:09Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::field::sqrt,success,117.861,2.295,2026-11-05T04:08:12Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::projective::tests::affine_to_projective,success,117.861,4.911,2026-11-05T04:08:17Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::projective::tests::projective_add_and_sub,success,117.861,4.398,2026-11-05T04:08:21Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::projective::tests::projective_add_vs_double,success,117.861,3.079,2026-11-05T04:08:24Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::projective::tests::projective_double_and_sub,success,117.861,3.077,2026-11-05T04:08:27Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::projective::tests::projective_identity_addition,success,117.861,4.336,2026-11-05T04:08:31Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::projective::tests::test_vector_add_mixed_identity,success,117.861,3.025,2026-11-05T04:08:34Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::projective::tests::test_vector_double_generator,success,117.861,3.049,2026-11-05T04:08:38Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::projective::tests::test_vector_repeated_add,success,117.861,15.660,2026-11-05T04:08:53Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::projective::tests::test_vector_repeated_add_mixed,success,117.861,15.014,2026-11-05T04:09:08Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::projective::tests::test_vector_scalar_mult,timeout,117.861,150.017,2026-11-05T04:11:38Z,50248605.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p384_rs-0.1.10,arithmetic::scalar::tests::from_to_bytes_roundtrip,success,117.861,1.821,2026-11-05T04:11:40Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::scalar::tests::invert,success,117.861,3.039,2026-11-05T04:11:43Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::scalar::tests::multiply,success,117.861,1.787,2026-11-05T04:11:45Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,arithmetic::scalar::tests::sqrt,success,117.861,6.438,2026-11-05T04:11:51Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,ecdsa::tests::sign::ecdsa_signing,timeout,117.861,150.017,2026-11-05T04:14:21Z,50248605.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p384_rs-0.1.10,ecdsa::tests::signing_secret_key_equivalent,success,117.861,13.319,2026-11-05T04:14:35Z,50248605.0,,
+experimental-bsan,p384_rs-0.1.10,ecdsa::tests::verify::ecdsa_verify_invalid_s,timeout,117.861,150.017,2026-11-05T04:17:05Z,50248605.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p384_rs-0.1.10,ecdsa::tests::verify::ecdsa_verify_success,timeout,117.861,150.017,2026-11-05T04:19:35Z,50248605.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p384_rs-0.1.10,ecdsa::tests::wycheproof::wycheproof,timeout,117.861,150.013,2026-11-05T04:22:05Z,50248605.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

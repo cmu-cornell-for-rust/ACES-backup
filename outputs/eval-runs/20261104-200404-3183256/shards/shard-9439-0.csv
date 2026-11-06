@@ -1,0 +1,18 @@
+experimental-bsan,dependency_runner-1.5.0,common::tests::decanonicalize_removes_prefix,success,350.218,4.723,2026-11-05T05:16:50Z,50251264.0,,
+experimental-bsan,dependency_runner-1.5.0,executable::tests::empty_executables,success,350.218,4.805,2026-11-05T05:16:55Z,50251264.0,,
+experimental-bsan,dependency_runner-1.5.0,executable::tests::executables,test_failed,350.218,1.961,2026-11-05T05:16:57Z,50251264.0,panic,"thread 'executable::tests::executables' (74437) panicked at src/executable.rs:416:9: assertion `left == right` failed"
+experimental-bsan,dependency_runner-1.5.0,pe::tests::read_dependencies_test_dll,test_failed,350.218,1.817,2026-11-05T05:16:59Z,50251264.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,dependency_runner-1.5.0,pe::tests::read_dependencies_test_exe,test_failed,350.218,1.803,2026-11-05T05:17:00Z,50251264.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,dependency_runner-1.5.0,pe::tests::read_dependencies_test_exe_goblin,test_failed,350.218,1.816,2026-11-05T05:17:02Z,50251264.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,dependency_runner-1.5.0,query::tests::build_query,test_failed,350.218,1.959,2026-11-05T05:17:04Z,50251264.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,dependency_runner-1.5.0,runner::tests::run_build_same_output,test_failed,350.218,1.939,2026-11-05T05:17:06Z,50251264.0,panic,"thread 'runner::tests::run_build_same_output' (74876) panicked at src/runner.rs:158:9: assertion `left == right` failed"
+experimental-bsan,dependency_runner-1.5.0,system::tests::fscache,test_failed,350.218,1.837,2026-11-05T05:17:08Z,50251264.0,panic,"thread 'system::tests::fscache' (75003) panicked at src/system.rs:287:9: assertion failed: test_file_path.exists()"
+experimental-bsan,dependency_runner-1.5.0,tests::test_deprun_basic,success,350.218,113.129,2026-11-05T05:19:01Z,50251264.0,,
+experimental-bsan,dependency_runner-1.5.0,tests::test_deprun_errors_only,success,350.218,4.815,2026-11-05T05:19:06Z,50251264.0,,
+experimental-bsan,dependency_runner-1.5.0,tests::test_deprun_json_output,success,350.218,4.833,2026-11-05T05:19:11Z,50251264.0,,
+experimental-bsan,dependency_runner-1.5.0,tests::test_deprun_max_depth,success,350.218,4.863,2026-11-05T05:19:16Z,50251264.0,,
+experimental-bsan,dependency_runner-1.5.0,tests::test_deprun_with_filter,success,350.218,4.864,2026-11-05T05:19:21Z,50251264.0,,
+experimental-bsan,dependency_runner-1.5.0,tests::test_deprun_with_filter_no_match,success,350.218,4.834,2026-11-05T05:19:25Z,50251264.0,,
+experimental-bsan,dependency_runner-1.5.0,vcx::tests::vcxproj,test_failed,350.218,1.803,2026-11-05T05:19:27Z,50251264.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,dependency_runner-1.5.0,vcx::tests::vcxproj_no_user,test_failed,350.218,1.812,2026-11-05T05:19:29Z,50251264.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,dependency_runner-1.5.0,vcx::tests::vcxproj_user,test_failed,350.218,1.802,2026-11-05T05:19:31Z,50251264.0,other,"error: test failed, to rerun pass `--lib`"

@@ -1,0 +1,15 @@
+experimental-bsan,rand_regex-0.19.0,test::sanity_test_run_count,success,136.363,1.515,2026-11-05T05:23:20Z,50252691.0,,
+experimental-bsan,rand_regex-0.19.0,test::sanity_test_unicode_character_classes_size,success,136.363,4.709,2026-11-05T05:23:24Z,50252691.0,,
+experimental-bsan,rand_regex-0.19.0,test::test_ascii_character_classes,success,136.363,144.442,2026-11-05T05:25:49Z,50252691.0,,
+experimental-bsan,rand_regex-0.19.0,test::test_binary_generator,timeout,136.363,150.014,2026-11-05T05:28:19Z,50252691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rand_regex-0.19.0,test::test_encoding_generator_1,success,136.363,13.587,2026-11-05T05:28:32Z,50252691.0,,
+experimental-bsan,rand_regex-0.19.0,test::test_encoding_generator_2,success,136.363,18.854,2026-11-05T05:28:51Z,50252691.0,,
+experimental-bsan,rand_regex-0.19.0,test::test_encoding_generator_3,success,136.363,11.223,2026-11-05T05:29:02Z,50252691.0,,
+experimental-bsan,rand_regex-0.19.0,test::test_generating_non_utf8_string,success,136.363,1.558,2026-11-05T05:29:04Z,50252691.0,,
+experimental-bsan,rand_regex-0.19.0,test::test_perl_classes,timeout,136.363,150.019,2026-11-05T05:31:34Z,50252691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rand_regex-0.19.0,test::test_proptest,test_failed,136.363,5.662,2026-11-05T05:31:40Z,50252691.0,panic,"thread 'test::test_proptest' (66374) panicked at src/lib.rs:873:9: Distinct samples generated for pattern `a?` outside the range 2..=2: 1 (examples:"
+experimental-bsan,rand_regex-0.19.0,test::test_regex_generate,success,136.363,21.640,2026-11-05T05:32:01Z,50252691.0,,
+experimental-bsan,rand_regex-0.19.0,test::test_unicode_cases,timeout,136.363,150.020,2026-11-05T05:34:31Z,50252691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rand_regex-0.19.0,test::test_unicode_character_classes,timeout,136.363,150.018,2026-11-05T05:37:01Z,50252691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rand_regex-0.19.0,test::test_unicode_script_classes,timeout,136.363,150.014,2026-11-05T05:39:32Z,50252691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rand_regex-0.19.0,test::unsatisfiable_char_class_intersection,success,136.363,1.550,2026-11-05T05:39:33Z,50252691.0,,

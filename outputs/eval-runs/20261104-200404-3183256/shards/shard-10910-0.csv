@@ -1,0 +1,14 @@
+experimental-bsan,rnacos-0.6.3,common::cycle_queue::tests::iter,success,1177.750,3.470,2026-11-05T05:49:00Z,50253154.0,,
+experimental-bsan,rnacos-0.6.3,config::config_index::add_service,success,1177.750,3.105,2026-11-05T05:49:04Z,50253154.0,,
+experimental-bsan,rnacos-0.6.3,config::config_index::query_service,success,1177.750,3.122,2026-11-05T05:49:07Z,50253154.0,,
+experimental-bsan,rnacos-0.6.3,config::config_sled::tests::list,timeout,1177.750,150.020,2026-11-05T05:51:37Z,50253154.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rnacos-0.6.3,config::config_sled::tests::multi_insert,timeout,1177.750,150.020,2026-11-05T05:54:07Z,50253154.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rnacos-0.6.3,config::config_sled::tests::page_test,timeout,1177.750,150.019,2026-11-05T05:56:37Z,50253154.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rnacos-0.6.3,config::config_sled::tests::test,timeout,1177.750,150.019,2026-11-05T05:59:07Z,50253154.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rnacos-0.6.3,config::config_sled::tests::test_del,timeout,1177.750,150.019,2026-11-05T06:01:37Z,50253154.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rnacos-0.6.3,metrics::model::tests::test_recalculate_from_histogram,success,1177.750,6.449,2026-11-05T06:01:43Z,50253154.0,,
+experimental-bsan,rnacos-0.6.3,naming::core::query_healthy_instances,test_failed,1177.750,34.378,2026-11-05T06:02:18Z,50253154.0,panic,"thread 'naming::core::query_healthy_instances' (102445) panicked at src/naming/core.rs:1121:5: assertion failed: items.is_empty()"
+experimental-bsan,rnacos-0.6.3,naming::core::test_add_service,success,1177.750,3.183,2026-11-05T06:02:21Z,50253154.0,,
+experimental-bsan,rnacos-0.6.3,naming::core::test_remove_has_instance_service,success,1177.750,3.206,2026-11-05T06:02:24Z,50253154.0,,
+experimental-bsan,rnacos-0.6.3,naming::service_index::add_service,success,1177.750,3.089,2026-11-05T06:02:27Z,50253154.0,,
+experimental-bsan,rnacos-0.6.3,naming::service_index::query_service,success,1177.750,3.094,2026-11-05T06:02:30Z,50253154.0,,

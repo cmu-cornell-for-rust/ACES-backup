@@ -1,0 +1,11 @@
+experimental-bsan,rsevents-extra-0.2.2,countdown::basic_countdown,success,7.356,1.528,2026-11-05T06:02:51Z,50255058.0,,
+experimental-bsan,rsevents-extra-0.2.2,countdown::negative_countdown,test_failed,7.356,1.577,2026-11-05T06:02:53Z,50255058.0,panic,"thread 'countdown::negative_countdown' (8133) panicked at src/countdown.rs:114:13: tick() called more times than outstanding jobs!"
+experimental-bsan,rsevents-extra-0.2.2,countdown::reset_countdown,test_failed,7.356,1.580,2026-11-05T06:02:55Z,50255058.0,panic,"thread 'countdown::reset_countdown' (8261) panicked at src/countdown.rs:203:5: assertion `left == right` failed"
+experimental-bsan,rsevents-extra-0.2.2,countdown::start_at_zero,success,7.356,1.538,2026-11-05T06:02:56Z,50255058.0,,
+experimental-bsan,rsevents-extra-0.2.2,countdown::threaded_countdown,success,7.356,1.532,2026-11-05T06:02:58Z,50255058.0,,
+experimental-bsan,rsevents-extra-0.2.2,semaphore::test::release_1_of_1,success,7.356,1.632,2026-11-05T06:02:59Z,50255058.0,,
+experimental-bsan,rsevents-extra-0.2.2,semaphore::test::release_1_of_2,success,7.356,1.636,2026-11-05T06:03:01Z,50255058.0,,
+experimental-bsan,rsevents-extra-0.2.2,semaphore::test::release_2_of_2,success,7.356,1.637,2026-11-05T06:03:03Z,50255058.0,,
+experimental-bsan,rsevents-extra-0.2.2,semaphore::test::release_2_of_3,success,7.356,1.631,2026-11-05T06:03:04Z,50255058.0,,
+experimental-bsan,rsevents-extra-0.2.2,semaphore::test::uncontested_semaphore,success,7.356,1.525,2026-11-05T06:03:06Z,50255058.0,,
+experimental-bsan,rsevents-extra-0.2.2,semaphore::test::zero_semaphore,success,7.356,1.532,2026-11-05T06:03:07Z,50255058.0,,

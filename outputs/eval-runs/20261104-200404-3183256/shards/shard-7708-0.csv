@@ -1,0 +1,26 @@
+experimental-bsan,languagetool-rust-3.0.1,api::check::data_annotations::data_annotation_tests::test_interpreted_markup,success,710.144,2.977,2026-11-05T04:25:58Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,api::check::data_annotations::data_annotation_tests::test_markup,success,710.144,2.979,2026-11-05T04:26:01Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,api::check::data_annotations::data_annotation_tests::test_text,success,710.144,2.964,2026-11-05T04:26:04Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,api::check::data_annotations::tests::test_data_annotation,success,710.144,2.967,2026-11-05T04:26:07Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,api::check::data_annotations::tests::test_try_get_text,success,710.144,2.984,2026-11-05T04:26:10Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,api::check::requests::tests::test_with_data,success,710.144,2.980,2026-11-05T04:26:13Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,api::check::requests::tests::test_with_data_str,success,710.144,2.975,2026-11-05T04:26:16Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,api::check::requests::tests::test_with_language,success,710.144,2.974,2026-11-05T04:26:19Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,api::check::requests::tests::test_with_text,success,710.144,2.975,2026-11-05T04:26:22Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,api::check::tests::test_serialize_option_vec_string,success,710.144,2.980,2026-11-05T04:26:25Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,api::server::tests::test_server_annotate,test_failed,710.144,11.234,2026-11-05T04:26:36Z,50248809.0,panic,"thread 'api::server::tests::test_server_annotate' (55158) panicked at src/api/server.rs:750:14: called `Result::unwrap()` on an `Err` value: Reqwest(reqwest::Error { kind: Request, url: ""http://localhost:8010/v2/check"", source: hyper_util::client::legacy::Error(Connect, ConnectError(""tcp connect err"
+experimental-bsan,languagetool-rust-3.0.1,api::server::tests::test_server_check_data,test_failed,710.144,11.962,2026-11-05T04:26:48Z,50248809.0,panic,"thread 'api::server::tests::test_server_check_data' (55666) panicked at src/api/server.rs:667:9: assertion failed: client.check(&req).await.is_ok()"
+experimental-bsan,languagetool-rust-3.0.1,api::server::tests::test_server_check_multiple_and_join,test_failed,710.144,11.029,2026-11-05T04:27:00Z,50248809.0,panic,"thread 'api::server::tests::test_server_check_multiple_and_join' (56010) panicked at src/api/server.rs:688:67: called `Result::unwrap()` on an `Err` value: Reqwest(reqwest::Error { kind: Request, url: ""http://localhost:8010/v2/check"", source: hyper_util::client::legacy::Error(Connect, ConnectError("""
+experimental-bsan,languagetool-rust-3.0.1,api::server::tests::test_server_check_multiple_and_join_without_context,test_failed,710.144,11.498,2026-11-05T04:27:11Z,50248809.0,panic,"thread 'api::server::tests::test_server_check_multiple_and_join_without_context' (56635) panicked at src/api/server.rs:718:14: called `Result::unwrap()` on an `Err` value: Reqwest(reqwest::Error { kind: Request, url: ""http://localhost:8010/v2/check"", source: hyper_util::client::legacy::Error(Connect"
+experimental-bsan,languagetool-rust-3.0.1,api::server::tests::test_server_check_text,test_failed,710.144,12.204,2026-11-05T04:27:23Z,50248809.0,panic,"thread 'api::server::tests::test_server_check_text' (60087) panicked at src/api/server.rs:654:9: assertion failed: client.check(&req).await.is_ok()"
+experimental-bsan,languagetool-rust-3.0.1,api::server::tests::test_server_languages,test_failed,710.144,11.115,2026-11-05T04:27:34Z,50248809.0,panic,"thread 'api::server::tests::test_server_languages' (62062) panicked at src/api/server.rs:772:9: assertion failed: client.languages().await.is_ok()"
+experimental-bsan,languagetool-rust-3.0.1,api::server::tests::test_server_ping,test_failed,710.144,11.057,2026-11-05T04:27:45Z,50248809.0,panic,"thread 'api::server::tests::test_server_ping' (62820) panicked at src/api/server.rs:641:9:"
+experimental-bsan,languagetool-rust-3.0.1,cli::check::test::test_read_from_stdin,success,710.144,3.202,2026-11-05T04:27:49Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,cli::tests::test_cli,success,710.144,6.453,2026-11-05T04:27:55Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,cli::tests::test_cli_from_build_cli,success,710.144,6.432,2026-11-05T04:28:02Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,error::tests::test_error_cli,success,710.144,3.144,2026-11-05T04:28:05Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,error::tests::test_error_invalid_request,success,710.144,3.104,2026-11-05T04:28:08Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,error::tests::test_error_invalid_value,success,710.144,3.112,2026-11-05T04:28:11Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,error::tests::test_error_io,success,710.144,3.135,2026-11-05T04:28:14Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,error::tests::test_error_json,success,710.144,3.091,2026-11-05T04:28:17Z,50248809.0,,
+experimental-bsan,languagetool-rust-3.0.1,error::tests::test_error_reqwest,success,710.144,12.977,2026-11-05T04:28:30Z,50248809.0,,

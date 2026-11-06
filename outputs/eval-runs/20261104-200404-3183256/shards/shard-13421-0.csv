@@ -1,0 +1,8 @@
+experimental-bsan,aori-rs-0.2.7,client::tests::test_make_and_cancel,success,701.891,3.244,2026-11-05T06:50:58Z,50256814.0,,
+experimental-bsan,aori-rs-0.2.7,client::tests::test_make_and_take,success,701.891,3.182,2026-11-05T06:51:01Z,50256814.0,,
+experimental-bsan,aori-rs-0.2.7,client::tests::test_ping,success,701.891,4.378,2026-11-05T06:51:05Z,50256814.0,,
+experimental-bsan,aori-rs-0.2.7,client::tests::test_rfq,test_failed,701.891,4.316,2026-11-05T06:51:09Z,50256814.0,panic,"thread 'client::tests::test_rfq' (94566) panicked at src/client.rs:77:9: Expected Ok response, got Err(Transport(Http(Stream(hyper_util::client::legacy::Error(Connect, ConnectError(""dns error"", Custom { kind: Uncategorized, error: ""failed to lookup address information: Name or service not known"" }))"
+experimental-bsan,aori-rs-0.2.7,provider::provider_tests::test_ping,test_failed,701.891,2.134,2026-11-05T06:51:12Z,50256814.0,panic,"thread 'provider::provider_tests::test_ping' (94751) panicked at src/provider.rs:450:9: Expected Ok response, got Err(Transport(Http(Stream(hyper_util::client::legacy::Error(Connect, ConnectError(""dns error"", Custom { kind: Uncategorized, error: ""failed to lookup address information: Name or service"
+experimental-bsan,aori-rs-0.2.7,response::tests::test_deserialize_aori_feed_event,test_failed,701.891,1.835,2026-11-05T06:51:14Z,50256814.0,panic,"thread 'response::tests::test_deserialize_aori_feed_event' (94869) panicked at src/response.rs:166:9: assertion failed: event.is_ok()"
+experimental-bsan,aori-rs-0.2.7,shared_types::tests::hash_order,success,701.891,3.105,2026-11-05T06:51:17Z,50256814.0,,
+experimental-bsan,aori-rs-0.2.7,shared_types::tests::serialize_aori_order,success,701.891,3.295,2026-11-05T06:51:20Z,50256814.0,,

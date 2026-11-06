@@ -1,0 +1,42 @@
+experimental-bsan,snmp_usm-0.2.1,it_authenticates_in_msg_using_md5,timeout,18.936,150.015,2026-11-05T03:15:05Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_authenticates_in_msg_using_sha1,success,18.936,105.327,2026-11-05T03:16:51Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,it_authenticates_out_msg_using_md5,timeout,18.936,150.012,2026-11-05T03:19:21Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_authenticates_out_msg_using_sha1,success,18.936,105.137,2026-11-05T03:21:06Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,it_creates_security_params_with_username_and_auth_params,success,18.936,7.011,2026-11-05T03:21:13Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,it_decrypts_scoped_pdu_using_localized_md5_key,timeout,18.936,150.013,2026-11-05T03:23:43Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_decrypts_scoped_pdu_using_localized_sha1_key,timeout,18.936,150.012,2026-11-05T03:26:13Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_encodes_empty_security_params,success,18.936,7.108,2026-11-05T03:26:20Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,it_encrypts_scoped_pdu_using_localized_md5_key,timeout,18.936,150.011,2026-11-05T03:28:50Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_encrypts_scoped_pdu_using_localized_sha1_key,timeout,18.936,150.013,2026-11-05T03:31:20Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_returns_empty_vec_when_decrypting_empty_scoped_pdu,timeout,18.936,150.012,2026-11-05T03:33:50Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_returns_empty_vec_when_encrypting_empty_scoped_pdu,timeout,18.936,150.010,2026-11-05T03:36:20Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_returns_error_for_in_msg_with_malformed_security_params,timeout,18.936,150.012,2026-11-05T03:38:50Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_returns_error_for_malformed_in_msg,timeout,18.936,150.012,2026-11-05T03:41:20Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_returns_error_for_priv_params_with_wrong_len,timeout,18.936,150.013,2026-11-05T03:43:50Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_returns_malformed_msg_for_empty_out_msg,timeout,18.936,150.011,2026-11-05T03:46:20Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_returns_malformed_msg_for_malformed_out_msg,timeout,18.936,150.013,2026-11-05T03:48:51Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,it_returns_malformed_security_params_error_for_empty_security_params,success,18.936,7.031,2026-11-05T03:48:58Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,it_returns_malformed_security_params_error_for_negative_engine_boots,success,18.936,7.082,2026-11-05T03:49:05Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,it_returns_malformed_security_params_error_for_negative_engine_time,success,18.936,7.072,2026-11-05T03:49:12Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,it_returns_not_in_time_window_error_for_invalid_engine_boots_in_authoritative,success,18.936,106.268,2026-11-05T03:50:58Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,it_returns_not_in_time_window_error_for_invalid_engine_boots_in_non_authoritative,success,18.936,105.925,2026-11-05T03:52:44Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,it_returns_not_in_time_window_error_for_invalid_engine_time_in_authoritative,success,18.936,105.907,2026-11-05T03:54:30Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,it_returns_not_in_time_window_error_for_invalid_engine_time_in_non_authoritative,success,18.936,106.503,2026-11-05T03:56:16Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,it_returns_not_in_time_window_for_engine_boots_max,timeout,18.936,150.012,2026-11-05T03:58:46Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,localized_key::tests::it_constructs_localized_key_with_md5,timeout,18.936,150.012,2026-11-05T04:01:16Z,50245018.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,snmp_usm-0.2.1,localized_key::tests::it_constructs_localized_key_with_sha1,success,18.936,108.530,2026-11-05T04:03:05Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,localized_key::tests::it_panics_with_empty_passwd,success,18.936,7.051,2026-11-05T04:03:12Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,pos_finder::tests::it_returns_error_for_wrong_tag,success,18.936,7.021,2026-11-05T04:03:19Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,pos_finder::tests::it_returns_error_when_reading_end_of_buf,success,18.936,7.036,2026-11-05T04:03:26Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,pos_finder::tests::it_returns_invalid_error_for_high_tag_num,success,18.936,7.003,2026-11-05T04:03:33Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,pos_finder::tests::it_returns_invalid_error_for_indefinite_len,success,18.936,7.003,2026-11-05T04:03:40Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,pos_finder::tests::it_returns_invalid_error_for_invalid_long_len,success,18.936,7.013,2026-11-05T04:03:47Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,pos_finder::tests::it_returns_invalid_error_for_invalid_short_len,success,18.936,7.026,2026-11-05T04:03:54Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,pos_finder::tests::it_returns_invalid_error_for_len_larger_than_usize_max,success,18.936,7.038,2026-11-05T04:04:01Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,pos_finder::tests::it_skips_int,success,18.936,7.033,2026-11-05T04:04:08Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,pos_finder::tests::it_skips_octet_str,success,18.936,7.043,2026-11-05T04:04:15Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,pos_finder::tests::it_skips_seq,success,18.936,7.019,2026-11-05T04:04:22Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,pos_finder::tests::it_steps_into_octet_str,success,18.936,7.019,2026-11-05T04:04:29Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,pos_finder::tests::it_steps_into_seq,success,18.936,7.010,2026-11-05T04:04:36Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,priv_key::des_priv_key::tests::it_adds_padding_if_not_multiple_of_block_size,success,18.936,7.021,2026-11-05T04:04:43Z,50245018.0,,
+experimental-bsan,snmp_usm-0.2.1,priv_key::des_priv_key::tests::it_does_not_add_padding_if_multiple_of_block_size,success,18.936,7.016,2026-11-05T04:04:50Z,50245018.0,,

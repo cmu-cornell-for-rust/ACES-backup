@@ -1,0 +1,2 @@
+experimental-bsan,selecting-1.2.0,should_work_tcp_stream,success,7.677,3.059,2026-11-05T09:01:57Z,50264816.0,,
+experimental-bsan,selecting-1.2.0,should_work_with_multiple_fds,test_failed,7.677,3.047,2026-11-05T09:02:00Z,50264816.0,panic,"thread 'should_work_with_multiple_fds' (48040) panicked at tests/tcp.rs:62:44: Couldn't connect to the server...: Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" }"

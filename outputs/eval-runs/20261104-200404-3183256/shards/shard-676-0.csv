@@ -1,0 +1,259 @@
+experimental-bsan,base64-0.23.1,alphabet::tests::alphabet_debug,success,199.487,4.365,2026-11-05T01:30:14Z,50233196.0,,
+experimental-bsan,base64-0.23.1,alphabet::tests::alphabet_symbols,success,199.487,4.397,2026-11-05T01:30:19Z,50233196.0,,
+experimental-bsan,base64-0.23.1,alphabet::tests::detects_duplicate_end,success,199.487,4.378,2026-11-05T01:30:23Z,50233196.0,,
+experimental-bsan,base64-0.23.1,alphabet::tests::detects_duplicate_middle,success,199.487,4.358,2026-11-05T01:30:27Z,50233196.0,,
+experimental-bsan,base64-0.23.1,alphabet::tests::detects_duplicate_start,success,199.487,4.357,2026-11-05T01:30:32Z,50233196.0,,
+experimental-bsan,base64-0.23.1,alphabet::tests::detects_length,success,199.487,4.360,2026-11-05T01:30:36Z,50233196.0,,
+experimental-bsan,base64-0.23.1,alphabet::tests::detects_padding,success,199.487,4.360,2026-11-05T01:30:41Z,50233196.0,,
+experimental-bsan,base64-0.23.1,alphabet::tests::detects_unprintable,success,199.487,4.376,2026-11-05T01:30:45Z,50233196.0,,
+experimental-bsan,base64-0.23.1,alphabet::tests::same_as_unchecked,success,199.487,4.363,2026-11-05T01:30:49Z,50233196.0,,
+experimental-bsan,base64-0.23.1,alphabet::tests::str_same_as_input,success,199.487,4.363,2026-11-05T01:30:54Z,50233196.0,,
+experimental-bsan,base64-0.23.1,alphabet::tests::symbol_matches_char_for_all_valid_symbols,success,199.487,4.383,2026-11-05T01:30:58Z,50233196.0,,
+experimental-bsan,base64-0.23.1,chunked_encoder::tests::chunked_encode_empty,success,199.487,4.365,2026-11-05T01:31:02Z,50233196.0,,
+experimental-bsan,base64-0.23.1,chunked_encoder::tests::chunked_encode_fast_loop,success,199.487,4.354,2026-11-05T01:31:07Z,50233196.0,,
+experimental-bsan,base64-0.23.1,chunked_encoder::tests::chunked_encode_intermediate_fast_loop,success,199.487,4.375,2026-11-05T01:31:11Z,50233196.0,,
+experimental-bsan,base64-0.23.1,chunked_encoder::tests::chunked_encode_matches_normal_encode_random_string_sink,timeout,199.487,150.010,2026-11-05T01:33:41Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,chunked_encoder::tests::chunked_encode_slow_loop_only,success,199.487,4.430,2026-11-05T01:33:46Z,50233196.0,,
+experimental-bsan,base64-0.23.1,decode::coverage_gaming::decode_error,success,199.487,4.424,2026-11-05T01:33:50Z,50233196.0,,
+experimental-bsan,base64-0.23.1,decode::coverage_gaming::decode_slice_error,success,199.487,4.426,2026-11-05T01:33:55Z,50233196.0,,
+experimental-bsan,base64-0.23.1,decode::coverage_gaming::decoded_len_est,success,199.487,4.439,2026-11-05T01:33:59Z,50233196.0,,
+experimental-bsan,base64-0.23.1,decode::coverage_gaming::deprecated_fns,success,199.487,4.447,2026-11-05T01:34:03Z,50233196.0,,
+experimental-bsan,base64-0.23.1,decode::tests::decode_engine_estimation_works_for_various_lengths,success,199.487,7.897,2026-11-05T01:34:11Z,50233196.0,,
+experimental-bsan,base64-0.23.1,decode::tests::decode_into_nonempty_vec_doesnt_clobber_existing_prefix,timeout,199.487,150.010,2026-11-05T01:36:41Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,decode::tests::decode_slice_doesnt_clobber_existing_prefix_or_suffix,timeout,199.487,150.010,2026-11-05T01:39:11Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,decode::tests::decode_slice_output_length_errors,success,199.487,8.997,2026-11-05T01:39:20Z,50233196.0,,
+experimental-bsan,base64-0.23.1,decode::tests::decode_slice_unchecked_doesnt_clobber_existing_prefix_or_suffix,timeout,199.487,150.010,2026-11-05T01:41:50Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,decode::tests::invalid_last_symbol_debug,success,199.487,4.384,2026-11-05T01:41:55Z,50233196.0,,
+experimental-bsan,base64-0.23.1,display::tests::basic_display,success,199.487,4.400,2026-11-05T01:41:59Z,50233196.0,,
+experimental-bsan,base64-0.23.1,display::tests::display_encode_matches_normal_encode,timeout,199.487,150.011,2026-11-05T01:44:29Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,display_wrapper_matches_normal_encode,success,199.487,4.460,2026-11-05T01:44:34Z,50233196.0,,
+experimental-bsan,base64-0.23.1,encode::tests::add_padding_random_valid_utf8,success,199.487,4.726,2026-11-05T01:44:38Z,50233196.0,,
+experimental-bsan,base64-0.23.1,encode::tests::encode_engine_slice_into_nonempty_buffer_doesnt_clobber_suffix,timeout,199.487,150.011,2026-11-05T01:47:09Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,encode::tests::encode_engine_string_into_nonempty_buffer_doesnt_clobber_prefix,timeout,199.487,150.011,2026-11-05T01:49:39Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,encode::tests::encode_imap,success,199.487,4.397,2026-11-05T01:49:43Z,50233196.0,,
+experimental-bsan,base64-0.23.1,encode::tests::encode_to_slice_random_valid_utf8,timeout,199.487,150.010,2026-11-05T01:52:13Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,encode::tests::encode_with_padding_random_valid_utf8,timeout,199.487,150.010,2026-11-05T01:54:43Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,encode::tests::encoded_size_correct_no_pad,success,199.487,4.615,2026-11-05T01:54:48Z,50233196.0,,
+experimental-bsan,base64-0.23.1,encode::tests::encoded_size_correct_standard,success,199.487,4.603,2026-11-05T01:54:52Z,50233196.0,,
+experimental-bsan,base64-0.23.1,encode::tests::encoded_size_overflow,success,199.487,4.396,2026-11-05T01:54:57Z,50233196.0,,
+experimental-bsan,base64-0.23.1,encode_all_ascii,success,199.487,4.410,2026-11-05T01:55:01Z,50233196.0,,
+experimental-bsan,base64-0.23.1,encode_all_bytes,success,199.487,4.439,2026-11-05T01:55:06Z,50233196.0,,
+experimental-bsan,base64-0.23.1,encode_all_bytes_url,success,199.487,4.425,2026-11-05T01:55:10Z,50233196.0,,
+experimental-bsan,base64-0.23.1,encode_engine_slice_error_when_buffer_too_small,success,199.487,5.513,2026-11-05T01:55:15Z,50233196.0,,
+experimental-bsan,base64-0.23.1,encoded_len_overflow,success,199.487,4.403,2026-11-05T01:55:20Z,50233196.0,,
+experimental-bsan,base64-0.23.1,encoded_len_padded,success,199.487,4.399,2026-11-05T01:55:24Z,50233196.0,,
+experimental-bsan,base64-0.23.1,encoded_len_unpadded,success,199.487,4.399,2026-11-05T01:55:29Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::general_purpose::decode::tests::decode_chunk_4_writes_only_3_bytes,success,199.487,4.413,2026-11-05T01:55:33Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::general_purpose::decode::tests::decode_chunk_8_writes_only_6_bytes,success,199.487,4.382,2026-11-05T01:55:38Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::general_purpose::decode::tests::estimate_short_lengths,success,199.487,4.402,2026-11-05T01:55:42Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::general_purpose::decode::tests::estimate_via_u128_inflation,success,199.487,4.544,2026-11-05T01:55:47Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_1_invalid_byte_in_last_quad_invalid_byte::case_1_general_purpose,success,199.487,62.607,2026-11-05T01:56:49Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_1_invalid_byte_in_last_quad_invalid_byte::case_2_naive,success,199.487,108.478,2026-11-05T01:58:38Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_1_invalid_byte_in_last_quad_invalid_byte::case_3_decoder_reader,success,199.487,93.661,2026-11-05T02:00:11Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_1_invalid_byte_in_last_quad_invalid_byte::case_4_simd,success,199.487,18.242,2026-11-05T02:00:30Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_1_valid_symbol_in_last_quad_invalid_length::case_1_general_purpose,success,199.487,81.054,2026-11-05T02:01:51Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_1_valid_symbol_in_last_quad_invalid_length::case_2_naive,success,199.487,142.501,2026-11-05T02:04:13Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_1_valid_symbol_in_last_quad_invalid_length::case_3_decoder_reader,success,199.487,94.228,2026-11-05T02:05:47Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_1_valid_symbol_in_last_quad_invalid_length::case_4_simd,success,199.487,22.140,2026-11-05T02:06:09Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_invalid_last_symbol::case_1_general_purpose,success,199.487,65.126,2026-11-05T02:07:15Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_invalid_last_symbol::case_2_naive,success,199.487,110.495,2026-11-05T02:09:05Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_invalid_last_symbol::case_3_decoder_reader,success,199.487,71.146,2026-11-05T02:10:16Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_invalid_last_symbol::case_4_simd,success,199.487,20.131,2026-11-05T02:10:36Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_invalid_last_symbol_every_possible_three_symbols::case_1_general_purpose,timeout,199.487,150.021,2026-11-05T02:13:07Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_invalid_last_symbol_every_possible_three_symbols::case_2_naive,timeout,199.487,150.033,2026-11-05T02:15:37Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_invalid_last_symbol_every_possible_three_symbols::case_3_decoder_reader,timeout,199.487,150.034,2026-11-05T02:18:07Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_invalid_last_symbol_every_possible_three_symbols::case_4_simd,timeout,199.487,150.033,2026-11-05T02:20:37Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_invalid_last_symbol_every_possible_two_symbols::case_1_general_purpose,timeout,199.487,150.013,2026-11-05T02:23:07Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_invalid_last_symbol_every_possible_two_symbols::case_2_naive,timeout,199.487,150.013,2026-11-05T02:25:37Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_invalid_last_symbol_every_possible_two_symbols::case_3_decoder_reader,timeout,199.487,150.012,2026-11-05T02:28:07Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_detect_invalid_last_symbol_every_possible_two_symbols::case_4_simd,timeout,199.487,150.014,2026-11-05T02:30:37Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_doesnt_write_extra_bytes::case_1_general_purpose,timeout,199.487,150.011,2026-11-05T02:33:07Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_doesnt_write_extra_bytes::case_2_naive,timeout,199.487,150.010,2026-11-05T02:35:37Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_doesnt_write_extra_bytes::case_3_decoder_reader,timeout,199.487,150.012,2026-11-05T02:38:07Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_doesnt_write_extra_bytes::case_4_simd,timeout,199.487,150.012,2026-11-05T02:40:37Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_into_slice_fits_in_precisely_sized_slice::case_1_general_purpose,timeout,199.487,150.011,2026-11-05T02:43:07Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_into_slice_fits_in_precisely_sized_slice::case_2_naive,timeout,199.487,150.011,2026-11-05T02:45:37Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_into_slice_fits_in_precisely_sized_slice::case_3_decoder_reader,timeout,199.487,150.012,2026-11-05T02:48:07Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_into_slice_fits_in_precisely_sized_slice::case_4_simd,timeout,199.487,150.011,2026-11-05T02:50:37Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_byte_error::case_1_general_purpose,timeout,199.487,150.010,2026-11-05T02:53:07Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_byte_error::case_2_naive,timeout,199.487,150.010,2026-11-05T02:55:38Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_byte_error::case_3_decoder_reader,timeout,199.487,150.012,2026-11-05T02:58:08Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_byte_error::case_4_simd,timeout,199.487,150.011,2026-11-05T03:00:38Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_bits_ignored_when_configured::case_1_general_purpose,success,199.487,59.835,2026-11-05T03:01:37Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_bits_ignored_when_configured::case_2_naive,success,199.487,112.071,2026-11-05T03:03:29Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_bits_ignored_when_configured::case_3_decoder_reader,timeout,199.487,150.015,2026-11-05T03:06:00Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_bits_ignored_when_configured::case_4_simd,success,199.487,19.127,2026-11-05T03:06:19Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_bytes_all_pad_modes_invalid_byte::case_1_general_purpose,success,199.487,5.742,2026-11-05T03:06:24Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_bytes_all_pad_modes_invalid_byte::case_2_naive,success,199.487,5.694,2026-11-05T03:06:30Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_bytes_all_pad_modes_invalid_byte::case_3_simd,success,199.487,5.813,2026-11-05T03:06:36Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_bytes_invalid_byte::case_1_general_purpose,success,199.487,5.316,2026-11-05T03:06:41Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_bytes_invalid_byte::case_2_naive,success,199.487,5.297,2026-11-05T03:06:47Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_bytes_invalid_byte::case_3_decoder_reader,success,199.487,35.225,2026-11-05T03:07:22Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_bytes_invalid_byte::case_4_simd,success,199.487,5.340,2026-11-05T03:07:27Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_padding_as_invalid_byte_at_first_byte_all_modes::case_1_general_purpose,success,199.487,62.471,2026-11-05T03:08:30Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_padding_as_invalid_byte_at_first_byte_all_modes::case_2_naive,success,199.487,108.912,2026-11-05T03:10:19Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_padding_as_invalid_byte_at_first_byte_all_modes::case_3_simd,success,199.487,17.974,2026-11-05T03:10:37Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_padding_as_invalid_byte_at_first_pad_byte::case_1_general_purpose,success,199.487,43.059,2026-11-05T03:11:20Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_padding_as_invalid_byte_at_first_pad_byte::case_2_naive,success,199.487,73.640,2026-11-05T03:12:33Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_padding_as_invalid_byte_at_first_pad_byte::case_3_decoder_reader,success,199.487,51.311,2026-11-05T03:13:25Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_invalid_trailing_padding_as_invalid_byte_at_first_pad_byte::case_4_simd,success,199.487,13.421,2026-11-05T03:13:38Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_length_estimate_delta::case_1_general_purpose,success,199.487,4.639,2026-11-05T03:13:43Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_length_estimate_delta::case_2_naive,success,199.487,4.645,2026-11-05T03:13:47Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_length_estimate_delta::case_3_decoder_reader,success,199.487,4.678,2026-11-05T03:13:52Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_length_estimate_delta::case_4_simd,success,199.487,4.717,2026-11-05T03:13:57Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_no_padding::case_1_general_purpose,success,199.487,4.409,2026-11-05T03:14:01Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_no_padding::case_2_naive,success,199.487,4.387,2026-11-05T03:14:06Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_no_padding::case_3_decoder_reader,success,199.487,4.389,2026-11-05T03:14:10Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_no_padding::case_4_simd,success,199.487,4.393,2026-11-05T03:14:14Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_short_padding::case_1_general_purpose,success,199.487,4.372,2026-11-05T03:14:19Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_short_padding::case_2_naive,success,199.487,4.393,2026-11-05T03:14:23Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_short_padding::case_3_decoder_reader,success,199.487,4.370,2026-11-05T03:14:28Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_short_padding::case_4_simd,success,199.487,4.359,2026-11-05T03:14:32Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_too_much_padding::case_1_general_purpose,success,199.487,4.367,2026-11-05T03:14:36Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_too_much_padding::case_2_naive,success,199.487,4.391,2026-11-05T03:14:41Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_too_much_padding::case_3_decoder_reader,success,199.487,4.401,2026-11-05T03:14:45Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_too_much_padding::case_4_simd,success,199.487,4.390,2026-11-05T03:14:49Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_valid_two_padding_symbols::case_1_general_purpose,success,199.487,4.404,2026-11-05T03:14:54Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_valid_two_padding_symbols::case_2_naive,success,199.487,4.394,2026-11-05T03:14:58Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_valid_two_padding_symbols::case_3_decoder_reader,success,199.487,4.392,2026-11-05T03:15:03Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_2_byte_suffix_valid_two_padding_symbols::case_4_simd,success,199.487,4.403,2026-11-05T03:15:07Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_3_byte_suffix_invalid_trailing_symbol::case_1_general_purpose,success,199.487,4.395,2026-11-05T03:15:12Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_3_byte_suffix_invalid_trailing_symbol::case_2_naive,success,199.487,4.381,2026-11-05T03:15:16Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_3_byte_suffix_invalid_trailing_symbol::case_3_decoder_reader,success,199.487,4.397,2026-11-05T03:15:20Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_3_byte_suffix_invalid_trailing_symbol::case_4_simd,success,199.487,4.391,2026-11-05T03:15:25Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_3_byte_suffix_no_padding::case_1_general_purpose,success,199.487,4.394,2026-11-05T03:15:29Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_3_byte_suffix_no_padding::case_2_naive,success,199.487,4.390,2026-11-05T03:15:34Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_3_byte_suffix_no_padding::case_3_decoder_reader,success,199.487,4.377,2026-11-05T03:15:38Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_3_byte_suffix_no_padding::case_4_simd,success,199.487,4.392,2026-11-05T03:15:42Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_3_byte_suffix_valid::case_1_general_purpose,success,199.487,4.387,2026-11-05T03:15:47Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_3_byte_suffix_valid::case_2_naive,success,199.487,4.396,2026-11-05T03:15:51Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_3_byte_suffix_valid::case_3_decoder_reader,success,199.487,4.371,2026-11-05T03:15:55Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_malleability_test_case_3_byte_suffix_valid::case_4_simd,success,199.487,4.383,2026-11-05T03:16:00Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_indifferent_padding_accepts_anything::case_1_general_purpose,success,199.487,43.241,2026-11-05T03:16:43Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_indifferent_padding_accepts_anything::case_2_naive,success,199.487,72.805,2026-11-05T03:17:56Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_indifferent_padding_accepts_anything::case_3_decoder_reader,success,199.487,139.329,2026-11-05T03:20:15Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_indifferent_padding_accepts_anything::case_4_simd,success,199.487,13.955,2026-11-05T03:20:29Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_canonical_accepts_canonical::case_1_general_purpose,success,199.487,23.816,2026-11-05T03:20:53Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_canonical_accepts_canonical::case_2_naive,success,199.487,38.715,2026-11-05T03:21:32Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_canonical_accepts_canonical::case_3_decoder_reader,success,199.487,72.068,2026-11-05T03:22:44Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_canonical_accepts_canonical::case_4_simd,success,199.487,9.262,2026-11-05T03:22:53Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_canonical_rejects_non_canonical::case_1_general_purpose,success,199.487,23.567,2026-11-05T03:23:17Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_canonical_rejects_non_canonical::case_2_naive,success,199.487,38.703,2026-11-05T03:23:55Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_canonical_rejects_non_canonical::case_3_decoder_reader,success,199.487,27.818,2026-11-05T03:24:23Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_canonical_rejects_non_canonical::case_4_simd,success,199.487,8.969,2026-11-05T03:24:32Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_no_padding_accepts_no_padding::case_1_general_purpose,success,199.487,23.798,2026-11-05T03:24:56Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_no_padding_accepts_no_padding::case_2_naive,success,199.487,38.593,2026-11-05T03:25:35Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_no_padding_accepts_no_padding::case_3_decoder_reader,success,199.487,72.274,2026-11-05T03:26:47Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_no_padding_accepts_no_padding::case_4_simd,success,199.487,9.255,2026-11-05T03:26:56Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_no_padding_rejects_any_padding::case_1_general_purpose,success,199.487,23.725,2026-11-05T03:27:20Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_no_padding_rejects_any_padding::case_2_naive,success,199.487,38.726,2026-11-05T03:27:59Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_no_padding_rejects_any_padding::case_3_decoder_reader,success,199.487,26.444,2026-11-05T03:28:25Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_pad_mode_requires_no_padding_rejects_any_padding::case_4_simd,success,199.487,9.059,2026-11-05T03:28:34Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_padding_before_final_non_padding_char_error_invalid_byte_at_first_pad_all_modes::case_1_general_purpose,timeout,199.487,150.012,2026-11-05T03:31:04Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_padding_before_final_non_padding_char_error_invalid_byte_at_first_pad_all_modes::case_2_naive,timeout,199.487,150.010,2026-11-05T03:33:34Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_padding_before_final_non_padding_char_error_invalid_byte_at_first_pad_all_modes::case_3_decoder_reader,timeout,199.487,150.012,2026-11-05T03:36:04Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_padding_before_final_non_padding_char_error_invalid_byte_at_first_pad_all_modes::case_4_simd,timeout,199.487,150.013,2026-11-05T03:38:34Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_padding_before_final_non_padding_char_error_invalid_byte_at_first_pad_non_canonical_padding_suffix::case_1_general_purpose,timeout,199.487,150.014,2026-11-05T03:41:04Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_padding_before_final_non_padding_char_error_invalid_byte_at_first_pad_non_canonical_padding_suffix::case_2_naive,timeout,199.487,150.010,2026-11-05T03:43:34Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_padding_before_final_non_padding_char_error_invalid_byte_at_first_pad_non_canonical_padding_suffix::case_3_decoder_reader,timeout,199.487,150.011,2026-11-05T03:46:04Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_padding_before_final_non_padding_char_error_invalid_byte_at_first_pad_non_canonical_padding_suffix::case_4_simd,timeout,199.487,150.012,2026-11-05T03:48:34Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_padding_starts_before_final_chunk_error_invalid_byte_at_first_pad::case_1_general_purpose,timeout,199.487,150.012,2026-11-05T03:51:05Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_padding_starts_before_final_chunk_error_invalid_byte_at_first_pad::case_2_naive,timeout,199.487,150.009,2026-11-05T03:53:35Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_padding_starts_before_final_chunk_error_invalid_byte_at_first_pad::case_3_decoder_reader,timeout,199.487,150.013,2026-11-05T03:56:05Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_padding_starts_before_final_chunk_error_invalid_byte_at_first_pad::case_4_simd,timeout,199.487,150.012,2026-11-05T03:58:35Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_slice_checked_fails_gracefully_at_all_output_lengths::case_1_general_purpose,timeout,199.487,150.009,2026-11-05T04:01:05Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_slice_checked_fails_gracefully_at_all_output_lengths::case_2_naive,timeout,199.487,150.009,2026-11-05T04:03:35Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_slice_checked_fails_gracefully_at_all_output_lengths::case_3_decoder_reader,timeout,199.487,150.017,2026-11-05T04:06:05Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_slice_checked_fails_gracefully_at_all_output_lengths::case_4_simd,timeout,199.487,150.012,2026-11-05T04:08:35Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_slice_unchecked_in_small_slice::case_1_general_purpose,success,199.487,4.416,2026-11-05T04:08:39Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_slice_unchecked_in_small_slice::case_2_naive,success,199.487,4.420,2026-11-05T04:08:44Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_slice_unchecked_in_small_slice::case_3_decoder_reader,success,199.487,4.412,2026-11-05T04:08:48Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_slice_unchecked_in_small_slice::case_4_simd,success,199.487,4.401,2026-11-05T04:08:52Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::decode_too_little_data_before_padding_error_invalid_byte::case_1_general_purpose,timeout,199.487,150.013,2026-11-05T04:11:22Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_too_little_data_before_padding_error_invalid_byte::case_2_naive,timeout,199.487,150.009,2026-11-05T04:13:53Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_too_little_data_before_padding_error_invalid_byte::case_3_decoder_reader,timeout,199.487,150.013,2026-11-05T04:16:23Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::decode_too_little_data_before_padding_error_invalid_byte::case_4_simd,timeout,199.487,150.013,2026-11-05T04:18:53Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::detects_users_real_world_invalid_suffix::case_1_general_purpose,success,199.487,4.365,2026-11-05T04:18:57Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::detects_users_real_world_invalid_suffix::case_2_naive,success,199.487,4.386,2026-11-05T04:19:01Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::detects_users_real_world_invalid_suffix::case_3_decoder_reader,success,199.487,4.387,2026-11-05T04:19:06Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::detects_users_real_world_invalid_suffix::case_4_simd,success,199.487,4.378,2026-11-05T04:19:10Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::encode_decode_smorgasbord::case_1_general_purpose::alphabet_1_CommonAlphabet__Standard,success,199.487,141.442,2026-11-05T04:21:32Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::encode_decode_smorgasbord::case_1_general_purpose::alphabet_2_CommonAlphabet__UrlSafe,success,199.487,141.046,2026-11-05T04:23:53Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::encode_decode_smorgasbord::case_2_naive::alphabet_1_CommonAlphabet__Standard,timeout,199.487,150.010,2026-11-05T04:26:23Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_decode_smorgasbord::case_2_naive::alphabet_2_CommonAlphabet__UrlSafe,timeout,199.487,150.009,2026-11-05T04:28:53Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_decode_smorgasbord::case_3_decoder_reader::alphabet_1_CommonAlphabet__Standard,timeout,199.487,150.011,2026-11-05T04:31:23Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_decode_smorgasbord::case_3_decoder_reader::alphabet_2_CommonAlphabet__UrlSafe,timeout,199.487,150.010,2026-11-05T04:33:53Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_decode_smorgasbord::case_4_simd::alphabet_1_CommonAlphabet__Standard,success,199.487,103.389,2026-11-05T04:35:36Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::encode_decode_smorgasbord::case_4_simd::alphabet_2_CommonAlphabet__UrlSafe,success,199.487,104.088,2026-11-05T04:37:20Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::encode_doesnt_write_extra_bytes::case_1_general_purpose,timeout,199.487,150.010,2026-11-05T04:39:50Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_doesnt_write_extra_bytes::case_2_naive,timeout,199.487,150.010,2026-11-05T04:42:20Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_doesnt_write_extra_bytes::case_3_decoder_reader,timeout,199.487,150.010,2026-11-05T04:44:50Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_doesnt_write_extra_bytes::case_4_simd,timeout,199.487,150.010,2026-11-05T04:47:20Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_engine_slice_fits_into_precisely_sized_slice::case_1_general_purpose,timeout,199.487,150.010,2026-11-05T04:49:50Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_engine_slice_fits_into_precisely_sized_slice::case_2_naive,timeout,199.487,150.010,2026-11-05T04:52:21Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_engine_slice_fits_into_precisely_sized_slice::case_3_decoder_reader,timeout,199.487,150.010,2026-11-05T04:54:51Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_engine_slice_fits_into_precisely_sized_slice::case_4_simd,timeout,199.487,150.011,2026-11-05T04:57:21Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_matches_naive::case_1_general_purpose,timeout,199.487,150.009,2026-11-05T04:59:51Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_matches_naive::case_2_naive,timeout,199.487,150.009,2026-11-05T05:02:21Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_matches_naive::case_3_decoder_reader,timeout,199.487,150.010,2026-11-05T05:04:51Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::encode_matches_naive::case_4_simd,timeout,199.487,150.010,2026-11-05T05:07:21Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::estimate_via_u128_inflation::case_1_general_purpose,success,199.487,4.542,2026-11-05T05:07:25Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::estimate_via_u128_inflation::case_2_naive,success,199.487,4.521,2026-11-05T05:07:30Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::estimate_via_u128_inflation::case_3_decoder_reader,success,199.487,4.539,2026-11-05T05:07:34Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::estimate_via_u128_inflation::case_4_simd,success,199.487,4.542,2026-11-05T05:07:39Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::inner_decode_reports_padding_position::case_1_general_purpose,timeout,199.487,150.010,2026-11-05T05:10:09Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::inner_decode_reports_padding_position::case_2_naive,timeout,199.487,150.011,2026-11-05T05:12:39Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::inner_decode_reports_padding_position::case_3_decoder_reader,timeout,199.487,150.010,2026-11-05T05:15:09Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::inner_decode_reports_padding_position::case_4_simd,timeout,199.487,150.010,2026-11-05T05:17:39Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::miri_quick_test::case_1_simd::alphabet_1_CommonAlphabet__Standard,success,199.487,6.168,2026-11-05T05:17:45Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::miri_quick_test::case_1_simd::alphabet_2_CommonAlphabet__UrlSafe,success,199.487,6.182,2026-11-05T05:17:51Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::rfc_test_vectors_std_alphabet::case_1_general_purpose,success,199.487,4.378,2026-11-05T05:17:56Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::rfc_test_vectors_std_alphabet::case_2_naive,success,199.487,4.361,2026-11-05T05:18:00Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::rfc_test_vectors_std_alphabet::case_3_decoder_reader,success,199.487,4.425,2026-11-05T05:18:05Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::rfc_test_vectors_std_alphabet::case_4_simd,success,199.487,4.387,2026-11-05T05:18:09Z,50233196.0,,
+experimental-bsan,base64-0.23.1,engine::tests::roundtrip_random_alphabet::case_1_general_purpose,timeout,199.487,150.010,2026-11-05T05:20:39Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::roundtrip_random_alphabet::case_2_naive,timeout,199.487,150.010,2026-11-05T05:23:09Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::roundtrip_random_alphabet::case_3_decoder_reader,timeout,199.487,150.011,2026-11-05T05:25:39Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::roundtrip_random_alphabet::case_4_simd,timeout,199.487,150.010,2026-11-05T05:28:09Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::roundtrip_weird_alphabet::case_1_general_purpose,timeout,199.487,150.010,2026-11-05T05:30:39Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::roundtrip_weird_alphabet::case_2_naive,timeout,199.487,150.010,2026-11-05T05:33:09Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,engine::tests::roundtrip_weird_alphabet::case_3_decoder_reader,timeout,199.487,150.010,2026-11-05T05:35:39Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,read::decoder_tests::handles_short_read_from_delegate,timeout,199.487,150.009,2026-11-05T05:38:09Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,read::decoder_tests::internal_padding_anywhere_error,timeout,199.487,150.009,2026-11-05T05:40:39Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,read::decoder_tests::internal_padding_error_with_short_read_concatenated_texts_invalid_byte_error,timeout,199.487,150.009,2026-11-05T05:43:09Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,read::decoder_tests::read_in_short_increments,timeout,199.487,150.012,2026-11-05T05:45:39Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,read::decoder_tests::read_in_short_increments_with_short_delegate_reads,timeout,199.487,150.010,2026-11-05T05:48:09Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,read::decoder_tests::reports_invalid_byte_correctly,timeout,199.487,150.011,2026-11-05T05:50:39Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,read::decoder_tests::reports_invalid_last_symbol_correctly,timeout,199.487,150.010,2026-11-05T05:53:10Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,read::decoder_tests::simple,success,199.487,4.763,2026-11-05T05:53:14Z,50233196.0,,
+experimental-bsan,base64-0.23.1,read::decoder_tests::trailing_junk,success,199.487,4.526,2026-11-05T05:53:19Z,50233196.0,,
+experimental-bsan,base64-0.23.1,roundtrip_decode_trailing_10_bytes,success,199.487,4.580,2026-11-05T05:53:23Z,50233196.0,,
+experimental-bsan,base64-0.23.1,roundtrip_random_no_padding,timeout,199.487,150.014,2026-11-05T05:55:53Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,roundtrip_random_short_no_padding,timeout,199.487,150.014,2026-11-05T05:58:23Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,roundtrip_random_short_standard,timeout,199.487,150.014,2026-11-05T06:00:54Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,roundtrip_random_with_fast_loop_standard,timeout,199.487,150.014,2026-11-05T06:03:24Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,tests::roundtrip_random_config_long,timeout,199.487,150.010,2026-11-05T06:05:54Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,tests::roundtrip_random_config_short,timeout,199.487,150.013,2026-11-05T06:08:24Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,write::encoder_string_writer::tests::every_possible_split_of_input,timeout,199.487,150.011,2026-11-05T06:10:54Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,write::encoder_string_writer::tests::incremental_writes,timeout,199.487,150.011,2026-11-05T06:13:24Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,write::encoder_tests::drop_calls_finish_for_you,success,199.487,4.388,2026-11-05T06:13:28Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::encode_1_2_3_bytes,success,199.487,4.381,2026-11-05T06:13:32Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::encode_nine_bytes_two_writes,success,199.487,4.388,2026-11-05T06:13:37Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::encode_one_then_five_bytes,success,199.487,4.397,2026-11-05T06:13:41Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::encode_one_then_two_bytes,success,199.487,4.383,2026-11-05T06:13:46Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::encode_random_config_matches_normal_encode_reasonable_input_len,timeout,199.487,150.010,2026-11-05T06:16:16Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,write::encoder_tests::encode_random_config_matches_normal_encode_tiny_input_len,timeout,199.487,150.009,2026-11-05T06:18:46Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,write::encoder_tests::encode_three_bytes,success,199.487,4.370,2026-11-05T06:18:50Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::encode_with_padding,success,199.487,4.369,2026-11-05T06:18:55Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::encode_with_padding_multiple_writes,success,199.487,4.355,2026-11-05T06:18:59Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::every_possible_split_of_input,timeout,199.487,150.010,2026-11-05T06:21:29Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,write::encoder_tests::finish_writes_extra_byte,success,199.487,4.342,2026-11-05T06:21:33Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::retrying_writes_that_error_with_interrupted_works,timeout,199.487,150.009,2026-11-05T06:24:03Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-0.23.1,write::encoder_tests::write_1_chunk_and_partial_encodes_only_complete_chunk,success,199.487,4.361,2026-11-05T06:24:08Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::write_1_chunk_encodes_complete_chunk,success,199.487,4.376,2026-11-05T06:24:12Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::write_2_partials_to_exactly_complete_chunk_encodes_complete_chunk,success,199.487,4.356,2026-11-05T06:24:16Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::write_partial_chunk_encodes_partial_chunk,success,199.487,4.347,2026-11-05T06:24:21Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::write_partial_then_enough_to_complete_chunk_and_another_chunk_and_another_partial_chunk_encodes_only_complete_chunks,success,199.487,4.362,2026-11-05T06:24:25Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::write_partial_then_enough_to_complete_chunk_and_another_chunk_encodes_complete_chunks,success,199.487,4.367,2026-11-05T06:24:30Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::write_partial_then_enough_to_complete_chunk_but_not_complete_another_chunk_encodes_complete_chunk_without_consuming_remaining,success,199.487,4.377,2026-11-05T06:24:34Z,50233196.0,,
+experimental-bsan,base64-0.23.1,write::encoder_tests::writes_that_only_write_part_of_input_and_sometimes_interrupt_produce_correct_encoded_data,timeout,199.487,150.010,2026-11-05T06:27:04Z,50233196.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

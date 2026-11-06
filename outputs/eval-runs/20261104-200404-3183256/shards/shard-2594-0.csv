@@ -1,0 +1,88 @@
+experimental-bsan,tan-0.16.0,annotations_pass_through_transient_expressions,success,64.347,11.456,2026-11-05T02:08:52Z,50239300.0,,
+experimental-bsan,tan-0.16.0,api::tests::has_tan_extension_strict_usage,success,64.347,11.489,2026-11-05T02:09:03Z,50239300.0,,
+experimental-bsan,tan-0.16.0,api::tests::has_tan_extension_usage,success,64.347,11.432,2026-11-05T02:09:15Z,50239300.0,,
+experimental-bsan,tan-0.16.0,api::tests::strip_tan_extension_usage,success,64.347,11.516,2026-11-05T02:09:26Z,50239300.0,,
+experimental-bsan,tan-0.16.0,check::tests::check_validates_array_expressions,success,64.347,11.589,2026-11-05T02:09:38Z,50239300.0,,
+experimental-bsan,tan-0.16.0,do_reports_intermediate_errors,test_failed,64.347,4.483,2026-11-05T02:09:43Z,50239300.0,panic,"thread 'do_reports_intermediate_errors' (60315) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval::util::tests::compute_module_file_paths_returns_only_strict_tan_files,success,64.347,11.586,2026-11-05T02:09:54Z,50239300.0,,
+experimental-bsan,tan-0.16.0,eval::util::tests::resolve_module_path_should_handle_relative_urls,test_failed,64.347,1.656,2026-11-05T02:09:56Z,50239300.0,panic,"thread 'eval::util::tests::resolve_module_path_should_handle_relative_urls' (61462) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_handles_function_with_no_params,test_failed,64.347,4.458,2026-11-05T02:10:00Z,50239300.0,panic,"thread 'eval_handles_function_with_no_params' (61894) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_processes_deep_data,test_failed,64.347,4.467,2026-11-05T02:10:05Z,50239300.0,panic,"thread 'eval_processes_deep_data' (62302) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_processes_empty_list,test_failed,64.347,4.463,2026-11-05T02:10:09Z,50239300.0,panic,"thread 'eval_processes_empty_list' (62811) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_processes_keyword_symbols,test_failed,64.347,4.472,2026-11-05T02:10:14Z,50239300.0,panic,"thread 'eval_processes_keyword_symbols' (63181) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_processes_map,test_failed,64.347,4.447,2026-11-05T02:10:18Z,50239300.0,panic,"thread 'eval_processes_map' (63665) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_processes_map_with_keys,test_failed,64.347,4.468,2026-11-05T02:10:23Z,50239300.0,panic,"thread 'eval_processes_map_with_keys' (64080) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_processes_multiline_strings,test_failed,64.347,4.439,2026-11-05T02:10:27Z,50239300.0,panic,"thread 'eval_processes_multiline_strings' (64281) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_processes_multiline_text,test_failed,64.347,4.462,2026-11-05T02:10:32Z,50239300.0,panic,"thread 'eval_processes_multiline_text' (64483) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_reports_let_errors,test_failed,64.347,4.468,2026-11-05T02:10:36Z,50239300.0,panic,"thread 'eval_reports_let_errors' (64754) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_should_handle_func_def_with_annotation,test_failed,64.347,4.466,2026-11-05T02:10:41Z,50239300.0,panic,"thread 'eval_should_handle_func_def_with_annotation' (66451) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_should_report_errors_in_args,test_failed,64.347,4.458,2026-11-05T02:10:45Z,50239300.0,panic,"thread 'eval_should_report_errors_in_args' (66795) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_should_report_errors_in_function_incovations,test_failed,64.347,4.440,2026-11-05T02:10:50Z,50239300.0,panic,"thread 'eval_should_report_errors_in_function_incovations' (67018) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_should_report_undefined_symbol_errors,test_failed,64.347,4.424,2026-11-05T02:10:54Z,50239300.0,panic,"thread 'eval_should_report_undefined_symbol_errors' (67291) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,eval_should_support_map_destructuring,test_failed,64.347,4.452,2026-11-05T02:10:59Z,50239300.0,panic,"thread 'eval_should_support_map_destructuring' (67849) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,expr::expr_iter::tests::expr_iter_performs_depth_first_iteration,success,64.347,11.644,2026-11-05T02:11:10Z,50239300.0,,
+experimental-bsan,tan-0.16.0,expr::expr_transform::tests::transform_with_identity_function,success,64.347,11.732,2026-11-05T02:11:22Z,50239300.0,,
+experimental-bsan,tan-0.16.0,expr::tests::expr_float_display,success,64.347,11.491,2026-11-05T02:11:33Z,50239300.0,,
+experimental-bsan,tan-0.16.0,expr::tests::expr_is_false,success,64.347,11.459,2026-11-05T02:11:45Z,50239300.0,,
+experimental-bsan,tan-0.16.0,expr::tests::expr_string_display,success,64.347,11.573,2026-11-05T02:11:56Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_handles_an_empty_string,success,64.347,11.672,2026-11-05T02:12:08Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_handles_escape_codes_in_strings,success,64.347,11.512,2026-11-05T02:12:20Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_handles_multiline_strings_with_double_quotes,success,64.347,11.605,2026-11-05T02:12:31Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_handles_number_separators,success,64.347,11.700,2026-11-05T02:12:43Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_handles_quasiquoting,success,64.347,11.695,2026-11-05T02:12:55Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_handles_shebang_line,success,64.347,11.682,2026-11-05T02:13:06Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_handles_signed_numbers,success,64.347,11.717,2026-11-05T02:13:18Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_parses_annotations,success,64.347,11.692,2026-11-05T02:13:30Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_parses_comments,success,64.347,11.666,2026-11-05T02:13:42Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_reports_unexpected_eof,success,64.347,11.696,2026-11-05T02:13:53Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_reports_unterminated_annotations,success,64.347,11.717,2026-11-05T02:14:05Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_reports_unterminated_strings,success,64.347,11.701,2026-11-05T02:14:17Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_returns_tokens,success,64.347,12.166,2026-11-05T02:14:29Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_scans_floats,success,64.347,11.710,2026-11-05T02:14:41Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_scans_ints,success,64.347,11.721,2026-11-05T02:14:52Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_scans_multiline_whitespace,success,64.347,11.737,2026-11-05T02:15:04Z,50239300.0,,
+experimental-bsan,tan-0.16.0,lex_scans_number_with_delimiters,success,64.347,11.667,2026-11-05T02:15:16Z,50239300.0,,
+experimental-bsan,tan-0.16.0,module::tests::new_modules_do_not_duplicate_prelude,success,64.347,11.723,2026-11-05T02:15:27Z,50239300.0,,
+experimental-bsan,tan-0.16.0,optimize::tests::optimize_rewrites_array_expressions,success,64.347,11.929,2026-11-05T02:15:39Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_detects_floats,success,64.347,11.721,2026-11-05T02:15:51Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_detects_ints,success,64.347,11.839,2026-11-05T02:16:03Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_a_simple_expression,success,64.347,11.809,2026-11-05T02:16:15Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_an_empty_token_list,success,64.347,11.747,2026-11-05T02:16:27Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_annotations,success,64.347,11.968,2026-11-05T02:16:39Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_ellipsis,success,64.347,11.833,2026-11-05T02:16:50Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_explicit_type_annotations,success,64.347,11.895,2026-11-05T02:17:02Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_float_range,success,64.347,11.704,2026-11-05T02:17:14Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_int_range,success,64.347,11.786,2026-11-05T02:17:26Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_more_complex_annotations,success,64.347,11.905,2026-11-05T02:17:38Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_multiline_whitespace,success,64.347,11.851,2026-11-05T02:17:50Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_multiple_expressions,success,64.347,11.864,2026-11-05T02:18:01Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_numbers_with_radix,success,64.347,11.924,2026-11-05T02:18:13Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_one,success,64.347,11.780,2026-11-05T02:18:25Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_handles_template_strings,success,64.347,11.750,2026-11-05T02:18:37Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_keeps_comments,success,64.347,11.800,2026-11-05T02:18:49Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_keeps_correct_range_annotations,success,64.347,11.839,2026-11-05T02:19:01Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_parses_arrays,success,64.347,11.833,2026-11-05T02:19:12Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_parses_maps,success,64.347,11.886,2026-11-05T02:19:24Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_removes_comments,success,64.347,11.761,2026-11-05T02:19:36Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_reports_multiple_number_errors,success,64.347,11.783,2026-11-05T02:19:48Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_reports_multiple_unexpected_tokens,success,64.347,11.786,2026-11-05T02:20:00Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_reports_number_errors,success,64.347,11.790,2026-11-05T02:20:12Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_reports_quote_errors,success,64.347,11.755,2026-11-05T02:20:23Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_reports_unexpected_tokens,success,64.347,11.773,2026-11-05T02:20:35Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parse_reports_unterminated_lists,success,64.347,11.767,2026-11-05T02:20:47Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parser::util::tests::desugar_key_path_usage,success,64.347,11.761,2026-11-05T02:20:59Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parser::util::tests::is_key_path_usage,success,64.347,11.827,2026-11-05T02:21:10Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parser::util::tests::is_key_symbol_usage,success,64.347,11.768,2026-11-05T02:21:22Z,50239300.0,,
+experimental-bsan,tan-0.16.0,parser::util::tests::is_potential_number_usage,success,64.347,11.702,2026-11-05T02:21:34Z,50239300.0,,
+experimental-bsan,tan-0.16.0,prune::tests::prune_removes_comments,success,64.347,11.965,2026-11-05T02:21:46Z,50239300.0,,
+experimental-bsan,tan-0.16.0,prune::tests::prune_transforms_template_strings,success,64.347,11.890,2026-11-05T02:21:58Z,50239300.0,,
+experimental-bsan,tan-0.16.0,resolver_handles_function_definition,test_failed,64.347,10.394,2026-11-05T02:22:08Z,50239300.0,panic,"thread 'resolver_handles_function_definition' (24615) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,scope_bindings_can_be_updated,success,64.347,11.769,2026-11-05T02:22:20Z,50239300.0,,
+experimental-bsan,tan-0.16.0,scope_binds_names_to_values,success,64.347,11.750,2026-11-05T02:22:32Z,50239300.0,,
+experimental-bsan,tan-0.16.0,should_eval_panic,test_failed,64.347,4.605,2026-11-05T02:22:36Z,50239300.0,panic,"thread 'should_eval_panic' (25639) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,should_not_bind_underscore,test_failed,64.347,4.568,2026-11-05T02:22:41Z,50239300.0,panic,"thread 'should_not_bind_underscore' (25834) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,util::args::tests::unpack_arg_none,success,64.347,11.843,2026-11-05T02:22:53Z,50239300.0,,
+experimental-bsan,tan-0.16.0,util::method::tests::compute_signature_from_annotations_usage,test_failed,64.347,1.717,2026-11-05T02:22:55Z,50239300.0,panic,"thread 'util::method::tests::compute_signature_from_annotations_usage' (26273) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,util::module_util::tests::require_module_usage,test_failed,64.347,1.696,2026-11-05T02:22:56Z,50239300.0,panic,"thread 'util::module_util::tests::require_module_usage' (26412) panicked at src/context.rs:58:33: env variable `TAN_ROOT` should be set"
+experimental-bsan,tan-0.16.0,util::tests::is_dynamically_scoped_should_detect_special_names,success,64.347,11.711,2026-11-05T02:23:08Z,50239300.0,,
+experimental-bsan,tan-0.16.0,util::tests::is_type_should_detect_type_symbols,success,64.347,11.685,2026-11-05T02:23:20Z,50239300.0,,

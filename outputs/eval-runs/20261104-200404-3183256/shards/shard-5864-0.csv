@@ -1,0 +1,38 @@
+experimental-bsan,yaque-0.6.6,header::test::encode_gibberish,success,70.280,1.542,2026-11-05T03:28:36Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,header::test::encode_length_ok,timeout,70.280,150.014,2026-11-05T03:31:06Z,50246000.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaque-0.6.6,mutex::test::test_mutex,success,70.280,1.722,2026-11-05T03:31:08Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,mutex::test::test_mutex_longer_data_first,success,70.280,1.831,2026-11-05T03:31:10Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::create_and_clear,success,70.280,1.718,2026-11-05T03:31:11Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::create_and_clear_async,success,70.280,1.872,2026-11-05T03:31:13Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::create_and_clear_fails,success,70.280,1.683,2026-11-05T03:31:15Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_dequeue_is_atomic,timeout,70.280,150.011,2026-11-05T03:33:45Z,50246000.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaque-0.6.6,queue::tests::test_enqueue,timeout,70.280,150.011,2026-11-05T03:36:15Z,50246000.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaque-0.6.6,queue::tests::test_enqueue_and_dequeue,timeout,70.280,150.013,2026-11-05T03:38:45Z,50246000.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaque-0.6.6,queue::tests::test_enqueue_dequeue_parallel,timeout,70.280,150.015,2026-11-05T03:41:15Z,50246000.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaque-0.6.6,queue::tests::test_enqueue_dequeue_parallel_with_batches,timeout,70.280,150.015,2026-11-05T03:43:45Z,50246000.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaque-0.6.6,queue::tests::test_enqueue_dequeue_parallel_with_max_queue_size,timeout,70.280,150.016,2026-11-05T03:46:15Z,50246000.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaque-0.6.6,queue::tests::test_enqueue_then_dequeue,timeout,70.280,150.016,2026-11-05T03:48:45Z,50246000.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaque-0.6.6,queue::tests::test_iterate,timeout,70.280,150.021,2026-11-05T03:51:15Z,50246000.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaque-0.6.6,queue::tests::test_max_queue_size,success,70.280,2.028,2026-11-05T03:51:17Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_max_queue_size_with_drain,success,70.280,5.628,2026-11-05T03:51:23Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_receive_with_timeout_and_end_transaction,success,70.280,1.486,2026-11-05T03:51:24Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_recv_batch_timeout_delayed_1,success,70.280,3.414,2026-11-05T03:51:28Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_recv_batch_timeout_delayed_2,success,70.280,3.842,2026-11-05T03:51:32Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_recv_batch_timeout_immediate,success,70.280,1.954,2026-11-05T03:51:34Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_recv_batch_timeout_nothing,success,70.280,2.858,2026-11-05T03:51:36Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_recv_timeout_delayed,success,70.280,2.883,2026-11-05T03:51:39Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_recv_timeout_immediate,success,70.280,1.882,2026-11-05T03:51:41Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_recv_timeout_nothing,success,70.280,2.791,2026-11-05T03:51:44Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_rollback,success,70.280,2.167,2026-11-05T03:51:46Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_small_queue_size,success,70.280,1.475,2026-11-05T03:51:48Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_small_segment_size,success,70.280,1.520,2026-11-05T03:51:49Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_trans_segment_transactions,success,70.280,43.226,2026-11-05T03:52:32Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_try_recv,success,70.280,4.446,2026-11-05T03:52:37Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_try_recv_batch,success,70.280,7.739,2026-11-05T03:52:45Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_try_recv_batch_up_to,success,70.280,48.755,2026-11-05T03:53:33Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_try_recv_batch_up_to_zero,success,70.280,1.826,2026-11-05T03:53:35Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,queue::tests::test_try_recv_empty_msg,success,70.280,1.826,2026-11-05T03:53:37Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,recovery::tests::test_recover_inexistent,success,70.280,1.504,2026-11-05T03:53:39Z,50246000.0,,
+experimental-bsan,yaque-0.6.6,recovery::tests::test_recover_while_open,timeout,70.280,150.017,2026-11-05T03:56:09Z,50246000.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaque-0.6.6,recovery::tests::test_unlock,timeout,70.280,150.015,2026-11-05T03:58:39Z,50246000.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yaque-0.6.6,recovery::tests::test_unlock_inexistent,success,70.280,1.457,2026-11-05T03:58:40Z,50246000.0,,

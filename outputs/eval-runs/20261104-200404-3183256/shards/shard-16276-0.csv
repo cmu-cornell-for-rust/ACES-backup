@@ -1,0 +1,4 @@
+experimental-bsan,alloy-rpc-client-0.5.4,builtin::test::test_parsing_ipc,test_failed,381.130,1.997,2026-11-05T07:44:27Z,50260639.0,panic,"thread 'builtin::test::test_parsing_ipc' (37270) panicked at src/builtin.rs:263:48: called `Result::unwrap()` on an `Err` value: SpawnError(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,alloy-rpc-client-0.5.4,builtin::test::test_parsing_urls,success,381.130,2.074,2026-11-05T07:44:29Z,50260639.0,,
+experimental-bsan,alloy-rpc-client-0.5.4,builtin::test::test_parsing_ws,success,381.130,2.024,2026-11-05T07:44:31Z,50260639.0,,
+experimental-bsan,alloy-rpc-client-0.5.4,client::tests::test_client_with_poll_interval,success,381.130,1.907,2026-11-05T07:44:33Z,50260639.0,,

@@ -1,0 +1,5 @@
+experimental-bsan,dnd-character-0.18.1,choosable_custom_level_feature_option_serialization,success,318.356,6.246,2026-11-05T07:29:11Z,50259745.0,,
+experimental-bsan,dnd-character-0.18.1,get_level_features,test_failed,318.356,15.748,2026-11-05T07:29:27Z,50259745.0,panic,"thread 'get_level_features' (34909) panicked at tests/api_test.rs:34:10: Error in API Request: Schema"
+experimental-bsan,dnd-character-0.18.1,schema_compat_0_13_17,success,318.356,6.553,2026-11-05T07:29:33Z,50259745.0,,
+experimental-bsan,dnd-character-0.18.1,test_character_progression_to_level_20,test_failed,318.356,11.324,2026-11-05T07:29:45Z,50259745.0,panic,"thread 'test_character_progression_to_level_20' (36019) panicked at tests/level.rs:156:9: Failed to level up to level 2: Some(""Failed to get choosable features"")"
+experimental-bsan,dnd-character-0.18.1,wizard_spells,test_failed,318.356,9.589,2026-11-05T07:29:54Z,50259745.0,panic,"thread 'wizard_spells' (39037) panicked at tests/api_test.rs:199:10: Error in API Request: Schema"

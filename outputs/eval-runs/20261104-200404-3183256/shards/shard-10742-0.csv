@@ -1,0 +1,14 @@
+experimental-bsan,crux_core-0.10.0,app_tester_new,success,255.883,8.786,2026-11-05T05:29:41Z,50252955.0,,
+experimental-bsan,crux_core-0.10.0,capability::channel::tests::test_channels,success,255.883,8.771,2026-11-05T05:29:50Z,50252955.0,,
+experimental-bsan,crux_core-0.10.0,capability::executor::tests::test_multithreaded_executor,timeout,255.883,150.047,2026-11-05T05:32:20Z,50252955.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,crux_core-0.10.0,capability::executor::tests::test_task_does_not_leak,success,255.883,8.727,2026-11-05T05:32:29Z,50252955.0,,
+experimental-bsan,crux_core-0.10.0,capability::shell_request::tests::test_effect_future,success,255.883,8.833,2026-11-05T05:32:37Z,50252955.0,,
+experimental-bsan,crux_core-0.10.0,capability::shell_stream::tests::test_shell_stream,success,255.883,8.741,2026-11-05T05:32:46Z,50252955.0,,
+experimental-bsan,crux_core-0.10.0,test::generate_types,test_failed,255.883,11.472,2026-11-05T05:32:58Z,50252955.0,panic,"thread 'test::generate_types' (72121) panicked at tests/typegen.rs:62:14: typescript type gen failed: PnpmNotFound(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,crux_core-0.10.0,test::test_autodiscovery,success,255.883,8.990,2026-11-05T05:33:07Z,50252955.0,,
+experimental-bsan,crux_core-0.10.0,tests::doesnt_crash_when_core_is_dropped,success,255.883,8.779,2026-11-05T05:33:15Z,50252955.0,,
+experimental-bsan,crux_core-0.10.0,tests::event_effect_loop,success,255.883,8.767,2026-11-05T05:33:24Z,50252955.0,,
+experimental-bsan,crux_core-0.10.0,tests::fetches_a_tree,success,255.883,9.136,2026-11-05T05:33:33Z,50252955.0,,
+experimental-bsan,crux_core-0.10.0,tests::updates_state_once_both_effects_are_done,success,255.883,8.745,2026-11-05T05:33:42Z,50252955.0,,
+experimental-bsan,crux_core-0.10.0,typegen::tests::test_typegen_for_uuid_with_samples,success,255.883,8.733,2026-11-05T05:33:51Z,50252955.0,,
+experimental-bsan,crux_core-0.10.0,typegen::tests::test_typegen_for_uuid_without_samples,success,255.883,8.690,2026-11-05T05:34:00Z,50252955.0,,

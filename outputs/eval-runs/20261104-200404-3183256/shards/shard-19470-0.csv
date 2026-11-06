@@ -1,0 +1,2 @@
+experimental-bsan,stardust-xr-0.50.0,client::client_connect,test_failed,1109.250,1.911,2026-11-05T09:24:52Z,50264976.0,panic,"thread 'client::client_connect' (44984) panicked at src/client.rs:28:10: Socket not connected: Kind(AddrNotAvailable)"
+experimental-bsan,stardust-xr-0.50.0,server::server_get_free_socket_path,test_failed,1109.250,2.012,2026-11-05T09:24:54Z,50264976.0,panic,"thread 'server::server_get_free_socket_path' (45113) panicked at src/server.rs:52:48: Unable to set up socket!"

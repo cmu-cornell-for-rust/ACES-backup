@@ -1,0 +1,11 @@
+experimental-bsan,archwiki-rs-3.2.5,formats::html::tests::test_convert_page_to_html,success,517.362,4.918,2026-11-05T06:03:17Z,50254602.0,,
+experimental-bsan,archwiki-rs-3.2.5,formats::markdown::tests::test_convert_page_to_markdown,success,517.362,57.295,2026-11-05T06:04:14Z,50254602.0,,
+experimental-bsan,archwiki-rs-3.2.5,formats::plain_text::tests::test_convert_page_to_plain_text,success,517.362,5.590,2026-11-05T06:04:20Z,50254602.0,,
+experimental-bsan,archwiki-rs-3.2.5,langs::tests::test_format_lang_table,success,517.362,4.719,2026-11-05T06:04:24Z,50254602.0,,
+experimental-bsan,archwiki-rs-3.2.5,search::tests::test_format_open_search_table,success,517.362,4.651,2026-11-05T06:04:29Z,50254602.0,,
+experimental-bsan,archwiki-rs-3.2.5,search::tests::test_format_text_search_table,success,517.362,4.705,2026-11-05T06:04:34Z,50254602.0,,
+experimental-bsan,archwiki-rs-3.2.5,search::tests::test_process_open_search,success,517.362,4.545,2026-11-05T06:04:38Z,50254602.0,,
+experimental-bsan,archwiki-rs-3.2.5,test_cli_info_cmd,success,517.362,7.031,2026-11-05T06:04:45Z,50254602.0,,
+experimental-bsan,archwiki-rs-3.2.5,test_cli_list_languages_cmd,test_failed,517.362,7.102,2026-11-05T06:04:53Z,50254602.0,panic,"thread 'test_cli_list_languages_cmd' (94404) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+experimental-bsan,archwiki-rs-3.2.5,test_cli_read_page_cmd,test_failed,517.362,19.170,2026-11-05T06:05:12Z,50254602.0,panic,"thread 'test_cli_read_page_cmd' (94518) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+experimental-bsan,archwiki-rs-3.2.5,test_cli_search_cmd,test_failed,517.362,7.038,2026-11-05T06:05:19Z,50254602.0,panic,"thread 'test_cli_search_cmd' (95541) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."

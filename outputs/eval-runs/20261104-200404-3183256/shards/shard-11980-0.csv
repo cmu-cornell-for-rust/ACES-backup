@@ -1,0 +1,11 @@
+experimental-bsan,cargo-lambda-deploy-1.9.2,functions::tests::test_create_function_direct_upload,success,2938.073,7.683,2026-11-05T06:44:43Z,50254674.0,,
+experimental-bsan,cargo-lambda-deploy-1.9.2,functions::tests::test_create_function_s3_upload,success,2938.073,10.297,2026-11-05T06:44:53Z,50254674.0,,
+experimental-bsan,cargo-lambda-deploy-1.9.2,functions::tests::test_set_log_retention,success,2938.073,6.658,2026-11-05T06:45:00Z,50254674.0,,
+experimental-bsan,cargo-lambda-deploy-1.9.2,functions::tests::test_set_log_retention_existing_group,success,2938.073,6.683,2026-11-05T06:45:07Z,50254674.0,,
+experimental-bsan,cargo-lambda-deploy-1.9.2,functions::tests::test_update_function_code_direct_upload,success,2938.073,7.028,2026-11-05T06:45:14Z,50254674.0,,
+experimental-bsan,cargo-lambda-deploy-1.9.2,functions::tests::test_update_function_code_with_s3,success,2938.073,9.984,2026-11-05T06:45:24Z,50254674.0,,
+experimental-bsan,cargo-lambda-deploy-1.9.2,functions::tests::test_update_function_config,success,2938.073,5.825,2026-11-05T06:45:29Z,50254674.0,,
+experimental-bsan,cargo-lambda-deploy-1.9.2,functions::tests::test_update_function_config_no_changes,success,2938.073,3.640,2026-11-05T06:45:33Z,50254674.0,,
+experimental-bsan,cargo-lambda-deploy-1.9.2,functions::tests::test_update_function_config_with_merge_env,success,2938.073,6.014,2026-11-05T06:45:39Z,50254674.0,,
+experimental-bsan,cargo-lambda-deploy-1.9.2,roles::tests::test_create_function_role,success,2938.073,18.758,2026-11-05T06:45:58Z,50254674.0,,
+experimental-bsan,cargo-lambda-deploy-1.9.2,tests::test_load_archive_from_binary_path,test_failed,2938.073,2.129,2026-11-05T06:46:00Z,50254674.0,panic,"thread 'tests::test_load_archive_from_binary_path' (75748) panicked at src/lib.rs:157:85: called `Result::unwrap()` on an `Err` value: FailedCmdExecution(CargoMetadata { stderr: ""error: manifest path `../../tests/fixtures/examples-package/Cargo.toml` does not exist\n"" })"

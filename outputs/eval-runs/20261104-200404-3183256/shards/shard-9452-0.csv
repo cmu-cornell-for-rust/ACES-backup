@@ -1,0 +1,18 @@
+experimental-bsan,erl_dist-0.8.0,epmd::tests::epmd_client_works,test_failed,85.427,1.737,2026-11-05T05:12:27Z,50251282.0,panic,"thread 'epmd::tests::epmd_client_works' (1165) panicked at src/epmd.rs:442:18: failed to run a test erlang node: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,erl_dist-0.8.0,flags::tests::bitand_intersects_flags,success,85.427,1.585,2026-11-05T05:12:29Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::bitor_assign_combines_flags,success,85.427,1.587,2026-11-05T05:12:31Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::bitor_combines_flags,success,85.427,1.601,2026-11-05T05:12:32Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::clone_and_copy,success,85.427,1.589,2026-11-05T05:12:34Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::contains_empty_is_always_true,success,85.427,1.577,2026-11-05T05:12:35Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::contains_multiple_flags,success,85.427,1.581,2026-11-05T05:12:37Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::contains_single_flag,success,85.427,1.594,2026-11-05T05:12:39Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::debug_format,success,85.427,1.599,2026-11-05T05:12:40Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::default_equals_mandatory,success,85.427,1.588,2026-11-05T05:12:42Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::flag_bit_values,success,85.427,1.573,2026-11-05T05:12:43Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::from_bits_truncate_preserves_unknown_bits,success,85.427,1.585,2026-11-05T05:12:45Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::from_bits_truncate_roundtrip,success,85.427,1.586,2026-11-05T05:12:47Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::hash_consistent,success,85.427,1.592,2026-11-05T05:12:48Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::high_and_low_bits_coexist,success,85.427,1.583,2026-11-05T05:12:50Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,flags::tests::mandatory_contains_expected_flags,success,85.427,1.588,2026-11-05T05:12:51Z,50251282.0,,
+experimental-bsan,erl_dist-0.8.0,handshake::tests::client_side_handshake_works,test_failed,85.427,1.747,2026-11-05T05:12:53Z,50251282.0,panic,"thread 'handshake::tests::client_side_handshake_works' (6802) panicked at src/handshake.rs:669:18: failed to run a test erlang node: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,erl_dist-0.8.0,handshake::tests::server_side_handshake_works,test_failed,85.427,11.757,2026-11-05T05:13:05Z,50251282.0,gc,"test handshake::tests::server_side_handshake_works ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."

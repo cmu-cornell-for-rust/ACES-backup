@@ -1,0 +1,47 @@
+experimental-bsan,hibitset-0.6.4,atomic::atomic_set_test::add_atomic,success,30.112,22.228,2026-11-05T03:05:06Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,atomic::atomic_set_test::add_atomic_100k,timeout,30.112,150.031,2026-11-05T03:07:36Z,50244250.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hibitset-0.6.4,atomic::atomic_set_test::clear,success,30.112,64.479,2026-11-05T03:08:40Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,atomic::atomic_set_test::insert,success,30.112,21.315,2026-11-05T03:09:02Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,atomic::atomic_set_test::insert_100k,timeout,30.112,150.025,2026-11-05T03:11:32Z,50244250.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hibitset-0.6.4,atomic::atomic_set_test::iter,timeout,30.112,150.026,2026-11-05T03:14:02Z,50244250.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hibitset-0.6.4,atomic::atomic_set_test::iter_odd_even,timeout,30.112,150.029,2026-11-05T03:16:32Z,50244250.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hibitset-0.6.4,atomic::atomic_set_test::remove,success,30.112,145.516,2026-11-05T03:18:57Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,iter::drain::drain_all,success,30.112,5.760,2026-11-05T03:19:03Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,iter::parallel::test_bit_producer::max_1_splitting_of_two_top_bits,timeout,30.112,150.017,2026-11-05T03:21:33Z,50244250.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hibitset-0.6.4,iter::parallel::test_bit_producer::max_2_splitting_of_two_top_bits,timeout,30.112,150.016,2026-11-05T03:24:03Z,50244250.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hibitset-0.6.4,iter::parallel::test_bit_producer::max_3_splitting_of_two_top_bits,timeout,30.112,150.017,2026-11-05T03:26:33Z,50244250.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hibitset-0.6.4,iter::tests::iterator_clear_empties,success,30.112,99.822,2026-11-05T03:28:13Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,iter::tests::iterator_clone,success,30.112,1.534,2026-11-05T03:28:15Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,ops::tests::and_assign,success,30.112,47.824,2026-11-05T03:29:02Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,ops::tests::and_assign_random,success,30.112,77.213,2026-11-05T03:30:20Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,ops::tests::and_assign_specific,success,30.112,2.361,2026-11-05T03:30:22Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,ops::tests::and_assign_with_modification,success,30.112,1.542,2026-11-05T03:30:23Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,ops::tests::operators,success,30.112,1.659,2026-11-05T03:30:25Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,ops::tests::or_assign,success,30.112,101.549,2026-11-05T03:32:07Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,ops::tests::or_assign_random,timeout,30.112,150.012,2026-11-05T03:34:37Z,50244250.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hibitset-0.6.4,ops::tests::xor,success,30.112,1.627,2026-11-05T03:34:38Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,ops::tests::xor_assign,success,30.112,106.406,2026-11-05T03:36:25Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,ops::tests::xor_assign_random,timeout,30.112,150.011,2026-11-05T03:38:55Z,50244250.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hibitset-0.6.4,ops::tests::xor_assign_specific,success,30.112,2.336,2026-11-05T03:38:57Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,test_parallel::par_iter_clusters,success,30.112,3.440,2026-11-05T03:39:01Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,test_parallel::par_iter_odd_even,success,30.112,43.960,2026-11-05T03:39:45Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,test_parallel::par_iter_one,timeout,30.112,150.017,2026-11-05T03:42:15Z,50244250.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hibitset-0.6.4,test_parallel::par_iter_random_add,timeout,30.112,150.011,2026-11-05T03:44:45Z,50244250.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hibitset-0.6.4,tests::insert,success,30.112,2.138,2026-11-05T03:44:47Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,tests::insert_100k,success,30.112,63.145,2026-11-05T03:45:50Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,tests::iter,success,30.112,57.917,2026-11-05T03:46:48Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,tests::iter_clusters,success,30.112,1.942,2026-11-05T03:46:50Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,tests::iter_odd_even,success,30.112,42.966,2026-11-05T03:47:33Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,tests::iter_random_add,success,30.112,102.298,2026-11-05T03:49:15Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,tests::not,success,30.112,4.341,2026-11-05T03:49:20Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,tests::remove,success,30.112,2.920,2026-11-05T03:49:22Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,util::test_average_ones::average_ones_agree_u32_u64,success,30.112,1.673,2026-11-05T03:49:24Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,util::test_average_ones::empty_average_ones_u32,success,30.112,1.528,2026-11-05T03:49:26Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,util::test_average_ones::empty_average_ones_u64,success,30.112,1.520,2026-11-05T03:49:27Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,util::test_average_ones::parity_0_average_ones_u32,success,30.112,65.002,2026-11-05T03:50:32Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,util::test_average_ones::parity_0_average_ones_u64,success,30.112,61.244,2026-11-05T03:51:33Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,util::test_average_ones::parity_1_average_ones_u32,success,30.112,65.238,2026-11-05T03:52:39Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,util::test_average_ones::parity_1_average_ones_u64,success,30.112,61.731,2026-11-05T03:53:40Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,util::test_average_ones::singleton_average_ones_u32,success,30.112,1.526,2026-11-05T03:53:42Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,util::test_average_ones::singleton_average_ones_u64,success,30.112,1.537,2026-11-05T03:53:44Z,50244250.0,,
+experimental-bsan,hibitset-0.6.4,util::test_average_ones::specific_values,success,30.112,1.528,2026-11-05T03:53:45Z,50244250.0,,

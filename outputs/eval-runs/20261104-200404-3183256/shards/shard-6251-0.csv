@@ -1,0 +1,36 @@
+experimental-bsan,prost-build-0.13.3,ast::tests::test_codeblocks,success,188.824,1.634,2026-11-05T03:38:00Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,ast::tests::test_comment_append_with_indent_leaves_prespaced_lines,success,188.824,13.689,2026-11-05T03:38:13Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,ast::tests::test_comment_append_with_indent_sanitizes_comment_doc_url,success,188.824,13.515,2026-11-05T03:38:27Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,ast::tests::test_comment_append_with_indent_sanitizes_square_brackets,success,188.824,14.547,2026-11-05T03:38:41Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,code_generator::c_escaping::tests::test_unescape_c_escape_string,success,188.824,1.610,2026-11-05T03:38:43Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,code_generator::c_escaping::tests::test_unescape_c_escape_string_incomplete_hex_value,success,188.824,1.613,2026-11-05T03:38:45Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,config::tests::test_error_incorrect_skip_protoc_run,success,188.824,1.593,2026-11-05T03:38:46Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,config::tests::test_error_non_existing_file_descriptor_set,success,188.824,1.615,2026-11-05T03:38:48Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,config::tests::test_error_protoc_failed,test_failed,188.824,1.763,2026-11-05T03:38:50Z,50246649.0,panic,"thread 'config::tests::test_error_protoc_failed' (21126) panicked at src/config.rs:1307:9: assertion 'starts_with` failed:"
+experimental-bsan,prost-build-0.13.3,config::tests::test_error_protoc_not_executable,success,188.824,1.648,2026-11-05T03:38:51Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,config::tests::test_error_protoc_not_found,success,188.824,1.644,2026-11-05T03:38:53Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,config::tests::test_error_text_incorrect_file_descriptor_set,success,188.824,1.637,2026-11-05T03:38:55Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,config::tests::test_error_unset_out_dir,success,188.824,1.632,2026-11-05T03:38:56Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,extern_paths::tests::test_error_duplicate,success,188.824,1.605,2026-11-05T03:38:58Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,extern_paths::tests::test_error_fully_qualified,success,188.824,1.623,2026-11-05T03:38:59Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,extern_paths::tests::test_error_invalid_path,success,188.824,1.620,2026-11-05T03:39:01Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,extern_paths::tests::test_extern_paths,success,188.824,1.754,2026-11-05T03:39:03Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,extern_paths::tests::test_well_known_types,success,188.824,1.722,2026-11-05T03:39:05Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,ident::tests::test_sanitize_identifier,success,188.824,1.640,2026-11-05T03:39:06Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,ident::tests::test_strip_enum_prefix,success,188.824,1.623,2026-11-05T03:39:08Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,ident::tests::test_to_snake,success,188.824,1.896,2026-11-05T03:39:10Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,ident::tests::test_to_snake_non_raw_keyword,success,188.824,1.631,2026-11-05T03:39:11Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,ident::tests::test_to_snake_raw_keyword,success,188.824,1.832,2026-11-05T03:39:13Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,ident::tests::test_to_upper_camel,success,188.824,1.692,2026-11-05T03:39:15Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,path::tests::test_get_best,success,188.824,1.699,2026-11-05T03:39:17Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,path::tests::test_get_keep_order,success,188.824,1.674,2026-11-05T03:39:18Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,path::tests::test_get_matches_sub_path,success,188.824,1.738,2026-11-05T03:39:20Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,path::tests::test_prefixes,success,188.824,1.636,2026-11-05T03:39:22Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,path::tests::test_suffixes,success,188.824,1.645,2026-11-05T03:39:23Z,50246649.0,,
+experimental-bsan,prost-build-0.13.3,tests::deterministic_include_file,test_failed,188.824,1.810,2026-11-05T03:39:25Z,50246649.0,panic,"thread 'tests::deterministic_include_file' (22499) panicked at src/lib.rs:550:18: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Could not find `protoc`. If `protoc` is installed, try setting the `PROTOC` environment variable to the path of the `protoc` binary. To inst"
+experimental-bsan,prost-build-0.13.3,tests::finalize_package,test_failed,188.824,1.799,2026-11-05T03:39:27Z,50246649.0,panic,"thread 'tests::finalize_package' (22560) panicked at src/lib.rs:412:14: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Could not find `protoc`. If `protoc` is installed, try setting the `PROTOC` environment variable to the path of the `protoc` binary. To install it on "
+experimental-bsan,prost-build-0.13.3,tests::smoke_test,test_failed,188.824,1.804,2026-11-05T03:39:29Z,50246649.0,panic,"thread 'tests::smoke_test' (22628) panicked at src/lib.rs:390:14: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Could not find `protoc`. If `protoc` is installed, try setting the `PROTOC` environment variable to the path of the `protoc` binary. To install it on Debian"
+experimental-bsan,prost-build-0.13.3,tests::test_generate_field_attributes,test_failed,188.824,1.813,2026-11-05T03:39:31Z,50246649.0,panic,"thread 'tests::test_generate_field_attributes' (22698) panicked at src/lib.rs:513:14: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Could not find `protoc`. If `protoc` is installed, try setting the `PROTOC` environment variable to the path of the `protoc` binary. To "
+experimental-bsan,prost-build-0.13.3,tests::test_generate_message_attributes,test_failed,188.824,1.819,2026-11-05T03:39:32Z,50246649.0,panic,"thread 'tests::test_generate_message_attributes' (22758) panicked at src/lib.rs:437:14: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Could not find `protoc`. If `protoc` is installed, try setting the `PROTOC` environment variable to the path of the `protoc` binary. T"
+experimental-bsan,prost-build-0.13.3,tests::test_generate_no_empty_outputs,test_failed,188.824,1.815,2026-11-05T03:39:34Z,50246649.0,panic,"thread 'tests::test_generate_no_empty_outputs' (22832) panicked at src/lib.rs:482:14: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Could not find `protoc`. If `protoc` is installed, try setting the `PROTOC` environment variable to the path of the `protoc` binary. To "
+experimental-bsan,prost-build-0.13.3,tests::write_includes,success,188.824,1.832,2026-11-05T03:39:36Z,50246649.0,,

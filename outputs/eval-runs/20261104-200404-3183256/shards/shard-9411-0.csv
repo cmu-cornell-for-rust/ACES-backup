@@ -1,0 +1,18 @@
+experimental-bsan,cargo_metadata-0.18.1,advanced_feature_configuration,test_failed,68.882,5.538,2026-11-05T05:12:14Z,50251233.0,panic,"thread 'advanced_feature_configuration' (32872) panicked at tests/test_samples.rs:592:32: called `Result::unwrap()` on an `Err` value: CargoMetadata { stderr: ""error: manifest path `tests/all/Cargo.toml` does not exist\n"" }"
+experimental-bsan,cargo_metadata-0.18.1,all_the_fields,test_failed,68.882,5.659,2026-11-05T05:12:19Z,50251233.0,panic,"thread 'all_the_fields' (33217) panicked at tests/test_samples.rs:200:10: called `Result::unwrap()` on an `Err` value: CargoMetadata { stderr: ""error: manifest path `tests/all/Cargo.toml` does not exist\n"" }"
+experimental-bsan,cargo_metadata-0.18.1,alt_registry,success,68.882,4.698,2026-11-05T05:12:24Z,50251233.0,,
+experimental-bsan,cargo_metadata-0.18.1,basic_workspace_root_package_exists,test_failed,68.882,5.113,2026-11-05T05:12:29Z,50251233.0,panic,"thread 'basic_workspace_root_package_exists' (33667) panicked at tests/test_samples.rs:663:10: called `Result::unwrap()` on an `Err` value: CargoMetadata { stderr: ""error: manifest path `tests/basic_workspace/Cargo.toml` does not exist\n"" }"
+experimental-bsan,cargo_metadata-0.18.1,builder_interface,timeout,68.882,150.018,2026-11-05T05:14:59Z,50251233.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo_metadata-0.18.1,cargo_path,success,68.882,5.014,2026-11-05T05:15:04Z,50251233.0,,
+experimental-bsan,cargo_metadata-0.18.1,current_dir,test_failed,68.882,5.295,2026-11-05T05:15:10Z,50251233.0,panic,"thread 'current_dir' (41266) panicked at tests/test_samples.rs:557:10: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,cargo_metadata-0.18.1,debuginfo_variants,success,68.882,6.843,2026-11-05T05:15:17Z,50251233.0,,
+experimental-bsan,cargo_metadata-0.18.1,depkind_to_string,success,68.882,5.692,2026-11-05T05:15:22Z,50251233.0,,
+experimental-bsan,cargo_metadata-0.18.1,error1,test_failed,68.882,3.996,2026-11-05T05:15:26Z,50251233.0,panic,"thread 'error1' (41986) panicked at tests/selftest.rs:87:49: assertion `left == right` failed"
+experimental-bsan,cargo_metadata-0.18.1,error2,success,68.882,5.700,2026-11-05T05:15:32Z,50251233.0,,
+experimental-bsan,cargo_metadata-0.18.1,metadata,success,68.882,6.564,2026-11-05T05:15:39Z,50251233.0,,
+experimental-bsan,cargo_metadata-0.18.1,metadata_deps,success,68.882,45.306,2026-11-05T05:16:24Z,50251233.0,,
+experimental-bsan,cargo_metadata-0.18.1,missing_workspace_default_members,success,68.882,5.260,2026-11-05T05:16:29Z,50251233.0,,
+experimental-bsan,cargo_metadata-0.18.1,old_minimal,success,68.882,5.741,2026-11-05T05:16:35Z,50251233.0,,
+experimental-bsan,cargo_metadata-0.18.1,parse_stream_is_robust,success,68.882,5.669,2026-11-05T05:16:41Z,50251233.0,,
+experimental-bsan,cargo_metadata-0.18.1,test::test_deserialize_rust_version,success,68.882,5.447,2026-11-05T05:16:46Z,50251233.0,,
+experimental-bsan,cargo_metadata-0.18.1,workspace_default_packages,success,68.882,44.913,2026-11-05T05:17:31Z,50251233.0,,

@@ -1,0 +1,8 @@
+experimental-bsan,litime-3.3.0,formatter::test::issue_4,test_failed,95.428,3.633,2026-11-05T06:42:50Z,50257092.0,panic,"thread 'formatter::test::issue_4' (61910) panicked at src/formatter.rs:324:9: assertion `left == right` failed"
+experimental-bsan,litime-3.3.0,formatter::test::issue_6,test_failed,95.428,2.394,2026-11-05T06:42:53Z,50257092.0,panic,"thread 'formatter::test::issue_6' (61968) panicked at src/formatter.rs:356:9: assertion `left == right` failed"
+experimental-bsan,litime-3.3.0,formatter::test::no_end,test_failed,95.428,1.907,2026-11-05T06:42:55Z,50257092.0,panic,"thread 'formatter::test::no_end' (62025) panicked at src/formatter.rs:290:9: assertion `left == right` failed"
+experimental-bsan,litime-3.3.0,formatter::test::no_start,test_failed,95.428,1.968,2026-11-05T06:42:57Z,50257092.0,panic,"thread 'formatter::test::no_start' (62082) panicked at src/formatter.rs:263:9: assertion `left == right` failed"
+experimental-bsan,litime-3.3.0,formatter::test::short_quote,test_failed,95.428,1.943,2026-11-05T06:42:59Z,50257092.0,panic,"thread 'formatter::test::short_quote' (62137) panicked at src/formatter.rs:236:9: assertion `left == right` failed"
+experimental-bsan,litime-3.3.0,formatter::test::wrapped_quote,test_failed,95.428,2.118,2026-11-05T06:43:01Z,50257092.0,panic,"thread 'formatter::test::wrapped_quote' (62194) panicked at src/formatter.rs:208:9: assertion `left == right` failed"
+experimental-bsan,litime-3.3.0,test_get_minute_nsfw,timeout,95.428,150.019,2026-11-05T06:45:31Z,50257092.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,litime-3.3.0,test_get_minute_sfw,timeout,95.428,150.018,2026-11-05T06:48:01Z,50257092.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

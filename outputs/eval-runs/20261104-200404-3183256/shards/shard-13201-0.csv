@@ -1,0 +1,9 @@
+experimental-bsan,pingora-header-serde-0.9.0,dict::test::test_deserialize_with_dict,test_failed,54.945,1.635,2026-11-05T06:33:07Z,50256519.0,panic,"thread 'dict::test::test_deserialize_with_dict' (67192) panicked at src/dict.rs:26:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,pingora-header-serde-0.9.0,dict::test::test_ser_de_with_dict,test_failed,54.945,1.638,2026-11-05T06:33:08Z,50256519.0,panic,"thread 'dict::test::test_ser_de_with_dict' (67329) panicked at src/dict.rs:26:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,pingora-header-serde-0.9.0,dict::test::test_ser_with_dict,test_failed,54.945,1.625,2026-11-05T06:33:10Z,50256519.0,panic,"thread 'dict::test::test_ser_with_dict' (67453) panicked at src/dict.rs:26:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,pingora-header-serde-0.9.0,tests::test_empty_header_wire_format,success,54.945,2.969,2026-11-05T06:33:13Z,50256519.0,,
+experimental-bsan,pingora-header-serde-0.9.0,tests::test_no_headers,success,54.945,2.973,2026-11-05T06:33:16Z,50256519.0,,
+experimental-bsan,pingora-header-serde-0.9.0,tests::test_parsing_multiline_header,success,54.945,2.944,2026-11-05T06:33:19Z,50256519.0,,
+experimental-bsan,pingora-header-serde-0.9.0,tests::test_ser_de_no_dict,success,54.945,3.031,2026-11-05T06:33:22Z,50256519.0,,
+experimental-bsan,pingora-header-serde-0.9.0,tests::test_ser_wo_dict,success,54.945,3.590,2026-11-05T06:33:25Z,50256519.0,,
+experimental-bsan,pingora-header-serde-0.9.0,tests::test_serialize_deserialize_multiline_header,success,54.945,3.584,2026-11-05T06:33:29Z,50256519.0,,

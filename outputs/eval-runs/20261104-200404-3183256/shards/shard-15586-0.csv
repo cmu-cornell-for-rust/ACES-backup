@@ -1,0 +1,5 @@
+experimental-bsan,dinghy-lib-0.8.6,android::tests::test_find_non_legacy_ndk,success,172.191,1.655,2026-11-05T07:26:39Z,50259735.0,,
+experimental-bsan,dinghy-lib-0.8.6,android::tests::test_find_non_legacy_ndk_on_non_existing_directory,success,172.191,1.556,2026-11-05T07:26:41Z,50259735.0,,
+experimental-bsan,dinghy-lib-0.8.6,config::tests::load_config_with_str_test_data,test_failed,172.191,1.643,2026-11-05T07:26:43Z,50259735.0,panic,"thread 'config::tests::load_config_with_str_test_data' (91411) panicked at src/config.rs:244:46: called `Result::unwrap()` on an `Err` value: Reading ""/work/../test-ws/test-app/.dinghy.toml"""
+experimental-bsan,dinghy-lib-0.8.6,platform::regular_platform::tests::deb_multiarch_yields_a_system_toolchain,success,172.191,1.541,2026-11-05T07:26:44Z,50259735.0,,
+experimental-bsan,dinghy-lib-0.8.6,platform::regular_platform::tests::toolchain_less_platform_assembles_for_remote_run,success,172.191,1.541,2026-11-05T07:26:46Z,50259735.0,,

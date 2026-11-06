@@ -1,0 +1,7 @@
+experimental-bsan,rust-releases-rust-changelog-0.28.0,fetch::tests::test_fetch_meta_manifest,success,148.070,1.589,2026-11-05T06:59:57Z,50258212.0,,
+experimental-bsan,rust-releases-rust-changelog-0.28.0,tests::fetch_supported_channel,success,148.070,1.565,2026-11-05T06:59:58Z,50258212.0,,
+experimental-bsan,rust-releases-rust-changelog-0.28.0,tests::fetch_unsupported_channel::beta,success,148.070,1.567,2026-11-05T07:00:00Z,50258212.0,,
+experimental-bsan,rust-releases-rust-changelog-0.28.0,tests::fetch_unsupported_channel::nightly,success,148.070,1.564,2026-11-05T07:00:02Z,50258212.0,,
+experimental-bsan,rust-releases-rust-changelog-0.28.0,tests::parse_date,success,148.070,1.565,2026-11-05T07:00:03Z,50258212.0,,
+experimental-bsan,rust-releases-rust-changelog-0.28.0,tests::source_dist_index,test_failed,148.070,1.640,2026-11-05T07:00:05Z,50258212.0,panic,"thread 'tests::source_dist_index' (1008) panicked at src/lib.rs:184:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,rust-releases-rust-changelog-0.28.0,tests::with_unreleased_version,test_failed,148.070,1.652,2026-11-05T07:00:06Z,50258212.0,panic,"thread 'tests::with_unreleased_version' (1289) panicked at src/lib.rs:211:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

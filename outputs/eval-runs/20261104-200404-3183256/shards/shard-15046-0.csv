@@ -1,0 +1,6 @@
+experimental-bsan,minitt-0.4.3,check::tests::check_pair,test_failed,211.551,1.626,2026-11-05T07:15:13Z,50259011.0,crash,"test check::tests::check_pair ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,minitt-0.4.3,check::tests::simple_check,test_failed,211.551,1.564,2026-11-05T07:15:15Z,50259011.0,crash,"test check::tests::simple_check ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,minitt-0.4.3,parser::tests::no_reparse,success,211.551,18.693,2026-11-05T07:15:33Z,50259011.0,,
+experimental-bsan,minitt-0.4.3,parser::tests::simple_parse,timeout,211.551,150.018,2026-11-05T07:18:04Z,50259011.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,minitt-0.4.3,pretty::tests::simple_decl,success,211.551,1.654,2026-11-05T07:18:05Z,50259011.0,,
+experimental-bsan,minitt-0.4.3,pretty::tests::simple_expr,success,211.551,1.682,2026-11-05T07:18:07Z,50259011.0,,

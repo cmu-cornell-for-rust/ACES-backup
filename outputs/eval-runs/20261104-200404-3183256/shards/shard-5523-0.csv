@@ -1,0 +1,40 @@
+experimental-bsan,font-kit-0.14.3,analyze_bytes,test_failed,70.278,4.405,2026-11-05T03:16:56Z,50245267.0,panic,"thread 'analyze_bytes' (70740) panicked at tests/tests.rs:107:52: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,font-kit-0.14.3,analyze_file,test_failed,70.278,4.415,2026-11-05T03:17:01Z,50245267.0,panic,"thread 'analyze_file' (71183) panicked at tests/tests.rs:101:52: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,font-kit-0.14.3,font_transform,success,70.278,4.540,2026-11-05T03:17:05Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,get_empty_glyph_outline,test_failed,70.278,4.404,2026-11-05T03:17:10Z,50245267.0,panic,"thread 'get_empty_glyph_outline' (72249) panicked at tests/tests.rs:435:52: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,font-kit-0.14.3,get_font_data,success,70.278,4.347,2026-11-05T03:17:14Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,get_font_full_name,success,70.278,4.373,2026-11-05T03:17:18Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,get_font_full_name_from_lowercase_family_name,success,70.278,4.359,2026-11-05T03:17:23Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,get_font_metrics,success,70.278,4.397,2026-11-05T03:17:27Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,get_font_properties,success,70.278,4.405,2026-11-05T03:17:32Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,get_fully_hinted_glyph_outline,test_failed,70.278,4.408,2026-11-05T03:17:36Z,50245267.0,panic,"thread 'get_fully_hinted_glyph_outline' (79310) panicked at tests/tests.rs:360:58: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,font-kit-0.14.3,get_glyph_advance_and_origin,success,70.278,4.359,2026-11-05T03:17:40Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,get_glyph_count,test_failed,70.278,4.420,2026-11-05T03:17:45Z,50245267.0,panic,"thread 'get_glyph_count' (80805) panicked at tests/tests.rs:998:56: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,font-kit-0.14.3,get_glyph_for_char,success,70.278,4.373,2026-11-05T03:17:49Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,get_glyph_outline,success,70.278,4.383,2026-11-05T03:17:54Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,get_glyph_outline_eb_garamond_exclam,test_failed,70.278,4.424,2026-11-05T03:17:58Z,50245267.0,panic,"thread 'get_glyph_outline_eb_garamond_exclam' (82951) panicked at tests/tests.rs:1005:58: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,font-kit-0.14.3,get_glyph_outline_inconsolata_J,test_failed,70.278,4.413,2026-11-05T03:18:02Z,50245267.0,panic,"thread 'get_glyph_outline_inconsolata_J' (84116) panicked at tests/tests.rs:1117:58: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,font-kit-0.14.3,get_glyph_raster_bounds,test_failed,70.278,4.402,2026-11-05T03:18:07Z,50245267.0,panic,"thread 'get_glyph_raster_bounds' (84761) panicked at tests/tests.rs:449:58: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,font-kit-0.14.3,get_glyph_typographic_bounds,success,70.278,4.378,2026-11-05T03:18:11Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,get_vertically_hinted_glyph_outline,success,70.278,4.389,2026-11-05T03:18:16Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,load_font_from_file,test_failed,70.278,4.407,2026-11-05T03:18:20Z,50245267.0,panic,"thread 'load_font_from_file' (87082) panicked at tests/tests.rs:85:52: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,font-kit-0.14.3,load_font_from_memory,test_failed,70.278,4.395,2026-11-05T03:18:24Z,50245267.0,panic,"thread 'load_font_from_memory' (87740) panicked at tests/tests.rs:92:52: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,font-kit-0.14.3,load_font_table,success,70.278,4.373,2026-11-05T03:18:29Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,load_fonts_from_opentype_collection,test_failed,70.278,4.412,2026-11-05T03:18:33Z,50245267.0,panic,"thread 'load_fonts_from_opentype_collection' (88708) panicked at tests/tests.rs:981:63: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,font-kit-0.14.3,loaders::freetype::test::get_pcf_postscript_name,test_failed,70.278,1.656,2026-11-05T03:18:35Z,50245267.0,panic,"thread 'loaders::freetype::test::get_pcf_postscript_name' (88881) panicked at src/loaders/freetype.rs:1246:54: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,font-kit-0.14.3,rasterize_empty_glyph,test_failed,70.278,4.413,2026-11-05T03:18:39Z,50245267.0,panic,"thread 'rasterize_empty_glyph' (89246) panicked at tests/tests.rs:901:52: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,font-kit-0.14.3,rasterize_empty_glyph_on_empty_canvas,test_failed,70.278,4.406,2026-11-05T03:18:44Z,50245267.0,panic,"thread 'rasterize_empty_glyph_on_empty_canvas' (89458) panicked at tests/tests.rs:920:52: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,font-kit-0.14.3,rasterize_glyph_bilevel,success,70.278,4.432,2026-11-05T03:18:48Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,rasterize_glyph_bilevel_offset,success,70.278,4.480,2026-11-05T03:18:53Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,rasterize_glyph_with_full_hinting,success,70.278,4.393,2026-11-05T03:18:57Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,rasterize_glyph_with_full_hinting_subpixel,success,70.278,4.807,2026-11-05T03:19:02Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,rasterize_glyph_with_grayscale_aa,success,70.278,4.403,2026-11-05T03:19:06Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,test::select_best_match_bold_sans_serif,success,70.278,4.381,2026-11-05T03:19:11Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,test::select_best_match_by_name_after_invalid,success,70.278,4.357,2026-11-05T03:19:15Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,test::select_best_match_monospace,success,70.278,4.379,2026-11-05T03:19:20Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,test::select_best_match_sans_serif,success,70.278,4.373,2026-11-05T03:19:24Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,test::select_best_match_serif,success,70.278,4.491,2026-11-05T03:19:28Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,test::select_by_postscript_name_ArialMT,success,70.278,4.359,2026-11-05T03:19:33Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,test::select_by_postscript_name_invalid,success,70.278,4.362,2026-11-05T03:19:37Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,test::select_family_by_name_dejavu,success,70.278,4.342,2026-11-05T03:19:42Z,50245267.0,,
+experimental-bsan,font-kit-0.14.3,test::select_localized_family_name,success,70.278,4.356,2026-11-05T03:19:46Z,50245267.0,,

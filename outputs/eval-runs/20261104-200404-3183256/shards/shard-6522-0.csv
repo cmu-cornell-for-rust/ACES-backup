@@ -1,0 +1,34 @@
+experimental-bsan,superboring-0.1.17,implementation::test_aes_128_gcm_known_vector,success,80.152,1.625,2026-11-05T03:44:55Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,implementation::test_aes_256_gcm_authentication,success,80.152,1.824,2026-11-05T03:44:57Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,implementation::test_aes_256_gcm_known_vector,success,80.152,1.628,2026-11-05T03:44:59Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,implementation::test_aes_keywrap_128,success,80.152,1.570,2026-11-05T03:45:00Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,implementation::test_aes_keywrap_256,success,80.152,1.573,2026-11-05T03:45:02Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,implementation::test_cipher_nid,success,80.152,1.503,2026-11-05T03:45:04Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,implementation::test_hmac_sha256,success,80.152,1.584,2026-11-05T03:45:05Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,implementation::test_hmac_sha384,success,80.152,1.557,2026-11-05T03:45:07Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,implementation::test_hmac_sha512,success,80.152,1.603,2026-11-05T03:45:08Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,implementation::test_mldsa_algorithm_sizes,success,80.152,1.500,2026-11-05T03:45:10Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,implementation::test_mldsa_clone_private_key,timeout,80.152,150.013,2026-11-05T03:47:40Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,implementation::test_mldsa_debug_redacts_seed,success,80.152,40.675,2026-11-05T03:48:21Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,implementation::test_mldsa_keygen_nist_vectors,timeout,80.152,150.012,2026-11-05T03:50:51Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,implementation::test_mldsa_public_from_private,timeout,80.152,150.011,2026-11-05T03:53:21Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,implementation::test_mldsa_public_key_bytes_roundtrip,timeout,80.152,150.012,2026-11-05T03:55:51Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,implementation::test_mldsa_seed_roundtrip,timeout,80.152,150.013,2026-11-05T03:58:21Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,implementation::test_mldsa_sign_verify,timeout,80.152,150.012,2026-11-05T04:00:51Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,implementation::test_mldsa_signatures_are_randomized,timeout,80.152,150.013,2026-11-05T04:03:21Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,implementation::test_nid_roundtrip,success,80.152,1.509,2026-11-05T04:03:22Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,implementation::test_rsa_encrypt_decrypt,timeout,80.152,150.011,2026-11-05T04:05:52Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,implementation::test_rsa_oaep_encrypt_decrypt,timeout,80.152,150.011,2026-11-05T04:08:22Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,implementation::test_rsa_pkcs1,timeout,80.152,150.011,2026-11-05T04:10:52Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,implementation::test_rsa_pss,timeout,80.152,150.011,2026-11-05T04:13:22Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,implementation::test_sign_oneshot,timeout,80.152,150.012,2026-11-05T04:15:52Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,rsa_tests::check_key_does_not_enforce_a_size_policy,success,80.152,14.211,2026-11-05T04:16:07Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,rsa_tests::check_key_rejects_d_not_below_n,success,80.152,3.866,2026-11-05T04:16:11Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,rsa_tests::check_key_rejects_tiny_moduli,timeout,80.152,150.014,2026-11-05T04:18:41Z,50247226.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,superboring-0.1.17,rsa_tests::encoded_crt_values_are_checked,success,80.152,16.257,2026-11-05T04:18:57Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,rsa_tests::every_inconsistent_component_is_rejected,success,80.152,8.251,2026-11-05T04:19:05Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,rsa_tests::multi_prime_keys_are_rejected,success,80.152,3.278,2026-11-05T04:19:08Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,rsa_tests::oaep_decrypts_openssl_ciphertexts,success,80.152,83.228,2026-11-05T04:20:32Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,rsa_tests::oaep_encrypts_like_openssl,success,80.152,42.938,2026-11-05T04:21:15Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,rsa_tests::private_components_round_trip,success,80.152,25.507,2026-11-05T04:21:40Z,50247226.0,,
+experimental-bsan,superboring-0.1.17,rsa_tests::public_check_key_validates_parameters,success,80.152,3.171,2026-11-05T04:21:43Z,50247226.0,,

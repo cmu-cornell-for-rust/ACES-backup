@@ -1,0 +1,79 @@
+experimental-bsan,sic_io-0.23.0,decode::tests::apng::apng::case_0,test_failed,299.143,1.716,2026-11-05T02:19:52Z,50239886.0,panic,"thread 'decode::tests::apng::apng::case_0' (14760) panicked at src/decode.rs:333:69: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::apng::apng::case_1,test_failed,299.143,1.680,2026-11-05T02:19:54Z,50239886.0,panic,"thread 'decode::tests::apng::apng::case_1' (14900) panicked at src/decode.rs:333:69: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::apng::apng::case_2,test_failed,299.143,1.676,2026-11-05T02:19:55Z,50239886.0,panic,"thread 'decode::tests::apng::apng::case_2' (15162) panicked at src/decode.rs:333:69: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::apng::apng::case_3,test_failed,299.143,1.665,2026-11-05T02:19:57Z,50239886.0,panic,"thread 'decode::tests::apng::apng::case_3' (15416) panicked at src/decode.rs:333:69: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::apng::apng::case_4,test_failed,299.143,1.677,2026-11-05T02:19:59Z,50239886.0,panic,"thread 'decode::tests::apng::apng::case_4' (15658) panicked at src/decode.rs:333:69: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::apng::apng::case_5,test_failed,299.143,1.670,2026-11-05T02:20:00Z,50239886.0,panic,"thread 'decode::tests::apng::apng::case_5' (15909) panicked at src/decode.rs:333:69: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::load_gif_looping_frame_first_is_zero,test_failed,299.143,1.694,2026-11-05T02:20:02Z,50239886.0,panic,"thread 'decode::tests::load_gif_looping_frame_first_is_zero' (16129) panicked at src/decode.rs:187:50: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::load_gif_looping_frame_last_is_seven_index,test_failed,299.143,1.687,2026-11-05T02:20:04Z,50239886.0,panic,"thread 'decode::tests::load_gif_looping_frame_last_is_seven_index' (16364) panicked at src/decode.rs:281:50: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::load_gif_looping_frame_nth,test_failed,299.143,1.674,2026-11-05T02:20:06Z,50239886.0,panic,"thread 'decode::tests::load_gif_looping_frame_nth' (16671) panicked at src/decode.rs:230:53: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::load_gif_looping_frame_nth_beyond_length,test_failed,299.143,1.680,2026-11-05T02:20:07Z,50239886.0,panic,"thread 'decode::tests::load_gif_looping_frame_nth_beyond_length' (16923) panicked at src/decode.rs:252:65: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::load_gif_non_looping_frame_first,test_failed,299.143,1.674,2026-11-05T02:20:09Z,50239886.0,panic,"thread 'decode::tests::load_gif_non_looping_frame_first' (17227) panicked at src/decode.rs:154:49: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::load_gif_non_looping_frame_first_is_zero,test_failed,299.143,1.679,2026-11-05T02:20:11Z,50239886.0,panic,"thread 'decode::tests::load_gif_non_looping_frame_first_is_zero' (17494) panicked at src/decode.rs:170:50: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::load_gif_non_looping_frame_last_is_seven_index,test_failed,299.143,1.684,2026-11-05T02:20:12Z,50239886.0,panic,"thread 'decode::tests::load_gif_non_looping_frame_last_is_seven_index' (17826) panicked at src/decode.rs:264:50: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::load_gif_non_looping_frame_nth,test_failed,299.143,1.675,2026-11-05T02:20:14Z,50239886.0,panic,"thread 'decode::tests::load_gif_non_looping_frame_nth' (18116) panicked at src/decode.rs:216:53: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::load_gif_non_looping_frame_nth_beyond_length,test_failed,299.143,1.677,2026-11-05T02:20:16Z,50239886.0,panic,"thread 'decode::tests::load_gif_non_looping_frame_nth_beyond_length' (18587) panicked at src/decode.rs:242:65: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,decode::tests::load_not_gif_formatted,test_failed,299.143,1.676,2026-11-05T02:20:17Z,50239886.0,panic,"thread 'decode::tests::load_not_gif_formatted' (18795) panicked at src/decode.rs:301:69: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::extension_invalid_extension,success,299.143,1.606,2026-11-05T02:20:19Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::extension_no_extension,success,299.143,1.608,2026-11-05T02:20:21Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::extension_unknown_extension,success,299.143,1.606,2026-11-05T02:20:22Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::identifier_custom_pnm_sample_encoding_ascii_pbm,success,299.143,1.591,2026-11-05T02:20:24Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::identifier_custom_pnm_sample_encoding_ascii_pgm::case_0,success,299.143,1.591,2026-11-05T02:20:26Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::identifier_custom_pnm_sample_encoding_ascii_pgm::case_1,success,299.143,1.594,2026-11-05T02:20:27Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::identifier_custom_pnm_sample_encoding_ascii_pgm::case_2,success,299.143,1.591,2026-11-05T02:20:29Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::identifier_unknown_identifier,success,299.143,1.603,2026-11-05T02:20:30Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_0,success,299.143,1.603,2026-11-05T02:20:32Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_1,success,299.143,1.613,2026-11-05T02:20:34Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_10,success,299.143,1.603,2026-11-05T02:20:35Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_11,success,299.143,1.607,2026-11-05T02:20:37Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_12,success,299.143,1.607,2026-11-05T02:20:38Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_13,success,299.143,1.599,2026-11-05T02:20:40Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_14,success,299.143,1.605,2026-11-05T02:20:42Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_15,success,299.143,1.601,2026-11-05T02:20:43Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_16,success,299.143,1.606,2026-11-05T02:20:45Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_2,success,299.143,1.602,2026-11-05T02:20:46Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_3,success,299.143,1.606,2026-11-05T02:20:48Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_4,success,299.143,1.605,2026-11-05T02:20:50Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_5,success,299.143,1.603,2026-11-05T02:20:51Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_6,success,299.143,1.612,2026-11-05T02:20:53Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_7,success,299.143,1.621,2026-11-05T02:20:55Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_8,success,299.143,1.602,2026-11-05T02:20:56Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_extensions::case_9,success,299.143,1.602,2026-11-05T02:20:58Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_0,success,299.143,1.602,2026-11-05T02:20:59Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_1,success,299.143,1.594,2026-11-05T02:21:01Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_10,success,299.143,1.596,2026-11-05T02:21:03Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_11,success,299.143,1.592,2026-11-05T02:21:04Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_12,success,299.143,1.598,2026-11-05T02:21:06Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_13,success,299.143,1.603,2026-11-05T02:21:07Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_14,success,299.143,1.599,2026-11-05T02:21:09Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_15,success,299.143,1.601,2026-11-05T02:21:11Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_16,success,299.143,1.597,2026-11-05T02:21:12Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_2,success,299.143,1.599,2026-11-05T02:21:14Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_3,success,299.143,1.598,2026-11-05T02:21:15Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_4,success,299.143,1.591,2026-11-05T02:21:17Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_5,success,299.143,1.599,2026-11-05T02:21:19Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_6,success,299.143,1.608,2026-11-05T02:21:20Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_7,success,299.143,1.614,2026-11-05T02:21:22Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_8,success,299.143,1.593,2026-11-05T02:21:24Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier::case_9,success,299.143,1.597,2026-11-05T02:21:25Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_0,success,299.143,1.591,2026-11-05T02:21:27Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_1,success,299.143,1.600,2026-11-05T02:21:28Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_10,success,299.143,1.589,2026-11-05T02:21:30Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_11,success,299.143,1.598,2026-11-05T02:21:32Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_12,success,299.143,1.596,2026-11-05T02:21:33Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_13,success,299.143,1.596,2026-11-05T02:21:35Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_14,success,299.143,1.598,2026-11-05T02:21:36Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_15,success,299.143,1.592,2026-11-05T02:21:38Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_16,success,299.143,1.595,2026-11-05T02:21:40Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_2,success,299.143,1.596,2026-11-05T02:21:41Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_3,success,299.143,1.596,2026-11-05T02:21:43Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_4,success,299.143,1.603,2026-11-05T02:21:44Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_5,success,299.143,1.600,2026-11-05T02:21:46Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_6,success,299.143,1.595,2026-11-05T02:21:48Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_7,success,299.143,1.596,2026-11-05T02:21:49Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_8,success,299.143,1.591,2026-11-05T02:21:51Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode::dynamic::tests::test_with_identifier_uppercase::case_9,success,299.143,1.591,2026-11-05T02:21:52Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode_settings::jpeg::tests::jpeg_quality_in_range_lower,success,299.143,1.592,2026-11-05T02:21:54Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode_settings::jpeg::tests::jpeg_quality_in_range_upper,success,299.143,1.592,2026-11-05T02:21:56Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode_settings::jpeg::tests::jpeg_quality_out_range_lower,success,299.143,1.602,2026-11-05T02:21:57Z,50239886.0,,
+experimental-bsan,sic_io-0.23.0,encode_settings::jpeg::tests::jpeg_quality_out_range_upper,success,299.143,1.604,2026-11-05T02:21:59Z,50239886.0,,

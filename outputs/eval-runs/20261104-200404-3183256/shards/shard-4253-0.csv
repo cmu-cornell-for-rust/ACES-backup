@@ -1,0 +1,54 @@
+experimental-bsan,magic-wormhole-0.8.1,core::key::test::test_decrypt_data,success,358.541,1.715,2026-11-05T02:49:27Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::key::test::test_derive_key,success,358.541,1.817,2026-11-05T02:49:29Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::key::test::test_derive_phase_key,success,358.541,2.485,2026-11-05T02:49:32Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::key::test::test_derive_phase_key2,success,358.541,1.696,2026-11-05T02:49:34Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::key::test::test_encrypt_data,success,358.541,1.775,2026-11-05T02:49:35Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::key::test::test_extract_pake_msg,success,358.541,1.696,2026-11-05T02:49:37Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_ack,success,358.541,1.644,2026-11-05T02:49:39Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_add,success,358.541,1.682,2026-11-05T02:49:40Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_allocate,success,358.541,1.654,2026-11-05T02:49:42Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_bind,success,358.541,1.658,2026-11-05T02:49:44Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_claim,success,358.541,1.661,2026-11-05T02:49:45Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_close,success,358.541,1.676,2026-11-05T02:49:47Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_close_errory,success,358.541,1.661,2026-11-05T02:49:49Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_close_scared,success,358.541,1.676,2026-11-05T02:49:50Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_list,success,358.541,1.662,2026-11-05T02:49:52Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_message,success,358.541,1.668,2026-11-05T02:49:54Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_open,success,358.541,1.655,2026-11-05T02:49:55Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_release,success,358.541,1.655,2026-11-05T02:49:57Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_submit_permissions,success,358.541,1.647,2026-11-05T02:49:59Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_welcome3,success,358.541,1.664,2026-11-05T02:50:00Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_welcome4,success,358.541,1.632,2026-11-05T02:50:02Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_welcome5,success,358.541,1.644,2026-11-05T02:50:04Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::server_messages::test::test_welcome6,success,358.541,1.658,2026-11-05T02:50:05Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::test::test_connect_with_code_expecting_nameplate,timeout,358.541,150.020,2026-11-05T02:52:35Z,50243156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,magic-wormhole-0.8.1,core::test::test_connect_with_unknown_code_and_allocate_passes,timeout,358.541,150.022,2026-11-05T02:55:05Z,50243156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,magic-wormhole-0.8.1,core::test::test_connect_with_unknown_code_and_no_allocate_fails,timeout,358.541,150.021,2026-11-05T02:57:36Z,50243156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,magic-wormhole-0.8.1,core::test::test_crowded,timeout,358.541,150.020,2026-11-05T03:00:06Z,50243156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,magic-wormhole-0.8.1,core::test::test_file_rust2rust,test_failed,358.541,12.632,2026-11-05T03:00:18Z,50243156.0,gc,"test core::test::test_file_rust2rust ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,magic-wormhole-0.8.1,core::test::test_mood,success,358.541,2.480,2026-11-05T03:00:21Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::test::test_phase,success,358.541,2.460,2026-11-05T03:00:23Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::test::test_send_many,timeout,358.541,150.019,2026-11-05T03:02:53Z,50243156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,magic-wormhole-0.8.1,core::test::test_wrong_code,test_failed,358.541,12.850,2026-11-05T03:03:06Z,50243156.0,gc,"test core::test::test_wrong_code ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,magic-wormhole-0.8.1,core::wordlist::test::test_choose_more_words,timeout,358.541,150.018,2026-11-05T03:05:36Z,50243156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,magic-wormhole-0.8.1,core::wordlist::test::test_choose_words,timeout,358.541,150.017,2026-11-05T03:08:06Z,50243156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,magic-wormhole-0.8.1,core::wordlist::test::test_choose_words_matches_completion,timeout,358.541,150.017,2026-11-05T03:10:36Z,50243156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,magic-wormhole-0.8.1,core::wordlist::test::test_completion,success,358.541,1.662,2026-11-05T03:10:38Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::wordlist::test::test_completion_fuzzy,success,358.541,8.652,2026-11-05T03:10:47Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::wordlist::test::test_completion_normal,success,358.541,4.327,2026-11-05T03:10:51Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::wordlist::test::test_default_wordlist,success,358.541,4.236,2026-11-05T03:10:55Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::wordlist::test::test_get_wordlist,success,358.541,4.374,2026-11-05T03:11:00Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::wordlist::test::test_load_words,success,358.541,4.250,2026-11-05T03:11:04Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::wordlist::test::test_wormhole_code_fuzzy_completions,success,358.541,9.243,2026-11-05T03:11:13Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,core::wordlist::test::test_wormhole_code_normal_completions,success,358.541,8.510,2026-11-05T03:11:22Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,transfer::test::test_file_ack,success,358.541,1.628,2026-11-05T03:11:23Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,transfer::test::test_message,success,358.541,1.633,2026-11-05T03:11:25Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,transfer::test::test_message_ack,success,358.541,1.627,2026-11-05T03:11:27Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,transfer::test::test_offer_directory,success,358.541,1.653,2026-11-05T03:11:28Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,transfer::test::test_offer_file,success,358.541,1.641,2026-11-05T03:11:30Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,transfer::test::test_transit,success,358.541,1.676,2026-11-05T03:11:32Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,transfer::v1::test::test_transit_ack,success,358.541,1.626,2026-11-05T03:11:33Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,transit::test::test_abilities_encoding,success,358.541,1.640,2026-11-05T03:11:35Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,transit::test::test_hints_encoding,success,358.541,1.696,2026-11-05T03:11:36Z,50243156.0,,
+experimental-bsan,magic-wormhole-0.8.1,uri::test::test_uri,timeout,358.541,150.018,2026-11-05T03:14:07Z,50243156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,magic-wormhole-0.8.1,uri::test::test_uri_err,success,358.541,1.723,2026-11-05T03:14:08Z,50243156.0,,

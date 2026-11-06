@@ -1,0 +1,16 @@
+experimental-bsan,xts-mode-0.5.1,decrypt_file_no_remainder,test_failed,150.558,2.913,2026-11-05T05:16:32Z,50252337.0,panic,"thread 'decrypt_file_no_remainder' (27347) panicked at tests/encryption.rs:132:59: could not read input: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,xts-mode-0.5.1,decrypt_file_no_remainder_256,test_failed,150.558,2.908,2026-11-05T05:16:35Z,50252337.0,panic,"thread 'decrypt_file_no_remainder_256' (27440) panicked at tests/encryption.rs:196:59: could not read input: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,xts-mode-0.5.1,decrypt_file_with_remainder,test_failed,150.558,2.899,2026-11-05T05:16:38Z,50252337.0,panic,"thread 'decrypt_file_with_remainder' (27541) panicked at tests/encryption.rs:164:61: could not read input: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,xts-mode-0.5.1,decrypt_file_with_remainder_256,test_failed,150.558,2.911,2026-11-05T05:16:41Z,50252337.0,panic,"thread 'decrypt_file_with_remainder_256' (27636) panicked at tests/encryption.rs:228:61: could not read input: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,xts-mode-0.5.1,encrypt_file_no_remainder,test_failed,150.558,2.896,2026-11-05T05:16:44Z,50252337.0,panic,"thread 'encrypt_file_no_remainder' (27700) panicked at tests/encryption.rs:115:65: could not read input: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,xts-mode-0.5.1,encrypt_file_no_remainder_256,test_failed,150.558,2.904,2026-11-05T05:16:47Z,50252337.0,panic,"thread 'encrypt_file_no_remainder_256' (27796) panicked at tests/encryption.rs:179:65: could not read input: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,xts-mode-0.5.1,encrypt_file_with_remainder,test_failed,150.558,2.915,2026-11-05T05:16:50Z,50252337.0,panic,"thread 'encrypt_file_with_remainder' (27890) panicked at tests/encryption.rs:147:67: could not read input: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,xts-mode-0.5.1,encrypt_file_with_remainder_256,test_failed,150.558,2.913,2026-11-05T05:16:53Z,50252337.0,panic,"thread 'encrypt_file_with_remainder_256' (27955) panicked at tests/encryption.rs:211:67: could not read input: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,xts-mode-0.5.1,random_key_recrypt_128,success,150.558,4.953,2026-11-05T05:16:58Z,50252337.0,,
+experimental-bsan,xts-mode-0.5.1,random_key_recrypt_128_no_remainder,success,150.558,4.580,2026-11-05T05:17:02Z,50252337.0,,
+experimental-bsan,xts-mode-0.5.1,random_key_recrypt_256,success,150.558,5.130,2026-11-05T05:17:08Z,50252337.0,,
+experimental-bsan,xts-mode-0.5.1,random_key_recrypt_256_no_remainder,success,150.558,4.757,2026-11-05T05:17:12Z,50252337.0,,
+experimental-bsan,xts-mode-0.5.1,recrypt_128,success,150.558,2.861,2026-11-05T05:17:15Z,50252337.0,,
+experimental-bsan,xts-mode-0.5.1,recrypt_256,success,150.558,2.852,2026-11-05T05:17:18Z,50252337.0,,
+experimental-bsan,xts-mode-0.5.1,recrypt_no_remainder_128,success,150.558,2.846,2026-11-05T05:17:21Z,50252337.0,,
+experimental-bsan,xts-mode-0.5.1,recrypt_no_remainder_256,success,150.558,2.856,2026-11-05T05:17:24Z,50252337.0,,

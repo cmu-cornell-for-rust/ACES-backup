@@ -1,0 +1,13 @@
+experimental-bsan,kaigan-0.2.5,types::prefix_string::tests::deserialize_data,success,26.635,1.545,2026-11-05T05:35:45Z,50253537.0,,
+experimental-bsan,kaigan-0.2.5,types::prefix_string::tests::fail_serialize_invalid_length_type,success,26.635,1.546,2026-11-05T05:35:47Z,50253537.0,,
+experimental-bsan,kaigan-0.2.5,types::prefix_string::tests::serialize_data,success,26.635,1.556,2026-11-05T05:35:48Z,50253537.0,,
+experimental-bsan,kaigan-0.2.5,types::prefix_vec::tests::deserialize_data,success,26.635,1.542,2026-11-05T05:35:50Z,50253537.0,,
+experimental-bsan,kaigan-0.2.5,types::prefix_vec::tests::fail_deserialize_invalid_data,success,26.635,1.542,2026-11-05T05:35:51Z,50253537.0,,
+experimental-bsan,kaigan-0.2.5,types::prefix_vec::tests::fail_deserialize_invalid_length,success,26.635,1.541,2026-11-05T05:35:53Z,50253537.0,,
+experimental-bsan,kaigan-0.2.5,types::prefix_vec::tests::fail_serialize_invalid_length_type,success,26.635,1.556,2026-11-05T05:35:54Z,50253537.0,,
+experimental-bsan,kaigan-0.2.5,types::prefix_vec::tests::serialize_data,success,26.635,1.569,2026-11-05T05:35:56Z,50253537.0,,
+experimental-bsan,kaigan-0.2.5,types::remainder_str::tests::deserialize_data,success,26.635,1.549,2026-11-05T05:35:58Z,50253537.0,,
+experimental-bsan,kaigan-0.2.5,types::remainder_str::tests::serialize_data,success,26.635,1.567,2026-11-05T05:35:59Z,50253537.0,,
+experimental-bsan,kaigan-0.2.5,types::remainder_vec::tests::deserialize_data,success,26.635,1.541,2026-11-05T05:36:01Z,50253537.0,,
+experimental-bsan,kaigan-0.2.5,types::remainder_vec::tests::fail_deserialize_invalid_data_length,test_failed,26.635,1.607,2026-11-05T05:36:02Z,50253537.0,panic,"thread 'types::remainder_vec::tests::fail_deserialize_invalid_data_length' (76569) panicked at src/types/remainder_vec.rs:120:64: called `Result::unwrap_err()` on an `Ok` value: [5, 15, 7]"
+experimental-bsan,kaigan-0.2.5,types::remainder_vec::tests::serialize_data,success,26.635,1.547,2026-11-05T05:36:04Z,50253537.0,,

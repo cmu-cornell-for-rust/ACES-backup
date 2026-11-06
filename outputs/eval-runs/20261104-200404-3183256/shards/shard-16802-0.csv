@@ -1,0 +1,4 @@
+experimental-bsan,mssql_quick-2.0.0,tests::is_msset_ok,test_failed,166.455,2.135,2026-11-05T07:51:57Z,50261306.0,panic,"thread 'tests::is_msset_ok' (4994) panicked at src/lib.rs:40:14: called `Result::unwrap()` on an `Err` value: Connection refused (os error 111)"
+experimental-bsan,mssql_quick-2.0.0,tests::test_complex,success,166.455,7.546,2026-11-05T07:52:04Z,50261306.0,,
+experimental-bsan,mssql_quick-2.0.0,tests::test_option,success,166.455,1.766,2026-11-05T07:52:06Z,50261306.0,,
+experimental-bsan,mssql_quick-2.0.0,tests::test_sql_set,success,166.455,1.613,2026-11-05T07:52:08Z,50261306.0,,

@@ -1,0 +1,117 @@
+experimental-bsan,changeforest-1.2.1,binary_segmentation::tests::test_binary_segmentation_change_in_mean,success,105.699,108.152,2026-11-05T01:56:00Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,binary_segmentation::tests::test_binary_segmentation_result,timeout,105.699,150.012,2026-11-05T01:58:30Z,50234963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,changeforest-1.2.1,classifier::classifier::tests::test_full_likelihood,success,105.699,2.958,2026-11-05T01:58:33Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,classifier::classifier::tests::test_single_likelihood,success,105.699,2.944,2026-11-05T01:58:36Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,classifier::knn::tests::test_X_ordering,success,105.699,2.953,2026-11-05T01:58:39Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,classifier::knn::tests::test_gain::case_1,success,105.699,3.210,2026-11-05T01:58:42Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,classifier::knn::tests::test_predictions::case_1,success,105.699,2.966,2026-11-05T01:58:45Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,classifier::knn::tests::test_predictions::case_2,success,105.699,2.979,2026-11-05T01:58:48Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,classifier::knn::tests::test_predictions::case_3,success,105.699,2.955,2026-11-05T01:58:51Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,classifier::knn::tests::test_predictions::case_4,success,105.699,2.973,2026-11-05T01:58:54Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,classifier::knn::tests::test_predictions::case_5,success,105.699,2.976,2026-11-05T01:58:57Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,classifier::knn::tests::test_predictions::case_6,success,105.699,2.973,2026-11-05T01:59:00Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,classifier::knn::tests::test_two_step_search::case_1,success,105.699,61.601,2026-11-05T02:00:02Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,classifier::random_forest::tests::test_predictions::case_1,test_failed,105.699,1.607,2026-11-05T02:00:03Z,50234963.0,panic,"thread 'classifier::random_forest::tests::test_predictions::case_1' (31572) panicked at src/classifier/random_forest.rs:75:52: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,classifier::random_forest::tests::test_predictions::case_2,test_failed,105.699,1.610,2026-11-05T02:00:05Z,50234963.0,panic,"thread 'classifier::random_forest::tests::test_predictions::case_2' (31730) panicked at src/classifier/random_forest.rs:75:52: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,classifier::random_forest::tests::test_predictions::case_3,test_failed,105.699,1.613,2026-11-05T02:00:06Z,50234963.0,panic,"thread 'classifier::random_forest::tests::test_predictions::case_3' (31990) panicked at src/classifier/random_forest.rs:75:52: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,classifier::random_forest::tests::test_predictions::case_4,test_failed,105.699,1.609,2026-11-05T02:00:08Z,50234963.0,panic,"thread 'classifier::random_forest::tests::test_predictions::case_4' (32143) panicked at src/classifier/random_forest.rs:75:52: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,classifier::random_forest::tests::test_two_step_search::case_1,timeout,105.699,150.012,2026-11-05T02:02:38Z,50234963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,changeforest-1.2.1,classifier::random_forest::tests::test_two_step_search::case_2,timeout,105.699,150.013,2026-11-05T02:05:08Z,50234963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,changeforest-1.2.1,fmt::tests::test_format_binary_segmentation_result,success,105.699,3.070,2026-11-05T02:05:11Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::change_in_mean::tests::test_X_cumsum,success,105.699,2.950,2026-11-05T02:05:14Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::change_in_mean::tests::test_smart_change_in_mean_gain::case_1,success,105.699,54.493,2026-11-05T02:06:09Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::change_in_mean::tests::test_smart_change_in_mean_gain::case_2,success,105.699,31.053,2026-11-05T02:06:40Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::change_in_mean::tests::test_smart_change_in_mean_gain::case_3,success,105.699,3.814,2026-11-05T02:06:44Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::classifier_gain::tests::test_gain_from_likelihoods,success,105.699,2.941,2026-11-05T02:06:46Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::classifier_gain::tests::test_model_selection,timeout,105.699,150.013,2026-11-05T02:09:17Z,50234963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_gain::case_01,success,105.699,2.999,2026-11-05T02:09:20Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_gain::case_02,success,105.699,2.981,2026-11-05T02:09:23Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_gain::case_03,success,105.699,3.000,2026-11-05T02:09:26Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_gain::case_04,success,105.699,2.978,2026-11-05T02:09:29Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_gain::case_05,success,105.699,3.000,2026-11-05T02:09:32Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_gain::case_06,success,105.699,2.992,2026-11-05T02:09:35Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_gain::case_07,success,105.699,3.010,2026-11-05T02:09:38Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_gain::case_08,success,105.699,3.032,2026-11-05T02:09:41Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_gain::case_09,success,105.699,3.019,2026-11-05T02:09:44Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_gain::case_10,success,105.699,3.021,2026-11-05T02:09:47Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_gain::case_11,success,105.699,3.018,2026-11-05T02:09:50Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_gain::case_12,success,105.699,3.015,2026-11-05T02:09:53Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_loss::case_1,success,105.699,2.942,2026-11-05T02:09:56Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_loss::case_2,success,105.699,2.943,2026-11-05T02:09:59Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_loss::case_3,success,105.699,2.942,2026-11-05T02:10:02Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_loss::case_4,success,105.699,2.943,2026-11-05T02:10:05Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_loss::case_5,success,105.699,2.944,2026-11-05T02:10:07Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,gain::gain::tests::test_change_in_mean_loss::case_6,success,105.699,2.921,2026-11-05T02:10:10Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,model_selection_result::tests::test_model_selection_result_default,success,105.699,2.959,2026-11-05T02:10:13Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_change_in_mean_find_best_split::case_01,success,105.699,3.130,2026-11-05T02:10:17Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_change_in_mean_find_best_split::case_02,success,105.699,3.050,2026-11-05T02:10:20Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_change_in_mean_find_best_split::case_03,success,105.699,3.014,2026-11-05T02:10:23Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_change_in_mean_find_best_split::case_04,success,105.699,2.998,2026-11-05T02:10:26Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_change_in_mean_find_best_split::case_05,success,105.699,2.988,2026-11-05T02:10:29Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_change_in_mean_find_best_split::case_06,success,105.699,3.027,2026-11-05T02:10:32Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_change_in_mean_find_best_split::case_07,success,105.699,3.074,2026-11-05T02:10:35Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_change_in_mean_find_best_split::case_08,success,105.699,3.001,2026-11-05T02:10:38Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_change_in_mean_find_best_split::case_09,success,105.699,3.030,2026-11-05T02:10:41Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_change_in_mean_find_best_split::case_10,success,105.699,2.946,2026-11-05T02:10:44Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_split_candidates::case_1,success,105.699,2.933,2026-11-05T02:10:47Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_split_candidates::case_2,success,105.699,2.919,2026-11-05T02:10:50Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_split_candidates::case_3,success,105.699,2.944,2026-11-05T02:10:53Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::grid_search::tests::test_split_candidates::case_4,success,105.699,2.947,2026-11-05T02:10:55Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split::case_01,success,105.699,3.248,2026-11-05T02:10:59Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split::case_02,success,105.699,3.236,2026-11-05T02:11:02Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split::case_03,success,105.699,3.233,2026-11-05T02:11:05Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split::case_04,success,105.699,3.147,2026-11-05T02:11:08Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split::case_05,success,105.699,3.159,2026-11-05T02:11:12Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split::case_06,success,105.699,3.239,2026-11-05T02:11:15Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split::case_07,success,105.699,3.220,2026-11-05T02:11:18Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split::case_08,success,105.699,3.148,2026-11-05T02:11:21Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split::case_09,success,105.699,3.220,2026-11-05T02:11:24Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split::case_10,success,105.699,3.061,2026-11-05T02:11:28Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split_guesses::case_1,success,105.699,5.976,2026-11-05T02:11:33Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split_guesses::case_2,success,105.699,6.005,2026-11-05T02:11:40Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split_guesses::case_3,success,105.699,3.991,2026-11-05T02:11:44Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split_guesses::case_4,success,105.699,4.428,2026-11-05T02:11:48Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,optimizer::two_step_search::tests::test_change_in_mean_find_best_split_guesses::case_5,success,105.699,4.741,2026-11-05T02:11:53Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,segmentation::tests::test_generate_segments::case_1,success,105.699,2.936,2026-11-05T02:11:56Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,segmentation::tests::test_generate_segments::case_2,success,105.699,2.932,2026-11-05T02:11:59Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,segmentation::tests::test_generate_segments::case_3,success,105.699,2.962,2026-11-05T02:12:02Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,segmentation::tests::test_optimizer::case_1,success,105.699,2.941,2026-11-05T02:12:05Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,segmentation::tests::test_optimizer::case_2,success,105.699,3.161,2026-11-05T02:12:08Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,segmentation::tests::test_optimizer::case_3,success,105.699,3.405,2026-11-05T02:12:11Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,segmentation::tests::test_sbs_segments::case_1,success,105.699,2.940,2026-11-05T02:12:14Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,segmentation::tests::test_sbs_segments::case_2,success,105.699,2.944,2026-11-05T02:12:17Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,segmentation::tests::test_sbs_segments::case_3,success,105.699,2.944,2026-11-05T02:12:20Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,test_integration_iris::case_1,test_failed,105.699,3.019,2026-11-05T02:12:23Z,50234963.0,panic,"thread 'test_integration_iris::case_1' (18826) panicked at tests/test_integration.rs:22:48: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_iris::case_2,test_failed,105.699,3.018,2026-11-05T02:12:26Z,50234963.0,panic,"thread 'test_integration_iris::case_2' (19411) panicked at tests/test_integration.rs:22:48: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_iris::case_3,test_failed,105.699,3.024,2026-11-05T02:12:29Z,50234963.0,panic,"thread 'test_integration_iris::case_3' (19811) panicked at tests/test_integration.rs:22:48: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_iris::case_4,test_failed,105.699,2.999,2026-11-05T02:12:32Z,50234963.0,panic,"thread 'test_integration_iris::case_4' (20186) panicked at tests/test_integration.rs:22:48: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_iris::case_5,test_failed,105.699,3.012,2026-11-05T02:12:35Z,50234963.0,panic,"thread 'test_integration_iris::case_5' (21568) panicked at tests/test_integration.rs:22:48: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_iris::case_6,test_failed,105.699,3.014,2026-11-05T02:12:38Z,50234963.0,panic,"thread 'test_integration_iris::case_6' (22692) panicked at tests/test_integration.rs:22:48: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_iris::case_7,test_failed,105.699,3.025,2026-11-05T02:12:41Z,50234963.0,panic,"thread 'test_integration_iris::case_7' (23219) panicked at tests/test_integration.rs:22:48: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_iris::case_8,test_failed,105.699,3.021,2026-11-05T02:12:44Z,50234963.0,panic,"thread 'test_integration_iris::case_8' (23630) panicked at tests/test_integration.rs:22:48: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_iris::case_9,test_failed,105.699,3.024,2026-11-05T02:12:47Z,50234963.0,panic,"thread 'test_integration_iris::case_9' (24013) panicked at tests/test_integration.rs:22:48: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_letters::case_1,test_failed,105.699,3.015,2026-11-05T02:12:50Z,50234963.0,panic,"thread 'test_integration_letters::case_1' (24428) panicked at tests/test_integration.rs:44:51: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_letters::case_2,test_failed,105.699,3.013,2026-11-05T02:12:53Z,50234963.0,panic,"thread 'test_integration_letters::case_2' (24887) panicked at tests/test_integration.rs:44:51: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_letters::case_3,test_failed,105.699,3.020,2026-11-05T02:12:56Z,50234963.0,panic,"thread 'test_integration_letters::case_3' (26273) panicked at tests/test_integration.rs:44:51: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_letters::case_4,test_failed,105.699,3.008,2026-11-05T02:12:59Z,50234963.0,panic,"thread 'test_integration_letters::case_4' (27074) panicked at tests/test_integration.rs:44:51: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_letters::case_5,test_failed,105.699,3.014,2026-11-05T02:13:02Z,50234963.0,panic,"thread 'test_integration_letters::case_5' (27461) panicked at tests/test_integration.rs:44:51: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,test_integration_letters::case_6,test_failed,105.699,3.026,2026-11-05T02:13:06Z,50234963.0,panic,"thread 'test_integration_letters::case_6' (27970) panicked at tests/test_integration.rs:44:51: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,changeforest-1.2.1,testing::tests::test_approx_gain::case_1,success,105.699,3.061,2026-11-05T02:13:09Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,testing::tests::test_approx_gain::case_2,success,105.699,3.050,2026-11-05T02:13:12Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,testing::tests::test_compare_approx_to_normal_gain::case_1,success,105.699,111.239,2026-11-05T02:15:03Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,testing::tests::test_compare_approx_to_normal_gain::case_2,success,105.699,108.783,2026-11-05T02:16:52Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,testing::tests::test_compare_approx_to_normal_gain::case_3,success,105.699,57.824,2026-11-05T02:17:50Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,testing::tests::test_loss::case_1,success,105.699,2.942,2026-11-05T02:17:52Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,testing::tests::test_loss::case_2,success,105.699,2.924,2026-11-05T02:17:55Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,testing::tests::test_loss::case_3,success,105.699,2.934,2026-11-05T02:17:58Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,testing::tests::test_loss::case_4,success,105.699,2.923,2026-11-05T02:18:01Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,utils::tests::test_log_eta::case_1,success,105.699,2.927,2026-11-05T02:18:04Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,utils::tests::test_log_eta::case_2,success,105.699,2.920,2026-11-05T02:18:07Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,wrapper::tests::test_binary_segmentation_wrapper::case_1,timeout,105.699,150.013,2026-11-05T02:20:37Z,50234963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,changeforest-1.2.1,wrapper::tests::test_binary_segmentation_wrapper::case_2,timeout,105.699,150.028,2026-11-05T02:23:07Z,50234963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,changeforest-1.2.1,wrapper::tests::test_binary_segmentation_wrapper::case_3,timeout,105.699,150.015,2026-11-05T02:25:37Z,50234963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,changeforest-1.2.1,wrapper::tests::test_binary_segmentation_wrapper::case_4,success,105.699,4.860,2026-11-05T02:25:42Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,wrapper::tests::test_binary_segmentation_wrapper::case_5,success,105.699,24.215,2026-11-05T02:26:06Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,wrapper::tests::test_binary_segmentation_wrapper::case_6,success,105.699,6.903,2026-11-05T02:26:13Z,50234963.0,,
+experimental-bsan,changeforest-1.2.1,wrapper::tests::test_binary_segmentation_wrapper::case_7,timeout,105.699,150.013,2026-11-05T02:28:43Z,50234963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,changeforest-1.2.1,wrapper::tests::test_binary_segmentation_wrapper::case_8,timeout,105.699,150.013,2026-11-05T02:31:13Z,50234963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

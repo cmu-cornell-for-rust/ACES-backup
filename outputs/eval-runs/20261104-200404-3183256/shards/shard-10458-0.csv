@@ -1,0 +1,15 @@
+experimental-bsan,langchain-rust-4.6.0,document_loaders::csv_loader::csv_loader::tests::test_csv_load_from_path,success,650.679,4.209,2026-11-05T05:30:57Z,50252578.0,,
+experimental-bsan,langchain-rust-4.6.0,document_loaders::csv_loader::csv_loader::tests::test_csv_loader,success,650.679,3.886,2026-11-05T05:31:01Z,50252578.0,,
+experimental-bsan,langchain-rust-4.6.0,document_loaders::dir_loader::tests::test_find_files_with_extension,success,650.679,1.964,2026-11-05T05:31:03Z,50252578.0,,
+experimental-bsan,langchain-rust-4.6.0,document_loaders::html_loader::html_loader::tests::test_html_load_from_path,success,650.679,17.668,2026-11-05T05:31:20Z,50252578.0,,
+experimental-bsan,langchain-rust-4.6.0,document_loaders::html_loader::html_loader::tests::test_html_loader,success,650.679,2.001,2026-11-05T05:31:22Z,50252578.0,,
+experimental-bsan,langchain-rust-4.6.0,document_loaders::pandoc_loader::pandoc_loader::tests::test_pandoc_loader,test_failed,650.679,1.976,2026-11-05T05:31:24Z,50252578.0,panic,"thread 'document_loaders::pandoc_loader::pandoc_loader::tests::test_pandoc_loader' (48490) panicked at src/document_loaders/pandoc_loader/pandoc_loader.rs:176:14: called `Result::unwrap()` on an `Err` value: IOError(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,langchain-rust-4.6.0,document_loaders::text_loader::text_loader::tests::test_reading_mocked_file_content,timeout,650.679,150.035,2026-11-05T05:33:54Z,50252578.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,langchain-rust-4.6.0,output_parsers::markdown_parser::tests::test_markdown_parser_finds_code_block,success,650.679,89.371,2026-11-05T05:35:24Z,50252578.0,,
+experimental-bsan,langchain-rust-4.6.0,prompt::chat::tests::test_message_formatter_macro,success,650.679,1.866,2026-11-05T05:35:26Z,50252578.0,,
+experimental-bsan,langchain-rust-4.6.0,prompt::prompt::tests::should_format_fstring_template,success,650.679,1.746,2026-11-05T05:35:27Z,50252578.0,,
+experimental-bsan,langchain-rust-4.6.0,prompt::prompt::tests::should_format_jinja2_template,success,650.679,1.768,2026-11-05T05:35:29Z,50252578.0,,
+experimental-bsan,langchain-rust-4.6.0,prompt::prompt::tests::should_prompt_macro_work,success,650.679,1.762,2026-11-05T05:35:31Z,50252578.0,,
+experimental-bsan,langchain-rust-4.6.0,prompt::prompt::tests::test_chat_template_macros,success,650.679,1.781,2026-11-05T05:35:33Z,50252578.0,,
+experimental-bsan,langchain-rust-4.6.0,tools::command_executor::command_executor::test::test_with_string_executor,success,650.679,1.917,2026-11-05T05:35:35Z,50252578.0,,
+experimental-bsan,langchain-rust-4.6.0,tools::scraper::scraper::tests::test_scrape_url,success,650.679,7.686,2026-11-05T05:35:42Z,50252578.0,,

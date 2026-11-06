@@ -1,0 +1,5 @@
+experimental-bsan,async_ftp-6.0.0,ftp::tests::list_command_dos_newlines,success,72.095,3.252,2026-11-05T07:22:01Z,50259559.0,,
+experimental-bsan,async_ftp-6.0.0,ftp::tests::list_command_unix_newlines,success,72.095,3.229,2026-11-05T07:22:04Z,50259559.0,,
+experimental-bsan,async_ftp-6.0.0,test_ftp,test_failed,72.095,135.475,2026-11-05T07:24:20Z,50259559.0,panic,"thread 'test_ftp' (34972) panicked at tests/lib.rs:44:12: called `Result::unwrap()` on an `Err` value: ConnectionError(Os { code: 110, kind: TimedOut, message: ""Connection timed out"" })"
+experimental-bsan,async_ftp-6.0.0,types::tests::file_type_str,success,72.095,3.735,2026-11-05T07:24:24Z,50259559.0,,
+experimental-bsan,async_ftp-6.0.0,types::tests::format_control_str,success,72.095,3.755,2026-11-05T07:24:27Z,50259559.0,,

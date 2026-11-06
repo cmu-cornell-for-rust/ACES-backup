@@ -1,0 +1,5 @@
+experimental-bsan,mysql_quick-1.4.4,method::test::test_myset,success,333.336,1.957,2026-11-05T07:34:23Z,50260099.0,,
+experimental-bsan,mysql_quick-1.4.4,method::test::test_myupdate,success,333.336,1.909,2026-11-05T07:34:25Z,50260099.0,,
+experimental-bsan,mysql_quick-1.4.4,test::test_complex,success,333.336,63.226,2026-11-05T07:35:29Z,50260099.0,,
+experimental-bsan,mysql_quick-1.4.4,test::test_one,test_failed,333.336,2.244,2026-11-05T07:35:31Z,50260099.0,panic,"thread 'test::test_one' (49237) panicked at src/lib.rs:19:51: called `Result::unwrap()` on an `Err` value: DriverError { Could not connect to address `localhost:3306': Connection refused (os error 111) }"
+experimental-bsan,mysql_quick-1.4.4,test::test_set,success,333.336,1.726,2026-11-05T07:35:33Z,50260099.0,,

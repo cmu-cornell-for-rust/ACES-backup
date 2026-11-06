@@ -1,0 +1,13 @@
+experimental-bsan,lazy_errors-0.10.1,error::tests::error_is_small_std,success,14.124,1.552,2026-11-05T05:35:34Z,50253551.0,,
+experimental-bsan,lazy_errors-0.10.1,error::tests::error_is_small_surrogate,success,14.124,1.553,2026-11-05T05:35:36Z,50253551.0,,
+experimental-bsan,lazy_errors-0.10.1,stash::tests::error_stash_enforce_errors_does_not_modify_if_nonempty,success,14.124,1.562,2026-11-05T05:35:37Z,50253551.0,,
+experimental-bsan,lazy_errors-0.10.1,stash::tests::error_stash_enforce_errors_modifies_only_once,success,14.124,1.559,2026-11-05T05:35:39Z,50253551.0,,
+experimental-bsan,lazy_errors-0.10.1,stash::tests::error_stash_enforce_errors_modifies_original_stash,success,14.124,1.561,2026-11-05T05:35:40Z,50253551.0,,
+experimental-bsan,lazy_errors-0.10.1,stash::tests::stash_debug_fmt_when_empty,success,14.124,1.553,2026-11-05T05:35:42Z,50253551.0,,
+experimental-bsan,lazy_errors-0.10.1,stash::tests::stash_debug_fmt_with_errors,test_failed,14.124,1.745,2026-11-05T05:35:44Z,50253551.0,panic,"thread 'stash::tests::stash_debug_fmt_with_errors' (49554) panicked at src/stash.rs:687:9: assertion failed: msg.contains(""lazy_errors"")"
+experimental-bsan,lazy_errors-0.10.1,stash::tests::stash_debug_fmt_with_errors_eyre,test_failed,14.124,1.686,2026-11-05T05:35:45Z,50253551.0,panic,"thread 'stash::tests::stash_debug_fmt_with_errors_eyre' (49925) panicked at src/stash.rs:702:9: assertion failed: msg.contains(""lazy_errors"")"
+experimental-bsan,lazy_errors-0.10.1,stash::tests::stash_with_errors_enforce_errors_does_not_modify,success,14.124,1.562,2026-11-05T05:35:47Z,50253551.0,,
+experimental-bsan,lazy_errors-0.10.1,stash::tests::stash_with_errors_enforce_errors_modifies_only_once,success,14.124,1.555,2026-11-05T05:35:48Z,50253551.0,,
+experimental-bsan,lazy_errors-0.10.1,stash_err::tests::stash_err_has_correct_backtrace,success,14.124,1.968,2026-11-05T05:35:50Z,50253551.0,,
+experimental-bsan,lazy_errors-0.10.1,try_collect_or_stash::tests::try_collect_or_stash_has_correct_backtrace,success,14.124,2.382,2026-11-05T05:35:53Z,50253551.0,,
+experimental-bsan,lazy_errors-0.10.1,try_collect_or_stash::tests::try_collect_or_stash_into_stash_with_errors,success,14.124,1.553,2026-11-05T05:35:54Z,50253551.0,,

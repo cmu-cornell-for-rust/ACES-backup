@@ -1,0 +1,34 @@
+experimental-bsan,spider-2.11.7,packages::scraper::element_ref::element::tests::test_has_class,success,486.406,2.652,2026-11-05T03:51:51Z,50247221.0,,
+experimental-bsan,spider-2.11.7,packages::scraper::element_ref::element::tests::test_has_id,success,486.406,2.616,2026-11-05T03:51:53Z,50247221.0,,
+experimental-bsan,spider-2.11.7,packages::scraper::element_ref::element::tests::test_is_link,success,486.406,1.825,2026-11-05T03:51:55Z,50247221.0,,
+experimental-bsan,spider-2.11.7,packages::scraper::element_ref::tests::test_scope,success,486.406,2.107,2026-11-05T03:51:57Z,50247221.0,,
+experimental-bsan,spider-2.11.7,packages::scraper::element_ref::tests::test_text,success,486.406,1.947,2026-11-05T03:51:59Z,50247221.0,,
+experimental-bsan,spider-2.11.7,packages::scraper::html::serializable::tests::test_serialize,success,486.406,2.007,2026-11-05T03:52:01Z,50247221.0,,
+experimental-bsan,spider-2.11.7,packages::scraper::html::tests::root_element_document_comment,success,486.406,1.844,2026-11-05T03:52:03Z,50247221.0,,
+experimental-bsan,spider-2.11.7,packages::scraper::html::tests::root_element_document_doctype,success,486.406,1.848,2026-11-05T03:52:05Z,50247221.0,,
+experimental-bsan,spider-2.11.7,packages::scraper::html::tests::root_element_fragment,success,486.406,1.825,2026-11-05T03:52:07Z,50247221.0,,
+experimental-bsan,spider-2.11.7,packages::scraper::html::tests::select_is_reversible,success,486.406,1.912,2026-11-05T03:52:09Z,50247221.0,,
+experimental-bsan,spider-2.11.7,packages::scraper::selector::tests::invalid_selector_conversions,success,486.406,1.767,2026-11-05T03:52:10Z,50247221.0,,
+experimental-bsan,spider-2.11.7,packages::scraper::selector::tests::selector_conversions,success,486.406,2.566,2026-11-05T03:52:13Z,50247221.0,,
+experimental-bsan,spider-2.11.7,packages::scraper::test::tag_with_newline,success,486.406,1.892,2026-11-05T03:52:15Z,50247221.0,,
+experimental-bsan,spider-2.11.7,page::parse_links,timeout,486.406,150.024,2026-11-05T03:54:45Z,50247221.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,spider-2.11.7,page::test_abs_path,success,486.406,1.957,2026-11-05T03:54:47Z,50247221.0,,
+experimental-bsan,spider-2.11.7,page::test_status_code,success,486.406,2.668,2026-11-05T03:54:50Z,50247221.0,,
+experimental-bsan,spider-2.11.7,utils::trie::tests::test_insert_and_search,success,486.406,1.801,2026-11-05T03:54:51Z,50247221.0,,
+experimental-bsan,spider-2.11.7,utils::trie::tests::test_insert_multiple_nodes,success,486.406,1.785,2026-11-05T03:54:53Z,50247221.0,,
+experimental-bsan,spider-2.11.7,utils::trie::tests::test_insert_overwrite,success,486.406,1.769,2026-11-05T03:54:55Z,50247221.0,,
+experimental-bsan,spider-2.11.7,utils::trie::tests::test_search_nonexistent_path,success,486.406,1.760,2026-11-05T03:54:57Z,50247221.0,,
+experimental-bsan,spider-2.11.7,utils::trie::tests::test_trie_new,success,486.406,1.740,2026-11-05T03:54:58Z,50247221.0,,
+experimental-bsan,spider-2.11.7,utils::trie::tests::test_trie_node_new,success,486.406,1.747,2026-11-05T03:55:00Z,50247221.0,,
+experimental-bsan,spider-2.11.7,website::crawl,test_failed,486.406,67.811,2026-11-05T03:56:08Z,50247221.0,panic,"thread 'website::crawl' (30010) panicked at src/website.rs:4684:5: ListBucket { links_visited: {SymbolUsize { value: 1 }}, interner: StringInterner { dedup: {SymbolUsize { value: 1 }: ()}, backend: BufferBackend { len_strings: 1, buffer: [27, 104, 116, 116, 112, 115, 58, 47, 47, 99, 104, 111, 111, 1"
+experimental-bsan,spider-2.11.7,website::crawl_invalid,success,486.406,16.501,2026-11-05T03:56:25Z,50247221.0,,
+experimental-bsan,spider-2.11.7,website::not_crawl_blacklist,success,486.406,68.417,2026-11-05T03:57:33Z,50247221.0,,
+experimental-bsan,spider-2.11.7,website::randomize_website_agent,success,486.406,1.748,2026-11-05T03:57:35Z,50247221.0,,
+experimental-bsan,spider-2.11.7,website::scrape,timeout,486.406,150.024,2026-11-05T04:00:05Z,50247221.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,spider-2.11.7,website::test_crawl_budget,success,486.406,53.645,2026-11-05T04:00:58Z,50247221.0,,
+experimental-bsan,spider-2.11.7,website::test_crawl_subdomains,test_failed,486.406,67.767,2026-11-05T04:02:06Z,50247221.0,panic,"thread 'website::test_crawl_subdomains' (38042) panicked at src/website.rs:4873:5: ListBucket { links_visited: {SymbolUsize { value: 1 }}, interner: StringInterner { dedup: {SymbolUsize { value: 1 }: ()}, backend: BufferBackend { len_strings: 1, buffer: [27, 104, 116, 116, 112, 115, 58, 47, 47, 99, "
+experimental-bsan,spider-2.11.7,website::test_crawl_subscription,test_failed,486.406,67.753,2026-11-05T04:03:14Z,50247221.0,panic,"thread 'website::test_crawl_subscription' (38565) panicked at src/website.rs:4974:5: true"
+experimental-bsan,spider-2.11.7,website::test_crawl_tld,test_failed,486.406,67.411,2026-11-05T04:04:21Z,50247221.0,panic,"thread 'website::test_crawl_tld' (39780) panicked at src/website.rs:4945:5: ListBucket { links_visited: {SymbolUsize { value: 1 }}, interner: StringInterner { dedup: {SymbolUsize { value: 1 }: ()}, backend: BufferBackend { len_strings: 1, buffer: [27, 104, 116, 116, 112, 115, 58, 47, 47, 99, 104, 11"
+experimental-bsan,spider-2.11.7,website::test_link_duplicates,success,486.406,16.234,2026-11-05T04:04:38Z,50247221.0,,
+experimental-bsan,spider-2.11.7,website::test_respect_robots_txt,test_failed,486.406,6.792,2026-11-05T04:04:45Z,50247221.0,panic,"thread 'website::test_respect_robots_txt' (40451) panicked at src/website.rs:4854:5: assertion `left == right` failed"
+experimental-bsan,spider-2.11.7,website::test_with_configuration,success,486.406,1.815,2026-11-05T04:04:46Z,50247221.0,,

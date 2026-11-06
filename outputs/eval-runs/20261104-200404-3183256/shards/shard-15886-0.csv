@@ -1,0 +1,5 @@
+experimental-bsan,nostr-relay-pool-0.35.0,relay::flags::tests::test_service_flags,success,371.418,1.765,2026-11-05T07:36:08Z,50260140.0,,
+experimental-bsan,nostr-relay-pool-0.35.0,relay::flags::tests::test_service_flags_can_read,success,371.418,1.729,2026-11-05T07:36:10Z,50260140.0,,
+experimental-bsan,nostr-relay-pool-0.35.0,relay::flags::tests::test_service_flags_can_write,test_failed,371.418,1.786,2026-11-05T07:36:12Z,50260140.0,panic,"thread 'relay::flags::tests::test_service_flags_can_write' (50601) panicked at src/relay/flags.rs:327:9: assertion failed: !f.can_write()"
+experimental-bsan,nostr-relay-pool-0.35.0,relay::limits::tests::test_event_limits_get_max_size,success,371.418,1.702,2026-11-05T07:36:14Z,50260140.0,,
+experimental-bsan,nostr-relay-pool-0.35.0,relay::tests::test_ok_msg,test_failed,371.418,3.698,2026-11-05T07:36:17Z,50260140.0,panic,"thread 'relay::tests::test_ok_msg' (50710) panicked at src/relay/mod.rs:478:9: assertion `left == right` failed"

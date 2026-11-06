@@ -1,0 +1,12 @@
+experimental-bsan,scoopit-api-0.16.2,test_create_source,success,342.818,4.483,2026-11-05T05:54:23Z,50254371.0,,
+experimental-bsan,scoopit-api-0.16.2,test_get_sources,success,342.818,6.289,2026-11-05T05:54:29Z,50254371.0,,
+experimental-bsan,scoopit-api-0.16.2,test_get_suggestion_engines,success,342.818,4.996,2026-11-05T05:54:34Z,50254371.0,,
+experimental-bsan,scoopit-api-0.16.2,test_get_topic_group,success,342.818,5.635,2026-11-05T05:54:40Z,50254371.0,,
+experimental-bsan,scoopit-api-0.16.2,test_source_requests_serialization,success,342.818,4.443,2026-11-05T05:54:44Z,50254371.0,,
+experimental-bsan,scoopit-api-0.16.2,test_source_twitter_user,success,342.818,4.440,2026-11-05T05:54:48Z,50254371.0,,
+experimental-bsan,scoopit-api-0.16.2,test_update_resp,success,342.818,4.420,2026-11-05T05:54:53Z,50254371.0,,
+experimental-bsan,scoopit-api-0.16.2,tests::get_profile,test_failed,342.818,1.803,2026-11-05T05:54:55Z,50254371.0,panic,"thread 'tests::get_profile' (6054) panicked at src/lib.rs:298:60: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,scoopit-api-0.16.2,tests::get_test,test_failed,342.818,1.801,2026-11-05T05:54:57Z,50254371.0,panic,"thread 'tests::get_test' (6128) panicked at src/lib.rs:298:60: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,scoopit-api-0.16.2,tests::get_topic,test_failed,342.818,1.809,2026-11-05T05:54:58Z,50254371.0,panic,"thread 'tests::get_topic' (6255) panicked at src/lib.rs:298:60: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,scoopit-api-0.16.2,tests::get_topic_with_tags,test_failed,342.818,1.808,2026-11-05T05:55:00Z,50254371.0,panic,"thread 'tests::get_topic_with_tags' (6414) panicked at src/lib.rs:298:60: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,scoopit-api-0.16.2,tests::search,test_failed,342.818,1.809,2026-11-05T05:55:02Z,50254371.0,panic,"thread 'tests::search' (7039) panicked at src/lib.rs:298:60: called `Result::unwrap()` on an `Err` value: NotPresent"

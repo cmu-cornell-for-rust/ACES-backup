@@ -1,0 +1,38 @@
+experimental-bsan,rustypaste-0.15.1,auth::tests::test_extract_tokens,success,571.345,3.499,2026-11-05T03:33:24Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,config::tests::test_get_tokens,test_failed,571.345,1.864,2026-11-05T03:33:26Z,50245950.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,rustypaste-0.15.1,config::tests::test_parse_config,test_failed,571.345,1.834,2026-11-05T03:33:28Z,50245950.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,rustypaste-0.15.1,config::tests::test_parse_deprecated_config,test_failed,571.345,1.838,2026-11-05T03:33:30Z,50245950.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,rustypaste-0.15.1,config::tests::test_space_handling,success,571.345,3.245,2026-11-05T03:33:33Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,file::tests::test_file_checksum,test_failed,571.345,1.872,2026-11-05T03:33:35Z,50245950.0,panic,"thread 'file::tests::test_file_checksum' (10978) panicked at src/file.rs:70:14: cannot get file with checksum"
+experimental-bsan,rustypaste-0.15.1,header::tests::test_content_disposition,success,571.345,3.249,2026-11-05T03:33:39Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,header::tests::test_expiry_date,success,571.345,3.189,2026-11-05T03:33:42Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,mime::tests::test_match_mime_type,success,571.345,14.093,2026-11-05T03:33:56Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,paste::tests::test_paste_data,test_failed,571.345,18.792,2026-11-05T03:34:15Z,50245950.0,panic,"thread 'paste::tests::test_paste_data' (12687) panicked at src/paste.rs:497:9: assertion `left == right` failed"
+experimental-bsan,rustypaste-0.15.1,random::tests::test_generate_url,success,571.345,3.247,2026-11-05T03:34:18Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_auth,success,571.345,14.719,2026-11-05T03:34:33Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_delete_file,success,571.345,26.369,2026-11-05T03:34:59Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_delete_file_without_token_in_config,success,571.345,14.817,2026-11-05T03:35:14Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_index,success,571.345,3.457,2026-11-05T03:35:17Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_index_with_landing_page,success,571.345,3.442,2026-11-05T03:35:21Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_index_with_landing_page_file,success,571.345,3.449,2026-11-05T03:35:24Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_index_with_landing_page_file_not_found,success,571.345,3.428,2026-11-05T03:35:28Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_list,success,571.345,25.071,2026-11-05T03:35:53Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_list_expired,success,571.345,25.597,2026-11-05T03:36:18Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_payload_limit,success,571.345,14.741,2026-11-05T03:36:33Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_upload_duplicate_file,success,571.345,25.193,2026-11-05T03:36:58Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_upload_expiring_file,test_failed,571.345,25.110,2026-11-05T03:37:23Z,50245950.0,panic,"thread 'server::tests::test_upload_expiring_file' (31937) panicked at src/server.rs:1069:9: assertion `left == right` failed"
+experimental-bsan,rustypaste-0.15.1,server::tests::test_upload_file,success,571.345,27.165,2026-11-05T03:37:51Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_upload_file_override_filename,success,571.345,27.193,2026-11-05T03:38:18Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_upload_oneshot,success,571.345,27.430,2026-11-05T03:38:45Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_upload_oneshot_url,success,571.345,26.809,2026-11-05T03:39:12Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_upload_remote_file,test_failed,571.345,28.378,2026-11-05T03:39:40Z,50245950.0,panic,"thread 'server::tests::test_upload_remote_file' (40077) panicked at src/server.rs:1134:9: assertion `left == right` failed"
+experimental-bsan,rustypaste-0.15.1,server::tests::test_upload_same_filename,success,571.345,26.363,2026-11-05T03:40:07Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_upload_url,success,571.345,26.284,2026-11-05T03:40:33Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_version,success,571.345,14.547,2026-11-05T03:40:48Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_version_without_auth,success,571.345,14.499,2026-11-05T03:41:02Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,server::tests::test_version_without_config,success,571.345,14.695,2026-11-05T03:41:17Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,util::tests::test_get_expired_files,test_failed,571.345,2.726,2026-11-05T03:41:20Z,50245950.0,panic,"thread 'util::tests::test_get_expired_files' (51596) panicked at src/util.rs:186:9: assertion `left == right` failed"
+experimental-bsan,rustypaste-0.15.1,util::tests::test_glob_match,test_failed,571.345,11.638,2026-11-05T03:41:31Z,50245950.0,panic,"thread 'util::tests::test_glob_match' (51793) panicked at src/util.rs:155:9: assertion `left == right` failed"
+experimental-bsan,rustypaste-0.15.1,util::tests::test_safe_join_path,success,571.345,3.269,2026-11-05T03:41:35Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,util::tests::test_sha256sum,success,571.345,3.262,2026-11-05T03:41:38Z,50245950.0,,
+experimental-bsan,rustypaste-0.15.1,util::tests::test_system_time,success,571.345,3.300,2026-11-05T03:41:41Z,50245950.0,,

@@ -1,0 +1,5 @@
+experimental-bsan,effective-limits-0.7.0,test_no_ulimit,success,104.096,7.390,2026-11-05T07:25:38Z,50259760.0,,
+experimental-bsan,effective-limits-0.7.0,test_ulimit,test_failed,104.096,6.135,2026-11-05T07:25:44Z,50259760.0,panic,"thread 'test_ulimit' (91120) panicked at tests/limited.rs:193:5: assertion `left == right` failed"
+experimental-bsan,effective-limits-0.7.0,tests::it_works,success,104.096,6.661,2026-11-05T07:25:51Z,50259760.0,,
+experimental-bsan,effective-limits-0.7.0,tests::test_min_opt,success,104.096,5.969,2026-11-05T07:25:57Z,50259760.0,,
+experimental-bsan,effective-limits-0.7.0,win_bindings,timeout,104.096,150.033,2026-11-05T07:28:27Z,50259760.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

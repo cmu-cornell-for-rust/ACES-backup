@@ -1,0 +1,84 @@
+experimental-bsan,mainline-8.0.1,async_dht::test::announce_get_peer,test_failed,153.741,27.609,2026-11-05T02:12:30Z,50239476.0,panic,"thread 'async_dht::test::announce_get_peer' (102550) panicked at src/async_dht.rs:470:18: failed to announce: NoClosestNodes"
+experimental-bsan,mainline-8.0.1,async_dht::test::concurrent_get_mutable,test_failed,153.741,62.472,2026-11-05T02:13:32Z,50239476.0,panic,"thread 'async_dht::test::concurrent_get_mutable' (2657) panicked at src/async_dht.rs:847:53: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,async_dht::test::concurrent_put_mutable_different,test_failed,153.741,83.990,2026-11-05T02:14:56Z,50239476.0,panic,"thread '<unnamed>' (19758) panicked at src/async_dht.rs:938:25: assertion failed: result.is_ok()"
+experimental-bsan,mainline-8.0.1,async_dht::test::concurrent_put_mutable_different_with_cas,test_failed,153.741,69.595,2026-11-05T02:16:06Z,50239476.0,panic,"thread 'async_dht::test::concurrent_put_mutable_different_with_cas' (26061) panicked at src/async_dht.rs:993:57: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,async_dht::test::concurrent_put_mutable_same,test_failed,153.741,54.421,2026-11-05T02:17:00Z,50239476.0,panic,"thread '<unnamed>' (42134) panicked at src/async_dht.rs:895:87: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,async_dht::test::conflict_301_cas,test_failed,153.741,58.233,2026-11-05T02:17:59Z,50239476.0,panic,"thread 'async_dht::test::conflict_301_cas' (47573) panicked at src/async_dht.rs:1020:18: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,async_dht::test::get_mutable_detailed_no_more_recent_value,test_failed,153.741,59.017,2026-11-05T02:18:58Z,50239476.0,panic,"thread 'async_dht::test::get_mutable_detailed_no_more_recent_value' (57957) panicked at src/async_dht.rs:693:45: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,async_dht::test::get_mutable_detailed_no_values,test_failed,153.741,38.596,2026-11-05T02:19:36Z,50239476.0,panic,"thread 'async_dht::test::get_mutable_detailed_no_values' (68266) panicked at src/async_dht.rs:611:13: assertion failed: outcome.no_values > 0"
+experimental-bsan,mainline-8.0.1,async_dht::test::get_mutable_detailed_returns_values_outcome,test_failed,153.741,70.257,2026-11-05T02:20:47Z,50239476.0,panic,"thread 'async_dht::test::get_mutable_detailed_returns_values_outcome' (74562) panicked at src/async_dht.rs:646:53: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,async_dht::test::get_mutable_most_recent_prefers_highest_seq,test_failed,153.741,61.043,2026-11-05T02:21:48Z,50239476.0,panic,"thread 'async_dht::test::get_mutable_most_recent_prefers_highest_seq' (86703) panicked at src/async_dht.rs:775:56: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,async_dht::test::put_get_immutable,test_failed,153.741,28.331,2026-11-05T02:22:16Z,50239476.0,panic,"thread 'async_dht::test::put_get_immutable' (96757) panicked at src/async_dht.rs:501:55: called `Result::unwrap()` on an `Err` value: NoClosestNodes"
+experimental-bsan,mainline-8.0.1,async_dht::test::put_get_mutable,test_failed,153.741,66.086,2026-11-05T02:23:22Z,50239476.0,panic,"thread 'async_dht::test::put_get_mutable' (101598) panicked at src/async_dht.rs:568:67: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,async_dht::test::put_get_mutable_no_more_recent_value,test_failed,153.741,64.182,2026-11-05T02:24:26Z,50239476.0,panic,"thread 'async_dht::test::put_get_mutable_no_more_recent_value' (3938) panicked at src/async_dht.rs:744:53: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,async_dht::test::raw_put_immutable_returns_outcome,test_failed,153.741,20.252,2026-11-05T02:24:47Z,50239476.0,panic,"thread 'async_dht::test::raw_put_immutable_returns_outcome' (15244) panicked at src/async_dht.rs:530:56: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,async_dht::test::repeated_put_query,test_failed,153.741,38.916,2026-11-05T02:25:26Z,50239476.0,panic,"thread 'async_dht::test::repeated_put_query' (18668) panicked at src/async_dht.rs:813:30: called `Result::unwrap()` on an `Err` value: NoClosestNodes"
+experimental-bsan,mainline-8.0.1,common::id::test::distance_to_furthest,success,153.741,1.671,2026-11-05T02:25:27Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::id::test::distance_to_id,success,153.741,1.677,2026-11-05T02:25:29Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::id::test::distance_to_random_id,success,153.741,1.664,2026-11-05T02:25:31Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::id::test::distance_to_self,success,153.741,1.669,2026-11-05T02:25:32Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::id::test::from_ipv4,success,153.741,1.664,2026-11-05T02:25:34Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::id::test::from_u8_20,success,153.741,1.667,2026-11-05T02:25:36Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::id::test::is_valid_for_ipv4,success,153.741,1.672,2026-11-05T02:25:37Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::immutable::test::test_hash_immutable,success,153.741,1.655,2026-11-05T02:25:39Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::immutable::test::test_validate_immutable,success,153.741,1.663,2026-11-05T02:25:41Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_find_node_request,success,153.741,1.707,2026-11-05T02:25:42Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_find_node_request_read_only,success,153.741,1.708,2026-11-05T02:25:44Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_find_node_response,success,153.741,1.739,2026-11-05T02:25:46Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_get_immutable_request,success,153.741,1.723,2026-11-05T02:25:48Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_get_immutable_response,success,153.741,1.735,2026-11-05T02:25:49Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_get_peers_request,success,153.741,1.705,2026-11-05T02:25:51Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_get_peers_response,success,153.741,1.738,2026-11-05T02:25:53Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_get_peers_response_neither,success,153.741,1.659,2026-11-05T02:25:54Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_get_peers_response_peers,success,153.741,1.743,2026-11-05T02:25:56Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_ping_request,success,153.741,1.695,2026-11-05T02:25:58Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_ping_response,success,153.741,1.710,2026-11-05T02:26:00Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_put_immutable_request,success,153.741,1.741,2026-11-05T02:26:01Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_put_immutable_request_with_mutable_fields_is_rejected,success,153.741,1.899,2026-11-05T02:26:03Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_put_mutable_request,success,153.741,1.775,2026-11-05T02:26:05Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_put_mutable_request_missing_sequence_is_rejected,success,153.741,1.727,2026-11-05T02:26:07Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::messages::tests::test_put_mutable_request_missing_signature_is_rejected,success,153.741,1.728,2026-11-05T02:26:08Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::mutable::tests::from_dht_message_rejects_a_signed_item_for_a_different_target,success,153.741,10.709,2026-11-05T02:26:19Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::mutable::tests::most_recent_mutable_item_selects_by_seq_then_value,success,153.741,21.977,2026-11-05T02:26:41Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::mutable::tests::signable_with_salt,success,153.741,1.658,2026-11-05T02:26:43Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::mutable::tests::signable_without_salt,success,153.741,1.660,2026-11-05T02:26:45Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::routing_table::test::buckets_are_sets,success,153.741,1.684,2026-11-05T02:26:46Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::routing_table::test::closest,success,153.741,12.549,2026-11-05T02:26:59Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::routing_table::test::contains,success,153.741,1.682,2026-11-05T02:27:00Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::routing_table::test::remove,success,153.741,1.695,2026-11-05T02:27:02Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::routing_table::test::should_not_add_more_than_k,success,153.741,1.697,2026-11-05T02:27:04Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::routing_table::test::should_not_add_self,success,153.741,1.680,2026-11-05T02:27:06Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::routing_table::test::should_update_existing_node,success,153.741,1.678,2026-11-05T02:27:07Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::routing_table::test::table_is_empty,success,153.741,1.667,2026-11-05T02:27:09Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,common::routing_table::test::to_vec,success,153.741,2.005,2026-11-05T02:27:11Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,dht::test::announce_get_peer,test_failed,153.741,28.178,2026-11-05T02:27:39Z,50239476.0,panic,"thread 'dht::test::announce_get_peer' (39766) panicked at src/dht.rs:973:14: failed to announce: NoClosestNodes"
+experimental-bsan,mainline-8.0.1,dht::test::bind_twice,success,153.741,3.495,2026-11-05T02:27:43Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,dht::test::concurrent_get_mutable,test_failed,153.741,66.464,2026-11-05T02:28:49Z,50239476.0,panic,"thread 'dht::test::concurrent_get_mutable' (43646) panicked at src/dht.rs:1164:43: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,dht::test::concurrent_put_mutable_different,test_failed,153.741,82.264,2026-11-05T02:30:11Z,50239476.0,panic,"thread '<unnamed>' (60043) panicked at src/dht.rs:1245:21: assertion failed: result.is_ok()"
+experimental-bsan,mainline-8.0.1,dht::test::concurrent_put_mutable_different_with_cas,test_failed,153.741,65.505,2026-11-05T02:31:17Z,50239476.0,panic,"thread 'dht::test::concurrent_put_mutable_different_with_cas' (63976) panicked at src/dht.rs:1296:50: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,dht::test::concurrent_put_mutable_same,test_failed,153.741,56.419,2026-11-05T02:32:13Z,50239476.0,panic,"thread '<unnamed>' (77731) panicked at src/dht.rs:1205:84: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,dht::test::conflict_301_cas,test_failed,153.741,63.695,2026-11-05T02:33:17Z,50239476.0,panic,"thread 'dht::test::conflict_301_cas' (83709) panicked at src/dht.rs:1344:14: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,dht::test::conflict_302_seq_less_than_current,test_failed,153.741,59.972,2026-11-05T02:34:17Z,50239476.0,panic,"thread 'dht::test::conflict_302_seq_less_than_current' (89657) panicked at src/dht.rs:1317:14: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,dht::test::find_node_no_values,success,153.741,1.800,2026-11-05T02:34:19Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,dht::test::get_mutable_most_recent_prefers_highest_seq,test_failed,153.741,54.551,2026-11-05T02:35:13Z,50239476.0,panic,"thread 'dht::test::get_mutable_most_recent_prefers_highest_seq' (94933) panicked at src/dht.rs:1105:49: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,dht::test::populate_bootstrapping_node_routing_table,success,153.741,2.162,2026-11-05T02:35:16Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,dht::test::put_get_immutable,test_failed,153.741,29.042,2026-11-05T02:35:45Z,50239476.0,panic,"thread 'dht::test::put_get_immutable' (100678) panicked at src/dht.rs:998:45: called `Result::unwrap()` on an `Err` value: NoClosestNodes"
+experimental-bsan,mainline-8.0.1,dht::test::put_get_immutable_no_values,success,153.741,1.793,2026-11-05T02:35:47Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,dht::test::put_get_mutable,test_failed,153.741,65.348,2026-11-05T02:36:52Z,50239476.0,panic,"thread 'dht::test::put_get_mutable' (103192) panicked at src/dht.rs:1045:43: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,dht::test::put_get_mutable_no_more_recent_value,test_failed,153.741,66.965,2026-11-05T02:37:59Z,50239476.0,panic,"thread 'dht::test::put_get_mutable_no_more_recent_value' (7921) panicked at src/dht.rs:1080:43: called `Result::unwrap()` on an `Err` value: Query(NoClosestNodes)"
+experimental-bsan,mainline-8.0.1,dht::test::repeated_put_query,test_failed,153.741,26.231,2026-11-05T02:38:25Z,50239476.0,panic,"thread 'dht::test::repeated_put_query' (13695) panicked at src/dht.rs:1133:46: called `Result::unwrap()` on an `Err` value: NoClosestNodes"
+experimental-bsan,mainline-8.0.1,rpc::closest_nodes::tests::add_sorted_by_id,success,153.741,10.820,2026-11-05T02:38:36Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::closest_nodes::tests::order_by_secure_id,success,153.741,1.675,2026-11-05T02:38:38Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::closest_nodes::tests::simulation,timeout,153.741,150.021,2026-11-05T02:41:08Z,50239476.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mainline-8.0.1,rpc::closest_nodes::tests::take_until_expected_distance_to_20th_node,success,153.741,20.208,2026-11-05T02:41:28Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::put_query::tests::mutable_majority_cas_failure_wins_over_completed_success,success,153.741,8.539,2026-11-05T02:41:36Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::server::peers::test::all_peers,success,153.741,1.672,2026-11-05T02:41:38Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::server::peers::test::max_info_hashes,success,153.741,1.674,2026-11-05T02:41:40Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::server::peers::test::random_peers_subset,success,153.741,2.202,2026-11-05T02:41:42Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::server::tokens::test::valid_tokens,success,153.741,1.658,2026-11-05T02:41:44Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::socket::test::ignore_response_from_wrong_address,success,153.741,1.733,2026-11-05T02:41:45Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::socket::test::recv_request,success,153.741,1.712,2026-11-05T02:41:47Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::socket::test::recv_response,success,153.741,1.728,2026-11-05T02:41:49Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::socket::test::tid,success,153.741,1.665,2026-11-05T02:41:51Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::tests::get_does_not_echo_inflight_mutable_put,success,153.741,8.396,2026-11-05T02:41:59Z,50239476.0,,
+experimental-bsan,mainline-8.0.1,rpc::tests::mutable_get_counts_wrong_primary_response_as_invalid,success,153.741,1.734,2026-11-05T02:42:01Z,50239476.0,,

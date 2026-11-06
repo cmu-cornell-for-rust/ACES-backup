@@ -1,0 +1,23 @@
+experimental-bsan,lambda_runtime-0.13.0,diagnostic::test::round_trip_lambda_error,success,368.275,1.688,2026-11-05T04:38:29Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,requests::test_event_completion_request,success,368.275,1.686,2026-11-05T04:38:31Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,requests::tests::test_event_error_request,success,368.275,1.706,2026-11-05T04:38:33Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,requests::tests::test_init_error_request,success,368.275,1.682,2026-11-05T04:38:34Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,requests::tests::test_next_event_request,success,368.275,1.683,2026-11-05T04:38:36Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,runtime::endpoint_tests::panic_in_async_run,test_failed,368.275,12.108,2026-11-05T04:38:48Z,50249647.0,gc,"test runtime::endpoint_tests::panic_in_async_run ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,lambda_runtime-0.13.0,runtime::endpoint_tests::panic_outside_async_run,test_failed,368.275,12.088,2026-11-05T04:39:00Z,50249647.0,gc,"test runtime::endpoint_tests::panic_outside_async_run ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,lambda_runtime-0.13.0,runtime::endpoint_tests::successful_end_to_end_run,test_failed,368.275,12.091,2026-11-05T04:39:12Z,50249647.0,gc,"test runtime::endpoint_tests::successful_end_to_end_run ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,lambda_runtime-0.13.0,runtime::endpoint_tests::test_error_response,test_failed,368.275,12.090,2026-11-05T04:39:24Z,50249647.0,gc,"test runtime::endpoint_tests::test_error_response ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,lambda_runtime-0.13.0,runtime::endpoint_tests::test_next_event,test_failed,368.275,12.086,2026-11-05T04:39:37Z,50249647.0,gc,"test runtime::endpoint_tests::test_next_event ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,lambda_runtime-0.13.0,runtime::endpoint_tests::test_ok_response,test_failed,368.275,12.084,2026-11-05T04:39:49Z,50249647.0,gc,"test runtime::endpoint_tests::test_ok_response ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,lambda_runtime-0.13.0,types::test::context_with_bad_client_context_is_err,success,368.275,1.700,2026-11-05T04:39:50Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,types::test::context_with_bad_deadline_type_is_err,success,368.275,1.723,2026-11-05T04:39:52Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,types::test::context_with_bad_identity_is_err,success,368.275,1.703,2026-11-05T04:39:54Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,types::test::context_with_certain_missing_headers_still_resolves,success,368.275,1.711,2026-11-05T04:39:56Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,types::test::context_with_client_context_resolves,success,368.275,1.781,2026-11-05T04:39:57Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,types::test::context_with_empty_client_context_resolves,success,368.275,1.705,2026-11-05T04:39:59Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,types::test::context_with_empty_identity_is_err,success,368.275,1.706,2026-11-05T04:40:01Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,types::test::context_with_expected_values_and_types_resolves,success,368.275,1.729,2026-11-05T04:40:02Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,types::test::context_with_identity_resolves,success,368.275,1.751,2026-11-05T04:40:04Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,types::test::context_with_missing_deadline_should_panic,success,368.275,1.735,2026-11-05T04:40:06Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,types::test::invoke_request_id_should_not_panic,success,368.275,1.705,2026-11-05T04:40:08Z,50249647.0,,
+experimental-bsan,lambda_runtime-0.13.0,types::test::invoke_request_id_should_panic,success,368.275,1.716,2026-11-05T04:40:09Z,50249647.0,,

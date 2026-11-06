@@ -1,0 +1,30 @@
+experimental-bsan,nur-0.11.1,args::tests::test_gather_commandline_args_handles_missing_nur_args,success,1633.771,2.219,2026-11-05T04:22:19Z,50247941.0,,
+experimental-bsan,nur-0.11.1,args::tests::test_gather_commandline_args_handles_missing_task_args,success,1633.771,2.051,2026-11-05T04:22:21Z,50247941.0,,
+experimental-bsan,nur-0.11.1,args::tests::test_gather_commandline_args_handles_missing_task_name,success,1633.771,2.007,2026-11-05T04:22:23Z,50247941.0,,
+experimental-bsan,nur-0.11.1,args::tests::test_gather_commandline_args_handles_no_args_at_all,success,1633.771,2.018,2026-11-05T04:22:25Z,50247941.0,,
+experimental-bsan,nur-0.11.1,args::tests::test_gather_commandline_args_splits_on_task_name,success,1633.771,2.047,2026-11-05T04:22:27Z,50247941.0,,
+experimental-bsan,nur-0.11.1,args::tests::test_parse_commandline_args_commands,test_failed,1633.771,14.057,2026-11-05T04:22:41Z,50247941.0,crash,"test args::tests::test_parse_commandline_args_commands ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,args::tests::test_parse_commandline_args_enter_shell,test_failed,1633.771,13.693,2026-11-05T04:22:55Z,50247941.0,crash,"test args::tests::test_parse_commandline_args_enter_shell ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,args::tests::test_parse_commandline_args_help,test_failed,1633.771,13.807,2026-11-05T04:23:09Z,50247941.0,crash,"test args::tests::test_parse_commandline_args_help ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,args::tests::test_parse_commandline_args_list,test_failed,1633.771,13.849,2026-11-05T04:23:23Z,50247941.0,crash,"test args::tests::test_parse_commandline_args_list ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,args::tests::test_parse_commandline_args_quiet,test_failed,1633.771,14.011,2026-11-05T04:23:37Z,50247941.0,crash,"test args::tests::test_parse_commandline_args_quiet ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,args::tests::test_parse_commandline_args_stdin,test_failed,1633.771,13.922,2026-11-05T04:23:51Z,50247941.0,crash,"test args::tests::test_parse_commandline_args_stdin ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,args::tests::test_parse_commandline_args_without_args,test_failed,1633.771,13.810,2026-11-05T04:24:05Z,50247941.0,crash,"test args::tests::test_parse_commandline_args_without_args ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,engine::tests::test_init_engine_state_will_add_commands,test_failed,1633.771,13.731,2026-11-05T04:24:18Z,50247941.0,crash,"test engine::tests::test_init_engine_state_will_add_commands ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,engine::tests::test_init_engine_state_will_set_flags,test_failed,1633.771,13.749,2026-11-05T04:24:32Z,50247941.0,crash,"test engine::tests::test_init_engine_state_will_set_flags ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,engine::tests::test_init_engine_state_will_set_nu_version,test_failed,1633.771,13.600,2026-11-05T04:24:46Z,50247941.0,crash,"test engine::tests::test_init_engine_state_will_set_nu_version ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,engine::tests::test_nur_engine_will_allow_scripts,test_failed,1633.771,13.611,2026-11-05T04:24:59Z,50247941.0,crash,"test engine::tests::test_nur_engine_will_allow_scripts ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,engine::tests::test_nur_engine_will_allow_sub_tasks,test_failed,1633.771,13.551,2026-11-05T04:25:13Z,50247941.0,crash,"test engine::tests::test_nur_engine_will_allow_sub_tasks ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,engine::tests::test_nur_engine_will_check_task_name_exists,test_failed,1633.771,13.595,2026-11-05T04:25:27Z,50247941.0,crash,"test engine::tests::test_nur_engine_will_check_task_name_exists ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,engine::tests::test_nur_engine_will_include_std_lib,test_failed,1633.771,13.528,2026-11-05T04:25:40Z,50247941.0,crash,"test engine::tests::test_nur_engine_will_include_std_lib ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,engine::tests::test_nur_engine_will_load_env_and_config,test_failed,1633.771,12.761,2026-11-05T04:25:53Z,50247941.0,crash,"test engine::tests::test_nur_engine_will_load_env_and_config ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,engine::tests::test_nur_engine_will_load_nurfiles,test_failed,1633.771,12.781,2026-11-05T04:26:06Z,50247941.0,crash,"test engine::tests::test_nur_engine_will_load_nurfiles ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,engine::tests::test_nur_engine_will_set_env,test_failed,1633.771,12.280,2026-11-05T04:26:18Z,50247941.0,crash,"test engine::tests::test_nur_engine_will_set_env ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,engine::tests::test_nur_engine_will_set_nur_variable,test_failed,1633.771,12.282,2026-11-05T04:26:30Z,50247941.0,crash,"test engine::tests::test_nur_engine_will_set_nur_variable ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,engine::tests::test_nur_engine_will_set_task_name,test_failed,1633.771,12.372,2026-11-05T04:26:43Z,50247941.0,crash,"test engine::tests::test_nur_engine_will_set_task_name ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,nur-0.11.1,path::tests::test_find_project_path,success,1633.771,1.789,2026-11-05T04:26:45Z,50247941.0,,
+experimental-bsan,nur-0.11.1,path::tests::test_find_project_path_error,success,1633.771,1.788,2026-11-05T04:26:46Z,50247941.0,,
+experimental-bsan,nur-0.11.1,path::tests::test_find_project_path_subdirectory,success,1633.771,1.793,2026-11-05T04:26:48Z,50247941.0,,
+experimental-bsan,nur-0.11.1,state::tests::test_nur_state_with_project_path,success,1633.771,1.802,2026-11-05T04:26:50Z,50247941.0,,
+experimental-bsan,nur-0.11.1,state::tests::test_nur_state_without_project_path,success,1633.771,1.811,2026-11-05T04:26:52Z,50247941.0,,
+experimental-bsan,nur-0.11.1,state::tests::test_nur_state_without_task,success,1633.771,1.810,2026-11-05T04:26:54Z,50247941.0,,

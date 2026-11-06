@@ -1,0 +1,4 @@
+experimental-bsan,git-credential-null-1.0.1,test_git_clone_with_password,success,36.547,3.436,2026-11-05T07:45:46Z,50261045.0,,
+experimental-bsan,git-credential-null-1.0.1,test_git_clone_without_password,success,36.547,3.606,2026-11-05T07:45:49Z,50261045.0,,
+experimental-bsan,git-credential-null-1.0.1,test_output_get_command,test_failed,36.547,3.083,2026-11-05T07:45:52Z,50261045.0,panic,"thread 'test_output_get_command' (80436) panicked at tests/integration.rs:9:65: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,git-credential-null-1.0.1,test_output_other_commands,test_failed,36.547,3.053,2026-11-05T07:45:56Z,50261045.0,panic,"thread 'test_output_other_commands' (80653) panicked at tests/integration.rs:18:67: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

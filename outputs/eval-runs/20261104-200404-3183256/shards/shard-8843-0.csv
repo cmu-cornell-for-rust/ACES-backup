@@ -1,0 +1,21 @@
+experimental-bsan,ws-0.9.2,bind_port_zero,test_failed,86.950,3.148,2026-11-05T04:42:55Z,50250447.0,panic,"thread 'bind_port_zero' (27131) panicked at tests/bind.rs:11:37: called `Result::unwrap()` on an `Err` value: WS Error <Io(Os { code: 22, kind: InvalidInput, message: ""Invalid argument"" })>"
+experimental-bsan,ws-0.9.2,bind_try_multiple_addrs,test_failed,86.950,3.127,2026-11-05T04:42:58Z,50250447.0,panic,"thread 'bind_try_multiple_addrs' (27534) panicked at tests/bind.rs:27:34: called `Result::unwrap()` on an `Err` value: WS Error <Io(Os { code: 22, kind: InvalidInput, message: ""Invalid argument"" })>"
+experimental-bsan,ws-0.9.2,factory::test::closure_factory,success,86.950,5.645,2026-11-05T04:43:04Z,50250447.0,,
+experimental-bsan,ws-0.9.2,factory::test::connection_lost,success,86.950,5.638,2026-11-05T04:43:09Z,50250447.0,,
+experimental-bsan,ws-0.9.2,factory::test::impl_factory,success,86.950,5.639,2026-11-05T04:43:15Z,50250447.0,,
+experimental-bsan,ws-0.9.2,frame::test::display_frame,success,86.950,5.645,2026-11-05T04:43:21Z,50250447.0,,
+experimental-bsan,ws-0.9.2,handler::test::closure_handler,success,86.950,5.643,2026-11-05T04:43:26Z,50250447.0,,
+experimental-bsan,ws-0.9.2,handler::test::handler,success,86.950,5.698,2026-11-05T04:43:32Z,50250447.0,,
+experimental-bsan,ws-0.9.2,handshake::test::remote_addr,success,86.950,5.678,2026-11-05T04:43:38Z,50250447.0,,
+experimental-bsan,ws-0.9.2,handshake::test::remote_addr_forwarded,success,86.950,5.694,2026-11-05T04:43:43Z,50250447.0,,
+experimental-bsan,ws-0.9.2,handshake::test::remote_addr_x_forwarded_for,success,86.950,5.680,2026-11-05T04:43:49Z,50250447.0,,
+experimental-bsan,ws-0.9.2,io::test::test_url_to_addrs,success,86.950,5.782,2026-11-05T04:43:55Z,50250447.0,,
+experimental-bsan,ws-0.9.2,message::test::binary_convert,success,86.950,5.619,2026-11-05T04:44:00Z,50250447.0,,
+experimental-bsan,ws-0.9.2,message::test::binary_convert_vec,success,86.950,5.638,2026-11-05T04:44:06Z,50250447.0,,
+experimental-bsan,ws-0.9.2,message::test::display,success,86.950,5.620,2026-11-05T04:44:12Z,50250447.0,,
+experimental-bsan,ws-0.9.2,message::test::text_convert,success,86.950,5.614,2026-11-05T04:44:17Z,50250447.0,,
+experimental-bsan,ws-0.9.2,protocol::test::closecode_from_u16,success,86.950,5.612,2026-11-05T04:44:23Z,50250447.0,,
+experimental-bsan,ws-0.9.2,protocol::test::closecode_into_u16,success,86.950,5.635,2026-11-05T04:44:29Z,50250447.0,,
+experimental-bsan,ws-0.9.2,protocol::test::opcode_from_u8,success,86.950,5.626,2026-11-05T04:44:34Z,50250447.0,,
+experimental-bsan,ws-0.9.2,protocol::test::opcode_into_u8,success,86.950,5.602,2026-11-05T04:44:40Z,50250447.0,,
+experimental-bsan,ws-0.9.2,shutdown_before_connections,test_failed,86.950,6.366,2026-11-05T04:44:46Z,50250447.0,panic,"thread '<unnamed>' (51532) panicked at tests/shutdown.rs:22:41: called `Result::unwrap()` on an `Err` value: WS Error <Io(Os { code: 22, kind: InvalidInput, message: ""Invalid argument"" })>"

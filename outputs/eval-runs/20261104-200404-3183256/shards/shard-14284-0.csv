@@ -1,0 +1,7 @@
+experimental-bsan,libp2p-websocket-0.44.0,framed::tests::dial_addr,success,359.895,2.494,2026-11-05T06:59:28Z,50257950.0,,
+experimental-bsan,libp2p-websocket-0.44.0,framed::tests::listen_addr,success,359.895,1.640,2026-11-05T06:59:30Z,50257950.0,,
+experimental-bsan,libp2p-websocket-0.44.0,quicksink::tests::error_does_not_panic,success,359.895,2.409,2026-11-05T06:59:32Z,50257950.0,,
+experimental-bsan,libp2p-websocket-0.44.0,quicksink::tests::replay,success,359.895,2.483,2026-11-05T06:59:35Z,50257950.0,,
+experimental-bsan,libp2p-websocket-0.44.0,quicksink::tests::smoke_test,test_failed,359.895,12.531,2026-11-05T06:59:47Z,50257950.0,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,libp2p-websocket-0.44.0,tests::dialer_connects_to_listener_ipv4,test_failed,359.895,11.783,2026-11-05T06:59:59Z,50257950.0,gc,"test tests::dialer_connects_to_listener_ipv4 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,libp2p-websocket-0.44.0,tests::dialer_connects_to_listener_ipv6,test_failed,359.895,11.795,2026-11-05T07:00:11Z,50257950.0,gc,"test tests::dialer_connects_to_listener_ipv6 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."

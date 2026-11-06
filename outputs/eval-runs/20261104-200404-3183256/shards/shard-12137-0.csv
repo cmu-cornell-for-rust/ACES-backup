@@ -1,0 +1,11 @@
+experimental-bsan,killport-1.1.0,check_docker_container_type_and_name,success,286.372,8.565,2026-11-05T06:04:34Z,50254887.0,,
+experimental-bsan,killport-1.1.0,check_process_type_and_name,success,286.372,8.242,2026-11-05T06:04:42Z,50254887.0,,
+experimental-bsan,killport-1.1.0,docker_container_kill_succeeds,success,286.372,8.154,2026-11-05T06:04:50Z,50254887.0,,
+experimental-bsan,killport-1.1.0,find_killables_processes_only,success,286.372,8.055,2026-11-05T06:04:58Z,50254887.0,,
+experimental-bsan,killport-1.1.0,kill_service_by_port_dry_run,success,286.372,8.173,2026-11-05T06:05:06Z,50254887.0,,
+experimental-bsan,killport-1.1.0,native_process_kill_succeeds,success,286.372,8.324,2026-11-05T06:05:15Z,50254887.0,,
+experimental-bsan,killport-1.1.0,test_basic_kill_no_process,success,286.372,16.221,2026-11-05T06:05:31Z,50254887.0,,
+experimental-bsan,killport-1.1.0,test_basic_kill_process,test_failed,286.372,39.638,2026-11-05T06:06:11Z,50254887.0,panic,"thread 'test_basic_kill_process' (59411) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+experimental-bsan,killport-1.1.0,test_dry_run_option,test_failed,286.372,48.761,2026-11-05T06:06:59Z,50254887.0,panic,"thread 'test_dry_run_option' (65905) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+experimental-bsan,killport-1.1.0,test_mode_option,test_failed,286.372,49.285,2026-11-05T06:07:49Z,50254887.0,panic,"thread 'test_mode_option' (70973) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+experimental-bsan,killport-1.1.0,test_signal_handling,test_failed,286.372,36.057,2026-11-05T06:08:25Z,50254887.0,panic,"thread 'test_signal_handling' (72900) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."

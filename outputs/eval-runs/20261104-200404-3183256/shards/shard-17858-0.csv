@@ -1,0 +1,3 @@
+experimental-bsan,netcdf-sys-0.8.1,tests::test_get_var,test_failed,177.080,1.585,2026-11-05T08:27:27Z,50262799.0,panic,"thread 'tests::test_get_var' (14643) panicked at src/lib.rs:109:13: assertion `left == right` failed"
+experimental-bsan,netcdf-sys-0.8.1,tests::test_inq_varid,test_failed,177.080,1.563,2026-11-05T08:27:29Z,50262799.0,panic,"thread 'tests::test_inq_varid' (15462) panicked at src/lib.rs:83:13: assertion `left == right` failed"
+experimental-bsan,netcdf-sys-0.8.1,tests::test_nc_open_close,test_failed,177.080,1.570,2026-11-05T08:27:30Z,50262799.0,panic,"thread 'tests::test_nc_open_close' (16114) panicked at src/lib.rs:62:13: assertion `left == right` failed"

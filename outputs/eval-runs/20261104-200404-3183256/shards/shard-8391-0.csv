@@ -1,0 +1,22 @@
+experimental-bsan,assert_cli-0.6.3,assert::test::cargo_binary_default_uses_active_profile,success,68.064,5.849,2026-11-05T04:33:35Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,assert::test::empty_env,success,68.064,5.917,2026-11-05T04:33:41Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,assert::test::in_place_mod,success,68.064,5.855,2026-11-05T04:33:46Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,assert::test::in_place_mod2,success,68.064,7.610,2026-11-05T04:33:54Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,assert::test::in_place_mod3,success,68.064,5.859,2026-11-05T04:34:00Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,assert::test::main_binary_default_uses_active_profile,success,68.064,5.859,2026-11-05T04:34:06Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,assert::test::take_ownership,success,68.064,6.930,2026-11-05T04:34:13Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,assert::test::take_slice,success,68.064,5.905,2026-11-05T04:34:19Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,assert::test::take_slice_of_strings,success,68.064,5.882,2026-11-05T04:34:25Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,assert::test::take_slice_of_strs,success,68.064,5.917,2026-11-05T04:34:31Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,assert::test::take_string_i32,success,68.064,5.879,2026-11-05T04:34:36Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,assert::test::take_vec,success,68.064,5.927,2026-11-05T04:34:42Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,cargo_binary,test_failed,68.064,49.968,2026-11-05T04:35:32Z,50249806.0,panic,"thread 'cargo_binary' (17078) panicked at src/assert.rs:441:13: Assertion failed for `cargo run --quiet --bin assert_fixture --`"
+experimental-bsan,assert_cli-0.6.3,diff::tests::added_first_line_diff,test_failed,68.064,1.699,2026-11-05T04:35:34Z,50249806.0,panic,"thread 'diff::tests::added_first_line_diff' (23961) panicked at src/diff.rs:100:9: assertion `left == right` failed"
+experimental-bsan,assert_cli-0.6.3,diff::tests::basic_diff,test_failed,68.064,1.686,2026-11-05T04:35:36Z,50249806.0,panic,"thread 'diff::tests::basic_diff' (24114) panicked at src/diff.rs:60:9: assertion `left == right` failed"
+experimental-bsan,assert_cli-0.6.3,diff::tests::multiline_diff,test_failed,68.064,2.142,2026-11-05T04:35:38Z,50249806.0,panic,"thread 'diff::tests::multiline_diff' (24311) panicked at src/diff.rs:80:9: assertion `left == right` failed"
+experimental-bsan,assert_cli-0.6.3,macros::test::flatten_escaped,success,68.064,5.852,2026-11-05T04:35:44Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,macros::test::flatten_quoted,success,68.064,5.824,2026-11-05T04:35:50Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,macros::test::flatten_unquoted,success,68.064,5.842,2026-11-05T04:35:55Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,main_binary,test_failed,68.064,22.769,2026-11-05T04:36:18Z,50249806.0,panic,"thread 'main_binary' (26266) panicked at src/assert.rs:441:13: Assertion failed for `cargo run --quiet --`"
+experimental-bsan,assert_cli-0.6.3,output::test_find_subsequence,success,68.064,5.795,2026-11-05T04:36:24Z,50249806.0,,
+experimental-bsan,assert_cli-0.6.3,test_readme,success,68.064,5.995,2026-11-05T04:36:30Z,50249806.0,,

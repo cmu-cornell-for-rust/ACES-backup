@@ -1,0 +1,24 @@
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::async_error_handler,success,74.335,3.080,2026-11-05T04:27:30Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::async_func,success,74.335,3.060,2026-11-05T04:27:33Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::graceful_restart,success,74.335,3.342,2026-11-05T04:27:37Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::graceful_restart_beyond_grace,test_failed,74.335,2.164,2026-11-05T04:27:39Z,50249510.0,panic,"thread 'job::test::graceful_restart_beyond_grace' (100330) panicked at src/job/test.rs:602:9: expected Some(CommandState::Running { .. }), got Some(Finished { status: ExitError(1), started: Instant { tv_sec: 4607164, tv_nsec: 331785715 }, finished: Instant { tv_sec: 4607164, tv_nsec: 399491990 } }) "
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::graceful_stop,success,74.335,3.252,2026-11-05T04:27:42Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::graceful_stop_beyond_grace,test_failed,74.335,2.114,2026-11-05T04:27:44Z,50249510.0,panic,"thread 'job::test::graceful_stop_beyond_grace' (102864) panicked at src/job/test.rs:558:9: expected Some(CommandState::Running { .. }), got Some(Finished { status: Success, started: Instant { tv_sec: 4607169, tv_nsec: 784889856 }, finished: Instant { tv_sec: 4607169, tv_nsec: 860563822 } }) (after U"
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::queue_ordering,success,74.335,3.098,2026-11-05T04:27:48Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::restart,success,74.335,3.384,2026-11-05T04:27:51Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::signal_unix,success,74.335,3.155,2026-11-05T04:27:54Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::start,success,74.335,3.141,2026-11-05T04:27:57Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::stop,success,74.335,3.221,2026-11-05T04:28:00Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::stop_fail,success,74.335,3.210,2026-11-05T04:28:04Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::stop_when_running,success,74.335,3.166,2026-11-05T04:28:07Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::sync_error_handler,success,74.335,3.057,2026-11-05T04:28:10Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::sync_func,success,74.335,3.037,2026-11-05T04:28:13Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::try_graceful_restart,test_failed,74.335,2.212,2026-11-05T04:28:15Z,50249510.0,panic,"thread 'job::test::try_graceful_restart' (4093) panicked at src/job/test.rs:710:5: expected Some(CommandState::Running { .. }), got Some(Finished { status: ExitError(1), started: Instant { tv_sec: 4607200, tv_nsec: 521212044 }, finished: Instant { tv_sec: 4607200, tv_nsec: 593346183 } })"
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::try_graceful_restart_beyond_grace,test_failed,74.335,2.226,2026-11-05T04:28:17Z,50249510.0,panic,"thread 'job::test::try_graceful_restart_beyond_grace' (4398) panicked at src/job/test.rs:825:5: expected Some(CommandState::Running { .. }), got Some(Finished { status: ExitError(1), started: Instant { tv_sec: 4607202, tv_nsec: 747471437 }, finished: Instant { tv_sec: 4607202, tv_nsec: 820521429 } }"
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::try_restart,timeout,74.335,150.016,2026-11-05T04:30:47Z,50249510.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::try_restart_beyond_grace,test_failed,74.335,2.285,2026-11-05T04:30:50Z,50249510.0,panic,"thread 'job::test::try_restart_beyond_grace' (27767) panicked at src/job/test.rs:767:5: expected Some(CommandState::Running { .. }), got Some(Finished { status: ExitError(1), started: Instant { tv_sec: 4607355, tv_nsec: 109015103 }, finished: Instant { tv_sec: 4607355, tv_nsec: 182811746 } })"
+experimental-bsan,watchexec-supervisor-3.0.0,job::test::unset_error_handler,success,74.335,3.192,2026-11-05T04:30:53Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,unix_shell_alternate,success,74.335,3.172,2026-11-05T04:30:56Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,unix_shell_alternate_shopts,success,74.335,3.153,2026-11-05T04:30:59Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,unix_shell_none,success,74.335,3.167,2026-11-05T04:31:03Z,50249510.0,,
+experimental-bsan,watchexec-supervisor-3.0.0,unix_shell_sh,success,74.335,3.175,2026-11-05T04:31:06Z,50249510.0,,

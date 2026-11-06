@@ -1,0 +1,148 @@
+experimental-bsan,webrtc-0.21.1,a_built_in_provider_resolves,success,1068.390,71.026,2026-11-05T02:01:04Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,application_provider_to_application_provider,success,1068.390,108.476,2026-11-05T02:02:52Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,application_provider_to_ring,success,1068.390,108.704,2026-11-05T02:04:41Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,close_and_drop_release_a_connection_that_added_a_track,success,1068.390,75.636,2026-11-05T02:05:57Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,close_does_not_wait_long_for_a_stuck_driver,success,1068.390,74.452,2026-11-05T02:07:11Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,close_from_a_callback_releases_turn_allocations_without_stalling,test_failed,1068.390,87.446,2026-11-05T02:08:39Z,50234248.0,panic,"thread 'close_from_a_callback_releases_turn_allocations_without_stalling' (55697) panicked at tests/turn_release_on_close.rs:268:17: close() from a callback left the TURN allocation on the server (dedicated_reactor=true, run 0)"
+experimental-bsan,webrtc-0.21.1,close_releases_turn_allocations,test_failed,1068.390,90.038,2026-11-05T02:10:09Z,50234248.0,panic,"thread 'close_releases_turn_allocations' (66118) panicked at tests/turn_release_on_close.rs:244:17: close() left the TURN allocation on the server (dedicated_reactor=true, run 1)"
+experimental-bsan,webrtc-0.21.1,data_channel::tests::drop_removes_event_sender,success,1068.390,73.565,2026-11-05T02:11:22Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,data_channel::tests::outstanding_bytes_trait_default_is_zero,success,1068.390,71.647,2026-11-05T02:12:34Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,data_channel::tests::try_send_text_trait_default_delegates_to_send_text,success,1068.390,71.562,2026-11-05T02:13:45Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,data_channel::tests::try_send_trait_default_delegates_to_send,success,1068.390,71.206,2026-11-05T02:14:57Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,data_channel::tests::writable_trait_default_is_ok,success,1068.390,71.650,2026-11-05T02:16:08Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,data_channel_poll_ends_after_close,success,1068.390,75.696,2026-11-05T02:17:24Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,data_channel_poll_ends_when_a_dedicated_reactor_connection_is_dropped,success,1068.390,73.007,2026-11-05T02:18:37Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,flexfec03_recovers_every_dropped_packet,test_failed,1068.390,112.924,2026-11-05T02:20:30Z,50234248.0,panic,"thread 'flexfec03_recovers_every_dropped_packet' (102672) panicked at tests/flexfec03_encoder_decoder.rs:527:9: assertion `left == right` failed: packets neither delivered nor recovered: [105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 12"
+experimental-bsan,webrtc-0.21.1,ice_restart_rebind_releases_the_previous_allocation,success,1068.390,71.517,2026-11-05T02:21:42Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::expand_wildcard_deduplicates_against_configured_addresses,success,1068.390,67.780,2026-11-05T02:22:49Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::expand_wildcard_does_not_fall_back_when_deduplicated_away,success,1068.390,64.068,2026-11-05T02:23:53Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::insert_data_channel_event_sender_replaces_closed_sender,success,1068.390,63.467,2026-11-05T02:24:57Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::insert_data_channel_event_sender_skips_live_sender,success,1068.390,63.356,2026-11-05T02:26:00Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::link_local_addresses_are_recognised,success,1068.390,63.304,2026-11-05T02:27:04Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::preregistration_message_is_delivered_after_on_open,success,1068.390,63.463,2026-11-05T02:28:07Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::registered_full_consumer_still_reports_back_pressure,success,1068.390,63.277,2026-11-05T02:29:10Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::resolve_bind_addrs_expands_a_wildcard_into_interface_addresses,success,1068.390,63.589,2026-11-05T02:30:14Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::resolve_bind_addrs_keeps_concrete_addresses_and_deduplicates,success,1068.390,63.638,2026-11-05T02:31:18Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::resolve_bind_addrs_reports_an_unresolvable_address,success,1068.390,63.670,2026-11-05T02:32:21Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::retained_events_are_delivered_once_the_channel_registers,success,1068.390,63.382,2026-11-05T02:33:25Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::stage_appends_behind_already_retained_events,success,1068.390,63.325,2026-11-05T02:34:28Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::stage_drops_when_receiver_is_gone,success,1068.390,63.353,2026-11-05T02:35:31Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::stage_retains_event_for_unregistered_channel,success,1068.390,63.234,2026-11-05T02:36:35Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::stage_retains_on_full_queue,success,1068.390,63.345,2026-11-05T02:37:38Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::unregistered_channel_never_reports_back_pressure,success,1068.390,63.427,2026-11-05T02:38:41Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::driver::tests::unregistered_retention_is_bounded,success,1068.390,63.461,2026-11-05T02:39:45Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::tests::build_reports_a_bind_failure_instead_of_returning_a_dead_connection,success,1068.390,64.757,2026-11-05T02:40:50Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::tests::create_data_channel_wakes_driver,success,1068.390,64.676,2026-11-05T02:41:54Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::tests::mark_ice_restart_rebind_pending_is_gated_on_the_setting,success,1068.390,64.945,2026-11-05T02:42:59Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::transport::gro_buf_tests::gro_recv_buf_len_sizes_for_capacity_and_falls_back_without_gro,success,1068.390,63.466,2026-11-05T02:44:03Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::transport::turn_relayer::tests::allocate_response_on_exact_four_tuple_still_routes_to_turn,success,1068.390,63.390,2026-11-05T02:45:06Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::transport::turn_relayer::tests::binding_response_from_turn_server_addr_is_not_turn_traffic,success,1068.390,63.569,2026-11-05T02:46:10Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::transport::turn_relayer::tests::binding_response_matching_an_outstanding_turn_transaction_routes_to_turn,success,1068.390,63.743,2026-11-05T02:47:14Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::transport::turn_relayer::tests::channel_data_on_exact_four_tuple_still_routes_to_turn,success,1068.390,63.617,2026-11-05T02:48:17Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,peer_connection::transport::turn_relayer::tests::routes_turn_allocate_response_by_local_addr_and_port,success,1068.390,64.019,2026-11-05T02:49:21Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,ring_is_the_default_even_when_aws_lc_rs_is_also_enabled,success,1068.390,63.942,2026-11-05T02:50:25Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,ring_to_ring,success,1068.390,98.822,2026-11-05T02:52:04Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,rtp_transceiver::tests::a_failing_new_sender_leaves_the_current_one_in_place,success,1068.390,65.553,2026-11-05T02:53:10Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,rtp_transceiver::tests::set_sender_reports_a_connection_that_is_gone,success,1068.390,65.333,2026-11-05T02:54:15Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::default_impl_tests::default_caps_are_one,success,1068.390,63.508,2026-11-05T02:55:18Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::default_impl_tests::default_recv_from_derives_from_poll_recv,success,1068.390,63.458,2026-11-05T02:56:22Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::default_impl_tests::default_send_to_forwards_one_datagram,success,1068.390,63.415,2026-11-05T02:57:25Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::default_impl_tests::poll_once_probes_without_blocking_or_allocating,success,1068.390,63.306,2026-11-05T02:58:29Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::primitives::tests::broadcast_reaches_every_subscriber,success,1068.390,63.276,2026-11-05T02:59:32Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::primitives::tests::broadcast_send_never_blocks_without_subscribers,success,1068.390,63.374,2026-11-05T03:00:35Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::primitives::tests::broadcast_survives_losing_all_subscribers,success,1068.390,63.224,2026-11-05T03:01:38Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::primitives::tests::channel_capacity_zero_is_clamped_not_panic,success,1068.390,63.270,2026-11-05T03:02:42Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::primitives::tests::channel_roundtrip_and_try_variants,success,1068.390,63.162,2026-11-05T03:03:45Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::primitives::tests::mutex_shares_state_across_clones,success,1068.390,63.354,2026-11-05T03:04:48Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::primitives::tests::mutex_try_lock_fails_while_held,success,1068.390,63.481,2026-11-05T03:05:52Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::primitives::tests::notify_waiters_wakes_a_parked_task,success,1068.390,63.135,2026-11-05T03:06:55Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::primitives::tests::notify_with_no_waiters_stores_no_permit,success,1068.390,62.979,2026-11-05T03:07:58Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::primitives::tests::recv_returns_none_after_senders_dropped,success,1068.390,63.122,2026-11-05T03:09:01Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,runtime::primitives::tests::sender_reports_closed_when_receiver_dropped,success,1068.390,62.974,2026-11-05T03:10:04Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_add_ice_candidate,success,1068.390,80.846,2026-11-05T03:11:25Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_add_track_negotiates_non_first_codec,success,1068.390,68.021,2026-11-05T03:12:33Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_add_track_preserves_simulcast,success,1068.390,67.922,2026-11-05T03:13:41Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_add_track_rejects_invalid_rid_mix,success,1068.390,64.587,2026-11-05T03:14:45Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_add_transceiver_from_kind_negotiates_non_first_codec,success,1068.390,67.692,2026-11-05T03:15:53Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_add_transceiver_from_kind_preserves_simulcast,success,1068.390,67.554,2026-11-05T03:17:01Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_add_transceiver_from_kind_rejects_invalid_rid_mix,success,1068.390,64.693,2026-11-05T03:18:05Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_add_transceiver_from_track_negotiates_non_first_codec,success,1068.390,68.456,2026-11-05T03:19:14Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_add_transceiver_from_track_preserves_simulcast,success,1068.390,68.016,2026-11-05T03:20:22Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_add_transceiver_from_track_rejects_invalid_rid_mix,success,1068.390,64.790,2026-11-05T03:21:27Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_all_configuration_options_combined,success,1068.390,65.851,2026-11-05T03:22:33Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_automatic_host_candidate_gathering,success,1068.390,65.345,2026-11-05T03:23:38Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_backpressure_reaches_the_sender,success,1068.390,105.129,2026-11-05T03:25:23Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_bundle_policy,success,1068.390,66.175,2026-11-05T03:26:29Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_certificates,success,1068.390,64.559,2026-11-05T03:27:34Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_close_wakes_parked_backpressured_send,success,1068.390,118.100,2026-11-05T03:29:32Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_combined_configuration,success,1068.390,65.427,2026-11-05T03:30:37Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_concrete_address_binds_only_itself,success,1068.390,65.480,2026-11-05T03:31:43Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_create_offer,success,1068.390,65.198,2026-11-05T03:32:48Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_create_peer_connection,success,1068.390,65.496,2026-11-05T03:33:54Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_custom_runtime_serves_multiple_connections,test_failed,1068.390,23.978,2026-11-05T03:34:18Z,50234248.0,gc,"test test_custom_runtime_serves_multiple_connections ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,webrtc-0.21.1,test_data_channel_blocking_send_bounded_and_delivered,timeout,1068.390,150.026,2026-11-05T03:36:48Z,50234248.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,webrtc-0.21.1,test_data_channel_close_by_webrtc_interop,test_failed,1068.390,78.930,2026-11-05T03:38:07Z,50234248.0,panic,"thread 'test_data_channel_close_by_webrtc_interop' (60916) panicked at tests/data_channels_close_by_webrtc_interop.rs:99:26: called `Result::unwrap()` on an `Err` value: Test timeout - data channel close not detected by RTC in time"
+experimental-bsan,webrtc-0.21.1,test_data_channel_send_after_close_is_terminal,success,1068.390,109.264,2026-11-05T03:39:56Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_data_channel_send_backpressure_bounded_and_conserved,timeout,1068.390,150.026,2026-11-05T03:42:26Z,50234248.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,webrtc-0.21.1,test_data_channel_send_unbounded_escape_hatch,timeout,1068.390,150.026,2026-11-05T03:44:56Z,50234248.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,webrtc-0.21.1,test_data_channel_stall_does_not_block_media,test_failed,1068.390,149.978,2026-11-05T03:47:26Z,50234248.0,panic,"thread 'test_data_channel_stall_does_not_block_media' (101540) panicked at tests/data_channel_stall_does_not_block_media.rs:295:5: no media arrived at all before the observation window — the test never got into the state it is checking"
+experimental-bsan,webrtc-0.21.1,test_data_channels_close_interop_by_rtc_interop,test_failed,1068.390,77.600,2026-11-05T03:48:44Z,50234248.0,panic,"thread 'test_data_channels_close_interop_by_rtc_interop' (15410) panicked at tests/data_channels_close_by_rtc_interop.rs:92:26: called `Result::unwrap()` on an `Err` value: Test timeout - data channel close not detected by WebRTC in time"
+experimental-bsan,webrtc-0.21.1,test_data_channels_create_rtc_to_webrtc,test_failed,1068.390,79.930,2026-11-05T03:50:04Z,50234248.0,panic,"thread 'test_data_channels_create_rtc_to_webrtc' (24207) panicked at tests/data_channels_create_interop.rs:94:26: called `Result::unwrap()` on an `Err` value: Test timeout - bidirectional message exchange did not complete in time"
+experimental-bsan,webrtc-0.21.1,test_data_channels_webrtc_to_rtc,test_failed,1068.390,87.289,2026-11-05T03:51:31Z,50234248.0,panic,"thread 'test_data_channels_webrtc_to_rtc' (28945) panicked at tests/data_channels_interop.rs:58:26: called `Result::unwrap()` on an `Err` value: Test timeout - message was not echoed back in time"
+experimental-bsan,webrtc-0.21.1,test_dedicated_reactor_data_channel,success,1068.390,112.058,2026-11-05T03:53:23Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_dedicated_reactor_data_channel_with_tcp,test_failed,1068.390,67.806,2026-11-05T03:54:31Z,50234248.0,panic,"thread 'test_dedicated_reactor_data_channel_with_tcp' (43109) panicked at tests/dedicated_reactor_data_channel.rs:93:30: called `Result::unwrap()` on an `Err` value: Timeout waiting for offerer to connect"
+experimental-bsan,webrtc-0.21.1,test_dropped_data_channel_handle_does_not_stall_other_channels,success,1068.390,108.372,2026-11-05T03:56:19Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_ice_candidate_pool_size,success,1068.390,65.298,2026-11-05T03:57:24Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_ice_restart_after_turn_credential_rotation_keeps_relay,success,1068.390,63.629,2026-11-05T03:58:28Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_ice_restart_by_rtc_interop,test_failed,1068.390,70.708,2026-11-05T03:59:39Z,50234248.0,panic,"thread 'test_ice_restart_by_rtc_interop' (77634) panicked at tests/ice_restart_by_rtc_interop.rs:83:26: called `Result::unwrap()` on an `Err` value: Initial connection timeout"
+experimental-bsan,webrtc-0.21.1,test_ice_restart_by_webrtc_interop,test_failed,1068.390,71.015,2026-11-05T04:00:50Z,50234248.0,panic,"thread 'test_ice_restart_by_webrtc_interop' (86893) panicked at tests/ice_restart_by_webrtc_interop.rs:61:26: called `Result::unwrap()` on an `Err` value: Initial connection timeout"
+experimental-bsan,webrtc-0.21.1,test_ice_restart_does_not_leak_sockets,test_failed,1068.390,71.790,2026-11-05T04:02:02Z,50234248.0,panic,"thread 'test_ice_restart_does_not_leak_sockets' (97176) panicked at tests/ice_restart_rebinds_sockets.rs:797:51: called `Result::unwrap()` on an `Err` value: timeout: initial connect"
+experimental-bsan,webrtc-0.21.1,test_ice_restart_re_enumerates_interfaces,success,1068.390,67.870,2026-11-05T04:03:10Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_ice_restart_rebinds_a_fixed_port,success,1068.390,94.830,2026-11-05T04:04:44Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_ice_restart_rebinds_udp_and_tcp,test_failed,1068.390,71.556,2026-11-05T04:05:56Z,50234248.0,panic,"thread 'test_ice_restart_rebinds_udp_and_tcp' (27567) panicked at tests/ice_restart_rebinds_sockets.rs:792:49: called `Result::unwrap()` on an `Err` value: timeout: initial connect"
+experimental-bsan,webrtc-0.21.1,test_ice_restart_rebinds_udp_sockets_when_enabled,success,1068.390,117.274,2026-11-05T04:07:53Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_ice_restart_rebinds_with_static_local_credentials,success,1068.390,98.547,2026-11-05T04:09:32Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_ice_restart_reuses_sockets_by_default,success,1068.390,99.283,2026-11-05T04:11:11Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_ice_servers_configuration,success,1068.390,65.175,2026-11-05T04:12:16Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_ice_tcp_only_connection,test_failed,1068.390,74.730,2026-11-05T04:13:31Z,50234248.0,panic,"thread 'test_ice_tcp_only_connection' (55166) panicked at tests/ice_test.rs:833:10: Timed out waiting for TCP PeerConnection connection to establish: Elapsed"
+experimental-bsan,webrtc-0.21.1,test_ice_transport_policy,success,1068.390,65.769,2026-11-05T04:14:37Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_mdns_query_and_gather_rewrites_host_candidate,success,1068.390,65.391,2026-11-05T04:15:42Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_mdns_query_and_gather_webrtc_to_webrtc,success,1068.390,109.093,2026-11-05T04:17:31Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_media_engine_configuration,success,1068.390,65.823,2026-11-05T04:18:37Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_media_engine_required_for_tracks,success,1068.390,65.865,2026-11-05T04:19:43Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_media_only_connection_reaches_dtls_through_the_sender,success,1068.390,81.749,2026-11-05T04:21:05Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_media_only_negotiation_does_not_start_sctp,success,1068.390,105.329,2026-11-05T04:22:50Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_media_rejection_audio_rejected_video_connected,test_failed,1068.390,88.007,2026-11-05T04:24:18Z,50234248.0,panic,"thread 'test_media_rejection_audio_rejected_video_connected' (92061) panicked at tests/media_rejection.rs:194:14: called `Result::unwrap()` on an `Err` value: Elapsed"
+experimental-bsan,webrtc-0.21.1,test_negotiated_channel_is_never_announced,success,1068.390,98.951,2026-11-05T04:25:57Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_no_bindable_address_fails_the_build,success,1068.390,64.274,2026-11-05T04:27:01Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_offer_answer_exchange,success,1068.390,65.228,2026-11-05T04:28:07Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_offer_answer_webrtc_to_webrtc,success,1068.390,110.071,2026-11-05T04:29:57Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_on_data_channel_fires_only_for_peer_opened_channels,success,1068.390,105.073,2026-11-05T04:31:42Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_on_track_exposes_ssrcs_and_codec_immediately,test_failed,1068.390,70.522,2026-11-05T04:32:52Z,50234248.0,panic,"thread 'test_on_track_exposes_ssrcs_and_codec_immediately' (103564) panicked at tests/on_track_codings_ready.rs:77:26: called `Result::unwrap()` on an `Err` value: timeout waiting for on_track"
+experimental-bsan,webrtc-0.21.1,test_peer_connection_statistics,test_failed,1068.390,82.175,2026-11-05T04:34:15Z,50234248.0,panic,"thread 'test_peer_connection_statistics' (2532) panicked at tests/statistics.rs:141:14: called `Result::unwrap()` on an `Err` value: Elapsed"
+experimental-bsan,webrtc-0.21.1,test_peer_connection_with_full_configuration,success,1068.390,81.823,2026-11-05T04:35:36Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_peer_identity,success,1068.390,64.756,2026-11-05T04:36:41Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_play_from_disk_streaming,test_failed,1068.390,65.705,2026-11-05T04:37:47Z,50234248.0,panic,"thread 'test_play_from_disk_streaming' (6771) panicked at tests/play_save_disk.rs:334:14: called `Result::unwrap()` on an `Err` value: Elapsed"
+experimental-bsan,webrtc-0.21.1,test_reactor_pool_is_bounded_and_drop_stops_driver_task,success,1068.390,68.491,2026-11-05T04:38:55Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_remote_certificate_fingerprint_is_the_peers,success,1068.390,95.917,2026-11-05T04:40:31Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_renegotiation_no_duplicate_mids,test_failed,1068.390,66.894,2026-11-05T04:41:38Z,50234248.0,panic,"thread 'test_renegotiation_no_duplicate_mids' (9573) panicked at tests/renegotiation.rs:164:14: called `Result::unwrap()` on an `Err` value: Elapsed"
+experimental-bsan,webrtc-0.21.1,test_restart_ice,success,1068.390,65.323,2026-11-05T04:42:44Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_rtcp_mux_policy,success,1068.390,64.614,2026-11-05T04:43:48Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_rtcp_processing_webrtc2webrtc,test_failed,1068.390,67.589,2026-11-05T04:44:56Z,50234248.0,panic,"thread 'test_rtcp_processing_webrtc2webrtc' (11532) panicked at tests/rtcp_processing_webrtc2webrtc.rs:448:14: offerer connect: Elapsed"
+experimental-bsan,webrtc-0.21.1,test_sctp_receive_buffer_size_below_rfc_floor_is_clamped,success,1068.390,105.395,2026-11-05T04:46:41Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_sctp_receive_buffer_size_lowered,success,1068.390,104.192,2026-11-05T04:48:25Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_set_configuration_updates_turn_credentials_on_ice_restart,success,1068.390,67.114,2026-11-05T04:49:33Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_set_local_description,success,1068.390,65.586,2026-11-05T04:50:38Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_setting_engine_ice_timeouts,success,1068.390,64.953,2026-11-05T04:51:43Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_setting_engine_replay_protection,success,1068.390,65.429,2026-11-05T04:52:49Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_simulcast_rtc_to_webrtc,test_failed,1068.390,82.343,2026-11-05T04:54:11Z,50234248.0,panic,"thread 'test_simulcast_rtc_to_webrtc' (23326) panicked at tests/simulcast_rtc_to_webrtc_interop.rs:96:26: called `Result::unwrap()` on an `Err` value: Test timeout"
+experimental-bsan,webrtc-0.21.1,test_slow_consumer_does_not_stall_the_connection,test_failed,1068.390,145.140,2026-11-05T04:56:36Z,50234248.0,panic,"thread 'test_slow_consumer_does_not_stall_the_connection' (23735) panicked at tests/data_channel_slow_consumer.rs:380:5: sender left Connected while a consumer was stalled (257 messages sent) — back-pressure must stop the driver pulling, not block the driver loop"
+experimental-bsan,webrtc-0.21.1,test_slow_consumer_loses_nothing,timeout,1068.390,150.026,2026-11-05T04:59:06Z,50234248.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,webrtc-0.21.1,test_stun_gathering_with_google_stun,success,1068.390,76.289,2026-11-05T05:00:22Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_transport_objects_are_reachable,success,1068.390,106.522,2026-11-05T05:02:09Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_turn_relay_gathering_with_mock_turn_server,success,1068.390,66.434,2026-11-05T05:03:15Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_two_peers_on_different_runtimes_interoperate,test_failed,1068.390,24.569,2026-11-05T05:03:40Z,50234248.0,gc,"test test_two_peers_on_different_runtimes_interoperate ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,webrtc-0.21.1,test_unbindable_address_is_skipped,success,1068.390,65.967,2026-11-05T05:04:46Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_unreliable_data_channel_survives_failed_sends,success,1068.390,110.327,2026-11-05T05:06:36Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,test_wildcard_gathers_interface_host_candidates,success,1068.390,65.757,2026-11-05T05:07:42Z,50234248.0,,
+experimental-bsan,webrtc-0.21.1,track_local_poll_ends_after_close,success,1068.390,66.317,2026-11-05T05:08:48Z,50234248.0,,

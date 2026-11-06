@@ -1,0 +1,14 @@
+experimental-bsan,tokio-process-0.3.0-alpha.2,feed_a_lot,test_failed,51.245,8.545,2026-11-05T05:32:15Z,50253243.0,panic,"thread 'feed_a_lot' (92430) panicked at tests/stdio.rs:100:31: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,tokio-process-0.3.0-alpha.2,imp::orphan::test::drain_attempts_a_single_reap_of_all_queued_orphans,success,51.245,8.344,2026-11-05T05:32:23Z,50253243.0,,
+experimental-bsan,tokio-process-0.3.0-alpha.2,imp::reap::test::drop_enqueues_orphan_if_wait_fails,success,51.245,8.337,2026-11-05T05:32:31Z,50253243.0,,
+experimental-bsan,tokio-process-0.3.0-alpha.2,imp::reap::test::drop_reaps_if_possible,success,51.245,8.306,2026-11-05T05:32:40Z,50253243.0,,
+experimental-bsan,tokio-process-0.3.0-alpha.2,imp::reap::test::kill,success,51.245,8.333,2026-11-05T05:32:48Z,50253243.0,,
+experimental-bsan,tokio-process-0.3.0-alpha.2,imp::reap::test::reaper,success,51.245,8.329,2026-11-05T05:32:56Z,50253243.0,,
+experimental-bsan,tokio-process-0.3.0-alpha.2,issue_42,timeout,51.245,150.014,2026-11-05T05:35:26Z,50253243.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tokio-process-0.3.0-alpha.2,simple,test_failed,51.245,7.153,2026-11-05T05:35:33Z,50253243.0,panic,"thread 'simple' (10638) panicked at tests/smoke.rs:11:33: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,tokio-process-0.3.0-alpha.2,status_closes_any_pipes,test_failed,51.245,8.522,2026-11-05T05:35:42Z,50253243.0,panic,"thread 'status_closes_any_pipes' (11195) panicked at tests/stdio.rs:131:32: failed to spawn child: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,tokio-process-0.3.0-alpha.2,test::kills_on_drop,success,51.245,8.330,2026-11-05T05:35:50Z,50253243.0,,
+experimental-bsan,tokio-process-0.3.0-alpha.2,test::no_kill_if_already_killed,success,51.245,8.333,2026-11-05T05:35:59Z,50253243.0,,
+experimental-bsan,tokio-process-0.3.0-alpha.2,test::no_kill_if_reaped,success,51.245,8.299,2026-11-05T05:36:07Z,50253243.0,,
+experimental-bsan,tokio-process-0.3.0-alpha.2,test::no_kill_on_forget,success,51.245,8.329,2026-11-05T05:36:15Z,50253243.0,,
+experimental-bsan,tokio-process-0.3.0-alpha.2,wait_with_output_captures,test_failed,51.245,8.562,2026-11-05T05:36:24Z,50253243.0,panic,"thread 'wait_with_output_captures' (17851) panicked at tests/stdio.rs:107:35: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

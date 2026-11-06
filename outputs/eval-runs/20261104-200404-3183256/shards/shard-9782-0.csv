@@ -1,0 +1,17 @@
+experimental-bsan,fax-0.3.0,decode_test_images,test_failed,42.460,2.989,2026-11-05T05:11:48Z,50251657.0,panic,"thread 'decode_test_images' (76729) panicked at tests/check.rs:31:35: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,fax-0.3.0,decoder::tests::g3_fuzz_crash_run_length_overflow,success,42.460,4.300,2026-11-05T05:11:52Z,50251657.0,,
+experimental-bsan,fax-0.3.0,decoder::tests::g3_random_bytes_no_panic,success,42.460,4.616,2026-11-05T05:11:57Z,50251657.0,,
+experimental-bsan,fax-0.3.0,decoder::tests::g4_fuzz_crash_horizontal_overflow,success,42.460,4.289,2026-11-05T05:12:01Z,50251657.0,,
+experimental-bsan,fax-0.3.0,decoder::tests::g4_large_width_no_overflow,success,42.460,4.282,2026-11-05T05:12:05Z,50251657.0,,
+experimental-bsan,fax-0.3.0,decoder::tests::g4_roundtrip_canonical_form,success,42.460,7.077,2026-11-05T05:12:13Z,50251657.0,,
+experimental-bsan,fax-0.3.0,decoder::tests::g4_roundtrip_width_boundary_transition,success,42.460,4.275,2026-11-05T05:12:17Z,50251657.0,,
+experimental-bsan,fax-0.3.0,decoder::tests::g4_zero_width_no_panic,success,42.460,4.287,2026-11-05T05:12:21Z,50251657.0,,
+experimental-bsan,fax-0.3.0,main,test_failed,42.460,4.334,2026-11-05T05:12:26Z,50251657.0,panic,"thread 'main' (79872) panicked at tests/errors.rs:29:36: Failed to read directory: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,fax-0.3.0,roundtrip_encode_test_images,test_failed,42.460,2.984,2026-11-05T05:12:29Z,50251657.0,panic,"thread 'roundtrip_encode_test_images' (80213) panicked at tests/check.rs:84:35: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,fax-0.3.0,test_bits,success,42.460,4.270,2026-11-05T05:12:33Z,50251657.0,,
+experimental-bsan,fax-0.3.0,test_consume_more_than_valid_saturates,success,42.460,4.284,2026-11-05T05:12:37Z,50251657.0,,
+experimental-bsan,fax-0.3.0,test_peek_over_16_returns_none,success,42.460,4.307,2026-11-05T05:12:41Z,50251657.0,,
+experimental-bsan,fax-0.3.0,tests::test_group3_all_white_line,success,42.460,4.299,2026-11-05T05:12:46Z,50251657.0,,
+experimental-bsan,fax-0.3.0,tests::test_group3_mixed_line,success,42.460,4.296,2026-11-05T05:12:50Z,50251657.0,,
+experimental-bsan,fax-0.3.0,tests::test_group3_multiple_lines,success,42.460,4.288,2026-11-05T05:12:54Z,50251657.0,,
+experimental-bsan,fax-0.3.0,tests::test_group3_with_fill_bits,success,42.460,4.391,2026-11-05T05:12:59Z,50251657.0,,

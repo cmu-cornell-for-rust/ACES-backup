@@ -1,0 +1,3 @@
+experimental-bsan,openvino-finder-0.11.1,test::find_latest_library,success,50.053,1.618,2026-11-05T08:26:16Z,50262843.0,,
+experimental-bsan,openvino-finder-0.11.1,test::find_latest_plugin_xml,success,50.053,1.603,2026-11-05T08:26:18Z,50262843.0,,
+experimental-bsan,openvino-finder-0.11.1,test::find_openvino_c_locally,test_failed,50.053,2.756,2026-11-05T08:26:20Z,50262843.0,panic,"thread 'test::find_openvino_c_locally' (12994) panicked at src/lib.rs:358:9: assertion failed: find(""openvino_c"", Linking::Dynamic).is_some()"

@@ -1,0 +1,12 @@
+experimental-bsan,blocks_iterator-2.1.2,block_extra::test::block_extra_round_trip,success,95.746,1.670,2026-11-05T05:44:03Z,50254009.0,,
+experimental-bsan,blocks_iterator-2.1.2,block_extra::test::block_extra_unsupported_version,success,95.746,1.647,2026-11-05T05:44:05Z,50254009.0,,
+experimental-bsan,blocks_iterator-2.1.2,block_extra::test::test_block_reward,success,95.746,1.664,2026-11-05T05:44:06Z,50254009.0,,
+experimental-bsan,blocks_iterator-2.1.2,block_extra::test::test_hex,success,95.746,1.850,2026-11-05T05:44:08Z,50254009.0,,
+experimental-bsan,blocks_iterator-2.1.2,bsl::test::test_bsl_block_extra,success,95.746,2.089,2026-11-05T05:44:10Z,50254009.0,,
+experimental-bsan,blocks_iterator-2.1.2,inner_test::test_blk_testnet,test_failed,95.746,1.885,2026-11-05T05:44:12Z,50254009.0,panic,"thread 'inner_test::test_blk_testnet' (71264) panicked at src/lib.rs:205:9: assertion `left == right` failed"
+experimental-bsan,blocks_iterator-2.1.2,iter::inner_test::test_iter,test_failed,95.746,2.541,2026-11-05T05:44:15Z,50254009.0,panic,"thread 'iter::inner_test::test_iter' (71326) panicked at src/iter.rs:66:9: assertion `left != right` failed"
+experimental-bsan,blocks_iterator-2.1.2,iter::inner_test::test_start_stop,test_failed,95.746,1.837,2026-11-05T05:44:17Z,50254009.0,panic,"thread 'iter::inner_test::test_start_stop' (71424) panicked at src/iter.rs:80:29: called `Option::unwrap()` on a `None` value"
+experimental-bsan,blocks_iterator-2.1.2,stages::fee::test::test_size,success,95.746,1.661,2026-11-05T05:44:18Z,50254009.0,,
+experimental-bsan,blocks_iterator-2.1.2,stages::read_detect::test::test_rolling,success,95.746,1.663,2026-11-05T05:44:20Z,50254009.0,,
+experimental-bsan,blocks_iterator-2.1.2,utxo::mem::test::test_script_stack,success,95.746,1.662,2026-11-05T05:44:22Z,50254009.0,,
+experimental-bsan,blocks_iterator-2.1.2,utxo::mem::test::test_size,success,95.746,1.656,2026-11-05T05:44:23Z,50254009.0,,

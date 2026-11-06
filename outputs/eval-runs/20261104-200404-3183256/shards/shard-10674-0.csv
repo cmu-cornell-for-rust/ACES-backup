@@ -1,0 +1,14 @@
+experimental-bsan,actix-governor-0.7.0,tests::builder_test,success,329.527,1.665,2026-11-05T05:29:36Z,50252863.0,,
+experimental-bsan,actix-governor-0.7.0,tests::test_forbidden_response_error,success,329.527,2.645,2026-11-05T05:29:39Z,50252863.0,,
+experimental-bsan,actix-governor-0.7.0,tests::test_html_error_response,success,329.527,2.711,2026-11-05T05:29:42Z,50252863.0,,
+experimental-bsan,actix-governor-0.7.0,tests::test_json_error_response,success,329.527,2.694,2026-11-05T05:29:44Z,50252863.0,,
+experimental-bsan,actix-governor-0.7.0,tests::test_key_extraction_unwhitelisted_key_with_header,success,329.527,2.825,2026-11-05T05:29:47Z,50252863.0,,
+experimental-bsan,actix-governor-0.7.0,tests::test_key_extraction_whitelisted_key,success,329.527,2.832,2026-11-05T05:29:50Z,50252863.0,,
+experimental-bsan,actix-governor-0.7.0,tests::test_key_extraction_whitelisted_key_with_header,success,329.527,2.866,2026-11-05T05:29:53Z,50252863.0,,
+experimental-bsan,actix-governor-0.7.0,tests::test_method_filter,success,329.527,2.787,2026-11-05T05:29:56Z,50252863.0,,
+experimental-bsan,actix-governor-0.7.0,tests::test_method_filter_use_headers,success,329.527,2.760,2026-11-05T05:29:59Z,50252863.0,,
+experimental-bsan,actix-governor-0.7.0,tests::test_network_authentication_required_response_error,success,329.527,2.656,2026-11-05T05:30:01Z,50252863.0,,
+experimental-bsan,actix-governor-0.7.0,tests::test_server,success,329.527,2.878,2026-11-05T05:30:04Z,50252863.0,,
+experimental-bsan,actix-governor-0.7.0,tests::test_server_per_second,success,329.527,2.881,2026-11-05T05:30:07Z,50252863.0,,
+experimental-bsan,actix-governor-0.7.0,tests::test_server_permissive,test_failed,329.527,3.017,2026-11-05T05:30:10Z,50252863.0,panic,"thread 'tests::test_server_permissive' (76932) panicked at src/tests.rs:1046:5: assertion `left == right` failed"
+experimental-bsan,actix-governor-0.7.0,tests::test_server_use_headers,test_failed,329.527,3.098,2026-11-05T05:30:13Z,50252863.0,panic,"thread 'tests::test_server_use_headers' (76997) panicked at src/tests.rs:430:5: assertion `left == right` failed"

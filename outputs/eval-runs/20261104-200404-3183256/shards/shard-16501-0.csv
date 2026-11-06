@@ -1,0 +1,4 @@
+experimental-bsan,dssim-3.5.1,image_gray,test_failed,133.252,3.247,2026-11-05T07:46:17Z,50260926.0,panic,"thread 'image_gray' (36321) panicked at src/main.rs:160:63: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,dssim-3.5.1,image_gray_profile,test_failed,133.252,3.317,2026-11-05T07:46:21Z,50260926.0,panic,"thread 'image_gray_profile' (36521) panicked at src/main.rs:179:66: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,dssim-3.5.1,image_load1,test_failed,133.252,3.274,2026-11-05T07:46:24Z,50260926.0,panic,"thread 'image_load1' (36740) panicked at src/main.rs:193:66: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,dssim-3.5.1,rgblu_input,success,133.252,3.964,2026-11-05T07:46:28Z,50260926.0,,

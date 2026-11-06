@@ -1,0 +1,12 @@
+experimental-bsan,rex-sm-0.8.0,ingress::tests::rex_builder,success,131.060,24.050,2026-11-05T05:50:02Z,50254330.0,,
+experimental-bsan,rex-sm-0.8.0,ingress::tests::route_from_network,success,131.060,23.565,2026-11-05T05:50:26Z,50254330.0,,
+experimental-bsan,rex-sm-0.8.0,ingress::tests::route_to_network,success,131.060,23.442,2026-11-05T05:50:49Z,50254330.0,,
+experimental-bsan,rex-sm-0.8.0,manager::tests::ping_timeout,test_failed,131.060,25.183,2026-11-05T05:51:15Z,50254330.0,panic,"thread 'manager::tests::ping_timeout' (10500) panicked at src/manager.rs:924:9: assertion `left == right` failed"
+experimental-bsan,rex-sm-0.8.0,manager::tests::pong_timeout,test_failed,131.060,25.525,2026-11-05T05:51:40Z,50254330.0,panic,"thread 'manager::tests::pong_timeout' (11967) panicked at src/manager.rs:880:13: assertion `left == right` failed"
+experimental-bsan,rex-sm-0.8.0,manager::tests::state_machine,success,131.060,24.738,2026-11-05T05:52:05Z,50254330.0,,
+experimental-bsan,rex-sm-0.8.0,node::tests::insert_child_state,success,131.060,1.565,2026-11-05T05:52:06Z,50254330.0,,
+experimental-bsan,rex-sm-0.8.0,notification::tests::route_to_timeout_manager,test_failed,131.060,1.737,2026-11-05T05:52:08Z,50254330.0,panic,"thread 'notification::tests::route_to_timeout_manager' (19772) panicked at src/notification.rs:249:43: timeout one"
+experimental-bsan,rex-sm-0.8.0,queue::tests::streamable_deque,success,131.060,1.615,2026-11-05T05:52:10Z,50254330.0,,
+experimental-bsan,rex-sm-0.8.0,timeout::tests::partial_timeout_cancellation,test_failed,131.060,24.142,2026-11-05T05:52:34Z,50254330.0,panic,"thread 'timeout::tests::partial_timeout_cancellation' (20282) panicked at src/timeout.rs:534:70: called `Option::unwrap()` on a `None` value"
+experimental-bsan,rex-sm-0.8.0,timeout::tests::timeout_cancellation,test_failed,131.060,1.752,2026-11-05T05:52:36Z,50254330.0,panic,"thread 'timeout::tests::timeout_cancellation' (24144) panicked at src/timeout.rs:475:9: assertion failed: timeout_manager.signal_queue.pop_front().is_none()"
+experimental-bsan,rex-sm-0.8.0,timeout::tests::timeout_to_signal,test_failed,131.060,1.687,2026-11-05T05:52:37Z,50254330.0,panic,"thread 'timeout::tests::timeout_to_signal' (24378) panicked at src/timeout.rs:435:77: called `Option::unwrap()` on a `None` value"

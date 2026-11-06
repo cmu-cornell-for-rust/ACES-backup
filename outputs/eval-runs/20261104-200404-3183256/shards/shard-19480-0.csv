@@ -1,0 +1,2 @@
+experimental-bsan,strava-data-0.7.0-alpha.1,test_get_activity_by_id,test_failed,322.007,3.775,2026-11-05T09:11:46Z,50264986.0,panic,"thread 'test_get_activity_by_id' (4440) panicked at tests/integration_tests.rs:11:47: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,strava-data-0.7.0-alpha.1,test_get_logged_in_athlete_activities,test_failed,322.007,3.861,2026-11-05T09:11:50Z,50264986.0,panic,"thread 'test_get_logged_in_athlete_activities' (4594) panicked at tests/integration_tests.rs:29:37: called `Result::unwrap()` on an `Err` value: NotPresent"

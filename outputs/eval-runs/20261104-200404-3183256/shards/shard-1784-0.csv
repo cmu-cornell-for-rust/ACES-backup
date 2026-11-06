@@ -1,0 +1,124 @@
+experimental-bsan,rbx_xml-0.13.5,tests::basic::bad_migrated_property,success,162.462,71.933,2026-11-05T01:53:43Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,tests::basic::migrated_properties,success,162.462,73.470,2026-11-05T01:54:56Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,tests::basic::number_widening,success,162.462,61.697,2026-11-05T01:55:58Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,tests::basic::read_attributes,success,162.462,62.393,2026-11-05T01:57:00Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,tests::basic::read_material_colors,success,162.462,61.834,2026-11-05T01:58:02Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,tests::basic::read_tags,success,162.462,61.190,2026-11-05T01:59:03Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,tests::basic::read_unique_id,success,162.462,61.700,2026-11-05T02:00:05Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,tests::basic::with_bool,success,162.462,61.640,2026-11-05T02:01:07Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,tests::basic::write_empty_tags,success,162.462,71.680,2026-11-05T02:02:18Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,tests::basic::write_material_colors,success,162.462,71.544,2026-11-05T02:03:30Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,tests::basic::write_tags,success,162.462,71.664,2026-11-05T02:04:42Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,tests::edge_cases::empty_font,test_failed,162.462,1.679,2026-11-05T02:04:43Z,50234783.0,panic,"thread 'tests::edge_cases::empty_font' (55991) panicked at src/tests/edge_cases.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::edge_cases::xml_unknown_type,test_failed,162.462,1.687,2026-11-05T02:04:45Z,50234783.0,panic,"thread 'tests::edge_cases::xml_unknown_type' (56226) panicked at src/tests/edge_cases.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::formatting::formatting,success,162.462,87.224,2026-11-05T02:06:12Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,tests::models::attributes,test_failed,162.462,1.680,2026-11-05T02:06:14Z,50234783.0,panic,"thread 'tests::models::attributes' (66265) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::axes,test_failed,162.462,1.666,2026-11-05T02:06:16Z,50234783.0,panic,"thread 'tests::models::axes' (66485) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::bloomeffect,test_failed,162.462,1.678,2026-11-05T02:06:17Z,50234783.0,panic,"thread 'tests::models::bloomeffect' (66718) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::cframe_case_mixture,test_failed,162.462,1.688,2026-11-05T02:06:19Z,50234783.0,panic,"thread 'tests::models::cframe_case_mixture' (66966) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::default_inserted_folder,test_failed,162.462,1.686,2026-11-05T02:06:21Z,50234783.0,panic,"thread 'tests::models::default_inserted_folder' (67126) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::default_inserted_modulescript,test_failed,162.462,1.700,2026-11-05T02:06:23Z,50234783.0,panic,"thread 'tests::models::default_inserted_modulescript' (67324) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::faces,test_failed,162.462,1.668,2026-11-05T02:06:24Z,50234783.0,panic,"thread 'tests::models::faces' (67553) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::folder_with_cframe_attributes,test_failed,162.462,1.700,2026-11-05T02:06:26Z,50234783.0,panic,"thread 'tests::models::folder_with_cframe_attributes' (67759) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::folder_with_font_attribute,test_failed,162.462,1.696,2026-11-05T02:06:28Z,50234783.0,panic,"thread 'tests::models::folder_with_font_attribute' (67983) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::funny_numbervalue,test_failed,162.462,1.684,2026-11-05T02:06:29Z,50234783.0,panic,"thread 'tests::models::funny_numbervalue' (68212) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::funny_uipadding,test_failed,162.462,1.685,2026-11-05T02:06:31Z,50234783.0,panic,"thread 'tests::models::funny_uipadding' (68393) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::gui_inset_and_font_migration,test_failed,162.462,1.699,2026-11-05T02:06:33Z,50234783.0,panic,"thread 'tests::models::gui_inset_and_font_migration' (68556) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::lighting_with_int32_attribute,test_failed,162.462,1.695,2026-11-05T02:06:35Z,50234783.0,panic,"thread 'tests::models::lighting_with_int32_attribute' (68772) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::number_values_with_security_capabilities,test_failed,162.462,1.709,2026-11-05T02:06:36Z,50234783.0,panic,"thread 'tests::models::number_values_with_security_capabilities' (68907) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::optionalcoordinateframe_models,test_failed,162.462,1.703,2026-11-05T02:06:38Z,50234783.0,panic,"thread 'tests::models::optionalcoordinateframe_models' (70176) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::package_link,test_failed,162.462,1.683,2026-11-05T02:06:40Z,50234783.0,panic,"thread 'tests::models::package_link' (70970) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::ref_adjacent,test_failed,162.462,1.680,2026-11-05T02:06:41Z,50234783.0,panic,"thread 'tests::models::ref_adjacent' (71258) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::ref_child,test_failed,162.462,1.675,2026-11-05T02:06:43Z,50234783.0,panic,"thread 'tests::models::ref_child' (71475) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::ref_parent,test_failed,162.462,1.678,2026-11-05T02:06:45Z,50234783.0,panic,"thread 'tests::models::ref_parent' (71684) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::sharedstring,test_failed,162.462,1.680,2026-11-05T02:06:47Z,50234783.0,panic,"thread 'tests::models::sharedstring' (71908) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::tags,test_failed,162.462,1.671,2026-11-05T02:06:48Z,50234783.0,panic,"thread 'tests::models::tags' (72130) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::text_label_with_font,test_failed,162.462,1.682,2026-11-05T02:06:50Z,50234783.0,panic,"thread 'tests::models::text_label_with_font' (72319) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::three_beams,test_failed,162.462,1.675,2026-11-05T02:06:52Z,50234783.0,panic,"thread 'tests::models::three_beams' (72534) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::three_brickcolorvalues,test_failed,162.462,1.693,2026-11-05T02:06:53Z,50234783.0,panic,"thread 'tests::models::three_brickcolorvalues' (72708) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::three_color3values,test_failed,162.462,1.688,2026-11-05T02:06:55Z,50234783.0,panic,"thread 'tests::models::three_color3values' (73004) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::three_intvalues,test_failed,162.462,1.683,2026-11-05T02:06:57Z,50234783.0,panic,"thread 'tests::models::three_intvalues' (73262) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::three_nested_folders,test_failed,162.462,1.693,2026-11-05T02:06:58Z,50234783.0,panic,"thread 'tests::models::three_nested_folders' (73466) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::three_screengui,test_failed,162.462,1.683,2026-11-05T02:07:00Z,50234783.0,panic,"thread 'tests::models::three_screengui' (73679) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::three_uigradients,test_failed,162.462,1.689,2026-11-05T02:07:02Z,50234783.0,panic,"thread 'tests::models::three_uigradients' (73906) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::three_uigridlayouts,test_failed,162.462,1.685,2026-11-05T02:07:04Z,50234783.0,panic,"thread 'tests::models::three_uigridlayouts' (74239) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::three_unique_frames,test_failed,162.462,1.686,2026-11-05T02:07:05Z,50234783.0,panic,"thread 'tests::models::three_unique_frames' (74375) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::three_unique_parts,test_failed,162.462,1.684,2026-11-05T02:07:07Z,50234783.0,panic,"thread 'tests::models::three_unique_parts' (74507) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::three_vector3values,test_failed,162.462,1.690,2026-11-05T02:07:09Z,50234783.0,panic,"thread 'tests::models::three_vector3values' (74626) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::two_cframevalues,test_failed,162.462,1.681,2026-11-05T02:07:10Z,50234783.0,panic,"thread 'tests::models::two_cframevalues' (74805) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::two_imagebuttons,test_failed,162.462,1.686,2026-11-05T02:07:12Z,50234783.0,panic,"thread 'tests::models::two_imagebuttons' (76003) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::two_particleemitters,test_failed,162.462,1.702,2026-11-05T02:07:14Z,50234783.0,panic,"thread 'tests::models::two_particleemitters' (76738) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::two_ray_values,test_failed,162.462,1.692,2026-11-05T02:07:16Z,50234783.0,panic,"thread 'tests::models::two_ray_values' (76981) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::two_terrainregions,test_failed,162.462,1.693,2026-11-05T02:07:17Z,50234783.0,panic,"thread 'tests::models::two_terrainregions' (77111) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::unions,test_failed,162.462,1.682,2026-11-05T02:07:19Z,50234783.0,panic,"thread 'tests::models::unions' (77457) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,tests::models::weldconstraint,test_failed,162.462,1.691,2026-11-05T02:07:21Z,50234783.0,panic,"thread 'tests::models::weldconstraint' (77637) panicked at src/tests/models.rs:29:1: called `Result::unwrap()` on an `Err` value: could not read file because No such file or directory (os error 2)"
+experimental-bsan,rbx_xml-0.13.5,types::axes::test::deserialize_axes,success,162.462,1.659,2026-11-05T02:07:22Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::axes::test::round_trip_axes,success,162.462,1.675,2026-11-05T02:07:24Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::axes::test::serialize_axes,success,162.462,1.721,2026-11-05T02:07:26Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::binary_string::test::cdata_serialize,success,162.462,1.725,2026-11-05T02:07:27Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::binary_string::test::decode_crlf,success,162.462,1.676,2026-11-05T02:07:29Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::binary_string::test::decode_lf,success,162.462,1.675,2026-11-05T02:07:31Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::binary_string::test::decode_simple,success,162.462,1.663,2026-11-05T02:07:33Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::binary_string::test::decode_spaces,success,162.462,1.670,2026-11-05T02:07:34Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::binary_string::test::no_cdata_empty,success,162.462,1.693,2026-11-05T02:07:36Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::binary_string::test::round_trip_binary_string,success,162.462,1.762,2026-11-05T02:07:38Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::binary_string::test::round_trip_empty,success,162.462,1.652,2026-11-05T02:07:39Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::bool::test::round_trip_false,success,162.462,1.642,2026-11-05T02:07:41Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::bool::test::round_trip_true,success,162.462,1.634,2026-11-05T02:07:43Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::cframe::test::round_trip,success,162.462,2.132,2026-11-05T02:07:45Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::color_sequence::test::deserialize_color_sequence,success,162.462,1.687,2026-11-05T02:07:46Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::color_sequence::test::round_trip_color_sequence,success,162.462,1.714,2026-11-05T02:07:48Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::color_sequence::test::serialize_color_sequence,success,162.462,1.766,2026-11-05T02:07:50Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::content::test::deserialize_content_null,success,162.462,1.702,2026-11-05T02:07:52Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::content::test::deserialize_content_url,success,162.462,1.707,2026-11-05T02:07:53Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::content::test::round_trip_content_null,success,162.462,1.674,2026-11-05T02:07:55Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::content::test::round_trip_content_url,success,162.462,1.700,2026-11-05T02:07:57Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::content::test::serialize_content_null,success,162.462,1.768,2026-11-05T02:07:59Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::content::test::serialize_content_url,success,162.462,1.780,2026-11-05T02:08:00Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::enumeration::test::round_trip,success,162.462,1.641,2026-11-05T02:08:02Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::faces::test::deserialize_faces,success,162.462,1.660,2026-11-05T02:08:04Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::faces::test::round_trip_faces,success,162.462,1.767,2026-11-05T02:08:05Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::faces::test::serialize_faces,success,162.462,1.730,2026-11-05T02:08:07Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::font::test::deserialize_font_face,success,162.462,2.019,2026-11-05T02:08:09Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::font::test::round_trip_font_face,success,162.462,2.012,2026-11-05T02:08:11Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::font::test::serialize_font_face,success,162.462,2.274,2026-11-05T02:08:14Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::number_range::test::deserialize_number_range,success,162.462,1.664,2026-11-05T02:08:15Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::number_range::test::round_trip_number_range,success,162.462,1.671,2026-11-05T02:08:17Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::number_range::test::serialize_number_range,success,162.462,1.736,2026-11-05T02:08:19Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::number_sequence::test::deserialize_number_sequence,success,162.462,1.674,2026-11-05T02:08:20Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::number_sequence::test::round_trip_number_sequence,success,162.462,1.681,2026-11-05T02:08:22Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::number_sequence::test::serialize_number_sequence,success,162.462,1.754,2026-11-05T02:08:24Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::numbers::test::round_trip_f32,success,162.462,1.643,2026-11-05T02:08:25Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::numbers::test::round_trip_f64,success,162.462,1.677,2026-11-05T02:08:27Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::numbers::test::round_trip_i32,success,162.462,1.633,2026-11-05T02:08:29Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::numbers::test::round_trip_i64,success,162.462,1.647,2026-11-05T02:08:30Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::numbers::test::test_inf_and_nan_deserialize,success,162.462,1.722,2026-11-05T02:08:32Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::numbers::test::test_inf_and_nan_serialize,success,162.462,1.870,2026-11-05T02:08:34Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::optional_cframe::test::round_trip_none,success,162.462,1.662,2026-11-05T02:08:36Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::optional_cframe::test::round_trip_some,success,162.462,2.230,2026-11-05T02:08:38Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::physical_properties::test::deserialize_physical_properties_custom,success,162.462,2.087,2026-11-05T02:08:40Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::physical_properties::test::deserialize_physical_properties_default,success,162.462,1.760,2026-11-05T02:08:42Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::physical_properties::test::round_trip_physical_properties_custom,success,162.462,2.011,2026-11-05T02:08:44Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::physical_properties::test::round_trip_physical_properties_default,success,162.462,1.719,2026-11-05T02:08:46Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::physical_properties::test::serialize_physical_properties_custom,success,162.462,2.304,2026-11-05T02:08:48Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::physical_properties::test::serialize_physical_properties_default,success,162.462,1.837,2026-11-05T02:08:50Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::ray::test::deserialize_rect,success,162.462,2.139,2026-11-05T02:08:52Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::ray::test::round_trip_ray,success,162.462,1.980,2026-11-05T02:08:54Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::ray::test::serialize_ray,success,162.462,2.324,2026-11-05T02:08:56Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::rect::test::deserialize_rect,success,162.462,2.022,2026-11-05T02:08:58Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::rect::test::round_trip_rect,success,162.462,1.878,2026-11-05T02:09:00Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::rect::test::serialize_rect,success,162.462,2.165,2026-11-05T02:09:02Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::strings::test::de_protected_string,success,162.462,1.679,2026-11-05T02:09:04Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::strings::test::round_trip_empty_string,success,162.462,1.630,2026-11-05T02:09:06Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::strings::test::round_trip_just_whitespace_string,success,162.462,1.639,2026-11-05T02:09:07Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::strings::test::round_trip_string,success,162.462,1.653,2026-11-05T02:09:09Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::strings::test::serialize_sensitive_whitespace_string,success,162.462,1.681,2026-11-05T02:09:11Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::strings::test::serialize_simple_string,success,162.462,1.692,2026-11-05T02:09:12Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::udims::test::de_udim,success,162.462,1.722,2026-11-05T02:09:14Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::udims::test::de_udim2,success,162.462,1.821,2026-11-05T02:09:16Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::udims::test::round_trip_udim,success,162.462,1.701,2026-11-05T02:09:18Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::udims::test::round_trip_udim2,success,162.462,1.778,2026-11-05T02:09:19Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::vectors::test::round_trip_vector2,success,162.462,1.703,2026-11-05T02:09:21Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::vectors::test::round_trip_vector2int16,success,162.462,1.717,2026-11-05T02:09:23Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::vectors::test::round_trip_vector3,success,162.462,1.752,2026-11-05T02:09:25Z,50234783.0,,
+experimental-bsan,rbx_xml-0.13.5,types::vectors::test::round_trip_vector3int16,success,162.462,1.750,2026-11-05T02:09:26Z,50234783.0,,

@@ -1,0 +1,11 @@
+experimental-bsan,mel_spec-0.2.7,mel::tests::test_fft_frequencies,success,318.541,1.648,2026-11-05T06:05:00Z,50254929.0,,
+experimental-bsan,mel_spec-0.2.7,mel::tests::test_hz_to_mel,success,318.541,1.637,2026-11-05T06:05:01Z,50254929.0,,
+experimental-bsan,mel_spec-0.2.7,mel::tests::test_mel,success,318.541,69.297,2026-11-05T06:06:11Z,50254929.0,,
+experimental-bsan,mel_spec-0.2.7,mel::tests::test_mel_frequencies,success,318.541,1.630,2026-11-05T06:06:12Z,50254929.0,,
+experimental-bsan,mel_spec-0.2.7,mel::tests::test_mel_to_hz,success,318.541,1.618,2026-11-05T06:06:14Z,50254929.0,,
+experimental-bsan,mel_spec-0.2.7,mel::tests::test_mels_to_hz,success,318.541,1.627,2026-11-05T06:06:15Z,50254929.0,,
+experimental-bsan,mel_spec-0.2.7,mel::tests::test_spectrogram,success,318.541,15.868,2026-11-05T06:06:31Z,50254929.0,,
+experimental-bsan,mel_spec-0.2.7,rb::tests::test_ringbuffer,test_failed,318.541,20.306,2026-11-05T06:06:52Z,50254929.0,panic,"thread 'rb::tests::test_ringbuffer' (70626) panicked at src/rb.rs:98:47: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.2.7,stft::tests::test_spectrogram_add,success,318.541,1.633,2026-11-05T06:06:53Z,50254929.0,,
+experimental-bsan,mel_spec-0.2.7,vad::tests::test_speech_detection,test_failed,318.541,1.708,2026-11-05T06:06:55Z,50254929.0,panic,"thread 'vad::tests::test_speech_detection' (71023) panicked at src/vad.rs:351:61: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mel_spec-0.2.7,vad::tests::test_vad_boundaries,test_failed,318.541,1.695,2026-11-05T06:06:57Z,50254929.0,panic,"thread 'vad::tests::test_vad_boundaries' (71079) panicked at src/vad.rs:427:56: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

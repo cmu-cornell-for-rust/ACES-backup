@@ -1,0 +1,88 @@
+experimental-bsan,wasm-pack-0.15.0,build::build_crates_with_same_names,timeout,621.680,150.038,2026-11-05T02:20:51Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,build::build_custom_profile,timeout,621.680,150.037,2026-11-05T02:23:21Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,build::build_different_profiles,timeout,621.680,150.025,2026-11-05T02:25:51Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,build::build_force,timeout,621.680,150.022,2026-11-05T02:28:21Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,build::build_from_new,timeout,621.680,150.050,2026-11-05T02:30:51Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,build::build_in_non_crate_directory_doesnt_panic,success,621.680,7.673,2026-11-05T02:30:59Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,build::build_no_install,timeout,621.680,150.022,2026-11-05T02:33:29Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,build::build_with_and_without_wasm_bindgen_debug,timeout,621.680,150.023,2026-11-05T02:35:59Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,build::build_with_arbitrary_cargo_options,timeout,621.680,150.024,2026-11-05T02:38:29Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,build::dash_dash_web_target_has_error_on_old_bindgen,timeout,621.680,150.020,2026-11-05T02:40:59Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,build::it_should_build_crates_in_a_workspace,timeout,621.680,150.021,2026-11-05T02:43:29Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,build::it_should_build_js_hello_world_example,test_failed,621.680,83.199,2026-11-05T02:44:53Z,50239306.0,panic,"thread 'build::it_should_build_js_hello_world_example' (67058) panicked at tests/all/build.rs:21:47: Unexpected failure."
+experimental-bsan,wasm-pack-0.15.0,build::it_should_build_js_hello_world_example_with_custom_target_dir,test_failed,621.680,82.316,2026-11-05T02:46:15Z,50239306.0,panic,"thread 'build::it_should_build_js_hello_world_example_with_custom_target_dir' (67896) panicked at tests/all/build.rs:51:10: Unexpected failure."
+experimental-bsan,wasm-pack-0.15.0,build::it_should_build_nested_project_with_transitive_dependencies,timeout,621.680,150.028,2026-11-05T02:48:45Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,build::it_should_not_make_a_pkg_json_if_passed_no_pack,test_failed,621.680,81.898,2026-11-05T02:50:07Z,50239306.0,panic,"thread 'build::it_should_not_make_a_pkg_json_if_passed_no_pack' (71004) panicked at tests/all/build.rs:32:10: Unexpected failure."
+experimental-bsan,wasm-pack-0.15.0,build::renamed_crate_name_works,timeout,621.680,150.019,2026-11-05T02:52:37Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,download::all_latest_tool_download_urls_valid,success,621.680,86.628,2026-11-05T02:54:04Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,download::can_download_prebuilt_cargo_generate,timeout,621.680,150.035,2026-11-05T02:56:34Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,download::can_download_prebuilt_wasm_bindgen,timeout,621.680,150.028,2026-11-05T02:59:04Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,download::can_download_prebuilt_wasm_opt,timeout,621.680,150.022,2026-11-05T03:01:34Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,download::downloading_prebuilt_wasm_bindgen_handles_http_errors,success,621.680,7.610,2026-11-05T03:01:41Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,generate::new_with_name_succeeds,timeout,621.680,150.034,2026-11-05T03:04:11Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,generate::new_with_no_name_errors,timeout,621.680,150.037,2026-11-05T03:06:41Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,license::it_copies_a_license_default_path,success,621.680,84.154,2026-11-05T03:08:06Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,license::it_copies_a_license_provided_path,success,621.680,82.945,2026-11-05T03:09:29Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,license::it_copies_a_non_standard_license_provided_path,success,621.680,44.207,2026-11-05T03:10:13Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,license::it_copies_all_licenses_default_path,success,621.680,82.941,2026-11-05T03:11:36Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,license::it_copies_all_licenses_provided_path,success,621.680,85.366,2026-11-05T03:13:01Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,lockfile::it_gets_wasm_bindgen_test_version,timeout,621.680,150.033,2026-11-05T03:15:31Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,lockfile::it_gets_wasm_bindgen_version,timeout,621.680,150.032,2026-11-05T03:18:01Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,lockfile::it_gets_wasm_bindgen_version_from_dependencies,success,621.680,107.789,2026-11-05T03:19:49Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,lockfile::it_gets_wasm_bindgen_version_in_crate_inside_workspace,success,621.680,105.191,2026-11-05T03:21:34Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,log_level::log_level_error,test_failed,621.680,83.508,2026-11-05T03:22:58Z,50239306.0,panic,"thread 'log_level::log_level_error' (83957) panicked at tests/all/log_level.rs:78:10: Unexpected failure."
+experimental-bsan,wasm-pack-0.15.0,log_level::log_level_info,test_failed,621.680,83.958,2026-11-05T03:24:22Z,50239306.0,panic,"thread 'log_level::log_level_info' (84812) panicked at tests/all/log_level.rs:48:10: Unexpected failure."
+experimental-bsan,wasm-pack-0.15.0,log_level::log_level_warn,test_failed,621.680,84.631,2026-11-05T03:25:46Z,50239306.0,panic,"thread 'log_level::log_level_warn' (85480) panicked at tests/all/log_level.rs:63:10: Unexpected failure."
+experimental-bsan,wasm-pack-0.15.0,log_level::quiet,test_failed,621.680,83.128,2026-11-05T03:27:10Z,50239306.0,panic,"thread 'log_level::quiet' (86403) panicked at tests/all/log_level.rs:33:10: Unexpected failure."
+experimental-bsan,wasm-pack-0.15.0,manifest::configure_wasm_bindgen_debug_incorrectly_is_error,success,621.680,28.357,2026-11-05T03:27:38Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_checks_has_cdylib_default_path,success,621.680,124.395,2026-11-05T03:29:43Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_checks_has_cdylib_provided_path,success,621.680,81.186,2026-11-05T03:31:04Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_checks_has_cdylib_wrong_crate_type,success,621.680,6.060,2026-11-05T03:31:10Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_creates_a_package_json_default_path,success,621.680,82.430,2026-11-05T03:32:32Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_creates_a_package_json_provided_path,success,621.680,82.929,2026-11-05T03:33:55Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_creates_a_package_json_provided_path_with_scope,success,621.680,82.899,2026-11-05T03:35:18Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_creates_a_package_json_with_correct_files_when_out_name_is_provided,success,621.680,83.803,2026-11-05T03:36:42Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_creates_a_package_json_with_correct_keys_when_types_are_skipped,success,621.680,83.440,2026-11-05T03:38:05Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_creates_a_package_json_with_npm_dependencies_provided_by_wasm_bindgen,success,621.680,83.266,2026-11-05T03:39:29Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_creates_a_pkg_json_in_out_dir,success,621.680,83.174,2026-11-05T03:40:52Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_creates_a_pkg_json_with_correct_files_on_node,success,621.680,82.412,2026-11-05T03:42:14Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_creates_a_pkg_json_with_correct_files_on_nomodules,success,621.680,82.302,2026-11-05T03:43:37Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_does_not_error_when_wasm_bindgen_is_declared,success,621.680,81.786,2026-11-05T03:44:58Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_doesnt_recurse_up_the_path_to_find_cargo_toml_when_default,success,621.680,6.013,2026-11-05T03:45:04Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_errors_when_wasm_bindgen_is_not_declared,success,621.680,6.766,2026-11-05T03:45:11Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_gets_the_crate_name_default_path,timeout,621.680,150.025,2026-11-05T03:47:41Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,manifest::it_gets_the_crate_name_provided_path,success,621.680,82.066,2026-11-05T03:49:03Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_gets_the_default_name_prefix,timeout,621.680,150.029,2026-11-05T03:51:33Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,manifest::it_gets_the_name_prefix_passed_from_cli,timeout,621.680,150.027,2026-11-05T03:54:04Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,manifest::it_lists_license_files_in_files_field_of_package_json,success,621.680,82.157,2026-11-05T03:55:26Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_recognizes_a_map_during_depcheck,success,621.680,37.206,2026-11-05T03:56:03Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,manifest::it_recurses_up_the_path_to_find_cargo_toml,timeout,621.680,150.027,2026-11-05T03:58:33Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,manifest::it_sets_homepage_field_if_available_in_cargo_toml,timeout,621.680,150.031,2026-11-05T04:01:03Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,manifest::it_sets_keywords_field_if_available_in_cargo_toml,timeout,621.680,150.040,2026-11-05T04:03:33Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,manifest::parse_crate_data_returns_unused_keys_in_cargo_toml,timeout,621.680,150.031,2026-11-05T04:06:03Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,readme::it_copies_a_readme_default_path,success,621.680,82.042,2026-11-05T04:07:25Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,readme::it_copies_a_readme_provided_path,success,621.680,84.861,2026-11-05T04:08:50Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,readme::it_ignores_a_disabled_readme,test_failed,621.680,86.777,2026-11-05T04:10:17Z,50239306.0,panic,"thread 'readme::it_ignores_a_disabled_readme' (11659) panicked at tests/all/readme.rs:133:10: Unexpected failure."
+experimental-bsan,wasm-pack-0.15.0,stamps::load_stamp,success,621.680,5.387,2026-11-05T04:10:22Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,stamps::load_stamp_from_non_existent_file,success,621.680,5.373,2026-11-05T04:10:28Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,stamps::update_stamp,success,621.680,5.350,2026-11-05T04:10:33Z,50239306.0,,
+experimental-bsan,wasm-pack-0.15.0,test::cdylib_not_required,timeout,621.680,150.027,2026-11-05T04:13:03Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,test::complains_about_missing_wasm_bindgen_test_dependency,timeout,621.680,150.025,2026-11-05T04:15:33Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,test::extra_options_is_passed_to_cargo_when_building_tests,timeout,621.680,150.026,2026-11-05T04:18:03Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,test::it_can_find_a_webdriver_on_path,timeout,621.680,150.036,2026-11-05T04:20:33Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,test::it_can_run_browser_tests,timeout,621.680,150.020,2026-11-05T04:23:03Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,test::it_can_run_failing_tests,timeout,621.680,150.023,2026-11-05T04:25:33Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,test::it_can_run_node_tests,timeout,621.680,150.019,2026-11-05T04:28:04Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,test::it_can_run_tests_with_different_wbg_test_and_wbg_versions,timeout,621.680,150.020,2026-11-05T04:30:34Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,test::it_requires_node_or_a_browser,timeout,621.680,150.024,2026-11-05T04:33:04Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,test::renamed_crate_name_works,timeout,621.680,150.024,2026-11-05T04:35:34Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,test::test_output_is_printed_once_in_both_stdout_and_failures,timeout,621.680,150.020,2026-11-05T04:38:04Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,test::the_headless_flag_requires_a_browser,timeout,621.680,150.020,2026-11-05T04:40:34Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,wasm_opt::custom_args,timeout,621.680,150.020,2026-11-05T04:43:04Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,wasm_opt::disable_in_release,timeout,621.680,150.019,2026-11-05T04:45:34Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,wasm_opt::enable_in_dev,timeout,621.680,150.020,2026-11-05T04:48:04Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,wasm_opt::misconfigured,timeout,621.680,150.020,2026-11-05T04:50:34Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,wasm_opt::off_in_dev,timeout,621.680,150.025,2026-11-05T04:53:04Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,wasm_opt::on_in_release,timeout,621.680,150.021,2026-11-05T04:55:34Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,webdriver::can_install_chromedriver,timeout,621.680,150.035,2026-11-05T04:58:04Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wasm-pack-0.15.0,webdriver::can_install_geckodriver,timeout,621.680,150.036,2026-11-05T05:00:34Z,50239306.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

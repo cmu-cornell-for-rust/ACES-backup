@@ -1,0 +1,27 @@
+experimental-bsan,safe-nd-0.11.7,blob::tests::deterministic_name,success,170.631,20.316,2026-11-05T04:09:04Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,blob::tests::deterministic_test,success,170.631,1.670,2026-11-05T04:09:06Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,blob::tests::serialisation,success,170.631,6.725,2026-11-05T04:09:13Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,blob::tests::zbase32_encode_decode_idata_address,success,170.631,1.702,2026-11-05T04:09:14Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,identity::tests::zbase32_encode_decode_client_public_id,success,170.631,2.097,2026-11-05T04:09:17Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,identity::tests::zbase32_encode_decode_enum_public_id,success,170.631,1.896,2026-11-05T04:09:18Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,identity::tests::zbase32_encode_decode_node_public_id,success,170.631,25.700,2026-11-05T04:09:44Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,keys::tests::serialisation_key_pair,success,170.631,54.509,2026-11-05T04:10:39Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,keys::tests::serialisation_public_key,success,170.631,38.214,2026-11-05T04:11:17Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,keys::tests::zbase32_encode_decode_public_key,success,170.631,38.962,2026-11-05T04:11:56Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,map::tests::zbase32_encode_decode_map_address,success,170.631,1.711,2026-11-05T04:11:58Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,messaging::account::tests::exceed_size_limit,success,170.631,108.876,2026-11-05T04:13:47Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,messaging::account::tests::valid,success,170.631,2.091,2026-11-05T04:13:49Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,messaging::tests::debug_format,success,170.631,1.646,2026-11-05T04:13:50Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,messaging::tests::try_from,success,170.631,6.964,2026-11-05T04:13:57Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,money::tests::checked_add_sub,success,170.631,1.649,2026-11-05T04:13:59Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,money::tests::display,success,170.631,1.667,2026-11-05T04:14:01Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,money::tests::from_str,success,170.631,1.667,2026-11-05T04:14:02Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,sequence::tests::sequence_append_entry_and_apply,test_failed,170.631,7.128,2026-11-05T04:14:09Z,50248615.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,safe-nd-0.11.7,sequence::tests::sequence_causality_between_data_and_policy_ops,test_failed,170.631,33.952,2026-11-05T04:14:43Z,50248615.0,panic,"thread 'sequence::tests::sequence_causality_between_data_and_policy_ops' (59382) panicked at src/sequence/mod.rs:570:9: assertion `left == right` failed"
+experimental-bsan,safe-nd-0.11.7,sequence::tests::sequence_concurrent_policy_and_data_ops,test_failed,170.631,12.248,2026-11-05T04:14:56Z,50248615.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,safe-nd-0.11.7,sequence::tests::sequence_concurrent_policy_ops,test_failed,170.631,12.300,2026-11-05T04:15:08Z,50248615.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,safe-nd-0.11.7,sequence::tests::sequence_create_private,success,170.631,6.913,2026-11-05T04:15:15Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,sequence::tests::sequence_create_public,success,170.631,6.975,2026-11-05T04:15:22Z,50248615.0,,
+experimental-bsan,safe-nd-0.11.7,sequence::tests::sequence_old_data_op,test_failed,170.631,12.237,2026-11-05T04:15:34Z,50248615.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,safe-nd-0.11.7,sequence::tests::sequence_private_set_policy_and_apply,test_failed,170.631,16.416,2026-11-05T04:15:51Z,50248615.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,safe-nd-0.11.7,sequence::tests::sequence_public_set_policy_and_apply,test_failed,170.631,11.299,2026-11-05T04:16:02Z,50248615.0,other,"error: test failed, to rerun pass `--lib`"

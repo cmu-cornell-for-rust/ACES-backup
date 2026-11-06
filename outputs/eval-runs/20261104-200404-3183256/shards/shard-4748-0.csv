@@ -1,0 +1,48 @@
+experimental-bsan,p12-keystore-0.4.1,archive_preserves_duplicate_and_unrelated_certificate_bags,success,172.378,48.273,2026-11-05T03:07:50Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,archive_rejects_bad_passwords_and_modified_macs,success,172.378,42.219,2026-11-05T03:08:32Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,codec::tests::decrypt_rejects_pbes1_iterations_above_maximum_before_kdf,success,172.378,7.543,2026-11-05T03:08:40Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,codec::tests::decrypt_rejects_pbes2_pbkdf2_iterations_above_maximum_before_kdf,success,172.378,7.579,2026-11-05T03:08:47Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,codec::tests::decrypt_rejects_pbes2_scrypt_excessive_parallelism_before_kdf,success,172.378,7.497,2026-11-05T03:08:55Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,codec::tests::decrypt_rejects_pbes2_scrypt_memory_cost_from_large_block_size_before_kdf,success,172.378,7.594,2026-11-05T03:09:02Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,codec::tests::decrypt_rejects_pbes2_scrypt_memory_cost_from_large_n_before_kdf,success,172.378,7.639,2026-11-05T03:09:10Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,codec::tests::key_bags_without_local_ids_are_retained_before_import_policy,success,172.378,22.014,2026-11-05T03:09:32Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,codec::tests::test_deserialize_bag,timeout,172.378,150.015,2026-11-05T03:12:02Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,codec::tests::test_from_secret_bag,timeout,172.378,150.016,2026-11-05T03:14:32Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,codec::tests::test_secret_to_safe_bag,timeout,172.378,150.019,2026-11-05T03:17:02Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,codec::tests::traditional_mac_round_trip_sha2_variants,timeout,172.378,150.012,2026-11-05T03:19:32Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,codec::tests::verify_mac_rejects_iterations_above_maximum_before_kdf,success,172.378,7.413,2026-11-05T03:19:40Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,explicit_certificate_aliases_still_require_bmp_characters,success,172.378,86.975,2026-11-05T03:21:07Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,oid::tests::test_oid_values,success,172.378,7.338,2026-11-05T03:21:14Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,raw_import_preserves_keys_and_certificates_with_colliding_aliases,success,172.378,42.285,2026-11-05T03:21:56Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,secret::tests::test_from_oid,success,172.378,7.285,2026-11-05T03:22:04Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,secret::tests::test_from_oid_str,success,172.378,7.468,2026-11-05T03:22:11Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,secret::tests::test_getters,success,172.378,7.406,2026-11-05T03:22:18Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,secret::tests::test_invalid_oid,success,172.378,7.345,2026-11-05T03:22:26Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,secret::tests::test_secret_builder,success,172.378,7.248,2026-11-05T03:22:33Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,secret::tests::test_secret_builder_with_aes128_generic,success,172.378,7.149,2026-11-05T03:22:40Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,secret::tests::test_secret_builder_with_aes192,success,172.378,7.238,2026-11-05T03:22:47Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,secret::tests::test_secret_builder_with_missing_len,success,172.378,7.303,2026-11-05T03:22:55Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,secret::tests::test_secret_builder_with_non_default_rng,success,172.378,7.190,2026-11-05T03:23:02Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,secret::tests::test_secret_builder_with_val,success,172.378,7.221,2026-11-05T03:23:09Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,secret::tests::test_secret_builder_with_val_n_id,success,172.378,7.196,2026-11-05T03:23:16Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,test_keystore_api,timeout,172.378,150.011,2026-11-05T03:25:46Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_keystore_api_with_aes_key,timeout,172.378,150.017,2026-11-05T03:28:16Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_keystore_create_private_key_chain,timeout,172.378,150.014,2026-11-05T03:30:47Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_keystore_create_secret,timeout,172.378,150.015,2026-11-05T03:33:17Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_keystore_read_write_copy,timeout,172.378,150.016,2026-11-05T03:35:47Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_parse_clear_twocerts_bundle,success,172.378,10.234,2026-11-05T03:35:57Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,test_parse_pbes1_keystore,timeout,172.378,150.013,2026-11-05T03:38:27Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_parse_pbes1_truststore,timeout,172.378,150.011,2026-11-05T03:40:57Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_parse_pbes2_keystore,timeout,172.378,150.012,2026-11-05T03:43:27Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_parse_pbes2_truststore,timeout,172.378,150.012,2026-11-05T03:45:57Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_parse_self_signed_pfx,timeout,172.378,150.011,2026-11-05T03:48:27Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_raw_policy,success,172.378,10.352,2026-11-05T03:48:37Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,test_relaxed_policy,success,172.378,10.157,2026-11-05T03:48:48Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,test_strict_policy,success,172.378,10.281,2026-11-05T03:48:58Z,50244156.0,,
+experimental-bsan,p12-keystore-0.4.1,test_write_pbes1_3des_keystore,timeout,172.378,150.012,2026-11-05T03:51:28Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_write_pbes1_3des_truststore,timeout,172.378,150.011,2026-11-05T03:53:58Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_write_pbes1_40rc2_keystore,timeout,172.378,150.010,2026-11-05T03:56:28Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_write_pbes1_40rc2_truststore,timeout,172.378,150.011,2026-11-05T03:58:58Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_write_pbes2_keystore,timeout,172.378,150.012,2026-11-05T04:01:28Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,test_write_pbes2_truststore,timeout,172.378,150.013,2026-11-05T04:03:58Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,p12-keystore-0.4.1,unicode_certificate_subjects_round_trip_without_generated_friendly_names,timeout,172.378,150.012,2026-11-05T04:06:28Z,50244156.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

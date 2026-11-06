@@ -1,0 +1,5 @@
+experimental-bsan,fastping-rs-0.2.4,ping::tests::test_ping,success,89.101,1.549,2026-11-05T07:26:17Z,50259814.0,,
+experimental-bsan,fastping-rs-0.2.4,tests::test_add_remove_addrs,test_failed,89.101,1.587,2026-11-05T07:26:19Z,50259814.0,panic,"thread 'tests::test_add_remove_addrs' (86278) panicked at src/lib.rs:377:17: assertion failed: false"
+experimental-bsan,fastping-rs-0.2.4,tests::test_integration,test_failed,89.101,1.585,2026-11-05T07:26:21Z,50259814.0,panic,"thread 'tests::test_integration' (86394) panicked at src/lib.rs:432:17: assertion failed: false"
+experimental-bsan,fastping-rs-0.2.4,tests::test_newpinger,test_failed,89.101,1.596,2026-11-05T07:26:22Z,50259814.0,panic,"thread 'tests::test_newpinger' (86502) panicked at src/lib.rs:347:17: assertion failed: false"
+experimental-bsan,fastping-rs-0.2.4,tests::test_stop,test_failed,89.101,1.594,2026-11-05T07:26:24Z,50259814.0,panic,"thread 'tests::test_stop' (86590) panicked at src/lib.rs:392:17: assertion failed: false"

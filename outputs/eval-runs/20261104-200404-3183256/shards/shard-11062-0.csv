@@ -1,0 +1,13 @@
+experimental-bsan,bgpkit-broker-0.7.6,collector::tests::test_load_collectors,success,199.281,4.193,2026-11-05T05:35:40Z,50253340.0,,
+experimental-bsan,bgpkit-broker-0.7.6,item::tests::test_sorting,success,199.281,1.621,2026-11-05T05:35:42Z,50253340.0,,
+experimental-bsan,bgpkit-broker-0.7.6,query::tests::test_param_to_string,success,199.281,1.628,2026-11-05T05:35:43Z,50253340.0,,
+experimental-bsan,bgpkit-broker-0.7.6,tests::test_broker_error,success,199.281,89.703,2026-11-05T05:37:13Z,50253340.0,,
+experimental-bsan,bgpkit-broker-0.7.6,tests::test_filters,test_failed,199.281,95.416,2026-11-05T05:38:49Z,50253340.0,panic,"thread 'tests::test_filters' (97130) panicked at src/lib.rs:927:9: assertion `left == right` failed"
+experimental-bsan,bgpkit-broker-0.7.6,tests::test_health_check,success,199.281,90.312,2026-11-05T05:40:19Z,50253340.0,,
+experimental-bsan,bgpkit-broker-0.7.6,tests::test_iterator,test_failed,199.281,96.059,2026-11-05T05:41:55Z,50253340.0,panic,"thread 'tests::test_iterator' (29529) panicked at src/lib.rs:918:9: assertion `left == right` failed"
+experimental-bsan,bgpkit-broker-0.7.6,tests::test_latest,timeout,199.281,150.021,2026-11-05T05:44:25Z,50253340.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bgpkit-broker-0.7.6,tests::test_latest_no_ssl,timeout,199.281,150.016,2026-11-05T05:46:55Z,50253340.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bgpkit-broker-0.7.6,tests::test_network_error,success,199.281,86.836,2026-11-05T05:48:22Z,50253340.0,,
+experimental-bsan,bgpkit-broker-0.7.6,tests::test_peers,timeout,199.281,150.017,2026-11-05T05:50:52Z,50253340.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bgpkit-broker-0.7.6,tests::test_query,success,199.281,94.989,2026-11-05T05:52:27Z,50253340.0,,
+experimental-bsan,bgpkit-broker-0.7.6,tests::test_query_all,test_failed,199.281,95.204,2026-11-05T05:54:02Z,50253340.0,panic,"thread 'tests::test_query_all' (59340) panicked at src/lib.rs:909:9: assertion `left == right` failed"

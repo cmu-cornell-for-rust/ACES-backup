@@ -1,0 +1,8 @@
+experimental-bsan,rs_box-0.0.28,block_chain::coin_flags_test::test_simple_used_with_coin_flags,success,84.901,1.634,2026-11-05T06:45:45Z,50257293.0,,
+experimental-bsan,rs_box-0.0.28,block_chain::hash_rate_test::test_simple_used_with_hash_rate,success,84.901,1.834,2026-11-05T06:45:46Z,50257293.0,,
+experimental-bsan,rs_box-0.0.28,lib_tests::test_get_version,success,84.901,1.624,2026-11-05T06:45:48Z,50257293.0,,
+experimental-bsan,rs_box-0.0.28,lib_tests::test_rs_box_setup,test_failed,84.901,1.844,2026-11-05T06:45:50Z,50257293.0,panic,"thread 'lib_tests::test_rs_box_setup' (53517) panicked at src/rs_box_log/rs_box_log.rs:89:37: Failed to create log directory: Os { code: 30, kind: ReadOnlyFilesystem, message: ""Read-only file system"" }"
+experimental-bsan,rs_box-0.0.28,rs_box_log::rs_box_log_test::test_logs_with_terminal_show,timeout,84.901,150.023,2026-11-05T06:48:20Z,50257293.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rs_box-0.0.28,rs_box_log::rs_box_log_test::test_logs_with_write_logfile,test_failed,84.901,2.079,2026-11-05T06:48:22Z,50257293.0,panic,"thread 'rs_box_log::rs_box_log_test::test_logs_with_write_logfile' (81607) panicked at src/rs_box_log/rs_box_log.rs:89:37: Failed to create log directory: Os { code: 30, kind: ReadOnlyFilesystem, message: ""Read-only file system"" }"
+experimental-bsan,rs_box-0.0.28,rs_box_log::rs_box_log_test::test_none_setup_status,timeout,84.901,150.019,2026-11-05T06:50:52Z,50257293.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rs_box-0.0.28,rs_box_log::rs_box_log_test::test_simple_log_output,timeout,84.901,150.022,2026-11-05T06:53:22Z,50257293.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

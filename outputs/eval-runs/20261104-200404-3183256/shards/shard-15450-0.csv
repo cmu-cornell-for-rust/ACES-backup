@@ -1,0 +1,5 @@
+experimental-bsan,async-bincode-0.8.0,futures_tests::it_works,test_failed,113.947,11.848,2026-11-05T07:22:49Z,50259558.0,gc,"test futures_tests::it_works ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-bincode-0.8.0,futures_tests::lots,test_failed,113.947,11.871,2026-11-05T07:23:01Z,50259558.0,gc,"test futures_tests::lots ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-bincode-0.8.0,tokio_tests::it_works,success,113.947,1.931,2026-11-05T07:23:03Z,50259558.0,,
+experimental-bsan,async-bincode-0.8.0,tokio_tests::lots,timeout,113.947,150.016,2026-11-05T07:25:33Z,50259558.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-bincode-0.8.0,tokio_tests::sync_destination,success,113.947,2.605,2026-11-05T07:25:36Z,50259558.0,,

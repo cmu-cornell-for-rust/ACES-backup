@@ -1,0 +1,2 @@
+experimental-bsan,mio-utun-0.6.19,smoke,test_failed,17.306,2.944,2026-11-05T08:54:07Z,50264407.0,panic,"thread 'smoke' (33087) panicked at tests/echo.rs:22:49: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: Sys(ENODEV) }"
+experimental-bsan,mio-utun-0.6.19,test_server,test_failed,17.306,2.949,2026-11-05T08:54:10Z,50264407.0,panic,"thread 'test_server' (33350) panicked at tests/echo.rs:36:49: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: Sys(ENODEV) }"

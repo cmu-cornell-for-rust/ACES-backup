@@ -1,0 +1,44 @@
+experimental-bsan,versatiles-0.13.0,tests::convert_subcommand,success,646.343,4.341,2026-11-05T03:18:03Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tests::help,success,646.343,3.657,2026-11-05T03:18:06Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tests::probe_subcommand,success,646.343,3.830,2026-11-05T03:18:10Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tests::serve_subcommand,success,646.343,4.554,2026-11-05T03:18:15Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tests::version,success,646.343,3.312,2026-11-05T03:18:18Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::convert::tests::test_local,test_failed,646.343,4.744,2026-11-05T03:18:23Z,50244698.0,other,"error: test failed, to rerun pass `--bin versatiles`"
+experimental-bsan,versatiles-0.13.0,tools::convert::tests::test_remote1,timeout,646.343,150.022,2026-11-05T03:20:53Z,50244698.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,versatiles-0.13.0,tools::convert::tests::test_remote2,timeout,646.343,150.021,2026-11-05T03:23:23Z,50244698.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,versatiles-0.13.0,tools::help::tests::test_help1,success,646.343,11.642,2026-11-05T03:23:34Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::help::tests::test_help2,success,646.343,3.645,2026-11-05T03:23:38Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::probe::tests::test_local,test_failed,646.343,4.438,2026-11-05T03:23:43Z,50244698.0,panic,"thread 'tools::probe::tests::test_local' (43269) panicked at src/tools/probe.rs:52:10: called `Result::unwrap()` on an `Err` value: path '""/work/../testdata/berlin.mbtiles""' does not exist"
+experimental-bsan,versatiles-0.13.0,tools::probe::tests::test_remote,timeout,646.343,150.020,2026-11-05T03:26:13Z,50244698.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,versatiles-0.13.0,tools::serve::tests::test_local,test_failed,646.343,41.461,2026-11-05T03:26:54Z,50244698.0,panic,"thread 'tools::serve::tests::test_local' (48277) panicked at src/tools/serve.rs:189:10: called `Result::unwrap()` on an `Err` value: path '""/work/../testdata/berlin.mbtiles""' does not exist"
+experimental-bsan,versatiles-0.13.0,tools::serve::tests::test_remote,timeout,646.343,150.020,2026-11-05T03:29:24Z,50244698.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,versatiles-0.13.0,tools::server::sources::static_source::tests::get_data_invalid_path,success,646.343,3.112,2026-11-05T03:29:27Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::sources::static_source::tests::get_data_valid_path,success,646.343,3.115,2026-11-05T03:29:30Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::sources::static_source::tests::get_data_with_path_filtering,success,646.343,3.119,2026-11-05T03:29:33Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::sources::static_source::tests::new_static_source,success,646.343,13.564,2026-11-05T03:29:47Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::sources::static_source_folder::tests::directory_with_index_html,success,646.343,3.167,2026-11-05T03:29:50Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::sources::static_source_folder::tests::test,test_failed,646.343,3.206,2026-11-05T03:29:53Z,50244698.0,panic,"thread 'tools::server::sources::static_source_folder::tests::test' (51764) panicked at src/tools/server/sources/static_source_folder.rs:104:61: called `Result::unwrap()` on an `Err` value: No such file or directory (os error 2)"
+experimental-bsan,versatiles-0.13.0,tools::server::sources::static_source_tar::tests::from_directory,success,646.343,3.041,2026-11-05T03:29:57Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::sources::static_source_tar::tests::from_non_existing_path,success,646.343,3.021,2026-11-05T03:30:00Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::sources::static_source_tar::tests::small_stuff,timeout,646.343,150.016,2026-11-05T03:32:30Z,50244698.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,versatiles-0.13.0,tools::server::sources::static_source_tar::tests::test_get_data,timeout,646.343,150.016,2026-11-05T03:35:00Z,50244698.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,versatiles-0.13.0,tools::server::sources::tile_source::tests::debug,success,646.343,3.094,2026-11-05T03:35:03Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::sources::tile_source::tests::tile_container_from,success,646.343,3.067,2026-11-05T03:35:06Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::sources::tile_source::tests::tile_container_get_data,success,646.343,3.163,2026-11-05T03:35:09Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::tile_server::tests::same_prefix_twice,success,646.343,3.195,2026-11-05T03:35:12Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::tile_server::tests::server,success,646.343,9.409,2026-11-05T03:35:22Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::tile_server::tests::test_get_encoding,success,646.343,3.123,2026-11-05T03:35:25Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::tile_server::tests::tile_server_add_tile_source,success,646.343,3.054,2026-11-05T03:35:28Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::tile_server::tests::tile_server_iter_url_mapping,success,646.343,3.135,2026-11-05T03:35:31Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::tile_server::tests::tile_server_new,success,646.343,3.271,2026-11-05T03:35:34Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::utils::mime::tests::test_guess_mime,success,646.343,3.159,2026-11-05T03:35:37Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::utils::url::tests::test_as_path,success,646.343,3.043,2026-11-05T03:35:40Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::utils::url::tests::test_as_string,success,646.343,3.042,2026-11-05T03:35:44Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::utils::url::tests::test_as_vec,success,646.343,3.035,2026-11-05T03:35:47Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::utils::url::tests::test_be_dir,success,646.343,3.040,2026-11-05T03:35:50Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::utils::url::tests::test_is_dir,success,646.343,3.041,2026-11-05T03:35:53Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::utils::url::tests::test_join_as_string,success,646.343,3.037,2026-11-05T03:35:56Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::utils::url::tests::test_push,success,646.343,3.056,2026-11-05T03:35:59Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::utils::url::tests::test_starts_with,success,646.343,3.061,2026-11-05T03:36:02Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::utils::url::tests::test_strip_prefix,success,646.343,3.046,2026-11-05T03:36:05Z,50244698.0,,
+experimental-bsan,versatiles-0.13.0,tools::server::utils::url::tests::test_url_new,success,646.343,3.050,2026-11-05T03:36:08Z,50244698.0,,

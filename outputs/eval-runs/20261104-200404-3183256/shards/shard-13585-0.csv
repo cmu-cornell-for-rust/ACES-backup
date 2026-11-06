@@ -1,0 +1,8 @@
+experimental-bsan,foundry-compilers-artifacts-vyper-0.21.0,input::tests::keeps_supported_evm_version,success,175.718,1.687,2026-11-05T06:42:12Z,50256979.0,,
+experimental-bsan,foundry-compilers-artifacts-vyper-0.21.0,input::tests::normalizes_evm_version_for_older_vyper,success,175.718,1.677,2026-11-05T06:42:13Z,50256979.0,,
+experimental-bsan,foundry-compilers-artifacts-vyper-0.21.0,input::tests::normalizes_evm_version_on_creation,success,175.718,1.679,2026-11-05T06:42:15Z,50256979.0,,
+experimental-bsan,foundry-compilers-artifacts-vyper-0.21.0,output::tests::can_deserialize_03_output,test_failed,175.718,1.737,2026-11-05T06:42:17Z,50256979.0,panic,"thread 'output::tests::can_deserialize_03_output' (73377) panicked at src/output.rs:159:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,foundry-compilers-artifacts-vyper-0.21.0,output::tests::can_deserialize_04_output,test_failed,175.718,1.752,2026-11-05T06:42:19Z,50256979.0,panic,"thread 'output::tests::can_deserialize_04_output' (73770) panicked at src/output.rs:159:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,foundry-compilers-artifacts-vyper-0.21.0,settings::tests::deserializes_optimization_level_aliases,success,175.718,1.679,2026-11-05T06:42:20Z,50256979.0,,
+experimental-bsan,foundry-compilers-artifacts-vyper-0.21.0,settings::tests::deserializes_snake_case_config_aliases,success,175.718,1.687,2026-11-05T06:42:22Z,50256979.0,,
+experimental-bsan,foundry-compilers-artifacts-vyper-0.21.0,settings::tests::serializes_extended_vyper_settings,success,175.718,1.745,2026-11-05T06:42:24Z,50256979.0,,

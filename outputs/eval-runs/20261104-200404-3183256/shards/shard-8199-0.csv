@@ -1,0 +1,23 @@
+experimental-bsan,clerk-rs-0.4.0,models::email_address_verification::tests::test_deserialize_email_address_verification,success,351.205,1.662,2026-11-05T04:33:15Z,50249561.0,,
+experimental-bsan,clerk-rs-0.4.0,models::email_address_verification::tests::test_deserialize_email_address_verification_other_strategy,success,351.205,1.652,2026-11-05T04:33:17Z,50249561.0,,
+experimental-bsan,clerk-rs-0.4.0,validators::authorizer::tests::test_helper_generate_token_header,timeout,351.205,150.012,2026-11-05T04:35:47Z,50249561.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,clerk-rs-0.4.0,validators::authorizer::tests::test_helper_generate_token_header_error,success,351.205,1.642,2026-11-05T04:35:49Z,50249561.0,,
+experimental-bsan,clerk-rs-0.4.0,validators::authorizer::tests::test_helper_generate_token_header_with_kid,timeout,351.205,150.012,2026-11-05T04:38:19Z,50249561.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,clerk-rs-0.4.0,validators::authorizer::tests::test_validate_jwt_invalid_token,timeout,351.205,150.012,2026-11-05T04:40:49Z,50249561.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,clerk-rs-0.4.0,validators::authorizer::tests::test_validate_jwt_missing_kid,timeout,351.205,150.012,2026-11-05T04:43:19Z,50249561.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,clerk-rs-0.4.0,validators::authorizer::tests::test_validate_jwt_success,timeout,351.205,150.013,2026-11-05T04:45:49Z,50249561.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,clerk-rs-0.4.0,validators::authorizer::tests::test_validate_jwt_unknown_key,timeout,351.205,150.012,2026-11-05T04:48:19Z,50249561.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,clerk-rs-0.4.0,validators::authorizer::tests::test_validate_jwt_with_key_expired,timeout,351.205,150.012,2026-11-05T04:50:49Z,50249561.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,clerk-rs-0.4.0,validators::authorizer::tests::test_validate_jwt_with_key_invalid_decoding_key,timeout,351.205,150.012,2026-11-05T04:53:19Z,50249561.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,clerk-rs-0.4.0,validators::authorizer::tests::test_validate_jwt_with_key_invalid_sig,timeout,351.205,150.012,2026-11-05T04:55:49Z,50249561.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,clerk-rs-0.4.0,validators::authorizer::tests::test_validate_jwt_with_key_success,timeout,351.205,150.016,2026-11-05T04:58:19Z,50249561.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,clerk-rs-0.4.0,validators::authorizer::tests::test_validate_jwt_with_key_unexpected_key_algorithm,timeout,351.205,150.012,2026-11-05T05:00:49Z,50249561.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,clerk-rs-0.4.0,validators::jwks::tests::test_memory_cache_jwks_provider_caching,success,351.205,2.378,2026-11-05T05:00:52Z,50249561.0,,
+experimental-bsan,clerk-rs-0.4.0,validators::jwks::tests::test_memory_cache_jwks_provider_expires,success,351.205,4.856,2026-11-05T05:00:56Z,50249561.0,,
+experimental-bsan,clerk-rs-0.4.0,validators::jwks::tests::test_memory_cache_jwks_provider_success,success,351.205,2.394,2026-11-05T05:00:59Z,50249561.0,,
+experimental-bsan,clerk-rs-0.4.0,validators::jwks::tests::test_memory_cache_jwks_provider_unknown_never,success,351.205,2.376,2026-11-05T05:01:01Z,50249561.0,,
+experimental-bsan,clerk-rs-0.4.0,validators::jwks::tests::test_memory_cache_jwks_provider_unknown_ratelimit,success,351.205,7.343,2026-11-05T05:01:09Z,50249561.0,,
+experimental-bsan,clerk-rs-0.4.0,validators::jwks::tests::test_memory_cache_jwks_provider_unknown_refresh,success,351.205,3.294,2026-11-05T05:01:12Z,50249561.0,,
+experimental-bsan,clerk-rs-0.4.0,validators::jwks::tests::test_simple_jwks_provider_repeat,success,351.205,3.309,2026-11-05T05:01:15Z,50249561.0,,
+experimental-bsan,clerk-rs-0.4.0,validators::jwks::tests::test_simple_jwks_provider_success,success,351.205,2.389,2026-11-05T05:01:18Z,50249561.0,,
+experimental-bsan,clerk-rs-0.4.0,validators::jwks::tests::test_simple_jwks_provider_unknown_key,success,351.205,2.394,2026-11-05T05:01:20Z,50249561.0,,

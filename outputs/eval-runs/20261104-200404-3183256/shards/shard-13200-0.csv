@@ -1,0 +1,9 @@
+experimental-bsan,picomux-0.3.2,buffer_table::tests::create_entry_clears_existing_tombstone,success,232.118,3.050,2026-11-05T06:36:07Z,50256518.0,,
+experimental-bsan,picomux-0.3.2,buffer_table::tests::dropped_entries_are_tombstoned,success,232.118,3.044,2026-11-05T06:36:10Z,50256518.0,,
+experimental-bsan,picomux-0.3.2,buffer_table::tests::expired_tombstones_are_removed,success,232.118,3.074,2026-11-05T06:36:13Z,50256518.0,,
+experimental-bsan,picomux-0.3.2,buffer_table::tests::pending_window_wait_does_not_lock_table,success,232.118,3.078,2026-11-05T06:36:16Z,50256518.0,,
+experimental-bsan,picomux-0.3.2,dropping_stream_drains_writes_and_keeps_mux_usable,success,232.118,4.781,2026-11-05T06:36:21Z,50256518.0,,
+experimental-bsan,picomux-0.3.2,response_after_request_eof_crosses_flow_control_windows,test_failed,232.118,22.132,2026-11-05T06:36:43Z,50256518.0,panic,"thread 'response_after_request_eof_crosses_flow_control_windows' (56181) panicked at tests/half_close.rs:53:10: half-close request/response stalled: Elapsed(())"
+experimental-bsan,picomux-0.3.2,shutdown_reports_closed_transport,success,232.118,4.138,2026-11-05T06:36:47Z,50256518.0,,
+experimental-bsan,picomux-0.3.2,simultaneous_shutdown_preserves_both_directions,test_failed,232.118,40.499,2026-11-05T06:37:27Z,50256518.0,panic,"thread 'simultaneous_shutdown_preserves_both_directions' (56414) panicked at tests/half_close.rs:86:10: simultaneous shutdown stalled: Elapsed(())"
+experimental-bsan,picomux-0.3.2,tests::test_picomux_basic,success,232.118,8.543,2026-11-05T06:37:36Z,50256518.0,,

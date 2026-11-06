@@ -1,0 +1,116 @@
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::concurrent_oauth_refresh_is_coalesced_by_authentication_middleware,timeout,1476.932,150.029,2026-11-05T02:20:07Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::empty_origins_preserve_existing_credential_selection,timeout,1476.932,150.024,2026-11-05T02:22:37Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::expired_oauth_with_failed_refresh_sends_no_authorization_header,timeout,1476.932,150.022,2026-11-05T02:25:07Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::multiple_origins_select_their_source_hosts,success,1476.932,88.671,2026-11-05T02:26:36Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::replacement_during_refresh_cannot_change_reused_credential_kind,success,1476.932,88.658,2026-11-05T02:28:05Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::reused_host_credential_is_sent_only_to_trusted_origin,timeout,1476.932,150.023,2026-11-05T02:30:35Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::source_hosts_use_canonical_domain_and_ip_storage_keys,timeout,1476.932,150.024,2026-11-05T02:33:05Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::test_basic_auth_storage,success,1476.932,136.864,2026-11-05T02:35:22Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::test_bearer_storage,success,1476.932,135.769,2026-11-05T02:37:37Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::test_conda_token_storage,success,1476.932,136.943,2026-11-05T02:39:54Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::test_host_wildcard_expansion,success,1476.932,2.397,2026-11-05T02:39:57Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::test_rattler_auth_file_env_var_handling,success,1476.932,1.831,2026-11-05T02:39:59Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_middleware::tests::test_store_fallback,success,1476.932,1.870,2026-11-05T02:40:00Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::authentication::tests::legacy_oauth_json_round_trips_without_audience,success,1476.932,1.801,2026-11-05T02:40:02Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::backends::file::tests::concurrent_updates_and_deletion_preserve_other_entries,success,1476.932,2.998,2026-11-05T02:40:05Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::backends::file::tests::test_file_storage,test_failed,1476.932,48.856,2026-11-05T02:40:54Z,50235008.0,panic,"thread 'authentication_storage::backends::file::tests::test_file_storage' (98290) panicked at /local/ev-50235008-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.49.0/src/runtime.rs:734:13: snapshot assertion for 'file_storage' failed in line 218"
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::backends::keyring::tests::list_keys_does_not_read_secrets,success,1476.932,1.796,2026-11-05T02:40:56Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::backends::keyring::tests::windows_search_pattern_is_a_valid_regex_matching_target_names,success,1476.932,8.698,2026-11-05T02:41:05Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::backends::memory::tests::test_memory_storage,success,1476.932,1.774,2026-11-05T02:41:06Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::backends::netrc::tests::test_file_storage,success,1476.932,1.775,2026-11-05T02:41:08Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::backends::netrc::tests::test_file_storage_from_env,success,1476.932,1.784,2026-11-05T02:41:10Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::backends::netrc::tests::test_from_env_and_defaults_warns_on_malformed_netrc,success,1476.932,2.816,2026-11-05T02:41:13Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::backends::netrc::tests::test_from_env_and_defaults_warns_on_missing_explicit_netrc,success,1476.932,2.676,2026-11-05T02:41:16Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::backends::netrc::tests::test_from_env_malformed_netrc_returns_err,success,1476.932,1.774,2026-11-05T02:41:17Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::backends::netrc::tests::test_from_env_missing_explicit_netrc_returns_err,success,1476.932,1.755,2026-11-05T02:41:19Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::storage::tests::delete_entry_unshadows_other_backends_for_get,success,1476.932,1.770,2026-11-05T02:41:21Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::storage::tests::entry_operations_reject_unknown_source,success,1476.932,1.755,2026-11-05T02:41:23Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::storage::tests::get_by_url_refreshed_passes_through_non_oauth,success,1476.932,1.924,2026-11-05T02:41:25Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::storage::tests::list_returns_entries_from_backends,success,1476.932,1.756,2026-11-05T02:41:26Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,authentication_storage::storage::tests::store_without_backends_reports_the_host_it_failed_for,success,1476.932,1.765,2026-11-05T02:41:28Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::bearer_token_debug_is_redacted,success,1476.932,1.764,2026-11-05T02:41:30Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::cached_jwt_is_stale_inside_refresh_margin,success,1476.932,1.774,2026-11-05T02:41:32Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::challenge_triggers_mint_and_replay,success,1476.932,90.152,2026-11-05T02:43:02Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::concurrent_challenges_mint_once,success,1476.932,94.047,2026-11-05T02:44:36Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::default_middleware_is_inert_for_untrusted_origins,timeout,1476.932,150.022,2026-11-05T02:47:06Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::existing_authorization_header_is_respected,success,1476.932,89.655,2026-11-05T02:48:36Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::failing_flow_falls_through_to_next,success,1476.932,89.626,2026-11-05T02:50:05Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::flow_error_is_swallowed_and_negative_cached,success,1476.932,90.672,2026-11-05T02:51:36Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::flows_are_consulted_in_order_until_one_yields,success,1476.932,90.576,2026-11-05T02:53:06Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::garbage_yields_no_challenges_and_no_panic,success,1476.932,1.780,2026-11-05T02:53:08Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::header_invalid_token_is_not_cached_and_does_not_error,success,1476.932,91.044,2026-11-05T02:54:39Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::inapplicable_flow_is_negative_cached,success,1476.932,91.291,2026-11-05T02:56:11Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::jwt_expiration_reads_exp_claim,success,1476.932,1.781,2026-11-05T02:56:12Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::negative_cache_is_scoped_per_origin,success,1476.932,90.384,2026-11-05T02:57:43Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::opaque_token_has_no_expiration,success,1476.932,1.752,2026-11-05T02:57:45Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::parses_multiple_challenges_in_one_header,success,1476.932,1.808,2026-11-05T02:57:46Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::parses_multiple_headers,success,1476.932,1.776,2026-11-05T02:57:48Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::parses_single_bearer_challenge,success,1476.932,1.777,2026-11-05T02:57:50Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::quoted_commas_do_not_split_challenges,success,1476.932,1.773,2026-11-05T02:57:52Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::replays_at_most_once,success,1476.932,89.495,2026-11-05T02:59:21Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::second_request_reuses_cached_token_without_challenge,success,1476.932,90.070,2026-11-05T03:00:51Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::stale_cached_token_is_cleared_and_reacquired,success,1476.932,92.004,2026-11-05T03:02:23Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::tokens_are_cached_per_origin,success,1476.932,90.775,2026-11-05T03:03:54Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::unclonable_challenged_request_is_returned_unreplayed_with_warning,success,1476.932,91.113,2026-11-05T03:05:25Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::unparsable_header_value_does_not_hide_others,success,1476.932,1.778,2026-11-05T03:05:27Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,challenge_middleware::tests::unquoted_params_and_case_insensitive_keys,success,1476.932,1.784,2026-11-05T03:05:29Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,gcs_middleware::tests::test_cache_refreshes_on_token_change,success,1476.932,1.894,2026-11-05T03:05:31Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,gcs_middleware::tests::test_cache_reuses_valid_token,success,1476.932,1.906,2026-11-05T03:05:33Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,gcs_middleware::tests::test_cancellation_during_refresh_does_not_deadlock,success,1476.932,1.919,2026-11-05T03:05:35Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,gcs_middleware::tests::test_gcs_middleware,success,1476.932,1.884,2026-11-05T03:05:36Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,gcs_middleware::tests::test_singleflight_under_concurrent_load,success,1476.932,1.977,2026-11-05T03:05:38Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,mirror_middleware::test::test_mirror_middleware,success,1476.932,89.393,2026-11-05T03:07:08Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,mirror_middleware::test::test_mirror_middleware_broken,timeout,1476.932,150.025,2026-11-05T03:09:38Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,mirror_middleware::test::test_mirror_middleware_path_rewrite,success,1476.932,90.630,2026-11-05T03:11:09Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,mirror_middleware::test::test_mirror_sort,success,1476.932,1.816,2026-11-05T03:11:10Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oauth_refresh::tests::concurrent_refresh_is_single_flight,success,1476.932,89.947,2026-11-05T03:12:40Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oauth_refresh::tests::concurrent_refresh_never_reuses_rotated_token,success,1476.932,90.704,2026-11-05T03:14:11Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oauth_refresh::tests::expired_token_is_not_returned_after_refresh_failure,success,1476.932,90.887,2026-11-05T03:15:42Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oauth_refresh::tests::missing_refresh_token_yields_unauthenticated,success,1476.932,1.894,2026-11-05T03:15:44Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oauth_refresh::tests::queued_refresh_does_not_restore_deleted_credentials,success,1476.932,2.126,2026-11-05T03:15:46Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oauth_refresh::tests::refresh_does_not_follow_redirects,timeout,1476.932,150.023,2026-11-05T03:18:16Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,oauth_refresh::tests::refresh_preserves_omitted_refresh_token,timeout,1476.932,150.026,2026-11-05T03:20:46Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,oauth_refresh::tests::refresh_rejects_unusable_responses,timeout,1476.932,150.027,2026-11-05T03:23:16Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,oauth_refresh::tests::refresh_tolerates_optional_fields,timeout,1476.932,150.023,2026-11-05T03:25:46Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,oauth_refresh::tests::storage_failure_still_uses_refreshed_host_token,timeout,1476.932,150.025,2026-11-05T03:28:16Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,oauth_refresh::tests::transient_failure_keeps_unexpired_token,test_failed,1476.932,89.294,2026-11-05T03:29:46Z,50235008.0,panic,"thread 'oauth_refresh::tests::transient_failure_keeps_unexpired_token' (80751) panicked at src/oauth_refresh.rs:618:9: assertion failed: matches!(result.authentication,"
+experimental-bsan,rattler_networking-0.34.2,oauth_refresh::tests::transient_failure_on_expired_token_yields_unauthenticated,success,1476.932,89.298,2026-11-05T03:31:15Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::basic_challenge_sends_stored_credentials,success,1476.932,1.781,2026-11-05T03:31:17Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::bearer_challenge_builds_scoped_token_url,success,1476.932,1.843,2026-11-05T03:31:19Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::bearer_is_preferred_and_service_is_optional,success,1476.932,1.832,2026-11-05T03:31:20Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::no_credentials_means_no_authorization_header,success,1476.932,1.749,2026-11-05T03:31:22Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::non_shard_msgpack_urls_are_not_shards,success,1476.932,1.927,2026-11-05T03:31:24Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::shard_index_url_maps_to_repodata_manifest,success,1476.932,1.782,2026-11-05T03:31:26Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::shard_url_maps_to_shards_repository,success,1476.932,1.841,2026-11-05T03:31:28Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::test_oci_middleware,success,1476.932,101.349,2026-11-05T03:33:09Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::test_oci_middleware_missing_package_is_404,success,1476.932,93.281,2026-11-05T03:34:42Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::test_oci_middleware_missing_package_with_digest_is_404,success,1476.932,94.106,2026-11-05T03:36:16Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::test_oci_middleware_repodata,success,1476.932,93.115,2026-11-05T03:37:50Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::test_oci_middleware_sharded_repodata,success,1476.932,149.421,2026-11-05T03:40:19Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::test_oci_middleware_unknown_digest_falls_back_to_manifest,success,1476.932,103.442,2026-11-05T03:42:02Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::transient_probe_responses_are_not_cached_as_direct,success,1476.932,1.819,2026-11-05T03:42:04Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::unusable_challenges_degrade_to_direct,success,1476.932,1.875,2026-11-05T03:42:06Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oci_middleware::tests::zst_and_zstd_media_types_are_equivalent,success,1476.932,1.751,2026-11-05T03:42:08Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,offline_middleware::tests::rejects_requests_before_network_access,success,1476.932,86.403,2026-11-05T03:43:34Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oidc_exchange::tests::discovers_token_endpoint,timeout,1476.932,150.026,2026-11-05T03:46:04Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,oidc_exchange::tests::metadata_url_inserts_well_known_path,success,1476.932,1.805,2026-11-05T03:46:06Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oidc_exchange::tests::prefix_dev_audience,success,1476.932,1.819,2026-11-05T03:46:08Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,oidc_exchange::tests::rejects_unusable_metadata,timeout,1476.932,150.025,2026-11-05T03:48:38Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,oidc_exchange::tests::token_exchange_reports_errors,timeout,1476.932,150.025,2026-11-05T03:51:08Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,oidc_exchange::tests::token_exchange_sends_form_encoded_rfc8693_request,success,1476.932,90.268,2026-11-05T03:52:38Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,s3_middleware::tests::aws_sdk_and_reqwest_share_default_https_client,timeout,1476.932,150.025,2026-11-05T03:55:09Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,s3_middleware::tests::test_presigned_s3_request_aws,success,1476.932,103.739,2026-11-05T03:56:52Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,s3_middleware::tests::test_presigned_s3_request_custom_config,success,1476.932,144.748,2026-11-05T03:59:17Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,s3_middleware::tests::test_presigned_s3_request_custom_config_from_env,success,1476.932,106.413,2026-11-05T04:01:03Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,s3_middleware::tests::test_presigned_s3_request_endpoint_url,success,1476.932,103.641,2026-11-05T04:02:47Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,s3_middleware::tests::test_presigned_s3_request_env_precedence,success,1476.932,106.431,2026-11-05T04:04:34Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,s3_middleware::tests::test_presigned_s3_request_no_credentials,test_failed,1476.932,104.695,2026-11-05T04:06:18Z,50235008.0,crash,"test s3_middleware::tests::test_presigned_s3_request_no_credentials ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rattler_networking-0.34.2,s3_middleware::tests::test_presigned_s3_request_provider_takes_precedence_over_storage,success,1476.932,146.129,2026-11-05T04:08:44Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,s3_middleware::tests::test_presigned_s3_request_public_bucket_aws,test_failed,1476.932,106.019,2026-11-05T04:10:30Z,50235008.0,crash,"test s3_middleware::tests::test_presigned_s3_request_public_bucket_aws ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rattler_networking-0.34.2,s3_middleware::tests::test_presigned_s3_request_renews_credentials,timeout,1476.932,150.032,2026-11-05T04:13:00Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,trusted_publishing::tests::ambient_flow_delegates_for_prefix_dev_family_hosts,success,1476.932,1.955,2026-11-05T04:13:02Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,trusted_publishing::tests::ambient_flow_never_delegates_for_untrusted_origins,success,1476.932,1.900,2026-11-05T04:13:04Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,trusted_publishing::tests::flow_ignores_non_bearer_challenges,success,1476.932,86.029,2026-11-05T04:14:30Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,trusted_publishing::tests::flow_mints_token_via_gitlab_env,success,1476.932,88.163,2026-11-05T04:15:59Z,50235008.0,,
+experimental-bsan,rattler_networking-0.34.2,trusted_publishing::tests::middleware_with_trusted_publishing_flow_end_to_end,timeout,1476.932,150.021,2026-11-05T04:18:29Z,50235008.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rattler_networking-0.34.2,trusted_publishing::tests::mint_path_without_leading_slash_is_normalized,success,1476.932,87.089,2026-11-05T04:19:56Z,50235008.0,,

@@ -1,0 +1,10 @@
+experimental-bsan,partial_config-0.7.3,a_redacted_field_sources_from_the_environment_and_stays_hidden,success,86.880,6.397,2026-11-05T06:20:34Z,50255787.0,,
+experimental-bsan,partial_config-0.7.3,complete_config_overrides_correctly,success,86.880,6.508,2026-11-05T06:20:40Z,50255787.0,,
+experimental-bsan,partial_config-0.7.3,env_skip_field_is_never_sourced_from_the_environment,success,86.880,6.452,2026-11-05T06:20:47Z,50255787.0,,
+experimental-bsan,partial_config-0.7.3,incomplete_config_fails_to_build,success,86.880,6.467,2026-11-05T06:20:53Z,50255787.0,,
+experimental-bsan,partial_config-0.7.3,redacted::tests::a_secret_field_stays_hidden_inside_a_derived_debug,success,86.880,7.089,2026-11-05T06:21:00Z,50255787.0,,
+experimental-bsan,partial_config-0.7.3,redacted::tests::debug_and_display_never_reveal_the_secret,success,86.880,7.075,2026-11-05T06:21:08Z,50255787.0,,
+experimental-bsan,partial_config-0.7.3,redacted::tests::from_str_wraps_so_it_is_a_drop_in_config_field,success,86.880,7.064,2026-11-05T06:21:15Z,50255787.0,,
+experimental-bsan,partial_config-0.7.3,redacted::tests::the_value_is_reachable_only_through_the_named_accessors,success,86.880,7.064,2026-11-05T06:21:22Z,50255787.0,,
+experimental-bsan,partial_config-0.7.3,rename_works,success,86.880,7.055,2026-11-05T06:21:29Z,50255787.0,,
+experimental-bsan,partial_config-0.7.3,ui,timeout,86.880,150.028,2026-11-05T06:23:59Z,50255787.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

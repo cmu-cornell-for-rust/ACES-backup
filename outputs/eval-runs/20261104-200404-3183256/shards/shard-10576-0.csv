@@ -1,0 +1,15 @@
+experimental-bsan,salvo-cli-0.4.1,git::tests::write_ignore_file_creates_expected_entries,success,597.104,1.634,2026-11-05T05:31:04Z,50252722.0,,
+experimental-bsan,salvo-cli-0.4.1,namer::tests::helper_checks_match_expected_names,success,597.104,1.600,2026-11-05T05:31:06Z,50252722.0,,
+experimental-bsan,salvo-cli-0.4.1,namer::tests::validate_package_name_accepts_common_rust_names,success,597.104,1.599,2026-11-05T05:31:08Z,50252722.0,,
+experimental-bsan,salvo-cli-0.4.1,namer::tests::validate_package_name_rejects_invalid_body_characters,success,597.104,1.613,2026-11-05T05:31:09Z,50252722.0,,
+experimental-bsan,salvo-cli-0.4.1,namer::tests::validate_package_name_rejects_invalid_first_characters,success,597.104,1.627,2026-11-05T05:31:11Z,50252722.0,,
+experimental-bsan,salvo-cli-0.4.1,project::tests::check_name_handles_windows_reserved_names_per_platform,success,597.104,15.436,2026-11-05T05:31:26Z,50252722.0,,
+experimental-bsan,salvo-cli-0.4.1,project::tests::check_name_rejects_reserved_names,success,597.104,15.361,2026-11-05T05:31:42Z,50252722.0,,
+experimental-bsan,salvo-cli-0.4.1,project::tests::check_path_accepts_normal_project_paths,success,597.104,1.664,2026-11-05T05:31:43Z,50252722.0,,
+experimental-bsan,salvo-cli-0.4.1,project::tests::join_paths_includes_bad_path_in_error_message,success,597.104,15.108,2026-11-05T05:31:59Z,50252722.0,,
+experimental-bsan,salvo-cli-0.4.1,tests::test_write_project::tests::test_seaorm_templates_render_project_and_migration_docs_correctly,timeout,597.104,150.019,2026-11-05T05:34:29Z,50252722.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-cli-0.4.1,tests::test_write_project::tests::test_write_project_all_combinations,timeout,597.104,150.019,2026-11-05T05:36:59Z,50252722.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-cli-0.4.1,updater::tests::parse_skip_update_env_honors_truthy_and_falsy_values,success,597.104,1.607,2026-11-05T05:37:00Z,50252722.0,,
+experimental-bsan,salvo-cli-0.4.1,updater::tests::resolve_update_status_detects_newer_release,success,597.104,1.602,2026-11-05T05:37:02Z,50252722.0,,
+experimental-bsan,salvo-cli-0.4.1,updater::tests::resolve_update_status_rejects_invalid_current_versions,success,597.104,1.601,2026-11-05T05:37:03Z,50252722.0,,
+experimental-bsan,salvo-cli-0.4.1,updater::tests::resolve_update_status_treats_equal_or_newer_local_builds_as_up_to_date,success,597.104,1.598,2026-11-05T05:37:05Z,50252722.0,,

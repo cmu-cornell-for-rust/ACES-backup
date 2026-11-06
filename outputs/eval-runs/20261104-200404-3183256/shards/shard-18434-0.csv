@@ -1,0 +1,2 @@
+experimental-bsan,async-compat-0.2.4,tests::existing_tokio_runtime_is_reused_by_compat,success,296.174,2.360,2026-11-05T08:43:34Z,50263568.0,,
+experimental-bsan,async-compat-0.2.4,tests::tokio_runtime_is_reused_even_after_it_exits,test_failed,296.174,2.506,2026-11-05T08:43:37Z,50263568.0,panic,"thread 'tests::tokio_runtime_is_reused_even_after_it_exits' (13613) panicked at src/lib.rs:523:9: assertion failed: TOKIO1.fallback_rt.is_none()"

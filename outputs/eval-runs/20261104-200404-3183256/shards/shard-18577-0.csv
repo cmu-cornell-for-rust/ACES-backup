@@ -1,0 +1,2 @@
+experimental-bsan,clone3-0.2.3,wrapper::tests::panics_when_incompatible,success,24.551,1.656,2026-11-05T08:42:05Z,50263761.0,,
+experimental-bsan,clone3-0.2.3,wrapper::tests::wait_for_child,test_failed,24.551,1.677,2026-11-05T08:42:07Z,50263761.0,panic,"thread 'wrapper::tests::wait_for_child' (93636) panicked at src/wrapper.rs:338:56: called `Result::unwrap()` on an `Err` value: Errno(38)"

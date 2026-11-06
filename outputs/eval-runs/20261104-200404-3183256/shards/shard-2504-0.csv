@@ -1,0 +1,91 @@
+experimental-bsan,ractor-0.13.0,actor::actor_id::tests::test_is_local,success,536.857,1.677,2026-11-05T02:14:26Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::actor_id::tests::test_pid,success,536.857,1.655,2026-11-05T02:14:28Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::actor_drain_messages,success,536.857,129.317,2026-11-05T02:16:37Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::actor_failing_in_spawn_err_doesnt_poison_registries,success,536.857,25.974,2026-11-05T02:17:03Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::actor_post_stop_executed_before_stop_and_wait_returns,success,536.857,29.544,2026-11-05T02:17:33Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::instant_spawns,timeout,536.857,150.041,2026-11-05T02:20:03Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,actor::tests::kill_and_wait,timeout,536.857,150.035,2026-11-05T02:22:33Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,actor::tests::returns_actor_references,success,536.857,2.388,2026-11-05T02:22:35Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::runtime_message_typing,success,536.857,33.081,2026-11-05T02:23:08Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::stop_and_wait,timeout,536.857,150.030,2026-11-05T02:25:38Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::draining_children_and_wait_during_parent_shutdown,success,536.857,33.478,2026-11-05T02:26:12Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::draining_children_will_shutdown_parent_too,success,536.857,33.343,2026-11-05T02:26:45Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::instant_supervised_spawns,timeout,536.857,150.025,2026-11-05T02:29:15Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::stopping_children_and_wait_during_parent_shutdown,success,536.857,33.341,2026-11-05T02:29:49Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::stopping_children_will_shutdown_parent_too,success,536.857,33.356,2026-11-05T02:30:22Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::test_killing_a_supervisor_terminates_children,success,536.857,33.009,2026-11-05T02:30:55Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::test_supervision_error_in_handle,success,536.857,32.843,2026-11-05T02:31:28Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::test_supervision_error_in_post_startup,success,536.857,32.993,2026-11-05T02:32:01Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::test_supervision_error_in_post_stop,success,536.857,33.260,2026-11-05T02:32:34Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::test_supervision_error_in_supervisor_handle,success,536.857,33.153,2026-11-05T02:33:08Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::test_supervision_panic_in_handle,success,536.857,33.497,2026-11-05T02:33:41Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::test_supervision_panic_in_post_startup,success,536.857,33.009,2026-11-05T02:34:14Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::test_supervision_panic_in_post_stop,success,536.857,33.370,2026-11-05T02:34:47Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::test_supervision_panic_in_supervisor_handle,success,536.857,33.987,2026-11-05T02:35:21Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::test_supervisor_captures_dead_childs_state,success,536.857,33.161,2026-11-05T02:35:55Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::test_supervisor_double_link,success,536.857,33.084,2026-11-05T02:36:28Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::supervisor::test_supervisor_exit_doesnt_call_child_post_stop,success,536.857,33.187,2026-11-05T02:37:01Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::test_err_map,success,536.857,31.338,2026-11-05T02:37:32Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::test_error_on_start_captured,success,536.857,32.288,2026-11-05T02:38:05Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::test_kill_terminates_supervision_work,success,536.857,32.344,2026-11-05T02:38:37Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::test_kill_terminates_work,success,536.857,33.038,2026-11-05T02:39:10Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::test_panic_on_start_captured,success,536.857,32.534,2026-11-05T02:39:43Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::test_sending_message_to_dead_actor,success,536.857,32.679,2026-11-05T02:40:15Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::test_sending_message_to_invalid_actor_type,success,536.857,33.038,2026-11-05T02:40:48Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,actor::tests::test_stop_does_not_terminate_async_work,timeout,536.857,150.028,2026-11-05T02:43:18Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,actor::tests::test_stop_higher_priority_over_messages,success,536.857,32.987,2026-11-05T02:43:51Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,factory::hash::tests::test_bounded_hashing,success,536.857,2.325,2026-11-05T02:43:54Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,factory::queues::tests::test_basic_queueing,success,536.857,31.455,2026-11-05T02:44:25Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,factory::queues::tests::test_priority_queueing,success,536.857,31.585,2026-11-05T02:44:57Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,factory::tests::basic::test_discarding_new_records_on_queuer,success,536.857,43.635,2026-11-05T02:45:41Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,factory::tests::basic::test_discarding_old_records_on_queuer,success,536.857,49.991,2026-11-05T02:46:31Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,factory::tests::basic::test_dispatch_custom_hashing,timeout,536.857,150.036,2026-11-05T02:49:01Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,factory::tests::basic::test_dispatch_key_persistent,timeout,536.857,150.039,2026-11-05T02:51:31Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,factory::tests::basic::test_dispatch_queuer,timeout,536.857,150.027,2026-11-05T02:54:01Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,factory::tests::basic::test_dispatch_round_robin,timeout,536.857,150.031,2026-11-05T02:56:31Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,factory::tests::basic::test_dispatch_sticky_queueing,timeout,536.857,150.039,2026-11-05T02:59:01Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,factory::tests::basic::test_stuck_workers,test_failed,536.857,44.331,2026-11-05T02:59:45Z,50238721.0,panic,"thread 'factory::tests::basic::test_stuck_workers' (83519) panicked at src/factory/tests/basic.rs:758:5: assertion failed: worker_counters.iter().map(|c|"
+experimental-bsan,ractor-0.13.0,factory::tests::draining_requests::test_request_draining,timeout,536.857,150.029,2026-11-05T03:02:15Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,factory::tests::dynamic_discarding::test_dynamic_dispatch_basic,timeout,536.857,150.036,2026-11-05T03:04:46Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,factory::tests::dynamic_pool::test_worker_pool_adjustment_automatic,timeout,536.857,150.042,2026-11-05T03:07:16Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,factory::tests::dynamic_pool::test_worker_pool_adjustment_manual,timeout,536.857,150.030,2026-11-05T03:09:46Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,factory::tests::lifecycle::test_lifecycle_hooks,timeout,536.857,150.029,2026-11-05T03:12:16Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,factory::tests::priority_queueing::test_basic_priority_queueing,success,536.857,37.195,2026-11-05T03:12:53Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,factory::tests::worker_lifecycle::test_factory_can_silent_retry,success,536.857,33.843,2026-11-05T03:13:27Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,factory::tests::worker_lifecycle::test_worker_death_restarts_and_gets_next_message,timeout,536.857,150.036,2026-11-05T03:15:57Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,pg::tests::test_actor_leaves_pg_group_manually,success,536.857,32.880,2026-11-05T03:16:30Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,pg::tests::test_actor_leaves_pg_group_on_shutdown,success,536.857,33.007,2026-11-05T03:17:03Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,pg::tests::test_actor_leaves_scope_manually,success,536.857,33.193,2026-11-05T03:17:36Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,pg::tests::test_actor_leaves_scope_on_shupdown,success,536.857,33.078,2026-11-05T03:18:09Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,pg::tests::test_basic_group_in_default_scope,success,536.857,32.882,2026-11-05T03:18:42Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,pg::tests::test_basic_group_in_named_scope,success,536.857,32.512,2026-11-05T03:19:15Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,pg::tests::test_multiple_groups,success,536.857,35.720,2026-11-05T03:19:50Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,pg::tests::test_multiple_groups_in_multiple_scopes,success,536.857,36.222,2026-11-05T03:20:27Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,pg::tests::test_multiple_members_in_group,success,536.857,35.195,2026-11-05T03:21:02Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,pg::tests::test_multiple_members_in_scoped_group,success,536.857,35.715,2026-11-05T03:21:38Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,pg::tests::test_pg_monitoring,timeout,536.857,150.038,2026-11-05T03:24:08Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,pg::tests::test_scope_monitoring,timeout,536.857,150.030,2026-11-05T03:26:38Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,pg::tests::test_which_scoped_groups,success,536.857,35.300,2026-11-05T03:27:13Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,pg::tests::test_which_scopes_and_groups,success,536.857,32.321,2026-11-05T03:27:45Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,port::output::tests::output_port_subscriber_tests::test_output_port_subscriber,success,536.857,33.874,2026-11-05T03:28:19Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,port::output::tests::test_50_receivers,test_failed,536.857,57.845,2026-11-05T03:29:17Z,50238721.0,panic,"thread 'port::output::tests::test_50_receivers' (36088) panicked at src/port/output/tests.rs:157:10: Test actor failed in exit: Timeout"
+experimental-bsan,ractor-0.13.0,port::output::tests::test_single_forward,success,536.857,32.568,2026-11-05T03:29:50Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,registry::tests::test_actor_registry_unenrollment,success,536.857,32.438,2026-11-05T03:30:22Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,registry::tests::test_basic_registation,success,536.857,32.061,2026-11-05T03:30:54Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,registry::tests::test_duplicate_registration,success,536.857,32.350,2026-11-05T03:31:27Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,rpc::call_result::tests::expect_err_panics,success,536.857,2.323,2026-11-05T03:31:29Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,rpc::call_result::tests::expect_timeout_panics,success,536.857,2.149,2026-11-05T03:31:31Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,rpc::call_result::tests::test_call_result_operations,success,536.857,2.280,2026-11-05T03:31:34Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,rpc::call_result::tests::unwrap_err_panics,success,536.857,2.297,2026-11-05T03:31:36Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,rpc::call_result::tests::unwrap_timeout_panics,success,536.857,2.324,2026-11-05T03:31:38Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,rpc::tests::test_multi_call,test_failed,536.857,35.932,2026-11-05T03:32:14Z,50238721.0,panic,"thread 'rpc::tests::test_multi_call' (37617) panicked at src/rpc/tests.rs:405:9: assertion failed: matches!(result, rpc::CallResult::Timeout)"
+experimental-bsan,ractor-0.13.0,rpc::tests::test_rpc_call,timeout,536.857,150.029,2026-11-05T03:34:44Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,rpc::tests::test_rpc_call_forwarding,timeout,536.857,150.030,2026-11-05T03:37:14Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,rpc::tests::test_rpc_cast,timeout,536.857,150.031,2026-11-05T03:39:44Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,tests::test_error_conversions,success,536.857,30.718,2026-11-05T03:40:15Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,tests::test_error_message_extraction,success,536.857,32.065,2026-11-05T03:40:47Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,tests::test_platform_sleep_works,success,536.857,2.364,2026-11-05T03:40:50Z,50238721.0,,
+experimental-bsan,ractor-0.13.0,time::tests::test_exit_after,timeout,536.857,150.043,2026-11-05T03:43:20Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,time::tests::test_intervals,timeout,536.857,150.030,2026-11-05T03:45:50Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,time::tests::test_kill_after,timeout,536.857,150.034,2026-11-05T03:48:20Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ractor-0.13.0,time::tests::test_send_after,timeout,536.857,150.024,2026-11-05T03:50:50Z,50238721.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

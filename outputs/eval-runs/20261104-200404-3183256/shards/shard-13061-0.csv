@@ -1,0 +1,9 @@
+experimental-bsan,gogoanime-scraper-1.2.3,download::tests::test_download_content,success,299.908,3.858,2026-11-05T06:33:12Z,50256323.0,,
+experimental-bsan,gogoanime-scraper-1.2.3,input_handler::tests::check_no_spaces,success,299.908,3.156,2026-11-05T06:33:15Z,50256323.0,,
+experimental-bsan,gogoanime-scraper-1.2.3,input_handler::tests::check_spaces,success,299.908,3.195,2026-11-05T06:33:18Z,50256323.0,,
+experimental-bsan,gogoanime-scraper-1.2.3,parser::tests::test_get_anime_name,test_failed,299.908,3.905,2026-11-05T06:33:22Z,50256323.0,panic,"thread 'parser::tests::test_get_anime_name' (67892) panicked at src/parser.rs:152:9: assertion `left == right` failed"
+experimental-bsan,gogoanime-scraper-1.2.3,parser::tests::test_get_anime_url,test_failed,299.908,3.620,2026-11-05T06:33:26Z,50256323.0,panic,"thread 'parser::tests::test_get_anime_url' (68160) panicked at src/parser.rs:134:9: assertion `left == right` failed"
+experimental-bsan,gogoanime-scraper-1.2.3,parser::tests::test_get_anime_url_with_empty_body,success,299.908,3.407,2026-11-05T06:33:29Z,50256323.0,,
+experimental-bsan,gogoanime-scraper-1.2.3,parser::tests::test_get_total_number_of_episodes_bleach,test_failed,299.908,4.623,2026-11-05T06:33:34Z,50256323.0,panic,"thread 'parser::tests::test_get_total_number_of_episodes_bleach' (68664) panicked at src/parser.rs:173:55: called `Result::unwrap()` on an `Err` value: ""An error has occurred"""
+experimental-bsan,gogoanime-scraper-1.2.3,parser::tests::test_get_total_number_of_episodes_kaijuu8,test_failed,299.908,4.449,2026-11-05T06:33:38Z,50256323.0,panic,"thread 'parser::tests::test_get_total_number_of_episodes_kaijuu8' (68926) panicked at src/parser.rs:167:55: called `Result::unwrap()` on an `Err` value: ""An error has occurred"""
+experimental-bsan,gogoanime-scraper-1.2.3,utils::tests::test_get_html,success,299.908,3.784,2026-11-05T06:33:42Z,50256323.0,,

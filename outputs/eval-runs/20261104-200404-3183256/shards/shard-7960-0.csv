@@ -1,0 +1,25 @@
+experimental-bsan,uhyve-0.10.0,arch::x86_64::paging::tests::test_pagetable_initialization,success,355.977,64.192,2026-11-05T04:22:13Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,arch::x86_64::tests::test_virt_to_phys,success,355.977,3.395,2026-11-05T04:22:16Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,hypercall::by_fd::tests::test_read_internal_on_virtual00,success,355.977,3.067,2026-11-05T04:22:19Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,isolation::filemap::tests::test_uhyvefilemap,test_failed,355.977,1.731,2026-11-05T04:22:21Z,50249159.0,panic,"thread 'isolation::filemap::tests::test_uhyvefilemap' (38059) panicked at src/isolation/filemap/tests.rs:12:5: assertion failed: fixture_path.is_dir()"
+experimental-bsan,uhyve-0.10.0,isolation::filemap::tests::test_uhyvefilemap_directory,test_failed,355.977,1.742,2026-11-05T04:22:23Z,50249159.0,panic,"thread 'isolation::filemap::tests::test_uhyvefilemap_directory' (38136) panicked at src/isolation/filemap/tests.rs:89:5: assertion failed: fixture_path.is_dir()"
+experimental-bsan,uhyve-0.10.0,isolation::filemap::tests::test_uhyveiomode_input,success,355.977,3.062,2026-11-05T04:22:26Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,isolation::landlock::tests::test_get_file_or_parent,success,355.977,3.070,2026-11-05T04:22:29Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,isolation::landlock::tests::test_landlock_strict_mode,test_failed,355.977,1.756,2026-11-05T04:22:31Z,50249159.0,panic,"thread 'isolation::landlock::tests::test_landlock_strict_mode' (38418) panicked at src/isolation/landlock.rs:94:37: Unable to initialize Landlock: Ruleset(AddRules(Fs(Compat(Access(Incompatible { access: BitFlags<AccessFs>(0b100000000000111, Execute | WriteFile | ReadFile | Truncate) })))))"
+experimental-bsan,uhyve-0.10.0,isolation::tempdir::tests::test_create_with_dir_path,success,355.977,3.102,2026-11-05T04:22:34Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,isolation::tempdir::tests::test_create_without_dir_path,success,355.977,3.105,2026-11-05T04:22:37Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,isolation::test_split_guest_and_host_path,success,355.977,3.113,2026-11-05T04:22:40Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,mem::tests::test_mmap_memory_readwrite,success,355.977,3.077,2026-11-05T04:22:43Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,mem_layout::tests::test_generate_guest_start_address,success,355.977,3.072,2026-11-05T04:22:46Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,paging::tests::test_bump_frame_allocator,success,355.977,3.046,2026-11-05T04:22:49Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,params::tests::test_env_vars,success,355.977,3.040,2026-11-05T04:22:52Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,params::tests::test_file_sandbox_mode,success,355.977,3.050,2026-11-05T04:22:55Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,stats::tests::test_stats,success,355.977,3.167,2026-11-05T04:22:58Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,tests::test_affinity_errors_when_lacking_cpu_cores,success,355.977,3.187,2026-11-05T04:23:02Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,tests::test_load_config_from_args_path,test_failed,355.977,3.129,2026-11-05T04:23:05Z,50249159.0,panic,"thread 'tests::test_load_config_from_args_path' (39619) panicked at src/bin/uhyve.rs:843:62: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,uhyve-0.10.0,tests::test_load_config_from_config_dir,test_failed,355.977,3.139,2026-11-05T04:23:08Z,50249159.0,panic,"thread 'tests::test_load_config_from_config_dir' (39751) panicked at src/bin/uhyve.rs:873:69: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,uhyve-0.10.0,tests::test_load_config_from_cwd,test_failed,355.977,3.133,2026-11-05T04:23:11Z,50249159.0,panic,"thread 'tests::test_load_config_from_cwd' (39847) panicked at src/bin/uhyve.rs:859:62: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,uhyve-0.10.0,tests::test_toml_affinity_strings,success,355.977,3.187,2026-11-05T04:23:14Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,tests::test_toml_affinity_usize_array,success,355.977,3.570,2026-11-05T04:23:18Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,tests::test_toml_are_fields_actually_skipped,success,355.977,3.119,2026-11-05T04:23:21Z,50249159.0,,
+experimental-bsan,uhyve-0.10.0,tests::test_toml_merge,success,355.977,3.251,2026-11-05T04:23:24Z,50249159.0,,

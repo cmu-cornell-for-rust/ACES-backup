@@ -1,0 +1,12 @@
+experimental-bsan,actix-web-codegen-4.4.0,multiple_multi_path_async,success,833.339,8.113,2026-11-05T05:54:37Z,50253927.0,,
+experimental-bsan,actix-web-codegen-4.4.0,multiple_shared_path_async,success,833.339,7.207,2026-11-05T05:54:44Z,50253927.0,,
+experimental-bsan,actix-web-codegen-4.4.0,scope_delete_async,success,833.339,6.756,2026-11-05T05:54:51Z,50253927.0,,
+experimental-bsan,actix-web-codegen-4.4.0,scope_get_async,success,833.339,6.662,2026-11-05T05:54:58Z,50253927.0,,
+experimental-bsan,actix-web-codegen-4.4.0,scope_get_param_async,test_failed,833.339,10.161,2026-11-05T05:55:08Z,50253927.0,panic,"thread 'scope_get_param_async' (94343) panicked at tests/scopes.rs:108:45: called `Result::unwrap()` on an `Err` value: Timeout"
+experimental-bsan,actix-web-codegen-4.4.0,scope_get_with_guard_async,success,833.339,6.778,2026-11-05T05:55:15Z,50253927.0,,
+experimental-bsan,actix-web-codegen-4.4.0,scope_post_async,success,833.339,6.753,2026-11-05T05:55:22Z,50253927.0,,
+experimental-bsan,actix-web-codegen-4.4.0,scope_v1_v2_async,success,833.339,7.209,2026-11-05T05:55:29Z,50253927.0,,
+experimental-bsan,actix-web-codegen-4.4.0,test_auto_async,success,833.339,6.710,2026-11-05T05:55:36Z,50253927.0,,
+experimental-bsan,actix-web-codegen-4.4.0,test_body,test_failed,833.339,8.619,2026-11-05T05:55:44Z,50253927.0,panic,"thread 'test_body' (95294) panicked at tests/routes.rs:270:41: called `Result::unwrap()` on an `Err` value: Timeout"
+experimental-bsan,actix-web-codegen-4.4.0,test_params,test_failed,833.339,8.533,2026-11-05T05:55:53Z,50253927.0,panic,"thread 'test_params' (95425) panicked at tests/routes.rs:238:41: called `Result::unwrap()` on an `Err` value: Timeout"
+experimental-bsan,actix-web-codegen-4.4.0,test_wrap,success,833.339,6.737,2026-11-05T05:55:59Z,50253927.0,,

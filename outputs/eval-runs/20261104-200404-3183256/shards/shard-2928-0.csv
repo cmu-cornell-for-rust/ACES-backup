@@ -1,0 +1,78 @@
+experimental-bsan,fekan-0.6.1,classification::classifier_sum_greater_than_zero,timeout,180.152,150.022,2026-11-05T02:20:39Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,classification::even_or_odd,timeout,180.152,150.017,2026-11-05T02:23:09Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,embedding_layer::test::test_build_embedding_table,success,180.152,2.995,2026-11-05T02:23:12Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,embedding_layer::test::test_embed_float,success,180.152,3.009,2026-11-05T02:23:15Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,embedding_layer::test::test_embedding_forward,success,180.152,2.997,2026-11-05T02:23:18Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,embedding_layer::test::test_embedding_forward_and_backward,success,180.152,3.011,2026-11-05T02:23:21Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan::test::test_error_send,success,180.152,2.974,2026-11-05T02:23:24Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan::test::test_error_sync,success,180.152,2.969,2026-11-05T02:23:27Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan::test::test_forward,success,180.152,3.781,2026-11-05T02:23:31Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan::test::test_forward_then_backward,success,180.152,4.095,2026-11-05T02:23:35Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan::test::test_merge_identical_models_yields_identical_output,success,180.152,3.566,2026-11-05T02:23:39Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan::test::test_model_send,success,180.152,2.982,2026-11-05T02:23:42Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan::test::test_model_sync,success,180.152,2.992,2026-11-05T02:23:45Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::edge_errors::test::test_spline_error_send,success,180.152,3.001,2026-11-05T02:23:48Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::edge_errors::test::test_spline_error_sync,success,180.152,2.983,2026-11-05T02:23:51Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::backward_after_infer,success,180.152,3.103,2026-11-05T02:23:54Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::prune_alive_edge,success,180.152,3.281,2026-11-05T02:23:57Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::prune_dead_edge,success,180.152,3.239,2026-11-05T02:24:00Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::symbolic_tests::test_cubic,success,180.152,3.155,2026-11-05T02:24:03Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::symbolic_tests::test_linear,success,180.152,3.117,2026-11-05T02:24:07Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::symbolic_tests::test_quadratic,success,180.152,3.228,2026-11-05T02:24:10Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::symbolic_tests::test_quartic,success,180.152,3.072,2026-11-05T02:24:13Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::symbolic_tests::test_quintic,success,180.152,3.291,2026-11-05T02:24:16Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::symbolic_tests::test_symbolic_backward_before_forward,success,180.152,3.291,2026-11-05T02:24:19Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_b_2,success,180.152,3.261,2026-11-05T02:24:23Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_backward_before_forward,success,180.152,3.233,2026-11-05T02:24:26Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_basis_cached,success,180.152,3.236,2026-11-05T02:24:29Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_forward_and_infer,success,180.152,3.205,2026-11-05T02:24:32Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_forward_and_infer_2,success,180.152,3.421,2026-11-05T02:24:36Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_forward_then_backward,success,180.152,3.188,2026-11-05T02:24:39Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_forward_then_backward_2,success,180.152,3.455,2026-11-05T02:24:43Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_merge_splines,success,180.152,3.022,2026-11-05T02:24:46Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_merge_splines_empty_spline,success,180.152,2.954,2026-11-05T02:24:49Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_merge_splines_mismatched_control_points,success,180.152,2.987,2026-11-05T02:24:51Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_merge_splines_mismatched_degree,success,180.152,2.990,2026-11-05T02:24:54Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_merge_splines_mismatched_knots,success,180.152,2.986,2026-11-05T02:24:57Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_merged_identical_splines_yield_identical_outputs,success,180.152,3.010,2026-11-05T02:25:01Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_new_spline_with_too_few_knots,success,180.152,2.983,2026-11-05T02:25:04Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_set_knot_length_decreasing,success,180.152,10.039,2026-11-05T02:25:14Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_set_knot_length_increasing,success,180.152,13.697,2026-11-05T02:25:27Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_spline_send,success,180.152,2.977,2026-11-05T02:25:30Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_spline_sync,success,180.152,2.977,2026-11-05T02:25:33Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_suggest_symbolic_quadratic,timeout,180.152,150.018,2026-11-05T02:28:03Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_suggest_symbolic_y_equals_x,timeout,180.152,150.024,2026-11-05T02:30:33Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_update_knots,success,180.152,3.305,2026-11-05T02:30:37Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::edge::tests::test_update_knots_from_bad_samples,success,180.152,3.016,2026-11-05T02:30:40Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_backward_bad_error_length,success,180.152,3.082,2026-11-05T02:30:43Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_backward_before_forward,success,180.152,3.050,2026-11-05T02:30:46Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_forward,success,180.152,3.070,2026-11-05T02:30:49Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_forward_bad_activations,success,180.152,3.038,2026-11-05T02:30:52Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_forward_multhreaded_reassemble,success,180.152,3.127,2026-11-05T02:30:55Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_forward_multithreaded_activations,success,180.152,3.082,2026-11-05T02:30:58Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_forward_then_backward,success,180.152,3.160,2026-11-05T02:31:01Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_forward_then_backward_multithreaded_reassemble,success,180.152,3.224,2026-11-05T02:31:05Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_forward_then_backward_multithreaded_result,success,180.152,3.187,2026-11-05T02:31:08Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_layer_send,success,180.152,3.032,2026-11-05T02:31:11Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_layer_sync,success,180.152,3.033,2026-11-05T02:31:14Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_merge_identical_layers_yield_identical_output,success,180.152,3.089,2026-11-05T02:31:17Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_new,success,180.152,3.173,2026-11-05T02:31:20Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,kan_layer::test::test_update_knots_from_samples_multithreaded_results_and_reassemble,success,180.152,3.184,2026-11-05T02:31:23Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,layer_errors::test::test_layer_error_send,success,180.152,2.993,2026-11-05T02:31:26Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,layer_errors::test::test_layer_error_sync,success,180.152,3.006,2026-11-05T02:31:29Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,regression::exp_sin_pix_y_squared,timeout,180.152,150.019,2026-11-05T02:33:59Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,regression::full_multiregression,timeout,180.152,150.020,2026-11-05T02:36:29Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,regression::full_multiregression_distinct_functions,timeout,180.152,150.022,2026-11-05T02:38:59Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,regression::partial_multiregression_different_base_determined_split,timeout,180.152,150.020,2026-11-05T02:41:30Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,regression::partial_multiregression_different_base_random_split,timeout,180.152,150.024,2026-11-05T02:44:00Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,regression::partial_multiregression_identical_base_determined_split,timeout,180.152,150.019,2026-11-05T02:46:30Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,regression::partial_multiregression_identical_base_random_split,timeout,180.152,150.022,2026-11-05T02:49:00Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,regression::prune_an_edge,timeout,180.152,150.034,2026-11-05T02:51:30Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,regression::regressor_xy,timeout,180.152,150.019,2026-11-05T02:54:00Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,regression::symbols::root_x,timeout,180.152,150.020,2026-11-05T02:56:30Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,regression::symbols::sin_x,timeout,180.152,150.045,2026-11-05T02:59:00Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,regression::symbols::x_cubed,timeout,180.152,150.022,2026-11-05T03:01:30Z,50239999.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,fekan-0.6.1,test::test_error_send,success,180.152,2.986,2026-11-05T03:01:33Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,test::test_error_sync,success,180.152,2.991,2026-11-05T03:01:36Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,test::test_nll_loss_and_gradient,success,180.152,2.990,2026-11-05T03:01:39Z,50239999.0,,
+experimental-bsan,fekan-0.6.1,test::test_nll_loss_and_gradient_2,success,180.152,2.996,2026-11-05T03:01:42Z,50239999.0,,

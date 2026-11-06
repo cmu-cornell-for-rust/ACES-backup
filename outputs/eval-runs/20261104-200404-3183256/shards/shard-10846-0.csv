@@ -1,0 +1,14 @@
+experimental-bsan,lodepng-3.12.2,error::error_str,success,21.697,1.565,2026-11-05T05:28:31Z,50253079.0,,
+experimental-bsan,lodepng-3.12.2,rustimpl::check_crc_impl,success,21.697,1.566,2026-11-05T05:28:33Z,50253079.0,,
+experimental-bsan,lodepng-3.12.2,rustimpl::test_filter_b1,timeout,21.697,150.018,2026-11-05T05:31:03Z,50253079.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lodepng-3.12.2,rustimpl::test_filter_b2,timeout,21.697,150.019,2026-11-05T05:33:33Z,50253079.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lodepng-3.12.2,rustimpl::test_filter_b3,timeout,21.697,150.017,2026-11-05T05:36:03Z,50253079.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lodepng-3.12.2,rustimpl::test_filter_b4,timeout,21.697,150.018,2026-11-05T05:38:33Z,50253079.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lodepng-3.12.2,rustimpl::test_filter_b8,timeout,21.697,150.019,2026-11-05T05:41:04Z,50253079.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lodepng-3.12.2,test::chunks,success,21.697,23.645,2026-11-05T05:41:27Z,50253079.0,,
+experimental-bsan,lodepng-3.12.2,test::create_and_destroy1,success,21.697,1.558,2026-11-05T05:41:29Z,50253079.0,,
+experimental-bsan,lodepng-3.12.2,test::create_and_destroy2,success,21.697,1.562,2026-11-05T05:41:30Z,50253079.0,,
+experimental-bsan,lodepng-3.12.2,test::custom_zlib,success,21.697,1.564,2026-11-05T05:41:32Z,50253079.0,,
+experimental-bsan,lodepng-3.12.2,test::pixel_sizes,success,21.697,83.924,2026-11-05T05:42:56Z,50253079.0,,
+experimental-bsan,lodepng-3.12.2,test::read_icc,test_failed,21.697,1.618,2026-11-05T05:42:57Z,50253079.0,panic,"thread 'test::read_icc' (100086) panicked at src/lib.rs:1556:11: called `Result::unwrap()` on an `Err` value: failed to open file for reading (78)"
+experimental-bsan,lodepng-3.12.2,test::test_pal,success,21.697,1.567,2026-11-05T05:42:59Z,50253079.0,,

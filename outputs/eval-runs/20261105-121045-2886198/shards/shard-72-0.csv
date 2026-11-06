@@ -1,0 +1,22 @@
+experimental-bsan,cargo-0.83.0,cache_lock::download_then_mutate_separate,success,1671.748,8.042,2026-11-05T17:41:31Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,cache_lock::download_then_mutate,test_failed,1671.748,7.474,2026-11-05T17:41:39Z,50276037.0,panic,"thread 'cache_lock::download_then_mutate' (86843) panicked at /local/ev-50276037-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/cargo-test-support-0.4.0/src/lib.rs:1647:13: test did not finish within 10 attempts (1.001070489s total)"
+experimental-bsan,cargo-0.83.0,cache_lock::multiple_mutate,test_failed,1671.748,7.056,2026-11-05T17:41:46Z,50276037.0,panic,"thread 'cache_lock::multiple_mutate' (86951) panicked at /local/ev-50276037-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/cargo-test-support-0.4.0/src/lib.rs:1647:13: test did not finish within 10 attempts (1.003340637s total)"
+experimental-bsan,cargo-0.83.0,cache_lock::multiple_shared,test_failed,1671.748,7.072,2026-11-05T17:41:53Z,50276037.0,panic,"thread 'cache_lock::multiple_shared' (87061) panicked at /local/ev-50276037-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/cargo-test-support-0.4.0/src/lib.rs:1647:13: test did not finish within 10 attempts (1.00146038s total)"
+experimental-bsan,cargo-0.83.0,cache_lock::mutate_err_is_atomic,test_failed,1671.748,7.081,2026-11-05T17:42:00Z,50276037.0,panic,"thread 'cache_lock::mutate_err_is_atomic' (87129) panicked at /local/ev-50276037-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/cargo-test-support-0.4.0/src/lib.rs:1647:13: test did not finish within 10 attempts (1.005060794s total)"
+experimental-bsan,cargo-0.83.0,cache_lock::mutate_then_download,test_failed,1671.748,7.145,2026-11-05T17:42:07Z,50276037.0,panic,"thread 'cache_lock::mutate_then_download' (87198) panicked at /local/ev-50276037-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/cargo-test-support-0.4.0/src/lib.rs:1647:13: test did not finish within 10 attempts (1.004816497s total)"
+experimental-bsan,cargo-0.83.0,cache_lock::mutate_then_shared,test_failed,1671.748,7.140,2026-11-05T17:42:15Z,50276037.0,panic,"thread 'cache_lock::mutate_then_shared' (87267) panicked at /local/ev-50276037-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/cargo-test-support-0.4.0/src/lib.rs:1647:13: test did not finish within 10 attempts (1.002443686s total)"
+experimental-bsan,cargo-0.83.0,cache_lock::shared_then_download,test_failed,1671.748,7.077,2026-11-05T17:42:22Z,50276037.0,panic,"thread 'cache_lock::shared_then_download' (87343) panicked at /local/ev-50276037-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/cargo-test-support-0.4.0/src/lib.rs:1647:13: test did not finish within 10 attempts (1.001012741s total)"
+experimental-bsan,cargo-0.83.0,cache_lock::shared_then_download_separate,success,1671.748,7.139,2026-11-05T17:42:29Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,cache_lock::shared_then_mutate_separate,success,1671.748,7.121,2026-11-05T17:42:36Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,config::config_ambiguous_filename,success,1671.748,76.849,2026-11-05T17:43:53Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,config::config_ambiguous_filename_symlink_doesnt_warn_relative,success,1671.748,71.209,2026-11-05T17:45:04Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,config::config_bad_toml,success,1671.748,76.600,2026-11-05T17:46:21Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,config::config_deserialize_any,success,1671.748,85.828,2026-11-05T17:47:47Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,config::config_get_other_types,success,1671.748,74.766,2026-11-05T17:49:01Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,config::config_get_ssl_version_missing,success,1671.748,6.321,2026-11-05T17:49:08Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,config::config_load_toml_profile,success,1671.748,8.755,2026-11-05T17:49:17Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,config::git_features,success,1671.748,86.225,2026-11-05T17:50:43Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,config::value_in_array,success,1671.748,6.483,2026-11-05T17:50:49Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,config_cli::merge_primitives_for_multiple_cli_occurrences,success,1671.748,11.065,2026-11-05T17:51:00Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,config_cli::merges_table,success,1671.748,8.227,2026-11-05T17:51:09Z,50276037.0,,
+experimental-bsan,cargo-0.83.0,config_cli::string_list_array,success,1671.748,8.779,2026-11-05T17:51:17Z,50276037.0,,

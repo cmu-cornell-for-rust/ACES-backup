@@ -1,0 +1,14 @@
+experimental-bsan,rattler_networking-0.21.4,authentication_middleware::tests::test_basic_auth_storage,test_failed,522.728,12.034,2026-11-05T05:38:13Z,50253146.0,gc,"test authentication_middleware::tests::test_basic_auth_storage ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,rattler_networking-0.21.4,authentication_middleware::tests::test_bearer_storage,test_failed,522.728,11.983,2026-11-05T05:38:25Z,50253146.0,gc,"test authentication_middleware::tests::test_bearer_storage ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,rattler_networking-0.21.4,authentication_middleware::tests::test_conda_token_storage,test_failed,522.728,11.986,2026-11-05T05:38:37Z,50253146.0,gc,"test authentication_middleware::tests::test_conda_token_storage ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,rattler_networking-0.21.4,authentication_middleware::tests::test_host_wildcard_expansion,success,522.728,2.236,2026-11-05T05:38:40Z,50253146.0,,
+experimental-bsan,rattler_networking-0.21.4,authentication_middleware::tests::test_rattler_auth_file_env_var_handling,success,522.728,1.729,2026-11-05T05:38:41Z,50253146.0,,
+experimental-bsan,rattler_networking-0.21.4,authentication_middleware::tests::test_store_fallback,success,522.728,1.818,2026-11-05T05:38:43Z,50253146.0,,
+experimental-bsan,rattler_networking-0.21.4,authentication_storage::backends::file::tests::test_file_storage,success,522.728,28.836,2026-11-05T05:39:12Z,50253146.0,,
+experimental-bsan,rattler_networking-0.21.4,authentication_storage::backends::netrc::tests::test_file_storage,success,522.728,1.695,2026-11-05T05:39:14Z,50253146.0,,
+experimental-bsan,rattler_networking-0.21.4,authentication_storage::backends::netrc::tests::test_file_storage_from_env,success,522.728,1.697,2026-11-05T05:39:15Z,50253146.0,,
+experimental-bsan,rattler_networking-0.21.4,mirror_middleware::test::test_mirror_middleware,success,522.728,2.448,2026-11-05T05:39:18Z,50253146.0,,
+experimental-bsan,rattler_networking-0.21.4,mirror_middleware::test::test_mirror_middleware_broken,success,522.728,4.908,2026-11-05T05:39:23Z,50253146.0,,
+experimental-bsan,rattler_networking-0.21.4,mirror_middleware::test::test_mirror_sort,success,522.728,1.697,2026-11-05T05:39:25Z,50253146.0,,
+experimental-bsan,rattler_networking-0.21.4,oci_middleware::tests::test_oci_middleware,success,522.728,6.619,2026-11-05T05:39:31Z,50253146.0,,
+experimental-bsan,rattler_networking-0.21.4,oci_middleware::tests::test_oci_middleware_repodata,success,522.728,3.895,2026-11-05T05:39:35Z,50253146.0,,

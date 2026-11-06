@@ -1,0 +1,4 @@
+experimental-bsan,tmp_env-0.1.1,tests::test_current_dir,test_failed,22.279,2.133,2026-11-05T08:14:46Z,50261970.0,panic,"thread 'tests::test_current_dir' (91749) panicked at src/lib.rs:187:35: should set the new current_dir: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,tmp_env-0.1.1,tests::test_env,success,22.279,1.996,2026-11-05T08:14:48Z,50261970.0,,
+experimental-bsan,tmp_env-0.1.1,tests::test_env_with_previous_value,success,22.279,2.031,2026-11-05T08:14:50Z,50261970.0,,
+experimental-bsan,tmp_env-0.1.1,tests::test_tmp_dir,success,22.279,2.049,2026-11-05T08:14:52Z,50261970.0,,

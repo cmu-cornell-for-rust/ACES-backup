@@ -1,0 +1,21 @@
+experimental-bsan,neomake-0.6.0,exec::test::stop_one_unblocks_a_hung_batch,success,507.511,1.950,2026-11-05T04:49:00Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,kill::test::hard_kill_stops_background_subshell,success,507.511,2.405,2026-11-05T04:49:02Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,kill::test::stop_is_sticky_and_does_not_block,success,507.511,1.675,2026-11-05T04:49:04Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,kill::test::stopped_wakes_without_a_poll_loop,success,507.511,1.809,2026-11-05T04:49:06Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,plan::tests::container_user_literal_round_trips_through_hocon,success,507.511,8.542,2026-11-05T04:49:14Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,plan::tests::critical_path_follows_deps_not_just_inputs,success,507.511,1.690,2026-11-05T04:49:16Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,plan::tests::guards_cycles_args_and_wave_order,success,507.511,60.488,2026-11-05T04:50:17Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,plan::tests::merge_container_rules,success,507.511,1.660,2026-11-05T04:50:18Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,plan::tests::missing_image_and_empty_shell_fail_closed,success,507.511,14.760,2026-11-05T04:50:33Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,plan::tests::plan_resolves_env_container_and_is_stable,test_failed,507.511,27.252,2026-11-05T04:51:00Z,50250259.0,crash,"test plan::tests::plan_resolves_env_container_and_is_stable ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,neomake-0.6.0,plan::tests::runtime_switch_discards_previous_extras_and_disable_opts_out,test_failed,507.511,14.163,2026-11-05T04:51:15Z,50250259.0,crash,"test plan::tests::runtime_switch_discards_previous_extras_and_disable_opts_out ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,neomake-0.6.0,plan::tests::templates_have_no_lint_errors,test_failed,507.511,37.747,2026-11-05T04:51:52Z,50250259.0,crash,"test plan::tests::templates_have_no_lint_errors ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,neomake-0.6.0,test::test_parse_workflow,test_failed,507.511,38.297,2026-11-05T04:52:31Z,50250259.0,crash,"test test::test_parse_workflow ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,neomake-0.6.0,workflow::tests::capture_overlays_explicit_vars,success,507.511,2.414,2026-11-05T04:52:33Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,workflow::tests::container_user_wire_form,success,507.511,1.676,2026-11-05T04:52:35Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,workflow::tests::env_capture_uses_the_injected_host_only,success,507.511,3.767,2026-11-05T04:52:39Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,workflow::tests::matrix_empty_dimension_errors_and_zero_dimensions_is_one_point,success,507.511,1.664,2026-11-05T04:52:40Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,workflow::tests::matrix_expand_is_cartesian_and_does_not_wrap,success,507.511,2.318,2026-11-05T04:52:43Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,workflow::tests::parse_rejects_incompatible_version_and_bad_names,success,507.511,7.317,2026-11-05T04:52:50Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,workflow::tests::retry_delay_matches_backoff,success,507.511,1.667,2026-11-05T04:52:52Z,50250259.0,,
+experimental-bsan,neomake-0.6.0,workflow::tests::version_wildcard_and_mismatch,success,507.511,1.663,2026-11-05T04:52:53Z,50250259.0,,

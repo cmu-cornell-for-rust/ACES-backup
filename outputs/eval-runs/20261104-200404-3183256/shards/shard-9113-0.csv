@@ -1,0 +1,19 @@
+experimental-bsan,agner-actors-0.4.1,actor_id::impl_fmt::actor_id_extra_part,success,104.034,10.438,2026-11-05T04:49:32Z,50250855.0,,
+experimental-bsan,agner-actors-0.4.1,actor_id::impl_fmt::actor_id_missing_part,success,104.034,10.423,2026-11-05T04:49:43Z,50250855.0,,
+experimental-bsan,agner-actors-0.4.1,actor_id::impl_fmt::actor_id_to_and_from_str,timeout,104.034,150.016,2026-11-05T04:52:13Z,50250855.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,agner-actors-0.4.1,actor_id::tests::actor_id_basic_props,timeout,104.034,150.033,2026-11-05T04:54:43Z,50250855.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,agner-actors-0.4.1,actor_returning_exit_reason,success,104.034,11.796,2026-11-05T04:54:55Z,50250855.0,,
+experimental-bsan,agner-actors-0.4.1,actor_returning_never,success,104.034,11.921,2026-11-05T04:55:07Z,50250855.0,,
+experimental-bsan,agner-actors-0.4.1,actor_returning_unit,success,104.034,11.811,2026-11-05T04:55:19Z,50250855.0,,
+experimental-bsan,agner-actors-0.4.1,actor_runner::pipe::tests::basic_test,timeout,104.034,150.016,2026-11-05T04:57:49Z,50250855.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,agner-actors-0.4.1,actor_runner::pipe::tests::futures_mpsc_test,timeout,104.034,150.018,2026-11-05T05:00:19Z,50250855.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,agner-actors-0.4.1,actor_runner::pipe::tests::tokio_mpsc_test,timeout,104.034,150.017,2026-11-05T05:02:49Z,50250855.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,agner-actors-0.4.1,echo_actor_via_chan,success,104.034,26.600,2026-11-05T05:03:15Z,50250855.0,,
+experimental-bsan,agner-actors-0.4.1,echo_actor_via_send,success,104.034,30.182,2026-11-05T05:03:45Z,50250855.0,,
+experimental-bsan,agner-actors-0.4.1,hit_small_system_limit,success,104.034,12.316,2026-11-05T05:03:58Z,50250855.0,,
+experimental-bsan,agner-actors-0.4.1,links_test,success,104.034,13.716,2026-11-05T05:04:12Z,50250855.0,,
+experimental-bsan,agner-actors-0.4.1,send_single_compatible_message,success,104.034,13.019,2026-11-05T05:04:25Z,50250855.0,,
+experimental-bsan,agner-actors-0.4.1,small_ring,success,104.034,13.469,2026-11-05T05:04:38Z,50250855.0,,
+experimental-bsan,agner-actors-0.4.1,system::actor_id_pool::tests::acquire_till_out_of_ids_release_and_retry,success,104.034,10.454,2026-11-05T05:04:48Z,50250855.0,,
+experimental-bsan,agner-actors-0.4.1,system::actor_id_pool::tests::concurrently_acquired_ids,timeout,104.034,150.019,2026-11-05T05:07:19Z,50250855.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,agner-actors-0.4.1,waits_work,success,104.034,12.249,2026-11-05T05:07:31Z,50250855.0,,

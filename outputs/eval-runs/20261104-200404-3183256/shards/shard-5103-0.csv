@@ -1,0 +1,44 @@
+experimental-bsan,postgresql_embedded-0.21.0,blocking::postgresql::test::test_postgresql,success,517.756,11.241,2026-11-05T03:15:40Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,dump_command,test_failed,517.756,8.611,2026-11-05T03:15:49Z,50244652.0,other,"error: test failed, to rerun pass `--test dump_command`"
+experimental-bsan,postgresql_embedded-0.21.0,error::test::test_display_messages_and_sources,success,517.756,11.184,2026-11-05T03:16:00Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,error::test::test_from_archive_error,success,517.756,11.217,2026-11-05T03:16:11Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,error::test::test_from_io_error,success,517.756,11.202,2026-11-05T03:16:22Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,error::test::test_from_semver_error,success,517.756,11.217,2026-11-05T03:16:33Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,error::test::test_from_sqlx_error,success,517.756,11.245,2026-11-05T03:16:45Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,error::test::test_from_utf8_error,success,517.756,11.209,2026-11-05T03:16:56Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,lifecycle,test_failed,517.756,8.623,2026-11-05T03:17:05Z,50244652.0,other,"error: test failed, to rerun pass `--test environment_variables`"
+experimental-bsan,postgresql_embedded-0.21.0,postgres_concurrency,success,517.756,19.226,2026-11-05T03:17:24Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,settings::tests::test_settings_builder_all_fields,success,517.756,11.244,2026-11-05T03:17:35Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,settings::tests::test_settings_builder_config_method,success,517.756,11.251,2026-11-05T03:17:46Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,settings::tests::test_settings_builder_default,success,517.756,11.214,2026-11-05T03:17:58Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,settings::tests::test_settings_builder_defaults,success,517.756,11.238,2026-11-05T03:18:09Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,settings::tests::test_settings_builder_socket_dir,success,517.756,11.250,2026-11-05T03:18:20Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,settings::tests::test_settings_from_url,success,517.756,11.474,2026-11-05T03:18:32Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,settings::tests::test_settings_from_url_invalid_timeout,success,517.756,11.235,2026-11-05T03:18:43Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,settings::tests::test_settings_from_url_invalid_url,success,517.756,11.220,2026-11-05T03:18:54Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,settings::tests::test_settings_from_url_invalid_version,success,517.756,11.259,2026-11-05T03:19:05Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,settings::tests::test_settings_from_url_with_socket_dir,success,517.756,11.261,2026-11-05T03:19:17Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,settings::tests::test_settings_new,success,517.756,11.271,2026-11-05T03:19:28Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,settings::tests::test_settings_url_with_socket_dir,success,517.756,11.240,2026-11-05T03:19:39Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,start_config,test_failed,517.756,13.535,2026-11-05T03:19:53Z,50244652.0,other,"error: test failed, to rerun pass `--test start_config`"
+experimental-bsan,postgresql_embedded-0.21.0,test_authentication_invalid_password,test_failed,517.756,10.947,2026-11-05T03:20:04Z,50244652.0,other,"error: test failed, to rerun pass `--test postgresql`"
+experimental-bsan,postgresql_embedded-0.21.0,test_authentication_invalid_username,test_failed,517.756,12.156,2026-11-05T03:20:16Z,50244652.0,other,"error: test failed, to rerun pass `--test postgresql`"
+experimental-bsan,postgresql_embedded-0.21.0,test_authentication_success,test_failed,517.756,13.709,2026-11-05T03:20:29Z,50244652.0,other,"error: test failed, to rerun pass `--test postgresql`"
+experimental-bsan,postgresql_embedded-0.21.0,test_embedded_async_lifecycle,test_failed,517.756,14.410,2026-11-05T03:20:44Z,50244652.0,other,"error: test failed, to rerun pass `--test postgresql`"
+experimental-bsan,postgresql_embedded-0.21.0,test_embedded_blocking_lifecycle,test_failed,517.756,6.564,2026-11-05T03:20:51Z,50244652.0,other,"error: test failed, to rerun pass `--test blocking`"
+experimental-bsan,postgresql_embedded-0.21.0,test_persistent_database,test_failed,517.756,11.593,2026-11-05T03:21:02Z,50244652.0,other,"error: test failed, to rerun pass `--test postgresql`"
+experimental-bsan,postgresql_embedded-0.21.0,test_persistent_database_reuse,test_failed,517.756,11.294,2026-11-05T03:21:13Z,50244652.0,other,"error: test failed, to rerun pass `--test postgresql`"
+experimental-bsan,postgresql_embedded-0.21.0,test_temporary_database,test_failed,517.756,11.745,2026-11-05T03:21:25Z,50244652.0,other,"error: test failed, to rerun pass `--test postgresql`"
+experimental-bsan,postgresql_embedded-0.21.0,test_username_setting,test_failed,517.756,11.618,2026-11-05T03:21:37Z,50244652.0,other,"error: test failed, to rerun pass `--test postgresql`"
+experimental-bsan,postgresql_embedded-0.21.0,tests::test_version,success,517.756,11.174,2026-11-05T03:21:48Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,tests::test_version_14,success,517.756,11.220,2026-11-05T03:21:59Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,tests::test_version_15,success,517.756,11.190,2026-11-05T03:22:10Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,tests::test_version_16,success,517.756,11.231,2026-11-05T03:22:22Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,tests::test_version_17,success,517.756,11.197,2026-11-05T03:22:33Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,tests::test_version_18,success,517.756,11.203,2026-11-05T03:22:44Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,tests::test_version_latest,success,517.756,11.208,2026-11-05T03:22:55Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,unix_socket_tests::test_connection_type_tcp_vs_unix_socket,test_failed,517.756,13.985,2026-11-05T03:23:09Z,50244652.0,other,"error: test failed, to rerun pass `--test unix_socket`"
+experimental-bsan,postgresql_embedded-0.21.0,unix_socket_tests::test_unix_socket_lifecycle,test_failed,517.756,16.610,2026-11-05T03:23:26Z,50244652.0,other,"error: test failed, to rerun pass `--test unix_socket`"
+experimental-bsan,postgresql_embedded-0.21.0,unix_socket_tests::test_unix_socket_temporary_cleanup,test_failed,517.756,14.662,2026-11-05T03:23:41Z,50244652.0,other,"error: test failed, to rerun pass `--test unix_socket`"
+experimental-bsan,postgresql_embedded-0.21.0,unix_socket_tests::test_unix_socket_url_format,success,517.756,11.236,2026-11-05T03:23:52Z,50244652.0,,
+experimental-bsan,postgresql_embedded-0.21.0,unix_socket_tests::test_unix_socket_with_builder,test_failed,517.756,13.961,2026-11-05T03:24:06Z,50244652.0,other,"error: test failed, to rerun pass `--test unix_socket`"

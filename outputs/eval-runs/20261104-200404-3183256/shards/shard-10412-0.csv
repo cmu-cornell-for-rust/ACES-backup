@@ -1,0 +1,15 @@
+experimental-bsan,game-loop-1.2.0,it_calls_the_render_function_as_quickly_as_possible,test_failed,4.009,3.093,2026-11-05T05:18:09Z,50252509.0,panic,"thread 'it_calls_the_render_function_as_quickly_as_possible' (19833) panicked at tests/game_loop.rs:124:5: assertion failed: control.number_of_renders() > 1000"
+experimental-bsan,game-loop-1.2.0,it_calls_the_update_function_according_to_updates_per_second,success,4.009,3.030,2026-11-05T05:18:12Z,50252509.0,,
+experimental-bsan,game-loop-1.2.0,it_can_exit_the_game_loop_from_the_update_or_render_closure,success,4.009,2.946,2026-11-05T05:18:15Z,50252509.0,,
+experimental-bsan,game-loop-1.2.0,it_can_re_measure_how_much_time_has_accumulated_mid_way_through_a_render,success,4.009,3.135,2026-11-05T05:18:18Z,50252509.0,,
+experimental-bsan,game-loop-1.2.0,it_limits_the_maximum_frame_time_which_reduces_the_number_of_updates,success,4.009,3.138,2026-11-05T05:18:21Z,50252509.0,,
+experimental-bsan,game-loop-1.2.0,it_provides_accumulated_time_to_the_closures,success,4.009,2.975,2026-11-05T05:18:24Z,50252509.0,,
+experimental-bsan,game-loop-1.2.0,it_provides_blending_factor_so_that_render_can_interpolate_between_frames,test_failed,4.009,2.999,2026-11-05T05:18:27Z,50252509.0,panic,"thread 'it_provides_blending_factor_so_that_render_can_interpolate_between_frames' (21062) panicked at tests/game_loop.rs:145:9: assertion failed: g.blending_factor() < 0.0001"
+experimental-bsan,game-loop-1.2.0,it_provides_fixed_time_step_to_the_closures,success,4.009,2.943,2026-11-05T05:18:30Z,50252509.0,,
+experimental-bsan,game-loop-1.2.0,it_provides_game_to_the_closures,success,4.009,2.940,2026-11-05T05:18:33Z,50252509.0,,
+experimental-bsan,game-loop-1.2.0,it_provides_max_frame_time_to_the_closures,success,4.009,2.934,2026-11-05T05:18:36Z,50252509.0,,
+experimental-bsan,game-loop-1.2.0,it_provides_number_of_renders_to_the_closures,success,4.009,2.911,2026-11-05T05:18:39Z,50252509.0,,
+experimental-bsan,game-loop-1.2.0,it_provides_number_of_updates_to_the_closures,success,4.009,2.973,2026-11-05T05:18:42Z,50252509.0,,
+experimental-bsan,game-loop-1.2.0,it_provides_running_time_to_the_closures,success,4.009,2.967,2026-11-05T05:18:45Z,50252509.0,,
+experimental-bsan,game-loop-1.2.0,it_provides_updates_per_second_to_the_closures,success,4.009,2.936,2026-11-05T05:18:48Z,50252509.0,,
+experimental-bsan,game-loop-1.2.0,it_returns_the_control_struct_after_the_game_loop_exits,success,4.009,2.939,2026-11-05T05:18:51Z,50252509.0,,

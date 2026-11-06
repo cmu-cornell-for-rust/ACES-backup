@@ -1,0 +1,3 @@
+experimental-bsan,cargo-lambda-invoke-1.9.2,test::test_download_example,test_failed,1857.391,12.370,2026-11-05T08:46:32Z,50262252.0,gc,"test test::test_download_example ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,cargo-lambda-invoke-1.9.2,test::test_download_example_with_cache,test_failed,1857.391,12.103,2026-11-05T08:46:44Z,50262252.0,gc,"test test::test_download_example_with_cache ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,cargo-lambda-invoke-1.9.2,test::test_example_name,success,1857.391,1.700,2026-11-05T08:46:46Z,50262252.0,,

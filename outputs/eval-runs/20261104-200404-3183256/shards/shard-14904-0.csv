@@ -1,0 +1,6 @@
+experimental-bsan,gitscribe-0.6.0,change::tests::test_get_changes,success,180.511,11.831,2026-11-05T07:11:48Z,50258832.0,,
+experimental-bsan,gitscribe-0.6.0,change::tests::test_parse_change,test_failed,180.511,28.712,2026-11-05T07:12:17Z,50258832.0,panic,"thread 'change::tests::test_parse_change' (29646) panicked at src/change.rs:157:80: called `Result::unwrap()` on an `Err` value: ParseError(Invalid)"
+experimental-bsan,gitscribe-0.6.0,version::tests::test_increment_version_major,success,180.511,2.905,2026-11-05T07:12:19Z,50258832.0,,
+experimental-bsan,gitscribe-0.6.0,version::tests::test_increment_version_minor,success,180.511,2.918,2026-11-05T07:12:22Z,50258832.0,,
+experimental-bsan,gitscribe-0.6.0,version::tests::test_increment_version_patch,success,180.511,2.902,2026-11-05T07:12:25Z,50258832.0,,
+experimental-bsan,gitscribe-0.6.0,version::tests::test_version,success,180.511,2.893,2026-11-05T07:12:28Z,50258832.0,,

@@ -1,0 +1,32 @@
+experimental-bsan,cargo-lambda-new-1.9.2,extensions::test::test_add_events_extension,success,2137.867,2.065,2026-11-05T04:23:18Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,functions::test::test_http_features_to_string,success,2137.867,1.752,2026-11-05T04:23:20Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,functions::test::test_json_value_event_type,success,2137.867,1.743,2026-11-05T04:23:22Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,functions::test::test_sns_event_type,success,2137.867,1.753,2026-11-05T04:23:24Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,functions::test::test_submodule_event_type,success,2137.867,1.748,2026-11-05T04:23:25Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,template::config::tests::test_ask_template_options,test_failed,2137.867,1.822,2026-11-05T04:23:27Z,50247465.0,panic,"thread 'template::config::tests::test_ask_template_options' (71208) panicked at src/template/config.rs:314:9: assertion `left == right` failed"
+experimental-bsan,cargo-lambda-new-1.9.2,template::config::tests::test_parse_missing_template_config,success,2137.867,1.756,2026-11-05T04:23:29Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,template::config::tests::test_parse_template_config_ignore_conditions,test_failed,2137.867,1.817,2026-11-05T04:23:31Z,50247465.0,panic,"thread 'template::config::tests::test_parse_template_config_ignore_conditions' (71379) panicked at src/template/config.rs:344:9: assertion `left == right` failed"
+experimental-bsan,cargo-lambda-new-1.9.2,template::config::tests::test_parse_template_config_ignore_files,test_failed,2137.867,1.818,2026-11-05T04:23:33Z,50247465.0,panic,"thread 'template::config::tests::test_parse_template_config_ignore_files' (71486) panicked at src/template/config.rs:277:9: assertion `left == right` failed"
+experimental-bsan,cargo-lambda-new-1.9.2,template::config::tests::test_parse_template_config_prompts,test_failed,2137.867,1.819,2026-11-05T04:23:35Z,50247465.0,panic,"thread 'template::config::tests::test_parse_template_config_prompts' (71544) panicked at src/template/config.rs:221:9: assertion failed: config.disable_default_prompts"
+experimental-bsan,cargo-lambda-new-1.9.2,template::config::tests::test_parse_template_config_render_conditions,test_failed,2137.867,1.812,2026-11-05T04:23:36Z,50247465.0,panic,"thread 'template::config::tests::test_parse_template_config_render_conditions' (71601) panicked at src/template/config.rs:330:9: assertion `left == right` failed"
+experimental-bsan,cargo-lambda-new-1.9.2,template::config::tests::test_parse_template_config_render_files,test_failed,2137.867,1.841,2026-11-05T04:23:38Z,50247465.0,panic,"thread 'template::config::tests::test_parse_template_config_render_files' (71657) panicked at src/template/config.rs:264:9: assertion `left == right` failed"
+experimental-bsan,cargo-lambda-new-1.9.2,template::config::tests::test_suggest_choice,success,2137.867,1.751,2026-11-05T04:23:40Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,template::config::tests::test_validate_choice,success,2137.867,1.750,2026-11-05T04:23:42Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,template::test::test_adjust_remote_zip_base,success,2137.867,18.980,2026-11-05T04:24:01Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,template::test::test_find_local_zip_file,success,2137.867,1.776,2026-11-05T04:24:03Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,template::test::test_is_remote_zip_file,success,2137.867,1.765,2026-11-05T04:24:04Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,template::test::test_match_git_http_url,success,2137.867,89.277,2026-11-05T04:25:34Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,template::test::test_match_git_ssh_url,success,2137.867,50.877,2026-11-05T04:26:24Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,template::test::test_template_root_config_path,test_failed,2137.867,1.856,2026-11-05T04:26:26Z,50247465.0,panic,"thread 'template::test::test_template_root_config_path' (76149) panicked at src/template.rs:584:9: assertion `left == right` failed"
+experimental-bsan,cargo-lambda-new-1.9.2,template::test::test_template_root_config_path_in_template_dir,success,2137.867,1.779,2026-11-05T04:26:28Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,template::test::test_template_root_with_base_dir,success,2137.867,1.767,2026-11-05T04:26:30Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,template::test::test_template_root_with_base_dir_and_template_dir,success,2137.867,1.801,2026-11-05T04:26:32Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,template::test::test_template_source,test_failed,2137.867,22.768,2026-11-05T04:26:55Z,50247465.0,panic,"thread 'template::test::test_template_source' (76369) panicked at src/template.rs:530:14: failed to parse relative path to zip file: Diagnostic { message: ""invalid template option ../../tests/templates/function-template.zip: No such file or directory (os error 2)"" }"
+experimental-bsan,cargo-lambda-new-1.9.2,template::test::test_translate_shortcut,success,2137.867,1.743,2026-11-05T04:26:56Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,tests::test_render_path_with_variables,success,2137.867,9.184,2026-11-05T04:27:05Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,tests::test_render_relative_path_with_render_all_files,success,2137.867,1.748,2026-11-05T04:27:07Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,tests::test_render_relative_path_with_render_conditional_files,success,2137.867,1.757,2026-11-05T04:27:09Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,tests::test_render_relative_path_with_render_conditional_files_false,success,2137.867,1.752,2026-11-05T04:27:11Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,tests::test_render_relative_path_with_render_files,success,2137.867,1.762,2026-11-05T04:27:13Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,tests::test_should_ignore_file,success,2137.867,1.754,2026-11-05T04:27:14Z,50247465.0,,
+experimental-bsan,cargo-lambda-new-1.9.2,tests::test_should_not_ignore_file,success,2137.867,1.757,2026-11-05T04:27:16Z,50247465.0,,

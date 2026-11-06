@@ -1,0 +1,9 @@
+experimental-bsan,wasmer-registry-5.21.0,config::tests::format_registry_urls,success,659.445,2.036,2026-11-05T06:50:12Z,50256760.0,,
+experimental-bsan,wasmer-registry-5.21.0,config::tests::test_registries_switch_token,success,659.445,2.087,2026-11-05T06:50:14Z,50256760.0,,
+experimental-bsan,wasmer-registry-5.21.0,package::builder::tests::test_construct_package_tar_gz,test_failed,659.445,10.799,2026-11-05T06:50:25Z,50256760.0,panic,"thread 'package::builder::tests::test_construct_package_tar_gz' (49759) panicked at src/package/builder.rs:1035:9: assertion failed: `(left == right)`"
+experimental-bsan,wasmer-registry-5.21.0,package::builder::tests::test_construct_wai_package_tar_gz,test_failed,659.445,11.574,2026-11-05T06:50:37Z,50256760.0,panic,"thread 'package::builder::tests::test_construct_wai_package_tar_gz' (50217) panicked at src/package/builder.rs:1094:9: assertion failed: `(left == right)`"
+experimental-bsan,wasmer-registry-5.21.0,wasmer_env::tests::load_defaults_from_config,success,659.445,3.019,2026-11-05T06:50:40Z,50256760.0,,
+experimental-bsan,wasmer-registry-5.21.0,wasmer_env::tests::override_cache_dir,success,659.445,3.107,2026-11-05T06:50:43Z,50256760.0,,
+experimental-bsan,wasmer-registry-5.21.0,wasmer_env::tests::override_registry,success,659.445,2.252,2026-11-05T06:50:45Z,50256760.0,,
+experimental-bsan,wasmer-registry-5.21.0,wasmer_env::tests::override_registry_and_token,success,659.445,1.834,2026-11-05T06:50:47Z,50256760.0,,
+experimental-bsan,wasmer-registry-5.21.0,wasmer_env::tests::override_token,success,659.445,2.235,2026-11-05T06:50:49Z,50256760.0,,

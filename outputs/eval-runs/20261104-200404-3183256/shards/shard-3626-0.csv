@@ -1,0 +1,63 @@
+experimental-bsan,secp256kfun-0.10.0,against_c_lib::point_addition,timeout,233.601,150.025,2026-11-05T02:35:41Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,against_c_lib::point_multiplication,timeout,233.601,150.014,2026-11-05T02:38:11Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,against_c_lib::point_ord,timeout,233.601,150.014,2026-11-05T02:40:41Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,against_c_lib::scalar_negation,success,233.601,20.600,2026-11-05T02:41:02Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,against_c_lib::scalar_ops,success,233.601,32.215,2026-11-05T02:41:34Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,against_c_lib::scalar_ord,success,233.601,84.102,2026-11-05T02:42:58Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,against_c_lib::vartime_double_mul,timeout,233.601,150.015,2026-11-05T02:45:28Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,g_expressions_give_correct_answers,success,233.601,52.487,2026-11-05T02:46:21Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,libsecp_compat::v0_27::test::prop_public_key,success,233.601,29.413,2026-11-05T02:46:50Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,libsecp_compat::v0_27::test::prop_secret_key,success,233.601,20.584,2026-11-05T02:47:11Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,libsecp_compat::v0_27::test::public_key,success,233.601,7.110,2026-11-05T02:47:18Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,libsecp_compat::v0_27::test::scalar_roundtrip,success,233.601,50.913,2026-11-05T02:48:09Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,libsecp_compat::v0_28::test::prop_public_key,success,233.601,28.672,2026-11-05T02:48:37Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,libsecp_compat::v0_28::test::prop_secret_key,success,233.601,20.503,2026-11-05T02:48:58Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,libsecp_compat::v0_28::test::public_key,success,233.601,7.093,2026-11-05T02:49:05Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,libsecp_compat::v0_28::test::scalar_roundtrip,success,233.601,46.509,2026-11-05T02:49:51Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,nonce::test::derive_nonce_macros_work_with_fixed_length_data,success,233.601,7.170,2026-11-05T02:49:59Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,nonce::test::deterministic_tests,success,233.601,7.380,2026-11-05T02:50:06Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,nonce::test::synthetic_nonce_gen_is_random,success,233.601,7.302,2026-11-05T02:50:13Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,op::test::double_mul_spec_edgecase,success,233.601,8.508,2026-11-05T02:50:22Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,op::test::lincomb_against_mul,timeout,233.601,150.015,2026-11-05T02:52:52Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,point::test::assign_tests,success,233.601,7.209,2026-11-05T02:52:59Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,point::test::fmt_debug,success,233.601,7.889,2026-11-05T02:53:07Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,point::test::g_to_and_from_bytes,success,233.601,7.268,2026-11-05T02:53:14Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,point::test::operations_even_y,timeout,233.601,150.015,2026-11-05T02:55:44Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,point::test::operations_jacobian,timeout,233.601,150.015,2026-11-05T02:58:14Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,point::test::operations_jacobian_public_zero,timeout,233.601,150.015,2026-11-05T03:00:44Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,point::test::operations_jacobian_secret,timeout,233.601,150.015,2026-11-05T03:03:14Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,point::test::operations_jacobian_secret_zero,timeout,233.601,150.014,2026-11-05T03:05:44Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,point::test::operations_normal,timeout,233.601,150.016,2026-11-05T03:08:15Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,point::test::operations_normal_public_zero,timeout,233.601,150.016,2026-11-05T03:10:45Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,point::test::operations_normal_secret,timeout,233.601,150.015,2026-11-05T03:13:15Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,point::test::operations_normal_secret_zero,timeout,233.601,150.014,2026-11-05T03:15:45Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,point::test::point_even_y_json_deserialization_roundtrip,timeout,233.601,150.014,2026-11-05T03:18:15Z,50241869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,secp256kfun-0.10.0,point::test::zero_cases,success,233.601,12.374,2026-11-05T03:18:27Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,point::test::zero_to_and_from_bytes,success,233.601,7.166,2026-11-05T03:18:34Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,s_expressions_give_correct_answers,success,233.601,7.406,2026-11-05T03:18:42Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,scalar::test::assign_tests,success,233.601,7.176,2026-11-05T03:18:49Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,scalar::test::from_slice,success,233.601,7.134,2026-11-05T03:18:56Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,scalar::test::from_slice_mod_order,success,233.601,7.154,2026-11-05T03:19:03Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,scalar::test::invert,success,233.601,89.010,2026-11-05T03:20:32Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,scalar::test::minus_one,success,233.601,7.162,2026-11-05T03:20:39Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,scalar::test::one,success,233.601,7.145,2026-11-05T03:20:46Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,scalar::test::random,success,233.601,7.156,2026-11-05T03:20:54Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,scalar::test::scalar_serde_rountrip,success,233.601,7.165,2026-11-05T03:21:01Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,scalar::test::scalar_subtraction_is_not_commutative,success,233.601,7.121,2026-11-05T03:21:08Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,scalar::test::sub,success,233.601,116.834,2026-11-05T03:23:05Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,scalar::test::zero,success,233.601,7.160,2026-11-05T03:23:12Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test::bincode2_serialize_roundtrip,success,233.601,7.138,2026-11-05T03:23:19Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test::deserialize_invalid_bytes,success,233.601,7.193,2026-11-05T03:23:26Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test::deserialize_wrong_length,success,233.601,7.169,2026-11-05T03:23:34Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test::display,success,233.601,7.148,2026-11-05T03:23:41Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test::from_str_error_cases,success,233.601,7.131,2026-11-05T03:23:48Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test::from_str_roundtrip,success,233.601,7.152,2026-11-05T03:23:55Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test::serde_serialize_roundtrip,success,233.601,7.108,2026-11-05T03:24:02Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test::serialize_hex_roundtrip,success,233.601,7.136,2026-11-05T03:24:09Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test_add_poly,success,233.601,13.118,2026-11-05T03:24:22Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test_add_poly_unequal_len,success,233.601,13.736,2026-11-05T03:24:36Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test_lagrange_lambda,success,233.601,7.288,2026-11-05T03:24:43Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test_reconstruct_shared_secret,success,233.601,7.391,2026-11-05T03:24:51Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test_recover_overdetermined_poly,success,233.601,36.210,2026-11-05T03:25:27Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,test_recover_public_poly,success,233.601,21.241,2026-11-05T03:25:48Z,50241869.0,,
+experimental-bsan,secp256kfun-0.10.0,vendor::k256::field::field_5x52::tests::overflow_check_after_weak_normalize,success,233.601,7.147,2026-11-05T03:25:55Z,50241869.0,,

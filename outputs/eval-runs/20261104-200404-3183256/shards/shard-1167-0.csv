@@ -1,0 +1,172 @@
+experimental-bsan,yara-x-0.10.0,compiler::atoms::mask::tests::mask_combinator,success,1064.960,1.933,2026-11-05T01:55:03Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::atoms::quality::test::best_range_in_masked_bytes,success,1064.960,1.849,2026-11-05T01:55:05Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::atoms::quality::test::test_atom_quality,success,1064.960,2.116,2026-11-05T01:55:07Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::atoms::quality::test::test_seq_quality,success,1064.960,5.544,2026-11-05T01:55:13Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::atoms::test::case_combinations,success,1064.960,1.751,2026-11-05T01:55:15Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::atoms::test::make_wide,success,1064.960,1.704,2026-11-05T01:55:16Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::atoms::test::mask_combinations,success,1064.960,1.727,2026-11-05T01:55:18Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::atoms::test::xor_combinations,success,1064.960,1.715,2026-11-05T01:55:20Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::base64::test::base64,success,1064.960,1.745,2026-11-05T01:55:22Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::ir::dfs::test::dfs,success,1064.960,1.701,2026-11-05T01:55:23Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::ir::hex2hir::tests::class_to_hex,success,1064.960,1.730,2026-11-05T01:55:25Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::ir::hex2hir::tests::hex_byte_to_hir,success,1064.960,1.731,2026-11-05T01:55:27Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::ir::hex2hir::tests::hex_tokens_to_hir,success,1064.960,1.756,2026-11-05T01:55:29Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::ir::tests::ir,test_failed,1064.960,35.513,2026-11-05T01:56:04Z,50233910.0,crash,"test compiler::ir::tests::ir ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,compiler::report::tests::byte_offset_to_line_col_empty_string,success,1064.960,1.710,2026-11-05T01:56:06Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::report::tests::byte_offset_to_line_col_end_of_string,success,1064.960,1.701,2026-11-05T01:56:07Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::report::tests::byte_offset_to_line_col_multibyte_characters,success,1064.960,1.725,2026-11-05T01:56:09Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::report::tests::byte_offset_to_line_col_multiline,success,1064.960,1.714,2026-11-05T01:56:11Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::report::tests::byte_offset_to_line_col_out_of_bounds,success,1064.960,1.704,2026-11-05T01:56:13Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::report::tests::byte_offset_to_line_col_single_line,success,1064.960,1.705,2026-11-05T01:56:14Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::tests::banned_modules,success,1064.960,22.970,2026-11-05T01:56:37Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::tests::continue_after_error,test_failed,1064.960,23.108,2026-11-05T01:57:00Z,50233910.0,crash,"test compiler::tests::continue_after_error ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,compiler::tests::errors_2,success,1064.960,27.163,2026-11-05T01:57:28Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::tests::errors_serialization,success,1064.960,21.971,2026-11-05T01:57:50Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::tests::globals,test_failed,1064.960,50.781,2026-11-05T01:58:40Z,50233910.0,crash,"test compiler::tests::globals ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,compiler::tests::globals_json,test_failed,1064.960,27.663,2026-11-05T01:59:08Z,50233910.0,crash,"test compiler::tests::globals_json ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,compiler::tests::import_modules,success,1064.960,29.130,2026-11-05T01:59:37Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::tests::namespaces,success,1064.960,28.108,2026-11-05T02:00:05Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::tests::relaxed_re_syntax,test_failed,1064.960,62.675,2026-11-05T02:01:08Z,50233910.0,crash,"test compiler::tests::relaxed_re_syntax ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,compiler::tests::serialization,test_failed,1064.960,52.046,2026-11-05T02:02:00Z,50233910.0,crash,"test compiler::tests::serialization ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,compiler::tests::snapshots,success,1064.960,21.547,2026-11-05T02:02:22Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::tests::test_errors,timeout,1064.960,150.023,2026-11-05T02:04:52Z,50233910.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yara-x-0.10.0,compiler::tests::test_warnings,test_failed,1064.960,117.597,2026-11-05T02:06:49Z,50233910.0,crash,"test compiler::tests::test_warnings ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,compiler::tests::unsupported_modules,test_failed,1064.960,37.982,2026-11-05T02:07:27Z,50233910.0,crash,"test compiler::tests::unsupported_modules ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,compiler::tests::utf8_errors,success,1064.960,20.742,2026-11-05T02:07:48Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::tests::var_stack,success,1064.960,1.691,2026-11-05T02:07:50Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,compiler::tests::wrong_type,success,1064.960,34.716,2026-11-05T02:08:25Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,modules::console::tests::log,test_failed,1064.960,46.290,2026-11-05T02:09:11Z,50233910.0,crash,"test modules::console::tests::log ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::cuckoo::tests::cuckoo,test_failed,1064.960,39.042,2026-11-05T02:09:50Z,50233910.0,crash,"test modules::cuckoo::tests::cuckoo ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::dotnet::parser::test::var_sint,success,1064.960,1.692,2026-11-05T02:09:52Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,modules::dotnet::parser::test::var_uint,success,1064.960,1.685,2026-11-05T02:09:53Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,modules::elf::tests::import_md5,test_failed,1064.960,1.765,2026-11-05T02:09:55Z,50233910.0,panic,"thread 'modules::elf::tests::import_md5' (22044) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/elf/tests/testdata/8bfe885838b4d1fba194b761ca900a0425aa892e4b358bf5a9bf4304e571df1b.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::elf::tests::telfhash,test_failed,1064.960,1.771,2026-11-05T02:09:57Z,50233910.0,panic,"thread 'modules::elf::tests::telfhash' (22186) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/elf/tests/testdata/8bfe885838b4d1fba194b761ca900a0425aa892e4b358bf5a9bf4304e571df1b.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::hash::tests::test_hash_module,test_failed,1064.960,41.949,2026-11-05T02:10:39Z,50233910.0,crash,"test modules::hash::tests::test_hash_module ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::macho::parser::test_sleb_parsing,success,1064.960,1.690,2026-11-05T02:10:41Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,modules::macho::parser::test_uleb_parsing,success,1064.960,1.691,2026-11-05T02:10:42Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,modules::macho::tests::test_macho_module,test_failed,1064.960,2.025,2026-11-05T02:10:44Z,50233910.0,panic,"thread 'modules::macho::tests::test_macho_module' (28794) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/macho/tests/testdata/tiny_universal.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::math::tests::abs,test_failed,1064.960,24.386,2026-11-05T02:11:09Z,50233910.0,crash,"test modules::math::tests::abs ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::math::tests::count,test_failed,1064.960,26.731,2026-11-05T02:11:35Z,50233910.0,crash,"test modules::math::tests::count ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::math::tests::deviation,test_failed,1064.960,25.099,2026-11-05T02:12:01Z,50233910.0,crash,"test modules::math::tests::deviation ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::math::tests::entropy,test_failed,1064.960,23.756,2026-11-05T02:12:24Z,50233910.0,crash,"test modules::math::tests::entropy ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::math::tests::in_range,test_failed,1064.960,26.484,2026-11-05T02:12:51Z,50233910.0,crash,"test modules::math::tests::in_range ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::math::tests::mean,test_failed,1064.960,23.517,2026-11-05T02:13:14Z,50233910.0,crash,"test modules::math::tests::mean ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::math::tests::min_and_max,test_failed,1064.960,24.835,2026-11-05T02:13:39Z,50233910.0,crash,"test modules::math::tests::min_and_max ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::math::tests::mode,test_failed,1064.960,54.594,2026-11-05T02:14:34Z,50233910.0,crash,"test modules::math::tests::mode ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::math::tests::monte_carlo_pi,test_failed,1064.960,25.337,2026-11-05T02:14:59Z,50233910.0,crash,"test modules::math::tests::monte_carlo_pi ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::math::tests::percentage,test_failed,1064.960,26.915,2026-11-05T02:15:26Z,50233910.0,crash,"test modules::math::tests::percentage ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::math::tests::serial_correlation,test_failed,1064.960,23.695,2026-11-05T02:15:50Z,50233910.0,crash,"test modules::math::tests::serial_correlation ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::math::tests::to_number,test_failed,1064.960,24.590,2026-11-05T02:16:14Z,50233910.0,crash,"test modules::math::tests::to_number ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::math::tests::to_string,test_failed,1064.960,23.775,2026-11-05T02:16:38Z,50233910.0,crash,"test modules::math::tests::to_string ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::checksum,test_failed,1064.960,1.784,2026-11-05T02:16:40Z,50233910.0,panic,"thread 'modules::pe::tests::checksum' (58972) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/af3f20a9272489cbef4281c8c86ad42ccfb04ccedd3ada1e8c26939c726a4c8e.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::delayed_import_rva,test_failed,1064.960,1.790,2026-11-05T02:16:42Z,50233910.0,panic,"thread 'modules::pe::tests::delayed_import_rva' (59181) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/079a472d22290a94ebb212aa8015cdc8dd28a968c6b4d3b88acdd58ce2d3b885.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::exports,test_failed,1064.960,1.788,2026-11-05T02:16:44Z,50233910.0,panic,"thread 'modules::pe::tests::exports' (59438) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/2d80c403b5c50f8bbacb65f58e7a19f272c62d1889216b7a6f1141571ec12649.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::image_directory_constants,test_failed,1064.960,23.752,2026-11-05T02:17:07Z,50233910.0,crash,"test modules::pe::tests::image_directory_constants ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::imphash,test_failed,1064.960,1.923,2026-11-05T02:17:09Z,50233910.0,panic,"thread 'modules::pe::tests::imphash' (61429) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/c704cca0fe4c9bdee18a302952540073b860e3b4d42e081f86d27bdb1cf6ede4.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::import_rva,test_failed,1064.960,1.795,2026-11-05T02:17:11Z,50233910.0,panic,"thread 'modules::pe::tests::import_rva' (61685) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/0ba6042247d90a187919dd88dc2d55cd882c80e5afc511c4f7b2e0e193968f7f.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::imports,test_failed,1064.960,1.832,2026-11-05T02:17:13Z,50233910.0,panic,"thread 'modules::pe::tests::imports' (61842) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/2775d97f8bdb3311ace960a42eee35dbec84b9d71a6abbacb26c14e83f5897e4.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::is_32bits,test_failed,1064.960,1.803,2026-11-05T02:17:15Z,50233910.0,panic,"thread 'modules::pe::tests::is_32bits' (62034) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/0ba6042247d90a187919dd88dc2d55cd882c80e5afc511c4f7b2e0e193968f7f.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::is_64bits,test_failed,1064.960,1.802,2026-11-05T02:17:17Z,50233910.0,panic,"thread 'modules::pe::tests::is_64bits' (62348) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/2e9c671b8a0411f2b397544b368c44d7f095eb395779de0ad1ac946914dfa34c.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::is_dll,test_failed,1064.960,1.799,2026-11-05T02:17:19Z,50233910.0,panic,"thread 'modules::pe::tests::is_dll' (64156) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/079a472d22290a94ebb212aa8015cdc8dd28a968c6b4d3b88acdd58ce2d3b885.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::locale_and_language,test_failed,1064.960,1.797,2026-11-05T02:17:20Z,50233910.0,panic,"thread 'modules::pe::tests::locale_and_language' (65100) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/db6a9934570fa98a93a979e7e0e218e0c9710e5a787b18c6948f2eedd9338984.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::rich_signature,test_failed,1064.960,1.788,2026-11-05T02:17:22Z,50233910.0,panic,"thread 'modules::pe::tests::rich_signature' (65326) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/079a472d22290a94ebb212aa8015cdc8dd28a968c6b4d3b88acdd58ce2d3b885.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::rva_to_offset,test_failed,1064.960,1.796,2026-11-05T02:17:24Z,50233910.0,panic,"thread 'modules::pe::tests::rva_to_offset' (65587) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/c6f9709feccf42f2d9e22057182fe185f177fb9daaa2649b4669a24f2ee7e3ba.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::section_index,test_failed,1064.960,1.793,2026-11-05T02:17:26Z,50233910.0,panic,"thread 'modules::pe::tests::section_index' (65845) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/079a472d22290a94ebb212aa8015cdc8dd28a968c6b4d3b88acdd58ce2d3b885.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::pe::tests::valid_on,test_failed,1064.960,1.791,2026-11-05T02:17:28Z,50233910.0,panic,"thread 'modules::pe::tests::valid_on' (66106) panicked at src/modules/tests.rs:32:29: can not open file: ""src/modules/pe/tests/testdata/079a472d22290a94ebb212aa8015cdc8dd28a968c6b4d3b88acdd58ce2d3b885.in.zip"""
+experimental-bsan,yara-x-0.10.0,modules::string::tests::length,test_failed,1064.960,23.446,2026-11-05T02:17:51Z,50233910.0,crash,"test modules::string::tests::length ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::string::tests::to_int,test_failed,1064.960,23.505,2026-11-05T02:18:15Z,50233910.0,crash,"test modules::string::tests::to_int ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::test_proto2::tests::test_proto2_module,test_failed,1064.960,25.381,2026-11-05T02:18:40Z,50233910.0,crash,"test modules::test_proto2::tests::test_proto2_module ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,modules::tests::test_modules,success,1064.960,10.281,2026-11-05T02:18:50Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,modules::time::tests::now,test_failed,1064.960,54.543,2026-11-05T02:19:45Z,50233910.0,crash,"test modules::time::tests::now ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,re::bitmapset::tests::thread_set,success,1064.960,1.729,2026-11-05T02:19:47Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::hir::tests::split,success,1064.960,1.783,2026-11-05T02:19:48Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_atoms,timeout,1064.960,150.032,2026-11-05T02:22:18Z,50233910.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_1,success,1064.960,1.833,2026-11-05T02:22:20Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_10,success,1064.960,2.607,2026-11-05T02:22:23Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_11,success,1064.960,1.913,2026-11-05T02:22:25Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_12,success,1064.960,2.032,2026-11-05T02:22:27Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_13,success,1064.960,2.362,2026-11-05T02:22:29Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_14,success,1064.960,1.895,2026-11-05T02:22:31Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_15,success,1064.960,1.898,2026-11-05T02:22:33Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_16,success,1064.960,2.056,2026-11-05T02:22:35Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_17,success,1064.960,2.085,2026-11-05T02:22:37Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_18,success,1064.960,4.275,2026-11-05T02:22:42Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_19,success,1064.960,21.679,2026-11-05T02:23:03Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_2,success,1064.960,1.858,2026-11-05T02:23:05Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_20,success,1064.960,1.913,2026-11-05T02:23:07Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_21,success,1064.960,3.177,2026-11-05T02:23:10Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_22,success,1064.960,2.890,2026-11-05T02:23:13Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_23,success,1064.960,2.012,2026-11-05T02:23:15Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_24,success,1064.960,1.998,2026-11-05T02:23:17Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_3,success,1064.960,6.772,2026-11-05T02:23:24Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_4,success,1064.960,1.967,2026-11-05T02:23:26Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_5,success,1064.960,1.987,2026-11-05T02:23:28Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_6,success,1064.960,2.202,2026-11-05T02:23:30Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_7,success,1064.960,6.882,2026-11-05T02:23:37Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_8,success,1064.960,6.774,2026-11-05T02:23:44Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,re::thompson::tests::re_code_9,success,1064.960,2.336,2026-11-05T02:23:46Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,scanner::matches::test::match_list,success,1064.960,1.707,2026-11-05T02:23:48Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,scanner::tests::global_rules,test_failed,1064.960,32.381,2026-11-05T02:24:20Z,50233910.0,crash,"test scanner::tests::global_rules ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::iterators,test_failed,1064.960,30.991,2026-11-05T02:24:51Z,50233910.0,crash,"test scanner::tests::iterators ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::matches,test_failed,1064.960,38.111,2026-11-05T02:25:29Z,50233910.0,crash,"test scanner::tests::matches ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::max_matches_per_pattern,test_failed,1064.960,52.868,2026-11-05T02:26:22Z,50233910.0,crash,"test scanner::tests::max_matches_per_pattern ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::metadata,test_failed,1064.960,35.297,2026-11-05T02:26:58Z,50233910.0,crash,"test scanner::tests::metadata ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::module_output,test_failed,1064.960,31.728,2026-11-05T02:27:29Z,50233910.0,crash,"test scanner::tests::module_output ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::module_outputs,test_failed,1064.960,31.610,2026-11-05T02:28:01Z,50233910.0,crash,"test scanner::tests::module_outputs ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::namespaces,test_failed,1064.960,61.173,2026-11-05T02:29:02Z,50233910.0,crash,"test scanner::tests::namespaces ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::private_rules,test_failed,1064.960,30.451,2026-11-05T02:29:33Z,50233910.0,crash,"test scanner::tests::private_rules ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::reuse_scanner,test_failed,1064.960,31.545,2026-11-05T02:30:04Z,50233910.0,crash,"test scanner::tests::reuse_scanner ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::set_module_output,test_failed,1064.960,32.725,2026-11-05T02:30:37Z,50233910.0,crash,"test scanner::tests::set_module_output ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::variables_1,test_failed,1064.960,54.336,2026-11-05T02:31:31Z,50233910.0,crash,"test scanner::tests::variables_1 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::variables_2,test_failed,1064.960,23.163,2026-11-05T02:31:54Z,50233910.0,crash,"test scanner::tests::variables_2 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,scanner::tests::xor_matches,test_failed,1064.960,52.741,2026-11-05T02:32:47Z,50233910.0,crash,"test scanner::tests::xor_matches ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,string_pool::test::bstring_pool_serde,success,1064.960,1.734,2026-11-05T02:32:49Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,string_pool::test::string_pool_serde,success,1064.960,1.731,2026-11-05T02:32:51Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,symbols::tests::message_dyn_lookup,success,1064.960,19.539,2026-11-05T02:33:10Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,symbols::tests::message_lookup,success,1064.960,19.222,2026-11-05T02:33:29Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,tests::arithmetic_operations,test_failed,1064.960,36.229,2026-11-05T02:34:06Z,50233910.0,crash,"test tests::arithmetic_operations ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::base64,test_failed,1064.960,45.273,2026-11-05T02:34:51Z,50233910.0,crash,"test tests::base64 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::bitwise_operations,test_failed,1064.960,36.589,2026-11-05T02:35:28Z,50233910.0,crash,"test tests::bitwise_operations ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::boolean_casting,test_failed,1064.960,36.153,2026-11-05T02:36:04Z,50233910.0,crash,"test tests::boolean_casting ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::boolean_operations,test_failed,1064.960,35.396,2026-11-05T02:36:39Z,50233910.0,crash,"test tests::boolean_operations ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::duplicate_pattern,test_failed,1064.960,58.484,2026-11-05T02:37:38Z,50233910.0,crash,"test tests::duplicate_pattern ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::eight_rules,test_failed,1064.960,34.598,2026-11-05T02:38:12Z,50233910.0,crash,"test tests::eight_rules ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::filesize,test_failed,1064.960,58.237,2026-11-05T02:39:11Z,50233910.0,crash,"test tests::filesize ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::for_in,test_failed,1064.960,41.186,2026-11-05T02:39:52Z,50233910.0,crash,"test tests::for_in ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::for_of,test_failed,1064.960,37.714,2026-11-05T02:40:30Z,50233910.0,crash,"test tests::for_of ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::fullword,test_failed,1064.960,45.036,2026-11-05T02:41:15Z,50233910.0,crash,"test tests::fullword ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::hex_large_jumps,test_failed,1064.960,35.255,2026-11-05T02:41:50Z,50233910.0,crash,"test tests::hex_large_jumps ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::hex_patterns,test_failed,1064.960,45.424,2026-11-05T02:42:35Z,50233910.0,crash,"test tests::hex_patterns ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::intxx,test_failed,1064.960,23.588,2026-11-05T02:42:59Z,50233910.0,crash,"test tests::intxx ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::match_at,test_failed,1064.960,53.506,2026-11-05T02:43:52Z,50233910.0,crash,"test tests::match_at ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::match_count,test_failed,1064.960,55.085,2026-11-05T02:44:48Z,50233910.0,crash,"test tests::match_count ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::match_in,test_failed,1064.960,54.273,2026-11-05T02:45:42Z,50233910.0,crash,"test tests::match_in ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::match_length,test_failed,1064.960,55.478,2026-11-05T02:46:37Z,50233910.0,crash,"test tests::match_length ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::match_offset,test_failed,1064.960,22.959,2026-11-05T02:47:00Z,50233910.0,crash,"test tests::match_offset ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::of,test_failed,1064.960,37.842,2026-11-05T02:47:38Z,50233910.0,crash,"test tests::of ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::regexp_nocase,test_failed,1064.960,52.714,2026-11-05T02:48:31Z,50233910.0,crash,"test tests::regexp_nocase ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::regexp_patterns_1,test_failed,1064.960,45.014,2026-11-05T02:49:16Z,50233910.0,crash,"test tests::regexp_patterns_1 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::regexp_patterns_2,test_failed,1064.960,58.517,2026-11-05T02:50:14Z,50233910.0,crash,"test tests::regexp_patterns_2 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::regexp_patterns_3,test_failed,1064.960,57.885,2026-11-05T02:51:12Z,50233910.0,crash,"test tests::regexp_patterns_3 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::regexp_patterns_4,test_failed,1064.960,45.116,2026-11-05T02:51:58Z,50233910.0,crash,"test tests::regexp_patterns_4 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::regexp_patterns_5,test_failed,1064.960,45.077,2026-11-05T02:52:43Z,50233910.0,crash,"test tests::regexp_patterns_5 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::regexp_patterns_6,test_failed,1064.960,54.819,2026-11-05T02:53:37Z,50233910.0,crash,"test tests::regexp_patterns_6 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::regexp_wide,test_failed,1064.960,44.902,2026-11-05T02:54:22Z,50233910.0,crash,"test tests::regexp_wide ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::rule_reuse_1,test_failed,1064.960,43.051,2026-11-05T02:55:05Z,50233910.0,crash,"test tests::rule_reuse_1 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::rule_reuse_2,test_failed,1064.960,33.261,2026-11-05T02:55:39Z,50233910.0,crash,"test tests::rule_reuse_2 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::string_operations,test_failed,1064.960,44.972,2026-11-05T02:56:24Z,50233910.0,crash,"test tests::string_operations ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::test_comparison_operations,test_failed,1064.960,36.748,2026-11-05T02:57:00Z,50233910.0,crash,"test tests::test_comparison_operations ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::test_defined_1,test_failed,1064.960,36.554,2026-11-05T02:57:37Z,50233910.0,crash,"test tests::test_defined_1 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::test_defined_2,test_failed,1064.960,55.722,2026-11-05T02:58:33Z,50233910.0,crash,"test tests::test_defined_2 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::test_defined_3,test_failed,1064.960,32.202,2026-11-05T02:59:05Z,50233910.0,crash,"test tests::test_defined_3 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::text_patterns,test_failed,1064.960,53.199,2026-11-05T02:59:58Z,50233910.0,crash,"test tests::text_patterns ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::uintxx,test_failed,1064.960,23.708,2026-11-05T03:00:22Z,50233910.0,crash,"test tests::uintxx ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::with,test_failed,1064.960,23.294,2026-11-05T03:00:45Z,50233910.0,crash,"test tests::with ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,tests::xor,test_failed,1064.960,45.149,2026-11-05T03:01:30Z,50233910.0,crash,"test tests::xor ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,yara-x-0.10.0,types::func::test::invalid_mangled_name_1,success,1064.960,1.728,2026-11-05T03:01:32Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,types::func::test::invalid_mangled_name_2,success,1064.960,1.726,2026-11-05T03:01:34Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,types::func::test::invalid_mangled_name_3,success,1064.960,1.734,2026-11-05T03:01:36Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,types::func::test::mangled_name,success,1064.960,1.723,2026-11-05T03:01:37Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,types::structure::tests::struct_eq,success,1064.960,1.751,2026-11-05T03:01:39Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,types::structure::tests::test_struct,success,1064.960,1.725,2026-11-05T03:01:41Z,50233910.0,,
+experimental-bsan,yara-x-0.10.0,variables::test::is_valid_identifier,success,1064.960,1.709,2026-11-05T03:01:43Z,50233910.0,,

@@ -1,0 +1,36 @@
+experimental-bsan,libheif-rs-3.0.0,add_metadata,test_failed,375.882,27.580,2026-11-05T03:41:33Z,50246625.0,other,"error: test failed, to rerun pass `--test write_test`"
+experimental-bsan,libheif-rs-3.0.0,create_and_encode_image,test_failed,375.882,27.447,2026-11-05T03:42:00Z,50246625.0,other,"error: test failed, to rerun pass `--test write_test`"
+experimental-bsan,libheif-rs-3.0.0,create_and_encode_monochrome_image,test_failed,375.882,38.486,2026-11-05T03:42:39Z,50246625.0,other,"error: test failed, to rerun pass `--test write_test`"
+experimental-bsan,libheif-rs-3.0.0,decode_and_scale_image,test_failed,375.882,5.895,2026-11-05T03:42:44Z,50246625.0,other,"error: test failed, to rerun pass `--test read_test`"
+experimental-bsan,libheif-rs-3.0.0,get_all_metadata,success,375.882,12.997,2026-11-05T03:42:57Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,get_auxiliary_images,test_failed,375.882,5.891,2026-11-05T03:43:03Z,50246625.0,other,"error: test failed, to rerun pass `--test read_test`"
+experimental-bsan,libheif-rs-3.0.0,get_decoder_descriptors,test_failed,375.882,3.027,2026-11-05T03:43:06Z,50246625.0,panic,"thread 'get_decoder_descriptors' (6911) panicked at tests/heif_struct_test.rs:54:5: assertion failed: descriptors.len() >= 2"
+experimental-bsan,libheif-rs-3.0.0,get_encoder,success,375.882,12.929,2026-11-05T03:43:19Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,get_encoder_descriptors,test_failed,375.882,3.094,2026-11-05T03:43:22Z,50246625.0,panic,"thread 'get_encoder_descriptors' (8558) panicked at tests/heif_struct_test.rs:25:5: assertion failed: descriptors.len() >= 2"
+experimental-bsan,libheif-rs-3.0.0,get_encoder_for_format,success,375.882,12.938,2026-11-05T03:43:35Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,get_exif,success,375.882,13.085,2026-11-05T03:43:49Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,get_image_handler,success,375.882,12.988,2026-11-05T03:44:02Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,get_thumbnail,success,375.882,12.970,2026-11-05T03:44:14Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,get_version,success,375.882,12.909,2026-11-05T03:44:27Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,image_collection,success,375.882,12.946,2026-11-05T03:44:40Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,image_integration_tests::test_image_integration,test_failed,375.882,4.841,2026-11-05T03:44:45Z,50246625.0,panic,"thread 'image_integration_tests::test_image_integration' (18667) panicked at tests/integration.rs:13:37: called `Result::unwrap()` on an `Err` value: Decoding(DecodingError { format: Name(""heif""), underlying: Some(HeifError { code: PluginLoadingError, sub_code: NoMatchingDecoderInstalled, message: """
+experimental-bsan,libheif-rs-3.0.0,read_from_file,success,375.882,12.966,2026-11-05T03:44:58Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,read_from_memory,success,375.882,12.914,2026-11-05T03:45:11Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,read_from_reader,test_failed,375.882,6.108,2026-11-05T03:45:17Z,50246625.0,other,"error: test failed, to rerun pass `--test read_test`"
+experimental-bsan,libheif-rs-3.0.0,set_encoder_param,test_failed,375.882,27.466,2026-11-05T03:45:45Z,50246625.0,other,"error: test failed, to rerun pass `--test write_test`"
+experimental-bsan,libheif-rs-3.0.0,test_check_file_type,success,375.882,12.961,2026-11-05T03:45:58Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,test_decoding_options,success,375.882,12.911,2026-11-05T03:46:11Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,test_encoder_av1,test_failed,375.882,12.950,2026-11-05T03:46:24Z,50246625.0,other,"error: test failed, to rerun pass `--test write_test`"
+experimental-bsan,libheif-rs-3.0.0,test_encoder_hevc,success,375.882,12.982,2026-11-05T03:46:37Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,test_encoding_options,success,375.882,12.962,2026-11-05T03:46:50Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,test_nclx_color_profile_of_handle_and_image,test_failed,375.882,5.876,2026-11-05T03:46:55Z,50246625.0,other,"error: test failed, to rerun pass `--test read_test`"
+experimental-bsan,libheif-rs-3.0.0,test_raw_color_profile_of_image,test_failed,375.882,5.939,2026-11-05T03:47:01Z,50246625.0,other,"error: test failed, to rerun pass `--test read_test`"
+experimental-bsan,libheif-rs-3.0.0,test_raw_color_profile_of_image_handle,success,375.882,13.050,2026-11-05T03:47:15Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,test_read_avif_image,test_failed,375.882,5.926,2026-11-05T03:47:20Z,50246625.0,other,"error: test failed, to rerun pass `--test read_test`"
+experimental-bsan,libheif-rs-3.0.0,top_decode_heic,success,375.882,13.005,2026-11-05T03:47:33Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,v1_18::test_encode_grid,test_failed,375.882,13.113,2026-11-05T03:47:47Z,50246625.0,other,"error: test failed, to rerun pass `--test write_test`"
+experimental-bsan,libheif-rs-3.0.0,v1_18::write_and_read_regions,test_failed,375.882,22.697,2026-11-05T03:48:09Z,50246625.0,other,"error: test failed, to rerun pass `--test regions_test`"
+experimental-bsan,libheif-rs-3.0.0,v1_19::context_security_limits,success,375.882,13.029,2026-11-05T03:48:22Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,v1_19::get_default_security_limits,success,375.882,13.077,2026-11-05T03:48:35Z,50246625.0,,
+experimental-bsan,libheif-rs-3.0.0,v1_20::test_sequence,test_failed,375.882,10.309,2026-11-05T03:48:46Z,50246625.0,other,"error: test failed, to rerun pass `--test sequences`"
+experimental-bsan,libheif-rs-3.0.0,v1_21::track_has_alpha_channel,success,375.882,13.092,2026-11-05T03:48:59Z,50246625.0,,

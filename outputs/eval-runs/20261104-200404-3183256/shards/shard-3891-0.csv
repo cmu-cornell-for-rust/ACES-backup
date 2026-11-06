@@ -1,0 +1,59 @@
+experimental-bsan,fluvio-0.23.4,config::cluster::test_metadata::test_create_metadata,success,594.545,1.870,2026-11-05T02:45:21Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,config::cluster::test_metadata::test_get_metadata_path,success,594.545,1.940,2026-11-05T02:45:23Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,config::cluster::test_metadata::test_profile_with_metadata,success,594.545,5.174,2026-11-05T02:45:28Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,config::cluster::test_metadata::test_save_updated_metadata,success,594.545,3.517,2026-11-05T02:45:32Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,config::cluster::test_metadata::test_update_old_metadata,success,594.545,1.939,2026-11-05T02:45:34Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,config::cluster::test_metadata::test_update_with_new_metadata,success,594.545,1.945,2026-11-05T02:45:36Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,config::config::test::test_config,success,594.545,5.166,2026-11-05T02:45:41Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,config::config::test::test_default_path_home,success,594.545,1.711,2026-11-05T02:45:42Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,config::config::test::test_local_cluster,success,594.545,1.722,2026-11-05T02:45:44Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,config::config::test::test_rename_profile,success,594.545,5.129,2026-11-05T02:45:49Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,config::config::test::test_set_tls,success,594.545,9.005,2026-11-05T02:45:58Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,config::config::test::test_tls_save,success,594.545,2.078,2026-11-05T02:46:00Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,consumer::offset::tests::test_flush_avoid_repeats_sync,test_failed,594.545,13.567,2026-11-05T02:46:14Z,50242675.0,gc,"test consumer::offset::tests::test_flush_avoid_repeats_sync ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,fluvio-0.23.4,consumer::offset::tests::test_flush_error_propagated_sync,test_failed,594.545,13.558,2026-11-05T02:46:28Z,50242675.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 58 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,fluvio-0.23.4,consumer::offset::tests::test_flush_ignores_initial_state_sync,success,594.545,3.369,2026-11-05T02:46:31Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,consumer::offset::tests::test_flush_sync,test_failed,594.545,13.543,2026-11-05T02:46:45Z,50242675.0,gc,"test consumer::offset::tests::test_flush_sync ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,fluvio-0.23.4,consumer::offset::tests::test_monotonic_update,success,594.545,1.720,2026-11-05T02:46:46Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,consumer::offset::tests::test_try_flush,success,594.545,1.722,2026-11-05T02:46:48Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,consumer::offset::tests::test_try_flush_avoid_repeats,success,594.545,1.715,2026-11-05T02:46:50Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,consumer::offset::tests::test_try_flush_ignores_initial_state,success,594.545,1.733,2026-11-05T02:46:52Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,consumer::stream::tests::test_multi_partition_stream_auto_commit_and_flush_on_drop_sync,success,594.545,3.582,2026-11-05T02:46:55Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,consumer::stream::tests::test_multi_partition_stream_commit_and_flush_on_manual_sync,test_failed,594.545,13.462,2026-11-05T02:47:09Z,50242675.0,gc,"test consumer::stream::tests::test_multi_partition_stream_commit_and_flush_on_manual_sync ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,fluvio-0.23.4,consumer::stream::tests::test_multi_partition_stream_flush_error_propagated_sync,test_failed,594.545,13.465,2026-11-05T02:47:22Z,50242675.0,gc,"test consumer::stream::tests::test_multi_partition_stream_flush_error_propagated_sync ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,fluvio-0.23.4,consumer::stream::tests::test_multi_partition_stream_periodic_and_drop_flush_sync,test_failed,594.545,15.371,2026-11-05T02:47:37Z,50242675.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 58 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,fluvio-0.23.4,consumer::stream::tests::test_multi_partition_stream_works_sync,test_failed,594.545,13.446,2026-11-05T02:47:51Z,50242675.0,gc,"test consumer::stream::tests::test_multi_partition_stream_works_sync ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,fluvio-0.23.4,consumer::stream::tests::test_none_offset_strategy_raise_error_on_commit_sync,success,594.545,3.373,2026-11-05T02:47:54Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,consumer::stream::tests::test_none_offset_strategy_raise_error_on_flush_sync,success,594.545,3.512,2026-11-05T02:47:58Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,consumer::stream::tests::test_single_partition_stream_auto_commit_and_flush_on_drop_sync,success,594.545,3.540,2026-11-05T02:48:01Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,consumer::stream::tests::test_single_partition_stream_commit_and_flush_on_manual_sync,test_failed,594.545,13.557,2026-11-05T02:48:15Z,50242675.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 58 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,fluvio-0.23.4,consumer::stream::tests::test_single_partition_stream_flush_error_propagated_sync,success,594.545,3.505,2026-11-05T02:48:18Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,consumer::stream::tests::test_single_partition_stream_periodic_and_drop_flush_sync,test_failed,594.545,15.356,2026-11-05T02:48:34Z,50242675.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 58 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,fluvio-0.23.4,consumer::stream::tests::test_single_partition_stream_works_sync,success,594.545,3.376,2026-11-05T02:48:37Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,consumer::tests::test_consumer_config_default,success,594.545,1.719,2026-11-05T02:48:39Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,offset::tests::test_offset_beginning,success,594.545,1.730,2026-11-05T02:48:41Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,offset::tests::test_offset_beginning_end_short,success,594.545,1.725,2026-11-05T02:48:42Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,offset::tests::test_offset_beginning_end_short_nonzero,success,594.545,1.734,2026-11-05T02:48:44Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,offset::tests::test_offset_beginning_start_nonzero,success,594.545,1.721,2026-11-05T02:48:46Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,offset::tests::test_offset_end,success,594.545,1.740,2026-11-05T02:48:48Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,offset::tests::test_offset_end_short,success,594.545,1.723,2026-11-05T02:48:49Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,offset::tests::test_offset_end_start_nonzero,success,594.545,1.731,2026-11-05T02:48:51Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::accumulator::test::test_produce_partition_response_future_not_found_sync,success,594.545,3.347,2026-11-05T02:48:55Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::accumulator::test::test_produce_partition_response_future_on_error_sync,success,594.545,3.368,2026-11-05T02:48:58Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::accumulator::test::test_produce_partition_response_future_ready_sync,success,594.545,3.336,2026-11-05T02:49:01Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::accumulator::test::test_produce_partition_response_future_resolved_sync,success,594.545,3.380,2026-11-05T02:49:05Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::accumulator::test::test_producer_batch_push_and_full,success,594.545,1.724,2026-11-05T02:49:06Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::accumulator::test::test_producer_batch_push_and_not_full,success,594.545,1.750,2026-11-05T02:49:08Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::accumulator::test::test_producer_write_limit,success,594.545,1.742,2026-11-05T02:49:10Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::accumulator::test::test_record_accumulator_sync,test_failed,594.545,14.106,2026-11-05T02:49:24Z,50242675.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 58 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,fluvio-0.23.4,producer::config::tests::test_retry_policy_exponential_iter,success,594.545,1.742,2026-11-05T02:49:26Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::config::tests::test_retry_policy_fibonacci_iter,success,594.545,1.737,2026-11-05T02:49:27Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::config::tests::test_retry_policy_fixed_iter,success,594.545,1.733,2026-11-05T02:49:29Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::config::tests::test_retry_policy_never_retry,success,594.545,1.730,2026-11-05T02:49:31Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::event::test::test_event_handler_sync,success,594.545,3.637,2026-11-05T02:49:35Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::memory_batch::test::test_convert_memory_batch_to_batch,success,594.545,1.743,2026-11-05T02:49:36Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::memory_batch::test::test_is_the_first_record_from_batch_and_actual_batch_size_larger_then_batch_limit,success,594.545,1.839,2026-11-05T02:49:38Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::memory_batch::test::test_memory_batch,test_failed,594.545,2.020,2026-11-05T02:49:40Z,50242675.0,panic,"thread 'producer::memory_batch::test::test_memory_batch' (78627) panicked at src/producer/memory_batch.rs:200:9: assertion `left == right` failed"
+experimental-bsan,fluvio-0.23.4,producer::partitioning::tests::test_parallel_partitioning,success,594.545,4.415,2026-11-05T02:49:45Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::partitioning::tests::test_round_robin_individual,success,594.545,1.737,2026-11-05T02:49:46Z,50242675.0,,
+experimental-bsan,fluvio-0.23.4,producer::tests::test_topic_producer_should_detect_new_partitions_sync,test_failed,594.545,13.631,2026-11-05T02:50:00Z,50242675.0,gc,"test producer::tests::test_topic_producer_should_detect_new_partitions_sync ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."

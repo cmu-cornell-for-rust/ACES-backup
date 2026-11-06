@@ -1,0 +1,4 @@
+experimental-bsan,ogg_pager-0.7.2,tests::opus_ident_header,test_failed,4.442,1.677,2026-11-05T07:51:11Z,50261369.0,panic,"thread 'tests::opus_ident_header' (25623) panicked at src/lib.rs:164:75: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ogg_pager-0.7.2,tests::paginate_large,test_failed,4.442,1.687,2026-11-05T07:51:12Z,50261369.0,panic,"thread 'tests::paginate_large' (25794) panicked at src/lib.rs:173:77: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ogg_pager-0.7.2,tests::paginate_large_perfectly_divisible,success,4.442,1.775,2026-11-05T07:51:14Z,50261369.0,,
+experimental-bsan,ogg_pager-0.7.2,tests::paginate_perfectly_divisible_terminate,success,4.442,1.590,2026-11-05T07:51:16Z,50261369.0,,

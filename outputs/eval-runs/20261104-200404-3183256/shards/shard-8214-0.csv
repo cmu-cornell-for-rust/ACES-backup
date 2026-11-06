@@ -1,0 +1,23 @@
+experimental-bsan,dtz-identity-auth-2.2.7,test::claims_decode,success,1051.068,3.411,2026-11-05T04:44:58Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::claims_decode_scope,success,1051.068,3.084,2026-11-05T04:45:01Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::claims_decode_subject,success,1051.068,3.293,2026-11-05T04:45:04Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::invalid_cookie_in_header,success,1051.068,2.701,2026-11-05T04:45:07Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::multiple_cookies,success,1051.068,42.677,2026-11-05T04:45:50Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::parse_public_key,success,1051.068,3.104,2026-11-05T04:45:53Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_api_key_url,success,1051.068,2.706,2026-11-05T04:45:56Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_api_key_with_ctx_url,success,1051.068,2.470,2026-11-05T04:45:58Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_b64,success,1051.068,2.578,2026-11-05T04:46:01Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_b64_2,success,1051.068,3.089,2026-11-05T04:46:04Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_b64_basic_auth,success,1051.068,2.622,2026-11-05T04:46:07Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_get_params_ok,success,1051.068,2.576,2026-11-05T04:46:09Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_optional_user,timeout,1051.068,150.035,2026-11-05T04:48:39Z,50249593.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_reading_the_cache_does_not_renew_an_entry,success,1051.068,2.535,2026-11-05T04:48:42Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_rejected_api_key_is_not_looked_up_again,test_failed,1051.068,2.895,2026-11-05T04:48:45Z,50249593.0,panic,"thread 'test::test_rejected_api_key_is_not_looked_up_again' (85718) panicked at src/test.rs:332:5: assertion failed: started.elapsed() < Duration::from_millis(20)"
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_replacement_context,success,1051.068,2.664,2026-11-05T04:48:48Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_replacement_identity,success,1051.068,2.441,2026-11-05T04:48:50Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_replacement_nothing,success,1051.068,2.536,2026-11-05T04:48:53Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_required_user,timeout,1051.068,150.029,2026-11-05T04:51:23Z,50249593.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dtz-identity-auth-2.2.7,test::test_token_lifetime_limit,success,1051.068,2.493,2026-11-05T04:51:25Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::unauthorized_on_empty_header,timeout,1051.068,150.025,2026-11-05T04:53:55Z,50249593.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dtz-identity-auth-2.2.7,test::verify_broken_token,success,1051.068,41.586,2026-11-05T04:54:37Z,50249593.0,,
+experimental-bsan,dtz-identity-auth-2.2.7,test::verify_token,success,1051.068,41.184,2026-11-05T04:55:18Z,50249593.0,,

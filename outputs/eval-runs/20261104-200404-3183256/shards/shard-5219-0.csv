@@ -1,0 +1,43 @@
+experimental-bsan,rpm-0.15.1,parse_externally_signed_rpm_and_verify,timeout,378.501,150.019,2026-11-05T03:17:50Z,50244841.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.15.1,rpm::filecaps::tests::test_validate_caps_text,success,378.501,5.788,2026-11-05T03:17:56Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::filecaps::tests::test_validate_capset,success,378.501,5.744,2026-11-05T03:18:02Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::filecaps::tests::test_validate_suffix,success,378.501,5.710,2026-11-05T03:18:07Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::headers::header::test::test_region_tag,success,378.501,5.745,2026-11-05T03:18:13Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::headers::signature_builder::test::signature_builder_digest_only,success,378.501,5.740,2026-11-05T03:18:19Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::headers::signature_builder::test::signature_builder_w_digest_and_eddsa_signature,success,378.501,5.748,2026-11-05T03:18:25Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::headers::signature_builder::test::signature_builder_w_digest_and_rsa_signature,success,378.501,5.826,2026-11-05T03:18:31Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::headers::signature_builder::test::signature_header_build,success,378.501,5.743,2026-11-05T03:18:36Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::headers::types::test::test_file_mode,success,378.501,5.724,2026-11-05T03:18:42Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::headers::types::test::test_scriptlet_builder,success,378.501,5.709,2026-11-05T03:18:48Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::headers::types::test::test_verify_capabilities_invalid,success,378.501,5.715,2026-11-05T03:18:53Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::headers::types::test::test_verify_capabilities_valid,success,378.501,5.753,2026-11-05T03:18:59Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::signature::pgp::test::parse_asc,success,378.501,12.252,2026-11-05T03:19:11Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,rpm::signature::pgp::test::sign_verify_roundtrip,timeout,378.501,150.014,2026-11-05T03:21:42Z,50244841.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.15.1,rpm::signature::pgp::test::static_parse_rpm_sign_signature,test_failed,378.501,1.742,2026-11-05T03:21:43Z,50244841.0,panic,"thread 'rpm::signature::pgp::test::static_parse_rpm_sign_signature' (45577) panicked at src/rpm/signature/pgp.rs:474:10: Should be able to dump extracted signature: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,rpm-0.15.1,rpm::signature::pgp::test::verify_pgp_crate,timeout,378.501,150.014,2026-11-05T03:24:13Z,50244841.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.15.1,rpm::signature::pgp::test::verify_pgp_crate2,timeout,378.501,150.014,2026-11-05T03:26:43Z,50244841.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.15.1,rpm::signature::pgp::test::verify_subkeys_match,success,378.501,12.662,2026-11-05T03:26:56Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,test_package_segment_boundaries,timeout,378.501,150.016,2026-11-05T03:29:26Z,50244841.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.15.1,test_rpm_file_signatures,success,378.501,6.531,2026-11-05T03:29:33Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,test_rpm_file_signatures_resign,timeout,378.501,150.015,2026-11-05T03:32:03Z,50244841.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.15.1,test_verify_package_with_wrong_key_type,timeout,378.501,150.014,2026-11-05T03:34:33Z,50244841.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.15.1,test_verify_unsigned_package,success,378.501,11.624,2026-11-05T03:34:44Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,tests::test_no_rpm_files,success,378.501,6.254,2026-11-05T03:34:51Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,tests::test_rpm_builder,success,378.501,11.654,2026-11-05T03:35:02Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,tests::test_rpm_header,timeout,378.501,150.026,2026-11-05T03:37:32Z,50244841.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rpm-0.15.1,tests::test_rpm_no_symlinks,success,378.501,6.544,2026-11-05T03:37:39Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_compare_version_string,success,378.501,5.817,2026-11-05T03:37:45Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_evr_ord,success,378.501,5.781,2026-11-05T03:37:50Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_evr_parse,success,378.501,5.743,2026-11-05T03:37:56Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_evr_parse_edge_cases,success,378.501,5.728,2026-11-05T03:38:02Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_evr_tostr,success,378.501,5.721,2026-11-05T03:38:08Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_nevra_ord,success,378.501,5.754,2026-11-05T03:38:13Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_nevra_parse,success,378.501,5.745,2026-11-05T03:38:19Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_nevra_parse_edge_cases,success,378.501,5.707,2026-11-05T03:38:25Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_nevra_tostr,success,378.501,5.735,2026-11-05T03:38:31Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_non_alphanumeric_equivalence,success,378.501,5.741,2026-11-05T03:38:36Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_non_ascii_character_equivalence,success,378.501,5.727,2026-11-05T03:38:42Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_non_intuitive_comparison_behavior,success,378.501,5.726,2026-11-05T03:38:48Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_rpm_evr_compare,success,378.501,5.745,2026-11-05T03:38:54Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_version_comparison_numeric_handling,success,378.501,5.740,2026-11-05T03:38:59Z,50244841.0,,
+experimental-bsan,rpm-0.15.1,version::test::test_version_comparison_tilde_and_caret,success,378.501,5.784,2026-11-05T03:39:05Z,50244841.0,,

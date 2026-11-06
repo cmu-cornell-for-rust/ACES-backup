@@ -1,0 +1,17 @@
+experimental-bsan,actix-session-0.10.1,clear_session_after_renew,success,487.332,6.029,2026-11-05T05:19:17Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,cookie_storage,success,487.332,6.443,2026-11-05T05:19:23Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,errors_are_opaque,success,487.332,6.282,2026-11-05T05:19:29Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,get_session,success,487.332,5.996,2026-11-05T05:19:35Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,get_session_from_request_head,success,487.332,6.037,2026-11-05T05:19:41Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,insert_session_after_renew,success,487.332,6.016,2026-11-05T05:19:47Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,purge_session,success,487.332,6.014,2026-11-05T05:19:53Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,remove_session_after_renew,success,487.332,6.020,2026-11-05T05:19:59Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,renew_session,success,487.332,6.006,2026-11-05T05:20:05Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,session,success,487.332,6.008,2026-11-05T05:20:11Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,session_entries,success,487.332,5.989,2026-11-05T05:20:17Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,storage::cookie::tests::loading_a_random_session_key_returns_deserialization_error,success,487.332,6.028,2026-11-05T05:20:24Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,storage::cookie::tests::test_session_workflow,success,487.332,37.046,2026-11-05T05:21:01Z,50251553.0,,
+experimental-bsan,actix-session-0.10.1,storage::redis_rs::tests::loading_a_missing_session_returns_none,test_failed,487.332,6.621,2026-11-05T05:21:07Z,50251553.0,panic,"thread 'storage::redis_rs::tests::loading_a_missing_session_returns_none' (96801) panicked at src/storage/redis_rs.rs:415:18: called `Result::unwrap()` on an `Err` value: Connection refused (os error 111)"
+experimental-bsan,actix-session-0.10.1,storage::redis_rs::tests::loading_an_invalid_session_state_returns_deserialization_error,test_failed,487.332,4.849,2026-11-05T05:21:12Z,50251553.0,panic,"thread 'storage::redis_rs::tests::loading_an_invalid_session_state_returns_deserialization_error' (96961) panicked at src/storage/redis_rs.rs:415:18: called `Result::unwrap()` on an `Err` value: Connection refused (os error 111)"
+experimental-bsan,actix-session-0.10.1,storage::redis_rs::tests::test_session_workflow,test_failed,487.332,8.454,2026-11-05T05:21:21Z,50251553.0,panic,"thread 'storage::redis_rs::tests::test_session_workflow' (97067) panicked at src/storage/redis_rs.rs:415:18: called `Result::unwrap()` on an `Err` value: Connection refused (os error 111)"
+experimental-bsan,actix-session-0.10.1,storage::redis_rs::tests::updating_of_an_expired_state_is_handled_gracefully,test_failed,487.332,5.687,2026-11-05T05:21:26Z,50251553.0,panic,"thread 'storage::redis_rs::tests::updating_of_an_expired_state_is_handled_gracefully' (97201) panicked at src/storage/redis_rs.rs:415:18: called `Result::unwrap()` on an `Err` value: Connection refused (os error 111)"

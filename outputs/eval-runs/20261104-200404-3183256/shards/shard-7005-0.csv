@@ -1,0 +1,30 @@
+experimental-bsan,egui_tiles-0.18.0,a_hidden_pane_leaves_no_active_tiles_behind,success,750.680,72.781,2026-11-05T04:08:40Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,behavior::test_num_columns_heuristic,success,750.680,8.500,2026-11-05T04:08:49Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,container::grid::tests::test_grid_with_chaos_monkey,timeout,750.680,150.017,2026-11-05T04:11:19Z,50247883.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,egui_tiles-0.18.0,container::tabs::tests::simplify_lets_go_of_a_tab_it_removes,success,750.680,8.500,2026-11-05T04:11:27Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,ctrl_shift_tab_cycles_backward_and_wraps,timeout,750.680,150.023,2026-11-05T04:13:57Z,50247883.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,egui_tiles-0.18.0,ctrl_tab_cycles_forward_and_wraps,timeout,750.680,150.020,2026-11-05T04:16:27Z,50247883.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,egui_tiles-0.18.0,ctrl_tab_does_nothing_when_the_pointer_is_elsewhere,timeout,750.680,150.017,2026-11-05T04:18:57Z,50247883.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,egui_tiles-0.18.0,cycling_skips_hidden_tabs,success,750.680,145.702,2026-11-05T04:21:23Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,dropping_a_pane_never_loses_it,timeout,750.680,150.022,2026-11-05T04:23:53Z,50247883.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,egui_tiles-0.18.0,hiding_a_pane_gives_its_space_to_its_sibling,success,750.680,94.312,2026-11-05T04:25:28Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,many_drags_in_a_row_never_lose_a_pane,timeout,750.680,150.020,2026-11-05T04:27:58Z,50247883.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,egui_tiles-0.18.0,plain_tab_leaves_the_active_tab_alone,success,750.680,120.509,2026-11-05T04:29:58Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,test_serialize_json,success,750.680,9.078,2026-11-05T04:30:07Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,test_serialize_ron,success,750.680,22.026,2026-11-05T04:30:29Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tile_accessibility_nodes_stay_under_parent_ui,success,750.680,36.131,2026-11-05T04:31:05Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tiles::tests::a_container_with_nothing_to_show_is_not_laid_out,success,750.680,8.506,2026-11-05T04:31:14Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tiles::tests::an_empty_container_keeps_its_space,success,750.680,8.509,2026-11-05T04:31:22Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tiles::tests::auto_adding_tabs_keeps_the_pane_s_id,success,750.680,8.564,2026-11-05T04:31:31Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tiles::tests::auto_adding_tabs_to_a_root_pane_makes_the_tabs_the_root,success,750.680,8.562,2026-11-05T04:31:40Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tiles::tests::flattening_tabs_in_tabs_keeps_the_container_s_id,success,750.680,8.528,2026-11-05T04:31:48Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tiles::tests::flattening_tabs_in_tabs_keeps_the_open_tab,success,750.680,8.517,2026-11-05T04:31:57Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tiles::tests::hiding_the_only_pane_hides_every_container_above_it,success,750.680,8.497,2026-11-05T04:32:05Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tiles::tests::inserting_into_a_matching_container_creates_nothing,success,750.680,8.527,2026-11-05T04:32:14Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tiles::tests::the_wrapper_inherits_being_the_active_tab,success,750.680,8.543,2026-11-05T04:32:22Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tiles::tests::the_wrapper_inherits_the_wrapped_tile_s_share,success,750.680,8.613,2026-11-05T04:32:31Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tiles::tests::the_wrapper_takes_the_wrapped_tile_s_grid_cell,success,750.680,8.643,2026-11-05T04:32:40Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tiles::tests::wrapping_a_tile_keeps_its_id,success,750.680,8.641,2026-11-05T04:32:48Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tree::tests::gc_clears_a_root_it_had_to_drop,success,750.680,8.583,2026-11-05T04:32:57Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tree::tests::gc_drops_the_second_reference_to_a_shared_tile_and_not_the_tile,success,750.680,8.571,2026-11-05T04:33:05Z,50247883.0,,
+experimental-bsan,egui_tiles-0.18.0,tree::tests::wrapping_the_root_makes_the_new_container_the_root,success,750.680,8.603,2026-11-05T04:33:14Z,50247883.0,,

@@ -1,0 +1,34 @@
+experimental-bsan,croaring-2.1.1,bitmap_cardinality_roundtrip,timeout,225.071,150.018,2026-11-05T03:48:50Z,50247097.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,croaring-2.1.1,cursor_return_from_the_edge,success,225.071,4.605,2026-11-05T03:48:55Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,empty_cursor,success,225.071,4.636,2026-11-05T03:48:59Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,empty_intersect_with_range,success,225.071,4.677,2026-11-05T03:49:04Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,empty_reset_iterator,success,225.071,4.628,2026-11-05T03:49:09Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,frozen_bitmap_portable_roundtrip,test_failed,225.071,4.268,2026-11-05T03:49:13Z,50247097.0,crash,"test frozen_bitmap_portable_roundtrip ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,croaring-2.1.1,frozen_bitmap_roundtrip,timeout,225.071,150.017,2026-11-05T03:51:43Z,50247097.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,croaring-2.1.1,native_bitmap_roundtrip,timeout,225.071,150.015,2026-11-05T03:54:13Z,50247097.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,croaring-2.1.1,serialize_into_existing_slice_presized_aligned_frozen,success,225.071,4.623,2026-11-05T03:54:18Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,serialize_into_existing_vec_frozen,success,225.071,4.635,2026-11-05T03:54:22Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,serialize_into_existing_vec_native,success,225.071,4.621,2026-11-05T03:54:27Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,serialize_into_existing_vec_norealloc_frozen,success,225.071,4.687,2026-11-05T03:54:32Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,serialize_into_existing_vec_portable,success,225.071,4.658,2026-11-05T03:54:36Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,smoke1,success,225.071,4.619,2026-11-05T03:54:41Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,smoke2,success,225.071,4.639,2026-11-05T03:54:46Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,test_bitmap_serialization_roundtrip,timeout,225.071,150.016,2026-11-05T03:57:16Z,50247097.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,croaring-2.1.1,test_frozen_view,success,225.071,29.342,2026-11-05T03:57:45Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,test_native,success,225.071,28.535,2026-11-05T03:58:13Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,test_portable_deserialize,success,225.071,36.119,2026-11-05T03:58:50Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,test_portable_view,test_failed,225.071,27.139,2026-11-05T03:59:17Z,50247097.0,crash,"test test_portable_view ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,croaring-2.1.1,test_r64_contains_max,success,225.071,4.663,2026-11-05T03:59:21Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,test_r64_cursor_reset,success,225.071,4.615,2026-11-05T03:59:26Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,test_treemap_deserialize_cpp,success,225.071,5.075,2026-11-05T03:59:31Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,test_treemap_deserialize_jvm,success,225.071,5.057,2026-11-05T03:59:36Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,test_treemap_jvm_serialization_roundtrip,timeout,225.071,150.021,2026-11-05T04:02:06Z,50247097.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,croaring-2.1.1,test_treemap_max_andnot_empty,success,225.071,4.692,2026-11-05T04:02:11Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,test_treemap_native_serialization_roundtrip,timeout,225.071,150.022,2026-11-05T04:04:41Z,50247097.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,croaring-2.1.1,treemap::serialization::tests::smoke_frozen,success,225.071,4.711,2026-11-05T04:04:46Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,treemap::serialization::tests::smoke_jvm_legacy,success,225.071,4.666,2026-11-05T04:04:50Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,treemap::serialization::tests::smoke_native,success,225.071,4.659,2026-11-05T04:04:55Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,treemap::serialization::tests::smoke_portable,success,225.071,4.728,2026-11-05T04:05:00Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,treemap_cardinality_roundtrip,timeout,225.071,150.016,2026-11-05T04:07:30Z,50247097.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,croaring-2.1.1,treemap_remove_big_range,success,225.071,4.624,2026-11-05T04:07:35Z,50247097.0,,
+experimental-bsan,croaring-2.1.1,treemap_run_optimized,success,225.071,4.661,2026-11-05T04:07:39Z,50247097.0,,

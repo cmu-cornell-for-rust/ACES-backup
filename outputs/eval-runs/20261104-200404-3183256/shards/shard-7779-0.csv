@@ -1,0 +1,26 @@
+experimental-bsan,symspell-0.5.2,string_strategy::tests::ascii_at_correct,success,20.635,1.488,2026-11-05T04:14:29Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,string_strategy::tests::ascii_at_negative,success,20.635,1.482,2026-11-05T04:14:31Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,string_strategy::tests::ascii_at_over_limit,success,20.635,1.487,2026-11-05T04:14:32Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,string_strategy::tests::ascii_remove,success,20.635,1.496,2026-11-05T04:14:34Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,string_strategy::tests::ascii_slice_prefix,success,20.635,1.495,2026-11-05T04:14:35Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,string_strategy::tests::ascii_slice_suffix,success,20.635,1.485,2026-11-05T04:14:37Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,string_strategy::tests::prepare,success,20.635,1.487,2026-11-05T04:14:38Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,string_strategy::tests::unicode_at_multibyte,success,20.635,1.505,2026-11-05T04:14:40Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,string_strategy::tests::unicode_len_multibyte,success,20.635,1.489,2026-11-05T04:14:41Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,string_strategy::tests::unicode_remove_multibyte,success,20.635,1.497,2026-11-05T04:14:43Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,string_strategy::tests::unicode_slice_multibyte,success,20.635,1.493,2026-11-05T04:14:44Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,string_strategy::tests::unicode_suffix_multibyte,success,20.635,1.497,2026-11-05T04:14:46Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,string_strategy::tests::unicodei_strategy,success,20.635,1.495,2026-11-05T04:14:47Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,symspell::tests::test_load_bigram_dictionary_line_bad_count,success,20.635,1.486,2026-11-05T04:14:49Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,symspell::tests::test_load_bigram_dictionary_missing_file,success,20.635,1.499,2026-11-05T04:14:50Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,symspell::tests::test_load_dictionary_line_bad_count,success,20.635,1.491,2026-11-05T04:14:52Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,symspell::tests::test_load_dictionary_missing_file,success,20.635,1.494,2026-11-05T04:14:53Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,symspell::tests::test_lookup_all,test_failed,20.635,1.554,2026-11-05T04:14:55Z,50248883.0,panic,"thread 'symspell::tests::test_lookup_all' (38118) panicked at src/symspell.rs:1034:9: assertion failed: results.len() > 1"
+experimental-bsan,symspell-0.5.2,symspell::tests::test_lookup_closest,test_failed,20.635,1.552,2026-11-05T04:14:56Z,50248883.0,panic,"thread 'symspell::tests::test_lookup_closest' (38340) panicked at src/symspell.rs:1046:9: assertion failed: !results.is_empty()"
+experimental-bsan,symspell-0.5.2,symspell::tests::test_lookup_compound,test_failed,20.635,1.863,2026-11-05T04:14:58Z,50248883.0,panic,"thread 'symspell::tests::test_lookup_compound' (38604) panicked at src/symspell.rs:939:9: assertion `left == right` failed"
+experimental-bsan,symspell-0.5.2,symspell::tests::test_lookup_compound_overflow,success,20.635,1.945,2026-11-05T04:15:00Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,symspell::tests::test_lookup_compound_with_bigrams,test_failed,20.635,1.815,2026-11-05T04:15:02Z,50248883.0,panic,"thread 'symspell::tests::test_lookup_compound_with_bigrams' (39062) panicked at src/symspell.rs:1007:9: assertion `left == right` failed"
+experimental-bsan,symspell-0.5.2,symspell::tests::test_lookup_empty_input,test_failed,20.635,1.539,2026-11-05T04:15:04Z,50248883.0,panic,"thread 'symspell::tests::test_lookup_empty_input' (39242) panicked at src/symspell.rs:1068:9: assertion failed: !results.is_empty()"
+experimental-bsan,symspell-0.5.2,symspell::tests::test_lookup_no_match,success,20.635,1.491,2026-11-05T04:15:05Z,50248883.0,,
+experimental-bsan,symspell-0.5.2,symspell::tests::test_lookup_top,test_failed,20.635,1.553,2026-11-05T04:15:07Z,50248883.0,panic,"thread 'symspell::tests::test_lookup_top' (39665) panicked at src/symspell.rs:1018:9: assertion `left == right` failed"
+experimental-bsan,symspell-0.5.2,symspell::tests::test_word_segmentation,test_failed,20.635,1.562,2026-11-05T04:15:08Z,50248883.0,panic,"thread 'symspell::tests::test_word_segmentation' (39781) panicked at src/symspell.rs:1113:9: assertion `left == right` failed"

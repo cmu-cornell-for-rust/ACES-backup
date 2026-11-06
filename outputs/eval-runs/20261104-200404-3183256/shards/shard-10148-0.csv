@@ -1,0 +1,16 @@
+experimental-bsan,lib_tsalign-7.0.2,a_star_aligner::alignment_result::alignment::template_switch_specifics::tests::move_template_switch_end_backwards,success,509.220,2.464,2026-11-05T05:19:39Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,a_star_aligner::alignment_result::alignment::template_switch_specifics::tests::move_template_switch_end_forwards,success,509.220,1.818,2026-11-05T05:19:41Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,a_star_aligner::alignment_result::alignment::template_switch_specifics::tests::move_template_switch_start_backwards,success,509.220,1.787,2026-11-05T05:19:43Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,a_star_aligner::alignment_result::alignment::template_switch_specifics::tests::move_template_switch_start_forwards,success,509.220,1.788,2026-11-05T05:19:45Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,a_star_aligner::configurable_a_star_align::tests::test_193,timeout,509.220,150.032,2026-11-05T05:22:15Z,50252132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lib_tsalign-7.0.2,a_star_aligner::configurable_a_star_align::tests::test_panic,timeout,509.220,150.020,2026-11-05T05:24:45Z,50252132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lib_tsalign-7.0.2,a_star_aligner::template_switch_distance::strategies::allow_ts_14_out_of_range::tests::new,success,509.220,1.562,2026-11-05T05:24:47Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,a_star_aligner::tests::match_overtakes_gap,success,509.220,1.786,2026-11-05T05:24:48Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,alignment_matrix::index::iterators::tests::alignment_matrix_inner_iterator,success,509.220,1.541,2026-11-05T05:24:50Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,alignment_matrix::index::iterators::tests::alignment_matrix_inner_iterator_zero,success,509.220,1.556,2026-11-05T05:24:51Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,alignment_matrix::tests::test_simple_alignments,success,509.220,2.281,2026-11-05T05:24:54Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,config::io::tests::display,success,509.220,8.806,2026-11-05T05:25:03Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,costs::cost_function::io::tests::simple_example,success,509.220,1.575,2026-11-05T05:25:04Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,costs::cost_function::tests::min,success,509.220,1.968,2026-11-05T05:25:06Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,costs::gap_affine::io::tests::simple_example,success,509.220,2.164,2026-11-05T05:25:08Z,50252132.0,,
+experimental-bsan,lib_tsalign-7.0.2,tests::test_tsnax_disc1_473,test_failed,509.220,1.630,2026-11-05T05:25:10Z,50252132.0,panic,"thread 'tests::test_tsnax_disc1_473' (74299) panicked at src/tests.rs:43:61: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

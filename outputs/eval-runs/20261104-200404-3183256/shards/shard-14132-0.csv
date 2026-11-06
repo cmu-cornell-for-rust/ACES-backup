@@ -1,0 +1,7 @@
+experimental-bsan,dssim-core-3.2.10,blur::blur_1x1,success,51.828,1.543,2026-11-05T06:51:16Z,50257746.0,,
+experimental-bsan,dssim-core-3.2.10,blur::blur_one,success,51.828,1.562,2026-11-05T06:51:17Z,50257746.0,,
+experimental-bsan,dssim-core-3.2.10,blur::blur_one_stride,success,51.828,1.586,2026-11-05T06:51:19Z,50257746.0,,
+experimental-bsan,dssim-core-3.2.10,blur::blur_two,success,51.828,1.543,2026-11-05T06:51:20Z,50257746.0,,
+experimental-bsan,dssim-core-3.2.10,blur::blur_zero,success,51.828,1.529,2026-11-05T06:51:22Z,50257746.0,,
+experimental-bsan,dssim-core-3.2.10,dssim::png_compare,test_failed,51.828,1.592,2026-11-05T06:51:23Z,50257746.0,panic,"thread 'dssim::png_compare' (26591) panicked at src/dssim.rs:427:65: called `Result::unwrap()` on an `Err` value: failed to open file for reading (78)"
+experimental-bsan,dssim-core-3.2.10,dssim::poison,success,51.828,2.478,2026-11-05T06:51:26Z,50257746.0,,

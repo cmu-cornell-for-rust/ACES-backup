@@ -1,0 +1,12 @@
+experimental-bsan,socket-server-mocker-0.5.0,http_get,test_failed,344.518,5.389,2026-11-05T05:55:23Z,50254406.0,panic,"thread 'http_get' (97021) panicked at tests/http_reqwest_api_mock.rs:39:50: called `Option::unwrap()` on a `None` value"
+experimental-bsan,socket-server-mocker-0.5.0,postgres_insert_mock,test_failed,344.518,6.667,2026-11-05T05:55:30Z,50254406.0,panic,"thread 'postgres_insert_mock' (98222) panicked at tests/postgres_mock.rs:78:10: called `Result::unwrap()` on an `Err` value: Error { kind: Closed, cause: None }"
+experimental-bsan,socket-server-mocker-0.5.0,postgres_select_mock,test_failed,344.518,6.600,2026-11-05T05:55:36Z,50254406.0,panic,"thread 'postgres_select_mock' (99834) panicked at tests/postgres_mock.rs:139:62: called `Result::unwrap()` on an `Err` value: Error { kind: Closed, cause: None }"
+experimental-bsan,socket-server-mocker-0.5.0,simple_receiving_message_test,success,344.518,13.466,2026-11-05T05:55:50Z,50254406.0,,
+experimental-bsan,socket-server-mocker-0.5.0,simple_sending_message_test_random_port,success,344.518,13.631,2026-11-05T05:56:03Z,50254406.0,,
+experimental-bsan,socket-server-mocker-0.5.0,test_dns_mock,test_failed,344.518,8.526,2026-11-05T05:56:12Z,50254406.0,panic,"thread '<unnamed>' (100472) panicked at tests/dns_mock.rs:25:47: called `Option::unwrap()` on a `None` value"
+experimental-bsan,socket-server-mocker-0.5.0,test_receive_timeout,success,344.518,14.156,2026-11-05T05:56:26Z,50254406.0,,
+experimental-bsan,socket-server-mocker-0.5.0,test_simple_tcp,success,344.518,13.694,2026-11-05T05:56:40Z,50254406.0,,
+experimental-bsan,socket-server-mocker-0.5.0,test_simple_udp,success,344.518,13.835,2026-11-05T05:56:54Z,50254406.0,,
+experimental-bsan,socket-server-mocker-0.5.0,test_smtp_mock,test_failed,344.518,16.013,2026-11-05T05:57:10Z,50254406.0,panic,"thread 'test_smtp_mock' (102086) panicked at tests/smtp_mock.rs:54:33: called `Result::unwrap()` on an `Err` value: lettre::transport::smtp::Error { kind: Network, source: Os { code: 32, kind: BrokenPipe, message: ""Broken pipe"" } }"
+experimental-bsan,socket-server-mocker-0.5.0,test_try_listen_twice_on_same_port,success,344.518,13.631,2026-11-05T05:57:23Z,50254406.0,,
+experimental-bsan,socket-server-mocker-0.5.0,test_try_receive_before_send,success,344.518,13.584,2026-11-05T05:57:37Z,50254406.0,,

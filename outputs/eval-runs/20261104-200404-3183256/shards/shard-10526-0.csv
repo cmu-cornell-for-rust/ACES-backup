@@ -1,0 +1,15 @@
+experimental-bsan,pi_path_finding-0.6.3,base::test_angle::test,success,146.660,1.565,2026-11-05T05:23:30Z,50252653.0,,
+experimental-bsan,pi_path_finding-0.6.3,base::test_angle::test1,success,146.660,1.565,2026-11-05T05:23:32Z,50252653.0,,
+experimental-bsan,pi_path_finding-0.6.3,nav_mesh::navmesh_astar::navmesh_hello,test_failed,146.660,1.707,2026-11-05T05:23:33Z,50252653.0,panic,"thread 'nav_mesh::navmesh_astar::navmesh_hello' (10294) panicked at src/nav_mesh.rs:71:48: index out of bounds: the len is 15 but the index is 114"
+experimental-bsan,pi_path_finding-0.6.3,nav_mesh::navmesh_astar::navmesh_simple,test_failed,146.660,1.800,2026-11-05T05:23:35Z,50252653.0,panic,"thread 'nav_mesh::navmesh_astar::navmesh_simple' (10471) panicked at src/nav_mesh.rs:71:48: index out of bounds: the len is 28 but the index is 114"
+experimental-bsan,pi_path_finding-0.6.3,nav_mesh::navmesh_astar::navmesh_testdata,test_failed,146.660,3.365,2026-11-05T05:23:39Z,50252653.0,panic,"thread 'nav_mesh::navmesh_astar::navmesh_testdata' (10635) panicked at src/nav_mesh.rs:753:14: called `Result::unwrap()` on an `Err` value: ""AStarResult::NotFound"""
+experimental-bsan,pi_path_finding-0.6.3,nav_mesh::navmesh_astar::navmesh_testdata2,test_failed,146.660,3.355,2026-11-05T05:23:42Z,50252653.0,panic,"thread 'nav_mesh::navmesh_astar::navmesh_testdata2' (11845) panicked at src/nav_mesh.rs:1308:14: called `Result::unwrap()` on an `Err` value: ""AStarResult::NotFound"""
+experimental-bsan,pi_path_finding-0.6.3,tile_map::test10,success,146.660,2.282,2026-11-05T05:23:44Z,50252653.0,,
+experimental-bsan,pi_path_finding-0.6.3,tile_map::test_tilemap::test1,success,146.660,1.772,2026-11-05T05:23:46Z,50252653.0,,
+experimental-bsan,pi_path_finding-0.6.3,tile_map::test_tilemap::test2,success,146.660,2.096,2026-11-05T05:23:48Z,50252653.0,,
+experimental-bsan,pi_path_finding-0.6.3,tile_map::test_tilemap::test22,success,146.660,2.098,2026-11-05T05:23:50Z,50252653.0,,
+experimental-bsan,pi_path_finding-0.6.3,tile_map::test_tilemap::test3,timeout,146.660,150.018,2026-11-05T05:26:20Z,50252653.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,pi_path_finding-0.6.3,tile_map::test_tilemap::test4,success,146.660,2.184,2026-11-05T05:26:22Z,50252653.0,,
+experimental-bsan,pi_path_finding-0.6.3,tile_map::test_tilemap::test5,success,146.660,1.618,2026-11-05T05:26:24Z,50252653.0,,
+experimental-bsan,pi_path_finding-0.6.3,tile_map::test_tilemap::test6,success,146.660,1.862,2026-11-05T05:26:26Z,50252653.0,,
+experimental-bsan,pi_path_finding-0.6.3,tile_map::test_tilemap::test7,success,146.660,1.676,2026-11-05T05:26:28Z,50252653.0,,

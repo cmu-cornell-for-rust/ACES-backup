@@ -1,0 +1,48 @@
+experimental-bsan,wgsl_to_wgpu-0.19.0,bindgroup::tests::bind_group_data_consecutive_bind_groups,success,317.755,2.183,2026-11-05T03:09:31Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,bindgroup::tests::bind_group_data_first_group_not_zero,success,317.755,1.942,2026-11-05T03:09:33Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,bindgroup::tests::bind_group_data_non_consecutive_bind_groups,success,317.755,2.161,2026-11-05T03:09:35Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,bindgroup::tests::bind_groups_module_compute,success,317.755,22.802,2026-11-05T03:09:58Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,bindgroup::tests::bind_groups_module_fragment,success,317.755,17.727,2026-11-05T03:10:16Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,bindgroup::tests::bind_groups_module_vertex,success,317.755,17.260,2026-11-05T03:10:33Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,bindgroup::tests::bind_groups_module_vertex_fragment,success,317.755,34.104,2026-11-05T03:11:07Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,consts::tests::write_global_constants,success,317.755,3.075,2026-11-05T03:11:10Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,consts::tests::write_pipeline_overrideable_constants_empty,success,317.755,1.889,2026-11-05T03:11:12Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_all_structs_bytemuck,success,317.755,30.916,2026-11-05T03:11:43Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_all_structs_bytemuck_f64_vec,success,317.755,2.346,2026-11-05T03:11:46Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_all_structs_bytemuck_input_layout_validation,success,317.755,17.398,2026-11-05T03:12:03Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_all_structs_bytemuck_skip_input_layout_validation,success,317.755,2.363,2026-11-05T03:12:05Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_all_structs_encase,success,317.755,20.645,2026-11-05T03:12:26Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_all_structs_glam,test_failed,317.755,28.153,2026-11-05T03:12:54Z,50244190.0,crash,"test structs::tests::write_all_structs_glam ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_all_structs_nalgebra,test_failed,317.755,32.265,2026-11-05T03:13:26Z,50244190.0,crash,"test structs::tests::write_all_structs_nalgebra ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_all_structs_rust,test_failed,317.755,28.192,2026-11-05T03:13:55Z,50244190.0,crash,"test structs::tests::write_all_structs_rust ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_all_structs_serde_encase_bytemuck,success,317.755,17.330,2026-11-05T03:14:12Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_all_structs_skip_stage_outputs,success,317.755,2.445,2026-11-05T03:14:14Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_runtime_sized_array,success,317.755,2.252,2026-11-05T03:14:17Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_runtime_sized_array_bytemuck_host_shareable,success,317.755,2.168,2026-11-05T03:14:19Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_runtime_sized_array_bytemuck_vertex,success,317.755,2.235,2026-11-05T03:14:21Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_runtime_sized_array_no_encase,success,317.755,2.113,2026-11-05T03:14:23Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,structs::tests::write_runtime_sized_array_not_last_field,success,317.755,2.185,2026-11-05T03:14:25Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::add_duplicate_module_different_paths,success,317.755,27.001,2026-11-05T03:14:52Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::add_single_root_module,success,317.755,21.710,2026-11-05T03:15:14Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::create_shader_module_compute_overrides,test_failed,317.755,17.206,2026-11-05T03:15:31Z,50244190.0,crash,"test test::create_shader_module_compute_overrides ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::create_shader_module_consecutive_bind_groups,test_failed,317.755,36.074,2026-11-05T03:16:08Z,50244190.0,crash,"test test::create_shader_module_consecutive_bind_groups ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::create_shader_module_immediate_data,test_failed,317.755,7.814,2026-11-05T03:16:15Z,50244190.0,crash,"test test::create_shader_module_immediate_data ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::create_shader_module_multiple_outputs,test_failed,317.755,7.848,2026-11-05T03:16:23Z,50244190.0,crash,"test test::create_shader_module_multiple_outputs ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::create_shader_module_non_consecutive_bind_groups,success,317.755,2.175,2026-11-05T03:16:25Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::create_shader_module_overrides,test_failed,317.755,13.078,2026-11-05T03:16:39Z,50244190.0,crash,"test test::create_shader_module_overrides ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::create_shader_module_parse_error,success,317.755,1.932,2026-11-05T03:16:40Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::create_shader_module_repeated_bindings,success,317.755,2.151,2026-11-05T03:16:43Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::create_shader_module_semantic_error,success,317.755,1.932,2026-11-05T03:16:45Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::create_shader_modules_source,test_failed,317.755,7.493,2026-11-05T03:16:52Z,50244190.0,crash,"test test::create_shader_modules_source ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::create_shader_modules_source_rustfmt,success,317.755,15.832,2026-11-05T03:17:08Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::create_shader_multiple_entries,test_failed,317.755,57.184,2026-11-05T03:18:05Z,50244190.0,crash,"test test::create_shader_multiple_entries ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::mesh_shader,success,317.755,24.310,2026-11-05T03:18:29Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::shader_stage_collection,success,317.755,17.257,2026-11-05T03:18:47Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::single_root_module,success,317.755,21.385,2026-11-05T03:19:08Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::vertex_entries,success,317.755,19.081,2026-11-05T03:19:27Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::write_vertex_module_empty,success,317.755,1.848,2026-11-05T03:19:29Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::write_vertex_module_single_input_float16,success,317.755,16.055,2026-11-05T03:19:45Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::write_vertex_module_single_input_float32,success,317.755,16.347,2026-11-05T03:20:01Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::write_vertex_module_single_input_float64,success,317.755,16.289,2026-11-05T03:20:18Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::write_vertex_module_single_input_sint32,success,317.755,16.617,2026-11-05T03:20:34Z,50244190.0,,
+experimental-bsan,wgsl_to_wgpu-0.19.0,test::write_vertex_module_single_input_uint32,success,317.755,16.032,2026-11-05T03:20:50Z,50244190.0,,

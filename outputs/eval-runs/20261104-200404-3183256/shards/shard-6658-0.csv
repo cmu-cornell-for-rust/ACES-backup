@@ -1,0 +1,33 @@
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,case_convert::test::test_camel_case,success,111.703,3.110,2026-11-05T03:48:30Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,case_convert::test::test_snake_case,success,111.703,3.102,2026-11-05T03:48:33Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,parse_and_typecheck::test::parse_and_typecheck,test_failed,111.703,2.499,2026-11-05T03:48:36Z,50247407.0,panic,"thread 'parse_and_typecheck::test::parse_and_typecheck' (74462) panicked at src/protoc/command.rs:174:17: protoc binary not found: cannot find binary path"
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,path::test::test_fs_path_to_proto_path,success,111.703,3.088,2026-11-05T03:48:39Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,protobuf_abs_path::test::absolute_path_push_simple,success,111.703,3.110,2026-11-05T03:48:42Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,protobuf_abs_path::test::absolute_path_remove_prefix,success,111.703,3.115,2026-11-05T03:48:45Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,protobuf_abs_path::test::ends_with,success,111.703,3.104,2026-11-05T03:48:48Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,protobuf_abs_path::test::self_and_parents,success,111.703,3.119,2026-11-05T03:48:52Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,protobuf_rel_path::test::components,success,111.703,3.123,2026-11-05T03:48:55Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,protobuf_rel_path::test::parent,success,111.703,3.110,2026-11-05T03:48:58Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,protobuf_rel_path::test::self_and_parents,success,111.703,3.106,2026-11-05T03:49:01Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,protoc::command::test::version,test_failed,111.703,1.738,2026-11-05T03:49:03Z,50247407.0,panic,"thread 'protoc::command::test::version' (75667) panicked at src/protoc/command.rs:174:17: protoc binary not found: cannot find binary path"
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parse_and_typecheck::test::parse_and_typecheck_custom,success,111.703,3.282,2026-11-05T03:49:06Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parse_dependencies::test::parse_dependencies,success,111.703,3.243,2026-11-05T03:49:09Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_default_value_bytes,success,111.703,3.180,2026-11-05T03:49:12Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_default_value_int,success,111.703,3.152,2026-11-05T03:49:16Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_default_value_string,success,111.703,3.179,2026-11-05T03:49:19Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_enum,success,111.703,3.189,2026-11-05T03:49:22Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_field_default_value_float,success,111.703,3.155,2026-11-05T03:49:25Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_field_default_value_int,success,111.703,3.166,2026-11-05T03:49:28Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_group,success,111.703,3.335,2026-11-05T03:49:32Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_ignore,success,111.703,3.129,2026-11-05T03:49:35Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_import,success,111.703,3.285,2026-11-05T03:49:38Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_incorrect_file_descriptor,success,111.703,3.126,2026-11-05T03:49:41Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_map,success,111.703,3.132,2026-11-05T03:49:44Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_message,success,111.703,3.491,2026-11-05T03:49:48Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_nested_message,success,111.703,3.191,2026-11-05T03:49:51Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_oneof,success,111.703,3.244,2026-11-05T03:49:54Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_reserved,success,111.703,3.196,2026-11-05T03:49:57Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,pure::parser::test::test_syntax,success,111.703,3.044,2026-11-05T03:50:01Z,50247407.0,,
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,test_against_protobuf_protos::test,test_failed,111.703,1.664,2026-11-05T03:50:02Z,50247407.0,panic,"thread 'test_against_protobuf_protos::test' (78287) panicked at src/test_against_protobuf_protos.rs:12:5: assertion failed: path.exists()"
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,test_bundled_google_proto_files_consistent,test_failed,111.703,3.103,2026-11-05T03:50:05Z,50247407.0,panic,"thread 'test_bundled_google_proto_files_consistent' (78388) panicked at tests/bundled_proto_consistent.rs:16:5: assertion `left == right` failed: ../proto/google src/proto/google"
+experimental-bsan,protobuf-parse2-4.0.0-alpha.4,test_bundled_rustproto_proto_consistent,test_failed,111.703,3.109,2026-11-05T03:50:08Z,50247407.0,panic,"thread 'test_bundled_rustproto_proto_consistent' (78487) panicked at tests/bundled_proto_consistent.rs:17:5: assertion `left == right` failed: ../proto/rustproto.proto src/proto/rustproto.proto"

@@ -1,0 +1,3 @@
+experimental-bsan,rs-car-ipfs-0.4.0,pb::test::linux_tarxz_range_links,success,103.017,2.942,2026-11-05T08:29:20Z,50263012.0,,
+experimental-bsan,rs-car-ipfs-0.4.0,pb::test::parse_content,success,103.017,2.933,2026-11-05T08:29:23Z,50263012.0,,
+experimental-bsan,rs-car-ipfs-0.4.0,read_single_file_test_data,test_failed,103.017,13.896,2026-11-05T08:29:37Z,50263012.0,gc,"test read_single_file_test_data ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."

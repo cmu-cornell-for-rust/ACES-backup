@@ -1,0 +1,5 @@
+experimental-bsan,cog-rust-1.0.14,helpers::headers::tests::has_returns_true_if_key_exists,success,525.723,1.817,2026-11-05T07:30:37Z,50259659.0,,
+experimental-bsan,cog-rust-1.0.14,helpers::headers::tests::header_is_encoded_correctly,success,525.723,1.788,2026-11-05T07:30:39Z,50259659.0,,
+experimental-bsan,cog-rust-1.0.14,helpers::headers::tests::header_is_parsed_correctly,success,525.723,1.793,2026-11-05T07:30:41Z,50259659.0,,
+experimental-bsan,cog-rust-1.0.14,spec::tests::test_dataurl_serialize,test_failed,525.723,22.987,2026-11-05T07:31:04Z,50259659.0,panic,"thread 'spec::tests::test_dataurl_serialize' (12454) panicked at src/spec.rs:223:9: assertion failed: dataurl.starts_with(""data:image/png;base64,"")"
+experimental-bsan,cog-rust-1.0.14,spec::tests::test_path_deserialize,success,525.723,3.263,2026-11-05T07:31:07Z,50259659.0,,

@@ -1,0 +1,6 @@
+experimental-bsan,await-openai-0.23.0,entity::chat_completion_chunk::tests::serde,success,420.447,2.273,2026-11-05T07:10:38Z,50258540.0,,
+experimental-bsan,await-openai-0.23.0,entity::chat_completion_chunk::tests::test_done,success,420.447,1.711,2026-11-05T07:10:40Z,50258540.0,,
+experimental-bsan,await-openai-0.23.0,entity::chat_completion_chunk::tests::test_parser_for_content,success,420.447,2.363,2026-11-05T07:10:42Z,50258540.0,,
+experimental-bsan,await-openai-0.23.0,entity::chat_completion_chunk::tests::test_parser_for_tool_call,success,420.447,2.337,2026-11-05T07:10:45Z,50258540.0,,
+experimental-bsan,await-openai-0.23.0,entity::chat_completion_object::tests::serde,test_failed,420.447,2.535,2026-11-05T07:10:47Z,50258540.0,panic,"thread 'entity::chat_completion_object::tests::serde' (4638) panicked at src/entity/chat_completion_object.rs:663:13: assertion `left == right` failed: deserialize test failed: function"
+experimental-bsan,await-openai-0.23.0,entity::create_chat_completion::tests::serde,success,420.447,2.492,2026-11-05T07:10:50Z,50258540.0,,

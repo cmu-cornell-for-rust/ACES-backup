@@ -1,0 +1,26 @@
+experimental-bsan,typed-generational-arena-0.2.9,always_contains_inserted_elements,success,180.780,97.537,2026-11-05T04:19:03Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,can_get_live_value,success,180.780,19.805,2026-11-05T04:19:23Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,cannot_get_free_value,success,180.780,19.740,2026-11-05T04:19:43Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,cannot_get_other_generation_value,success,180.780,19.717,2026-11-05T04:20:03Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,capacity_and_reserve,success,180.780,19.916,2026-11-05T04:20:23Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,cargo_readme_up_to_date,test_failed,180.780,6.787,2026-11-05T04:20:29Z,50248892.0,panic,"thread 'cargo_readme_up_to_date' (54582) panicked at tests/readme.rs:27:9: Run `cargo readme > README.md` to update README.md"
+experimental-bsan,typed-generational-arena-0.2.9,clear,success,180.780,19.829,2026-11-05T04:20:49Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,drain,success,180.780,19.887,2026-11-05T04:21:09Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,from_iter_into_iter,timeout,180.780,150.015,2026-11-05T04:23:39Z,50248892.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,typed-generational-arena-0.2.9,get2_mut,success,180.780,19.921,2026-11-05T04:23:59Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,get2_mut_with_same_index_but_different_generation,success,180.780,19.845,2026-11-05T04:24:19Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,get_mut,success,180.780,19.887,2026-11-05T04:24:39Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,index_deleted_item,success,180.780,19.903,2026-11-05T04:24:59Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,insert_delete_insert,success,180.780,135.226,2026-11-05T04:27:14Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,insert_many_and_cause_doubling,success,180.780,25.503,2026-11-05T04:27:40Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,interp,timeout,180.780,150.015,2026-11-05T04:30:10Z,50248892.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,typed-generational-arena-0.2.9,into_iter,success,180.780,19.919,2026-11-05T04:30:30Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,iter,timeout,180.780,150.014,2026-11-05T04:33:00Z,50248892.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,typed-generational-arena-0.2.9,iter_mut,timeout,180.780,150.015,2026-11-05T04:35:30Z,50248892.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,typed-generational-arena-0.2.9,never_contains_deleted_elements,success,180.780,102.547,2026-11-05T04:37:12Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,out_of_bounds_get2_mut_with_index_from_other_arena,success,180.780,19.842,2026-11-05T04:37:32Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,out_of_bounds_get2_mut_with_index_from_other_slab,success,180.780,19.742,2026-11-05T04:37:52Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,out_of_bounds_get_with_index_from_other_arena,success,180.780,19.825,2026-11-05T04:38:12Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,out_of_bounds_get_with_index_from_other_slab,success,180.780,19.808,2026-11-05T04:38:31Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,out_of_bounds_remove_with_index_from_other_arena,success,180.780,19.835,2026-11-05T04:38:51Z,50248892.0,,
+experimental-bsan,typed-generational-arena-0.2.9,try_insert_when_full,success,180.780,19.885,2026-11-05T04:39:11Z,50248892.0,,

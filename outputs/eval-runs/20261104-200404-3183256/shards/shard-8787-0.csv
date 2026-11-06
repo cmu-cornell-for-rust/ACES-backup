@@ -1,0 +1,21 @@
+experimental-bsan,rmesg-1.0.24,entry::tests::test_display,success,207.356,3.002,2026-11-05T04:44:00Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,entry::tests::test_serialize_to_klog,success,207.356,3.016,2026-11-05T04:44:03Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,entry::tests::test_serialize_to_kmsg,success,207.356,3.000,2026-11-05T04:44:06Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,klogctl::test::get_kernel_buffer_size,success,207.356,2.966,2026-11-05T04:44:09Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,klogctl::test::test_klog,timeout,207.356,150.018,2026-11-05T04:46:39Z,50250314.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rmesg-1.0.24,klogctl::test::test_parse_multiline,success,207.356,10.004,2026-11-05T04:46:49Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,klogctl::test::test_parse_serialize,success,207.356,10.151,2026-11-05T04:46:59Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,klogctl::test::test_stream,timeout,207.356,150.018,2026-11-05T04:49:29Z,50250314.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rmesg-1.0.24,kmsgfile::test::test_kmsg,test_failed,207.356,1.988,2026-11-05T04:49:31Z,50250314.0,panic,"thread 'kmsgfile::test::test_kmsg' (18113) panicked at src/kmsgfile.rs:335:9: Response from kmsg not Ok"
+experimental-bsan,rmesg-1.0.24,kmsgfile::test::test_parse_serialize,success,207.356,11.185,2026-11-05T04:49:42Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,kmsgfile::test::test_stream,success,207.356,14.954,2026-11-05T04:49:57Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,test::test_log_entries,timeout,207.356,150.017,2026-11-05T04:52:27Z,50250314.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rmesg-1.0.24,test::test_stream,success,207.356,14.500,2026-11-05T04:52:42Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,tests::test_all_flags_together,success,207.356,3.309,2026-11-05T04:52:45Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,tests::test_clear_flag,success,207.356,3.155,2026-11-05T04:52:48Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,tests::test_default_options,success,207.356,3.196,2026-11-05T04:52:51Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,tests::test_devkmsg_backend,success,207.356,3.119,2026-11-05T04:52:54Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,tests::test_follow_flag,success,207.356,3.197,2026-11-05T04:52:58Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,tests::test_invalid_backend,success,207.356,3.162,2026-11-05T04:53:01Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,tests::test_klogctl_backend,success,207.356,3.159,2026-11-05T04:53:04Z,50250314.0,,
+experimental-bsan,rmesg-1.0.24,tests::test_raw_flag,success,207.356,3.182,2026-11-05T04:53:07Z,50250314.0,,

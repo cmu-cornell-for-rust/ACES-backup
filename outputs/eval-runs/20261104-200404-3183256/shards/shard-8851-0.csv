@@ -1,0 +1,20 @@
+experimental-bsan,actix-session-0.11.0,clear_session_after_renew,success,502.210,6.101,2026-11-05T04:49:57Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,cookie_storage,success,502.210,6.272,2026-11-05T04:50:03Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,errors_are_opaque,success,502.210,6.133,2026-11-05T04:50:10Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,get_session,success,502.210,5.867,2026-11-05T04:50:15Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,get_session_from_request_head,success,502.210,5.861,2026-11-05T04:50:21Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,insert_session_after_renew,success,502.210,5.883,2026-11-05T04:50:27Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,purge_session,success,502.210,5.888,2026-11-05T04:50:33Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,remove_session_after_renew,success,502.210,5.888,2026-11-05T04:50:39Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,renew_session,success,502.210,5.863,2026-11-05T04:50:45Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,session,success,502.210,5.885,2026-11-05T04:50:51Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,session_contains_key,success,502.210,5.866,2026-11-05T04:50:57Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,session_entries,success,502.210,5.873,2026-11-05T04:51:02Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,storage::cookie::tests::loading_a_random_session_key_returns_deserialization_error,success,502.210,5.876,2026-11-05T04:51:08Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,storage::cookie::tests::test_session_workflow,success,502.210,38.267,2026-11-05T04:51:47Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,storage::redis_rs::tests::loading_a_missing_session_returns_none,timeout,502.210,150.020,2026-11-05T04:54:17Z,50250455.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,actix-session-0.11.0,storage::redis_rs::tests::loading_an_invalid_session_state_returns_deserialization_error,timeout,502.210,150.020,2026-11-05T04:56:47Z,50250455.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,actix-session-0.11.0,storage::redis_rs::tests::test_session_workflow,timeout,502.210,150.020,2026-11-05T04:59:17Z,50250455.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,actix-session-0.11.0,storage::redis_rs::tests::updating_of_an_expired_state_is_handled_gracefully,timeout,502.210,150.019,2026-11-05T05:01:47Z,50250455.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,actix-session-0.11.0,update_or_session,success,502.210,5.819,2026-11-05T05:01:53Z,50250455.0,,
+experimental-bsan,actix-session-0.11.0,update_session,success,502.210,5.816,2026-11-05T05:01:58Z,50250455.0,,

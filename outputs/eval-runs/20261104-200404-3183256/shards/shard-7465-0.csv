@@ -1,0 +1,27 @@
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::eif_hasher::tests::invalid_block_size,success,1170.461,2.142,2026-11-05T04:23:33Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::eif_hasher::tests::test_hash_exact_block_size_values,success,1170.461,2.775,2026-11-05T04:23:36Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::eif_hasher::tests::test_hash_less_values_than_block_size,success,1170.461,2.869,2026-11-05T04:23:39Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::eif_hasher::tests::test_hash_more_values_than_block_size,success,1170.461,3.024,2026-11-05T04:23:42Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::eif_hasher::tests::test_hash_with_writes_of_different_sizes,success,1170.461,91.486,2026-11-05T04:25:13Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::eif_hasher::tests::test_no_cache,success,1170.461,23.725,2026-11-05T04:25:37Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::tests::test_eif_header_from_be_bytes_invalid_length,success,1170.461,1.999,2026-11-05T04:25:39Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::tests::test_eif_header_size,success,1170.461,1.975,2026-11-05T04:25:41Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::tests::test_eif_header_to_from_be_bytes,success,1170.461,2.026,2026-11-05T04:25:43Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::tests::test_eif_section_header_from_be_bytes_invalid_length,success,1170.461,1.976,2026-11-05T04:25:45Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::tests::test_eif_section_header_from_be_bytes_invalid_section_type,success,1170.461,1.970,2026-11-05T04:25:47Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::tests::test_eif_section_header_size,success,1170.461,1.970,2026-11-05T04:25:49Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::tests::test_eif_section_header_to_from_be_bytes,success,1170.461,1.993,2026-11-05T04:25:51Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,defs::tests::test_eif_section_type,success,1170.461,1.989,2026-11-05T04:25:53Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::cbor::tests::pcr_info_bytes_match_0_8_0,success,1170.461,2.028,2026-11-05T04:25:55Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::cbor::tests::reads_0_8_0_signature_section,success,1170.461,2.093,2026-11-05T04:25:57Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::cbor::tests::rejects_trailing_bytes,success,1170.461,2.039,2026-11-05T04:25:59Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::cbor::tests::round_trip,success,1170.461,2.046,2026-11-05T04:26:01Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::cbor::tests::signature_section_bytes_match_0_8_0,success,1170.461,2.049,2026-11-05T04:26:03Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::eif_signer::arn_tests::test_invalid_kms_arns,timeout,1170.461,150.026,2026-11-05T04:28:34Z,50248426.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::eif_signer::arn_tests::test_region_formats,timeout,1170.461,150.024,2026-11-05T04:31:04Z,50248426.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::eif_signer::arn_tests::test_valid_kms_arns,success,1170.461,147.636,2026-11-05T04:33:31Z,50248426.0,,
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::tests::kms::test_kms_sign_key_data_from_invalid_cert_key_info,test_failed,1170.461,2.051,2026-11-05T04:33:33Z,50248426.0,panic,"thread 'utils::tests::kms::test_kms_sign_key_data_from_invalid_cert_key_info' (80972) panicked at src/utils/mod.rs:753:50: Please set AWS_KMS_TEST_KEY_ARN: NotPresent"
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::tests::kms::test_kms_sign_key_data_from_valid_key_arn,test_failed,1170.461,2.054,2026-11-05T04:33:35Z,50248426.0,panic,"thread 'utils::tests::kms::test_kms_sign_key_data_from_valid_key_arn' (81115) panicked at src/utils/mod.rs:765:50: Please set AWS_KMS_TEST_KEY_ARN: NotPresent"
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::tests::test_local_sign_key_data_from_invalid_cert_key_info,timeout,1170.461,150.022,2026-11-05T04:36:06Z,50248426.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::tests::test_local_sign_key_data_from_invalid_local_key_info,timeout,1170.461,150.026,2026-11-05T04:38:36Z,50248426.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,aws-nitro-enclaves-image-format-0.8.1,utils::tests::test_local_sign_key_data_from_valid_key_info,timeout,1170.461,150.022,2026-11-05T04:41:06Z,50248426.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

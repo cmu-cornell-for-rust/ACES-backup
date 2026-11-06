@@ -1,0 +1,24 @@
+experimental-bsan,cargo_metadata-0.23.1,advanced_feature_configuration,test_failed,67.884,4.595,2026-11-05T04:20:28Z,50249199.0,panic,"thread 'advanced_feature_configuration' (63265) panicked at tests/test_samples.rs:614:32: called `Result::unwrap()` on an `Err` value: CargoMetadata { stderr: ""error: manifest path `tests/all/Cargo.toml` does not exist\n"" }"
+experimental-bsan,cargo_metadata-0.23.1,all_the_fields,test_failed,67.884,4.707,2026-11-05T04:20:33Z,50249199.0,panic,"thread 'all_the_fields' (63322) panicked at tests/test_samples.rs:208:10: called `Result::unwrap()` on an `Err` value: CargoMetadata { stderr: ""error: manifest path `tests/all/Cargo.toml` does not exist\n"" }"
+experimental-bsan,cargo_metadata-0.23.1,alt_registry,success,67.884,4.576,2026-11-05T04:20:37Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,basic_workspace_root_package_exists,test_failed,67.884,4.574,2026-11-05T04:20:42Z,50249199.0,panic,"thread 'basic_workspace_root_package_exists' (63453) panicked at tests/test_samples.rs:689:10: called `Result::unwrap()` on an `Err` value: CargoMetadata { stderr: ""error: manifest path `tests/basic_workspace/Cargo.toml` does not exist\n"" }"
+experimental-bsan,cargo_metadata-0.23.1,build_dir,test_failed,67.884,4.554,2026-11-05T04:20:47Z,50249199.0,panic,"thread 'build_dir' (63509) panicked at tests/selftest.rs:207:9: assertion failed: &metadata.build_directory.unwrap().ends_with(""cargo_metadata/target"")"
+experimental-bsan,cargo_metadata-0.23.1,builder_interface,timeout,67.884,150.023,2026-11-05T04:23:17Z,50249199.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo_metadata-0.23.1,cargo_path,success,67.884,4.407,2026-11-05T04:23:21Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,current_dir,test_failed,67.884,4.503,2026-11-05T04:23:26Z,50249199.0,panic,"thread 'current_dir' (64343) panicked at tests/test_samples.rs:575:10: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,cargo_metadata-0.23.1,debuginfo_variants,success,67.884,5.534,2026-11-05T04:23:31Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,depkind_to_string,success,67.884,4.411,2026-11-05T04:23:36Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,error1,test_failed,67.884,3.077,2026-11-05T04:23:39Z,50249199.0,panic,"thread 'error1' (64598) panicked at tests/selftest.rs:92:13: assertion failed: [error, &error_with_path].contains(&stderr.trim())"
+experimental-bsan,cargo_metadata-0.23.1,error2,success,67.884,4.443,2026-11-05T04:23:43Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,libtest::deser,success,67.884,4.805,2026-11-05T04:23:48Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,metadata,success,67.884,5.762,2026-11-05T04:23:54Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,metadata_deps,success,67.884,32.282,2026-11-05T04:24:26Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,missing_workspace_default_members,success,67.884,4.505,2026-11-05T04:24:30Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,old_minimal,success,67.884,4.665,2026-11-05T04:24:35Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,parse_stream_is_robust,success,67.884,4.644,2026-11-05T04:24:40Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,test::package_name_eq,success,67.884,4.417,2026-11-05T04:24:44Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,test::test_deserialize_rust_version,success,67.884,4.432,2026-11-05T04:24:49Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,test_unknown_target_kind_and_crate_type,success,67.884,4.492,2026-11-05T04:24:53Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,workspace_default_members_is_available,success,67.884,4.547,2026-11-05T04:24:58Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,workspace_default_members_is_missing,success,67.884,4.516,2026-11-05T04:25:02Z,50249199.0,,
+experimental-bsan,cargo_metadata-0.23.1,workspace_default_packages,success,67.884,32.385,2026-11-05T04:25:35Z,50249199.0,,

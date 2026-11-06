@@ -1,0 +1,23 @@
+experimental-bsan,markov-1.1.0,test::feed,success,38.887,3.004,2026-11-05T04:33:00Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::feed_str,success,38.887,3.009,2026-11-05T04:33:03Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::gen_before_number,test_failed,38.887,3.077,2026-11-05T04:33:06Z,50249659.0,panic,"thread 'test::gen_before_number' (47841) panicked at src/bin/markgen.rs:70:47: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,markov-1.1.0,test::gen_default,test_failed,38.887,3.068,2026-11-05T04:33:09Z,50249659.0,panic,"thread 'test::gen_default' (47936) panicked at src/bin/markgen.rs:70:47: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,markov-1.1.0,test::gen_invalid_n_arg_string,success,38.887,3.005,2026-11-05T04:33:12Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::gen_invalid_n_arg_zero,success,38.887,3.012,2026-11-05T04:33:15Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::gen_invalid_no_files,success,38.887,3.010,2026-11-05T04:33:18Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::gen_number_after,test_failed,38.887,3.083,2026-11-05T04:33:21Z,50249659.0,panic,"thread 'test::gen_number_after' (48248) panicked at src/bin/markgen.rs:70:47: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,markov-1.1.0,test::generate,success,38.887,3.002,2026-11-05T04:33:24Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::generate_for_higher_order,success,38.887,3.024,2026-11-05T04:33:27Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::generate_from_token,success,38.887,3.002,2026-11-05T04:33:30Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::generate_from_unfound_token,success,38.887,2.991,2026-11-05T04:33:33Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::generate_str,success,38.887,3.029,2026-11-05T04:33:36Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::generate_str_from_token,success,38.887,3.019,2026-11-05T04:33:39Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::generate_str_from_token_higher_order,success,38.887,3.057,2026-11-05T04:33:42Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::generate_str_from_unfound_token,success,38.887,3.010,2026-11-05T04:33:45Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::is_empty,success,38.887,2.980,2026-11-05T04:33:48Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::iter,success,38.887,2.983,2026-11-05T04:33:51Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::iter_for,success,38.887,3.028,2026-11-05T04:33:54Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::new,success,38.887,2.967,2026-11-05T04:33:57Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::save_then_load,success,38.887,4.165,2026-11-05T04:34:01Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::str_iter,success,38.887,3.013,2026-11-05T04:34:04Z,50249659.0,,
+experimental-bsan,markov-1.1.0,test::str_iter_for,success,38.887,3.078,2026-11-05T04:34:08Z,50249659.0,,

@@ -1,0 +1,542 @@
+experimental-bsan,genai-0.7.0,a_finished_tool_call_without_input_has_empty_arguments,timeout,2063.371,150.009,2026-11-05T01:54:47Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,adapter::adapter_kind::tests::test_adapter_kind_all_excludes_custom,success,2063.371,79.668,2026-11-05T01:56:06Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapter_kind::tests::test_adapter_kind_all_has_no_duplicates,success,2063.371,79.767,2026-11-05T01:57:26Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapter_kind::tests::test_adapter_kind_all_round_trips_lower_str,success,2063.371,79.417,2026-11-05T01:58:46Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapter_kind::tests::test_adapter_kind_from_model_openai_routing,success,2063.371,79.654,2026-11-05T02:00:05Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::all_adapters::tests::test_api_route_dispatch_preserves_model_and_uses_gateway_endpoint,success,2063.371,79.446,2026-11-05T02:01:25Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::all_adapters::tests::test_deepseek_managed_body_thinking_disables_zero_effort,success,2063.371,79.771,2026-11-05T02:02:45Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::all_adapters::tests::test_deepseek_managed_body_thinking_enables_non_zero_effort,success,2063.371,79.677,2026-11-05T02:04:04Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::all_adapters::tests::test_deepseek_managed_body_thinking_omits_fields_without_effort,success,2063.371,79.314,2026-11-05T02:05:24Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::all_adapters::tests::test_deepseek_still_echoes_reasoning_content,success,2063.371,79.533,2026-11-05T02:06:43Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::all_adapters::tests::test_heabsy_dispatch_preserves_model_and_uses_heabsy_endpoint,success,2063.371,79.806,2026-11-05T02:08:03Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::all_adapters::tests::test_mistral_replays_reasoning_as_thinking_chunk_and_renames_seed,success,2063.371,79.560,2026-11-05T02:09:23Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::all_adapters::tests::test_ollama_think_disabled_for_zero_effort,success,2063.371,79.375,2026-11-05T02:10:42Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::all_adapters::tests::test_ollama_think_enabled_for_budget_effort,success,2063.371,79.651,2026-11-05T02:12:02Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::all_adapters::tests::test_ollama_think_maps_efforts_to_string_levels,success,2063.371,79.544,2026-11-05T02:13:21Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::all_adapters::tests::test_ollama_think_omitted_without_effort,success,2063.371,79.535,2026-11-05T02:14:41Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_adapter_advanced_effort_selection,success,2063.371,80.500,2026-11-05T02:16:01Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_adapter_alias_custom_and_unknown_reasoning_behavior,success,2063.371,80.174,2026-11-05T02:17:21Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_adapter_explicit_reasoning_precedes_suffix,success,2063.371,79.530,2026-11-05T02:18:41Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_adapter_namespaced_reasoning_suffix_is_removed,success,2063.371,79.727,2026-11-05T02:20:01Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_adapter_opus_4_5_budget_uses_legacy_thinking,success,2063.371,79.563,2026-11-05T02:21:20Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_adapter_protected_reasoning_suffix_is_retained,success,2063.371,79.612,2026-11-05T02:22:40Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_adapter_reasoning_suffixes_are_removed,success,2063.371,80.552,2026-11-05T02:24:00Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_adapter_resolve_max_tokens_existing_branches,success,2063.371,79.712,2026-11-05T02:25:20Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_adapter_resolve_max_tokens_preserves_broad_matching,success,2063.371,79.461,2026-11-05T02:26:40Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_adapter_unknown_reasoning_zero_omits_fields,success,2063.371,79.571,2026-11-05T02:27:59Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_anthropic_tool_eager_input_streaming_serializes,success,2063.371,79.909,2026-11-05T02:29:19Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_cache_control_parts_empty_is_noop,success,2063.371,79.652,2026-11-05T02:30:39Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_cache_control_parts_marks_only_last_part,success,2063.371,79.585,2026-11-05T02:31:59Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_cache_control_parts_non_object_last_is_unchanged,success,2063.371,79.944,2026-11-05T02:33:18Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_control_to_json_ephemeral,success,2063.371,79.524,2026-11-05T02:34:38Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_control_to_json_ephemeral_1h,success,2063.371,79.893,2026-11-05T02:35:58Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_control_to_json_ephemeral_24h,success,2063.371,79.528,2026-11-05T02:37:18Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_control_to_json_ephemeral_5m,success,2063.371,79.563,2026-11-05T02:38:37Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_control_to_json_memory,success,2063.371,79.830,2026-11-05T02:39:57Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_dynamic_map_response_schema_is_sent_for_backend_validation,success,2063.371,79.944,2026-11-05T02:41:17Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_non_strict_tool_schema_is_untouched,success,2063.371,79.389,2026-11-05T02:42:36Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_output_config_merges_effort_and_format,success,2063.371,79.675,2026-11-05T02:43:56Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_parse_cache_creation_details_empty,success,2063.371,80.193,2026-11-05T02:45:16Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_parse_cache_creation_details_with_1h_only,success,2063.371,79.444,2026-11-05T02:46:36Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_parse_cache_creation_details_with_5m_only,success,2063.371,79.013,2026-11-05T02:47:55Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_parse_cache_creation_details_with_both_ttls,success,2063.371,79.008,2026-11-05T02:49:14Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_request_level_cache_control_auto_breakpoint_on_system,success,2063.371,79.403,2026-11-05T02:50:33Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_request_level_cache_control_deferred_when_explicit_present,success,2063.371,79.574,2026-11-05T02:51:53Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_request_level_cache_control_falls_back_to_last_tool_when_no_system,success,2063.371,80.123,2026-11-05T02:53:13Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_request_level_cache_control_noop_without_static_prefix,success,2063.371,79.709,2026-11-05T02:54:33Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_strict_tool_uses_anthropic_schema_dialect,success,2063.371,79.372,2026-11-05T02:55:52Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_tool_cache_control_serialized_on_anthropic_payload,success,2063.371,79.850,2026-11-05T02:57:12Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_anthropic_tool_choice_required_serialized_on_anthropic_payload,success,2063.371,79.017,2026-11-05T02:58:31Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_assistant_thinking_signature_serializes_before_tool_use,success,2063.371,78.975,2026-11-05T02:59:50Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_assistant_unpaired_thinking_metadata_is_dropped,success,2063.371,79.480,2026-11-05T03:01:09Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_non_stream_multiple_thinking_blocks_round_trip_without_flattening,success,2063.371,78.973,2026-11-05T03:02:28Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_non_stream_usage_maps_thinking_tokens_to_reasoning_tokens,success,2063.371,78.834,2026-11-05T03:03:47Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_non_stream_usage_without_thinking_share_has_no_completion_details,success,2063.371,78.702,2026-11-05T03:05:06Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::adapter_shared::tests::test_non_stream_usage_zero_thinking_tokens_is_none,success,2063.371,78.811,2026-11-05T03:06:25Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_model::tests::test_anthropic_model_capabilities_preserve_unknown_and_custom_behavior,success,2063.371,79.018,2026-11-05T03:07:44Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_model::tests::test_anthropic_model_capability_matrix,success,2063.371,79.186,2026-11-05T03:09:03Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_model::tests::test_anthropic_model_max_tokens_capability_preserves_existing_classes,success,2063.371,79.578,2026-11-05T03:10:23Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_model::tests::test_anthropic_model_parse_known_models,success,2063.371,80.874,2026-11-05T03:11:43Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_model::tests::test_anthropic_model_parse_latest_alias,success,2063.371,80.513,2026-11-05T03:13:04Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_model::tests::test_anthropic_model_parse_malformed_numeric_segments,success,2063.371,80.360,2026-11-05T03:14:24Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_model::tests::test_anthropic_model_parse_segment_boundaries,success,2063.371,79.894,2026-11-05T03:15:44Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_model::tests::test_anthropic_model_parse_unknown_family,success,2063.371,80.196,2026-11-05T03:17:04Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_model::tests::test_anthropic_model_parse_unrelated_custom_name,success,2063.371,80.019,2026-11-05T03:18:25Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_reasoning::tests::test_anthropic_fable_and_mythos_support_xhigh,success,2063.371,80.037,2026-11-05T03:19:45Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_reasoning::tests::test_anthropic_future_opus_generation_uses_effort,success,2063.371,80.431,2026-11-05T03:21:05Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_reasoning::tests::test_anthropic_haiku_5_uses_effort_not_legacy_budget_tokens,success,2063.371,80.470,2026-11-05T03:22:25Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_reasoning::tests::test_anthropic_opus_4_7_reasoning_zero_omits_thinking,success,2063.371,80.240,2026-11-05T03:23:46Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_reasoning::tests::test_anthropic_opus_4_7_uses_adaptive_thinking,success,2063.371,80.148,2026-11-05T03:25:06Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_reasoning::tests::test_anthropic_opus_5_reasoning_zero_disables_thinking,success,2063.371,79.985,2026-11-05T03:26:26Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_reasoning::tests::test_anthropic_opus_5_uses_effort_not_legacy_budget_tokens,success,2063.371,79.664,2026-11-05T03:27:46Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_reasoning::tests::test_anthropic_pre_4_7_models_still_use_budget_tokens,success,2063.371,79.478,2026-11-05T03:29:05Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_reasoning::tests::test_anthropic_reasoning_zero_model_name_suffix,success,2063.371,78.449,2026-11-05T03:30:24Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_reasoning::tests::test_anthropic_reasoning_zero_other_models_omit_thinking,success,2063.371,78.489,2026-11-05T03:31:42Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_reasoning::tests::test_anthropic_sonnet_5_reasoning_zero_disables_thinking,success,2063.371,78.340,2026-11-05T03:33:00Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::ant_reasoning::tests::test_anthropic_sonnet_5_uses_adaptive_thinking,success,2063.371,78.331,2026-11-05T03:34:19Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::streamer::tests::split_signature_deltas_form_one_logical_block_signature,success,2063.371,78.247,2026-11-05T03:35:37Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::anthropic::streamer::tests::start_and_delta_signature_variants_form_one_logical_signature,success,2063.371,78.326,2026-11-05T03:36:55Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::adapter_api::tests::empty_env_var_falls_through_to_the_next_candidate,success,2063.371,78.064,2026-11-05T03:38:13Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::adapter_api::tests::falls_back_to_the_aws_env_var,success,2063.371,78.342,2026-11-05T03:39:32Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::adapter_api::tests::no_env_var_set_yields_none,success,2063.371,78.392,2026-11-05T03:40:50Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::adapter_api::tests::prefers_the_genai_env_var,success,2063.371,78.148,2026-11-05T03:42:08Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::converse::tests::assistant_turn_falls_back_to_tool_call_signatures,success,2063.371,78.252,2026-11-05T03:43:27Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::converse::tests::assistant_turn_replays_signed_and_redacted_reasoning_before_tool_use,success,2063.371,78.338,2026-11-05T03:44:45Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::converse::tests::assistant_turn_skips_tool_call_signatures_for_non_openai,success,2063.371,78.310,2026-11-05T03:46:03Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::converse::tests::bare_anthropic_id_gets_thinking_config,success,2063.371,78.296,2026-11-05T03:47:22Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::converse::tests::documents_get_unique_valid_names,success,2063.371,78.370,2026-11-05T03:48:40Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::converse::tests::nova_gets_a_reasoning_effort_level,success,2063.371,78.376,2026-11-05T03:49:58Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::converse::tests::nova_high_effort_drops_sampling_settings,success,2063.371,78.405,2026-11-05T03:51:17Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::converse::tests::openai_gets_reasoning_effort,success,2063.371,78.242,2026-11-05T03:52:35Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::converse::tests::publisher_is_read_with_and_without_a_profile_prefix,success,2063.371,77.999,2026-11-05T03:53:53Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::converse::tests::response_keeps_reasoning_blocks_for_replay,success,2063.371,78.089,2026-11-05T03:55:11Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::streamer::tests::emits_text_delta_after_start_from_same_frame,success,2063.371,78.265,2026-11-05T03:56:29Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::streamer::tests::emits_tool_call_after_start_from_same_frame,success,2063.371,78.355,2026-11-05T03:57:48Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::streamer::tests::end_carries_signed_and_redacted_thought_blocks,success,2063.371,78.775,2026-11-05T03:59:07Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::streamer::tests::end_carries_usage_from_metadata_after_message_stop,success,2063.371,78.471,2026-11-05T04:00:25Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::streamer::tests::end_is_emitted_at_eof_without_metadata,success,2063.371,78.428,2026-11-05T04:01:44Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::streamer::tests::invalid_headers_len_returns_error,success,2063.371,78.227,2026-11-05T04:03:02Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::streamer::tests::parses_single_delta_frame,success,2063.371,78.380,2026-11-05T04:04:20Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::bedrock::streamer::tests::partial_frame_returns_none,success,2063.371,78.740,2026-11-05T04:05:39Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_a_mirrored_signature_on_the_call_is_honoured,success,2063.371,78.483,2026-11-05T04:06:57Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_a_response_with_no_known_name_is_sent_without_an_id,success,2063.371,78.244,2026-11-05T04:08:16Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_a_signature_on_a_text_part_rides_the_text_part_back,success,2063.371,78.173,2026-11-05T04:09:34Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_a_two_call_turn_round_trips_with_both_signatures,success,2063.371,78.469,2026-11-05T04:10:52Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_body_to_gemini_chat_response_accepts_tail_with_null_finish_reason,success,2063.371,78.220,2026-11-05T04:12:11Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_body_to_gemini_chat_response_accepts_usage_only_stream_tail,success,2063.371,78.144,2026-11-05T04:13:29Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_body_to_gemini_chat_response_still_rejects_missing_candidates,success,2063.371,78.248,2026-11-05T04:14:47Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_cached_tokens_are_not_added_but_tool_use_tokens_are,success,2063.371,78.137,2026-11-05T04:16:05Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_each_call_goes_back_with_its_own_signature,success,2063.371,78.094,2026-11-05T04:17:23Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_every_builtin_triggers_the_opt_in_when_mixed,success,2063.371,78.507,2026-11-05T04:18:42Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_free_signatures_before_a_call_are_not_sent_bare,success,2063.371,78.199,2026-11-05T04:20:00Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_function_call_ids_go_back_with_the_call_and_its_response,success,2063.371,78.613,2026-11-05T04:21:19Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_function_response_infers_name_from_gemini_synthetic_call_id,success,2063.371,78.239,2026-11-05T04:22:37Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_function_response_part_id_only_for_known_calls,success,2063.371,78.282,2026-11-05T04:23:56Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_function_response_uses_function_name_when_available,success,2063.371,78.153,2026-11-05T04:25:14Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_merge_consecutive_tool_responses,success,2063.371,78.421,2026-11-05T04:26:32Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_merge_does_not_merge_non_tool_user_entries,success,2063.371,78.448,2026-11-05T04:27:51Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_merge_three_consecutive_tool_responses,success,2063.371,78.395,2026-11-05T04:29:09Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_mixing_builtin_and_function_tools_opts_into_server_side_invocations,success,2063.371,78.618,2026-11-05T04:30:28Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_parser_keeps_a_signature_only_part_as_empty_text,success,2063.371,78.306,2026-11-05T04:31:46Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_response_json_schema_is_forwarded_raw,success,2063.371,78.021,2026-11-05T04:33:04Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_signatures_stay_next_to_the_part_they_arrived_on,success,2063.371,78.063,2026-11-05T04:34:23Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_streamed_shape_puts_each_signature_on_its_part,success,2063.371,77.957,2026-11-05T04:35:41Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_the_opt_in_merges_with_tool_choice_rather_than_replacing_it,success,2063.371,77.838,2026-11-05T04:36:58Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_tool_call_id_uses_counter,success,2063.371,77.851,2026-11-05T04:38:16Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_tool_choice_required_maps_to_gemini_any_mode,success,2063.371,77.824,2026-11-05T04:39:34Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_tool_choice_specific_tool_sets_gemini_allowed_function,success,2063.371,77.787,2026-11-05T04:40:52Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_tool_parameters_use_parameters_json_schema_raw,success,2063.371,77.768,2026-11-05T04:42:10Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_tool_use_prompt_tokens_are_folded_into_prompt_tokens,success,2063.371,77.774,2026-11-05T04:43:28Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_tool_use_tokens_alone_become_the_prompt_count,success,2063.371,77.729,2026-11-05T04:44:46Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_trailing_signature_is_dropped,success,2063.371,77.835,2026-11-05T04:46:04Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_unmixed_requests_do_not_get_the_opt_in,success,2063.371,77.681,2026-11-05T04:47:21Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_unsigned_first_call_gets_the_validator_placeholder,success,2063.371,77.720,2026-11-05T04:48:39Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini::adapter_impl::tests::test_gemini_usage_without_tool_use_is_unchanged,success,2063.371,77.584,2026-11-05T04:49:57Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_audio_binary_becomes_an_audio_content_block,success,2063.371,78.040,2026-11-05T04:51:15Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_base_payload_and_headers,success,2063.371,77.804,2026-11-05T04:52:33Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_binary_kinds_map_by_mime_type,success,2063.371,78.043,2026-11-05T04:53:51Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_binary_url_becomes_a_uri_reference,success,2063.371,77.815,2026-11-05T04:55:09Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_builtin_tools_are_bare_type_tags,success,2063.371,77.828,2026-11-05T04:56:27Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_embeddings_are_not_supported,success,2063.371,77.601,2026-11-05T04:57:44Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_extra_body_can_still_override_a_scalar,success,2063.371,77.707,2026-11-05T04:59:02Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_extra_body_deep_merges_into_generation_config,success,2063.371,77.720,2026-11-05T05:00:20Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_function_result_name_resolves_from_the_call,success,2063.371,77.775,2026-11-05T05:01:38Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_function_tools_are_flat,success,2063.371,77.698,2026-11-05T05:02:56Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_inline_system_messages_join_into_system_instruction,success,2063.371,77.654,2026-11-05T05:04:13Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_model_routing,success,2063.371,77.685,2026-11-05T05:05:31Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_previous_interaction_id_and_store,success,2063.371,77.808,2026-11-05T05:06:49Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_reasoning_effort_from_model_suffix,success,2063.371,78.272,2026-11-05T05:08:07Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_reasoning_effort_maps_to_thinking_level,success,2063.371,78.193,2026-11-05T05:09:26Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_reasoning_effort_option_wins_over_model_suffix,success,2063.371,77.839,2026-11-05T05:10:44Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_response_format_rides_the_text_variant,success,2063.371,77.850,2026-11-05T05:12:01Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_stateful_function_result_with_fn_name_ok,success,2063.371,77.546,2026-11-05T05:13:19Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_store_can_be_opted_out,success,2063.371,77.722,2026-11-05T05:14:37Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_store_defaults_to_true,success,2063.371,77.639,2026-11-05T05:15:54Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_stream_flag_shares_the_chat_url,success,2063.371,77.852,2026-11-05T05:17:12Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_thinking_summaries_opt_in,success,2063.371,77.949,2026-11-05T05:18:30Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_thought_signature_is_not_emitted_twice,success,2063.371,77.917,2026-11-05T05:19:49Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_to_chat_response_extracts_tool_calls,success,2063.371,77.780,2026-11-05T05:21:06Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_to_chat_response_incomplete_is_max_tokens,success,2063.371,77.646,2026-11-05T05:22:24Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_to_chat_response_maps_media_output,success,2063.371,77.680,2026-11-05T05:23:42Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_to_chat_response_skips_unknown_steps,success,2063.371,77.769,2026-11-05T05:25:00Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_to_chat_response_walks_the_step_timeline,success,2063.371,77.674,2026-11-05T05:26:18Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_to_chat_response_without_id_when_not_stored,success,2063.371,77.462,2026-11-05T05:27:35Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_tool_call_signature_emits_its_thought_step,success,2063.371,77.752,2026-11-05T05:28:53Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_tool_choice_variants,success,2063.371,77.899,2026-11-05T05:30:11Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_tool_roundtrip_builds_ordered_steps,success,2063.371,77.763,2026-11-05T05:31:29Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_unresolvable_function_result_name_errors,success,2063.371,77.675,2026-11-05T05:32:47Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::adapter_impl::tests::test_gemini_ix_unsigned_tool_call_uses_the_skip_sentinel,success,2063.371,77.883,2026-11-05T05:34:04Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_enriched::tests::test_ix_enriched_grounding_counts,success,2063.371,77.692,2026-11-05T05:35:22Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_enriched::tests::test_ix_enriched_malformed_frames_are_not_fatal,success,2063.371,77.852,2026-11-05T05:36:40Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_enriched::tests::test_ix_enriched_returns_none_for_normalized_content,success,2063.371,77.589,2026-11-05T05:37:58Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_enriched::tests::test_ix_enriched_search_call,success,2063.371,77.529,2026-11-05T05:39:15Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_enriched::tests::test_ix_enriched_search_result,success,2063.371,77.564,2026-11-05T05:40:33Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_enriched::tests::test_ix_enriched_step_boundaries,success,2063.371,77.600,2026-11-05T05:41:51Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_enriched::tests::test_ix_enriched_unknown_server_tool_passes_through,success,2063.371,77.586,2026-11-05T05:43:08Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_enriched::tests::test_ix_enriched_url_citations,success,2063.371,77.852,2026-11-05T05:44:26Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_types::ix_usage::tests::test_gemini_ix_usage_audio_input_only_ok,success,2063.371,77.512,2026-11-05T05:45:44Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_types::ix_usage::tests::test_gemini_ix_usage_full_breakdown_ok,success,2063.371,77.372,2026-11-05T05:47:01Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_types::ix_usage::tests::test_gemini_ix_usage_missing_total_is_computed_ok,success,2063.371,77.559,2026-11-05T05:48:19Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_types::ix_usage::tests::test_gemini_ix_usage_reported_total_wins_ok,success,2063.371,77.516,2026-11-05T05:49:36Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_types::ix_usage::tests::test_gemini_ix_usage_thought_only_output_ok,success,2063.371,77.569,2026-11-05T05:50:54Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::ix_types::ix_usage::tests::test_gemini_ix_usage_zero_values_are_not_reported_ok,success,2063.371,77.395,2026-11-05T05:52:11Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::streamer::tests::test_gemini_ix_parses_arguments_delta,success,2063.371,77.617,2026-11-05T05:53:29Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::streamer::tests::test_gemini_ix_parses_error_event,success,2063.371,77.661,2026-11-05T05:54:47Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::streamer::tests::test_gemini_ix_parses_function_call_step_start,success,2063.371,77.481,2026-11-05T05:56:04Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::streamer::tests::test_gemini_ix_parses_interaction_completed_with_usage,success,2063.371,77.628,2026-11-05T05:57:22Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::streamer::tests::test_gemini_ix_parses_interaction_created,success,2063.371,77.655,2026-11-05T05:58:40Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::streamer::tests::test_gemini_ix_parses_status_update,success,2063.371,77.577,2026-11-05T05:59:57Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::streamer::tests::test_gemini_ix_parses_text_delta,success,2063.371,77.637,2026-11-05T06:01:15Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::streamer::tests::test_gemini_ix_parses_thought_signature_delta,success,2063.371,77.622,2026-11-05T06:02:33Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::streamer::tests::test_gemini_ix_parses_thought_summary_delta_with_nested_content,success,2063.371,77.701,2026-11-05T06:03:51Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::gemini_ix::streamer::tests::test_gemini_ix_unknown_events_are_not_fatal,success,2063.371,77.417,2026-11-05T06:05:08Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::github_copilot::adapter_impl::tests::test_accept_header,success,2063.371,77.700,2026-11-05T06:06:26Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::github_copilot::adapter_impl::tests::test_authorization_header,success,2063.371,77.698,2026-11-05T06:07:44Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::github_copilot::adapter_impl::tests::test_payload_messages,success,2063.371,77.599,2026-11-05T06:09:01Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::github_copilot::adapter_impl::tests::test_payload_model_name,success,2063.371,77.463,2026-11-05T06:10:19Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::github_copilot::adapter_impl::tests::test_payload_stream_false_for_chat,success,2063.371,77.375,2026-11-05T06:11:36Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::github_copilot::adapter_impl::tests::test_payload_stream_true_for_chat_stream,success,2063.371,77.578,2026-11-05T06:12:54Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::github_copilot::adapter_impl::tests::test_url_construction,success,2063.371,77.751,2026-11-05T06:14:12Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::ollama::adapter_shared::tests::test_into_usage_with_cached_tokens,success,2063.371,77.650,2026-11-05T06:15:29Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::ollama::adapter_shared::tests::test_into_usage_without_cached_field_has_no_details,success,2063.371,77.731,2026-11-05T06:16:47Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::ollama::adapter_shared::tests::test_into_usage_zero_cached_tokens_yields_no_details,success,2063.371,77.889,2026-11-05T06:18:05Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::ollama::streamer::tests::test_stream_captures_all_fields_sharing_a_line,success,2063.371,77.841,2026-11-05T06:19:23Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::ollama::streamer::tests::test_stream_line_with_content_and_tool_calls_emits_all,success,2063.371,77.928,2026-11-05T06:20:41Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::ollama::streamer::tests::test_stream_line_with_thinking_and_content_emits_both,success,2063.371,78.115,2026-11-05T06:21:59Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::ollama::streamer::tests::test_stream_malformed_line_yields_stream_parse_error,success,2063.371,77.769,2026-11-05T06:23:17Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::ollama::streamer::tests::test_stream_multiple_lines_in_one_chunk_emit_in_order,success,2063.371,77.792,2026-11-05T06:24:35Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::ollama::streamer::tests::test_stream_single_field_lines_yield_one_event_each,success,2063.371,77.849,2026-11-05T06:25:53Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_impl::tests::test_to_chat_response_captures_finish_reason_as_stop_reason,success,2063.371,77.628,2026-11-05T06:27:10Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_impl::tests::test_to_chat_response_captures_reasoning_details_as_custom_parts,success,2063.371,77.764,2026-11-05T06:28:28Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_impl::tests::test_to_chat_response_splits_mistral_thinking_chunks,success,2063.371,77.694,2026-11-05T06:29:46Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_impl::tests::test_to_chat_response_stop_reason_none_when_missing,success,2063.371,77.745,2026-11-05T06:31:04Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_cache_control_without_eligible_content_does_not_fail_chat_completion,success,2063.371,77.736,2026-11-05T06:32:22Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_custom_parts_that_are_not_reasoning_blocks_are_not_echoed,success,2063.371,77.789,2026-11-05T06:33:39Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_extra_body_merged_into_chat_completion_payload,success,2063.371,77.597,2026-11-05T06:34:57Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_gpt_5_5_chat_completion_keeps_legacy_cache_retention,success,2063.371,77.606,2026-11-05T06:36:15Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_gpt_5_6_chat_completion_cache_key_uses_api_default_mode,success,2063.371,77.681,2026-11-05T06:37:32Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_gpt_5_6_chat_completion_defaults_to_explicit_cache_mode,success,2063.371,77.745,2026-11-05T06:38:50Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_gpt_5_6_chat_completion_ignores_tool_cache_control,success,2063.371,77.768,2026-11-05T06:40:08Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_gpt_5_6_chat_completion_places_breakpoint_on_last_eligible_block,success,2063.371,77.985,2026-11-05T06:41:26Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_gpt_6_chat_completion_defaults_to_explicit_cache_mode,success,2063.371,77.811,2026-11-05T06:42:44Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_managed_body_disabled_thinking_preserves_reasoning_effort_payload,success,2063.371,77.651,2026-11-05T06:44:02Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_managed_body_thinking_disables_zero_effort,success,2063.371,77.706,2026-11-05T06:45:19Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_managed_body_thinking_enables_keyword_effort,success,2063.371,78.012,2026-11-05T06:46:38Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_managed_body_thinking_enables_max_effort,success,2063.371,77.792,2026-11-05T06:47:55Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_managed_body_thinking_omits_fields_without_effort,success,2063.371,77.631,2026-11-05T06:49:13Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_managed_body_thinking_preserves_budget_behavior,success,2063.371,77.668,2026-11-05T06:50:31Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_managed_body_thinking_uses_model_name_derived_effort,success,2063.371,77.672,2026-11-05T06:51:48Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_max_tokens_key_by_model,success,2063.371,77.834,2026-11-05T06:53:06Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_no_reasoning_content_when_absent,success,2063.371,77.495,2026-11-05T06:54:24Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_null_usage_is_treated_as_absent_usage,success,2063.371,77.588,2026-11-05T06:55:42Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_reasoning_content_serialized_on_assistant_message,success,2063.371,77.427,2026-11-05T06:56:59Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_reasoning_details_echoed_verbatim_on_assistant_message,success,2063.371,77.555,2026-11-05T06:58:17Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::adapter_shared::tests::test_tool_choice_specific_tool_serialized_on_chat_completion_payload,success,2063.371,77.699,2026-11-05T06:59:34Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::cache_policy::tests::test_adapter_adapters_openai_prompt_cache_endpoint_check_uses_supported_domain_allowlist,success,2063.371,77.615,2026-11-05T07:00:52Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::cache_policy::tests::test_adapter_adapters_openai_prompt_cache_policy_general_intent_uses_api_default,success,2063.371,77.596,2026-11-05T07:02:10Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::cache_policy::tests::test_adapter_adapters_openai_prompt_cache_policy_ignores_tool_control,success,2063.371,77.564,2026-11-05T07:03:27Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::cache_policy::tests::test_adapter_adapters_openai_prompt_cache_policy_ignores_unsupported_scope,success,2063.371,77.398,2026-11-05T07:04:45Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::cache_policy::tests::test_adapter_adapters_openai_prompt_cache_policy_message_control_is_explicit,success,2063.371,77.562,2026-11-05T07:06:02Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::cache_policy::tests::test_adapter_adapters_openai_prompt_cache_policy_no_configuration_is_explicit,success,2063.371,77.353,2026-11-05T07:07:20Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::cache_policy::tests::test_adapter_adapters_openai_prompt_cache_ttl_maps_all_controls,success,2063.371,77.368,2026-11-05T07:08:37Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::cache_policy::tests::test_adapter_adapters_openai_rejects_prompt_cache_options_for_codex_responses_endpoint,success,2063.371,77.389,2026-11-05T07:09:55Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::cache_policy::tests::test_adapter_adapters_openai_requires_explicit_cache,success,2063.371,77.773,2026-11-05T07:11:13Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::cache_policy::tests::test_adapter_adapters_openai_requires_explicit_cache_rejects_older_names,success,2063.371,77.773,2026-11-05T07:12:30Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::cache_policy::tests::test_adapter_adapters_openai_supports_prompt_cache_options_for_official_endpoint,success,2063.371,77.663,2026-11-05T07:13:48Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::openai_model::tests::test_adapter_openai_model_is_resp_model_variants,success,2063.371,77.713,2026-11-05T07:15:06Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::openai_model::tests::test_adapter_openai_model_parse_gpt4_snapshot,success,2063.371,77.387,2026-11-05T07:16:23Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::openai_model::tests::test_adapter_openai_model_parse_gpt4o_date_snapshot,success,2063.371,77.549,2026-11-05T07:17:41Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::openai_model::tests::test_adapter_openai_model_parse_gpt4o_mini,success,2063.371,77.563,2026-11-05T07:18:59Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::openai_model::tests::test_adapter_openai_model_parse_gpt5,success,2063.371,77.721,2026-11-05T07:20:16Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::openai_model::tests::test_adapter_openai_model_parse_gpt6_astra,success,2063.371,77.637,2026-11-05T07:21:34Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::openai_model::tests::test_adapter_openai_model_parse_gpt_oss,success,2063.371,77.628,2026-11-05T07:22:52Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::openai_model::tests::test_adapter_openai_model_parse_legacy_embedding,success,2063.371,77.550,2026-11-05T07:24:09Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::openai_model::tests::test_adapter_openai_model_parse_namespaced,success,2063.371,77.585,2026-11-05T07:25:27Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::openai_model::tests::test_adapter_openai_model_parse_o_series_qualifier,success,2063.371,77.573,2026-11-05T07:26:45Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::openai_model::tests::test_adapter_openai_model_requires_explicit_cache,success,2063.371,77.632,2026-11-05T07:28:02Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::schema::tests::non_strict_tool_schema_is_untouched,success,2063.371,77.575,2026-11-05T07:29:20Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::schema::tests::strict_tool_schema_uses_the_openai_tool_dialect,success,2063.371,77.583,2026-11-05T07:30:37Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::schema::tests::unsupported_schema_is_still_sent_to_the_backend,success,2063.371,77.510,2026-11-05T07:31:55Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::streamer::tests::test_capture_usage_tail_replaces_empty_deepseek_usage,success,2063.371,77.577,2026-11-05T07:33:13Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::streamer::tests::test_take_delta_content_reads_mistral_thinking_and_text,success,2063.371,77.684,2026-11-05T07:34:30Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::streamer::tests::test_take_finish_reason_usage_ignores_null_deepseek_usage,success,2063.371,77.677,2026-11-05T07:35:48Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::streamer::tests::test_take_finish_reason_usage_reads_inline_openai_usage,success,2063.371,77.629,2026-11-05T07:37:06Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::streamer::tests::test_take_finish_reason_usage_respects_capture_flag,success,2063.371,77.530,2026-11-05T07:38:23Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::streamer::tests::test_take_stream_error_none_when_error_key_missing,success,2063.371,77.549,2026-11-05T07:39:41Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai::streamer::tests::test_take_stream_error_reads_openai_error_payload,success,2063.371,77.465,2026-11-05T07:40:58Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::custom_grammar_tool_and_roundtrip_use_responses_native_items,success,2063.371,77.841,2026-11-05T07:42:16Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::dynamic_map_schema_is_sent_to_backend_for_validation,success,2063.371,77.617,2026-11-05T07:43:34Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::function_tool_strict_is_sent_only_when_set,success,2063.371,77.425,2026-11-05T07:44:51Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::pydantic_union_schema_is_sanitized_for_responses,success,2063.371,77.630,2026-11-05T07:46:09Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::test_openai_resp_adapter_adapters_openai_resp_tool_to_openai_tool_optional_description,success,2063.371,77.596,2026-11-05T07:47:27Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::test_openai_resp_assistant_message_uses_output_text_content_type,success,2063.371,77.363,2026-11-05T07:48:44Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::test_openai_resp_cache_control_without_eligible_content_does_not_fail_response_request,success,2063.371,77.555,2026-11-05T07:50:02Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::test_openai_resp_extra_body_merged_into_response_payload,success,2063.371,77.777,2026-11-05T07:51:20Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::test_openai_resp_gpt_5_5_responses_keeps_legacy_cache_retention,success,2063.371,77.534,2026-11-05T07:52:37Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::test_openai_resp_gpt_5_6_codex_responses_endpoint_omits_prompt_cache_options,success,2063.371,77.505,2026-11-05T07:53:55Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::test_openai_resp_gpt_5_6_responses_cache_key_uses_api_default_cache_mode,success,2063.371,77.673,2026-11-05T07:55:12Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::test_openai_resp_gpt_5_6_responses_defaults_to_explicit_cache_mode,success,2063.371,77.723,2026-11-05T07:56:30Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::test_openai_resp_gpt_5_6_responses_ignores_tool_cache_control,success,2063.371,77.582,2026-11-05T07:57:48Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::test_openai_resp_gpt_5_6_responses_places_breakpoint_on_last_eligible_content_block,success,2063.371,77.532,2026-11-05T07:59:05Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::test_openai_resp_gpt_6_responses_defaults_to_explicit_cache_mode,success,2063.371,77.536,2026-11-05T08:00:23Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::adapter_impl::tests::test_openai_resp_tool_choice_specific_tool_serialized_on_response_payload,success,2063.371,77.419,2026-11-05T08:01:40Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::resp_types::resp_output_helper::tests::decodes_custom_tool_call_as_raw_string_input,success,2063.371,77.559,2026-11-05T08:02:58Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::resp_types::resp_usage::tests::test_resp_usage_deserializes_openai_cache_write_tokens,success,2063.371,77.757,2026-11-05T08:04:16Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::openai_resp::streamer::tests::recognizes_custom_tool_input_delta_events,success,2063.371,77.417,2026-11-05T08:05:34Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_auth_header_minimax,success,2063.371,77.655,2026-11-05T08:06:51Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_auth_header_openai,success,2063.371,77.471,2026-11-05T08:08:09Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_embed_not_supported,success,2063.371,77.374,2026-11-05T08:09:26Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_minimax_payload_with_options,success,2063.371,77.648,2026-11-05T08:10:44Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_minimax_prefix_case_insensitive,success,2063.371,77.715,2026-11-05T08:12:02Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_no_x_api_key_in_openai_path,success,2063.371,77.499,2026-11-05T08:13:19Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_payload_messages_array,success,2063.371,77.557,2026-11-05T08:14:37Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_payload_model_name_minimax,success,2063.371,77.429,2026-11-05T08:15:54Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_payload_model_name_openai,success,2063.371,77.928,2026-11-05T08:17:12Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_payload_stream_false_for_chat,success,2063.371,77.389,2026-11-05T08:18:30Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_payload_stream_true_for_chat_stream,success,2063.371,77.569,2026-11-05T08:19:48Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_url_minimax_path,success,2063.371,77.369,2026-11-05T08:21:05Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_url_openai_path,success,2063.371,77.568,2026-11-05T08:22:23Z,50232680.0,,
+experimental-bsan,genai-0.7.0,adapter::adapters::opencode_go::adapter_impl::tests::test_x_api_key_in_minimax_path,success,2063.371,77.409,2026-11-05T08:23:40Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_message::tests::from_tool_calls_does_not_duplicate_openai_reasoning_items,success,2063.371,77.541,2026-11-05T08:24:58Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_message::tests::from_tool_calls_keeps_gemini_signatures_with_their_calls,success,2063.371,77.389,2026-11-05T08:26:15Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_message::tests::from_tool_calls_keeps_signatures_on_their_calls,success,2063.371,77.358,2026-11-05T08:27:33Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_message::tests::test_chat_chat_message_options_none_is_omitted,success,2063.371,77.333,2026-11-05T08:28:50Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_options::tests::test_chat_options_deser_empty_object,success,2063.371,77.550,2026-11-05T08:30:07Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_options::tests::test_chat_options_deser_partial_without_stop_sequences,success,2063.371,77.485,2026-11-05T08:31:25Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_options::tests::test_chat_options_from_model_name_none_suffix_alias,success,2063.371,77.469,2026-11-05T08:32:43Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_options::tests::test_chat_options_from_model_name_protected_qwen_max,success,2063.371,77.647,2026-11-05T08:34:00Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_options::tests::test_chat_options_from_model_name_protected_zero,success,2063.371,77.491,2026-11-05T08:35:18Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_options::tests::test_chat_options_from_model_name_qwen_max_low_suffix,success,2063.371,77.848,2026-11-05T08:36:36Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_options::tests::test_chat_options_from_model_name_qwen_max_zero_suffix,success,2063.371,77.779,2026-11-05T08:37:53Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_options::tests::test_chat_options_from_model_name_zero_suffix,success,2063.371,77.471,2026-11-05T08:39:11Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_options::tests::test_chat_options_reasoning_effort_as_keyword_zero,success,2063.371,77.496,2026-11-05T08:40:28Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_options::tests::test_chat_options_reasoning_effort_display_zero,success,2063.371,77.654,2026-11-05T08:41:46Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_options::tests::test_chat_options_reasoning_effort_from_keyword_none_alias,success,2063.371,77.485,2026-11-05T08:43:04Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_options::tests::test_chat_options_reasoning_effort_from_keyword_zero,success,2063.371,77.493,2026-11-05T08:44:21Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_stream::tests::stream_end_keeps_a_signature_the_call_already_carries,success,2063.371,77.621,2026-11-05T08:45:39Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_stream::tests::stream_end_orders_signature_text_and_tool_call_and_mirrors_signature,success,2063.371,77.490,2026-11-05T08:46:56Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_stream::tests::test_chat_stream_fires_a_single_terminal_sink_callback,success,2063.371,77.527,2026-11-05T08:48:14Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::chat_stream::tests::test_stream_end_preserves_captured_stop_reason,success,2063.371,77.538,2026-11-05T08:49:31Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::frame_sink::tests::test_frame_sink_collector_collects,success,2063.371,77.653,2026-11-05T08:50:49Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::frame_sink::tests::test_frame_sink_fn_sink_calls_closure,success,2063.371,77.522,2026-11-05T08:52:07Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::frame_sink::tests::test_frame_sink_owned_frame_json,success,2063.371,77.540,2026-11-05T08:53:24Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::frame_sink::tests::test_frame_sink_owned_frame_text_fallback,success,2063.371,77.647,2026-11-05T08:54:42Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::frame_sink::tests::test_frame_sink_raw_frame_serde_roundtrip,success,2063.371,77.791,2026-11-05T08:56:00Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::anthropic_preserves_optional_properties_and_defaults,success,2063.371,77.507,2026-11-05T08:57:17Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_does_not_drop_existing_required_names,success,2063.371,77.553,2026-11-05T08:58:35Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_dynamic_map_is_preserved_for_backend_validation,success,2063.371,77.419,2026-11-05T08:59:52Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_inlines_supported_ref_annotations_without_dropping_them,success,2063.371,77.613,2026-11-05T09:01:10Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_leaves_live_accepted_keywords_untouched,success,2063.371,77.606,2026-11-05T09:02:28Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_normalizes_discriminated_one_of,success,2063.371,77.651,2026-11-05T09:03:46Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_preserves_bare_one_of_for_backend_validation,success,2063.371,77.673,2026-11-05T09:05:03Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_preserves_discriminator_when_referenced_branches_can_overlap,success,2063.371,77.613,2026-11-05T09:06:21Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_preserves_one_of_when_const_tags_do_not_prove_disjointness,success,2063.371,77.561,2026-11-05T09:07:39Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_preserves_property_names_and_semantic_constraints,success,2063.371,77.361,2026-11-05T09:08:56Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_sanitizes_live_rejected_generated_fixtures_exactly,success,2063.371,81.948,2026-11-05T09:10:18Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_sanitizes_live_rejected_tool_fixtures_exactly,success,2063.371,79.681,2026-11-05T09:11:38Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_sanitizes_schemars_generated_schemas,success,2063.371,78.574,2026-11-05T09:12:56Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_strictifies_nested_generated_objects,success,2063.371,77.325,2026-11-05T09:14:14Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::openai_top_level_array_is_preserved_for_backend_validation,success,2063.371,77.320,2026-11-05T09:15:31Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::json_schema::tests::schema_sanitization_does_not_rewrite_literal_objects,success,2063.371,77.464,2026-11-05T09:16:49Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::message_content::tests::test_message_content_into_joined_texts_empty,success,2063.371,77.363,2026-11-05T09:18:06Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::message_content::tests::test_message_content_into_joined_texts_single_part,success,2063.371,77.498,2026-11-05T09:19:23Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::message_content::tests::test_message_content_into_joined_texts_two_parts,success,2063.371,77.811,2026-11-05T09:20:41Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::message_content::tests::test_message_content_joined_texts_empty,success,2063.371,77.536,2026-11-05T09:21:59Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::message_content::tests::test_message_content_joined_texts_single_part,success,2063.371,77.655,2026-11-05T09:23:17Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::message_content::tests::test_message_content_joined_texts_two_parts,success,2063.371,77.716,2026-11-05T09:24:34Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::tool::tool_types::tests::tool_config_array_roundtrip,success,2063.371,77.541,2026-11-05T09:25:52Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::tool::tool_types::tests::tool_config_custom_roundtrip,success,2063.371,77.405,2026-11-05T09:27:09Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::tool::tool_types::tests::tool_config_websearch_roundtrip,success,2063.371,77.595,2026-11-05T09:28:27Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::tool::tool_types::tests::tool_name_custom_named_websearch_is_disambiguated,success,2063.371,77.738,2026-11-05T09:29:45Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::tool::tool_types::tests::tool_name_custom_roundtrip,success,2063.371,77.537,2026-11-05T09:31:02Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::tool::tool_types::tests::tool_name_websearch_roundtrip,success,2063.371,77.756,2026-11-05T09:32:20Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::usage::tests::test_deserializes_openai_cache_write_tokens,success,2063.371,77.562,2026-11-05T09:33:38Z,50232680.0,,
+experimental-bsan,genai-0.7.0,chat::usage::tests::test_openai_cache_write_tokens_zero_is_none,success,2063.371,77.428,2026-11-05T09:34:55Z,50232680.0,,
+experimental-bsan,genai-0.7.0,client::config::tests::adapter_config_applies_service_target_resolver,success,2063.371,77.842,2026-11-05T09:36:13Z,50232680.0,,
+experimental-bsan,genai-0.7.0,client::config::tests::adapter_config_falls_back_to_the_default_endpoint,success,2063.371,77.986,2026-11-05T09:37:31Z,50232680.0,,
+experimental-bsan,genai-0.7.0,client::config::tests::bound_client_accepts_matching_namespace,success,2063.371,77.746,2026-11-05T09:38:49Z,50232680.0,,
+experimental-bsan,genai-0.7.0,client::config::tests::bound_client_exposes_adapter_kind_via_getter,timeout,2063.371,150.017,2026-11-05T09:41:19Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,client::config::tests::bound_client_rejects_mismatched_iden,success,2063.371,77.314,2026-11-05T09:42:37Z,50232680.0,,
+experimental-bsan,genai-0.7.0,client::config::tests::bound_client_rejects_mismatched_namespace,success,2063.371,77.400,2026-11-05T09:43:54Z,50232680.0,,
+experimental-bsan,genai-0.7.0,client::config::tests::bound_client_routes_bare_name_through_bound_adapter,success,2063.371,77.296,2026-11-05T09:45:11Z,50232680.0,,
+experimental-bsan,genai-0.7.0,client::config::tests::provider_config_applies_to_adapter_config_resolution,success,2063.371,77.363,2026-11-05T09:46:29Z,50232680.0,,
+experimental-bsan,genai-0.7.0,client::config::tests::provider_config_is_scoped_to_its_adapter,success,2063.371,77.430,2026-11-05T09:47:46Z,50232680.0,,
+experimental-bsan,genai-0.7.0,client::config::tests::provider_config_supplies_endpoint_and_auth,success,2063.371,77.266,2026-11-05T09:49:04Z,50232680.0,,
+experimental-bsan,genai-0.7.0,client::config::tests::resolvers_still_win_over_provider_config,success,2063.371,77.227,2026-11-05T09:50:21Z,50232680.0,,
+experimental-bsan,genai-0.7.0,client::config::tests::unbound_client_preserves_inference,success,2063.371,77.568,2026-11-05T09:51:39Z,50232680.0,,
+experimental-bsan,genai-0.7.0,dropping_stream_cancels_pending_http_request,timeout,2063.371,150.007,2026-11-05T09:54:09Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,error::tests::test_error_headers_from_http_error,success,2063.371,77.405,2026-11-05T09:55:26Z,50232680.0,,
+experimental-bsan,genai-0.7.0,error::tests::test_error_headers_from_web_model_call,success,2063.371,77.516,2026-11-05T09:56:44Z,50232680.0,,
+experimental-bsan,genai-0.7.0,error::tests::test_error_headers_none_without_a_response,success,2063.371,77.222,2026-11-05T09:58:01Z,50232680.0,,
+experimental-bsan,genai-0.7.0,error::tests::test_error_status_from_http_error,success,2063.371,77.190,2026-11-05T09:59:18Z,50232680.0,,
+experimental-bsan,genai-0.7.0,error::tests::test_error_status_from_web_adapter_call,success,2063.371,77.314,2026-11-05T10:00:36Z,50232680.0,,
+experimental-bsan,genai-0.7.0,error::tests::test_error_status_from_web_model_call,success,2063.371,77.243,2026-11-05T10:01:53Z,50232680.0,,
+experimental-bsan,genai-0.7.0,error::tests::test_error_status_none_without_a_response,success,2063.371,77.211,2026-11-05T10:03:10Z,50232680.0,,
+experimental-bsan,genai-0.7.0,error::tests::test_webc_error_status_none_for_non_status_failures,success,2063.371,77.300,2026-11-05T10:04:28Z,50232680.0,,
+experimental-bsan,genai-0.7.0,header_timeout_releases_request,timeout,2063.371,150.012,2026-11-05T10:06:58Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,heartbeats_reset_read_timeout_without_model_events,test_failed,2063.371,145.810,2026-11-05T10:09:24Z,50232680.0,panic,"thread 'heartbeats_reset_read_timeout_without_model_events' (75828) panicked at tests/tests_stream_timeouts.rs:74:55: called `Result::unwrap()` on an `Err` value: Os { code: 32, kind: BrokenPipe, message: ""Broken pipe"" }"
+experimental-bsan,genai-0.7.0,idle_body_timeout_releases_response,test_failed,2063.371,145.255,2026-11-05T10:11:49Z,50232680.0,panic,"thread 'idle_body_timeout_releases_response' (76562) panicked at tests/tests_stream_timeouts.rs:138:5: Web stream error for model 'test (adapter: OpenAI)'."
+experimental-bsan,genai-0.7.0,incomplete_response_falls_back_to_its_output,timeout,2063.371,150.019,2026-11-05T10:14:19Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,incomplete_response_keeps_streamed_tool_calls,timeout,2063.371,150.015,2026-11-05T10:16:49Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,max_tokens_keeps_a_tool_call_cut_off_before_its_input,timeout,2063.371,150.019,2026-11-05T10:19:19Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,max_tokens_keeps_the_tool_call_it_cut_off,timeout,2063.371,150.019,2026-11-05T10:21:49Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,partial_frames_reset_read_timeout,test_failed,2063.371,145.394,2026-11-05T10:24:15Z,50232680.0,panic,"thread 'partial_frames_reset_read_timeout' (79453) panicked at tests/tests_stream_timeouts.rs:88:57: called `Result::unwrap()` on an `Err` value: Os { code: 32, kind: BrokenPipe, message: ""Broken pipe"" }"
+experimental-bsan,genai-0.7.0,partial_function_call_delta_uses_done_arguments,timeout,2063.371,150.018,2026-11-05T10:26:45Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,per_call_header_override_does_not_consume_read_budget,timeout,2063.371,150.019,2026-11-05T10:29:15Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,per_call_read_timeout_overrides_client_default,timeout,2063.371,150.021,2026-11-05T10:31:45Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,reqwest_total_timeout_remains_in_effect,timeout,2063.371,150.021,2026-11-05T10:34:15Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,resolver::provider_config::tests::auth_maps_to_auth_only_provider_config,success,2063.371,82.504,2026-11-05T10:35:38Z,50232680.0,,
+experimental-bsan,genai-0.7.0,resolver::provider_config::tests::endpoint_maps_to_endpoint_only_provider_config,success,2063.371,94.809,2026-11-05T10:37:13Z,50232680.0,,
+experimental-bsan,genai-0.7.0,resolver::provider_config::tests::none_infers_as_provider_config_default,success,2063.371,88.476,2026-11-05T10:38:41Z,50232680.0,,
+experimental-bsan,genai-0.7.0,resolver::provider_config::tests::reverse_optional_tuple_maps_to_full_provider_config,success,2063.371,77.356,2026-11-05T10:39:58Z,50232680.0,,
+experimental-bsan,genai-0.7.0,resolver::provider_config::tests::reverse_tuple_maps_to_full_provider_config,success,2063.371,77.133,2026-11-05T10:41:16Z,50232680.0,,
+experimental-bsan,genai-0.7.0,resolver::provider_config::tests::tuple_maps_to_full_provider_config,success,2063.371,77.116,2026-11-05T10:42:33Z,50232680.0,,
+experimental-bsan,genai-0.7.0,resolver::provider_config::tests::unit_maps_to_provider_config_default,success,2063.371,77.181,2026-11-05T10:43:50Z,50232680.0,,
+experimental-bsan,genai-0.7.0,stalled_error_body_preserves_http_status_and_retry_headers,test_failed,2063.371,144.990,2026-11-05T10:46:15Z,50232680.0,panic,"thread 'stalled_error_body_preserves_http_status_and_retry_headers' (102423) panicked at tests/tests_stream_timeouts.rs:147:50: HTTP error remains inspectable: Headers"
+experimental-bsan,genai-0.7.0,test_chat_bare_model_id_ok,test_failed,2063.371,95.977,2026-11-05T10:47:51Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_bedrock_api`"
+experimental-bsan,genai-0.7.0,test_chat_binary_audio_b64_ok,success,2063.371,76.092,2026-11-05T10:49:07Z,50232680.0,,
+experimental-bsan,genai-0.7.0,test_chat_binary_image_b64_ok,test_failed,2063.371,93.126,2026-11-05T10:50:40Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_binary_image_file_ok,test_failed,2063.371,93.211,2026-11-05T10:52:13Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_binary_image_url_ok,test_failed,2063.371,121.889,2026-11-05T10:54:15Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_mistral`"
+experimental-bsan,genai-0.7.0,test_chat_binary_multi_b64_ok,test_failed,2063.371,93.575,2026-11-05T10:55:49Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_binary_pdf_b64_ok,test_failed,2063.371,92.919,2026-11-05T10:57:22Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_binary_video_b64_ok,success,2063.371,73.511,2026-11-05T10:58:35Z,50232680.0,,
+experimental-bsan,genai-0.7.0,test_chat_cache_explicit_1h_ttl_ok,test_failed,2063.371,102.348,2026-11-05T11:00:18Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_cache_explicit_system_ok,test_failed,2063.371,102.192,2026-11-05T11:02:00Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_cache_explicit_user_ok,test_failed,2063.371,101.959,2026-11-05T11:03:42Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_cache_implicit_simple_ok,test_failed,2063.371,135.695,2026-11-05T11:05:58Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai`"
+experimental-bsan,genai-0.7.0,test_chat_claude_multi_system_ok,test_failed,2063.371,133.215,2026-11-05T11:08:11Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_claude_simple_ok,test_failed,2063.371,132.198,2026-11-05T11:10:23Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_claude_stop_sequences_ok,test_failed,2063.371,132.368,2026-11-05T11:12:36Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_claude_temperature_ok,test_failed,2063.371,132.829,2026-11-05T11:14:48Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_gemini_json_structured_ok,test_failed,2063.371,133.328,2026-11-05T11:17:02Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_gemini_multi_system_ok,test_failed,2063.371,135.185,2026-11-05T11:19:17Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_gemini_simple_ok,test_failed,2063.371,132.207,2026-11-05T11:21:29Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_gemini_stop_sequences_ok,test_failed,2063.371,132.756,2026-11-05T11:23:42Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_gemini_temperature_ok,test_failed,2063.371,132.969,2026-11-05T11:25:55Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_json_mode_ok,test_failed,2063.371,102.099,2026-11-05T11:27:37Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_deepseek`"
+experimental-bsan,genai-0.7.0,test_chat_json_structured_ok,test_failed,2063.371,103.990,2026-11-05T11:29:21Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_fireworks`"
+experimental-bsan,genai-0.7.0,test_chat_multi_system_ok,test_failed,2063.371,93.409,2026-11-05T11:30:55Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_namespaced_ok,test_failed,2063.371,93.639,2026-11-05T11:32:28Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_reasoning_effort_zero_disables_thinking_ok,test_failed,2063.371,123.740,2026-11-05T11:34:32Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_ollama_reasoning`"
+experimental-bsan,genai-0.7.0,test_chat_reasoning_minimal_ok,test_failed,2063.371,125.946,2026-11-05T11:36:38Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai`"
+experimental-bsan,genai-0.7.0,test_chat_reasoning_none_ok,test_failed,2063.371,130.089,2026-11-05T11:38:48Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai_resp`"
+experimental-bsan,genai-0.7.0,test_chat_reasoning_normalize_ok,test_failed,2063.371,103.476,2026-11-05T11:40:32Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_deepseek_reasoning`"
+experimental-bsan,genai-0.7.0,test_chat_reasoning_nova_high_ok,test_failed,2063.371,95.036,2026-11-05T11:42:07Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_bedrock_api`"
+experimental-bsan,genai-0.7.0,test_chat_reasoning_nova_medium_ok,test_failed,2063.371,94.528,2026-11-05T11:43:41Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_bedrock_api`"
+experimental-bsan,genai-0.7.0,test_chat_reasoning_ok,test_failed,2063.371,93.885,2026-11-05T11:45:15Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_simple_ok,test_failed,2063.371,91.927,2026-11-05T11:46:47Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_aihubmix`"
+experimental-bsan,genai-0.7.0,test_chat_stop_sequences_ok,test_failed,2063.371,93.412,2026-11-05T11:48:21Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_stream_cache_explicit_1h_ttl_ok,test_failed,2063.371,103.071,2026-11-05T11:50:04Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_stream_capture_all_ok,test_failed,2063.371,94.482,2026-11-05T11:51:38Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_stream_capture_content_ok,test_failed,2063.371,92.224,2026-11-05T11:53:10Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_aihubmix`"
+experimental-bsan,genai-0.7.0,test_chat_stream_claude_capture_all_ok,test_failed,2063.371,132.795,2026-11-05T11:55:23Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_stream_claude_capture_content_ok,test_failed,2063.371,132.104,2026-11-05T11:57:35Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_stream_claude_simple_ok,test_failed,2063.371,132.374,2026-11-05T11:59:48Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_stream_frame_sink_ok,test_failed,2063.371,92.626,2026-11-05T12:01:20Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_chat_stream_gemini_capture_all_ok,test_failed,2063.371,133.104,2026-11-05T12:03:34Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_stream_gemini_capture_content_ok,test_failed,2063.371,132.630,2026-11-05T12:05:46Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_stream_gemini_simple_ok,test_failed,2063.371,132.357,2026-11-05T12:07:59Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_chat_stream_non_empty_chunk_deepseek_ok,test_failed,2063.371,123.347,2026-11-05T12:10:02Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_ollama_reasoning`"
+experimental-bsan,genai-0.7.0,test_chat_stream_reasoning_chunk_ok,test_failed,2063.371,123.286,2026-11-05T12:12:05Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_ollama_reasoning`"
+experimental-bsan,genai-0.7.0,test_chat_stream_simple_ok,test_failed,2063.371,92.061,2026-11-05T12:13:37Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_aihubmix`"
+experimental-bsan,genai-0.7.0,test_chat_stream_tool_capture_ok,test_failed,2063.371,94.913,2026-11-05T12:15:12Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_bedrock_api`"
+experimental-bsan,genai-0.7.0,test_chat_temperature_ok,test_failed,2063.371,98.143,2026-11-05T12:16:50Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_cohere`"
+experimental-bsan,genai-0.7.0,test_chat_top_system_ok,test_failed,2063.371,110.942,2026-11-05T12:18:41Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_gemini_ix`"
+experimental-bsan,genai-0.7.0,test_chat_verbosity_ok,test_failed,2063.371,130.000,2026-11-05T12:20:51Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai_resp`"
+experimental-bsan,genai-0.7.0,test_cohere_embed_batch_empty_should_fail,timeout,2063.371,150.017,2026-11-05T12:23:22Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_cohere_embed_batch_simple_ok,test_failed,2063.371,99.122,2026-11-05T12:25:01Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_cohere_embeddings`"
+experimental-bsan,genai-0.7.0,test_cohere_embed_single_namespaced_ok,test_failed,2063.371,98.127,2026-11-05T12:26:39Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_cohere_embeddings`"
+experimental-bsan,genai-0.7.0,test_cohere_embed_single_simple_ok,test_failed,2063.371,98.718,2026-11-05T12:28:18Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_cohere_embeddings`"
+experimental-bsan,genai-0.7.0,test_cohere_embed_single_with_options_ok,test_failed,2063.371,98.053,2026-11-05T12:29:56Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_cohere_embeddings`"
+experimental-bsan,genai-0.7.0,test_cohere_embed_with_provider_specific_options_ok,test_failed,2063.371,98.819,2026-11-05T12:31:34Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_cohere_embeddings`"
+experimental-bsan,genai-0.7.0,test_embed_batch_empty_should_fail,timeout,2063.371,150.008,2026-11-05T12:34:05Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_embed_batch_simple_ok,test_failed,2063.371,132.405,2026-11-05T12:36:17Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai_embeddings`"
+experimental-bsan,genai-0.7.0,test_embed_different_models_ok,test_failed,2063.371,128.557,2026-11-05T12:38:26Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai_embeddings`"
+experimental-bsan,genai-0.7.0,test_embed_empty_text_should_work,test_failed,2063.371,128.267,2026-11-05T12:40:34Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai_embeddings`"
+experimental-bsan,genai-0.7.0,test_embed_invalid_model_should_fail,timeout,2063.371,150.020,2026-11-05T12:43:04Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_embed_request_batch_ok,test_failed,2063.371,127.537,2026-11-05T12:45:11Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai_embeddings`"
+experimental-bsan,genai-0.7.0,test_embed_request_single_ok,test_failed,2063.371,127.600,2026-11-05T12:47:19Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai_embeddings`"
+experimental-bsan,genai-0.7.0,test_embed_response_methods_ok,test_failed,2063.371,127.858,2026-11-05T12:49:27Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai_embeddings`"
+experimental-bsan,genai-0.7.0,test_embed_single_namespaced_ok,test_failed,2063.371,128.017,2026-11-05T12:51:35Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai_embeddings`"
+experimental-bsan,genai-0.7.0,test_embed_single_simple_ok,test_failed,2063.371,128.339,2026-11-05T12:53:43Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai_embeddings`"
+experimental-bsan,genai-0.7.0,test_embed_single_with_options_ok,test_failed,2063.371,128.849,2026-11-05T12:55:52Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai_embeddings`"
+experimental-bsan,genai-0.7.0,test_embed_with_openai_specific_options_ok,test_failed,2063.371,127.676,2026-11-05T12:58:00Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_openai_embeddings`"
+experimental-bsan,genai-0.7.0,test_gemini_embed_batch_empty_should_fail,timeout,2063.371,150.018,2026-11-05T13:00:30Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_gemini_embed_batch_simple_ok,test_failed,2063.371,107.635,2026-11-05T13:02:18Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_gemini_embeddings`"
+experimental-bsan,genai-0.7.0,test_gemini_embed_single_namespaced_ok,test_failed,2063.371,106.536,2026-11-05T13:04:04Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_gemini_embeddings`"
+experimental-bsan,genai-0.7.0,test_gemini_embed_single_simple_ok,test_failed,2063.371,107.802,2026-11-05T13:05:52Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_gemini_embeddings`"
+experimental-bsan,genai-0.7.0,test_gemini_embed_single_with_options_ok,test_failed,2063.371,107.367,2026-11-05T13:07:39Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_gemini_embeddings`"
+experimental-bsan,genai-0.7.0,test_gemini_embed_with_provider_specific_options_ok,test_failed,2063.371,107.979,2026-11-05T13:09:27Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_gemini_embeddings`"
+experimental-bsan,genai-0.7.0,test_gemini_ix_routing_ok,success,2063.371,69.537,2026-11-05T13:10:37Z,50232680.0,,
+experimental-bsan,genai-0.7.0,test_gemini_ix_stateful_session_ok,test_failed,2063.371,110.951,2026-11-05T13:12:28Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_gemini_ix`"
+experimental-bsan,genai-0.7.0,test_gemini_ix_stateful_stream_captures_response_id_ok,test_failed,2063.371,110.049,2026-11-05T13:14:18Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_gemini_ix`"
+experimental-bsan,genai-0.7.0,test_list_models,test_failed,2063.371,98.120,2026-11-05T13:15:56Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_p_gemini_image_generation,test_failed,2063.371,108.467,2026-11-05T13:17:45Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_gemini_image`"
+experimental-bsan,genai-0.7.0,test_resolver_auth_ok,test_failed,2063.371,92.532,2026-11-05T13:19:17Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_aihubmix`"
+experimental-bsan,genai-0.7.0,test_tool_claude_full_flow_ok,test_failed,2063.371,133.052,2026-11-05T13:21:30Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_tool_claude_simple_ok,test_failed,2063.371,132.449,2026-11-05T13:23:43Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_tool_deterministic_history_gemini_3_ok,test_failed,2063.371,105.100,2026-11-05T13:25:28Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_gemini`"
+experimental-bsan,genai-0.7.0,test_tool_full_flow_ok,test_failed,2063.371,93.782,2026-11-05T13:27:02Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_tool_gemini_full_flow_ok,test_failed,2063.371,132.240,2026-11-05T13:29:14Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_tool_gemini_simple_ok,test_failed,2063.371,132.694,2026-11-05T13:31:27Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_vertex`"
+experimental-bsan,genai-0.7.0,test_tool_google_web_search_ok,test_failed,2063.371,105.109,2026-11-05T13:33:12Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_gemini`"
+experimental-bsan,genai-0.7.0,test_tool_simple_ok,test_failed,2063.371,94.362,2026-11-05T13:34:46Z,50232680.0,other,"error: test failed, to rerun pass `--test tests_p_anthropic`"
+experimental-bsan,genai-0.7.0,test_yakbak_aihubmix_chat_stream,timeout,2063.371,150.011,2026-11-05T13:37:16Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_anthropic_adjudication_two_turn_multi_tool_round_trip,timeout,2063.371,150.019,2026-11-05T13:39:46Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_anthropic_ping_stream,timeout,2063.371,150.011,2026-11-05T13:42:16Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_anthropic_thinking_signature_variants_preserve_block_pairs,timeout,2063.371,150.019,2026-11-05T13:44:46Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_anthropic_thinking_stream_without_capture_opt_in_captures_nothing,timeout,2063.371,150.020,2026-11-05T13:47:16Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_anthropic_thinking_tool_non_stream_capture,timeout,2063.371,150.018,2026-11-05T13:49:46Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_anthropic_thinking_tool_stream_round_trip_capture,timeout,2063.371,150.021,2026-11-05T13:52:16Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_anthropic_tool_stream,timeout,2063.371,150.020,2026-11-05T13:54:46Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_anthropic_usage_cache_creation_stream,timeout,2063.371,150.017,2026-11-05T13:57:17Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_anthropic_usage_cache_stream,timeout,2063.371,150.017,2026-11-05T13:59:47Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_anthropic_usage_stream,timeout,2063.371,150.019,2026-11-05T14:02:17Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_bedrock_claude_thinking_tool_stream_round_trip,timeout,2063.371,150.019,2026-11-05T14:04:47Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_bedrock_reasoning_tool_non_stream,timeout,2063.371,150.020,2026-11-05T14:07:17Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_bedrock_reasoning_tool_stream_round_trip,timeout,2063.371,150.020,2026-11-05T14:09:47Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_gemini_builtin_with_functions,timeout,2063.371,150.017,2026-11-05T14:12:17Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_gemini_ix_stateful_session,timeout,2063.371,150.017,2026-11-05T14:14:47Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_gemini_ix_tool_full_flow,timeout,2063.371,150.016,2026-11-05T14:17:17Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_gemini_ix_tool_stream,timeout,2063.371,150.019,2026-11-05T14:19:47Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_gemini_multi_turn_thought_signatures,timeout,2063.371,150.021,2026-11-05T14:22:17Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_gemini_thinking_stream,timeout,2063.371,150.019,2026-11-05T14:24:47Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_gemini_tool_stream,timeout,2063.371,150.018,2026-11-05T14:27:17Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_gemini_url_context_stream,timeout,2063.371,150.018,2026-11-05T14:29:47Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_github_copilot_simple_stream,timeout,2063.371,150.019,2026-11-05T14:32:17Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_github_copilot_tool_stream,timeout,2063.371,150.020,2026-11-05T14:34:47Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_ollama_cached_usage_non_stream,timeout,2063.371,150.018,2026-11-05T14:37:17Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_ollama_cached_usage_stream,timeout,2063.371,150.017,2026-11-05T14:39:47Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_ollama_cloud_simple_stream,timeout,2063.371,150.017,2026-11-05T14:42:17Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_ollama_ndjson_multi_event_order,timeout,2063.371,150.026,2026-11-05T14:44:47Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_ollama_ndjson_multi_event_stream,timeout,2063.371,150.018,2026-11-05T14:47:17Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_openai_resp_custom_grammar_tool,timeout,2063.371,150.017,2026-11-05T14:49:47Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_openai_resp_multi_tool_ordering,timeout,2063.371,150.016,2026-11-05T14:52:17Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_openai_resp_reasoning_stream,timeout,2063.371,150.017,2026-11-05T14:54:48Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_openai_resp_reasoning_stream_completed_empty,timeout,2063.371,150.016,2026-11-05T14:57:18Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_openai_resp_reasoning_summary_capture,timeout,2063.371,150.016,2026-11-05T14:59:48Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_openai_resp_stream_error,timeout,2063.371,150.017,2026-11-05T15:02:18Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_openai_resp_stream_error_after_delta,timeout,2063.371,150.016,2026-11-05T15:04:48Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_openai_resp_stream_tools,timeout,2063.371,150.016,2026-11-05T15:07:18Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_openai_resp_tools_completed_no_output_field,timeout,2063.371,150.017,2026-11-05T15:09:48Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_openai_resp_utf8_chunking_bug,timeout,2063.371,150.016,2026-11-05T15:12:18Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_openai_stream_tool_call_with_finish_reason,timeout,2063.371,150.017,2026-11-05T15:14:48Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_opencode_go_minimax_chat,timeout,2063.371,150.018,2026-11-05T15:17:18Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_opencode_go_minimax_stream,timeout,2063.371,150.017,2026-11-05T15:19:48Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_opencode_go_openai_chat,timeout,2063.371,150.017,2026-11-05T15:22:18Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,test_yakbak_opencode_go_openai_stream,timeout,2063.371,150.016,2026-11-05T15:24:48Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,transport_options_are_not_serialized,success,2063.371,69.210,2026-11-05T15:25:57Z,50232680.0,,
+experimental-bsan,genai-0.7.0,unset_transport_timeouts_preserve_existing_behavior,timeout,2063.371,150.017,2026-11-05T15:28:27Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,webc::error::tests::response_status_headers_are_exposed,success,2063.371,68.810,2026-11-05T15:29:36Z,50232680.0,,
+experimental-bsan,genai-0.7.0,webc::frame_tap::tests::test_frame_tap_frame_indices_stay_contiguous,success,2063.371,68.778,2026-11-05T15:30:45Z,50232680.0,,
+experimental-bsan,genai-0.7.0,webc::frame_tap::tests::test_frame_tap_terminal_latch_end_wins_over_later_error,success,2063.371,68.763,2026-11-05T15:31:54Z,50232680.0,,
+experimental-bsan,genai-0.7.0,webc::frame_tap::tests::test_frame_tap_terminal_latch_error_wins_over_later_end,success,2063.371,68.789,2026-11-05T15:33:02Z,50232680.0,,
+experimental-bsan,genai-0.7.0,webc::frame_tap::tests::test_frame_tap_terminal_latch_shared_across_clones,success,2063.371,68.865,2026-11-05T15:34:11Z,50232680.0,,
+experimental-bsan,genai-0.7.0,webc::web_stream::tests::test_web_stream_delimited_frame_tap_taps_each_line,timeout,2063.371,150.018,2026-11-05T15:36:41Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,webc::web_stream::tests::test_web_stream_http_error_captures_headers,timeout,2063.371,150.017,2026-11-05T15:39:11Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,webc::web_stream::tests::test_web_stream_no_sink_leaves_transport_untapped,timeout,2063.371,150.016,2026-11-05T15:41:41Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,webc::web_stream::tests::test_web_stream_sse_frame_tap_taps_all_blocks,timeout,2063.371,150.019,2026-11-05T15:44:12Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,webc::web_stream::tests::test_web_stream_utf8_invalid_bytes,timeout,2063.371,150.019,2026-11-05T15:46:42Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,webc::web_stream::tests::test_web_stream_utf8_split_character,timeout,2063.371,150.017,2026-11-05T15:49:12Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,genai-0.7.0,webc::web_stream::tests::test_web_stream_utf8_truncated_at_end,timeout,2063.371,150.019,2026-11-05T15:51:42Z,50232680.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

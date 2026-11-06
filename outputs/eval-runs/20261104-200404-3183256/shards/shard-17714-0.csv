@@ -1,0 +1,3 @@
+experimental-bsan,idl2json_cli-0.10.1,tests::conversion_with_options_should_be_correct,test_failed,256.050,1.702,2026-11-05T08:28:46Z,50262654.0,panic,"thread 'tests::conversion_with_options_should_be_correct' (86826) panicked at src/tests.rs:141:14: called `Result::unwrap()` on an `Err` value: Failed to parse: (record { 2_138_241_783 = opt (999 : int) }) due to: Could not read did file '/work/../../samples/internet_identity.did'."
+experimental-bsan,idl2json_cli-0.10.1,tests::error_handling_should_be_correct,success,256.050,3.031,2026-11-05T08:28:49Z,50262654.0,,
+experimental-bsan,idl2json_cli-0.10.1,tests::simple_conversion_should_be_correct,success,256.050,2.979,2026-11-05T08:28:52Z,50262654.0,,

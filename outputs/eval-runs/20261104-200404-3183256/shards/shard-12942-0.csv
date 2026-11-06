@@ -1,0 +1,9 @@
+experimental-bsan,cargo-quickinstall-0.3.2,args::test::test_crate_name_from_positional_args,success,38.666,4.267,2026-11-05T06:26:41Z,50256190.0,,
+experimental-bsan,cargo-quickinstall-0.3.2,args::test::test_crate_name_from_positional_args_err,success,38.666,4.317,2026-11-05T06:26:45Z,50256190.0,,
+experimental-bsan,cargo-quickinstall-0.3.2,args::test::test_options_from_env,success,38.666,4.295,2026-11-05T06:26:50Z,50256190.0,,
+experimental-bsan,cargo-quickinstall-0.3.2,args::test::test_options_from_env_err,success,38.666,4.239,2026-11-05T06:26:54Z,50256190.0,,
+experimental-bsan,cargo-quickinstall-0.3.2,command_ext::tests::test_cmd_format,success,38.666,4.244,2026-11-05T06:26:58Z,50256190.0,,
+experimental-bsan,cargo-quickinstall-0.3.2,do_dry_run_for_nonexistent_package,success,38.666,4.834,2026-11-05T06:27:03Z,50256190.0,,
+experimental-bsan,cargo-quickinstall-0.3.2,do_dry_run_for_ripgrep,test_failed,38.666,5.047,2026-11-05T06:27:08Z,50256190.0,panic,"thread 'do_dry_run_for_ripgrep' (1034) panicked at tests/integration_tests.rs:50:57: called `Result::unwrap()` on an `Err` value: Command failed:"
+experimental-bsan,cargo-quickinstall-0.3.2,quickinstall_for_ripgrep,test_failed,38.666,4.845,2026-11-05T06:27:13Z,50256190.0,panic,"thread 'quickinstall_for_ripgrep' (1373) panicked at tests/integration_tests.rs:25:5: Could not find a pre-built package for ripgrep 13.0.0 on x86_64-unknown-linux-gnu."
+experimental-bsan,cargo-quickinstall-0.3.2,test_get_latest_version,test_failed,38.666,40.538,2026-11-05T06:27:53Z,50256190.0,panic,"thread 'test_get_latest_version' (1692) panicked at tests/integration_tests.rs:73:5: assertion `left == right` failed"

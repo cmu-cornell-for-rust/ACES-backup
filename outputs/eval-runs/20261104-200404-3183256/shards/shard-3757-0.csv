@@ -1,0 +1,61 @@
+experimental-bsan,rusoto_credential-0.48.0,container::tests::error_from_empty_env_vars,success,233.353,3.876,2026-11-05T02:36:15Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,container::tests::error_from_missing_env_vars,success,233.353,3.859,2026-11-05T02:36:19Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,container::tests::request_from_full_uri_with_empty_token,success,233.353,3.973,2026-11-05T02:36:23Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,container::tests::request_from_full_uri_with_token,success,233.353,4.028,2026-11-05T02:36:27Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,container::tests::request_from_full_uri_without_token,success,233.353,3.974,2026-11-05T02:36:31Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,container::tests::request_from_relative_uri,success,233.353,3.995,2026-11-05T02:36:35Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,environment::tests::alternative_prefix,success,233.353,4.268,2026-11-05T02:36:39Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,environment::tests::environment_provider_bad_expiration,success,233.353,4.194,2026-11-05T02:36:43Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,environment::tests::environment_provider_missing_credentials,success,233.353,4.248,2026-11-05T02:36:47Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,environment::tests::environment_provider_missing_key_id,success,233.353,4.191,2026-11-05T02:36:52Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,environment::tests::environment_provider_missing_secret,success,233.353,4.203,2026-11-05T02:36:56Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,environment::tests::get_non_temporary_credentials_from_env,success,233.353,4.163,2026-11-05T02:37:00Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,environment::tests::get_temporary_credentials_from_env,success,233.353,4.244,2026-11-05T02:37:04Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,environment::tests::get_temporary_credentials_with_expiration_from_env,success,233.353,4.239,2026-11-05T02:37:09Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,environment::tests::regression_test_rfc_3339_compat,success,233.353,4.157,2026-11-05T02:37:13Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::default_profile_location,success,233.353,4.053,2026-11-05T02:37:17Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::default_profile_location_from_empty_env_var,success,233.353,4.026,2026-11-05T02:37:21Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::default_profile_location_from_env_var,success,233.353,4.049,2026-11-05T02:37:25Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::default_profile_name,success,233.353,4.043,2026-11-05T02:37:29Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::default_profile_name_from_empty_env_var,success,233.353,4.035,2026-11-05T02:37:33Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::default_profile_name_from_env_var,success,233.353,4.051,2026-11-05T02:37:37Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::existing_file_no_credentials,test_failed,233.353,2.273,2026-11-05T02:37:39Z,50242295.0,panic,"thread 'profile::tests::existing_file_no_credentials' (71170) panicked at src/profile.rs:642:9: assertion `left == right` failed"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::parse_all_values_credentials_file,test_failed,233.353,2.237,2026-11-05T02:37:42Z,50242295.0,panic,"thread 'profile::tests::parse_all_values_credentials_file' (71245) panicked at src/profile.rs:535:9: assertion failed: result.is_ok()"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::parse_config_file_credential_process,test_failed,233.353,2.243,2026-11-05T02:37:44Z,50242295.0,panic,"thread 'profile::tests::parse_config_file_credential_process' (71319) panicked at src/profile.rs:478:9: assertion failed: result.is_some()"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::parse_config_file_default_profile,test_failed,233.353,2.207,2026-11-05T02:37:46Z,50242295.0,panic,"thread 'profile::tests::parse_config_file_default_profile' (71393) panicked at src/profile.rs:441:9: assertion failed: result.is_some()"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::parse_config_file_multiple_profiles,test_failed,233.353,2.205,2026-11-05T02:37:48Z,50242295.0,panic,"thread 'profile::tests::parse_config_file_multiple_profiles' (71465) panicked at src/profile.rs:455:9: assertion failed: result.is_some()"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::parse_credentials_bad_path,success,233.353,3.936,2026-11-05T02:37:52Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::parse_credentials_directory_path,success,233.353,3.996,2026-11-05T02:37:56Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::parse_credentials_file_default_profile,test_failed,233.353,2.220,2026-11-05T02:37:59Z,50242295.0,panic,"thread 'profile::tests::parse_credentials_file_default_profile' (71681) panicked at src/profile.rs:496:9: assertion failed: result.is_ok()"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::parse_credentials_file_multiple_profiles,test_failed,233.353,2.218,2026-11-05T02:38:01Z,50242295.0,panic,"thread 'profile::tests::parse_credentials_file_multiple_profiles' (71746) panicked at src/profile.rs:513:9: assertion failed: result.is_ok()"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::parse_credentials_unrecognized_field,test_failed,233.353,2.241,2026-11-05T02:38:03Z,50242295.0,panic,"thread 'profile::tests::parse_credentials_unrecognized_field' (71816) panicked at src/profile.rs:675:9: assertion failed: result.is_ok()"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::profile_provider_bad_profile,test_failed,233.353,2.622,2026-11-05T02:38:06Z,50242295.0,panic,"thread 'profile::tests::profile_provider_bad_profile' (71898) panicked at src/profile.rs:601:9: assertion `left == right` failed"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::profile_provider_credential_process,test_failed,233.353,2.577,2026-11-05T02:38:08Z,50242295.0,panic,"thread 'profile::tests::profile_provider_credential_process' (71993) panicked at src/profile.rs:617:9: assertion failed: result.is_ok()"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::profile_provider_happy_path,test_failed,233.353,2.507,2026-11-05T02:38:11Z,50242295.0,panic,"thread 'profile::tests::profile_provider_happy_path' (72075) panicked at src/profile.rs:556:9: assertion failed: result.is_ok()"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::profile_provider_profile_name,success,233.353,4.063,2026-11-05T02:38:15Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::profile_provider_profile_name_via_environment_variable,test_failed,233.353,2.547,2026-11-05T02:38:18Z,50242295.0,panic,"thread 'profile::tests::profile_provider_profile_name_via_environment_variable' (72322) panicked at src/profile.rs:586:26: called `Result::unwrap()` on an `Err` value: CredentialsError { message: ""Couldn't stat credentials file: [ \""tests/sample-data/multiple_profile_credentials\"" ]. Non existant, o"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::profile_provider_via_environment_variable,success,233.353,4.122,2026-11-05T02:38:22Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::region_from_profile,test_failed,233.353,2.293,2026-11-05T02:38:24Z,50242295.0,panic,"thread 'profile::tests::region_from_profile' (72545) panicked at src/profile.rs:750:9: assertion `left == right` failed"
+experimental-bsan,rusoto_credential-0.48.0,profile::tests::region_from_profile_missing_profile,success,233.353,3.919,2026-11-05T02:38:28Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,static_provider::tests::static_provider_impl_from_for_awscredentials,success,233.353,4.022,2026-11-05T02:38:32Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,static_provider::tests::test_static_provider_creation,success,233.353,4.139,2026-11-05T02:38:36Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,static_provider::tests::test_static_provider_custom_time_expiration,success,233.353,4.171,2026-11-05T02:38:40Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,static_provider::tests::test_static_provider_expiration_time_is_recalculated,success,233.353,5.141,2026-11-05T02:38:46Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,static_provider::tests::test_static_provider_minimal_creation,success,233.353,4.172,2026-11-05T02:38:50Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,static_provider::tests::test_static_provider_secrets_not_in_debug,success,233.353,20.088,2026-11-05T02:39:10Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,tests::credentials_with_values_are_not_considered_anonymous,success,233.353,3.972,2026-11-05T02:39:14Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,tests::default_empty_credentials_are_considered_anonymous,success,233.353,3.998,2026-11-05T02:39:18Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,tests::parse_iam_task_credentials_sample_response,test_failed,233.353,2.243,2026-11-05T02:39:20Z,50242295.0,panic,"thread 'tests::parse_iam_task_credentials_sample_response' (74006) panicked at src/lib.rs:515:27: Couldn't stat file"
+experimental-bsan,rusoto_credential-0.48.0,tests::profile_provider_finds_right_credentials_in_file,test_failed,233.353,2.595,2026-11-05T02:39:23Z,50242295.0,panic,"thread 'tests::profile_provider_finds_right_credentials_in_file' (74070) panicked at src/lib.rs:498:64: Failed to get credentials from profile provider using tests/sample-data/multiple_profile_credentials: CredentialsError { message: ""Couldn't stat credentials file: [ \""tests/sample-data/multiple_pr"
+experimental-bsan,rusoto_credential-0.48.0,tests::providers_are_send_and_sync,success,233.353,3.947,2026-11-05T02:39:27Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,tests::test_aws_credentials_secrets_not_in_debug,success,233.353,18.482,2026-11-05T02:39:45Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,variable::test::api_ergonomics,success,233.353,4.004,2026-11-05T02:39:49Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,variable::test::dynamic,success,233.353,4.001,2026-11-05T02:39:53Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,variable::test::from_binary_file,success,233.353,3.966,2026-11-05T02:39:57Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,variable::test::from_empty_env_var,success,233.353,4.095,2026-11-05T02:40:01Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,variable::test::from_env_var,success,233.353,4.094,2026-11-05T02:40:06Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,variable::test::from_text_file,success,233.353,4.031,2026-11-05T02:40:10Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,variable::test::from_value,success,233.353,4.059,2026-11-05T02:40:14Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,variable::test::is_send,success,233.353,3.883,2026-11-05T02:40:18Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,variable::test::is_sync,success,233.353,4.047,2026-11-05T02:40:22Z,50242295.0,,
+experimental-bsan,rusoto_credential-0.48.0,variable::test::or,success,233.353,3.979,2026-11-05T02:40:26Z,50242295.0,,

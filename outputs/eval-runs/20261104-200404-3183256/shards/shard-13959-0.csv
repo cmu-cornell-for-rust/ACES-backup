@@ -1,0 +1,8 @@
+experimental-bsan,wincompatlib-0.7.5,tests::dxvk::apply_dxvk,test_failed,77.073,8.848,2026-11-05T06:47:45Z,50257474.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,wincompatlib-0.7.5,tests::fonts::install_all_fonts,test_failed,77.073,1.567,2026-11-05T06:47:47Z,50257474.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,wincompatlib-0.7.5,tests::proton::create_prefix,success,77.073,25.899,2026-11-05T06:48:13Z,50257474.0,,
+experimental-bsan,wincompatlib-0.7.5,tests::proton::proton_version,success,77.073,1.532,2026-11-05T06:48:14Z,50257474.0,,
+experimental-bsan,wincompatlib-0.7.5,tests::proton::run_and_kill_notepad,test_failed,77.073,6.917,2026-11-05T06:48:21Z,50257474.0,panic,"thread 'tests::proton::run_and_kill_notepad' (57007) panicked at src/tests/proton.rs:92:5: assertion failed: notepad.wait_with_output()?.status.success()"
+experimental-bsan,wincompatlib-0.7.5,tests::wine::create_prefix,success,77.073,12.029,2026-11-05T06:48:33Z,50257474.0,,
+experimental-bsan,wincompatlib-0.7.5,tests::wine::run_and_kill_notepad,test_failed,77.073,7.115,2026-11-05T06:48:40Z,50257474.0,panic,"thread 'tests::wine::run_and_kill_notepad' (58622) panicked at src/tests/wine.rs:91:5: assertion failed: notepad.wait_with_output()?.status.success()"
+experimental-bsan,wincompatlib-0.7.5,tests::wine::wine_version,success,77.073,1.556,2026-11-05T06:48:42Z,50257474.0,,

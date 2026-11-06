@@ -1,0 +1,4 @@
+experimental-bsan,rssql-0.2.6,tests::test_all,test_failed,449.326,32.043,2026-11-05T08:01:14Z,50261524.0,panic,"thread 'tests::test_all' (29305) panicked at src/lib.rs:593:14: called `Result::unwrap()` on an `Err` value: PoolTimedOut"
+experimental-bsan,rssql-0.2.6,tests::test_mysql,test_failed,449.326,2.042,2026-11-05T08:01:16Z,50261524.0,panic,"thread 'tests::test_mysql' (30048) panicked at src/lib.rs:507:14: called `Result::unwrap()` on an `Err` value: error communicating with database: Connection refused (os error 111)"
+experimental-bsan,rssql-0.2.6,tests::test_postgresql,test_failed,449.326,2.047,2026-11-05T08:01:18Z,50261524.0,panic,"thread 'tests::test_postgresql' (30141) panicked at src/lib.rs:539:18: called `Result::unwrap()` on an `Err` value: error communicating with database: Connection refused (os error 111)"
+experimental-bsan,rssql-0.2.6,tests::test_sqlite,success,449.326,3.384,2026-11-05T08:01:21Z,50261524.0,,

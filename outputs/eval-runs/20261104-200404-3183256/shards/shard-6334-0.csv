@@ -1,0 +1,35 @@
+experimental-bsan,flashpoint-archive-0.9.0,tests::add_playtime,success,297.505,4.299,2026-11-05T03:43:21Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::count_games,test_failed,297.505,32.011,2026-11-05T03:43:53Z,50246809.0,panic,"thread 'tests::count_games' (10375) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::create_and_save_game,success,297.505,4.207,2026-11-05T03:43:57Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::create_and_save_game_data,success,297.505,3.772,2026-11-05T03:44:01Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::create_platform,success,297.505,3.557,2026-11-05T03:44:05Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::create_tag,success,297.505,3.542,2026-11-05T03:44:08Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::database_not_initialized,success,297.505,1.815,2026-11-05T03:44:10Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::delete_platform,success,297.505,3.730,2026-11-05T03:44:14Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::delete_tag,success,297.505,3.761,2026-11-05T03:44:18Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::find_all_game_libraries,test_failed,297.505,31.976,2026-11-05T03:44:50Z,50246809.0,panic,"thread 'tests::find_all_game_libraries' (12018) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::find_game,test_failed,297.505,31.954,2026-11-05T03:45:22Z,50246809.0,panic,"thread 'tests::find_game' (12471) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::find_tag,success,297.505,3.536,2026-11-05T03:45:25Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::game_redirects,success,297.505,3.552,2026-11-05T03:45:29Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::get_platform,test_failed,297.505,31.932,2026-11-05T03:46:01Z,50246809.0,panic,"thread 'tests::get_platform' (13357) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::get_tag,test_failed,297.505,31.989,2026-11-05T03:46:33Z,50246809.0,panic,"thread 'tests::get_tag' (13737) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::merge_tags,success,297.505,3.908,2026-11-05T03:46:37Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::migrations_valid,success,297.505,2.470,2026-11-05T03:46:39Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::parse_user_exact_search_input,timeout,297.505,150.021,2026-11-05T03:49:09Z,50246809.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flashpoint-archive-0.9.0,tests::parse_user_quick_search_input,success,297.505,1.891,2026-11-05T03:49:11Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::parse_user_search_input,timeout,297.505,150.019,2026-11-05T03:51:41Z,50246809.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flashpoint-archive-0.9.0,tests::parse_user_search_input_assorted,timeout,297.505,150.018,2026-11-05T03:54:11Z,50246809.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flashpoint-archive-0.9.0,tests::parse_user_search_input_sizes,timeout,297.505,150.018,2026-11-05T03:56:41Z,50246809.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flashpoint-archive-0.9.0,tests::parse_user_search_input_whitespace,success,297.505,84.219,2026-11-05T03:58:05Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::search_full_scan,test_failed,297.505,31.958,2026-11-05T03:58:37Z,50246809.0,panic,"thread 'tests::search_full_scan' (31381) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::search_games_index_limited,test_failed,297.505,32.008,2026-11-05T03:59:09Z,50246809.0,panic,"thread 'tests::search_games_index_limited' (32893) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::search_games_installed,test_failed,297.505,31.988,2026-11-05T03:59:42Z,50246809.0,panic,"thread 'tests::search_games_installed' (34819) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::search_games_random,test_failed,297.505,31.975,2026-11-05T04:00:14Z,50246809.0,panic,"thread 'tests::search_games_random' (35310) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::search_multiple_subfilters,test_failed,297.505,31.965,2026-11-05T04:00:45Z,50246809.0,panic,"thread 'tests::search_multiple_subfilters' (35857) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::search_tag_suggestions,success,297.505,3.553,2026-11-05T04:00:49Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::search_tags_and,test_failed,297.505,31.995,2026-11-05T04:01:21Z,50246809.0,panic,"thread 'tests::search_tags_and' (37872) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::search_tags_and_or_combined,test_failed,297.505,31.951,2026-11-05T04:01:53Z,50246809.0,panic,"thread 'tests::search_tags_and_or_combined' (38082) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::search_tags_or,test_failed,297.505,31.935,2026-11-05T04:02:25Z,50246809.0,panic,"thread 'tests::search_tags_or' (38238) panicked at src/lib.rs:61:50: Failed to open R2D2 conn pool: Error(Some(""unable to open database file: benches/flashpoint.sqlite""))"
+experimental-bsan,flashpoint-archive-0.9.0,tests::tag_categories,success,297.505,3.440,2026-11-05T04:02:28Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::update_game_when_platform_changed,success,297.505,3.968,2026-11-05T04:02:32Z,50246809.0,,
+experimental-bsan,flashpoint-archive-0.9.0,tests::update_tags_clear_existing,success,297.505,3.611,2026-11-05T04:02:36Z,50246809.0,,

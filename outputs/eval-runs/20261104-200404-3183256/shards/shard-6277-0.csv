@@ -1,0 +1,36 @@
+experimental-bsan,sudoku-0.8.0,board::canonicalization::most_canonical_grid_automorphism_count,success,44.046,29.399,2026-11-05T03:36:42Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,board::canonicalization::transformation_from_struct,timeout,44.046,150.016,2026-11-05T03:39:12Z,50246688.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sudoku-0.8.0,board::grid_state::grid_state_roundtrip,success,44.046,4.294,2026-11-05T03:39:16Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,board::positions::test::band_cells,success,44.046,3.463,2026-11-05T03:39:20Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,board::positions::test::col_cells,success,44.046,3.468,2026-11-05T03:39:23Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,board::positions::test::row_cells,success,44.046,3.472,2026-11-05T03:39:27Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,board::positions::test::stack_cells,success,44.046,3.466,2026-11-05T03:39:30Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,board::positions::test::unique,success,44.046,3.457,2026-11-05T03:39:34Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,board::sudoku::test::test_symmetry_all_cells_equivalent,success,44.046,5.292,2026-11-05T03:39:39Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,board::sudoku::test::test_symmetry_composite_symmetries,success,44.046,6.678,2026-11-05T03:39:46Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,canonicalize,timeout,44.046,150.016,2026-11-05T03:42:16Z,50246688.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sudoku-0.8.0,canonicalize_idempotency,timeout,44.046,150.019,2026-11-05T03:44:46Z,50246688.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sudoku-0.8.0,correct_solution_easy_sudokus,success,44.046,16.486,2026-11-05T03:45:02Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,correct_solution_hard_sudokus,timeout,44.046,150.015,2026-11-05T03:47:33Z,50246688.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sudoku-0.8.0,correct_solution_medium_sudokus,success,44.046,7.350,2026-11-05T03:47:40Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,from_str_line_too_short,success,44.046,3.379,2026-11-05T03:47:43Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,from_str_line_with_comment,success,44.046,3.478,2026-11-05T03:47:47Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,generate_solved_sudoku_correctness,timeout,44.046,150.018,2026-11-05T03:50:17Z,50246688.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sudoku-0.8.0,generate_sudoku_uniqueness,timeout,44.046,150.019,2026-11-05T03:52:47Z,50246688.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sudoku-0.8.0,is_solved_on_solved,success,44.046,5.369,2026-11-05T03:52:52Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,is_solved_on_unsolved,success,44.046,4.057,2026-11-05T03:52:56Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,parse_permissive,success,44.046,3.467,2026-11-05T03:53:00Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,readme,success,44.046,4.138,2026-11-05T03:53:04Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,shuffle_solved,success,44.046,46.367,2026-11-05T03:53:50Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,shuffle_unsolved,success,44.046,56.746,2026-11-05T03:54:47Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,solution_multiple_solutions,success,44.046,3.445,2026-11-05T03:54:51Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,solutionless_sudokus,success,44.046,3.686,2026-11-05T03:54:54Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,solve_1,success,44.046,3.751,2026-11-05T03:54:58Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,solve_2,success,44.046,3.585,2026-11-05T03:55:02Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,strategy::solver::test::grid_state_str_impossible_sudoku,success,44.046,3.858,2026-11-05T03:55:05Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,strategy::solver::test::roundtrip_grid_state_str,success,44.046,75.119,2026-11-05T03:56:21Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,strategy::solver::test::strategy_solver_correct_solution_easy_sudokus,success,44.046,60.468,2026-11-05T03:57:21Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,strategy::solver::test::strategy_solver_correct_solution_medium_sudokus,success,44.046,17.760,2026-11-05T03:57:39Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,strategy::strategies::xy_wing::test::xy_wing,success,44.046,3.773,2026-11-05T03:57:43Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,strategy::strategies::xyz_wing::test::xyz_wing,success,44.046,4.288,2026-11-05T03:57:47Z,50246688.0,,
+experimental-bsan,sudoku-0.8.0,wrong_format_1,success,44.046,3.595,2026-11-05T03:57:51Z,50246688.0,,

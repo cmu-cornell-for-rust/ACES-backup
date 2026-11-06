@@ -1,0 +1,7 @@
+experimental-bsan,remoc-obs-0.5.0,events,success,109.490,7.773,2026-11-05T06:59:24Z,50258171.0,,
+experimental-bsan,remoc-obs-0.5.0,events_incremental,success,109.490,7.908,2026-11-05T06:59:32Z,50258171.0,,
+experimental-bsan,remoc-obs-0.5.0,incremental,timeout,109.490,150.029,2026-11-05T07:02:02Z,50258171.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-obs-0.5.0,mirrored,timeout,109.490,150.016,2026-11-05T07:04:32Z,50258171.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-obs-0.5.0,mirrored_disconnect,test_failed,109.490,6.468,2026-11-05T07:04:39Z,50258171.0,panic,"thread 'mirrored_disconnect' (82218) panicked at tests/hash_map.rs:162:5: assertion failed: matches!(mirror.borrow().await, Err(RecvError::Closed))"
+experimental-bsan,remoc-obs-0.5.0,mirrored_disconnect_after_done,timeout,109.490,150.013,2026-11-05T07:07:09Z,50258171.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,remoc-obs-0.5.0,standalone,success,109.490,7.715,2026-11-05T07:07:16Z,50258171.0,,

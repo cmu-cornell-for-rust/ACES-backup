@@ -1,0 +1,8 @@
+experimental-bsan,retry-policies-0.4.0,policies::exponential_backoff::tests::builder_invalid_retry_bounds,success,16.408,1.651,2026-11-05T06:44:34Z,50257282.0,,
+experimental-bsan,retry-policies-0.4.0,policies::exponential_backoff::tests::different_exponential_base_produce_different_max_retries_for_the_same_duration,success,16.408,1.596,2026-11-05T06:44:36Z,50257282.0,,
+experimental-bsan,retry-policies-0.4.0,policies::exponential_backoff::tests::does_not_retry_after_total_retry_duration,success,16.408,1.595,2026-11-05T06:44:37Z,50257282.0,,
+experimental-bsan,retry-policies-0.4.0,policies::exponential_backoff::tests::does_not_retry_before_total_retry_duration_if_max_retries_exceeded,success,16.408,1.616,2026-11-05T06:44:39Z,50257282.0,,
+experimental-bsan,retry-policies-0.4.0,policies::exponential_backoff::tests::if_n_past_retries_is_above_maximum_it_decides_to_mark_as_failed,success,16.408,1.531,2026-11-05T06:44:40Z,50257282.0,,
+experimental-bsan,retry-policies-0.4.0,policies::exponential_backoff::tests::if_n_past_retries_is_below_maximum_it_decides_to_retry,success,16.408,1.604,2026-11-05T06:44:42Z,50257282.0,,
+experimental-bsan,retry-policies-0.4.0,policies::exponential_backoff::tests::maximum_retry_interval_is_never_exceeded,success,16.408,1.548,2026-11-05T06:44:44Z,50257282.0,,
+experimental-bsan,retry-policies-0.4.0,policies::exponential_backoff::tests::overflow_backoff_exponent_does_not_cause_a_panic,success,16.408,1.618,2026-11-05T06:44:45Z,50257282.0,,

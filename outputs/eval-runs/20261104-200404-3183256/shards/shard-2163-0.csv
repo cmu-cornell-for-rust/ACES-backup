@@ -1,0 +1,103 @@
+experimental-bsan,gear-wasm-0.45.1,builder::code::tests::example,success,26.359,1.800,2026-11-05T01:58:26Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,builder::code::tests::func_example,success,26.359,1.793,2026-11-05T01:58:28Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,builder::code::tests::func_example_multi_result,success,26.359,1.782,2026-11-05T01:58:30Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,builder::export::tests::example,success,26.359,1.796,2026-11-05T01:58:32Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,builder::global::tests::example,success,26.359,1.783,2026-11-05T01:58:34Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,builder::import::tests::example,success,26.359,1.771,2026-11-05T01:58:35Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,builder::module::tests::data,success,26.359,1.762,2026-11-05T01:58:37Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,builder::module::tests::export,success,26.359,1.756,2026-11-05T01:58:39Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,builder::module::tests::functions,success,26.359,1.785,2026-11-05T01:58:41Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,builder::module::tests::global,success,26.359,1.802,2026-11-05T01:58:42Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,builder::module::tests::reuse_types,success,26.359,1.811,2026-11-05T01:58:44Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,builder::module::tests::smoky,success,26.359,1.798,2026-11-05T01:58:46Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::clear_removes_all_values,success,26.359,1.805,2026-11-05T01:58:48Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::contains_key_returns_true_when_a_key_is_present,success,26.359,1.789,2026-11-05T01:58:50Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::default_is_empty_no_matter_how_we_look_at_it,success,26.359,1.762,2026-11-05T01:58:52Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::deserialize_enforces_max_idx,success,26.359,1.807,2026-11-05T01:58:53Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::deserialize_requires_elements_to_be_in_order,success,26.359,1.791,2026-11-05T01:58:55Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::from_iterator_builds_a_map,success,26.359,1.750,2026-11-05T01:58:57Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::get_returns_elements_that_are_there_but_nothing_else,success,26.359,1.794,2026-11-05T01:58:59Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::insert_behaves_like_other_maps,success,26.359,1.785,2026-11-05T01:59:00Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::iterators_are_well_behaved,success,26.359,1.799,2026-11-05T01:59:02Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::partial_eq_is_smart_about_none_values_at_the_end,success,26.359,1.818,2026-11-05T01:59:04Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::partial_eq_works_as_expected_in_simple_cases,success,26.359,1.789,2026-11-05T01:59:06Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::remove_behaves_like_other_maps,success,26.359,1.765,2026-11-05T01:59:08Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::serialize_and_deserialize,success,26.359,1.767,2026-11-05T01:59:10Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::index_map::tests::with_capacity_creates_empty_map,success,26.359,1.768,2026-11-05T01:59:11Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::add_custom_section,test_failed,26.359,1.854,2026-11-05T01:59:13Z,50236862.0,panic,"thread 'elements::module::integration_tests::add_custom_section' (15691) panicked at src/elements/module.rs:952:63: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::add_start,test_failed,26.359,1.856,2026-11-05T01:59:15Z,50236862.0,panic,"thread 'elements::module::integration_tests::add_start' (15745) panicked at src/elements/module.rs:982:63: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::add_start_custom,test_failed,26.359,1.900,2026-11-05T01:59:17Z,50236862.0,panic,"thread 'elements::module::integration_tests::add_start_custom' (15798) panicked at src/elements/module.rs:994:14: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::const_,test_failed,26.359,1.907,2026-11-05T01:59:19Z,50236862.0,panic,"thread 'elements::module::integration_tests::const_' (15851) panicked at src/elements/module.rs:798:68: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::hello,test_failed,26.359,1.895,2026-11-05T01:59:21Z,50236862.0,panic,"thread 'elements::module::integration_tests::hello' (15904) panicked at src/elements/module.rs:717:68: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::insert_sections,success,26.359,1.809,2026-11-05T01:59:23Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::memory_space,test_failed,26.359,1.898,2026-11-05T01:59:25Z,50236862.0,panic,"thread 'elements::module::integration_tests::memory_space' (15992) panicked at src/elements/module.rs:945:62: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::module_default_round_trip,success,26.359,1.773,2026-11-05T01:59:26Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::mut_start,test_failed,26.359,1.848,2026-11-05T01:59:28Z,50236862.0,panic,"thread 'elements::module::integration_tests::mut_start' (16082) panicked at src/elements/module.rs:971:63: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::names,test_failed,26.359,1.900,2026-11-05T01:59:30Z,50236862.0,panic,"thread 'elements::module::integration_tests::names' (16136) panicked at src/elements/module.rs:882:14: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::names_section_not_present,test_failed,26.359,1.916,2026-11-05T01:59:32Z,50236862.0,panic,"thread 'elements::module::integration_tests::names_section_not_present' (16208) panicked at src/elements/module.rs:1027:58: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::names_section_present,test_failed,26.359,1.936,2026-11-05T01:59:34Z,50236862.0,panic,"thread 'elements::module::integration_tests::names_section_present' (16262) panicked at src/elements/module.rs:1010:59: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::names_with_global_section,test_failed,26.359,1.931,2026-11-05T01:59:36Z,50236862.0,panic,"thread 'elements::module::integration_tests::names_with_global_section' (16353) panicked at src/elements/module.rs:910:14: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::peek,test_failed,26.359,1.911,2026-11-05T01:59:38Z,50236862.0,panic,"thread 'elements::module::integration_tests::peek' (16421) panicked at src/elements/module.rs:838:68: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::peek_2,test_failed,26.359,1.929,2026-11-05T01:59:40Z,50236862.0,panic,"thread 'elements::module::integration_tests::peek_2' (16479) panicked at src/elements/module.rs:851:60: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::peek_3,test_failed,26.359,1.925,2026-11-05T01:59:42Z,50236862.0,panic,"thread 'elements::module::integration_tests::peek_3' (16532) panicked at src/elements/module.rs:864:65: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::serde,test_failed,26.359,1.925,2026-11-05T01:59:44Z,50236862.0,panic,"thread 'elements::module::integration_tests::serde' (16586) panicked at src/elements/module.rs:725:68: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::serde_code,test_failed,26.359,1.929,2026-11-05T01:59:46Z,50236862.0,panic,"thread 'elements::module::integration_tests::serde_code' (16640) panicked at src/elements/module.rs:774:59: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::serde_import,test_failed,26.359,1.940,2026-11-05T01:59:48Z,50236862.0,panic,"thread 'elements::module::integration_tests::serde_import' (16695) panicked at src/elements/module.rs:756:59: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::serde_type,test_failed,26.359,1.934,2026-11-05T01:59:50Z,50236862.0,panic,"thread 'elements::module::integration_tests::serde_type' (16748) panicked at src/elements/module.rs:738:59: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::serialization_roundtrip,test_failed,26.359,1.937,2026-11-05T01:59:52Z,50236862.0,panic,"thread 'elements::module::integration_tests::serialization_roundtrip' (16802) panicked at src/elements/module.rs:1076:67: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::shared_memory_flag,success,26.359,1.844,2026-11-05T01:59:54Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::module::integration_tests::store,test_failed,26.359,1.933,2026-11-05T01:59:56Z,50236862.0,panic,"thread 'elements::module::integration_tests::store' (16893) panicked at src/elements/module.rs:827:60: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::name_section::tests::deserialize_local_names,test_failed,26.359,1.924,2026-11-05T01:59:58Z,50236862.0,panic,"thread 'elements::name_section::tests::deserialize_local_names' (16949) panicked at src/elements/name_section.rs:359:14: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::name_section::tests::serialize_all_subsections,success,26.359,1.828,2026-11-05T01:59:59Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::name_section::tests::serialize_function_names,success,26.359,1.831,2026-11-05T02:00:01Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::name_section::tests::serialize_local_names,success,26.359,1.833,2026-11-05T02:00:03Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::name_section::tests::serialize_module_name,success,26.359,1.830,2026-11-05T02:00:05Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::ops::display,success,26.359,1.837,2026-11-05T02:00:07Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::ops::ifelse,success,26.359,1.828,2026-11-05T02:00:09Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::ops::instructions_hashset,success,26.359,1.834,2026-11-05T02:00:10Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::ops::size_off,success,26.359,1.831,2026-11-05T02:00:12Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::counted_list,success,26.359,1.827,2026-11-05T02:00:14Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint32_8192,success,26.359,1.833,2026-11-05T02:00:16Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint32_bad_extended,success,26.359,1.832,2026-11-05T02:00:18Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint32_bad_extended2,success,26.359,1.833,2026-11-05T02:00:20Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint32_max,success,26.359,1.832,2026-11-05T02:00:22Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint32_min,success,26.359,1.883,2026-11-05T02:00:23Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint32_neg_8192,success,26.359,1.834,2026-11-05T02:00:25Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint32_too_long,success,26.359,1.845,2026-11-05T02:00:27Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint64_8192,success,26.359,1.838,2026-11-05T02:00:29Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint64_bad_extended,success,26.359,1.838,2026-11-05T02:00:31Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint64_max,success,26.359,1.835,2026-11-05T02:00:33Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint64_min,success,26.359,1.835,2026-11-05T02:00:35Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint64_neg_8192,success,26.359,1.832,2026-11-05T02:00:36Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint64_too_long,success,26.359,1.829,2026-11-05T02:00:38Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint7_invalid,success,26.359,1.829,2026-11-05T02:00:40Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varint7_neg,success,26.359,1.832,2026-11-05T02:00:42Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint32_0,success,26.359,1.828,2026-11-05T02:00:44Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint32_1,success,26.359,1.833,2026-11-05T02:00:46Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint32_135,success,26.359,1.835,2026-11-05T02:00:47Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint32_8192,success,26.359,1.831,2026-11-05T02:00:49Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint32_too_long,success,26.359,1.831,2026-11-05T02:00:51Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint32_too_long_nulled,success,26.359,1.827,2026-11-05T02:00:53Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint32_too_long_trailing,success,26.359,1.830,2026-11-05T02:00:55Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint64_0,success,26.359,1.822,2026-11-05T02:00:57Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint64_1,success,26.359,1.863,2026-11-05T02:00:59Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint64_135,success,26.359,1.828,2026-11-05T02:01:00Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint64_8192,success,26.359,1.825,2026-11-05T02:01:02Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint64_too_long,success,26.359,1.824,2026-11-05T02:01:04Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::primitives::tests::varuint64_too_long_trailing,success,26.359,1.837,2026-11-05T02:01:06Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::reloc_section::tests::reloc_section,test_failed,26.359,1.939,2026-11-05T02:01:08Z,50236862.0,panic,"thread 'elements::reloc_section::tests::reloc_section' (18638) panicked at src/elements/reloc_section.rs:322:14: Module should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::code_detect,success,26.359,1.847,2026-11-05T02:01:10Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::code_section_ser,success,26.359,1.838,2026-11-05T02:01:12Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::data_section_detect,success,26.359,1.870,2026-11-05T02:01:13Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::data_section_ser,success,26.359,1.842,2026-11-05T02:01:15Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::element_section_ser,success,26.359,1.828,2026-11-05T02:01:17Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::export_detect,success,26.359,1.841,2026-11-05T02:01:19Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::fn_section_detect,success,26.359,1.832,2026-11-05T02:01:21Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::fn_section_number,success,26.359,1.830,2026-11-05T02:01:23Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::fn_section_ref,success,26.359,1.825,2026-11-05T02:01:25Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::import_section,test_failed,26.359,1.929,2026-11-05T02:01:27Z,50236862.0,panic,"thread 'elements::section::tests::import_section' (19013) panicked at src/elements/section.rs:772:68: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::start_section,success,26.359,1.892,2026-11-05T02:01:28Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::type_section_infer,success,26.359,1.845,2026-11-05T02:01:30Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,elements::section::tests::type_section_len,success,26.359,1.845,2026-11-05T02:01:32Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,io::tests::cursor,success,26.359,1.834,2026-11-05T02:01:34Z,50236862.0,,
+experimental-bsan,gear-wasm-0.45.1,io::tests::overflow_in_cursor,success,26.359,1.840,2026-11-05T02:01:36Z,50236862.0,,

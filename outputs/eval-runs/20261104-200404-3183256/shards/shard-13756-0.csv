@@ -1,0 +1,8 @@
+experimental-bsan,pingora-limits-0.9.0,estimator::tests::desc,success,71.494,1.577,2026-11-05T06:43:23Z,50257197.0,,
+experimental-bsan,pingora-limits-0.9.0,estimator::tests::get,success,71.494,1.576,2026-11-05T06:43:25Z,50257197.0,,
+experimental-bsan,pingora-limits-0.9.0,estimator::tests::incr,success,71.494,1.565,2026-11-05T06:43:26Z,50257197.0,,
+experimental-bsan,pingora-limits-0.9.0,estimator::tests::reset,success,71.494,1.573,2026-11-05T06:43:28Z,50257197.0,,
+experimental-bsan,pingora-limits-0.9.0,inflight::tests::inflight_count,success,71.494,5.349,2026-11-05T06:43:33Z,50257197.0,,
+experimental-bsan,pingora-limits-0.9.0,rate::tests::test_observe_rate,success,71.494,7.677,2026-11-05T06:43:41Z,50257197.0,,
+experimental-bsan,pingora-limits-0.9.0,rate::tests::test_observe_rate_custom_90_10,success,71.494,7.726,2026-11-05T06:43:48Z,50257197.0,,
+experimental-bsan,pingora-limits-0.9.0,rate::tests::test_observe_rate_custom_proportional,test_failed,71.494,4.403,2026-11-05T06:43:53Z,50257197.0,panic,"thread 'rate::tests::test_observe_rate_custom_proportional' (30161) panicked at src/rate.rs:263:9: assertion failed: `(left approx_eq right)`"

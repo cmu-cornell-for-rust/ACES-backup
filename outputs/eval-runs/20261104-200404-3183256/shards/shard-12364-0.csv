@@ -1,0 +1,11 @@
+experimental-bsan,vents-0.6.0,delayed_event::test::debug,success,60.299,1.613,2026-11-05T06:04:44Z,50255170.0,,
+experimental-bsan,vents-0.6.0,delayed_event::test::delayed_event,test_failed,60.299,12.954,2026-11-05T06:04:57Z,50255170.0,panic,"thread 'delayed_event::test::delayed_event' (66649) panicked at src/delayed_event.rs:183:9: assertion `left == right` failed"
+experimental-bsan,vents-0.6.0,delayed_event::test::double_subscriber,success,60.299,1.630,2026-11-05T06:04:59Z,50255170.0,,
+experimental-bsan,vents-0.6.0,delayed_event::test::remove_subscriber,success,60.299,2.059,2026-11-05T06:05:01Z,50255170.0,,
+experimental-bsan,vents-0.6.0,event::test::debug,success,60.299,1.602,2026-11-05T06:05:02Z,50255170.0,,
+experimental-bsan,vents-0.6.0,event::test::double_subscriber,success,60.299,1.621,2026-11-05T06:05:04Z,50255170.0,,
+experimental-bsan,vents-0.6.0,event::test::event,success,60.299,1.618,2026-11-05T06:05:06Z,50255170.0,,
+experimental-bsan,vents-0.6.0,once_event::test::debug,success,60.299,1.621,2026-11-05T06:05:07Z,50255170.0,,
+experimental-bsan,vents-0.6.0,once_event::test::double_subscriber,success,60.299,1.637,2026-11-05T06:05:09Z,50255170.0,,
+experimental-bsan,vents-0.6.0,once_event::test::event_once,success,60.299,1.629,2026-11-05T06:05:11Z,50255170.0,,
+experimental-bsan,vents-0.6.0,once_event::test::event_once_async,success,60.299,1.747,2026-11-05T06:05:12Z,50255170.0,,

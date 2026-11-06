@@ -1,0 +1,24 @@
+experimental-bsan,cala-cel-interpreter-0.32.7,compiles_and_evaluates_deeply_nested_expression_on_small_caller_stack,timeout,670.683,150.028,2026-11-05T04:33:05Z,50249195.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cala-cel-interpreter-0.32.7,compiles_realistic_velocity_expression_on_small_caller_stack,success,670.683,28.396,2026-11-05T04:33:34Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::contract_tests::json_rejections_cover_recursive_bytes_and_non_string_keys,test_failed,670.683,23.760,2026-11-05T04:33:58Z,50249195.0,crash,"test interpreter::contract_tests::json_rejections_cover_recursive_bytes_and_non_string_keys ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::contract_tests::scalar_evaluation_is_bare_and_keeps_expression_and_foreign_source,success,670.683,18.261,2026-11-05T04:34:16Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::bytes_to_json_is_error_not_panic,success,670.683,17.750,2026-11-05T04:34:34Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::cast_function,success,670.683,18.645,2026-11-05T04:34:52Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::decimal_arithmetic_functions,success,670.683,31.130,2026-11-05T04:35:23Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::decimal_cmp_function,test_failed,670.683,32.633,2026-11-05T04:35:56Z,50249195.0,crash,"test interpreter::tests::decimal_cmp_function ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::function_on_timestamp,success,670.683,25.066,2026-11-05T04:36:21Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::has_macro_with_map,success,670.683,24.369,2026-11-05T04:36:46Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::invalid_format_on_timestamp_is_error_not_panic,success,670.683,23.941,2026-11-05T04:37:09Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::literals,success,670.683,22.777,2026-11-05T04:37:32Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::logic,success,670.683,17.853,2026-11-05T04:37:50Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::long_but_legal_expression_still_compiles,timeout,670.683,150.021,2026-11-05T04:40:20Z,50249195.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::lookup,success,670.683,22.660,2026-11-05T04:40:43Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::oversized_expression_rejected_before_parser,success,670.683,4.774,2026-11-05T04:40:48Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::package_function,success,670.683,26.025,2026-11-05T04:41:14Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::parser_panic_surfaces_as_error,timeout,670.683,150.025,2026-11-05T04:43:44Z,50249195.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cala-cel-interpreter-0.32.7,interpreter::tests::to_level_function,success,670.683,19.734,2026-11-05T04:44:03Z,50249195.0,,
+experimental-bsan,cala-cel-interpreter-0.32.7,malformed_nested_expression_errors_without_hanging,timeout,670.683,150.026,2026-11-05T04:46:33Z,50249195.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cala-cel-interpreter-0.32.7,nesting_beyond_recursion_cap_errors_without_crashing,timeout,670.683,150.025,2026-11-05T04:49:04Z,50249195.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cala-cel-interpreter-0.32.7,recovery_cost_scales_linearly_with_input,timeout,670.683,150.023,2026-11-05T04:51:34Z,50249195.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cala-cel-interpreter-0.32.7,repeated_negation_parens_motif_errors_quickly,timeout,670.683,150.022,2026-11-05T04:54:04Z,50249195.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cala-cel-interpreter-0.32.7,value::tests::nested_runtime_value_failure_keeps_the_expression_in_the_public_contract,success,670.683,4.808,2026-11-05T04:54:08Z,50249195.0,,

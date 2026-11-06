@@ -1,0 +1,32 @@
+experimental-bsan,dateparser-0.2.1,datetime::tests::chinese_ymd,success,184.914,2.670,2026-11-05T03:50:43Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::chinese_ymd_hms,success,184.914,3.171,2026-11-05T03:50:47Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::dot_mdy_or_ymd,success,184.914,33.050,2026-11-05T03:51:20Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::hms,success,184.914,8.299,2026-11-05T03:51:28Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::hms_z,success,184.914,8.342,2026-11-05T03:51:36Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::month_dmy,success,184.914,7.459,2026-11-05T03:51:44Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::month_dmy_hms,success,184.914,12.804,2026-11-05T03:51:57Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::month_md_hms,success,184.914,8.578,2026-11-05T03:52:05Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::month_mdy,success,184.914,7.700,2026-11-05T03:52:13Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::month_mdy_hms,success,184.914,13.382,2026-11-05T03:52:26Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::month_mdy_hms_z,success,184.914,10.970,2026-11-05T03:52:37Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::month_ymd,success,184.914,2.806,2026-11-05T03:52:40Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::mysql_log_timestamp,success,184.914,36.873,2026-11-05T03:53:17Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::postgres_timestamp,success,184.914,8.722,2026-11-05T03:53:26Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::rfc2822,success,184.914,1.658,2026-11-05T03:53:27Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::rfc3339,success,184.914,1.699,2026-11-05T03:53:29Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::slash_mdy,success,184.914,2.686,2026-11-05T03:53:32Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::slash_mdy_hms,success,184.914,12.813,2026-11-05T03:53:45Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::slash_ymd,success,184.914,2.607,2026-11-05T03:53:47Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::slash_ymd_hms,success,184.914,12.032,2026-11-05T03:53:59Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::unix_timestamp,success,184.914,2.691,2026-11-05T03:54:02Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::ymd,success,184.914,2.457,2026-11-05T03:54:05Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::ymd_hms,success,184.914,11.525,2026-11-05T03:54:16Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::ymd_hms_z,success,184.914,9.409,2026-11-05T03:54:25Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,datetime::tests::ymd_z,success,184.914,8.546,2026-11-05T03:54:34Z,50247475.0,,
+experimental-bsan,dateparser-0.2.1,tests::parse_in_local,test_failed,184.914,27.265,2026-11-05T03:55:01Z,50247475.0,panic,"thread 'tests::parse_in_local' (46089) panicked at src/lib.rs:623:35: assertion `left == right` failed: parse_in_local/ymd/2021-02-21"
+experimental-bsan,dateparser-0.2.1,tests::parse_with_edt,timeout,184.914,150.018,2026-11-05T03:57:31Z,50247475.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dateparser-0.2.1,tests::parse_with_est,timeout,184.914,150.021,2026-11-05T04:00:01Z,50247475.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dateparser-0.2.1,tests::parse_with_local,timeout,184.914,150.027,2026-11-05T04:02:31Z,50247475.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dateparser-0.2.1,tests::parse_with_timezone_in_utc,test_failed,184.914,33.074,2026-11-05T04:03:05Z,50247475.0,panic,"thread 'tests::parse_with_timezone_in_utc' (82047) panicked at src/lib.rs:824:35: assertion `left == right` failed: parse_with_timezone_in_utc/ymd_z/2021-02-21 PST"
+experimental-bsan,dateparser-0.2.1,tests::parse_with_utc,timeout,184.914,150.020,2026-11-05T04:05:35Z,50247475.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dateparser-0.2.1,timezone::tests::parse,success,184.914,1.552,2026-11-05T04:05:36Z,50247475.0,,

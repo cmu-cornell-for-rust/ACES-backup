@@ -1,0 +1,19 @@
+experimental-bsan,vfox-0.2.1,hooks::available::tests::dummy,success,472.592,20.099,2026-11-05T05:00:55Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,hooks::available::tests::dummy_async,success,472.592,20.065,2026-11-05T05:01:15Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,hooks::available::tests::nodejs_async,test_failed,472.592,0.777,2026-11-05T05:01:15Z,50251183.0,panic,"thread 'hooks::available::tests::nodejs_async' (43204) panicked at src/plugin.rs:67:30: called `Result::unwrap()` on an `Err` value: Error(""Plugin directory not found: \""plugins/nodejs\"""")"
+experimental-bsan,vfox-0.2.1,hooks::parse_legacy_file::tests::test_parse_legacy_file_nodejs,test_failed,472.592,0.790,2026-11-05T05:01:16Z,50251183.0,panic,"thread 'hooks::parse_legacy_file::tests::test_parse_legacy_file_nodejs' (43291) panicked at src/hooks/parse_legacy_file.rs:83:14: called `Result::unwrap()` on an `Err` value: Error(""Plugin directory not found: \""plugins/nodejs\"""")"
+experimental-bsan,vfox-0.2.1,hooks::post_install::tests::dummy,success,472.592,1.487,2026-11-05T05:01:18Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,hooks::pre_install::tests::dummy,success,472.592,20.851,2026-11-05T05:01:39Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,hooks::pre_install::tests::nodejs,test_failed,472.592,0.784,2026-11-05T05:01:39Z,50251183.0,panic,"thread 'hooks::pre_install::tests::nodejs' (44010) panicked at src/plugin.rs:67:30: called `Result::unwrap()` on an `Err` value: Error(""Plugin directory not found: \""plugins/nodejs\"""")"
+experimental-bsan,vfox-0.2.1,lua_mod::archiver::tests::test_zip,success,472.592,0.999,2026-11-05T05:01:40Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,lua_mod::file::tests::test_symlink,success,472.592,0.915,2026-11-05T05:01:41Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,lua_mod::http::tests::test_get,success,472.592,1.745,2026-11-05T05:01:43Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,lua_mod::http::tests::test_head,success,472.592,1.591,2026-11-05T05:01:45Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,lua_mod::json::tests::test_decode,success,472.592,0.911,2026-11-05T05:01:46Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,lua_mod::json::tests::test_encode,success,472.592,0.900,2026-11-05T05:01:47Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,lua_mod::strings::tests::test_strings,success,472.592,0.887,2026-11-05T05:01:47Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,vfox::tests::test_env_keys,success,472.592,23.464,2026-11-05T05:02:11Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,vfox::tests::test_install,test_failed,472.592,1.781,2026-11-05T05:02:13Z,50251183.0,panic,"thread 'vfox::tests::test_install' (45198) panicked at src/vfox.rs:336:14: called `Result::unwrap()` on an `Err` value: LuaError(RuntimeError(""attempt to get an unknown field 'envType'\nstack traceback:\n\t[C]: in upvalue 'error'\n\t[string \""__mlua_index\""]:33: in metamethod 'index'\n\tplugins/node"
+experimental-bsan,vfox-0.2.1,vfox::tests::test_install_cmake,timeout,472.592,150.033,2026-11-05T05:04:43Z,50251183.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,vfox-0.2.1,vfox::tests::test_install_plugin,success,472.592,3.428,2026-11-05T05:04:46Z,50251183.0,,
+experimental-bsan,vfox-0.2.1,vfox::tests::test_metadata,test_failed,472.592,22.279,2026-11-05T05:05:09Z,50251183.0,panic,"thread 'vfox::tests::test_metadata' (50194) panicked at /local/ev-50251183-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.40.0/src/runtime.rs:548:9: snapshot assertion for 'metadata' failed in line 400"

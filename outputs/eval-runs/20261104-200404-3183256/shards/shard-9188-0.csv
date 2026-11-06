@@ -1,0 +1,19 @@
+experimental-bsan,holochain_metrics-0.7.1,influxive::child_svc::downloader::tests::tar_gz_sanity,timeout,559.549,150.024,2026-11-05T05:00:26Z,50250943.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,holochain_metrics-0.7.1,influxive::child_svc::tests::line_protocol::write_to_file_then_read,timeout,559.549,150.025,2026-11-05T05:02:56Z,50250943.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,holochain_metrics-0.7.1,influxive::child_svc::tests::sanity,timeout,559.549,150.027,2026-11-05T05:05:26Z,50250943.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,holochain_metrics-0.7.1,influxive::otel::tests::f64_histogram,timeout,559.549,150.027,2026-11-05T05:07:56Z,50250943.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,holochain_metrics-0.7.1,influxive::otel::tests::f64_observable_gauge,timeout,559.549,150.008,2026-11-05T05:10:26Z,50250943.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,holochain_metrics-0.7.1,influxive::otel::tests::i64_up_down_counter,timeout,559.549,150.022,2026-11-05T05:12:56Z,50250943.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,holochain_metrics-0.7.1,influxive::otel::tests::u64_counter,timeout,559.549,150.032,2026-11-05T05:15:26Z,50250943.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,holochain_metrics-0.7.1,influxive::otel::tests::u64_counter_with_attributes,timeout,559.549,150.016,2026-11-05T05:17:57Z,50250943.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,holochain_metrics-0.7.1,influxive::otel::tests::u64_histogram,timeout,559.549,150.016,2026-11-05T05:20:27Z,50250943.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,holochain_metrics-0.7.1,influxive::otel::tests::utils::query_result_sanity,success,559.549,1.764,2026-11-05T05:20:28Z,50250943.0,,
+experimental-bsan,holochain_metrics-0.7.1,influxive::tests::file_meter_provider_one_metric_one_value,test_failed,559.549,4.553,2026-11-05T05:20:33Z,50250943.0,panic,"thread 'influxive::tests::file_meter_provider_one_metric_one_value' (5094) panicked at src/influxive/tests.rs:46:6: called `Result::unwrap()` on an `Err` value: Elapsed(())"
+experimental-bsan,holochain_metrics-0.7.1,influxive::writer::test::writer_file_all_data_types,test_failed,559.549,3.800,2026-11-05T05:20:37Z,50250943.0,panic,"thread 'influxive::writer::test::writer_file_all_data_types' (6436) panicked at src/influxive/writer/test.rs:214:5: assertion `left == right` failed: Expected 6 lines of metrics"
+experimental-bsan,holochain_metrics-0.7.1,influxive::writer::test::writer_file_many,success,559.549,47.439,2026-11-05T05:21:24Z,50250943.0,,
+experimental-bsan,holochain_metrics-0.7.1,influxive::writer::test::writer_file_one,success,559.549,48.060,2026-11-05T05:22:12Z,50250943.0,,
+experimental-bsan,holochain_metrics-0.7.1,influxive::writer::test::writer_stress,test_failed,559.549,5.137,2026-11-05T05:22:17Z,50250943.0,panic,"thread 'influxive::writer::test::writer_stress' (15255) panicked at src/influxive/writer/test.rs:298:5: assertion `left == right` failed"
+experimental-bsan,holochain_metrics-0.7.1,test::metrics_influxive_external,success,559.549,1.760,2026-11-05T05:22:19Z,50250943.0,,
+experimental-bsan,holochain_metrics-0.7.1,test::metrics_influxive_file,success,559.549,4.158,2026-11-05T05:22:23Z,50250943.0,,
+experimental-bsan,holochain_metrics-0.7.1,test::metrics_influxive_svc,success,559.549,1.752,2026-11-05T05:22:25Z,50250943.0,,
+experimental-bsan,holochain_metrics-0.7.1,test::metrics_none,success,559.549,1.749,2026-11-05T05:22:27Z,50250943.0,,

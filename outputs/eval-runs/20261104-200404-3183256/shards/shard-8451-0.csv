@@ -1,0 +1,22 @@
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_amd_u32,timeout,203.549,150.017,2026-11-05T04:40:15Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_amd_u64,timeout,203.549,150.016,2026-11-05T04:42:45Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_counts_u32,success,203.549,1.621,2026-11-05T04:42:46Z,50249869.0,,
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_counts_u64,success,203.549,1.611,2026-11-05T04:42:48Z,50249869.0,,
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_simplicial_u32,success,203.549,8.205,2026-11-05T04:42:56Z,50249869.0,,
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_solver_intranode_bk_u32,timeout,203.549,150.016,2026-11-05T04:45:26Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_solver_ldlt_u32,timeout,203.549,150.013,2026-11-05T04:47:56Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_solver_llt_u32,timeout,203.549,150.014,2026-11-05T04:50:26Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_solver_regularization_u32,timeout,203.549,150.014,2026-11-05T04:52:56Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_supernodal_intranode_bk_1_u32,timeout,203.549,150.017,2026-11-05T04:55:26Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_supernodal_intranode_bk_2_u32,timeout,203.549,150.014,2026-11-05T04:57:57Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_supernodal_ldlt_u32,timeout,203.549,150.017,2026-11-05T05:00:27Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,cholesky::tests::test_supernodal_u32,timeout,203.549,150.017,2026-11-05T05:02:57Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,lu::tests::test_numeric_lu_multifrontal,timeout,203.549,150.012,2026-11-05T05:05:27Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,lu::tests::test_numeric_lu_simplicial,timeout,203.549,150.013,2026-11-05T05:07:57Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,lu::tests::test_solver_lu_simplicial,timeout,203.549,150.010,2026-11-05T05:10:27Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,qr::tests::test_numeric_qr_1_no_transpose,success,203.549,109.332,2026-11-05T05:12:16Z,50249869.0,,
+experimental-bsan,faer-sparse-0.17.1,qr::tests::test_numeric_qr_1_transpose,test_failed,203.549,15.208,2026-11-05T05:12:31Z,50249869.0,panic,"thread 'qr::tests::test_numeric_qr_1_transpose' (101847) panicked at /local/ev-50249869-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/pulp-0.18.22/src/x86.rs:1537:43: misaligned pointer dereference: address must be a multiple of 0x10 but is 0x7befd83dae48"
+experimental-bsan,faer-sparse-0.17.1,qr::tests::test_numeric_simplicial_qr_1_transpose,timeout,203.549,150.012,2026-11-05T05:15:01Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,qr::tests::test_solver_qr_1_transpose,timeout,203.549,150.014,2026-11-05T05:17:31Z,50249869.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-sparse-0.17.1,qr::tests::test_solver_qr_edge_case,test_failed,203.549,3.382,2026-11-05T05:17:35Z,50249869.0,panic,"thread 'qr::tests::test_solver_qr_edge_case' (29354) panicked at /local/ev-50249869-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/pulp-0.18.22/src/x86.rs:1537:43: misaligned pointer dereference: address must be a multiple of 0x10 but is 0x7b8ea35dafc8"
+experimental-bsan,faer-sparse-0.17.1,qr::tests::test_symbolic_qr_u32,success,203.549,1.637,2026-11-05T05:17:36Z,50249869.0,,

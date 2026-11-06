@@ -1,0 +1,811 @@
+experimental-bsan,parquet-53.2.0,arrow::array_reader::builder::tests::test_create_array_reader,test_failed,1127.499,2.050,2026-11-05T01:34:48Z,50232569.0,panic,"thread 'arrow::array_reader::builder::tests::test_create_array_reader' (63449) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and t"
+experimental-bsan,parquet-53.2.0,arrow::array_reader::byte_array::tests::test_byte_array_decoder,success,1127.499,17.451,2026-11-05T01:35:05Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::byte_array::tests::test_byte_array_decoder_nulls,success,1127.499,17.253,2026-11-05T01:35:22Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::byte_array::tests::test_byte_array_decoder_skip,success,1127.499,17.308,2026-11-05T01:35:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::byte_array_dictionary::tests::test_dictionary_fallback,success,1127.499,17.431,2026-11-05T01:35:57Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::byte_array_dictionary::tests::test_dictionary_preservation,success,1127.499,17.027,2026-11-05T01:36:14Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::byte_array_dictionary::tests::test_dictionary_preservation_skip,success,1127.499,16.966,2026-11-05T01:36:31Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::byte_array_dictionary::tests::test_dictionary_skip_fallback,success,1127.499,17.125,2026-11-05T01:36:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::byte_array_dictionary::tests::test_nulls,success,1127.499,17.101,2026-11-05T01:37:05Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::byte_array_dictionary::tests::test_too_large_dictionary,success,1127.499,17.401,2026-11-05T01:37:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::byte_view_array::tests::test_byte_array_string_view_decoder,success,1127.499,17.131,2026-11-05T01:37:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::fixed_len_byte_array::tests::test_decimal_list,success,1127.499,18.309,2026-11-05T01:37:58Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::fixed_size_list_array::tests::test_empty_list,success,1127.499,16.853,2026-11-05T01:38:15Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::fixed_size_list_array::tests::test_nested_list,success,1127.499,16.980,2026-11-05T01:38:32Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::fixed_size_list_array::tests::test_nested_var_list,success,1127.499,16.988,2026-11-05T01:38:49Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::fixed_size_list_array::tests::test_nullable_list,success,1127.499,16.917,2026-11-05T01:39:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::fixed_size_list_array::tests::test_read_as_dyn_list,success,1127.499,18.077,2026-11-05T01:39:24Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::fixed_size_list_array::tests::test_read_list_column,success,1127.499,19.119,2026-11-05T01:39:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::fixed_size_list_array::tests::test_required_list,success,1127.499,17.013,2026-11-05T01:40:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::list_array::tests::test_large_list_array_reader,success,1127.499,17.373,2026-11-05T01:40:18Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::list_array::tests::test_list_array_reader,success,1127.499,17.356,2026-11-05T01:40:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::list_array::tests::test_nested_lists,success,1127.499,20.617,2026-11-05T01:40:56Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::map_array::tests::read_map_array_column,success,1127.499,19.414,2026-11-05T01:41:15Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::primitive_array::tests::test_primitive_array_reader_data,success,1127.499,17.072,2026-11-05T01:41:32Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::primitive_array::tests::test_primitive_array_reader_decimal_types,success,1127.499,17.545,2026-11-05T01:41:50Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::primitive_array::tests::test_primitive_array_reader_def_and_rep_levels,success,1127.499,17.412,2026-11-05T01:42:07Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::primitive_array::tests::test_primitive_array_reader_empty_pages,success,1127.499,16.905,2026-11-05T01:42:24Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::primitive_array::tests::test_primitive_array_reader_temporal_types,success,1127.499,18.631,2026-11-05T01:42:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::struct_array::tests::test_struct_array_reader,success,1127.499,16.884,2026-11-05T01:43:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::array_reader::struct_array::tests::test_struct_array_reader_list,success,1127.499,16.812,2026-11-05T01:43:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_and,success,1127.499,16.945,2026-11-05T01:43:33Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_and_fuzz,success,1127.499,27.946,2026-11-05T01:44:01Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_and_longer,success,1127.499,17.022,2026-11-05T01:44:18Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_and_shorter,success,1127.499,16.912,2026-11-05T01:44:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_combine,success,1127.499,17.124,2026-11-05T01:44:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_combine_2elements,success,1127.499,17.130,2026-11-05T01:45:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_empty_selector,success,1127.499,17.211,2026-11-05T01:45:27Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_from_filters,success,1127.499,17.097,2026-11-05T01:45:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_from_one_and_empty,success,1127.499,16.950,2026-11-05T01:46:01Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_from_ranges,success,1127.499,16.890,2026-11-05T01:46:18Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_intersect_row_selection_and_combine,success,1127.499,17.015,2026-11-05T01:46:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_intersection,success,1127.499,16.889,2026-11-05T01:46:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_iter,success,1127.499,16.950,2026-11-05T01:47:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_limit,success,1127.499,16.961,2026-11-05T01:47:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_offset,success,1127.499,16.987,2026-11-05T01:47:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_row_count,success,1127.499,16.829,2026-11-05T01:47:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_scan_ranges,success,1127.499,16.889,2026-11-05T01:48:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_split_off,success,1127.499,16.934,2026-11-05T01:48:33Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::selection::tests::test_union,success,1127.499,16.941,2026-11-05T01:48:50Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_arbitrary_decimal,success,1127.499,19.766,2026-11-05T01:49:10Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_arrow_reader_all_columns,test_failed,1127.499,1.791,2026-11-05T01:49:12Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_arrow_reader_all_columns' (13788) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:81:21: failed to get arrow data dir: env `ARROW_TEST_DATA` is undefined or has empty value, and the pre-de"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_arrow_reader_single_column,test_failed,1127.499,1.849,2026-11-05T01:49:14Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_arrow_reader_single_column' (13917) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:81:21: failed to get arrow data dir: env `ARROW_TEST_DATA` is undefined or has empty value, and the pre-"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_batch_size_overallocate,test_failed,1127.499,1.809,2026-11-05T01:49:15Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_batch_size_overallocate' (14018) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pr"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_decimal,success,1127.499,24.568,2026-11-05T01:49:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_decimal_nullable_struct,success,1127.499,18.408,2026-11-05T01:49:58Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_dictionary_preservation,success,1127.499,17.952,2026-11-05T01:50:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_empty_projection,test_failed,1127.499,1.821,2026-11-05T01:50:18Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_empty_projection' (17141) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defin"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_fixed_length_binary_column_reader,timeout,1127.499,150.022,2026-11-05T01:52:48Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_float16_roundtrip,success,1127.499,18.836,2026-11-05T01:53:07Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_int32_nullable_struct,success,1127.499,18.223,2026-11-05T01:53:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_int96_single_column_reader_test,timeout,1127.499,150.017,2026-11-05T01:55:55Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_interval_day_time_column_reader,timeout,1127.499,150.033,2026-11-05T01:58:25Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_invalid_utf8,success,1127.499,16.985,2026-11-05T01:58:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_invalid_utf8_large_string_array,success,1127.499,40.037,2026-11-05T01:59:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_invalid_utf8_string_array,success,1127.499,40.323,2026-11-05T02:00:03Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_invalid_utf8_string_view_array,success,1127.499,39.390,2026-11-05T02:00:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_list_selection,success,1127.499,44.987,2026-11-05T02:01:27Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_list_selection_fuzz,timeout,1127.499,150.017,2026-11-05T02:03:57Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_list_skip,success,1127.499,18.384,2026-11-05T02:04:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_nested_nullability,success,1127.499,17.397,2026-11-05T02:04:33Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_null_column_reader_test,success,1127.499,17.563,2026-11-05T02:04:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_null_schema_inference,test_failed,1127.499,1.843,2026-11-05T02:04:53Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_null_schema_inference' (54605) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_one_incompatible_nested_column,success,1127.499,20.313,2026-11-05T02:05:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_primitive_single_column_reader_test,timeout,1127.499,150.017,2026-11-05T02:07:43Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_raw_repetition,success,1127.499,18.065,2026-11-05T02:08:01Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_binary_as_utf8,success,1127.499,19.447,2026-11-05T02:08:20Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_decimal_file,test_failed,1127.499,1.832,2026-11-05T02:08:22Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_decimal_file' (68838) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defi"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_extended_byte_stream_split,test_failed,1127.499,1.837,2026-11-05T02:08:24Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_extended_byte_stream_split' (69090) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, an"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_float16_nonzeros_file,test_failed,1127.499,1.852,2026-11-05T02:08:26Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_float16_nonzeros_file' (69182) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_float16_zeros_file,test_failed,1127.499,1.782,2026-11-05T02:08:28Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_float16_zeros_file' (69389) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pr"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_float32_float64_byte_stream_split,test_failed,1127.499,1.772,2026-11-05T02:08:30Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_float32_float64_byte_stream_split' (69564) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty va"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_incorrect_map_schema_file,test_failed,1127.499,1.806,2026-11-05T02:08:31Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_incorrect_map_schema_file' (69712) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_lz4_hadoop_fallback,test_failed,1127.499,1.771,2026-11-05T02:08:33Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_lz4_hadoop_fallback' (69903) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the p"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_lz4_hadoop_large,test_failed,1127.499,1.811,2026-11-05T02:08:35Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_lz4_hadoop_large' (70027) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_lz4_raw,test_failed,1127.499,1.827,2026-11-05T02:08:37Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_lz4_raw' (70201) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined d"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_maps,test_failed,1127.499,1.822,2026-11-05T02:08:39Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_maps' (70376) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined data"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_nested_lists,test_failed,1127.499,1.837,2026-11-05T02:08:41Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_nested_lists' (70506) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defi"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_non_utf8_binary_as_utf8,success,1127.499,18.302,2026-11-05T02:08:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_null_list,test_failed,1127.499,1.848,2026-11-05T02:09:01Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_null_list' (71826) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_structs,test_failed,1127.499,1.824,2026-11-05T02:09:03Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_structs' (71972) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined d"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_read_with_page_index_enabled,test_failed,1127.499,1.841,2026-11-05T02:09:05Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_read_with_page_index_enabled' (72098) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and t"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_row_group_exact_multiple,success,1127.499,58.429,2026-11-05T02:10:03Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_scan_row_with_selection,test_failed,1127.499,1.842,2026-11-05T02:10:05Z,50232569.0,panic,"thread 'arrow::arrow_reader::tests::test_scan_row_with_selection' (76787) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pr"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_schema_incompatible_columns,success,1127.499,19.439,2026-11-05T02:10:24Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_schema_mismatched_column_names,success,1127.499,17.964,2026-11-05T02:10:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_schema_too_few_columns,success,1127.499,18.648,2026-11-05T02:11:01Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_schema_too_many_columns,success,1127.499,17.837,2026-11-05T02:11:19Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_skip_metadata,success,1127.499,19.141,2026-11-05T02:11:38Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_time_utc_roundtrip,success,1127.499,19.061,2026-11-05T02:11:57Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_unsigned_primitive_single_column_reader_test,timeout,1127.499,150.020,2026-11-05T02:14:27Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_unsigned_roundtrip,success,1127.499,18.741,2026-11-05T02:14:46Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_utf8_single_column_reader_test,timeout,1127.499,150.029,2026-11-05T02:17:16Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_reader::tests::test_with_schema,success,1127.499,20.550,2026-11-05T02:17:36Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::list_single_column,success,1127.499,16.951,2026-11-05T02:17:53Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::mismatched_types,success,1127.499,16.933,2026-11-05T02:18:10Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::mixed_struct_list,success,1127.499,17.351,2026-11-05T02:18:28Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_calculate_array_levels_1,success,1127.499,17.209,2026-11-05T02:18:45Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_calculate_array_levels_2,success,1127.499,17.241,2026-11-05T02:19:02Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_calculate_array_levels_nested_list,success,1127.499,17.056,2026-11-05T02:19:19Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_calculate_array_levels_twitter_example,success,1127.499,17.041,2026-11-05T02:19:36Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_calculate_nested_struct_levels,success,1127.499,16.889,2026-11-05T02:19:53Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_calculate_one_level_1,success,1127.499,16.941,2026-11-05T02:20:10Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_calculate_one_level_2,success,1127.499,17.001,2026-11-05T02:20:27Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_fixed_size_list,success,1127.499,16.984,2026-11-05T02:20:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_fixed_size_list_empty,success,1127.499,16.964,2026-11-05T02:21:01Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_fixed_size_list_of_struct,success,1127.499,16.913,2026-11-05T02:21:18Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_fixed_size_list_of_var_lists,success,1127.499,16.915,2026-11-05T02:21:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_list_mask_struct,success,1127.499,16.977,2026-11-05T02:21:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_list_of_struct,success,1127.499,16.989,2026-11-05T02:22:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_map_array,success,1127.499,16.932,2026-11-05T02:22:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_null_dictionary_values,success,1127.499,16.951,2026-11-05T02:22:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_null_vs_nonnull_struct,success,1127.499,16.941,2026-11-05T02:23:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::levels::tests::test_struct_mask_list,success,1127.499,17.228,2026-11-05T02:23:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::all_null_primitive_single_column,success,1127.499,149.706,2026-11-05T02:25:47Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer,success,1127.499,24.070,2026-11-05T02:26:11Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_2_level_struct,success,1127.499,21.367,2026-11-05T02:26:32Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_2_level_struct_mixed_null,success,1127.499,21.450,2026-11-05T02:26:54Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_2_level_struct_non_null,success,1127.499,21.219,2026-11-05T02:27:15Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_binary,success,1127.499,23.768,2026-11-05T02:27:39Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_binary_view,success,1127.499,33.125,2026-11-05T02:28:12Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_complex,success,1127.499,75.463,2026-11-05T02:29:27Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_complex_mixed,success,1127.499,27.851,2026-11-05T02:29:55Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_decimal,success,1127.499,27.798,2026-11-05T02:30:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_list,success,1127.499,19.225,2026-11-05T02:30:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_list_non_null,success,1127.499,19.452,2026-11-05T02:31:02Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_map,success,1127.499,21.591,2026-11-05T02:31:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_non_null,success,1127.499,20.588,2026-11-05T02:31:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_page_size,success,1127.499,18.101,2026-11-05T02:32:02Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_primitive_dictionary,success,1127.499,55.826,2026-11-05T02:32:58Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_string_dictionary,success,1127.499,55.341,2026-11-05T02:33:53Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::arrow_writer_string_dictionary_unsigned_index,success,1127.499,54.660,2026-11-05T02:34:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::binary_column_bloom_filter,timeout,1127.499,150.017,2026-11-05T02:37:18Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::binary_single_column,timeout,1127.499,150.020,2026-11-05T02:39:48Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::binary_view_single_column,success,1127.499,60.726,2026-11-05T02:40:49Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::bool_large_single_column,timeout,1127.499,150.021,2026-11-05T02:43:19Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::bool_single_column,success,1127.499,102.199,2026-11-05T02:45:01Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::check_page_offset_index_with_nan,success,1127.499,17.713,2026-11-05T02:45:19Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::complex_aggregate,success,1127.499,22.281,2026-11-05T02:45:41Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::date32_single_column,success,1127.499,106.655,2026-11-05T02:47:27Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::date64_single_column,success,1127.499,106.824,2026-11-05T02:49:14Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::duration_microsecond_single_column,success,1127.499,17.034,2026-11-05T02:49:31Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::duration_millisecond_single_column,success,1127.499,17.012,2026-11-05T02:49:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::duration_nanosecond_single_column,success,1127.499,16.911,2026-11-05T02:50:05Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::duration_second_single_column,success,1127.499,17.027,2026-11-05T02:50:22Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::empty_string_null_column_bloom_filter,timeout,1127.499,150.018,2026-11-05T02:52:52Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::f32_single_column,timeout,1127.499,150.019,2026-11-05T02:55:22Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::f64_single_column,timeout,1127.499,150.020,2026-11-05T02:57:52Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::fallback_flush_data_page,success,1127.499,108.201,2026-11-05T02:59:41Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::fixed_size_binary_single_column,success,1127.499,51.272,2026-11-05T03:00:32Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::i16_single_column,timeout,1127.499,150.021,2026-11-05T03:03:02Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::i32_column_bloom_filter,timeout,1127.499,150.016,2026-11-05T03:05:32Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::i32_column_bloom_filter_at_end,timeout,1127.499,150.018,2026-11-05T03:08:02Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::i32_single_column,timeout,1127.499,150.018,2026-11-05T03:10:32Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::i64_single_column,timeout,1127.499,150.018,2026-11-05T03:13:02Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::i8_single_column,timeout,1127.499,150.020,2026-11-05T03:15:32Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::in_progress_accounting,success,1127.499,18.005,2026-11-05T03:15:50Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::interval_day_time_single_column,success,1127.499,82.887,2026-11-05T03:17:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::interval_month_day_nano_single_column,success,1127.499,17.070,2026-11-05T03:17:30Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::interval_year_month_single_column,success,1127.499,101.554,2026-11-05T03:19:12Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::large_binary_single_column,success,1127.499,149.771,2026-11-05T03:21:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::large_list_single_column,success,1127.499,62.575,2026-11-05T03:22:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::large_string_single_column,timeout,1127.499,150.019,2026-11-05T03:25:14Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::list_nested_nulls,success,1127.499,108.683,2026-11-05T03:27:03Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::list_single_column,success,1127.499,62.817,2026-11-05T03:28:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::mismatched_schemas,success,1127.499,16.916,2026-11-05T03:28:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::null_list_single_column,success,1127.499,19.035,2026-11-05T03:28:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::null_single_column,success,1127.499,59.896,2026-11-05T03:29:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::roundtrip_bytes,success,1127.499,20.981,2026-11-05T03:30:03Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::statistics_null_counts_only_nulls,success,1127.499,109.711,2026-11-05T03:31:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::string_single_column,timeout,1127.499,150.018,2026-11-05T03:34:22Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::string_view_single_column,success,1127.499,106.345,2026-11-05T03:36:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::struct_single_column,success,1127.499,80.658,2026-11-05T03:37:29Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::test_aggregates_records,success,1127.499,21.142,2026-11-05T03:37:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::test_arrow_writer_metadata,success,1127.499,17.624,2026-11-05T03:38:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::test_arrow_writer_nullable,success,1127.499,17.894,2026-11-05T03:38:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::test_arrow_writer_skip_metadata,success,1127.499,17.690,2026-11-05T03:38:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::test_disabled_statistics_with_chunk,success,1127.499,18.562,2026-11-05T03:39:02Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::test_disabled_statistics_with_page,success,1127.499,18.956,2026-11-05T03:39:21Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::test_list_of_struct_roundtrip,success,1127.499,111.158,2026-11-05T03:41:12Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::test_writer_all_null,success,1127.499,18.791,2026-11-05T03:41:31Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::time32_millisecond_single_column,success,1127.499,107.350,2026-11-05T03:43:19Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::time32_second_single_column,success,1127.499,106.146,2026-11-05T03:45:05Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::time64_microsecond_single_column,success,1127.499,106.183,2026-11-05T03:46:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::time64_nanosecond_single_column,success,1127.499,106.816,2026-11-05T03:48:38Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::timestamp_microsecond_single_column,success,1127.499,62.560,2026-11-05T03:49:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::timestamp_millisecond_single_column,success,1127.499,61.809,2026-11-05T03:50:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::timestamp_nanosecond_single_column,success,1127.499,61.837,2026-11-05T03:51:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::timestamp_second_single_column,success,1127.499,60.592,2026-11-05T03:52:45Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::u16_single_column,timeout,1127.499,150.019,2026-11-05T03:55:15Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::u32_min_max,timeout,1127.499,150.016,2026-11-05T03:57:45Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::u32_single_column,timeout,1127.499,150.018,2026-11-05T04:00:15Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::u64_min_max,timeout,1127.499,150.018,2026-11-05T04:02:45Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::u64_single_column,timeout,1127.499,150.022,2026-11-05T04:05:15Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::arrow_writer::tests::u8_single_column,timeout,1127.499,150.020,2026-11-05T04:07:45Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::metadata::tests::test_page_index,test_failed,1127.499,1.972,2026-11-05T04:07:47Z,50232569.0,panic,"thread 'arrow::async_reader::metadata::tests::test_page_index' (28959) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-d"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::metadata::tests::test_simple,test_failed,1127.499,1.954,2026-11-05T04:07:49Z,50232569.0,panic,"thread 'arrow::async_reader::metadata::tests::test_simple' (29084) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defin"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::store::tests::test_simple,test_failed,1127.499,1.951,2026-11-05T04:07:51Z,50232569.0,panic,"thread 'arrow::async_reader::store::tests::test_simple' (29154) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined "
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_async_reader,test_failed,1127.499,1.926,2026-11-05T04:07:53Z,50232569.0,panic,"thread 'arrow::async_reader::tests::test_async_reader' (29237) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined d"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_async_reader_skip_pages,test_failed,1127.499,1.943,2026-11-05T04:07:55Z,50232569.0,panic,"thread 'arrow::async_reader::tests::test_async_reader_skip_pages' (29355) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pr"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_async_reader_with_index,test_failed,1127.499,1.932,2026-11-05T04:07:57Z,50232569.0,panic,"thread 'arrow::async_reader::tests::test_async_reader_with_index' (29472) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pr"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_async_reader_with_limit,test_failed,1127.499,1.945,2026-11-05T04:07:59Z,50232569.0,panic,"thread 'arrow::async_reader::tests::test_async_reader_with_limit' (29639) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pr"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_async_reader_zero_row_selector,test_failed,1127.499,1.969,2026-11-05T04:08:01Z,50232569.0,panic,"thread 'arrow::async_reader::tests::test_async_reader_zero_row_selector' (29797) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_batch_size_overallocate,test_failed,1127.499,1.955,2026-11-05T04:08:03Z,50232569.0,panic,"thread 'arrow::async_reader::tests::test_batch_size_overallocate' (29962) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pr"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_fuzz_async_reader_selection,test_failed,1127.499,1.939,2026-11-05T04:08:05Z,50232569.0,panic,"thread 'arrow::async_reader::tests::test_fuzz_async_reader_selection' (30069) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and th"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_get_row_group_column_bloom_filter_with_length,test_failed,1127.499,1.942,2026-11-05T04:08:07Z,50232569.0,panic,"thread 'arrow::async_reader::tests::test_get_row_group_column_bloom_filter_with_length' (30159) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has e"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_get_row_group_column_bloom_filter_without_length,test_failed,1127.499,1.962,2026-11-05T04:08:09Z,50232569.0,panic,"thread 'arrow::async_reader::tests::test_get_row_group_column_bloom_filter_without_length' (30333) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or ha"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_in_memory_row_group_sparse,test_failed,1127.499,1.941,2026-11-05T04:08:11Z,50232569.0,panic,"thread 'arrow::async_reader::tests::test_in_memory_row_group_sparse' (30488) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the"
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_limit_multiple_row_groups,success,1127.499,23.137,2026-11-05T04:08:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_nested_skip,success,1127.499,39.468,2026-11-05T04:09:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_parquet_record_batch_stream_schema,success,1127.499,26.306,2026-11-05T04:09:39Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_row_filter,success,1127.499,19.877,2026-11-05T04:09:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_row_filter_nested,success,1127.499,20.879,2026-11-05T04:10:20Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::async_reader::tests::test_row_filter_with_index,test_failed,1127.499,1.910,2026-11-05T04:10:22Z,50232569.0,panic,"thread 'arrow::async_reader::tests::test_row_filter_with_index' (34886) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-"
+experimental-bsan,parquet-53.2.0,arrow::async_writer::store::tests::test_async_writer,success,1127.499,17.893,2026-11-05T04:10:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::async_writer::tests::in_progress_accounting,success,1127.499,20.554,2026-11-05T04:11:01Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::async_writer::tests::test_async_writer,success,1127.499,17.833,2026-11-05T04:11:18Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::async_writer::tests::test_async_writer_bytes_written,success,1127.499,17.708,2026-11-05T04:11:36Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::async_writer::tests::test_async_writer_file,success,1127.499,64.479,2026-11-05T04:12:41Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::async_writer::tests::test_async_writer_with_sync_writer,test_failed,1127.499,1.934,2026-11-05T04:12:43Z,50232569.0,panic,"thread 'arrow::async_writer::tests::test_async_writer_with_sync_writer' (37835) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and "
+experimental-bsan,parquet-53.2.0,arrow::buffer::bit_util::tests::test_bit_fns,success,1127.499,18.510,2026-11-05T04:13:01Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::buffer::dictionary_buffer::tests::test_dictionary_buffer,success,1127.499,16.812,2026-11-05T04:13:18Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::buffer::dictionary_buffer::tests::test_validates_keys,success,1127.499,16.774,2026-11-05T04:13:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::buffer::offset_buffer::tests::test_offset_buffer,success,1127.499,16.704,2026-11-05T04:13:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::buffer::offset_buffer::tests::test_offset_buffer_append,success,1127.499,16.724,2026-11-05T04:14:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::buffer::offset_buffer::tests::test_offset_buffer_empty,success,1127.499,16.816,2026-11-05T04:14:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::buffer::offset_buffer::tests::test_offset_buffer_pad_nulls,success,1127.499,16.888,2026-11-05T04:14:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::buffer::offset_buffer::tests::test_pad_nulls_empty,success,1127.499,16.883,2026-11-05T04:14:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::buffer::offset_buffer::tests::test_utf8_validation,success,1127.499,16.830,2026-11-05T04:15:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::buffer::view_buffer::tests::test_view_buffer_append_view,success,1127.499,16.803,2026-11-05T04:15:32Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::buffer::view_buffer::tests::test_view_buffer_empty,success,1127.499,16.829,2026-11-05T04:15:49Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::buffer::view_buffer::tests::test_view_buffer_pad_null,success,1127.499,16.799,2026-11-05T04:16:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::record_reader::definition_levels::tests::test_packed_decoder,success,1127.499,17.707,2026-11-05T04:16:24Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::record_reader::definition_levels::tests::test_packed_decoder_skip,success,1127.499,17.617,2026-11-05T04:16:41Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::record_reader::tests::test_read_more_than_one_batch,success,1127.499,21.939,2026-11-05T04:17:03Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::record_reader::tests::test_read_optional_records,success,1127.499,17.057,2026-11-05T04:17:20Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::record_reader::tests::test_read_repeated_records,success,1127.499,17.142,2026-11-05T04:17:38Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::record_reader::tests::test_read_required_records,success,1127.499,17.010,2026-11-05T04:17:55Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::record_reader::tests::test_row_group_boundary,success,1127.499,16.864,2026-11-05T04:18:12Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::record_reader::tests::test_skip_optional_records,success,1127.499,16.855,2026-11-05T04:18:28Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::record_reader::tests::test_skip_required_records,success,1127.499,16.849,2026-11-05T04:18:45Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_arrow_schema_roundtrip,success,1127.499,27.441,2026-11-05T04:19:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_arrow_schema_roundtrip_lists,success,1127.499,18.328,2026-11-05T04:19:31Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_byte_array_fields,success,1127.499,17.025,2026-11-05T04:19:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_column_desc_to_field,success,1127.499,17.622,2026-11-05T04:20:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_decimal_fields,success,1127.499,17.111,2026-11-05T04:20:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_duplicate_fields,success,1127.499,16.921,2026-11-05T04:20:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_empty_struct_field,success,1127.499,16.815,2026-11-05T04:20:57Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_field_to_column_desc,success,1127.499,17.932,2026-11-05T04:21:15Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_flat_primitives,success,1127.499,17.505,2026-11-05T04:21:32Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_get_arrow_schema_from_metadata,success,1127.499,17.130,2026-11-05T04:21:49Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_metadata,success,1127.499,17.173,2026-11-05T04:22:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_nested_schema,success,1127.499,17.150,2026-11-05T04:22:24Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_nested_schema_partial,success,1127.499,17.155,2026-11-05T04:22:41Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_nested_schema_partial_ordering,success,1127.499,16.919,2026-11-05T04:22:58Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_parquet_list_nullable,success,1127.499,17.118,2026-11-05T04:23:15Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_parquet_lists,success,1127.499,17.531,2026-11-05T04:23:32Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_parquet_maps,success,1127.499,17.212,2026-11-05T04:23:49Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_read_parquet_field_ids_raw,success,1127.499,17.039,2026-11-05T04:24:07Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::schema::tests::test_repeated_nested_schema,success,1127.499,17.358,2026-11-05T04:24:24Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::test::test_metadata_read_write_partial_offset,success,1127.499,18.270,2026-11-05T04:24:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::test::test_metadata_read_write_roundtrip,success,1127.499,18.186,2026-11-05T04:25:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,arrow::test::test_metadata_read_write_roundtrip_page_index,success,1127.499,22.032,2026-11-05T04:25:22Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,bad_data::bad_metadata_err,success,1127.499,25.603,2026-11-05T04:25:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,bad_data::test_arrow_gh_41317,test_failed,1127.499,15.929,2026-11-05T04:26:04Z,50232569.0,panic,"thread 'bad_data::test_arrow_gh_41317' (81630) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined data dir `/local/"
+experimental-bsan,parquet-53.2.0,bad_data::test_arrow_gh_41321,test_failed,1127.499,15.929,2026-11-05T04:26:20Z,50232569.0,panic,"thread 'bad_data::test_arrow_gh_41321' (81895) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined data dir `/local/"
+experimental-bsan,parquet-53.2.0,bad_data::test_arrow_rs_gh_6229_dict_header,test_failed,1127.499,16.040,2026-11-05T04:26:36Z,50232569.0,panic,"thread 'bad_data::test_arrow_rs_gh_6229_dict_header' (82239) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined dat"
+experimental-bsan,parquet-53.2.0,bad_data::test_arrow_rs_gh_6229_dict_levels,test_failed,1127.499,16.154,2026-11-05T04:26:52Z,50232569.0,panic,"thread 'bad_data::test_arrow_rs_gh_6229_dict_levels' (82324) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined dat"
+experimental-bsan,parquet-53.2.0,bad_data::test_invalid_files,test_failed,1127.499,16.124,2026-11-05T04:27:08Z,50232569.0,panic,"thread 'bad_data::test_invalid_files' (82561) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined data dir `/local/e"
+experimental-bsan,parquet-53.2.0,bad_data::test_parquet_1481,test_failed,1127.499,16.158,2026-11-05T04:27:25Z,50232569.0,panic,"thread 'bad_data::test_parquet_1481' (83131) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined data dir `/local/ev"
+experimental-bsan,parquet-53.2.0,basic::tests::test_column_order_get_converted_type_sort_order,success,1127.499,17.094,2026-11-05T04:27:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_column_order_get_default_sort_order,success,1127.499,17.262,2026-11-05T04:27:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_column_order_get_logical_type_sort_order,success,1127.499,17.282,2026-11-05T04:28:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_column_order_sort_order,success,1127.499,17.284,2026-11-05T04:28:33Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_compression_codec_to_string,success,1127.499,17.355,2026-11-05T04:28:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_display_column_order,success,1127.499,17.253,2026-11-05T04:29:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_display_compression,success,1127.499,17.256,2026-11-05T04:29:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_display_converted_type,success,1127.499,17.114,2026-11-05T04:29:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_display_encoding,success,1127.499,17.178,2026-11-05T04:30:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_display_page_type,success,1127.499,17.263,2026-11-05T04:30:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_display_repetition,success,1127.499,17.150,2026-11-05T04:30:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_display_sort_order,success,1127.499,17.123,2026-11-05T04:30:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_display_type,success,1127.499,17.057,2026-11-05T04:31:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_from_compression,success,1127.499,17.298,2026-11-05T04:31:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_from_converted_type,success,1127.499,17.357,2026-11-05T04:31:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_from_encoding,success,1127.499,17.352,2026-11-05T04:32:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_from_page_type,success,1127.499,17.012,2026-11-05T04:32:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_from_repetition,success,1127.499,17.166,2026-11-05T04:32:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_from_string_into_converted_type,success,1127.499,17.132,2026-11-05T04:32:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_from_string_into_repetition,success,1127.499,17.119,2026-11-05T04:33:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_from_string_into_type,success,1127.499,17.213,2026-11-05T04:33:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_from_type,success,1127.499,17.183,2026-11-05T04:33:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_into_compression,success,1127.499,17.147,2026-11-05T04:34:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_into_converted_type,success,1127.499,16.991,2026-11-05T04:34:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_into_encoding,success,1127.499,17.196,2026-11-05T04:34:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_into_page_type,success,1127.499,17.320,2026-11-05T04:34:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_into_repetition,success,1127.499,17.163,2026-11-05T04:35:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_into_type,success,1127.499,17.264,2026-11-05T04:35:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_logical_to_converted_type,success,1127.499,17.204,2026-11-05T04:35:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_parse_compression,success,1127.499,17.069,2026-11-05T04:36:01Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,basic::tests::test_parse_encoding,success,1127.499,17.379,2026-11-05T04:36:18Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,bloom_filter::tests::test_block_insert_and_check,timeout,1127.499,150.019,2026-11-05T04:38:48Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,bloom_filter::tests::test_bloom_filter_header_size_assumption,success,1127.499,17.057,2026-11-05T04:39:05Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,bloom_filter::tests::test_hash_bytes,success,1127.499,17.053,2026-11-05T04:39:22Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,bloom_filter::tests::test_mask_set_quick_check,timeout,1127.499,150.017,2026-11-05T04:41:52Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,bloom_filter::tests::test_num_of_bits_from_ndv_fpp,success,1127.499,17.213,2026-11-05T04:42:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,bloom_filter::tests::test_optimal_num_of_bytes,success,1127.499,17.046,2026-11-05T04:42:27Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,bloom_filter::tests::test_sbbf_insert_and_check,timeout,1127.499,150.020,2026-11-05T04:44:57Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,bloom_filter::tests::test_with_fixture,success,1127.499,17.048,2026-11-05T04:45:14Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,checksum::test_datapage_v1_corrupt_checksum,test_failed,1127.499,15.696,2026-11-05T04:45:29Z,50232569.0,panic,"thread 'checksum::test_datapage_v1_corrupt_checksum' (23841) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined dat"
+experimental-bsan,parquet-53.2.0,checksum::test_datapage_v1_snappy_compressed_checksum,test_failed,1127.499,15.997,2026-11-05T04:45:45Z,50232569.0,panic,"thread 'checksum::test_datapage_v1_snappy_compressed_checksum' (24213) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-d"
+experimental-bsan,parquet-53.2.0,checksum::test_datapage_v1_uncompressed_checksum,test_failed,1127.499,16.097,2026-11-05T04:46:01Z,50232569.0,panic,"thread 'checksum::test_datapage_v1_uncompressed_checksum' (24769) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-define"
+experimental-bsan,parquet-53.2.0,checksum::test_plain_dict_uncompressed_checksum,test_failed,1127.499,16.154,2026-11-05T04:46:18Z,50232569.0,panic,"thread 'checksum::test_plain_dict_uncompressed_checksum' (25778) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined"
+experimental-bsan,parquet-53.2.0,checksum::test_rle_dict_snappy_checksum,test_failed,1127.499,16.027,2026-11-05T04:46:34Z,50232569.0,panic,"thread 'checksum::test_rle_dict_snappy_checksum' (26779) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined data di"
+experimental-bsan,parquet-53.2.0,column::page::tests::test_compressed_page,success,1127.499,17.008,2026-11-05T04:46:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::page::tests::test_page,success,1127.499,17.066,2026-11-05T04:47:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::decoder::tests::test_skip_padding,success,1127.499,17.292,2026-11-05T04:47:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::decoder::tests::test_skip_rep_levels,timeout,1127.499,150.020,2026-11-05T04:49:55Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_batch_adjust_after_buffering_page,success,1127.499,17.131,2026-11-05T04:50:12Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_batch_values_def_levels,success,1127.499,17.626,2026-11-05T04:50:30Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_batch_values_def_rep_levels,success,1127.499,18.119,2026-11-05T04:50:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_batch_values_only,success,1127.499,18.150,2026-11-05T04:51:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_batch_values_rep_levels,success,1127.499,18.172,2026-11-05T04:51:24Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_dict_v1_int32,success,1127.499,17.620,2026-11-05T04:51:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_dict_v1_int32_multi_page,success,1127.499,17.810,2026-11-05T04:52:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_dict_v1_int32_small,success,1127.499,17.169,2026-11-05T04:52:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_dict_v1_int32_uneven,success,1127.499,17.896,2026-11-05T04:52:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_dict_v1_int64,success,1127.499,17.806,2026-11-05T04:52:53Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_dict_v2_int32,success,1127.499,17.875,2026-11-05T04:53:11Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_dict_v2_int32_multi_page,success,1127.499,17.765,2026-11-05T04:53:28Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_dict_v2_int32_small,success,1127.499,16.964,2026-11-05T04:53:45Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_dict_v2_int32_uneven,success,1127.499,17.512,2026-11-05T04:54:03Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_dict_v2_int64,success,1127.499,17.603,2026-11-05T04:54:21Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v1_int32,success,1127.499,17.574,2026-11-05T04:54:38Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v1_int32_multi_page,success,1127.499,17.427,2026-11-05T04:54:56Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v1_int32_required_non_repeated,success,1127.499,17.068,2026-11-05T04:55:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v1_int32_uneven,success,1127.499,17.829,2026-11-05T04:55:30Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v1_int64,success,1127.499,17.822,2026-11-05T04:55:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v1_int64_multi_page,success,1127.499,17.868,2026-11-05T04:56:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v1_int64_required_non_repeated,success,1127.499,17.234,2026-11-05T04:56:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v1_int64_uneven,success,1127.499,17.642,2026-11-05T04:56:41Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v2_int32,success,1127.499,17.543,2026-11-05T04:56:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v2_int32_multi_page,success,1127.499,17.479,2026-11-05T04:57:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v2_int32_required_non_repeated,success,1127.499,17.206,2026-11-05T04:57:33Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v2_int32_uneven,success,1127.499,17.513,2026-11-05T04:57:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v2_int64,success,1127.499,17.729,2026-11-05T04:58:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v2_int64_multi_page,success,1127.499,17.506,2026-11-05T04:58:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v2_int64_required_non_repeated,success,1127.499,17.182,2026-11-05T04:58:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::reader::tests::test_read_plain_v2_int64_uneven,success,1127.499,17.627,2026-11-05T04:59:01Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_bool_statistics,success,1127.499,16.795,2026-11-05T04:59:18Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_boundary_order,success,1127.499,17.383,2026-11-05T04:59:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_boundary_order_logical_type,success,1127.499,17.048,2026-11-05T04:59:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_byte_array_statistics,success,1127.499,16.971,2026-11-05T05:00:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_index_with_null_pages,success,1127.499,17.099,2026-11-05T05:00:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_offset_index_metadata,success,1127.499,17.058,2026-11-05T05:00:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_offset_index_metadata_truncating,success,1127.499,17.046,2026-11-05T05:01:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_offset_index_truncating_spec_example,success,1127.499,16.831,2026-11-05T05:01:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_add_data_pages_with_dict,success,1127.499,17.035,2026-11-05T05:01:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_boolean_type_does_not_support_dictionary,success,1127.499,16.921,2026-11-05T05:01:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_check_byte_array_min_max,success,1127.499,16.926,2026-11-05T05:02:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_check_float16_min_max,success,1127.499,16.849,2026-11-05T05:02:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_check_float16_nan_middle,success,1127.499,16.966,2026-11-05T05:02:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_check_metadata,success,1127.499,16.888,2026-11-05T05:02:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_compression_v1,success,1127.499,25.370,2026-11-05T05:03:24Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_compression_v2,success,1127.499,24.298,2026-11-05T05:03:49Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_default_encoding_support_bool,success,1127.499,16.884,2026-11-05T05:04:05Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_default_encoding_support_byte_array,success,1127.499,16.964,2026-11-05T05:04:22Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_default_encoding_support_double,success,1127.499,16.985,2026-11-05T05:04:39Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_default_encoding_support_fixed_len_byte_array,success,1127.499,16.809,2026-11-05T05:04:56Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_default_encoding_support_float,success,1127.499,17.235,2026-11-05T05:05:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_default_encoding_support_int32,success,1127.499,17.191,2026-11-05T05:05:31Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_default_encoding_support_int64,success,1127.499,17.155,2026-11-05T05:05:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_default_encoding_support_int96,success,1127.499,16.959,2026-11-05T05:06:05Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_dictionary_disabled_v1,success,1127.499,20.194,2026-11-05T05:06:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_dictionary_disabled_v2,success,1127.499,20.296,2026-11-05T05:06:45Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_dictionary_fallback_small_data_page,success,1127.499,20.374,2026-11-05T05:07:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_empty_column_roundtrip,success,1127.499,16.871,2026-11-05T05:07:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_error_when_writing_disabled_dictionary,success,1127.499,16.919,2026-11-05T05:07:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_inconsistent_def_rep_length,success,1127.499,16.939,2026-11-05T05:07:56Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_invalid_def_levels,success,1127.499,16.742,2026-11-05T05:08:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_invalid_rep_levels,success,1127.499,16.797,2026-11-05T05:08:30Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_non_nullable_values_roundtrip,success,1127.499,20.913,2026-11-05T05:08:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_not_enough_values_to_write,success,1127.499,16.760,2026-11-05T05:09:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_nullable_non_repeated_values_roundtrip,success,1127.499,18.761,2026-11-05T05:09:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_nullable_repeated_values_roundtrip,success,1127.499,20.193,2026-11-05T05:09:47Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_precalculated_statistics,success,1127.499,17.028,2026-11-05T05:10:04Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_small_write_batch_size,success,1127.499,38.319,2026-11-05T05:10:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_uint32_converted_type_min_max,success,1127.499,16.929,2026-11-05T05:10:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_column_writer_write_only_one_dictionary_page,success,1127.499,17.165,2026-11-05T05:11:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_compare_greater_byte_array_decimals,success,1127.499,17.092,2026-11-05T05:11:33Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_decimal_min_max_no_truncation,success,1127.499,17.085,2026-11-05T05:11:50Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_disabled_statistics,success,1127.499,17.215,2026-11-05T05:12:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_double_statistics,success,1127.499,17.171,2026-11-05T05:12:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_double_statistics_nan_middle,success,1127.499,17.130,2026-11-05T05:12:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_double_statistics_nan_only,success,1127.499,17.055,2026-11-05T05:12:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_double_statistics_nan_start,success,1127.499,17.238,2026-11-05T05:13:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_double_statistics_neg_zero_max,success,1127.499,17.305,2026-11-05T05:13:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_double_statistics_neg_zero_only,success,1127.499,17.090,2026-11-05T05:13:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_double_statistics_zero_min,success,1127.499,17.171,2026-11-05T05:14:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_double_statistics_zero_only,success,1127.499,17.100,2026-11-05T05:14:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_fixed_len_byte_array_statistics,success,1127.499,17.106,2026-11-05T05:14:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float16_min_max_no_truncation,success,1127.499,17.368,2026-11-05T05:14:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float16_statistics_nan_middle,success,1127.499,17.300,2026-11-05T05:15:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float16_statistics_nan_only,success,1127.499,17.261,2026-11-05T05:15:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float16_statistics_nan_start,success,1127.499,17.029,2026-11-05T05:15:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float16_statistics_neg_zero_max,success,1127.499,17.148,2026-11-05T05:16:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float16_statistics_neg_zero_only,success,1127.499,17.202,2026-11-05T05:16:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float16_statistics_zero_min,success,1127.499,17.104,2026-11-05T05:16:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float16_statistics_zero_only,success,1127.499,17.210,2026-11-05T05:17:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float_statistics,success,1127.499,17.257,2026-11-05T05:17:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float_statistics_nan_middle,success,1127.499,17.054,2026-11-05T05:17:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float_statistics_nan_only,success,1127.499,17.154,2026-11-05T05:17:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float_statistics_nan_start,success,1127.499,17.093,2026-11-05T05:18:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float_statistics_neg_zero_max,success,1127.499,17.076,2026-11-05T05:18:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float_statistics_neg_zero_only,success,1127.499,17.192,2026-11-05T05:18:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float_statistics_zero_min,success,1127.499,17.113,2026-11-05T05:19:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_float_statistics_zero_only,success,1127.499,17.218,2026-11-05T05:19:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_increment,success,1127.499,17.423,2026-11-05T05:19:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_increment_max_binary_chars,success,1127.499,17.421,2026-11-05T05:19:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_increment_utf8,success,1127.499,17.347,2026-11-05T05:20:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_int32_statistics,success,1127.499,16.814,2026-11-05T05:20:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_int64_statistics,success,1127.499,17.197,2026-11-05T05:20:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_int96_statistics,success,1127.499,17.161,2026-11-05T05:21:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_interval_stats_should_not_have_min_max,success,1127.499,17.121,2026-11-05T05:21:18Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_mixed_precomputed_statistics,success,1127.499,17.112,2026-11-05T05:21:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_no_column_index_when_stats_disabled,success,1127.499,17.214,2026-11-05T05:21:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_send,success,1127.499,17.110,2026-11-05T05:22:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_statistics_truncating_byte_array,success,1127.499,17.115,2026-11-05T05:22:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_statistics_truncating_fixed_len_byte_array,success,1127.499,17.028,2026-11-05T05:22:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,column::writer::tests::test_truncate_utf8,success,1127.499,17.048,2026-11-05T05:23:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,compression::tests::test_codec_brotli,timeout,1127.499,150.019,2026-11-05T05:25:30Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,compression::tests::test_codec_gzip,timeout,1127.499,150.018,2026-11-05T05:28:00Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,compression::tests::test_codec_lz4,timeout,1127.499,150.020,2026-11-05T05:30:30Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,compression::tests::test_codec_lz4_raw,timeout,1127.499,150.019,2026-11-05T05:33:00Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,compression::tests::test_codec_snappy,timeout,1127.499,150.018,2026-11-05T05:35:30Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,compression::tests::test_codec_zstd,timeout,1127.499,150.017,2026-11-05T05:38:00Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,data_type::tests::test_as_bytes,success,1127.499,16.923,2026-11-05T05:38:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,data_type::tests::test_byte_array_from,success,1127.499,16.925,2026-11-05T05:38:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,data_type::tests::test_byte_array_ord,success,1127.499,16.815,2026-11-05T05:38:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,data_type::tests::test_decimal_partial_eq,success,1127.499,17.013,2026-11-05T05:39:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,data_type::tests::test_int96_from,success,1127.499,17.196,2026-11-05T05:39:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_byte_stream_split_f64,success,1127.499,17.414,2026-11-05T05:39:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_byte_stream_split_flba16,success,1127.499,17.371,2026-11-05T05:40:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_byte_stream_split_flba19,success,1127.499,16.943,2026-11-05T05:40:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_byte_stream_split_flba5,success,1127.499,17.190,2026-11-05T05:40:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_byte_stream_split_flba_bad_input,success,1127.499,17.280,2026-11-05T05:40:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_byte_stream_split_flba_mismatch,success,1127.499,17.199,2026-11-05T05:41:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_byte_stream_split_i64,success,1127.499,17.225,2026-11-05T05:41:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_byte_stream_split_multiple_f32,success,1127.499,17.218,2026-11-05T05:41:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_byte_stream_split_multiple_i32,success,1127.499,17.189,2026-11-05T05:42:01Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_decoder_sample,success,1127.499,17.237,2026-11-05T05:42:18Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_int32_data_across_blocks,success,1127.499,18.644,2026-11-05T05:42:36Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_int32_empty,success,1127.499,17.258,2026-11-05T05:42:54Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_int32_min_max,success,1127.499,17.216,2026-11-05T05:43:11Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_int32_multiple_blocks,success,1127.499,17.956,2026-11-05T05:43:29Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_int32_repeat,success,1127.499,17.175,2026-11-05T05:43:46Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_int32_same_values,success,1127.499,17.355,2026-11-05T05:44:03Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_int32_uneven,success,1127.499,17.355,2026-11-05T05:44:21Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_int32_with_empty_blocks,success,1127.499,17.974,2026-11-05T05:44:39Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_int64_empty,success,1127.499,17.310,2026-11-05T05:44:56Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_int64_min_max,success,1127.499,16.995,2026-11-05T05:45:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_int64_multiple_blocks,success,1127.499,17.966,2026-11-05T05:45:31Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_not_initialized_get,success,1127.499,17.264,2026-11-05T05:45:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_not_initialized_offset,success,1127.499,17.082,2026-11-05T05:46:05Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_bit_packed_padding,success,1127.499,17.234,2026-11-05T05:46:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_byte_array_same_arrays,success,1127.499,17.761,2026-11-05T05:46:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_byte_array_single_array,success,1127.499,17.850,2026-11-05T05:46:58Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_delta_byte_array_unique_arrays,success,1127.499,17.711,2026-11-05T05:47:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_get_decoders,success,1127.499,17.118,2026-11-05T05:47:33Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_decode_bool,success,1127.499,17.185,2026-11-05T05:47:50Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_decode_byte_array,success,1127.499,17.090,2026-11-05T05:48:07Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_decode_double,success,1127.499,17.226,2026-11-05T05:48:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_decode_fixed_len_byte_array,success,1127.499,17.197,2026-11-05T05:48:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_decode_float,success,1127.499,17.490,2026-11-05T05:48:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_decode_int32,success,1127.499,17.393,2026-11-05T05:49:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_decode_int32_spaced,success,1127.499,17.388,2026-11-05T05:49:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_decode_int64,success,1127.499,17.153,2026-11-05T05:49:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_decode_int96,success,1127.499,17.191,2026-11-05T05:50:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_all_bool,success,1127.499,17.226,2026-11-05T05:50:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_all_byte_array,success,1127.499,17.029,2026-11-05T05:50:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_all_double,success,1127.499,17.072,2026-11-05T05:51:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_all_fixed_len_byte_array,success,1127.499,17.072,2026-11-05T05:51:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_all_float,success,1127.499,17.198,2026-11-05T05:51:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_all_int32,success,1127.499,17.233,2026-11-05T05:51:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_all_int64,success,1127.499,17.223,2026-11-05T05:52:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_all_int96,success,1127.499,17.148,2026-11-05T05:52:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_bool,success,1127.499,17.174,2026-11-05T05:52:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_byte_array,success,1127.499,17.058,2026-11-05T05:53:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_double,success,1127.499,17.346,2026-11-05T05:53:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_fixed_len_byte_array,success,1127.499,17.321,2026-11-05T05:53:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_float,success,1127.499,17.320,2026-11-05T05:53:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_int32,success,1127.499,17.007,2026-11-05T05:54:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_int64,success,1127.499,17.144,2026-11-05T05:54:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_plain_skip_int96,success,1127.499,17.218,2026-11-05T05:54:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_rle_value_decode_bool_decode,success,1127.499,18.108,2026-11-05T05:55:02Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_rle_value_decode_int32_not_supported,success,1127.499,17.180,2026-11-05T05:55:19Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_rle_value_encode_int32_not_supported,success,1127.499,17.226,2026-11-05T05:55:36Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_skip_byte_stream_split,success,1127.499,17.303,2026-11-05T05:55:53Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_skip_byte_stream_split_ints,success,1127.499,17.260,2026-11-05T05:56:11Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_skip_delta_bit_packed_int32_min_max,success,1127.499,17.150,2026-11-05T05:56:28Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_skip_delta_bit_packed_int32_repeat,success,1127.499,17.366,2026-11-05T05:56:45Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_skip_delta_bit_packed_int32_same_values,success,1127.499,17.319,2026-11-05T05:57:03Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::decoding::tests::test_skip_delta_bit_packed_int32_uneven,success,1127.499,17.422,2026-11-05T05:57:20Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_bool,success,1127.499,30.889,2026-11-05T05:57:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_byte_array,timeout,1127.499,150.020,2026-11-05T06:00:21Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_byte_stream_split_example_f32,success,1127.499,16.948,2026-11-05T06:00:38Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_dict_encoded_size,success,1127.499,17.029,2026-11-05T06:00:55Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_double,success,1127.499,33.977,2026-11-05T06:01:29Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_estimated_data_encoded_size,success,1127.499,18.693,2026-11-05T06:01:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_fixed_len_byte_array,timeout,1127.499,150.025,2026-11-05T06:04:18Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_float,success,1127.499,31.770,2026-11-05T06:04:49Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_get_encoders,success,1127.499,17.086,2026-11-05T06:05:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_i32,success,1127.499,39.218,2026-11-05T06:05:46Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_i64,success,1127.499,44.491,2026-11-05T06:06:30Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_i96,success,1127.499,37.570,2026-11-05T06:07:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::encoding::tests::test_issue_47,success,1127.499,17.378,2026-11-05T06:07:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_long_run,success,1127.499,18.091,2026-11-05T06:07:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_random,timeout,1127.499,150.016,2026-11-05T06:10:13Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_rle_consume_flush_buffer,success,1127.499,17.064,2026-11-05T06:10:30Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_rle_decode_bool,success,1127.499,16.971,2026-11-05T06:10:47Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_rle_decode_int32,success,1127.499,16.957,2026-11-05T06:11:04Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_rle_decode_with_dict_int32,success,1127.499,16.909,2026-11-05T06:11:21Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_rle_padded,success,1127.499,16.976,2026-11-05T06:11:38Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_rle_skip_bool,success,1127.499,17.177,2026-11-05T06:11:55Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_rle_skip_dict,success,1127.499,17.140,2026-11-05T06:12:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_rle_skip_int32,success,1127.499,17.117,2026-11-05T06:12:30Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_rle_specific_roundtrip,success,1127.499,16.838,2026-11-05T06:12:47Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_rle_specific_sequences,success,1127.499,20.227,2026-11-05T06:13:07Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_truncated_rle,success,1127.499,17.113,2026-11-05T06:13:24Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,encodings::rle::tests::test_values,success,1127.499,70.701,2026-11-05T06:14:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::metadata::reader::async_tests::test_page_index,test_failed,1127.499,2.003,2026-11-05T06:14:37Z,50232569.0,panic,"thread 'file::metadata::reader::async_tests::test_page_index' (94171) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-de"
+experimental-bsan,parquet-53.2.0,file::metadata::reader::async_tests::test_simple,test_failed,1127.499,1.900,2026-11-05T06:14:39Z,50232569.0,panic,"thread 'file::metadata::reader::async_tests::test_simple' (94253) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-define"
+experimental-bsan,parquet-53.2.0,file::metadata::reader::tests::test_metadata_column_orders_len_mismatch,success,1127.499,16.997,2026-11-05T06:14:56Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::metadata::reader::tests::test_metadata_column_orders_parse,success,1127.499,17.034,2026-11-05T06:15:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::metadata::reader::tests::test_parse_metadata_corrupt_footer,success,1127.499,17.014,2026-11-05T06:15:30Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::metadata::reader::tests::test_parse_metadata_invalid_start,success,1127.499,16.918,2026-11-05T06:15:47Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::metadata::reader::tests::test_parse_metadata_size_smaller_than_footer,success,1127.499,16.974,2026-11-05T06:16:04Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::metadata::reader::tests::test_try_parse,test_failed,1127.499,1.830,2026-11-05T06:16:05Z,50232569.0,panic,"thread 'file::metadata::reader::tests::test_try_parse' (97701) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined d"
+experimental-bsan,parquet-53.2.0,file::metadata::tests::test_column_chunk_metadata_thrift_conversion,success,1127.499,16.922,2026-11-05T06:16:22Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::metadata::tests::test_column_chunk_metadata_thrift_conversion_empty,success,1127.499,17.274,2026-11-05T06:16:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::metadata::tests::test_compressed_size,success,1127.499,17.281,2026-11-05T06:16:57Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::metadata::tests::test_memory_size,success,1127.499,17.339,2026-11-05T06:17:14Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::metadata::tests::test_row_group_metadata_thrift_conversion,success,1127.499,17.092,2026-11-05T06:17:31Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::metadata::tests::test_row_group_metadata_thrift_conversion_empty,success,1127.499,17.182,2026-11-05T06:17:49Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::metadata::tests::test_row_group_metadata_thrift_corrupted,success,1127.499,17.315,2026-11-05T06:18:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::page_encoding_stats::tests::test_page_encoding_stats_from_thrift,success,1127.499,17.180,2026-11-05T06:18:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::page_index::index::tests::test_invalid_column_index,success,1127.499,17.174,2026-11-05T06:18:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::page_index::index::tests::test_page_index_min_max_null,success,1127.499,17.243,2026-11-05T06:18:58Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::page_index::index::tests::test_page_index_min_max_null_none,success,1127.499,17.329,2026-11-05T06:19:15Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_parse_enabledstatistics,success,1127.499,17.260,2026-11-05T06:19:32Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_parse_writerversion,success,1127.499,17.291,2026-11-05T06:19:49Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_reader_properties_builder,success,1127.499,17.466,2026-11-05T06:20:07Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_reader_properties_default_settings,success,1127.499,17.494,2026-11-05T06:20:24Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_writer_properties_bloom_filter_ndv_fpp_set,success,1127.499,17.413,2026-11-05T06:20:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_writer_properties_builder,success,1127.499,17.502,2026-11-05T06:20:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_writer_properties_builder_partial_defaults,success,1127.499,17.383,2026-11-05T06:21:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_writer_properties_default_settings,success,1127.499,17.618,2026-11-05T06:21:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_writer_properties_dictionary_encoding,success,1127.499,17.606,2026-11-05T06:21:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_writer_properties_panic_when_dictionary_is_disabled,success,1127.499,17.663,2026-11-05T06:22:10Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_writer_properties_panic_when_dictionary_is_enabled,success,1127.499,17.352,2026-11-05T06:22:27Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_writer_properties_panic_when_plain_dictionary_is_fallback,success,1127.499,17.392,2026-11-05T06:22:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_writer_properties_panic_when_rle_dictionary_is_fallback,success,1127.499,17.337,2026-11-05T06:23:02Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::properties::tests::test_writer_version,success,1127.499,17.345,2026-11-05T06:23:19Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_byte_stream_split_extended,test_failed,1127.499,1.835,2026-11-05T06:23:21Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_byte_stream_split_extended' (22191) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_cursor_and_file_has_the_same_behaviour,test_failed,1127.499,1.907,2026-11-05T06:23:23Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_cursor_and_file_has_the_same_behaviour' (22344) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empt"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_file_reader,test_failed,1127.499,1.890,2026-11-05T06:23:25Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_file_reader' (22437) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-define"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_file_reader_datapage_v2,test_failed,1127.499,1.861,2026-11-05T06:23:27Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_file_reader_datapage_v2' (22529) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and th"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_file_reader_filter_row_groups_and_range,test_failed,1127.499,1.918,2026-11-05T06:23:29Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_file_reader_filter_row_groups_and_range' (22645) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has emp"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_file_reader_filter_row_groups_with_predicate,test_failed,1127.499,1.899,2026-11-05T06:23:31Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_file_reader_filter_row_groups_with_predicate' (22727) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or ha"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_file_reader_filter_row_groups_with_range,test_failed,1127.499,1.794,2026-11-05T06:23:32Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_file_reader_filter_row_groups_with_range' (22783) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has em"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_file_reader_into_iter,test_failed,1127.499,1.834,2026-11-05T06:23:34Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_file_reader_into_iter' (22871) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the "
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_file_reader_into_iter_project,test_failed,1127.499,1.824,2026-11-05T06:23:36Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_file_reader_into_iter_project' (22931) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, "
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_file_reader_invalid_metadata,success,1127.499,17.437,2026-11-05T06:23:54Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_file_reader_key_value_metadata,test_failed,1127.499,1.865,2026-11-05T06:23:55Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_file_reader_key_value_metadata' (27693) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value,"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_file_reader_optional_metadata,test_failed,1127.499,1.874,2026-11-05T06:23:57Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_file_reader_optional_metadata' (27796) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, "
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_file_reader_try_from,test_failed,1127.499,1.916,2026-11-05T06:23:59Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_file_reader_try_from' (28056) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the p"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_file_reader_with_no_filter,test_failed,1127.499,1.832,2026-11-05T06:24:01Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_file_reader_with_no_filter' (28280) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_filtered_rowgroup_metadata,success,1127.499,18.176,2026-11-05T06:24:19Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_fixed_length_index,success,1127.499,17.746,2026-11-05T06:24:37Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_multi_gz,test_failed,1127.499,1.891,2026-11-05T06:24:39Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_multi_gz' (29920) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined d"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_page_index_reader,test_failed,1127.499,1.914,2026-11-05T06:24:41Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_page_index_reader' (30033) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_page_index_reader_all_type,test_failed,1127.499,1.812,2026-11-05T06:24:43Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_page_index_reader_all_type' (30101) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_page_index_reader_out_of_order,test_failed,1127.499,1.850,2026-11-05T06:24:45Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_page_index_reader_out_of_order' (30161) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value,"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_page_iterator,test_failed,1127.499,1.848,2026-11-05T06:24:46Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_page_iterator' (30288) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defi"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_peek_page_with_dictionary_page,test_failed,1127.499,1.900,2026-11-05T06:24:48Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_peek_page_with_dictionary_page' (30385) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value,"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_peek_page_with_dictionary_page_without_offset_index,test_failed,1127.499,1.884,2026-11-05T06:24:50Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_peek_page_with_dictionary_page_without_offset_index' (30452) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefine"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_reuse_file_chunk,test_failed,1127.499,1.878,2026-11-05T06:24:52Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_reuse_file_chunk' (30519) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-d"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_skip_page_with_offset_index,test_failed,1127.499,1.925,2026-11-05T06:24:54Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_skip_page_with_offset_index' (30641) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, an"
+experimental-bsan,parquet-53.2.0,file::serialized_reader::tests::test_skip_page_without_offset_index,test_failed,1127.499,1.812,2026-11-05T06:24:56Z,50232569.0,panic,"thread 'file::serialized_reader::tests::test_skip_page_without_offset_index' (30783) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value,"
+experimental-bsan,parquet-53.2.0,file::statistics::tests::test_count_decoding_null_invalid,success,1127.499,17.468,2026-11-05T06:25:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::statistics::tests::test_count_encoding,success,1127.499,17.399,2026-11-05T06:25:31Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::statistics::tests::test_count_encoding_distinct_too_large,success,1127.499,17.454,2026-11-05T06:25:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::statistics::tests::test_count_encoding_null_too_large,success,1127.499,17.286,2026-11-05T06:26:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::statistics::tests::test_statistics_debug,success,1127.499,17.583,2026-11-05T06:26:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::statistics::tests::test_statistics_display,success,1127.499,17.694,2026-11-05T06:26:41Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::statistics::tests::test_statistics_from_thrift,success,1127.499,17.624,2026-11-05T06:26:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::statistics::tests::test_statistics_min_max_bytes,success,1127.499,17.597,2026-11-05T06:27:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::statistics::tests::test_statistics_negative_null_count,success,1127.499,17.339,2026-11-05T06:27:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::statistics::tests::test_statistics_partial_eq,success,1127.499,17.425,2026-11-05T06:27:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::statistics::tests::test_statistics_thrift_none,success,1127.499,17.421,2026-11-05T06:28:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_append_metadata,success,1127.499,18.136,2026-11-05T06:28:27Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_backwards_compatible_statistics,success,1127.499,17.735,2026-11-05T06:28:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_boolean_compressed_roundtrip,success,1127.499,23.914,2026-11-05T06:29:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_boolean_roundtrip,success,1127.499,23.733,2026-11-05T06:29:32Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_byte_array_size_statistics,success,1127.499,17.915,2026-11-05T06:29:50Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_byte_stream_split_extended_roundtrip,test_failed,1127.499,1.855,2026-11-05T06:29:52Z,50232569.0,panic,"thread 'file::writer::tests::test_byte_stream_split_extended_roundtrip' (42876) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and "
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_bytes_writer_empty_row_groups,success,1127.499,17.479,2026-11-05T06:30:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_bytes_writer_multiple_row_groups,success,1127.499,18.087,2026-11-05T06:30:27Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_bytes_writer_multiple_row_groups_compressed,success,1127.499,18.130,2026-11-05T06:30:45Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_bytes_writer_single_row_group,success,1127.499,17.527,2026-11-05T06:31:03Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_bytes_writer_single_row_group_compressed,success,1127.499,17.843,2026-11-05T06:31:21Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_column_offset_index_file,success,1127.499,17.790,2026-11-05T06:31:39Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_disabled_statistics,success,1127.499,17.942,2026-11-05T06:31:57Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_file_writer_column_orders_populated,success,1127.499,17.245,2026-11-05T06:32:14Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_file_writer_empty_file,success,1127.499,17.155,2026-11-05T06:32:31Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_file_writer_empty_row_groups,success,1127.499,17.208,2026-11-05T06:32:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_file_writer_multiple_large_row_groups,success,1127.499,27.507,2026-11-05T06:33:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_file_writer_multiple_row_groups,success,1127.499,17.933,2026-11-05T06:33:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_file_writer_single_row_group,success,1127.499,17.601,2026-11-05T06:33:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_file_writer_v2_with_metadata,success,1127.499,17.496,2026-11-05T06:34:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_file_writer_with_metadata,success,1127.499,17.458,2026-11-05T06:34:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_file_writer_with_sorting_columns_metadata,success,1127.499,17.556,2026-11-05T06:34:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_page_writer_data_pages,success,1127.499,17.576,2026-11-05T06:35:01Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_page_writer_dict_pages,success,1127.499,17.467,2026-11-05T06:35:19Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_row_group_writer_error_not_all_columns_written,success,1127.499,17.350,2026-11-05T06:35:36Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_row_group_writer_num_records_mismatch,success,1127.499,17.365,2026-11-05T06:35:54Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_size_statistics_with_repetition_and_nulls,success,1127.499,17.337,2026-11-05T06:36:11Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,file::writer::tests::test_spliced_write,success,1127.499,19.190,2026-11-05T06:36:30Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::api_tests::test_field_visibility,success,1127.499,17.280,2026-11-05T06:36:47Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::api_tests::test_list_element_access,success,1127.499,17.205,2026-11-05T06:37:05Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::api_tests::test_map_entry_access,success,1127.499,16.945,2026-11-05T06:37:22Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_convert_date_to_string,success,1127.499,17.080,2026-11-05T06:37:39Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_convert_decimal_to_string,success,1127.499,17.022,2026-11-05T06:37:56Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_convert_double_to_string,success,1127.499,17.004,2026-11-05T06:38:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_convert_float16_to_string,success,1127.499,17.017,2026-11-05T06:38:30Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_convert_float_to_string,success,1127.499,17.098,2026-11-05T06:38:47Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_convert_timestamp_micros_to_string,success,1127.499,16.994,2026-11-05T06:39:04Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_convert_timestamp_millis_to_string,success,1127.499,17.237,2026-11-05T06:39:21Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_is_primitive,success,1127.499,17.224,2026-11-05T06:39:38Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_list_complex_accessors,success,1127.499,17.280,2026-11-05T06:39:56Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_list_complex_invalid_accessors,success,1127.499,17.315,2026-11-05T06:40:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_list_primitive_accessors,success,1127.499,17.202,2026-11-05T06:40:30Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_list_primitive_invalid_accessors,success,1127.499,17.260,2026-11-05T06:40:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_map_accessors,success,1127.499,17.114,2026-11-05T06:41:05Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_complex_accessors,success,1127.499,17.510,2026-11-05T06:41:22Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_complex_field_fmt,success,1127.499,17.428,2026-11-05T06:41:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_complex_invalid_accessors,success,1127.499,17.358,2026-11-05T06:41:57Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_convert_bool,success,1127.499,17.117,2026-11-05T06:42:14Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_convert_byte_array,success,1127.499,17.225,2026-11-05T06:42:31Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_convert_double,success,1127.499,17.032,2026-11-05T06:42:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_convert_float,success,1127.499,17.109,2026-11-05T06:43:05Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_convert_int32,success,1127.499,17.194,2026-11-05T06:43:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_convert_int64,success,1127.499,17.309,2026-11-05T06:43:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_convert_int96,success,1127.499,17.188,2026-11-05T06:43:57Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_display,success,1127.499,17.313,2026-11-05T06:44:15Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_primitive_accessors,success,1127.499,17.311,2026-11-05T06:44:32Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_primitive_field_fmt,success,1127.499,17.365,2026-11-05T06:44:49Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_row_primitive_invalid_accessors,success,1127.499,17.231,2026-11-05T06:45:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::api::tests::test_to_json_value,success,1127.499,17.319,2026-11-05T06:45:24Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_file_reader_iter,test_failed,1127.499,1.866,2026-11-05T06:45:26Z,50232569.0,panic,"thread 'record::reader::tests::test_file_reader_iter' (91569) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined da"
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_file_reader_iter_projection,test_failed,1127.499,1.849,2026-11-05T06:45:28Z,50232569.0,panic,"thread 'record::reader::tests::test_file_reader_iter_projection' (91626) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre"
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_file_reader_iter_projection_err,test_failed,1127.499,1.948,2026-11-05T06:45:30Z,50232569.0,panic,"thread 'record::reader::tests::test_file_reader_iter_projection_err' (91697) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the"
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_file_reader_rows_invalid_map_type,test_failed,1127.499,2.057,2026-11-05T06:45:32Z,50232569.0,panic,"thread 'record::reader::tests::test_file_reader_rows_invalid_map_type' (91783) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and t"
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_file_reader_rows_invalid_projection,test_failed,1127.499,1.879,2026-11-05T06:45:33Z,50232569.0,panic,"thread 'record::reader::tests::test_file_reader_rows_invalid_projection' (91861) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and"
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_file_reader_rows_nonnullable,test_failed,1127.499,1.844,2026-11-05T06:45:35Z,50232569.0,panic,"thread 'record::reader::tests::test_file_reader_rows_nonnullable' (91919) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pr"
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_file_reader_rows_nullable,test_failed,1127.499,2.024,2026-11-05T06:45:37Z,50232569.0,panic,"thread 'record::reader::tests::test_file_reader_rows_nullable' (92017) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-d"
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_file_reader_rows_nulls,test_failed,1127.499,1.866,2026-11-05T06:45:39Z,50232569.0,panic,"thread 'record::reader::tests::test_file_reader_rows_nulls' (92105) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defi"
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_file_reader_rows_projection,test_failed,1127.499,1.932,2026-11-05T06:45:41Z,50232569.0,panic,"thread 'record::reader::tests::test_file_reader_rows_projection' (92184) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre"
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_file_reader_rows_projection_list,test_failed,1127.499,2.057,2026-11-05T06:45:43Z,50232569.0,panic,"thread 'record::reader::tests::test_file_reader_rows_projection_list' (92258) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and th"
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_file_reader_rows_projection_map,test_failed,1127.499,1.943,2026-11-05T06:45:45Z,50232569.0,panic,"thread 'record::reader::tests::test_file_reader_rows_projection_map' (92348) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the"
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_into_columns_in_row,success,1127.499,17.256,2026-11-05T06:46:03Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_iter_columns_in_row,success,1127.499,17.474,2026-11-05T06:46:20Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_row_group_rows_invalid_projection,test_failed,1127.499,1.922,2026-11-05T06:46:22Z,50232569.0,panic,"thread 'record::reader::tests::test_row_group_rows_invalid_projection' (93510) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and t"
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_tree_reader_handle_nested_repeated_fields_with_no_annotation,success,1127.499,18.050,2026-11-05T06:46:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,record::reader::tests::test_tree_reader_handle_repeated_fields_with_no_annotation,test_failed,1127.499,1.910,2026-11-05T06:46:42Z,50232569.0,panic,"thread 'record::reader::tests::test_tree_reader_handle_repeated_fields_with_no_annotation' (94053) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or ha"
+experimental-bsan,parquet-53.2.0,record::triplet::tests::test_triplet_null_column,test_failed,1127.499,1.883,2026-11-05T06:46:44Z,50232569.0,panic,"thread 'record::triplet::tests::test_triplet_null_column' (94152) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-define"
+experimental-bsan,parquet-53.2.0,record::triplet::tests::test_triplet_optional_column,test_failed,1127.499,1.884,2026-11-05T06:46:46Z,50232569.0,panic,"thread 'record::triplet::tests::test_triplet_optional_column' (94232) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-de"
+experimental-bsan,parquet-53.2.0,record::triplet::tests::test_triplet_optional_list_column,test_failed,1127.499,1.893,2026-11-05T06:46:48Z,50232569.0,panic,"thread 'record::triplet::tests::test_triplet_optional_list_column' (94328) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the p"
+experimental-bsan,parquet-53.2.0,record::triplet::tests::test_triplet_optional_map_column,test_failed,1127.499,1.876,2026-11-05T06:46:50Z,50232569.0,panic,"thread 'record::triplet::tests::test_triplet_optional_map_column' (94389) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pr"
+experimental-bsan,parquet-53.2.0,record::triplet::tests::test_triplet_required_column,test_failed,1127.499,1.868,2026-11-05T06:46:51Z,50232569.0,panic,"thread 'record::triplet::tests::test_triplet_required_column' (94452) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-de"
+experimental-bsan,parquet-53.2.0,record::triplet::tests::test_triplet_zero_batch_size,test_failed,1127.499,2.000,2026-11-05T06:46:54Z,50232569.0,panic,"thread 'record::triplet::tests::test_triplet_zero_batch_size' (94521) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-de"
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_assert_token,success,1127.499,17.421,2026-11-05T06:47:11Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_parse_message_type_compare_1,success,1127.499,17.008,2026-11-05T06:47:28Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_parse_message_type_compare_2,success,1127.499,17.453,2026-11-05T06:47:45Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_parse_message_type_compare_3,success,1127.499,17.373,2026-11-05T06:48:03Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_parse_message_type_compare_4,success,1127.499,17.625,2026-11-05T06:48:20Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_parse_message_type_decimal,success,1127.499,17.567,2026-11-05T06:48:38Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_parse_message_type_fixed_byte_array,success,1127.499,17.336,2026-11-05T06:48:55Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_parse_message_type_integer,success,1127.499,17.708,2026-11-05T06:49:13Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_parse_message_type_invalid,success,1127.499,17.359,2026-11-05T06:49:30Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_parse_message_type_no_name,success,1127.499,17.272,2026-11-05T06:49:48Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_parse_message_type_temporal,success,1127.499,17.660,2026-11-05T06:50:05Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_tokenize_backtrack,success,1127.499,17.381,2026-11-05T06:50:23Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_tokenize_delimiters,success,1127.499,17.201,2026-11-05T06:50:40Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_tokenize_delimiters_with_whitespaces,success,1127.499,17.347,2026-11-05T06:50:57Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_tokenize_empty_string,success,1127.499,17.564,2026-11-05T06:51:15Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_tokenize_message_type,success,1127.499,17.660,2026-11-05T06:51:33Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::parser::tests::test_tokenize_words,success,1127.499,17.527,2026-11-05T06:51:50Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::printer::tests::test_print_and_parse_decimal,success,1127.499,17.530,2026-11-05T06:52:08Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::printer::tests::test_print_and_parse_nested,success,1127.499,17.418,2026-11-05T06:52:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::printer::tests::test_print_and_parse_primitive,success,1127.499,17.488,2026-11-05T06:52:43Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::printer::tests::test_print_flba_logical_types,success,1127.499,17.329,2026-11-05T06:53:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::printer::tests::test_print_group_type,success,1127.499,17.458,2026-11-05T06:53:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::printer::tests::test_print_logical_types,success,1127.499,17.342,2026-11-05T06:53:35Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::printer::tests::test_print_primitive_type,success,1127.499,17.378,2026-11-05T06:53:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_check_contains_group_group,success,1127.499,17.401,2026-11-05T06:54:10Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_check_contains_group_primitive,success,1127.499,17.425,2026-11-05T06:54:27Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_check_contains_primitive_primitive,success,1127.499,17.337,2026-11-05T06:54:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_column_descriptor,success,1127.499,17.332,2026-11-05T06:55:02Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_get_physical_type_panic,success,1127.499,17.304,2026-11-05T06:55:19Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_get_physical_type_primitive,success,1127.499,17.472,2026-11-05T06:55:36Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_group_type,success,1127.499,17.268,2026-11-05T06:55:54Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_primitive_type,success,1127.499,17.459,2026-11-05T06:56:11Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_schema_build_tree_def_rep_levels,success,1127.499,17.663,2026-11-05T06:56:29Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_schema_descriptor,success,1127.499,17.576,2026-11-05T06:56:46Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_schema_from_thrift_group_has_no_child,success,1127.499,17.429,2026-11-05T06:57:04Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_schema_from_thrift_root_has_repetition,success,1127.499,17.250,2026-11-05T06:57:21Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_schema_from_thrift_with_num_children_set,success,1127.499,17.658,2026-11-05T06:57:39Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_schema_type_thrift_conversion,success,1127.499,18.000,2026-11-05T06:57:57Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_schema_type_thrift_conversion_decimal,success,1127.499,17.433,2026-11-05T06:58:14Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::types::tests::test_schema_type_thrift_conversion_err,success,1127.499,17.355,2026-11-05T06:58:32Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,schema::visitor::tests::test_visitor,success,1127.499,17.535,2026-11-05T06:58:49Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,statistics::missing_null_counts_as_zero,success,1127.499,17.317,2026-11-05T06:59:07Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,statistics::test::alltypes_plain,test_failed,1127.499,16.038,2026-11-05T06:59:23Z,50232569.0,panic,"thread 'statistics::test::alltypes_plain' (27679) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined data dir `/loc"
+experimental-bsan,parquet-53.2.0,statistics::test::alltypes_tiny_pages,test_failed,1127.499,16.027,2026-11-05T06:59:39Z,50232569.0,panic,"thread 'statistics::test::alltypes_tiny_pages' (27878) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined data dir "
+experimental-bsan,parquet-53.2.0,statistics::test::fixed_length_decimal_legacy,test_failed,1127.499,15.953,2026-11-05T06:59:55Z,50232569.0,panic,"thread 'statistics::test::fixed_length_decimal_legacy' (28208) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined d"
+experimental-bsan,parquet-53.2.0,statistics::test::nan_in_stats,test_failed,1127.499,16.022,2026-11-05T07:00:11Z,50232569.0,panic,"thread 'statistics::test::nan_in_stats' (28536) panicked at /local/ev-50232569-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/arrow-53.2.0/src/util/test_util.rs:103:21: failed to get parquet data dir: env `PARQUET_TEST_DATA` is undefined or has empty value, and the pre-defined data dir `/local"
+experimental-bsan,parquet-53.2.0,statistics::test::roundtrip_empty,success,1127.499,21.326,2026-11-05T07:00:32Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,statistics::test_binary_view,timeout,1127.499,150.018,2026-11-05T07:03:02Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_boolean,timeout,1127.499,150.019,2026-11-05T07:05:32Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_byte,timeout,1127.499,150.016,2026-11-05T07:08:02Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_column_non_existent,timeout,1127.499,150.019,2026-11-05T07:10:32Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_column_not_found,timeout,1127.499,150.017,2026-11-05T07:13:02Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_data_page_stats_with_all_null_page,success,1127.499,52.369,2026-11-05T07:13:55Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,statistics::test_dates_32_diff_rg_sizes,timeout,1127.499,150.015,2026-11-05T07:16:25Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_dates_64_diff_rg_sizes,timeout,1127.499,150.015,2026-11-05T07:18:55Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_decimal,timeout,1127.499,150.019,2026-11-05T07:21:25Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_decimal_256,timeout,1127.499,150.020,2026-11-05T07:23:55Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_dictionary,timeout,1127.499,150.022,2026-11-05T07:26:25Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_float16,timeout,1127.499,150.018,2026-11-05T07:28:55Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_float64,timeout,1127.499,150.020,2026-11-05T07:31:25Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_float_16,timeout,1127.499,150.017,2026-11-05T07:33:55Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_float_32,timeout,1127.499,150.017,2026-11-05T07:36:25Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_float_64,timeout,1127.499,150.018,2026-11-05T07:38:55Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_int32_range,timeout,1127.499,150.020,2026-11-05T07:41:25Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_int_16,timeout,1127.499,150.014,2026-11-05T07:43:55Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_int_32,timeout,1127.499,150.015,2026-11-05T07:46:25Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_int_64,timeout,1127.499,150.016,2026-11-05T07:48:55Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_int_8,timeout,1127.499,150.016,2026-11-05T07:51:25Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_missing_statistics,success,1127.499,18.549,2026-11-05T07:51:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,statistics::test_multiple_data_pages_nulls_and_negatives,success,1127.499,18.732,2026-11-05T07:52:03Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,statistics::test_numeric_limits_float,timeout,1127.499,150.016,2026-11-05T07:54:33Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_numeric_limits_signed,timeout,1127.499,150.015,2026-11-05T07:57:03Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_numeric_limits_unsigned,timeout,1127.499,150.015,2026-11-05T07:59:33Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_one_row_group_with_null_and_negative,success,1127.499,19.114,2026-11-05T07:59:52Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,statistics::test_one_row_group_without_null,success,1127.499,18.434,2026-11-05T08:00:10Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,statistics::test_period_in_column_names,timeout,1127.499,150.018,2026-11-05T08:02:40Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_time32_millisecond_diff_rg_sizes,timeout,1127.499,150.017,2026-11-05T08:05:10Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_time32_second_diff_rg_sizes,timeout,1127.499,150.021,2026-11-05T08:07:40Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_time64_microsecond_diff_rg_sizes,timeout,1127.499,150.019,2026-11-05T08:10:10Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_time64_nanosecond_diff_rg_sizes,timeout,1127.499,150.017,2026-11-05T08:12:40Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_timestamp,timeout,1127.499,150.016,2026-11-05T08:15:11Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_timestamp_diff_rg_sizes,timeout,1127.499,150.016,2026-11-05T08:17:41Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_two_row_group_with_null,success,1127.499,19.335,2026-11-05T08:18:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,statistics::test_two_row_groups_with_all_nulls_in_one,success,1127.499,19.277,2026-11-05T08:18:19Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,statistics::test_uint,timeout,1127.499,150.018,2026-11-05T08:20:49Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_uint32_range,timeout,1127.499,150.019,2026-11-05T08:23:19Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_utf8,timeout,1127.499,150.016,2026-11-05T08:25:49Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,statistics::test_utf8_view,timeout,1127.499,150.017,2026-11-05T08:28:19Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,test_list,success,1127.499,22.231,2026-11-05T08:28:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,test_primitive,success,1127.499,38.477,2026-11-05T08:29:20Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,test_string,success,1127.499,39.785,2026-11-05T08:30:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,tests::test_command_help,success,1127.499,18.733,2026-11-05T08:30:19Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,tests::test_configure_reader_builder,success,1127.499,17.265,2026-11-05T08:30:36Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,tests::test_convert_csv_to_parquet,timeout,1127.499,150.019,2026-11-05T08:33:06Z,50232569.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,parquet-53.2.0,tests::test_parse_arg_compression_format,success,1127.499,25.000,2026-11-05T08:33:31Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,tests::test_parse_arg_compression_format_fail,success,1127.499,18.187,2026-11-05T08:33:49Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,tests::test_parse_arg_format_error,success,1127.499,17.951,2026-11-05T08:34:07Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,tests::test_parse_arg_format_variants,success,1127.499,21.507,2026-11-05T08:34:29Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,tests::test_parse_arg_minimum,success,1127.499,18.463,2026-11-05T08:34:47Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_pack::tests::test_basic,success,1127.499,19.141,2026-11-05T08:35:06Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_bit_reader_get_aligned,success,1127.499,17.434,2026-11-05T08:35:24Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_bit_reader_get_byte_offset,success,1127.499,17.167,2026-11-05T08:35:41Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_bit_reader_get_value,success,1127.499,17.409,2026-11-05T08:35:58Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_bit_reader_get_value_boundary,success,1127.499,17.291,2026-11-05T08:36:16Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_bit_reader_get_vlq_int,success,1127.499,17.355,2026-11-05T08:36:33Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_bit_reader_get_zigzag_vlq_int,success,1127.499,17.171,2026-11-05T08:36:50Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_bit_reader_skip,success,1127.499,17.176,2026-11-05T08:37:07Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_bit_reader_skip_boundary,success,1127.499,17.187,2026-11-05T08:37:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_ceil,success,1127.499,17.330,2026-11-05T08:37:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_consume_flush_buffer,success,1127.499,17.262,2026-11-05T08:37:59Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_get_batch,success,1127.499,68.128,2026-11-05T08:39:07Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_get_batch_zero_extend,success,1127.499,17.527,2026-11-05T08:39:25Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_get_bit,success,1127.499,17.592,2026-11-05T08:39:42Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_get_next_byte_ptr,success,1127.499,17.136,2026-11-05T08:40:00Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_num_required_bits,success,1127.499,17.130,2026-11-05T08:40:17Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_put_aligned_roundtrip,success,1127.499,17.318,2026-11-05T08:40:34Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_put_get_bool,success,1127.499,17.127,2026-11-05T08:40:51Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_put_value_roundtrip,success,1127.499,17.858,2026-11-05T08:41:09Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_put_vlq_int,success,1127.499,17.345,2026-11-05T08:41:26Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_put_zigzag_vlq_int,success,1127.499,17.520,2026-11-05T08:41:44Z,50232569.0,,
+experimental-bsan,parquet-53.2.0,util::bit_util::tests::test_skip,success,1127.499,17.277,2026-11-05T08:42:01Z,50232569.0,,

@@ -1,0 +1,87 @@
+experimental-bsan,ntex-net-4.5.0,backpressure_release_is_lossless,timeout,306.851,150.018,2026-11-05T02:15:57Z,50239330.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-net-4.5.0,busy_task,success,306.851,12.493,2026-11-05T02:16:09Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,busy_task_io_progress,success,306.851,12.471,2026-11-05T02:16:22Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,channel::tests::test_oneshot,success,306.851,12.516,2026-11-05T02:16:34Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,client_drop_with_queued_output_resets_connection,test_failed,306.851,3.101,2026-11-05T02:16:38Z,50239330.0,panic,"thread 'client_drop_with_queued_output_resets_connection' (14131) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,client_force_close_idle_resets_connection,test_failed,306.851,3.089,2026-11-05T02:16:41Z,50239330.0,panic,"thread 'client_force_close_idle_resets_connection' (14389) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,client_force_close_resets_connection,test_failed,306.851,3.103,2026-11-05T02:16:44Z,50239330.0,panic,"thread 'client_force_close_resets_connection' (14673) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,client_graceful_close_delivers_and_closes,test_failed,306.851,3.104,2026-11-05T02:16:47Z,50239330.0,panic,"thread 'client_graceful_close_delivers_and_closes' (15000) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,close_on_stop_with_full_queue,success,306.851,12.424,2026-11-05T02:16:59Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect::error::tests::connect_error_clone,success,306.851,12.447,2026-11-05T02:17:12Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect::error::tests::error_diagnostic,success,306.851,12.410,2026-11-05T02:17:24Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect::message::tests::address,success,306.851,12.461,2026-11-05T02:17:37Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect::message::tests::connect,success,306.851,12.438,2026-11-05T02:17:49Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect::message::tests::connect_with_addr,success,306.851,12.445,2026-11-05T02:18:02Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect::message::tests::display,success,306.851,12.426,2026-11-05T02:18:14Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect::message::tests::parse_host,success,306.851,12.414,2026-11-05T02:18:26Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect::resolve::tests::ip_literals,success,306.851,12.441,2026-11-05T02:18:39Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect::resolve::tests::resolver,success,306.851,12.825,2026-11-05T02:18:52Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect::resolve::tests::resolver_ip_literals,success,306.851,12.533,2026-11-05T02:19:04Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect::uri::tests::port_tests,success,306.851,12.495,2026-11-05T02:19:17Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect::uri::tests::url_address,success,306.851,12.433,2026-11-05T02:19:29Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect_falls_back_to_next_address,test_failed,306.851,4.609,2026-11-05T02:19:34Z,50239330.0,panic,"thread 'connect_falls_back_to_next_address' (30126) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,connect_host,test_failed,306.851,4.611,2026-11-05T02:19:38Z,50239330.0,panic,"thread 'connect_host' (30847) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,connect_ipv6,test_failed,306.851,4.468,2026-11-05T02:19:43Z,50239330.0,panic,"thread 'connect_ipv6' (31503) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,connect_refused,test_failed,306.851,4.597,2026-11-05T02:19:48Z,50239330.0,panic,"thread 'connect_refused' (32286) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,connect_resolver_error,success,306.851,12.619,2026-11-05T02:20:00Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,connect_socket_addr,test_failed,306.851,4.620,2026-11-05T02:20:05Z,50239330.0,panic,"thread 'connect_socket_addr' (37264) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,connector_service,test_failed,306.851,4.629,2026-11-05T02:20:10Z,50239330.0,panic,"thread 'connector_service' (38019) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,cross_thread_wakeup,success,306.851,12.557,2026-11-05T02:20:22Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,drop_resets_connection,test_failed,306.851,17.529,2026-11-05T02:20:40Z,50239330.0,gc,"test drop_resets_connection ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-net-4.5.0,filter_writes_while_processing_immediate_read,test_failed,306.851,5.926,2026-11-05T02:20:46Z,50239330.0,panic,"thread 'filter_writes_while_processing_immediate_read' (42449) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,force_close_resets_connection,test_failed,306.851,17.504,2026-11-05T02:21:03Z,50239330.0,gc,"test force_close_resets_connection ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-net-4.5.0,from_unix_stream,test_failed,306.851,4.473,2026-11-05T02:21:08Z,50239330.0,panic,"thread 'from_unix_stream' (45358) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,graceful_shutdown_closes_cleanly,test_failed,306.851,17.491,2026-11-05T02:21:25Z,50239330.0,gc,"test graceful_shutdown_closes_cleanly ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-net-4.5.0,helpers_require_a_driver,success,306.851,12.475,2026-11-05T02:21:38Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,inline_pages_survive_pending_and_partial_sends,test_failed,306.851,12.623,2026-11-05T02:21:50Z,50239330.0,panic,"thread 'inline_pages_survive_pending_and_partial_sends' (51870) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,io_outlives_close,success,306.851,12.471,2026-11-05T02:22:03Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,large_page_sends,success,306.851,12.518,2026-11-05T02:22:15Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,nested_reactor,test_failed,306.851,4.447,2026-11-05T02:22:20Z,50239330.0,other,"error: test failed, to rerun pass `--test connect`"
+experimental-bsan,ntex-net-4.5.0,partial_gathered_sends,success,306.851,12.565,2026-11-05T02:22:32Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,paused_reader_stays_bounded_and_loses_nothing,timeout,306.851,150.018,2026-11-05T02:25:02Z,50239330.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-net-4.5.0,polling::reactor::tests::api_errors_are_reported,success,306.851,12.528,2026-11-05T02:25:15Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::reactor::tests::reactor_info,success,306.851,12.489,2026-11-05T02:25:27Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::reactor::tests::tick_drains_errors_and_their_deferred_work,success,306.851,12.499,2026-11-05T02:25:40Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::cleanup_closes_socket_with_deferred_secondary_drop,success,306.851,12.644,2026-11-05T02:25:53Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::dropped_stream_closes_inline,success,306.851,12.666,2026-11-05T02:26:05Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::hup::err_without_read_armed_reports_socket_error,success,306.851,12.717,2026-11-05T02:26:18Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::hup::half_close_with_read_armed_delivers_eof,success,306.851,12.702,2026-11-05T02:26:31Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::hup::hup_detaches_the_stream,success,306.851,12.697,2026-11-05T02:26:43Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::hup::hup_stops_the_stream_cleanly,success,306.851,12.617,2026-11-05T02:26:56Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::level_mode_where_supported,success,306.851,12.659,2026-11-05T02:27:09Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::lingering_close_runs_in_blocking_pool,success,306.851,12.692,2026-11-05T02:27:21Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::reactor_error_stops_the_stream,success,306.851,12.718,2026-11-05T02:27:34Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::read::read_continues_until_budget,success,306.851,12.675,2026-11-05T02:27:47Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::read::read_stops_on_backpressure,success,306.851,12.642,2026-11-05T02:27:59Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::readable_event_keeps_write_interest,success,306.851,12.659,2026-11-05T02:28:12Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::readable_without_data_renews_read_interest,success,306.851,12.638,2026-11-05T02:28:25Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::registration_arms_read_interest,success,306.851,12.651,2026-11-05T02:28:37Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::runtime_tick_closes_socket_without_new_events,success,306.851,12.678,2026-11-05T02:28:50Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::write::direct_write_arms_write_interest,success,306.851,13.357,2026-11-05T02:29:03Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::write::drained_write_does_not_arm_write_interest,success,306.851,12.677,2026-11-05T02:29:16Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::write::failed_write_returns_pages_to_the_buffer,success,306.851,12.694,2026-11-05T02:29:29Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::write::repeated_direct_writes_keep_interest_armed,success,306.851,13.382,2026-11-05T02:29:42Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::write::write_continues_until_budget,success,306.851,46.520,2026-11-05T02:30:29Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::write_interest_with_pending_output,success,306.851,12.690,2026-11-05T02:30:41Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,polling::stream::tests::zero_linger_does_not_wait,success,306.851,12.415,2026-11-05T02:30:54Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,read_pause_churn_is_lossless,timeout,306.851,150.017,2026-11-05T02:33:24Z,50239330.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-net-4.5.0,reset_while_read_paused,test_failed,306.851,8.509,2026-11-05T02:33:32Z,50239330.0,panic,"thread 'reset_while_read_paused' (36408) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,reset_while_waiting_for_input,test_failed,306.851,8.511,2026-11-05T02:33:41Z,50239330.0,panic,"thread 'reset_while_waiting_for_input' (38660) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,ring_recv_eof,success,306.851,12.545,2026-11-05T02:33:54Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,ring_recv_many_connections,success,306.851,12.463,2026-11-05T02:34:06Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,ring_recv_partial_frames,success,306.851,12.497,2026-11-05T02:34:19Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,ring_recv_stream,success,306.851,12.520,2026-11-05T02:34:31Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,send_canceled_on_drop,success,306.851,12.520,2026-11-05T02:34:44Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,shutdown_after_peer_close_succeeds,test_failed,306.851,17.513,2026-11-05T02:35:01Z,50239330.0,gc,"test shutdown_after_peer_close_succeeds ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-net-4.5.0,shutdown_times_out_on_stalled_peer,test_failed,306.851,17.477,2026-11-05T02:35:19Z,50239330.0,gc,"test shutdown_times_out_on_stalled_peer ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-net-4.5.0,slow_peer_receives_everything_in_order,test_failed,306.851,12.638,2026-11-05T02:35:31Z,50239330.0,panic,"thread 'slow_peer_receives_everything_in_order' (50787) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,stalled_peer_throttles_writer_and_loses_nothing,test_failed,306.851,12.625,2026-11-05T02:35:44Z,50239330.0,panic,"thread 'stalled_peer_throttles_writer_and_loses_nothing' (51920) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,submission_queue_overflow,success,306.851,12.466,2026-11-05T02:35:56Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,tcp_nodelay,test_failed,306.851,4.466,2026-11-05T02:36:01Z,50239330.0,panic,"thread 'tcp_nodelay' (53708) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,unconsumed_buffer_merge_preserves_order,timeout,306.851,150.017,2026-11-05T02:38:31Z,50239330.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-net-4.5.0,unix_connect,test_failed,306.851,4.483,2026-11-05T02:38:35Z,50239330.0,panic,"thread 'unix_connect' (71807) panicked at src/lib.rs:104:9: not in a ntex driver"
+experimental-bsan,ntex-net-4.5.0,unix_connect_invalid_path,success,306.851,12.502,2026-11-05T02:38:48Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,uring::reactor::tests::apply_wrapped_changes,success,306.851,12.490,2026-11-05T02:39:00Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,uring::reactor::tests::notifier_rearms,success,306.851,12.510,2026-11-05T02:39:13Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,zero_copy_send_canceled_on_drop,success,306.851,12.481,2026-11-05T02:39:25Z,50239330.0,,
+experimental-bsan,ntex-net-4.5.0,zero_copy_sends,success,306.851,12.499,2026-11-05T02:39:38Z,50239330.0,,

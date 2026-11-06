@@ -1,0 +1,3 @@
+experimental-bsan,auditable-serde-0.9.0,tests::verify_schema,test_failed,40.667,3.071,2026-11-05T08:15:07Z,50262179.0,panic,"thread 'tests::verify_schema' (44276) panicked at src/lib.rs:214:10: error reading existing schema: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,auditable-serde-0.9.0,validation::tests::cyclic_dependencies,success,40.667,1.548,2026-11-05T08:15:08Z,50262179.0,,
+experimental-bsan,auditable-serde-0.9.0,validation::tests::no_cyclic_dependencies,success,40.667,1.556,2026-11-05T08:15:10Z,50262179.0,,

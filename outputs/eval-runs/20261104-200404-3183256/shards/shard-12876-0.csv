@@ -1,0 +1,9 @@
+experimental-bsan,acmer-0.0.16,accept_certificate_test,test_failed,411.917,5.639,2026-11-05T06:30:02Z,50256070.0,panic,"thread 'accept_certificate_test' (1586) panicked at tests/acceptor.rs:128:10: called `Result::unwrap()` on an `Err` value: FailToFetchAcmeDirectory"
+experimental-bsan,acmer-0.0.16,acceptor_with_created_account_test,test_failed,411.917,4.747,2026-11-05T06:30:07Z,50256070.0,panic,"thread 'acceptor_with_created_account_test' (18633) panicked at tests/acceptor.rs:74:10: called `Result::unwrap()` on an `Err` value: Other(reqwest::Error { kind: Request, url: Url { scheme: ""https"", cannot_be_a_base: false, username: """", password: None, host: Some(Domain(""localhost"")), port: Some(1"
+experimental-bsan,acmer-0.0.16,create_account_with_auto_generated_key_test,test_failed,411.917,5.368,2026-11-05T06:30:12Z,50256070.0,panic,"thread 'create_account_with_auto_generated_key_test' (20158) panicked at tests/acceptor.rs:40:10: called `Result::unwrap()` on an `Err` value: FailToFetchAcmeDirectory"
+experimental-bsan,acmer-0.0.16,create_account_with_key_test,test_failed,411.917,6.393,2026-11-05T06:30:19Z,50256070.0,panic,"thread 'create_account_with_key_test' (22398) panicked at tests/acceptor.rs:61:10: called `Result::unwrap()` on an `Err` value: FailToFetchAcmeDirectory"
+experimental-bsan,acmer-0.0.16,store::fs::test::test_fs_account_store,success,411.917,4.250,2026-11-05T06:30:23Z,50256070.0,,
+experimental-bsan,acmer-0.0.16,store::test::test_auth_store_lock,success,411.917,3.688,2026-11-05T06:30:27Z,50256070.0,,
+experimental-bsan,acmer-0.0.16,store::test::test_auth_store_unlock,success,411.917,3.697,2026-11-05T06:30:30Z,50256070.0,,
+experimental-bsan,acmer-0.0.16,store::test::test_memory_store,success,411.917,3.673,2026-11-05T06:30:34Z,50256070.0,,
+experimental-bsan,acmer-0.0.16,store::test::test_order_memory_store,success,411.917,3.688,2026-11-05T06:30:38Z,50256070.0,,

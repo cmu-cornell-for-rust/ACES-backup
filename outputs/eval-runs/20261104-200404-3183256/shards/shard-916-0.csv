@@ -1,0 +1,209 @@
+experimental-bsan,numbat-1.14.0,column_formatter::test_column_formatter,success,563.416,42.424,2026-11-05T01:42:38Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,command::test::test_args,success,563.416,6.294,2026-11-05T01:42:44Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,command::test::test_command_parser,success,563.416,6.178,2026-11-05T01:42:50Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,command::test::test_existent_commands,success,563.416,6.206,2026-11-05T01:42:57Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,command::test::test_whitespace,success,563.416,6.202,2026-11-05T01:43:03Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,dimension::basic,success,563.416,6.652,2026-11-05T01:43:09Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,dimension::fails_if_same_dimension_is_added_twice,success,563.416,6.178,2026-11-05T01:43:16Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,examples_can_be_parsed_and_interpreted,success,563.416,6.248,2026-11-05T01:43:22Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::assert_eq_3::tests::get_float_parts::integer_with_zero_fractional_part,success,563.416,6.191,2026-11-05T01:43:28Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::assert_eq_3::tests::get_float_parts::negative_integer,success,563.416,6.199,2026-11-05T01:43:34Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::assert_eq_3::tests::get_float_parts::negative_number_with_decimal,success,563.416,6.168,2026-11-05T01:43:41Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::assert_eq_3::tests::get_float_parts::positive_integer,success,563.416,6.019,2026-11-05T01:43:47Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::assert_eq_3::tests::get_float_parts::positive_number_with_decimal,success,563.416,6.156,2026-11-05T01:43:53Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::assert_eq_3::tests::left_pad::negative_number_with_decimal,success,563.416,6.149,2026-11-05T01:43:59Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::assert_eq_3::tests::left_pad::negative_number_without_decimal,success,563.416,6.144,2026-11-05T01:44:05Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::assert_eq_3::tests::left_pad::negative_zero_padded,success,563.416,6.096,2026-11-05T01:44:11Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::assert_eq_3::tests::left_pad::number_already_wider_than_width,success,563.416,6.138,2026-11-05T01:44:17Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::assert_eq_3::tests::left_pad::positive_number_with_decimal,success,563.416,6.130,2026-11-05T01:44:23Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::assert_eq_3::tests::left_pad::positive_number_without_decimal,success,563.416,6.122,2026-11-05T01:44:30Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::assert_eq_3::tests::left_pad::zero_padded,success,563.416,6.077,2026-11-05T01:44:36Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::tests::arithmetic_with_units,test_failed,563.416,13.415,2026-11-05T01:44:49Z,50233512.0,crash,"test interpreter::tests::arithmetic_with_units ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,interpreter::tests::comparisons,test_failed,563.416,14.470,2026-11-05T01:45:04Z,50233512.0,crash,"test interpreter::tests::comparisons ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,interpreter::tests::division_by_zero_raises_runtime_error,success,563.416,17.371,2026-11-05T01:45:21Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::tests::foreign_functions,test_failed,563.416,25.095,2026-11-05T01:45:46Z,50233512.0,crash,"test interpreter::tests::foreign_functions ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,interpreter::tests::function_definitions,test_failed,563.416,14.814,2026-11-05T01:46:01Z,50233512.0,crash,"test interpreter::tests::function_definitions ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,interpreter::tests::multiline_input_yields_result_of_last_line,success,563.416,17.789,2026-11-05T01:46:19Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,interpreter::tests::power_operator,test_failed,563.416,23.691,2026-11-05T01:46:42Z,50233512.0,crash,"test interpreter::tests::power_operator ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,interpreter::tests::simple_arithmetic,test_failed,563.416,56.081,2026-11-05T01:47:39Z,50233512.0,crash,"test interpreter::tests::simple_arithmetic ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,interpreter::tests::variable_definitions,success,563.416,18.941,2026-11-05T01:47:58Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,list::test::allocate,success,563.416,6.176,2026-11-05T01:48:04Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,list::test::basic,success,563.416,41.517,2026-11-05T01:48:45Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,list::test::bug_1,success,563.416,6.151,2026-11-05T01:48:51Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,list::test::equality,success,563.416,6.148,2026-11-05T01:48:58Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,modules_are_self_consistent,timeout,563.416,150.021,2026-11-05T01:51:28Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,name_resolution_error_examples_fail_as_expected,success,563.416,6.130,2026-11-05T01:51:34Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,numbat_tests_are_executed_successfully,success,563.416,6.157,2026-11-05T01:51:40Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,number::test_abs,success,563.416,6.124,2026-11-05T01:51:46Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,number::test_pretty_print,success,563.416,6.195,2026-11-05T01:51:52Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parse_error_examples_fail_as_expected,success,563.416,6.187,2026-11-05T01:51:58Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::accumulate_errors,success,563.416,42.990,2026-11-05T01:52:41Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::addition_and_subtraction,success,563.416,6.303,2026-11-05T01:52:48Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::addition_subtraction_multiplication_division_precedence,success,563.416,6.450,2026-11-05T01:52:54Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::callable_calls,success,563.416,6.214,2026-11-05T01:53:00Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::comparisons,success,563.416,6.368,2026-11-05T01:53:07Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::conditionals,success,563.416,6.727,2026-11-05T01:53:14Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::conversion,success,563.416,6.279,2026-11-05T01:53:20Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::decimal_separator,success,563.416,6.276,2026-11-05T01:53:26Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::dimension_definition,success,563.416,6.318,2026-11-05T01:53:32Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::exponentiation,success,563.416,6.526,2026-11-05T01:53:39Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::factorials,success,563.416,6.400,2026-11-05T01:53:45Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::function_call,success,563.416,41.837,2026-11-05T01:54:27Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::function_definition,success,563.416,6.956,2026-11-05T01:54:34Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::hex_oct_bin,success,563.416,6.129,2026-11-05T01:54:40Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::identifiers,success,563.416,6.227,2026-11-05T01:54:47Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::implicit_multiplication,success,563.416,6.185,2026-11-05T01:54:53Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::invalid_input,success,563.416,6.206,2026-11-05T01:54:59Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::large_numbers,success,563.416,6.175,2026-11-05T01:55:05Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::lists,success,563.416,7.260,2026-11-05T01:55:12Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::logical_operation,success,563.416,41.967,2026-11-05T01:55:54Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::multiplication_and_division,success,563.416,6.437,2026-11-05T01:56:01Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::nonfinite,success,563.416,6.176,2026-11-05T01:56:07Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::numbers_simple,success,563.416,6.217,2026-11-05T01:56:13Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::postfix_apply,success,563.416,6.253,2026-11-05T01:56:20Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::procedure_call,success,563.416,41.515,2026-11-05T01:57:01Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::scientific_notation,success,563.416,6.308,2026-11-05T01:57:07Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::strings,success,563.416,6.601,2026-11-05T01:57:14Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::structs,success,563.416,6.329,2026-11-05T01:57:20Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::unary,success,563.416,6.471,2026-11-05T01:57:27Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::unicode_exponentiation,success,563.416,6.249,2026-11-05T01:57:33Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,parser::tests::variable_definition,success,563.416,6.399,2026-11-05T01:57:39Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,prefix_parser::tests::basic,success,563.416,6.419,2026-11-05T01:57:46Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,product::tests::canonicalize,success,563.416,6.123,2026-11-05T01:57:52Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,product::tests::divide,success,563.416,6.199,2026-11-05T01:57:58Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,product::tests::iter,success,563.416,6.168,2026-11-05T01:58:04Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,product::tests::multiply,success,563.416,6.118,2026-11-05T01:58:11Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,product::tests::multiply_canonicalize,success,563.416,6.125,2026-11-05T01:58:17Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,product::tests::power,success,563.416,6.195,2026-11-05T01:58:23Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,quantity::tests::abs,success,563.416,6.135,2026-11-05T01:58:29Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,quantity::tests::conversion_basic,success,563.416,6.297,2026-11-05T01:58:35Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,quantity::tests::conversion_trivial,success,563.416,6.251,2026-11-05T01:58:42Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,quantity::tests::full_simplify_basic,success,563.416,6.387,2026-11-05T01:58:48Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,quantity::tests::full_simplify_complex,success,563.416,9.209,2026-11-05T01:58:57Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,quantity::tests::full_simplify_convertible_to_scalar,success,563.416,7.189,2026-11-05T01:59:04Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,quantity::tests::full_simplify_scalarlike_units,success,563.416,6.354,2026-11-05T01:59:11Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,quantity::tests::full_simplify_unit_rearrangements,success,563.416,6.774,2026-11-05T01:59:18Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,quantity::tests::prefixes,success,563.416,6.362,2026-11-05T01:59:24Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,quantity::tests::si_compliant_pretty_printing,success,563.416,6.282,2026-11-05T01:59:30Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,resolver::tests::resolved_cyclic_imports,success,563.416,6.241,2026-11-05T01:59:36Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,resolver::tests::resolver_basic_import,success,563.416,6.226,2026-11-05T01:59:43Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,resolver::tests::resolver_depth_first_includes,success,563.416,6.387,2026-11-05T01:59:49Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,resolver::tests::resolver_repeated_includes,success,563.416,6.307,2026-11-05T01:59:55Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,runtime_error_examples_fail_as_expected,success,563.416,6.111,2026-11-05T02:00:02Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,session_history::test::test,success,563.416,5.857,2026-11-05T02:00:07Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,session_history::test::test_error,success,563.416,5.791,2026-11-05T02:00:13Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,simple_value,timeout,563.416,150.019,2026-11-05T02:02:43Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_algebra,timeout,563.416,150.019,2026-11-05T02:05:13Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_bohr_radius_regression,timeout,563.416,150.018,2026-11-05T02:07:43Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_comparisons,timeout,563.416,150.019,2026-11-05T02:10:13Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_conditionals,timeout,563.416,150.018,2026-11-05T02:12:43Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_conversions,timeout,563.416,150.019,2026-11-05T02:15:13Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_datetime_runtime_errors,timeout,563.416,150.020,2026-11-05T02:17:44Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_exponentiation,timeout,563.416,150.020,2026-11-05T02:20:14Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_factorial,timeout,563.416,150.020,2026-11-05T02:22:44Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_full_simplify,timeout,563.416,150.018,2026-11-05T02:25:14Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_full_simplify_for_function_calls,timeout,563.416,150.019,2026-11-05T02:27:44Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_function_inverses,timeout,563.416,150.018,2026-11-05T02:30:14Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_implicit_conversion,timeout,563.416,150.017,2026-11-05T02:32:44Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_incompatible_dimension_errors,timeout,563.416,150.019,2026-11-05T02:35:14Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_last_result_identifier,timeout,563.416,150.019,2026-11-05T02:37:44Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_logical,timeout,563.416,150.019,2026-11-05T02:40:14Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_math,timeout,563.416,150.020,2026-11-05T02:42:44Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_misc_examples,timeout,563.416,150.019,2026-11-05T02:45:14Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_name_clash_errors,timeout,563.416,150.019,2026-11-05T02:47:44Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_other_functions,timeout,563.416,150.017,2026-11-05T02:50:14Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_override_constants,timeout,563.416,150.017,2026-11-05T02:52:44Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_overwrite_captured_constant,timeout,563.416,150.019,2026-11-05T02:55:14Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_overwrite_inner_function,timeout,563.416,150.018,2026-11-05T02:57:44Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_overwrite_regular_function,timeout,563.416,150.019,2026-11-05T03:00:14Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_parse_errors,timeout,563.416,150.018,2026-11-05T03:02:44Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_prefixes,timeout,563.416,150.019,2026-11-05T03:05:14Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_pretty_print_prefixes,timeout,563.416,150.018,2026-11-05T03:07:44Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_recovery_after_runtime_error,timeout,563.416,150.018,2026-11-05T03:10:14Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_reset_after_runtime_error,timeout,563.416,150.019,2026-11-05T03:12:45Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_runtime_errors,timeout,563.416,150.016,2026-11-05T03:15:15Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_statement_pretty_printing,timeout,563.416,150.018,2026-11-05T03:17:45Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_string_interpolation,timeout,563.416,150.019,2026-11-05T03:20:15Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_temperature_conversions,timeout,563.416,150.019,2026-11-05T03:22:45Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_type_check_errors,timeout,563.416,150.021,2026-11-05T03:25:15Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,test_user_errors,timeout,563.416,150.020,2026-11-05T03:27:45Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,tests::assert_eq_3::fails_and_does_not_show_original_values_when_same_units,timeout,563.416,150.017,2026-11-05T03:30:15Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,tests::assert_eq_3::fails_and_formats_to_match_precision_of_eps,timeout,563.416,150.018,2026-11-05T03:32:45Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,tests::assert_eq_3::fails_and_show_original_values_for_lhs_and_rhs,timeout,563.416,150.018,2026-11-05T03:35:15Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,tests::assert_eq_3::fails_and_show_original_values_for_lhs_only,timeout,563.416,150.019,2026-11-05T03:37:45Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,tests::assert_eq_3::fails_and_show_original_values_for_rhs_only,timeout,563.416,150.019,2026-11-05T03:40:15Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,tests::assert_eq_3::fails_when_types_mismatch,timeout,563.416,150.020,2026-11-05T03:42:45Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,tests::assert_eq_3::issue505_angles,timeout,563.416,150.018,2026-11-05T03:45:15Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,tests::assert_eq_3::succeeds_when_eps_is_equal_to_diff,timeout,563.416,150.017,2026-11-05T03:47:45Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,tests::assert_eq_3::succeeds_when_eps_larger_than_diff,timeout,563.416,150.019,2026-11-05T03:50:15Z,50233512.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,numbat-1.14.0,tokenizer::test_field_access,success,563.416,38.229,2026-11-05T03:50:53Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,tokenizer::test_is_currency_char,success,563.416,5.752,2026-11-05T03:50:59Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,tokenizer::test_is_subscript_char,success,563.416,5.774,2026-11-05T03:51:05Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,tokenizer::test_lists,success,563.416,38.166,2026-11-05T03:51:43Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,tokenizer::test_logical_operators,success,563.416,37.230,2026-11-05T03:52:20Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,tokenizer::test_tokenize_basic,success,563.416,37.963,2026-11-05T03:52:58Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,tokenizer::test_tokenize_numbers,success,563.416,39.589,2026-11-05T03:53:38Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,tokenizer::test_tokenize_string,success,563.416,38.288,2026-11-05T03:54:16Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typecheck_error_examples_fail_as_expected,success,563.416,5.840,2026-11-05T03:54:22Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::arity_checks_in_procedure_calls,success,563.416,15.748,2026-11-05T03:54:38Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::basic_arithmetic,test_failed,563.416,3.813,2026-11-05T03:54:42Z,50233512.0,crash,"test typechecker::tests::type_checking::basic_arithmetic ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::boolean_values,success,563.416,7.956,2026-11-05T03:54:50Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::callables,success,563.416,22.977,2026-11-05T03:55:13Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::comparisons,test_failed,563.416,3.835,2026-11-05T03:55:16Z,50233512.0,crash,"test typechecker::tests::type_checking::comparisons ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::conditionals,success,563.416,18.394,2026-11-05T03:55:35Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::equality,test_failed,563.416,3.854,2026-11-05T03:55:39Z,50233512.0,crash,"test typechecker::tests::type_checking::equality ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::exponentiation_with_dimensionful_base,test_failed,563.416,7.051,2026-11-05T03:55:46Z,50233512.0,crash,"test typechecker::tests::type_checking::exponentiation_with_dimensionful_base ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::exponentiation_with_scalar_base,test_failed,563.416,6.659,2026-11-05T03:55:52Z,50233512.0,crash,"test typechecker::tests::type_checking::exponentiation_with_scalar_base ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::foreign_function_with_missing_return_type,success,563.416,8.018,2026-11-05T03:56:01Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::function_definitions,test_failed,563.416,7.596,2026-11-05T03:56:08Z,50233512.0,crash,"test typechecker::tests::type_checking::function_definitions ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::function_definitions_with_local_variables,success,563.416,24.176,2026-11-05T03:56:32Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::function_types_basic,success,563.416,22.810,2026-11-05T03:56:55Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::function_types_in_argument_position,success,563.416,22.485,2026-11-05T03:57:18Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::function_types_in_return_position,success,563.416,14.926,2026-11-05T03:57:33Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::generics_basic,test_failed,563.416,4.234,2026-11-05T03:57:37Z,50233512.0,crash,"test typechecker::tests::type_checking::generics_basic ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::generics_type_parameter_name_clash,success,563.416,10.456,2026-11-05T03:57:47Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::incompatible_alternative_dimension_expression,success,563.416,8.426,2026-11-05T03:57:56Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::instantiation,test_failed,563.416,6.608,2026-11-05T03:58:02Z,50233512.0,crash,"test typechecker::tests::type_checking::instantiation ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::lists,test_failed,563.416,11.901,2026-11-05T03:58:14Z,50233512.0,crash,"test typechecker::tests::type_checking::lists ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::name_resolution,success,563.416,24.007,2026-11-05T03:58:38Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::no_dimensionless_base_units,success,563.416,8.050,2026-11-05T03:58:46Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::non_dtype_return_types,success,563.416,19.820,2026-11-05T03:59:06Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::polymorphic_zero,test_failed,563.416,3.763,2026-11-05T03:59:10Z,50233512.0,crash,"test typechecker::tests::type_checking::polymorphic_zero ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::recursive_functions,test_failed,563.416,3.930,2026-11-05T03:59:14Z,50233512.0,crash,"test typechecker::tests::type_checking::recursive_functions ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::structs,test_failed,563.416,4.124,2026-11-05T03:59:18Z,50233512.0,crash,"test typechecker::tests::type_checking::structs ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::unit_definitions,test_failed,563.416,7.966,2026-11-05T03:59:26Z,50233512.0,crash,"test typechecker::tests::type_checking::unit_definitions ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::unknown_foreign_function,success,563.416,8.072,2026-11-05T03:59:34Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::unknown_function,success,563.416,8.336,2026-11-05T03:59:42Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::unknown_identifier,success,563.416,8.052,2026-11-05T03:59:51Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::variable_definitions,test_failed,563.416,11.543,2026-11-05T04:00:02Z,50233512.0,crash,"test typechecker::tests::type_checking::variable_definitions ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_checking::wrong_arity,success,563.416,13.051,2026-11-05T04:00:15Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::basic_polymorphic,success,563.416,12.581,2026-11-05T04:00:28Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::comparisons,success,563.416,10.589,2026-11-05T04:00:38Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::dimension_types_addition_subtraction,success,563.416,24.483,2026-11-05T04:01:03Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::dimension_types_combinations,test_failed,563.416,3.923,2026-11-05T04:01:07Z,50233512.0,crash,"test typechecker::tests::type_inference::dimension_types_combinations ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::dimension_types_exponentiation,success,563.416,15.299,2026-11-05T04:01:22Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::dimension_types_gauss_elimination,test_failed,563.416,3.887,2026-11-05T04:01:26Z,50233512.0,crash,"test typechecker::tests::type_inference::dimension_types_gauss_elimination ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::dimension_types_multiplication,success,563.416,13.389,2026-11-05T04:01:39Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::equality,success,563.416,12.767,2026-11-05T04:01:52Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::factorial,success,563.416,8.033,2026-11-05T04:02:00Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::function_types,test_failed,563.416,3.852,2026-11-05T04:02:04Z,50233512.0,crash,"test typechecker::tests::type_inference::function_types ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::if_then_else,success,563.416,15.311,2026-11-05T04:02:19Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::lists,test_failed,563.416,11.192,2026-11-05T04:02:31Z,50233512.0,crash,"test typechecker::tests::type_inference::lists ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::logical_operators,success,563.416,8.094,2026-11-05T04:02:39Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::recursive_functions,test_failed,563.416,8.575,2026-11-05T04:02:47Z,50233512.0,crash,"test typechecker::tests::type_inference::recursive_functions ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::structs,test_failed,563.416,3.972,2026-11-05T04:02:51Z,50233512.0,crash,"test typechecker::tests::type_inference::structs ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::typed_holes,test_failed,563.416,6.125,2026-11-05T04:02:57Z,50233512.0,crash,"test typechecker::tests::type_inference::typed_holes ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typechecker::tests::type_inference::unary_minus,success,563.416,8.115,2026-11-05T04:03:06Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,typed_ast::tests::pretty_print_basic,test_failed,563.416,4.698,2026-11-05T04:03:10Z,50233512.0,crash,"test typed_ast::tests::pretty_print_basic ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typed_ast::tests::pretty_print_dexpr,test_failed,563.416,4.730,2026-11-05T04:03:15Z,50233512.0,crash,"test typed_ast::tests::pretty_print_dexpr ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,typed_ast::tests::pretty_print_roundtrip_check,test_failed,563.416,4.704,2026-11-05T04:03:20Z,50233512.0,crash,"test typed_ast::tests::pretty_print_roundtrip_check ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,numbat-1.14.0,unit::tests::canonicalization,success,563.416,5.884,2026-11-05T04:03:26Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,unit::tests::division,success,563.416,5.780,2026-11-05T04:03:31Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,unit::tests::is_multiple_of_basic,success,563.416,6.461,2026-11-05T04:03:38Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,unit::tests::is_multiple_of_with_factor,success,563.416,5.948,2026-11-05T04:03:44Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,unit::tests::to_base_unit_representation_basic,success,563.416,5.797,2026-11-05T04:03:50Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,unit::tests::to_base_unit_representation_combined,success,563.416,5.866,2026-11-05T04:03:56Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,unit::tests::to_base_unit_representation_percent,success,563.416,5.775,2026-11-05T04:04:01Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,unit::tests::to_string,success,563.416,6.060,2026-11-05T04:04:07Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,unit::tests::with_prefix,success,563.416,5.792,2026-11-05T04:04:13Z,50233512.0,,
+experimental-bsan,numbat-1.14.0,vm::vm_basic,success,563.416,5.761,2026-11-05T04:04:19Z,50233512.0,,

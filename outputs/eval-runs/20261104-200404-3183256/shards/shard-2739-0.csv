@@ -1,0 +1,83 @@
+experimental-bsan,arrow-json-53.2.0,reader::schema::tests::test_coercion_scalar_and_list,success,320.999,1.655,2026-11-05T02:16:13Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::schema::tests::test_infer_from_null_then_object,success,320.999,1.662,2026-11-05T02:16:15Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::schema::tests::test_infer_json_schema_bigger_than_i64_max,success,320.999,1.674,2026-11-05T02:16:17Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::schema::tests::test_invalid_json_infer_schema,success,320.999,1.639,2026-11-05T02:16:18Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::schema::tests::test_json_infer_schema,test_failed,320.999,1.718,2026-11-05T02:16:20Z,50239559.0,panic,"thread 'reader::schema::tests::test_json_infer_schema' (49503) panicked at src/reader/schema.rs:530:83: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::schema::tests::test_json_infer_schema_nested_list,success,320.999,1.672,2026-11-05T02:16:22Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::schema::tests::test_json_infer_schema_nested_structs,success,320.999,1.710,2026-11-05T02:16:23Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::schema::tests::test_json_infer_schema_struct_in_list,success,320.999,1.722,2026-11-05T02:16:25Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::schema::tests::test_null_field_inferred_as_null,success,320.999,1.845,2026-11-05T02:16:27Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::schema::tests::test_row_limit,test_failed,320.999,1.713,2026-11-05T02:16:29Z,50239559.0,panic,"thread 'reader::schema::tests::test_row_limit' (50473) panicked at src/reader/schema.rs:546:76: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::tape::tests::test_basic,success,320.999,1.728,2026-11-05T02:16:30Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tape::tests::test_invalid,success,320.999,1.672,2026-11-05T02:16:32Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tape::tests::test_sizes,success,320.999,1.629,2026-11-05T02:16:34Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::struct_nullability,success,320.999,1.862,2026-11-05T02:16:36Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_basic,success,320.999,5.660,2026-11-05T02:16:41Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_coercing_primitive_into_string,success,320.999,4.645,2026-11-05T02:16:46Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_coercing_primitive_into_string_decoder,success,320.999,1.744,2026-11-05T02:16:48Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_complex,success,320.999,5.692,2026-11-05T02:16:53Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_date_from_json_milliseconds,test_failed,320.999,1.720,2026-11-05T02:16:55Z,50239559.0,panic,"thread 'reader::tests::test_date_from_json_milliseconds' (53018) panicked at src/reader/mod.rs:1556:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_decimals,success,320.999,7.767,2026-11-05T02:17:03Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_decoder_error,success,320.999,1.810,2026-11-05T02:17:05Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_delta_checkpoint,success,320.999,3.167,2026-11-05T02:17:08Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_empty_json_arrays,success,320.999,2.642,2026-11-05T02:17:11Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_json_arrays,test_failed,320.999,1.715,2026-11-05T02:17:12Z,50239559.0,panic,"thread 'reader::tests::test_json_arrays' (55122) panicked at src/reader/mod.rs:1556:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_json_basic,test_failed,320.999,1.711,2026-11-05T02:17:14Z,50239559.0,panic,"thread 'reader::tests::test_json_basic' (55399) panicked at src/reader/mod.rs:1556:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_json_basic_schema,test_failed,320.999,1.721,2026-11-05T02:17:16Z,50239559.0,panic,"thread 'reader::tests::test_json_basic_schema' (55588) panicked at src/reader/mod.rs:1556:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_json_basic_schema_projection,test_failed,320.999,1.724,2026-11-05T02:17:17Z,50239559.0,panic,"thread 'reader::tests::test_json_basic_schema_projection' (56777) panicked at src/reader/mod.rs:1556:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_json_basic_with_nulls,test_failed,320.999,1.717,2026-11-05T02:17:19Z,50239559.0,panic,"thread 'reader::tests::test_json_basic_with_nulls' (57461) panicked at src/reader/mod.rs:1556:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_json_empty_projection,test_failed,320.999,1.709,2026-11-05T02:17:21Z,50239559.0,panic,"thread 'reader::tests::test_json_empty_projection' (57718) panicked at src/reader/mod.rs:1556:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_json_iterator,test_failed,320.999,1.712,2026-11-05T02:17:23Z,50239559.0,panic,"thread 'reader::tests::test_json_iterator' (57861) panicked at src/reader/mod.rs:2074:55: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_map,success,320.999,4.124,2026-11-05T02:17:27Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_nested_empty_json_arrays,success,320.999,2.873,2026-11-05T02:17:30Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_nested_list_json_arrays,success,320.999,1.874,2026-11-05T02:17:32Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_not_coercing_primitive_into_string_without_flag,success,320.999,1.653,2026-11-05T02:17:33Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_projection,success,320.999,4.600,2026-11-05T02:17:38Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_serde_field,success,320.999,1.647,2026-11-05T02:17:40Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_serde_large_numbers,success,320.999,1.654,2026-11-05T02:17:41Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_serialize_decimal,success,320.999,1.672,2026-11-05T02:17:43Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_serialize_timestamp,success,320.999,1.659,2026-11-05T02:17:45Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_skip_empty_lines,success,320.999,1.659,2026-11-05T02:17:46Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_strict_mode_missing_columns_in_schema,success,320.999,1.718,2026-11-05T02:17:48Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_strict_mode_no_missing_columns_in_schema,success,320.999,4.968,2026-11-05T02:17:53Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_string,success,320.999,4.303,2026-11-05T02:17:57Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_time_from_json_nanoseconds,test_failed,320.999,1.719,2026-11-05T02:17:59Z,50239559.0,panic,"thread 'reader::tests::test_time_from_json_nanoseconds' (62603) panicked at src/reader/mod.rs:1556:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_times,success,320.999,18.379,2026-11-05T02:18:17Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_timestamp_from_json_milliseconds,test_failed,320.999,1.717,2026-11-05T02:18:19Z,50239559.0,panic,"thread 'reader::tests::test_timestamp_from_json_milliseconds' (64544) panicked at src/reader/mod.rs:1556:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_timestamp_from_json_seconds,test_failed,320.999,1.721,2026-11-05T02:18:21Z,50239559.0,panic,"thread 'reader::tests::test_timestamp_from_json_seconds' (64755) panicked at src/reader/mod.rs:1556:37: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_timestamp_truncation,success,320.999,3.037,2026-11-05T02:18:24Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_timestamps,success,320.999,31.925,2026-11-05T02:18:56Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_truncation,success,320.999,4.716,2026-11-05T02:19:01Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,reader::tests::test_with_multiple_batches,test_failed,320.999,1.711,2026-11-05T02:19:02Z,50239559.0,panic,"thread 'reader::tests::test_with_multiple_batches' (69137) panicked at src/reader/mod.rs:1934:61: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,tests::test_arrow_native_type_to_json,success,320.999,1.633,2026-11-05T02:19:04Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::json_struct_array_nulls,success,320.999,1.867,2026-11-05T02:19:06Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::json_writer_empty,success,320.999,1.631,2026-11-05T02:19:07Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::json_writer_map,success,320.999,1.761,2026-11-05T02:19:09Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::test_decimal128_encoder,success,320.999,1.685,2026-11-05T02:19:11Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::test_decimal256_encoder,success,320.999,1.710,2026-11-05T02:19:13Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::test_decimal_encoder_with_nulls,success,320.999,1.684,2026-11-05T02:19:14Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::test_write_multi_batches,test_failed,320.999,1.727,2026-11-05T02:19:16Z,50239559.0,panic,"thread 'writer::tests::test_write_multi_batches' (71127) panicked at src/writer/mod.rs:1311:57: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,writer::tests::test_write_single_batch,test_failed,320.999,1.723,2026-11-05T02:19:18Z,50239559.0,panic,"thread 'writer::tests::test_write_single_batch' (71428) panicked at src/writer/mod.rs:1267:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,writer::tests::test_writer_binary,success,320.999,1.789,2026-11-05T02:19:20Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::test_writer_explicit_nulls,success,320.999,2.174,2026-11-05T02:19:22Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::test_writer_fixed_size_binary,success,320.999,1.710,2026-11-05T02:19:23Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::test_writer_fixed_size_list,success,320.999,1.732,2026-11-05T02:19:25Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::test_writer_null_dict,success,320.999,1.652,2026-11-05T02:19:27Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_arrays,test_failed,320.999,1.713,2026-11-05T02:19:29Z,50239559.0,panic,"thread 'writer::tests::write_arrays' (73093) panicked at src/writer/mod.rs:1092:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_basic_nulls,test_failed,320.999,1.705,2026-11-05T02:19:30Z,50239559.0,panic,"thread 'writer::tests::write_basic_nulls' (73343) panicked at src/writer/mod.rs:1092:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_basic_rows,test_failed,320.999,1.715,2026-11-05T02:19:32Z,50239559.0,panic,"thread 'writer::tests::write_basic_rows' (73586) panicked at src/writer/mod.rs:1092:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_dates,success,320.999,1.713,2026-11-05T02:19:34Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_dictionary,success,320.999,1.771,2026-11-05T02:19:36Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_durations,success,320.999,1.766,2026-11-05T02:19:37Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_large_utf8,success,320.999,1.717,2026-11-05T02:19:39Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_list_of_dictionary,success,320.999,1.709,2026-11-05T02:19:41Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_list_of_dictionary_large_values,success,320.999,1.698,2026-11-05T02:19:43Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_list_of_struct,success,320.999,1.821,2026-11-05T02:19:44Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_nested_list,success,320.999,1.738,2026-11-05T02:19:46Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_nested_structs,success,320.999,1.802,2026-11-05T02:19:48Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_nested_with_nulls,test_failed,320.999,1.709,2026-11-05T02:19:50Z,50239559.0,panic,"thread 'writer::tests::write_nested_with_nulls' (78513) panicked at src/writer/mod.rs:1092:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_simple_rows,success,320.999,1.723,2026-11-05T02:19:51Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_struct_with_list_field,success,320.999,1.759,2026-11-05T02:19:53Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_times,success,320.999,1.760,2026-11-05T02:19:55Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_timestamps,success,320.999,1.774,2026-11-05T02:19:57Z,50239559.0,,
+experimental-bsan,arrow-json-53.2.0,writer::tests::write_timestamps_with_tz,success,320.999,1.766,2026-11-05T02:19:58Z,50239559.0,,

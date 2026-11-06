@@ -1,0 +1,81 @@
+experimental-bsan,oo7-0.6.0,attribute_search_patterns,test_failed,1549.638,3.417,2026-11-05T02:38:33Z,50239761.0,panic,"thread 'attribute_search_patterns' (63389) panicked at tests/dbus_collection.rs:55:42: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,attributes_mutation,test_failed,1549.638,4.804,2026-11-05T02:38:38Z,50239761.0,panic,"thread 'attributes_mutation' (63657) panicked at tests/dbus_item.rs:94:42: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,blob_secret_type,test_failed,1549.638,4.748,2026-11-05T02:38:43Z,50239761.0,panic,"thread 'blob_secret_type' (63962) panicked at tests/dbus_item.rs:159:42: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,bulk_create_items,timeout,1549.638,150.021,2026-11-05T02:41:13Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,change_secret,timeout,1549.638,150.021,2026-11-05T02:43:43Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,comprehensive_search_patterns,timeout,1549.638,150.019,2026-11-05T02:46:13Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,concurrent_writes,timeout,1549.638,150.019,2026-11-05T02:48:43Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,content_type,timeout,1549.638,150.020,2026-11-05T02:51:13Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,create_and_retrieve_items,timeout,1549.638,150.021,2026-11-05T02:53:43Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,create_encrypted_item,test_failed,1549.638,3.237,2026-11-05T02:53:46Z,50239761.0,panic,"thread 'create_encrypted_item' (25185) panicked at tests/dbus_collection.rs:48:46: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,create_plain_item,test_failed,1549.638,3.255,2026-11-05T02:53:50Z,50239761.0,panic,"thread 'create_plain_item' (25353) panicked at tests/dbus_collection.rs:41:42: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,crypto::test::test_encrypt,success,1549.638,9.854,2026-11-05T02:54:00Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,crypto::test::test_legacy_derive_key_and_iv,success,1549.638,23.670,2026-11-05T02:54:23Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,dbus::algorithm::tests::serialization,success,1549.638,9.972,2026-11-05T02:54:33Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,dbus::api::properties::tests::deserialize_collection_properties,success,1549.638,9.966,2026-11-05T02:54:43Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,dbus::api::properties::tests::deserialize_item_properties,success,1549.638,10.044,2026-11-05T02:54:53Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,dbus::api::properties::tests::serialize_label,success,1549.638,9.945,2026-11-05T02:55:03Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,dbus::api::properties::tests::serialize_label_with_attributes,success,1549.638,10.033,2026-11-05T02:55:13Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,dbus::api::properties::tests::signature,success,1549.638,9.972,2026-11-05T02:55:23Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,dbus::api::secret::tests::signature,success,1549.638,9.803,2026-11-05T02:55:33Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,default_collections,test_failed,1549.638,5.979,2026-11-05T02:55:39Z,50239761.0,panic,"thread 'default_collections' (34201) panicked at tests/dbus_service.rs:30:40: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,delete,timeout,1549.638,150.019,2026-11-05T02:58:09Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,delete_broken_items,timeout,1549.638,150.019,2026-11-05T03:00:39Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,delete_items,timeout,1549.638,150.019,2026-11-05T03:03:09Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,deleted_error,test_failed,1549.638,4.563,2026-11-05T03:03:14Z,50239761.0,panic,"thread 'deleted_error' (40486) panicked at tests/dbus_item.rs:223:42: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,empty_keyring_operations,timeout,1549.638,150.018,2026-11-05T03:05:44Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,encrypted_session,test_failed,1549.638,6.006,2026-11-05T03:05:50Z,50239761.0,panic,"thread 'encrypted_session' (43388) panicked at tests/dbus_service.rs:39:46: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,file::api::legacy_keyring::tests::legacy_decrypt,success,1549.638,32.119,2026-11-05T03:06:22Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,file::api::tests::key_strength,success,1549.638,10.031,2026-11-05T03:06:32Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,file::api::tests::keyfile_add_remove,timeout,1549.638,150.018,2026-11-05T03:09:02Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,file::api::tests::keyfile_dump_load,timeout,1549.638,150.016,2026-11-05T03:11:32Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,file::unlocked_item::tests::created_timestamp,success,1549.638,10.111,2026-11-05T03:11:42Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,file::unlocked_item::tests::modified_timestamp_updates,success,1549.638,12.051,2026-11-05T03:11:54Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,file::unlocked_item::tests::serialization,success,1549.638,10.293,2026-11-05T03:12:05Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,file::unlocked_item::tests::set_label,success,1549.638,11.133,2026-11-05T03:12:16Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,file::unlocked_item::tests::set_secret_blob,success,1549.638,11.168,2026-11-05T03:12:27Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,file::unlocked_item::tests::set_secret_text,success,1549.638,11.198,2026-11-05T03:12:38Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,file_item_lock_unlock,timeout,1549.638,150.019,2026-11-05T03:15:08Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,file_item_lock_with_locked_keyring_fails,timeout,1549.638,150.017,2026-11-05T03:17:38Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,file_keyring_lock_unlock,timeout,1549.638,150.017,2026-11-05T03:20:08Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,file_locked_item_operations_fail,timeout,1549.638,150.017,2026-11-05T03:22:38Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,file_locked_keyring_operations_fail,timeout,1549.638,150.016,2026-11-05T03:25:08Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,invalid_item_error_on_decrypt_failure,timeout,1549.638,150.018,2026-11-05T03:27:38Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,item_attribute_operations,timeout,1549.638,150.018,2026-11-05T03:30:08Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,item_delete,timeout,1549.638,150.018,2026-11-05T03:32:38Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,item_is_locked,timeout,1549.638,150.017,2026-11-05T03:35:08Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,item_lifecycle_operations,timeout,1549.638,150.019,2026-11-05T03:37:38Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,item_replace,timeout,1549.638,150.016,2026-11-05T03:40:09Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,item_replacement_behavior,timeout,1549.638,150.019,2026-11-05T03:42:39Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,item_timestamps,timeout,1549.638,150.019,2026-11-05T03:45:09Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,item_update_attributes,timeout,1549.638,150.020,2026-11-05T03:47:39Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,item_update_label,timeout,1549.638,150.019,2026-11-05T03:50:09Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,item_update_secret,timeout,1549.638,150.018,2026-11-05T03:52:39Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,items,test_failed,1549.638,3.195,2026-11-05T03:52:42Z,50239761.0,panic,"thread 'items' (88456) panicked at tests/dbus_collection.rs:131:42: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,key::tests::key_debug_is_redacted,success,1549.638,9.683,2026-11-05T03:52:52Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,key::tests::private_public_pair,timeout,1549.638,150.017,2026-11-05T03:55:22Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,label_mutation,test_failed,1549.638,3.269,2026-11-05T03:55:25Z,50239761.0,panic,"thread 'label_mutation' (89365) panicked at tests/dbus_collection.rs:175:42: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,mac::tests::mac_debug_is_redacted,success,1549.638,9.912,2026-11-05T03:55:35Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,migrate,timeout,1549.638,150.020,2026-11-05T03:58:05Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,migrate_from_legacy,timeout,1549.638,150.018,2026-11-05T04:00:35Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,open,timeout,1549.638,150.020,2026-11-05T04:03:05Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,open_nonexistent,timeout,1549.638,150.016,2026-11-05T04:05:35Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,open_wrong_password,timeout,1549.638,150.016,2026-11-05T04:08:05Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,partially_corrupted_keyring_error,timeout,1549.638,150.015,2026-11-05T04:10:35Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,plain_session,test_failed,1549.638,5.680,2026-11-05T04:10:41Z,50239761.0,panic,"thread 'plain_session' (92331) panicked at tests/dbus_service.rs:46:42: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,repeated_write,timeout,1549.638,150.015,2026-11-05T04:13:11Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,replace_item_index_invalid,timeout,1549.638,150.015,2026-11-05T04:15:41Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,secret::tests::content_type_from_str,success,1549.638,9.357,2026-11-05T04:15:50Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,secret::tests::content_type_serialization,success,1549.638,9.350,2026-11-05T04:16:00Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,secret::tests::invalid_utf8,success,1549.638,9.360,2026-11-05T04:16:09Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,secret::tests::random,success,1549.638,9.387,2026-11-05T04:16:18Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,secret::tests::secret_debug_is_redacted,success,1549.638,9.360,2026-11-05T04:16:28Z,50239761.0,,
+experimental-bsan,oo7-0.6.0,secret_mutation,test_failed,1549.638,4.395,2026-11-05T04:16:32Z,50239761.0,panic,"thread 'secret_mutation' (93920) panicked at tests/dbus_item.rs:36:42: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,secret_mutation_encrypted,test_failed,1549.638,4.392,2026-11-05T04:16:37Z,50239761.0,panic,"thread 'secret_mutation_encrypted' (93976) panicked at tests/dbus_item.rs:65:46: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,secret_types_handling,timeout,1549.638,150.015,2026-11-05T04:19:07Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,set_attributes,timeout,1549.638,150.015,2026-11-05T04:21:37Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,text_secret_type,test_failed,1549.638,4.377,2026-11-05T04:21:41Z,50239761.0,panic,"thread 'text_secret_type' (94592) panicked at tests/dbus_item.rs:137:42: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,timestamps,test_failed,1549.638,4.383,2026-11-05T04:21:46Z,50239761.0,panic,"thread 'timestamps' (94648) panicked at tests/dbus_item.rs:185:42: called `Result::unwrap()` on an `Err` value: ZBus(InputOutput(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,oo7-0.6.0,write_with_strong_key,timeout,1549.638,150.015,2026-11-05T04:24:16Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,write_with_weak_key,timeout,1549.638,150.015,2026-11-05T04:26:46Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oo7-0.6.0,wrong_password_error_type,timeout,1549.638,150.015,2026-11-05T04:29:16Z,50239761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

@@ -1,0 +1,131 @@
+experimental-bsan,libcramjam-0.9.3,all_byte_values,success,245.067,27.113,2026-11-05T01:52:33Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,backend_is_the_one_requested,success,245.067,21.572,2026-11-05T01:52:55Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,bzip2_contract::concatenated_streams,success,245.067,24.106,2026-11-05T01:53:19Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,bzip2_contract::ours_to_reference_every_level,success,245.067,55.615,2026-11-05T01:54:15Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,bzip2_contract::ratio_matches_reference_semantics,success,245.067,35.086,2026-11-05T01:54:50Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,bzip2_contract::reference_to_ours,success,245.067,51.858,2026-11-05T01:55:42Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,bzip2_contract::streaming,success,245.067,52.733,2026-11-05T01:56:34Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,bzip2_contract::truncated_and_corrupt,success,245.067,29.248,2026-11-05T01:57:04Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,bzip2_stream_flush_and_finish,timeout,245.067,150.013,2026-11-05T01:59:34Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,c_compress_our_decompress,success,245.067,56.876,2026-11-05T02:00:31Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,c_compress_our_decompress_all_levels,success,245.067,33.099,2026-11-05T02:01:04Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,compress_bound_sufficient,timeout,245.067,150.020,2026-11-05T02:03:34Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,corpus_subset,test_failed,245.067,4.311,2026-11-05T02:03:38Z,50234626.0,panic,"thread 'corpus_subset' (40277) panicked at tests/../benches/common.rs:68:29: failed to read /work/benches/data/Mark.Twain-Tom.Sawyer.txt.bz2: No such file or directory (os error 2)"
+experimental-bsan,libcramjam-0.9.3,deflate_all_levels_deterministic,timeout,245.067,150.031,2026-11-05T02:06:08Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,deflate_family_contract::gzip_concatenated_members,timeout,245.067,150.014,2026-11-05T02:08:38Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,deflate_family_contract::ours_to_reference_every_level,test_failed,245.067,36.521,2026-11-05T02:09:15Z,50234626.0,panic,"thread 'deflate_family_contract::ours_to_reference_every_level' (77349) panicked at /local/ev-50234626-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/flate2-1.1.9/src/ffi/miniz_oxide.rs:150:9: assertion failed: level.level() <= 10"
+experimental-bsan,libcramjam-0.9.3,deflate_family_contract::ratio_matches_reference_semantics,timeout,245.067,150.018,2026-11-05T02:11:45Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,deflate_family_contract::reference_to_ours,timeout,245.067,150.015,2026-11-05T02:14:15Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,deflate_family_contract::streaming,timeout,245.067,150.020,2026-11-05T02:16:45Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,deflate_family_contract::truncated_and_corrupt,timeout,245.067,150.018,2026-11-05T02:19:15Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,deflate_flate2_to_ours,timeout,245.067,150.016,2026-11-05T02:21:45Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,deflate_ours_to_flate2,timeout,245.067,150.016,2026-11-05T02:24:15Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,empty_and_tiny_inputs,success,245.067,21.854,2026-11-05T02:24:37Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,flush_makes_written_data_decodable,timeout,245.067,150.019,2026-11-05T02:27:07Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,flush_with_nothing_pending_is_a_no_op,success,245.067,22.608,2026-11-05T02:27:29Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,fuzz_many_seeds,timeout,245.067,150.015,2026-11-05T02:30:00Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,gzip_all_levels_deterministic,timeout,245.067,150.021,2026-11-05T02:32:30Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,gzip_concat_flate2_then_ours,success,245.067,21.824,2026-11-05T02:32:51Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,gzip_concat_mixed_impls,success,245.067,23.173,2026-11-05T02:33:15Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,gzip_concat_ours_then_flate2,success,245.067,21.867,2026-11-05T02:33:36Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,gzip_flate2_to_ours,timeout,245.067,150.015,2026-11-05T02:36:07Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,gzip_ours_to_flate2,timeout,245.067,150.015,2026-11-05T02:38:37Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,highly_compressible,timeout,245.067,150.018,2026-11-05T02:41:07Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,incompressible_and_rle_blocks,success,245.067,49.756,2026-11-05T02:41:56Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,incompressible_data_uses_stored_chunks,success,245.067,56.709,2026-11-05T02:42:53Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,incompressible_random,timeout,245.067,150.018,2026-11-05T02:45:23Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,invalid_preset_errors_on_use,success,245.067,22.096,2026-11-05T02:45:45Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,level_zero_is_the_default_level,success,245.067,30.701,2026-11-05T02:46:16Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,lz4::block::tests::round_trip_no_store_size,success,245.067,22.407,2026-11-05T02:46:38Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,lz4::block::tests::round_trip_store_size,success,245.067,21.752,2026-11-05T02:47:00Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,lz4_contract::block_api_cross,timeout,245.067,150.027,2026-11-05T02:49:30Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,lz4_contract::concatenated_frames,success,245.067,24.458,2026-11-05T02:49:55Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,lz4_contract::ours_to_reference_every_level,timeout,245.067,150.015,2026-11-05T02:52:25Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,lz4_contract::ratio_matches_reference_semantics,timeout,245.067,150.017,2026-11-05T02:54:55Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,lz4_contract::reference_to_ours,timeout,245.067,150.013,2026-11-05T02:57:25Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,lz4_contract::streaming_with_frame_options,timeout,245.067,150.016,2026-11-05T02:59:55Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,lz4_contract::truncated_and_corrupt,success,245.067,32.756,2026-11-05T03:00:28Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,lz4_stream_flush_and_finish,timeout,245.067,150.021,2026-11-05T03:02:58Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,many_small_writes_decode,success,245.067,106.455,2026-11-05T03:04:44Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,many_windows_multi_megabyte,timeout,245.067,150.016,2026-11-05T03:07:14Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,memory_stays_bounded,timeout,245.067,150.014,2026-11-05T03:09:44Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,multi_mb_exceeding_dict_size_slides_window,timeout,245.067,150.015,2026-11-05T03:12:14Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,multi_megabyte_stream_exceeds_window,timeout,245.067,150.014,2026-11-05T03:14:44Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,our_compress_c_decompress,success,245.067,62.335,2026-11-05T03:15:47Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,our_compress_c_decompress_all_levels,success,245.067,25.272,2026-11-05T03:16:12Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,our_compress_c_decompress_binary_literals,success,245.067,44.117,2026-11-05T03:16:56Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,our_compress_c_decompress_single_file,success,245.067,21.723,2026-11-05T03:17:18Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,our_compress_c_decompress_src_dir,success,245.067,30.193,2026-11-05T03:17:48Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,our_compress_our_decompress_binary_literals,success,245.067,44.159,2026-11-05T03:18:32Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,our_compress_our_decompress_single_file,success,245.067,21.717,2026-11-05T03:18:54Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,our_roundtrip_large,success,245.067,54.197,2026-11-05T03:19:48Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,our_roundtrip_long_literal_run_then_match,success,245.067,92.157,2026-11-05T03:21:20Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,our_roundtrip_src_dir,success,245.067,30.527,2026-11-05T03:21:51Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,self_roundtrip,success,245.067,39.942,2026-11-05T03:22:31Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,self_roundtrip_all_levels,success,245.067,22.792,2026-11-05T03:22:53Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,single_write_matches_one_shot_bytes,success,245.067,57.315,2026-11-05T03:23:51Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,small_and_empty_streams,success,245.067,103.311,2026-11-05T03:25:34Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,stream_output_decodes_with_our_decoder_at_every_flush_point,success,245.067,27.802,2026-11-05T03:26:02Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,stream_types_are_send,success,245.067,21.594,2026-11-05T03:26:24Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,streaming_flush_bt4_no_false_match,success,245.067,22.072,2026-11-05T03:26:46Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,streaming_matches_one_shot_bytes_when_finished_in_one_go,timeout,245.067,150.012,2026-11-05T03:29:16Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,streaming_rle_block_preserves_repeat_offsets,success,245.067,21.917,2026-11-05T03:29:38Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,tests::brotli::roundtrip_compress_via_slice_decompress_via_slice,timeout,245.067,150.017,2026-11-05T03:32:08Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::brotli::roundtrip_compress_via_slice_decompress_via_vector,timeout,245.067,150.016,2026-11-05T03:34:38Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::brotli::roundtrip_compress_via_vector_decompress_via_slice,timeout,245.067,150.017,2026-11-05T03:37:08Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::brotli::roundtrip_compress_via_vector_decompress_via_vector,timeout,245.067,150.014,2026-11-05T03:39:38Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::bzip2::roundtrip_compress_via_slice_decompress_via_slice,timeout,245.067,150.018,2026-11-05T03:42:08Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::bzip2::roundtrip_compress_via_slice_decompress_via_vector,success,245.067,24.273,2026-11-05T03:42:32Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,tests::bzip2::roundtrip_compress_via_vector_decompress_via_slice,timeout,245.067,150.016,2026-11-05T03:45:02Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::bzip2::roundtrip_compress_via_vector_decompress_via_vector,success,245.067,24.250,2026-11-05T03:45:26Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,tests::deflate::roundtrip_compress_via_slice_decompress_via_slice,timeout,245.067,150.016,2026-11-05T03:47:56Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::deflate::roundtrip_compress_via_slice_decompress_via_vector,timeout,245.067,150.020,2026-11-05T03:50:26Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::deflate::roundtrip_compress_via_vector_decompress_via_slice,timeout,245.067,150.017,2026-11-05T03:52:57Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::deflate::roundtrip_compress_via_vector_decompress_via_vector,timeout,245.067,150.018,2026-11-05T03:55:27Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::gzip::roundtrip_compress_via_slice_decompress_via_slice,timeout,245.067,150.017,2026-11-05T03:57:57Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::gzip::roundtrip_compress_via_slice_decompress_via_vector,timeout,245.067,150.020,2026-11-05T04:00:27Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::gzip::roundtrip_compress_via_vector_decompress_via_slice,timeout,245.067,150.017,2026-11-05T04:02:57Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::gzip::roundtrip_compress_via_vector_decompress_via_vector,timeout,245.067,150.019,2026-11-05T04:05:27Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::lz4::roundtrip_compress_via_slice_decompress_via_slice,timeout,245.067,150.016,2026-11-05T04:07:57Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::lz4::roundtrip_compress_via_slice_decompress_via_vector,success,245.067,63.913,2026-11-05T04:09:01Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,tests::lz4::roundtrip_compress_via_vector_decompress_via_slice,timeout,245.067,150.017,2026-11-05T04:11:31Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::lz4::roundtrip_compress_via_vector_decompress_via_vector,success,245.067,65.762,2026-11-05T04:12:36Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,tests::snappy::roundtrip_compress_via_slice_decompress_via_slice,timeout,245.067,150.014,2026-11-05T04:15:07Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::snappy::roundtrip_compress_via_slice_decompress_via_vector,timeout,245.067,150.015,2026-11-05T04:17:37Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::snappy::roundtrip_compress_via_vector_decompress_via_slice,timeout,245.067,150.017,2026-11-05T04:20:07Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::snappy::roundtrip_compress_via_vector_decompress_via_vector,timeout,245.067,150.015,2026-11-05T04:22:37Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::xz::roundtrip_compress_via_slice_decompress_via_slice,timeout,245.067,150.016,2026-11-05T04:25:07Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::xz::roundtrip_compress_via_slice_decompress_via_vector,success,245.067,102.818,2026-11-05T04:26:50Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,tests::xz::roundtrip_compress_via_vector_decompress_via_slice,timeout,245.067,150.016,2026-11-05T04:29:20Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::xz::roundtrip_compress_via_vector_decompress_via_vector,success,245.067,102.756,2026-11-05T04:31:02Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,tests::zlib::roundtrip_compress_via_slice_decompress_via_slice,timeout,245.067,150.016,2026-11-05T04:33:32Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::zlib::roundtrip_compress_via_slice_decompress_via_vector,timeout,245.067,150.018,2026-11-05T04:36:02Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::zlib::roundtrip_compress_via_vector_decompress_via_slice,timeout,245.067,150.016,2026-11-05T04:38:32Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::zlib::roundtrip_compress_via_vector_decompress_via_vector,timeout,245.067,150.019,2026-11-05T04:41:03Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::zstd::roundtrip_compress_via_slice_decompress_via_slice,timeout,245.067,150.017,2026-11-05T04:43:33Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::zstd::roundtrip_compress_via_slice_decompress_via_vector,success,245.067,23.539,2026-11-05T04:43:56Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,tests::zstd::roundtrip_compress_via_vector_decompress_via_slice,timeout,245.067,150.016,2026-11-05T04:46:26Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,tests::zstd::roundtrip_compress_via_vector_decompress_via_vector,success,245.067,23.733,2026-11-05T04:46:50Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,trailing_garbage_never_decoded,timeout,245.067,150.015,2026-11-05T04:49:20Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,write_flush_write_flush_write_finish_decodes_via_liblzma,success,245.067,79.237,2026-11-05T04:50:39Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,xz_contract::alone_format,success,245.067,71.658,2026-11-05T04:51:51Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,xz_contract::concatenated_streams,success,245.067,25.301,2026-11-05T04:52:16Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,xz_contract::every_check_decodes_with_liblzma,success,245.067,34.373,2026-11-05T04:52:51Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,xz_contract::filters_and_options_are_honored_in_xz_format,success,245.067,49.812,2026-11-05T04:53:40Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,xz_contract::invalid_presets_rejected,success,245.067,21.630,2026-11-05T04:54:02Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,xz_contract::ours_to_reference_every_preset,timeout,245.067,150.032,2026-11-05T04:56:32Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,xz_contract::ratio_matches_reference_semantics,success,245.067,78.564,2026-11-05T04:57:51Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,xz_contract::raw_format_is_container_less_and_round_trips,success,245.067,85.215,2026-11-05T04:59:16Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,xz_contract::reference_to_ours,success,245.067,105.669,2026-11-05T05:01:02Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,xz_contract::stream_decompressor_reads_everything,success,245.067,27.128,2026-11-05T05:01:29Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,xz_contract::streaming,success,245.067,85.287,2026-11-05T05:02:54Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,xz_contract::truncated_and_corrupt,success,245.067,37.006,2026-11-05T05:03:31Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,zlib_all_levels_deterministic,timeout,245.067,150.018,2026-11-05T05:06:01Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,zlib_flate2_to_ours,timeout,245.067,150.017,2026-11-05T05:08:31Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,zlib_ours_to_flate2,timeout,245.067,150.016,2026-11-05T05:11:01Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,zstd_contract::concatenated_frames,success,245.067,24.330,2026-11-05T05:11:25Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,zstd_contract::ours_to_reference_every_level,timeout,245.067,150.025,2026-11-05T05:13:56Z,50234626.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcramjam-0.9.3,zstd_contract::ratio_matches_reference_semantics,success,245.067,73.189,2026-11-05T05:15:09Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,zstd_contract::reference_to_ours,success,245.067,98.430,2026-11-05T05:16:47Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,zstd_contract::streaming,success,245.067,60.961,2026-11-05T05:17:48Z,50234626.0,,
+experimental-bsan,libcramjam-0.9.3,zstd_contract::truncated_and_corrupt,success,245.067,30.883,2026-11-05T05:18:19Z,50234626.0,,

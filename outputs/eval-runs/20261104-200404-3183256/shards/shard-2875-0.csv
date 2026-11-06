@@ -1,0 +1,79 @@
+experimental-bsan,cargo-readme-3.4.1,a_member_of_a_multi_member_workspace_still_works,test_failed,181.883,26.522,2026-11-05T02:16:53Z,50239825.0,panic,"thread 'a_member_of_a_multi_member_workspace_still_works' (78178) panicked at tests/virtual-manifest.rs:68:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,alternate_input_a_little_bit_longer,test_failed,181.883,5.600,2026-11-05T02:16:58Z,50239825.0,panic,"thread 'alternate_input_a_little_bit_longer' (78622) panicked at tests/alternate-input.rs:75:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,alternate_input_empty_docs,test_failed,181.883,5.605,2026-11-05T02:17:04Z,50239825.0,panic,"thread 'alternate_input_empty_docs' (79010) panicked at tests/alternate-input.rs:19:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,alternate_input_single_line,test_failed,181.883,5.544,2026-11-05T02:17:10Z,50239825.0,panic,"thread 'alternate_input_single_line' (79636) panicked at tests/alternate-input.rs:46:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,alternate_template,test_failed,181.883,6.712,2026-11-05T02:17:16Z,50239825.0,panic,"thread 'alternate_template' (80091) panicked at tests/alternate-template.rs:64:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,append_license,test_failed,181.883,8.152,2026-11-05T02:17:24Z,50239825.0,panic,"thread 'append_license' (80615) panicked at tests/append-license.rs:65:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,badges,test_failed,181.883,9.427,2026-11-05T02:17:34Z,50239825.0,panic,"thread 'badges' (81222) panicked at tests/badges.rs:30:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,badges_missing_attr_fail,test_failed,181.883,11.010,2026-11-05T02:17:45Z,50239825.0,panic,"thread 'badges_missing_attr_fail' (81946) panicked at tests/badges-missing-attr.rs:14:10: Unexpected stderr, failed diff original var"
+experimental-bsan,cargo-readme-3.4.1,config::manifest::tests::supported_badges_in_sync,success,181.883,26.743,2026-11-05T02:18:12Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,default_behavior,test_failed,181.883,12.256,2026-11-05T02:18:24Z,50239825.0,panic,"thread 'default_behavior' (86668) panicked at tests/default-behavior.rs:60:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,default_template_is_relative_to_project_root,test_failed,181.883,24.847,2026-11-05T02:18:49Z,50239825.0,panic,"thread 'default_template_is_relative_to_project_root' (88542) panicked at tests/relative-paths.rs:116:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,entrypoint_resolution_cargo_bin,test_failed,181.883,13.634,2026-11-05T02:19:03Z,50239825.0,panic,"thread 'entrypoint_resolution_cargo_bin' (89392) panicked at tests/entrypoint-resolution.rs:71:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,entrypoint_resolution_cargo_lib,test_failed,181.883,13.634,2026-11-05T02:19:16Z,50239825.0,panic,"thread 'entrypoint_resolution_cargo_lib' (90685) panicked at tests/entrypoint-resolution.rs:53:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,entrypoint_resolution_lib,test_failed,181.883,13.803,2026-11-05T02:19:30Z,50239825.0,panic,"thread 'entrypoint_resolution_lib' (91721) panicked at tests/entrypoint-resolution.rs:35:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,entrypoint_resolution_main,test_failed,181.883,13.666,2026-11-05T02:19:44Z,50239825.0,panic,"thread 'entrypoint_resolution_main' (92674) panicked at tests/entrypoint-resolution.rs:17:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,input_is_relative_to_cwd,test_failed,181.883,24.993,2026-11-05T02:20:09Z,50239825.0,panic,"thread 'input_is_relative_to_cwd' (94175) panicked at tests/relative-paths.rs:36:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,input_relative_to_project_root_is_not_found,test_failed,181.883,25.081,2026-11-05T02:20:34Z,50239825.0,panic,"thread 'input_relative_to_project_root_is_not_found' (97251) panicked at tests/relative-paths.rs:57:10: Unexpected stderr, failed var.contains(Could not open file 'src/single_line.rs')"
+experimental-bsan,cargo-readme-3.4.1,list_badges,success,181.883,27.251,2026-11-05T02:21:01Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,markdown_input_with_flag_is_processed,test_failed,181.883,19.280,2026-11-05T02:21:20Z,50239825.0,panic,"thread 'markdown_input_with_flag_is_processed' (99489) panicked at tests/no-comment-extraction.rs:60:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,markdown_input_without_flag_is_empty,test_failed,181.883,19.401,2026-11-05T02:21:40Z,50239825.0,panic,"thread 'markdown_input_without_flag_is_empty' (100423) panicked at tests/no-comment-extraction.rs:21:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,missing_badges_license,test_failed,181.883,15.007,2026-11-05T02:21:55Z,50239825.0,panic,"thread 'missing_badges_license' (101483) panicked at tests/missing-badges-license.rs:18:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,multi_member_workspace_lists_the_candidates,test_failed,181.883,26.204,2026-11-05T02:22:21Z,50239825.0,panic,"thread 'multi_member_workspace_lists_the_candidates' (102848) panicked at tests/virtual-manifest.rs:42:10: Unexpected stderr, failed var.contains(Multiple workspace members found, choose one with --project-root: [crates/alpha, crates/beta])"
+experimental-bsan,cargo-readme-3.4.1,multiline_doc,test_failed,181.883,16.451,2026-11-05T02:22:38Z,50239825.0,panic,"thread 'multiline_doc' (103637) panicked at tests/multiline-doc.rs:66:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,multiple_bin_fail,test_failed,181.883,17.917,2026-11-05T02:22:55Z,50239825.0,panic,"thread 'multiple_bin_fail' (2111) panicked at tests/multiple-bin-fail.rs:15:10: Unexpected stderr, failed diff original var"
+experimental-bsan,cargo-readme-3.4.1,no_append_license,test_failed,181.883,8.222,2026-11-05T02:23:04Z,50239825.0,panic,"thread 'no_append_license' (3933) panicked at tests/append-license.rs:84:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,no_entrypoint_fail,test_failed,181.883,20.808,2026-11-05T02:23:25Z,50239825.0,panic,"thread 'no_entrypoint_fail' (5854) panicked at tests/no-entrypoint-fail.rs:14:10: Unexpected stderr, failed diff original var"
+experimental-bsan,cargo-readme-3.4.1,no_template,test_failed,181.883,22.091,2026-11-05T02:23:47Z,50239825.0,panic,"thread 'no_template' (7753) panicked at tests/no-template.rs:64:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,output_is_relative_to_cwd,test_failed,181.883,25.043,2026-11-05T02:24:12Z,50239825.0,panic,"thread 'output_is_relative_to_cwd' (9754) panicked at tests/relative-paths.rs:143:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,readme::extract::tests::extract_docs_mix_styles_multiline,success,181.883,26.754,2026-11-05T02:24:39Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::extract::tests::extract_docs_mix_styles_singleline,success,181.883,26.833,2026-11-05T02:25:05Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::extract::tests::extract_docs_multiline_style,success,181.883,27.171,2026-11-05T02:25:33Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::extract::tests::extract_docs_nested_level_1,success,181.883,27.001,2026-11-05T02:26:00Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::extract::tests::extract_docs_nested_level_2,success,181.883,26.848,2026-11-05T02:26:26Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::extract::tests::extract_docs_singleline_style,success,181.883,26.868,2026-11-05T02:26:53Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::alternate_delimiter_3_tildes,success,181.883,32.780,2026-11-05T02:27:26Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::alternate_delimiter_4_backticks,success,181.883,32.951,2026-11-05T02:27:59Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::alternate_delimiter_4_backticks_nested,success,181.883,33.032,2026-11-05T02:28:32Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::alternate_delimiter_4_tildes,success,181.883,33.133,2026-11-05T02:29:05Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::alternate_delimiter_mixed,success,181.883,33.057,2026-11-05T02:29:38Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::do_not_hide_line_in_code_block,success,181.883,33.213,2026-11-05T02:30:12Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::do_not_indent_markdown_headings,success,181.883,32.979,2026-11-05T02:30:45Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::hide_line_in_rust_code_block,success,181.883,32.994,2026-11-05T02:31:18Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::indent_markdown_headings,success,181.883,33.338,2026-11-05T02:31:51Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::transform_other_code_block_with_symbols,success,181.883,33.527,2026-11-05T02:32:24Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::transform_rust_code_block,success,181.883,33.495,2026-11-05T02:32:58Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::transform_rust_code_block_all_annotations,success,181.883,33.549,2026-11-05T02:33:31Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::transform_rust_code_block_multiple_tags,success,181.883,33.188,2026-11-05T02:34:05Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::transform_rust_code_block_with_prefix,success,181.883,33.260,2026-11-05T02:34:38Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::transform_text_block,success,181.883,32.808,2026-11-05T02:35:11Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::process::tests::typo_annotations_are_not_rust,success,181.883,32.968,2026-11-05T02:35:44Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::append_license_with_empty_readme,success,181.883,26.708,2026-11-05T02:36:10Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::append_license_with_filled_readme,success,181.883,26.609,2026-11-05T02:36:37Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::prepend_badges_with_empty_readme_and_empty_badges,success,181.883,26.535,2026-11-05T02:37:04Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::prepend_badges_with_empty_readme_and_non_empty_badges,success,181.883,26.417,2026-11-05T02:37:30Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::prepend_badges_with_filled_readme_and_empty_badges,success,181.883,26.429,2026-11-05T02:37:56Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::prepend_badges_with_filled_readme_and_non_empty_badges,success,181.883,26.906,2026-11-05T02:38:23Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::prepend_title_with_empty_readme,success,181.883,26.530,2026-11-05T02:38:50Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::prepend_title_with_filled_readme,success,181.883,26.555,2026-11-05T02:39:17Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::render_badges,success,181.883,26.752,2026-11-05T02:39:43Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::render_full,success,181.883,26.583,2026-11-05T02:40:10Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::render_license,success,181.883,26.485,2026-11-05T02:40:36Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::render_minimal,success,181.883,26.460,2026-11-05T02:41:03Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::render_nothing,success,181.883,26.523,2026-11-05T02:41:29Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::render_title,success,181.883,26.502,2026-11-05T02:41:56Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::template_full,success,181.883,26.483,2026-11-05T02:42:22Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::template_minimal,success,181.883,26.948,2026-11-05T02:42:49Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::template_with_badge_tag_but_missing_badges_should_warn,success,181.883,27.054,2026-11-05T02:43:16Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::template_with_badges,success,181.883,26.958,2026-11-05T02:43:43Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::template_with_license,success,181.883,27.169,2026-11-05T02:44:11Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::template_with_license_tag_but_missing_license_should_warn,success,181.883,27.970,2026-11-05T02:44:39Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::template_with_title,success,181.883,28.048,2026-11-05T02:45:07Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::template_with_version,success,181.883,27.866,2026-11-05T02:45:34Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,readme::template::tests::template_without_readme_should_fail,success,181.883,27.768,2026-11-05T02:46:02Z,50239825.0,,
+experimental-bsan,cargo-readme-3.4.1,single_member_workspace_resolves_to_that_member,test_failed,181.883,27.196,2026-11-05T02:46:29Z,50239825.0,panic,"thread 'single_member_workspace_resolves_to_that_member' (34282) panicked at tests/virtual-manifest.rs:24:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,template_is_relative_to_cwd,test_failed,181.883,25.628,2026-11-05T02:46:55Z,50239825.0,panic,"thread 'template_is_relative_to_cwd' (37828) panicked at tests/relative-paths.rs:77:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,template_relative_to_project_root_is_not_found,test_failed,181.883,25.545,2026-11-05T02:47:21Z,50239825.0,panic,"thread 'template_relative_to_project_root_is_not_found' (40680) panicked at tests/relative-paths.rs:97:10: Unexpected stderr, failed var.contains(Could not open template file 'NOTITLE.tpl')"
+experimental-bsan,cargo-readme-3.4.1,template_with_version,test_failed,181.883,24.175,2026-11-05T02:47:45Z,50239825.0,panic,"thread 'template_with_version' (44557) panicked at tests/project-with-version.rs:23:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,workspace_inheritance_with_template,test_failed,181.883,28.629,2026-11-05T02:48:14Z,50239825.0,panic,"thread 'workspace_inheritance_with_template' (49398) panicked at tests/workspace-inheritance.rs:37:10: Unexpected failure."
+experimental-bsan,cargo-readme-3.4.1,workspace_inheritance_without_template,test_failed,181.883,27.888,2026-11-05T02:48:41Z,50239825.0,panic,"thread 'workspace_inheritance_without_template' (51965) panicked at tests/workspace-inheritance.rs:54:10: Unexpected failure."

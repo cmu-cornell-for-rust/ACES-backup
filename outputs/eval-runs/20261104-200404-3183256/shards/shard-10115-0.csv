@@ -1,0 +1,16 @@
+experimental-bsan,gwasmi_core-0.12.0,nan_preserving_float::tests::test_neg_nan_f32,success,21.893,1.572,2026-11-05T05:11:33Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,nan_preserving_float::tests::test_neg_nan_f64,success,21.893,1.563,2026-11-05T05:11:34Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,nan_preserving_float::tests::test_ops_f32,success,21.893,2.856,2026-11-05T05:11:37Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,nan_preserving_float::tests::test_ops_f64,success,21.893,3.641,2026-11-05T05:11:41Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,trap::trap_size,success,21.893,1.567,2026-11-05T05:11:42Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,units::tests::bytes_new16,success,21.893,1.551,2026-11-05T05:11:44Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,units::tests::bytes_new32,success,21.893,1.561,2026-11-05T05:11:45Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,units::tests::bytes_new64,success,21.893,1.566,2026-11-05T05:11:47Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,units::tests::pages_checked_add,success,21.893,1.948,2026-11-05T05:11:49Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,units::tests::pages_checked_sub,success,21.893,1.906,2026-11-05T05:11:51Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,units::tests::pages_max,success,21.893,1.559,2026-11-05T05:11:52Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,units::tests::pages_new,success,21.893,1.553,2026-11-05T05:11:54Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,units::tests::pages_to_bytes,success,21.893,1.550,2026-11-05T05:11:56Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,value::copysign_regression_works,success,21.893,1.555,2026-11-05T05:11:57Z,50252096.0,,
+experimental-bsan,gwasmi_core-0.12.0,value::wasm_float_max_regression_works,test_failed,21.893,1.610,2026-11-05T05:11:59Z,50252096.0,panic,"thread 'value::wasm_float_max_regression_works' (51328) panicked at src/value.rs:804:5: assertion `left == right` failed"
+experimental-bsan,gwasmi_core-0.12.0,value::wasm_float_min_regression_works,test_failed,21.893,1.617,2026-11-05T05:12:00Z,50252096.0,panic,"thread 'value::wasm_float_min_regression_works' (51637) panicked at src/value.rs:792:5: assertion `left == right` failed"

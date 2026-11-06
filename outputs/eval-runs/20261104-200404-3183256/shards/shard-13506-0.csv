@@ -1,0 +1,8 @@
+experimental-bsan,config-0.14.1,path::parser::test::test_child,success,309.270,1.593,2026-11-05T06:44:23Z,50256900.0,,
+experimental-bsan,config-0.14.1,path::parser::test::test_id,success,309.270,1.582,2026-11-05T06:44:25Z,50256900.0,,
+experimental-bsan,config-0.14.1,path::parser::test::test_id_dash,success,309.270,1.579,2026-11-05T06:44:26Z,50256900.0,,
+experimental-bsan,config-0.14.1,path::parser::test::test_subscript,success,309.270,1.580,2026-11-05T06:44:28Z,50256900.0,,
+experimental-bsan,config-0.14.1,path::parser::test::test_subscript_neg,success,309.270,1.578,2026-11-05T06:44:29Z,50256900.0,,
+experimental-bsan,config-0.14.1,ser::test::test_nest,success,309.270,2.292,2026-11-05T06:44:32Z,50256900.0,,
+experimental-bsan,config-0.14.1,ser::test::test_struct,success,309.270,1.627,2026-11-05T06:44:33Z,50256900.0,,
+experimental-bsan,config-0.14.1,value::tests::test_i64,test_failed,309.270,1.662,2026-11-05T06:44:35Z,50256900.0,panic,"thread 'value::tests::test_i64' (73057) panicked at src/value.rs:896:14: called `Result::unwrap()` on an `Err` value: configuration file ""tests/types/i64.toml"" not found"

@@ -1,0 +1,22 @@
+experimental-bsan,hyperlink-0.1.43,html::test_document_href,success,143.162,1.577,2026-11-05T04:36:45Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_document_join_bare_html,success,143.162,1.621,2026-11-05T04:36:47Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_document_join_index_html,success,143.162,1.608,2026-11-05T04:36:48Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_document_links,success,143.162,5.596,2026-11-05T04:36:54Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_html_parsing_malformed_script,success,143.162,1.699,2026-11-05T04:36:56Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_json_script,success,143.162,2.098,2026-11-05T04:36:58Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_push_and_canonicalize::basic,success,143.162,1.561,2026-11-05T04:36:59Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_push_and_canonicalize::empty_base,success,143.162,1.561,2026-11-05T04:37:01Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_push_and_canonicalize::empty_href,success,143.162,1.558,2026-11-05T04:37:03Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_push_and_canonicalize::external_scheme_empty_base,success,143.162,1.562,2026-11-05T04:37:04Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_push_and_canonicalize::external_scheme_index,success,143.162,1.563,2026-11-05T04:37:06Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_push_and_canonicalize::external_scheme_relative,success,143.162,1.567,2026-11-05T04:37:07Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_push_and_canonicalize::external_scheme_subdir,success,143.162,1.560,2026-11-05T04:37:09Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_push_and_canonicalize::files,success,143.162,1.557,2026-11-05T04:37:10Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_push_and_canonicalize::index_html,success,143.162,1.559,2026-11-05T04:37:12Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,html::test_push_and_canonicalize::index_html_middle,success,143.162,1.560,2026-11-05T04:37:14Z,50249894.0,,
+experimental-bsan,hyperlink-0.1.43,tests::test_bad_dir,test_failed,143.162,1.679,2026-11-05T04:37:15Z,50249894.0,panic,"thread 'tests::test_bad_dir' (33373) panicked at src/main.rs:698:55: called `Result::unwrap()` on an `Err` value: CargoError { cause: Some(NotFoundError { path: ""/local/ev-50249894-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/hyperlink/0aac898d0fcf5d94/out/hyperlink"" }) }"
+experimental-bsan,hyperlink-0.1.43,tests::test_dead_anchor,test_failed,143.162,1.771,2026-11-05T04:37:17Z,50249894.0,panic,"thread 'tests::test_dead_anchor' (33430) panicked at src/main.rs:652:55: called `Result::unwrap()` on an `Err` value: CargoError { cause: Some(NotFoundError { path: ""/local/ev-50249894-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/hyperlink/0aac898d0fcf5d94/out/hyperlink"" }) }"
+experimental-bsan,hyperlink-0.1.43,tests::test_dead_link,test_failed,143.162,1.734,2026-11-05T04:37:19Z,50249894.0,panic,"thread 'tests::test_dead_link' (33486) panicked at src/main.rs:627:55: called `Result::unwrap()` on an `Err` value: CargoError { cause: Some(NotFoundError { path: ""/local/ev-50249894-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/hyperlink/0aac898d0fcf5d94/out/hyperlink"" }) }"
+experimental-bsan,hyperlink-0.1.43,tests::test_no_args,test_failed,143.162,1.693,2026-11-05T04:37:21Z,50249894.0,panic,"thread 'tests::test_no_args' (33602) panicked at src/main.rs:684:55: called `Result::unwrap()` on an `Err` value: CargoError { cause: Some(NotFoundError { path: ""/local/ev-50249894-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/hyperlink/0aac898d0fcf5d94/out/hyperlink"" }) }"
+experimental-bsan,hyperlink-0.1.43,tests::test_version,test_failed,143.162,1.685,2026-11-05T04:37:22Z,50249894.0,panic,"thread 'tests::test_version' (33710) panicked at src/main.rs:673:55: called `Result::unwrap()` on an `Err` value: CargoError { cause: Some(NotFoundError { path: ""/local/ev-50249894-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/hyperlink/0aac898d0fcf5d94/out/hyperlink"" }) }"
+experimental-bsan,hyperlink-0.1.43,urls::test_is_bad_schema,success,143.162,1.552,2026-11-05T04:37:24Z,50249894.0,,

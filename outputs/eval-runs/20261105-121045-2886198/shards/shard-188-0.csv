@@ -1,0 +1,4 @@
+experimental-bsan,aws-config-1.12.0,credential_process::test::test_credential_process_no_expiry,success,965.056,1.973,2026-11-05T18:03:16Z,50276179.0,,
+experimental-bsan,aws-config-1.12.0,imds::credentials::test::read_timeout_during_credentials_refresh_should_error_without_last_retrieved_credentials,test_failed,965.056,197.006,2026-11-05T18:06:33Z,50276179.0,panic,"thread 'imds::credentials::test::read_timeout_during_credentials_refresh_should_error_without_last_retrieved_credentials' (78469) panicked at src/imds/credentials.rs:458:9:"
+experimental-bsan,aws-config-1.12.0,credential_process::test::credentials_with_fallback_account_id,success,965.056,2.006,2026-11-05T18:06:35Z,50276179.0,,
+experimental-bsan,aws-config-1.12.0,credential_process::test::test_credential_process,success,965.056,2.062,2026-11-05T18:06:37Z,50276179.0,,

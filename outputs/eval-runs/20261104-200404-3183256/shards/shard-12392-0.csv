@@ -1,0 +1,10 @@
+experimental-bsan,actix-cloud-0.7.0,memorydb::interface::tests::test_batch,test_failed,814.178,11.789,2026-11-05T06:27:37Z,50255408.0,panic,"thread 'memorydb::interface::tests::test_batch' (99274) panicked at src/memorydb/interface.rs:68:14: called `Result::unwrap()` on an `Err` value: Connection refused (os error 111)"
+experimental-bsan,actix-cloud-0.7.0,memorydb::interface::tests::test_default_capacity,success,814.178,5.054,2026-11-05T06:27:42Z,50255408.0,,
+experimental-bsan,actix-cloud-0.7.0,memorydb::interface::tests::test_ex,test_failed,814.178,15.930,2026-11-05T06:27:58Z,50255408.0,panic,"thread 'memorydb::interface::tests::test_ex' (99969) panicked at src/memorydb/interface.rs:68:14: called `Result::unwrap()` on an `Err` value: Connection refused (os error 111)"
+experimental-bsan,actix-cloud-0.7.0,memorydb::interface::tests::test_expire,test_failed,814.178,15.914,2026-11-05T06:28:14Z,50255408.0,panic,"thread 'memorydb::interface::tests::test_expire' (102772) panicked at src/memorydb/interface.rs:68:14: called `Result::unwrap()` on an `Err` value: Connection refused (os error 111)"
+experimental-bsan,actix-cloud-0.7.0,memorydb::interface::tests::test_normal,test_failed,814.178,11.727,2026-11-05T06:28:25Z,50255408.0,panic,"thread 'memorydb::interface::tests::test_normal' (103411) panicked at src/memorydb/interface.rs:68:14: called `Result::unwrap()` on an `Err` value: Connection refused (os error 111)"
+experimental-bsan,actix-cloud-0.7.0,utils::tests::test_is_default,success,814.178,1.825,2026-11-05T06:28:27Z,50255408.0,,
+experimental-bsan,actix-cloud-0.7.0,utils::tests::test_is_unique,success,814.178,1.836,2026-11-05T06:28:29Z,50255408.0,,
+experimental-bsan,actix-cloud-0.7.0,utils::tests::test_rand_string,success,814.178,1.915,2026-11-05T06:28:31Z,50255408.0,,
+experimental-bsan,actix-cloud-0.7.0,utils::tests::test_rand_string_all,success,814.178,3.777,2026-11-05T06:28:35Z,50255408.0,,
+experimental-bsan,actix-cloud-0.7.0,utils::tests::test_rand_string_hex,success,814.178,1.943,2026-11-05T06:28:37Z,50255408.0,,

@@ -1,0 +1,17 @@
+experimental-bsan,interprocess-2.2.1,tests::local_socket::no_client_file,success,110.122,1.941,2026-11-05T05:12:55Z,50251686.0,,
+experimental-bsan,interprocess-2.2.1,tests::local_socket::no_client_namespaced,success,110.122,2.161,2026-11-05T05:12:57Z,50251686.0,,
+experimental-bsan,interprocess-2.2.1,tests::local_socket::no_server_file,success,110.122,1.715,2026-11-05T05:12:59Z,50251686.0,,
+experimental-bsan,interprocess-2.2.1,tests::local_socket::no_server_namespaced,success,110.122,1.705,2026-11-05T05:13:01Z,50251686.0,,
+experimental-bsan,interprocess-2.2.1,tests::local_socket::stream_file,success,110.122,3.728,2026-11-05T05:13:05Z,50251686.0,,
+experimental-bsan,interprocess-2.2.1,tests::local_socket::stream_namespaced,test_failed,110.122,4.186,2026-11-05T05:13:09Z,50251686.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,interprocess-2.2.1,tests::os::unix::local_socket_fake_ns::local_socket_fake_ns,success,110.122,3.121,2026-11-05T05:13:12Z,50251686.0,,
+experimental-bsan,interprocess-2.2.1,tests::os::unix::local_socket_mode::local_socket_file_mode,success,110.122,1.943,2026-11-05T05:13:14Z,50251686.0,,
+experimental-bsan,interprocess-2.2.1,tests::os::unix::local_socket_mode::local_socket_namespaced_mode,success,110.122,2.152,2026-11-05T05:13:16Z,50251686.0,,
+experimental-bsan,interprocess-2.2.1,tests::tokio_local_socket::no_server_file,success,110.122,1.738,2026-11-05T05:13:18Z,50251686.0,,
+experimental-bsan,interprocess-2.2.1,tests::tokio_local_socket::no_server_namespaced,success,110.122,1.750,2026-11-05T05:13:20Z,50251686.0,,
+experimental-bsan,interprocess-2.2.1,tests::tokio_local_socket::stream_file_nosplit,test_failed,110.122,4.148,2026-11-05T05:13:24Z,50251686.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,interprocess-2.2.1,tests::tokio_local_socket::stream_file_split,test_failed,110.122,4.157,2026-11-05T05:13:28Z,50251686.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,interprocess-2.2.1,tests::tokio_local_socket::stream_namespaced_nosplit,test_failed,110.122,4.341,2026-11-05T05:13:32Z,50251686.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,interprocess-2.2.1,tests::tokio_local_socket::stream_namespaced_split,test_failed,110.122,4.364,2026-11-05T05:13:37Z,50251686.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,interprocess-2.2.1,tests::tokio_unnamed_pipe::basic,success,110.122,1.744,2026-11-05T05:13:39Z,50251686.0,,
+experimental-bsan,interprocess-2.2.1,tests::unnamed_pipe::basic,success,110.122,1.707,2026-11-05T05:13:40Z,50251686.0,,

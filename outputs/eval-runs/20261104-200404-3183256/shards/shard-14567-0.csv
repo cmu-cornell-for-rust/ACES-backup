@@ -1,0 +1,7 @@
+experimental-bsan,testing-language-server-0.1.1,server::tests::bubble_adapter_error,test_failed,233.947,16.551,2026-11-05T07:04:42Z,50258356.0,panic,"thread 'server::tests::bubble_adapter_error' (58976) panicked at src/server.rs:600:14: called `Result::unwrap()` on an `Err` value: Adapter(""No such file or directory (os error 2)"")"
+experimental-bsan,testing-language-server-0.1.1,server::tests::project_files_are_filtered_by_extension,test_failed,233.947,18.175,2026-11-05T07:05:01Z,50258356.0,panic,"thread 'server::tests::project_files_are_filtered_by_extension' (59649) panicked at src/server.rs:561:9: assertion `left == right` failed"
+experimental-bsan,testing-language-server-0.1.1,server::tests::skip_workspace_diagnostics,success,233.947,3.625,2026-11-05T07:05:04Z,50258356.0,,
+experimental-bsan,testing-language-server-0.1.1,server::tests::test_check_file,success,233.947,3.656,2026-11-05T07:05:08Z,50258356.0,,
+experimental-bsan,testing-language-server-0.1.1,server::tests::test_check_workspace,success,233.947,4.605,2026-11-05T07:05:13Z,50258356.0,,
+experimental-bsan,testing-language-server-0.1.1,util::tests::test_clean_old_logs,success,233.947,32.769,2026-11-05T07:05:45Z,50258356.0,,
+experimental-bsan,testing-language-server-0.1.1,util::tests::test_resolve_path,success,233.947,3.441,2026-11-05T07:05:49Z,50258356.0,,

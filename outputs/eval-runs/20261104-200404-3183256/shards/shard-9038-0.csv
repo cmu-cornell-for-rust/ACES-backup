@@ -1,0 +1,20 @@
+experimental-bsan,rpkl-0.8.0,decoder::primitive::tests::decode_int_large_u64_is_pos_variant,success,82.273,4.264,2026-11-05T04:46:57Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,decoder::primitive::tests::decode_int_negative_is_neg_variant,success,82.273,4.267,2026-11-05T04:47:01Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,decoder::primitive::tests::decode_int_positive_is_pos_variant,success,82.273,4.277,2026-11-05T04:47:05Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,decoder::primitive::tests::decode_int_zero_is_pos_variant,success,82.273,4.262,2026-11-05T04:47:10Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,internal::types::test::deserialize_array,success,82.273,4.302,2026-11-05T04:47:14Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,internal::types::test::deserialize_map,success,82.273,4.277,2026-11-05T04:47:18Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,non_primitive_values::bytes,test_failed,82.273,2.968,2026-11-05T04:47:21Z,50250751.0,panic,"thread 'non_primitive_values::bytes' (79381) panicked at tests/tests.rs:237:14: deserialize bytes.pkl: PklProcessStart"
+experimental-bsan,rpkl-0.8.0,non_primitive_values::durations,test_failed,82.273,2.921,2026-11-05T04:47:24Z,50250751.0,other,"error: test failed, to rerun pass `--test tests`"
+experimental-bsan,rpkl-0.8.0,non_primitive_values::mappings,test_failed,82.273,2.930,2026-11-05T04:47:27Z,50250751.0,other,"error: test failed, to rerun pass `--test tests`"
+experimental-bsan,rpkl-0.8.0,non_primitive_values::non_primitive_values,test_failed,82.273,2.923,2026-11-05T04:47:30Z,50250751.0,other,"error: test failed, to rerun pass `--test tests`"
+experimental-bsan,rpkl-0.8.0,pkl::de::visitor::tests::test_visit_i64,success,82.273,4.251,2026-11-05T04:47:34Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,pkl::de::visitor::tests::test_visit_unit,success,82.273,4.250,2026-11-05T04:47:39Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,pkl::deserializer::tests::decoded_positive_int_is_u64,success,82.273,4.265,2026-11-05T04:47:43Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,pkl::deserializer::tests::deserialize,success,82.273,4.297,2026-11-05T04:47:47Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,pkl::deserializer::tests::deserialize_time,success,82.273,4.301,2026-11-05T04:47:51Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,tests::evaluator_options_with_http,success,82.273,4.264,2026-11-05T04:47:56Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,tests::http_options_builder,success,82.273,4.251,2026-11-05T04:48:00Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,tests::http_proxy_options_builder,success,82.273,4.278,2026-11-05T04:48:04Z,50250751.0,,
+experimental-bsan,rpkl-0.8.0,tests::optional_values,test_failed,82.273,2.967,2026-11-05T04:48:07Z,50250751.0,panic,"thread 'tests::optional_values' (83311) panicked at tests/tests.rs:34:56: called `Result::unwrap()` on an `Err` value: PklProcessStart"
+experimental-bsan,rpkl-0.8.0,tests::resources,test_failed,82.273,2.975,2026-11-05T04:48:10Z,50250751.0,panic,"thread 'tests::resources' (83498) panicked at tests/tests.rs:57:78: called `Result::unwrap()` on an `Err` value: PklProcessStart"

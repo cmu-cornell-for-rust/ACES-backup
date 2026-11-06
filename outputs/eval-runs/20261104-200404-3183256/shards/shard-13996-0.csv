@@ -1,0 +1,7 @@
+experimental-bsan,alloy-rpc-client-2.5.0,builtin::test::empty_ipc_path_error_includes_path,success,608.912,1.887,2026-11-05T06:58:31Z,50257539.0,,
+experimental-bsan,alloy-rpc-client-2.5.0,builtin::test::test_backward_compatibility,success,608.912,1.854,2026-11-05T06:58:33Z,50257539.0,,
+experimental-bsan,alloy-rpc-client-2.5.0,builtin::test::test_parsing_ipc,test_failed,608.912,2.541,2026-11-05T06:58:35Z,50257539.0,panic,"thread 'builtin::test::test_parsing_ipc' (29862) panicked at src/builtin.rs:433:48: called `Result::unwrap()` on an `Err` value: SpawnError(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,alloy-rpc-client-2.5.0,builtin::test::test_parsing_urls,success,608.912,2.002,2026-11-05T06:58:37Z,50257539.0,,
+experimental-bsan,alloy-rpc-client-2.5.0,builtin::test::test_parsing_ws,success,608.912,2.013,2026-11-05T06:58:39Z,50257539.0,,
+experimental-bsan,alloy-rpc-client-2.5.0,builtin::test::test_ws_config_auth_priority,success,608.912,1.855,2026-11-05T06:58:41Z,50257539.0,,
+experimental-bsan,alloy-rpc-client-2.5.0,client::tests::test_client_with_poll_interval,success,608.912,1.907,2026-11-05T06:58:43Z,50257539.0,,

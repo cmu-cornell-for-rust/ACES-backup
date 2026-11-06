@@ -1,0 +1,15 @@
+experimental-bsan,webbrowser-1.2.4,os::tests_browser_env::test_all_substitution,success,472.143,11.536,2026-11-05T05:32:08Z,50252849.0,,
+experimental-bsan,webbrowser-1.2.4,os::tests_browser_env::test_basic_substitution,success,472.143,11.448,2026-11-05T05:32:19Z,50252849.0,,
+experimental-bsan,webbrowser-1.2.4,os::tests_browser_env::test_escaped_url_field_code,success,472.143,11.441,2026-11-05T05:32:31Z,50252849.0,,
+experimental-bsan,webbrowser-1.2.4,os::tests_browser_env::test_multiple_field_codes_in_one_option,success,472.143,11.460,2026-11-05T05:32:42Z,50252849.0,,
+experimental-bsan,webbrowser-1.2.4,os::tests_browser_env::test_no_substitution,success,472.143,11.403,2026-11-05T05:32:54Z,50252849.0,,
+experimental-bsan,webbrowser-1.2.4,os::tests_browser_env::test_url_is_not_scanned_for_field_codes,success,472.143,11.603,2026-11-05T05:33:05Z,50252849.0,,
+experimental-bsan,webbrowser-1.2.4,os::tests_browser_env::test_url_passed_exactly_once,success,472.143,13.418,2026-11-05T05:33:19Z,50252849.0,,
+experimental-bsan,webbrowser-1.2.4,os::tests_browser_env::test_url_with_spaces_is_one_arg,success,472.143,12.409,2026-11-05T05:33:31Z,50252849.0,,
+experimental-bsan,webbrowser-1.2.4,os::tests_xdg::test_xdg_open_local_file,success,472.143,12.415,2026-11-05T05:33:44Z,50252849.0,,
+experimental-bsan,webbrowser-1.2.4,tests::test_existence_default,test_failed,472.143,4.522,2026-11-05T05:33:48Z,50252849.0,panic,"thread 'tests::test_existence_default' (23405) panicked at tests/test_android.rs:93:9: should have found a browser"
+experimental-bsan,webbrowser-1.2.4,tests::test_local_file_abs_path,test_failed,472.143,10.550,2026-11-05T05:33:59Z,50252849.0,panic,"thread 'tests::test_local_file_abs_path' (23963) panicked at tests/common.rs:115:56: failed to create html file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,webbrowser-1.2.4,tests::test_local_file_rel_path,test_failed,472.143,10.503,2026-11-05T05:34:09Z,50252849.0,panic,"thread 'tests::test_local_file_rel_path' (24605) panicked at tests/common.rs:115:56: failed to create html file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,webbrowser-1.2.4,tests::test_local_file_uri,test_failed,472.143,10.637,2026-11-05T05:34:20Z,50252849.0,panic,"thread 'tests::test_local_file_uri' (25591) panicked at tests/common.rs:115:56: failed to create html file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,webbrowser-1.2.4,tests::test_non_existence_safari,success,472.143,11.569,2026-11-05T05:34:31Z,50252849.0,,
+experimental-bsan,webbrowser-1.2.4,tests::test_open_default,test_failed,472.143,10.709,2026-11-05T05:34:42Z,50252849.0,panic,"thread 'tests::test_open_default' (27130) panicked at tests/common.rs:97:36: failed to open browser: Custom { kind: NotFound, error: ""No valid browsers detected. You can specify one in BROWSER environment variable"" }"

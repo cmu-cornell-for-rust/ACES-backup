@@ -1,0 +1,33 @@
+experimental-bsan,cargo-generate-rpm-0.21.1,auto_req::builtin::test_elf_info_new,success,652.517,1.790,2026-11-05T03:55:36Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,auto_req::builtin::test_find_require_of_shebang,success,652.517,1.655,2026-11-05T03:55:38Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,auto_req::builtin::test_find_require_of_shebang_non_utf8_executable,success,652.517,1.656,2026-11-05T03:55:40Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,auto_req::builtin::test_find_requires_of_elf,success,652.517,2.081,2026-11-05T03:55:42Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,auto_req::builtin::test_is_executable,success,652.517,1.657,2026-11-05T03:55:43Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,auto_req::script::test_find_requires,success,652.517,1.675,2026-11-05T03:55:45Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,build_target::test::test_build_target_path,test_failed,652.517,2.223,2026-11-05T03:55:47Z,50247285.0,panic,"thread 'build_target::test::test_build_target_path' (96872) panicked at src/build_target.rs:78:9: assertion `left == right` failed"
+experimental-bsan,cargo-generate-rpm-0.21.1,build_target::test::test_target_path,test_failed,652.517,2.224,2026-11-05T03:55:49Z,50247285.0,panic,"thread 'build_target::test::test_target_path' (97107) panicked at src/build_target.rs:94:9: assertion `left == right` failed"
+experimental-bsan,cargo-generate-rpm-0.21.1,cli::tests::test_auto_req,success,652.517,4.689,2026-11-05T03:55:54Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,cli::tests::test_extrametadata,success,652.517,2.529,2026-11-05T03:55:57Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,cli::tests::test_get_matches_and_try_parse_from,success,652.517,2.813,2026-11-05T03:56:00Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,cli::tests::test_metadata_overwrite,success,652.517,2.233,2026-11-05T03:56:02Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,cli::tests::test_set_metadata,success,652.517,2.192,2026-11-05T03:56:04Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,cli::tests::verify_cargo_wrapper,success,652.517,2.131,2026-11-05T03:56:06Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,cli::tests::verify_cli,success,652.517,2.147,2026-11-05T03:56:08Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::asset_info::test::test_asset_config,success,652.517,3.753,2026-11-05T03:56:12Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::asset_info::test::test_asset_empty_directory,success,652.517,1.998,2026-11-05T03:56:14Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::asset_info::test::test_expand_glob,success,652.517,2.270,2026-11-05T03:56:16Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::asset_info::test::test_generate_rpm_file_path,test_failed,652.517,2.241,2026-11-05T03:56:19Z,50247285.0,panic,"thread 'config::asset_info::test::test_generate_rpm_file_path' (98633) panicked at src/config/asset_info.rs:454:14: called `Result::unwrap()` on an `Err` value: AssetFileNotFound(""/local/ev-50247285-0/target/release/foobar"")"
+experimental-bsan,cargo-generate-rpm-0.21.1,config::asset_info::test::test_get_base_from_glob,success,652.517,1.687,2026-11-05T03:56:20Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::asset_info::test::test_new,success,652.517,26.123,2026-11-05T03:56:46Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::metadata::test::test_compound_metadata_config,success,652.517,1.668,2026-11-05T03:56:48Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::metadata::test::test_get_scriptlet_config,success,652.517,1.663,2026-11-05T03:56:50Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::metadata::test::test_metadata_config,success,652.517,1.692,2026-11-05T03:56:51Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::metadata::toml_dotted_bare_key_parser::test_parse_dotted_bare_keys,success,652.517,1.660,2026-11-05T03:56:53Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::test::test_config_create_rpm_builder,test_failed,652.517,26.781,2026-11-05T03:57:20Z,50247285.0,panic,"thread 'config::test::test_config_create_rpm_builder' (100181) panicked at src/config/mod.rs:564:9: assertion failed: if Path::new(""target/release/cargo-generate-rpm"").exists() {"
+experimental-bsan,cargo-generate-rpm-0.21.1,config::test::test_config_new,success,652.517,53.703,2026-11-05T03:58:14Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::test::test_config_new_with_workspace,success,652.517,2.697,2026-11-05T03:58:16Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::test::test_new,success,652.517,50.996,2026-11-05T03:59:07Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,config::test::test_table_to_dependencies,success,652.517,1.807,2026-11-05T03:59:09Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,tests::test_no_output_specified,test_failed,652.517,2.295,2026-11-05T03:59:11Z,50247285.0,panic,"thread 'tests::test_no_output_specified' (4841) panicked at src/main.rs:136:9: assertion `left == right` failed"
+experimental-bsan,cargo-generate-rpm-0.21.1,tests::test_output_is_dir,success,652.517,2.111,2026-11-05T03:59:14Z,50247285.0,,
+experimental-bsan,cargo-generate-rpm-0.21.1,tests::test_output_is_file,success,652.517,2.153,2026-11-05T03:59:16Z,50247285.0,,

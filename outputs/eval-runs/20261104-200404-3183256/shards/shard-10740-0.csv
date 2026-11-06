@@ -1,0 +1,14 @@
+experimental-bsan,crc32fast-1.5.3,baseline::test::fast_16_is_the_same_as_slow,success,141.625,5.130,2026-11-05T05:27:42Z,50252953.0,,
+experimental-bsan,crc32fast-1.5.3,baseline::test::slow,success,141.625,3.018,2026-11-05T05:27:45Z,50252953.0,,
+experimental-bsan,crc32fast-1.5.3,combine::golden,success,141.625,3.045,2026-11-05T05:27:48Z,50252953.0,,
+experimental-bsan,crc32fast-1.5.3,combine_matches_reference,success,141.625,4.343,2026-11-05T05:27:53Z,50252953.0,,
+experimental-bsan,crc32fast-1.5.3,exhaustive_lengths_alignments_inits,timeout,141.625,150.012,2026-11-05T05:30:23Z,50252953.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,crc32fast-1.5.3,large_sizes,timeout,141.625,150.012,2026-11-05T05:32:53Z,50252953.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,crc32fast-1.5.3,reference_matches_known_vectors,success,141.625,2.979,2026-11-05T05:32:56Z,50252953.0,,
+experimental-bsan,crc32fast-1.5.3,specialized::pclmulqdq::test::check_against_baseline,success,141.625,128.701,2026-11-05T05:35:04Z,50252953.0,,
+experimental-bsan,crc32fast-1.5.3,specialized::pclmulqdq::test::check_large_inputs_against_baseline,success,141.625,11.999,2026-11-05T05:35:16Z,50252953.0,,
+experimental-bsan,crc32fast-1.5.3,streaming_random_splits,timeout,141.625,150.012,2026-11-05T05:37:47Z,50252953.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,crc32fast-1.5.3,test::combine,success,141.625,6.340,2026-11-05T05:37:53Z,50252953.0,,
+experimental-bsan,crc32fast-1.5.3,test::combine_from_len,success,141.625,6.582,2026-11-05T05:37:59Z,50252953.0,,
+experimental-bsan,crc32fast-1.5.3,test::total_len_for_empty_and_unknown_initial_length,success,141.625,2.962,2026-11-05T05:38:02Z,50252953.0,,
+experimental-bsan,crc32fast-1.5.3,test::total_len_tracks_resumed_and_combined_blocks,success,141.625,2.978,2026-11-05T05:38:05Z,50252953.0,,

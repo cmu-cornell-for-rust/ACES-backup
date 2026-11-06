@@ -1,0 +1,23 @@
+experimental-bsan,light-compressed-token-2.0.0,__anchor_private_print_idl_address,success,752.259,1.844,2026-11-05T04:45:11Z,50249654.0,,
+experimental-bsan,light-compressed-token-2.0.0,__anchor_private_print_idl_error_error_code,success,752.259,2.072,2026-11-05T04:45:13Z,50249654.0,,
+experimental-bsan,light-compressed-token-2.0.0,__anchor_private_print_idl_program,success,752.259,5.043,2026-11-05T04:45:18Z,50249654.0,,
+experimental-bsan,light-compressed-token-2.0.0,batch_compress::test::test_batch_compress_instruction_data,success,752.259,1.729,2026-11-05T04:45:19Z,50249654.0,,
+experimental-bsan,light-compressed-token-2.0.0,batch_compress::test::test_batch_compress_instruction_data_none,success,752.259,1.726,2026-11-05T04:45:21Z,50249654.0,,
+experimental-bsan,light-compressed-token-2.0.0,batch_compress::test::test_batch_compress_instruction_data_randomized,timeout,752.259,150.018,2026-11-05T04:47:51Z,50249654.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,light-compressed-token-2.0.0,burn::test::failing_tests_burn,test_failed,752.259,1.959,2026-11-05T04:47:53Z,50249654.0,crash,"test burn::test::failing_tests_burn ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-compressed-token-2.0.0,burn::test::test_burn,test_failed,752.259,1.978,2026-11-05T04:47:55Z,50249654.0,crash,"test burn::test::test_burn ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-compressed-token-2.0.0,burn::test::test_rnd_burn,test_failed,752.259,1.951,2026-11-05T04:47:57Z,50249654.0,crash,"test burn::test::test_rnd_burn ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-compressed-token-2.0.0,delegation::test::test_approve,test_failed,752.259,1.979,2026-11-05T04:47:59Z,50249654.0,crash,"test delegation::test::test_approve ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-compressed-token-2.0.0,delegation::test::test_revoke,test_failed,752.259,1.940,2026-11-05T04:48:01Z,50249654.0,crash,"test delegation::test::test_revoke ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-compressed-token-2.0.0,freeze::test_freeze::test_freeze,test_failed,752.259,1.974,2026-11-05T04:48:03Z,50249654.0,crash,"test freeze::test_freeze::test_freeze ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-compressed-token-2.0.0,instructions::create_token_pool::test::test_check_spl_token_pool_derivation,success,752.259,3.439,2026-11-05T04:48:07Z,50249654.0,,
+experimental-bsan,light-compressed-token-2.0.0,process_mint::test::test_manual_ix_data_serialization_borsh_compat,test_failed,752.259,1.929,2026-11-05T04:48:09Z,50249654.0,crash,"test process_mint::test::test_manual_ix_data_serialization_borsh_compat ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-compressed-token-2.0.0,process_mint::test::test_manual_ix_data_serialization_borsh_compat_random,test_failed,752.259,1.947,2026-11-05T04:48:10Z,50249654.0,crash,"test process_mint::test::test_manual_ix_data_serialization_borsh_compat_random ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-compressed-token-2.0.0,process_transfer::test::test_sum_check,success,752.259,1.731,2026-11-05T04:48:12Z,50249654.0,,
+experimental-bsan,light-compressed-token-2.0.0,process_transfer::transfer_sdk::__anchor_private_print_idl_error_transfer_sdk_error,success,752.259,1.771,2026-11-05T04:48:14Z,50249654.0,,
+experimental-bsan,light-compressed-token-2.0.0,test_id,success,752.259,1.721,2026-11-05T04:48:16Z,50249654.0,,
+experimental-bsan,light-compressed-token-2.0.0,token_data::test::equivalency_of_hash_functions,test_failed,752.259,1.979,2026-11-05T04:48:18Z,50249654.0,crash,"test token_data::test::equivalency_of_hash_functions ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-compressed-token-2.0.0,token_data::test::equivalency_of_hash_functions_iters_poseidon,test_failed,752.259,2.008,2026-11-05T04:48:20Z,50249654.0,crash,"test token_data::test::equivalency_of_hash_functions_iters_poseidon ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-compressed-token-2.0.0,token_data::test::failing_tests_hashing,test_failed,752.259,1.969,2026-11-05T04:48:22Z,50249654.0,crash,"test token_data::test::failing_tests_hashing ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-compressed-token-2.0.0,token_data::test::test_circuit_equivalence,test_failed,752.259,2.001,2026-11-05T04:48:24Z,50249654.0,crash,"test token_data::test::test_circuit_equivalence ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-compressed-token-2.0.0,token_data::test::test_frozen_equivalence,test_failed,752.259,1.984,2026-11-05T04:48:26Z,50249654.0,crash,"test token_data::test::test_frozen_equivalence ... BorrowSanitizer:DEADLYSIGNAL"

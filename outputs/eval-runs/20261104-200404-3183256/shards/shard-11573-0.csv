@@ -1,0 +1,12 @@
+experimental-bsan,espup-0.13.0,env::tests::test_create_export_file,success,675.470,4.545,2026-11-05T05:54:48Z,50254100.0,,
+experimental-bsan,espup-0.13.0,env::tests::test_get_export_file,success,675.470,4.537,2026-11-05T05:54:52Z,50254100.0,,
+experimental-bsan,espup-0.13.0,fails_with_no_arguments,success,675.470,5.927,2026-11-05T05:54:58Z,50254100.0,,
+experimental-bsan,espup-0.13.0,host_triple::tests::test_get_host_triple,success,675.470,4.509,2026-11-05T05:55:03Z,50254100.0,,
+experimental-bsan,espup-0.13.0,targets::tests::test_parse_targets,success,675.470,4.569,2026-11-05T05:55:07Z,50254100.0,,
+experimental-bsan,espup-0.13.0,toolchain::rust::tests::test_get_cargo_home,success,675.470,4.549,2026-11-05T05:55:12Z,50254100.0,,
+experimental-bsan,espup-0.13.0,toolchain::rust::tests::test_get_rustup_home,success,675.470,4.522,2026-11-05T05:55:16Z,50254100.0,,
+experimental-bsan,espup-0.13.0,toolchain::rust::tests::test_xtensa_rust_parse_version,test_failed,675.470,50.657,2026-11-05T05:56:07Z,50254100.0,bsan,"error: Undefined Behavior: an access of size 4b at offset 0xfffffffffffffef0 is out of bounds for alloc1232188 of size 10b.\n   --> /local/ev-50254100-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/openssl-sys/129792c9480ccfef/out/openssl-build/build/src/crypto/x509/x509_lu.c:165:18\n\nstack backtrace:\n0: x509_object_cmp\n      at /local/ev-50254100-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/openssl-sys/129792c9480ccfef/out/openssl-build/build/src/crypto/x509/x509_lu.c:165:18\n1: msort_with_tmp\n      at stdlib/qsort.c:239:7\n2: msort_with_tmp\n      at stdlib/qsort.c:201:6\n3: msort_with_tmp\n      at stdlib/qsort.c:201:6\n4: msort_with_tmp\n      at stdlib/qsort.c:201:6\n5: msort_with_tmp\n      at stdlib/qsort.c:201:6\n6: msort_with_tmp\n      at stdlib/qsort.c:201:6\n7: qsort_r\n      at stdlib/qsort.c:396:6\n8: BlockGC\n      at /opt/rust/rustup/toolchains/bsan/compiler-rt/lib/bsan/bsan_thread.h:212:23\nerror: test failed, to rerun pass `--lib`"
+experimental-bsan,espup-0.13.0,verify_help,success,675.470,5.945,2026-11-05T05:56:13Z,50254100.0,,
+experimental-bsan,espup-0.13.0,verify_install_help,success,675.470,6.732,2026-11-05T05:56:20Z,50254100.0,,
+experimental-bsan,espup-0.13.0,verify_uninstall_help,success,675.470,5.865,2026-11-05T05:56:26Z,50254100.0,,
+experimental-bsan,espup-0.13.0,verify_update_help,success,675.470,6.770,2026-11-05T05:56:33Z,50254100.0,,

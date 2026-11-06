@@ -1,0 +1,10 @@
+experimental-bsan,epub-builder-0.8.3,common::test_indent,success,110.725,1.559,2026-11-05T06:17:46Z,50255589.0,,
+experimental-bsan,epub-builder-0.8.3,toc::toc_epub_broken_sublevels,success,110.725,1.638,2026-11-05T06:17:48Z,50255589.0,,
+experimental-bsan,epub-builder-0.8.3,toc::toc_epub_simple,success,110.725,1.594,2026-11-05T06:17:49Z,50255589.0,,
+experimental-bsan,epub-builder-0.8.3,toc::toc_epub_simple_sublevels,success,110.725,1.712,2026-11-05T06:17:51Z,50255589.0,,
+experimental-bsan,epub-builder-0.8.3,toc::toc_epub_title_escaped,success,110.725,1.570,2026-11-05T06:17:52Z,50255589.0,,
+experimental-bsan,epub-builder-0.8.3,toc::toc_epub_title_not_escaped,success,110.725,1.571,2026-11-05T06:17:54Z,50255589.0,,
+experimental-bsan,epub-builder-0.8.3,toc::toc_simple,success,110.725,1.639,2026-11-05T06:17:56Z,50255589.0,,
+experimental-bsan,epub-builder-0.8.3,zip_command::zip_creation,success,110.725,1.537,2026-11-05T06:17:57Z,50255589.0,,
+experimental-bsan,epub-builder-0.8.3,zip_command::zip_not_ok,success,110.725,1.537,2026-11-05T06:17:59Z,50255589.0,,
+experimental-bsan,epub-builder-0.8.3,zip_command::zip_ok,test_failed,110.725,1.586,2026-11-05T06:18:00Z,50255589.0,panic,"thread 'zip_command::zip_ok' (42855) panicked at src/zip_command.rs:213:5: assertion failed: res.is_ok()"

@@ -1,0 +1,28 @@
+experimental-bsan,cggtts-4.4.0,buffer::test::test_crc_header_buffering,success,141.831,1.763,2026-11-05T04:03:21Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,buffer::test::test_crc_tracks_buffering,success,141.831,1.587,2026-11-05T04:03:22Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,header::code::test::test_code,success,141.831,1.580,2026-11-05T04:03:24Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,header::delay::test::calibration_id,success,141.831,1.577,2026-11-05T04:03:25Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,header::delay::test::test_delay,success,141.831,1.574,2026-11-05T04:03:27Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,header::delay::test::test_system_delay,success,141.831,1.572,2026-11-05T04:03:29Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,header::formatting::test::header_crc_buffering,test_failed,141.831,1.643,2026-11-05T04:03:30Z,50248261.0,panic,"thread 'header::formatting::test::header_crc_buffering' (103690) panicked at src/lib.rs:345:54: File open error: No such file or directory (os error 2)"
+experimental-bsan,cggtts-4.4.0,header::hardware::test::hardware_parsing,success,141.831,1.579,2026-11-05T04:03:32Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,header::parsing::test::date_parsing,success,141.831,1.584,2026-11-05T04:03:33Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,header::parsing::test::hardware_parsing,success,141.831,1.571,2026-11-05T04:03:35Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,header::parsing::test::version_parsing,success,141.831,1.569,2026-11-05T04:03:37Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,header::reference_time::test::from_str,success,141.831,1.580,2026-11-05T04:03:38Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,header::version::test::version_parsing,success,141.831,1.566,2026-11-05T04:03:40Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,scheduler::calendar::test::test_bipm,success,141.831,4.205,2026-11-05T04:03:44Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,scheduler::calendar::test::test_bipm_not_sideral_gps,success,141.831,3.893,2026-11-05T04:03:48Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,scheduler::period::test::bipm_specifications,success,141.831,1.570,2026-11-05T04:03:50Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,tests::parser::test::ezgtr60_258,test_failed,141.831,1.655,2026-11-05T04:03:51Z,50248261.0,panic,"thread 'tests::parser::test::ezgtr60_258' (4390) panicked at src/lib.rs:345:54: File open error: No such file or directory (os error 2)"
+experimental-bsan,cggtts-4.4.0,tests::parser::test::gzgtr5_60_258,test_failed,141.831,1.674,2026-11-05T04:03:53Z,50248261.0,panic,"thread 'tests::parser::test::gzgtr5_60_258' (4554) panicked at src/lib.rs:345:54: File open error: No such file or directory (os error 2)"
+experimental-bsan,cggtts-4.4.0,tests::parser::test::parse_dataset,test_failed,141.831,1.652,2026-11-05T04:03:55Z,50248261.0,panic,"thread 'tests::parser::test::parse_dataset' (4704) panicked at src/tests/parser.rs:22:36: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cggtts-4.4.0,track::class::test::cv_class,success,141.831,1.579,2026-11-05T04:03:56Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,track::formatting::test::track_crc_formatting,success,141.831,1.975,2026-11-05T04:03:58Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,track::tests::parser_ionospheric,success,141.831,1.643,2026-11-05T04:04:00Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,track::tests::track_parsing,success,141.831,1.867,2026-11-05T04:04:02Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,tracker::fit::test::tracker_30s_15s_ok,success,141.831,1.732,2026-11-05T04:04:03Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,tracker::fit::test::tracker_30s_30s_ok,success,141.831,1.899,2026-11-05T04:04:05Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,tracker::fit::test::tracker_30s_nok,success,141.831,1.606,2026-11-05T04:04:07Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,tracker::fit::test::tracker_no_gap_x3,success,141.831,1.728,2026-11-05T04:04:09Z,50248261.0,,
+experimental-bsan,cggtts-4.4.0,tracker::fit::test::tracker_no_gap_x4,success,141.831,1.725,2026-11-05T04:04:10Z,50248261.0,,

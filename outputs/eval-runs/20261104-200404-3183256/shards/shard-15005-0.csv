@@ -1,0 +1,6 @@
+experimental-bsan,lib-cargo-crate-0.2.5,info::test_super::test_fetch,success,292.912,41.209,2026-11-05T07:15:10Z,50258943.0,,
+experimental-bsan,lib-cargo-crate-0.2.5,info::test_super::test_search,success,292.912,26.329,2026-11-05T07:15:37Z,50258943.0,,
+experimental-bsan,lib-cargo-crate-0.2.5,utils::test_utils::test_crate_from_file,success,292.912,6.804,2026-11-05T07:15:44Z,50258943.0,,
+experimental-bsan,lib-cargo-crate-0.2.5,utils::test_utils::test_crate_from_folder,success,292.912,6.696,2026-11-05T07:15:50Z,50258943.0,,
+experimental-bsan,lib-cargo-crate-0.2.5,utils::test_utils::test_workspace_from_file,test_failed,292.912,1.679,2026-11-05T07:15:52Z,50258943.0,panic,"thread 'utils::test_utils::test_workspace_from_file' (59771) panicked at src/utils.rs:90:66: called `Result::unwrap()` on an `Err` value: No such file or directory (os error 2)"
+experimental-bsan,lib-cargo-crate-0.2.5,utils::test_utils::test_workspace_from_folder,test_failed,292.912,1.666,2026-11-05T07:15:54Z,50258943.0,panic,"thread 'utils::test_utils::test_workspace_from_folder' (59939) panicked at src/utils.rs:83:55: called `Result::unwrap()` on an `Err` value: Impossible to find a valid Cargo.toml at /"

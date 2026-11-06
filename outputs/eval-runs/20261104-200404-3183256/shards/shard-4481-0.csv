@@ -1,0 +1,51 @@
+experimental-bsan,cargo-auditable-0.7.7,auditable_from_metadata::tests::dependency_cycle,test_failed,89.822,1.744,2026-11-05T02:55:41Z,50243735.0,panic,"thread 'auditable_from_metadata::tests::dependency_cycle' (20738) panicked at src/auditable_from_metadata.rs:268:20: called `Result::unwrap()` on an `Err` value: CargoMetadata { stderr: ""error: manifest path `/work/tests/fixtures/cargo-audit-dep-cycle/Cargo.toml` does not exist\n"" }"
+experimental-bsan,cargo-auditable-0.7.7,cargo_arguments::tests::basic_parsing,success,89.822,3.027,2026-11-05T02:55:44Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,cargo_arguments::tests::double_dash_to_ignore_args,success,89.822,2.935,2026-11-05T02:55:47Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,cargo_arguments::tests::with_unrelated_flags,success,89.822,3.020,2026-11-05T02:55:50Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_create_metadata_file_windows_msvc_i686_has_feat00,success,89.822,3.079,2026-11-05T02:55:53Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_create_object_file_linux,success,89.822,3.116,2026-11-05T02:55:56Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_create_object_file_linux_arm,success,89.822,2.978,2026-11-05T02:55:59Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_create_object_file_macos,success,89.822,3.026,2026-11-05T02:56:02Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_create_object_file_windows_gnu,success,89.822,3.025,2026-11-05T02:56:06Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_create_object_file_windows_msvc,success,89.822,3.155,2026-11-05T02:56:09Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_create_object_file_windows_msvc_i686,success,89.822,3.113,2026-11-05T02:56:12Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_loongarch_abi_detection,success,89.822,3.056,2026-11-05T02:56:15Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_macho_build_version_absent_for_unknown_platform,success,89.822,3.044,2026-11-05T02:56:18Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_macho_build_version_absent_when_target_abi_is_unavailable,success,89.822,3.052,2026-11-05T02:56:21Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_macho_build_version_empty_target_abi_is_a_device_target,success,89.822,3.050,2026-11-05T02:56:24Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_macho_build_version_leaves_minos_and_sdk_unset,success,89.822,3.050,2026-11-05T02:56:27Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_macho_build_version_present_for_macos_without_target_abi,success,89.822,3.043,2026-11-05T02:56:30Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_macho_platform_detection,success,89.822,3.060,2026-11-05T02:56:33Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,object_file::tests::test_riscv_abi_detection,success,89.822,3.039,2026-11-05T02:56:36Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,rustc_arguments::tests::bare_linker_unspecified,success,89.822,3.052,2026-11-05T02:56:39Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,rustc_arguments::tests::cargo_c_compatibility,success,89.822,3.253,2026-11-05T02:56:43Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,rustc_arguments::tests::detect_bare_linker,success,89.822,3.077,2026-11-05T02:56:46Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,rustc_arguments::tests::detect_bare_linker_from_flavor,success,89.822,3.700,2026-11-05T02:56:49Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,rustc_arguments::tests::embed_licensing_compatibility,success,89.822,3.124,2026-11-05T02:56:53Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,rustc_arguments::tests::multiple_codegen_options,success,89.822,3.050,2026-11-05T02:56:56Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,rustc_arguments::tests::multiple_emit_values,success,89.822,3.051,2026-11-05T02:56:59Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,rustc_arguments::tests::rustc_version_verbose,success,89.822,3.042,2026-11-05T02:57:02Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,rustc_arguments::tests::rustc_vv,success,89.822,3.022,2026-11-05T02:57:05Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,sbom_precursor::tests::git_with_elided_name,success,89.822,3.039,2026-11-05T02:57:08Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,sbom_precursor::tests::git_with_elided_name_no_query,success,89.822,3.053,2026-11-05T02:57:11Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,sbom_precursor::tests::git_with_explicit_name,success,89.822,2.959,2026-11-05T02:57:14Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,sbom_precursor::tests::path_with_elided_name,success,89.822,2.992,2026-11-05T02:57:17Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,sbom_precursor::tests::path_with_explicit_name,success,89.822,2.939,2026-11-05T02:57:20Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,sbom_precursor::tests::registry_with_name,success,89.822,2.983,2026-11-05T02:57:23Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,target_info::tests::test_rustc_parser_linux,success,89.822,3.083,2026-11-05T02:57:26Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,target_json::tests::query_linker_flavor,success,89.822,4.613,2026-11-05T02:57:30Z,50243735.0,,
+experimental-bsan,cargo-auditable-0.7.7,test_bare_linker,test_failed,89.822,3.047,2026-11-05T02:57:34Z,50243735.0,panic,"thread 'test_bare_linker' (27695) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_bin_and_lib_in_one_crate,test_failed,89.822,3.088,2026-11-05T02:57:37Z,50243735.0,panic,"thread 'test_bin_and_lib_in_one_crate' (27914) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_build_script,test_failed,89.822,2.999,2026-11-05T02:57:40Z,50243735.0,panic,"thread 'test_build_script' (28100) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_build_then_runtime_dep,test_failed,89.822,3.076,2026-11-05T02:57:43Z,50243735.0,panic,"thread 'test_build_then_runtime_dep' (28494) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_cargo_auditable_workspaces,test_failed,89.822,3.109,2026-11-05T02:57:46Z,50243735.0,panic,"thread 'test_cargo_auditable_workspaces' (28790) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_custom_rustc_path,test_failed,89.822,3.154,2026-11-05T02:57:49Z,50243735.0,panic,"thread 'test_custom_rustc_path' (29037) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_lto,test_failed,89.822,3.116,2026-11-05T02:57:52Z,50243735.0,panic,"thread 'test_lto' (29228) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_lto_stripped,test_failed,89.822,3.047,2026-11-05T02:57:55Z,50243735.0,panic,"thread 'test_lto_stripped' (29471) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_path_not_equal_name,test_failed,89.822,3.128,2026-11-05T02:57:58Z,50243735.0,panic,"thread 'test_path_not_equal_name' (29585) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_platform_specific_deps,test_failed,89.822,3.073,2026-11-05T02:58:02Z,50243735.0,panic,"thread 'test_platform_specific_deps' (29780) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_proc_macro,test_failed,89.822,3.140,2026-11-05T02:58:05Z,50243735.0,panic,"thread 'test_proc_macro' (29969) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_runtime_then_build_dep,test_failed,89.822,3.057,2026-11-05T02:58:08Z,50243735.0,panic,"thread 'test_runtime_then_build_dep' (30109) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_self_hosting,test_failed,89.822,3.068,2026-11-05T02:58:11Z,50243735.0,panic,"thread 'test_self_hosting' (30247) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_wasm,test_failed,89.822,3.062,2026-11-05T02:58:14Z,50243735.0,panic,"thread 'test_wasm' (30350) panicked at tests/it.rs:44:5: Failed to invoke `cargo clean`!"
+experimental-bsan,cargo-auditable-0.7.7,test_workspace_member_version_info,success,89.822,3.609,2026-11-05T02:58:18Z,50243735.0,,

@@ -1,0 +1,6 @@
+experimental-bsan,pgrx-sql-entity-graph-0.12.7,aggregate::aggregate_type::tests::list,success,200.649,1.750,2026-11-05T07:16:01Z,50259117.0,,
+experimental-bsan,pgrx-sql-entity-graph-0.12.7,aggregate::aggregate_type::tests::solo,success,200.649,1.705,2026-11-05T07:16:03Z,50259117.0,,
+experimental-bsan,pgrx-sql-entity-graph-0.12.7,aggregate::tests::agg_all_options,test_failed,200.649,3.940,2026-11-05T07:16:07Z,50259117.0,crash,"test aggregate::tests::agg_all_options ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,pgrx-sql-entity-graph-0.12.7,aggregate::tests::agg_missing_required,test_failed,200.649,2.010,2026-11-05T07:16:09Z,50259117.0,crash,"test aggregate::tests::agg_missing_required ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,pgrx-sql-entity-graph-0.12.7,aggregate::tests::agg_required_only,test_failed,200.649,2.139,2026-11-05T07:16:11Z,50259117.0,crash,"test aggregate::tests::agg_required_only ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,pgrx-sql-entity-graph-0.12.7,extern_args::tests::parse_args,success,200.649,1.706,2026-11-05T07:16:13Z,50259117.0,,

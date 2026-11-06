@@ -1,0 +1,68 @@
+experimental-bsan,raystack-0.12.0,eval::test::eval_works_with_bad_token,test_failed,205.883,1.769,2026-11-05T02:26:43Z,50240602.0,panic,"thread 'eval::test::eval_works_with_bad_token' (11960) panicked at src/eval.rs:209:60: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,eval::test::eval_works_with_good_token,test_failed,205.883,1.748,2026-11-05T02:26:45Z,50240602.0,panic,"thread 'eval::test::eval_works_with_good_token' (12196) panicked at src/eval.rs:209:60: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,eval::test::eval_works_with_no_token,test_failed,205.883,1.751,2026-11-05T02:26:46Z,50240602.0,panic,"thread 'eval::test::eval_works_with_no_token' (12379) panicked at src/eval.rs:209:60: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,grid::test::add_col,success,205.883,1.747,2026-11-05T02:26:48Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::add_col_overwrite_existing_col,success,205.883,1.711,2026-11-05T02:26:50Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::add_no_rows,success,205.883,1.653,2026-11-05T02:26:52Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::add_rows,success,205.883,1.663,2026-11-05T02:26:53Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::add_rows_with_invalid_tag_name,success,205.883,1.642,2026-11-05T02:26:55Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::add_rows_without_json_object,success,205.883,1.649,2026-11-05T02:26:57Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::bad_col_name,success,205.883,1.634,2026-11-05T02:26:58Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::col_to_vec,success,205.883,1.656,2026-11-05T02:27:00Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::concat_all,success,205.883,1.719,2026-11-05T02:27:02Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::concat_all_with_no_grids,success,205.883,1.650,2026-11-05T02:27:03Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::concat_all_with_some_empty_grids,success,205.883,1.711,2026-11-05T02:27:05Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::empty_grid,success,205.883,1.632,2026-11-05T02:27:07Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::has_col_name,success,205.883,1.622,2026-11-05T02:27:08Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::keep_cols,success,205.883,1.679,2026-11-05T02:27:10Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::keep_cols_from_empty_grid,success,205.883,1.630,2026-11-05T02:27:12Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::map_col_does_not_modify_grid_if_there_is_no_matching_col,success,205.883,1.652,2026-11-05T02:27:13Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::map_col_works,success,205.883,1.654,2026-11-05T02:27:15Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::remove_cols,success,205.883,1.689,2026-11-05T02:27:17Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::remove_cols_from_empty_grid,success,205.883,1.642,2026-11-05T02:27:18Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::rename_col,success,205.883,1.698,2026-11-05T02:27:20Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::rename_col_if_col_missing,success,205.883,1.668,2026-11-05T02:27:22Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::rename_col_overwriting_existing_col,success,205.883,1.697,2026-11-05T02:27:23Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::size,success,205.883,1.654,2026-11-05T02:27:25Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,grid::test::sort_rows,success,205.883,1.664,2026-11-05T02:27:27Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,hs_types::test::serde_date_time_with_multiple_slashes_tz_works,success,205.883,1.787,2026-11-05T02:27:29Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,hs_types::test::serde_date_time_with_one_slash_tz_works,success,205.883,1.949,2026-11-05T02:27:30Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,hs_types::test::serde_date_time_works,success,205.883,1.998,2026-11-05T02:27:32Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,hs_types::test::serde_date_works,success,205.883,1.652,2026-11-05T02:27:34Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,hs_types::test::serde_time_works,success,205.883,1.645,2026-11-05T02:27:36Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,hs_types::test::short_time_zone_works,success,205.883,1.635,2026-11-05T02:27:37Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,test::about,test_failed,205.883,1.725,2026-11-05T02:27:39Z,50240602.0,panic,"thread 'test::about' (22982) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::add_backslash_necessary,success,205.883,1.700,2026-11-05T02:27:41Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,test::add_backslash_not_necessary,success,205.883,1.658,2026-11-05T02:27:43Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,test::error_grid,test_failed,205.883,1.707,2026-11-05T02:27:44Z,50240602.0,panic,"thread 'test::error_grid' (23520) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::eval,test_failed,205.883,1.716,2026-11-05T02:27:46Z,50240602.0,panic,"thread 'test::eval' (23654) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::filetypes,test_failed,205.883,1.728,2026-11-05T02:27:48Z,50240602.0,panic,"thread 'test::filetypes' (24812) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::has_valid_path_segments_works,success,205.883,1.732,2026-11-05T02:27:50Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,test::his_read_date,test_failed,205.883,1.715,2026-11-05T02:27:51Z,50240602.0,panic,"thread 'test::his_read_date' (25707) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::his_read_date_span,test_failed,205.883,1.722,2026-11-05T02:27:53Z,50240602.0,panic,"thread 'test::his_read_date_span' (25976) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::his_read_date_time,test_failed,205.883,1.728,2026-11-05T02:27:55Z,50240602.0,panic,"thread 'test::his_read_date_time' (26174) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::his_read_date_time_span,test_failed,205.883,1.729,2026-11-05T02:27:56Z,50240602.0,panic,"thread 'test::his_read_date_time_span' (26337) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::his_read_date_time_utc,test_failed,205.883,1.727,2026-11-05T02:27:58Z,50240602.0,panic,"thread 'test::his_read_date_time_utc' (26454) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::his_read_today,test_failed,205.883,1.722,2026-11-05T02:28:00Z,50240602.0,panic,"thread 'test::his_read_today' (26621) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::his_read_yesterday,test_failed,205.883,1.717,2026-11-05T02:28:02Z,50240602.0,panic,"thread 'test::his_read_yesterday' (26852) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::his_write_bool,test_failed,205.883,1.717,2026-11-05T02:28:03Z,50240602.0,panic,"thread 'test::his_write_bool' (27039) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::his_write_num,test_failed,205.883,1.729,2026-11-05T02:28:05Z,50240602.0,panic,"thread 'test::his_write_num' (27243) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::his_write_num_no_unit,test_failed,205.883,1.703,2026-11-05T02:28:07Z,50240602.0,panic,"thread 'test::his_write_num_no_unit' (27514) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::his_write_str,test_failed,205.883,1.710,2026-11-05T02:28:09Z,50240602.0,panic,"thread 'test::his_write_str' (27765) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::nav,test_failed,205.883,1.689,2026-11-05T02:28:10Z,50240602.0,panic,"thread 'test::nav' (28005) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::nav_root,test_failed,205.883,1.711,2026-11-05T02:28:12Z,50240602.0,panic,"thread 'test::nav_root' (28270) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::ops,test_failed,205.883,1.697,2026-11-05T02:28:14Z,50240602.0,panic,"thread 'test::ops' (28573) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::project_name_works,test_failed,205.883,1.706,2026-11-05T02:28:16Z,50240602.0,panic,"thread 'test::project_name_works' (28775) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::read_by_ids_multiple,test_failed,205.883,1.730,2026-11-05T02:28:17Z,50240602.0,panic,"thread 'test::read_by_ids_multiple' (28988) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::read_by_ids_single,test_failed,205.883,1.714,2026-11-05T02:28:19Z,50240602.0,panic,"thread 'test::read_by_ids_single' (29189) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::read_by_ids_with_no_ids,test_failed,205.883,1.722,2026-11-05T02:28:21Z,50240602.0,panic,"thread 'test::read_by_ids_with_no_ids' (29377) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::read_with_no_limit,test_failed,205.883,1.721,2026-11-05T02:28:23Z,50240602.0,panic,"thread 'test::read_with_no_limit' (29587) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::read_with_non_zero_limit,test_failed,205.883,1.719,2026-11-05T02:28:24Z,50240602.0,panic,"thread 'test::read_with_non_zero_limit' (29930) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::read_with_zero_limit,test_failed,205.883,1.714,2026-11-05T02:28:26Z,50240602.0,panic,"thread 'test::read_with_zero_limit' (30153) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::recovers_from_invalid_auth_token,test_failed,205.883,1.718,2026-11-05T02:28:28Z,50240602.0,panic,"thread 'test::recovers_from_invalid_auth_token' (30555) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::utc_his_write_bool,test_failed,205.883,1.727,2026-11-05T02:28:29Z,50240602.0,panic,"thread 'test::utc_his_write_bool' (30837) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::utc_his_write_num,test_failed,205.883,1.741,2026-11-05T02:28:31Z,50240602.0,panic,"thread 'test::utc_his_write_num' (31076) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::utc_his_write_num_no_unit,test_failed,205.883,1.739,2026-11-05T02:28:33Z,50240602.0,panic,"thread 'test::utc_his_write_num_no_unit' (31405) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,test::utc_his_write_str,test_failed,205.883,1.729,2026-11-05T02:28:35Z,50240602.0,panic,"thread 'test::utc_his_write_str' (31703) panicked at src/lib.rs:623:53: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,raystack-0.12.0,tz::test::full_name_match_works,success,205.883,1.905,2026-11-05T02:28:37Z,50240602.0,,
+experimental-bsan,raystack-0.12.0,tz::test::short_name_match_works,success,205.883,1.900,2026-11-05T02:28:39Z,50240602.0,,

@@ -1,0 +1,12 @@
+experimental-bsan,rls-analysis-0.18.3,loader::tests::target_triple,success,64.472,1.666,2026-11-05T05:48:32Z,50254334.0,,
+experimental-bsan,rls-analysis-0.18.3,loader::tests::unix_path,success,64.472,1.596,2026-11-05T05:48:34Z,50254334.0,,
+experimental-bsan,rls-analysis-0.18.3,loader::tests::windows_path,success,64.472,1.587,2026-11-05T05:48:36Z,50254334.0,,
+experimental-bsan,rls-analysis-0.18.3,symbol_query::tests::test_automaton,success,64.472,36.914,2026-11-05T05:49:13Z,50254334.0,,
+experimental-bsan,rls-analysis-0.18.3,test::doc_urls_resolve_correctly,test_failed,64.472,1.646,2026-11-05T05:49:14Z,50254334.0,panic,"thread 'test::doc_urls_resolve_correctly' (79638) panicked at src/test/mod.rs:55:9: assertion `left == right` failed"
+experimental-bsan,rls-analysis-0.18.3,test::smoke,success,64.472,1.588,2026-11-05T05:49:16Z,50254334.0,,
+experimental-bsan,rls-analysis-0.18.3,test::test_all_ref_unique,test_failed,64.472,1.639,2026-11-05T05:49:18Z,50254334.0,panic,"thread 'test::test_all_ref_unique' (79901) panicked at src/test/mod.rs:367:5: assertion `left == right` failed"
+experimental-bsan,rls-analysis-0.18.3,test::test_child_count,test_failed,64.472,1.634,2026-11-05T05:49:19Z,50254334.0,panic,"thread 'test::test_child_count' (80045) panicked at src/test/mod.rs:329:17: index out of bounds: the len is 0 but the index is 0"
+experimental-bsan,rls-analysis-0.18.3,test::test_extern_fn,test_failed,64.472,1.635,2026-11-05T05:49:21Z,50254334.0,panic,"thread 'test::test_extern_fn' (80177) panicked at src/test/mod.rs:354:5: assertion `left == right` failed"
+experimental-bsan,rls-analysis-0.18.3,test::test_hello,test_failed,64.472,1.666,2026-11-05T05:49:23Z,50254334.0,panic,"thread 'test::test_hello' (80293) panicked at src/test/mod.rs:153:5: assertion `left == right` failed"
+experimental-bsan,rls-analysis-0.18.3,test::test_self,test_failed,64.472,1.634,2026-11-05T05:49:24Z,50254334.0,panic,"thread 'test::test_self' (80462) panicked at src/test/mod.rs:341:5: assertion `left == right` failed"
+experimental-bsan,rls-analysis-0.18.3,test::test_types,test_failed,64.472,1.637,2026-11-05T05:49:26Z,50254334.0,panic,"thread 'test::test_types' (80591) panicked at src/test/mod.rs:260:9: assertion `left == right` failed"

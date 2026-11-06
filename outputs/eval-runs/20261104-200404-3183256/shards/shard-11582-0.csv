@@ -1,0 +1,12 @@
+experimental-bsan,femtopb-build-0.9.0,tests::scalar_only_oneof_omits_lifetime_and_phantom,success,262.958,5.587,2026-11-05T05:47:55Z,50254110.0,,
+experimental-bsan,femtopb-build-0.9.0,tests::transform_boxed_message_becomes_deferred,success,262.958,2.971,2026-11-05T05:47:58Z,50254110.0,,
+experimental-bsan,femtopb-build-0.9.0,tests::transform_default_packed_scalar_becomes_packed,success,262.958,3.059,2026-11-05T05:48:01Z,50254110.0,,
+experimental-bsan,femtopb-build-0.9.0,tests::transform_enum,success,262.958,2.712,2026-11-05T05:48:04Z,50254110.0,,
+experimental-bsan,femtopb-build-0.9.0,tests::transform_explicit_packed_true_becomes_packed,success,262.958,3.119,2026-11-05T05:48:07Z,50254110.0,,
+experimental-bsan,femtopb-build-0.9.0,tests::transform_message_one_scalar,success,262.958,3.369,2026-11-05T05:48:11Z,50254110.0,,
+experimental-bsan,femtopb-build-0.9.0,tests::transform_message_repeated_scalars,success,262.958,17.438,2026-11-05T05:48:28Z,50254110.0,,
+experimental-bsan,femtopb-build-0.9.0,tests::transform_message_singular_compounds,success,262.958,10.318,2026-11-05T05:48:38Z,50254110.0,,
+experimental-bsan,femtopb-build-0.9.0,tests::transform_message_singular_scalars,success,262.958,12.210,2026-11-05T05:48:51Z,50254110.0,,
+experimental-bsan,femtopb-build-0.9.0,tests::transform_message_singulars_with_defaults,success,262.958,18.241,2026-11-05T05:49:09Z,50254110.0,,
+experimental-bsan,femtopb-build-0.9.0,tests::transform_repeated_enum_defaults_to_packed_enumvalue,success,262.958,2.989,2026-11-05T05:49:12Z,50254110.0,,
+experimental-bsan,femtopb-build-0.9.0,tests::transform_repeated_message_stays_repeated,test_failed,262.958,2.566,2026-11-05T05:49:15Z,50254110.0,crash,"test tests::transform_repeated_message_stays_repeated ... BorrowSanitizer:DEADLYSIGNAL"

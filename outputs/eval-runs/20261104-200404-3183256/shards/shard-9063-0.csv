@@ -1,0 +1,20 @@
+experimental-bsan,smartstring-1.0.1,proptest::strategy,success,209.715,26.221,2026-11-05T04:49:27Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,serde::test::test_ser_de,success,209.715,1.548,2026-11-05T04:49:29Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::check_alignment,success,209.715,1.543,2026-11-05T04:49:30Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::dont_panic_on_removing_last_index_from_an_inline_string,success,209.715,1.540,2026-11-05T04:49:32Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::dont_panic_when_inserting_a_string_at_exactly_inline_capacity,success,209.715,1.534,2026-11-05T04:49:33Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::drain_bounds_integer_overflow_must_panic,success,209.715,1.566,2026-11-05T04:49:35Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::drain_over_inline_boundary,success,209.715,1.564,2026-11-05T04:49:36Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::drain_wrapped_shouldnt_drop_twice,success,209.715,1.551,2026-11-05T04:49:38Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::fail,success,209.715,1.548,2026-11-05T04:49:40Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::from_string,success,209.715,1.546,2026-11-05T04:49:41Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::must_not_promote_before_insert_succeeds,success,209.715,1.552,2026-11-05T04:49:43Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::must_panic_on_insert_outside_char_boundary,success,209.715,1.578,2026-11-05T04:49:44Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::must_panic_on_out_of_bounds_range,success,209.715,1.548,2026-11-05T04:49:46Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::must_panic_on_slice_outside_char_boundary,success,209.715,1.554,2026-11-05T04:49:47Z,50250777.0,,
+experimental-bsan,smartstring-1.0.1,test::tests::proptest_eq,timeout,209.715,150.022,2026-11-05T04:52:17Z,50250777.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,smartstring-1.0.1,test::tests::proptest_everything_compact,timeout,209.715,150.025,2026-11-05T04:54:47Z,50250777.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,smartstring-1.0.1,test::tests::proptest_everything_lazycompact,timeout,209.715,150.026,2026-11-05T04:57:18Z,50250777.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,smartstring-1.0.1,test::tests::proptest_ordering_compact,timeout,209.715,150.013,2026-11-05T04:59:48Z,50250777.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,smartstring-1.0.1,test::tests::proptest_ordering_lazycompact,timeout,209.715,150.020,2026-11-05T05:02:18Z,50250777.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,smartstring-1.0.1,test::tests::shouldnt_panic_on_inclusive_range_end_one_less_than_start,success,209.715,1.527,2026-11-05T05:02:19Z,50250777.0,,

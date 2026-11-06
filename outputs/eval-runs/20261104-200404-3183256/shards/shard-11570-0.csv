@@ -1,0 +1,12 @@
+experimental-bsan,epub-2.1.5,archive_entry,test_failed,76.814,2.901,2026-11-05T05:44:45Z,50254097.0,panic,"thread 'archive_entry' (77258) panicked at tests/archive.rs:17:5: assertion failed: archive.is_ok()"
+experimental-bsan,epub-2.1.5,archive_entry_percent_encoding,test_failed,76.814,2.908,2026-11-05T05:44:48Z,50254097.0,panic,"thread 'archive_entry_percent_encoding' (77621) panicked at tests/archive.rs:26:5: assertion failed: archive.is_ok()"
+experimental-bsan,epub-2.1.5,archive_open,test_failed,76.814,2.899,2026-11-05T05:44:51Z,50254097.0,panic,"thread 'archive_open' (77942) panicked at tests/archive.rs:8:5: assertion failed: archive.is_ok()"
+experimental-bsan,epub-2.1.5,archive_root_file,test_failed,76.814,2.902,2026-11-05T05:44:54Z,50254097.0,panic,"thread 'archive_root_file' (78233) panicked at tests/archive.rs:37:5: assertion failed: archive.is_ok()"
+experimental-bsan,epub-2.1.5,bad_epub,success,76.814,18.220,2026-11-05T05:45:12Z,50254097.0,,
+experimental-bsan,epub-2.1.5,doc_open,test_failed,76.814,4.285,2026-11-05T05:45:16Z,50254097.0,panic,"thread 'doc_open' (81201) panicked at tests/doc.rs:16:5: assertion failed: doc.is_ok()"
+experimental-bsan,epub-2.1.5,doc_open_epub3,success,76.814,10.964,2026-11-05T05:45:27Z,50254097.0,,
+experimental-bsan,epub-2.1.5,read_doc,success,76.814,50.485,2026-11-05T05:46:18Z,50254097.0,,
+experimental-bsan,epub-2.1.5,test_toc_play_order,test_failed,76.814,4.241,2026-11-05T05:46:22Z,50254097.0,panic,"thread 'test_toc_play_order' (94105) panicked at tests/doc.rs:150:5: assertion failed: doc.is_ok()"
+experimental-bsan,epub-2.1.5,toc_test,test_failed,76.814,4.282,2026-11-05T05:46:26Z,50254097.0,panic,"thread 'toc_test' (99921) panicked at tests/doc.rs:127:5: assertion failed: doc.is_ok()"
+experimental-bsan,epub-2.1.5,toc_title_test,test_failed,76.814,4.351,2026-11-05T05:46:31Z,50254097.0,panic,"thread 'toc_title_test' (100452) panicked at tests/doc.rs:141:5: assertion failed: doc.is_ok()"
+experimental-bsan,epub-2.1.5,version_test,test_failed,76.814,4.386,2026-11-05T05:46:35Z,50254097.0,panic,"thread 'version_test' (101047) panicked at tests/doc.rs:168:5: assertion failed: doc.is_ok()"

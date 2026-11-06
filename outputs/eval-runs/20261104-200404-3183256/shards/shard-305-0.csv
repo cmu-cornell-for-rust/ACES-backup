@@ -1,0 +1,470 @@
+experimental-bsan,simd-json-0.18.1,alternating_containers_are_counted,success,306.831,12.460,2026-11-05T01:24:13Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,arrays_at_the_limit_parse,test_failed,306.831,47.016,2026-11-05T01:25:00Z,50232748.0,crash,"test arrays_at_the_limit_parse ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,simd-json-0.18.1,arrays_past_the_limit_are_rejected,success,306.831,11.982,2026-11-05T01:25:12Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,crash000000,test_failed,306.831,5.791,2026-11-05T01:25:18Z,50232748.0,panic,"thread 'crash000000' (10711) panicked at tests/jsonchecker.rs:162:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000001,test_failed,306.831,5.929,2026-11-05T01:25:24Z,50232748.0,panic,"thread 'crash000001' (11454) panicked at tests/jsonchecker.rs:163:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000002,test_failed,306.831,5.827,2026-11-05T01:25:30Z,50232748.0,panic,"thread 'crash000002' (12101) panicked at tests/jsonchecker.rs:164:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000003,test_failed,306.831,5.905,2026-11-05T01:25:36Z,50232748.0,panic,"thread 'crash000003' (12648) panicked at tests/jsonchecker.rs:165:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000004,test_failed,306.831,5.778,2026-11-05T01:25:42Z,50232748.0,panic,"thread 'crash000004' (13160) panicked at tests/jsonchecker.rs:166:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000005,test_failed,306.831,5.808,2026-11-05T01:25:48Z,50232748.0,panic,"thread 'crash000005' (13768) panicked at tests/jsonchecker.rs:167:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000006,test_failed,306.831,5.945,2026-11-05T01:25:54Z,50232748.0,panic,"thread 'crash000006' (14537) panicked at tests/jsonchecker.rs:168:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000007,test_failed,306.831,5.919,2026-11-05T01:26:00Z,50232748.0,panic,"thread 'crash000007' (15143) panicked at tests/jsonchecker.rs:169:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000008,test_failed,306.831,5.922,2026-11-05T01:26:06Z,50232748.0,panic,"thread 'crash000008' (15624) panicked at tests/jsonchecker.rs:170:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000009,test_failed,306.831,5.920,2026-11-05T01:26:11Z,50232748.0,panic,"thread 'crash000009' (16144) panicked at tests/jsonchecker.rs:171:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000010,test_failed,306.831,5.915,2026-11-05T01:26:17Z,50232748.0,panic,"thread 'crash000010' (16621) panicked at tests/jsonchecker.rs:173:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000011,test_failed,306.831,5.954,2026-11-05T01:26:23Z,50232748.0,panic,"thread 'crash000011' (17114) panicked at tests/jsonchecker.rs:174:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000012,test_failed,306.831,5.925,2026-11-05T01:26:29Z,50232748.0,panic,"thread 'crash000012' (17586) panicked at tests/jsonchecker.rs:175:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000013,test_failed,306.831,5.921,2026-11-05T01:26:35Z,50232748.0,panic,"thread 'crash000013' (18042) panicked at tests/jsonchecker.rs:176:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000014,test_failed,306.831,5.902,2026-11-05T01:26:41Z,50232748.0,panic,"thread 'crash000014' (18550) panicked at tests/jsonchecker.rs:177:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000015,test_failed,306.831,5.915,2026-11-05T01:26:47Z,50232748.0,panic,"thread 'crash000015' (18990) panicked at tests/jsonchecker.rs:178:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000016,test_failed,306.831,5.816,2026-11-05T01:26:53Z,50232748.0,panic,"thread 'crash000016' (19664) panicked at tests/jsonchecker.rs:179:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000017,test_failed,306.831,5.758,2026-11-05T01:26:59Z,50232748.0,panic,"thread 'crash000017' (20087) panicked at tests/jsonchecker.rs:180:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000018,test_failed,306.831,5.890,2026-11-05T01:27:05Z,50232748.0,panic,"thread 'crash000018' (20584) panicked at tests/jsonchecker.rs:181:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000019,test_failed,306.831,5.894,2026-11-05T01:27:11Z,50232748.0,panic,"thread 'crash000019' (21136) panicked at tests/jsonchecker.rs:182:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000020,test_failed,306.831,5.857,2026-11-05T01:27:16Z,50232748.0,panic,"thread 'crash000020' (21943) panicked at tests/jsonchecker.rs:184:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000021,test_failed,306.831,5.823,2026-11-05T01:27:22Z,50232748.0,panic,"thread 'crash000021' (22449) panicked at tests/jsonchecker.rs:185:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000022,test_failed,306.831,5.897,2026-11-05T01:27:28Z,50232748.0,panic,"thread 'crash000022' (22907) panicked at tests/jsonchecker.rs:186:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000023,test_failed,306.831,5.837,2026-11-05T01:27:34Z,50232748.0,panic,"thread 'crash000023' (23454) panicked at tests/jsonchecker.rs:187:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000024,test_failed,306.831,5.910,2026-11-05T01:27:40Z,50232748.0,panic,"thread 'crash000024' (24057) panicked at tests/jsonchecker.rs:188:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000025,test_failed,306.831,5.912,2026-11-05T01:27:46Z,50232748.0,panic,"thread 'crash000025' (24622) panicked at tests/jsonchecker.rs:189:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000026,test_failed,306.831,5.858,2026-11-05T01:27:52Z,50232748.0,panic,"thread 'crash000026' (25214) panicked at tests/jsonchecker.rs:190:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000027,test_failed,306.831,5.906,2026-11-05T01:27:58Z,50232748.0,panic,"thread 'crash000027' (25720) panicked at tests/jsonchecker.rs:191:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000028,test_failed,306.831,5.822,2026-11-05T01:28:04Z,50232748.0,panic,"thread 'crash000028' (26450) panicked at tests/jsonchecker.rs:192:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000030,test_failed,306.831,5.923,2026-11-05T01:28:10Z,50232748.0,panic,"thread 'crash000030' (27054) panicked at tests/jsonchecker.rs:196:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000031,test_failed,306.831,5.805,2026-11-05T01:28:15Z,50232748.0,panic,"thread 'crash000031' (27436) panicked at tests/jsonchecker.rs:197:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000032,test_failed,306.831,5.893,2026-11-05T01:28:21Z,50232748.0,panic,"thread 'crash000032' (28039) panicked at tests/jsonchecker.rs:198:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000033,test_failed,306.831,5.814,2026-11-05T01:28:27Z,50232748.0,panic,"thread 'crash000033' (28515) panicked at tests/jsonchecker.rs:199:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000034,test_failed,306.831,5.901,2026-11-05T01:28:33Z,50232748.0,panic,"thread 'crash000034' (29004) panicked at tests/jsonchecker.rs:200:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000035,test_failed,306.831,5.822,2026-11-05T01:28:39Z,50232748.0,panic,"thread 'crash000035' (29620) panicked at tests/jsonchecker.rs:201:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000036,test_failed,306.831,5.877,2026-11-05T01:28:45Z,50232748.0,panic,"thread 'crash000036' (30227) panicked at tests/jsonchecker.rs:202:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,crash000037,test_failed,306.831,5.830,2026-11-05T01:28:51Z,50232748.0,panic,"thread 'crash000037' (30890) panicked at tests/jsonchecker.rs:203:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,every_entry_point_rejects,success,306.831,13.950,2026-11-05T01:29:05Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,fail02,test_failed,306.831,5.902,2026-11-05T01:29:10Z,50232748.0,panic,"thread 'fail02' (32872) panicked at tests/jsonchecker.rs:71:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail03,test_failed,306.831,5.801,2026-11-05T01:29:16Z,50232748.0,panic,"thread 'fail03' (33468) panicked at tests/jsonchecker.rs:72:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail04,test_failed,306.831,5.896,2026-11-05T01:29:22Z,50232748.0,panic,"thread 'fail04' (34167) panicked at tests/jsonchecker.rs:73:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail05,test_failed,306.831,5.835,2026-11-05T01:29:28Z,50232748.0,panic,"thread 'fail05' (34740) panicked at tests/jsonchecker.rs:74:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail06,test_failed,306.831,5.888,2026-11-05T01:29:34Z,50232748.0,panic,"thread 'fail06' (35310) panicked at tests/jsonchecker.rs:75:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail07,test_failed,306.831,5.840,2026-11-05T01:29:40Z,50232748.0,panic,"thread 'fail07' (35875) panicked at tests/jsonchecker.rs:76:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail08,test_failed,306.831,5.868,2026-11-05T01:29:46Z,50232748.0,panic,"thread 'fail08' (36379) panicked at tests/jsonchecker.rs:77:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail09,test_failed,306.831,5.853,2026-11-05T01:29:52Z,50232748.0,panic,"thread 'fail09' (36932) panicked at tests/jsonchecker.rs:78:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail10,test_failed,306.831,5.928,2026-11-05T01:29:58Z,50232748.0,panic,"thread 'fail10' (37456) panicked at tests/jsonchecker.rs:80:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail11,test_failed,306.831,5.852,2026-11-05T01:30:03Z,50232748.0,panic,"thread 'fail11' (37996) panicked at tests/jsonchecker.rs:81:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail12,test_failed,306.831,5.837,2026-11-05T01:30:09Z,50232748.0,panic,"thread 'fail12' (38553) panicked at tests/jsonchecker.rs:82:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail13,test_failed,306.831,5.786,2026-11-05T01:30:15Z,50232748.0,panic,"thread 'fail13' (39375) panicked at tests/jsonchecker.rs:83:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail14,test_failed,306.831,5.958,2026-11-05T01:30:21Z,50232748.0,panic,"thread 'fail14' (39859) panicked at tests/jsonchecker.rs:84:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail15,test_failed,306.831,5.943,2026-11-05T01:30:27Z,50232748.0,panic,"thread 'fail15' (40552) panicked at tests/jsonchecker.rs:85:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail16,test_failed,306.831,5.934,2026-11-05T01:30:33Z,50232748.0,panic,"thread 'fail16' (41013) panicked at tests/jsonchecker.rs:86:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail17,test_failed,306.831,5.936,2026-11-05T01:30:39Z,50232748.0,panic,"thread 'fail17' (41550) panicked at tests/jsonchecker.rs:87:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail19,test_failed,306.831,5.894,2026-11-05T01:30:45Z,50232748.0,panic,"thread 'fail19' (41926) panicked at tests/jsonchecker.rs:89:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail20,test_failed,306.831,5.950,2026-11-05T01:30:51Z,50232748.0,panic,"thread 'fail20' (42291) panicked at tests/jsonchecker.rs:91:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail21,test_failed,306.831,5.928,2026-11-05T01:30:57Z,50232748.0,panic,"thread 'fail21' (42609) panicked at tests/jsonchecker.rs:92:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail22,test_failed,306.831,5.957,2026-11-05T01:31:03Z,50232748.0,panic,"thread 'fail22' (42877) panicked at tests/jsonchecker.rs:93:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail23,test_failed,306.831,5.909,2026-11-05T01:31:09Z,50232748.0,panic,"thread 'fail23' (43248) panicked at tests/jsonchecker.rs:94:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail24,test_failed,306.831,5.882,2026-11-05T01:31:15Z,50232748.0,panic,"thread 'fail24' (43580) panicked at tests/jsonchecker.rs:95:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail25,test_failed,306.831,5.781,2026-11-05T01:31:20Z,50232748.0,panic,"thread 'fail25' (43921) panicked at tests/jsonchecker.rs:96:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail26,test_failed,306.831,5.797,2026-11-05T01:31:26Z,50232748.0,panic,"thread 'fail26' (44308) panicked at tests/jsonchecker.rs:97:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail27,test_failed,306.831,5.898,2026-11-05T01:31:32Z,50232748.0,panic,"thread 'fail27' (44717) panicked at tests/jsonchecker.rs:98:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail28,test_failed,306.831,5.878,2026-11-05T01:31:38Z,50232748.0,panic,"thread 'fail28' (44974) panicked at tests/jsonchecker.rs:99:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail29,test_failed,306.831,5.790,2026-11-05T01:31:44Z,50232748.0,panic,"thread 'fail29' (45490) panicked at tests/jsonchecker.rs:100:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail30,test_failed,306.831,5.794,2026-11-05T01:31:50Z,50232748.0,panic,"thread 'fail30' (45902) panicked at tests/jsonchecker.rs:102:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail31,test_failed,306.831,5.889,2026-11-05T01:31:56Z,50232748.0,panic,"thread 'fail31' (46370) panicked at tests/jsonchecker.rs:103:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail32,test_failed,306.831,5.815,2026-11-05T01:32:01Z,50232748.0,panic,"thread 'fail32' (46969) panicked at tests/jsonchecker.rs:104:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail33,test_failed,306.831,5.860,2026-11-05T01:32:07Z,50232748.0,panic,"thread 'fail33' (47426) panicked at tests/jsonchecker.rs:105:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail34,test_failed,306.831,5.854,2026-11-05T01:32:13Z,50232748.0,panic,"thread 'fail34' (47969) panicked at tests/jsonchecker.rs:106:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail35,test_failed,306.831,5.799,2026-11-05T01:32:19Z,50232748.0,panic,"thread 'fail35' (48428) panicked at tests/jsonchecker.rs:107:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail36,test_failed,306.831,5.862,2026-11-05T01:32:25Z,50232748.0,panic,"thread 'fail36' (48894) panicked at tests/jsonchecker.rs:108:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail37,test_failed,306.831,5.813,2026-11-05T01:32:31Z,50232748.0,panic,"thread 'fail37' (49477) panicked at tests/jsonchecker.rs:109:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail38,test_failed,306.831,5.884,2026-11-05T01:32:37Z,50232748.0,panic,"thread 'fail38' (49953) panicked at tests/jsonchecker.rs:110:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail42,test_failed,306.831,5.859,2026-11-05T01:32:43Z,50232748.0,panic,"thread 'fail42' (50672) panicked at tests/jsonchecker.rs:117:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail43,test_failed,306.831,5.863,2026-11-05T01:32:48Z,50232748.0,panic,"thread 'fail43' (51257) panicked at tests/jsonchecker.rs:118:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail44,test_failed,306.831,5.929,2026-11-05T01:32:54Z,50232748.0,panic,"thread 'fail44' (51835) panicked at tests/jsonchecker.rs:119:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail45,test_failed,306.831,5.825,2026-11-05T01:33:00Z,50232748.0,panic,"thread 'fail45' (52444) panicked at tests/jsonchecker.rs:120:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail46,test_failed,306.831,5.934,2026-11-05T01:33:06Z,50232748.0,panic,"thread 'fail46' (53018) panicked at tests/jsonchecker.rs:121:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail47,test_failed,306.831,5.822,2026-11-05T01:33:12Z,50232748.0,panic,"thread 'fail47' (53458) panicked at tests/jsonchecker.rs:122:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail48,test_failed,306.831,5.921,2026-11-05T01:33:18Z,50232748.0,panic,"thread 'fail48' (53946) panicked at tests/jsonchecker.rs:123:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail49,test_failed,306.831,5.860,2026-11-05T01:33:24Z,50232748.0,panic,"thread 'fail49' (54391) panicked at tests/jsonchecker.rs:124:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail50,test_failed,306.831,5.870,2026-11-05T01:33:30Z,50232748.0,panic,"thread 'fail50' (54937) panicked at tests/jsonchecker.rs:126:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail51,test_failed,306.831,5.912,2026-11-05T01:33:36Z,50232748.0,panic,"thread 'fail51' (55423) panicked at tests/jsonchecker.rs:127:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail52,test_failed,306.831,5.764,2026-11-05T01:33:41Z,50232748.0,panic,"thread 'fail52' (55847) panicked at tests/jsonchecker.rs:128:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail53,test_failed,306.831,5.899,2026-11-05T01:33:47Z,50232748.0,panic,"thread 'fail53' (56290) panicked at tests/jsonchecker.rs:129:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail54,test_failed,306.831,5.840,2026-11-05T01:33:53Z,50232748.0,panic,"thread 'fail54' (56689) panicked at tests/jsonchecker.rs:130:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail55,test_failed,306.831,5.912,2026-11-05T01:33:59Z,50232748.0,panic,"thread 'fail55' (57336) panicked at tests/jsonchecker.rs:131:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail56,test_failed,306.831,5.866,2026-11-05T01:34:05Z,50232748.0,panic,"thread 'fail56' (58068) panicked at tests/jsonchecker.rs:132:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail57,test_failed,306.831,5.853,2026-11-05T01:34:11Z,50232748.0,panic,"thread 'fail57' (60040) panicked at tests/jsonchecker.rs:133:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail58,test_failed,306.831,5.901,2026-11-05T01:34:17Z,50232748.0,panic,"thread 'fail58' (60666) panicked at tests/jsonchecker.rs:134:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail59,test_failed,306.831,5.830,2026-11-05T01:34:23Z,50232748.0,panic,"thread 'fail59' (61138) panicked at tests/jsonchecker.rs:135:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail60,test_failed,306.831,5.922,2026-11-05T01:34:29Z,50232748.0,panic,"thread 'fail60' (61706) panicked at tests/jsonchecker.rs:137:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail61,test_failed,306.831,5.839,2026-11-05T01:34:34Z,50232748.0,panic,"thread 'fail61' (62248) panicked at tests/jsonchecker.rs:138:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail62,test_failed,306.831,5.927,2026-11-05T01:34:40Z,50232748.0,panic,"thread 'fail62' (62876) panicked at tests/jsonchecker.rs:139:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail63,test_failed,306.831,5.821,2026-11-05T01:34:46Z,50232748.0,panic,"thread 'fail63' (63322) panicked at tests/jsonchecker.rs:140:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail64,test_failed,306.831,5.948,2026-11-05T01:34:52Z,50232748.0,panic,"thread 'fail64' (63761) panicked at tests/jsonchecker.rs:141:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail65,test_failed,306.831,5.727,2026-11-05T01:34:58Z,50232748.0,panic,"thread 'fail65' (64142) panicked at tests/jsonchecker.rs:142:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail66,test_failed,306.831,5.833,2026-11-05T01:35:04Z,50232748.0,panic,"thread 'fail66' (64528) panicked at tests/jsonchecker.rs:143:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail67,test_failed,306.831,5.962,2026-11-05T01:35:10Z,50232748.0,panic,"thread 'fail67' (64895) panicked at tests/jsonchecker.rs:144:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail68,test_failed,306.831,5.946,2026-11-05T01:35:16Z,50232748.0,panic,"thread 'fail68' (65361) panicked at tests/jsonchecker.rs:145:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail69,test_failed,306.831,5.975,2026-11-05T01:35:22Z,50232748.0,panic,"thread 'fail69' (65705) panicked at tests/jsonchecker.rs:149:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail70,test_failed,306.831,5.961,2026-11-05T01:35:28Z,50232748.0,panic,"thread 'fail70' (66171) panicked at tests/jsonchecker.rs:151:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail71,test_failed,306.831,5.911,2026-11-05T01:35:34Z,50232748.0,panic,"thread 'fail71' (66519) panicked at tests/jsonchecker.rs:152:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail72,test_failed,306.831,5.945,2026-11-05T01:35:40Z,50232748.0,panic,"thread 'fail72' (67048) panicked at tests/jsonchecker.rs:153:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail73,test_failed,306.831,5.933,2026-11-05T01:35:46Z,50232748.0,panic,"thread 'fail73' (67634) panicked at tests/jsonchecker.rs:154:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail74,test_failed,306.831,5.947,2026-11-05T01:35:52Z,50232748.0,panic,"thread 'fail74' (68206) panicked at tests/jsonchecker.rs:155:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail75,test_failed,306.831,5.923,2026-11-05T01:35:58Z,50232748.0,panic,"thread 'fail75' (68631) panicked at tests/jsonchecker.rs:156:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail76,test_failed,306.831,5.886,2026-11-05T01:36:03Z,50232748.0,panic,"thread 'fail76' (69053) panicked at tests/jsonchecker.rs:157:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail77,test_failed,306.831,5.888,2026-11-05T01:36:09Z,50232748.0,panic,"thread 'fail77' (69751) panicked at tests/jsonchecker.rs:158:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,fail78,test_failed,306.831,5.800,2026-11-05T01:36:15Z,50232748.0,panic,"thread 'fail78' (70379) panicked at tests/jsonchecker.rs:159:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,impls::native::deser::test::easy_string,success,306.831,11.335,2026-11-05T01:36:27Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,impls::native::deser::test::string_with_quote,success,306.831,11.183,2026-11-05T01:36:38Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,impls::native::deser::test::string_with_utf8,success,306.831,11.330,2026-11-05T01:36:49Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,limit_fits_in_a_default_thread_stack,test_failed,306.831,50.377,2026-11-05T01:37:39Z,50232748.0,crash,"test limit_fits_in_a_default_thread_stack ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,simd-json-0.18.1,lowering_the_limit_works,success,306.831,11.272,2026-11-05T01:37:51Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,macros::test::array,success,306.831,11.269,2026-11-05T01:38:02Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,macros::test::array_typed_borrowed,success,306.831,11.289,2026-11-05T01:38:13Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,macros::test::array_typed_owned,success,306.831,11.302,2026-11-05T01:38:25Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,macros::test::obj,success,306.831,11.235,2026-11-05T01:38:36Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,macros::test::obj_typed_borrowed,success,306.831,11.291,2026-11-05T01:38:47Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,macros::test::obj_typed_owned,success,306.831,11.247,2026-11-05T01:38:58Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::bad_dot,success,306.831,11.278,2026-11-05T01:39:10Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::bad_e,success,306.831,11.295,2026-11-05T01:39:21Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::float,success,306.831,11.383,2026-11-05T01:39:32Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::float_precision,success,306.831,11.307,2026-11-05T01:39:44Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::float_trailing_invalid,success,306.831,11.271,2026-11-05T01:39:55Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::infinite_exponent,success,306.831,11.516,2026-11-05T01:40:07Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::infinite_literal,success,306.831,11.401,2026-11-05T01:40:18Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::int,success,306.831,11.402,2026-11-05T01:40:29Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::int_bad_exponent,success,306.831,11.415,2026-11-05T01:40:41Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::int_bare_sign,success,306.831,11.416,2026-11-05T01:40:52Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::int_leading_zero,success,306.831,11.245,2026-11-05T01:41:03Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::int_trailing_invalid,success,306.831,11.369,2026-11-05T01:41:15Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::int_zero_prefix,success,306.831,11.151,2026-11-05T01:41:26Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::long_int_boundaries,success,306.831,11.378,2026-11-05T01:41:37Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::minus_309,success,306.831,11.262,2026-11-05T01:41:49Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::nan,success,306.831,11.269,2026-11-05T01:42:00Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::tiny_float,success,306.831,11.474,2026-11-05T01:42:11Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::zero_float,success,306.831,11.148,2026-11-05T01:42:23Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,numberparse::correct::test::zero_int,success,306.831,11.276,2026-11-05T01:42:34Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,objects_at_the_limit_parse,timeout,306.831,150.017,2026-11-05T01:45:04Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,objects_past_the_limit_are_rejected,success,306.831,13.756,2026-11-05T01:45:18Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,pass01,test_failed,306.831,5.933,2026-11-05T01:45:24Z,50232748.0,panic,"thread 'pass01' (2559) panicked at tests/jsonchecker.rs:53:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass02,test_failed,306.831,5.949,2026-11-05T01:45:30Z,50232748.0,panic,"thread 'pass02' (2926) panicked at tests/jsonchecker.rs:54:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass03,test_failed,306.831,5.902,2026-11-05T01:45:36Z,50232748.0,panic,"thread 'pass03' (3562) panicked at tests/jsonchecker.rs:55:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass04,test_failed,306.831,5.930,2026-11-05T01:45:41Z,50232748.0,panic,"thread 'pass04' (3885) panicked at tests/jsonchecker.rs:56:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass05,test_failed,306.831,5.808,2026-11-05T01:45:47Z,50232748.0,panic,"thread 'pass05' (4332) panicked at tests/jsonchecker.rs:57:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass06,test_failed,306.831,5.811,2026-11-05T01:45:53Z,50232748.0,panic,"thread 'pass06' (4719) panicked at tests/jsonchecker.rs:58:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass07,test_failed,306.831,5.899,2026-11-05T01:45:59Z,50232748.0,panic,"thread 'pass07' (5042) panicked at tests/jsonchecker.rs:59:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass08,test_failed,306.831,5.881,2026-11-05T01:46:05Z,50232748.0,panic,"thread 'pass08' (5299) panicked at tests/jsonchecker.rs:60:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass09,test_failed,306.831,5.802,2026-11-05T01:46:11Z,50232748.0,panic,"thread 'pass09' (5598) panicked at tests/jsonchecker.rs:61:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass10,test_failed,306.831,5.875,2026-11-05T01:46:17Z,50232748.0,panic,"thread 'pass10' (5808) panicked at tests/jsonchecker.rs:62:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass11,test_failed,306.831,5.859,2026-11-05T01:46:23Z,50232748.0,panic,"thread 'pass11' (6107) panicked at tests/jsonchecker.rs:63:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass12,test_failed,306.831,5.846,2026-11-05T01:46:28Z,50232748.0,panic,"thread 'pass12' (6342) panicked at tests/jsonchecker.rs:64:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass13,test_failed,306.831,5.901,2026-11-05T01:46:34Z,50232748.0,panic,"thread 'pass13' (6527) panicked at tests/jsonchecker.rs:65:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass14,test_failed,306.831,5.802,2026-11-05T01:46:40Z,50232748.0,panic,"thread 'pass14' (6824) panicked at tests/jsonchecker.rs:66:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass15,test_failed,306.831,5.888,2026-11-05T01:46:46Z,50232748.0,panic,"thread 'pass15' (7101) panicked at tests/jsonchecker.rs:67:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,pass16,test_failed,306.831,5.854,2026-11-05T01:46:52Z,50232748.0,panic,"thread 'pass16' (7407) panicked at tests/jsonchecker.rs:68:1: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simd-json-0.18.1,raising_the_limit_allows_a_deep_tape,success,306.831,116.270,2026-11-05T01:48:48Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::de::tests::test_deser_u16,success,306.831,11.327,2026-11-05T01:49:00Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::se::pp::test::numerical_map_serde,success,306.831,11.274,2026-11-05T01:49:11Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::se::pp::test::pretty_print_serde,success,306.831,11.174,2026-11-05T01:49:22Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::se::pp::test::prettyfy,success,306.831,11.460,2026-11-05T01:49:34Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::se::pp::test::prop_json_encode_decode,timeout,306.831,150.019,2026-11-05T01:52:04Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,serde::se::pp::test::prop_serd_compat,timeout,306.831,150.016,2026-11-05T01:54:34Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,serde::se::test::enum_tuple,success,306.831,11.456,2026-11-05T01:54:45Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::se::test::numerical_map_serde,success,306.831,11.505,2026-11-05T01:54:57Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::se::test::print_serde,success,306.831,11.413,2026-11-05T01:55:08Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::se::test::prop_json_encode_decode,timeout,306.831,150.017,2026-11-05T01:57:38Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,serde::test::array_as_struct,success,306.831,11.272,2026-11-05T01:57:49Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::test::convert_borrowed_value,success,306.831,11.812,2026-11-05T01:58:01Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::test::convert_enum,success,306.831,11.395,2026-11-05T01:58:13Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::test::convert_owned_value,success,306.831,12.505,2026-11-05T01:58:25Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::test::floats,success,306.831,11.341,2026-11-05T01:58:36Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::test::maps,success,306.831,11.414,2026-11-05T01:58:48Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::test::object_simd_json,success,306.831,11.116,2026-11-05T01:58:59Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::test::option_field_absent,success,306.831,11.456,2026-11-05T01:59:10Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::test::option_field_present,success,306.831,11.428,2026-11-05T01:59:22Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::test::simple_simd_json,success,306.831,11.382,2026-11-05T01:59:33Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::test::test_parsing_errors,success,306.831,11.512,2026-11-05T01:59:45Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::test::vectors,success,306.831,11.471,2026-11-05T01:59:56Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::de::test::deserialize,success,306.831,11.314,2026-11-05T02:00:08Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::de::test::option_field_absent_owned,success,306.831,11.256,2026-11-05T02:00:19Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::de::test::option_field_present_owned,success,306.831,11.286,2026-11-05T02:00:30Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::de::test::variant,success,306.831,11.196,2026-11-05T02:00:41Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::se::test::arr,success,306.831,11.273,2026-11-05T02:00:53Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::se::test::bool_false,success,306.831,11.229,2026-11-05T02:01:04Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::se::test::bool_true,success,306.831,11.338,2026-11-05T02:01:15Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::se::test::float,success,306.831,11.376,2026-11-05T02:01:27Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::se::test::from_slice_to_object,success,306.831,11.373,2026-11-05T02:01:38Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::se::test::int,success,306.831,11.256,2026-11-05T02:01:49Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::se::test::map,success,306.831,11.268,2026-11-05T02:02:01Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::se::test::null,success,306.831,11.281,2026-11-05T02:02:12Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::se::test::prop_deserialize_obj,timeout,306.831,150.015,2026-11-05T02:04:42Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,serde::value::borrowed::se::test::stringlike,success,306.831,11.390,2026-11-05T02:04:53Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::owned::de::test::deserialize,success,306.831,11.208,2026-11-05T02:05:05Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::owned::de::test::option_field_absent_owned,success,306.831,11.408,2026-11-05T02:05:16Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::owned::de::test::option_field_present_owned,success,306.831,11.226,2026-11-05T02:05:27Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::owned::de::test::variant,success,306.831,11.283,2026-11-05T02:05:38Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::owned::se::test::from_slice_to_object,success,306.831,11.442,2026-11-05T02:05:50Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,serde::value::owned::se::test::prop_deserialize_obj,timeout,306.831,150.019,2026-11-05T02:08:20Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,stage2::test::false_atom,success,306.831,11.230,2026-11-05T02:08:31Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,stage2::test::null_atom,success,306.831,11.353,2026-11-05T02:08:43Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,stage2::test::parse_string,success,306.831,11.500,2026-11-05T02:08:54Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,stage2::test::parsing_errors,success,306.831,11.482,2026-11-05T02:09:06Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,stage2::test::true_atom,success,306.831,11.486,2026-11-05T02:09:17Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,test::serde_test,success,306.831,11.456,2026-11-05T02:09:29Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,test::simd_json_test,success,306.831,11.394,2026-11-05T02:09:40Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,test_serde_json,success,306.831,11.115,2026-11-05T02:09:51Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,test_simd_json,success,306.831,11.422,2026-11-05T02:10:02Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::alligned_number_parse,success,306.831,11.250,2026-11-05T02:10:14Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::count1,success,306.831,11.278,2026-11-05T02:10:25Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::count2,success,306.831,11.366,2026-11-05T02:10:36Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::count3,success,306.831,11.343,2026-11-05T02:10:48Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::count4,success,306.831,11.222,2026-11-05T02:10:59Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::count5,success,306.831,11.311,2026-11-05T02:11:10Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::impls::find_structural_bits_native,success,306.831,11.192,2026-11-05T02:11:22Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::null_in_json,success,306.831,11.361,2026-11-05T02:11:33Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::prop_json_encode_decode,timeout,306.831,150.017,2026-11-05T02:14:03Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,tests::serde::bool_false,success,306.831,11.499,2026-11-05T02:14:14Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::bool_true,success,306.831,11.378,2026-11-05T02:14:26Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::crazy_string,success,306.831,11.131,2026-11-05T02:14:37Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::double_array,success,306.831,11.391,2026-11-05T02:14:48Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::empty,success,306.831,11.192,2026-11-05T02:15:00Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::empty_array,success,306.831,11.277,2026-11-05T02:15:11Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::empty_string,success,306.831,11.354,2026-11-05T02:15:22Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::enum_test,success,306.831,11.322,2026-11-05T02:15:34Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::event,success,306.831,11.918,2026-11-05T02:15:45Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::exhausted_deserializer_errors_instead_of_oob,success,306.831,11.302,2026-11-05T02:15:57Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::float,success,306.831,11.258,2026-11-05T02:16:08Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::float1,success,306.831,11.309,2026-11-05T02:16:19Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::float3,success,306.831,11.312,2026-11-05T02:16:31Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::float_across_chunk_boundary,success,306.831,14.366,2026-11-05T02:16:45Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::int,success,306.831,11.293,2026-11-05T02:16:56Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::int_map_key,success,306.831,11.283,2026-11-05T02:17:08Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::invalid_float,success,306.831,11.292,2026-11-05T02:17:19Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::invalid_float_array,success,306.831,11.353,2026-11-05T02:17:30Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::list,success,306.831,11.344,2026-11-05T02:17:42Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::lonely_quote,success,306.831,11.272,2026-11-05T02:17:53Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::lonely_quote1,success,306.831,11.206,2026-11-05T02:18:04Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::lonely_quote2,success,306.831,11.434,2026-11-05T02:18:16Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::lonely_quote3,success,306.831,11.506,2026-11-05T02:18:27Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::malformed_array,success,306.831,11.430,2026-11-05T02:18:39Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::map0,success,306.831,11.460,2026-11-05T02:18:50Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::map1,success,306.831,11.477,2026-11-05T02:19:02Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::map2,success,306.831,11.405,2026-11-05T02:19:13Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::min_i64,success,306.831,11.273,2026-11-05T02:19:24Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::minus_one,success,306.831,11.293,2026-11-05T02:19:36Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::nested_list1,success,306.831,11.261,2026-11-05T02:19:47Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::nested_list2,success,306.831,11.252,2026-11-05T02:19:58Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::nested_null,success,306.831,11.328,2026-11-05T02:20:09Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::nestednested_null,success,306.831,11.328,2026-11-05T02:20:21Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::null,success,306.831,11.325,2026-11-05T02:20:32Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::null_null,success,306.831,11.237,2026-11-05T02:20:43Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::null_null_array,success,306.831,11.290,2026-11-05T02:20:55Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::obj1,success,306.831,11.254,2026-11-05T02:21:06Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::obj2,success,306.831,11.371,2026-11-05T02:21:17Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::obj3,success,306.831,11.369,2026-11-05T02:21:29Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::obj4,success,306.831,11.270,2026-11-05T02:21:40Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::odd_array,success,306.831,11.242,2026-11-05T02:21:51Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::odd_array2,success,306.831,11.217,2026-11-05T02:22:02Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::odd_array3,success,306.831,11.231,2026-11-05T02:22:14Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::odd_array4,success,306.831,11.341,2026-11-05T02:22:25Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::one,success,306.831,11.414,2026-11-05T02:22:36Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::one_element_array,success,306.831,11.287,2026-11-05T02:22:48Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::overdriven_next_key_seed_errors_instead_of_oob,success,306.831,11.187,2026-11-05T02:22:59Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::overdriven_next_value_seed_errors_instead_of_oob,success,306.831,11.464,2026-11-05T02:23:10Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::prop_json,timeout,306.831,150.018,2026-11-05T02:25:40Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,tests::serde::prop_junk,timeout,306.831,150.017,2026-11-05T02:28:10Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,tests::serde::prop_string,success,306.831,13.235,2026-11-05T02:28:24Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::string,success,306.831,11.385,2026-11-05T02:28:35Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::test_deser_restart,success,306.831,11.371,2026-11-05T02:28:46Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::test_deser_to_value,success,306.831,11.161,2026-11-05T02:28:58Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::tpl1,success,306.831,11.359,2026-11-05T02:29:09Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::tpl2,success,306.831,11.223,2026-11-05T02:29:20Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::tpl3,success,306.831,11.272,2026-11-05T02:29:32Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::tpl4,success,306.831,11.302,2026-11-05T02:29:43Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::tpl5,success,306.831,11.288,2026-11-05T02:29:54Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::tpl6,success,306.831,11.292,2026-11-05T02:30:05Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::tpl7,success,306.831,11.295,2026-11-05T02:30:17Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::two_element_array,success,306.831,11.226,2026-11-05T02:30:28Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::unicode,success,306.831,11.294,2026-11-05T02:30:39Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::union,success,306.831,11.360,2026-11-05T02:30:51Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::utf8,success,306.831,11.283,2026-11-05T02:31:02Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::utf8_invalid_surrogates,success,306.831,11.238,2026-11-05T02:31:13Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::vecvec,success,306.831,11.303,2026-11-05T02:31:25Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::zero,success,306.831,11.209,2026-11-05T02:31:36Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::serde::zero_element_touple,success,306.831,11.289,2026-11-05T02:31:47Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::silly_float1,success,306.831,11.341,2026-11-05T02:31:58Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::string_array,success,306.831,11.343,2026-11-05T02:32:10Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::test_send_sync,success,306.831,11.259,2026-11-05T02:32:21Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::test_tape_object_escaped,success,306.831,11.128,2026-11-05T02:32:32Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,tests::test_tape_object_simple,success,306.831,11.474,2026-11-05T02:32:44Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,unterminated_deep_input_errors,success,306.831,11.815,2026-11-05T02:32:55Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::serialize::test::bool_false,success,306.831,11.379,2026-11-05T02:33:07Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::serialize::test::bool_true,success,306.831,11.454,2026-11-05T02:33:18Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::serialize::test::null,success,306.831,11.417,2026-11-05T02:33:30Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::serialize::test::obj,success,306.831,11.246,2026-11-05T02:33:41Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::serialize::test::string,success,306.831,11.232,2026-11-05T02:33:52Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::array_access,success,306.831,11.270,2026-11-05T02:34:04Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_array,success,306.831,11.212,2026-11-05T02:34:15Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_bool,success,306.831,11.296,2026-11-05T02:34:26Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_f32,success,306.831,11.255,2026-11-05T02:34:37Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_f64,success,306.831,11.305,2026-11-05T02:34:49Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_float,success,306.831,11.257,2026-11-05T02:35:00Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_i16,success,306.831,11.257,2026-11-05T02:35:11Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_i32,success,306.831,11.211,2026-11-05T02:35:22Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_i64,success,306.831,11.205,2026-11-05T02:35:34Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_i8,success,306.831,11.269,2026-11-05T02:35:45Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_int,success,306.831,11.280,2026-11-05T02:35:56Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_null,success,306.831,11.228,2026-11-05T02:36:07Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_object,success,306.831,11.218,2026-11-05T02:36:19Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_str,success,306.831,11.248,2026-11-05T02:36:30Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_u16,success,306.831,11.258,2026-11-05T02:36:41Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_u32,success,306.831,11.271,2026-11-05T02:36:52Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_u64,success,306.831,11.263,2026-11-05T02:37:04Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_u8,success,306.831,11.248,2026-11-05T02:37:15Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_uint,success,306.831,11.304,2026-11-05T02:37:26Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::conversions_usize,success,306.831,11.439,2026-11-05T02:37:38Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::default,success,306.831,11.444,2026-11-05T02:37:49Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::object_access,success,306.831,11.499,2026-11-05T02:38:01Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_clone_static,timeout,306.831,150.017,2026-11-05T02:40:31Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_f32_cmp,success,306.831,16.418,2026-11-05T02:40:47Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_f64_cmp,success,306.831,16.460,2026-11-05T02:41:04Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_i16_cmp,success,306.831,16.214,2026-11-05T02:41:20Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_i32_cmp,success,306.831,15.991,2026-11-05T02:41:36Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_i64_cmp,success,306.831,16.132,2026-11-05T02:41:52Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_i8_cmp,success,306.831,16.009,2026-11-05T02:42:08Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_into_static,timeout,306.831,150.018,2026-11-05T02:44:38Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_serialize_deserialize,timeout,306.831,150.016,2026-11-05T02:47:08Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_string_cmp,success,306.831,37.068,2026-11-05T02:47:45Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_to_owned,timeout,306.831,150.017,2026-11-05T02:50:15Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_u16_cmp,success,306.831,16.142,2026-11-05T02:50:31Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_u32_cmp,success,306.831,16.109,2026-11-05T02:50:47Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_u64_cmp,success,306.831,16.147,2026-11-05T02:51:04Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_u8_cmp,success,306.831,16.051,2026-11-05T02:51:20Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::prop_usize_cmp,success,306.831,16.460,2026-11-05T02:51:36Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::test_bool_cmp,success,306.831,11.399,2026-11-05T02:51:48Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::test_hashmap_cmp,success,306.831,11.425,2026-11-05T02:51:59Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::test_option_from,success,306.831,11.412,2026-11-05T02:52:10Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::test_slice_cmp,success,306.831,11.304,2026-11-05T02:52:22Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::borrowed::test::test_union_cmp,success,306.831,11.103,2026-11-05T02:52:33Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::array::test::get_ints,success,306.831,11.240,2026-11-05T02:52:44Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::array::test::get_nested,success,306.831,11.180,2026-11-05T02:52:55Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::array::test::iter,success,306.831,11.201,2026-11-05T02:53:06Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::array::test::iter_container,success,306.831,11.212,2026-11-05T02:53:18Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::object::test::get_container,success,306.831,11.234,2026-11-05T02:53:29Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::object::test::get_ints,success,306.831,11.113,2026-11-05T02:53:40Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::object::test::iter_container,success,306.831,11.223,2026-11-05T02:53:51Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::object::test::iter_ints,success,306.831,11.206,2026-11-05T02:54:03Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::object::test::keys_container,success,306.831,11.261,2026-11-05T02:54:14Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::object::test::keys_ints,success,306.831,11.359,2026-11-05T02:54:25Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::object::test::values_container,success,306.831,11.363,2026-11-05T02:54:37Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::object::test::values_ints,success,306.831,11.302,2026-11-05T02:54:48Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::array_index,success,306.831,11.269,2026-11-05T02:54:59Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversion_str,success,306.831,11.208,2026-11-05T02:55:10Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_bool,success,306.831,11.210,2026-11-05T02:55:22Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_f32,success,306.831,11.328,2026-11-05T02:55:33Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_f64,success,306.831,11.281,2026-11-05T02:55:44Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_float,success,306.831,11.235,2026-11-05T02:55:55Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_i16,success,306.831,11.160,2026-11-05T02:56:07Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_i32,success,306.831,11.496,2026-11-05T02:56:18Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_i64,success,306.831,11.444,2026-11-05T02:56:30Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_i8,success,306.831,11.420,2026-11-05T02:56:41Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_int,success,306.831,11.472,2026-11-05T02:56:52Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_null,success,306.831,11.408,2026-11-05T02:57:04Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_u16,success,306.831,11.278,2026-11-05T02:57:15Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_u32,success,306.831,11.267,2026-11-05T02:57:26Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_u64,success,306.831,11.307,2026-11-05T02:57:38Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_u8,success,306.831,11.380,2026-11-05T02:57:49Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_uint,success,306.831,11.318,2026-11-05T02:58:01Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::conversions_usize,success,306.831,11.281,2026-11-05T02:58:12Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::default,success,306.831,11.181,2026-11-05T02:58:23Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::mixed_int_cmp,success,306.831,11.300,2026-11-05T02:58:34Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::mut_array_index,success,306.831,11.241,2026-11-05T02:58:46Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::mut_object_index,success,306.831,11.193,2026-11-05T02:58:57Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::object_index,success,306.831,11.191,2026-11-05T02:59:08Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::test_bool_cmp,success,306.831,11.171,2026-11-05T02:59:19Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::lazy::test::test_union_cmp,success,306.831,11.264,2026-11-05T02:59:30Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::serialize::test::bool_false,success,306.831,11.223,2026-11-05T02:59:42Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::serialize::test::bool_true,success,306.831,11.207,2026-11-05T02:59:53Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::serialize::test::null,success,306.831,11.201,2026-11-05T03:00:04Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::serialize::test::obj,success,306.831,11.180,2026-11-05T03:00:15Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::serialize::test::string,success,306.831,11.137,2026-11-05T03:00:26Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::array_access,success,306.831,11.113,2026-11-05T03:00:38Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_array,success,306.831,11.141,2026-11-05T03:00:49Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_bool,success,306.831,11.276,2026-11-05T03:01:00Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_f32,success,306.831,11.262,2026-11-05T03:01:11Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_f64,success,306.831,11.315,2026-11-05T03:01:23Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_float,success,306.831,11.341,2026-11-05T03:01:34Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_i16,success,306.831,11.317,2026-11-05T03:01:45Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_i32,success,306.831,11.176,2026-11-05T03:01:56Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_i64,success,306.831,11.083,2026-11-05T03:02:08Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_i8,success,306.831,11.156,2026-11-05T03:02:19Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_int,success,306.831,11.136,2026-11-05T03:02:30Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_null,success,306.831,11.126,2026-11-05T03:02:41Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_object,success,306.831,11.167,2026-11-05T03:02:52Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_str,success,306.831,11.219,2026-11-05T03:03:03Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_u16,success,306.831,11.121,2026-11-05T03:03:14Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_u32,success,306.831,11.138,2026-11-05T03:03:26Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_u64,success,306.831,11.119,2026-11-05T03:03:37Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_u8,success,306.831,11.140,2026-11-05T03:03:48Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_uint,success,306.831,11.091,2026-11-05T03:03:59Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::conversions_usize,success,306.831,11.215,2026-11-05T03:04:10Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::default,success,306.831,11.221,2026-11-05T03:04:21Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::object_access,success,306.831,11.142,2026-11-05T03:04:33Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_f32_cmp,success,306.831,16.333,2026-11-05T03:04:49Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_f64_cmp,success,306.831,16.265,2026-11-05T03:05:05Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_i16_cmp,success,306.831,16.192,2026-11-05T03:05:21Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_i32_cmp,success,306.831,16.018,2026-11-05T03:05:37Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_i64_cmp,success,306.831,16.304,2026-11-05T03:05:54Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_i8_cmp,success,306.831,16.322,2026-11-05T03:06:10Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_serialize_deserialize,timeout,306.831,150.021,2026-11-05T03:08:40Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_string_cmp,success,306.831,34.887,2026-11-05T03:09:15Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_to_owned,timeout,306.831,150.018,2026-11-05T03:11:45Z,50232748.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_u16_cmp,success,306.831,15.928,2026-11-05T03:12:01Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_u32_cmp,success,306.831,16.100,2026-11-05T03:12:17Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_u64_cmp,success,306.831,16.215,2026-11-05T03:12:33Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_u8_cmp,success,306.831,15.960,2026-11-05T03:12:49Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::prop_usize_cmp,success,306.831,16.175,2026-11-05T03:13:06Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::test_bool_cmp,success,306.831,11.273,2026-11-05T03:13:17Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::test_hashmap_cmp,success,306.831,11.310,2026-11-05T03:13:28Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::test_option_from,success,306.831,11.263,2026-11-05T03:13:39Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::test_slice_cmp,success,306.831,11.262,2026-11-05T03:13:51Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::owned::test::test_union_cmp,success,306.831,11.251,2026-11-05T03:14:02Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::array::test::get_ints,success,306.831,11.178,2026-11-05T03:14:13Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::array::test::get_nested,success,306.831,11.197,2026-11-05T03:14:24Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::array::test::iter,success,306.831,11.232,2026-11-05T03:14:36Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::array::test::iter_container,success,306.831,11.292,2026-11-05T03:14:47Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::object::test::get_container,success,306.831,11.499,2026-11-05T03:14:58Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::object::test::get_ints,success,306.831,11.227,2026-11-05T03:15:10Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::object::test::iter_container,success,306.831,11.533,2026-11-05T03:15:21Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::object::test::iter_ints,success,306.831,11.523,2026-11-05T03:15:33Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::object::test::keys_container,success,306.831,11.385,2026-11-05T03:15:44Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::object::test::keys_ints,success,306.831,11.449,2026-11-05T03:15:56Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::object::test::values_container,success,306.831,11.428,2026-11-05T03:16:07Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::object::test::values_ints,success,306.831,11.260,2026-11-05T03:16:18Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::array_index,success,306.831,11.256,2026-11-05T03:16:30Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversion_str,success,306.831,11.292,2026-11-05T03:16:41Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_bool,success,306.831,11.242,2026-11-05T03:16:52Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_f32,success,306.831,11.266,2026-11-05T03:17:03Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_f64,success,306.831,11.268,2026-11-05T03:17:15Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_float,success,306.831,11.250,2026-11-05T03:17:26Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_i16,success,306.831,11.307,2026-11-05T03:17:37Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_i32,success,306.831,11.329,2026-11-05T03:17:49Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_i64,success,306.831,11.231,2026-11-05T03:18:00Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_i8,success,306.831,11.267,2026-11-05T03:18:11Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_int,success,306.831,11.224,2026-11-05T03:18:22Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_null,success,306.831,11.235,2026-11-05T03:18:34Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_u16,success,306.831,11.251,2026-11-05T03:18:45Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_u32,success,306.831,11.328,2026-11-05T03:18:56Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_u64,success,306.831,11.281,2026-11-05T03:19:07Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_u8,success,306.831,11.220,2026-11-05T03:19:19Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_uint,success,306.831,11.202,2026-11-05T03:19:30Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::conversions_usize,success,306.831,11.226,2026-11-05T03:19:41Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::default,success,306.831,11.176,2026-11-05T03:19:52Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::mixed_int_cmp,success,306.831,11.428,2026-11-05T03:20:04Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::mut_array_index,success,306.831,11.334,2026-11-05T03:20:15Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::mut_object_index,success,306.831,11.310,2026-11-05T03:20:26Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::object_index,success,306.831,11.369,2026-11-05T03:20:38Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::test_bool_cmp,success,306.831,11.323,2026-11-05T03:20:49Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::test::test_union_cmp,success,306.831,11.252,2026-11-05T03:21:00Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::trait_impls::test::get_array_includes_last_element,success,306.831,11.157,2026-11-05T03:21:12Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::trait_impls::test::get_object_includes_last_element,success,306.831,11.227,2026-11-05T03:21:23Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::trait_impls::test::try_get_array_includes_last_element,success,306.831,11.207,2026-11-05T03:21:34Z,50232748.0,,
+experimental-bsan,simd-json-0.18.1,value::tape::trait_impls::test::try_get_object_includes_last_element,success,306.831,11.122,2026-11-05T03:21:45Z,50232748.0,,

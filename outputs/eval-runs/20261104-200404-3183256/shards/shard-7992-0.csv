@@ -1,0 +1,24 @@
+experimental-bsan,build-data-0.2.1,escape_ascii,success,61.349,29.105,2026-11-05T04:16:44Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,exec,success,61.349,29.137,2026-11-05T04:17:13Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,format_date,success,61.349,30.413,2026-11-05T04:17:43Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,format_time,success,61.349,29.528,2026-11-05T04:18:13Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,format_timestamp,success,61.349,29.597,2026-11-05T04:18:42Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,get_env,success,61.349,29.462,2026-11-05T04:19:12Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,get_git_branch,test_failed,61.349,29.091,2026-11-05T04:19:41Z,50249192.0,panic,"thread 'get_git_branch' (66785) panicked at tests/test.rs:169:54: called `Result::unwrap()` on an `Err` value: ""command 'git rev-parse --abbrev-ref=loose HEAD' failed: exit=128 stdout='' stderr='fatal: not a git repository (or any parent up to mount point /)\\nStopping at filesystem boundary (GIT_DI"
+experimental-bsan,build-data-0.2.1,get_git_commit,test_failed,61.349,28.940,2026-11-05T04:20:10Z,50249192.0,panic,"thread 'get_git_commit' (67145) panicked at tests/test.rs:182:54: called `Result::unwrap()` on an `Err` value: ""command 'git rev-parse HEAD' failed: exit=128 stdout='' stderr='fatal: not a git repository (or any parent up to mount point /)\\nStopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILE"
+experimental-bsan,build-data-0.2.1,get_git_commit_short,test_failed,61.349,28.992,2026-11-05T04:20:39Z,50249192.0,panic,"thread 'get_git_commit_short' (67444) panicked at tests/test.rs:193:60: called `Result::unwrap()` on an `Err` value: ""command 'git rev-parse HEAD' failed: exit=128 stdout='' stderr='fatal: not a git repository (or any parent up to mount point /)\\nStopping at filesystem boundary (GIT_DISCOVERY_ACROS"
+experimental-bsan,build-data-0.2.1,get_git_dirty,test_failed,61.349,29.041,2026-11-05T04:21:08Z,50249192.0,panic,"thread 'get_git_dirty' (68092) panicked at tests/test.rs:204:45: called `Result::unwrap()` on an `Err` value: ""command 'git status -s' failed: exit=128 stdout='' stderr='fatal: not a git repository (or any parent up to mount point /)\\nStopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM"
+experimental-bsan,build-data-0.2.1,get_hostname,success,61.349,30.245,2026-11-05T04:21:38Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,get_rustc_version,success,61.349,29.781,2026-11-05T04:22:08Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,no_debug_rebuilds_debug,success,61.349,29.418,2026-11-05T04:22:37Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,no_debug_rebuilds_release,success,61.349,29.382,2026-11-05T04:23:07Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,parse_rustc_channel,success,61.349,28.926,2026-11-05T04:23:36Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,parse_rustc_semver,success,61.349,29.000,2026-11-05T04:24:05Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,parse_rustc_version,success,61.349,29.069,2026-11-05T04:24:34Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,rust_channel,success,61.349,28.763,2026-11-05T04:25:03Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,set_build_date,success,61.349,28.854,2026-11-05T04:25:31Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,set_build_epoch_time,success,61.349,29.419,2026-11-05T04:26:01Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,set_build_time,success,61.349,29.843,2026-11-05T04:26:31Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,set_build_timestamp,success,61.349,29.410,2026-11-05T04:27:00Z,50249192.0,,
+experimental-bsan,build-data-0.2.1,source_time_values,test_failed,61.349,29.636,2026-11-05T04:27:30Z,50249192.0,panic,"thread 'source_time_values' (75027) panicked at tests/test.rs:367:47: called `Result::unwrap()` on an `Err` value: ""command 'git log -1 --pretty=%ct' failed: exit=128 stdout='' stderr='fatal: not a git repository (or any parent up to mount point /)\\nStopping at filesystem boundary (GIT_DISCOVERY_AC"
+experimental-bsan,build-data-0.2.1,test_now,success,61.349,29.173,2026-11-05T04:27:59Z,50249192.0,,

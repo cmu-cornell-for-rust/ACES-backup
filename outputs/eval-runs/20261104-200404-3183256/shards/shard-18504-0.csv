@@ -1,0 +1,2 @@
+experimental-bsan,bracket-rex-0.8.7,rex::tests::test_image,test_failed,24.622,1.597,2026-11-05T08:40:04Z,50263656.0,panic,"thread 'rex::tests::test_image' (31550) panicked at src/rex.rs:200:75: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,bracket-rex-0.8.7,rex::tests::test_roundtrip,timeout,24.622,150.016,2026-11-05T08:42:34Z,50263656.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

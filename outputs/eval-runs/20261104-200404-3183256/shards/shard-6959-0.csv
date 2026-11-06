@@ -1,0 +1,31 @@
+experimental-bsan,wg-1.1.0,basic,success,110.959,7.432,2026-11-05T03:55:46Z,50247814.0,,
+experimental-bsan,wg-1.1.0,debug_and_clone,success,110.959,7.307,2026-11-05T03:55:53Z,50247814.0,,
+experimental-bsan,wg-1.1.0,done_returns_remaining,success,110.959,7.260,2026-11-05T03:56:00Z,50247814.0,,
+experimental-bsan,wg-1.1.0,from_count,success,110.959,7.260,2026-11-05T03:56:08Z,50247814.0,,
+experimental-bsan,wg-1.1.0,manual_poll::poll_installs_fresh_listener_when_notified_but_counter_nonzero,success,110.959,7.243,2026-11-05T03:56:15Z,50247814.0,,
+experimental-bsan,wg-1.1.0,reuse,success,110.959,7.296,2026-11-05T03:56:22Z,50247814.0,,
+experimental-bsan,wg-1.1.0,std_tests::blocking_tests::block_wait_smol,test_failed,110.959,13.245,2026-11-05T03:56:35Z,50247814.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 17 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,wg-1.1.0,std_tests::blocking_tests::block_wait_tokio,success,110.959,8.061,2026-11-05T03:56:44Z,50247814.0,,
+experimental-bsan,wg-1.1.0,std_tests::blocking_tests::test_wait_blocking_on_zero_returns_immediately,success,110.959,7.257,2026-11-05T03:56:51Z,50247814.0,,
+experimental-bsan,wg-1.1.0,std_tests::from_smol,test_failed,110.959,13.231,2026-11-05T03:57:04Z,50247814.0,gc,"test std_tests::from_smol ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,wg-1.1.0,std_tests::from_tokio,success,110.959,7.405,2026-11-05T03:57:11Z,50247814.0,,
+experimental-bsan,wg-1.1.0,std_tests::smol_basic,test_failed,110.959,13.322,2026-11-05T03:57:25Z,50247814.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 17 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,wg-1.1.0,std_tests::smol_nested,test_failed,110.959,13.240,2026-11-05T03:57:38Z,50247814.0,gc,"test std_tests::smol_nested ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,wg-1.1.0,std_tests::smol_reuse,test_failed,110.959,13.266,2026-11-05T03:57:51Z,50247814.0,gc,"test std_tests::smol_reuse ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,wg-1.1.0,std_tests::tokio_basic,success,110.959,7.489,2026-11-05T03:57:59Z,50247814.0,,
+experimental-bsan,wg-1.1.0,std_tests::tokio_nested,success,110.959,7.412,2026-11-05T03:58:06Z,50247814.0,,
+experimental-bsan,wg-1.1.0,std_tests::tokio_reuse,success,110.959,7.500,2026-11-05T03:58:14Z,50247814.0,,
+experimental-bsan,wg-1.1.0,std_tests::wake_after_updating_smol,timeout,110.959,150.034,2026-11-05T04:00:44Z,50247814.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wg-1.1.0,std_tests::wake_after_updating_tokio,timeout,110.959,150.032,2026-11-05T04:03:14Z,50247814.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wg-1.1.0,test_add_assign,success,110.959,7.227,2026-11-05T04:03:21Z,50247814.0,,
+experimental-bsan,wg-1.1.0,test_async_remaining,success,110.959,7.221,2026-11-05T04:03:28Z,50247814.0,,
+experimental-bsan,wg-1.1.0,test_clone_and_fmt,success,110.959,7.237,2026-11-05T04:03:36Z,50247814.0,,
+experimental-bsan,wg-1.1.0,test_over_done,success,110.959,7.207,2026-11-05T04:03:43Z,50247814.0,,
+experimental-bsan,wg-1.1.0,test_over_done_is_silent,success,110.959,7.222,2026-11-05T04:03:50Z,50247814.0,,
+experimental-bsan,wg-1.1.0,test_remaining,success,110.959,7.219,2026-11-05T04:03:57Z,50247814.0,,
+experimental-bsan,wg-1.1.0,test_sync_wait_group_from,success,110.959,7.227,2026-11-05T04:04:05Z,50247814.0,,
+experimental-bsan,wg-1.1.0,test_sync_wait_group_nested,success,110.959,7.272,2026-11-05T04:04:12Z,50247814.0,,
+experimental-bsan,wg-1.1.0,test_sync_wait_group_reuse,success,110.959,7.254,2026-11-05T04:04:19Z,50247814.0,,
+experimental-bsan,wg-1.1.0,test_wait_on_zero_returns_immediately,success,110.959,7.235,2026-11-05T04:04:26Z,50247814.0,,
+experimental-bsan,wg-1.1.0,wait_on_zero_returns_immediately,success,110.959,7.208,2026-11-05T04:04:34Z,50247814.0,,
+experimental-bsan,wg-1.1.0,waitgroup_is_send_sync,success,110.959,7.225,2026-11-05T04:04:41Z,50247814.0,,

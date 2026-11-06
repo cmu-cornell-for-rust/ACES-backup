@@ -1,0 +1,18 @@
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::namespace::tests::an_empty_file_is_sent_as_no_chunks,success,862.005,2.115,2026-11-05T05:25:34Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::namespace::tests::an_upload_is_sent_in_bounded_chunks_that_add_up_to_the_file,timeout,862.005,150.026,2026-11-05T05:28:04Z,50251546.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::node::tests::a_missing_secret_fails_naming_it,success,862.005,43.458,2026-11-05T05:28:48Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::node::tests::a_secret_with_the_key_passes,success,862.005,43.869,2026-11-05T05:29:32Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::node::tests::a_secret_without_the_key_fails_naming_it,success,862.005,43.671,2026-11-05T05:30:15Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::node::tests::not_being_allowed_to_read_secrets_skips_the_check,success,862.005,43.537,2026-11-05T05:30:59Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::pod_spec_builder::tests::a_direct_process_mounts_its_files_and_reads_env_from_secrets,success,862.005,1.864,2026-11-05T05:31:01Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::pod_spec_builder::tests::a_direct_process_runs_its_command_exposes_ports_and_probes_as_told,success,862.005,1.816,2026-11-05T05:31:03Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::pod_spec_builder::tests::a_direct_process_without_ports_has_no_probe,success,862.005,1.794,2026-11-05T05:31:04Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::pod_spec_builder::tests::a_tcp_probe_targets_the_given_port,success,862.005,1.798,2026-11-05T05:31:06Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::pod_spec_builder::tests::a_wrapped_node_runs_through_the_wrapper_and_has_no_probe,success,862.005,1.806,2026-11-05T05:31:08Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::provider::tests::existing_namespace_is_neither_created_nor_deleted,success,862.005,44.656,2026-11-05T05:31:53Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,kubernetes::provider::tests::own_namespace_is_created_and_deleted_on_drop,success,862.005,48.353,2026-11-05T05:32:41Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,native::namespace::tests::a_relative_base_dir_is_made_absolute,success,862.005,1.947,2026-11-05T05:32:43Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,native::namespace::tests::generate_files_uses_expected_path_when_provided,success,862.005,2.591,2026-11-05T05:32:46Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,native::namespace::tests::generate_files_uses_stdout_when_expected_path_absent,timeout,862.005,150.026,2026-11-05T05:35:16Z,50251546.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zombienet-provider-0.6.1,native::node::tests::an_injected_path_is_replaced_only_where_it_stands_alone,success,862.005,1.775,2026-11-05T05:35:17Z,50251546.0,,
+experimental-bsan,zombienet-provider-0.6.1,shared::helpers::tests::check_runing_in_ci_env_var,success,862.005,1.770,2026-11-05T05:35:19Z,50251546.0,,

@@ -1,0 +1,24 @@
+experimental-bsan,pandoras_pot-0.7.1,args::tests::config_argument_is_parsed,success,205.888,3.470,2026-11-05T04:28:43Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,args::tests::help_has_priority,success,205.888,1.572,2026-11-05T04:28:44Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,args::tests::help_prints_help,success,205.888,1.580,2026-11-05T04:28:46Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,args::tests::no_args_ok,success,205.888,1.576,2026-11-05T04:28:47Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,args::tests::print_default_prints_default,success,205.888,2.089,2026-11-05T04:28:50Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,args::tests::two_bad_arg_prints_help,success,205.888,1.571,2026-11-05T04:28:51Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,args::tests::version_has_priority,success,205.888,1.572,2026-11-05T04:28:53Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,args::tests::version_prints_version,success,205.888,1.579,2026-11-05T04:28:54Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,config::tests::deserialize_config_1,success,205.888,1.889,2026-11-05T04:28:56Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,config::tests::deserialize_config_2,success,205.888,2.268,2026-11-05T04:28:58Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,config::tests::deserialize_empty_config,success,205.888,1.575,2026-11-05T04:29:00Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,config::tests::deserialize_incomplete_config,success,205.888,1.810,2026-11-05T04:29:02Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,config::tests::deserialize_markov_chain_generator_config,success,205.888,1.674,2026-11-05T04:29:04Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,config::tests::deserialize_random_generator_config,success,205.888,1.640,2026-11-05T04:29:05Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,generator::tests::generator_is_limited,test_failed,205.888,4.915,2026-11-05T04:29:10Z,50249435.0,panic,"thread 'generator::tests::generator_is_limited' (70506) panicked at src/generator.rs:223:43: Receiver within limit have not sent message"
+experimental-bsan,pandoras_pot-0.7.1,tests::app_catch_all,timeout,205.888,150.019,2026-11-05T04:31:40Z,50249435.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,pandoras_pot-0.7.1,tests::app_default_config,timeout,205.888,150.020,2026-11-05T04:34:10Z,50249435.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,pandoras_pot-0.7.1,tests::app_disabled_catch_all_no_routes,success,205.888,1.591,2026-11-05T04:34:12Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,tests::app_size_limited,success,205.888,13.949,2026-11-05T04:34:26Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,tests::app_specified_routes,timeout,205.888,150.017,2026-11-05T04:36:56Z,50249435.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,pandoras_pot-0.7.1,tests::app_time_limited,test_failed,205.888,13.964,2026-11-05T04:37:10Z,50249435.0,panic,"thread 'tests::app_time_limited' (5535) panicked at src/main.rs:540:24: Time limited app sent data for too long"
+experimental-bsan,pandoras_pot-0.7.1,tests::app_too_small_chunk_buffer,success,205.888,1.685,2026-11-05T04:37:12Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,tests::app_too_small_chunk_size,success,205.888,1.691,2026-11-05T04:37:13Z,50249435.0,,
+experimental-bsan,pandoras_pot-0.7.1,tests::app_with_static_generator,success,205.888,74.331,2026-11-05T04:38:28Z,50249435.0,,

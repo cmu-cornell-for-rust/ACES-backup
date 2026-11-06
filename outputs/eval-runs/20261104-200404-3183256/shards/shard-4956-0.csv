@@ -1,0 +1,46 @@
+experimental-bsan,tealdeer-1.7.0,cache::tests::test_reader_with_patch,success,467.396,3.534,2026-11-05T03:12:35Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,cache::tests::test_reader_without_patch,success,467.396,3.593,2026-11-05T03:12:39Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,config::test_serialize_deserialize,success,467.396,6.853,2026-11-05T03:12:46Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,formatter::tests::test_empty_command,success,467.396,3.433,2026-11-05T03:12:49Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,formatter::tests::test_highlight_code_segment,success,467.396,3.481,2026-11-05T03:12:52Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,formatter::tests::test_i18n,success,467.396,3.550,2026-11-05T03:12:56Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,formatter::tests::test_is_freestanding_substring,success,467.396,3.554,2026-11-05T03:13:00Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,line_iterator::test::test_first_line_new_format,success,467.396,3.521,2026-11-05T03:13:03Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,line_iterator::test::test_first_line_old_format,success,467.396,3.583,2026-11-05T03:13:07Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test::language::country_code_expansion,success,467.396,3.448,2026-11-05T03:13:10Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test::language::ignore_posix_and_c,success,467.396,3.407,2026-11-05T03:13:14Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test::language::missing_lang_env,success,467.396,3.464,2026-11-05T03:13:17Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test::language::missing_language_env,success,467.396,3.548,2026-11-05T03:13:21Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test::language::no_duplicates,success,467.396,3.508,2026-11-05T03:13:24Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test::language::preference_order,success,467.396,3.555,2026-11-05T03:13:28Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_autoupdate_cache,timeout,467.396,150.040,2026-11-05T03:15:58Z,50244422.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tealdeer-1.7.0,test_cache_location_not_a_directory,timeout,467.396,150.040,2026-11-05T03:18:28Z,50244422.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tealdeer-1.7.0,test_cache_location_source,timeout,467.396,150.020,2026-11-05T03:20:58Z,50244422.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tealdeer-1.7.0,test_correct_rendering_v1,success,467.396,33.894,2026-11-05T03:21:32Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_correct_rendering_v2,success,467.396,33.989,2026-11-05T03:22:06Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_correct_rendering_with_config,success,467.396,35.647,2026-11-05T03:22:41Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_create_cache_directory_path,test_failed,467.396,130.559,2026-11-05T03:24:52Z,50244422.0,panic,"thread 'test_create_cache_directory_path' (30122) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+experimental-bsan,tealdeer-1.7.0,test_custom_page_overwrites,success,467.396,32.966,2026-11-05T03:25:25Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_custom_patch_appends_to_common,success,467.396,33.957,2026-11-05T03:25:59Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_custom_patch_does_not_append_to_custom,success,467.396,32.991,2026-11-05T03:26:32Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_list_flag_rendering,success,467.396,92.524,2026-11-05T03:28:05Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_lowercased_page_lookup,success,467.396,90.543,2026-11-05T03:29:35Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_markdown_rendering,success,467.396,32.503,2026-11-05T03:30:08Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_missing_cache,success,467.396,32.139,2026-11-05T03:30:40Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_multi_platform_list_flag_rendering,timeout,467.396,150.023,2026-11-05T03:33:10Z,50244422.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tealdeer-1.7.0,test_multiple_platform_command_search,success,467.396,90.717,2026-11-05T03:34:41Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_multiple_platform_command_search_not_found,success,467.396,33.084,2026-11-05T03:35:14Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_os_specific_page,success,467.396,33.922,2026-11-05T03:35:48Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_pager_flag_enable,test_failed,467.396,137.027,2026-11-05T03:38:05Z,50244422.0,panic,"thread 'test_pager_flag_enable' (37803) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+experimental-bsan,tealdeer-1.7.0,test_quiet_cache,test_failed,467.396,136.415,2026-11-05T03:40:21Z,50244422.0,panic,"thread 'test_quiet_cache' (39474) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+experimental-bsan,tealdeer-1.7.0,test_quiet_failures,test_failed,467.396,135.482,2026-11-05T03:42:37Z,50244422.0,panic,"thread 'test_quiet_failures' (40209) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+experimental-bsan,tealdeer-1.7.0,test_quiet_old_cache,test_failed,467.396,135.284,2026-11-05T03:44:52Z,50244422.0,panic,"thread 'test_quiet_old_cache' (40605) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+experimental-bsan,tealdeer-1.7.0,test_raw_render_file,success,467.396,64.221,2026-11-05T03:45:56Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_rendering_color_auto,success,467.396,33.911,2026-11-05T03:46:30Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_rendering_color_never,success,467.396,33.687,2026-11-05T03:47:04Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_rendering_i18n,success,467.396,33.655,2026-11-05T03:47:37Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_setup_seed_config,success,467.396,33.779,2026-11-05T03:48:11Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_show_paths,success,467.396,63.140,2026-11-05T03:49:14Z,50244422.0,,
+experimental-bsan,tealdeer-1.7.0,test_spaces_find_command,test_failed,467.396,127.740,2026-11-05T03:51:22Z,50244422.0,panic,"thread 'test_spaces_find_command' (41914) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected failure."
+experimental-bsan,tealdeer-1.7.0,test_update_cache,timeout,467.396,150.039,2026-11-05T03:53:52Z,50244422.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tealdeer-1.7.0,types::test::test_linetype_from_str,success,467.396,3.697,2026-11-05T03:53:56Z,50244422.0,,

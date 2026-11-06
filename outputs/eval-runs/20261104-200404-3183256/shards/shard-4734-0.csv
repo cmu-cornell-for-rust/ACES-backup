@@ -1,0 +1,48 @@
+experimental-bsan,interthread-3.1.0,actor_async_std_bounded,test_failed,471.193,15.474,2026-11-05T03:12:15Z,50244142.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 9 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,interthread-3.1.0,actor_async_std_bounded_gen,test_failed,471.193,21.100,2026-11-05T03:12:36Z,50244142.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 5 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,interthread-3.1.0,actor_async_std_bounded_gen_rest,test_failed,471.193,21.106,2026-11-05T03:12:57Z,50244142.0,gc,"test actor_async_std_bounded_gen_rest ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,interthread-3.1.0,actor_async_std_unbounded,test_failed,471.193,15.478,2026-11-05T03:13:13Z,50244142.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 9 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,interthread-3.1.0,actor_async_std_unbounded_option,test_failed,471.193,16.876,2026-11-05T03:13:30Z,50244142.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 10 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,interthread-3.1.0,actor_private_generics,success,471.193,15.730,2026-11-05T03:13:45Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,actor_smol_bounded,test_failed,471.193,15.496,2026-11-05T03:14:01Z,50244142.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 9 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,interthread-3.1.0,actor_smol_unbounded,test_failed,471.193,15.508,2026-11-05T03:14:16Z,50244142.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 9 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,interthread-3.1.0,actor_sync_bounded,success,471.193,15.826,2026-11-05T03:14:32Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,actor_sync_bounded_rest,success,471.193,15.756,2026-11-05T03:14:48Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,actor_sync_unbound_default,success,471.193,15.866,2026-11-05T03:15:04Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,actor_sync_unbound_default_debut_plus_const_generic_param,success,471.193,16.028,2026-11-05T03:15:20Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,actor_sync_unbounded_int,success,471.193,16.103,2026-11-05T03:15:36Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,actor_tokio_bounded,success,471.193,19.280,2026-11-05T03:15:55Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,actor_tokio_unbounded,success,471.193,18.331,2026-11-05T03:16:14Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,actor_tokio_unbounded_result,success,471.193,16.722,2026-11-05T03:16:30Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,async_std_async_generic_family_rw_lock,test_failed,471.193,14.830,2026-11-05T03:16:45Z,50244142.0,gc,"test async_std_async_generic_family_rw_lock ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,interthread-3.1.0,async_std_std_generic_family_rw_lock,test_failed,471.193,14.811,2026-11-05T03:17:00Z,50244142.0,gc,"test async_std_std_generic_family_rw_lock ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,interthread-3.1.0,debut_async_tokio_test,timeout,471.193,150.024,2026-11-05T03:19:30Z,50244142.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,interthread-3.1.0,debut_std_test,timeout,471.193,150.018,2026-11-05T03:22:00Z,50244142.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,interthread-3.1.0,debut_std_tokio_test,timeout,471.193,150.025,2026-11-05T03:24:30Z,50244142.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,interthread-3.1.0,id_actor_sync_bounded,success,471.193,15.922,2026-11-05T03:24:46Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,id_actor_sync_inter,success,471.193,15.911,2026-11-05T03:25:02Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,id_actor_tokio_bounded,success,471.193,16.665,2026-11-05T03:25:19Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,interact_simple,success,471.193,15.892,2026-11-05T03:25:35Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,not_send_actor,success,471.193,15.775,2026-11-05T03:25:51Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,not_send_actor_opt,success,471.193,15.776,2026-11-05T03:26:06Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,not_send_actor_res_slf,success,471.193,15.766,2026-11-05T03:26:22Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,not_send_actor_res_slf_err,success,471.193,15.760,2026-11-05T03:26:38Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,parse::atp::tests::close_cap_test,success,471.193,15.824,2026-11-05T03:26:54Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,parse::atp::tests::explicit_chars_in_str,success,471.193,15.877,2026-11-05T03:27:10Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,parse::atp::tests::open_comment_test,success,471.193,15.952,2026-11-05T03:27:26Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,parse::atp::tests::parser_close_open,success,471.193,16.028,2026-11-05T03:27:42Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,parse::atp::tests::parser_close_open_inline,success,471.193,15.825,2026-11-05T03:27:57Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,parse::atp::tests::test_lifetime,success,471.193,15.859,2026-11-05T03:28:13Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,parse::tests::test_for_attr_inside_impl,success,471.193,15.878,2026-11-05T03:28:29Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,parse::tests::test_for_family,success,471.193,15.835,2026-11-05T03:28:45Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,parse::tests::test_for_family_edit_special_case_for_member,success,471.193,15.851,2026-11-05T03:29:01Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,parse::tests::test_func_actor_edit,success,471.193,15.890,2026-11-05T03:29:17Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,parse::tests::test_func_actor_edit_plus_comment,success,471.193,15.862,2026-11-05T03:29:33Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,self_word_in_arg_type,success,471.193,15.817,2026-11-05T03:29:48Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,static_methods_async,success,471.193,16.549,2026-11-05T03:30:05Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,static_methods_generic_model,success,471.193,15.809,2026-11-05T03:30:21Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,std_family_mutex,success,471.193,16.134,2026-11-05T03:30:37Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,std_family_rw_lock,success,471.193,15.890,2026-11-05T03:30:53Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,std_generic_family_rw_lock,success,471.193,15.969,2026-11-05T03:31:09Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,tokio_async_generic_family_rw_lock,success,471.193,16.950,2026-11-05T03:31:26Z,50244142.0,,
+experimental-bsan,interthread-3.1.0,tokio_std_generic_family_rw_lock,success,471.193,17.011,2026-11-05T03:31:43Z,50244142.0,,

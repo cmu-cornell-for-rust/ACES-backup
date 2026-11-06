@@ -1,0 +1,16 @@
+experimental-bsan,polling-3.7.3,above_ms,test_failed,32.798,15.114,2026-11-05T05:12:39Z,50252196.0,panic,"thread 'above_ms' (27008) panicked at tests/precision.rs:75:9: assertion failed: lowest < dur + margin"
+experimental-bsan,polling-3.7.3,basic_io,success,32.798,15.149,2026-11-05T05:12:55Z,50252196.0,,
+experimental-bsan,polling-3.7.3,below_ms,test_failed,32.798,12.220,2026-11-05T05:13:08Z,50252196.0,panic,"thread 'below_ms' (29625) panicked at tests/precision.rs:37:9: assertion failed: lowest < dur + margin"
+experimental-bsan,polling-3.7.3,concurrent,success,32.798,15.099,2026-11-05T05:13:23Z,50252196.0,,
+experimental-bsan,polling-3.7.3,concurrent_add,success,32.798,15.153,2026-11-05T05:13:38Z,50252196.0,,
+experimental-bsan,polling-3.7.3,concurrent_interruption,success,32.798,16.114,2026-11-05T05:13:54Z,50252196.0,,
+experimental-bsan,polling-3.7.3,concurrent_modify,success,32.798,15.173,2026-11-05T05:14:09Z,50252196.0,,
+experimental-bsan,polling-3.7.3,edge_oneshot_triggered,success,32.798,15.098,2026-11-05T05:14:24Z,50252196.0,,
+experimental-bsan,polling-3.7.3,edge_triggered,success,32.798,19.109,2026-11-05T05:14:43Z,50252196.0,,
+experimental-bsan,polling-3.7.3,insert_twice,success,32.798,15.048,2026-11-05T05:14:58Z,50252196.0,,
+experimental-bsan,polling-3.7.3,level_triggered,success,32.798,19.107,2026-11-05T05:15:18Z,50252196.0,,
+experimental-bsan,polling-3.7.3,many_connections,success,32.798,15.426,2026-11-05T05:15:33Z,50252196.0,,
+experimental-bsan,polling-3.7.3,non_blocking,success,32.798,15.101,2026-11-05T05:15:48Z,50252196.0,,
+experimental-bsan,polling-3.7.3,oneshot_triggered,success,32.798,21.051,2026-11-05T05:16:09Z,50252196.0,,
+experimental-bsan,polling-3.7.3,simple,success,32.798,15.072,2026-11-05T05:16:24Z,50252196.0,,
+experimental-bsan,polling-3.7.3,twice,success,32.798,17.070,2026-11-05T05:16:41Z,50252196.0,,

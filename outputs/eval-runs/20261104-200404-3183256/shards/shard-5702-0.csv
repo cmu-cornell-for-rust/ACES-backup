@@ -1,0 +1,39 @@
+experimental-bsan,tame-index-0.14.0,builds_local_registry,timeout,627.910,150.023,2026-11-05T03:33:30Z,50245709.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tame-index-0.14.0,can_take_lock,success,627.910,9.936,2026-11-05T03:33:40Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,can_take_lock_in_non_existant_directory,success,627.910,9.973,2026-11-05T03:33:50Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,can_take_shared_lock,test_failed,627.910,5.048,2026-11-05T03:33:55Z,50245709.0,panic,"thread 'can_take_shared_lock' (52691) panicked at tests/flock.rs:42:38: failed to read output: Error { kind: UnexpectedEof, message: ""failed to fill whole buffer"" }"
+experimental-bsan,tame-index-0.14.0,clones_new,success,627.910,67.415,2026-11-05T03:35:03Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,downloads_and_verifies,success,627.910,18.407,2026-11-05T03:35:21Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,fetch_invalidates_cache,timeout,627.910,150.022,2026-11-05T03:37:51Z,50245709.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tame-index-0.14.0,index::local::test::gets_components,success,627.910,9.856,2026-11-05T03:38:01Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,index::location::test::custom,success,627.910,10.483,2026-11-05T03:38:12Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,index::location::test::opens_sparse,success,627.910,22.635,2026-11-05T03:38:34Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,index::location::test::parses_from_file,success,627.910,10.849,2026-11-05T03:38:45Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,index::test::download_url_complex,success,627.910,10.119,2026-11-05T03:38:55Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,index::test::download_url_crates_io,success,627.910,9.892,2026-11-05T03:39:05Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,index::test::download_url_non_crates_io,success,627.910,9.972,2026-11-05T03:39:15Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,krate::test::krate_versions,success,627.910,9.970,2026-11-05T03:39:25Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,krate_name::test::rejects_leading_digit,success,627.910,9.965,2026-11-05T03:39:35Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,krate_name::test::rejects_reserved,test_failed,627.910,1.742,2026-11-05T03:39:37Z,50245709.0,panic,"thread 'krate_name::test::rejects_reserved' (72348) panicked at src/krate_name.rs:377:44: called `Result::unwrap_err()` on an `Ok` value: proc_macro"
+experimental-bsan,tame-index-0.14.0,krate_name::test::rejects_simple,success,627.910,10.036,2026-11-05T03:39:47Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,krate_name::test::rejects_too_long,success,627.910,10.021,2026-11-05T03:39:57Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,krate_name::test::relative_path,success,627.910,10.021,2026-11-05T03:40:07Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,make_request_with_cache,success,627.910,10.446,2026-11-05T03:40:17Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,make_request_without_cache,success,627.910,9.997,2026-11-05T03:40:27Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,non_main_local_branch,success,627.910,142.167,2026-11-05T03:42:50Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,opens_crates_io,success,627.910,9.955,2026-11-05T03:43:00Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,opens_existing,success,627.910,102.266,2026-11-05T03:44:42Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,parse_modified_response,success,627.910,11.075,2026-11-05T03:44:53Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,parse_unmodified_response,success,627.910,10.304,2026-11-05T03:45:03Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,parses_current_cargo_cache,test_failed,627.910,3.095,2026-11-05T03:45:06Z,50245709.0,panic,"thread 'parses_current_cargo_cache' (102292) panicked at tests/cache.rs:27:10: cache file not found"
+experimental-bsan,tame-index-0.14.0,remote::async_reuses_connection,timeout,627.910,150.034,2026-11-05T03:47:36Z,50245709.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tame-index-0.14.0,remote::end_to_end,success,627.910,31.731,2026-11-05T03:48:08Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,remote::reuses_connection,timeout,627.910,150.027,2026-11-05T03:50:38Z,50245709.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tame-index-0.14.0,serializes_current_cargo_cache,test_failed,627.910,3.087,2026-11-05T03:50:41Z,50245709.0,panic,"thread 'serializes_current_cargo_cache' (22541) panicked at tests/cache.rs:66:10: cache file not found"
+experimental-bsan,tame-index-0.14.0,updates_cache,success,627.910,100.832,2026-11-05T03:52:22Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,utils::test::canonicalizes_git_urls,success,627.910,9.908,2026-11-05T03:52:32Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,utils::test::gets_cargo_version,success,627.910,9.912,2026-11-05T03:52:42Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,utils::test::matches_cargo,success,627.910,9.913,2026-11-05T03:52:52Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,utils::test::parses_cargo_semver,success,627.910,9.952,2026-11-05T03:53:02Z,50245709.0,,
+experimental-bsan,tame-index-0.14.0,wait_lock_times_out,test_failed,627.910,5.024,2026-11-05T03:53:07Z,50245709.0,panic,"thread 'wait_lock_times_out' (28151) panicked at tests/flock.rs:42:38: failed to read output: Error { kind: UnexpectedEof, message: ""failed to fill whole buffer"" }"
+experimental-bsan,tame-index-0.14.0,waits_lock,test_failed,627.910,5.010,2026-11-05T03:53:12Z,50245709.0,panic,"thread 'waits_lock' (28338) panicked at tests/flock.rs:42:38: failed to read output: Error { kind: UnexpectedEof, message: ""failed to fill whole buffer"" }"

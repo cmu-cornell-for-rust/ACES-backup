@@ -1,0 +1,48 @@
+experimental-bsan,qcalc-0.15.4,app::tests::create_and_call_function,test_failed,243.261,1.746,2026-11-05T03:08:14Z,50244165.0,panic,"thread 'app::tests::create_and_call_function' (88758) panicked at src/app.rs:248:68: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,app::tests::higher_order,test_failed,243.261,1.728,2026-11-05T03:08:16Z,50244165.0,panic,"thread 'app::tests::higher_order' (88981) panicked at src/app.rs:248:68: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,app::tests::test_assignment,test_failed,243.261,1.738,2026-11-05T03:08:17Z,50244165.0,panic,"thread 'app::tests::test_assignment' (89185) panicked at src/app.rs:248:68: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,app::tests::test_bin_hex,test_failed,243.261,1.746,2026-11-05T03:08:19Z,50244165.0,panic,"thread 'app::tests::test_bin_hex' (89307) panicked at src/app.rs:248:68: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,app::tests::test_bitwise_operators,test_failed,243.261,1.726,2026-11-05T03:08:21Z,50244165.0,panic,"thread 'app::tests::test_bitwise_operators' (89502) panicked at src/app.rs:248:68: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,app::tests::test_built_in_fns,test_failed,243.261,1.742,2026-11-05T03:08:23Z,50244165.0,panic,"thread 'app::tests::test_built_in_fns' (89783) panicked at src/app.rs:248:68: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,app::tests::test_elem,test_failed,243.261,1.755,2026-11-05T03:08:24Z,50244165.0,panic,"thread 'app::tests::test_elem' (90033) panicked at src/app.rs:248:68: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,app::tests::test_factorial,test_failed,243.261,1.751,2026-11-05T03:08:26Z,50244165.0,panic,"thread 'app::tests::test_factorial' (90260) panicked at src/app.rs:248:68: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,app::tests::test_if_else,test_failed,243.261,1.743,2026-11-05T03:08:28Z,50244165.0,panic,"thread 'app::tests::test_if_else' (90578) panicked at src/app.rs:248:68: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,app::tests::test_iterator,test_failed,243.261,1.768,2026-11-05T03:08:30Z,50244165.0,panic,"thread 'app::tests::test_iterator' (90766) panicked at src/app.rs:248:68: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,app::tests::test_list,test_failed,243.261,1.758,2026-11-05T03:08:32Z,50244165.0,panic,"thread 'app::tests::test_list' (91133) panicked at src/app.rs:248:68: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,app::tests::test_range,test_failed,243.261,1.746,2026-11-05T03:08:33Z,50244165.0,panic,"thread 'app::tests::test_range' (91497) panicked at src/app.rs:248:68: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,app::tests::test_rc_file,test_failed,243.261,1.758,2026-11-05T03:08:35Z,50244165.0,panic,"thread 'app::tests::test_rc_file' (91710) panicked at src/app.rs:253:67: called `Result::unwrap()` on an `Err` value: Unknown { .. } - ""Unknown error while interacting with the clipboard: X11 server connection timed out because it was unreachable"""
+experimental-bsan,qcalc-0.15.4,interpreter::tests::function_with_closure,success,243.261,3.090,2026-11-05T03:08:38Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,interpreter::tests::nan_for_nan,success,243.261,3.081,2026-11-05T03:08:41Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,interpreter::tests::non_numeric_operations,success,243.261,3.078,2026-11-05T03:08:44Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,interpreter::tests::partial_cmp_values,success,243.261,3.073,2026-11-05T03:08:47Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,interpreter::tests::simple_add,success,243.261,3.079,2026-11-05T03:08:51Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,interpreter::tests::simple_variable,success,243.261,3.060,2026-11-05T03:08:54Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,interpreter::tests::test_ord,success,243.261,3.063,2026-11-05T03:08:57Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::grouping,success,243.261,3.058,2026-11-05T03:09:00Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::integer_base_log,success,243.261,3.062,2026-11-05T03:09:03Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::negative,success,243.261,3.057,2026-11-05T03:09:06Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::simple_add,success,243.261,3.062,2026-11-05T03:09:09Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::simple_mult,success,243.261,3.058,2026-11-05T03:09:12Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_assignment,success,243.261,3.070,2026-11-05T03:09:15Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_bools,success,243.261,3.058,2026-11-05T03:09:18Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_exponent,success,243.261,3.055,2026-11-05T03:09:21Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_fact,success,243.261,3.044,2026-11-05T03:09:24Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_function_mult_params,success,243.261,3.076,2026-11-05T03:09:27Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_function_single_param,success,243.261,3.041,2026-11-05T03:09:30Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_function_underscore_params,success,243.261,3.051,2026-11-05T03:09:33Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_if,success,243.261,3.051,2026-11-05T03:09:37Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_missing_closing_paren,success,243.261,3.041,2026-11-05T03:09:40Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_nil,success,243.261,3.043,2026-11-05T03:09:43Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_no_params,success,243.261,3.090,2026-11-05T03:09:46Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_tuple,success,243.261,3.097,2026-11-05T03:09:49Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,parse::tests::test_uniq_params,success,243.261,3.075,2026-11-05T03:09:52Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,token::tests::alpha_underscore_idents,success,243.261,3.069,2026-11-05T03:09:55Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,token::tests::divide,success,243.261,3.067,2026-11-05T03:09:58Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,token::tests::test_add,success,243.261,3.050,2026-11-05T03:10:01Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,token::tests::test_bin,success,243.261,3.040,2026-11-05T03:10:04Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,token::tests::test_hex,success,243.261,3.035,2026-11-05T03:10:07Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,token::tests::test_if_else,success,243.261,3.065,2026-11-05T03:10:10Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,token::tests::test_nan_and_nil,success,243.261,3.059,2026-11-05T03:10:13Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,token::tests::test_space,success,243.261,3.066,2026-11-05T03:10:16Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,token::tests::test_tokenizer,success,243.261,3.062,2026-11-05T03:10:20Z,50244165.0,,
+experimental-bsan,qcalc-0.15.4,token::tests::test_underscore,success,243.261,3.059,2026-11-05T03:10:23Z,50244165.0,,

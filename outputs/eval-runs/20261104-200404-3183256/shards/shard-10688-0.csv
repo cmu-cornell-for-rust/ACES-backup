@@ -1,0 +1,14 @@
+experimental-bsan,async-shutdown-0.2.2,delay_token,success,72.250,3.430,2026-11-05T05:25:19Z,50252879.0,,
+experimental-bsan,async-shutdown-0.2.2,delay_token_too_late,success,72.250,2.919,2026-11-05T05:25:22Z,50252879.0,,
+experimental-bsan,async-shutdown-0.2.2,shutdown,success,72.250,3.610,2026-11-05T05:25:26Z,50252879.0,,
+experimental-bsan,async-shutdown-0.2.2,shutdown_complete::test::cloning_does_not_clone_waker_token,success,72.250,2.948,2026-11-05T05:25:29Z,50252879.0,,
+experimental-bsan,async-shutdown-0.2.2,shutdown_complete::test::waker_list_doesnt_grow_infinitely,timeout,72.250,150.016,2026-11-05T05:27:59Z,50252879.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-shutdown-0.2.2,shutdown_only_works_once,success,72.250,2.885,2026-11-05T05:28:02Z,50252879.0,,
+experimental-bsan,async-shutdown-0.2.2,shutdown_signal::test::cloning_does_not_clone_waker_token,success,72.250,2.938,2026-11-05T05:28:05Z,50252879.0,,
+experimental-bsan,async-shutdown-0.2.2,shutdown_signal::test::waker_list_doesnt_grow_infinitely,timeout,72.250,150.024,2026-11-05T05:30:35Z,50252879.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-shutdown-0.2.2,vital_token,success,72.250,3.588,2026-11-05T05:30:38Z,50252879.0,,
+experimental-bsan,async-shutdown-0.2.2,wait_for_shutdown_complete_in_task_without_delay_tokens,success,72.250,3.438,2026-11-05T05:30:42Z,50252879.0,,
+experimental-bsan,async-shutdown-0.2.2,wrap_cancel,success,72.250,3.574,2026-11-05T05:30:45Z,50252879.0,,
+experimental-bsan,async-shutdown-0.2.2,wrap_cancel_no_shutdown,success,72.250,3.629,2026-11-05T05:30:49Z,50252879.0,,
+experimental-bsan,async-shutdown-0.2.2,wrap_delay,success,72.250,3.443,2026-11-05T05:30:52Z,50252879.0,,
+experimental-bsan,async-shutdown-0.2.2,wrap_vital,success,72.250,3.610,2026-11-05T05:30:56Z,50252879.0,,

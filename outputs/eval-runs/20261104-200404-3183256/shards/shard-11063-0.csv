@@ -1,0 +1,13 @@
+experimental-bsan,binary-ff1-0.2.0,ff1::tests::decrypt_then_encrypt,success,92.312,47.555,2026-11-05T05:34:37Z,50253341.0,,
+experimental-bsan,binary-ff1-0.2.0,ff1::tests::encrypt_reuse_multiple_plaintexts,timeout,92.312,150.011,2026-11-05T05:37:07Z,50253341.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,binary-ff1-0.2.0,ff1::tests::encrypt_then_decrypt,success,92.312,46.762,2026-11-05T05:37:53Z,50253341.0,,
+experimental-bsan,binary-ff1-0.2.0,limb::tests::limb_add,success,92.312,12.101,2026-11-05T05:38:05Z,50253341.0,,
+experimental-bsan,binary-ff1-0.2.0,limb::tests::limb_sub,success,92.312,12.647,2026-11-05T05:38:18Z,50253341.0,,
+experimental-bsan,binary-ff1-0.2.0,limb::tests::load_and_store_unchanged,success,92.312,7.117,2026-11-05T05:38:25Z,50253341.0,,
+experimental-bsan,binary-ff1-0.2.0,limb::tests::reverse_and_shift_unchanged,success,92.312,12.374,2026-11-05T05:38:38Z,50253341.0,,
+experimental-bsan,binary-ff1-0.2.0,limb::tests::reverse_no_shift_unchanged,success,92.312,6.835,2026-11-05T05:38:44Z,50253341.0,,
+experimental-bsan,binary-ff1-0.2.0,prf::tests::seek_equivalent_to_write,success,92.312,11.168,2026-11-05T05:38:56Z,50253341.0,,
+experimental-bsan,binary-ff1-0.2.0,prf::tests::write_bytes_individually,success,92.312,5.451,2026-11-05T05:39:01Z,50253341.0,,
+experimental-bsan,binary-ff1-0.2.0,prf::tests::write_chunks_separately,success,92.312,13.045,2026-11-05T05:39:14Z,50253341.0,,
+experimental-bsan,binary-ff1-0.2.0,reference_impl,timeout,92.312,150.019,2026-11-05T05:41:44Z,50253341.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,binary-ff1-0.2.0,zcash_test_vectors,success,92.312,4.830,2026-11-05T05:41:49Z,50253341.0,,

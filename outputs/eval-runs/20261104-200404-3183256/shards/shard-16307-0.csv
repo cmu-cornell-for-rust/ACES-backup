@@ -1,0 +1,4 @@
+experimental-bsan,async-backtrace-0.2.7,consolidate,test_failed,215.638,13.247,2026-11-05T07:42:49Z,50260701.0,panic,"thread 'consolidate' (21848) panicked at tests/consolidate.rs:33:5: assertion failed: `(left == right)`"
+experimental-bsan,async-backtrace-0.2.7,contention,success,215.638,10.114,2026-11-05T07:42:59Z,50260701.0,,
+experimental-bsan,async-backtrace-0.2.7,poll_in_drop,test_failed,215.638,17.227,2026-11-05T07:43:16Z,50260701.0,panic,"thread 'poll_in_drop' (24833) panicked at tests/poll-in-drop.rs:22:9: assertion failed: `(left == right)`"
+experimental-bsan,async-backtrace-0.2.7,reentrant,test_failed,215.638,19.717,2026-11-05T07:43:36Z,50260701.0,panic,"thread 'reentrant' (25299) panicked at tests/reentrant.rs:14:5: assertion failed: `(left == right)`"

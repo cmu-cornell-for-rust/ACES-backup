@@ -1,0 +1,16 @@
+experimental-bsan,typst-upgrade-1.7.0,diffline::test::init,success,293.202,1.656,2026-11-05T05:17:48Z,50252309.0,,
+experimental-bsan,typst-upgrade-1.7.0,diffline::test::parse,success,293.202,1.638,2026-11-05T05:17:50Z,50252309.0,,
+experimental-bsan,typst-upgrade-1.7.0,diffline::test::show,success,293.202,1.652,2026-11-05T05:17:51Z,50252309.0,,
+experimental-bsan,typst-upgrade-1.7.0,diffline::test::variants,success,293.202,1.625,2026-11-05T05:17:53Z,50252309.0,,
+experimental-bsan,typst-upgrade-1.7.0,term::test::init,success,293.202,1.644,2026-11-05T05:17:55Z,50252309.0,,
+experimental-bsan,typst-upgrade-1.7.0,test::should_find_typst_files_in_proj,test_failed,293.202,1.682,2026-11-05T05:17:56Z,50252309.0,panic,"thread 'test::should_find_typst_files_in_proj' (76692) panicked at src/main.rs:140:9: Path does not exist: /work/tests/proj"
+experimental-bsan,typst-upgrade-1.7.0,test::should_not_find_typst_files_in_non_existent_dir,success,293.202,1.639,2026-11-05T05:17:58Z,50252309.0,,
+experimental-bsan,typst-upgrade-1.7.0,upgrade::test::ex_upgrade_exception1,success,293.202,1.652,2026-11-05T05:18:00Z,50252309.0,,
+experimental-bsan,typst-upgrade-1.7.0,upgrade::test::ex_upgrade_exception2,test_failed,293.202,1.697,2026-11-05T05:18:02Z,50252309.0,panic,"thread 'upgrade::test::ex_upgrade_exception2' (76854) panicked at src/upgrade.rs:401:5: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,typst-upgrade-1.7.0,upgrade::test::ex_upgrade_normal1,test_failed,293.202,1.700,2026-11-05T05:18:03Z,50252309.0,panic,"thread 'upgrade::test::ex_upgrade_normal1' (76926) panicked at src/upgrade.rs:401:5: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,typst-upgrade-1.7.0,upgrade::test::ex_upgrade_normal2,test_failed,293.202,1.709,2026-11-05T05:18:05Z,50252309.0,panic,"thread 'upgrade::test::ex_upgrade_normal2' (76991) panicked at src/upgrade.rs:401:5: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,typst-upgrade-1.7.0,upgrade::test::next,success,293.202,1.653,2026-11-05T05:18:07Z,50252309.0,,
+experimental-bsan,typst-upgrade-1.7.0,upgrade::test::should_not_convert_illegal_root,success,293.202,1.657,2026-11-05T05:18:08Z,50252309.0,,
+experimental-bsan,typst-upgrade-1.7.0,upgrade::test::should_not_upgrade_local,success,293.202,1.659,2026-11-05T05:18:10Z,50252309.0,,
+experimental-bsan,typst-upgrade-1.7.0,upgrade::test::should_not_upgrade_non_preview,success,293.202,1.647,2026-11-05T05:18:12Z,50252309.0,,
+experimental-bsan,typst-upgrade-1.7.0,upgrade::test::upgrader_build,success,293.202,1.629,2026-11-05T05:18:13Z,50252309.0,,

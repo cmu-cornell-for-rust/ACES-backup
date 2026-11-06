@@ -1,0 +1,260 @@
+experimental-bsan,serde_with-3.24.0,array::test_oob_item,timeout,700.042,150.022,2026-11-05T01:40:58Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,array::test_serialized_is_valid,timeout,700.042,150.024,2026-11-05T01:43:28Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,array::test_too_long,timeout,700.042,150.024,2026-11-05T01:45:58Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,array::test_too_short,timeout,700.042,150.024,2026-11-05T01:48:28Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,array::test_valid_json,timeout,700.042,150.021,2026-11-05T01:50:58Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,array::test_wrong_item_type,timeout,700.042,150.024,2026-11-05T01:53:28Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,base58_different_charsets,success,700.042,38.290,2026-11-05T01:54:06Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,base58_vec,success,700.042,36.522,2026-11-05T01:54:43Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,base64_different_charsets,success,700.042,37.250,2026-11-05T01:55:20Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,base64_vec,success,700.042,36.832,2026-11-05T01:55:57Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,bool_from_int::flexible_out_of_range,timeout,700.042,150.020,2026-11-05T01:58:27Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,bool_from_int::flexible_wrong_type,timeout,700.042,150.022,2026-11-05T02:00:57Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,bool_from_int::strict_out_of_range,timeout,700.042,150.023,2026-11-05T02:03:27Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,bool_from_int::test_fractional_value_flexible,timeout,700.042,150.023,2026-11-05T02:05:57Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,bool_from_int::test_fractional_value_strict,timeout,700.042,150.023,2026-11-05T02:08:27Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,bool_from_int::test_serialized_flexible_is_valid,timeout,700.042,150.023,2026-11-05T02:10:57Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,bool_from_int::test_serialized_strict_is_valid,timeout,700.042,150.021,2026-11-05T02:13:27Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,bytes_or_string::test_bytes_valid_json,timeout,700.042,150.025,2026-11-05T02:15:57Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,bytes_or_string::test_int_not_valid_json,timeout,700.042,150.025,2026-11-05T02:18:27Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,bytes_or_string::test_serialized_is_valid,timeout,700.042,150.024,2026-11-05T02:20:57Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,bytes_or_string::test_string_valid_json,timeout,700.042,150.023,2026-11-05T02:23:28Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,collections::test_fnv_hashmap,success,700.042,34.918,2026-11-05T02:24:02Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,collections::test_fnv_hashset,success,700.042,34.964,2026-11-05T02:24:37Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,default_on::test_default_on_error,success,700.042,34.905,2026-11-05T02:25:12Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,default_on::test_default_on_null,success,700.042,35.073,2026-11-05T02:25:47Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,derive::test_enabled_has_correct_schema,timeout,700.042,150.022,2026-11-05T02:28:17Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,deserialize_fromstr::test_deserialize_from_bytes,success,700.042,34.949,2026-11-05T02:28:52Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,deserialize_fromstr::test_deserialize_fromstr,success,700.042,34.981,2026-11-05T02:29:27Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,deserialize_fromstr::test_deserialize_fromstr_in_vec,success,700.042,35.018,2026-11-05T02:30:02Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,duplicate_key_first_wins_btreemap,success,700.042,35.007,2026-11-05T02:30:37Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,duplicate_key_first_wins_hashmap,success,700.042,35.303,2026-11-05T02:31:13Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,duplicate_key_first_wins_indexmap,success,700.042,35.216,2026-11-05T02:31:48Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,duplicate_value_first_wins_hashset,success,700.042,35.072,2026-11-05T02:32:23Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,duplicate_value_last_wins_btreeset,success,700.042,34.878,2026-11-05T02:32:58Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,duplicate_value_last_wins_hashset,success,700.042,35.253,2026-11-05T02:33:33Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,duplicate_value_last_wins_indexset,success,700.042,35.020,2026-11-05T02:34:08Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,duration::test_integer_as_flexible_string,timeout,700.042,150.023,2026-11-05T02:36:38Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,duration::test_integer_as_flexible_u64,timeout,700.042,150.022,2026-11-05T02:39:08Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,duration::test_negative_as_flexible_string,timeout,700.042,150.021,2026-11-05T02:41:38Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,duration::test_negative_as_flexible_timestamp,timeout,700.042,150.023,2026-11-05T02:44:08Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,duration::test_negative_as_flexible_u64,timeout,700.042,150.024,2026-11-05T02:46:39Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,duration::test_negative_string_as_flexible_timestamp,timeout,700.042,150.021,2026-11-05T02:49:09Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,duration::test_number_as_flexible_string,timeout,700.042,150.023,2026-11-05T02:51:39Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,duration::test_number_as_flexible_u64,timeout,700.042,150.021,2026-11-05T02:54:09Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,duration::test_serialized_is_valid,timeout,700.042,150.020,2026-11-05T02:56:39Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,duration::test_string_as_flexible_string,timeout,700.042,150.022,2026-11-05T02:59:09Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,duration::test_string_as_flexible_u64,timeout,700.042,150.021,2026-11-05T03:01:39Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,enum_map::json_round_trip,success,700.042,34.739,2026-11-05T03:02:14Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,enum_map::rmp_round_trip,success,700.042,34.790,2026-11-05T03:02:49Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,enum_map::ron_serialize,success,700.042,38.062,2026-11-05T03:03:27Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,enum_map::serde_test_round_trip,success,700.042,34.863,2026-11-05T03:04:02Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,enum_map::serde_test_round_trip_human_readable,success,700.042,34.771,2026-11-05T03:04:36Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,enum_map::test_invalid_key,timeout,700.042,150.022,2026-11-05T03:07:06Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,enum_map::test_matches_expected,timeout,700.042,150.022,2026-11-05T03:09:36Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,enum_map::test_mixed_up_schemas,timeout,700.042,150.022,2026-11-05T03:12:06Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,enum_map::test_no_fields_required,timeout,700.042,150.024,2026-11-05T03:14:36Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,enum_map::test_serialized_is_valid,timeout,700.042,150.023,2026-11-05T03:17:07Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,enum_map::xml_round_trip,success,700.042,35.195,2026-11-05T03:17:42Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,enum_map::yaml_round_trip,success,700.042,34.808,2026-11-05T03:18:17Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,frominto::test_frominto_de,success,700.042,34.328,2026-11-05T03:18:51Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,frominto::test_frominto_de_and_ser,success,700.042,34.394,2026-11-05T03:19:25Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,frominto::test_frominto_ser,success,700.042,34.621,2026-11-05T03:20:00Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,frominto::test_tryfrominto_de,success,700.042,34.803,2026-11-05T03:20:35Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,frominto::test_tryfrominto_de_and_ser,success,700.042,35.143,2026-11-05T03:21:10Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,frominto::test_tryfrominto_de_with_error,success,700.042,35.484,2026-11-05T03:21:45Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,frominto::test_tryfrominto_ser,success,700.042,35.665,2026-11-05T03:22:21Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,frominto::test_tryfrominto_ser_with_error,success,700.042,36.194,2026-11-05T03:22:57Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,fromintoref::test_frominto_de,success,700.042,36.246,2026-11-05T03:23:34Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,fromintoref::test_frominto_de_and_ser,success,700.042,36.374,2026-11-05T03:24:10Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,fromintoref::test_frominto_ser,success,700.042,36.739,2026-11-05T03:24:47Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,fromintoref::test_tryfrominto_de,success,700.042,36.399,2026-11-05T03:25:23Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,fromintoref::test_tryfrominto_de_and_ser,success,700.042,34.714,2026-11-05T03:25:58Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,fromintoref::test_tryfrominto_de_with_error,success,700.042,34.675,2026-11-05T03:26:32Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,fromintoref::test_tryfrominto_ser,success,700.042,34.703,2026-11-05T03:27:07Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,fromintoref::test_tryfrominto_ser_with_error,success,700.042,34.633,2026-11-05T03:27:42Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,hex_vec,success,700.042,34.561,2026-11-05T03:28:16Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,hex_vec_lowercase,success,700.042,34.582,2026-11-05T03:28:51Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,hex_vec_uppercase,success,700.042,34.563,2026-11-05T03:29:26Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,json_datetime_from_any_to_string_deserialization,success,700.042,34.695,2026-11-05T03:30:00Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,key_value_map::test_btreemap,timeout,700.042,150.024,2026-11-05T03:32:30Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,key_value_map::test_kvmap_complex_key_serde_test,success,700.042,34.604,2026-11-05T03:33:05Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,key_value_map::test_kvmap_complex_key_yaml,success,700.042,34.739,2026-11-05T03:33:40Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,key_value_map::test_kvmap_map_json,success,700.042,34.718,2026-11-05T03:34:14Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,key_value_map::test_kvmap_seq_json,success,700.042,34.731,2026-11-05T03:34:49Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,key_value_map::test_kvmap_struct_json,success,700.042,34.660,2026-11-05T03:35:24Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,key_value_map::test_kvmap_tuple_json,success,700.042,34.674,2026-11-05T03:35:58Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,key_value_map::test_kvmap_tuple_struct_json,success,700.042,34.613,2026-11-05T03:36:33Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,key_value_map::test_num_properties,timeout,700.042,150.025,2026-11-05T03:39:03Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,key_value_map::test_untagged_enum,timeout,700.042,150.023,2026-11-05T03:41:33Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,key_value_map::test_untagged_nested_enum,timeout,700.042,150.022,2026-11-05T03:44:03Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,malicious_size_hint::maps_duplicate_key_is_error_huge_size_hint,success,700.042,34.400,2026-11-05T03:44:38Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,malicious_size_hint::maps_first_key_wins_huge_size_hint,success,700.042,34.356,2026-11-05T03:45:12Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,malicious_size_hint::sets_duplicate_value_is_error_huge_size_hint,success,700.042,34.317,2026-11-05T03:45:46Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,malicious_size_hint::sets_last_value_wins_huge_size_hint,success,700.042,34.275,2026-11-05T03:46:21Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,map_tuple_list::test_map_as_tuple_list,success,700.042,34.731,2026-11-05T03:46:55Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,map_tuple_list::test_map_as_tuple_list_works_with_serializer_that_needs_length_to_serialize_sequence,success,700.042,34.327,2026-11-05T03:47:30Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,map_tuple_list::test_map_as_tuple_with_nested_complex_type,success,700.042,34.406,2026-11-05T03:48:04Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,map_tuple_list::test_tuple_array_as_map,success,700.042,34.504,2026-11-05T03:48:39Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,map_tuple_list::test_tuple_list_as_map,success,700.042,34.505,2026-11-05T03:49:13Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,none_as_empty_string::test_null_is_valid,timeout,700.042,150.025,2026-11-05T03:51:43Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,none_as_empty_string::test_number_is_invalid,timeout,700.042,150.026,2026-11-05T03:54:13Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,none_as_empty_string::test_serialized_is_valid,timeout,700.042,150.022,2026-11-05T03:56:43Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,one_or_many::test_prefer_many,timeout,700.042,150.023,2026-11-05T03:59:13Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,one_or_many::test_prefer_many_no_invalid_type_many,timeout,700.042,150.022,2026-11-05T04:01:43Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,one_or_many::test_prefer_many_no_invalid_type_one,timeout,700.042,150.023,2026-11-05T04:04:13Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,one_or_many::test_prefer_one,timeout,700.042,150.023,2026-11-05T04:06:44Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,one_or_many::test_prefer_one_matches,timeout,700.042,150.022,2026-11-05T04:09:14Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,one_or_many::test_prefer_one_no_invalid_type_many,timeout,700.042,150.023,2026-11-05T04:11:44Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,one_or_many::test_prefer_one_no_invalid_type_one,timeout,700.042,150.022,2026-11-05T04:14:14Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,pickfirst::test_pick_first_four,success,700.042,34.018,2026-11-05T04:14:48Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,pickfirst::test_pick_first_three,success,700.042,34.142,2026-11-05T04:15:22Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,pickfirst::test_pick_first_two,success,700.042,34.222,2026-11-05T04:15:56Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,prohibit_duplicate_key_btreemap,success,700.042,34.221,2026-11-05T04:16:30Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,prohibit_duplicate_key_hashmap,success,700.042,34.572,2026-11-05T04:17:05Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,prohibit_duplicate_key_indexmap,success,700.042,34.267,2026-11-05T04:17:39Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,prohibit_duplicate_value_btreeset,success,700.042,34.239,2026-11-05T04:18:13Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,prohibit_duplicate_value_hashset,success,700.042,34.419,2026-11-05T04:18:48Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,prohibit_duplicate_value_indexset,success,700.042,34.274,2026-11-05T04:19:22Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,schemars_basic,success,700.042,36.888,2026-11-05T04:19:59Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,schemars_custom_schema_with,timeout,700.042,150.023,2026-11-05T04:22:29Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,schemars_custom_with,timeout,700.042,150.023,2026-11-05T04:24:59Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,schemars_deserialize_only_bug_735,success,700.042,36.010,2026-11-05T04:25:35Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,schemars_other_cfg_attrs,timeout,700.042,150.025,2026-11-05T04:28:05Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,serde_as_macro::test_default_on_option,success,700.042,34.453,2026-11-05T04:28:40Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,serde_as_macro::test_serde_as_macro_deserialize,success,700.042,34.301,2026-11-05T04:29:14Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,serde_as_macro::test_serde_as_macro_multiple_field_attributes,success,700.042,34.238,2026-11-05T04:29:48Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,serde_as_macro::test_serde_as_macro_replace_infer_type,success,700.042,34.393,2026-11-05T04:30:23Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,serde_as_macro::test_serde_as_macro_serialize,success,700.042,34.235,2026-11-05T04:30:57Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,serde_as_macro::test_serde_as_macro_serialize_deserialize,success,700.042,34.200,2026-11-05T04:31:31Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,serde_conv::test_bool_as_string,success,700.042,34.178,2026-11-05T04:32:05Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,serialize_display::test_serialize_display,success,700.042,34.171,2026-11-05T04:32:39Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,serialize_display::test_serialize_display_in_vec,success,700.042,34.661,2026-11-05T04:33:14Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,snapshots::bytes,timeout,700.042,150.021,2026-11-05T04:35:44Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::default_on_null,timeout,700.042,150.023,2026-11-05T04:38:14Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::duration,timeout,700.042,150.022,2026-11-05T04:40:44Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::enum_map,timeout,700.042,150.025,2026-11-05T04:43:14Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::from_into,timeout,700.042,150.024,2026-11-05T04:45:44Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::key_value_map,timeout,700.042,150.024,2026-11-05T04:48:14Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::key_value_map_enum,timeout,700.042,150.023,2026-11-05T04:50:44Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::key_value_map_flatten,timeout,700.042,150.024,2026-11-05T04:53:15Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::map,timeout,700.042,150.024,2026-11-05T04:55:45Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::map_fixed,timeout,700.042,150.023,2026-11-05T04:58:15Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::one_or_many_nested,timeout,700.042,150.024,2026-11-05T05:00:45Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::one_or_many_prefer_one,timeout,700.042,150.023,2026-11-05T05:03:15Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::pickfirst,timeout,700.042,150.022,2026-11-05T05:05:45Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::pickfirst_nested,timeout,700.042,150.023,2026-11-05T05:08:15Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::set_last_value_wins,timeout,700.042,150.022,2026-11-05T05:10:45Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::set_last_value_wins_displaysfromstr,timeout,700.042,150.022,2026-11-05T05:13:15Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::set_prevent_duplicates,timeout,700.042,150.022,2026-11-05T05:15:45Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::set_prevent_duplicates_displaysfromstr,timeout,700.042,150.023,2026-11-05T05:18:15Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,snapshots::string_with_separator,timeout,700.042,150.023,2026-11-05T05:20:45Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,string_with_separator,success,700.042,33.951,2026-11-05T05:21:19Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_arrays,success,700.042,34.108,2026-11-05T05:21:53Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_basic_wrappers,success,700.042,33.886,2026-11-05T05:22:27Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_big_arrays,success,700.042,35.789,2026-11-05T05:23:03Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_boolfromint,success,700.042,34.075,2026-11-05T05:23:37Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_borrow_cow,timeout,700.042,150.022,2026-11-05T05:26:07Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_borrow_cow_str,success,700.042,34.069,2026-11-05T05:26:41Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_bound,timeout,700.042,150.014,2026-11-05T05:29:11Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_bytes,success,700.042,33.975,2026-11-05T05:29:45Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_bytes_or_string,success,700.042,34.012,2026-11-05T05:30:19Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_changelog,success,700.042,34.706,2026-11-05T05:30:54Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_chrono_btreemap_naive_date_time,success,700.042,34.103,2026-11-05T05:31:28Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_chrono_duration_seconds,success,700.042,34.093,2026-11-05T05:32:02Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_chrono_duration_seconds_with_frac,success,700.042,34.173,2026-11-05T05:32:36Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_chrono_naive_date_time,success,700.042,34.060,2026-11-05T05:33:10Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_chrono_option_naive_date_time,success,700.042,34.134,2026-11-05T05:33:44Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_chrono_timestamp_seconds,success,700.042,34.380,2026-11-05T05:34:19Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_chrono_timestamp_seconds_with_frac,success,700.042,34.269,2026-11-05T05:34:53Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_chrono_vec_option_naive_date_time,success,700.042,34.274,2026-11-05T05:35:27Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_civil_datetime_out_of_range,success,700.042,34.186,2026-11-05T05:36:02Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_civil_datetime_smoketest,success,700.042,34.166,2026-11-05T05:36:36Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_datetime_local_smoketest,success,700.042,34.329,2026-11-05T05:37:10Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_datetime_utc_smoketest,success,700.042,34.220,2026-11-05T05:37:44Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_display_fromstr,success,700.042,34.169,2026-11-05T05:38:18Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_docs_rs_url_point_to_current_version,timeout,700.042,150.014,2026-11-05T05:40:49Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_duration_large_duration,success,700.042,33.983,2026-11-05T05:41:23Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_duration_out_of_range,success,700.042,33.962,2026-11-05T05:41:56Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_duration_seconds,success,700.042,34.018,2026-11-05T05:42:31Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_duration_seconds_with_frac,success,700.042,34.054,2026-11-05T05:43:05Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_duration_smoketest,success,700.042,34.229,2026-11-05T05:43:39Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_enum_unit_variant_with_prefix,success,700.042,34.078,2026-11-05T05:44:13Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_enum_unit_variant_with_suffix,success,700.042,34.056,2026-11-05T05:44:47Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_flatten_with_prefix,success,700.042,34.072,2026-11-05T05:45:21Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_flatten_with_suffix,success,700.042,34.101,2026-11-05T05:45:55Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_hashmap,success,700.042,34.206,2026-11-05T05:46:29Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_hashset,success,700.042,34.398,2026-11-05T05:47:04Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_if_is_human_readable,timeout,700.042,150.022,2026-11-05T05:49:34Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_indexmap,success,700.042,34.110,2026-11-05T05:50:08Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_indexset,success,700.042,34.112,2026-11-05T05:50:42Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_jsonstring,timeout,700.042,150.024,2026-11-05T05:53:12Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_jsonstring_nested,success,700.042,34.116,2026-11-05T05:53:46Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_map,timeout,700.042,150.023,2026-11-05T05:56:16Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_map_as_tuple_list,success,700.042,35.262,2026-11-05T05:56:52Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_map_first_key_wins,timeout,700.042,150.023,2026-11-05T05:59:22Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_map_prevent_duplicates,timeout,700.042,150.023,2026-11-05T06:01:52Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_map_skip_error_btreemap,success,700.042,34.415,2026-11-05T06:02:26Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_map_skip_error_btreemap_flatten,success,700.042,34.256,2026-11-05T06:03:00Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_map_skip_error_hashmap,success,700.042,34.675,2026-11-05T06:03:35Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_map_skip_error_hashmap_flatten,success,700.042,34.648,2026-11-05T06:04:10Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_map_skip_error_indexmap,success,700.042,34.485,2026-11-05T06:04:44Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_map_skip_error_indexmap_flatten,success,700.042,34.361,2026-11-05T06:05:19Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_naive_datetime_smoketest,success,700.042,34.378,2026-11-05T06:05:53Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_none_as_empty_string,success,700.042,34.313,2026-11-05T06:06:27Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_none_as_zero,success,700.042,34.175,2026-11-05T06:07:01Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_nonzero,timeout,700.042,150.022,2026-11-05T06:09:31Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_offset_datetime_iso8601,success,700.042,34.002,2026-11-05T06:10:05Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_offset_datetime_rfc2822,success,700.042,34.081,2026-11-05T06:10:40Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_offset_datetime_rfc3339,success,700.042,34.012,2026-11-05T06:11:14Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_one_or_many_btreeset_prefer_many,success,700.042,34.053,2026-11-05T06:11:48Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_one_or_many_btreeset_prefer_one,success,700.042,34.100,2026-11-05T06:12:22Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_one_or_many_hashset_prefer_many,success,700.042,34.053,2026-11-05T06:12:56Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_one_or_many_hashset_prefer_one,success,700.042,34.127,2026-11-05T06:13:30Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_one_or_many_prefer_many,success,700.042,34.157,2026-11-05T06:14:04Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_one_or_many_prefer_one,success,700.042,34.146,2026-11-05T06:14:38Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_option,success,700.042,34.011,2026-11-05T06:15:12Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_pickfirst,timeout,700.042,150.023,2026-11-05T06:17:42Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_plain_with_prefix,success,700.042,34.093,2026-11-05T06:18:16Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_plain_with_suffix,success,700.042,34.118,2026-11-05T06:18:51Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_range,timeout,700.042,150.015,2026-11-05T06:21:21Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_rangefrom,success,700.042,33.964,2026-11-05T06:21:55Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_rangeinclusive,timeout,700.042,150.014,2026-11-05T06:24:25Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_rangeto,success,700.042,33.968,2026-11-05T06:24:59Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_result,success,700.042,34.007,2026-11-05T06:25:33Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_sequence_like_types,success,700.042,34.090,2026-11-05T06:26:07Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_serde_with_macros_dependency,test_failed,700.042,36.789,2026-11-05T06:26:44Z,50233193.0,panic,"thread 'test_serde_with_macros_dependency' (44766) panicked at tests/version_numbers.rs:39:5: could not read ../serde_with/Cargo.toml: No such file or directory (os error 2)"
+experimental-bsan,serde_with-3.24.0,test_serialize_reference,success,700.042,34.142,2026-11-05T06:27:18Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_set_last_value_wins,timeout,700.042,150.022,2026-11-05T06:29:48Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_set_last_value_wins_with_duplicates,timeout,700.042,150.022,2026-11-05T06:32:18Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_set_prevent_duplicates,timeout,700.042,150.025,2026-11-05T06:34:48Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_set_prevent_duplicates_with_duplicates,timeout,700.042,150.022,2026-11-05T06:37:18Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_smallvec_basic,success,700.042,33.927,2026-11-05T06:37:52Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_smallvec_displayfromstr,success,700.042,33.922,2026-11-05T06:38:26Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_smallvec_large,success,700.042,33.989,2026-11-05T06:39:00Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_smallvec_nested,success,700.042,33.922,2026-11-05T06:39:34Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_smallvec_oneormany_prefermany,success,700.042,33.992,2026-11-05T06:40:08Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_smallvec_oneormany_preferone,success,700.042,33.948,2026-11-05T06:40:42Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_smallvec_string,success,700.042,33.992,2026-11-05T06:41:16Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_std::map,timeout,700.042,150.022,2026-11-05T06:43:46Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_std::option,timeout,700.042,150.021,2026-11-05T06:46:16Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_std::set,timeout,700.042,150.022,2026-11-05T06:48:46Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_std::tuples,timeout,700.042,150.022,2026-11-05T06:51:16Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_std::vec,timeout,700.042,150.022,2026-11-05T06:53:46Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_std::vec_deque,timeout,700.042,150.025,2026-11-05T06:56:16Z,50233193.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,serde_with-3.24.0,test_timestamp_out_of_range,success,700.042,33.909,2026-11-05T06:56:50Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_timestamp_smoketest,success,700.042,34.004,2026-11-05T06:57:24Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_tuples,success,700.042,34.081,2026-11-05T06:57:58Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_vec_skip_error,success,700.042,33.963,2026-11-05T06:58:32Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,test_zoned_smoketest,success,700.042,43.997,2026-11-05T06:59:16Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,time::test_duration_seconds,success,700.042,33.958,2026-11-05T06:59:50Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,time::test_duration_seconds_with_frac,success,700.042,33.941,2026-11-05T07:00:24Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,time::test_duration_smoketest,success,700.042,33.984,2026-11-05T07:00:58Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,time::test_timestamp_seconds_systemtime,success,700.042,33.993,2026-11-05T07:01:32Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,time::test_timestamp_seconds_with_frac_systemtime,success,700.042,34.032,2026-11-05T07:02:06Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,time::test_timestamp_systemtime_smoketest,success,700.042,34.032,2026-11-05T07:02:40Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,unwrap_or_skip_none,success,700.042,33.925,2026-11-05T07:03:14Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,unwrap_or_skip_ref_none,success,700.042,33.979,2026-11-05T07:03:48Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,unwrap_or_skip_ref_some,success,700.042,33.998,2026-11-05T07:04:22Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,unwrap_or_skip_some,success,700.042,33.986,2026-11-05T07:04:56Z,50233193.0,,
+experimental-bsan,serde_with-3.24.0,utils::duration::test_parse_float_into_time_parts,success,700.042,33.950,2026-11-05T07:05:30Z,50233193.0,,

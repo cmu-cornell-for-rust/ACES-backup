@@ -1,0 +1,2 @@
+experimental-bsan,diss-0.3.2,test::test_list_sessions,success,89.903,3.131,2026-11-05T08:45:18Z,50263885.0,,
+experimental-bsan,diss-0.3.2,test::test_new_session_ending_directly,test_failed,89.903,1.877,2026-11-05T08:45:19Z,50263885.0,panic,"thread 'test::test_new_session_ending_directly' (24944) panicked at src/lib.rs:604:13: assertion failed: res.is_ok()"

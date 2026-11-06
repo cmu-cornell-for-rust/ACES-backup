@@ -1,0 +1,10 @@
+experimental-bsan,reflectapi-cli-0.21.1,python_directory_output_removes_stale_generated_files,success,283.343,12.068,2026-11-05T06:24:55Z,50255848.0,,
+experimental-bsan,reflectapi-cli-0.21.1,python_format_falls_back_when_ruff_is_missing,success,283.343,7.654,2026-11-05T06:25:03Z,50255848.0,,
+experimental-bsan,reflectapi-cli-0.21.1,python_format_false_does_not_require_ruff,success,283.343,7.537,2026-11-05T06:25:11Z,50255848.0,,
+experimental-bsan,reflectapi-cli-0.21.1,python_format_reports_ruff_failures,success,283.343,5.794,2026-11-05T06:25:17Z,50255848.0,,
+experimental-bsan,reflectapi-cli-0.21.1,python_legacy_cleanup_skips_symlinked_directories,success,283.343,7.082,2026-11-05T06:25:24Z,50255848.0,,
+experimental-bsan,reflectapi-cli-0.21.1,python_output_into_fresh_directory,test_failed,283.343,4.123,2026-11-05T06:25:28Z,50255848.0,panic,"thread 'python_output_into_fresh_directory' (12312) panicked at tests/output_paths.rs:125:5: exit=Some(1)"
+experimental-bsan,reflectapi-cli-0.21.1,python_stdout_emits_generated_not_init,test_failed,283.343,4.053,2026-11-05T06:25:32Z,50255848.0,panic,"thread 'python_stdout_emits_generated_not_init' (12411) panicked at tests/output_paths.rs:412:5: assertion failed: out.status.success()"
+experimental-bsan,reflectapi-cli-0.21.1,ts_output_into_fresh_directory,test_failed,283.343,4.106,2026-11-05T06:25:36Z,50255848.0,panic,"thread 'ts_output_into_fresh_directory' (12534) panicked at tests/output_paths.rs:99:5: exit=Some(1)"
+experimental-bsan,reflectapi-cli-0.21.1,ts_output_to_file_path_writes_siblings,test_failed,283.343,4.075,2026-11-05T06:25:40Z,50255848.0,panic,"thread 'ts_output_to_file_path_writes_siblings' (12667) panicked at tests/output_paths.rs:365:5: stderr:"
+experimental-bsan,reflectapi-cli-0.21.1,ts_stdout_emits_primary_file_not_transport,test_failed,283.343,4.054,2026-11-05T06:25:44Z,50255848.0,panic,"thread 'ts_stdout_emits_primary_file_not_transport' (12806) panicked at tests/output_paths.rs:389:5: assertion failed: out.status.success()"

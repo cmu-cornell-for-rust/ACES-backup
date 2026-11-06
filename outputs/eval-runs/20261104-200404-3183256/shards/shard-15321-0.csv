@@ -1,0 +1,6 @@
+experimental-bsan,tower_governor-0.8.0,tests::governor_tests::hello_world,success,308.074,3.256,2026-11-05T07:21:51Z,50259384.0,,
+experimental-bsan,tower_governor-0.8.0,tests::governor_tests::test_error_handler,success,308.074,2.554,2026-11-05T07:21:53Z,50259384.0,,
+experimental-bsan,tower_governor-0.8.0,tests::governor_tests::test_method_filter,test_failed,308.074,3.627,2026-11-05T07:21:57Z,50259384.0,panic,"thread 'tests::governor_tests::test_method_filter' (37077) panicked at src/tests.rs:214:9: assertion `left == right` failed"
+experimental-bsan,tower_governor-0.8.0,tests::governor_tests::test_method_filter_use_headers,test_failed,308.074,3.419,2026-11-05T07:22:00Z,50259384.0,panic,"thread 'tests::governor_tests::test_method_filter_use_headers' (37582) panicked at src/tests.rs:473:9: assertion `left == right` failed"
+experimental-bsan,tower_governor-0.8.0,tests::governor_tests::test_server,test_failed,308.074,3.611,2026-11-05T07:22:04Z,50259384.0,panic,"thread 'tests::governor_tests::test_server' (38070) panicked at src/tests.rs:138:9: assertion `left == right` failed"
+experimental-bsan,tower_governor-0.8.0,tests::governor_tests::test_server_use_headers,test_failed,308.074,3.431,2026-11-05T07:22:07Z,50259384.0,panic,"thread 'tests::governor_tests::test_server_use_headers' (38326) panicked at src/tests.rs:299:9: assertion `left == right` failed"

@@ -1,0 +1,17 @@
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_element_does_not_exist,success,480.622,21.538,2026-11-05T05:19:31Z,50251697.0,,
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_first_no_seq,timeout,480.622,150.015,2026-11-05T05:22:01Z,50251697.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_from_bytes_copy_6857_2400_3600,success,480.622,140.314,2026-11-05T05:24:22Z,50251697.0,,
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_from_bytes_copy_9601_2400_5000,timeout,480.622,150.014,2026-11-05T05:26:52Z,50251697.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_full_6857_2400,timeout,480.622,150.015,2026-11-05T05:29:22Z,50251697.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_full_9601_2400,timeout,480.622,150.014,2026-11-05T05:31:52Z,50251697.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_get_bucket,success,480.622,75.087,2026-11-05T05:33:07Z,50251697.0,,
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_get_bucket_mut,success,480.622,74.606,2026-11-05T05:34:21Z,50251697.0,,
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_get_unmarked_bucket,success,480.622,127.485,2026-11-05T05:36:29Z,50251697.0,,
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_iter_manual,success,480.622,2.741,2026-11-05T05:36:32Z,50251697.0,,
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_iter_random_6857_2400,timeout,480.622,150.027,2026-11-05T05:39:02Z,50251697.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_iter_random_9601_2400,timeout,480.622,150.031,2026-11-05T05:41:32Z,50251697.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_manual,success,480.622,1.916,2026-11-05T05:41:34Z,50251697.0,,
+experimental-bsan,light-hash-set-1.2.0,test::test_hash_set_random,test_failed,480.622,3.572,2026-11-05T05:41:37Z,50251697.0,crash,"test test::test_hash_set_random ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,light-hash-set-1.2.0,test::test_is_valid,success,480.622,2.627,2026-11-05T05:41:40Z,50251697.0,,
+experimental-bsan,light-hash-set-1.2.0,zero_copy::test::test_buffer_size_error,success,480.622,1.612,2026-11-05T05:41:42Z,50251697.0,,
+experimental-bsan,light-hash-set-1.2.0,zero_copy::test::test_load_from_bytes,timeout,480.622,150.019,2026-11-05T05:44:12Z,50251697.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

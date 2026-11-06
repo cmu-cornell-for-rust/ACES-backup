@@ -1,0 +1,86 @@
+experimental-bsan,apple-codesign-0.29.0,apple_certificates::test::all,success,2172.504,11.481,2026-11-05T02:45:05Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,apple_certificates::test::apple_root_ca,success,2172.504,10.577,2026-11-05T02:45:15Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,apple_certificates::test::chaining,timeout,2172.504,150.019,2026-11-05T02:47:45Z,50239360.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,apple-codesign-0.29.0,apple_certificates::test::intermediate_have_apple_ca_extension,success,2172.504,10.777,2026-11-05T02:47:56Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,certificate::tests::apple_developer_id_application,success,2172.504,88.818,2026-11-05T02:49:25Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,certificate::tests::apple_developer_id_installer,success,2172.504,89.776,2026-11-05T02:50:55Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,certificate::tests::apple_development,success,2172.504,97.865,2026-11-05T02:52:32Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,certificate::tests::apple_distribution,success,2172.504,99.155,2026-11-05T02:54:12Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,certificate::tests::cms_self_signed_certificate_signing_ecdsa,success,2172.504,9.695,2026-11-05T02:54:21Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,certificate::tests::cms_self_signed_certificate_signing_ed25519,success,2172.504,6.802,2026-11-05T02:54:28Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,certificate::tests::generate_all_profiles,success,2172.504,7.385,2026-11-05T02:54:36Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,certificate::tests::generate_self_signed_certificate_ecdsa,success,2172.504,6.490,2026-11-05T02:54:42Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,certificate::tests::generate_self_signed_certificate_ed25519,success,2172.504,5.299,2026-11-05T02:54:47Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,certificate::tests::third_mac_mac,success,2172.504,99.239,2026-11-05T02:56:27Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cli::config::test::default_config,success,2172.504,4.818,2026-11-05T02:56:31Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cli::config::test::macos_keychain_signer,success,2172.504,5.029,2026-11-05T02:56:36Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cli::config::test::p12_signer,success,2172.504,5.323,2026-11-05T02:56:42Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cli::config::test::paths_toml,success,2172.504,6.031,2026-11-05T02:56:48Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cli::config::test::pem_signer,success,2172.504,5.049,2026-11-05T02:56:53Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cli::config::test::remote_signer,success,2172.504,5.322,2026-11-05T02:56:58Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cli::config::test::smartcard_signer,success,2172.504,5.245,2026-11-05T02:57:04Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cli::config::test::windows_store,success,2172.504,5.119,2026-11-05T02:57:09Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cli::test::verify_cli,success,2172.504,24.042,2026-11-05T02:57:33Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cli_tests,timeout,2172.504,150.034,2026-11-05T03:00:03Z,50239360.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,apple-codesign-0.29.0,code_directory::tests::code_signature_flags_from_str,success,2172.504,4.760,2026-11-05T03:00:08Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_anchor_apple,test_failed,2172.504,2.420,2026-11-05T03:00:10Z,50239360.0,crash,"test code_requirement::test::parse_anchor_apple ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_anchor_apple_generic,test_failed,2172.504,2.166,2026-11-05T03:00:12Z,50239360.0,crash,"test code_requirement::test::parse_anchor_apple_generic ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_anchor_certificate_hash,test_failed,2172.504,2.171,2026-11-05T03:00:14Z,50239360.0,crash,"test code_requirement::test::parse_anchor_certificate_hash ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_anchor_trusted,test_failed,2172.504,2.156,2026-11-05T03:00:17Z,50239360.0,crash,"test code_requirement::test::parse_anchor_trusted ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_and,test_failed,2172.504,2.162,2026-11-05T03:00:19Z,50239360.0,crash,"test code_requirement::test::parse_and ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_blob,test_failed,2172.504,2.170,2026-11-05T03:00:21Z,50239360.0,crash,"test code_requirement::test::parse_blob ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_certificate_field,test_failed,2172.504,2.161,2026-11-05T03:00:23Z,50239360.0,crash,"test code_requirement::test::parse_certificate_field ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_certificate_field_date,test_failed,2172.504,2.175,2026-11-05T03:00:25Z,50239360.0,crash,"test code_requirement::test::parse_certificate_field_date ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_certificate_generic,test_failed,2172.504,2.161,2026-11-05T03:00:27Z,50239360.0,crash,"test code_requirement::test::parse_certificate_generic ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_certificate_policy,test_failed,2172.504,2.159,2026-11-05T03:00:30Z,50239360.0,crash,"test code_requirement::test::parse_certificate_policy ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_certificate_trusted,test_failed,2172.504,2.158,2026-11-05T03:00:32Z,50239360.0,crash,"test code_requirement::test::parse_certificate_trusted ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_code_directory_hash,test_failed,2172.504,2.177,2026-11-05T03:00:34Z,50239360.0,crash,"test code_requirement::test::parse_code_directory_hash ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_entitlements_key,test_failed,2172.504,2.167,2026-11-05T03:00:36Z,50239360.0,crash,"test code_requirement::test::parse_entitlements_key ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_false,test_failed,2172.504,2.151,2026-11-05T03:00:38Z,50239360.0,crash,"test code_requirement::test::parse_false ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_identifier,test_failed,2172.504,2.158,2026-11-05T03:00:41Z,50239360.0,crash,"test code_requirement::test::parse_identifier ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_info_plist_key_field,test_failed,2172.504,2.150,2026-11-05T03:00:43Z,50239360.0,crash,"test code_requirement::test::parse_info_plist_key_field ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_legacy,test_failed,2172.504,2.150,2026-11-05T03:00:45Z,50239360.0,crash,"test code_requirement::test::parse_legacy ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_absent,test_failed,2172.504,2.147,2026-11-05T03:00:47Z,50239360.0,crash,"test code_requirement::test::parse_match_absent ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_after,test_failed,2172.504,2.144,2026-11-05T03:00:49Z,50239360.0,crash,"test code_requirement::test::parse_match_after ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_before,test_failed,2172.504,2.143,2026-11-05T03:00:51Z,50239360.0,crash,"test code_requirement::test::parse_match_before ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_begins_with,test_failed,2172.504,2.145,2026-11-05T03:00:54Z,50239360.0,crash,"test code_requirement::test::parse_match_begins_with ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_contains,test_failed,2172.504,2.140,2026-11-05T03:00:56Z,50239360.0,crash,"test code_requirement::test::parse_match_contains ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_ends_with,test_failed,2172.504,2.140,2026-11-05T03:00:58Z,50239360.0,crash,"test code_requirement::test::parse_match_ends_with ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_equal,test_failed,2172.504,2.143,2026-11-05T03:01:00Z,50239360.0,crash,"test code_requirement::test::parse_match_equal ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_exists,test_failed,2172.504,2.138,2026-11-05T03:01:02Z,50239360.0,crash,"test code_requirement::test::parse_match_exists ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_greater_than,test_failed,2172.504,2.140,2026-11-05T03:01:04Z,50239360.0,crash,"test code_requirement::test::parse_match_greater_than ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_greater_than_equal,test_failed,2172.504,2.141,2026-11-05T03:01:06Z,50239360.0,crash,"test code_requirement::test::parse_match_greater_than_equal ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_less_than,test_failed,2172.504,2.135,2026-11-05T03:01:09Z,50239360.0,crash,"test code_requirement::test::parse_match_less_than ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_less_than_equal,test_failed,2172.504,2.146,2026-11-05T03:01:11Z,50239360.0,crash,"test code_requirement::test::parse_match_less_than_equal ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_on,test_failed,2172.504,2.136,2026-11-05T03:01:13Z,50239360.0,crash,"test code_requirement::test::parse_match_on ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_on_or_after,test_failed,2172.504,2.153,2026-11-05T03:01:15Z,50239360.0,crash,"test code_requirement::test::parse_match_on_or_after ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_match_on_or_before,test_failed,2172.504,2.140,2026-11-05T03:01:17Z,50239360.0,crash,"test code_requirement::test::parse_match_on_or_before ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_named_anchor,test_failed,2172.504,2.130,2026-11-05T03:01:19Z,50239360.0,crash,"test code_requirement::test::parse_named_anchor ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_named_code,test_failed,2172.504,2.135,2026-11-05T03:01:22Z,50239360.0,crash,"test code_requirement::test::parse_named_code ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_not,test_failed,2172.504,2.126,2026-11-05T03:01:24Z,50239360.0,crash,"test code_requirement::test::parse_not ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_notarized,test_failed,2172.504,2.133,2026-11-05T03:01:26Z,50239360.0,crash,"test code_requirement::test::parse_notarized ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_or,test_failed,2172.504,2.124,2026-11-05T03:01:28Z,50239360.0,crash,"test code_requirement::test::parse_or ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_platform,test_failed,2172.504,2.135,2026-11-05T03:01:30Z,50239360.0,crash,"test code_requirement::test::parse_platform ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_requirement::test::parse_true,test_failed,2172.504,2.128,2026-11-05T03:01:32Z,50239360.0,crash,"test code_requirement::test::parse_true ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,apple-codesign-0.29.0,code_resources::tests::parse_firefox,success,2172.504,6.964,2026-11-05T03:01:39Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cryptography::test::ecdsa_key_operations_secp256,success,2172.504,10.518,2026-11-05T03:01:50Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cryptography::test::ed25519_key_operations,success,2172.504,4.894,2026-11-05T03:01:55Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,cryptography::test::parse_keychain_p12_export,timeout,2172.504,150.022,2026-11-05T03:04:25Z,50239360.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,apple-codesign-0.29.0,cryptography::test::rsa_key_operations,timeout,2172.504,150.018,2026-11-05T03:06:55Z,50239360.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,apple-codesign-0.29.0,macho::tests::parse_applications_macho_signatures,success,2172.504,9.854,2026-11-05T03:07:05Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,macho::tests::version_nibbles,success,2172.504,4.764,2026-11-05T03:07:09Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,plist_der::test::der_encoding,success,2172.504,5.138,2026-11-05T03:07:15Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,policy::test::apple_signed_auto_derive,timeout,2172.504,150.019,2026-11-05T03:09:45Z,50239360.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,apple-codesign-0.29.0,policy::test::developer_id_requirements_derive,success,2172.504,56.244,2026-11-05T03:10:41Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,policy::test::get_policies,success,2172.504,4.757,2026-11-05T03:10:46Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,policy::test::non_apple_signed,success,2172.504,36.892,2026-11-05T03:11:23Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,policy::test::self_signed_auto_derive,success,2172.504,77.803,2026-11-05T03:12:40Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,policy::test::worldwide_developer_relations,success,2172.504,4.826,2026-11-05T03:12:45Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,signing::test::path_identifier_normalization,success,2172.504,4.858,2026-11-05T03:12:50Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,signing_settings::tests::as_bundle_macho_settings,success,2172.504,4.831,2026-11-05T03:12:55Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,signing_settings::tests::as_nested_bundle_settings,success,2172.504,4.898,2026-11-05T03:13:00Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,signing_settings::tests::as_nested_macho_settings,success,2172.504,4.844,2026-11-05T03:13:05Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,signing_settings::tests::entitlements_handling,success,2172.504,4.903,2026-11-05T03:13:10Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,signing_settings::tests::for_notarization_handling,success,2172.504,4.803,2026-11-05T03:13:14Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,signing_settings::tests::parse_settings_scope,success,2172.504,4.808,2026-11-05T03:13:19Z,50239360.0,,
+experimental-bsan,apple-codesign-0.29.0,ticket_lookup::test::lookup_ticket,success,2172.504,105.406,2026-11-05T03:15:05Z,50239360.0,,

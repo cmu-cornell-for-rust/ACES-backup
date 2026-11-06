@@ -1,0 +1,152 @@
+experimental-bsan,text-splitter-0.33.0,can_handle_invalid_code,success,794.086,7.118,2026-11-05T01:54:38Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_by_paragraphs,success,794.086,7.091,2026-11-05T01:54:46Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_capacity_range,success,794.086,7.067,2026-11-05T01:54:53Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_overlap_characters,success,794.086,7.156,2026-11-05T01:55:00Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_overlap_paragraph,success,794.086,7.087,2026-11-05T01:55:07Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_overlap_words,success,794.086,7.177,2026-11-05T01:55:14Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_overlap_words_trim,success,794.086,7.172,2026-11-05T01:55:21Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::characters::tests::returns_size,success,794.086,6.984,2026-11-05T01:55:28Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::huggingface::tests::handles_padding,test_failed,794.086,1.851,2026-11-05T01:55:30Z,50234201.0,panic,"thread 'chunk_size::huggingface::tests::handles_padding' (41033) panicked at src/chunk_size/huggingface.rs:71:80: called `Result::unwrap()` on an `Err` value: RequestError(Transport(Transport { kind: Dns, message: Some(""resolve dns name ':80'""), url: Some(Url { scheme: ""https"", cannot_be_a_base: fal"
+experimental-bsan,text-splitter-0.33.0,chunk_size::huggingface::tests::returns_full_size_when_truncation_disabled,test_failed,794.086,1.887,2026-11-05T01:55:32Z,50234201.0,panic,"thread 'chunk_size::huggingface::tests::returns_full_size_when_truncation_disabled' (41266) panicked at src/chunk_size/huggingface.rs:91:18: Could not load tokenizer 'sentence-transformers/all-MiniLM-L6-v2': RequestError(Transport(Transport { kind: Dns, message: Some(""resolve dns name ':80'""), url: "
+experimental-bsan,text-splitter-0.33.0,chunk_size::huggingface::tests::returns_size,test_failed,794.086,1.860,2026-11-05T01:55:34Z,50234201.0,panic,"thread 'chunk_size::huggingface::tests::returns_size' (41654) panicked at src/chunk_size/huggingface.rs:55:77: called `Result::unwrap()` on an `Err` value: RequestError(Transport(Transport { kind: Dns, message: Some(""resolve dns name ':80'""), url: Some(Url { scheme: ""https"", cannot_be_a_base: false,"
+experimental-bsan,text-splitter-0.33.0,chunk_size::huggingface::tests::returns_size_handles_prefix,test_failed,794.086,1.639,2026-11-05T01:55:36Z,50234201.0,panic,"thread 'chunk_size::huggingface::tests::returns_size_handles_prefix' (42150) panicked at src/chunk_size/huggingface.rs:63:85: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,text-splitter-0.33.0,chunk_size::huggingface::tests::returns_truncated_size_when_tokenizer_has_truncation,test_failed,794.086,1.889,2026-11-05T01:55:37Z,50234201.0,panic,"thread 'chunk_size::huggingface::tests::returns_truncated_size_when_tokenizer_has_truncation' (42330) panicked at src/chunk_size/huggingface.rs:79:14: Could not load tokenizer 'sentence-transformers/all-MiniLM-L6-v2': RequestError(Transport(Transport { kind: Dns, message: Some(""resolve dns name ':80"
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::basic_chunk_config,success,794.086,6.956,2026-11-05T01:55:44Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::boundary_probe_is_skipped_when_probe_start_is_chunk_end,success,794.086,6.989,2026-11-05T01:55:51Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::boundary_probe_stops_when_next_boundary_exceeds_chunk_end,success,794.086,7.008,2026-11-05T01:55:58Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::can_clear_cache_on_memoized_sizer,success,794.086,7.033,2026-11-05T01:56:05Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::cant_set_overlap_larger_than_capacity,success,794.086,7.027,2026-11-05T01:56:13Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::cant_set_overlap_larger_than_desired,success,794.086,7.022,2026-11-05T01:56:20Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::check_chunk_capacity,success,794.086,7.028,2026-11-05T01:56:27Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::check_chunk_capacity_for_range,success,794.086,7.046,2026-11-05T01:56:34Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::check_chunk_capacity_for_range_from,success,794.086,7.047,2026-11-05T01:56:41Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::check_chunk_capacity_for_range_full,success,794.086,7.054,2026-11-05T01:56:48Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::check_chunk_capacity_for_range_inclusive,success,794.086,7.045,2026-11-05T01:56:55Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::check_chunk_capacity_for_range_to,success,794.086,7.041,2026-11-05T01:57:02Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::check_chunk_capacity_for_range_to_inclusive,success,794.086,7.039,2026-11-05T01:57:09Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::chunk_capacity_can_adjust_max,success,794.086,7.027,2026-11-05T01:57:16Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::chunk_capacity_max_and_desired_equal,success,794.086,7.053,2026-11-05T01:57:23Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::chunk_capacity_max_cant_be_less_than_desired,success,794.086,7.035,2026-11-05T01:57:30Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::chunk_size_arc,success,794.086,7.017,2026-11-05T01:57:37Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::chunk_size_box,success,794.086,7.067,2026-11-05T01:57:44Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::chunk_size_cow,success,794.086,7.084,2026-11-05T01:57:51Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::chunk_size_rc,success,794.086,7.051,2026-11-05T01:57:58Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::chunk_size_ref,success,794.086,7.033,2026-11-05T01:58:05Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::chunk_size_ref_mut,success,794.086,7.037,2026-11-05T01:58:12Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::chunk_size_reference,success,794.086,7.058,2026-11-05T01:58:19Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::disable_trimming,success,794.086,7.038,2026-11-05T01:58:27Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::memoized_sizer_calculates_once_per_different_text,success,794.086,7.035,2026-11-05T01:58:34Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::memoized_sizer_only_calculates_once_per_text,success,794.086,7.016,2026-11-05T01:58:41Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::new_sizer,success,794.086,7.012,2026-11-05T01:58:48Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tests::set_chunk_overlap,success,794.086,7.033,2026-11-05T01:58:55Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,chunk_size::tiktoken::tests::returns_offsets,timeout,794.086,150.035,2026-11-05T02:01:25Z,50234201.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,text-splitter-0.33.0,code_overlap_trim,test_failed,794.086,37.468,2026-11-05T02:02:02Z,50234201.0,panic,"thread 'code_overlap_trim' (14497) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,code_overlap_trim_false,test_failed,794.086,37.348,2026-11-05T02:02:40Z,50234201.0,panic,"thread 'code_overlap_trim_false' (19273) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,code_trim,test_failed,794.086,37.319,2026-11-05T02:03:17Z,50234201.0,panic,"thread 'code_trim' (22888) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,code_trim_false,test_failed,794.086,37.429,2026-11-05T02:03:54Z,50234201.0,panic,"thread 'code_trim_false' (26972) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,distant_fallback_separator_does_not_size_the_whole_section,timeout,794.086,150.017,2026-11-05T02:06:24Z,50234201.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,text-splitter-0.33.0,distant_higher_newline_does_not_size_the_whole_section,timeout,794.086,150.015,2026-11-05T02:08:55Z,50234201.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,text-splitter-0.33.0,double_newline_fallsback_to_single_and_sentences,success,794.086,7.234,2026-11-05T02:09:02Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,fallsback_to_normal_text_split_if_no_markdown_content,success,794.086,7.135,2026-11-05T02:09:09Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,functions_overlap,success,794.086,7.408,2026-11-05T02:09:16Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,groups_functions,success,794.086,7.210,2026-11-05T02:09:24Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,groups_functions_with_children,success,794.086,7.254,2026-11-05T02:09:31Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,handles_ending_on_newline,success,794.086,7.064,2026-11-05T02:09:38Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,huggingface_small_chunk_behavior,test_failed,794.086,7.099,2026-11-05T02:09:45Z,50234201.0,panic,"thread 'huggingface_small_chunk_behavior' (84096) panicked at tests/text_splitter.rs:153:81: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,text-splitter-0.33.0,huggingface_tokenizer_with_padding,test_failed,794.086,7.325,2026-11-05T02:09:52Z,50234201.0,panic,"thread 'huggingface_tokenizer_with_padding' (85038) panicked at tests/text_splitter.rs:165:88: called `Result::unwrap()` on an `Err` value: RequestError(Transport(Transport { kind: Dns, message: Some(""resolve dns name ':80'""), url: Some(Url { scheme: ""https"", cannot_be_a_base: false, username: """", p"
+experimental-bsan,text-splitter-0.33.0,markdown_overlap_trim,test_failed,794.086,40.167,2026-11-05T02:10:33Z,50234201.0,panic,"thread 'markdown_overlap_trim' (86885) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,markdown_overlap_trim_false,test_failed,794.086,39.797,2026-11-05T02:11:12Z,50234201.0,panic,"thread 'markdown_overlap_trim_false' (94492) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,markdown_trim,test_failed,794.086,39.674,2026-11-05T02:11:52Z,50234201.0,panic,"thread 'markdown_trim' (666) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,markdown_trim_false,test_failed,794.086,39.778,2026-11-05T02:12:32Z,50234201.0,panic,"thread 'markdown_trim_false' (7293) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,overlap_trim,test_failed,794.086,36.972,2026-11-05T02:13:09Z,50234201.0,panic,"thread 'overlap_trim' (13171) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,overlap_trim_false,test_failed,794.086,37.040,2026-11-05T02:13:46Z,50234201.0,panic,"thread 'overlap_trim_false' (17264) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,random_chunk_indices_increase,test_failed,794.086,3.043,2026-11-05T02:13:49Z,50234201.0,panic,"thread 'random_chunk_indices_increase' (20710) panicked at tests/code.rs:34:77: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,text-splitter-0.33.0,random_chunk_overlap,test_failed,794.086,7.128,2026-11-05T02:13:56Z,50234201.0,panic,"thread 'random_chunk_overlap' (21276) panicked at tests/text_splitter.rs:318:77: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,text-splitter-0.33.0,random_chunk_range,test_failed,794.086,7.150,2026-11-05T02:14:03Z,50234201.0,panic,"thread 'random_chunk_range' (21759) panicked at tests/text_splitter.rs:281:77: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,text-splitter-0.33.0,random_chunk_size,test_failed,794.086,3.035,2026-11-05T02:14:06Z,50234201.0,panic,"thread 'random_chunk_size' (22040) panicked at tests/code.rs:13:77: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,text-splitter-0.33.0,range_trim,test_failed,794.086,37.018,2026-11-05T02:14:43Z,50234201.0,panic,"thread 'range_trim' (22379) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,range_trim_false,test_failed,794.086,37.220,2026-11-05T02:15:21Z,50234201.0,panic,"thread 'range_trim_false' (25422) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,regex_handles_empty_string,success,794.086,7.098,2026-11-05T02:15:28Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,split_by_headers,success,794.086,7.181,2026-11-05T02:15:35Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,split_by_rule,success,794.086,7.185,2026-11-05T02:15:42Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,split_by_rule_trim,success,794.086,7.233,2026-11-05T02:15:49Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::code::tests::depth_ord,success,794.086,7.106,2026-11-05T02:15:56Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::code::tests::depth_partialord,success,794.086,7.102,2026-11-05T02:16:04Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::code::tests::depth_sorting,success,794.086,7.106,2026-11-05T02:16:11Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::code::tests::multiple_top_siblings,success,794.086,7.133,2026-11-05T02:16:18Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::code::tests::optimized_code_offsets,success,794.086,7.090,2026-11-05T02:16:25Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::code::tests::rust_splitter,success,794.086,7.247,2026-11-05T02:16:32Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::code::tests::rust_splitter_char_indices,success,794.086,7.247,2026-11-05T02:16:39Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::code::tests::rust_splitter_indices,success,794.086,7.274,2026-11-05T02:16:47Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::can_handle_unicode_characters,success,794.086,7.147,2026-11-05T02:16:54Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::chunk_by_graphemes,success,794.086,7.174,2026-11-05T02:17:01Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::chunk_by_sentences,success,794.086,7.209,2026-11-05T02:17:08Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::chunk_by_words,success,794.086,7.286,2026-11-05T02:17:16Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::chunk_char_indices,success,794.086,7.198,2026-11-05T02:17:23Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::empty_string,success,794.086,7.084,2026-11-05T02:17:30Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::grapheme_char_indices,success,794.086,7.180,2026-11-05T02:17:37Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::graphemes_fallback_to_chars,success,794.086,7.230,2026-11-05T02:17:44Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::returns_one_chunk_if_text_is_shorter_than_max_chunk_size,success,794.086,7.176,2026-11-05T02:17:52Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::returns_two_chunks_if_text_is_longer_than_max_chunk_size,success,794.086,7.291,2026-11-05T02:17:59Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::sentences_falls_back_to_words,success,794.086,7.233,2026-11-05T02:18:06Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_block_quote,success,794.086,7.117,2026-11-05T02:18:13Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_checklist,success,794.086,7.125,2026-11-05T02:18:20Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_code_block,success,794.086,7.124,2026-11-05T02:18:27Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_emphasis,success,794.086,7.131,2026-11-05T02:18:35Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_footnote_def,success,794.086,7.088,2026-11-05T02:18:42Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_footnote_reference,success,794.086,7.104,2026-11-05T02:18:49Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_hardbreak,success,794.086,7.118,2026-11-05T02:18:56Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_heading,success,794.086,7.142,2026-11-05T02:19:03Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_html,success,794.086,7.128,2026-11-05T02:19:10Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_image,success,794.086,7.151,2026-11-05T02:19:17Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_inline_code,success,794.086,7.134,2026-11-05T02:19:25Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_inline_html,success,794.086,7.143,2026-11-05T02:19:32Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_link,success,794.086,7.113,2026-11-05T02:19:39Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_no_markdown_separators,success,794.086,7.117,2026-11-05T02:19:46Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_ranges_after_offset_block,success,794.086,7.159,2026-11-05T02:19:53Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_softbreak,success,794.086,7.095,2026-11-05T02:20:00Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_strikethrough,success,794.086,7.118,2026-11-05T02:20:07Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_strong,success,794.086,7.108,2026-11-05T02:20:14Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_table,success,794.086,7.154,2026-11-05T02:20:22Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::test_with_rule,success,794.086,7.136,2026-11-05T02:20:29Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::trim_char_indices,success,794.086,7.198,2026-11-05T02:20:36Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::trim_grapheme_indices,success,794.086,7.184,2026-11-05T02:20:43Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::trim_sentence_indices,success,794.086,7.258,2026-11-05T02:20:50Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::trim_word_indices,success,794.086,7.295,2026-11-05T02:20:58Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::markdown::tests::words_fallback_to_graphemes,success,794.086,7.219,2026-11-05T02:21:05Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::tests::chunk_stats_empty,success,794.086,7.097,2026-11-05T02:21:12Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::tests::chunk_stats_multiple,success,794.086,7.095,2026-11-05T02:21:19Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::tests::chunk_stats_one,success,794.086,7.093,2026-11-05T02:21:26Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::tests::semantic_ranges_are_sorted,success,794.086,7.095,2026-11-05T02:21:33Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::tests::semantic_ranges_skip_previous_ranges,success,794.086,7.090,2026-11-05T02:21:40Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::can_handle_unicode_characters,success,794.086,7.123,2026-11-05T02:21:48Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::chunk_by_graphemes,success,794.086,7.134,2026-11-05T02:21:55Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::chunk_by_sentences,success,794.086,7.203,2026-11-05T02:22:02Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::chunk_by_words,success,794.086,7.327,2026-11-05T02:22:09Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::chunk_char_indices,success,794.086,7.135,2026-11-05T02:22:16Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::correctly_determines_newlines,success,794.086,7.114,2026-11-05T02:22:24Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::custom_len_function,success,794.086,7.157,2026-11-05T02:22:31Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::empty_string,success,794.086,7.098,2026-11-05T02:22:38Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::grapheme_char_indices,success,794.086,7.179,2026-11-05T02:22:45Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::graphemes_fallback_to_chars,success,794.086,7.216,2026-11-05T02:22:52Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::handles_char_bigger_than_len,success,794.086,7.140,2026-11-05T02:22:59Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::returns_one_chunk_if_text_is_shorter_than_max_chunk_size,success,794.086,7.137,2026-11-05T02:23:07Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::returns_two_chunks_if_text_is_longer_than_max_chunk_size,success,794.086,7.228,2026-11-05T02:23:14Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::sentences_falls_back_to_words,success,794.086,7.217,2026-11-05T02:23:21Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::trim_char_indices,success,794.086,7.142,2026-11-05T02:23:28Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::trim_grapheme_indices,success,794.086,7.187,2026-11-05T02:23:35Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::trim_paragraph_indices,success,794.086,7.186,2026-11-05T02:23:43Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::trim_sentence_indices,success,794.086,7.195,2026-11-05T02:23:50Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::trim_word_indices,success,794.086,7.193,2026-11-05T02:23:57Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,splitter::text::tests::words_fallback_to_graphemes,success,794.086,7.248,2026-11-05T02:24:04Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,subheadings_grouped_with_top_header,success,794.086,7.274,2026-11-05T02:24:11Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,tiktoken_punctuation_that_fits_is_not_rejected_by_larger_prefixes,timeout,794.086,150.033,2026-11-05T02:26:42Z,50234201.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,text-splitter-0.33.0,tiktoken_word_that_fits_is_not_rejected_by_larger_prefixes,timeout,794.086,150.035,2026-11-05T02:29:12Z,50234201.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,text-splitter-0.33.0,trim,test_failed,794.086,37.255,2026-11-05T02:29:49Z,50234201.0,panic,"thread 'trim' (48355) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,trim::tests::trim_all,success,794.086,7.088,2026-11-05T02:29:56Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,trim::tests::trim_indentation_fallback,success,794.086,7.127,2026-11-05T02:30:03Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,trim::tests::trim_indentation_preserved,success,794.086,7.122,2026-11-05T02:30:10Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,trim_false,test_failed,794.086,37.241,2026-11-05T02:30:48Z,50234201.0,panic,"thread 'trim_false' (56826) panicked at /local/ev-50234201-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/glob.rs:121:9: the glob! macro did not match any files."
+experimental-bsan,text-splitter-0.33.0,trim_paragraphs,success,794.086,7.157,2026-11-05T02:30:55Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,trimming_does_trim_block_level_indentation_if_only_one_item,success,794.086,7.328,2026-11-05T02:31:02Z,50234201.0,,
+experimental-bsan,text-splitter-0.33.0,trimming_doesnt_trim_block_level_indentation_if_multiple_items,success,794.086,7.376,2026-11-05T02:31:10Z,50234201.0,,

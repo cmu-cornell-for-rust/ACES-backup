@@ -1,0 +1,1 @@
+experimental-bsan,viu-1.5.1,app::test::test_view_without_extension,test_failed,288.169,1.781,2026-11-05T10:00:37Z,50269745.0,panic,"thread 'app::test::test_view_without_extension' (24862) panicked at src/app.rs:230:49: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"

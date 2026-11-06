@@ -1,0 +1,46 @@
+experimental-bsan,sway-parse-0.72.1,attribute::tests::parse_annotated_fn,success,532.006,66.486,2026-11-05T03:14:09Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,attribute::tests::parse_attribute,success,532.006,24.186,2026-11-05T03:14:34Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,item::item_impl::tests::parse_impl_for_mut_ref,success,532.006,3.203,2026-11-05T03:14:37Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,item::item_impl::tests::parse_impl_for_ptr,success,532.006,3.276,2026-11-05T03:14:40Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,item::item_impl::tests::parse_impl_for_ref,success,532.006,3.274,2026-11-05T03:14:43Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,item::item_impl::tests::parse_impl_for_slice,success,532.006,3.330,2026-11-05T03:14:47Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,item::item_impl::tests::parse_impl_mut_ref,success,532.006,3.366,2026-11-05T03:14:50Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,item::item_impl::tests::parse_impl_ptr,success,532.006,3.349,2026-11-05T03:14:54Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,item::item_impl::tests::parse_impl_ref,success,532.006,3.229,2026-11-05T03:14:57Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,item::item_impl::tests::parse_impl_slice,success,532.006,3.295,2026-11-05T03:15:00Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_abi,test_failed,532.006,2.496,2026-11-05T03:15:03Z,50244420.0,crash,"test item::tests::parse_attributes_abi ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_doc_comment,test_failed,532.006,2.007,2026-11-05T03:15:05Z,50244420.0,crash,"test item::tests::parse_attributes_doc_comment ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_fn_basic,test_failed,532.006,1.983,2026-11-05T03:15:07Z,50244420.0,crash,"test item::tests::parse_attributes_fn_basic ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_fn_empty_parens,test_failed,532.006,2.067,2026-11-05T03:15:09Z,50244420.0,crash,"test item::tests::parse_attributes_fn_empty_parens ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_fn_one_and_zero_arg,test_failed,532.006,2.075,2026-11-05T03:15:11Z,50244420.0,crash,"test item::tests::parse_attributes_fn_one_and_zero_arg ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_fn_one_arg,test_failed,532.006,2.050,2026-11-05T03:15:13Z,50244420.0,crash,"test item::tests::parse_attributes_fn_one_arg ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_fn_one_arg_value,test_failed,532.006,2.080,2026-11-05T03:15:15Z,50244420.0,crash,"test item::tests::parse_attributes_fn_one_arg_value ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_fn_two_arg_values,test_failed,532.006,2.157,2026-11-05T03:15:17Z,50244420.0,crash,"test item::tests::parse_attributes_fn_two_arg_values ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_fn_two_args,test_failed,532.006,2.078,2026-11-05T03:15:19Z,50244420.0,crash,"test item::tests::parse_attributes_fn_two_args ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_fn_two_basic,test_failed,532.006,2.070,2026-11-05T03:15:21Z,50244420.0,crash,"test item::tests::parse_attributes_fn_two_basic ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_fn_zero_and_one_arg,test_failed,532.006,2.107,2026-11-05T03:15:23Z,50244420.0,crash,"test item::tests::parse_attributes_fn_zero_and_one_arg ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_fn_zero_one_and_three_args,test_failed,532.006,2.182,2026-11-05T03:15:26Z,50244420.0,crash,"test item::tests::parse_attributes_fn_zero_one_and_three_args ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_fn_zero_one_and_three_args_in_one_attribute_decl,test_failed,532.006,2.124,2026-11-05T03:15:28Z,50244420.0,crash,"test item::tests::parse_attributes_fn_zero_one_and_three_args_in_one_attribute_decl ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_none,test_failed,532.006,1.949,2026-11-05T03:15:30Z,50244420.0,crash,"test item::tests::parse_attributes_none ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_attributes_trait,test_failed,532.006,2.404,2026-11-05T03:15:32Z,50244420.0,crash,"test item::tests::parse_attributes_trait ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_doc_comment,test_failed,532.006,2.329,2026-11-05T03:15:35Z,50244420.0,crash,"test item::tests::parse_doc_comment ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_doc_comment_struct,success,532.006,4.138,2026-11-05T03:15:39Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,item::tests::parse_nested_annotations,test_failed,532.006,2.664,2026-11-05T03:15:41Z,50244420.0,crash,"test item::tests::parse_nested_annotations ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,module::tests::parse_noop_script_module,test_failed,532.006,1.995,2026-11-05T03:15:43Z,50244420.0,crash,"test module::tests::parse_noop_script_module ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,noop_script_file,test_failed,532.006,3.417,2026-11-05T03:15:47Z,50244420.0,crash,"test noop_script_file ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,path::tests::parse_nested_path,success,532.006,21.770,2026-11-05T03:16:09Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,tests::parse_invalid,test_failed,532.006,2.345,2026-11-05T03:16:11Z,50244420.0,crash,"test tests::parse_invalid ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,sway-parse-0.72.1,token::tests::accepts_paths,success,532.006,3.170,2026-11-05T03:16:15Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,token::tests::accepts_simple_identifiers,success,532.006,3.275,2026-11-05T03:16:18Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,token::tests::lex_bidi,success,532.006,4.170,2026-11-05T03:16:22Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,token::tests::lex_char_escaped_quote,success,532.006,3.184,2026-11-05T03:16:25Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,token::tests::lex_commented_token_stream,success,532.006,3.403,2026-11-05T03:16:29Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,token::tests::lex_comments_check_comment_kind,success,532.006,3.478,2026-11-05T03:16:32Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,token::tests::lex_doc_comments,success,532.006,3.376,2026-11-05T03:16:36Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,token::tests::rejects_invalid_identifiers,success,532.006,3.218,2026-11-05T03:16:39Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,token::tests::rejects_malformed_paths,success,532.006,3.227,2026-11-05T03:16:42Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,ty::tests::parse_array,success,532.006,3.209,2026-11-05T03:16:45Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,ty::tests::parse_mut_ref,success,532.006,3.259,2026-11-05T03:16:49Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,ty::tests::parse_ptr,success,532.006,3.243,2026-11-05T03:16:52Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,ty::tests::parse_ref,success,532.006,3.209,2026-11-05T03:16:55Z,50244420.0,,
+experimental-bsan,sway-parse-0.72.1,ty::tests::parse_slice,success,532.006,3.295,2026-11-05T03:16:58Z,50244420.0,,

@@ -1,0 +1,66 @@
+experimental-bsan,deflate-1.0.0,bit_reverse::test::test_bit_reverse,success,19.935,1.615,2026-11-05T02:24:14Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,bitstream::test::write_bits,success,19.935,1.598,2026-11-05T02:24:16Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,chained_hash_table::test::chained_hash,success,19.935,5.445,2026-11-05T02:24:22Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,chained_hash_table::test::initial_chains,success,19.935,13.580,2026-11-05T02:24:35Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,chained_hash_table::test::table_slide,test_failed,19.935,1.675,2026-11-05T02:24:37Z,50240676.0,panic,"thread 'chained_hash_table::test::table_slide' (23970) panicked at src/chained_hash_table.rs:294:50: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,chained_hash_table::test::table_unique,success,19.935,5.491,2026-11-05T02:24:42Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,compress::test::fixed_data,success,19.935,6.079,2026-11-05T02:24:48Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,compress::test::fixed_example,success,19.935,6.017,2026-11-05T02:24:54Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,compress::test::fixed_string_file,test_failed,19.935,1.683,2026-11-05T02:24:56Z,50240676.0,panic,"thread 'compress::test::fixed_string_file' (24678) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,compress::test::fixed_string_mem,success,19.935,5.966,2026-11-05T02:25:02Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,huffman_lengths::test::padding,success,19.935,1.589,2026-11-05T02:25:04Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,huffman_table::test::extra_bits_distance,success,19.935,1.598,2026-11-05T02:25:05Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,huffman_table::test::make_table_fixed,success,19.935,1.763,2026-11-05T02:25:07Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,huffman_table::test::test_distance_code,success,19.935,1.594,2026-11-05T02:25:09Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,huffman_table::test::test_distance_extra_bits,success,19.935,1.594,2026-11-05T02:25:10Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,huffman_table::test::test_empty_table,success,19.935,1.613,2026-11-05T02:25:12Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,huffman_table::test::test_get_length_code,success,19.935,1.596,2026-11-05T02:25:14Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,huffman_table::test::test_length_table_fixed,success,19.935,1.609,2026-11-05T02:25:15Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,huffman_table::test::test_length_table_max_length,success,19.935,1.631,2026-11-05T02:25:17Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,input_buffer::test::buffer_add_full,success,19.935,1.597,2026-11-05T02:25:18Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,input_buffer::test::buffer_add_not_full,success,19.935,1.587,2026-11-05T02:25:20Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,input_buffer::test::slide,success,19.935,1.587,2026-11-05T02:25:22Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,length_encode::test::optimal_lengths,success,19.935,1.831,2026-11-05T02:25:23Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,length_encode::test::test_encode_lengths,success,19.935,1.836,2026-11-05T02:25:25Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,length_encode::test::test_lengths_from_frequencies,success,19.935,2.377,2026-11-05T02:25:28Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,lz77::test::border,success,19.935,31.877,2026-11-05T02:26:00Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,lz77::test::border_multiple_blocks,success,19.935,62.866,2026-11-05T02:27:02Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,lz77::test::buffer_fill,test_failed,19.935,1.691,2026-11-05T02:27:04Z,50240676.0,panic,"thread 'lz77::test::buffer_fill' (28637) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,lz77::test::compress_block_multiple_windows,test_failed,19.935,1.689,2026-11-05T02:27:06Z,50240676.0,panic,"thread 'lz77::test::compress_block_multiple_windows' (28747) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,lz77::test::compress_block_status,success,19.935,5.513,2026-11-05T02:27:11Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,lz77::test::compress_long,test_failed,19.935,1.684,2026-11-05T02:27:13Z,50240676.0,panic,"thread 'lz77::test::compress_long' (29063) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,lz77::test::compress_short,success,19.935,5.550,2026-11-05T02:27:19Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,lz77::test::exact_window_size,timeout,19.935,150.016,2026-11-05T02:29:49Z,50240676.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,deflate-1.0.0,lz77::test::lazy,success,19.935,5.526,2026-11-05T02:29:54Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,lz77::test::multiple_inputs,success,19.935,9.441,2026-11-05T02:30:04Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,lz77::test::test_decompress_with_backbuffer,success,19.935,1.599,2026-11-05T02:30:05Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,lzvalue::test::lzvalue,success,19.935,4.035,2026-11-05T02:30:09Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,matching::test::get_longest_match,success,19.935,9.300,2026-11-05T02:30:19Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,matching::test::match_index_zero,success,19.935,5.493,2026-11-05T02:30:24Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,matching::test::match_length,success,19.935,1.584,2026-11-05T02:30:26Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,output_writer::test::array_bounds,success,19.935,13.822,2026-11-05T02:30:40Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,rle::test::rle_compress,success,19.935,1.579,2026-11-05T02:30:41Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,stored_block::test::no_compression_multiple_chunks,success,19.935,1.600,2026-11-05T02:30:43Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,stored_block::test::no_compression_one_chunk,success,19.935,1.599,2026-11-05T02:30:44Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,stored_block::test::no_compression_string,success,19.935,1.584,2026-11-05T02:30:46Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,test::deflate_short,success,19.935,6.375,2026-11-05T02:30:52Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,test::dynamic_string_file,test_failed,19.935,1.704,2026-11-05T02:30:54Z,50240676.0,panic,"thread 'test::dynamic_string_file' (35899) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,test::dynamic_string_mem,success,19.935,6.515,2026-11-05T02:31:01Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,test::empty_input,success,19.935,14.991,2026-11-05T02:31:16Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,test::file_rle,test_failed,19.935,1.670,2026-11-05T02:31:17Z,50240676.0,panic,"thread 'test::file_rle' (36255) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,test::file_zlib,test_failed,19.935,1.672,2026-11-05T02:31:19Z,50240676.0,panic,"thread 'test::file_zlib' (36311) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,test::frequency_overflow,success,19.935,56.043,2026-11-05T02:32:15Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,test::gzip,test_failed,19.935,1.696,2026-11-05T02:32:17Z,50240676.0,panic,"thread 'test::gzip' (36623) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,test::one_and_two_values,success,19.935,27.760,2026-11-05T02:32:45Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,test::zlib_last_block,success,19.935,36.552,2026-11-05T02:33:21Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,test::zlib_short,success,19.935,6.453,2026-11-05T02:33:28Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,writer::gzip::test::gzip_writer,test_failed,19.935,1.697,2026-11-05T02:33:29Z,50240676.0,panic,"thread 'writer::gzip::test::gzip_writer' (37479) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,writer::test::deflate_writer,test_failed,19.935,1.697,2026-11-05T02:33:31Z,50240676.0,panic,"thread 'writer::test::deflate_writer' (37558) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,writer::test::issue_18,success,19.935,58.392,2026-11-05T02:34:29Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,writer::test::writer_reset,test_failed,19.935,1.696,2026-11-05T02:34:31Z,50240676.0,panic,"thread 'writer::test::writer_reset' (38026) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,writer::test::writer_reset_zlib,test_failed,19.935,1.697,2026-11-05T02:34:33Z,50240676.0,panic,"thread 'writer::test::writer_reset_zlib' (38093) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,writer::test::writer_sync,test_failed,19.935,1.699,2026-11-05T02:34:35Z,50240676.0,panic,"thread 'writer::test::writer_sync' (38185) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,writer::test::writer_sync_multiple,test_failed,19.935,1.693,2026-11-05T02:34:36Z,50240676.0,panic,"thread 'writer::test::writer_sync_multiple' (38254) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,writer::test::zlib_writer,test_failed,19.935,1.709,2026-11-05T02:34:38Z,50240676.0,panic,"thread 'writer::test::zlib_writer' (38326) panicked at src/test_utils.rs:10:34: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,deflate-1.0.0,zlib::test::test_gen_fcheck,success,19.935,1.609,2026-11-05T02:34:40Z,50240676.0,,
+experimental-bsan,deflate-1.0.0,zlib::test::test_header,success,19.935,1.640,2026-11-05T02:34:41Z,50240676.0,,

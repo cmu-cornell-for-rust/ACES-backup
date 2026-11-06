@@ -1,0 +1,36 @@
+experimental-bsan,update-informer-1.3.0,package::tests::name_fmt_test,success,398.569,1.792,2026-11-05T03:42:45Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,package::tests::name_with_owner_fmt_test,success,398.569,1.751,2026-11-05T03:42:47Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,package::tests::new_with_name_test,success,398.569,1.736,2026-11-05T03:42:48Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,package::tests::new_with_owner_and_name_test,success,398.569,1.731,2026-11-05T03:42:50Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,registry::crates::tests::failure_test,test_failed,398.569,1.819,2026-11-05T03:42:52Z,50246714.0,panic,"thread 'registry::crates::tests::failure_test' (25810) panicked at src/test_helper.rs:34:46: read file to string: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,update-informer-1.3.0,registry::crates::tests::success_test,test_failed,398.569,1.815,2026-11-05T03:42:54Z,50246714.0,panic,"thread 'registry::crates::tests::success_test' (26079) panicked at src/test_helper.rs:34:46: read file to string: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,update-informer-1.3.0,registry::github::tests::failure_test,test_failed,398.569,1.814,2026-11-05T03:42:56Z,50246714.0,panic,"thread 'registry::github::tests::failure_test' (26306) panicked at src/test_helper.rs:42:46: read file to string: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,update-informer-1.3.0,registry::github::tests::success_test,test_failed,398.569,1.817,2026-11-05T03:42:57Z,50246714.0,panic,"thread 'registry::github::tests::success_test' (26553) panicked at src/test_helper.rs:42:46: read file to string: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,update-informer-1.3.0,registry::npm::tests::failure_test,test_failed,398.569,1.829,2026-11-05T03:42:59Z,50246714.0,panic,"thread 'registry::npm::tests::failure_test' (26721) panicked at src/test_helper.rs:50:46: read file to string: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,update-informer-1.3.0,registry::npm::tests::success_test,test_failed,398.569,1.811,2026-11-05T03:43:01Z,50246714.0,panic,"thread 'registry::npm::tests::success_test' (26984) panicked at src/test_helper.rs:50:46: read file to string: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,update-informer-1.3.0,registry::pypi::tests::failure_test,test_failed,398.569,1.825,2026-11-05T03:43:03Z,50246714.0,panic,"thread 'registry::pypi::tests::failure_test' (27175) panicked at src/test_helper.rs:58:46: read file to string: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,update-informer-1.3.0,registry::pypi::tests::success_test,test_failed,398.569,1.794,2026-11-05T03:43:05Z,50246714.0,panic,"thread 'registry::pypi::tests::success_test' (27423) panicked at src/test_helper.rs:58:46: read file to string: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,update-informer-1.3.0,tests::check_version_on_crates_test,test_failed,398.569,1.838,2026-11-05T03:43:07Z,50246714.0,panic,"thread 'tests::check_version_on_crates_test' (27666) panicked at src/test_helper.rs:34:46: read file to string: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,update-informer-1.3.0,tests::check_version_with_amp_string_test,success,398.569,1.768,2026-11-05T03:43:08Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,tests::check_version_with_string_name_test,success,398.569,1.776,2026-11-05T03:43:10Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,tests::check_version_with_string_version_test,success,398.569,1.774,2026-11-05T03:43:12Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,tests::create_version_file_test,success,398.569,1.786,2026-11-05T03:43:14Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,tests::do_not_create_version_file_test,test_failed,398.569,1.837,2026-11-05T03:43:16Z,50246714.0,panic,"thread 'tests::do_not_create_version_file_test' (28680) panicked at src/test_helper.rs:34:46: read file to string: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,update-informer-1.3.0,tests::fake_check_version_test,success,398.569,1.772,2026-11-05T03:43:17Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,tests::no_new_version_on_registry_test,test_failed,398.569,1.841,2026-11-05T03:43:19Z,50246714.0,panic,"thread 'tests::no_new_version_on_registry_test' (28944) panicked at src/test_helper.rs:34:46: read file to string: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,update-informer-1.3.0,tests::no_new_version_with_interval_test,success,398.569,1.759,2026-11-05T03:43:21Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,tests::return_version_from_file_test,success,398.569,1.770,2026-11-05T03:43:23Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version::tests::fmt_test,success,398.569,1.745,2026-11-05T03:43:25Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version::tests::parse_amp_string_version_test,success,398.569,1.737,2026-11-05T03:43:26Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version::tests::parse_str_version_test,success,398.569,1.730,2026-11-05T03:43:28Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version::tests::parse_string_version_test,success,398.569,1.744,2026-11-05T03:43:30Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version::tests::parse_version_with_prefix_test,success,398.569,1.747,2026-11-05T03:43:32Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version::tests::semver_test,success,398.569,1.747,2026-11-05T03:43:33Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version_file::tests::create_version_file_twice_test,success,398.569,1.744,2026-11-05T03:43:35Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version_file::tests::get_version_file_exists_test,success,398.569,1.770,2026-11-05T03:43:37Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version_file::tests::get_version_file_not_exists_test,success,398.569,1.752,2026-11-05T03:43:39Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version_file::tests::last_modified_file_exists_test,success,398.569,1.738,2026-11-05T03:43:40Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version_file::tests::last_modified_file_not_exists_test,success,398.569,1.743,2026-11-05T03:43:42Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version_file::tests::new_test,success,398.569,1.732,2026-11-05T03:43:44Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version_file::tests::recreate_file_test,success,398.569,1.739,2026-11-05T03:43:46Z,50246714.0,,
+experimental-bsan,update-informer-1.3.0,version_file::tests::write_version_test,success,398.569,1.767,2026-11-05T03:43:47Z,50246714.0,,

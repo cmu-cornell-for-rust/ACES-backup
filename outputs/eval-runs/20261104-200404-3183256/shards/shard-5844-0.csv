@@ -1,0 +1,38 @@
+experimental-bsan,some-auth-0.1.5,hasher::tests::bcrypt_verify_0_invalid_password_0_false,timeout,139.928,150.016,2026-11-05T03:29:05Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,hasher::tests::bcrypt_verify_0_valid_password_0_true,timeout,139.928,150.013,2026-11-05T03:31:35Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,jwt::tests::decode_token_0_expired_token_0_invalid,success,139.928,1.741,2026-11-05T03:31:37Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,jwt::tests::decode_token_0_spoofed_token_0_invalid,success,139.928,1.702,2026-11-05T03:31:39Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,jwt::tests::decode_token_test,success,139.928,1.747,2026-11-05T03:31:40Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,jwt::tests::decode_token_with_bearer_test,success,139.928,1.736,2026-11-05T03:31:42Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,jwt::tests::generate_token_test,success,139.928,1.648,2026-11-05T03:31:44Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,user_service::tests::block_user_0_non_existent_user_0_returns_not_found_error,timeout,139.928,150.012,2026-11-05T03:34:14Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::block_user_test,timeout,139.928,150.014,2026-11-05T03:36:44Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::create_user_0_existing_usernaime_0_returns_error,timeout,139.928,150.013,2026-11-05T03:39:14Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::create_user_0_non_valid_username_or_password_validation_0_returns_err,timeout,139.928,150.013,2026-11-05T03:41:44Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::create_user_test,timeout,139.928,150.013,2026-11-05T03:44:14Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::generate_tokens_0_blocked_user_0_returns_error,timeout,139.928,150.012,2026-11-05T03:46:44Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::generate_tokens_0_invalid_password_0_returns_error,timeout,139.928,150.013,2026-11-05T03:49:14Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::generate_tokens_test,timeout,139.928,150.015,2026-11-05T03:51:44Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::get_authenticated_user_0_correct_role_0_ok,timeout,139.928,150.014,2026-11-05T03:54:14Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::get_authenticated_user_0_not_in_role_0_returns_error,timeout,139.928,150.013,2026-11-05T03:56:44Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::refresh_tokens_0_blocked_user_0_returns_invalid_credentials,timeout,139.928,150.013,2026-11-05T03:59:14Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::refresh_tokens_0_non_existent_user_0_returns_invalid_credentials,timeout,139.928,150.013,2026-11-05T04:01:44Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::refresh_tokens_0_unactual_token_0_returns_invalid_credentials,timeout,139.928,150.014,2026-11-05T04:04:14Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::refresh_tokens_test,timeout,139.928,150.013,2026-11-05T04:06:44Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::update_own_password_0_blocked_user_0_returns_error,timeout,139.928,150.016,2026-11-05T04:09:14Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::update_own_password_0_invalid_password_0_returns_error,timeout,139.928,150.013,2026-11-05T04:11:44Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::update_own_password_0_weak_password_0_returns_error,timeout,139.928,150.014,2026-11-05T04:14:15Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::update_own_password_test,timeout,139.928,150.012,2026-11-05T04:16:45Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::update_user_password_by_admin_0_for_blocked_user_0_returns_invalid_operation,timeout,139.928,150.014,2026-11-05T04:19:15Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::update_user_password_by_admin_test,timeout,139.928,150.013,2026-11-05T04:21:45Z,50245965.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,some-auth-0.1.5,user_service::tests::validate_password_0_all_requirements_0_ok,success,139.928,9.785,2026-11-05T04:21:54Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,user_service::tests::validate_password_0_no_digits_0_err,success,139.928,9.764,2026-11-05T04:22:04Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,user_service::tests::validate_password_0_no_lowercases_0_err,success,139.928,9.708,2026-11-05T04:22:14Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,user_service::tests::validate_password_0_no_special_simbols_0_err,success,139.928,9.746,2026-11-05T04:22:24Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,user_service::tests::validate_password_0_no_uppercases_0_err,success,139.928,9.778,2026-11-05T04:22:33Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,user_service::tests::validate_password_0_too_short_0_err,success,139.928,9.780,2026-11-05T04:22:43Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,user_service::tests::validate_username_0_non_latin_0_err,success,139.928,3.321,2026-11-05T04:22:47Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,user_service::tests::validate_username_0_only_letters_0_ok,success,139.928,3.330,2026-11-05T04:22:50Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,user_service::tests::validate_username_0_only_numbers_0_err,success,139.928,3.340,2026-11-05T04:22:53Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,user_service::tests::validate_username_0_too_short_0_err,success,139.928,3.348,2026-11-05T04:22:57Z,50245965.0,,
+experimental-bsan,some-auth-0.1.5,user_service::tests::validate_username_0_with_letters_and_numbers_0_ok,success,139.928,3.385,2026-11-05T04:23:00Z,50245965.0,,

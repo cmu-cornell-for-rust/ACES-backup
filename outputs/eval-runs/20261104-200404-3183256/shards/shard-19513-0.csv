@@ -1,0 +1,2 @@
+experimental-bsan,systemd-zbus-5.3.2,tests::list_unit,test_failed,649.697,11.879,2026-11-05T09:17:27Z,50265019.0,gc,"test tests::list_unit ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,systemd-zbus-5.3.2,tests::mounts,test_failed,649.697,11.893,2026-11-05T09:17:39Z,50265019.0,gc,"test tests::mounts ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."

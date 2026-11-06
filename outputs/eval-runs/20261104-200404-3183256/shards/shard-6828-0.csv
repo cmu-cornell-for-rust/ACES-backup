@@ -1,0 +1,31 @@
+experimental-bsan,asap-0.14.0,generator::tests::is_sync,success,667.638,3.455,2026-11-05T04:04:57Z,50247648.0,,
+experimental-bsan,asap-0.14.0,generator::tests::it_does_not_cache_more_tokens_than_max_count,test_failed,667.638,4.820,2026-11-05T04:05:02Z,50247648.0,panic,"thread 'generator::tests::it_does_not_cache_more_tokens_than_max_count' (10513) panicked at src/generator.rs:408:9: assertion `left == right` failed"
+experimental-bsan,asap-0.14.0,instantiates_from_environment,timeout,667.638,150.025,2026-11-05T04:07:32Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,iss_is_assumed_if_sub_is_undefined,timeout,667.638,150.023,2026-11-05T04:10:02Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,it_allows_extra_claims,timeout,667.638,150.024,2026-11-05T04:12:32Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,it_caches_tokens_when_enabled,test_failed,667.638,5.439,2026-11-05T04:12:38Z,50247648.0,panic,"thread 'it_caches_tokens_when_enabled' (34341) panicked at tests/api.rs:586:5: assertion `left == right` failed"
+experimental-bsan,asap-0.14.0,it_caches_tokens_with_extra_claims_when_enabled,test_failed,667.638,5.633,2026-11-05T04:12:44Z,50247648.0,panic,"thread 'it_caches_tokens_with_extra_claims_when_enabled' (34472) panicked at tests/api.rs:605:5: assertion `left == right` failed"
+experimental-bsan,asap-0.14.0,it_does_not_fetch_expired_key_from_cache,timeout,667.638,150.022,2026-11-05T04:15:14Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,it_does_not_override_required_claims,timeout,667.638,150.021,2026-11-05T04:17:44Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,it_does_not_return_expired_cached_tokens,success,667.638,5.087,2026-11-05T04:17:49Z,50247648.0,,
+experimental-bsan,asap-0.14.0,it_fails_with_no_public_key,timeout,667.638,150.021,2026-11-05T04:20:19Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,it_fails_with_wrong_public_key,timeout,667.638,150.023,2026-11-05T04:22:49Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,it_fetches_key_from_cache,timeout,667.638,150.022,2026-11-05T04:25:19Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,it_regenerates_cached_tokens_when_they_are_different,success,667.638,6.820,2026-11-05T04:25:26Z,50247648.0,,
+experimental-bsan,asap-0.14.0,it_rejects_duplicate_jti_claims,timeout,667.638,150.019,2026-11-05T04:27:56Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,it_rejects_tokens_signed_with_unsupported_alg,timeout,667.638,150.022,2026-11-05T04:30:26Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,it_rejects_tokens_with_missing_signatures,timeout,667.638,150.022,2026-11-05T04:32:56Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,it_rejects_unsigned_tokens,success,667.638,3.311,2026-11-05T04:32:59Z,50247648.0,,
+experimental-bsan,asap-0.14.0,it_uses_the_fallback_keyserver,timeout,667.638,150.021,2026-11-05T04:35:29Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,it_works,timeout,667.638,150.023,2026-11-05T04:37:59Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,keyserver_works,timeout,667.638,150.028,2026-11-05T04:40:29Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,util::key_conversion,success,667.638,3.376,2026-11-05T04:40:33Z,50247648.0,,
+experimental-bsan,asap-0.14.0,validates_exp_is_before_current_time,timeout,667.638,150.019,2026-11-05T04:43:03Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,validates_if_custom_max_lifespan_is_exceeded,timeout,667.638,150.019,2026-11-05T04:45:33Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,validates_if_encounters_unrecognized_audience,timeout,667.638,150.021,2026-11-05T04:48:03Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,validates_if_max_lifespan_is_exceeded,timeout,667.638,150.019,2026-11-05T04:50:33Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,validates_kid_is_owned_by_isser,timeout,667.638,150.020,2026-11-05T04:53:03Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,validates_nbf_is_after_current_time,timeout,667.638,150.020,2026-11-05T04:55:33Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,validator::tests::is_sync,success,667.638,3.237,2026-11-05T04:55:36Z,50247648.0,,
+experimental-bsan,asap-0.14.0,works_with_aud_as_string,timeout,667.638,150.022,2026-11-05T04:58:06Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,asap-0.14.0,works_with_aud_as_vec,timeout,667.638,150.023,2026-11-05T05:00:36Z,50247648.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

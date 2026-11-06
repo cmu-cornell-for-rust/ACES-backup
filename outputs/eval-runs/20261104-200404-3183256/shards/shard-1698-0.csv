@@ -1,0 +1,129 @@
+experimental-bsan,similar-3.2.0,algorithms::capture::test_capture_hook_grouping,test_failed,284.967,16.764,2026-11-05T01:53:24Z,50234668.0,panic,"thread 'algorithms::capture::test_capture_hook_grouping' (43573) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'capture_hook_grouping' failed in line 116"
+experimental-bsan,similar-3.2.0,algorithms::histogram::test_anchor_search_scans_equal_runs_once,success,284.967,8.726,2026-11-05T01:53:33Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::histogram::test_cross_type_lookup_compatibility,success,284.967,1.658,2026-11-05T01:53:35Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::histogram::test_deadline_fallback,success,284.967,1.925,2026-11-05T01:53:37Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::histogram::test_deterministic_tie_breaking,success,284.967,2.263,2026-11-05T01:53:39Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::histogram::test_diff,success,284.967,1.673,2026-11-05T01:53:41Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::histogram::test_empty_sides,success,284.967,1.638,2026-11-05T01:53:42Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::histogram::test_finish_called,success,284.967,1.614,2026-11-05T01:53:44Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::histogram::test_identical_input,success,284.967,1.613,2026-11-05T01:53:46Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::histogram::test_issue44_swapped_regression,success,284.967,1.641,2026-11-05T01:53:47Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::histogram::test_no_common_elements,success,284.967,1.587,2026-11-05T01:53:49Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::histogram::test_prefers_low_frequency_anchor_over_noise,success,284.967,1.654,2026-11-05T01:53:51Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::histogram::test_subrange_regression,success,284.967,1.671,2026-11-05T01:53:52Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::hunt::test_diff,success,284.967,1.659,2026-11-05T01:53:54Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::hunt::test_finish_called,success,284.967,1.643,2026-11-05T01:53:56Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::hunt::test_issue44_swapped_regression,success,284.967,1.667,2026-11-05T01:53:57Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::hunt::test_lcs_length_matches_classic_lcs,success,284.967,1.804,2026-11-05T01:53:59Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::hunt::test_repetitive_match_list_uses_memory_safety_valve,success,284.967,2.179,2026-11-05T01:54:01Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::hunt::test_subrange_regression,success,284.967,1.676,2026-11-05T01:54:03Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_bad_range_regression,success,284.967,1.619,2026-11-05T01:54:05Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_contiguous,test_failed,284.967,15.143,2026-11-05T01:54:20Z,50234668.0,panic,"thread 'algorithms::lcs::test_contiguous' (53967) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'contiguous' failed in line 512"
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_deadline_fallback_issue_97,success,284.967,1.642,2026-11-05T01:54:21Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_deadline_table_allocation_is_incremental,success,284.967,132.101,2026-11-05T01:56:33Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_diff,test_failed,284.967,15.034,2026-11-05T01:56:49Z,50234668.0,panic,"thread 'algorithms::lcs::test_diff' (82992) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'diff' failed in line 449"
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_empty_table_dimension_does_not_allocate,success,284.967,1.659,2026-11-05T01:56:50Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_finish_called,success,284.967,1.637,2026-11-05T01:56:52Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_identical_subrange_issue_98,success,284.967,1.635,2026-11-05T01:56:53Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_incremental_table_matches_contiguous_in_both_orientations,success,284.967,1.653,2026-11-05T01:56:55Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_issue44_swapped_regression,success,284.967,1.603,2026-11-05T01:56:57Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_pat,test_failed,284.967,15.434,2026-11-05T01:57:12Z,50234668.0,panic,"thread 'algorithms::lcs::test_pat' (93366) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'pat' failed in line 522"
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_raw_accepts_partialeq_only_values,success,284.967,1.620,2026-11-05T01:57:14Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_same,test_failed,284.967,14.590,2026-11-05T01:57:28Z,50234668.0,panic,"thread 'algorithms::lcs::test_same' (97154) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'same' failed in line 639"
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_subrange_regression,success,284.967,1.604,2026-11-05T01:57:30Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_table,success,284.967,1.652,2026-11-05T01:57:32Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::lcs::test_table_size_overflow_panics,success,284.967,1.665,2026-11-05T01:57:33Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::myers::test_contiguous,test_failed,284.967,15.224,2026-11-05T01:57:49Z,50234668.0,panic,"thread 'algorithms::myers::test_contiguous' (99824) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'contiguous' failed in line 1640"
+experimental-bsan,similar-3.2.0,algorithms::myers::test_deadline_reached,test_failed,284.967,15.299,2026-11-05T01:58:04Z,50234668.0,panic,"thread 'algorithms::myers::test_deadline_reached' (6496) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'deadline_reached' failed in line 1890"
+experimental-bsan,similar-3.2.0,algorithms::myers::test_diff,test_failed,284.967,15.085,2026-11-05T01:58:19Z,50234668.0,panic,"thread 'algorithms::myers::test_diff' (9632) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'diff' failed in line 1495"
+experimental-bsan,similar-3.2.0,algorithms::myers::test_find_middle_snake,success,284.967,1.616,2026-11-05T01:58:21Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::myers::test_finish_called,success,284.967,1.610,2026-11-05T01:58:22Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::myers::test_front_anchor_regressions_stay_exact,success,284.967,21.012,2026-11-05T01:58:43Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::myers::test_heuristic_deadline_guards,success,284.967,2.031,2026-11-05T01:58:45Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::myers::test_heuristic_middle_snake_has_a_work_limit,success,284.967,75.889,2026-11-05T02:00:01Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::myers::test_myers_preflight_reuses_common_context_scan,success,284.967,4.509,2026-11-05T02:00:06Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::myers::test_myers_reduction_and_raw_myers_preserve_sparse_match,timeout,284.967,150.015,2026-11-05T02:02:36Z,50234668.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,similar-3.2.0,algorithms::myers::test_myers_reduction_preserves_subrange_offsets,success,284.967,5.123,2026-11-05T02:02:41Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::myers::test_pat,test_failed,284.967,15.361,2026-11-05T02:02:56Z,50234668.0,panic,"thread 'algorithms::myers::test_pat' (49332) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'pat' failed in line 1650"
+experimental-bsan,similar-3.2.0,algorithms::myers::test_raw_accepts_partialeq_only_values,success,284.967,1.633,2026-11-05T02:02:58Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::myers::test_small_side_exact_commits_after_first_emit,test_failed,284.967,1.915,2026-11-05T02:03:00Z,50234668.0,panic,"thread 'algorithms::myers::test_small_side_exact_commits_after_first_emit' (52276) panicked at src/algorithms/myers.rs:1827:9: assertion failed: used"
+experimental-bsan,similar-3.2.0,algorithms::myers::test_small_side_exact_variants,success,284.967,10.540,2026-11-05T02:03:10Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::patience::test_finish_called,success,284.967,1.658,2026-11-05T02:03:12Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::patience::test_patience,test_failed,284.967,15.992,2026-11-05T02:03:28Z,50234668.0,panic,"thread 'algorithms::patience::test_patience' (53610) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'patience' failed in line 286"
+experimental-bsan,similar-3.2.0,algorithms::patience::test_patience_out_of_bounds_bug,test_failed,284.967,14.890,2026-11-05T02:03:43Z,50234668.0,panic,"thread 'algorithms::patience::test_patience_out_of_bounds_bug' (55141) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'patience_out_of_bounds_bug' failed in line 332"
+experimental-bsan,similar-3.2.0,algorithms::patience::test_uniqueness_includes_common_edges,success,284.967,1.639,2026-11-05T02:03:45Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::preflight::test_common_item_budget,success,284.967,1.630,2026-11-05T02:03:46Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::preflight::test_common_item_budget_with_hash_collisions,success,284.967,97.445,2026-11-05T02:05:24Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::preflight::test_confusing_record_cleanup_is_context_sensitive,success,284.967,1.661,2026-11-05T02:05:25Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::preflight::test_myers_reduction_preserves_sparse_anchor_chain_with_common_edges,success,284.967,16.218,2026-11-05T02:05:42Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::preflight::test_myers_reduction_preserves_sparse_match,success,284.967,15.665,2026-11-05T02:05:57Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::preflight::test_myers_reduction_suppresses_scattered_popular_records,success,284.967,3.829,2026-11-05T02:06:01Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::replace::test_mayers_replace,success,284.967,14.940,2026-11-05T02:06:16Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::replace::test_replace,success,284.967,14.488,2026-11-05T02:06:31Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::test_replace_fast_path_cross_type_guard,success,284.967,2.337,2026-11-05T02:06:33Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::utils::test_common_prefix_len,success,284.967,1.662,2026-11-05T02:06:35Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::utils::test_common_suffix_len,success,284.967,1.644,2026-11-05T02:06:36Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::utils::test_int_hasher,success,284.967,1.648,2026-11-05T02:06:38Z,50234668.0,,
+experimental-bsan,similar-3.2.0,algorithms::utils::test_unique,success,284.967,1.634,2026-11-05T02:06:40Z,50234668.0,,
+experimental-bsan,similar-3.2.0,common::test_capture_diff_slices_by_key,success,284.967,1.654,2026-11-05T02:06:41Z,50234668.0,,
+experimental-bsan,similar-3.2.0,common::test_capture_diff_slices_by_key_all_algorithms,success,284.967,1.773,2026-11-05T02:06:43Z,50234668.0,,
+experimental-bsan,similar-3.2.0,common::test_capture_diff_slices_by_key_deadline,success,284.967,1.706,2026-11-05T02:06:45Z,50234668.0,,
+experimental-bsan,similar-3.2.0,common::test_compact_keeps_diffop_cursors_contiguous,success,284.967,1.742,2026-11-05T02:06:47Z,50234668.0,,
+experimental-bsan,similar-3.2.0,common::test_compact_preserves_non_zero_range_cursors,success,284.967,1.693,2026-11-05T02:06:48Z,50234668.0,,
+experimental-bsan,similar-3.2.0,common::test_histogram_full_range_delete_insert_cursors,success,284.967,1.646,2026-11-05T02:06:50Z,50234668.0,,
+experimental-bsan,similar-3.2.0,common::test_myers_compacts_adjacent_deletes_issue_80,success,284.967,1.642,2026-11-05T02:06:52Z,50234668.0,,
+experimental-bsan,similar-3.2.0,common::test_myers_unbalanced_regressions,timeout,284.967,150.019,2026-11-05T02:09:22Z,50234668.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,similar-3.2.0,common::test_non_string_iter_change,success,284.967,1.696,2026-11-05T02:09:23Z,50234668.0,,
+experimental-bsan,similar-3.2.0,lookup::tests::caches_values_once_per_index,success,284.967,1.626,2026-11-05T02:09:25Z,50234668.0,,
+experimental-bsan,similar-3.2.0,lookup::tests::works_with_diff_algorithms,success,284.967,1.655,2026-11-05T02:09:27Z,50234668.0,,
+experimental-bsan,similar-3.2.0,merge::test_byte_merge_writer,success,284.967,1.636,2026-11-05T02:09:28Z,50234668.0,,
+experimental-bsan,similar-3.2.0,merge::test_conflict_adds_newlines_only_around_markers,success,284.967,1.675,2026-11-05T02:09:30Z,50234668.0,,
+experimental-bsan,similar-3.2.0,merge::test_conflicting_changes_are_structured_and_rendered,success,284.967,1.693,2026-11-05T02:09:32Z,50234668.0,,
+experimental-bsan,similar-3.2.0,merge::test_conflicting_insertions,success,284.967,1.663,2026-11-05T02:09:33Z,50234668.0,,
+experimental-bsan,similar-3.2.0,merge::test_identical_changes_merge_cleanly,success,284.967,1.658,2026-11-05T02:09:35Z,50234668.0,,
+experimental-bsan,similar-3.2.0,merge::test_insert_at_changed_range_boundary_conflicts,success,284.967,1.665,2026-11-05T02:09:37Z,50234668.0,,
+experimental-bsan,similar-3.2.0,merge::test_merge_identity_and_range_invariants,success,284.967,106.735,2026-11-05T02:11:23Z,50234668.0,,
+experimental-bsan,similar-3.2.0,merge::test_non_overlapping_changes_merge_cleanly,success,284.967,1.654,2026-11-05T02:11:25Z,50234668.0,,
+experimental-bsan,similar-3.2.0,merge::test_owned_inputs,success,284.967,1.666,2026-11-05T02:11:27Z,50234668.0,,
+experimental-bsan,similar-3.2.0,merge::test_whitespace_insensitive_merge,success,284.967,1.661,2026-11-05T02:11:28Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::abstraction::test_split_chars,success,284.967,1.688,2026-11-05T02:11:30Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::abstraction::test_split_chars_bytes,success,284.967,1.699,2026-11-05T02:11:32Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::abstraction::test_split_graphemes,success,284.967,1.632,2026-11-05T02:11:34Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::abstraction::test_split_graphemes_bytes,success,284.967,8.742,2026-11-05T02:11:42Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::abstraction::test_split_lines,success,284.967,1.636,2026-11-05T02:11:44Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::abstraction::test_split_lines_bytes,success,284.967,1.632,2026-11-05T02:11:46Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::abstraction::test_split_words,success,284.967,1.606,2026-11-05T02:11:47Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::abstraction::test_split_words_bytes,success,284.967,1.634,2026-11-05T02:11:49Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::inline::test_iter_all_inline_changes_helpers_match_manual_iteration,success,284.967,2.697,2026-11-05T02:11:52Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::inline::test_line_ops_inline,test_failed,284.967,19.275,2026-11-05T02:12:11Z,50234668.0,panic,"thread 'text::inline::test_line_ops_inline' (12437) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'line_ops_inline' failed in line 956"
+experimental-bsan,similar-3.2.0,text::inline::test_line_ops_inline_chars,success,284.967,1.724,2026-11-05T02:12:13Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::inline::test_line_ops_inline_issue_84_chars,success,284.967,1.779,2026-11-05T02:12:14Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::inline::test_line_ops_inline_semantic_cleanup,success,284.967,1.941,2026-11-05T02:12:16Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::inline::test_line_ops_inline_semantic_snapshot,test_failed,284.967,15.891,2026-11-05T02:12:32Z,50234668.0,panic,"thread 'text::inline::test_line_ops_inline_semantic_snapshot' (18288) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'line_ops_inline_semantic_snapshot' failed in line 1124"
+experimental-bsan,similar-3.2.0,text::inline::test_semantic_cleanup_handles_leading_single_token_equal,success,284.967,1.627,2026-11-05T02:12:34Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::inline::test_semantic_cleanup_handles_trailing_single_token_equal,success,284.967,1.683,2026-11-05T02:12:36Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::inline::test_serde,test_failed,284.967,17.685,2026-11-05T02:12:53Z,50234668.0,panic,"thread 'text::inline::test_serde' (22555) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'serde' failed in line 1199"
+experimental-bsan,similar-3.2.0,text::test_captured_ops,test_failed,284.967,15.223,2026-11-05T02:13:08Z,50234668.0,panic,"thread 'text::test_captured_ops' (25115) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'captured_ops' failed in line 1190"
+experimental-bsan,similar-3.2.0,text::test_captured_word_ops,test_failed,284.967,22.915,2026-11-05T02:13:31Z,50234668.0,panic,"thread 'text::test_captured_word_ops' (28690) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'captured_word_ops' failed in line 1204"
+experimental-bsan,similar-3.2.0,text::test_char_diff,test_failed,284.967,15.697,2026-11-05T02:13:47Z,50234668.0,panic,"thread 'text::test_char_diff' (30901) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'char_diff' failed in line 1393"
+experimental-bsan,similar-3.2.0,text::test_get_close_matches,success,284.967,1.845,2026-11-05T02:13:49Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::test_iter_changes_panics_on_invalid_ops,success,284.967,1.620,2026-11-05T02:13:51Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::test_lifetimes_on_iter,test_failed,284.967,15.840,2026-11-05T02:14:06Z,50234668.0,panic,"thread 'text::test_lifetimes_on_iter' (32698) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'lifetimes_on_iter' failed in line 1431"
+experimental-bsan,similar-3.2.0,text::test_line_ops,test_failed,284.967,15.822,2026-11-05T02:14:22Z,50234668.0,panic,"thread 'text::test_line_ops' (34104) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'line_ops' failed in line 1328"
+experimental-bsan,similar-3.2.0,text::test_owned_inputs,success,284.967,1.631,2026-11-05T02:14:24Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::test_ratio,success,284.967,1.623,2026-11-05T02:14:26Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::test_regression_issue_37,success,284.967,1.735,2026-11-05T02:14:27Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::test_regression_issue_95,success,284.967,1.747,2026-11-05T02:14:29Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::test_serde,test_failed,284.967,16.235,2026-11-05T02:14:45Z,50234668.0,panic,"thread 'text::test_serde' (35963) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'serde' failed in line 1447"
+experimental-bsan,similar-3.2.0,text::test_serde_ops,test_failed,284.967,15.438,2026-11-05T02:15:01Z,50234668.0,panic,"thread 'text::test_serde_ops' (37151) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'serde_ops' failed in line 1459"
+experimental-bsan,similar-3.2.0,text::test_unified_diff,test_failed,284.967,14.764,2026-11-05T02:15:16Z,50234668.0,panic,"thread 'text::test_unified_diff' (38492) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'unified_diff' failed in line 1214"
+experimental-bsan,similar-3.2.0,text::test_virtual_newlines,test_failed,284.967,15.359,2026-11-05T02:15:31Z,50234668.0,panic,"thread 'text::test_virtual_newlines' (43839) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'virtual_newlines' failed in line 1387"
+experimental-bsan,similar-3.2.0,text::test_whitespace_mode_bytes,success,284.967,1.600,2026-11-05T02:15:33Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::test_whitespace_mode_issue_94,success,284.967,1.895,2026-11-05T02:15:35Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::test_whitespace_mode_large_input_remapping,success,284.967,4.274,2026-11-05T02:15:39Z,50234668.0,,
+experimental-bsan,similar-3.2.0,text::test_whitespace_mode_semantics,success,284.967,1.698,2026-11-05T02:15:40Z,50234668.0,,
+experimental-bsan,similar-3.2.0,udiff::test_empty_unified_diff,success,284.967,1.624,2026-11-05T02:15:42Z,50234668.0,,
+experimental-bsan,similar-3.2.0,udiff::test_unified_diff,test_failed,284.967,15.109,2026-11-05T02:15:57Z,50234668.0,panic,"thread 'udiff::test_unified_diff' (45971) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'unified_diff' failed in line 345"
+experimental-bsan,similar-3.2.0,udiff::test_unified_diff_newline_hint,test_failed,284.967,14.744,2026-11-05T02:16:12Z,50234668.0,panic,"thread 'udiff::test_unified_diff_newline_hint' (48394) panicked at /local/ev-50234668-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.48.0/src/runtime.rs:719:13: snapshot assertion for 'unified_diff_newline_hint' failed in line 356"
+experimental-bsan,similar-3.2.0,utils::test_empty_inputs_issue_99,success,284.967,1.699,2026-11-05T02:16:14Z,50234668.0,,
+experimental-bsan,similar-3.2.0,utils::test_remapper,success,284.967,1.702,2026-11-05T02:16:15Z,50234668.0,,

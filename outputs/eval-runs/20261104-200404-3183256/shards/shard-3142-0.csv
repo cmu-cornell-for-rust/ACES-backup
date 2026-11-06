@@ -1,0 +1,72 @@
+experimental-bsan,arrow-csv-60.0.0,reader::records::tests::test_basic,success,421.238,3.703,2026-11-05T02:26:47Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::records::tests::test_flush_offset_overflow_returns_csv_error,success,421.238,3.517,2026-11-05T02:26:50Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::records::tests::test_invalid_fields,success,421.238,5.688,2026-11-05T02:26:56Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::records::tests::test_skip_insufficient_rows,success,421.238,3.607,2026-11-05T02:27:00Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::records::tests::test_truncated_row_count_not_reset_by_flush,success,421.238,3.582,2026-11-05T02:27:03Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::records::tests::test_truncated_row_count_reset_by_clear,success,421.238,3.589,2026-11-05T02:27:07Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::records::tests::test_truncated_rows,success,421.238,3.617,2026-11-05T02:27:10Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::parse_date32,success,421.238,1.533,2026-11-05T02:27:12Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::parse_date64,success,421.238,1.541,2026-11-05T02:27:14Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::parse_time,success,421.238,1.536,2026-11-05T02:27:15Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_bounded,success,421.238,3.681,2026-11-05T02:27:19Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_comment,success,421.238,5.423,2026-11-05T02:27:24Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_csv,test_failed,421.238,1.628,2026-11-05T02:27:26Z,50240380.0,panic,"thread 'reader::tests::test_csv' (44581) panicked at src/reader/mod.rs:1399:58: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_csv_decoder_rejects_invalid_projection,success,421.238,5.372,2026-11-05T02:27:31Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_csv_from_buf_reader,test_failed,421.238,1.642,2026-11-05T02:27:33Z,50240380.0,panic,"thread 'reader::tests::test_csv_from_buf_reader' (48038) panicked at src/reader/mod.rs:1599:84: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_csv_reader_decimal_parsing,success,421.238,25.129,2026-11-05T02:27:58Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_csv_reader_rejects_invalid_projection,success,421.238,1.551,2026-11-05T02:28:00Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_csv_reader_with_decimal,test_failed,421.238,1.651,2026-11-05T02:28:01Z,50240380.0,panic,"thread 'reader::tests::test_csv_reader_with_decimal' (51642) panicked at src/reader/mod.rs:1448:61: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_csv_reader_with_decimal_3264,test_failed,421.238,1.648,2026-11-05T02:28:03Z,50240380.0,panic,"thread 'reader::tests::test_csv_reader_with_decimal_3264' (51799) panicked at src/reader/mod.rs:1551:61: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_csv_record_batch_reader_schema,success,421.238,20.874,2026-11-05T02:28:24Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_csv_schema_metadata,test_failed,421.238,1.615,2026-11-05T02:28:25Z,50240380.0,panic,"thread 'reader::tests::test_csv_schema_metadata' (52983) panicked at src/reader/mod.rs:1429:58: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_csv_with_dictionary,test_failed,421.238,1.610,2026-11-05T02:28:27Z,50240380.0,panic,"thread 'reader::tests::test_csv_with_dictionary' (53189) panicked at src/reader/mod.rs:1826:58: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_csv_with_nullable_dictionary,test_failed,421.238,1.605,2026-11-05T02:28:29Z,50240380.0,panic,"thread 'reader::tests::test_csv_with_nullable_dictionary' (53277) panicked at src/reader/mod.rs:1864:77: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_csv_with_projection,test_failed,421.238,1.607,2026-11-05T02:28:30Z,50240380.0,panic,"thread 'reader::tests::test_csv_with_projection' (53394) panicked at src/reader/mod.rs:1733:58: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_custom_nulls,test_failed,421.238,1.621,2026-11-05T02:28:32Z,50240380.0,panic,"thread 'reader::tests::test_custom_nulls' (53527) panicked at src/reader/mod.rs:1976:65: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_empty_projection,success,421.238,3.719,2026-11-05T02:28:36Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_header_bounds,success,421.238,17.856,2026-11-05T02:28:54Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_header_validation,success,421.238,7.542,2026-11-05T02:29:01Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_header_validation_with_buffered_reader,success,421.238,5.374,2026-11-05T02:29:07Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_header_validation_with_truncated_rows,success,421.238,3.651,2026-11-05T02:29:10Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_init_nulls,test_failed,421.238,1.622,2026-11-05T02:29:12Z,50240380.0,panic,"thread 'reader::tests::test_init_nulls' (57501) panicked at src/reader/mod.rs:1919:63: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_invalid_utf8,success,421.238,18.718,2026-11-05T02:29:31Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_io,success,421.238,3.584,2026-11-05T02:29:34Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_non_std_escape,success,421.238,5.426,2026-11-05T02:29:40Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_non_std_quote,success,421.238,5.366,2026-11-05T02:29:45Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_non_std_terminator,success,421.238,5.262,2026-11-05T02:29:50Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_null_boolean,success,421.238,5.378,2026-11-05T02:29:56Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_nulls,test_failed,421.238,1.625,2026-11-05T02:29:57Z,50240380.0,panic,"thread 'reader::tests::test_nulls' (61309) panicked at src/reader/mod.rs:1894:58: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_parse_invalid_csv_bool,test_failed,421.238,1.622,2026-11-05T02:29:59Z,50240380.0,panic,"thread 'reader::tests::test_parse_invalid_csv_bool' (61450) panicked at src/reader/mod.rs:2115:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_parse_invalid_csv_float,test_failed,421.238,1.629,2026-11-05T02:30:01Z,50240380.0,panic,"thread 'reader::tests::test_parse_invalid_csv_float' (61642) panicked at src/reader/mod.rs:2115:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_parse_invalid_csv_int,test_failed,421.238,1.624,2026-11-05T02:30:02Z,50240380.0,panic,"thread 'reader::tests::test_parse_invalid_csv_int' (61811) panicked at src/reader/mod.rs:2115:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_parse_string_view_multi_column,success,421.238,5.444,2026-11-05T02:30:08Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_parse_string_view_single_column,success,421.238,4.467,2026-11-05T02:30:12Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_parse_timestamp,success,421.238,18.983,2026-11-05T02:30:31Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_parsing_bool,success,421.238,1.533,2026-11-05T02:30:33Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_parsing_float,success,421.238,1.541,2026-11-05T02:30:34Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_truncated_row_count_accumulates_across_batches,success,421.238,3.688,2026-11-05T02:30:38Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_truncated_row_count_clean_file,success,421.238,6.261,2026-11-05T02:30:44Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_truncated_row_count_counts_padded_rows,success,421.238,6.311,2026-11-05T02:30:51Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_truncated_row_count_excludes_skipped_rows,success,421.238,6.317,2026-11-05T02:30:57Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_truncated_row_count_ignores_empty_trailing_field,success,421.238,6.301,2026-11-05T02:31:03Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_truncated_row_count_on_decoder,success,421.238,5.394,2026-11-05T02:31:09Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_truncated_row_count_without_truncated_rows,success,421.238,6.326,2026-11-05T02:31:15Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_truncated_rows,success,421.238,11.015,2026-11-05T02:31:26Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_truncated_rows_csv,test_failed,421.238,1.605,2026-11-05T02:31:28Z,50240380.0,panic,"thread 'reader::tests::test_truncated_rows_csv' (70874) panicked at src/reader/mod.rs:2742:63: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,arrow-csv-60.0.0,reader::tests::test_truncated_rows_not_nullable_error,success,421.238,6.328,2026-11-05T02:31:34Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_conversion_consistency,success,421.238,3.752,2026-11-05T02:31:38Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv,success,421.238,1.723,2026-11-05T02:31:40Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_binary,success,421.238,1.607,2026-11-05T02:31:41Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_custom_options,success,421.238,1.645,2026-11-05T02:31:43Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_decimal,success,421.238,1.673,2026-11-05T02:31:45Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_invalid_cast,success,421.238,1.564,2026-11-05T02:31:46Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_quote_style,success,421.238,1.699,2026-11-05T02:31:48Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_quote_style_with_nulls,success,421.238,1.582,2026-11-05T02:31:49Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_tz_format,success,421.238,1.560,2026-11-05T02:31:51Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_using_rfc3339,success,421.238,1.567,2026-11-05T02:31:53Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_whitespace_all_string_types,success,421.238,1.705,2026-11-05T02:31:54Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_whitespace_handling,success,421.238,1.701,2026-11-05T02:31:56Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_whitespace_with_special_chars,success,421.238,1.562,2026-11-05T02:31:58Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_with_any_terminator,success,421.238,1.566,2026-11-05T02:31:59Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_with_crlf_terminator,success,421.238,1.574,2026-11-05T02:32:01Z,50240380.0,,
+experimental-bsan,arrow-csv-60.0.0,writer::tests::test_write_csv_with_lf_terminator,success,421.238,1.559,2026-11-05T02:32:02Z,50240380.0,,

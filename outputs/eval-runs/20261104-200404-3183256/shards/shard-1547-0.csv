@@ -1,0 +1,138 @@
+experimental-bsan,sliding_features-11.0.0,pipeline::builder::tests::a_pipeline_needs_an_output,success,277.607,1.648,2026-11-05T01:49:40Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::builder::tests::constants_are_folded,success,277.607,1.624,2026-11-05T01:49:41Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::builder::tests::equal_calls_share_one_node,success,277.607,1.615,2026-11-05T01:49:43Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::builder::tests::foreign_nodes_are_rejected,success,277.607,1.615,2026-11-05T01:49:45Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::builder::tests::limits_are_enforced,success,277.607,1.601,2026-11-05T01:49:46Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::builder::tests::names_are_checked,success,277.607,1.622,2026-11-05T01:49:48Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::domain::tests::arithmetic_examples,success,277.607,1.604,2026-11-05T01:49:49Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::domain::tests::contains_respects_open_and_closed_ends,success,277.607,1.587,2026-11-05T01:49:51Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::domain::tests::display_and_constructors,success,277.607,1.608,2026-11-05T01:49:53Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::domain::tests::empty_open_domain_panics,success,277.607,1.632,2026-11-05T01:49:54Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::domain::tests::intersection,success,277.607,1.627,2026-11-05T01:49:56Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::domain::tests::operations_contain_every_result,success,277.607,40.274,2026-11-05T01:50:36Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::domain::tests::reversed_bounds_panic,success,277.607,1.626,2026-11-05T01:50:38Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::domain::tests::rounding_collapse_yields_a_point_not_an_empty_domain,success,277.607,1.592,2026-11-05T01:50:39Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::error::tests::a_compile_error_needs_an_error,success,277.607,1.615,2026-11-05T01:50:41Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::error::tests::display_lists_every_diagnostic,success,277.607,1.611,2026-11-05T01:50:43Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::function::tests::binary_op_domains,success,277.607,1.617,2026-11-05T01:50:44Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::function::tests::names_are_unique_and_round_trip,success,277.607,1.650,2026-11-05T01:50:46Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::function::tests::output_domains,success,277.607,1.624,2026-11-05T01:50:48Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::function::tests::parameter_checks,success,277.607,1.658,2026-11-05T01:50:49Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::function::tests::the_reference_lists_every_signature,success,277.607,1.947,2026-11-05T01:50:51Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::function::tests::window_lengths,success,277.607,1.610,2026-11-05T01:50:53Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::graph::tests::equal_nodes_are_shared,success,277.607,1.622,2026-11-05T01:50:55Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::graph::tests::foreign_nodes_are_rejected,success,277.607,1.651,2026-11-05T01:50:56Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::graph::tests::reachability,success,277.607,1.634,2026-11-05T01:50:58Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::graph::tests::the_node_limit_counts_distinct_nodes,success,277.607,1.633,2026-11-05T01:50:59Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::lex::tests::line_breaks_end_statements_only_after_complete_expressions,success,277.607,1.628,2026-11-05T01:51:01Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::lex::tests::locations_count_lines_and_columns,success,277.607,1.628,2026-11-05T01:51:03Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::lex::tests::numbers,success,277.607,1.628,2026-11-05T01:51:04Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::parse::tests::analysis_findings_point_at_their_expression,success,277.607,1.777,2026-11-05T01:51:06Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::parse::tests::calls_unary_minus_and_numbers,success,277.607,2.402,2026-11-05T01:51:09Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::parse::tests::deep_nesting_is_an_error_not_a_stack_overflow,timeout,277.607,150.019,2026-11-05T01:53:39Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,pipeline::parse::tests::edit_distances,success,277.607,1.680,2026-11-05T01:53:40Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::parse::tests::errors_point_at_the_problem,success,277.607,2.582,2026-11-05T01:53:43Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::parse::tests::every_function_round_trips,success,277.607,4.945,2026-11-05T01:53:48Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::parse::tests::precedence_and_associativity,success,277.607,2.158,2026-11-05T01:53:50Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::parse::tests::random_pipelines_round_trip_through_text,timeout,277.607,150.016,2026-11-05T01:56:20Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,pipeline::parse::tests::several_inputs,success,277.607,1.680,2026-11-05T01:56:22Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::parse::tests::statements_bindings_and_sharing,success,277.607,2.504,2026-11-05T01:56:24Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::program::tests::admits_rejects_not_ready_values,success,277.607,1.603,2026-11-05T01:56:26Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::program::tests::only_reachable_nodes_are_lowered,success,277.607,1.603,2026-11-05T01:56:27Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::state::tests::pure_function_values,success,277.607,1.602,2026-11-05T01:56:29Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::state::tests::pure_functions_propagate_not_ready,success,277.607,1.597,2026-11-05T01:56:31Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::a_single_output_pipeline_is_a_view,success,277.607,1.696,2026-11-05T01:56:32Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::a_view_holds_its_value_while_its_argument_is_not_ready,success,277.607,1.626,2026-11-05T01:56:34Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::clone_branches_and_reset_starts_over,success,277.607,2.298,2026-11-05T01:56:36Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::declared_input_domains_silence_warnings,success,277.607,1.611,2026-11-05T01:56:38Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::every_function_survives_adversarial_input,timeout,277.607,150.014,2026-11-05T01:59:08Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::matches_the_hand_written_chain,success,277.607,3.059,2026-11-05T01:59:11Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::never_ready_calls_and_constant_outputs_are_errors,success,277.607,1.635,2026-11-05T01:59:13Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::non_finite_input_is_not_ready,success,277.607,1.601,2026-11-05T01:59:14Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::output_domains_and_warm_ups,success,277.607,1.633,2026-11-05T01:59:16Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::outputs_stay_in_their_declared_domain,success,277.607,79.977,2026-11-05T02:00:36Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::requirements_guard_the_views,success,277.607,1.633,2026-11-05T02:00:38Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::several_inputs,success,277.607,1.644,2026-11-05T02:00:39Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::shared_nodes_are_computed_once,success,277.607,1.634,2026-11-05T02:00:41Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::suspicious_pipelines_compile_with_warnings,success,277.607,1.649,2026-11-05T02:00:43Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::the_warm_up_estimate_suffices,success,277.607,3.967,2026-11-05T02:00:47Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::unused_helpers_are_not_run,success,277.607,1.621,2026-11-05T02:00:48Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pipeline::tests::update_checks_the_input_count,success,277.607,1.637,2026-11-05T02:00:50Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pure_functions::abs::tests::abs,success,277.607,1.588,2026-11-05T02:00:51Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pure_functions::echo::tests::echo_plot,timeout,277.607,150.014,2026-11-05T02:03:21Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,pure_functions::gte::tests::gte,success,277.607,1.602,2026-11-05T02:03:23Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pure_functions::ln::tests::ln_of_non_positive_values_is_none,success,277.607,1.614,2026-11-05T02:03:25Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pure_functions::ln::tests::ln_of_positive_values,success,277.607,1.607,2026-11-05T02:03:26Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,pure_functions::lte::tests::lte,success,277.607,1.607,2026-11-05T02:03:28Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,rolling::drawdown::tests::drawdown,success,277.607,1.623,2026-11-05T02:03:30Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,rolling::first::tests::first,success,277.607,1.619,2026-11-05T02:03:31Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,rolling::ln_return::tests::ln_return,success,277.607,1.628,2026-11-05T02:03:33Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,rolling::welford_rolling::tests::welford_online,success,277.607,1.661,2026-11-05T02:03:35Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,rolling::welford_rolling::tests::welford_online_plot,timeout,277.607,150.016,2026-11-05T02:06:05Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::alma::tests::alma,timeout,277.607,150.015,2026-11-05T02:08:35Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::alma::tests::alma_plot,timeout,277.607,150.015,2026-11-05T02:11:05Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::binary_entropy::tests::binary_entropy,success,277.607,1.812,2026-11-05T02:11:06Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::center_of_gravity::tests::center_of_gravity_plot,timeout,277.607,150.017,2026-11-05T02:13:36Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::correlation_trend_indicator::tests::correlation_trend_indicator,success,277.607,2.474,2026-11-05T02:13:39Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::correlation_trend_indicator::tests::correlation_trend_indicator_plot,timeout,277.607,150.025,2026-11-05T02:16:09Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::cumulative::tests::cumulative_plot,timeout,277.607,150.019,2026-11-05T02:18:39Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::cumulative::tests::cumulative_sums_the_window,success,277.607,1.994,2026-11-05T02:18:41Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::cyber_cycle::tests::cyber_cycle_plot,timeout,277.607,150.022,2026-11-05T02:21:11Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::ehlers_fisher_transform::tests::ehlers_fisher_transform_plot,timeout,277.607,150.025,2026-11-05T02:23:41Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::ema::tests::ema_plot,timeout,277.607,150.019,2026-11-05T02:26:11Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::lag::test::lag,success,277.607,1.901,2026-11-05T02:26:13Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::laguerre_filter::tests::laguerre_filter,success,277.607,27.969,2026-11-05T02:26:41Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::laguerre_filter::tests::laguerre_filter_plot,timeout,277.607,150.022,2026-11-05T02:29:11Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::laguerre_rsi::tests::laguerre_rsi,success,277.607,3.235,2026-11-05T02:29:14Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::laguerre_rsi::tests::laguerre_rsi_plot,timeout,277.607,150.020,2026-11-05T02:31:45Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::mad_scaler::tests::mad_scaler,success,277.607,2.923,2026-11-05T02:31:47Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::mad_scaler::tests::mad_scaler_clone_continues_identically,success,277.607,3.655,2026-11-05T02:31:51Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::mad_scaler::tests::mad_scaler_disjoint_clean_and_outlier,success,277.607,2.090,2026-11-05T02:31:53Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::mad_scaler::tests::mad_scaler_matches_reference_f32,timeout,277.607,150.023,2026-11-05T02:34:23Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::mad_scaler::tests::mad_scaler_matches_reference_f64,timeout,277.607,150.023,2026-11-05T02:36:53Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::mad_scaler::tests::mad_scaler_no_lookahead,success,277.607,1.999,2026-11-05T02:36:55Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::mad_scaler::tests::mad_scaler_plot,timeout,277.607,150.018,2026-11-05T02:39:25Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::max::test::max,success,277.607,1.877,2026-11-05T02:39:27Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min::test::min,success,277.607,1.873,2026-11-05T02:39:29Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_all_outputs_finite,success,277.607,2.198,2026-11-05T02:39:31Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_bounds,success,277.607,1.855,2026-11-05T02:39:33Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_chained,success,277.607,2.187,2026-11-05T02:39:35Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_clamps_new_extremes,success,277.607,2.159,2026-11-05T02:39:38Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_identical_values_yield_zero,success,277.607,1.897,2026-11-05T02:39:40Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_max_recalculated_when_singular_max_leaves,success,277.607,1.885,2026-11-05T02:39:41Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_min_recalculated_when_singular_min_leaves,success,277.607,1.999,2026-11-05T02:39:43Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_no_lookahead_on_spike,success,277.607,1.933,2026-11-05T02:39:45Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_plot,timeout,277.607,150.019,2026-11-05T02:42:15Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_recovers_after_spike_leaves_window,success,277.607,1.939,2026-11-05T02:42:17Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_rising_sequence,success,277.607,1.870,2026-11-05T02:42:19Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_stress_test,success,277.607,2.834,2026-11-05T02:42:22Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_warmup,success,277.607,1.895,2026-11-05T02:42:24Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::min_max_normalizer_window_len_one,success,277.607,1.951,2026-11-05T02:42:26Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::min_max_normalizer::tests::normalizer,success,277.607,2.266,2026-11-05T02:42:28Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::my_rsi::tests::my_rsi,success,277.607,2.507,2026-11-05T02:42:31Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::my_rsi::tests::my_rsi_plot,timeout,277.607,150.019,2026-11-05T02:45:01Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::noise_elimination_technology::tests::net_my_rsi_plot,timeout,277.607,150.016,2026-11-05T02:47:31Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::polarized_fractal_efficiency::tests::efficiency_of_reference_paths,success,277.607,1.829,2026-11-05T02:47:33Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::polarized_fractal_efficiency::tests::pfe_without_smoothing_stays_in_range,success,277.607,3.378,2026-11-05T02:47:36Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::polarized_fractal_efficiency::tests::polarized_fractal_efficiency,success,277.607,2.672,2026-11-05T02:47:39Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::polarized_fractal_efficiency::tests::polarized_fractal_efficiency_plot,timeout,277.607,150.018,2026-11-05T02:50:09Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::polarized_fractal_efficiency::tests::window_of_one_is_rejected,success,277.607,1.947,2026-11-05T02:50:11Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::re_flex::tests::re_flex_plot,timeout,277.607,150.024,2026-11-05T02:52:41Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::roc::tests::roc_plot,timeout,277.607,150.026,2026-11-05T02:55:11Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::roofing_filter::tests::roofing_filter_plot,timeout,277.607,150.022,2026-11-05T02:57:41Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::rsi::tests::rsi_plot,timeout,277.607,150.017,2026-11-05T03:00:11Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::rsi::tests::rsi_range,success,277.607,2.125,2026-11-05T03:00:13Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::sma::tests::sma,success,277.607,2.937,2026-11-05T03:00:16Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::sma::tests::sma_averages_the_window,success,277.607,2.001,2026-11-05T03:00:18Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::sma::tests::sma_plot,timeout,277.607,150.022,2026-11-05T03:02:48Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::super_smoother::tests::super_smoother_plot,timeout,277.607,150.025,2026-11-05T03:05:18Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::trend_flex::tests::trend_flex_plot,timeout,277.607,150.021,2026-11-05T03:07:48Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::variance_stabilizing_transformation::tests::variance_stabilizing_transform_plot,timeout,277.607,150.022,2026-11-05T03:10:18Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::welford_online::tests::welford_online,success,277.607,2.009,2026-11-05T03:10:20Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::welford_online::tests::welford_online_plot,timeout,277.607,150.019,2026-11-05T03:12:50Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,sliding_windows::welford_online::tests::welford_online_sliding_matches_direct_computation,success,277.607,1.847,2026-11-05T03:12:52Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::z_score_standardization::tests::z_score_does_not_leak_current_value_into_statistics,success,277.607,1.850,2026-11-05T03:12:54Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::z_score_standardization::tests::z_score_matches_direct_past_window_computation,success,277.607,1.838,2026-11-05T03:12:56Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::z_score_standardization::tests::z_score_of_identical_values_is_zero,success,277.607,1.855,2026-11-05T03:12:58Z,50234446.0,,
+experimental-bsan,sliding_features-11.0.0,sliding_windows::z_score_standardization::tests::z_score_plot,timeout,277.607,150.017,2026-11-05T03:15:28Z,50234446.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sliding_features-11.0.0,test_data::tests::generate_test_data,success,277.607,2.310,2026-11-05T03:15:30Z,50234446.0,,

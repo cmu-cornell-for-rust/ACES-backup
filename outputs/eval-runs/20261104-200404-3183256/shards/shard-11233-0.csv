@@ -1,0 +1,13 @@
+experimental-bsan,mdbook-graphviz-0.2.1,preprocessor::test::chapter_sub_items,success,847.736,2.938,2026-11-05T05:50:34Z,50253581.0,,
+experimental-bsan,mdbook-graphviz-0.2.1,preprocessor::test::concurrent_execution,test_failed,847.736,3.600,2026-11-05T05:50:38Z,50253581.0,panic,"thread 'preprocessor::test::concurrent_execution' (20748) panicked at src/preprocessor.rs:569:9: 833.403517ms should be less than 2 * 100ms since we expect some variation when running"
+experimental-bsan,mdbook-graphviz-0.2.1,preprocessor::test::do_not_preprocess_flagged_blocks_without_custom_flag,success,847.736,2.682,2026-11-05T05:50:40Z,50253581.0,,
+experimental-bsan,mdbook-graphviz-0.2.1,preprocessor::test::named_blocks,success,847.736,2.785,2026-11-05T05:50:43Z,50253581.0,,
+experimental-bsan,mdbook-graphviz-0.2.1,preprocessor::test::no_name,success,847.736,2.778,2026-11-05T05:50:46Z,50253581.0,,
+experimental-bsan,mdbook-graphviz-0.2.1,preprocessor::test::only_preprocess_flagged_blocks,success,847.736,2.698,2026-11-05T05:50:49Z,50253581.0,,
+experimental-bsan,mdbook-graphviz-0.2.1,preprocessor::test::preprocess_flagged_blocks_with_custom_flag,success,847.736,2.723,2026-11-05T05:50:51Z,50253581.0,,
+experimental-bsan,mdbook-graphviz-0.2.1,preprocessor::test::preserve_escaping,success,847.736,2.928,2026-11-05T05:50:54Z,50253581.0,,
+experimental-bsan,mdbook-graphviz-0.2.1,preprocessor::test::preserve_tables,success,847.736,3.108,2026-11-05T05:50:57Z,50253581.0,,
+experimental-bsan,mdbook-graphviz-0.2.1,preprocessor::test::skip_draft_chapters,success,847.736,2.770,2026-11-05T05:51:00Z,50253581.0,,
+experimental-bsan,mdbook-graphviz-0.2.1,renderer::test::file_events,test_failed,847.736,2.798,2026-11-05T05:51:03Z,50253581.0,panic,"thread 'renderer::test::file_events' (21087) panicked at src/renderer.rs:185:14: Expect rendering to succeed: No such file or directory (os error 2)"
+experimental-bsan,mdbook-graphviz-0.2.1,renderer::test::file_events_with_link,test_failed,847.736,2.781,2026-11-05T05:51:06Z,50253581.0,panic,"thread 'renderer::test::file_events_with_link' (21141) panicked at src/renderer.rs:219:14: Expect rendering to succeed: No such file or directory (os error 2)"
+experimental-bsan,mdbook-graphviz-0.2.1,renderer::test::inline_events,test_failed,847.736,2.759,2026-11-05T05:51:09Z,50253581.0,panic,"thread 'renderer::test::inline_events' (21197) panicked at src/renderer.rs:160:14: called `Result::unwrap()` on an `Err` value: No such file or directory (os error 2)"

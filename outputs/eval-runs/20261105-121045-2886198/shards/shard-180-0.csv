@@ -1,0 +1,5 @@
+experimental-bsan,sysinfo-0.39.6,common::system::test::check_refresh_process_update,test_failed,66.671,1757.858,2026-11-05T18:17:34Z,50276168.0,panic,"thread 'common::system::test::check_refresh_process_update' (32861) panicked at src/common/system.rs:2915:9: 86 <= 5"
+experimental-bsan,sysinfo-0.39.6,code_checkers::code_checks,timeout,66.671,1800.030,2026-11-05T18:47:34Z,50276168.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sysinfo-0.39.6,common::system::test::check_processes_cpu_usage,success,66.671,1681.567,2026-11-05T19:15:36Z,50276168.0,,
+experimental-bsan,sysinfo-0.39.6,test_cpu_processes_usage,timeout,66.671,1800.019,2026-11-05T19:45:36Z,50276168.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sysinfo-0.39.6,test_refresh_processes,timeout,66.671,1800.031,2026-11-05T20:15:36Z,50276168.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"

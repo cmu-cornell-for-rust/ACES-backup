@@ -1,0 +1,7 @@
+experimental-bsan,kdbplus-0.3.9,cast_test,success,241.454,3.058,2026-11-05T06:57:29Z,50257935.0,,
+experimental-bsan,kdbplus-0.3.9,compression_test,test_failed,241.454,14.739,2026-11-05T06:57:44Z,50257935.0,gc,"test compression_test ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,kdbplus-0.3.9,format_test,success,241.454,3.373,2026-11-05T06:57:47Z,50257935.0,,
+experimental-bsan,kdbplus-0.3.9,functional_message_test,test_failed,241.454,14.723,2026-11-05T06:58:02Z,50257935.0,gc,"test functional_message_test ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,kdbplus-0.3.9,getter_test,success,241.454,3.070,2026-11-05T06:58:05Z,50257935.0,,
+experimental-bsan,kdbplus-0.3.9,length_test,success,241.454,3.060,2026-11-05T06:58:08Z,50257935.0,,
+experimental-bsan,kdbplus-0.3.9,push_pop_test,success,241.454,3.167,2026-11-05T06:58:11Z,50257935.0,,

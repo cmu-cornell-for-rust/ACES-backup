@@ -1,0 +1,7 @@
+experimental-bsan,testbench-1.0.1,race_cell::tests::clone,success,4.621,1.583,2026-11-05T07:00:38Z,50258355.0,,
+experimental-bsan,testbench-1.0.1,race_cell::tests::consistent_read,success,4.621,1.622,2026-11-05T07:00:40Z,50258355.0,,
+experimental-bsan,testbench-1.0.1,race_cell::tests::inconsistent_read,success,4.621,1.607,2026-11-05T07:00:41Z,50258355.0,,
+experimental-bsan,testbench-1.0.1,race_cell::tests::initial_state,success,4.621,1.602,2026-11-05T07:00:43Z,50258355.0,,
+experimental-bsan,testbench-1.0.1,tests::antagonist_showcase,test_failed,4.621,1.763,2026-11-05T07:00:45Z,50258355.0,panic,"thread 'tests::antagonist_showcase' (33149) panicked at src/lib.rs:236:9: assertion failed: atom.load(Ordering::Relaxed) > 100000"
+experimental-bsan,testbench-1.0.1,tests::fetch_and_or_xor,timeout,4.621,150.018,2026-11-05T07:03:15Z,50258355.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,testbench-1.0.1,tests::swap_and_fetch_add,timeout,4.621,150.018,2026-11-05T07:05:45Z,50258355.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

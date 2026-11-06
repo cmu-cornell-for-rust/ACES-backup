@@ -1,0 +1,19 @@
+experimental-bsan,object-0.36.5,parse_self,success,84.748,4.594,2026-11-05T04:52:09Z,50251001.0,,
+experimental-bsan,object-0.36.5,parse_self_cache,timeout,84.748,150.016,2026-11-05T04:54:39Z,50251001.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,object-0.36.5,pod::tests::single,success,84.748,4.344,2026-11-05T04:54:43Z,50251001.0,,
+experimental-bsan,object-0.36.5,pod::tests::slice,success,84.748,4.333,2026-11-05T04:54:47Z,50251001.0,,
+experimental-bsan,object-0.36.5,read::archive::tests::aix_names,success,84.748,4.341,2026-11-05T04:54:52Z,50251001.0,,
+experimental-bsan,object-0.36.5,read::archive::tests::bsd_names,success,84.748,4.327,2026-11-05T04:54:56Z,50251001.0,,
+experimental-bsan,object-0.36.5,read::archive::tests::gnu_names,success,84.748,4.336,2026-11-05T04:55:00Z,50251001.0,,
+experimental-bsan,object-0.36.5,read::archive::tests::kind,success,84.748,4.305,2026-11-05T04:55:05Z,50251001.0,,
+experimental-bsan,object-0.36.5,read::archive::tests::thin_gnu_names,success,84.748,4.163,2026-11-05T04:55:09Z,50251001.0,,
+experimental-bsan,object-0.36.5,read::coff::coff_extended_relocations,test_failed,84.748,2.909,2026-11-05T04:55:12Z,50251001.0,panic,"thread 'read::coff::coff_extended_relocations' (101674) panicked at tests/read/coff.rs:9:42: Could not read relocs_overflow.o: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,object-0.36.5,read::coff::section::tests::name_offset,success,84.748,4.146,2026-11-05T04:55:16Z,50251001.0,,
+experimental-bsan,object-0.36.5,read::elf::get_buildid_bad_elf,test_failed,84.748,2.897,2026-11-05T04:55:19Z,50251001.0,panic,"thread 'read::elf::get_buildid_bad_elf' (102699) panicked at tests/read/elf.rs:7:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,object-0.36.5,read::elf::get_buildid_less_bad_elf,test_failed,84.748,2.895,2026-11-05T04:55:22Z,50251001.0,panic,"thread 'read::elf::get_buildid_less_bad_elf' (102854) panicked at tests/read/elf.rs:7:42: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,object-0.36.5,read::macho::load_command::tests::cmd_size_invalid,success,84.748,4.143,2026-11-05T04:55:26Z,50251001.0,,
+experimental-bsan,object-0.36.5,read::macho::test_go_macho,test_failed,84.748,2.892,2026-11-05T04:55:29Z,50251001.0,panic,"thread 'read::macho::test_go_macho' (103156) panicked at tests/read/macho.rs:22:46: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,object-0.36.5,read::util::tests::bytes,success,84.748,4.154,2026-11-05T04:55:33Z,50251001.0,,
+experimental-bsan,object-0.36.5,read::util::tests::bytes_debug,success,84.748,4.164,2026-11-05T04:55:37Z,50251001.0,,
+experimental-bsan,object-0.36.5,write::string::tests::string_table,success,84.748,4.146,2026-11-05T04:55:41Z,50251001.0,,
+experimental-bsan,object-0.36.5,write::util::tests::bytes_mut,success,84.748,4.152,2026-11-05T04:55:46Z,50251001.0,,

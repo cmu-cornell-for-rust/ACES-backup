@@ -1,0 +1,4 @@
+experimental-bsan,eqlog-0.7.2,,build_failed,192.952,,2026-11-05T17:50:28Z,50276296.0,oom,"process didn't exit successfully: `/opt/rust/cargo/bin/cargo-bsan /ocean/projects/cis260383p/shared/ACES-backup/outputs/eval-runs/20261105-121045-2886198/rustc-cfg-miri.sh --crate-name eqlog_eqlog --edition=2021 /local/ev-50276296-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/eqlog-eqlog-0.7."
+experimental-bsan,eqlog-0.7.2,flat_eqlog::sort_if_stmts::equal_is_better,killed,,,2026-11-05T17:50:28Z,50276296.0,oom,"srun step OOM-killed at --mem-per-task 8G before this test got a row"
+experimental-bsan,eqlog-0.7.2,flat_eqlog::sort_if_stmts::less_variables_is_better,killed,,,2026-11-05T17:50:28Z,50276296.0,oom,"srun step OOM-killed at --mem-per-task 8G before this test got a row"
+experimental-bsan,eqlog-0.7.2,flat_eqlog::sort_if_stmts::only_dirty_is_better,killed,,,2026-11-05T17:50:28Z,50276296.0,oom,"srun step OOM-killed at --mem-per-task 8G before this test got a row"

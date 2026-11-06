@@ -1,0 +1,3 @@
+experimental-bsan,rusoto_route53-0.48.0,custom::custom_tests::test_parse_no_such_hosted_zone_error,success,190.070,2.737,2026-11-05T08:33:42Z,50263029.0,,
+experimental-bsan,rusoto_route53-0.48.0,custom::custom_tests::test_quoter,success,190.070,1.624,2026-11-05T08:33:44Z,50263029.0,,
+experimental-bsan,rusoto_route53-0.48.0,generated::protocol_tests::test_parse_error_route_53_get_hosted_zone,test_failed,190.070,1.872,2026-11-05T08:33:46Z,50263029.0,panic,"thread 'generated::protocol_tests::test_parse_error_route_53_get_hosted_zone' (100574) panicked at /local/ev-50263029-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/rusoto_mock-0.48.0/src/lib.rs:195:53: couldn't find file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

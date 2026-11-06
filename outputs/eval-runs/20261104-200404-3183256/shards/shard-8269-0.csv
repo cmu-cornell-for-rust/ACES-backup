@@ -1,0 +1,23 @@
+experimental-bsan,mzsignal-0.25.0,arrayops::test::test_find,success,246.424,3.131,2026-11-05T04:36:31Z,50249670.0,,
+experimental-bsan,mzsignal-0.25.0,average::test::test_averaging,test_failed,246.424,1.706,2026-11-05T04:36:33Z,50249670.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,mzsignal-0.25.0,average::test::test_rebin_chunked,timeout,246.424,150.015,2026-11-05T04:39:03Z,50249670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mzsignal-0.25.0,average::test::test_rebin_one,success,246.424,12.342,2026-11-05T04:39:15Z,50249670.0,,
+experimental-bsan,mzsignal-0.25.0,average::test::test_rebin_parallel,success,246.424,7.255,2026-11-05T04:39:22Z,50249670.0,,
+experimental-bsan,mzsignal-0.25.0,average::test::test_rebin_parallel_locked,timeout,246.424,150.014,2026-11-05T04:41:52Z,50249670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mzsignal-0.25.0,average::test::test_segment_grid,test_failed,246.424,1.699,2026-11-05T04:41:54Z,50249670.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,mzsignal-0.25.0,denoise::test::test_denoise,success,246.424,3.541,2026-11-05T04:41:57Z,50249670.0,,
+experimental-bsan,mzsignal-0.25.0,feature_mapping::test::test_construction,test_failed,246.424,1.700,2026-11-05T04:41:59Z,50249670.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,mzsignal-0.25.0,feature_statistics::test::test_fit_args,test_failed,246.424,1.760,2026-11-05T04:42:01Z,50249670.0,panic,"thread 'feature_statistics::test::test_fit_args' (51184) panicked at src/feature_statistics.rs:2084:73: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mzsignal-0.25.0,feature_statistics::test::test_fit_feature_10979,test_failed,246.424,1.761,2026-11-05T04:42:03Z,50249670.0,panic,"thread 'feature_statistics::test::test_fit_feature_10979' (51896) panicked at src/feature_statistics.rs:2084:73: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mzsignal-0.25.0,feature_statistics::test::test_fit_feature_14216,test_failed,246.424,1.767,2026-11-05T04:42:05Z,50249670.0,panic,"thread 'feature_statistics::test::test_fit_feature_14216' (52272) panicked at src/feature_statistics.rs:2084:73: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mzsignal-0.25.0,feature_statistics::test::test_fit_feature_4490,test_failed,246.424,1.748,2026-11-05T04:42:06Z,50249670.0,panic,"thread 'feature_statistics::test::test_fit_feature_4490' (52648) panicked at src/feature_statistics.rs:2084:73: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mzsignal-0.25.0,feature_statistics::test::test_mixed_signal,timeout,246.424,150.015,2026-11-05T04:44:36Z,50249670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mzsignal-0.25.0,peak_picker::test::test_peak_picker_no_noise,success,246.424,3.105,2026-11-05T04:44:40Z,50249670.0,,
+experimental-bsan,mzsignal-0.25.0,peak_picker::test::test_peak_picker_no_noise_parallel,success,246.424,3.761,2026-11-05T04:44:43Z,50249670.0,,
+experimental-bsan,mzsignal-0.25.0,peak_picker::test::test_peak_picker_no_noise_parallel_rebinned,timeout,246.424,150.032,2026-11-05T04:47:13Z,50249670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mzsignal-0.25.0,peak_picker::test::test_peak_picker_no_noise_snr_threshold,success,246.424,3.123,2026-11-05T04:47:17Z,50249670.0,,
+experimental-bsan,mzsignal-0.25.0,peak_picker::test::test_peak_picker_noisy_snr_threshold,success,246.424,3.341,2026-11-05T04:47:20Z,50249670.0,,
+experimental-bsan,mzsignal-0.25.0,peak_statistics::test::test_empty_array_width,success,246.424,3.118,2026-11-05T04:47:23Z,50249670.0,,
+experimental-bsan,mzsignal-0.25.0,reprofile::test::test_builder,success,246.424,4.760,2026-11-05T04:47:28Z,50249670.0,,
+experimental-bsan,mzsignal-0.25.0,smooth::test::test_savgol,success,246.424,4.387,2026-11-05T04:47:32Z,50249670.0,,
+experimental-bsan,mzsignal-0.25.0,text::test::read_arrays_over_time,test_failed,246.424,1.695,2026-11-05T04:47:34Z,50249670.0,other,"error: test failed, to rerun pass `--lib`"

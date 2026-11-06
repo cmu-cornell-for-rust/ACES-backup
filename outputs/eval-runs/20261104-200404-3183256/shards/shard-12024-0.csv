@@ -1,0 +1,11 @@
+experimental-bsan,databend-client-0.22.2,auth::tests::hide_content,success,250.300,3.072,2026-11-05T06:00:54Z,50254725.0,,
+experimental-bsan,databend-client-0.22.2,auth::tests::serialization,success,250.300,3.074,2026-11-05T06:00:57Z,50254725.0,,
+experimental-bsan,databend-client-0.22.2,client::test::parse_dsn,success,250.300,3.329,2026-11-05T06:01:00Z,50254725.0,,
+experimental-bsan,databend-client-0.22.2,request::test::build_request,success,250.300,3.081,2026-11-05T06:01:04Z,50254725.0,,
+experimental-bsan,databend-client-0.22.2,response::test::deserialize_session_config,success,250.300,3.075,2026-11-05T06:01:07Z,50254725.0,,
+experimental-bsan,databend-client-0.22.2,simple::select_simple,test_failed,250.300,3.646,2026-11-05T06:01:10Z,50254725.0,panic,"thread 'simple::select_simple' (19429) panicked at tests/core/simple.rs:23:57: called `Result::unwrap()` on an `Err` value: Request(""error sending request for url (http://localhost:8000/v1/query)"")"
+experimental-bsan,databend-client-0.22.2,stage::insert_with_stage_presigned,test_failed,250.300,3.773,2026-11-05T06:01:14Z,50254725.0,panic,"thread 'stage::insert_with_stage_presigned' (20820) panicked at tests/core/stage.rs:47:10: called `Result::unwrap()` on an `Err` value: Request(""error sending request for url (http://localhost:8000/v1/query)"")"
+experimental-bsan,databend-client-0.22.2,stage::insert_with_stage_stream,test_failed,250.300,3.776,2026-11-05T06:01:18Z,50254725.0,panic,"thread 'stage::insert_with_stage_stream' (21139) panicked at tests/core/stage.rs:47:10: called `Result::unwrap()` on an `Err` value: Request(""error sending request for url (http://localhost:8000/v1/upload_to_stage)"")"
+experimental-bsan,databend-client-0.22.2,stage::test::parse_stage,success,250.300,3.071,2026-11-05T06:01:21Z,50254725.0,,
+experimental-bsan,databend-client-0.22.2,stage::test::parse_stage_empty_path,success,250.300,3.078,2026-11-05T06:01:24Z,50254725.0,,
+experimental-bsan,databend-client-0.22.2,stage::test::parse_stage_fail,success,250.300,3.071,2026-11-05T06:01:27Z,50254725.0,,

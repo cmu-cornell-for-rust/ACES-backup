@@ -1,0 +1,24 @@
+experimental-bsan,cargo-deny-0.20.2,advisories::cfg::test::deserializes_advisories_cfg,test_failed,543.629,1.860,2026-11-05T04:28:22Z,50249198.0,panic,"thread 'advisories::cfg::test::deserializes_advisories_cfg' (95977) panicked at src/test_utils.rs:147:55: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cargo-deny-0.20.2,advisories::cfg::test::expands_path,success,543.629,43.486,2026-11-05T04:29:06Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,advisories::cfg::test::parses_valid_durations,success,543.629,3.285,2026-11-05T04:29:09Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,advisories::cfg::test::rejects_invalid_durations,success,543.629,41.701,2026-11-05T04:29:51Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,advisories::cfg::test::warns_on_duplicates,success,543.629,42.626,2026-11-05T04:30:34Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,advisories::helpers::db::test::matches_rustsec,success,543.629,3.329,2026-11-05T04:30:37Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,advisories::helpers::parse::test::split_arrays,success,543.629,3.218,2026-11-05T04:30:40Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,bans::cfg::test::deserializes_ban_cfg,test_failed,543.629,1.829,2026-11-05T04:30:42Z,50249198.0,panic,"thread 'bans::cfg::test::deserializes_ban_cfg' (97547) panicked at src/test_utils.rs:147:55: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cargo-deny-0.20.2,cfg::package_spec::test::deserializes_package_id,test_failed,543.629,1.838,2026-11-05T04:30:44Z,50249198.0,panic,"thread 'cfg::package_spec::test::deserializes_package_id' (97602) panicked at src/test_utils.rs:147:55: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cargo-deny-0.20.2,common::tests::test_default_config_path,success,543.629,3.248,2026-11-05T04:30:47Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,common::tests::test_resolve_config_path,success,543.629,3.181,2026-11-05T04:30:50Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,diag::test::codes_unique,success,543.629,42.137,2026-11-05T04:31:32Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,diag::test::codespan_output,success,543.629,45.539,2026-11-05T04:32:18Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,licenses::cfg::test::deserializes_licenses_cfg,test_failed,543.629,1.795,2026-11-05T04:32:20Z,50249198.0,panic,"thread 'licenses::cfg::test::deserializes_licenses_cfg' (98974) panicked at src/test_utils.rs:147:55: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cargo-deny-0.20.2,licenses::cfg::test::include_build_field_deserializes,success,543.629,3.307,2026-11-05T04:32:23Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,licenses::gather::test::finds_and_corrects_span,success,543.629,12.282,2026-11-05T04:32:35Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,licenses::gather::test::normalizes_line_endings,test_failed,543.629,1.796,2026-11-05T04:32:37Z,50249198.0,panic,"thread 'licenses::gather::test::normalizes_line_endings' (99296) panicked at src/licenses/gather.rs:945:72: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cargo-deny-0.20.2,sources::cfg::test::deserializes_sources_cfg,test_failed,543.629,1.784,2026-11-05T04:32:39Z,50249198.0,panic,"thread 'sources::cfg::test::deserializes_sources_cfg' (99385) panicked at src/test_utils.rs:147:55: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cargo-deny-0.20.2,stats::test::exit_code,success,543.629,3.166,2026-11-05T04:32:42Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,test::cli_snapshot,test_failed,543.629,11.011,2026-11-05T04:32:53Z,50249198.0,panic,"thread 'test::cli_snapshot' (99652) panicked at /local/ev-50249198-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-1.47.2/src/runtime.rs:719:13: snapshot assertion for 'cargo_deny' failed in line 495"
+experimental-bsan,cargo-deny-0.20.2,test::inexact_match_fails_for_different_hosts,success,543.629,3.188,2026-11-05T04:32:56Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,test::inexact_match_passes_for_same_hosts,success,543.629,3.227,2026-11-05T04:33:00Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,test::parses_sources,success,543.629,3.371,2026-11-05T04:33:03Z,50249198.0,,
+experimental-bsan,cargo-deny-0.20.2,test::validate_crates_io_sparse_dir_name,success,543.629,3.210,2026-11-05T04:33:06Z,50249198.0,,

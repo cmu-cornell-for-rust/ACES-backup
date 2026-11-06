@@ -1,0 +1,7 @@
+experimental-bsan,zenoh-plugin-mqtt-1.10.1,config::tests::test_no_path_field_and_no_required_field,success,1206.030,3.379,2026-11-05T07:21:41Z,50258455.0,,
+experimental-bsan,zenoh-plugin-mqtt-1.10.1,config::tests::test_path_field,success,1206.030,3.018,2026-11-05T07:21:44Z,50258455.0,,
+experimental-bsan,zenoh-plugin-mqtt-1.10.1,config::tests::test_path_field_and_required_field,success,1206.030,3.024,2026-11-05T07:21:47Z,50258455.0,,
+experimental-bsan,zenoh-plugin-mqtt-1.10.1,config::tests::test_required_field,success,1206.030,3.019,2026-11-05T07:21:50Z,50258455.0,,
+experimental-bsan,zenoh-plugin-mqtt-1.10.1,test_mqtt_pub_mqtt_sub,test_failed,1206.030,16.661,2026-11-05T07:22:07Z,50258455.0,gc,"test test_mqtt_pub_mqtt_sub ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,zenoh-plugin-mqtt-1.10.1,test_mqtt_pub_zenoh_sub,test_failed,1206.030,17.438,2026-11-05T07:22:24Z,50258455.0,gc,"test test_mqtt_pub_zenoh_sub ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,zenoh-plugin-mqtt-1.10.1,test_zenoh_pub_mqtt_sub,test_failed,1206.030,16.716,2026-11-05T07:22:41Z,50258455.0,gc,"test test_zenoh_pub_mqtt_sub ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."

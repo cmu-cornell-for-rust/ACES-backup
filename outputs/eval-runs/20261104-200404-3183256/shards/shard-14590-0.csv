@@ -1,0 +1,7 @@
+experimental-bsan,triggered-0.1.2,is_triggered,success,88.638,5.529,2026-11-05T07:02:04Z,50258380.0,,
+experimental-bsan,triggered-0.1.2,many_listeners_listen_first,test_failed,88.638,13.817,2026-11-05T07:02:18Z,50258380.0,gc,"test many_listeners_listen_first ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,triggered-0.1.2,many_listeners_trigger_first,success,88.638,6.408,2026-11-05T07:02:24Z,50258380.0,,
+experimental-bsan,triggered-0.1.2,many_sync_and_async_listeners_listen_first,success,88.638,8.067,2026-11-05T07:02:32Z,50258380.0,,
+experimental-bsan,triggered-0.1.2,single_listen_first,success,88.638,9.414,2026-11-05T07:02:42Z,50258380.0,,
+experimental-bsan,triggered-0.1.2,single_trigger_first,success,88.638,6.385,2026-11-05T07:02:48Z,50258380.0,,
+experimental-bsan,triggered-0.1.2,tests::polling_listener_keeps_only_last_waker,success,88.638,5.526,2026-11-05T07:02:53Z,50258380.0,,

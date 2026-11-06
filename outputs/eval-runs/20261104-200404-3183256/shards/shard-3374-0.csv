@@ -1,0 +1,66 @@
+experimental-bsan,dsi-bitstream-0.10.1,codes::omega::tests::test_omega,success,217.241,13.219,2026-11-05T02:27:47Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::pi::tests::test_against_zeta,success,217.241,13.349,2026-11-05T02:28:00Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::pi::tests::test_bits,success,217.241,13.195,2026-11-05T02:28:13Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::pi::tests::test_roundtrip,success,217.241,13.961,2026-11-05T02:28:27Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::pi::tests::test_roundtrip_pi2,success,217.241,14.366,2026-11-05T02:28:42Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::pi::tests::test_roundtrip_pi2_param,success,217.241,14.837,2026-11-05T02:28:56Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::rice::tests::test_log2_b,success,217.241,13.291,2026-11-05T02:29:10Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::vbyte::tests::test_high_payload_bit_be,success,217.241,13.323,2026-11-05T02:29:23Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::vbyte::tests::test_high_payload_bit_le,success,217.241,13.430,2026-11-05T02:29:37Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::vbyte::tests::test_high_payload_io_be,success,217.241,13.300,2026-11-05T02:29:50Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::vbyte::tests::test_high_payload_io_le,success,217.241,13.270,2026-11-05T02:30:03Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::vbyte::tests::test_overlong_bit_be,success,217.241,13.257,2026-11-05T02:30:16Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::vbyte::tests::test_overlong_bit_le,success,217.241,13.202,2026-11-05T02:30:30Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::vbyte::tests::test_overlong_io_be,success,217.241,13.151,2026-11-05T02:30:43Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::vbyte::tests::test_overlong_io_le,success,217.241,13.327,2026-11-05T02:30:56Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,codes::vbyte::tests::test_vbytes_be,timeout,217.241,150.018,2026-11-05T02:33:26Z,50240678.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dsi-bitstream-0.10.1,codes::vbyte::tests::test_vbytes_le,timeout,217.241,150.019,2026-11-05T02:35:56Z,50240678.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dsi-bitstream-0.10.1,dispatch::codes::parse_tests::test_parses_valid_parameterized_codes,success,217.241,13.721,2026-11-05T02:36:10Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,dispatch::codes::parse_tests::test_rejects_malformed_grammar,success,217.241,13.812,2026-11-05T02:36:24Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,dispatch::codes::parse_tests::test_rejects_out_of_range_parameters,success,217.241,13.702,2026-11-05T02:36:37Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_reader::tests::test_copy_to_large_buffer,success,217.241,13.521,2026-11-05T02:36:51Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_reader::tests::test_copy_to_then_decode,success,217.241,13.520,2026-11-05T02:37:05Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_reader::tests::test_peek_beyond_peek_bits_panics_be,success,217.241,13.521,2026-11-05T02:37:18Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_reader::tests::test_peek_beyond_peek_bits_panics_le,success,217.241,13.604,2026-11-05T02:37:32Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_reader::tests::test_peek_max_from_empty_buffer,success,217.241,13.673,2026-11-05T02:37:45Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_reader::tests::test_read,success,217.241,15.978,2026-11-05T02:38:01Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_reader::tests::test_topup_at_end_of_stream,success,217.241,13.476,2026-11-05T02:38:15Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_reader::tests::test_u16,timeout,217.241,150.016,2026-11-05T02:40:45Z,50240678.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_reader::tests::test_u32,timeout,217.241,150.017,2026-11-05T02:43:15Z,50240678.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_reader::tests::test_u64,timeout,217.241,150.017,2026-11-05T02:45:45Z,50240678.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_writer::tests::test_into_inner_error,success,217.241,13.357,2026-11-05T02:45:58Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_writer::tests::test_u128,timeout,217.241,150.019,2026-11-05T02:48:28Z,50240678.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_writer::tests::test_u16,timeout,217.241,150.017,2026-11-05T02:50:58Z,50240678.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_writer::tests::test_u32,timeout,217.241,150.017,2026-11-05T02:53:28Z,50240678.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_writer::tests::test_u64,timeout,217.241,150.017,2026-11-05T02:55:58Z,50240678.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_writer::tests::test_usize,timeout,217.241,150.018,2026-11-05T02:58:29Z,50240678.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dsi-bitstream-0.10.1,impls::buf_bit_writer::tests::test_write,success,217.241,15.577,2026-11-05T02:58:44Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,impls::mem_word_reader::tests::test_eof_table_read,success,217.241,13.182,2026-11-05T02:58:57Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,impls::word_adapter::tests::test_word_adapter,success,217.241,13.218,2026-11-05T02:59:11Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,impls::word_adapter::tests::test_word_adapter_codes,success,217.241,13.176,2026-11-05T02:59:24Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_codes,timeout,217.241,150.015,2026-11-05T03:01:54Z,50240678.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dsi-bitstream-0.10.1,test_const_code_roundtrips,success,217.241,13.202,2026-11-05T03:02:07Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_copy,timeout,217.241,150.017,2026-11-05T03:04:37Z,50240678.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dsi-bitstream-0.10.1,test_copy_from_u128_words,success,217.241,13.443,2026-11-05T03:04:50Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_copy_to_after_topup,success,217.241,13.419,2026-11-05T03:05:04Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_delta,success,217.241,13.244,2026-11-05T03:05:17Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_dispatch_matrix_be,success,217.241,21.331,2026-11-05T03:05:39Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_dispatch_matrix_le,success,217.241,21.424,2026-11-05T03:06:00Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_from,success,217.241,13.439,2026-11-05T03:06:13Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_gamma,success,217.241,13.265,2026-11-05T03:06:27Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_toint_tonat_16,success,217.241,27.219,2026-11-05T03:06:54Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_toint_tonat_8,success,217.241,13.481,2026-11-05T03:07:07Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_unary,success,217.241,13.446,2026-11-05T03:07:21Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_word_pos,success,217.241,13.502,2026-11-05T03:07:34Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_zeta2,success,217.241,13.337,2026-11-05T03:07:48Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,test_zeta3,success,217.241,13.295,2026-11-05T03:08:01Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,utils::count::tests::test_count,success,217.241,13.354,2026-11-05T03:08:14Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,utils::count::tests::test_failed_skip_bits_is_not_counted,success,217.241,13.232,2026-11-05T03:08:28Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,utils::count::tests::test_skip_bits_after_peek_is_counted,success,217.241,13.378,2026-11-05T03:08:41Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,utils::find_change::tests::test_find_change_points,success,217.241,13.528,2026-11-05T03:08:55Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,utils::stats::robustness_tests::test_count_zero_is_a_noop,success,217.241,13.347,2026-11-05T03:09:08Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,utils::stats::robustness_tests::test_large_count_saturates_without_panic,success,217.241,13.293,2026-11-05T03:09:21Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,utils::stats::robustness_tests::u64_max_panics_as_documented,success,217.241,13.309,2026-11-05T03:09:35Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,utils::stats::serde_tests::test_mismatched_sizes,success,217.241,18.931,2026-11-05T03:09:53Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,utils::stats::serde_tests::test_roundtrip_different_sizes,success,217.241,19.034,2026-11-05T03:10:13Z,50240678.0,,
+experimental-bsan,dsi-bitstream-0.10.1,utils::stats::serde_tests::test_serde_code_stats,success,217.241,14.137,2026-11-05T03:10:27Z,50240678.0,,

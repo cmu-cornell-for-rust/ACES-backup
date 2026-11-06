@@ -1,0 +1,6 @@
+experimental-bsan,spdx-0.10.6,expression::test::eq,success,20.483,1.657,2026-11-05T07:16:01Z,50259291.0,,
+experimental-bsan,spdx-0.10.6,licensee::test::handles_close,test_failed,20.483,1.718,2026-11-05T07:16:03Z,50259291.0,panic,"thread 'licensee::test::handles_close' (34284) panicked at src/licensee.rs:417:18: called `Result::unwrap()` on an `Err` value: 3"
+experimental-bsan,spdx-0.10.6,licensee::test::handles_exceptions,success,20.483,1.672,2026-11-05T07:16:05Z,50259291.0,,
+experimental-bsan,spdx-0.10.6,licensee::test::handles_license_ref,success,20.483,1.636,2026-11-05T07:16:06Z,50259291.0,,
+experimental-bsan,spdx-0.10.6,licensee::test::handles_or_later,test_failed,20.483,1.702,2026-11-05T07:16:08Z,50259291.0,panic,"thread 'licensee::test::handles_or_later' (34552) panicked at src/licensee.rs:333:14: called `Result::unwrap()` on an `Err` value: 11"
+experimental-bsan,spdx-0.10.6,test::gnu_or_later_display,success,20.483,1.629,2026-11-05T07:16:10Z,50259291.0,,

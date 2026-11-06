@@ -1,0 +1,6 @@
+experimental-bsan,mrflagly-0.2.15,service::tests::it_evaluates_rollout_and_variant,success,280.790,1.952,2026-11-05T07:16:22Z,50259031.0,,
+experimental-bsan,mrflagly-0.2.15,service::tests::it_handles_multiple_variants,success,280.790,1.969,2026-11-05T07:16:24Z,50259031.0,,
+experimental-bsan,mrflagly-0.2.15,service::tests::it_hashes_context_rollout,success,280.790,1.927,2026-11-05T07:16:26Z,50259031.0,,
+experimental-bsan,mrflagly-0.2.15,service::tests::it_respects_default,success,280.790,1.955,2026-11-05T07:16:28Z,50259031.0,,
+experimental-bsan,mrflagly-0.2.15,service::tests::it_url_config_service_works,success,280.790,1.993,2026-11-05T07:16:30Z,50259031.0,,
+experimental-bsan,mrflagly-0.2.15,service::tests::reloads_config,test_failed,280.790,3.157,2026-11-05T07:16:33Z,50259031.0,panic,"thread 'service::tests::reloads_config' (36561) panicked at src/service/mod.rs:313:9: assertion failed: !flag_service.enabled(""feature"", false, None)"

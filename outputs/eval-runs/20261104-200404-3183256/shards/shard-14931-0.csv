@@ -1,0 +1,6 @@
+experimental-bsan,host_discovery-2.1.9,tests::test_cpu,test_failed,363.801,1.685,2026-11-05T07:14:40Z,50258860.0,panic,"thread 'tests::test_cpu' (93998) panicked at src/tests.rs:51:5: assertion `left == right` failed"
+experimental-bsan,host_discovery-2.1.9,tests::test_distro,test_failed,363.801,2.368,2026-11-05T07:14:43Z,50258860.0,panic,"thread 'tests::test_distro' (94206) panicked at src/tests.rs:29:5: assertion failed: profile.distro.unwrap().starts_with(""Fedora"")"
+experimental-bsan,host_discovery-2.1.9,tests::test_gpu,test_failed,363.801,1.676,2026-11-05T07:14:44Z,50258860.0,panic,"thread 'tests::test_gpu' (94582) panicked at src/tests.rs:65:5: assertion failed: gpu.is_some()"
+experimental-bsan,host_discovery-2.1.9,tests::test_hostname,test_failed,363.801,1.691,2026-11-05T07:14:46Z,50258860.0,panic,"thread 'tests::test_hostname' (94778) panicked at src/tests.rs:36:5: assertion `left == right` failed"
+experimental-bsan,host_discovery-2.1.9,tests::test_profile,success,363.801,1.609,2026-11-05T07:14:48Z,50258860.0,,
+experimental-bsan,host_discovery-2.1.9,tests::test_wsl,success,363.801,1.621,2026-11-05T07:14:49Z,50258860.0,,

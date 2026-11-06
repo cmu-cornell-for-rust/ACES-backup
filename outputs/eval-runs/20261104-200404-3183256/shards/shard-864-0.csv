@@ -1,0 +1,218 @@
+experimental-bsan,printpdf-0.12.8,api_always_returns_parseable_json,success,1940.785,52.830,2026-11-05T02:03:50Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,apostrophe_operator_text_survives_roundtrip,success,1940.785,130.780,2026-11-05T02:06:01Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,boxes_survive_roundtrip_ttf_and_cid_cff,timeout,1940.785,150.024,2026-11-05T02:08:31Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,builtin_and_external_font_on_the_same_page,timeout,1940.785,150.019,2026-11-05T02:11:01Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,builtin_font_even_length_text_roundtrips,success,1940.785,103.460,2026-11-05T02:12:45Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,builtin_font_is_referenced_not_embedded,success,1940.785,97.191,2026-11-05T02:14:22Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,builtin_font_odd_length_text_roundtrips_bytewise,timeout,1940.785,150.020,2026-11-05T02:16:52Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,builtin_font_tj_with_kerning_roundtrips,success,1940.785,97.756,2026-11-05T02:18:30Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,builtin_font_winansi_specials_roundtrip,timeout,1940.785,150.019,2026-11-05T02:21:00Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,cff_opentype_font_program_is_embedded,timeout,1940.785,150.008,2026-11-05T02:23:30Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,cid_cmap::empty_codespace_defaults_to_two_bytes,success,1940.785,47.824,2026-11-05T02:24:17Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cid_cmap::hostile_cidrange_span_is_rejected,success,1940.785,48.262,2026-11-05T02:25:06Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cid_cmap::identity_cmaps,success,1940.785,47.722,2026-11-05T02:25:53Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cid_cmap::maps_codes_to_cids,success,1940.785,48.379,2026-11-05T02:26:42Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cid_cmap::splits_variable_width_codes,success,1940.785,48.366,2026-11-05T02:27:30Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cid_cmap::unresolvable_usecmap_is_reported,success,1940.785,47.921,2026-11-05T02:28:18Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cid_cmap::usecmap_identity_and_wmode,success,1940.785,48.006,2026-11-05T02:29:06Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cid_font_without_tounicode_gets_synthesized_mapping,timeout,1940.785,150.028,2026-11-05T02:31:36Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,cid_keyed_cff_codes_are_charset_cids,timeout,1940.785,150.023,2026-11-05T02:34:06Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,cmap::tests::bfrange_form1_still_works,success,1940.785,48.534,2026-11-05T02:34:55Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cmap::tests::bfrange_form2_array_still_works,success,1940.785,49.069,2026-11-05T02:35:44Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cmap::tests::bfrange_huge_range_is_bounded,success,1940.785,48.511,2026-11-05T02:36:32Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cmap::tests::bfrange_reversed_is_error,success,1940.785,48.562,2026-11-05T02:37:21Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cmap::tests::multi_codepoint_bfchar_target,success,1940.785,48.578,2026-11-05T02:38:10Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cmap::tests::roundtrip_through_cmap_string,success,1940.785,49.119,2026-11-05T02:38:59Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cmap::tests::single_line_bfchar_is_parsed,success,1940.785,48.936,2026-11-05T02:39:48Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cmap::tests::surrogate_pair_bfchar_target,success,1940.785,48.567,2026-11-05T02:40:36Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,content_stream_glyph_ids_exist_in_the_embedded_font,timeout,1940.785,150.023,2026-11-05T02:43:06Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,contents_array_of_streams_joined_correctly,success,1940.785,66.127,2026-11-05T02:44:12Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,corpus_roundtrip_files,success,1940.785,48.654,2026-11-05T02:45:01Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,cyclic_pages_tree_terminates,success,1940.785,71.420,2026-11-05T02:46:12Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,dangling_content_stream_ref_is_warning_not_error,success,1940.785,74.492,2026-11-05T02:47:27Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,debug_html_bounds,test_failed,1940.785,9.483,2026-11-05T02:47:37Z,50233443.0,crash,"test debug_html_bounds ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,decode_image_rejects_garbage_with_envelope,success,1940.785,48.525,2026-11-05T02:48:25Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,decode_image_returns_rawimage_json,timeout,1940.785,150.021,2026-11-05T02:50:55Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,demo_boot_sequence_with_all_default_fonts,timeout,1940.785,150.024,2026-11-05T02:53:25Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,deserialize::test_2,success,1940.785,48.506,2026-11-05T02:54:14Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,deserialize::test_bezier_path_parsing,success,1940.785,48.194,2026-11-05T02:55:02Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,document_with_font_roundtrips_through_the_demo_save_json,timeout,1940.785,150.020,2026-11-05T02:57:32Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,embedded_font_named_f1_is_not_misdetected_as_builtin,timeout,1940.785,150.024,2026-11-05T03:00:02Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,embedded_font_named_f1_text_survives_roundtrip,timeout,1940.785,150.022,2026-11-05T03:02:32Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,empty_font_payload_fails_save_like_the_reported_demo_error,success,1940.785,58.662,2026-11-05T03:03:31Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,external_font_text_roundtrips_twice,timeout,1940.785,150.022,2026-11-05T03:06:01Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,flate_raw_bitmap_image_roundtrips,success,1940.785,111.491,2026-11-05T03:07:52Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,font::bare_cff_wrap_test::synthetic_sfnt_upm_follows_font_matrix,success,1940.785,48.620,2026-11-05T03:08:41Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,font::bare_cff_wrap_test::width_scanner_evaluates_escape_arithmetic,success,1940.785,48.528,2026-11-05T03:09:29Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,font_descriptor_metrics_are_normalised_to_1000_em,timeout,1940.785,150.021,2026-11-05T03:11:59Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,font_without_source_bytes_errors_and_omits_the_font_program,success,1940.785,48.989,2026-11-05T03:12:48Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,form_xobject_is_preserved_across_roundtrip,success,1940.785,124.640,2026-11-05T03:14:53Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,form_xobject_resource_references_are_inlined,success,1940.785,79.939,2026-11-05T03:16:13Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,graphics::tests::rect_to_array_emits_real_not_rounded,success,1940.785,48.465,2026-11-05T03:17:02Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,highlight_text_is_visible_over_background,success,1940.785,47.956,2026-11-05T03:17:49Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,html::bridge::tests::image_item_emits_use_xobject,timeout,1940.785,150.020,2026-11-05T03:20:20Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,html::bridge::tests::image_item_without_bytes_is_noop,success,1940.785,50.999,2026-11-05T03:21:11Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,html::bridge::tests::opaque_rect_has_no_extgstate,success,1940.785,50.585,2026-11-05T03:22:01Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,html::bridge::tests::registered_image_serializes_as_xobject,timeout,1940.785,150.026,2026-11-05T03:24:31Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,html::bridge::tests::translucent_rect_emits_extgstate_alpha,success,1940.785,50.951,2026-11-05T03:25:22Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,html::builtin_font_tests::builtin_coverage_is_exact_not_block_rounded,timeout,1940.785,150.034,2026-11-05T03:27:52Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,html::builtin_font_tests::concrete_names_are_primary_and_generics_are_fallback_only,timeout,1940.785,150.034,2026-11-05T03:30:22Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,html::builtin_font_tests::every_builtin_face_carries_real_coverage,timeout,1940.785,150.034,2026-11-05T03:32:52Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,html::builtin_font_tests::helvetica_keeps_four_distinct_faces,timeout,1940.785,150.030,2026-11-05T03:35:22Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,html::builtin_font_tests::the_base_14_are_reachable_by_their_css_names,timeout,1940.785,150.034,2026-11-05T03:37:52Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,html::memory_font_tests::memory_fonts_passed_from_outside_are_queryable,timeout,1940.785,150.020,2026-11-05T03:40:23Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,html::tests::test_clean_html_elements,success,1940.785,48.982,2026-11-05T03:41:12Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,html::tests::test_default_options,success,1940.785,48.526,2026-11-05T03:42:00Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,html::tests::test_html_config_extraction,success,1940.785,48.080,2026-11-05T03:42:48Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,html::tests::test_html_img_embeds_through_pipeline,test_failed,1940.785,4.137,2026-11-05T03:42:52Z,50233443.0,crash,"test html::tests::test_html_img_embeds_through_pipeline ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,html::tests::test_inline_css,success,1940.785,48.079,2026-11-05T03:43:40Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,html::tests::test_simple_xml_rendering,test_failed,1940.785,3.636,2026-11-05T03:43:44Z,50233443.0,crash,"test html::tests::test_simple_xml_rendering ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,html_to_document_response_is_always_a_json_envelope_and_roundtrips_on_success,timeout,1940.785,150.016,2026-11-05T03:46:14Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,image_types::pixel_wire_tests::pixels_serialize_as_base64_and_accept_legacy_arrays,success,1940.785,48.191,2026-11-05T03:47:02Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,inline_background_rects_precede_span_text,test_failed,1940.785,20.871,2026-11-05T03:47:23Z,50233443.0,crash,"test inline_background_rects_precede_span_text ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,issue_212_cff_fontbbox_is_not_zero_height,timeout,1940.785,150.028,2026-11-05T03:49:53Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,issue_212_otf_cff_font_parses_with_glyphs,success,1940.785,54.180,2026-11-05T03:50:47Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,issue_213_br_tag_does_not_error,test_failed,1940.785,24.821,2026-11-05T03:51:12Z,50233443.0,crash,"test issue_213_br_tag_does_not_error ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,issue_216_image_xobject_stream_reference_is_not_rejected,success,1940.785,75.212,2026-11-05T03:52:27Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,issue_239_line_break_after_explicit_hyphen,success,1940.785,48.346,2026-11-05T03:53:16Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,issue_244_cmyk_fill_and_stroke_ops_are_parsed,success,1940.785,71.691,2026-11-05T03:54:28Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,issue_244_cmyk_roundtrip_through_printpdf,success,1940.785,82.300,2026-11-05T03:55:50Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,issue_253_mediabox_survives_fractional_page_size,success,1940.785,148.959,2026-11-05T03:58:19Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,issue_254_custom_font_canonical_usage_is_extractable,success,1940.785,49.196,2026-11-05T03:59:08Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,italic_font_descriptor_reports_the_slant,success,1940.785,143.738,2026-11-05T04:01:32Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,json_shape_roundtrips,success,1940.785,50.236,2026-11-05T04:02:22Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,layer_property_names_survive_roundtrip,timeout,1940.785,150.018,2026-11-05T04:04:52Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,matrix::test_ctm_translate,success,1940.785,48.444,2026-11-05T04:05:41Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,media_box_inherited_from_pages_node,success,1940.785,70.725,2026-11-05T04:06:51Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,mock_cff_cid_full_embed,timeout,1940.785,150.022,2026-11-05T04:09:21Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,mock_cff_cid_subset,timeout,1940.785,150.022,2026-11-05T04:11:51Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,mock_cff_named_full_embed,timeout,1940.785,150.023,2026-11-05T04:14:21Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,mock_cff_named_subset,timeout,1940.785,150.021,2026-11-05T04:16:51Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,mock_ttf_boxes_match_defined_metrics,success,1940.785,48.191,2026-11-05T04:17:40Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,mock_ttf_full_embed,timeout,1940.785,150.024,2026-11-05T04:20:10Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,mock_ttf_subset,timeout,1940.785,150.022,2026-11-05T04:22:40Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,multi_word_font_family_from_fonts_map_is_embedded,test_failed,1940.785,18.042,2026-11-05T04:22:58Z,50233443.0,crash,"test multi_word_font_family_from_fonts_map_is_embedded ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,nonzero_character_spacing_disables_merging,success,1940.785,115.021,2026-11-05T04:24:53Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,one_byte_codes_through_embedded_cmap_decode_and_measure,success,1940.785,91.752,2026-11-05T04:26:25Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,only_one_allsorts_is_linked,success,1940.785,46.690,2026-11-05T04:27:11Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,optimization_materially_reduces_the_same_document,timeout,1940.785,150.021,2026-11-05T04:29:41Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,optimize_false_keeps_streams_plain_but_truetype_length1_valid,timeout,1940.785,150.020,2026-11-05T04:32:11Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,optimized_cff_font_stream_is_flate_compressed,timeout,1940.785,150.024,2026-11-05T04:34:41Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,optimized_truetype_page_and_font_streams_are_flate_compressed,timeout,1940.785,150.020,2026-11-05T04:37:12Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,page_rasterizes_with_text_ink,success,1940.785,45.527,2026-11-05T04:37:57Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,page_without_contents_is_empty_not_error,success,1940.785,63.845,2026-11-05T04:39:01Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,pages_kid_without_type_treated_as_page,success,1940.785,64.390,2026-11-05T04:40:05Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,parse_resolves_cids_through_charset,success,1940.785,143.864,2026-11-05T04:42:29Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,parsed_font_from_bytes_retains_source_bytes,success,1940.785,51.280,2026-11-05T04:43:20Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,pdffonts_accepts_the_embedded_cff_program,success,1940.785,45.543,2026-11-05T04:44:06Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,pdffonts_accepts_the_embedded_truetype_program,success,1940.785,45.428,2026-11-05T04:44:51Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,pdftotext_roundtrips_builtin_and_external_together,success,1940.785,45.932,2026-11-05T04:45:37Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,pdftotext_roundtrips_builtin_font_non_ascii,success,1940.785,46.086,2026-11-05T04:46:23Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,pdftotext_roundtrips_builtin_font_text,success,1940.785,46.023,2026-11-05T04:47:10Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,pdftotext_roundtrips_cjk_text,success,1940.785,46.265,2026-11-05T04:47:56Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,pdftotext_roundtrips_external_font_text,success,1940.785,45.817,2026-11-05T04:48:42Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,pdftotext_roundtrips_multipage,success,1940.785,45.587,2026-11-05T04:49:27Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,pdftotext_roundtrips_quote_operators,success,1940.785,45.667,2026-11-05T04:50:13Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,pdftotext_sees_ligated_words,success,1940.785,45.681,2026-11-05T04:50:59Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,per_glyph_matrices_merge_into_kerned_tj_runs,success,1940.785,109.822,2026-11-05T04:52:48Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,registered_fonts_participate_in_every_render,timeout,1940.785,150.018,2026-11-05T04:55:18Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,roundtrip_recovers_font_resource_and_text,timeout,1940.785,150.023,2026-11-05T04:57:49Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,serde_roundtrip_keeps_the_font_embeddable,timeout,1940.785,150.019,2026-11-05T05:00:19Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,serialize::tests::rectangle_honors_paint_mode,success,1940.785,46.019,2026-11-05T05:01:05Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,serialize::win_ansi_tests::accented_names_become_single_winansi_bytes,success,1940.785,45.912,2026-11-05T05:01:51Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,serialize::win_ansi_tests::ascii_is_unchanged,success,1940.785,45.931,2026-11-05T05:02:36Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,serialize::win_ansi_tests::does_not_emit_utf8_for_non_ascii,success,1940.785,45.779,2026-11-05T05:03:22Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,serialize::win_ansi_tests::every_encoded_character_is_exactly_one_byte,success,1940.785,45.833,2026-11-05T05:04:08Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,serialize::win_ansi_tests::typographic_punctuation_becomes_single_winansi_bytes,success,1940.785,45.754,2026-11-05T05:04:54Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,serialize::win_ansi_tests::unrepresentable_characters_do_not_corrupt_the_stream,success,1940.785,46.181,2026-11-05T05:05:40Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,set_text_cursor_text_is_on_page_not_at_bottom,success,1940.785,45.459,2026-11-05T05:06:26Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,shading::tests::axial_two_stop_builds_type2_function,success,1940.785,45.404,2026-11-05T05:07:11Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,shading::tests::leading_constant_segment_for_offset_gradient,success,1940.785,45.498,2026-11-05T05:07:56Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,shading::tests::multi_stop_builds_stitching_function,success,1940.785,45.852,2026-11-05T05:08:42Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,shading_and_sh_op_survive_roundtrip,timeout,1940.785,150.017,2026-11-05T05:11:12Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,shaper_glyphs_survive_subsetting_cff,test_failed,1940.785,21.718,2026-11-05T05:11:34Z,50233443.0,crash,"test shaper_glyphs_survive_subsetting_cff ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,shaper_glyphs_survive_subsetting_ttf,test_failed,1940.785,21.381,2026-11-05T05:11:55Z,50233443.0,crash,"test shaper_glyphs_survive_subsetting_ttf ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,show_text_outside_text_section_warns,success,1940.785,46.788,2026-11-05T05:12:42Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,spacing_and_scaling_fold_into_geometry,success,1940.785,46.414,2026-11-05T05:13:29Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,svg_colorspace_resource_entries_are_dictionaries,timeout,1940.785,150.017,2026-11-05T05:15:59Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,svg_dropped_text_is_reported_loudly,timeout,1940.785,150.019,2026-11-05T05:18:29Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,svg_form_xobjects_are_self_contained,timeout,1940.785,150.020,2026-11-05T05:20:59Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,svg_gradients_survive_as_pattern_or_shading_paint,timeout,1940.785,150.017,2026-11-05T05:23:29Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,svg_no_dangling_references_in_xobject_subtrees,timeout,1940.785,150.018,2026-11-05T05:25:59Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,svg_page_content_resources_exist,timeout,1940.785,150.016,2026-11-05T05:28:29Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,svg_preview_text_is_visible_upright_onpage_in_embedded_font,test_failed,1940.785,40.093,2026-11-05T05:29:09Z,50233443.0,crash,"test svg_preview_text_is_visible_upright_onpage_in_embedded_font ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,svg_repros::issue_113_svg_gradient_resources_survive,timeout,1940.785,150.016,2026-11-05T05:31:39Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,svg_repros::issue_184_svg_text_with_legacy_family_name_produces_paths,timeout,1940.785,150.017,2026-11-05T05:34:09Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,svg_repros::issue_184_svg_text_with_matching_family_produces_paths,timeout,1940.785,150.018,2026-11-05T05:36:39Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,svg_repros::issue_184_svg_text_without_family_uses_supplied_font,timeout,1940.785,150.017,2026-11-05T05:39:09Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,svg_repros::issue_211_svg_xobject_defines_cs0_colorspace_resource,timeout,1940.785,150.021,2026-11-05T05:41:39Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,td_continuation_is_absolute,success,1940.785,70.260,2026-11-05T05:42:50Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_avoid_page_break_inside,test_failed,1940.785,20.161,2026-11-05T05:43:10Z,50233443.0,crash,"test test_avoid_page_break_inside ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_basic_text_breaks_across_pages,test_failed,1940.785,38.643,2026-11-05T05:43:48Z,50233443.0,crash,"test test_basic_text_breaks_across_pages ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_bookmark_parsing,timeout,1940.785,150.018,2026-11-05T05:46:18Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,test_complex_document_parsing,timeout,1940.785,150.016,2026-11-05T05:48:48Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,test_custom_font_roundtrip,timeout,1940.785,150.021,2026-11-05T05:51:19Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,test_date_serialization,success,1940.785,45.255,2026-11-05T05:52:04Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_datetime_serialization,success,1940.785,45.210,2026-11-05T05:52:49Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_datetime_str_parsing,success,1940.785,45.155,2026-11-05T05:53:34Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_document_to_bytes,success,1940.785,45.680,2026-11-05T05:54:20Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_edge_cases,success,1940.785,45.278,2026-11-05T05:55:05Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_epoch,success,1940.785,45.069,2026-11-05T05:55:50Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_explicit_page_dimensions,test_failed,1940.785,18.782,2026-11-05T05:56:09Z,50233443.0,crash,"test test_explicit_page_dimensions ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_extgstate_font_parsing,timeout,1940.785,150.034,2026-11-05T05:58:39Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,test_extgstate_parsing,success,1940.785,107.498,2026-11-05T06:00:27Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_html_greek_numerals,test_failed,1940.785,22.402,2026-11-05T06:00:49Z,50233443.0,crash,"test test_html_greek_numerals ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_html_mixed_list_styles,test_failed,1940.785,23.270,2026-11-05T06:01:12Z,50233443.0,crash,"test test_html_mixed_list_styles ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_html_nested_lists,test_failed,1940.785,22.759,2026-11-05T06:01:35Z,50233443.0,crash,"test test_html_nested_lists ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_html_ordered_list,test_failed,1940.785,22.277,2026-11-05T06:01:57Z,50233443.0,crash,"test test_html_ordered_list ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_html_to_document,test_failed,1940.785,23.160,2026-11-05T06:02:21Z,50233443.0,crash,"test test_html_to_document ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_html_unordered_list,test_failed,1940.785,22.207,2026-11-05T06:02:43Z,50233443.0,crash,"test test_html_unordered_list ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_html_uses_positioned_glyphs_not_text_operators,test_failed,1940.785,22.315,2026-11-05T06:03:05Z,50233443.0,crash,"test test_html_uses_positioned_glyphs_not_text_operators ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_layer_parsing,success,1940.785,119.517,2026-11-05T06:05:05Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_long_single_text_node_breaks,test_failed,1940.785,34.607,2026-11-05T06:05:39Z,50233443.0,crash,"test test_long_single_text_node_breaks ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_month_conversion,success,1940.785,45.346,2026-11-05T06:06:25Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_offset_serialization,success,1940.785,45.393,2026-11-05T06:07:10Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_op_color_settings,timeout,1940.785,150.017,2026-11-05T06:09:40Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,test_op_draw_line,success,1940.785,76.752,2026-11-05T06:10:57Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_op_draw_polygon,success,1940.785,77.201,2026-11-05T06:12:14Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_op_graphics_state,success,1940.785,117.344,2026-11-05T06:14:11Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_op_layer,success,1940.785,88.448,2026-11-05T06:15:40Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_op_line_style,timeout,1940.785,150.020,2026-11-05T06:18:10Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,test_op_marker,success,1940.785,80.644,2026-11-05T06:19:31Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_op_svg_embed,timeout,1940.785,150.016,2026-11-05T06:22:01Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,test_op_text_section,success,1940.785,125.572,2026-11-05T06:24:06Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_op_transform,success,1940.785,118.204,2026-11-05T06:26:04Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_op_write_text,success,1940.785,96.226,2026-11-05T06:27:41Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_op_write_text_without_font_setup,success,1940.785,88.858,2026-11-05T06:29:10Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_page_break_after,test_failed,1940.785,18.878,2026-11-05T06:29:28Z,50233443.0,crash,"test test_page_break_after ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_page_break_before,test_failed,1940.785,18.763,2026-11-05T06:29:47Z,50233443.0,crash,"test test_page_break_before ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,printpdf-0.12.8,test_parse_pdf_date_multibyte_does_not_panic,success,1940.785,45.661,2026-11-05T06:30:33Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_pdf_date_parsing,success,1940.785,45.422,2026-11-05T06:31:18Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_resources_for_page,success,1940.785,45.189,2026-11-05T06:32:04Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_svg_text_with_fonts_passed_from_outside,timeout,1940.785,150.017,2026-11-05T06:34:34Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,test_time_serialization,success,1940.785,45.124,2026-11-05T06:35:19Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,test_utc_offset,success,1940.785,45.299,2026-11-05T06:36:04Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,tests::test_manual_cmap_decoding,success,1940.785,45.238,2026-11-05T06:36:49Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,tests::test_tj_operator_decoding,success,1940.785,45.233,2026-11-05T06:37:34Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,tests::test_to_unicode_cmap_parsing,success,1940.785,45.542,2026-11-05T06:38:20Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,tests::to_unicode_bfrange_huge_range_is_bounded,success,1940.785,45.254,2026-11-05T06:39:05Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,tests::to_unicode_bfrange_reversed_range_is_error_not_panic,success,1940.785,45.897,2026-11-05T06:39:51Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,tounicode_maps_content_glyph_ids_back_to_the_source_text,timeout,1940.785,150.020,2026-11-05T06:42:21Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,truetype_font_program_is_embedded_with_subsetting,timeout,1940.785,150.024,2026-11-05T06:44:51Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,truetype_font_program_is_embedded_without_subsetting,success,1940.785,139.856,2026-11-05T06:47:11Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,undecodable_image_is_preserved_not_dropped,success,1940.785,116.959,2026-11-05T06:49:08Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,unembedded_simple_font_substitutes_builtin,success,1940.785,71.960,2026-11-05T06:50:20Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,units::max_mm,success,1940.785,46.267,2026-11-05T06:51:06Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,units::max_pt,success,1940.785,46.150,2026-11-05T06:51:53Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,units::min_mm,success,1940.785,45.919,2026-11-05T06:52:38Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,units::min_pt,success,1940.785,45.775,2026-11-05T06:53:24Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,units::mm_eq_zero_check,success,1940.785,46.002,2026-11-05T06:54:10Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,units::mm_to_point_conversion,success,1940.785,45.856,2026-11-05T06:54:56Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,units::point_to_mm_conversion,success,1940.785,45.569,2026-11-05T06:55:42Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,units::pt_eq_zero_check,success,1940.785,45.336,2026-11-05T06:56:27Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,upload_of_subset_font_pdf_roundtrips,timeout,1940.785,150.019,2026-11-05T06:58:57Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,utils::tests::xmp_date_zero_pads_single_digit_month,success,1940.785,45.444,2026-11-05T06:59:43Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,viewer_flow_resources_for_page_and_page_to_svg,success,1940.785,54.960,2026-11-05T07:00:38Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,widths_are_keyed_by_content_glyph_ids_and_normalised,timeout,1940.785,150.020,2026-11-05T07:03:08Z,50233443.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,printpdf-0.12.8,with_pages_tests::with_pages_replaces,success,1940.785,45.235,2026-11-05T07:03:53Z,50233443.0,,
+experimental-bsan,printpdf-0.12.8,xobject_stream_reference_is_not_a_type_error,success,1940.785,69.940,2026-11-05T07:05:03Z,50233443.0,,

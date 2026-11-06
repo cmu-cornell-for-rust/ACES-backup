@@ -1,0 +1,3 @@
+experimental-bsan,catalytic-0.2.0,materialized_view::test::materialized_view,test_failed,443.822,1.681,2026-11-05T08:22:45Z,50262267.0,panic,"thread 'materialized_view::test::materialized_view' (79134) panicked at src/materialized_view.rs:86:27: called `Result::unwrap()` on an `Err` value: Io(Custom { kind: NotFound, error: ""path not found"" })"
+experimental-bsan,catalytic-0.2.0,runtime::tests::it_works,test_failed,443.822,2.354,2026-11-05T08:22:48Z,50262267.0,panic,"thread 'runtime::tests::it_works' (79213) panicked at src/runtime.rs:86:23: called `Result::unwrap()` on an `Err` value: Io(Custom { kind: NotFound, error: ""path not found"" })"
+experimental-bsan,catalytic-0.2.0,sort::test::test_sort_columns,success,443.822,1.612,2026-11-05T08:22:49Z,50262267.0,,

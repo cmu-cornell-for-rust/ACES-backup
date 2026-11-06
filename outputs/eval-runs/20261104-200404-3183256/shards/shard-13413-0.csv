@@ -1,0 +1,8 @@
+experimental-bsan,aliri_reqwest-0.5.0,tests::exact_host_match_predicate::does_not_match_when_request_has_different_host,success,220.915,1.673,2026-11-05T06:42:54Z,50256802.0,,
+experimental-bsan,aliri_reqwest-0.5.0,tests::exact_host_match_predicate::matches_when_request_has_same_host,success,220.915,1.663,2026-11-05T06:42:56Z,50256802.0,,
+experimental-bsan,aliri_reqwest-0.5.0,tests::https_only_predicate::does_not_match_when_request_has_http_scheme,success,220.915,1.689,2026-11-05T06:42:58Z,50256802.0,,
+experimental-bsan,aliri_reqwest-0.5.0,tests::https_only_predicate::matches_when_request_has_https_scheme,success,220.915,1.704,2026-11-05T06:42:59Z,50256802.0,,
+experimental-bsan,aliri_reqwest-0.5.0,tests::when_request_already_contains_an_authorization_header::middleware_does_not_attach_access_token,success,220.915,1.839,2026-11-05T06:43:01Z,50256802.0,,
+experimental-bsan,aliri_reqwest-0.5.0,tests::when_request_does_not_have_an_authorization_header::and_predicate_evaluates_to_attach::middleware_attaches_access_token,success,220.915,1.827,2026-11-05T06:43:03Z,50256802.0,,
+experimental-bsan,aliri_reqwest-0.5.0,tests::when_request_does_not_have_an_authorization_header::and_predicate_evaluates_to_ignore::middleware_does_not_attach_access_token,success,220.915,1.788,2026-11-05T06:43:05Z,50256802.0,,
+experimental-bsan,aliri_reqwest-0.5.0,tests::when_request_does_not_have_an_authorization_header::middleware_with_defaults_attaches_token_on_https_request,success,220.915,1.818,2026-11-05T06:43:07Z,50256802.0,,

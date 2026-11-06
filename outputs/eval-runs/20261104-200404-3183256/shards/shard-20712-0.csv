@@ -1,0 +1,1 @@
+experimental-bsan,lua_bind_hash-1.0.1,tests::test_all_test_strings,test_failed,3.679,1.776,2026-11-05T09:32:38Z,50266594.0,panic,"thread 'tests::test_all_test_strings' (54721) panicked at src/lib.rs:47:21: unsafe precondition(s) violated: slice::from_raw_parts requires the pointer to be aligned and non-null, and the total size of the slice not to exceed `isize::MAX`"

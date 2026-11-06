@@ -1,0 +1,902 @@
+experimental-bsan,tantivy-0.27.0,aggregation::agg_data::tests::test_multi_terms_expands_physical_column_cartesian_product,success,830.714,122.275,2026-11-05T01:29:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::agg_data::tests::test_multi_terms_skips_missing_when_any_physical_column_is_full,success,830.714,121.935,2026-11-05T01:31:46Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::agg_data::tests::test_tree_roots_and_expansion_terms_missing_on_numeric,timeout,830.714,150.027,2026-11-05T01:34:16Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_limits::tests::test_agg_limits_with_empty_data,success,830.714,134.679,2026-11-05T01:36:30Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::agg_limits::tests::test_agg_limits_with_empty_merge,timeout,830.714,150.023,2026-11-05T01:39:00Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_req::tests::deser_json_test,success,830.714,1.652,2026-11-05T01:39:02Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::agg_req::tests::deser_json_test_bucket,success,830.714,1.702,2026-11-05T01:39:04Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::agg_req::tests::serialize_to_json_test,success,830.714,1.714,2026-11-05T01:39:06Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::agg_req::tests::test_get_fast_field_names,success,830.714,1.737,2026-11-05T01:39:07Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::agg_req::tests::test_metric_aggregations_deser,success,830.714,1.663,2026-11-05T01:39:09Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_field_validation_helper,timeout,830.714,150.027,2026-11-05T01:41:39Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_flushing_variants,timeout,830.714,150.027,2026-11-05T01:44:09Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_invalid_requests,timeout,830.714,150.027,2026-11-05T01:46:39Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_level1,timeout,830.714,150.027,2026-11-05T01:49:09Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_level1_simple,timeout,830.714,150.024,2026-11-05T01:51:39Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_level2_multi_segments,timeout,830.714,150.024,2026-11-05T01:54:09Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_level2_multi_segments_distributed_collector,timeout,830.714,150.028,2026-11-05T01:56:39Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_level2_single_segment,timeout,830.714,150.027,2026-11-05T01:59:09Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_level2_single_segment_distributed_collector,timeout,830.714,150.025,2026-11-05T02:01:39Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_on_json_object,success,830.714,119.685,2026-11-05T02:03:39Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_on_json_object_empty_columns,timeout,830.714,150.026,2026-11-05T02:06:09Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_on_json_object_mixed_numerical_segments,timeout,830.714,150.024,2026-11-05T02:08:39Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_on_json_object_mixed_types,timeout,830.714,150.023,2026-11-05T02:11:09Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_aggregation_on_nested_json_object,success,830.714,120.094,2026-11-05T02:13:09Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_date_histogram_as_subagg_parent_more_vs_child_more,timeout,830.714,150.026,2026-11-05T02:15:39Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_histogram_as_subagg_parent_more_vs_child_more,timeout,830.714,150.026,2026-11-05T02:18:10Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_percentile_order_prune_intermediate,timeout,830.714,150.023,2026-11-05T02:20:40Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_percentile_order_segment_level,success,830.714,142.384,2026-11-05T02:23:02Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_range_as_subagg_parent_more_vs_child_more,timeout,830.714,150.023,2026-11-05T02:25:32Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_terms_as_subagg_parent_more_vs_child_more,timeout,830.714,150.027,2026-11-05T02:28:02Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::agg_tests::test_terms_sub_agg_flushing_skewed_buckets,timeout,830.714,150.031,2026-11-05T02:30:32Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::calendar_interval::tests::test_month_bucket,success,830.714,1.610,2026-11-05T02:30:34Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::calendar_interval::tests::test_week_bucket,success,830.714,1.645,2026-11-05T02:30:35Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::calendar_interval::tests::test_year_bucket,success,830.714,1.608,2026-11-05T02:30:37Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::map::tests::test_dyn_array_heap_map,success,830.714,1.606,2026-11-05T02:30:39Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::numeric_types::num_cmp_tests::test_cmp_i64_f64,success,830.714,1.598,2026-11-05T02:30:40Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::numeric_types::num_cmp_tests::test_cmp_i64_u64,success,830.714,1.603,2026-11-05T02:30:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::numeric_types::num_cmp_tests::test_cmp_u64_f64,success,830.714,1.594,2026-11-05T02:30:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::numeric_types::num_proj_tests::test_f64_to_i64,success,830.714,1.600,2026-11-05T02:30:45Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::numeric_types::num_proj_tests::test_f64_to_u64,success,830.714,1.590,2026-11-05T02:30:47Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::numeric_types::num_proj_tests::test_i64_to_f64,success,830.714,1.590,2026-11-05T02:30:48Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::numeric_types::num_proj_tests::test_i64_to_u64,success,830.714,1.601,2026-11-05T02:30:50Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::numeric_types::num_proj_tests::test_u64_to_f64,success,830.714,1.593,2026-11-05T02:30:51Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::numeric_types::num_proj_tests::test_u64_to_i64,success,830.714,1.597,2026-11-05T02:30:53Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_date_histogram_calendar_interval,success,830.714,123.238,2026-11-05T02:32:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_date_histogram_fixed_interval,success,830.714,124.839,2026-11-05T02:35:01Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_histogram_basic,success,830.714,124.780,2026-11-05T02:37:06Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_histogram_json_mixed_types,timeout,830.714,150.026,2026-11-05T02:39:36Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_mixed_term_and_date_histogram,success,830.714,135.612,2026-11-05T02:41:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_no_matching_columns,success,830.714,119.902,2026-11-05T02:43:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_date_fields,success,830.714,123.264,2026-11-05T02:45:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_ip_fields,success,830.714,128.362,2026-11-05T02:48:03Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_json_missing_fields,success,830.714,142.922,2026-11-05T02:50:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_json_mixed_types,timeout,830.714,150.023,2026-11-05T02:52:56Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_json_nested_fields,success,830.714,128.200,2026-11-05T02:55:04Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_json_various_types,success,830.714,128.939,2026-11-05T02:57:13Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_missing_order,success,830.714,139.655,2026-11-05T02:59:33Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_missing_values,success,830.714,132.727,2026-11-05T03:01:46Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_multi_segment,timeout,830.714,150.023,2026-11-05T03:04:16Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_multi_source,success,830.714,147.456,2026-11-05T03:06:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_multi_source_ordering,success,830.714,143.004,2026-11-05T03:09:06Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_multi_value_fields,success,830.714,144.145,2026-11-05T03:11:30Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_multiple_column_types,success,830.714,135.253,2026-11-05T03:13:46Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_numeric_fields,timeout,830.714,150.024,2026-11-05T03:16:16Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_ordering,success,830.714,128.944,2026-11-05T03:18:25Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_single_segment,timeout,830.714,150.033,2026-11-05T03:20:55Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_size_limit_multi_segment,timeout,830.714,150.025,2026-11-05T03:23:25Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_size_limit_single_segment,timeout,830.714,150.032,2026-11-05T03:25:55Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_validation_errors,success,830.714,127.148,2026-11-05T03:28:02Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::composite::tests::composite_aggregation_term_with_sub_aggregations,success,830.714,126.998,2026-11-05T03:30:09Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::custom_order_serde_test,success,830.714,1.631,2026-11-05T03:30:11Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_basic_filter_with_metric_agg,timeout,830.714,150.023,2026-11-05T03:32:41Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_bool_field_filter,timeout,830.714,150.030,2026-11-05T03:35:11Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_boolean_query_filter,timeout,830.714,150.032,2026-11-05T03:37:41Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_custom_query_builder,timeout,830.714,150.031,2026-11-05T03:40:11Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_custom_tokenizer_required,success,830.714,127.596,2026-11-05T03:42:18Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_deeply_nested_filters,timeout,830.714,150.024,2026-11-05T03:44:49Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_filter_on_empty_index,success,830.714,6.378,2026-11-05T03:44:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_filter_result_correctness_vs_separate_query,timeout,830.714,150.031,2026-11-05T03:47:25Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_filter_with_base_query,timeout,830.714,150.023,2026-11-05T03:49:55Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_filter_with_multiple_metric_aggs,timeout,830.714,150.031,2026-11-05T03:52:25Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_filter_with_no_matches,timeout,830.714,150.023,2026-11-05T03:54:55Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_filter_with_terms_sub_agg,timeout,830.714,150.031,2026-11-05T03:57:25Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_malformed_query_string,timeout,830.714,150.034,2026-11-05T03:59:55Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_multiple_independent_filters,timeout,830.714,150.022,2026-11-05T04:02:25Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_multiple_nested_branches,timeout,830.714,150.028,2026-11-05T04:04:55Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_nested_filters_with_multiple_siblings_at_each_level,timeout,830.714,150.031,2026-11-05T04:07:25Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_query_builder_serialization_roundtrip,timeout,830.714,150.030,2026-11-05T04:09:55Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_query_string_serialization,timeout,830.714,150.022,2026-11-05T04:12:26Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_range_query_filter,timeout,830.714,150.032,2026-11-05T04:14:56Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_term_query_filter,timeout,830.714,150.031,2026-11-05T04:17:26Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::filter::tests::test_two_level_nested_filters,timeout,830.714,150.019,2026-11-05T04:19:56Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::date_histogram::tests::histogram_test_date,timeout,830.714,150.025,2026-11-05T04:22:26Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::date_histogram::tests::histogram_test_date_force_merge_segments,timeout,830.714,150.024,2026-11-05T04:24:56Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::date_histogram::tests::histogram_test_invalid_req,success,830.714,5.103,2026-11-05T04:25:01Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::date_histogram::tests::test_parse_into_milliseconds_do_not_accept_non_ascii,success,830.714,1.604,2026-11-05T04:25:03Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::date_histogram::tests::test_parse_into_millisecs,success,830.714,1.609,2026-11-05T04:25:04Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::date_histogram::tests::test_parse_offset_into_milliseconds,success,830.714,1.612,2026-11-05T04:25:06Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_counts_documents_in_separate_calls,success,830.714,120.904,2026-11-05T04:27:07Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_counts_each_document_once_per_bucket,timeout,830.714,150.028,2026-11-05T04:29:37Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_date_test_multi_segment,timeout,830.714,150.027,2026-11-05T04:32:07Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_date_test_single_segment,timeout,830.714,150.022,2026-11-05T04:34:37Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_dense_storage_test,timeout,830.714,150.025,2026-11-05T04:37:07Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_empty_result_behaviour_test_multi_segment,timeout,830.714,150.027,2026-11-05T04:39:37Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_empty_result_behaviour_test_single_segment,timeout,830.714,150.026,2026-11-05T04:42:07Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_extended_bounds_test_multi_segment,timeout,830.714,150.028,2026-11-05T04:44:37Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_extended_bounds_test_single_segment,timeout,830.714,150.027,2026-11-05T04:47:07Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_hard_bounds_test_multi_segment,timeout,830.714,150.032,2026-11-05T04:49:37Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_hard_bounds_test_single_segment,timeout,830.714,150.034,2026-11-05T04:52:07Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_invalid_request,timeout,830.714,150.025,2026-11-05T04:54:37Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_keyed_buckets_test,timeout,830.714,150.022,2026-11-05T04:57:07Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_memory_limit,timeout,830.714,150.027,2026-11-05T04:59:37Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_merge_test,timeout,830.714,150.023,2026-11-05T05:02:07Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_min_doc_test_multi_segments,timeout,830.714,150.023,2026-11-05T05:04:37Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_min_doc_test_single_segments,timeout,830.714,150.034,2026-11-05T05:07:08Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_non_binding_hard_bounds_test_multi_segment,timeout,830.714,150.023,2026-11-05T05:09:38Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_non_binding_hard_bounds_test_single_segment,timeout,830.714,150.033,2026-11-05T05:12:08Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_simple_test,timeout,830.714,150.028,2026-11-05T05:14:38Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_single_bucket_test_multi_segment,timeout,830.714,150.026,2026-11-05T05:17:08Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_single_bucket_test_single_segment,timeout,830.714,150.023,2026-11-05T05:19:38Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_test_crooked_values,timeout,830.714,150.024,2026-11-05T05:22:08Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_test_min_value_positive,timeout,830.714,150.026,2026-11-05T05:24:38Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::histogram_test_min_value_positive_force_merge_segments,timeout,830.714,150.033,2026-11-05T05:27:08Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::histogram::histogram::tests::test_aggregation_histogram_empty_index,success,830.714,5.965,2026-11-05T05:27:14Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_accepts_numeric_missing_on_str_field,success,830.714,133.384,2026-11-05T05:29:27Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_basic_two_fields,success,830.714,135.116,2026-11-05T05:31:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_combo_dropped_when_field_missing_no_fallback,success,830.714,134.092,2026-11-05T05:33:57Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_dedups_mixed_repeats_in_multivalued_field,success,830.714,134.000,2026-11-05T05:36:11Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_dedups_repeated_value_in_multivalued_field,success,830.714,133.744,2026-11-05T05:38:24Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_distributed_collector,timeout,830.714,150.030,2026-11-05T05:40:54Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_error_empty_terms,success,830.714,134.347,2026-11-05T05:43:09Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_expands_multiple_multivalued_fields_before_filtering,success,830.714,142.702,2026-11-05T05:45:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_expands_three_multivalued_fields,success,830.714,144.235,2026-11-05T05:47:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_fast_path_constant_field,success,830.714,134.763,2026-11-05T05:50:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_fast_path_multi_type_fields,success,830.714,120.587,2026-11-05T05:52:11Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_fast_path_noncontiguous_docs,success,830.714,134.443,2026-11-05T05:54:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_filters_single_values_between_fields,success,830.714,142.495,2026-11-05T05:56:48Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_final_key_order,success,830.714,1.775,2026-11-05T05:56:50Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_json_type_fanout_missing_and_sub_aggregations,timeout,830.714,150.023,2026-11-05T05:59:20Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_json_type_fanout_uses_optional_columns,success,830.714,129.092,2026-11-05T06:01:29Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_key_as_string_pipe_join,success,830.714,135.451,2026-11-05T06:03:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_memory_consumption_accounts_for_spilled_keys,success,830.714,2.120,2026-11-05T06:03:47Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_merges_buckets_on_intermediate_key_collision,success,830.714,127.694,2026-11-05T06:05:54Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_min_doc_count,success,830.714,133.897,2026-11-05T06:08:08Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_missing_fallback,success,830.714,132.768,2026-11-05T06:10:21Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_missing_fallback_on_json_path_absent_from_segment,success,830.714,126.692,2026-11-05T06:12:28Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_missing_fast_path_noncontiguous_docs,success,830.714,135.296,2026-11-05T06:14:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_missing_reuses_existing_term_before_segment_cutoff,success,830.714,133.907,2026-11-05T06:16:57Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_missing_subagg_value_at_cutoff,success,830.714,137.377,2026-11-05T06:19:14Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_missing_subagg_value_sorts_last_with_multivalued_field,success,830.714,136.802,2026-11-05T06:21:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_multi_segment_merge,timeout,830.714,150.027,2026-11-05T06:24:01Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_order_by_key_asc,success,830.714,137.803,2026-11-05T06:26:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_rejects_bytes_field,success,830.714,129.808,2026-11-05T06:28:29Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_rejects_numeric_missing_on_bool_field,success,830.714,129.974,2026-11-05T06:30:39Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_serde_round_trip,success,830.714,1.768,2026-11-05T06:30:41Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_size_and_sum_other,success,830.714,137.781,2026-11-05T06:32:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_sub_aggregation,success,830.714,137.630,2026-11-05T06:35:16Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_u64_array_packs_optional_field_directly,success,830.714,130.959,2026-11-05T06:37:27Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_u64_max_handles_multivalue_missing_and_sub_aggregation,success,830.714,130.518,2026-11-05T06:39:37Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::multi_terms::tests::test_multi_terms_wide_fields_use_u64_array_key,success,830.714,138.942,2026-11-05T06:41:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::bucket_range_test_negative_vals,success,830.714,1.821,2026-11-05T06:41:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::bucket_range_test_positive_vals,success,830.714,1.815,2026-11-05T06:42:00Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::bucket_test_extend_range_hole,success,830.714,1.842,2026-11-05T06:42:02Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::bucket_test_range_conversion_special_case,success,830.714,1.826,2026-11-05T06:42:04Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::range_binary_search_test_f64,success,830.714,1.785,2026-11-05T06:42:06Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::range_binary_search_test_u64,success,830.714,1.867,2026-11-05T06:42:08Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::range_counts_documents_in_separate_calls,success,830.714,122.257,2026-11-05T06:44:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::range_counts_each_document_once_per_bucket,timeout,830.714,150.032,2026-11-05T06:46:40Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::range_custom_key_keyed_buckets_test,timeout,830.714,150.040,2026-11-05T06:49:10Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::range_custom_key_test,timeout,830.714,150.031,2026-11-05T06:51:40Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::range_date_test_multi_segment,timeout,830.714,150.028,2026-11-05T06:54:10Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::range_date_test_single_segment,timeout,830.714,150.028,2026-11-05T06:56:40Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::range_fraction_test,timeout,830.714,150.040,2026-11-05T06:59:10Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::range_fraction_test_with_sub_agg,timeout,830.714,150.025,2026-11-05T07:01:40Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::range::tests::range_keyed_buckets_test,timeout,830.714,150.038,2026-11-05T07:04:11Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::flattened_term_histogram::tests::flattened_term_histogram_hard_bounds_charges_term_counts,timeout,830.714,150.036,2026-11-05T07:06:41Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::flattened_term_histogram::tests::flattened_term_histogram_linear_bucket_resolver,timeout,830.714,150.030,2026-11-05T07:09:11Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::flattened_term_histogram::tests::flattened_term_histogram_many_terms,timeout,830.714,150.034,2026-11-05T07:11:41Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::flattened_term_histogram::tests::flattened_term_histogram_single_bucket_resolver,timeout,830.714,150.039,2026-11-05T07:14:11Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::flattened_term_histogram::tests::flattened_term_histogram_test,timeout,830.714,150.030,2026-11-05T07:16:41Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::flattened_term_histogram::tests::flattened_term_histogram_with_hard_bounds,timeout,830.714,150.030,2026-11-05T07:19:11Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::flattened_term_histogram::tests::flattened_term_histogram_with_missing_on_full_column,timeout,830.714,150.024,2026-11-05T07:21:41Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::flattened_term_histogram::tests::flattened_term_histogram_with_non_binding_hard_bounds,timeout,830.714,150.040,2026-11-05T07:24:11Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::low_card_term_map_consolidates_count_lanes_and_shares_bucket_ids,success,830.714,4.715,2026-11-05T07:24:16Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::null_bitset_bounds_check_regression,timeout,830.714,150.026,2026-11-05T07:26:46Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::paged_term_map_reuses_buckets_and_counts,success,830.714,1.860,2026-11-05T07:26:48Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_bool,success,830.714,121.063,2026-11-05T07:28:49Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_bytes,success,830.714,124.407,2026-11-05T07:30:53Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_date,success,830.714,122.384,2026-11-05T07:32:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_date_missing,success,830.714,122.939,2026-11-05T07:34:59Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_different_tokenizer_on_ff_test,success,830.714,144.402,2026-11-05T07:37:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_error_count_test,timeout,830.714,150.034,2026-11-05T07:39:53Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_ip_addr,success,830.714,121.369,2026-11-05T07:41:54Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_merges_normalized_f64_buckets_with_sub_aggregations,success,830.714,145.395,2026-11-05T07:44:20Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_min_doc_count_special_case,timeout,830.714,150.039,2026-11-05T07:46:50Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_min_doc_count_special_case_with_sub_agg_empty_merge,timeout,830.714,150.025,2026-11-05T07:49:20Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_missing1,timeout,830.714,150.024,2026-11-05T07:51:50Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_missing_empty,success,830.714,123.266,2026-11-05T07:53:53Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_missing_multi_value,timeout,830.714,150.039,2026-11-05T07:56:23Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_missing_simple_id,success,830.714,123.212,2026-11-05T07:58:27Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_normalizes_u64_keys_across_segments,timeout,830.714,150.027,2026-11-05T08:00:57Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_order_by_cardinality_desc_multi_segment,success,830.714,149.260,2026-11-05T08:03:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_order_by_cardinality_desc_single_segment,timeout,830.714,150.035,2026-11-05T08:05:56Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_order_by_sum_multi_segment,timeout,830.714,150.040,2026-11-05T08:08:26Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_order_by_sum_single_segment,timeout,830.714,150.042,2026-11-05T08:10:56Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_sub_agg_vec_highcard_eager_ids,timeout,830.714,150.026,2026-11-05T08:13:26Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_sub_agg_vec_highcard_lazy_ids,timeout,830.714,150.034,2026-11-05T08:15:56Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_term_bucket_limit,timeout,830.714,150.024,2026-11-05T08:18:26Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_test,timeout,830.714,150.035,2026-11-05T08:20:56Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_test_count_order,timeout,830.714,150.027,2026-11-05T08:23:27Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_test_key_order,timeout,830.714,150.030,2026-11-05T08:25:57Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_test_order_count_single_segment,timeout,830.714,150.031,2026-11-05T08:28:27Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_test_order_key_single_segment,timeout,830.714,150.028,2026-11-05T08:30:57Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_test_order_sub_agg_single_segment,timeout,830.714,150.027,2026-11-05T08:33:27Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_test_single_segment,timeout,830.714,150.024,2026-11-05T08:35:57Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_test_sub_agg_order,timeout,830.714,150.036,2026-11-05T08:38:27Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_u64_max_value_does_not_overflow,success,830.714,122.184,2026-11-05T08:40:29Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggregation_u64_value,success,830.714,121.573,2026-11-05T08:42:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_aggs_hosts_and_tags_merge_on_mixed_order_request,timeout,830.714,150.025,2026-11-05T08:45:01Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_empty_json,timeout,830.714,150.030,2026-11-05T08:47:31Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::terms_missing_with_child_missing_sum,timeout,830.714,150.041,2026-11-05T08:50:01Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::test_json_format,success,830.714,2.016,2026-11-05T08:50:03Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_agg::tests::test_simple_agg,success,830.714,145.256,2026-11-05T08:52:28Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_missing_agg::tests::terms_aggregation_missing_mixed_type_mult_seg,timeout,830.714,150.024,2026-11-05T08:54:58Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_missing_agg::tests::terms_aggregation_missing_mixed_type_mult_seg_sub_agg,success,830.714,122.860,2026-11-05T08:57:01Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_missing_agg::tests::terms_aggregation_missing_mixed_type_one_seg,success,830.714,121.170,2026-11-05T08:59:02Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_missing_agg::tests::terms_aggregation_missing_mixed_type_sub_agg_reg1,success,830.714,122.840,2026-11-05T09:01:05Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_missing_agg::tests::terms_aggregation_missing_mult_seg_empty,timeout,830.714,150.024,2026-11-05T09:03:35Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_missing_agg::tests::terms_aggregation_missing_single_seg_empty,success,830.714,121.920,2026-11-05T09:05:37Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::bucket::term_missing_agg::tests::terms_aggregation_missing_str_on_numeric_field,success,830.714,121.655,2026-11-05T09:07:39Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::intermediate_agg_result::tests::test_deserialize_legacy_postcard_term_result,success,830.714,1.657,2026-11-05T09:07:41Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::intermediate_agg_result::tests::test_merge_fruits_tree_1,success,830.714,1.682,2026-11-05T09:07:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::intermediate_agg_result::tests::test_merge_fruits_tree_2,success,830.714,1.710,2026-11-05T09:07:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::intermediate_agg_result::tests::test_merge_fruits_tree_empty,success,830.714,1.679,2026-11-05T09:07:46Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::intermediate_agg_result::tests::test_multi_terms_repeated_merge_and_prune,success,830.714,1.855,2026-11-05T09:07:48Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::intermediate_agg_result::tests::test_prune_intermediate_results_count_ties_by_key,success,830.714,1.721,2026-11-05T09:07:49Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::intermediate_agg_result::tests::test_prune_intermediate_results_finalizer_size,success,830.714,1.672,2026-11-05T09:07:51Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::intermediate_agg_result::tests::test_prune_intermediate_results_key_order,success,830.714,1.695,2026-11-05T09:07:53Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::intermediate_agg_result::tests::test_prune_intermediate_results_segment_size,success,830.714,1.908,2026-11-05T09:07:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::intermediate_agg_result::tests::test_prune_intermediate_results_via_top_level,success,830.714,1.928,2026-11-05T09:07:57Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::intermediate_agg_result::tests::test_term_bucket_doc_count_no_u32_overflow,success,830.714,1.884,2026-11-05T09:07:59Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::average::tests::deserialization_with_missing_test1,success,830.714,1.915,2026-11-05T09:08:00Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::average::tests::deserialization_with_missing_test_fail,success,830.714,1.913,2026-11-05T09:08:02Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::numeric_collector::tests::cardinality_aggregation_ip_addr,success,830.714,121.075,2026-11-05T09:10:03Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::numeric_collector::tests::cardinality_aggregation_u64,success,830.714,121.783,2026-11-05T09:12:05Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::str_collector::tests::cardinality_aggregation_test_str_bitset,timeout,830.714,150.026,2026-11-05T09:14:35Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::str_collector::tests::cardinality_aggregation_test_str_bitset_with_missing,success,830.714,128.544,2026-11-05T09:16:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::term_ord_accumulator::tests::bitset_accumulator_basic,success,830.714,1.787,2026-11-05T09:16:46Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::term_ord_accumulator::tests::paged_bitset_basic,success,830.714,1.856,2026-11-05T09:16:48Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::term_ord_accumulator::tests::term_ord_set_promotes_on_maybe_compact,success,830.714,1.819,2026-11-05T09:16:49Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::tests::cardinality_aggregation_bytes_excluded_from_accessors,timeout,830.714,150.031,2026-11-05T09:19:19Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::tests::cardinality_aggregation_json,success,830.714,122.048,2026-11-05T09:21:21Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::tests::cardinality_aggregation_json_str_and_numeric,success,830.714,122.023,2026-11-05T09:23:24Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::tests::cardinality_aggregation_missing_value_single_empty_doc,success,830.714,131.677,2026-11-05T09:25:35Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::tests::cardinality_aggregation_test,timeout,830.714,150.032,2026-11-05T09:28:05Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::tests::cardinality_aggregation_test_empty_index,success,830.714,6.262,2026-11-05T09:28:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::tests::cardinality_aggregation_test_single_segment,timeout,830.714,150.031,2026-11-05T09:30:42Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::tests::cardinality_collector_merge,success,830.714,1.691,2026-11-05T09:30:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::tests::cardinality_collector_merge_stays_exact_for_small_sets,success,830.714,1.850,2026-11-05T09:30:45Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::tests::cardinality_collector_salt_differentiates_types,success,830.714,1.669,2026-11-05T09:30:47Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::tests::cardinality_collector_serde_roundtrip,success,830.714,1.692,2026-11-05T09:30:49Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::cardinality::tests::cardinality_collector_serialize_deserialize_binary,success,830.714,1.665,2026-11-05T09:30:50Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::extended_stat_multiple_values,success,830.714,1.650,2026-11-05T09:30:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::extended_stat_one_value,success,830.714,1.656,2026-11-05T09:30:54Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::extended_stat_zero_value,success,830.714,1.730,2026-11-05T09:30:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::merge_and_then_collect_non_empty_extended_stats,success,830.714,1.811,2026-11-05T09:30:57Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::merge_empty_with_multiple_values,success,830.714,1.806,2026-11-05T09:30:59Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::merge_empty_with_one_value,success,830.714,1.827,2026-11-05T09:31:01Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::merge_non_empty_extended_stats,success,830.714,1.797,2026-11-05T09:31:03Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::test_aggregation_extended_stats,timeout,830.714,150.026,2026-11-05T09:33:33Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::test_aggregation_extended_stats_no_variance,success,830.714,145.266,2026-11-05T09:35:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::test_aggregation_extended_stats_with_sigma,timeout,830.714,150.029,2026-11-05T09:38:28Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::test_aggregation_extended_stats_with_sigma_block,timeout,830.714,150.029,2026-11-05T09:40:58Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::test_aggregation_extended_stats_with_variance_similar_to_mean,timeout,830.714,150.024,2026-11-05T09:43:28Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::test_extended_stats_collect_block_keeps_infinite_sum_of_squares,success,830.714,1.622,2026-11-05T09:43:30Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::extended_stats::tests::test_extended_stats_collect_block_no_merge_overflow,success,830.714,1.634,2026-11-05T09:43:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::max::tests::test_max_agg_with_missing,timeout,830.714,150.034,2026-11-05T09:46:01Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::percentiles::tests::test_aggregation_percentile_parameters,success,830.714,146.630,2026-11-05T09:48:28Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::percentiles::tests::test_aggregation_percentile_simple,success,830.714,144.153,2026-11-05T09:50:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::percentiles::tests::test_aggregation_percentiles_empty_index,success,830.714,6.349,2026-11-05T09:50:59Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::percentiles::tests::test_aggregation_percentiles_multi_seg,timeout,830.714,150.032,2026-11-05T09:53:29Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::percentiles::tests::test_aggregation_percentiles_single_seg,timeout,830.714,150.027,2026-11-05T09:55:59Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::percentiles::tests::test_percentiles_missing,success,830.714,122.899,2026-11-05T09:58:02Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::percentiles::tests::test_percentiles_missing_sub_agg,success,830.714,127.713,2026-11-05T10:00:09Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::percentiles::tests::test_percentiles_negative_missing_on_u64_column,success,830.714,122.305,2026-11-05T10:02:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::stats::tests::test_aggregation_stats,timeout,830.714,150.034,2026-11-05T10:04:42Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::stats::tests::test_aggregation_stats_block,timeout,830.714,150.040,2026-11-05T10:07:12Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::stats::tests::test_aggregation_stats_empty_index,success,830.714,6.411,2026-11-05T10:07:18Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::stats::tests::test_aggregation_stats_simple,success,830.714,145.707,2026-11-05T10:09:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::stats::tests::test_collect_stats_slice_does_not_reapply_kahan_residual,success,830.714,1.647,2026-11-05T10:09:46Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::stats::tests::test_collect_stats_slice_keeps_infinite_sum,success,830.714,1.667,2026-11-05T10:09:47Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::stats::tests::test_collect_stats_slice_keeps_lane_compensation,success,830.714,1.660,2026-11-05T10:09:49Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::stats::tests::test_stats_fractional_missing_on_i64_column,success,830.714,122.672,2026-11-05T10:11:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::stats::tests::test_stats_json,timeout,830.714,150.024,2026-11-05T10:14:22Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::stats::tests::test_stats_json_missing,timeout,830.714,150.024,2026-11-05T10:16:52Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::stats::tests::test_stats_json_missing_sub_agg,success,830.714,121.842,2026-11-05T10:18:54Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::stats::tests::test_stats_negative_missing_on_u64_column,success,830.714,121.741,2026-11-05T10:20:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::sum::tests::test_sum_aggregation_empty_index_default_matches_es,success,830.714,6.147,2026-11-05T10:21:02Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::sum::tests::test_sum_aggregation_empty_index_none_if_no_match_opt_in,success,830.714,5.980,2026-11-05T10:21:08Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::sum::tests::test_sum_finalize_returns_none_when_no_values,success,830.714,1.626,2026-11-05T10:21:09Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::sum::tests::test_sum_finalize_returns_value_when_has_values,success,830.714,1.618,2026-11-05T10:21:11Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::sum::tests::test_sum_merge_two_empty_still_none,success,830.714,1.622,2026-11-05T10:21:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::tests::test_metric_aggregations,timeout,830.714,150.035,2026-11-05T10:23:42Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::top_hits::tests::test_aggregation_top_hits_empty_index,success,830.714,6.286,2026-11-05T10:23:49Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::top_hits::tests::test_aggregation_top_hits_multi_segment,timeout,830.714,150.029,2026-11-05T10:26:19Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::top_hits::tests::test_aggregation_top_hits_single_segment,timeout,830.714,150.025,2026-11-05T10:28:49Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,aggregation::metric::top_hits::tests::test_comparable_doc_feature,success,830.714,1.627,2026-11-05T10:28:51Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::top_hits::tests::test_comparable_doc_features,success,830.714,1.619,2026-11-05T10:28:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::metric::top_hits::tests::test_top_hits_collector_single_feature,success,830.714,1.635,2026-11-05T10:28:54Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::tests::key_order_is_total_and_consistent_with_equality,success,830.714,1.644,2026-11-05T10:28:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_as_column_distinguishes_the_two_kinds,success,830.714,1.633,2026-11-05T10:28:57Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_dedup_docid_val_pairs_consecutive,success,830.714,1.625,2026-11-05T10:28:59Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_dedup_docid_val_pairs_multi_doc,success,830.714,1.621,2026-11-05T10:29:00Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_dedup_docid_val_pairs_no_duplicates,success,830.714,1.770,2026-11-05T10:29:02Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_dedup_docid_val_pairs_non_consecutive,success,830.714,1.824,2026-11-05T10:29:04Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_dedup_docid_val_pairs_single_element,success,830.714,1.798,2026-11-05T10:29:06Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_fetch_block_accepts_trait_object,success,830.714,1.825,2026-11-05T10:29:08Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_fetch_block_contiguous_and_gather_match,success,830.714,2.529,2026-11-05T10:29:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_fetch_block_with_missing_ordered,success,830.714,1.803,2026-11-05T10:29:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_fetch_source_block_with_missing_on_a_computed_source,success,830.714,1.805,2026-11-05T10:29:14Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_find_missing_docs,success,830.714,1.789,2026-11-05T10:29:16Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_find_missing_docs_all_missing,success,830.714,1.831,2026-11-05T10:29:17Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_find_missing_docs_empty,success,830.714,1.812,2026-11-05T10:29:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_is_batch_multivalued_checks_loaded_values,success,830.714,1.845,2026-11-05T10:29:21Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_is_batch_multivalued_ignores_stale_full_docids,success,830.714,1.808,2026-11-05T10:29:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_multivalued_missing_merge,success,830.714,1.904,2026-11-05T10:29:25Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_sort_values_per_doc_for_dedup,success,830.714,1.622,2026-11-05T10:29:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_source_neutral_full_block_alignment,success,830.714,1.618,2026-11-05T10:29:28Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_source_neutral_multivalue_block_deduplication,success,830.714,1.627,2026-11-05T10:29:30Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::block_accessor::tests::test_source_neutral_optional_block_with_missing,success,830.714,1.618,2026-11-05T10:29:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::tests::test_cardinality_on_absent_field_with_str_missing,success,830.714,121.761,2026-11-05T10:31:33Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::tests::test_composite_and_multi_terms_reject_registered_source,success,830.714,121.509,2026-11-05T10:33:35Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::tests::test_empty_computed_str_source,success,830.714,122.312,2026-11-05T10:35:37Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::tests::test_is_contiguous,success,830.714,1.630,2026-11-05T10:35:39Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::tests::test_metric_over_registered_source,success,830.714,121.272,2026-11-05T10:37:40Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::tests::test_registered_source_as_sub_aggregation_of_terms,success,830.714,121.883,2026-11-05T10:39:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::tests::test_to_f64_on_physical_columns,success,830.714,1.669,2026-11-05T10:39:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::value_source_registry::tests::test_register_overrides,success,830.714,120.732,2026-11-05T10:41:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,aggregation::value_source::value_source_registry::tests::test_register_then_get,success,830.714,1.844,2026-11-05T10:41:46Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::count_collector::tests::test_count_collect_does_not_requires_scoring,success,830.714,1.811,2026-11-05T10:41:48Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::count_collector::tests::test_segment_count_collector,success,830.714,1.638,2026-11-05T10:41:50Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::facet_collector::tests::is_child_facet,success,830.714,1.630,2026-11-05T10:41:51Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::facet_collector::tests::test_collapse_simple,success,830.714,1.707,2026-11-05T10:41:53Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::facet_collector::tests::test_compress_mapping,success,830.714,1.637,2026-11-05T10:41:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::facet_collector::tests::test_doc_search_by_facet,success,830.714,128.869,2026-11-05T10:44:03Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::facet_collector::tests::test_doc_unsorted_multifacet,success,830.714,128.728,2026-11-05T10:46:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::facet_collector::tests::test_facet_collector_drilldown,timeout,830.714,150.038,2026-11-05T10:48:42Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::facet_collector::tests::test_facet_collector_simple,success,830.714,129.619,2026-11-05T10:50:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::facet_collector::tests::test_facet_collector_topk,timeout,830.714,150.039,2026-11-05T10:53:22Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::facet_collector::tests::test_facet_collector_topk_tie_break,success,830.714,128.222,2026-11-05T10:55:30Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::facet_collector::tests::test_facet_collector_wrong_root,success,830.714,130.178,2026-11-05T10:57:40Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::facet_collector::tests::test_misused_facet_collector,success,830.714,1.658,2026-11-05T10:57:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::facet_collector::tests::test_non_used_facet_collector,success,830.714,1.629,2026-11-05T10:57:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::histogram_collector::tests::test_add_histograms_empty,success,830.714,1.637,2026-11-05T10:57:45Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::histogram_collector::tests::test_add_histograms_simple,success,830.714,1.641,2026-11-05T10:57:47Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::histogram_collector::tests::test_histogram_builder_simple,success,830.714,1.641,2026-11-05T10:57:49Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::histogram_collector::tests::test_histogram_dates,success,830.714,120.980,2026-11-05T10:59:50Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::histogram_collector::tests::test_histogram_i64,success,830.714,122.347,2026-11-05T11:01:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::histogram_collector::tests::test_histogram_merge,timeout,830.714,150.030,2026-11-05T11:04:22Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::histogram_collector::tests::test_histogram_too_high_is_ignored,success,830.714,1.632,2026-11-05T11:04:24Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::histogram_collector::tests::test_histogram_too_low_is_ignored,success,830.714,1.635,2026-11-05T11:04:25Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::histogram_collector::tests::test_no_segments,success,830.714,1.808,2026-11-05T11:04:27Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::multi_collector::tests::test_multi_collector,timeout,830.714,150.033,2026-11-05T11:06:57Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::sort_key::order::tests::test_mixed_ownedvalue_compare,success,830.714,1.834,2026-11-05T11:06:59Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::order::tests::test_natural_none_is_higher,success,830.714,1.845,2026-11-05T11:07:01Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_bytes::tests::test_sort_by_bytes_asc,success,830.714,135.460,2026-11-05T11:09:16Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_bytes::tests::test_sort_by_bytes_desc,success,830.714,127.785,2026-11-05T11:11:24Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_erased_type::tests::test_sort_by_owned_bytes,success,830.714,120.529,2026-11-05T11:13:25Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_erased_type::tests::test_sort_by_owned_reverse,success,830.714,121.061,2026-11-05T11:15:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_erased_type::tests::test_sort_by_owned_score,success,830.714,128.496,2026-11-05T11:17:34Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_erased_type::tests::test_sort_by_owned_string,success,830.714,128.174,2026-11-05T11:19:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_erased_type::tests::test_sort_by_owned_u64,success,830.714,120.450,2026-11-05T11:21:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_score::tests::test_top_n_heap_basic,success,830.714,1.783,2026-11-05T11:21:45Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_score::tests::test_top_n_heap_matches_top_n_computer,success,830.714,109.699,2026-11-05T11:23:34Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_score::tests::test_top_n_heap_single_element,success,830.714,1.636,2026-11-05T11:23:36Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_score::tests::test_top_n_heap_threshold_always_accurate,success,830.714,1.633,2026-11-05T11:23:38Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_score::tests::test_top_n_heap_tiebreaking_lower_doc_wins,success,830.714,1.616,2026-11-05T11:23:39Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_score::tests::test_top_n_heap_under_capacity,success,830.714,1.625,2026-11-05T11:23:41Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_by_score::tests::test_top_n_heap_zero_capacity,success,830.714,1.630,2026-11-05T11:23:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_key_computer::tests::test_lazy_score_computer,success,830.714,120.530,2026-11-05T11:25:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::sort_key_computer::tests::test_lazy_score_computer_dynamic_ordering,success,830.714,120.759,2026-11-05T11:27:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::sort_key::tests::test_order_by_f64,timeout,830.714,150.029,2026-11-05T11:30:14Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::sort_key::tests::test_order_by_score,timeout,830.714,150.033,2026-11-05T11:32:44Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::sort_key::tests::test_order_by_score_then_owned_value,timeout,830.714,150.039,2026-11-05T11:35:14Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::sort_key::tests::test_order_by_score_then_string,timeout,830.714,150.039,2026-11-05T11:37:44Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::sort_key::tests::test_order_by_string,timeout,830.714,150.031,2026-11-05T11:40:14Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::sort_key::tests::test_order_by_string_prop,timeout,830.714,150.036,2026-11-05T11:42:44Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::sort_key_top_collector::tests::test_merge_top_k,success,830.714,1.928,2026-11-05T11:42:46Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::tests::test_filter_collector,success,830.714,131.526,2026-11-05T11:44:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::tests::test_option_collector_none,success,830.714,121.291,2026-11-05T11:46:59Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::tests::test_option_collector_some,success,830.714,120.961,2026-11-05T11:49:00Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::proptest_stable_ordering_across_segments_with_pagination,timeout,830.714,150.024,2026-11-05T11:51:30Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::proptest_stable_ordering_across_segments_with_term_query_and_pagination,timeout,830.714,150.038,2026-11-05T11:54:00Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_custom_score_top_collector_with_offset,success,830.714,129.399,2026-11-05T11:56:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_empty_topn_computer,success,830.714,1.831,2026-11-05T11:56:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_fast_field_ascending_order,success,830.714,129.545,2026-11-05T11:58:21Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_field_does_not_exist,success,830.714,131.027,2026-11-05T12:00:32Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_field_not_fast_field,success,830.714,123.480,2026-11-05T12:02:36Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_field_wrong_type,success,830.714,1.871,2026-11-05T12:02:38Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_push_assuming_capacity,success,830.714,1.678,2026-11-05T12:02:39Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_push_assuming_capacity_panics_when_no_cap,success,830.714,1.693,2026-11-05T12:02:41Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_sort_key_top_collector_with_offset,success,830.714,130.742,2026-11-05T12:04:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_0,success,830.714,1.700,2026-11-05T12:04:53Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_collector_at_capacity,success,830.714,129.747,2026-11-05T12:07:03Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_collector_at_capacity_with_offset,success,830.714,129.854,2026-11-05T12:09:13Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_collector_not_at_capacity_with_offset,success,830.714,129.864,2026-11-05T12:11:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_collector_not_at_capacity_without_offset,success,830.714,130.240,2026-11-05T12:13:33Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_collector_stable_sorting,success,830.714,129.899,2026-11-05T12:15:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_field_collect_string_prop,timeout,830.714,150.038,2026-11-05T12:18:13Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_field_collector_datetime,success,830.714,129.620,2026-11-05T12:20:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_field_collector_f64,success,830.714,129.655,2026-11-05T12:22:32Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_field_collector_i64,success,830.714,130.659,2026-11-05T12:24:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_field_collector_not_at_capacity,success,830.714,132.823,2026-11-05T12:26:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_field_collector_string,success,830.714,134.044,2026-11-05T12:29:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_n_computer_at_capacity,success,830.714,1.873,2026-11-05T12:29:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_n_computer_not_at_capacity,success,830.714,1.851,2026-11-05T12:29:14Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_top_segment_collector_stable_ordering_for_equal_feature,success,830.714,1.698,2026-11-05T12:29:15Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_topn_computer,success,830.714,1.700,2026-11-05T12:29:17Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_topn_computer_asc,success,830.714,1.708,2026-11-05T12:29:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_topn_computer_asc_prop,success,830.714,74.328,2026-11-05T12:30:33Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_topn_computer_desc,success,830.714,1.818,2026-11-05T12:30:35Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_topn_computer_duplicates,success,830.714,1.864,2026-11-05T12:30:37Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_topn_computer_no_panic,success,830.714,1.904,2026-11-05T12:30:39Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_topn_computer_option_asc_null_at_the_begining,success,830.714,1.680,2026-11-05T12:30:41Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,collector::top_score_collector::tests::test_topn_computer_option_asc_null_at_the_end,success,830.714,1.698,2026-11-05T12:30:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,compat_tests::create_format,success,830.714,1.682,2026-11-05T12:30:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,compat_tests::test_format_6,success,830.714,2.588,2026-11-05T12:30:47Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,compat_tests::test_format_7,success,830.714,2.598,2026-11-05T12:30:49Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::executor::tests::test_map_multithread,success,830.714,1.794,2026-11-05T12:30:51Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::executor::tests::test_map_singlethread,success,830.714,2.074,2026-11-05T12:30:53Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::executor::tests::test_panic_propagates_multi_thread,success,830.714,1.729,2026-11-05T12:30:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::executor::tests::test_panic_propagates_single_thread,success,830.714,1.695,2026-11-05T12:30:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_bool_term,success,830.714,1.855,2026-11-05T12:30:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_f64_term,success,830.714,1.881,2026-11-05T12:31:00Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_i64_term,success,830.714,1.838,2026-11-05T12:31:02Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_json_writer,success,830.714,1.888,2026-11-05T12:31:04Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_out_of_range_date_is_not_converted,success,830.714,1.863,2026-11-05T12:31:06Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_split_json_path_escaped_backslash,success,830.714,1.844,2026-11-05T12:31:08Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_split_json_path_escaped_dot,success,830.714,1.841,2026-11-05T12:31:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_split_json_path_escaped_normal_letter,success,830.714,1.842,2026-11-05T12:31:11Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_split_json_path_heading_dot,success,830.714,1.853,2026-11-05T12:31:13Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_split_json_path_simple,success,830.714,1.868,2026-11-05T12:31:15Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_split_json_path_single_segment,success,830.714,1.839,2026-11-05T12:31:17Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_split_json_path_trailing_dot,success,830.714,1.861,2026-11-05T12:31:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_string_term,success,830.714,1.856,2026-11-05T12:31:21Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::json_utils::tests::test_u64_term,success,830.714,1.812,2026-11-05T12:31:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::tests::create_should_wipeoff_existing,success,830.714,1.813,2026-11-05T12:31:24Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::tests::garbage_collect_works_as_intended,timeout,830.714,150.029,2026-11-05T12:33:54Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,core::tests::mmap_specific::test_index_manual_policy_mmap,timeout,830.714,150.026,2026-11-05T12:36:25Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,core::tests::mmap_specific::test_index_on_commit_reload_policy_different_directories,timeout,830.714,150.024,2026-11-05T12:38:55Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,core::tests::mmap_specific::test_index_on_commit_reload_policy_mmap,timeout,830.714,150.025,2026-11-05T12:41:25Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,core::tests::open_or_create_exists_but_schema_does_not_match,success,830.714,1.957,2026-11-05T12:41:27Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::tests::open_or_create_should_create,success,830.714,1.953,2026-11-05T12:41:29Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::tests::open_or_create_should_open,success,830.714,2.026,2026-11-05T12:41:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::tests::test_index_exists,success,830.714,1.911,2026-11-05T12:41:33Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::tests::test_index_on_commit_reload_policy,timeout,830.714,150.024,2026-11-05T12:44:03Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,core::tests::test_indexer_for_field,success,830.714,1.753,2026-11-05T12:44:04Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::tests::test_merging_segment_update_docfreq,timeout,830.714,150.039,2026-11-05T12:46:34Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,core::tests::test_non_text_json_term_freq,success,830.714,128.354,2026-11-05T12:48:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::tests::test_non_text_json_term_freq_bitpacked,success,830.714,133.745,2026-11-05T12:50:57Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::tests::test_positions_merge_bug_non_text_json_bitpacked_block,timeout,830.714,150.023,2026-11-05T12:53:27Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,core::tests::test_positions_merge_bug_non_text_json_vint,timeout,830.714,150.040,2026-11-05T12:55:57Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,core::tests::test_set_tokenizer_manager,success,830.714,1.904,2026-11-05T12:55:59Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,core::tests::test_single_segment_index_writer,success,830.714,124.569,2026-11-05T12:58:03Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::composite_file::test::test_composite_file,success,830.714,1.696,2026-11-05T12:58:05Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::composite_file::test::test_composite_file_bug,success,830.714,1.689,2026-11-05T12:58:07Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::footer::tests::test_deserialize_footer,success,830.714,1.682,2026-11-05T12:58:08Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::footer::tests::test_deserialize_footer_missing_magic_byte,success,830.714,1.636,2026-11-05T12:58:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::footer::tests::test_deserialize_footer_wrong_filesize,success,830.714,1.654,2026-11-05T12:58:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::footer::tests::test_deserialize_too_large_footer,success,830.714,1.641,2026-11-05T12:58:13Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::managed_directory::tests_mmap_specific::test_managed_directory,success,830.714,1.794,2026-11-05T12:58:15Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::managed_directory::tests_mmap_specific::test_managed_directory_gc_while_mmapped,success,830.714,1.736,2026-11-05T12:58:17Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::mmap_directory::file_watcher::tests::test_file_watcher_drop_handle,success,830.714,1.704,2026-11-05T12:58:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::mmap_directory::file_watcher::tests::test_file_watcher_drop_watcher,success,830.714,1.918,2026-11-05T12:58:20Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::mmap_directory::tests::test_cache,success,830.714,2.556,2026-11-05T12:58:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::mmap_directory::tests::test_mmap_released,timeout,830.714,150.024,2026-11-05T13:00:53Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,directory::mmap_directory::tests::test_open_empty,success,830.714,1.676,2026-11-05T13:00:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::mmap_directory::tests::test_open_non_existent_path,success,830.714,1.638,2026-11-05T13:00:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::ram_directory::tests::test_active_writer_memory_usage,success,830.714,1.640,2026-11-05T13:00:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::ram_directory::tests::test_dropped_writer_releases_path,success,830.714,1.646,2026-11-05T13:01:00Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::ram_directory::tests::test_persist,success,830.714,1.669,2026-11-05T13:01:01Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::mmap_directory_tests::test_directory_delete,success,830.714,1.681,2026-11-05T13:01:03Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::mmap_directory_tests::test_lock_blocking,success,830.714,1.739,2026-11-05T13:01:05Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::mmap_directory_tests::test_lock_non_blocking,success,830.714,1.737,2026-11-05T13:01:07Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::mmap_directory_tests::test_rewrite_forbidden,success,830.714,1.755,2026-11-05T13:01:08Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::mmap_directory_tests::test_simple,success,830.714,1.768,2026-11-05T13:01:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::mmap_directory_tests::test_watch,success,830.714,1.793,2026-11-05T13:01:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::mmap_directory_tests::test_write_create_the_file,success,830.714,1.738,2026-11-05T13:01:14Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::ram_directory_tests::test_directory_delete,success,830.714,1.739,2026-11-05T13:01:15Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::ram_directory_tests::test_lock_blocking,success,830.714,1.860,2026-11-05T13:01:17Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::ram_directory_tests::test_lock_non_blocking,success,830.714,1.753,2026-11-05T13:01:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::ram_directory_tests::test_rewrite_forbidden,success,830.714,1.748,2026-11-05T13:01:21Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::ram_directory_tests::test_simple,success,830.714,1.764,2026-11-05T13:01:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::ram_directory_tests::test_watch,success,830.714,1.730,2026-11-05T13:01:24Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::tests::ram_directory_tests::test_write_create_the_file,success,830.714,1.718,2026-11-05T13:01:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::watch_event_router::tests::test_watch_event_router_multiple_callback_different_key,success,830.714,1.723,2026-11-05T13:01:28Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::watch_event_router::tests::test_watch_event_router_multiple_callback_same_key,success,830.714,1.654,2026-11-05T13:01:29Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,directory::watch_event_router::tests::test_watch_event_router_simple,success,830.714,1.661,2026-11-05T13:01:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::alive_bitset::tests::test_alive_bitset,success,830.714,1.641,2026-11-05T13:01:33Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::alive_bitset::tests::test_alive_bitset_empty,success,830.714,1.634,2026-11-05T13:01:34Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::alive_bitset::tests::test_alive_bitset_iter,success,830.714,2.043,2026-11-05T13:01:36Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::alive_bitset::tests::test_alive_bitset_iter_minimal,success,830.714,1.632,2026-11-05T13:01:38Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::alive_bitset::tests::test_alive_bitset_iter_small,success,830.714,1.638,2026-11-05T13:01:40Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::facet_reader::tests::test_facet_not_populated_for_all_docs,success,830.714,130.429,2026-11-05T13:03:50Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::facet_reader::tests::test_facet_not_populated_for_any_docs,success,830.714,121.309,2026-11-05T13:05:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::facet_reader::tests::test_facet_only_indexed,success,830.714,129.421,2026-11-05T13:08:01Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::facet_reader::tests::test_facet_several_facets_sorted,success,830.714,131.434,2026-11-05T13:10:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::facet_reader::tests::test_facet_stored_and_indexed,success,830.714,128.151,2026-11-05T13:12:21Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::readers::tests::test_fast_field_reader_dynamic_column_handles,success,830.714,122.648,2026-11-05T13:14:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::readers::tests::test_fast_field_reader_resolve_with_dynamic_internal,success,830.714,122.263,2026-11-05T13:16:25Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_convert_i64_u64,success,830.714,1.750,2026-11-05T13:16:27Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_date_fastfield_default,success,830.714,1.824,2026-11-05T13:16:29Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_datefastfield,success,830.714,123.423,2026-11-05T13:18:33Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_facet_fastfield_simple,success,830.714,128.971,2026-11-05T13:20:41Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_fast_field_dot_in_schema_field_name,success,830.714,121.630,2026-11-05T13:22:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_fast_field_in_json_field_expand_dots_disabled,success,830.714,122.051,2026-11-05T13:24:45Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_fast_field_in_json_field_expand_dots_enabled,success,830.714,122.500,2026-11-05T13:26:48Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_fast_field_in_json_field_with_tokenizer,success,830.714,122.530,2026-11-05T13:28:50Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_fast_field_tokenizer,success,830.714,121.554,2026-11-05T13:30:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_fastfield_bool_default_value,success,830.714,1.729,2026-11-05T13:30:54Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_fastfield_bool_large,success,830.714,2.283,2026-11-05T13:30:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_fastfield_bool_small,success,830.714,1.721,2026-11-05T13:30:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_gcd_bug_regression_1757,success,830.714,129.006,2026-11-05T13:33:07Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_gcd_date,success,830.714,18.747,2026-11-05T13:33:25Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_generated_tie_breaker_fast_field,success,830.714,3.283,2026-11-05T13:33:29Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_intfastfield_large,success,830.714,1.755,2026-11-05T13:33:30Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_intfastfield_large_numbers,success,830.714,78.059,2026-11-05T13:34:48Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_intfastfield_null_amplitude,success,830.714,69.666,2026-11-05T13:35:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_intfastfield_permutation,timeout,830.714,150.019,2026-11-05T13:38:28Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_intfastfield_permutation_gcd,timeout,830.714,150.023,2026-11-05T13:40:58Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_intfastfield_small,success,830.714,1.880,2026-11-05T13:41:00Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_ip_addr_columnar_simple,success,830.714,122.484,2026-11-05T13:43:03Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_json_object_fast_field,success,830.714,123.320,2026-11-05T13:45:06Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_mapping_bug_docids_for_value_range,success,830.714,130.075,2026-11-05T13:47:16Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_merge_missing_date_fast_field,timeout,830.714,150.024,2026-11-05T13:49:46Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_shadowing_fast_field,success,830.714,123.190,2026-11-05T13:51:49Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_shadowing_fast_field_with_expand_dots,success,830.714,123.999,2026-11-05T13:53:53Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_signed_intfastfield_default_val,success,830.714,1.775,2026-11-05T13:53:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_signed_intfastfield_normal,success,830.714,77.880,2026-11-05T13:55:13Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_string_fastfield,timeout,830.714,150.024,2026-11-05T13:57:43Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_string_fastfield_simple,success,830.714,131.336,2026-11-05T13:59:54Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_text_fast_field_tokenizer,success,830.714,131.768,2026-11-05T14:02:06Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::tests::test_text_fastfield,timeout,830.714,150.031,2026-11-05T14:04:36Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,fastfield::writer::tests::test_json_fast_field_do_not_expand_dots,success,830.714,1.727,2026-11-05T14:04:38Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::writer::tests::test_json_fast_field_expand_dots,success,830.714,1.752,2026-11-05T14:04:40Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::writer::tests::test_json_fastfield_deep_arr,success,830.714,1.772,2026-11-05T14:04:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::writer::tests::test_json_fastfield_deep_obj,success,830.714,1.790,2026-11-05T14:04:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::writer::tests::test_json_fastfield_record_simple,success,830.714,1.909,2026-11-05T14:04:45Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fastfield::writer::tests::test_raw_fast_fields_bypass_tokenizer,success,830.714,1.874,2026-11-05T14:04:47Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fieldnorm::code::tests::test_decode_code,success,830.714,1.956,2026-11-05T14:04:49Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fieldnorm::code::tests::test_fieldnorm_byte,success,830.714,1.851,2026-11-05T14:04:51Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fieldnorm::code::tests::test_u32_max,success,830.714,1.862,2026-11-05T14:04:53Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fieldnorm::reader::tests::test_const_fieldnorm_reader_large_fieldnorm_id,success,830.714,1.846,2026-11-05T14:04:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fieldnorm::reader::tests::test_const_fieldnorm_reader_small_fieldnorm_id,success,830.714,1.840,2026-11-05T14:04:57Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fieldnorm::reader::tests::test_from_fieldnorms_array,success,830.714,1.856,2026-11-05T14:04:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fieldnorm::tests::test_fieldnorm,success,830.714,1.888,2026-11-05T14:05:00Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fieldnorm::tests::test_fieldnorm_disabled,success,830.714,130.231,2026-11-05T14:07:11Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fieldnorm::tests::test_fieldnorm_enabled,success,830.714,132.336,2026-11-05T14:09:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,fieldnorm::tests::test_should_panic_when_recording_fieldnorm_twice_for_same_doc,success,830.714,1.700,2026-11-05T14:09:25Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,future_result::tests::test_scheduled_result_error,success,830.714,1.679,2026-11-05T14:09:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,future_result::tests::test_scheduled_result_failed_to_schedule,success,830.714,1.684,2026-11-05T14:09:28Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,future_result::tests::test_scheduled_result_sent_error,success,830.714,1.677,2026-11-05T14:09:30Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,future_result::tests::test_scheduled_result_sent_success,success,830.714,1.682,2026-11-05T14:09:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::index_meta::tests::test_index_settings_default,success,830.714,1.870,2026-11-05T14:09:33Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::index_meta::tests::test_list_segment_files_builtin_candidates_and_segment_scope,success,830.714,1.945,2026-11-05T14:09:35Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::index_meta::tests::test_list_segment_files_custom_extensions,success,830.714,2.103,2026-11-05T14:09:37Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::index_meta::tests::test_list_segment_files_empty_metadata,success,830.714,1.857,2026-11-05T14:09:39Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::index_meta::tests::test_list_segment_files_tracks_temporary_docstore,success,830.714,2.023,2026-11-05T14:09:41Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::index_meta::tests::test_list_segment_files_uses_current_delete_opstamp,success,830.714,1.909,2026-11-05T14:09:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::index_meta::tests::test_serialize_metas,success,830.714,1.974,2026-11-05T14:09:45Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::index_meta::tests::test_serialize_metas_unsupported_comp,success,830.714,1.869,2026-11-05T14:09:47Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::inverted_index_plugin::tests::test_hashmap_size,success,830.714,1.858,2026-11-05T14:09:49Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::segment_id::tests::test_to_uuid_string,success,830.714,1.870,2026-11-05T14:09:51Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::segment_reader::test::test_alive_docs_iterator,success,830.714,136.001,2026-11-05T14:12:07Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::segment_reader::test::test_merge_field_meta_data_bitxor,success,830.714,1.832,2026-11-05T14:12:09Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::segment_reader::test::test_merge_field_meta_data_different,success,830.714,1.842,2026-11-05T14:12:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::segment_reader::test::test_merge_field_meta_data_merge,success,830.714,1.891,2026-11-05T14:12:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::segment_reader::test::test_merge_field_meta_data_same_field,success,830.714,1.857,2026-11-05T14:12:14Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,index::segment_reader::test::test_num_alive,success,830.714,130.038,2026-11-05T14:14:24Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::delete_queue::tests::test_deletequeue,success,830.714,1.692,2026-11-05T14:14:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_doc_mapping,success,830.714,1.667,2026-11-05T14:14:28Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_doc_mapping_new_permutation_rejects_duplicates,success,830.714,1.656,2026-11-05T14:14:29Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_doc_mapping_new_permutation_rejects_out_of_range,success,830.714,1.690,2026-11-05T14:14:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_doc_mapping_remap,success,830.714,1.668,2026-11-05T14:14:33Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_index_builder_rejects_manual_doc_id_mapping_with_sort_by_field,success,830.714,1.674,2026-11-05T14:14:34Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_index_builder_rejects_tie_breaker_sort_by_field,success,830.714,1.713,2026-11-05T14:14:36Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_single_segment_index_writer_finalize_rejects_manual_doc_id_mapping,success,830.714,61.416,2026-11-05T14:15:38Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_single_segment_index_writer_with_doc_id_mapping,timeout,830.714,150.024,2026-11-05T14:18:08Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_single_segment_index_writer_with_sort_by_field_untracks_tempstore,success,830.714,117.573,2026-11-05T14:20:05Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_sort_index_fast_field,success,830.714,137.425,2026-11-05T14:22:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_sort_index_get_documents,timeout,830.714,150.024,2026-11-05T14:24:53Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_sort_index_test_string_field,timeout,830.714,150.029,2026-11-05T14:27:23Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_sort_index_test_text_field,timeout,830.714,150.024,2026-11-05T14:29:53Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_text_sort,success,830.714,131.582,2026-11-05T14:32:04Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_id_mapping::tests_indexsorting::test_with_sort_by_date_field,success,830.714,130.453,2026-11-05T14:34:15Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_opstamp_mapping::tests::test_doc_to_opstamp_mapping_none,success,830.714,1.784,2026-11-05T14:34:17Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::doc_opstamp_mapping::tests::test_doc_to_opstamp_mapping_with_map,success,830.714,1.792,2026-11-05T14:34:18Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::flat_map_with_buffer::tests::test_flat_map_filling_no_elements_does_not_stop_iterator,success,830.714,1.785,2026-11-05T14:34:20Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::flat_map_with_buffer::tests::test_flat_map_with_buffer_empty,success,830.714,1.771,2026-11-05T14:34:22Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::flat_map_with_buffer::tests::test_flat_map_with_buffer_simple,success,830.714,1.786,2026-11-05T14:34:24Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_add_then_delete_all_documents,success,830.714,132.594,2026-11-05T14:36:36Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_bug_1617,success,830.714,140.971,2026-11-05T14:38:57Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_bug_1617_2,timeout,830.714,150.042,2026-11-05T14:41:28Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_bug_1617_3,timeout,830.714,150.026,2026-11-05T14:43:58Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_bug_1618,success,830.714,139.907,2026-11-05T14:46:18Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_bug_2442_reserved_character_columnar,success,830.714,121.414,2026-11-05T14:48:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_bug_2442_reserved_character_fast_field,success,830.714,128.972,2026-11-05T14:50:28Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_commit_and_rollback,timeout,830.714,150.023,2026-11-05T14:52:58Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_all_documents_and_rollback,success,830.714,134.232,2026-11-05T14:55:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_all_documents_empty_index,success,830.714,5.815,2026-11-05T14:55:18Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_all_documents_index_twice,success,830.714,8.281,2026-11-05T14:55:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_all_documents_rollback_correct_stamp,timeout,830.714,150.023,2026-11-05T14:57:56Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_all_documents_then_add,success,830.714,134.050,2026-11-05T15:00:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_and_merge_removes_terms_fast_field_dict,success,830.714,146.371,2026-11-05T15:02:37Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_bug_reproduction_ip_addr,timeout,830.714,150.027,2026-11-05T15:05:07Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_proptest,timeout,830.714,150.032,2026-11-05T15:07:37Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_proptest_adding,timeout,830.714,150.029,2026-11-05T15:10:07Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_proptest_with_merge,timeout,830.714,150.026,2026-11-05T15:12:37Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_proptest_with_merge_adding,timeout,830.714,150.034,2026-11-05T15:15:07Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_query_with_sort_by_field,success,830.714,131.037,2026-11-05T15:17:18Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_with_sort_by_field,success,830.714,130.674,2026-11-05T15:19:29Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_delete_with_sort_by_field_last_opstamp_is_not_max,success,830.714,131.084,2026-11-05T15:21:40Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_empty_operations_group,success,830.714,3.596,2026-11-05T15:21:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_fast_field_range,timeout,830.714,150.036,2026-11-05T15:24:14Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_ff_num_ips_regression,timeout,830.714,150.027,2026-11-05T15:26:44Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_index_doc_missing_field,success,830.714,129.146,2026-11-05T15:28:53Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_ip_range_query_multivalue_bug,timeout,830.714,150.034,2026-11-05T15:31:23Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_lockfile_already_exists_error_msg,success,830.714,3.466,2026-11-05T15:31:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_lockfile_released_on_drop,success,830.714,4.986,2026-11-05T15:31:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_lockfile_stops_duplicates,success,830.714,3.361,2026-11-05T15:31:35Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_merge_on_empty_segments,timeout,830.714,150.028,2026-11-05T15:34:05Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_merge_on_empty_segments_single_segment,success,830.714,131.624,2026-11-05T15:36:17Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_merge_regression_1,timeout,830.714,150.024,2026-11-05T15:38:47Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_minimal_no_sort_no_force_end_merge,timeout,830.714,150.024,2026-11-05T15:41:17Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_minimal_sort,success,830.714,123.516,2026-11-05T15:43:20Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_minimal_sort_force_end_merge,timeout,830.714,150.036,2026-11-05T15:45:50Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_minimal_sort_force_end_merge_with_delete,timeout,830.714,150.028,2026-11-05T15:48:20Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_minimal_sort_merge,success,830.714,149.299,2026-11-05T15:50:50Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_no_need_to_rewrite_delete_file_if_no_new_deletes,success,830.714,134.651,2026-11-05T15:53:04Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_operations_group,success,830.714,63.508,2026-11-05T15:54:08Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_ordered_batched_operations,success,830.714,130.868,2026-11-05T15:56:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_prepare_but_rollback,timeout,830.714,150.030,2026-11-05T15:58:49Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_prepare_with_commit_message,timeout,830.714,150.029,2026-11-05T16:01:19Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_range_query_bug_1,timeout,830.714,150.033,2026-11-05T16:03:49Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_range_query_bug_2,timeout,830.714,150.026,2026-11-05T16:06:19Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_set_merge_policy,success,830.714,3.538,2026-11-05T16:06:22Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_with_merges,timeout,830.714,150.028,2026-11-05T16:08:53Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::index_writer::tests::test_writer_options_validation,success,830.714,2.010,2026-11-05T16:08:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer_status::tests::test_bomb_defused,success,830.714,1.633,2026-11-05T16:08:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::index_writer_status::tests::test_bomb_goes_boom,success,830.714,1.640,2026-11-05T16:08:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::indexing_term::tests::indexing_term_wrap_extracts_field,success,830.714,1.647,2026-11-05T16:09:00Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::indexing_term::tests::test_term_bool,success,830.714,1.661,2026-11-05T16:09:01Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::indexing_term::tests::test_term_str,success,830.714,1.763,2026-11-05T16:09:03Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::indexing_term::tests::test_term_u64,success,830.714,1.770,2026-11-05T16:09:05Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::create_index_test_max_merge_issue_1035,timeout,830.714,150.024,2026-11-05T16:11:35Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::test_large_merge_segments,success,830.714,1.659,2026-11-05T16:11:36Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::test_log_merge_policy_all_segments_too_large_to_merge,success,830.714,1.665,2026-11-05T16:11:38Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::test_log_merge_policy_empty,success,830.714,1.641,2026-11-05T16:11:40Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::test_log_merge_policy_levels,success,830.714,1.679,2026-11-05T16:11:41Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::test_log_merge_policy_pair,success,830.714,1.770,2026-11-05T16:11:43Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::test_log_merge_policy_small_segments,success,830.714,1.772,2026-11-05T16:11:45Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::test_log_merge_policy_within_levels,success,830.714,1.753,2026-11-05T16:11:47Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::test_max_docs_before_merge_large_value,success,830.714,1.810,2026-11-05T16:11:49Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::test_merge_segments_with_deletes_above_threshold_all_in_level,success,830.714,1.765,2026-11-05T16:11:50Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::test_merge_segments_with_deletes_above_threshold_different_level_not_involved,success,830.714,1.760,2026-11-05T16:11:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::test_merge_single_segment_with_deletes_above_threshold,success,830.714,1.768,2026-11-05T16:11:54Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::log_merge_policy::tests::test_merge_single_segment_with_deletes_below_threshold,success,830.714,1.767,2026-11-05T16:11:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::merger::tests::merges_f64_fast_fields_correctly,timeout,830.714,150.029,2026-11-05T16:14:26Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger::tests::test_bug_merge,timeout,830.714,150.029,2026-11-05T16:16:56Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger::tests::test_index_merger_no_deletes,timeout,830.714,150.039,2026-11-05T16:19:26Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger::tests::test_index_merger_with_deletes,timeout,830.714,150.029,2026-11-05T16:21:56Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger::tests::test_max_doc,success,830.714,1.635,2026-11-05T16:21:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::merger::tests::test_merge_columnar_int_proptest,timeout,830.714,150.039,2026-11-05T16:24:28Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger::tests::test_merge_facets_sort_asc,timeout,830.714,150.028,2026-11-05T16:26:58Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger::tests::test_merge_facets_sort_desc,timeout,830.714,150.024,2026-11-05T16:29:28Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger::tests::test_merge_facets_sort_none,timeout,830.714,150.035,2026-11-05T16:31:58Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger::tests::test_merge_multivalued_int_fields_all_deleted,timeout,830.714,150.030,2026-11-05T16:34:28Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger::tests::test_merge_multivalued_int_fields_simple,timeout,830.714,150.028,2026-11-05T16:36:58Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger::tests::test_merged_index_has_blockwand,timeout,830.714,150.035,2026-11-05T16:39:28Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_bytes_asc,timeout,830.714,150.040,2026-11-05T16:41:58Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_bytes_desc,timeout,830.714,150.032,2026-11-05T16:44:28Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_bytes_matches_sorted_input,timeout,830.714,150.032,2026-11-05T16:46:58Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_bytes_missing_values,timeout,830.714,150.040,2026-11-05T16:49:28Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_bytes_with_deletes,timeout,830.714,150.026,2026-11-05T16:51:58Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_desc_disjunct,timeout,830.714,150.033,2026-11-05T16:54:28Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_desc_not_disjunct,timeout,830.714,150.023,2026-11-05T16:56:59Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_postings_with_deletes_and_missing_sort_keys,timeout,830.714,150.030,2026-11-05T16:59:29Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_str_asc,timeout,830.714,150.024,2026-11-05T17:01:59Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_str_desc,timeout,830.714,150.036,2026-11-05T17:04:29Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_str_matches_sorted_input,timeout,830.714,150.036,2026-11-05T17:06:59Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_str_missing_values,timeout,830.714,150.028,2026-11-05T17:09:29Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_str_with_deletes,timeout,830.714,150.032,2026-11-05T17:11:59Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_u64_asc_null_before_zero,timeout,830.714,150.030,2026-11-05T17:14:29Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_u64_asc_nulls_only_in_first_segment,timeout,830.714,150.027,2026-11-05T17:16:59Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_u64_desc_null_after_zero,timeout,830.714,150.039,2026-11-05T17:19:29Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_u64_desc_nulls_only_in_last_segment,timeout,830.714,150.031,2026-11-05T17:21:59Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_index_u64_matches_sorted_input,timeout,830.714,150.037,2026-11-05T17:24:29Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_sorted_postinglist_sort_issue,timeout,830.714,150.024,2026-11-05T17:26:59Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_merge_unsorted_index,timeout,830.714,150.040,2026-11-05T17:29:29Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::merger_sorted_index_test::tests::test_single_segment_str_sorted,success,830.714,132.399,2026-11-05T17:31:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::path_to_unordered_id::tests::path_to_unordered_test,success,830.714,1.827,2026-11-05T17:31:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_register::tests::test_segment_register,success,830.714,1.794,2026-11-05T17:31:45Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_updater::tests::delete_all_docs,timeout,830.714,150.033,2026-11-05T17:34:15Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::segment_updater::tests::delete_all_docs_min,success,830.714,134.471,2026-11-05T17:36:30Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_updater::tests::test_apply_doc_id_filter_in_merger,test_failed,830.714,132.849,2026-11-05T17:38:43Z,50232467.0,bsan,"test indexer::segment_updater::tests::test_apply_doc_id_filter_in_merger ... error: Undefined Behavior: deallocation through <272401112>(unprotected) (root of the allocation) at alloc5721234[0x4] is forbidden\n  --> /work/src/fastfield/alive_bitset.rs:35:1\n   |\n35 | }\n   | ^\n   = note: the above line calls library code, where the error was detected:\n  --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:65:14\n   |\n65 | unsafe { libc::free(ptr as *mut libc::c_void) }\n   |          ^\n   = help: the accessed tag <272401112>(unprotected) (root of the allocation) is foreign to the protected tag <273040488>(StrongProtector) (i.e., it is not a child)\n   = help: this deallocation (acting as a foreign write access) would cause the protected tag <273040488>(StrongProtector) (currently Frozen) to become Disabled\n   = help: protected tags must never be Disabled\nhelp: the accessed tag <272401112>(unprotected) was created here\n  --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:71:18\n   |\n71 | unsafe { libc::realloc(ptr as *mut libc::c_void, new_size) as *mut u8 }\n   |          ^\nhelp: the protected tag <273040488>(StrongProtector) was created here, in the initial state Frozen\n  --> /work/src/fastfield/alive_bitset.rs:27:0\n   |\n27 | pub fn intersect_alive_bitsets(left: AliveBitSet, right: AliveBitSet) -> AliveBitSet {\n   | ^\n\nstack backtrace:\n0: std::sys::alloc::unix::dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:65:14\n1: __rustc::__rdl_dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/alloc.rs:487:18\n2: alloc::alloc::dealloc_nonnull\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:205:14\n3: <alloc::alloc::Global>::deallocate_impl_runtime\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:354:22\n4: <alloc::alloc::Global>::deallocate_impl\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:469:9\n5: <alloc::alloc::Global as core::alloc::Allocator>::deallocate\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:588:23\n6: <alloc::raw_vec::RawVecInner>::deallocate\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:915:28\n7: <alloc::raw_vec::RawVec<u8> as core::ops::drop::Drop>::drop\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:443:29\n8: core::ptr::drop_glue::<alloc::raw_vec::RawVec<u8>>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n9: core::ptr::drop_glue::<alloc::vec::Vec<u8>>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n\nnote: stack trace was truncated after 10 frames; set stacktrace_max_len (e.g. BSAN_OPTIONS=stacktrace_max_len=32) to capture more.\nerror: test failed, to rerun pass `--lib`"
+experimental-bsan,tantivy-0.27.0,indexer::segment_updater::tests::test_delete_during_merge,timeout,830.714,150.028,2026-11-05T17:41:13Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::segment_updater::tests::test_merge_empty_indices_array,success,830.714,1.775,2026-11-05T17:41:15Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_updater::tests::test_merge_filtered_segments,timeout,830.714,150.038,2026-11-05T17:43:45Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::segment_updater::tests::test_merge_mismatched_schema,timeout,830.714,150.025,2026-11-05T17:46:15Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::segment_updater::tests::test_merge_segments,timeout,830.714,150.025,2026-11-05T17:48:45Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::segment_updater::tests::test_merge_single_filtered_segments,test_failed,830.714,130.291,2026-11-05T17:50:55Z,50232467.0,bsan,"test indexer::segment_updater::tests::test_merge_single_filtered_segments ... error: Undefined Behavior: deallocation through <272452488>(unprotected) (root of the allocation) at alloc5722076[0x4] is forbidden\n  --> /work/src/fastfield/alive_bitset.rs:35:1\n   |\n35 | }\n   | ^\n   = note: the above line calls library code, where the error was detected:\n  --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:65:14\n   |\n65 | unsafe { libc::free(ptr as *mut libc::c_void) }\n   |          ^\n   = help: the accessed tag <272452488>(unprotected) (root of the allocation) is foreign to the protected tag <272853480>(StrongProtector) (i.e., it is not a child)\n   = help: this deallocation (acting as a foreign write access) would cause the protected tag <272853480>(StrongProtector) (currently Frozen) to become Disabled\n   = help: protected tags must never be Disabled\nhelp: the accessed tag <272452488>(unprotected) was created here\n  --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:71:18\n   |\n71 | unsafe { libc::realloc(ptr as *mut libc::c_void, new_size) as *mut u8 }\n   |          ^\nhelp: the protected tag <272853480>(StrongProtector) was created here, in the initial state Frozen\n  --> /work/src/fastfield/alive_bitset.rs:27:0\n   |\n27 | pub fn intersect_alive_bitsets(left: AliveBitSet, right: AliveBitSet) -> AliveBitSet {\n   | ^\n\nstack backtrace:\n0: std::sys::alloc::unix::dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:65:14\n1: __rustc::__rdl_dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/alloc.rs:487:18\n2: alloc::alloc::dealloc_nonnull\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:205:14\n3: <alloc::alloc::Global>::deallocate_impl_runtime\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:354:22\n4: <alloc::alloc::Global>::deallocate_impl\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:469:9\n5: <alloc::alloc::Global as core::alloc::Allocator>::deallocate\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:588:23\n6: <alloc::raw_vec::RawVecInner>::deallocate\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:915:28\n7: <alloc::raw_vec::RawVec<u8> as core::ops::drop::Drop>::drop\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:443:29\n8: core::ptr::drop_glue::<alloc::raw_vec::RawVec<u8>>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n9: core::ptr::drop_glue::<alloc::vec::Vec<u8>>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n\nnote: stack trace was truncated after 10 frames; set stacktrace_max_len (e.g. BSAN_OPTIONS=stacktrace_max_len=32) to capture more.\nerror: test failed, to rerun pass `--lib`"
+experimental-bsan,tantivy-0.27.0,indexer::segment_updater::tests::test_remove_all_segments,success,830.714,135.555,2026-11-05T17:53:11Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_updater::tests::test_segment_sort_large_max_doc,success,830.714,1.725,2026-11-05T17:53:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_bug_regression_1629_position_when_array_with_a_field_value_that_does_not_contain_any_token,success,830.714,129.150,2026-11-05T17:55:22Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_finalize_with_doc_id_mapping_rejects_sort_by_field,success,830.714,61.664,2026-11-05T17:56:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_finalize_with_doc_id_mapping_rejects_wrong_length,success,830.714,61.763,2026-11-05T17:57:25Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_finalize_with_doc_id_mapping_remaps_missing_fieldnorms,success,830.714,123.756,2026-11-05T17:59:29Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_flat_json_indexing,success,830.714,131.372,2026-11-05T18:01:40Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_json_fast,success,830.714,123.552,2026-11-05T18:03:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_json_indexing,success,830.714,131.974,2026-11-05T18:05:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_json_raw_no_position,success,830.714,129.106,2026-11-05T18:08:05Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_json_term_with_numeric_merge_panic_regression_bug_2283,timeout,830.714,150.027,2026-11-05T18:10:35Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_json_tokenized_with_position,success,830.714,130.091,2026-11-05T18:12:45Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_last_token_not_ending_last,success,830.714,130.617,2026-11-05T18:14:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_multiple_field_value_and_long_tokens,success,830.714,129.488,2026-11-05T18:17:05Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_position_overlapping_path,success,830.714,129.482,2026-11-05T18:19:15Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_prepare_for_store,success,830.714,1.718,2026-11-05T18:19:16Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_show_error_when_tokenizer_not_registered,success,830.714,5.710,2026-11-05T18:19:22Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::segment_writer::tests::test_simple_json_indexing,success,830.714,128.992,2026-11-05T18:21:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::stamper::test::test_stamper,success,830.714,1.673,2026-11-05T18:21:33Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::stamper::test::test_stamper_revert,success,830.714,1.686,2026-11-05T18:21:34Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_advance_delete_bug,success,830.714,129.647,2026-11-05T18:23:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_json_field_1byte,timeout,830.714,150.039,2026-11-05T18:26:14Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_json_field_dot,success,830.714,130.216,2026-11-05T18:28:24Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_json_field_expand_dots_disabled_dot_escaped_required,success,830.714,129.296,2026-11-05T18:30:34Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_json_field_expand_dots_enabled_dot_escape_not_required,success,830.714,127.997,2026-11-05T18:32:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_json_field_list_fields,success,830.714,129.791,2026-11-05T18:34:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_json_field_null_byte_is_ignored,success,830.714,128.633,2026-11-05T18:37:00Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_json_field_number,success,830.714,149.527,2026-11-05T18:39:30Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_json_field_shadowing_field_name_bug,success,830.714,136.335,2026-11-05T18:41:46Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_json_fields_metadata_expanded_dots_multi_segment,timeout,830.714,150.023,2026-11-05T18:44:16Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_json_fields_metadata_expanded_dots_one_segment,success,830.714,148.541,2026-11-05T18:46:45Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_json_fields_metadata_no_expanded_dots_multi_segment,timeout,830.714,150.034,2026-11-05T18:49:15Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,indexer::tests_mmap::test_json_fields_metadata_no_expanded_dots_one_segment,success,830.714,149.155,2026-11-05T18:51:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,macros::test::test_doc_basic,success,830.714,1.641,2026-11-05T18:51:46Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,macros::test::test_doc_trailing_comma,success,830.714,1.656,2026-11-05T18:51:47Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,plugin::tests::test_add_plugin_to_non_empty_index_fails_closed,success,830.714,128.637,2026-11-05T18:53:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,plugin::tests::test_conflicting_plugins_fail_closed,success,830.714,1.722,2026-11-05T18:53:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,plugin::tests::test_custom_field_schema_roundtrip,success,830.714,1.655,2026-11-05T18:53:59Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,plugin::tests::test_custom_plugin_indexes_custom_document,success,830.714,60.615,2026-11-05T18:55:00Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,plugin::tests::test_merge_indices_mismatched_plugins_fails_closed,timeout,830.714,150.030,2026-11-05T18:57:30Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,plugin::tests::test_parse_json_rejects_custom_field,success,830.714,1.737,2026-11-05T18:57:32Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,plugin::tests::test_plugin_extensions,success,830.714,1.695,2026-11-05T18:57:33Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,plugin::tests::test_plugin_full_lifecycle,timeout,830.714,150.037,2026-11-05T19:00:03Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,plugin::tests::test_reopen_without_plugin_fails_closed,success,830.714,130.216,2026-11-05T19:02:14Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,plugin::tests::test_reserved_extension_plugins_fail_closed,success,830.714,2.023,2026-11-05T19:02:16Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,positions::tests::test_empty_position,success,830.714,1.711,2026-11-05T19:02:17Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,positions::tests::test_multiple_write_positions,success,830.714,1.695,2026-11-05T19:02:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,positions::tests::test_position,timeout,830.714,150.018,2026-11-05T19:04:49Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,positions::tests::test_position_advance,timeout,830.714,150.018,2026-11-05T19:07:19Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,positions::tests::test_position_delta,success,830.714,119.962,2026-11-05T19:09:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,positions::tests::test_position_read,success,830.714,1.922,2026-11-05T19:09:21Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,positions::tests::test_position_read_after_skip,success,830.714,1.896,2026-11-05T19:09:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,positions::tests::test_position_read_with_offset,success,830.714,2.806,2026-11-05T19:09:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,positions::tests::test_position_requesting_passed_block,success,830.714,1.669,2026-11-05T19:09:28Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,positions::tests::test_position_reread_anchor_different_than_block,timeout,830.714,150.018,2026-11-05T19:11:58Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,postings::block_search::tests::test_kary_search_allowed_branching_factors,success,830.714,1.635,2026-11-05T19:11:59Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::block_search::tests::test_proptest_branchless_binary_search,timeout,830.714,150.015,2026-11-05T19:14:29Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,postings::block_search::tests::test_search_in_branchless_binary_search,success,830.714,3.403,2026-11-05T19:14:33Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::block_search::tests::test_search_in_branchless_binary_search_corner_cases,success,830.714,2.156,2026-11-05T19:14:35Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::block_segment_postings::tests::test_block_segment_postings,timeout,830.714,150.023,2026-11-05T19:17:05Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,postings::block_segment_postings::tests::test_block_segment_postings_rank,timeout,830.714,150.026,2026-11-05T19:19:35Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,postings::block_segment_postings::tests::test_block_segment_postings_seek,timeout,830.714,150.018,2026-11-05T19:22:05Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,postings::block_segment_postings::tests::test_empty_block_segment_postings,success,830.714,1.628,2026-11-05T19:22:07Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::block_segment_postings::tests::test_empty_postings_doc_returns_terminated,success,830.714,1.621,2026-11-05T19:22:08Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::block_segment_postings::tests::test_empty_postings_doc_term_freq_returns_0,success,830.714,1.599,2026-11-05T19:22:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::block_segment_postings::tests::test_empty_segment_postings,success,830.714,1.612,2026-11-05T19:22:11Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::block_segment_postings::tests::test_reset_block_segment_postings,success,830.714,128.134,2026-11-05T19:24:20Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::block_segment_postings::tests::test_skip_right_at_new_block,timeout,830.714,150.030,2026-11-05T19:26:50Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,postings::compression::tests::test_block_decoder_initialization,success,830.714,1.662,2026-11-05T19:26:51Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::compression::tests::test_compress_vint_unsorted_does_not_overflow,success,830.714,1.687,2026-11-05T19:26:53Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::compression::tests::test_encode_sorted_block,success,830.714,1.707,2026-11-05T19:26:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::compression::tests::test_encode_sorted_block_with_junk,success,830.714,1.698,2026-11-05T19:26:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::compression::tests::test_encode_sorted_block_with_offset,success,830.714,1.707,2026-11-05T19:26:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::compression::tests::test_encode_unsorted_block_with_junk,success,830.714,1.795,2026-11-05T19:27:00Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::compression::tests::test_encode_vint,success,830.714,1.738,2026-11-05T19:27:02Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::loaded_postings::tests::test_vec_postings,success,830.714,1.853,2026-11-05T19:27:04Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::loaded_postings::tests::test_vec_postings2,success,830.714,2.188,2026-11-05T19:27:06Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::merger::tests::test_crosses_postings_block_boundary,success,830.714,3.283,2026-11-05T19:27:09Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::merger::tests::test_empty_term_yields_nothing,success,830.714,1.619,2026-11-05T19:27:11Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::merger::tests::test_merges_segments_skipping_deletes,success,830.714,1.685,2026-11-05T19:27:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::merger::tests::test_positions_follow_their_document,timeout,830.714,150.027,2026-11-05T19:29:42Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,postings::merger::tests::test_reset_discards_unfinished_term,timeout,830.714,150.029,2026-11-05T19:32:13Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,postings::recorder::tests::term_frequency_recorder_has_term_freq,success,830.714,1.656,2026-11-05T19:32:14Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::recorder::tests::term_frequency_recorder_high_frequency_doc,success,830.714,1.756,2026-11-05T19:32:16Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::recorder::tests::term_frequency_recorder_single_occurrence_per_doc,success,830.714,1.658,2026-11-05T19:32:18Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::recorder::tests::term_frequency_recorder_term_doc_freq_multiple_docs,success,830.714,1.639,2026-11-05T19:32:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::recorder::tests::term_frequency_recorder_term_doc_freq_single_doc,success,830.714,1.605,2026-11-05T19:32:21Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::recorder::tests::term_frequency_recorder_zero_docs,success,830.714,1.606,2026-11-05T19:32:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::recorder::tests::test_buffer_lender,success,830.714,1.610,2026-11-05T19:32:24Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::recorder::tests::test_vint_u32,success,830.714,1.615,2026-11-05T19:32:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::segment_postings::tests::test_doc_freq,success,830.714,1.642,2026-11-05T19:32:27Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::segment_postings::tests::test_empty_postings_doc_returns_terminated,success,830.714,1.606,2026-11-05T19:32:29Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::segment_postings::tests::test_empty_postings_doc_term_freq_returns_0,success,830.714,1.606,2026-11-05T19:32:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::segment_postings::tests::test_empty_segment_postings,success,830.714,1.604,2026-11-05T19:32:32Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::skip::tests::test_decode_block_wand_max_tf,success,830.714,1.610,2026-11-05T19:32:34Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::skip::tests::test_encode_block_wand_max_tf,success,830.714,1.608,2026-11-05T19:32:35Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::skip::tests::test_encode_decode_bitwidth,success,830.714,1.618,2026-11-05T19:32:37Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::skip::tests::test_skip_multiple_of_block_size,success,830.714,1.607,2026-11-05T19:32:39Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::skip::tests::test_skip_no_freq,success,830.714,1.604,2026-11-05T19:32:40Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::skip::tests::test_skip_with_freq,success,830.714,1.607,2026-11-05T19:32:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::term_info::tests::test_fixed_size,success,830.714,1.615,2026-11-05T19:32:44Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::tests::test_drop_token_that_are_too_long,success,830.714,135.354,2026-11-05T19:34:59Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::tests::test_index_max_length_token,timeout,830.714,150.023,2026-11-05T19:37:29Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,postings::tests::test_position_and_fieldnorm1,timeout,830.714,150.021,2026-11-05T19:39:59Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,postings::tests::test_position_and_fieldnorm2,success,830.714,129.450,2026-11-05T19:42:09Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::tests::test_position_write,success,830.714,8.207,2026-11-05T19:42:17Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,postings::tests::test_skip_next,timeout,830.714,150.028,2026-11-05T19:44:47Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,postings::tests::test_skip_positions,timeout,830.714,150.022,2026-11-05T19:47:17Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::all_query::tests::test_all_query,timeout,830.714,150.026,2026-11-05T19:49:47Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::all_query::tests::test_all_query_with_boost,timeout,830.714,150.028,2026-11-05T19:52:17Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::all_query::tests::test_fill_buffer,success,830.714,1.732,2026-11-05T19:52:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::automaton_weight::tests::test_automaton_weight,success,830.714,128.054,2026-11-05T19:54:27Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::automaton_weight::tests::test_automaton_weight_boost,success,830.714,128.282,2026-11-05T19:56:35Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::bitset::tests::test_bitset_large,timeout,830.714,150.025,2026-11-05T19:59:05Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::bitset::tests::test_docbitset_sequential,success,830.714,1.664,2026-11-05T19:59:07Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::bitset::tests::test_docbitset_skip,success,830.714,1.799,2026-11-05T19:59:09Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::bitset::tests::test_empty,success,830.714,1.654,2026-11-05T19:59:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::bitset::tests::test_seek_terminated,success,830.714,1.679,2026-11-05T19:59:12Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::bm25::tests::test_idf,success,830.714,1.639,2026-11-05T19:59:14Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::block_wand_intersection::tests::test_block_wand_intersection_all_overlap,success,830.714,2.426,2026-11-05T19:59:16Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::block_wand_intersection::tests::test_block_wand_intersection_disjoint,success,830.714,2.235,2026-11-05T19:59:18Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::block_wand_intersection::tests::test_block_wand_intersection_three_scorers,timeout,830.714,150.020,2026-11-05T20:01:48Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::boolean_query::block_wand_intersection::tests::test_block_wand_intersection_three_scorers_regression,timeout,830.714,150.020,2026-11-05T20:04:18Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::boolean_query::block_wand_intersection::tests::test_block_wand_intersection_two_scorers,timeout,830.714,150.018,2026-11-05T20:06:48Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::boolean_query::block_wand_union::tests::test_block_wand_single_term_scorer,timeout,830.714,150.021,2026-11-05T20:09:18Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::boolean_query::block_wand_union::tests::test_block_wand_two_term_scorers,timeout,830.714,150.017,2026-11-05T20:11:48Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::boolean_query::block_wand_union::tests::test_fn_reproduce_proptest,success,830.714,42.832,2026-11-05T20:12:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::boolean_query::tests::test_intersection,success,830.714,143.604,2026-11-05T20:14:55Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::boolean_query::tests::test_json_array_pitfall_bag_of_terms,success,830.714,140.626,2026-11-05T20:17:16Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::boolean_query::tests::test_minimum_required,success,830.714,142.418,2026-11-05T20:19:38Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::boolean_query::tests::test_union,success,830.714,140.471,2026-11-05T20:21:58Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::boolean_weight::tests::test_create_aligned_scorers_aligns_all_scorers,success,830.714,140.736,2026-11-05T20:24:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::boolean_weight::tests::test_create_aligned_scorers_for_empty_intersection,success,830.714,135.458,2026-11-05T20:26:35Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::boolean_weight::tests::test_create_aligned_scorers_for_single_weight,success,830.714,134.883,2026-11-05T20:28:50Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::boolean_weight::tests::test_create_aligned_scorers_returns_empty_scorer_for_disjoint_weights,success,830.714,135.617,2026-11-05T20:31:05Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::boolean_weight::tests::test_create_aligned_scorers_returns_empty_scorer_when_first_weight_is_empty,success,830.714,133.787,2026-11-05T20:33:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::occur_weights::tests::test_iter_visits_all_buckets_in_order,success,830.714,2.014,2026-11-05T20:33:21Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::occur_weights::tests::test_promote_should_to_must,success,830.714,1.978,2026-11-05T20:33:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::occur_weights::tests::test_push_and_get,success,830.714,2.018,2026-11-05T20:33:25Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::proptest_boolean_query::proptest_boolean_query,timeout,830.714,150.031,2026-11-05T20:35:55Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_boolean_non_all_term_disjunction,success,830.714,135.232,2026-11-05T20:38:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_boolean_query,success,830.714,135.481,2026-11-05T20:40:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_boolean_query_two_excluded,success,830.714,134.998,2026-11-05T20:42:41Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_boolean_query_with_weight,success,830.714,136.257,2026-11-05T20:44:57Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_boolean_reqopt,success,830.714,135.753,2026-11-05T20:47:13Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_boolean_single_must_clause,success,830.714,134.533,2026-11-05T20:49:27Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_boolean_termonly_intersection,success,830.714,135.004,2026-11-05T20:51:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_boolean_weight_optimization,success,830.714,134.050,2026-11-05T20:53:57Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_explain,success,830.714,134.625,2026-11-05T20:56:11Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_intersection_score,success,830.714,134.955,2026-11-05T20:58:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_min_should_match_with_all_query,success,830.714,141.439,2026-11-05T21:00:48Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_multiple_all_scorers,success,830.714,141.563,2026-11-05T21:03:09Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_must_all_with_should_regression,success,830.714,142.020,2026-11-05T21:05:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_range_query_all_match_in_boolean,success,830.714,140.667,2026-11-05T21:07:52Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boolean_query::tests::test_should_with_all_scorer_regression,success,830.714,141.770,2026-11-05T21:10:14Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::boost_query::tests::test_boost_query_explain,success,830.714,126.415,2026-11-05T21:12:20Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::const_score_query::tests::test_const_score_query_disables_child_scoring,success,830.714,134.060,2026-11-05T21:14:34Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::const_score_query::tests::test_const_score_query_explain_before_first_match_returns_error,success,830.714,133.777,2026-11-05T21:16:48Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::const_score_query::tests::test_const_score_query_explain_omits_child_scoring_details,success,830.714,133.819,2026-11-05T21:19:02Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::const_score_query::tests::test_const_score_query_supports_term_query_on_fast_only_field,success,830.714,121.721,2026-11-05T21:21:03Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::disjunction::tests::test_arg_check1,success,830.714,1.619,2026-11-05T21:21:05Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::disjunction::tests::test_arg_check2,success,830.714,1.627,2026-11-05T21:21:07Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::disjunction::tests::test_conjunction,success,830.714,1.710,2026-11-05T21:21:08Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::disjunction::tests::test_corner_case,timeout,830.714,150.029,2026-11-05T21:23:39Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::disjunction::tests::test_score_calculate,success,830.714,1.604,2026-11-05T21:23:40Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::disjunction::tests::test_score_calculate_corner_case,success,830.714,1.603,2026-11-05T21:23:42Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::disjunction_max_query::tests::test_dismax_is_not_summed_by_block_wand,success,830.714,133.774,2026-11-05T21:25:56Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::disjunction_max_query::tests::test_term_intersection_pruning_matches_unpruned_scorer,success,830.714,134.846,2026-11-05T21:28:10Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::doc_predicate_query::function_predicate::tests::test_function_predicate_matches_even_doc_ids,success,830.714,120.167,2026-11-05T21:30:11Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::doc_predicate_query::tests::proptest_necessary_condition_doc_set,success,830.714,65.723,2026-11-05T21:31:16Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::doc_predicate_query::tests::test_doc_predicate_query_explain,success,830.714,121.504,2026-11-05T21:33:18Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::doc_predicate_query::tests::test_doc_predicate_query_matches_expected_documents,success,830.714,121.416,2026-11-05T21:35:19Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::doc_predicate_query::tests::test_doc_predicate_query_scorer_danger_seeks_to_next_match,success,830.714,121.048,2026-11-05T21:37:20Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::doc_predicate_query::tests::test_doc_predicate_query_scorer_danger_target_is_a_match,success,830.714,120.609,2026-11-05T21:39:21Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::doc_predicate_query::tests::test_doc_predicate_query_scorer_danger_target_past_max_doc,success,830.714,121.662,2026-11-05T21:41:23Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::doc_predicate_query::tests::test_necessary_condition_restricts_evaluations,success,830.714,121.174,2026-11-05T21:43:24Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::doc_predicate_query::tests::test_necessary_condition_scorer_danger,success,830.714,120.953,2026-11-05T21:45:25Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::doc_predicate_query::tests::test_necessary_condition_size_hint_and_cost,success,830.714,121.110,2026-11-05T21:47:26Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::empty_query::tests::test_empty_scorer,success,830.714,1.618,2026-11-05T21:47:28Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::exclude::tests::test_exclude,success,830.714,1.620,2026-11-05T21:47:29Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::exclude::tests::test_exclude_skip,success,830.714,1.676,2026-11-05T21:47:31Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::exclude::tests::test_exclude_skip_random,success,830.714,109.370,2026-11-05T21:49:20Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::exist_query::tests::test_exists_docset_seek_danger,success,830.714,1.630,2026-11-05T21:49:22Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::exist_query::tests::test_exists_query_json,success,830.714,138.894,2026-11-05T21:51:41Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::exist_query::tests::test_exists_query_json_union_no_single_full_subpath,success,830.714,136.153,2026-11-05T21:53:57Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::exist_query::tests::test_exists_query_misc_supported_types,success,830.714,137.888,2026-11-05T21:56:15Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::exist_query::tests::test_exists_query_simple,timeout,830.714,150.023,2026-11-05T21:58:45Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::exist_query::tests::test_exists_query_unsupported_types,success,830.714,127.866,2026-11-05T22:00:53Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::fuzzy_query::test::test_fuzzy_automaton_streams_expanded_terms,success,830.714,134.184,2026-11-05T22:03:07Z,50232467.0,,
+experimental-bsan,tantivy-0.27.0,query::fuzzy_query::test::test_fuzzy_json_path,timeout,830.714,150.021,2026-11-05T22:05:37Z,50232467.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tantivy-0.27.0,query::fuzzy_query::test::test_fuzzy_term,success,830.714,131.269,2026-11-05T22:07:48Z,50232467.0,,

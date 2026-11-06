@@ -1,0 +1,5 @@
+experimental-bsan,zenoh-config-1.10.1,config_deser,timeout,324.695,150.023,2026-11-05T07:44:54Z,50260614.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zenoh-config-1.10.1,config_from_json,success,324.695,2.443,2026-11-05T07:44:57Z,50260614.0,,
+experimental-bsan,zenoh-config-1.10.1,config_keys,success,324.695,3.091,2026-11-05T07:45:00Z,50260614.0,,
+experimental-bsan,zenoh-config-1.10.1,tests::insert_remove_json5_array_item_by_id,success,324.695,97.220,2026-11-05T07:46:37Z,50260614.0,,
+experimental-bsan,zenoh-config-1.10.1,tests::test_toml_config_format,test_failed,324.695,2.110,2026-11-05T07:46:39Z,50260614.0,panic,"thread 'tests::test_toml_config_format' (34137) panicked at src/lib.rs:2099:38: called `Result::unwrap()` on an `Err` value: Unsupported file type '.toml' (.json, .json5 and .yaml are supported) at src/lib.rs:1500."

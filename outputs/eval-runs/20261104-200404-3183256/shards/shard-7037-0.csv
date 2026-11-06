@@ -1,0 +1,30 @@
+experimental-bsan,lapin-4.12.3,ack_after_channel_close_is_not_sent,timeout,1345.256,150.023,2026-11-05T04:19:41Z,50247926.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lapin-4.12.3,ack_after_connection_close_is_not_sent,timeout,1345.256,150.021,2026-11-05T04:22:12Z,50247926.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lapin-4.12.3,acks_racing_a_broker_channel_close_all_complete,timeout,1345.256,150.019,2026-11-05T04:24:42Z,50247926.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lapin-4.12.3,closed_connections_leave_no_tasks_behind,timeout,1345.256,150.019,2026-11-05T04:27:12Z,50247926.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lapin-4.12.3,concurrent_acks_cut_short_by_a_broker_channel_close_report_its_error,timeout,1345.256,150.020,2026-11-05T04:29:42Z,50247926.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lapin-4.12.3,connection,timeout,1345.256,150.017,2026-11-05T04:32:12Z,50247926.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lapin-4.12.3,connection::tests::an_ack_whose_command_never_runs_completes,success,1345.256,19.825,2026-11-05T04:32:32Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,connection::tests::basic_consume_empty_payload,success,1345.256,19.970,2026-11-05T04:32:52Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,connection::tests::basic_consume_small_payload,success,1345.256,19.846,2026-11-05T04:33:11Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,connection::tests::basic_qos_is_recorded_for_recovery,success,1345.256,19.904,2026-11-05T04:33:31Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,connection::tests::channel_limit,timeout,1345.256,150.034,2026-11-05T04:36:01Z,50247926.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lapin-4.12.3,connection::tests::clear_connection_steps_rejects_all_handshake_stages,success,1345.256,20.405,2026-11-05T04:36:22Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,connection::tests::recovery_rejects_pending_connection_handshake,success,1345.256,18.923,2026-11-05T04:36:41Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,connection::tests::retry_connection_header_preserves_waiter_and_replaces_queued_header,success,1345.256,18.910,2026-11-05T04:37:00Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,connection_survives_caller_runtime_shutdown,timeout,1345.256,150.021,2026-11-05T04:39:30Z,50247926.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lapin-4.12.3,consumer::test::stream_on_cancel,success,1345.256,18.799,2026-11-05T04:39:49Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,consumer::test::stream_on_error,success,1345.256,18.843,2026-11-05T04:40:07Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,half_close_after_start_rejects_instead_of_replaying_authentication,test_failed,1345.256,15.275,2026-11-05T04:40:23Z,50247926.0,panic,"thread 'half_close_after_start_rejects_instead_of_replaying_authentication' (77748) panicked at tests/connection_retry.rs:208:6: handshake stayed pending after EOF: Elapsed(())"
+experimental-bsan,lapin-4.12.3,id_sequence::tests::test_highest_max,success,1345.256,18.232,2026-11-05T04:40:41Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,id_sequence::tests::test_low_max,success,1345.256,18.155,2026-11-05T04:40:59Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,initial_half_close_rejects_when_retries_are_exhausted,test_failed,1345.256,15.272,2026-11-05T04:41:14Z,50247926.0,panic,"thread '<unnamed>' (92559) panicked at tests/connection_retry.rs:31:17: client did not retry TCP"
+experimental-bsan,lapin-4.12.3,initial_half_close_retries_handshake_on_new_socket,test_failed,1345.256,15.229,2026-11-05T04:41:30Z,50247926.0,panic,"thread 'initial_half_close_retries_handshake_on_new_socket' (7784) panicked at tests/connection_retry.rs:143:6: initial connection stayed pending: Elapsed(())"
+experimental-bsan,lapin-4.12.3,internal_rpc::tests::a_delivery_command_dropped_unrun_rejects_its_promise,success,1345.256,18.221,2026-11-05T04:41:48Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,internal_rpc::tests::a_delivery_command_dropped_unrun_reports_its_channel_error,success,1345.256,18.204,2026-11-05T04:42:06Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,internal_rpc::tests::a_delivery_command_handed_on_leaves_its_promise_to_the_command,success,1345.256,18.286,2026-11-05T04:42:24Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,internal_rpc::tests::a_delivery_failing_as_its_channel_ends_reports_the_channel_error,success,1345.256,18.266,2026-11-05T04:42:43Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,internal_rpc::tests::a_delivery_failing_on_a_live_channel_reports_its_own_error,success,1345.256,18.253,2026-11-05T04:43:01Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,internal_rpc::tests::a_delivery_whose_channel_ended_is_not_settled,success,1345.256,18.233,2026-11-05T04:43:19Z,50247926.0,,
+experimental-bsan,lapin-4.12.3,passive_declare_of_a_missing_queue_fails,timeout,1345.256,150.021,2026-11-05T04:45:49Z,50247926.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lapin-4.12.3,recovery_replays_qos_before_consumers,test_failed,1345.256,24.453,2026-11-05T04:46:14Z,50247926.0,panic,"thread 'recovery_replays_qos_before_consumers' (71669) panicked at tests/recovery_qos.rs:131:6: connection stayed pending: Elapsed(())"

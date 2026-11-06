@@ -1,0 +1,28 @@
+experimental-bsan,cargo-about-0.6.4,cli::generate::fails_back_to_default_about_config_when_absent,timeout,495.699,150.032,2026-11-05T04:11:45Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::fails_when_dependency_has_non_accepted_license_field,timeout,495.699,150.028,2026-11-05T04:14:15Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::fails_when_license_field_valid_and_accepted_field_empty,timeout,495.699,150.028,2026-11-05T04:16:45Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::fails_when_manifest_absent,success,495.699,10.215,2026-11-05T04:16:55Z,50248257.0,,
+experimental-bsan,cargo-about-0.6.4,cli::generate::fails_when_manifest_invalid,timeout,495.699,150.029,2026-11-05T04:19:25Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::fails_when_missing_accepted_field,success,495.699,3.776,2026-11-05T04:19:29Z,50248257.0,,
+experimental-bsan,cargo-about-0.6.4,cli::generate::fails_when_template_file_missing,timeout,495.699,150.027,2026-11-05T04:21:59Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::fails_when_templates_arg_missing,success,495.699,4.323,2026-11-05T04:22:03Z,50248257.0,,
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_a_license_when_license_field_valid,timeout,495.699,150.025,2026-11-05T04:24:33Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_all_licenses_when_dependency_has_different_license_and_text,timeout,495.699,150.023,2026-11-05T04:27:04Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_all_licenses_when_dependency_has_same_spdx_license_and_different_text,timeout,495.699,150.025,2026-11-05T04:29:34Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_custom_spdx_license_file_when_spdx_license_file_has_std_naming_but_not_specifed_in_manifest,timeout,495.699,150.024,2026-11-05T04:32:04Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_custom_spdx_license_text_when_manifest_has_license_file_field_with_spdx_text,timeout,495.699,150.026,2026-11-05T04:34:34Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_no_licenses_when_license_field_unknown,timeout,495.699,150.027,2026-11-05T04:37:04Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_no_licenses_when_license_file_field_but_file_empty,timeout,495.699,150.027,2026-11-05T04:39:34Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_no_licenses_when_license_file_field_but_no_file,timeout,495.699,150.027,2026-11-05T04:42:04Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_no_licenses_when_manifest_has_license_file_field_with_non_spdx_text,timeout,495.699,150.026,2026-11-05T04:44:34Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_no_licenses_when_manifest_has_license_file_field_with_spdx_license_text_and_non_std_filename,timeout,495.699,150.026,2026-11-05T04:47:04Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_no_licenses_when_no_license_and_accepted_field_empty,timeout,495.699,150.028,2026-11-05T04:49:34Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_no_licenses_when_no_licenses,timeout,495.699,150.025,2026-11-05T04:52:04Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::generate::reports_one_license_when_when_dependency_has_same_spdx_license_and_text,timeout,495.699,150.029,2026-11-05T04:54:34Z,50248257.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cargo-about-0.6.4,cli::init::does_not_overwrite_by_default,success,495.699,3.672,2026-11-05T04:54:38Z,50248257.0,,
+experimental-bsan,cargo-about-0.6.4,cli::init::fails_when_manifest_absent,success,495.699,3.526,2026-11-05T04:54:41Z,50248257.0,,
+experimental-bsan,cargo-about-0.6.4,cli::init::fails_when_manifest_empty,success,495.699,3.549,2026-11-05T04:54:45Z,50248257.0,,
+experimental-bsan,cargo-about-0.6.4,cli::init::overwrites_config_and_template_when_overwrite_specified,success,495.699,3.658,2026-11-05T04:54:49Z,50248257.0,,
+experimental-bsan,cargo-about-0.6.4,cli::init::overwrites_config_only_when_no_handlebars_and_overwrite_specified,success,495.699,3.656,2026-11-05T04:54:52Z,50248257.0,,
+experimental-bsan,cargo-about-0.6.4,cli::init::writes_config_and_template_by_default,success,495.699,3.545,2026-11-05T04:54:56Z,50248257.0,,
+experimental-bsan,cargo-about-0.6.4,cli::init::writes_config_only_when_no_handlebars_specifed,success,495.699,3.555,2026-11-05T04:54:59Z,50248257.0,,

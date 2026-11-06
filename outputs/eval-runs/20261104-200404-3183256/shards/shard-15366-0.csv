@@ -1,0 +1,6 @@
+experimental-bsan,wasmtime-fiber-26.0.0,tests::backtrace_traces_to_host,test_failed,62.830,42.891,2026-11-05T07:20:33Z,50259437.0,bsan,"test tests::backtrace_traces_to_host ... error: Undefined Behavior: trying to access an allocation that has been freed.\n   --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/slice/raw.rs:139:9\n    |\n139 | &*ptr::slice_from_raw_parts(data, len)\n    | ^\n\nstack backtrace:\nerror: test failed, to rerun pass `--lib`"
+experimental-bsan,wasmtime-fiber-26.0.0,tests::panics_propagated,success,62.830,1.610,2026-11-05T07:20:35Z,50259437.0,,
+experimental-bsan,wasmtime-fiber-26.0.0,tests::small_stacks,test_failed,62.830,1.650,2026-11-05T07:20:37Z,50259437.0,crash,"test tests::small_stacks ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wasmtime-fiber-26.0.0,tests::smoke,success,62.830,1.617,2026-11-05T07:20:38Z,50259437.0,,
+experimental-bsan,wasmtime-fiber-26.0.0,tests::suspend_and_resume,success,62.830,1.622,2026-11-05T07:20:40Z,50259437.0,,
+experimental-bsan,wasmtime-fiber-26.0.0,tests::suspend_and_resume_values,success,62.830,1.643,2026-11-05T07:20:42Z,50259437.0,,

@@ -1,0 +1,11 @@
+experimental-bsan,lair_keystore_api-0.7.1,config::tests::test_config_yaml,success,398.508,13.009,2026-11-05T06:06:31Z,50254891.0,,
+experimental-bsan,lair_keystore_api-0.7.1,in_proc_keystore::tests::in_proc_derive_seed_happy_path,test_failed,398.508,118.626,2026-11-05T06:08:30Z,50254891.0,panic,"thread 'in_proc_keystore::tests::in_proc_derive_seed_happy_path' (68900) panicked at src/in_proc_keystore.rs:286:14: called `Result::unwrap()` on an `Err` value: {""error"":""TimedOut""}"
+experimental-bsan,lair_keystore_api-0.7.1,in_proc_keystore::tests::in_proc_happy_path,success,398.508,105.243,2026-11-05T06:10:15Z,50254891.0,,
+experimental-bsan,lair_keystore_api-0.7.1,ipc_keystore::tests::ipc_happy_path,success,398.508,19.742,2026-11-05T06:10:35Z,50254891.0,,
+experimental-bsan,lair_keystore_api-0.7.1,lair_config_connection_url_absolute_root,success,398.508,13.846,2026-11-05T06:10:49Z,50254891.0,,
+experimental-bsan,lair_keystore_api-0.7.1,lair_config_connection_url_relative_root,success,398.508,13.228,2026-11-05T06:11:02Z,50254891.0,,
+experimental-bsan,lair_keystore_api-0.7.1,mem_store::tests::test_mem_store_sanity,success,398.508,13.653,2026-11-05T06:11:15Z,50254891.0,,
+experimental-bsan,lair_keystore_api-0.7.1,sf_alternate,success,398.508,15.296,2026-11-05T06:11:31Z,50254891.0,,
+experimental-bsan,lair_keystore_api-0.7.1,sf_never_3,success,398.508,15.557,2026-11-05T06:11:46Z,50254891.0,,
+experimental-bsan,lair_keystore_api-0.7.1,sf_one_and_done,timeout,398.508,150.031,2026-11-05T06:14:16Z,50254891.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lair_keystore_api-0.7.1,sodium_secretstream::tests::test_sodium_secretstream,success,398.508,14.417,2026-11-05T06:14:31Z,50254891.0,,

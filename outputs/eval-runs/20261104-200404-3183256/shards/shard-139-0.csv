@@ -1,0 +1,826 @@
+experimental-bsan,ntex-4.3.0,basic_connect_service,test_failed,3088.043,17.023,2026-11-05T02:07:43Z,50232566.0,gc,"test basic_connect_service ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,client::cfg::tests::basics,success,3088.043,47.483,2026-11-05T02:08:31Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::cfg::tests::client_basic_auth,success,3088.043,43.245,2026-11-05T02:09:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::cfg::tests::client_bearer_auth,success,3088.043,42.833,2026-11-05T02:09:57Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::cfg::tests::h2_settings,success,3088.043,42.936,2026-11-05T02:10:40Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::cfg::tests::invalid_header_name,success,3088.043,43.169,2026-11-05T02:11:23Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::cfg::tests::invalid_header_value,success,3088.043,42.883,2026-11-05T02:12:06Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::cfg::tests::response_payload_limit,success,3088.043,42.818,2026-11-05T02:12:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::cfg::tests::response_payload_timeout,success,3088.043,42.872,2026-11-05T02:13:32Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::cfg::tests::valid_header_name,success,3088.043,43.402,2026-11-05T02:14:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::cfg::tests::valid_header_value,success,3088.043,43.448,2026-11-05T02:14:59Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::codec::tests::test_connect_response_is_tunnel,success,3088.043,43.387,2026-11-05T02:15:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::codec::tests::test_empty_request_content_length,success,3088.043,43.260,2026-11-05T02:16:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::codec::tests::test_http10_response_keepalive,success,3088.043,43.368,2026-11-05T02:17:09Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::codec::tests::test_skip_interim_responses,success,3088.043,43.945,2026-11-05T02:17:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::connector::tests::scheme_routing,success,3088.043,45.780,2026-11-05T02:18:38Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::error::tests::client_error_clone_and_signature,success,3088.043,46.154,2026-11-05T02:19:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::error::tests::connect_error_conversions,success,3088.043,46.277,2026-11-05T02:20:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::error::tests::connect_error_from,success,3088.043,46.763,2026-11-05T02:20:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::error::tests::payload_errors,success,3088.043,44.831,2026-11-05T02:21:43Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::h1proto::tests::test_host_header,success,3088.043,45.657,2026-11-05T02:22:28Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::h2proto::tests::test_connection_headers_are_removed,success,3088.043,46.135,2026-11-05T02:23:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::h2proto::tests::test_skip_interim_responses,success,3088.043,49.124,2026-11-05T02:24:03Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::clean_eof_connections_are_not_reused,success,3088.043,49.742,2026-11-05T02:24:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_basics,success,3088.043,48.449,2026-11-05T02:25:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_expired_h2_is_closed,success,3088.043,49.099,2026-11-05T02:26:31Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_expired_h2_lifetime,success,3088.043,50.552,2026-11-05T02:27:21Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_expired_h2_lifetime_waits_for_reserved,success,3088.043,57.647,2026-11-05T02:28:19Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_h1_zero_keepalive_lifetime,success,3088.043,48.104,2026-11-05T02:29:07Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_h2_authority,success,3088.043,44.819,2026-11-05T02:29:52Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_h2_goaway_connection_is_removed,success,3088.043,50.112,2026-11-05T02:30:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_h2_lifecycle_settings,success,3088.043,47.279,2026-11-05T02:31:29Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_h2_new_connection_when_saturated,success,3088.043,47.659,2026-11-05T02:32:17Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_h2_streams_limit,success,3088.043,49.207,2026-11-05T02:33:06Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_h2_waiter_woken_by_connection_capacity,success,3088.043,49.229,2026-11-05T02:33:56Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_release_after_stop,success,3088.043,43.709,2026-11-05T02:34:39Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_shutdown_closes_pool,success,3088.043,48.282,2026-11-05T02:35:28Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::pool::tests::test_unlimited_concurrent_connect,success,3088.043,45.933,2026-11-05T02:36:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::client_auth_replaces_header,success,3088.043,43.252,2026-11-05T02:36:57Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::client_basic_auth,success,3088.043,43.530,2026-11-05T02:37:40Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::client_bearer_auth,success,3088.043,43.223,2026-11-05T02:38:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::client_invalid_headers,success,3088.043,43.485,2026-11-05T02:39:07Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::client_invalid_url,success,3088.043,43.640,2026-11-05T02:39:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::client_query,success,3088.043,40.443,2026-11-05T02:40:31Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::client_url_validation,success,3088.043,34.434,2026-11-05T02:41:06Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::cookies_extend_cookie_header,success,3088.043,34.460,2026-11-05T02:41:40Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::test_basics,success,3088.043,34.376,2026-11-05T02:42:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::test_client_header,success,3088.043,34.279,2026-11-05T02:42:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::test_client_header_override,success,3088.043,34.655,2026-11-05T02:43:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::test_debug,success,3088.043,36.134,2026-11-05T02:44:00Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::request::tests::test_debug_redacts_authorization,success,3088.043,36.700,2026-11-05T02:44:36Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::response::tests::test_body,success,3088.043,38.246,2026-11-05T02:45:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::response::tests::test_body_timeout_and_error,success,3088.043,38.316,2026-11-05T02:45:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::response::tests::test_json_body,success,3088.043,38.212,2026-11-05T02:46:31Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::response::tests::test_json_timeout_and_errors,success,3088.043,37.280,2026-11-05T02:47:09Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::response::tests::test_response_accessors,success,3088.043,36.682,2026-11-05T02:47:45Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::response::tests::test_response_stream,success,3088.043,37.005,2026-11-05T02:48:22Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::test::tests::test_basics,success,3088.043,37.004,2026-11-05T02:48:59Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::test::tests::test_cookies,success,3088.043,36.248,2026-11-05T02:49:36Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client::tests::request_from_head,success,3088.043,35.362,2026-11-05T02:50:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client_basic_auth,test_failed,3088.043,16.935,2026-11-05T02:50:28Z,50232566.0,gc,"test client_basic_auth ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,client_bearer_auth,test_failed,3088.043,17.138,2026-11-05T02:50:45Z,50232566.0,gc,"test client_bearer_auth ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,client_early_response,success,3088.043,39.222,2026-11-05T02:51:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client_invalid_chunked_body,success,3088.043,39.938,2026-11-05T02:52:04Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client_invalid_response_head,success,3088.043,39.672,2026-11-05T02:52:44Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client_no_response,success,3088.043,37.450,2026-11-05T02:53:21Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client_payload_poll_after_eof,success,3088.043,36.339,2026-11-05T02:53:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client_read_until_eof,success,3088.043,36.634,2026-11-05T02:54:34Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client_read_until_eof_http11,success,3088.043,36.199,2026-11-05T02:55:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,client_truncated_body_http10,success,3088.043,36.148,2026-11-05T02:55:47Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,compressed_close_reason_is_rejected,test_failed,3088.043,44.440,2026-11-05T02:56:31Z,50232566.0,gc,"test compressed_close_reason_is_rejected ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,decompressed_size_limit,test_failed,3088.043,44.414,2026-11-05T02:57:16Z,50232566.0,gc,"test decompressed_size_limit ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,deflate_8_bit_client_window,test_failed,3088.043,44.125,2026-11-05T02:58:00Z,50232566.0,gc,"test deflate_8_bit_client_window ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,deflate_accepted,test_failed,3088.043,44.343,2026-11-05T02:58:44Z,50232566.0,gc,"test deflate_accepted ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,deflate_accepted_with_params,test_failed,3088.043,44.342,2026-11-05T02:59:28Z,50232566.0,gc,"test deflate_accepted_with_params ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,deflate_declined,test_failed,3088.043,44.330,2026-11-05T03:00:13Z,50232566.0,gc,"test deflate_declined ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,deflate_invalid_response,test_failed,3088.043,44.848,2026-11-05T03:00:58Z,50232566.0,gc,"test deflate_invalid_response ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,deflate_not_offered,test_failed,3088.043,45.742,2026-11-05T03:01:43Z,50232566.0,gc,"test deflate_not_offered ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,deflate_sink_and_receiver,test_failed,3088.043,45.742,2026-11-05T03:02:29Z,50232566.0,gc,"test deflate_sink_and_receiver ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,deflate_transport,test_failed,3088.043,46.178,2026-11-05T03:03:15Z,50232566.0,gc,"test deflate_transport ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,http::config::tests::keep_alive,success,3088.043,34.222,2026-11-05T03:03:50Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::config::tests::keep_alive_settings,success,3088.043,35.112,2026-11-05T03:04:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::config::tests::read_rate_settings,success,3088.043,36.675,2026-11-05T03:05:01Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::config::tests::test_date,success,3088.043,36.038,2026-11-05T03:05:38Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::decoded_chunks_are_bounded,timeout,3088.043,150.042,2026-11-05T03:08:08Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::decoder_error_on_blocking_pool,success,3088.043,36.322,2026-11-05T03:08:44Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::decoder_from_headers,success,3088.043,35.140,2026-11-05T03:09:19Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::decoder_is_fused_after_error,success,3088.043,34.685,2026-11-05T03:09:54Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::decoder_offloads_large_input,timeout,3088.043,150.018,2026-11-05T03:12:24Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::decoder_task_output,timeout,3088.043,150.023,2026-11-05T03:14:54Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::decoder_truncated_stream,test_failed,3088.043,12.281,2026-11-05T03:15:06Z,50232566.0,bsan,"test http::encoding::decoder::tests::decoder_truncated_stream ... error: Undefined Behavior: deallocation through <2499376>(unprotected) (root of the allocation) at alloc37122[0x0] is forbidden\n    --> /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/allocate.rs:185:14\n     |\n 185 | unsafe { std::alloc::dealloc(ptr.cast(), layout) };\n     |          ^\n     = note: the above line calls library code, where the error was detected:\n    --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:65:14\n     |\n  65 | unsafe { libc::free(ptr as *mut libc::c_void) }\n     |          ^\n     = help: the accessed tag <2499376>(unprotected) (root of the allocation) is foreign to the protected tag <14643232>(StrongProtector) (i.e., it is not a child)\n     = help: this deallocation (acting as a foreign write access) would cause the protected tag <14643232>(StrongProtector) (currently Unique) to become Disabled\n     = help: protected tags must never be Disabled\nhelp: the accessed tag <2499376>(unprotected) was created here\n    --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:99:32\n     |\n  99 | let ret = unsafe { libc::posix_memalign(&mut out, align, layout.size()) };\n     |                    ^\nhelp: the protected tag <14643232>(StrongProtector) was created here, in the initial state Reserved\n    --> /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/flate2-1.1.10/src/gz/write.rs:148:0\n     |\n 148 | pub fn finish(mut self) -> io::Result<W> {\n     | ^\nhelp: the protected tag <14643232>(StrongProtector) later transitioned to Unique due to a child write access at offsets [0x0..0x1]\n    --> /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/deflate.rs:2710:13\n     |\n2710 | state.status = Status::Finish;\n     | ^\n     = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference\n\nstack backtrace:\n0: std::sys::alloc::unix::dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:65:14\n1: __rustc::__rdl_dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/alloc.rs:487:18\n2: alloc::alloc::dealloc_nonnull\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:205:14\n3: alloc::alloc::dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:197:14\n4: zlib_rs::allocate::zfree_rust\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/allocate.rs:185:14\n5: <zlib_rs::allocate::Allocator>::deallocate::<u8>\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/allocate.rs:393:33\n6: zlib_rs::deflate::end\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/deflate.rs:737:20\n7: <zlib_rs::stable::Deflate as core::ops::drop::Drop>::drop\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/stable.rs:424:17\n8: core::ptr::drop_glue::<zlib_rs::stable::Deflate>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n9: core::ptr::drop_glue::<flate2::ffi::zlib_rs::Deflate>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n\nnote: stack trace was truncated after 10 frames; set stacktrace_max_len (e.g. BSAN_OPTIONS=stacktrace_max_len=32) to capture more.\nerror: test failed, to rerun pass `--lib`"
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::flate_decoder_errors,timeout,3088.043,150.023,2026-11-05T03:17:36Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::flate_decoder_output_fills_pages,test_failed,3088.043,13.363,2026-11-05T03:17:50Z,50232566.0,bsan,"test http::encoding::decoder::tests::flate_decoder_output_fills_pages ... error: Undefined Behavior: deallocation through <2389072>(unprotected) (root of the allocation) at alloc34336[0x0] is forbidden\n    --> /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/allocate.rs:185:14\n     |\n 185 | unsafe { std::alloc::dealloc(ptr.cast(), layout) };\n     |          ^\n     = note: the above line calls library code, where the error was detected:\n    --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:65:14\n     |\n  65 | unsafe { libc::free(ptr as *mut libc::c_void) }\n     |          ^\n     = help: the accessed tag <2389072>(unprotected) (root of the allocation) is foreign to the protected tag <15929032>(StrongProtector) (i.e., it is not a child)\n     = help: this deallocation (acting as a foreign write access) would cause the protected tag <15929032>(StrongProtector) (currently Unique) to become Disabled\n     = help: protected tags must never be Disabled\nhelp: the accessed tag <2389072>(unprotected) was created here\n    --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:99:32\n     |\n  99 | let ret = unsafe { libc::posix_memalign(&mut out, align, layout.size()) };\n     |                    ^\nhelp: the protected tag <15929032>(StrongProtector) was created here, in the initial state Reserved\n    --> /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/flate2-1.1.10/src/zlib/write.rs:133:0\n     |\n 133 | pub fn finish(mut self) -> io::Result<W> {\n     | ^\nhelp: the protected tag <15929032>(StrongProtector) later transitioned to Unique due to a child write access at offsets [0x0..0x1]\n    --> /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/deflate.rs:2710:13\n     |\n2710 | state.status = Status::Finish;\n     | ^\n     = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference\n\nstack backtrace:\n0: std::sys::alloc::unix::dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:65:14\n1: __rustc::__rdl_dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/alloc.rs:487:18\n2: alloc::alloc::dealloc_nonnull\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:205:14\n3: alloc::alloc::dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:197:14\n4: zlib_rs::allocate::zfree_rust\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/allocate.rs:185:14\n5: <zlib_rs::allocate::Allocator>::deallocate::<u8>\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/allocate.rs:393:33\n6: zlib_rs::deflate::end\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/deflate.rs:737:20\n7: <zlib_rs::stable::Deflate as core::ops::drop::Drop>::drop\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/stable.rs:424:17\n8: core::ptr::drop_glue::<zlib_rs::stable::Deflate>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n9: core::ptr::drop_glue::<flate2::ffi::zlib_rs::Deflate>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n\nnote: stack trace was truncated after 10 frames; set stacktrace_max_len (e.g. BSAN_OPTIONS=stacktrace_max_len=32) to capture more.\nerror: test failed, to rerun pass `--lib`"
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::gzip_decoder_header,timeout,3088.043,150.019,2026-11-05T03:20:20Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::zstd_decoded_chunks_are_bounded,timeout,3088.043,150.021,2026-11-05T03:22:50Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::zstd_decoder,timeout,3088.043,150.021,2026-11-05T03:25:20Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::zstd_decoder_drains_output_without_input,success,3088.043,37.097,2026-11-05T03:25:57Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::zstd_decoder_errors,success,3088.043,35.234,2026-11-05T03:26:32Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::zstd_decoder_memory_error,success,3088.043,36.205,2026-11-05T03:27:09Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::zstd_decoder_memory_is_limited,success,3088.043,35.470,2026-11-05T03:27:44Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::decoder::tests::zstd_decoder_memory_shrinks,success,3088.043,36.921,2026-11-05T03:28:21Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_blocking_task_canceled,success,3088.043,36.387,2026-11-05T03:28:57Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_debug,success,3088.043,52.469,2026-11-05T03:29:50Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_drops_pending_on_error,success,3088.043,34.452,2026-11-05T03:30:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_finish_across_pages,timeout,3088.043,150.019,2026-11-05T03:32:54Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_flushes_when_body_is_pending,timeout,3088.043,150.021,2026-11-05T03:35:24Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_is_fused_after_end_of_stream,success,3088.043,34.487,2026-11-05T03:35:59Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_is_fused_after_error,success,3088.043,34.582,2026-11-05T03:36:33Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_offloads_large_chunks,test_failed,3088.043,55.715,2026-11-05T03:37:29Z,50232566.0,bsan,"test http::encoding::encoder::tests::encoder_offloads_large_chunks ... error: Undefined Behavior: deallocation through <59187120>(unprotected) (root of the allocation) at alloc1201068[0x0] is forbidden\n    --> /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/allocate.rs:185:14\n     |\n 185 | unsafe { std::alloc::dealloc(ptr.cast(), layout) };\n     |          ^\n     = note: the above line calls library code, where the error was detected:\n    --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:65:14\n     |\n  65 | unsafe { libc::free(ptr as *mut libc::c_void) }\n     |          ^\n     = help: the accessed tag <59187120>(unprotected) (root of the allocation) is foreign to the protected tag <71406648>(StrongProtector) (i.e., it is not a child)\n     = help: this deallocation (acting as a foreign write access) would cause the protected tag <71406648>(StrongProtector) (currently Unique) to become Disabled\n     = help: protected tags must never be Disabled\nhelp: the accessed tag <59187120>(unprotected) was created here\n    --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:99:32\n     |\n  99 | let ret = unsafe { libc::posix_memalign(&mut out, align, layout.size()) };\n     |                    ^\nhelp: the protected tag <71406648>(StrongProtector) was created here, in the initial state Reserved\n    --> /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/ntex-rt-4.2.1/src/pool.rs:0:20\nhelp: the protected tag <71406648>(StrongProtector) later transitioned to Unique due to a child write access at offsets [0x0..0x1]\n    --> /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/deflate.rs:2562:9\n     |\n2562 | stream.state.status = Status::Busy;\n     | ^\n     = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference\n\nstack backtrace:\n0: std::sys::alloc::unix::dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:65:14\n1: __rustc::__rdl_dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/std/src/alloc.rs:487:18\n2: alloc::alloc::dealloc_nonnull\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:205:14\n3: alloc::alloc::dealloc\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/alloc/src/alloc.rs:197:14\n4: zlib_rs::allocate::zfree_rust\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/allocate.rs:185:14\n5: <zlib_rs::allocate::Allocator>::deallocate::<u8>\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/allocate.rs:393:33\n6: zlib_rs::deflate::end\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/deflate.rs:737:20\n7: <zlib_rs::stable::Deflate as core::ops::drop::Drop>::drop\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/zlib-rs-0.6.8/src/stable.rs:424:17\n8: core::ptr::drop_glue::<zlib_rs::stable::Deflate>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n9: core::ptr::drop_glue::<flate2::ffi::zlib_rs::Deflate>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n\nnote: stack trace was truncated after 10 frames; set stacktrace_max_len (e.g. BSAN_OPTIONS=stacktrace_max_len=32) to capture more.\nerror: test failed, to rerun pass `--lib`"
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_put_across_pages,success,3088.043,45.913,2026-11-05T03:38:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_releases_state_on_finish,timeout,3088.043,150.021,2026-11-05T03:40:45Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_response_bodies,success,3088.043,55.884,2026-11-05T03:41:41Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_skips_small_bodies,success,3088.043,71.245,2026-11-05T03:42:52Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_splits_large_chunks,timeout,3088.043,150.023,2026-11-05T03:45:22Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_without_content_encoder,success,3088.043,35.568,2026-11-05T03:45:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_write_after_full_page,timeout,3088.043,150.020,2026-11-05T03:48:28Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_writes_pages,timeout,3088.043,150.020,2026-11-05T03:50:58Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_zstd_known_size,success,3088.043,33.310,2026-11-05T03:51:31Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::encoding::encoder::tests::encoder_zstd_window,success,3088.043,33.640,2026-11-05T03:52:05Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::error::tests::test_decode_error_from,success,3088.043,33.046,2026-11-05T03:52:38Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::error::tests::test_error_http_response,success,3088.043,33.170,2026-11-05T03:53:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::error::tests::test_from,success,3088.043,33.299,2026-11-05T03:53:45Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::error::tests::test_h2_error,success,3088.043,33.139,2026-11-05T03:54:18Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::error::tests::test_into_response,success,3088.043,32.895,2026-11-05T03:54:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::error::tests::test_payload_error,success,3088.043,33.360,2026-11-05T03:55:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::error::tests::test_payload_error_clone,success,3088.043,34.223,2026-11-05T03:55:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::error::tests::test_payload_error_conversions,success,3088.043,34.623,2026-11-05T03:56:33Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::codec::tests::test_bodyless_status_has_no_body,success,3088.043,35.055,2026-11-05T03:57:08Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::codec::tests::test_http10_stream_response_is_not_chunked,success,3088.043,35.705,2026-11-05T03:57:44Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::codec::tests::test_http_request_chunked_payload_and_next_message,success,3088.043,35.116,2026-11-05T03:58:19Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::codec::tests::test_response_without_body_has_length,success,3088.043,34.404,2026-11-05T03:58:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::codec::tests::test_switching_protocols_body_is_not_framed,success,3088.043,37.267,2026-11-05T03:59:30Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::codec::tests::test_switching_protocols_ends_http1,success,3088.043,35.375,2026-11-05T04:00:06Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::codec::tests::test_unknown_status_reason,success,3088.043,35.735,2026-11-05T04:00:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::control::tests::connection,success,3088.043,34.744,2026-11-05T04:01:16Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::control::tests::debug_fmt,success,3088.043,34.614,2026-11-05T04:01:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::control::tests::debug_fmt_io,success,3088.043,35.790,2026-11-05T04:02:27Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::control::tests::disconnect_reasons,success,3088.043,35.233,2026-11-05T04:03:02Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::control::tests::expect,success,3088.043,35.129,2026-11-05T04:03:37Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::control::tests::new_request,success,3088.043,35.131,2026-11-05T04:04:12Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::control::tests::request_io_access_is_one_shot,success,3088.043,34.500,2026-11-05T04:04:47Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::parse_h10_get,success,3088.043,35.793,2026-11-05T04:05:23Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::parse_h10_post,success,3088.043,35.461,2026-11-05T04:05:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::parse_header_name_origins,success,3088.043,35.746,2026-11-05T04:06:34Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::parse_header_values_split_from_buffer,success,3088.043,36.230,2026-11-05T04:07:10Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_asterisk_form_only_for_options,success,3088.043,35.658,2026-11-05T04:07:46Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_authority_form_only_for_connect,success,3088.043,33.994,2026-11-05T04:08:20Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_chunk_extension_control_chars,success,3088.043,33.842,2026-11-05T04:08:54Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_chunk_extensions_limit,success,3088.043,52.869,2026-11-05T04:09:47Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_chunk_framing_errors,success,3088.043,40.770,2026-11-05T04:10:27Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_chunk_size_line_byte_by_byte,success,3088.043,104.136,2026-11-05T04:12:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_chunked_trailers_after_data,success,3088.043,34.160,2026-11-05T04:12:46Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_chunked_trailers_limit,timeout,3088.043,150.027,2026-11-05T04:15:16Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_conn_close,success,3088.043,35.341,2026-11-05T04:15:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_conn_close_1_0,success,3088.043,35.694,2026-11-05T04:16:27Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_conn_default_1_0,success,3088.043,36.095,2026-11-05T04:17:03Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_conn_default_1_1,success,3088.043,35.902,2026-11-05T04:17:39Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_conn_keep_alive_1_0,success,3088.043,35.820,2026-11-05T04:18:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_conn_keep_alive_1_1,success,3088.043,34.812,2026-11-05T04:18:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_conn_multiple_tokens,success,3088.043,36.280,2026-11-05T04:19:26Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_conn_other_1_0,success,3088.043,36.188,2026-11-05T04:20:02Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_conn_other_1_1,success,3088.043,36.112,2026-11-05T04:20:38Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_conn_upgrade,success,3088.043,35.009,2026-11-05T04:21:13Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_conn_upgrade_connect_method,success,3088.043,36.338,2026-11-05T04:21:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_connection_flags,success,3088.043,36.849,2026-11-05T04:22:26Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_content_length_and_te_http10,success,3088.043,37.349,2026-11-05T04:23:04Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_content_length_plus,success,3088.043,36.881,2026-11-05T04:23:41Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_decoder_reusable_after_error,success,3088.043,37.277,2026-11-05T04:24:18Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_expect_100_continue,success,3088.043,34.806,2026-11-05T04:24:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_headers_content_length_err_1,success,3088.043,34.343,2026-11-05T04:25:27Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_headers_content_length_err_2,success,3088.043,34.525,2026-11-05T04:26:01Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_headers_multi_value,success,3088.043,34.567,2026-11-05T04:26:36Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_headers_split_field,success,3088.043,34.518,2026-11-05T04:27:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_host_validation,success,3088.043,35.143,2026-11-05T04:27:46Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_http10_ignores_expect_and_upgrade,success,3088.043,34.582,2026-11-05T04:28:20Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_http_request_bad_status_line,success,3088.043,34.606,2026-11-05T04:28:55Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_http_request_chunked_payload,success,3088.043,34.593,2026-11-05T04:29:30Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_http_request_chunked_payload_and_next_message,success,3088.043,34.790,2026-11-05T04:30:04Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_http_request_chunked_payload_chunks,success,3088.043,35.112,2026-11-05T04:30:39Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_http_request_parser_bad_method,success,3088.043,34.828,2026-11-05T04:31:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_http_request_parser_bad_version,success,3088.043,34.595,2026-11-05T04:31:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_http_request_parser_two_slashes,success,3088.043,33.667,2026-11-05T04:32:23Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_http_request_parser_utf8,success,3088.043,35.290,2026-11-05T04:32:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_http_request_upgrade,success,3088.043,35.866,2026-11-05T04:33:34Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_http_request_upgrade_content_length,success,3088.043,36.510,2026-11-05T04:34:10Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_illegal_content_length,success,3088.043,37.187,2026-11-05T04:34:48Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_invalid_header,success,3088.043,37.081,2026-11-05T04:35:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_invalid_name,success,3088.043,37.680,2026-11-05T04:36:02Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_large_chunks_are_not_merged,success,3088.043,36.857,2026-11-05T04:36:39Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_leading_empty_lines,success,3088.043,36.036,2026-11-05T04:37:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_max_buf_size_complete_message,success,3088.043,34.509,2026-11-05T04:37:50Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_max_headers,success,3088.043,34.201,2026-11-05T04:38:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_max_headers_repeated_names,success,3088.043,34.184,2026-11-05T04:38:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_max_start_line_size,success,3088.043,34.499,2026-11-05T04:39:33Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_multiple_content_length,success,3088.043,34.110,2026-11-05T04:40:07Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_multiple_transfer_encoding,success,3088.043,33.800,2026-11-05T04:40:41Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_parse,success,3088.043,34.064,2026-11-05T04:41:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_parse_body,success,3088.043,34.058,2026-11-05T04:41:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_parse_body_crlf,success,3088.043,33.976,2026-11-05T04:42:23Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_parse_chunked_payload_chunk_extension,success,3088.043,34.110,2026-11-05T04:42:57Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_parse_chunked_payload_trailers,success,3088.043,34.321,2026-11-05T04:43:31Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_parse_partial,success,3088.043,33.855,2026-11-05T04:44:05Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_parse_partial_eof,success,3088.043,33.962,2026-11-05T04:44:39Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_partial_start_line_is_resumed,success,3088.043,34.150,2026-11-05T04:45:13Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_request_chunked,success,3088.043,35.054,2026-11-05T04:45:48Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_request_target,success,3088.043,35.795,2026-11-05T04:46:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_request_transfer_codings,success,3088.043,36.535,2026-11-05T04:47:01Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_response_bodyless_status,success,3088.043,36.891,2026-11-05T04:47:38Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_response_http10_read_until_eof,success,3088.043,35.760,2026-11-05T04:48:13Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_response_read_until_eof,success,3088.043,35.415,2026-11-05T04:48:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_response_transfer_codings,success,3088.043,33.544,2026-11-05T04:49:22Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_small_chunks_are_merged,success,3088.043,114.472,2026-11-05T04:51:17Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_too_long_header_name,success,3088.043,34.524,2026-11-05T04:51:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_transfer_codings,success,3088.043,33.548,2026-11-05T04:52:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_transfer_encoding_content_length_combination,success,3088.043,33.550,2026-11-05T04:52:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_transfer_encoding_http10,success,3088.043,33.095,2026-11-05T04:53:32Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_transfer_encoding_identity,success,3088.043,33.147,2026-11-05T04:54:05Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_unknown_transfer_encoding,success,3088.043,33.035,2026-11-05T04:54:38Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::decoder::tests::test_upgrade_requires_connection_option,success,3088.043,33.265,2026-11-05T04:55:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::default::tests::default_acks,success,3088.043,33.209,2026-11-05T04:55:44Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_body_not_polled_after_length,success,3088.043,36.914,2026-11-05T04:56:21Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_chunked_body_terminated,success,3088.043,35.830,2026-11-05T04:56:57Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_client_timeout_without_request,success,3088.043,37.038,2026-11-05T04:57:34Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_control_error_stops_dispatcher,success,3088.043,36.891,2026-11-05T04:58:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_delayed_protocol_error_finishes_response,success,3088.043,35.673,2026-11-05T04:58:47Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_disconnect_during_response_body_pending,success,3088.043,37.872,2026-11-05T04:59:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_disconnect_notification_is_not_repeated,success,3088.043,35.781,2026-11-05T05:00:00Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_disconnect_state,success,3088.043,35.735,2026-11-05T05:00:36Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_dropped_dispatcher_fails_detached_payload,success,3088.043,37.310,2026-11-05T05:01:13Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_exhausted_payload_budget_decodes_buffered_data,success,3088.043,37.153,2026-11-05T05:01:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_expect_failed,success,3088.043,37.307,2026-11-05T05:02:28Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_filter_pause_suspends_headers_timer,success,3088.043,38.395,2026-11-05T05:03:06Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_filter_pause_suspends_keepalive,success,3088.043,38.956,2026-11-05T05:03:45Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_filter_pause_suspends_payload_timer,success,3088.043,37.708,2026-11-05T05:04:23Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_filter_pause_suspends_write_timeout,success,3088.043,53.324,2026-11-05T05:05:16Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_first_byte_wins_client_timeout,success,3088.043,36.767,2026-11-05T05:05:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_first_request_unbounded_without_header_timeout,success,3088.043,36.354,2026-11-05T05:06:29Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_header_progress_available_when_timer_fires,success,3088.043,35.389,2026-11-05T05:07:05Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_header_timeout_does_not_leak_into_payload,success,3088.043,35.152,2026-11-05T05:07:40Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_headers_rate_counts_bytes_decoded_during_write_backpressure,success,3088.043,35.329,2026-11-05T05:08:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_headers_rate_starts_with_first_byte,success,3088.043,34.822,2026-11-05T05:08:50Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_http10_expect_and_upgrade_ignored,success,3088.043,35.041,2026-11-05T05:09:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_idle_keepalive_expiry_is_ignored,success,3088.043,36.681,2026-11-05T05:10:02Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_informational_response_is_replaced,success,3088.043,37.261,2026-11-05T05:10:39Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_invalid_host_rejected,success,3088.043,36.412,2026-11-05T05:11:16Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_new_connection_without_header_timeout,success,3088.043,36.164,2026-11-05T05:11:52Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_no_write_timeout_during_response,success,3088.043,36.170,2026-11-05T05:12:28Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_on_request,success,3088.043,35.823,2026-11-05T05:13:04Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_partial_next_request_keepalive_without_header_timeout,success,3088.043,36.891,2026-11-05T05:13:41Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_partial_next_request_wins_keepalive_timeout,success,3088.043,37.474,2026-11-05T05:14:18Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_partial_request_headers_clean_disconnect,success,3088.043,36.836,2026-11-05T05:14:55Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_partial_request_headers_read_error,success,3088.043,37.747,2026-11-05T05:15:33Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_after_response_is_not_a_request,success,3088.043,38.316,2026-11-05T05:16:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_decode_error_is_preserved,success,3088.043,38.232,2026-11-05T05:16:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_decode_error_while_control_pending,success,3088.043,36.465,2026-11-05T05:17:26Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_dropped_before_response_closes,success,3088.043,37.642,2026-11-05T05:18:03Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_peer_gone_reports_incomplete,success,3088.043,37.780,2026-11-05T05:18:41Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_peer_gone_while_control_pending,success,3088.043,38.684,2026-11-05T05:19:20Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_progress_available_when_timer_fires,success,3088.043,38.027,2026-11-05T05:19:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_read_during_write_backpressure,success,3088.043,52.741,2026-11-05T05:20:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_read_error_reports_incomplete,success,3088.043,35.164,2026-11-05T05:21:26Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_resume_checks_expired_period,success,3088.043,35.323,2026-11-05T05:22:01Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_resume_continues_period,success,3088.043,34.753,2026-11-05T05:22:36Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_timeout,test_failed,3088.043,5.722,2026-11-05T05:22:42Z,50232566.0,panic,"thread 'http::h1::dispatcher::tests::test_payload_timeout' (6263) panicked at src/http/h1/dispatcher.rs:3342:9: received: 1200"
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_timeout_does_not_leak_into_keepalive,success,3088.043,35.445,2026-11-05T05:23:17Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_timer_pauses_for_write_backpressure,success,3088.043,49.737,2026-11-05T05:24:07Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_timer_resume_preserves_maximum,success,3088.043,33.650,2026-11-05T05:24:41Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_timer_starts_after_expect_response,success,3088.043,35.773,2026-11-05T05:25:16Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_payload_timer_waits_for_expect_continue,success,3088.043,37.489,2026-11-05T05:25:54Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_peer_gone_with_error,success,3088.043,34.811,2026-11-05T05:26:29Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_pending_body_dropped_on_half_close,success,3088.043,36.850,2026-11-05T05:27:06Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_pending_body_dropped_on_peer_gone,success,3088.043,35.331,2026-11-05T05:27:41Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_pipeline,success,3088.043,35.342,2026-11-05T05:28:16Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_pipeline_after_close,success,3088.043,36.124,2026-11-05T05:28:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_pipeline_with_delay,test_failed,3088.043,9.633,2026-11-05T05:29:02Z,50232566.0,panic,"thread 'http::h1::dispatcher::tests::test_pipeline_with_delay' (8759) panicked at src/http/h1/dispatcher.rs:1843:38: called `Option::unwrap()` on a `None` value"
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_pipeline_with_payload,success,3088.043,36.806,2026-11-05T05:29:39Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_protocol_error_response_replaced,success,3088.043,37.348,2026-11-05T05:30:16Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_read_backpressure,success,3088.043,37.565,2026-11-05T05:30:54Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_read_large_message,success,3088.043,75.442,2026-11-05T05:32:09Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_req_parse_err,success,3088.043,36.121,2026-11-05T05:32:45Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_response_body_error,success,3088.043,36.940,2026-11-05T05:33:22Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_response_without_body_is_framed,success,3088.043,37.489,2026-11-05T05:34:00Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_service_error,success,3088.043,37.497,2026-11-05T05:34:37Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_service_error_response_replaced,success,3088.043,38.670,2026-11-05T05:35:16Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_sized_body_complete_without_end,success,3088.043,36.911,2026-11-05T05:35:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_sized_body_flushed_before_close,success,3088.043,54.823,2026-11-05T05:36:48Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_unconsumed_payload,success,3088.043,37.731,2026-11-05T05:37:26Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_upgrade_failed,success,3088.043,39.110,2026-11-05T05:38:05Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_upgrade_without_connection_option,success,3088.043,38.232,2026-11-05T05:38:43Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_write_backpressure,success,3088.043,106.560,2026-11-05T05:40:30Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_write_disconnected,success,3088.043,35.229,2026-11-05T05:41:05Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_write_timeout_during_response,success,3088.043,36.731,2026-11-05T05:41:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_write_timeout_restarts_after_filter_pause,success,3088.043,37.084,2026-11-05T05:42:19Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_write_timeout_with_unfinished_payload,success,3088.043,36.767,2026-11-05T05:42:55Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_write_timer_expiry_during_filter_pause,success,3088.043,49.613,2026-11-05T05:43:45Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::dispatcher::tests::test_write_timer_restores_payload_timer,test_failed,3088.043,17.760,2026-11-05T05:44:03Z,50232566.0,panic,"thread 'http::h1::dispatcher::tests::test_write_timer_restores_payload_timer' (11880) panicked at src/http/h1/dispatcher.rs:2520:9: assertion `left == right` failed"
+experimental-bsan,ntex-4.3.0,http::h1::encoder::tests::test_chunked_te,success,3088.043,33.028,2026-11-05T05:44:36Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::encoder::tests::test_connect_authority_form,success,3088.043,33.144,2026-11-05T05:45:09Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::encoder::tests::test_convert_usize,success,3088.043,33.098,2026-11-05T05:45:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::encoder::tests::test_extra_headers,success,3088.043,33.088,2026-11-05T05:46:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::encoder::tests::test_put_header_page_boundary,success,3088.043,33.192,2026-11-05T05:46:48Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::encoder::tests::test_request_stream_framing,success,3088.043,33.391,2026-11-05T05:47:22Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::encoder::tests::test_request_without_date,success,3088.043,34.521,2026-11-05T05:47:56Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::encoder::tests::test_write_chunk_size,success,3088.043,35.004,2026-11-05T05:48:31Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::encoder::tests::test_write_content_length,success,3088.043,35.570,2026-11-05T05:49:07Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::encoder::tests::test_write_status_line,success,3088.043,35.631,2026-11-05T05:49:43Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::timer::tests::test_headers_progress_follows_decoded_input,success,3088.043,36.173,2026-11-05T05:50:19Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::timer::tests::test_keepalive_timer_is_reused,success,3088.043,35.181,2026-11-05T05:50:54Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::timer::tests::test_read_timeout_is_bounded_by_maximum,success,3088.043,35.335,2026-11-05T05:51:29Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h1::timer::tests::test_write_timer_survives_decoded_requests,success,3088.043,36.072,2026-11-05T05:52:05Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h2::payload::tests::test_debug_and_stream,success,3088.043,37.659,2026-11-05T05:52:43Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h2::payload::tests::test_pending_read_does_not_wake_io_task,success,3088.043,37.931,2026-11-05T05:53:21Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h2::payload::tests::test_ready_read_does_not_register_waker,success,3088.043,36.702,2026-11-05T05:53:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h2::payload::tests::test_trailers_after_data,success,3088.043,37.406,2026-11-05T05:54:35Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h2::service::tests::test_concat,success,3088.043,35.692,2026-11-05T05:55:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h2::service::tests::test_request_uri,success,3088.043,36.359,2026-11-05T05:55:47Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::h2::service::tests::test_request_uri_authority,success,3088.043,38.045,2026-11-05T05:56:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::helpers::tests::json_body_error,success,3088.043,34.665,2026-11-05T05:57:00Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::helpers::tests::json_body_matches_to_string,success,3088.043,42.939,2026-11-05T05:57:43Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::helpers::tests::trimmed,success,3088.043,35.555,2026-11-05T05:58:19Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::helpers::tests::valid_target,success,3088.043,36.184,2026-11-05T05:58:55Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::httpcodes::tests::test_build,success,3088.043,35.579,2026-11-05T05:59:30Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::httpmessage::tests::test_chunked,success,3088.043,34.435,2026-11-05T06:00:05Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::httpmessage::tests::test_content_type,success,3088.043,33.013,2026-11-05T06:00:38Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::httpmessage::tests::test_cookie_not_found,success,3088.043,33.059,2026-11-05T06:01:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::httpmessage::tests::test_encoding,success,3088.043,33.146,2026-11-05T06:01:44Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::httpmessage::tests::test_encoding_error,success,3088.043,33.088,2026-11-05T06:02:17Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::httpmessage::tests::test_mime_type,success,3088.043,33.107,2026-11-05T06:02:50Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::httpmessage::tests::test_mime_type_error,success,3088.043,33.068,2026-11-05T06:03:23Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::httpmessage::tests::test_mime_type_not_utf8,success,3088.043,33.083,2026-11-05T06:03:56Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::message::tests::message_clone,success,3088.043,33.046,2026-11-05T06:04:29Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::message::tests::message_drop_after_pool_destroyed,success,3088.043,33.010,2026-11-05T06:05:02Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::message::tests::nested_message_drop,success,3088.043,32.984,2026-11-05T06:05:35Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::message::tests::response_connection_type,success,3088.043,32.870,2026-11-05T06:06:08Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::payload::tests::payload_conversions,success,3088.043,33.052,2026-11-05T06:06:41Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::payload::tests::payload_debug,success,3088.043,33.041,2026-11-05T06:07:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::request::tests::test_basics,success,3088.043,33.036,2026-11-05T06:07:48Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::request::tests::test_default,success,3088.043,33.362,2026-11-05T06:08:21Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_basic_builder,success,3088.043,34.400,2026-11-05T06:08:55Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_builder_invalid_headers,success,3088.043,34.975,2026-11-05T06:09:30Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_content_type,success,3088.043,35.564,2026-11-05T06:10:06Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_cookies,success,3088.043,35.692,2026-11-05T06:10:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_debug,success,3088.043,35.678,2026-11-05T06:11:17Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_display,success,3088.043,34.429,2026-11-05T06:11:52Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_force_close,success,3088.043,35.429,2026-11-05T06:12:27Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_into_builder,success,3088.043,35.609,2026-11-05T06:13:03Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_into_response,success,3088.043,35.572,2026-11-05T06:13:38Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_json,success,3088.043,35.588,2026-11-05T06:14:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_json_ct,success,3088.043,34.589,2026-11-05T06:14:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_json_error,success,3088.043,34.997,2026-11-05T06:15:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_response_cookies,success,3088.043,35.595,2026-11-05T06:15:59Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_take_copies_head,success,3088.043,35.596,2026-11-05T06:16:35Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_update_response_cookies,success,3088.043,36.119,2026-11-05T06:17:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,http::response::tests::test_upgrade,success,3088.043,34.848,2026-11-05T06:17:46Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,middleware,test_failed,3088.043,16.625,2026-11-05T06:18:02Z,50232566.0,gc,"test middleware ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,response_extensions_are_cleared_when_reused_from_pool,success,3088.043,35.385,2026-11-05T06:18:38Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,system_storage,success,3088.043,35.733,2026-11-05T06:19:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,test_arbiter_local_storage,success,3088.043,35.453,2026-11-05T06:19:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,test_async,success,3088.043,36.231,2026-11-05T06:20:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,test_bind,test_failed,3088.043,39.465,2026-11-05T06:21:05Z,50232566.0,gc,"test test_bind ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_bind_error,success,3088.043,33.902,2026-11-05T06:21:39Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,test_bind_uds,test_failed,3088.043,38.470,2026-11-05T06:22:17Z,50232566.0,gc,"test test_bind_uds ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_block_on,success,3088.043,32.749,2026-11-05T06:22:50Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,test_body,test_failed,3088.043,40.072,2026-11-05T06:23:30Z,50232566.0,gc,"test test_body ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_body_auto_skips_brotli,test_failed,3088.043,40.021,2026-11-05T06:24:10Z,50232566.0,gc,"test test_body_auto_skips_brotli ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_body_chunked_implicit,test_failed,3088.043,40.034,2026-11-05T06:24:50Z,50232566.0,gc,"test test_body_chunked_implicit ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_body_deflate,test_failed,3088.043,40.064,2026-11-05T06:25:30Z,50232566.0,gc,"test test_body_deflate ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_body_encoding_override,test_failed,3088.043,40.047,2026-11-05T06:26:10Z,50232566.0,gc,"test test_body_encoding_override ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_body_gzip,test_failed,3088.043,40.007,2026-11-05T06:26:50Z,50232566.0,gc,"test test_body_gzip ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_body_gzip2,test_failed,3088.043,41.401,2026-11-05T06:27:32Z,50232566.0,gc,"test test_body_gzip2 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_body_gzip_large,test_failed,3088.043,41.012,2026-11-05T06:28:13Z,50232566.0,gc,"test test_body_gzip_large ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_body_gzip_large_random,test_failed,3088.043,75.082,2026-11-05T06:29:28Z,50232566.0,gc,"test test_body_gzip_large_random ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_body_zstd_large,timeout,3088.043,150.024,2026-11-05T06:31:58Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,test_chunked_payload,test_failed,3088.043,28.296,2026-11-05T06:32:26Z,50232566.0,gc,"test test_chunked_payload ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_client_cookie_handling,test_failed,3088.043,16.795,2026-11-05T06:32:43Z,50232566.0,gc,"test test_client_cookie_handling ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_client_deflate_encoding,test_failed,3088.043,16.870,2026-11-05T06:33:00Z,50232566.0,gc,"test test_client_deflate_encoding ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_client_deflate_encoding_large_random,test_failed,3088.043,51.899,2026-11-05T06:33:52Z,50232566.0,gc,"test test_client_deflate_encoding_large_random ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_client_gzip_encoding,test_failed,3088.043,16.827,2026-11-05T06:34:09Z,50232566.0,gc,"test test_client_gzip_encoding ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_client_gzip_encoding_large,test_failed,3088.043,16.590,2026-11-05T06:34:25Z,50232566.0,gc,"test test_client_gzip_encoding_large ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_client_gzip_encoding_large_random,timeout,3088.043,150.022,2026-11-05T06:36:55Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,test_client_timeout,test_failed,3088.043,16.681,2026-11-05T06:37:12Z,50232566.0,gc,"test test_client_timeout ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_client_zstd_encoding,test_failed,3088.043,16.610,2026-11-05T06:37:29Z,50232566.0,gc,"test test_client_zstd_encoding ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_configure,test_failed,3088.043,38.523,2026-11-05T06:38:07Z,50232566.0,gc,"test test_configure ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_connection_close,test_failed,3088.043,16.784,2026-11-05T06:38:24Z,50232566.0,gc,"test test_connection_close ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_connection_force_close,test_failed,3088.043,16.777,2026-11-05T06:38:41Z,50232566.0,gc,"test test_connection_force_close ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_connection_reuse,test_failed,3088.043,16.763,2026-11-05T06:38:58Z,50232566.0,gc,"test test_connection_reuse ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_connection_reuse_h2,test_failed,3088.043,18.327,2026-11-05T06:39:16Z,50232566.0,gc,"test test_connection_reuse_h2 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_connection_server_close,test_failed,3088.043,16.709,2026-11-05T06:39:33Z,50232566.0,gc,"test test_connection_server_close ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_connection_wait_queue,test_failed,3088.043,16.712,2026-11-05T06:39:50Z,50232566.0,gc,"test test_connection_wait_queue ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_connection_wait_queue_force_close,test_failed,3088.043,16.775,2026-11-05T06:40:06Z,50232566.0,gc,"test test_connection_wait_queue_force_close ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_content_length,test_failed,3088.043,28.637,2026-11-05T06:40:35Z,50232566.0,gc,"test test_content_length ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_create,test_failed,3088.043,15.293,2026-11-05T06:40:50Z,50232566.0,gc,"test test_create ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_custom_error,test_failed,3088.043,40.214,2026-11-05T06:41:31Z,50232566.0,gc,"test test_custom_error ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_encoding,test_failed,3088.043,40.211,2026-11-05T06:42:11Z,50232566.0,gc,"test test_encoding ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_expect_continue,test_failed,3088.043,27.577,2026-11-05T06:42:38Z,50232566.0,gc,"test test_expect_continue ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_filter_large_write_during_read_processing,test_failed,3088.043,31.948,2026-11-05T06:43:10Z,50232566.0,gc,"test test_filter_large_write_during_read_processing ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_form,test_failed,3088.043,16.343,2026-11-05T06:43:27Z,50232566.0,gc,"test test_form ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_gzip_encoding,test_failed,3088.043,40.253,2026-11-05T06:44:07Z,50232566.0,gc,"test test_gzip_encoding ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_gzip_encoding_large,test_failed,3088.043,40.245,2026-11-05T06:44:47Z,50232566.0,gc,"test test_gzip_encoding_large ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1,test_failed,3088.043,21.934,2026-11-05T06:45:09Z,50232566.0,gc,"test test_h1 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_2,test_failed,3088.043,27.518,2026-11-05T06:45:37Z,50232566.0,gc,"test test_h1_2 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_body,test_failed,3088.043,27.528,2026-11-05T06:46:04Z,50232566.0,gc,"test test_h1_body ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_body_chunked_explicit,test_failed,3088.043,27.563,2026-11-05T06:46:32Z,50232566.0,gc,"test test_h1_body_chunked_explicit ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_body_chunked_implicit,test_failed,3088.043,27.592,2026-11-05T06:46:59Z,50232566.0,gc,"test test_h1_body_chunked_implicit ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_body_length,test_failed,3088.043,27.575,2026-11-05T06:47:27Z,50232566.0,gc,"test test_h1_body_length ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_body_not_polled_after_peer_reset,test_failed,3088.043,27.656,2026-11-05T06:47:55Z,50232566.0,gc,"test test_h1_body_not_polled_after_peer_reset ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_control_init_error_does_not_block_shutdown,test_failed,3088.043,27.642,2026-11-05T06:48:22Z,50232566.0,gc,"test test_h1_control_init_error_does_not_block_shutdown ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_gracefull_shutdown,test_failed,3088.043,28.264,2026-11-05T06:48:51Z,50232566.0,gc,"test test_h1_gracefull_shutdown ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_gracefull_shutdown_2,test_failed,3088.043,28.200,2026-11-05T06:49:19Z,50232566.0,gc,"test test_h1_gracefull_shutdown_2 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_head_binary,test_failed,3088.043,28.799,2026-11-05T06:49:48Z,50232566.0,gc,"test test_h1_head_binary ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_head_binary2,test_failed,3088.043,28.820,2026-11-05T06:50:17Z,50232566.0,gc,"test test_h1_head_binary2 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_head_empty,test_failed,3088.043,28.748,2026-11-05T06:50:45Z,50232566.0,gc,"test test_h1_head_empty ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_headers,test_failed,3088.043,28.688,2026-11-05T06:51:14Z,50232566.0,gc,"test test_h1_headers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_request_line_too_long,test_failed,3088.043,28.111,2026-11-05T06:51:42Z,50232566.0,gc,"test test_h1_request_line_too_long ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_request_trailers,test_failed,3088.043,28.602,2026-11-05T06:52:11Z,50232566.0,gc,"test test_h1_request_trailers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_response_http_error_handling,test_failed,3088.043,28.861,2026-11-05T06:52:40Z,50232566.0,gc,"test test_h1_response_http_error_handling ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_service_error,test_failed,3088.043,28.803,2026-11-05T06:53:08Z,50232566.0,gc,"test test_h1_service_error ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_unsupported_transfer_coding,test_failed,3088.043,29.003,2026-11-05T06:53:38Z,50232566.0,gc,"test test_h1_unsupported_transfer_coding ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h1_v2,test_failed,3088.043,16.544,2026-11-05T06:53:54Z,50232566.0,gc,"test test_h1_v2 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2,test_failed,3088.043,22.349,2026-11-05T06:54:16Z,50232566.0,gc,"test test_h2 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_1,test_failed,3088.043,22.363,2026-11-05T06:54:39Z,50232566.0,gc,"test test_h2_1 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_body,test_failed,3088.043,22.694,2026-11-05T06:55:02Z,50232566.0,gc,"test test_h2_body ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_body2,test_failed,3088.043,22.748,2026-11-05T06:55:24Z,50232566.0,gc,"test test_h2_body2 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_body_chunked_explicit,test_failed,3088.043,22.780,2026-11-05T06:55:47Z,50232566.0,gc,"test test_h2_body_chunked_explicit ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_body_length,test_failed,3088.043,22.729,2026-11-05T06:56:10Z,50232566.0,gc,"test test_h2_body_length ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_client_drop,test_failed,3088.043,22.912,2026-11-05T06:56:33Z,50232566.0,gc,"test test_h2_client_drop ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_content_length,test_failed,3088.043,22.304,2026-11-05T06:56:55Z,50232566.0,gc,"test test_h2_content_length ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_control,test_failed,3088.043,22.279,2026-11-05T06:57:17Z,50232566.0,gc,"test test_h2_control ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_empty_data_frames_are_not_queued,test_failed,3088.043,28.610,2026-11-05T06:57:46Z,50232566.0,gc,"test test_h2_empty_data_frames_are_not_queued ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_empty_data_frames_limit,test_failed,3088.043,28.911,2026-11-05T06:58:15Z,50232566.0,gc,"test test_h2_empty_data_frames_limit ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_expect_continue,test_failed,3088.043,28.992,2026-11-05T06:58:44Z,50232566.0,gc,"test test_h2_expect_continue ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_expect_control_error,test_failed,3088.043,28.802,2026-11-05T06:59:13Z,50232566.0,gc,"test test_h2_expect_control_error ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_graceful_shutdown,test_failed,3088.043,22.557,2026-11-05T06:59:35Z,50232566.0,gc,"test test_h2_graceful_shutdown ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_head_binary,test_failed,3088.043,22.428,2026-11-05T06:59:58Z,50232566.0,gc,"test test_h2_head_binary ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_head_binary2,test_failed,3088.043,21.816,2026-11-05T07:00:20Z,50232566.0,gc,"test test_h2_head_binary2 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_head_empty,test_failed,3088.043,21.847,2026-11-05T07:00:42Z,50232566.0,gc,"test test_h2_head_empty ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_headers,test_failed,3088.043,21.849,2026-11-05T07:01:03Z,50232566.0,gc,"test test_h2_headers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_informational_response_is_replaced,test_failed,3088.043,27.395,2026-11-05T07:01:31Z,50232566.0,gc,"test test_h2_informational_response_is_replaced ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_keepalive_waits_for_request_body,test_failed,3088.043,17.708,2026-11-05T07:01:49Z,50232566.0,gc,"test test_h2_keepalive_waits_for_request_body ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_malformed_request_uri,test_failed,3088.043,27.461,2026-11-05T07:02:16Z,50232566.0,gc,"test test_h2_malformed_request_uri ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_not_graceful_shutdown,test_failed,3088.043,23.333,2026-11-05T07:02:39Z,50232566.0,gc,"test test_h2_not_graceful_shutdown ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_not_modified_has_no_body,test_failed,3088.043,27.303,2026-11-05T07:03:07Z,50232566.0,gc,"test test_h2_not_modified_has_no_body ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_request_body_dropped_after_response_is_reset,test_failed,3088.043,17.749,2026-11-05T07:03:24Z,50232566.0,gc,"test test_h2_request_body_dropped_after_response_is_reset ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_request_body_dropped_after_response_resets_stream,test_failed,3088.043,27.595,2026-11-05T07:03:52Z,50232566.0,gc,"test test_h2_request_body_dropped_after_response_resets_stream ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_request_headers_not_shared,test_failed,3088.043,22.027,2026-11-05T07:04:14Z,50232566.0,gc,"test test_h2_request_headers_not_shared ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_request_payload_ends_after_error,test_failed,3088.043,27.669,2026-11-05T07:04:42Z,50232566.0,gc,"test test_h2_request_payload_ends_after_error ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_request_trailers,test_failed,3088.043,27.604,2026-11-05T07:05:09Z,50232566.0,gc,"test test_h2_request_trailers ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_response_body_end_stream,test_failed,3088.043,27.532,2026-11-05T07:05:37Z,50232566.0,gc,"test test_h2_response_body_end_stream ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_response_body_error_resets_stream,test_failed,3088.043,27.563,2026-11-05T07:06:05Z,50232566.0,gc,"test test_h2_response_body_error_resets_stream ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_response_http_error_handling,test_failed,3088.043,21.923,2026-11-05T07:06:27Z,50232566.0,gc,"test test_h2_response_http_error_handling ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_service_error,test_failed,3088.043,21.907,2026-11-05T07:06:48Z,50232566.0,gc,"test test_h2_service_error ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_stalled_request_body_is_dropped_on_reset,test_failed,3088.043,17.721,2026-11-05T07:07:06Z,50232566.0,gc,"test test_h2_stalled_request_body_is_dropped_on_reset ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_stream_limit_waits_for_payload,test_failed,3088.043,17.736,2026-11-05T07:07:24Z,50232566.0,gc,"test test_h2_stream_limit_waits_for_payload ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_h2_unread_request_body_is_reset,test_failed,3088.043,18.044,2026-11-05T07:07:42Z,50232566.0,gc,"test test_h2_unread_request_body_is_reset ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_handshake_error_has_service,test_failed,3088.043,31.131,2026-11-05T07:08:13Z,50232566.0,gc,"test test_handshake_error_has_service ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_head_binary,test_failed,3088.043,42.303,2026-11-05T07:08:56Z,50232566.0,gc,"test test_head_binary ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_headers_read_rate_counts_parsed_bytes,test_failed,3088.043,28.791,2026-11-05T07:09:24Z,50232566.0,gc,"test test_headers_read_rate_counts_parsed_bytes ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_headers_read_rate_extends_timeout,test_failed,3088.043,29.064,2026-11-05T07:09:53Z,50232566.0,gc,"test test_headers_read_rate_extends_timeout ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_host_header_excludes_userinfo,test_failed,3088.043,31.083,2026-11-05T07:10:25Z,50232566.0,gc,"test test_host_header_excludes_userinfo ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_http10_keepalive,test_failed,3088.043,28.113,2026-11-05T07:10:53Z,50232566.0,gc,"test test_http10_keepalive ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_http10_keepalive_default_close,test_failed,3088.043,28.743,2026-11-05T07:11:21Z,50232566.0,gc,"test test_http10_keepalive_default_close ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_http1_disable_payload_timer_after_whole_pl_has_been_read,test_failed,3088.043,28.833,2026-11-05T07:11:50Z,50232566.0,gc,"test test_http1_disable_payload_timer_after_whole_pl_has_been_read ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_http1_handle_not_consumed_payload,test_failed,3088.043,28.860,2026-11-05T07:12:19Z,50232566.0,gc,"test test_http1_handle_not_consumed_payload ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_http1_handle_payload_errors,test_failed,3088.043,29.182,2026-11-05T07:12:48Z,50232566.0,gc,"test test_http1_handle_payload_errors ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_http1_keepalive,test_failed,3088.043,28.181,2026-11-05T07:13:17Z,50232566.0,gc,"test test_http1_keepalive ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_http1_keepalive_after_response,test_failed,3088.043,28.198,2026-11-05T07:13:45Z,50232566.0,gc,"test test_http1_keepalive_after_response ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_http1_keepalive_close,test_failed,3088.043,28.790,2026-11-05T07:14:14Z,50232566.0,gc,"test test_http1_keepalive_close ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_http1_keepalive_disabled,test_failed,3088.043,28.781,2026-11-05T07:14:42Z,50232566.0,gc,"test test_http1_keepalive_disabled ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_http1_keepalive_timeout,test_failed,3088.043,28.641,2026-11-05T07:15:11Z,50232566.0,gc,"test test_http1_keepalive_timeout ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_http1_malformed_request,test_failed,3088.043,28.804,2026-11-05T07:15:40Z,50232566.0,gc,"test test_http1_malformed_request ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_http1_no_keepalive_during_response,test_failed,3088.043,28.517,2026-11-05T07:16:08Z,50232566.0,gc,"test test_http1_no_keepalive_during_response ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_join_handle,success,3088.043,33.844,2026-11-05T07:16:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,test_json,test_failed,3088.043,16.314,2026-11-05T07:16:59Z,50232566.0,gc,"test test_json ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_keepalive_timeout,test_failed,3088.043,30.327,2026-11-05T07:17:29Z,50232566.0,gc,"test test_keepalive_timeout ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_listen,test_failed,3088.043,37.229,2026-11-05T07:18:06Z,50232566.0,gc,"test test_listen ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_listen_openssl,test_failed,3088.043,38.691,2026-11-05T07:18:45Z,50232566.0,gc,"test test_listen_openssl ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_listen_rustls,test_failed,3088.043,39.535,2026-11-05T07:19:25Z,50232566.0,gc,"test test_listen_rustls ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_listen_uds,test_failed,3088.043,38.745,2026-11-05T07:20:03Z,50232566.0,gc,"test test_listen_uds ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_log_backtrace,test_failed,3088.043,33.457,2026-11-05T07:20:37Z,50232566.0,bsan,"test test_log_backtrace ... error: Undefined Behavior: trying to access an allocation that has been freed.\n   --> /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/backtrace-0.3.76/src/symbolize/gimli/libs_dl_iterate_phdr.rs:106:18\n    |\n106 | unsafe { slice::from_raw_parts(dlpi_phdr, dlpi_phnum as usize) }\n    |          ^\n    = note: the above line calls library code, where the error was detected:\n   --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/slice/raw.rs:139:9\n    |\n139 | &*ptr::slice_from_raw_parts(data, len)\n    | ^\n\nstack backtrace:\n0: core::slice::raw::from_raw_parts::<libc::unix::linux_like::linux_l4re_shared::Elf64_Phdr>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/slice/raw.rs:139:9\n1: backtrace::symbolize::gimli::libs_dl_iterate_phdr::callback\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/backtrace-0.3.76/src/symbolize/gimli/libs_dl_iterate_phdr.rs:106:18\n2: dl_iterate_phdr\n      at elf/dl-iteratephdr.c:74:13\n3: backtrace::symbolize::gimli::libs_dl_iterate_phdr::native_libraries\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/backtrace-0.3.76/src/symbolize/gimli/libs_dl_iterate_phdr.rs:27:9\n4: <backtrace::symbolize::gimli::Cache>::new\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/backtrace-0.3.76/src/symbolize/gimli.rs:356:24\n5: <<backtrace::symbolize::gimli::Cache>::new as core::ops::function::FnOnce<()>>::call_once\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5\n6: <core::option::Option<backtrace::symbolize::gimli::Cache>>::get_or_insert_with::<<backtrace::symbolize::gimli::Cache>::new>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/option.rs:1828:38\n7: <backtrace::symbolize::gimli::Cache>::with_global::<backtrace::symbolize::gimli::resolve::{closure#1}>\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/backtrace-0.3.76/src/symbolize/gimli.rs:379:30\n8: backtrace::symbolize::gimli::resolve\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/backtrace-0.3.76/src/symbolize/gimli.rs:453:9\n9: backtrace::symbolize::resolve_frame_unsynchronized::<<backtrace::capture::Frame>::resolve_symbols::{closure#0}>\n      at /local/ev-50232566-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/backtrace-0.3.76/src/symbolize/mod.rs:178:14\n\nnote: stack trace was truncated after 10 frames; set stacktrace_max_len (e.g. BSAN_OPTIONS=stacktrace_max_len=32) to capture more.\nerror: test failed, to rerun pass `--test rt`"
+experimental-bsan,ntex-4.3.0,test_no_chunking,test_failed,3088.043,40.124,2026-11-05T07:21:17Z,50232566.0,gc,"test test_no_chunking ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_no_decompress,test_failed,3088.043,16.279,2026-11-05T07:21:33Z,50232566.0,gc,"test test_no_decompress ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_on_shutdown_arbiter,success,3088.043,32.616,2026-11-05T07:22:06Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,test_on_shutdown_system,success,3088.043,33.467,2026-11-05T07:22:39Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,test_on_worker_start,test_failed,3088.043,37.124,2026-11-05T07:23:17Z,50232566.0,gc,"test test_on_worker_start ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_openssl,test_failed,3088.043,38.615,2026-11-05T07:23:55Z,50232566.0,gc,"test test_openssl ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_openssl_accept_handshake_then_eof,test_failed,3088.043,14.948,2026-11-05T07:24:10Z,50232566.0,gc,"test test_openssl_accept_handshake_then_eof ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_openssl_accept_zero_handshake_timeout,test_failed,3088.043,15.136,2026-11-05T07:24:25Z,50232566.0,gc,"test test_openssl_accept_zero_handshake_timeout ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_openssl_read_before_error,test_failed,3088.043,15.091,2026-11-05T07:24:40Z,50232566.0,gc,"test test_openssl_read_before_error ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_openssl_shutdown_completes_on_peer_close_notify,test_failed,3088.043,15.151,2026-11-05T07:24:56Z,50232566.0,gc,"test test_openssl_shutdown_completes_on_peer_close_notify ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_openssl_shutdown_sends_close_notify,test_failed,3088.043,15.124,2026-11-05T07:25:11Z,50232566.0,gc,"test test_openssl_shutdown_sends_close_notify ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_openssl_string,test_failed,3088.043,15.200,2026-11-05T07:25:26Z,50232566.0,gc,"test test_openssl_string ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_panic_in_worker,test_failed,3088.043,39.220,2026-11-05T07:26:05Z,50232566.0,gc,"test test_panic_in_worker ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_payload_read_rate_extends_timeout,test_failed,3088.043,28.725,2026-11-05T07:26:34Z,50232566.0,gc,"test test_payload_read_rate_extends_timeout ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_protocol_error_sends_close,test_failed,3088.043,31.718,2026-11-05T07:27:06Z,50232566.0,gc,"test test_protocol_error_sends_close ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_query_method,test_failed,3088.043,16.517,2026-11-05T07:27:22Z,50232566.0,gc,"test test_query_method ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_reading_deflate_encoding,test_failed,3088.043,41.638,2026-11-05T07:28:04Z,50232566.0,gc,"test test_reading_deflate_encoding ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_reading_deflate_encoding_large,test_failed,3088.043,42.329,2026-11-05T07:28:46Z,50232566.0,gc,"test test_reading_deflate_encoding_large ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_reading_deflate_encoding_large_random,test_failed,3088.043,119.625,2026-11-05T07:30:46Z,50232566.0,gc,"test test_reading_deflate_encoding_large_random ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_reading_deflate_encoding_large_random_rustls,test_failed,3088.043,115.642,2026-11-05T07:32:42Z,50232566.0,gc,"test test_reading_deflate_encoding_large_random_rustls ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_reading_deflate_encoding_large_random_rustls_h1,test_failed,3088.043,115.640,2026-11-05T07:34:37Z,50232566.0,gc,"test test_reading_deflate_encoding_large_random_rustls_h1 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_reading_deflate_encoding_large_random_rustls_h2,test_failed,3088.043,115.164,2026-11-05T07:36:32Z,50232566.0,gc,"test test_reading_deflate_encoding_large_random_rustls_h2 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_reading_gzip_encoding_large_random,test_failed,3088.043,68.382,2026-11-05T07:37:41Z,50232566.0,gc,"test test_reading_gzip_encoding_large_random ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_receiver_answers_peer_close,test_failed,3088.043,31.007,2026-11-05T07:38:12Z,50232566.0,gc,"test test_receiver_answers_peer_close ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_receiver_does_not_answer_close_reply,test_failed,3088.043,31.735,2026-11-05T07:38:44Z,50232566.0,gc,"test test_receiver_does_not_answer_close_reply ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_receiver_drop_closes_connection,test_failed,3088.043,31.798,2026-11-05T07:39:15Z,50232566.0,gc,"test test_receiver_drop_closes_connection ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_request_state,test_failed,3088.043,42.666,2026-11-05T07:39:58Z,50232566.0,gc,"test test_request_state ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_run,test_failed,3088.043,38.378,2026-11-05T07:40:36Z,50232566.0,gc,"test test_run ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_rustls,test_failed,3088.043,41.692,2026-11-05T07:41:18Z,50232566.0,gc,"test test_rustls ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_rustls_accept_handshake_then_eof,test_failed,3088.043,15.277,2026-11-05T07:41:33Z,50232566.0,gc,"test test_rustls_accept_handshake_then_eof ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_rustls_accept_zero_handshake_timeout,test_failed,3088.043,15.284,2026-11-05T07:41:49Z,50232566.0,gc,"test test_rustls_accept_zero_handshake_timeout ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_rustls_keyupdate_response_flushed,test_failed,3088.043,15.260,2026-11-05T07:42:04Z,50232566.0,gc,"test test_rustls_keyupdate_response_flushed ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_rustls_peer_close_notify_closes_io,test_failed,3088.043,15.467,2026-11-05T07:42:20Z,50232566.0,gc,"test test_rustls_peer_close_notify_closes_io ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_rustls_shutdown_sends_close_notify,test_failed,3088.043,15.105,2026-11-05T07:42:35Z,50232566.0,gc,"test test_rustls_shutdown_sends_close_notify ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_rustls_shutdown_waits_for_peer_close_notify,test_failed,3088.043,15.129,2026-11-05T07:42:50Z,50232566.0,gc,"test test_rustls_shutdown_waits_for_peer_close_notify ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_rustls_string,test_failed,3088.043,15.091,2026-11-05T07:43:05Z,50232566.0,gc,"test test_rustls_string ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_rustls_uri,test_failed,3088.043,15.297,2026-11-05T07:43:20Z,50232566.0,gc,"test test_rustls_uri ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_server_cookies,test_failed,3088.043,42.346,2026-11-05T07:44:03Z,50232566.0,gc,"test test_server_cookies ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_server_state,test_failed,3088.043,39.380,2026-11-05T07:44:42Z,50232566.0,gc,"test test_server_state ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_simple,test_failed,3088.043,16.703,2026-11-05T07:44:59Z,50232566.0,gc,"test test_simple ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_slow_request,test_failed,3088.043,29.173,2026-11-05T07:45:28Z,50232566.0,gc,"test test_slow_request ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_slow_request2,test_failed,3088.043,27.476,2026-11-05T07:45:55Z,50232566.0,gc,"test test_slow_request2 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_spawn_api,success,3088.043,33.564,2026-11-05T07:46:29Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,test_spawn_cb,success,3088.043,33.810,2026-11-05T07:47:03Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,test_ssl_handshake_timeout,test_failed,3088.043,21.902,2026-11-05T07:47:25Z,50232566.0,gc,"test test_ssl_handshake_timeout ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_static_str,test_failed,3088.043,14.951,2026-11-05T07:47:40Z,50232566.0,gc,"test test_static_str ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_timeout,test_failed,3088.043,16.341,2026-11-05T07:47:56Z,50232566.0,gc,"test test_timeout ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_timeout_disable_override,test_failed,3088.043,16.347,2026-11-05T07:48:13Z,50232566.0,gc,"test test_timeout_disable_override ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_timeout_override,test_failed,3088.043,16.323,2026-11-05T07:48:29Z,50232566.0,gc,"test test_timeout_override ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_transport,test_failed,3088.043,29.054,2026-11-05T07:48:58Z,50232566.0,gc,"test test_transport ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_upgrade_handler_with_await,test_failed,3088.043,30.445,2026-11-05T07:49:28Z,50232566.0,gc,"test test_upgrade_handler_with_await ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_uri,test_failed,3088.043,14.968,2026-11-05T07:49:43Z,50232566.0,gc,"test test_uri ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_web_server,test_failed,3088.043,40.439,2026-11-05T07:50:24Z,50232566.0,gc,"test test_web_server ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_with_config,test_failed,3088.043,38.939,2026-11-05T07:51:03Z,50232566.0,gc,"test test_with_config ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_with_query_parameter,test_failed,3088.043,16.344,2026-11-05T07:51:19Z,50232566.0,gc,"test test_with_query_parameter ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_ws_transport,test_failed,3088.043,21.938,2026-11-05T07:51:41Z,50232566.0,gc,"test test_ws_transport ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,test_zstd_encoding,test_failed,3088.043,40.019,2026-11-05T07:52:21Z,50232566.0,gc,"test test_zstd_encoding ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,untruncated_host_header,test_failed,3088.043,16.327,2026-11-05T07:52:37Z,50232566.0,gc,"test untruncated_host_header ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web::app::tests::test_app_default_service,success,3088.043,33.521,2026-11-05T07:53:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::app::tests::test_app_filter_error,success,3088.043,39.546,2026-11-05T07:53:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::app::tests::test_app_service_init_errors,success,3088.043,35.402,2026-11-05T07:54:26Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::app::tests::test_case_insensitive_router,success,3088.043,35.282,2026-11-05T07:55:01Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::app::tests::test_default_resource,success,3088.043,35.417,2026-11-05T07:55:37Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::app::tests::test_extension,success,3088.043,33.970,2026-11-05T07:56:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::app::tests::test_external_resource,success,3088.043,40.267,2026-11-05T07:56:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::app::tests::test_filter,success,3088.043,35.208,2026-11-05T07:57:26Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::app::tests::test_pooled_request_resource_map,success,3088.043,45.985,2026-11-05T07:58:12Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::app::tests::test_router_wrap,success,3088.043,34.205,2026-11-05T07:58:46Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::app::tests::test_wrap,success,3088.043,34.518,2026-11-05T07:59:21Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::config::tests::test_configure_external_resource,success,3088.043,40.633,2026-11-05T08:00:02Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::config::tests::test_configure_service,success,3088.043,35.509,2026-11-05T08:00:37Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::config::tests::test_new_service_config,success,3088.043,34.965,2026-11-05T08:01:12Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::config::tests::test_webappconfig,success,3088.043,34.799,2026-11-05T08:01:47Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_default_error_renderers,success,3088.043,32.945,2026-11-05T08:02:20Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_either_error,success,3088.043,32.795,2026-11-05T08:02:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_error_helpers,success,3088.043,32.961,2026-11-05T08:03:26Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_handshake_error,success,3088.043,32.792,2026-11-05T08:03:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_internal_error_response_taken,success,3088.043,32.720,2026-11-05T08:04:31Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_into_error,success,3088.043,32.796,2026-11-05T08:05:04Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_io_error,success,3088.043,32.729,2026-11-05T08:05:37Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_json_payload_error,success,3088.043,32.811,2026-11-05T08:06:10Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_other_errors,success,3088.043,32.589,2026-11-05T08:06:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_path_error,success,3088.043,32.478,2026-11-05T08:07:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_query_payload_error,success,3088.043,32.548,2026-11-05T08:07:47Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_urlencoded_error,success,3088.043,32.509,2026-11-05T08:08:20Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::error::tests::test_web_error,success,3088.043,32.554,2026-11-05T08:08:52Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::extract::tests::test_option,success,3088.043,33.196,2026-11-05T08:09:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::extract::tests::test_result,success,3088.043,33.830,2026-11-05T08:09:59Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::guard::tests::test_fn_guard,success,3088.043,34.542,2026-11-05T08:10:34Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::guard::tests::test_guard_debug,success,3088.043,34.932,2026-11-05T08:11:09Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::guard::tests::test_header,success,3088.043,35.358,2026-11-05T08:11:44Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::guard::tests::test_host,success,3088.043,34.049,2026-11-05T08:12:18Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::guard::tests::test_host_absolute_form,success,3088.043,34.433,2026-11-05T08:12:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::guard::tests::test_host_scheme,success,3088.043,35.078,2026-11-05T08:13:28Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::guard::tests::test_host_without_header,success,3088.043,35.037,2026-11-05T08:14:03Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::guard::tests::test_host_without_host_name,success,3088.043,35.338,2026-11-05T08:14:38Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::guard::tests::test_methods,success,3088.043,33.992,2026-11-05T08:15:12Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::guard::tests::test_preds,success,3088.043,34.476,2026-11-05T08:15:47Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::httprequest::tests::test_debug,success,3088.043,35.078,2026-11-05T08:16:22Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::httprequest::tests::test_no_request_cookies,success,3088.043,35.006,2026-11-05T08:16:57Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::httprequest::tests::test_request_cookies,success,3088.043,35.390,2026-11-05T08:17:32Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::httprequest::tests::test_request_query,success,3088.043,34.873,2026-11-05T08:18:07Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::httprequest::tests::test_url_for,success,3088.043,39.080,2026-11-05T08:18:46Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::httprequest::tests::test_url_for_external,success,3088.043,37.624,2026-11-05T08:19:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::httprequest::tests::test_url_for_static,success,3088.043,32.663,2026-11-05T08:19:57Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::info::tests::test_forwarded,success,3088.043,32.757,2026-11-05T08:20:29Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::info::tests::test_forwarded_ignored_items,success,3088.043,32.598,2026-11-05T08:21:02Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::info::tests::test_host_sources,success,3088.043,32.630,2026-11-05T08:21:35Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::info::tests::test_peer_addr,success,3088.043,32.769,2026-11-05T08:22:07Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::info::tests::test_secure_config,success,3088.043,32.706,2026-11-05T08:22:40Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::compress::tests::test_accept_encoding_entry,success,3088.043,32.639,2026-11-05T08:23:13Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::compress::tests::test_auto_honours_q,success,3088.043,32.762,2026-11-05T08:23:45Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::compress::tests::test_auto_skips_unsupported_encodings,success,3088.043,32.777,2026-11-05T08:24:18Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::compress::tests::test_auto_wildcard,success,3088.043,32.683,2026-11-05T08:24:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::compress::tests::test_compress_accept_encoding,success,3088.043,57.279,2026-11-05T08:25:48Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::compress::tests::test_explicit_encoding,success,3088.043,32.614,2026-11-05T08:26:21Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::compress::tests::test_parse_q,success,3088.043,33.705,2026-11-05T08:26:55Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::compress::tests::test_repeated_headers,success,3088.043,34.019,2026-11-05T08:27:29Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::defaultheaders::tests::test_content_type,success,3088.043,35.017,2026-11-05T08:28:04Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::defaultheaders::tests::test_default_headers,success,3088.043,35.051,2026-11-05T08:28:39Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::defaultheaders::tests::test_invalid_header_name,success,3088.043,35.015,2026-11-05T08:29:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::defaultheaders::tests::test_invalid_header_value,success,3088.043,33.917,2026-11-05T08:29:48Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::logger::tests::test_body_size,success,3088.043,36.445,2026-11-05T08:30:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::logger::tests::test_default_format,success,3088.043,37.104,2026-11-05T08:31:01Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::logger::tests::test_logger,success,3088.043,38.480,2026-11-05T08:31:40Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::logger::tests::test_missing_values,success,3088.043,36.970,2026-11-05T08:32:17Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::logger::tests::test_percent_format,success,3088.043,33.974,2026-11-05T08:32:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::logger::tests::test_request_line,success,3088.043,33.944,2026-11-05T08:33:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::logger::tests::test_request_time_format,success,3088.043,33.950,2026-11-05T08:33:59Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::middleware::logger::tests::test_url_path,success,3088.043,34.140,2026-11-05T08:34:33Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::request::tests::test_request,success,3088.043,32.514,2026-11-05T08:35:05Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::request::tests::test_request_debug_params,success,3088.043,32.468,2026-11-05T08:35:38Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::request::tests::test_request_parts,success,3088.043,32.592,2026-11-05T08:36:10Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::resource::tests::test_default_resource,success,3088.043,32.726,2026-11-05T08:36:43Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::resource::tests::test_empty_path_in_scope,success,3088.043,32.698,2026-11-05T08:37:16Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::resource::tests::test_filter,success,3088.043,32.692,2026-11-05T08:37:48Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::resource::tests::test_into_factory,success,3088.043,32.470,2026-11-05T08:38:21Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::resource::tests::test_middleware,success,3088.043,32.698,2026-11-05T08:38:54Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::resource::tests::test_pattern,success,3088.043,32.644,2026-11-05T08:39:26Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::resource::tests::test_resource_guards,success,3088.043,47.780,2026-11-05T08:40:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::resource::tests::test_to,success,3088.043,35.630,2026-11-05T08:40:50Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::responder::tests::test_custom_responder,success,3088.043,34.949,2026-11-05T08:41:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::responder::tests::test_custom_responder_headers,success,3088.043,35.059,2026-11-05T08:42:00Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::responder::tests::test_either_responder,success,3088.043,34.809,2026-11-05T08:42:35Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::responder::tests::test_option_responder,success,3088.043,33.948,2026-11-05T08:43:09Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::responder::tests::test_responder,success,3088.043,34.972,2026-11-05T08:43:44Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::responder::tests::test_result_responder,success,3088.043,35.058,2026-11-05T08:44:19Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::responder::tests::test_tuple_responder_with_status_code,success,3088.043,35.237,2026-11-05T08:44:54Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::response::tests::test_from_err,success,3088.043,33.874,2026-11-05T08:45:28Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::response::tests::test_response,success,3088.043,34.655,2026-11-05T08:46:02Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::response::tests::test_response_accessors,success,3088.043,35.062,2026-11-05T08:46:37Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::rmap::tests::url_for_parent,success,3088.043,55.551,2026-11-05T08:47:33Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::route::tests::test_route,success,3088.043,36.074,2026-11-05T08:48:09Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::route::tests::test_route_array_and_extractor_error,success,3088.043,37.979,2026-11-05T08:48:47Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::route::tests::test_route_debug,success,3088.043,32.343,2026-11-05T08:49:19Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_default_resource,success,3088.043,32.808,2026-11-05T08:49:52Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_filter,success,3088.043,32.707,2026-11-05T08:50:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_middleware,success,3088.043,32.701,2026-11-05T08:50:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_nested2_scope_with_variable_segment,success,3088.043,51.441,2026-11-05T08:51:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_nested_scope,success,3088.043,32.735,2026-11-05T08:52:22Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_nested_scope_filter,success,3088.043,32.722,2026-11-05T08:52:55Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_nested_scope_no_slash,success,3088.043,32.672,2026-11-05T08:53:27Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_nested_scope_root,success,3088.043,32.703,2026-11-05T08:54:00Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_nested_scope_with_variable_segment,success,3088.043,42.216,2026-11-05T08:54:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope,success,3088.043,32.830,2026-11-05T08:55:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_config_2,success,3088.043,33.840,2026-11-05T08:55:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_default_service_only,success,3088.043,34.059,2026-11-05T08:56:23Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_guard,success,3088.043,35.183,2026-11-05T08:56:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_root,success,3088.043,35.034,2026-11-05T08:57:33Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_root2,success,3088.043,34.959,2026-11-05T08:58:08Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_root2_multi,success,3088.043,34.158,2026-11-05T08:58:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_root3,success,3088.043,34.929,2026-11-05T08:59:17Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_root_multi,success,3088.043,35.331,2026-11-05T08:59:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_route,success,3088.043,35.416,2026-11-05T09:00:28Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_route_multi,success,3088.043,35.428,2026-11-05T09:01:04Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_route_without_leading_slash,success,3088.043,34.075,2026-11-05T09:01:38Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_variable_segment,success,3088.043,45.376,2026-11-05T09:02:23Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_scope_variable_segment2,success,3088.043,45.541,2026-11-05T09:03:09Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_url_for_external,success,3088.043,40.830,2026-11-05T09:03:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_url_for_nested,success,3088.043,40.867,2026-11-05T09:04:30Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::scope::tests::test_url_for_parent,success,3088.043,47.299,2026-11-05T09:05:18Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::service::tests::test_fmt_debug,success,3088.043,32.522,2026-11-05T09:05:50Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::service::tests::test_multi,success,3088.043,32.933,2026-11-05T09:06:23Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::service::tests::test_service,success,3088.043,32.814,2026-11-05T09:06:56Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::service::tests::test_service_empty_path_in_scope,success,3088.043,32.819,2026-11-05T09:07:29Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::stack::tests::test_web_middleware,success,3088.043,32.727,2026-11-05T09:08:01Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::state::tests::app_state,success,3088.043,32.668,2026-11-05T09:08:34Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::state::tests::build_with,success,3088.043,32.837,2026-11-05T09:09:07Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::state::tests::state_handlers,success,3088.043,38.606,2026-11-05T09:09:46Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::test::tests::test_async_with_block,success,3088.043,32.876,2026-11-05T09:10:19Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::test::tests::test_basics,success,3088.043,32.822,2026-11-05T09:10:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::test::tests::test_request_methods,success,3088.043,32.822,2026-11-05T09:11:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::test::tests::test_request_response_form,success,3088.043,32.968,2026-11-05T09:11:57Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::test::tests::test_request_response_json,success,3088.043,32.983,2026-11-05T09:12:30Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::test::tests::test_request_state,success,3088.043,34.170,2026-11-05T09:13:04Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::test::tests::test_response,success,3088.043,34.536,2026-11-05T09:13:39Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::test::tests::test_response_cookies,success,3088.043,35.095,2026-11-05T09:14:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::test::tests::test_response_json,success,3088.043,35.211,2026-11-05T09:14:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::test::tests::test_server_config,test_failed,3088.043,12.291,2026-11-05T09:15:02Z,50232566.0,gc,"test web::test::tests::test_server_config ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web::test::tests::test_server_config_rustls_debug,success,3088.043,34.968,2026-11-05T09:15:37Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::test::tests::test_server_listener_ignores_port,test_failed,3088.043,12.143,2026-11-05T09:15:49Z,50232566.0,gc,"test web::test::tests::test_server_listener_ignores_port ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web::test::tests::test_server_openssl,test_failed,3088.043,12.123,2026-11-05T09:16:01Z,50232566.0,gc,"test web::test::tests::test_server_openssl ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web::test::tests::test_server_openssl_ws,test_failed,3088.043,12.272,2026-11-05T09:16:13Z,50232566.0,gc,"test web::test::tests::test_server_openssl_ws ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web::test::tests::test_test_methods,test_failed,3088.043,12.217,2026-11-05T09:16:25Z,50232566.0,gc,"test web::test::tests::test_test_methods ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web::types::form::tests::test_basic,success,3088.043,35.090,2026-11-05T09:17:00Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::form::tests::test_form,success,3088.043,35.638,2026-11-05T09:17:36Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::form::tests::test_responder,success,3088.043,34.032,2026-11-05T09:18:10Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::form::tests::test_responder_error,success,3088.043,34.431,2026-11-05T09:18:45Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::form::tests::test_urlencoded,success,3088.043,35.140,2026-11-05T09:19:20Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::form::tests::test_urlencoded_error,success,3088.043,35.327,2026-11-05T09:19:55Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::form::tests::test_urlencoded_errors2,success,3088.043,34.837,2026-11-05T09:20:30Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::json::tests::test_extract,success,3088.043,34.506,2026-11-05T09:21:04Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::json::tests::test_json,success,3088.043,32.561,2026-11-05T09:21:37Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::json::tests::test_json_body,success,3088.043,32.502,2026-11-05T09:22:10Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::json::tests::test_responder,success,3088.043,32.622,2026-11-05T09:22:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::json::tests::test_responder_serialize_error,success,3088.043,32.637,2026-11-05T09:23:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::json::tests::test_with_json_and_bad_content_type,success,3088.043,32.635,2026-11-05T09:23:47Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::json::tests::test_with_json_and_bad_custom_content_type,success,3088.043,32.623,2026-11-05T09:24:20Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::json::tests::test_with_json_and_good_custom_content_type,success,3088.043,32.656,2026-11-05T09:24:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::path::tests::test_extract_path_single,success,3088.043,37.688,2026-11-05T09:25:30Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::path::tests::test_path_from,success,3088.043,32.553,2026-11-05T09:26:03Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::path::tests::test_request_extract,success,3088.043,42.000,2026-11-05T09:26:45Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::path::tests::test_tuple_extract,success,3088.043,42.186,2026-11-05T09:27:27Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::payload::tests::test_bytes,success,3088.043,32.813,2026-11-05T09:28:00Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::payload::tests::test_message_body,success,3088.043,33.530,2026-11-05T09:28:34Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::payload::tests::test_payload,success,3088.043,33.929,2026-11-05T09:29:08Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::payload::tests::test_payload_config,success,3088.043,35.113,2026-11-05T09:29:43Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::payload::tests::test_payload_errors,success,3088.043,35.080,2026-11-05T09:30:18Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::payload::tests::test_payload_recv,success,3088.043,35.043,2026-11-05T09:30:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::payload::tests::test_string,success,3088.043,34.118,2026-11-05T09:31:27Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::query::tests::test_request_extract,success,3088.043,34.763,2026-11-05T09:32:02Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::query::tests::test_service_request_extract,success,3088.043,35.214,2026-11-05T09:32:37Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::types::tests::test_read_body,success,3088.043,35.546,2026-11-05T09:33:12Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::util::tests::block_canceled,success,3088.043,34.915,2026-11-05T09:33:47Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::util::tests::body_encoding,success,3088.043,34.062,2026-11-05T09:34:21Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web::ws::tests::dispatch_service,success,3088.043,34.093,2026-11-05T09:34:56Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,web_no_ws,test_failed,3088.043,41.660,2026-11-05T09:35:37Z,50232566.0,gc,"test web_no_ws ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_no_ws_2,test_failed,3088.043,41.483,2026-11-05T09:36:19Z,50232566.0,gc,"test web_no_ws_2 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_no_ws_with_response_payload,test_failed,3088.043,40.265,2026-11-05T09:36:59Z,50232566.0,gc,"test web_no_ws_with_response_payload ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws,test_failed,3088.043,41.594,2026-11-05T09:37:41Z,50232566.0,gc,"test web_ws ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws_after_pooled_post_request,test_failed,3088.043,41.388,2026-11-05T09:38:22Z,50232566.0,gc,"test web_ws_after_pooled_post_request ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws_client,test_failed,3088.043,41.486,2026-11-05T09:39:04Z,50232566.0,gc,"test web_ws_client ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws_handshake_error_response,test_failed,3088.043,41.451,2026-11-05T09:39:45Z,50232566.0,gc,"test web_ws_handshake_error_response ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws_host_includes_port,test_failed,3088.043,41.410,2026-11-05T09:40:26Z,50232566.0,gc,"test web_ws_host_includes_port ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws_protocol_error_sends_close,test_failed,3088.043,41.468,2026-11-05T09:41:08Z,50232566.0,gc,"test web_ws_protocol_error_sends_close ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws_protocols_parsing,test_failed,3088.043,41.427,2026-11-05T09:41:49Z,50232566.0,gc,"test web_ws_protocols_parsing ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws_rejects_unrequested_subprotocol,test_failed,3088.043,42.580,2026-11-05T09:42:32Z,50232566.0,gc,"test web_ws_rejects_unrequested_subprotocol ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws_service_close_timeout,test_failed,3088.043,43.220,2026-11-05T09:43:15Z,50232566.0,gc,"test web_ws_service_close_timeout ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws_shutdown_propagation,test_failed,3088.043,43.868,2026-11-05T09:43:59Z,50232566.0,gc,"test web_ws_shutdown_propagation ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws_sink_shares_close_state,test_failed,3088.043,43.715,2026-11-05T09:44:43Z,50232566.0,gc,"test web_ws_sink_shares_close_state ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws_subprotocol,test_failed,3088.043,43.340,2026-11-05T09:45:26Z,50232566.0,gc,"test web_ws_subprotocol ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,web_ws_subprotocol_none,test_failed,3088.043,41.417,2026-11-05T09:46:08Z,50232566.0,gc,"test web_ws_subprotocol_none ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-4.3.0,ws::client::tests::basic_auth,success,3088.043,32.496,2026-11-05T09:46:40Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::basic_errs,success,3088.043,32.699,2026-11-05T09:47:13Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::basics,success,3088.043,32.599,2026-11-05T09:47:46Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::bearer_auth,success,3088.043,32.579,2026-11-05T09:48:18Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::cookies_extend_configured_header,success,3088.043,34.416,2026-11-05T09:48:53Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::deflate_connection,success,3088.043,43.103,2026-11-05T09:49:36Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::deflate_offer,success,3088.043,34.482,2026-11-05T09:50:10Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::handshake_response_errors,success,3088.043,35.445,2026-11-05T09:50:46Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::header_override,success,3088.043,33.179,2026-11-05T09:51:19Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::negotiation,success,3088.043,33.348,2026-11-05T09:51:52Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::pooled_request_head_method_is_get,success,3088.043,34.537,2026-11-05T09:52:27Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::protocols,success,3088.043,43.840,2026-11-05T09:53:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::request_head_keeps_all_header_values,success,3088.043,53.908,2026-11-05T09:54:05Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::server_mode_connection,success,3088.043,53.738,2026-11-05T09:54:58Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::start_encoder_error,success,3088.043,53.754,2026-11-05T09:55:52Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::start_io_error,success,3088.043,57.739,2026-11-05T09:56:50Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::start_keepalive,success,3088.043,59.334,2026-11-05T09:57:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::start_service_error_sends_away_close,success,3088.043,53.201,2026-11-05T09:58:42Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::test_debug,success,3088.043,49.801,2026-11-05T09:59:32Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::client::tests::unexpected_extensions,success,3088.043,51.359,2026-11-05T10:00:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::accepts_extension_close_code,success,3088.043,55.253,2026-11-05T10:01:19Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::decode_continuation_errors,success,3088.043,52.136,2026-11-05T10:02:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::deflate::clones_share_state,success,3088.043,68.809,2026-11-05T10:03:20Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::deflate::context_takeover,success,3088.043,74.010,2026-11-05T10:04:34Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::deflate::decompressed_size_limit,timeout,3088.043,150.069,2026-11-05T10:07:04Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,ws::codec::tests::deflate::encode_rfc7692_example,success,3088.043,71.500,2026-11-05T10:08:16Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::deflate::fragmented_compressed_payload,success,3088.043,73.708,2026-11-05T10:09:29Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::deflate::invalid_data,success,3088.043,50.748,2026-11-05T10:10:20Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::deflate::reserved_bits,success,3088.043,51.621,2026-11-05T10:11:12Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::deflate::rfc7692_examples,success,3088.043,50.410,2026-11-05T10:12:02Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::deflate::roundtrip,timeout,3088.043,150.033,2026-11-05T10:14:32Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,ws::codec::tests::deflate::rsv1_only_on_first_data_frame,success,3088.043,94.558,2026-11-05T10:16:07Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::deflate::small_messages_without_context_takeover,success,3088.043,121.650,2026-11-05T10:18:09Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::deflate::uncompressed_messages,success,3088.043,51.830,2026-11-05T10:19:01Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::encode_errors,success,3088.043,49.742,2026-11-05T10:19:50Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::input_after_close_is_discarded,success,3088.043,49.810,2026-11-05T10:20:40Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::rejects_messages_after_close,success,3088.043,54.484,2026-11-05T10:21:35Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::text_payload_is_not_validated,success,3088.043,53.806,2026-11-05T10:22:28Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::codec::tests::validates_outgoing_continuations,success,3088.043,49.636,2026-11-05T10:23:18Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::deflate::tests::accept_declined,success,3088.043,49.516,2026-11-05T10:24:08Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::deflate::tests::accept_errors,success,3088.043,49.596,2026-11-05T10:24:57Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::deflate::tests::accept_params,success,3088.043,53.997,2026-11-05T10:25:51Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::deflate::tests::compress_fragments,success,3088.043,76.927,2026-11-05T10:27:08Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::deflate::tests::compress_roundtrip,timeout,3088.043,150.043,2026-11-05T10:29:38Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,ws::deflate::tests::config,success,3088.043,50.809,2026-11-05T10:30:29Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::deflate::tests::empty_last_fragment,success,3088.043,78.364,2026-11-05T10:31:48Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::deflate::tests::empty_messages,success,3088.043,71.254,2026-11-05T10:32:59Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::deflate::tests::invalid_data,success,3088.043,50.763,2026-11-05T10:33:50Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::deflate::tests::no_context_takeover,success,3088.043,144.873,2026-11-05T10:36:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::deflate::tests::offer,success,3088.043,50.635,2026-11-05T10:37:05Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::deflate::tests::window_bits,timeout,3088.043,150.038,2026-11-05T10:39:36Z,50232566.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ntex-4.3.0,ws::error::tests::test_client_error_clone,success,3088.043,50.943,2026-11-05T10:40:27Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::error::tests::test_client_error_from_either,success,3088.043,51.096,2026-11-05T10:41:18Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_close_frame,success,3088.043,51.029,2026-11-05T10:42:09Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_close_validation,success,3088.043,51.673,2026-11-05T10:43:01Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_empty_close_frame,success,3088.043,55.493,2026-11-05T10:43:56Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_invalid_control_frames,success,3088.043,51.455,2026-11-05T10:44:48Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_large_frame_roundtrip,success,3088.043,49.840,2026-11-05T10:45:37Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_masked_frames_roundtrip_with_distinct_masks,success,3088.043,50.068,2026-11-05T10:46:28Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_noncanonical_lengths,success,3088.043,55.224,2026-11-05T10:47:23Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_parse,success,3088.043,53.271,2026-11-05T10:48:16Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_parse_edge_cases,success,3088.043,49.721,2026-11-05T10:49:06Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_parse_frame_mask,success,3088.043,49.596,2026-11-05T10:49:55Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_parse_frame_max_size,success,3088.043,49.722,2026-11-05T10:50:45Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_parse_frame_no_mask,success,3088.043,53.675,2026-11-05T10:51:39Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_parse_length0,success,3088.043,55.959,2026-11-05T10:52:35Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_parse_length2,success,3088.043,50.520,2026-11-05T10:53:25Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_parse_length4,success,3088.043,58.691,2026-11-05T10:54:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_ping_frame,success,3088.043,49.743,2026-11-05T10:55:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_pong_frame,success,3088.043,52.770,2026-11-05T10:56:07Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::frame::tests::test_reserved_bits,success,3088.043,53.868,2026-11-05T10:57:01Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::handshake::tests::test_handshake,success,3088.043,51.807,2026-11-05T10:57:52Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::handshake::tests::test_only_version_13_is_supported,success,3088.043,50.126,2026-11-05T10:58:43Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::handshake::tests::test_wserror_http_response,success,3088.043,52.435,2026-11-05T10:59:35Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::mask::tests::test_apply_mask,success,3088.043,50.758,2026-11-05T11:00:26Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::proto::tests::closecode_from_u16,success,3088.043,54.194,2026-11-05T11:01:20Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::proto::tests::closecode_into_u16,success,3088.043,50.793,2026-11-05T11:02:11Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::proto::tests::test_from_opcode,success,3088.043,51.109,2026-11-05T11:03:02Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::proto::tests::test_from_opcode_display,success,3088.043,50.474,2026-11-05T11:03:52Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::proto::tests::test_hash_key,success,3088.043,50.370,2026-11-05T11:04:43Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::proto::tests::test_hash_key_too_long,success,3088.043,50.714,2026-11-05T11:05:34Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::proto::tests::test_to_opcode,success,3088.043,50.617,2026-11-05T11:06:24Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::sink::tests::clones_share_codec_state,success,3088.043,51.098,2026-11-05T11:07:15Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::sink::tests::close_timeout,success,3088.043,52.894,2026-11-05T11:08:08Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::sink::tests::send_on_disconnect_does_not_wait,success,3088.043,54.473,2026-11-05T11:09:03Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::sink::tests::send_waits_for_write_backpressure,success,3088.043,53.023,2026-11-05T11:09:56Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::transport::tests::binary_frames_are_forwarded,success,3088.043,53.479,2026-11-05T11:10:49Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::transport::tests::invalid_frame_sends_protocol_close,success,3088.043,53.371,2026-11-05T11:11:43Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::transport::tests::invalid_frame_sends_protocol_close_over_inner_filter,success,3088.043,52.860,2026-11-05T11:12:36Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::transport::tests::peer_close_code_is_echoed,success,3088.043,54.211,2026-11-05T11:13:30Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::transport::tests::shutdown_completes_on_read_eof,success,3088.043,57.014,2026-11-05T11:14:27Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::transport::tests::shutdown_waits_for_close_reply,success,3088.043,54.245,2026-11-05T11:15:21Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::transport::tests::shutdown_waits_for_close_reply_over_inner_filter,success,3088.043,52.504,2026-11-05T11:16:14Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::transport::tests::text_continuation_sends_unsupported_close,success,3088.043,52.343,2026-11-05T11:17:06Z,50232566.0,,
+experimental-bsan,ntex-4.3.0,ws::transport::tests::text_frame_sends_unsupported_close,success,3088.043,57.897,2026-11-05T11:18:04Z,50232566.0,,

@@ -1,0 +1,15 @@
+experimental-bsan,mp4ameta-0.11.0,collection,success,13.734,2.886,2026-11-05T05:20:15Z,50252616.0,,
+experimental-bsan,mp4ameta-0.11.0,dump_1,test_failed,13.734,3.012,2026-11-05T05:20:18Z,50252616.0,panic,"thread 'dump_1' (56976) panicked at tests/test.rs:364:43: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,mp4ameta-0.11.0,dump_2,test_failed,13.734,3.032,2026-11-05T05:20:21Z,50252616.0,panic,"thread 'dump_2' (57387) panicked at tests/test.rs:377:43: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,mp4ameta-0.11.0,genre_handling,success,13.734,2.910,2026-11-05T05:20:24Z,50252616.0,,
+experimental-bsan,mp4ameta-0.11.0,multiple_values,success,13.734,2.902,2026-11-05T05:20:27Z,50252616.0,,
+experimental-bsan,mp4ameta-0.11.0,read_sample,success,13.734,3.289,2026-11-05T05:20:30Z,50252616.0,,
+experimental-bsan,mp4ameta-0.11.0,read_sample_multi_data,success,13.734,3.328,2026-11-05T05:20:33Z,50252616.0,,
+experimental-bsan,mp4ameta-0.11.0,sample_files,test_failed,13.734,3.168,2026-11-05T05:20:36Z,50252616.0,panic,"thread 'sample_files' (59473) panicked at tests/test.rs:246:28: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mp4ameta-0.11.0,tag_destructuring,success,13.734,2.937,2026-11-05T05:20:39Z,50252616.0,,
+experimental-bsan,mp4ameta-0.11.0,track_disc_handling,success,13.734,2.911,2026-11-05T05:20:42Z,50252616.0,,
+experimental-bsan,mp4ameta-0.11.0,work_movement_handling,success,13.734,2.889,2026-11-05T05:20:45Z,50252616.0,,
+experimental-bsan,mp4ameta-0.11.0,write,test_failed,13.734,3.022,2026-11-05T05:20:48Z,50252616.0,panic,"thread 'write' (60553) panicked at tests/test.rs:294:59: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mp4ameta-0.11.0,write_bigger,test_failed,13.734,3.238,2026-11-05T05:20:52Z,50252616.0,panic,"thread 'write_bigger' (60764) panicked at tests/test.rs:330:66: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mp4ameta-0.11.0,write_empty,test_failed,13.734,2.968,2026-11-05T05:20:55Z,50252616.0,panic,"thread 'write_empty' (60994) panicked at tests/test.rs:347:65: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,mp4ameta-0.11.0,write_same,test_failed,13.734,3.031,2026-11-05T05:20:58Z,50252616.0,panic,"thread 'write_same' (61145) panicked at tests/test.rs:311:64: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

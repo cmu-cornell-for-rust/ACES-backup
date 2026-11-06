@@ -1,0 +1,36 @@
+experimental-bsan,protoc-prebuilt-0.3.0,force::test::bin_return_err_for_directory_by_path,success,401.282,2.975,2026-11-05T03:41:54Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,force::test::bin_return_err_for_non_exists_path,success,401.282,2.928,2026-11-05T03:41:57Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,force::test::bin_return_ok_none_for_absence_env_var,success,401.282,2.920,2026-11-05T03:42:00Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,force::test::bin_return_ok_path,success,401.282,2.920,2026-11-05T03:42:03Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,force::test::include_return_err_for_file_by_path,success,401.282,2.923,2026-11-05T03:42:06Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,force::test::include_return_err_for_non_exists_path,success,401.282,2.910,2026-11-05T03:42:09Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,force::test::include_return_ok_none_for_absence_env_var,success,401.282,2.897,2026-11-05T03:42:12Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,force::test::include_return_ok_path,success,401.282,2.955,2026-11-05T03:42:15Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,helpers::test::false_values,success,401.282,2.898,2026-11-05T03:42:18Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,helpers::test::true_values,success,401.282,2.913,2026-11-05T03:42:21Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,install::test::check_version_exists_fail,test_failed,401.282,1.709,2026-11-05T03:42:23Z,50246650.0,panic,"thread 'install::test::check_version_exists_fail' (103528) panicked at src/install.rs:105:5: assertion failed: matches!(result.unwrap_err(), Error::NonExistsVersion { .. })"
+experimental-bsan,protoc-prebuilt-0.3.0,install::test::check_version_exists_success,test_failed,401.282,1.705,2026-11-05T03:42:24Z,50246650.0,panic,"thread 'install::test::check_version_exists_success' (103637) panicked at src/install.rs:97:5: assertion failed: check_version_exists(""22.0"", &None).is_ok()"
+experimental-bsan,protoc-prebuilt-0.3.0,install::test::download_fail_version,test_failed,401.282,1.712,2026-11-05T03:42:26Z,50246650.0,panic,"thread 'install::test::download_fail_version' (103849) panicked at src/install.rs:119:5: assertion failed: matches!(result.unwrap_err(), Error::NonExistsPlatformVersion { .. })"
+experimental-bsan,protoc-prebuilt-0.3.0,install::test::download_success,test_failed,401.282,1.699,2026-11-05T03:42:28Z,50246650.0,panic,"thread 'install::test::download_success' (104092) panicked at src/install.rs:111:5: assertion failed: result.is_ok()"
+experimental-bsan,protoc-prebuilt-0.3.0,path::test::with_bin_subdirectory,success,401.282,2.900,2026-11-05T03:42:31Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,path::test::with_include_subdirectory,success,401.282,2.899,2026-11-05T03:42:34Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,path::test::without_bin_subdirectory,success,401.282,2.904,2026-11-05T03:42:36Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,path::test::without_include_subdirectory,success,401.282,2.952,2026-11-05T03:42:39Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,request::test::check_proxy_success,success,401.282,2.930,2026-11-05T03:42:42Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,request::test::check_user_agent,test_failed,401.282,1.682,2026-11-05T03:42:44Z,50246650.0,panic,"thread 'request::test::check_user_agent' (4071) panicked at src/request.rs:156:5: assertion failed: result.is_ok()"
+experimental-bsan,protoc-prebuilt-0.3.0,request::test::no_proxy_asterisk,success,401.282,2.913,2026-11-05T03:42:47Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,request::test::no_proxy_hosts,success,401.282,2.918,2026-11-05T03:42:50Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,request::test::prepare_proxy,success,401.282,2.927,2026-11-05T03:42:53Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,request::test::request_fail_authorization,test_failed,401.282,1.699,2026-11-05T03:42:55Z,50246650.0,panic,"thread 'request::test::request_fail_authorization' (5414) panicked at src/request.rs:178:5: assertion failed: matches!(error, ureq::Error::Status { .. })"
+experimental-bsan,protoc-prebuilt-0.3.0,request::test::request_fail_to_non_exists_domain,success,401.282,2.987,2026-11-05T03:42:58Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,test_integration,test_failed,401.282,3.066,2026-11-05T03:43:01Z,50246650.0,panic,"thread 'test_integration' (6070) panicked at tests/integration.rs:34:3: assertion failed: result.is_ok()"
+experimental-bsan,protoc-prebuilt-0.3.0,version::test::compare_version_21x,success,401.282,2.913,2026-11-05T03:43:04Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,version::test::compare_version_correct,success,401.282,2.912,2026-11-05T03:43:07Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,version::test::compare_version_incorrect,success,401.282,2.901,2026-11-05T03:43:09Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,version::test::compare_version_old_rc_alpha_beta,success,401.282,2.893,2026-11-05T03:43:12Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,version::test::compare_version_protoc_errors,success,401.282,2.902,2026-11-05T03:43:15Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,version::test::get_protoc_asset_name_err,success,401.282,2.913,2026-11-05T03:43:18Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,version::test::get_protoc_assets_name_default,success,401.282,2.919,2026-11-05T03:43:21Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,version::test::get_protoc_assets_name_exceptions,success,401.282,2.921,2026-11-05T03:43:24Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,version::test::prepare_assets_version_default,success,401.282,2.911,2026-11-05T03:43:27Z,50246650.0,,
+experimental-bsan,protoc-prebuilt-0.3.0,version::test::prepare_assets_version_exceptions,success,401.282,2.917,2026-11-05T03:43:30Z,50246650.0,,

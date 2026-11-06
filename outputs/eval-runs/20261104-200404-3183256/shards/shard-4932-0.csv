@@ -1,0 +1,46 @@
+experimental-bsan,nova-snark-0.37.0,bellpepper::tests::test_alloc_bit,success,1073.333,15.498,2026-11-05T03:23:19Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,circuit::tests::test_recursive_circuit_bn256_grumpkin,timeout,1073.333,150.026,2026-11-05T03:25:49Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,circuit::tests::test_recursive_circuit_pasta,timeout,1073.333,150.023,2026-11-05T03:28:19Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,circuit::tests::test_recursive_circuit_secpq,timeout,1073.333,150.024,2026-11-05T03:30:49Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,digest::tests::test_digest_field_not_ingested_in_computation,success,1073.333,2.001,2026-11-05T03:30:51Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,digest::tests::test_digest_impervious_to_serialization,success,1073.333,1.929,2026-11-05T03:30:53Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,gadgets::ecc::tests::test_ecc_circuit_add_equal,timeout,1073.333,150.025,2026-11-05T03:33:23Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,gadgets::ecc::tests::test_ecc_circuit_add_negation,timeout,1073.333,150.023,2026-11-05T03:35:53Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,gadgets::ecc::tests::test_ecc_circuit_ops,timeout,1073.333,150.024,2026-11-05T03:38:23Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,gadgets::ecc::tests::test_ecc_ops,success,1073.333,107.942,2026-11-05T03:40:11Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,gadgets::nonnative::bignat::tests::test_big_nat_can_decompose,timeout,1073.333,150.036,2026-11-05T03:42:41Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,gadgets::nonnative::bignat::tests::test_polynomial_multiplier_circuit,success,1073.333,1.969,2026-11-05T03:42:43Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,nifs::tests::test_tiny_r1cs,timeout,1073.333,150.023,2026-11-05T03:45:13Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,nifs::tests::test_tiny_r1cs_bellpepper,timeout,1073.333,150.020,2026-11-05T03:47:44Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,provider::hyperkzg::tests::test_hyperkzg_eval,success,1073.333,68.989,2026-11-05T03:48:53Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,provider::hyperkzg::tests::test_hyperkzg_large,success,1073.333,149.822,2026-11-05T03:51:22Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,provider::hyperkzg::tests::test_hyperkzg_small,success,1073.333,17.698,2026-11-05T03:51:40Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,provider::keccak::tests::test_keccak_example,success,1073.333,1.792,2026-11-05T03:51:42Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,provider::keccak::tests::test_keccak_transcript,success,1073.333,2.883,2026-11-05T03:51:45Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,provider::keccak::tests::test_keccak_transcript_incremental_vs_explicit,success,1073.333,5.789,2026-11-05T03:51:51Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,provider::poseidon::tests::test_poseidon_ro,timeout,1073.333,150.022,2026-11-05T03:54:21Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,provider::tests::test_bn256_from_label,timeout,1073.333,150.018,2026-11-05T03:56:51Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,provider::tests::test_pallas_from_label,timeout,1073.333,150.019,2026-11-05T03:59:21Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,provider::tests::test_secp256k1_from_label,timeout,1073.333,150.018,2026-11-05T04:01:51Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,r1cs::sparse::tests::test_matrix_creation,success,1073.333,1.736,2026-11-05T04:01:53Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,r1cs::sparse::tests::test_matrix_iter,timeout,1073.333,150.019,2026-11-05T04:04:23Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,r1cs::sparse::tests::test_matrix_vector_multiplication,success,1073.333,2.318,2026-11-05T04:04:25Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,r1cs::tests::test_pad_tiny_r1cs,success,1073.333,2.674,2026-11-05T04:04:28Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,spartan::direct::tests::test_direct_snark,timeout,1073.333,150.023,2026-11-05T04:06:58Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,spartan::polys::eq::tests::test_eq_polynomial,success,1073.333,2.410,2026-11-05T04:07:00Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,spartan::polys::masked_eq::tests::test_masked_eq_polynomial,success,1073.333,3.792,2026-11-05T04:07:04Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,spartan::polys::multilinear::tests::test_bind_and_evaluate,timeout,1073.333,150.017,2026-11-05T04:09:34Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,spartan::polys::multilinear::tests::test_evaluation,success,1073.333,2.344,2026-11-05T04:09:36Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,spartan::polys::multilinear::tests::test_mlp_add,success,1073.333,1.662,2026-11-05T04:09:38Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,spartan::polys::multilinear::tests::test_multilinear_polynomial,success,1073.333,2.402,2026-11-05T04:09:40Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,spartan::polys::multilinear::tests::test_sparse_polynomial,success,1073.333,2.448,2026-11-05T04:09:43Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,spartan::polys::univariate::tests::test_from_evals_cubic,success,1073.333,2.633,2026-11-05T04:09:45Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,spartan::polys::univariate::tests::test_from_evals_quad,success,1073.333,2.500,2026-11-05T04:09:48Z,50244394.0,,
+experimental-bsan,nova-snark-0.37.0,tests::test_ivc_base,timeout,1073.333,150.020,2026-11-05T04:12:18Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,tests::test_ivc_nondet_with_compression,timeout,1073.333,150.021,2026-11-05T04:14:48Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,tests::test_ivc_nontrivial,timeout,1073.333,150.022,2026-11-05T04:17:18Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,tests::test_ivc_nontrivial_with_compression,timeout,1073.333,150.021,2026-11-05T04:19:48Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,tests::test_ivc_nontrivial_with_spark_compression,timeout,1073.333,150.021,2026-11-05T04:22:18Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,tests::test_ivc_trivial,timeout,1073.333,150.020,2026-11-05T04:24:48Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,tests::test_pp_digest,timeout,1073.333,150.022,2026-11-05T04:27:18Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,nova-snark-0.37.0,tests::test_setup,timeout,1073.333,150.020,2026-11-05T04:29:48Z,50244394.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

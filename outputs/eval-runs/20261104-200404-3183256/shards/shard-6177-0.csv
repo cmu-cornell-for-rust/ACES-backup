@@ -1,0 +1,37 @@
+experimental-bsan,zyx-0.17.0,bf16_add1,success,306.050,59.201,2026-11-05T03:39:45Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,bf16_add2,success,306.050,67.630,2026-11-05T03:40:53Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,bf16_add3,success,306.050,79.939,2026-11-05T03:42:13Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,bf16_add4,success,306.050,60.692,2026-11-05T03:43:14Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,bf16_add5,timeout,306.050,150.020,2026-11-05T03:45:44Z,50246514.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zyx-0.17.0,bf16_binary_mul,success,306.050,92.897,2026-11-05T03:47:17Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,bf16_matmul_1,timeout,306.050,150.019,2026-11-05T03:49:47Z,50246514.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zyx-0.17.0,bf16_mean,success,306.050,120.880,2026-11-05T03:51:48Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,bf16_sigmoid,success,306.050,138.280,2026-11-05T03:54:06Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::algebraic::tests::mask_survives_algebraic_simplification,success,306.050,10.868,2026-11-05T03:54:17Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::fold_loops::tests::test_ceil_mask_loop_folds,success,306.050,13.362,2026-11-05T03:54:30Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::fold_loops::tests::test_cmpge_arange_loop_folds,success,306.050,13.482,2026-11-05T03:54:44Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::fold_loops::tests::test_flat_gather_is_optimized,success,306.050,5.586,2026-11-05T03:54:49Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::fold_loops::tests::test_gather_source_before_indices,success,306.050,22.448,2026-11-05T03:55:12Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::fold_loops::tests::test_interleaved_gather_is_optimized,success,306.050,5.490,2026-11-05T03:55:17Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::fold_loops::tests::test_llama_onehot_loop_folds,timeout,306.050,150.022,2026-11-05T03:57:47Z,50246514.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zyx-0.17.0,kernel::fold_loops::tests::test_mnist_gather_not_folded,success,306.050,14.937,2026-11-05T03:58:02Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::fold_loops::tests::test_scatter_loop_not_folded,success,306.050,14.033,2026-11-05T03:58:16Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::instr_sched::tests::_bench_instruction_schedule_large_kernel,timeout,306.050,150.017,2026-11-05T04:00:46Z,50246514.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zyx-0.17.0,kernel::instr_sched::tests::test_instruction_schedule_keeps_memory_order_per_target,success,306.050,5.072,2026-11-05T04:00:51Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::instr_sched::tests::test_instruction_schedule_keeps_stores_after_barriers,success,306.050,5.065,2026-11-05T04:00:57Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::instr_sched::tests::test_instruction_schedule_keeps_stores_in_loops,success,306.050,5.111,2026-11-05T04:01:02Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::instr_sched::tests::test_instruction_schedule_never_sinks_across_loops,success,306.050,5.377,2026-11-05T04:01:07Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::instr_sched::tests::test_instruction_schedule_orders_params_and_storages,success,306.050,5.250,2026-11-05T04:01:12Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::instr_sched::tests::test_instruction_schedule_topological,success,306.050,5.195,2026-11-05T04:01:18Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::vectorize::tests::vectorize_ops_and_constfold_clears_vectorize_devectorize,success,306.050,5.536,2026-11-05T04:01:23Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::vectorize::tests::vectorize_ops_forward_2_lane,success,306.050,5.097,2026-11-05T04:01:28Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::vectorize::tests::vectorize_ops_forward_4_lane,success,306.050,5.108,2026-11-05T04:01:33Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::vectorize::tests::vectorize_ops_forward_binary,success,306.050,5.052,2026-11-05T04:01:38Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::vectorize::tests::vectorize_ops_forward_binary_y_pos,success,306.050,4.898,2026-11-05T04:01:43Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,kernel::vectorize::tests::vectorize_ops_forward_mixed_ops,success,306.050,5.121,2026-11-05T04:01:48Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,mnist,test_failed,306.050,4.968,2026-11-05T04:01:53Z,50246514.0,other,"error: test failed, to rerun pass `--test mnist`"
+experimental-bsan,zyx-0.17.0,scalar::tests::f8_c_roundtrip,timeout,306.050,150.017,2026-11-05T04:04:23Z,50246514.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zyx-0.17.0,scalar::tests::f8_roundtrip,success,306.050,4.907,2026-11-05T04:04:28Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,tensor::tilize::tests::tilize_batched_f16,success,306.050,8.027,2026-11-05T04:04:36Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,tensor::tilize::tests::tilize_matches_golden_face_order,success,306.050,5.825,2026-11-05T04:04:42Z,50246514.0,,
+experimental-bsan,zyx-0.17.0,tensor::tilize::tests::tilize_roundtrip_odd_shape,success,306.050,7.740,2026-11-05T04:04:50Z,50246514.0,,

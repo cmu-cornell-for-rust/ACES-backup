@@ -1,0 +1,3 @@
+experimental-bsan,atty-0.2.14,tests::is_err,test_failed,4.912,1.595,2026-11-05T08:14:29Z,50262176.0,panic,"thread 'tests::is_err' (36767) panicked at src/lib.rs:189:9: assertion failed: is(Stream::Stderr)"
+experimental-bsan,atty-0.2.14,tests::is_in,test_failed,4.912,1.587,2026-11-05T08:14:31Z,50262176.0,panic,"thread 'tests::is_in' (37182) panicked at src/lib.rs:208:9: assertion failed: is(Stream::Stdin)"
+experimental-bsan,atty-0.2.14,tests::is_out,test_failed,4.912,1.593,2026-11-05T08:14:33Z,50262176.0,panic,"thread 'tests::is_out' (37546) panicked at src/lib.rs:195:9: assertion failed: is(Stream::Stdout)"

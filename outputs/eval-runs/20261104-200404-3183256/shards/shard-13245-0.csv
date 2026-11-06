@@ -1,0 +1,9 @@
+experimental-bsan,rust_bundler_cp-0.3.16,bundle_self,success,236.565,8.487,2026-11-05T06:36:17Z,50256569.0,,
+experimental-bsan,rust_bundler_cp-0.3.16,expander_test::test_create,success,236.565,8.537,2026-11-05T06:36:25Z,50256569.0,,
+experimental-bsan,rust_bundler_cp-0.3.16,expander_test::test_read_source_code,test_failed,236.565,1.638,2026-11-05T06:36:27Z,50256569.0,panic,"thread 'expander_test::test_read_source_code' (94568) panicked at src/lib.rs:436:51: failed to read binary target source"
+experimental-bsan,rust_bundler_cp-0.3.16,loop_cargos,test_failed,236.565,8.499,2026-11-05T06:36:36Z,50256569.0,panic,"thread 'loop_cargos' (94821) panicked at tests/validate_cargo.rs:7:38: read_dir failed: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,rust_bundler_cp-0.3.16,loop_test_cases,test_failed,236.565,5.689,2026-11-05T06:36:41Z,50256569.0,panic,"thread 'loop_test_cases' (95073) panicked at tests/golden.rs:18:42: read_dir failed: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,rust_bundler_cp-0.3.16,multiple_binaries,success,236.565,8.359,2026-11-05T06:36:50Z,50256569.0,,
+experimental-bsan,rust_bundler_cp-0.3.16,parse_pub_mod,success,236.565,8.350,2026-11-05T06:36:58Z,50256569.0,,
+experimental-bsan,rust_bundler_cp-0.3.16,parse_test_io,success,236.565,30.971,2026-11-05T06:37:29Z,50256569.0,,
+experimental-bsan,rust_bundler_cp-0.3.16,usage,success,236.565,8.359,2026-11-05T06:37:37Z,50256569.0,,

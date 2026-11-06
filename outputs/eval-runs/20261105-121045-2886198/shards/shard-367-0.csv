@@ -1,0 +1,2 @@
+experimental-bsan,hamster-0.0.4,tests::goodbye_with_variable,test_failed,91.451,4.259,2026-11-05T17:48:51Z,50276424.0,panic,"thread 'tests::goodbye_with_variable' (43918) panicked at src/main.rs:151:61: called `Option::unwrap()` on a `None` value"
+experimental-bsan,hamster-0.0.4,tests::hello,test_failed,91.451,4.248,2026-11-05T17:48:55Z,50276424.0,panic,"thread 'tests::hello' (44578) panicked at src/main.rs:151:61: called `Option::unwrap()` on a `None` value"

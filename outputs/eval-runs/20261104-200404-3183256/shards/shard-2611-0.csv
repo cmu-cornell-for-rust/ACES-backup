@@ -1,0 +1,87 @@
+experimental-bsan,libdoh-0.10.0,accept::tests::a_persistent_error_does_not_cause_a_busy_loop,success,319.518,3.386,2026-11-05T02:13:20Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,accept::tests::connection_errors_do_not_delay_accepting,success,319.518,1.721,2026-11-05T02:13:22Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,accept::tests::logs_are_rate_limited_and_count_suppressed_errors,success,319.518,2.053,2026-11-05T02:13:24Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,accept::tests::resource_errors_back_off_exponentially_up_to_a_cap,success,319.518,1.755,2026-11-05T02:13:26Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,admission::tests::admits_exactly_the_capacity,success,319.518,1.761,2026-11-05T02:13:27Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,admission::tests::concurrent_admissions_and_releases_leave_a_consistent_level,timeout,319.518,150.021,2026-11-05T02:15:58Z,50239321.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libdoh-0.10.0,admission::tests::concurrent_admissions_never_exceed_the_capacity,success,319.518,2.070,2026-11-05T02:16:00Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,admission::tests::pressure_follows_occupancy_with_hysteresis,success,319.518,1.817,2026-11-05T02:16:01Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,admission::tests::pressure_transitions,success,319.518,1.791,2026-11-05T02:16:03Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,admission::tests::pressure_with_huge_limits,success,319.518,1.803,2026-11-05T02:16:05Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,admission::tests::pressure_with_small_limits,success,319.518,1.845,2026-11-05T02:16:07Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,admission::tests::receivers_are_only_notified_when_the_level_changes,success,319.518,1.812,2026-11-05T02:16:09Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,admission::tests::slot_is_released_when_its_task_is_dropped,success,319.518,1.935,2026-11-05T02:16:11Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,dns_json::tests::json_queries_request_authenticated_status_independently_of_do_and_cd,success,319.518,1.857,2026-11-05T02:16:13Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,dns_json::tests::json_response_preserves_upstream_ad_and_cd,success,319.518,1.939,2026-11-05T02:16:15Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,edns_ecs::tests::test_add_ecs_to_packet,success,319.518,1.798,2026-11-05T02:16:16Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,edns_ecs::tests::test_build_ecs_option,success,319.518,1.764,2026-11-05T02:16:18Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,edns_ecs::tests::test_ecs_not_overwritten_if_exists,success,319.518,1.800,2026-11-05T02:16:20Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,edns_ecs::tests::test_extract_client_ip,success,319.518,1.835,2026-11-05T02:16:22Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::a_busy_connection_is_retired_by_age_and_allowed_to_finish,success,319.518,2.145,2026-11-05T02:16:24Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::a_connection_that_closes_by_itself,success,319.518,1.954,2026-11-05T02:16:26Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::a_handshake_completing_in_time_is_returned,success,319.518,2.036,2026-11-05T02:16:28Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::a_handshake_ready_when_its_deadline_moves_into_the_past_is_dropped,success,319.518,1.958,2026-11-05T02:16:30Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::a_pressure_recovery_at_the_deadline_extends_the_handshake_allowance,success,319.518,1.999,2026-11-05T02:16:32Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::a_request_starting_just_before_the_idle_deadline_prevents_retirement,success,319.518,2.084,2026-11-05T02:16:34Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::a_retirement_started_late_is_still_bounded_by_the_absolute_deadline,success,319.518,1.948,2026-11-05T02:16:36Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::a_stalled_connection_is_dropped_at_the_absolute_deadline,success,319.518,2.033,2026-11-05T02:16:38Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::activity_during_the_drain_does_not_postpone_the_close,success,319.518,2.902,2026-11-05T02:16:41Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::allowances_under_pressure,success,319.518,1.775,2026-11-05T02:16:43Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::an_idle_connection_is_retired_after_the_idle_allowance,success,319.518,1.982,2026-11-05T02:16:45Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::early_retirement_has_its_own_drain_deadline,success,319.518,2.114,2026-11-05T02:16:47Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::handshake_allowances_have_their_own_floor,success,319.518,1.791,2026-11-05T02:16:49Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::handshake_allowances_recover_without_restarting,success,319.518,2.059,2026-11-05T02:16:51Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::idle_time_starts_when_the_connection_is_ready,success,319.518,1.925,2026-11-05T02:16:53Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::idle_time_starts_when_the_last_request_completes,success,319.518,2.252,2026-11-05T02:16:55Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::pending_handshakes_follow_pressure_from_the_accept_time,success,319.518,2.186,2026-11-05T02:16:57Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::policy_values,success,319.518,1.772,2026-11-05T02:16:59Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::pressure_changes_during_the_drain_are_ignored,success,319.518,2.228,2026-11-05T02:17:01Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::pressure_does_not_affect_requests_in_progress,success,319.518,2.148,2026-11-05T02:17:03Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::pressure_recovery_does_not_restart_the_idle_interval,success,319.518,2.075,2026-11-05T02:17:05Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::rising_pressure_shortens_the_idle_allowance_from_the_original_idle_start,success,319.518,2.205,2026-11-05T02:17:08Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,lifecycle::tests::the_activity_count_is_exact,success,319.518,1.946,2026-11-05T02:17:10Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::config::entrypoint_validates_before_binding,success,319.518,11.388,2026-11-05T02:17:21Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::config::library_rejects_zero_clients,success,319.518,6.600,2026-11-05T02:17:28Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::config::library_timeout_range,success,319.518,6.686,2026-11-05T02:17:34Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::forced_close::http1_work_is_cancelled_and_its_permit_released,success,319.518,8.757,2026-11-05T02:17:43Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::forced_close::http2_stream_work_is_cancelled_and_its_permit_released,test_failed,319.518,7.664,2026-11-05T02:17:51Z,50239321.0,panic,"thread 'tests::forced_close::http2_stream_work_is_cancelled_and_its_permit_released' (84155) panicked at src/tests.rs:1305:9: condition not met in 500ms"
+experimental-bsan,libdoh-0.10.0,tests::http1::a_connection_idle_at_retirement_is_closed_without_a_response,success,319.518,9.223,2026-11-05T02:18:00Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http1::a_request_in_progress_at_retirement_completes_with_connection_close,success,319.518,9.779,2026-11-05T02:18:10Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http1::a_silent_client_is_disconnected_after_the_timeout,success,319.518,6.449,2026-11-05T02:18:16Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http1::a_slow_body_gets_a_408_and_the_connection_is_closed,success,319.518,6.623,2026-11-05T02:18:23Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http1::an_idle_connection_is_closed_as_soon_as_pressure_rises,success,319.518,6.825,2026-11-05T02:18:30Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http1::every_route_counts_as_activity,success,319.518,25.966,2026-11-05T02:18:56Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http1::idle_time_restarts_after_each_response,success,319.518,7.510,2026-11-05T02:19:03Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http1::keepalive_can_be_disabled,success,319.518,6.679,2026-11-05T02:19:10Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http1::trickling_an_incomplete_head_does_not_extend_the_timeout,success,319.518,6.856,2026-11-05T02:19:17Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http2::a_blocked_response_is_dropped_three_timeouts_after_the_service_completed,success,319.518,7.471,2026-11-05T02:19:24Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http2::a_busy_connection_retired_by_age_is_dropped_at_the_absolute_deadline,success,319.518,11.786,2026-11-05T02:19:36Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http2::a_request_in_progress_at_retirement_completes,success,319.518,11.674,2026-11-05T02:19:48Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http2::a_reset_stream_restores_idle_tracking,success,319.518,7.340,2026-11-05T02:19:55Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http2::an_idle_connection_is_closed_after_the_timeout,success,319.518,6.655,2026-11-05T02:20:02Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http2::idle_time_starts_when_the_last_stream_completes,success,319.518,8.080,2026-11-05T02:20:10Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::http2::requests_during_the_drain_do_not_postpone_the_close,success,319.518,7.720,2026-11-05T02:20:18Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::listeners::connections_beyond_the_limit_are_closed_at_once,success,319.518,7.908,2026-11-05T02:20:25Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::listeners::http1_retirement_over_tcp,success,319.518,8.352,2026-11-05T02:20:34Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::listeners::http2_goaway_and_flow_control_over_tcp,test_failed,319.518,9.039,2026-11-05T02:20:43Z,50239321.0,panic,"thread 'tests::listeners::http2_goaway_and_flow_control_over_tcp' (92082) panicked at src/tests.rs:1316:5: expected about 1.5s, got 2.617835634s"
+experimental-bsan,libdoh-0.10.0,tests::listeners::the_tls_listener_rejects_connections_before_any_tls_work,test_failed,319.518,39.540,2026-11-05T02:21:22Z,50239321.0,panic,"thread 'tests::listeners::the_tls_listener_rejects_connections_before_any_tls_work' (92226) panicked at src/tests.rs:1552:35: the certificate was never loaded"
+experimental-bsan,libdoh-0.10.0,tests::request_budget::a_slow_resolver_gets_the_upstream_error,test_failed,319.518,8.096,2026-11-05T02:21:31Z,50239321.0,panic,"thread 'tests::request_budget::a_slow_resolver_gets_the_upstream_error' (93523) panicked at src/tests.rs:1316:5: expected about 1s, got 1.418047788s"
+experimental-bsan,libdoh-0.10.0,tests::request_budget::time_spent_receiving_the_body_is_not_given_back_for_the_lookup,test_failed,319.518,9.516,2026-11-05T02:21:40Z,50239321.0,panic,"thread 'tests::request_budget::time_spent_receiving_the_body_is_not_given_back_for_the_lookup' (93729) panicked at src/tests.rs:1316:5: expected about 1s, got 1.355500757s"
+experimental-bsan,libdoh-0.10.0,tests::request_budget::waiting_for_a_permit_and_falling_back_to_tcp_share_the_budget,test_failed,319.518,8.262,2026-11-05T02:21:48Z,50239321.0,panic,"thread 'tests::request_budget::waiting_for_a_permit_and_falling_back_to_tcp_share_the_budget' (93928) panicked at src/tests.rs:1372:13: assertion `left == right` failed"
+experimental-bsan,libdoh-0.10.0,tests::tls::a_failed_handshake_releases_the_slot,test_failed,319.518,6.422,2026-11-05T02:21:55Z,50239321.0,panic,"thread 'tests::tls::a_failed_handshake_releases_the_slot' (94166) panicked at src/tests.rs:970:70: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Unable to load the certificates [/work/../../localhost.pem]: No such file or directory (os error 2)"" }"
+experimental-bsan,libdoh-0.10.0,tests::tls::a_handshake_slower_than_the_floor_is_dropped_under_high_pressure,test_failed,319.518,6.476,2026-11-05T02:22:01Z,50239321.0,panic,"thread 'tests::tls::a_handshake_slower_than_the_floor_is_dropped_under_high_pressure' (94406) panicked at src/tests.rs:970:70: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Unable to load the certificates [/work/../../localhost.pem]: No such file or directory (os erro"
+experimental-bsan,libdoh-0.10.0,tests::tls::a_late_handshake_leaves_a_full_idle_allowance_for_the_first_request,test_failed,319.518,6.391,2026-11-05T02:22:08Z,50239321.0,panic,"thread 'tests::tls::a_late_handshake_leaves_a_full_idle_allowance_for_the_first_request' (94740) panicked at src/tests.rs:970:70: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Unable to load the certificates [/work/../../localhost.pem]: No such file or directory (os e"
+experimental-bsan,libdoh-0.10.0,tests::tls::a_pending_handshake_is_dropped_as_soon_as_pressure_rises,test_failed,319.518,6.333,2026-11-05T02:22:14Z,50239321.0,panic,"thread 'tests::tls::a_pending_handshake_is_dropped_as_soon_as_pressure_rises' (94901) panicked at src/tests.rs:970:70: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Unable to load the certificates [/work/../../localhost.pem]: No such file or directory (os error 2)"" }"
+experimental-bsan,libdoh-0.10.0,tests::tls::a_silent_client_is_bounded_by_the_handshake_and_idle_allowances,test_failed,319.518,6.509,2026-11-05T02:22:21Z,50239321.0,panic,"thread 'tests::tls::a_silent_client_is_bounded_by_the_handshake_and_idle_allowances' (95099) panicked at src/tests.rs:970:70: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Unable to load the certificates [/work/../../localhost.pem]: No such file or directory (os error"
+experimental-bsan,libdoh-0.10.0,tests::tls::a_silent_peer_is_dropped_after_the_handshake_allowance,test_failed,319.518,6.446,2026-11-05T02:22:27Z,50239321.0,panic,"thread 'tests::tls::a_silent_peer_is_dropped_after_the_handshake_allowance' (95309) panicked at src/tests.rs:970:70: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Unable to load the certificates [/work/../../localhost.pem]: No such file or directory (os error 2)"" }"
+experimental-bsan,libdoh-0.10.0,tests::tls::http2_over_tls,test_failed,319.518,6.353,2026-11-05T02:22:34Z,50239321.0,panic,"thread 'tests::tls::http2_over_tls' (95620) panicked at src/tests.rs:970:70: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Unable to load the certificates [/work/../../localhost.pem]: No such file or directory (os error 2)"" }"
+experimental-bsan,libdoh-0.10.0,tests::tls::slow_handshakes_fit_in_the_floor_under_high_pressure,test_failed,319.518,6.463,2026-11-05T02:22:40Z,50239321.0,panic,"thread 'tests::tls::slow_handshakes_fit_in_the_floor_under_high_pressure' (95886) panicked at src/tests.rs:970:70: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Unable to load the certificates [/work/../../localhost.pem]: No such file or directory (os error 2)"" }"
+experimental-bsan,libdoh-0.10.0,tests::tls::under_high_pressure_a_late_handshake_still_gets_to_send_its_first_request,test_failed,319.518,6.473,2026-11-05T02:22:47Z,50239321.0,panic,"thread 'tests::tls::under_high_pressure_a_late_handshake_still_gets_to_send_its_first_request' (96143) panicked at src/tests.rs:970:70: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Unable to load the certificates [/work/../../localhost.pem]: No such file or directory"
+experimental-bsan,libdoh-0.10.0,tests::tls::under_high_pressure_a_silent_client_uses_both_allowances,test_failed,319.518,6.405,2026-11-05T02:22:53Z,50239321.0,panic,"thread 'tests::tls::under_high_pressure_a_silent_client_uses_both_allowances' (96322) panicked at src/tests.rs:970:70: called `Result::unwrap()` on an `Err` value: Custom { kind: NotFound, error: ""Unable to load the certificates [/work/../../localhost.pem]: No such file or directory (os error 2)"" }"
+experimental-bsan,libdoh-0.10.0,tests::upstream_tcp::a_full_pool_times_out_as_an_upstream_error,success,319.518,7.751,2026-11-05T02:23:01Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::upstream_tcp::a_stalled_exchange_times_out_and_releases_its_permit,success,319.518,7.668,2026-11-05T02:23:08Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::upstream_tcp::a_waiting_lookup_proceeds_when_a_permit_is_released,success,319.518,7.061,2026-11-05T02:23:15Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::upstream_tcp::cancelling_a_waiting_lookup_leaves_no_waiter_behind,success,319.518,6.755,2026-11-05T02:23:22Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::upstream_tcp::downstream_connections_do_not_prevent_tcp_fallback,success,319.518,6.978,2026-11-05T02:23:29Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::upstream_tcp::pool_size,success,319.518,29.357,2026-11-05T02:23:59Z,50239321.0,,
+experimental-bsan,libdoh-0.10.0,tests::upstream_tcp::truncated_answers_are_retried_over_tcp,success,319.518,12.129,2026-11-05T02:24:11Z,50239321.0,,

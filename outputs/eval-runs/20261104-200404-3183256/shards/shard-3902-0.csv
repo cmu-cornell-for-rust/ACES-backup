@@ -1,0 +1,59 @@
+experimental-bsan,oci-client-0.14.0,blob::tests::test_verifying_stream,success,582.611,3.526,2026-11-05T02:45:26Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,client::test::blob_url_generation_respects_http_protocol,timeout,582.611,150.030,2026-11-05T02:47:56Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::blob_url_generation_uses_http_if_on_exception_list,timeout,582.611,150.030,2026-11-05T02:50:26Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::blob_url_generation_uses_https_if_not_on_exception_list,timeout,582.611,150.031,2026-11-05T02:52:56Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::can_generate_valid_digest,success,582.611,3.094,2026-11-05T02:53:00Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,client::test::can_push_chunk,test_failed,582.611,1.860,2026-11-05T02:53:01Z,50242691.0,panic,"thread 'client::test::can_push_chunk' (39182) panicked at src/client.rs:2954:14: Failed to start registry container: Client(Init(SocketNotFoundError(""/var/run/docker.sock"")))"
+experimental-bsan,oci-client-0.14.0,client::test::can_push_multiple_chunks,test_failed,582.611,1.869,2026-11-05T02:53:03Z,50242691.0,panic,"thread 'client::test::can_push_multiple_chunks' (39358) panicked at src/client.rs:3004:14: Failed to start registry container: Client(Init(SocketNotFoundError(""/var/run/docker.sock"")))"
+experimental-bsan,oci-client-0.14.0,client::test::manifest_url_generation_respects_http_protocol,timeout,582.611,150.029,2026-11-05T02:55:33Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::manifest_url_generation_uses_http_if_on_exception_list,timeout,582.611,150.030,2026-11-05T02:58:03Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::manifest_url_generation_uses_https_if_not_on_exception_list,timeout,582.611,150.030,2026-11-05T03:00:33Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::pull_manifest_and_config_public,timeout,582.611,150.030,2026-11-05T03:03:04Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_apply_accept,success,582.611,3.125,2026-11-05T03:03:07Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,client::test::test_apply_auth_bearer_token,timeout,582.611,150.031,2026-11-05T03:05:37Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_apply_auth_no_token,timeout,582.611,150.030,2026-11-05T03:08:07Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_auth,timeout,582.611,150.033,2026-11-05T03:10:37Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_fetch_digest,timeout,582.611,150.029,2026-11-05T03:13:07Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_hashable_image_layer,success,582.611,3.195,2026-11-05T03:13:10Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,client::test::test_image_roundtrip_anon_auth,test_failed,582.611,1.859,2026-11-05T03:13:12Z,50242691.0,panic,"thread 'client::test::test_image_roundtrip_anon_auth' (24481) panicked at src/client.rs:3047:14: Failed to start registry container: Client(Init(SocketNotFoundError(""/var/run/docker.sock"")))"
+experimental-bsan,oci-client-0.14.0,client::test::test_image_roundtrip_basic_auth,test_failed,582.611,1.894,2026-11-05T03:13:14Z,50242691.0,panic,"thread 'client::test::test_image_roundtrip_basic_auth' (24554) panicked at src/client.rs:3065:50: cannot registry container: Client(Init(SocketNotFoundError(""/var/run/docker.sock"")))"
+experimental-bsan,oci-client-0.14.0,client::test::test_list_tags,test_failed,582.611,1.878,2026-11-05T03:13:16Z,50242691.0,panic,"thread 'client::test::test_list_tags' (24737) panicked at src/client.rs:2547:14: Failed to start registry container: Client(Init(SocketNotFoundError(""/var/run/docker.sock"")))"
+experimental-bsan,oci-client-0.14.0,client::test::test_mount,test_failed,582.611,1.865,2026-11-05T03:13:18Z,50242691.0,panic,"thread 'client::test::test_mount' (24948) panicked at src/client.rs:3183:14: Failed to start registry: Client(Init(SocketNotFoundError(""/var/run/docker.sock"")))"
+experimental-bsan,oci-client-0.14.0,client::test::test_platform_resolution,timeout,582.611,150.031,2026-11-05T03:15:48Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_pull,timeout,582.611,150.031,2026-11-05T03:18:18Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_pull_blob,timeout,582.611,150.029,2026-11-05T03:20:48Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_pull_blob_stream,timeout,582.611,150.031,2026-11-05T03:23:18Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_pull_blob_stream_partial,timeout,582.611,150.021,2026-11-05T03:25:48Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_pull_ghcr_io,timeout,582.611,150.027,2026-11-05T03:28:18Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_pull_manifest_private,timeout,582.611,150.027,2026-11-05T03:30:48Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_pull_manifest_public,timeout,582.611,150.029,2026-11-05T03:33:18Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_pull_without_layer_validation,timeout,582.611,150.030,2026-11-05T03:35:48Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_pull_wrong_layer_validation,timeout,582.611,150.027,2026-11-05T03:38:18Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_raw_manifest_digest,timeout,582.611,150.032,2026-11-05T03:40:48Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_registry_token_deserialize,success,582.611,3.072,2026-11-05T03:40:51Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,client::test::test_to_list_tags_url,timeout,582.611,150.027,2026-11-05T03:43:21Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_to_v2_blob_upload_url,timeout,582.611,150.028,2026-11-05T03:45:51Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_to_v2_blob_url,timeout,582.611,150.026,2026-11-05T03:48:21Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_to_v2_manifest::case_1,timeout,582.611,150.028,2026-11-05T03:50:52Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_to_v2_manifest::case_2,timeout,582.611,150.027,2026-11-05T03:53:22Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_to_v2_manifest::case_3,timeout,582.611,150.028,2026-11-05T03:55:52Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,client::test::test_to_v2_manifest::case_4,timeout,582.611,150.027,2026-11-05T03:58:22Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,config::tests::deserialize_test::case_1,success,582.611,3.179,2026-11-05T03:58:25Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,config::tests::deserialize_test::case_2,success,582.611,3.020,2026-11-05T03:58:28Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,config::tests::deserialize_test::case_3,success,582.611,3.057,2026-11-05T03:58:31Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,config::tests::serialize_test::case_1,success,582.611,3.506,2026-11-05T03:58:34Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,config::tests::serialize_test::case_2,success,582.611,3.063,2026-11-05T03:58:38Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,config::tests::serialize_test::case_3,success,582.611,3.207,2026-11-05T03:58:41Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,digest::tests::test_validate_digest,success,582.611,3.442,2026-11-05T03:58:44Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,errors::test::test_deserialize,success,582.611,3.004,2026-11-05T03:58:47Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,errors::test::test_deserialize_toomanyrequests,success,582.611,3.007,2026-11-05T03:58:50Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,errors::test::test_deserialize_without_detail_field,success,582.611,3.000,2026-11-05T03:58:53Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,errors::test::test_deserialize_without_message_field,success,582.611,3.009,2026-11-05T03:58:56Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,manifest::test::test_manifest,success,582.611,3.035,2026-11-05T03:58:59Z,50242691.0,,
+experimental-bsan,oci-client-0.14.0,test_bad_blob,timeout,582.611,150.029,2026-11-05T04:01:29Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,test_bad_config,timeout,582.611,150.027,2026-11-05T04:03:59Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,test_bad_manifest,timeout,582.611,150.026,2026-11-05T04:06:29Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,test_different_blob_algos,timeout,582.611,150.028,2026-11-05T04:09:00Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,test_different_manifest_algos,timeout,582.611,150.027,2026-11-05T04:11:30Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,test_different_reference_sha,timeout,582.611,150.026,2026-11-05T04:14:00Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,oci-client-0.14.0,test_good_pull,timeout,582.611,150.027,2026-11-05T04:16:30Z,50242691.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

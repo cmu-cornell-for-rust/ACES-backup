@@ -1,0 +1,2 @@
+experimental-bsan,tantivy-0.27.0,core::tests::mmap_specific::test_index_on_commit_reload_policy_different_directories,test_failed,827.006,315.189,2026-11-05T18:06:20Z,50276489.0,gc,"test core::tests::mmap_specific::test_index_on_commit_reload_policy_different_directories ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,tantivy-0.27.0,directory::mmap_directory::tests::test_mmap_released,success,827.006,1749.727,2026-11-05T18:35:29Z,50276489.0,,

@@ -1,0 +1,22 @@
+experimental-bsan,bzip2-0.6.1,bufread::tests::bug_61,success,73.342,22.985,2026-11-05T04:33:58Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,read::tests::empty,success,73.342,1.655,2026-11-05T04:34:00Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,read::tests::multistream_read_till_eof,timeout,73.342,150.015,2026-11-05T04:36:30Z,50249825.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bzip2-0.6.1,read::tests::qc,success,73.342,137.046,2026-11-05T04:38:47Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,read::tests::qc_partial,timeout,73.342,150.014,2026-11-05T04:41:17Z,50249825.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bzip2-0.6.1,read::tests::self_terminating,success,73.342,135.522,2026-11-05T04:43:33Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,read::tests::smoke,success,73.342,2.164,2026-11-05T04:43:35Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,read::tests::smoke2,success,73.342,2.158,2026-11-05T04:43:37Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,read::tests::smoke3,success,73.342,114.896,2026-11-05T04:45:32Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,read::tests::zero_length_read_at_eof,success,73.342,1.665,2026-11-05T04:45:34Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,read::tests::zero_length_read_with_data,success,73.342,110.601,2026-11-05T04:47:24Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,test::new_level_0,success,73.342,1.636,2026-11-05T04:47:26Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,test::new_level_10,success,73.342,1.632,2026-11-05T04:47:28Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,test::try_new,success,73.342,1.627,2026-11-05T04:47:29Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,write::tests::finish_empty_drop,success,73.342,1.628,2026-11-05T04:47:31Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,write::tests::finish_empty_explicit,success,73.342,1.634,2026-11-05T04:47:32Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,write::tests::qc,success,73.342,135.844,2026-11-05T04:49:48Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,write::tests::qc_partial,timeout,73.342,150.015,2026-11-05T04:52:18Z,50249825.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bzip2-0.6.1,write::tests::roundtrip_empty,success,73.342,1.712,2026-11-05T04:52:20Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,write::tests::smoke,timeout,73.342,150.017,2026-11-05T04:54:50Z,50249825.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bzip2-0.6.1,write::tests::terminate_on_drop,success,73.342,7.624,2026-11-05T04:54:58Z,50249825.0,,
+experimental-bsan,bzip2-0.6.1,write::tests::write_invalid,success,73.342,1.623,2026-11-05T04:54:59Z,50249825.0,,

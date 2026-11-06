@@ -1,0 +1,28 @@
+experimental-bsan,faer-svd-0.17.1,bidiag::tests::bidiag_c64,test_failed,261.716,2.838,2026-11-05T04:06:18Z,50248295.0,panic,"thread 'bidiag::tests::bidiag_c64' (8497) panicked at /local/ev-50248295-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/pulp-0.18.22/src/x86.rs:1537:43: misaligned pointer dereference: address must be a multiple of 0x10 but is 0x7b657e4ce8e8"
+experimental-bsan,faer-svd-0.17.1,bidiag::tests::bidiag_f64,success,261.716,4.151,2026-11-05T04:06:22Z,50248295.0,,
+experimental-bsan,faer-svd-0.17.1,bidiag_real_svd::tests::test_svd_1024_0,timeout,261.716,150.019,2026-11-05T04:08:52Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,bidiag_real_svd::tests::test_svd_1024_1,timeout,261.716,150.015,2026-11-05T04:11:22Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,bidiag_real_svd::tests::test_svd_1024_2,timeout,261.716,150.019,2026-11-05T04:13:52Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,bidiag_real_svd::tests::test_svd_1024_3,timeout,261.716,150.019,2026-11-05T04:16:22Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,bidiag_real_svd::tests::test_svd_128,timeout,261.716,150.012,2026-11-05T04:18:52Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,bidiag_real_svd::tests::test_svd_4,success,261.716,1.682,2026-11-05T04:18:54Z,50248295.0,,
+experimental-bsan,faer-svd-0.17.1,bidiag_real_svd::tests::test_svd_64,timeout,261.716,150.015,2026-11-05T04:21:24Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,bidiag_real_svd::tests::test_svd_n,timeout,261.716,150.016,2026-11-05T04:23:54Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,jacobi::tests::eigen_286,success,261.716,1.577,2026-11-05T04:23:55Z,50248295.0,,
+experimental-bsan,faer-svd-0.17.1,jacobi::tests::test_jacobi,timeout,261.716,150.011,2026-11-05T04:26:25Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,jacobi::tests::test_skip_first,timeout,261.716,150.011,2026-11-05T04:28:55Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,jacobi::tests::test_skip_last,timeout,261.716,150.010,2026-11-05T04:31:25Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,tests::test_cplx,test_failed,261.716,2.770,2026-11-05T04:31:28Z,50248295.0,panic,"thread 'tests::test_cplx' (3670) panicked at /local/ev-50248295-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/pulp-0.18.22/src/x86.rs:1537:43: misaligned pointer dereference: address must be a multiple of 0x10 but is 0x7b1e608e4028"
+experimental-bsan,faer-svd-0.17.1,tests::test_cplx_f32,timeout,261.716,150.014,2026-11-05T04:33:58Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,tests::test_cplx_identity,test_failed,261.716,1.865,2026-11-05T04:34:00Z,50248295.0,panic,"thread 'tests::test_cplx_identity' (39978) panicked at /local/ev-50248295-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/pulp-0.18.22/src/x86.rs:1537:43: misaligned pointer dereference: address must be a multiple of 0x10 but is 0x7b39a59ca228"
+experimental-bsan,faer-svd-0.17.1,tests::test_cplx_ones,test_failed,261.716,1.827,2026-11-05T04:34:02Z,50248295.0,panic,"thread 'tests::test_cplx_ones' (40151) panicked at /local/ev-50248295-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/pulp-0.18.22/src/x86.rs:1537:43: misaligned pointer dereference: address must be a multiple of 0x10 but is 0x7bc052de3e08"
+experimental-bsan,faer-svd-0.17.1,tests::test_cplx_thin,test_failed,261.716,18.709,2026-11-05T04:34:21Z,50248295.0,panic,"thread 'tests::test_cplx_thin' (40453) panicked at /local/ev-50248295-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/pulp-0.18.22/src/x86.rs:1537:43: misaligned pointer dereference: address must be a multiple of 0x10 but is 0x7b122e5e0788"
+experimental-bsan,faer-svd-0.17.1,tests::test_cplx_zero,success,261.716,47.745,2026-11-05T04:35:08Z,50248295.0,,
+experimental-bsan,faer-svd-0.17.1,tests::test_real,timeout,261.716,150.012,2026-11-05T04:37:38Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,tests::test_real_big,success,261.716,52.517,2026-11-05T04:38:31Z,50248295.0,,
+experimental-bsan,faer-svd-0.17.1,tests::test_real_f32,timeout,261.716,150.013,2026-11-05T04:41:01Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,tests::test_real_identity,success,261.716,47.302,2026-11-05T04:41:48Z,50248295.0,,
+experimental-bsan,faer-svd-0.17.1,tests::test_real_ones,timeout,261.716,150.013,2026-11-05T04:44:18Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,tests::test_real_small,success,261.716,70.461,2026-11-05T04:45:29Z,50248295.0,,
+experimental-bsan,faer-svd-0.17.1,tests::test_real_thin,timeout,261.716,150.014,2026-11-05T04:47:59Z,50248295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,faer-svd-0.17.1,tests::test_real_zero,success,261.716,47.050,2026-11-05T04:48:46Z,50248295.0,,

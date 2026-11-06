@@ -1,0 +1,634 @@
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::compress::empty,success,358.564,18.673,2026-11-05T01:23:37Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::compress::empty_chunk,success,358.564,18.714,2026-11-05T01:23:56Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::compress::long,test_failed,358.564,4.246,2026-11-05T01:24:00Z,50232623.0,panic,"thread 'brotli::futures::bufread::compress::long' (25714) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::compress::short,test_failed,358.564,4.230,2026-11-05T01:24:05Z,50232623.0,panic,"thread 'brotli::futures::bufread::compress::short' (26411) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::compress::to_full_output,success,358.564,17.871,2026-11-05T01:24:23Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::compress::with_level_0,success,358.564,19.204,2026-11-05T01:24:42Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::compress::with_level_best,success,358.564,51.223,2026-11-05T01:25:33Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::compress::with_level_default,success,358.564,50.989,2026-11-05T01:26:24Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::compress::with_level_max,success,358.564,51.082,2026-11-05T01:27:15Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::decompress::empty,success,358.564,18.680,2026-11-05T01:27:34Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::decompress::long,test_failed,358.564,4.302,2026-11-05T01:27:38Z,50232623.0,panic,"thread 'brotli::futures::bufread::decompress::long' (59963) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::decompress::long_chunks,test_failed,358.564,4.325,2026-11-05T01:27:42Z,50232623.0,panic,"thread 'brotli::futures::bufread::decompress::long_chunks' (60557) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::decompress::multiple_members,test_failed,358.564,4.214,2026-11-05T01:27:47Z,50232623.0,panic,"thread 'brotli::futures::bufread::decompress::multiple_members' (61248) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::decompress::short,success,358.564,18.767,2026-11-05T01:28:05Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::decompress::short_chunks,test_failed,358.564,4.176,2026-11-05T01:28:10Z,50232623.0,panic,"thread 'brotli::futures::bufread::decompress::short_chunks' (64761) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::decompress::to_full_output,success,358.564,17.932,2026-11-05T01:28:28Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::decompress::trailer,test_failed,358.564,4.183,2026-11-05T01:28:32Z,50232623.0,panic,"thread 'brotli::futures::bufread::decompress::trailer' (68027) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::bufread::decompress::zeros,success,358.564,18.816,2026-11-05T01:28:51Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::compress::empty,success,358.564,18.584,2026-11-05T01:29:09Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::compress::empty_chunk,success,358.564,18.714,2026-11-05T01:29:28Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::compress::long,test_failed,358.564,4.236,2026-11-05T01:29:32Z,50232623.0,panic,"thread 'brotli::futures::write::compress::long' (79460) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::compress::long_chunk_output,test_failed,358.564,4.313,2026-11-05T01:29:37Z,50232623.0,panic,"thread 'brotli::futures::write::compress::long_chunk_output' (80134) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::compress::short,test_failed,358.564,4.226,2026-11-05T01:29:41Z,50232623.0,panic,"thread 'brotli::futures::write::compress::short' (80838) panicked at tests/brotli.rs:4:1: timeout: the function call took 1004 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::compress::short_chunk_output,test_failed,358.564,4.259,2026-11-05T01:29:45Z,50232623.0,panic,"thread 'brotli::futures::write::compress::short_chunk_output' (81614) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::compress::with_level_0,success,358.564,19.242,2026-11-05T01:30:04Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::compress::with_level_best,success,358.564,75.288,2026-11-05T01:31:20Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::compress::with_level_default,success,358.564,76.149,2026-11-05T01:32:36Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::compress::with_level_max,success,358.564,76.647,2026-11-05T01:33:52Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::decompress::empty,success,358.564,18.692,2026-11-05T01:34:11Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::decompress::long,test_failed,358.564,4.241,2026-11-05T01:34:15Z,50232623.0,panic,"thread 'brotli::futures::write::decompress::long' (20968) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::decompress::long_chunks,test_failed,358.564,4.334,2026-11-05T01:34:20Z,50232623.0,panic,"thread 'brotli::futures::write::decompress::long_chunks' (21610) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::decompress::short,success,358.564,18.704,2026-11-05T01:34:38Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::decompress::short_chunks,success,358.564,18.810,2026-11-05T01:34:57Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::futures::write::decompress::zeros,success,358.564,18.724,2026-11-05T01:35:16Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::compress::empty,success,358.564,18.654,2026-11-05T01:35:35Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::compress::empty_chunk,success,358.564,18.933,2026-11-05T01:35:54Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::compress::long,test_failed,358.564,4.252,2026-11-05T01:35:58Z,50232623.0,panic,"thread 'brotli::tokio::bufread::compress::long' (33019) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::compress::short,test_failed,358.564,4.285,2026-11-05T01:36:02Z,50232623.0,panic,"thread 'brotli::tokio::bufread::compress::short' (33444) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::compress::to_full_output,success,358.564,17.802,2026-11-05T01:36:20Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::compress::with_level_0,success,358.564,19.216,2026-11-05T01:36:39Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::compress::with_level_best,success,358.564,51.490,2026-11-05T01:37:31Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::compress::with_level_default,success,358.564,51.528,2026-11-05T01:38:22Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::compress::with_level_max,success,358.564,50.536,2026-11-05T01:39:13Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::decompress::empty,success,358.564,17.840,2026-11-05T01:39:31Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::decompress::long,test_failed,358.564,4.102,2026-11-05T01:39:35Z,50232623.0,panic,"thread 'brotli::tokio::bufread::decompress::long' (67536) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::decompress::long_chunks,test_failed,358.564,4.068,2026-11-05T01:39:39Z,50232623.0,panic,"thread 'brotli::tokio::bufread::decompress::long_chunks' (68350) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::decompress::multiple_members,test_failed,358.564,4.106,2026-11-05T01:39:43Z,50232623.0,panic,"thread 'brotli::tokio::bufread::decompress::multiple_members' (68905) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::decompress::short,success,358.564,17.789,2026-11-05T01:40:01Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::decompress::short_chunks,success,358.564,17.903,2026-11-05T01:40:19Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::decompress::to_full_output,success,358.564,16.974,2026-11-05T01:40:36Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::decompress::trailer,success,358.564,17.905,2026-11-05T01:40:54Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::bufread::decompress::zeros,success,358.564,17.937,2026-11-05T01:41:12Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::compress::empty,success,358.564,17.839,2026-11-05T01:41:29Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::compress::empty_chunk,success,358.564,17.839,2026-11-05T01:41:47Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::compress::long,test_failed,358.564,4.103,2026-11-05T01:41:51Z,50232623.0,panic,"thread 'brotli::tokio::write::compress::long' (93983) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::compress::long_chunk_output,test_failed,358.564,4.122,2026-11-05T01:41:56Z,50232623.0,panic,"thread 'brotli::tokio::write::compress::long_chunk_output' (94620) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::compress::short,test_failed,358.564,4.106,2026-11-05T01:42:00Z,50232623.0,panic,"thread 'brotli::tokio::write::compress::short' (95108) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::compress::short_chunk_output,test_failed,358.564,4.103,2026-11-05T01:42:04Z,50232623.0,panic,"thread 'brotli::tokio::write::compress::short_chunk_output' (95470) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::compress::with_level_0,success,358.564,18.250,2026-11-05T01:42:22Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::compress::with_level_best,success,358.564,73.111,2026-11-05T01:43:35Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::compress::with_level_default,success,358.564,73.668,2026-11-05T01:44:49Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::compress::with_level_max,success,358.564,72.536,2026-11-05T01:46:01Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::decompress::empty,success,358.564,17.868,2026-11-05T01:46:19Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::decompress::long,test_failed,358.564,4.101,2026-11-05T01:46:23Z,50232623.0,panic,"thread 'brotli::tokio::write::decompress::long' (24030) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::decompress::long_chunks,test_failed,358.564,4.103,2026-11-05T01:46:28Z,50232623.0,panic,"thread 'brotli::tokio::write::decompress::long_chunks' (24628) panicked at tests/brotli.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::decompress::short,success,358.564,17.889,2026-11-05T01:46:45Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::decompress::short_chunks,success,358.564,17.995,2026-11-05T01:47:03Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,brotli::tokio::write::decompress::zeros,success,358.564,17.936,2026-11-05T01:47:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bufread_multiple_members_with_invalid_padding,success,358.564,17.023,2026-11-05T01:47:38Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bufread_multiple_members_with_padding,success,358.564,17.141,2026-11-05T01:47:56Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::compress::empty,success,358.564,17.103,2026-11-05T01:48:13Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::compress::empty_chunk,success,358.564,17.019,2026-11-05T01:48:30Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::compress::long,test_failed,358.564,5.497,2026-11-05T01:48:35Z,50232623.0,panic,"thread 'bzip2::futures::bufread::compress::long' (48549) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::compress::short,success,358.564,17.059,2026-11-05T01:48:52Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::compress::to_full_output,success,358.564,17.023,2026-11-05T01:49:09Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::compress::with_level_0,success,358.564,17.003,2026-11-05T01:49:26Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::compress::with_level_best,success,358.564,17.137,2026-11-05T01:49:43Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::compress::with_level_default,success,358.564,17.161,2026-11-05T01:50:01Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::compress::with_level_max,success,358.564,17.121,2026-11-05T01:50:18Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::decompress::empty,success,358.564,17.083,2026-11-05T01:50:35Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::decompress::long,test_failed,358.564,5.505,2026-11-05T01:50:40Z,50232623.0,panic,"thread 'bzip2::futures::bufread::decompress::long' (68308) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::decompress::long_chunks,test_failed,358.564,5.491,2026-11-05T01:50:46Z,50232623.0,panic,"thread 'bzip2::futures::bufread::decompress::long_chunks' (69139) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::decompress::multiple_members,success,358.564,17.033,2026-11-05T01:51:03Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::decompress::short,success,358.564,17.046,2026-11-05T01:51:20Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::decompress::short_chunks,success,358.564,17.295,2026-11-05T01:51:37Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::decompress::to_full_output,success,358.564,17.051,2026-11-05T01:51:54Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::decompress::trailer,success,358.564,17.044,2026-11-05T01:52:11Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::bufread::decompress::zeros,success,358.564,17.035,2026-11-05T01:52:28Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::compress::empty,success,358.564,16.992,2026-11-05T01:52:45Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::compress::empty_chunk,success,358.564,16.972,2026-11-05T01:53:02Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::compress::long,test_failed,358.564,5.463,2026-11-05T01:53:08Z,50232623.0,panic,"thread 'bzip2::futures::write::compress::long' (89538) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::compress::long_chunk_output,test_failed,358.564,5.478,2026-11-05T01:53:13Z,50232623.0,panic,"thread 'bzip2::futures::write::compress::long_chunk_output' (90473) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::compress::short,success,358.564,17.019,2026-11-05T01:53:30Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::compress::short_chunk_output,success,358.564,17.085,2026-11-05T01:53:48Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::compress::with_level_0,success,358.564,17.005,2026-11-05T01:54:05Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::compress::with_level_best,success,358.564,17.030,2026-11-05T01:54:22Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::compress::with_level_default,success,358.564,16.978,2026-11-05T01:54:39Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::compress::with_level_max,success,358.564,16.926,2026-11-05T01:54:56Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::decompress::empty,success,358.564,16.941,2026-11-05T01:55:12Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::decompress::long,test_failed,358.564,5.460,2026-11-05T01:55:18Z,50232623.0,panic,"thread 'bzip2::futures::write::decompress::long' (102101) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::decompress::long_chunks,test_failed,358.564,5.484,2026-11-05T01:55:23Z,50232623.0,panic,"thread 'bzip2::futures::write::decompress::long_chunks' (102574) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::decompress::short,success,358.564,17.021,2026-11-05T01:55:40Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::decompress::short_chunks,success,358.564,17.134,2026-11-05T01:55:58Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::futures::write::decompress::zeros,success,358.564,16.988,2026-11-05T01:56:15Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::compress::empty,success,358.564,17.021,2026-11-05T01:56:32Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::compress::empty_chunk,success,358.564,16.995,2026-11-05T01:56:49Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::compress::long,test_failed,358.564,5.473,2026-11-05T01:56:54Z,50232623.0,panic,"thread 'bzip2::tokio::bufread::compress::long' (8384) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::compress::short,success,358.564,17.008,2026-11-05T01:57:11Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::compress::to_full_output,success,358.564,16.929,2026-11-05T01:57:28Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::compress::with_level_0,success,358.564,16.985,2026-11-05T01:57:45Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::compress::with_level_best,success,358.564,17.038,2026-11-05T01:58:02Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::compress::with_level_default,success,358.564,17.055,2026-11-05T01:58:19Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::compress::with_level_max,success,358.564,17.036,2026-11-05T01:58:36Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::decompress::empty,success,358.564,16.999,2026-11-05T01:58:53Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::decompress::long,test_failed,358.564,5.456,2026-11-05T01:58:59Z,50232623.0,panic,"thread 'bzip2::tokio::bufread::decompress::long' (21963) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::decompress::long_chunks,test_failed,358.564,5.466,2026-11-05T01:59:04Z,50232623.0,panic,"thread 'bzip2::tokio::bufread::decompress::long_chunks' (22570) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::decompress::multiple_members,success,358.564,17.053,2026-11-05T01:59:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::decompress::short,success,358.564,16.983,2026-11-05T01:59:38Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::decompress::short_chunks,success,358.564,17.395,2026-11-05T01:59:56Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::decompress::to_full_output,success,358.564,17.031,2026-11-05T02:00:13Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::decompress::trailer,success,358.564,16.970,2026-11-05T02:00:30Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::bufread::decompress::zeros,success,358.564,17.020,2026-11-05T02:00:47Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::compress::empty,success,358.564,16.913,2026-11-05T02:01:04Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::compress::empty_chunk,success,358.564,16.976,2026-11-05T02:01:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::compress::long,test_failed,358.564,5.458,2026-11-05T02:01:26Z,50232623.0,panic,"thread 'bzip2::tokio::write::compress::long' (42722) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::compress::long_chunk_output,test_failed,358.564,5.455,2026-11-05T02:01:32Z,50232623.0,panic,"thread 'bzip2::tokio::write::compress::long_chunk_output' (44274) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::compress::short,success,358.564,16.880,2026-11-05T02:01:49Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::compress::short_chunk_output,success,358.564,17.040,2026-11-05T02:02:06Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::compress::with_level_0,success,358.564,17.067,2026-11-05T02:02:23Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::compress::with_level_best,success,358.564,17.062,2026-11-05T02:02:40Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::compress::with_level_default,success,358.564,16.991,2026-11-05T02:02:57Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::compress::with_level_max,success,358.564,16.975,2026-11-05T02:03:14Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::decompress::empty,success,358.564,16.949,2026-11-05T02:03:31Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::decompress::long,test_failed,358.564,5.467,2026-11-05T02:03:36Z,50232623.0,panic,"thread 'bzip2::tokio::write::decompress::long' (58369) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::decompress::long_chunks,test_failed,358.564,5.469,2026-11-05T02:03:42Z,50232623.0,panic,"thread 'bzip2::tokio::write::decompress::long_chunks' (58948) panicked at tests/bzip2.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::decompress::short,success,358.564,16.980,2026-11-05T02:03:59Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::decompress::short_chunks,success,358.564,17.095,2026-11-05T02:04:16Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,bzip2::tokio::write::decompress::zeros,success,358.564,16.924,2026-11-05T02:04:33Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::compress::empty,success,358.564,17.548,2026-11-05T02:04:50Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::compress::empty_chunk,success,358.564,17.525,2026-11-05T02:05:08Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::compress::long,test_failed,358.564,6.936,2026-11-05T02:05:15Z,50232623.0,panic,"thread 'deflate::futures::bufread::compress::long' (72459) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::compress::short,success,358.564,17.536,2026-11-05T02:05:32Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::compress::to_full_output,success,358.564,17.001,2026-11-05T02:05:49Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::compress::with_level_0,success,358.564,17.610,2026-11-05T02:06:07Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::compress::with_level_best,success,358.564,17.536,2026-11-05T02:06:24Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::compress::with_level_default,success,358.564,17.541,2026-11-05T02:06:42Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::compress::with_level_max,success,358.564,17.534,2026-11-05T02:07:00Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::decompress::empty,success,358.564,17.480,2026-11-05T02:07:17Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::decompress::long,test_failed,358.564,6.923,2026-11-05T02:07:24Z,50232623.0,panic,"thread 'deflate::futures::bufread::decompress::long' (90647) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::decompress::long_chunks,test_failed,358.564,6.933,2026-11-05T02:07:31Z,50232623.0,panic,"thread 'deflate::futures::bufread::decompress::long_chunks' (91596) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::decompress::multiple_members,test_failed,358.564,6.918,2026-11-05T02:07:38Z,50232623.0,panic,"thread 'deflate::futures::bufread::decompress::multiple_members' (92329) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::decompress::short,success,358.564,17.482,2026-11-05T02:07:55Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::decompress::short_chunks,success,358.564,17.635,2026-11-05T02:08:13Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::decompress::to_full_output,success,358.564,16.934,2026-11-05T02:08:30Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::decompress::trailer,success,358.564,17.465,2026-11-05T02:08:47Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::bufread::decompress::zeros,success,358.564,17.505,2026-11-05T02:09:05Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::compress::empty,success,358.564,17.474,2026-11-05T02:09:22Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::compress::empty_chunk,success,358.564,17.445,2026-11-05T02:09:40Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::compress::long,test_failed,358.564,6.899,2026-11-05T02:09:47Z,50232623.0,panic,"thread 'deflate::futures::write::compress::long' (104744) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::compress::long_chunk_output,test_failed,358.564,6.928,2026-11-05T02:09:54Z,50232623.0,panic,"thread 'deflate::futures::write::compress::long_chunk_output' (1325) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::compress::short,test_failed,358.564,6.931,2026-11-05T02:10:01Z,50232623.0,panic,"thread 'deflate::futures::write::compress::short' (2123) panicked at tests/deflate.rs:4:1: timeout: the function call took 1003 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::compress::short_chunk_output,test_failed,358.564,6.906,2026-11-05T02:10:08Z,50232623.0,panic,"thread 'deflate::futures::write::compress::short_chunk_output' (3006) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::compress::with_level_0,success,358.564,18.484,2026-11-05T02:10:26Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::compress::with_level_best,success,358.564,18.525,2026-11-05T02:10:45Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::compress::with_level_default,success,358.564,18.497,2026-11-05T02:11:03Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::compress::with_level_max,success,358.564,18.567,2026-11-05T02:11:22Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::decompress::empty,success,358.564,17.526,2026-11-05T02:11:39Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::decompress::long,test_failed,358.564,6.910,2026-11-05T02:11:46Z,50232623.0,panic,"thread 'deflate::futures::write::decompress::long' (15007) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::decompress::long_chunks,test_failed,358.564,6.932,2026-11-05T02:11:53Z,50232623.0,panic,"thread 'deflate::futures::write::decompress::long_chunks' (15598) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::decompress::short,success,358.564,17.546,2026-11-05T02:12:11Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::decompress::short_chunks,success,358.564,17.584,2026-11-05T02:12:28Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::futures::write::decompress::zeros,success,358.564,17.493,2026-11-05T02:12:46Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::compress::empty,success,358.564,17.545,2026-11-05T02:13:03Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::compress::empty_chunk,success,358.564,17.681,2026-11-05T02:13:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::compress::long,test_failed,358.564,6.986,2026-11-05T02:13:28Z,50232623.0,panic,"thread 'deflate::tokio::bufread::compress::long' (22331) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::compress::short,success,358.564,17.869,2026-11-05T02:13:46Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::compress::to_full_output,success,358.564,17.136,2026-11-05T02:14:03Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::compress::with_level_0,success,358.564,17.802,2026-11-05T02:14:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::compress::with_level_best,success,358.564,17.741,2026-11-05T02:14:39Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::compress::with_level_default,success,358.564,17.801,2026-11-05T02:14:56Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::compress::with_level_max,success,358.564,17.808,2026-11-05T02:15:14Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::decompress::empty,success,358.564,17.764,2026-11-05T02:15:32Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::decompress::long,test_failed,358.564,7.027,2026-11-05T02:15:39Z,50232623.0,panic,"thread 'deflate::tokio::bufread::decompress::long' (35095) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::decompress::long_chunks,test_failed,358.564,7.021,2026-11-05T02:15:46Z,50232623.0,panic,"thread 'deflate::tokio::bufread::decompress::long_chunks' (35961) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::decompress::multiple_members,test_failed,358.564,7.043,2026-11-05T02:15:53Z,50232623.0,panic,"thread 'deflate::tokio::bufread::decompress::multiple_members' (36813) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::decompress::short,success,358.564,17.773,2026-11-05T02:16:11Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::decompress::short_chunks,success,358.564,17.781,2026-11-05T02:16:29Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::decompress::to_full_output,success,358.564,17.182,2026-11-05T02:16:46Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::decompress::trailer,success,358.564,17.786,2026-11-05T02:17:04Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::bufread::decompress::zeros,success,358.564,17.680,2026-11-05T02:17:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::compress::empty,success,358.564,17.684,2026-11-05T02:17:39Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::compress::empty_chunk,success,358.564,17.759,2026-11-05T02:17:57Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::compress::long,test_failed,358.564,7.000,2026-11-05T02:18:04Z,50232623.0,panic,"thread 'deflate::tokio::write::compress::long' (49420) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::compress::long_chunk_output,test_failed,358.564,6.995,2026-11-05T02:18:11Z,50232623.0,panic,"thread 'deflate::tokio::write::compress::long_chunk_output' (49939) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::compress::short,test_failed,358.564,6.922,2026-11-05T02:18:18Z,50232623.0,panic,"thread 'deflate::tokio::write::compress::short' (51435) panicked at tests/deflate.rs:4:1: timeout: the function call took 1003 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::compress::short_chunk_output,test_failed,358.564,6.977,2026-11-05T02:18:25Z,50232623.0,panic,"thread 'deflate::tokio::write::compress::short_chunk_output' (52675) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::compress::with_level_0,success,358.564,18.731,2026-11-05T02:18:44Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::compress::with_level_best,success,358.564,18.733,2026-11-05T02:19:02Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::compress::with_level_default,success,358.564,18.684,2026-11-05T02:19:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::compress::with_level_max,success,358.564,18.755,2026-11-05T02:19:40Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::decompress::empty,success,358.564,17.697,2026-11-05T02:19:58Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::decompress::long,test_failed,358.564,7.027,2026-11-05T02:20:05Z,50232623.0,panic,"thread 'deflate::tokio::write::decompress::long' (64555) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::decompress::long_chunks,test_failed,358.564,6.990,2026-11-05T02:20:12Z,50232623.0,panic,"thread 'deflate::tokio::write::decompress::long_chunks' (65422) panicked at tests/deflate.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::decompress::short,success,358.564,17.670,2026-11-05T02:20:29Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::decompress::short_chunks,success,358.564,17.837,2026-11-05T02:20:47Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,deflate::tokio::write::decompress::zeros,success,358.564,17.866,2026-11-05T02:21:05Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::compress::empty,success,358.564,17.609,2026-11-05T02:21:23Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::compress::empty_chunk,success,358.564,17.765,2026-11-05T02:21:40Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::compress::long,test_failed,358.564,8.453,2026-11-05T02:21:49Z,50232623.0,panic,"thread 'gzip::futures::bufread::compress::long' (79435) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::compress::short,success,358.564,17.779,2026-11-05T02:22:07Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::compress::to_full_output,success,358.564,17.122,2026-11-05T02:22:24Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::compress::with_level_0,success,358.564,17.878,2026-11-05T02:22:42Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::compress::with_level_best,success,358.564,17.835,2026-11-05T02:22:59Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::compress::with_level_default,success,358.564,17.809,2026-11-05T02:23:17Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::compress::with_level_max,success,358.564,17.885,2026-11-05T02:23:35Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::decompress::empty,success,358.564,17.771,2026-11-05T02:23:53Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::decompress::long,test_failed,358.564,8.434,2026-11-05T02:24:01Z,50232623.0,panic,"thread 'gzip::futures::bufread::decompress::long' (95643) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::decompress::long_chunks,test_failed,358.564,8.430,2026-11-05T02:24:10Z,50232623.0,panic,"thread 'gzip::futures::bufread::decompress::long_chunks' (96590) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::decompress::multiple_members,test_failed,358.564,8.364,2026-11-05T02:24:18Z,50232623.0,panic,"thread 'gzip::futures::bufread::decompress::multiple_members' (97537) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::decompress::short,success,358.564,17.669,2026-11-05T02:24:36Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::decompress::short_chunks,success,358.564,17.892,2026-11-05T02:24:54Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::decompress::to_full_output,success,358.564,17.126,2026-11-05T02:25:11Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::decompress::trailer,success,358.564,17.687,2026-11-05T02:25:29Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::bufread::decompress::zeros,success,358.564,17.789,2026-11-05T02:25:46Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::compress::empty,success,358.564,17.762,2026-11-05T02:26:04Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::compress::empty_chunk,success,358.564,17.628,2026-11-05T02:26:22Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::compress::long,test_failed,358.564,8.434,2026-11-05T02:26:30Z,50232623.0,panic,"thread 'gzip::futures::write::compress::long' (10193) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::compress::long_chunk_output,test_failed,358.564,8.450,2026-11-05T02:26:39Z,50232623.0,panic,"thread 'gzip::futures::write::compress::long_chunk_output' (11222) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::compress::short,test_failed,358.564,8.423,2026-11-05T02:26:47Z,50232623.0,panic,"thread 'gzip::futures::write::compress::short' (12373) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::compress::short_chunk_output,test_failed,358.564,8.432,2026-11-05T02:26:56Z,50232623.0,panic,"thread 'gzip::futures::write::compress::short_chunk_output' (13621) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::compress::with_level_0,success,358.564,18.782,2026-11-05T02:27:15Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::compress::with_level_best,success,358.564,18.741,2026-11-05T02:27:33Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::compress::with_level_default,success,358.564,18.738,2026-11-05T02:27:52Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::compress::with_level_max,success,358.564,18.690,2026-11-05T02:28:11Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::decompress::empty,success,358.564,17.717,2026-11-05T02:28:28Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::decompress::long,test_failed,358.564,8.457,2026-11-05T02:28:37Z,50232623.0,panic,"thread 'gzip::futures::write::decompress::long' (31925) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::decompress::long_chunks,test_failed,358.564,8.423,2026-11-05T02:28:45Z,50232623.0,panic,"thread 'gzip::futures::write::decompress::long_chunks' (33054) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::decompress::short,success,358.564,17.791,2026-11-05T02:29:03Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::decompress::short_chunks,success,358.564,17.754,2026-11-05T02:29:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::futures::write::decompress::zeros,success,358.564,17.670,2026-11-05T02:29:39Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::compress::empty,success,358.564,17.612,2026-11-05T02:29:56Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::compress::empty_chunk,success,358.564,17.576,2026-11-05T02:30:14Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::compress::long,test_failed,358.564,8.369,2026-11-05T02:30:22Z,50232623.0,panic,"thread 'gzip::tokio::bufread::compress::long' (48896) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::compress::short,success,358.564,17.676,2026-11-05T02:30:40Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::compress::to_full_output,success,358.564,17.106,2026-11-05T02:30:57Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::compress::with_level_0,success,358.564,17.678,2026-11-05T02:31:15Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::compress::with_level_best,success,358.564,17.890,2026-11-05T02:31:33Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::compress::with_level_default,success,358.564,17.884,2026-11-05T02:31:50Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::compress::with_level_max,success,358.564,17.838,2026-11-05T02:32:08Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::decompress::empty,success,358.564,17.770,2026-11-05T02:32:26Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::decompress::long,test_failed,358.564,8.428,2026-11-05T02:32:35Z,50232623.0,panic,"thread 'gzip::tokio::bufread::decompress::long' (62489) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::decompress::long_chunks,test_failed,358.564,8.417,2026-11-05T02:32:43Z,50232623.0,panic,"thread 'gzip::tokio::bufread::decompress::long_chunks' (63052) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::decompress::multiple_members,test_failed,358.564,8.455,2026-11-05T02:32:51Z,50232623.0,panic,"thread 'gzip::tokio::bufread::decompress::multiple_members' (63852) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::decompress::short,success,358.564,17.714,2026-11-05T02:33:09Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::decompress::short_chunks,success,358.564,18.018,2026-11-05T02:33:27Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::decompress::to_full_output,success,358.564,17.152,2026-11-05T02:33:44Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::decompress::trailer,success,358.564,17.796,2026-11-05T02:34:02Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::bufread::decompress::zeros,success,358.564,17.821,2026-11-05T02:34:20Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::compress::empty,success,358.564,17.710,2026-11-05T02:34:38Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::compress::empty_chunk,success,358.564,17.604,2026-11-05T02:34:55Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::compress::long,test_failed,358.564,8.331,2026-11-05T02:35:04Z,50232623.0,panic,"thread 'gzip::tokio::write::compress::long' (75805) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::compress::long_chunk_output,test_failed,358.564,8.333,2026-11-05T02:35:12Z,50232623.0,panic,"thread 'gzip::tokio::write::compress::long_chunk_output' (76468) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::compress::short,test_failed,358.564,8.368,2026-11-05T02:35:20Z,50232623.0,panic,"thread 'gzip::tokio::write::compress::short' (77186) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::compress::short_chunk_output,test_failed,358.564,8.369,2026-11-05T02:35:29Z,50232623.0,panic,"thread 'gzip::tokio::write::compress::short_chunk_output' (77978) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::compress::with_level_0,success,358.564,18.555,2026-11-05T02:35:47Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::compress::with_level_best,success,358.564,18.609,2026-11-05T02:36:06Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::compress::with_level_default,success,358.564,18.657,2026-11-05T02:36:25Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::compress::with_level_max,success,358.564,18.686,2026-11-05T02:36:43Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::decompress::empty,success,358.564,17.749,2026-11-05T02:37:01Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::decompress::long,test_failed,358.564,8.486,2026-11-05T02:37:10Z,50232623.0,panic,"thread 'gzip::tokio::write::decompress::long' (86164) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::decompress::long_chunks,test_failed,358.564,8.439,2026-11-05T02:37:18Z,50232623.0,panic,"thread 'gzip::tokio::write::decompress::long_chunks' (87040) panicked at tests/gzip.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::decompress::short,success,358.564,17.933,2026-11-05T02:37:36Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::decompress::short_chunks,success,358.564,17.913,2026-11-05T02:37:54Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip::tokio::write::decompress::zeros,success,358.564,17.950,2026-11-05T02:38:12Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,gzip_bufread_chunks_decompress_with_extra_header,test_failed,358.564,8.501,2026-11-05T02:38:20Z,50232623.0,panic,"thread 'gzip_bufread_chunks_decompress_with_extra_header' (94556) panicked at tests/gzip.rs:44:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,gzip_bufread_decompress_with_extra_header,test_failed,358.564,8.497,2026-11-05T02:38:29Z,50232623.0,panic,"thread 'gzip_bufread_decompress_with_extra_header' (95297) panicked at tests/gzip.rs:32:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::compress::empty,success,358.564,17.199,2026-11-05T02:38:46Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::compress::empty_chunk,success,358.564,17.433,2026-11-05T02:39:04Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::compress::long,test_failed,358.564,9.943,2026-11-05T02:39:14Z,50232623.0,panic,"thread 'lzma::futures::bufread::compress::long' (100279) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::compress::short,success,358.564,17.494,2026-11-05T02:39:31Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::compress::to_full_output,success,358.564,17.192,2026-11-05T02:39:48Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::compress::with_level_0,success,358.564,17.378,2026-11-05T02:40:06Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::compress::with_level_best,success,358.564,17.402,2026-11-05T02:40:23Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::compress::with_level_default,success,358.564,17.311,2026-11-05T02:40:40Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::compress::with_level_max,success,358.564,17.309,2026-11-05T02:40:58Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::decompress::empty,success,358.564,17.253,2026-11-05T02:41:15Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::decompress::long,test_failed,358.564,9.853,2026-11-05T02:41:25Z,50232623.0,panic,"thread 'lzma::futures::bufread::decompress::long' (6972) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::decompress::long_chunks,test_failed,358.564,9.841,2026-11-05T02:41:35Z,50232623.0,panic,"thread 'lzma::futures::bufread::decompress::long_chunks' (8155) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::decompress::multiple_members,success,358.564,17.236,2026-11-05T02:41:52Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::decompress::short,success,358.564,17.242,2026-11-05T02:42:09Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::decompress::short_chunks,success,358.564,17.480,2026-11-05T02:42:27Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::decompress::to_full_output,success,358.564,17.181,2026-11-05T02:42:44Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::decompress::trailer,success,358.564,17.226,2026-11-05T02:43:01Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::bufread::decompress::zeros,success,358.564,17.225,2026-11-05T02:43:18Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::compress::empty,success,358.564,17.090,2026-11-05T02:43:35Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::compress::empty_chunk,success,358.564,17.212,2026-11-05T02:43:53Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::compress::long,test_failed,358.564,9.815,2026-11-05T02:44:03Z,50232623.0,panic,"thread 'lzma::futures::write::compress::long' (24204) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::compress::long_chunk_output,test_failed,358.564,9.801,2026-11-05T02:44:12Z,50232623.0,panic,"thread 'lzma::futures::write::compress::long_chunk_output' (24864) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::compress::short,success,358.564,17.250,2026-11-05T02:44:30Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::compress::short_chunk_output,success,358.564,17.273,2026-11-05T02:44:47Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::compress::with_level_0,success,358.564,17.266,2026-11-05T02:45:04Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::compress::with_level_best,success,358.564,17.315,2026-11-05T02:45:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::compress::with_level_default,success,358.564,17.196,2026-11-05T02:45:39Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::compress::with_level_max,success,358.564,17.376,2026-11-05T02:45:56Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::decompress::empty,success,358.564,17.256,2026-11-05T02:46:13Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::decompress::long,test_failed,358.564,9.834,2026-11-05T02:46:23Z,50232623.0,panic,"thread 'lzma::futures::write::decompress::long' (36383) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::decompress::long_chunks,test_failed,358.564,9.830,2026-11-05T02:46:33Z,50232623.0,panic,"thread 'lzma::futures::write::decompress::long_chunks' (38651) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::decompress::short,success,358.564,17.120,2026-11-05T02:46:50Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::decompress::short_chunks,success,358.564,17.239,2026-11-05T02:47:07Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::futures::write::decompress::zeros,success,358.564,17.275,2026-11-05T02:47:25Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::compress::empty,success,358.564,17.174,2026-11-05T02:47:42Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::compress::empty_chunk,success,358.564,17.372,2026-11-05T02:47:59Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::compress::long,test_failed,358.564,10.022,2026-11-05T02:48:09Z,50232623.0,panic,"thread 'lzma::tokio::bufread::compress::long' (46141) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::compress::short,success,358.564,17.407,2026-11-05T02:48:27Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::compress::to_full_output,success,358.564,17.083,2026-11-05T02:48:44Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::compress::with_level_0,success,358.564,17.262,2026-11-05T02:49:01Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::compress::with_level_best,success,358.564,17.245,2026-11-05T02:49:18Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::compress::with_level_default,success,358.564,17.203,2026-11-05T02:49:36Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::compress::with_level_max,success,358.564,17.254,2026-11-05T02:49:53Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::decompress::empty,success,358.564,17.171,2026-11-05T02:50:10Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::decompress::long,test_failed,358.564,9.836,2026-11-05T02:50:20Z,50232623.0,panic,"thread 'lzma::tokio::bufread::decompress::long' (56260) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::decompress::long_chunks,test_failed,358.564,9.804,2026-11-05T02:50:30Z,50232623.0,panic,"thread 'lzma::tokio::bufread::decompress::long_chunks' (56657) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::decompress::multiple_members,success,358.564,17.146,2026-11-05T02:50:47Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::decompress::short,success,358.564,17.212,2026-11-05T02:51:04Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::decompress::short_chunks,success,358.564,17.481,2026-11-05T02:51:22Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::decompress::to_full_output,success,358.564,17.138,2026-11-05T02:51:39Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::decompress::trailer,success,358.564,17.163,2026-11-05T02:51:56Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::bufread::decompress::zeros,success,358.564,17.173,2026-11-05T02:52:13Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::compress::empty,success,358.564,17.138,2026-11-05T02:52:30Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::compress::empty_chunk,success,358.564,17.113,2026-11-05T02:52:47Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::compress::long,test_failed,358.564,9.816,2026-11-05T02:52:57Z,50232623.0,panic,"thread 'lzma::tokio::write::compress::long' (63224) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::compress::long_chunk_output,test_failed,358.564,9.841,2026-11-05T02:53:07Z,50232623.0,panic,"thread 'lzma::tokio::write::compress::long_chunk_output' (63687) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::compress::short,success,358.564,17.132,2026-11-05T02:53:24Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::compress::short_chunk_output,success,358.564,17.166,2026-11-05T02:53:41Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::compress::with_level_0,success,358.564,17.255,2026-11-05T02:53:59Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::compress::with_level_best,success,358.564,17.288,2026-11-05T02:54:16Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::compress::with_level_default,success,358.564,17.291,2026-11-05T02:54:33Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::compress::with_level_max,success,358.564,17.333,2026-11-05T02:54:51Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::decompress::empty,success,358.564,17.208,2026-11-05T02:55:08Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::decompress::long,test_failed,358.564,9.886,2026-11-05T02:55:18Z,50232623.0,panic,"thread 'lzma::tokio::write::decompress::long' (76233) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::decompress::long_chunks,test_failed,358.564,9.907,2026-11-05T02:55:28Z,50232623.0,panic,"thread 'lzma::tokio::write::decompress::long_chunks' (77037) panicked at tests/lzma.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::decompress::short,success,358.564,17.340,2026-11-05T02:55:45Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::decompress::short_chunks,success,358.564,17.250,2026-11-05T02:56:02Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,lzma::tokio::write::decompress::zeros,success,358.564,17.315,2026-11-05T02:56:20Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,proptest::brotli::futures::bufread::compress,timeout,358.564,150.014,2026-11-05T02:58:50Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::brotli::futures::bufread::compress_with_level,timeout,358.564,150.018,2026-11-05T03:01:20Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::brotli::futures::bufread::decompress,timeout,358.564,150.014,2026-11-05T03:03:50Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::brotli::futures::write::compress,timeout,358.564,150.017,2026-11-05T03:06:20Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::brotli::futures::write::compress_with_level,timeout,358.564,150.018,2026-11-05T03:08:50Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::brotli::tokio::bufread::compress,timeout,358.564,150.016,2026-11-05T03:11:20Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::brotli::tokio::bufread::compress_with_level,timeout,358.564,150.019,2026-11-05T03:13:50Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::brotli::tokio::bufread::decompress,timeout,358.564,150.014,2026-11-05T03:16:20Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::brotli::tokio::write::compress,timeout,358.564,150.016,2026-11-05T03:18:50Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::brotli::tokio::write::compress_with_level,timeout,358.564,150.018,2026-11-05T03:21:20Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::bzip2::futures::bufread::compress,timeout,358.564,150.028,2026-11-05T03:23:50Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::bzip2::futures::bufread::compress_with_level,timeout,358.564,150.024,2026-11-05T03:26:20Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::bzip2::futures::bufread::decompress,success,358.564,133.963,2026-11-05T03:28:34Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,proptest::bzip2::futures::write::compress,timeout,358.564,150.024,2026-11-05T03:31:04Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::bzip2::futures::write::compress_with_level,timeout,358.564,150.024,2026-11-05T03:33:34Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::bzip2::tokio::bufread::compress,timeout,358.564,150.016,2026-11-05T03:36:04Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::bzip2::tokio::bufread::compress_with_level,timeout,358.564,150.024,2026-11-05T03:38:34Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::bzip2::tokio::bufread::decompress,timeout,358.564,150.016,2026-11-05T03:41:04Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::bzip2::tokio::write::compress,timeout,358.564,150.023,2026-11-05T03:43:34Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::bzip2::tokio::write::compress_with_level,timeout,358.564,150.019,2026-11-05T03:46:04Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::deflate::futures::bufread::compress,timeout,358.564,150.016,2026-11-05T03:48:34Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::deflate::futures::bufread::compress_with_level,timeout,358.564,150.015,2026-11-05T03:51:04Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::deflate::futures::bufread::decompress,timeout,358.564,150.015,2026-11-05T03:53:34Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::deflate::futures::write::compress,timeout,358.564,150.015,2026-11-05T03:56:05Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::deflate::futures::write::compress_with_level,timeout,358.564,150.023,2026-11-05T03:58:35Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::deflate::tokio::bufread::compress,timeout,358.564,150.014,2026-11-05T04:01:05Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::deflate::tokio::bufread::compress_with_level,timeout,358.564,150.017,2026-11-05T04:03:35Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::deflate::tokio::bufread::decompress,timeout,358.564,150.013,2026-11-05T04:06:05Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::deflate::tokio::write::compress,timeout,358.564,150.013,2026-11-05T04:08:35Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::deflate::tokio::write::compress_with_level,timeout,358.564,150.015,2026-11-05T04:11:05Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::gzip::futures::bufread::compress,timeout,358.564,150.019,2026-11-05T04:13:35Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::gzip::futures::bufread::compress_with_level,timeout,358.564,150.013,2026-11-05T04:16:05Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::gzip::futures::bufread::decompress,timeout,358.564,150.013,2026-11-05T04:18:35Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::gzip::futures::write::compress,timeout,358.564,150.015,2026-11-05T04:21:05Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::gzip::futures::write::compress_with_level,timeout,358.564,150.016,2026-11-05T04:23:35Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::gzip::tokio::bufread::compress,timeout,358.564,150.014,2026-11-05T04:26:05Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::gzip::tokio::bufread::compress_with_level,timeout,358.564,150.017,2026-11-05T04:28:35Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::gzip::tokio::bufread::decompress,timeout,358.564,150.013,2026-11-05T04:31:05Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::gzip::tokio::write::compress,timeout,358.564,150.015,2026-11-05T04:33:35Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::gzip::tokio::write::compress_with_level,timeout,358.564,150.017,2026-11-05T04:36:05Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::lzma::futures::bufread::compress,timeout,358.564,150.022,2026-11-05T04:38:35Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::lzma::futures::bufread::compress_with_level,timeout,358.564,150.026,2026-11-05T04:41:05Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::lzma::futures::bufread::decompress,success,358.564,107.765,2026-11-05T04:42:53Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,proptest::lzma::futures::write::compress,timeout,358.564,150.017,2026-11-05T04:45:23Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::lzma::futures::write::compress_with_level,timeout,358.564,150.019,2026-11-05T04:47:53Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::lzma::tokio::bufread::compress,timeout,358.564,150.016,2026-11-05T04:50:23Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::lzma::tokio::bufread::compress_with_level,timeout,358.564,150.029,2026-11-05T04:52:53Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::lzma::tokio::bufread::decompress,success,358.564,135.278,2026-11-05T04:55:09Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,proptest::lzma::tokio::write::compress,timeout,358.564,150.018,2026-11-05T04:57:39Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::lzma::tokio::write::compress_with_level,timeout,358.564,150.019,2026-11-05T05:00:09Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::xz::futures::bufread::compress,timeout,358.564,150.025,2026-11-05T05:02:39Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::xz::futures::bufread::compress_with_level,timeout,358.564,150.019,2026-11-05T05:05:09Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::xz::futures::bufread::decompress,success,358.564,141.420,2026-11-05T05:07:30Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,proptest::xz::futures::write::compress,timeout,358.564,150.021,2026-11-05T05:10:00Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::xz::futures::write::compress_with_level,timeout,358.564,150.019,2026-11-05T05:12:30Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::xz::tokio::bufread::compress,timeout,358.564,150.025,2026-11-05T05:15:00Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::xz::tokio::bufread::compress_with_level,timeout,358.564,150.027,2026-11-05T05:17:30Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::xz::tokio::bufread::decompress,timeout,358.564,150.015,2026-11-05T05:20:00Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::xz::tokio::write::compress,timeout,358.564,150.023,2026-11-05T05:22:30Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::xz::tokio::write::compress_with_level,timeout,358.564,150.021,2026-11-05T05:25:00Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zlib::futures::bufread::compress,timeout,358.564,150.015,2026-11-05T05:27:31Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zlib::futures::bufread::compress_with_level,timeout,358.564,150.014,2026-11-05T05:30:01Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zlib::futures::bufread::decompress,timeout,358.564,150.014,2026-11-05T05:32:31Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zlib::futures::write::compress,timeout,358.564,150.014,2026-11-05T05:35:01Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zlib::futures::write::compress_with_level,timeout,358.564,150.015,2026-11-05T05:37:31Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zlib::tokio::bufread::compress,timeout,358.564,150.017,2026-11-05T05:40:01Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zlib::tokio::bufread::compress_with_level,timeout,358.564,150.016,2026-11-05T05:42:31Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zlib::tokio::bufread::decompress,timeout,358.564,150.014,2026-11-05T05:45:01Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zlib::tokio::write::compress,timeout,358.564,150.015,2026-11-05T05:47:31Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zlib::tokio::write::compress_with_level,timeout,358.564,150.015,2026-11-05T05:50:01Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zstd::futures::bufread::compress,timeout,358.564,150.015,2026-11-05T05:52:31Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zstd::futures::bufread::compress_with_level,timeout,358.564,150.026,2026-11-05T05:55:01Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zstd::futures::bufread::decompress,success,358.564,99.373,2026-11-05T05:56:41Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,proptest::zstd::futures::write::compress,timeout,358.564,150.025,2026-11-05T05:59:11Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zstd::futures::write::compress_with_level,timeout,358.564,150.024,2026-11-05T06:01:41Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zstd::tokio::bufread::compress,timeout,358.564,150.023,2026-11-05T06:04:11Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zstd::tokio::bufread::compress_with_level,timeout,358.564,150.028,2026-11-05T06:06:41Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zstd::tokio::bufread::decompress,success,358.564,110.816,2026-11-05T06:08:32Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,proptest::zstd::tokio::write::compress,timeout,358.564,150.025,2026-11-05T06:11:02Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,proptest::zstd::tokio::write::compress_with_level,timeout,358.564,150.028,2026-11-05T06:13:32Z,50232623.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,async-compression-0.4.17,trained_zstd_decode_no_dict,success,358.564,17.741,2026-11-05T06:13:50Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,trained_zstd_decode_with_dict,success,358.564,17.671,2026-11-05T06:14:07Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,trained_zstd_decode_with_wrong_dict,success,358.564,18.125,2026-11-05T06:14:25Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::compress::empty,success,358.564,17.674,2026-11-05T06:14:43Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::compress::empty_chunk,success,358.564,17.905,2026-11-05T06:15:01Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::compress::long,test_failed,358.564,13.367,2026-11-05T06:15:14Z,50232623.0,panic,"thread 'xz::futures::bufread::compress::long' (55674) panicked at tests/xz.rs:7:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::compress::short,success,358.564,17.910,2026-11-05T06:15:32Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::compress::to_full_output,success,358.564,17.690,2026-11-05T06:15:50Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::compress::with_level_0,success,358.564,18.396,2026-11-05T06:16:08Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::compress::with_level_best,success,358.564,17.530,2026-11-05T06:16:26Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::compress::with_level_default,success,358.564,18.077,2026-11-05T06:16:44Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::compress::with_level_max,success,358.564,18.232,2026-11-05T06:17:02Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::decompress::empty,success,358.564,17.388,2026-11-05T06:17:20Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::decompress::long,test_failed,358.564,13.154,2026-11-05T06:17:33Z,50232623.0,panic,"thread 'xz::futures::bufread::decompress::long' (60933) panicked at tests/xz.rs:7:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::decompress::long_chunks,test_failed,358.564,13.533,2026-11-05T06:17:46Z,50232623.0,panic,"thread 'xz::futures::bufread::decompress::long_chunks' (61275) panicked at tests/xz.rs:7:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::decompress::multiple_members,success,358.564,17.411,2026-11-05T06:18:04Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::decompress::short,success,358.564,18.045,2026-11-05T06:18:22Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::decompress::short_chunks,success,358.564,18.477,2026-11-05T06:18:40Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::decompress::to_full_output,success,358.564,17.464,2026-11-05T06:18:58Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::decompress::trailer,success,358.564,18.129,2026-11-05T06:19:16Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::bufread::decompress::zeros,success,358.564,17.759,2026-11-05T06:19:34Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::write::compress::empty,success,358.564,17.780,2026-11-05T06:19:52Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::write::compress::empty_chunk,success,358.564,18.351,2026-11-05T06:20:10Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::write::compress::long,test_failed,358.564,12.912,2026-11-05T06:20:23Z,50232623.0,panic,"thread 'xz::futures::write::compress::long' (68762) panicked at tests/xz.rs:7:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::futures::write::compress::long_chunk_output,test_failed,358.564,13.279,2026-11-05T06:20:36Z,50232623.0,panic,"thread 'xz::futures::write::compress::long_chunk_output' (69103) panicked at tests/xz.rs:7:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::futures::write::compress::short,success,358.564,18.331,2026-11-05T06:20:55Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::write::compress::short_chunk_output,success,358.564,17.712,2026-11-05T06:21:12Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::write::compress::with_level_0,success,358.564,18.248,2026-11-05T06:21:31Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::write::compress::with_level_best,success,358.564,17.978,2026-11-05T06:21:49Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::write::compress::with_level_default,success,358.564,17.840,2026-11-05T06:22:06Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::write::compress::with_level_max,success,358.564,18.289,2026-11-05T06:22:25Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::write::decompress::empty,success,358.564,17.431,2026-11-05T06:22:42Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::write::decompress::long,test_failed,358.564,13.282,2026-11-05T06:22:55Z,50232623.0,panic,"thread 'xz::futures::write::decompress::long' (77428) panicked at tests/xz.rs:7:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::futures::write::decompress::long_chunks,test_failed,358.564,13.381,2026-11-05T06:23:09Z,50232623.0,panic,"thread 'xz::futures::write::decompress::long_chunks' (78166) panicked at tests/xz.rs:7:1: timeout: the function call took 1001 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::futures::write::decompress::short,success,358.564,17.540,2026-11-05T06:23:26Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::write::decompress::short_chunks,success,358.564,18.065,2026-11-05T06:23:45Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::futures::write::decompress::zeros,success,358.564,18.177,2026-11-05T06:24:03Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::compress::empty,success,358.564,17.492,2026-11-05T06:24:20Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::compress::empty_chunk,success,358.564,18.210,2026-11-05T06:24:38Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::compress::long,test_failed,358.564,13.153,2026-11-05T06:24:52Z,50232623.0,panic,"thread 'xz::tokio::bufread::compress::long' (86205) panicked at tests/xz.rs:7:1: timeout: the function call took 1003 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::compress::short,success,358.564,17.515,2026-11-05T06:25:09Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::compress::to_full_output,success,358.564,18.275,2026-11-05T06:25:27Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::compress::with_level_0,success,358.564,17.669,2026-11-05T06:25:45Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::compress::with_level_best,success,358.564,18.011,2026-11-05T06:26:03Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::compress::with_level_default,success,358.564,18.405,2026-11-05T06:26:22Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::compress::with_level_max,success,358.564,17.676,2026-11-05T06:26:39Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::decompress::empty,success,358.564,17.953,2026-11-05T06:26:57Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::decompress::long,test_failed,358.564,13.407,2026-11-05T06:27:11Z,50232623.0,panic,"thread 'xz::tokio::bufread::decompress::long' (98389) panicked at tests/xz.rs:7:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::decompress::long_chunks,test_failed,358.564,12.962,2026-11-05T06:27:24Z,50232623.0,panic,"thread 'xz::tokio::bufread::decompress::long_chunks' (99053) panicked at tests/xz.rs:7:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::decompress::multiple_members,success,358.564,17.556,2026-11-05T06:27:41Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::decompress::short,success,358.564,18.073,2026-11-05T06:27:59Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::decompress::short_chunks,success,358.564,18.188,2026-11-05T06:28:18Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::decompress::to_full_output,success,358.564,17.787,2026-11-05T06:28:35Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::decompress::trailer,success,358.564,18.081,2026-11-05T06:28:53Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::bufread::decompress::zeros,success,358.564,17.265,2026-11-05T06:29:11Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::compress::empty,success,358.564,18.034,2026-11-05T06:29:29Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::compress::empty_chunk,success,358.564,18.027,2026-11-05T06:29:47Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::compress::long,test_failed,358.564,12.682,2026-11-05T06:29:59Z,50232623.0,panic,"thread 'xz::tokio::write::compress::long' (5405) panicked at tests/xz.rs:7:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::compress::long_chunk_output,test_failed,358.564,13.093,2026-11-05T06:30:13Z,50232623.0,panic,"thread 'xz::tokio::write::compress::long_chunk_output' (6095) panicked at tests/xz.rs:7:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::compress::short,success,358.564,18.092,2026-11-05T06:30:31Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::compress::short_chunk_output,success,358.564,17.339,2026-11-05T06:30:48Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::compress::with_level_0,success,358.564,18.006,2026-11-05T06:31:06Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::compress::with_level_best,success,358.564,17.805,2026-11-05T06:31:24Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::compress::with_level_default,success,358.564,17.606,2026-11-05T06:31:42Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::compress::with_level_max,success,358.564,18.103,2026-11-05T06:32:00Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::decompress::empty,success,358.564,17.359,2026-11-05T06:32:17Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::decompress::long,test_failed,358.564,13.209,2026-11-05T06:32:30Z,50232623.0,panic,"thread 'xz::tokio::write::decompress::long' (16302) panicked at tests/xz.rs:7:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::decompress::long_chunks,test_failed,358.564,13.512,2026-11-05T06:32:44Z,50232623.0,panic,"thread 'xz::tokio::write::decompress::long_chunks' (16965) panicked at tests/xz.rs:7:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::decompress::short,success,358.564,17.368,2026-11-05T06:33:01Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::decompress::short_chunks,success,358.564,17.507,2026-11-05T06:33:19Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,xz::tokio::write::decompress::zeros,success,358.564,17.136,2026-11-05T06:33:36Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::compress::empty,success,358.564,17.841,2026-11-05T06:33:54Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::compress::empty_chunk,success,358.564,17.748,2026-11-05T06:34:11Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::compress::long,test_failed,358.564,14.085,2026-11-05T06:34:26Z,50232623.0,panic,"thread 'zlib::futures::bufread::compress::long' (23196) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::compress::short,success,358.564,17.730,2026-11-05T06:34:43Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::compress::to_full_output,success,358.564,17.182,2026-11-05T06:35:00Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::compress::with_level_0,success,358.564,17.678,2026-11-05T06:35:18Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::compress::with_level_best,success,358.564,17.625,2026-11-05T06:35:36Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::compress::with_level_default,success,358.564,18.105,2026-11-05T06:35:54Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::compress::with_level_max,success,358.564,17.828,2026-11-05T06:36:12Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::decompress::empty,success,358.564,17.647,2026-11-05T06:36:29Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::decompress::long,test_failed,358.564,13.961,2026-11-05T06:36:43Z,50232623.0,panic,"thread 'zlib::futures::bufread::decompress::long' (26435) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::decompress::long_chunks,test_failed,358.564,14.081,2026-11-05T06:36:58Z,50232623.0,panic,"thread 'zlib::futures::bufread::decompress::long_chunks' (26819) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::decompress::multiple_members,test_failed,358.564,14.053,2026-11-05T06:37:12Z,50232623.0,panic,"thread 'zlib::futures::bufread::decompress::multiple_members' (27211) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::decompress::short,success,358.564,17.694,2026-11-05T06:37:29Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::decompress::short_chunks,success,358.564,18.534,2026-11-05T06:37:48Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::decompress::to_full_output,success,358.564,18.070,2026-11-05T06:38:06Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::decompress::trailer,success,358.564,18.009,2026-11-05T06:38:24Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::bufread::decompress::zeros,success,358.564,18.420,2026-11-05T06:38:42Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::compress::empty,success,358.564,18.645,2026-11-05T06:39:01Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::compress::empty_chunk,success,358.564,18.201,2026-11-05T06:39:19Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::compress::long,test_failed,358.564,14.746,2026-11-05T06:39:34Z,50232623.0,panic,"thread 'zlib::futures::write::compress::long' (31201) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::compress::long_chunk_output,test_failed,358.564,14.900,2026-11-05T06:39:49Z,50232623.0,panic,"thread 'zlib::futures::write::compress::long_chunk_output' (31456) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::compress::short,test_failed,358.564,14.671,2026-11-05T06:40:04Z,50232623.0,panic,"thread 'zlib::futures::write::compress::short' (31629) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::compress::short_chunk_output,test_failed,358.564,14.468,2026-11-05T06:40:18Z,50232623.0,panic,"thread 'zlib::futures::write::compress::short_chunk_output' (31919) panicked at tests/zlib.rs:4:1: timeout: the function call took 1005 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::compress::with_level_0,success,358.564,19.744,2026-11-05T06:40:38Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::compress::with_level_best,success,358.564,19.402,2026-11-05T06:40:57Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::compress::with_level_default,success,358.564,20.086,2026-11-05T06:41:17Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::compress::with_level_max,success,358.564,19.332,2026-11-05T06:41:37Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::decompress::empty,success,358.564,18.452,2026-11-05T06:41:55Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::decompress::long,test_failed,358.564,14.957,2026-11-05T06:42:10Z,50232623.0,panic,"thread 'zlib::futures::write::decompress::long' (33318) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::decompress::long_chunks,test_failed,358.564,14.357,2026-11-05T06:42:25Z,50232623.0,panic,"thread 'zlib::futures::write::decompress::long_chunks' (33607) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::decompress::short,success,358.564,18.981,2026-11-05T06:42:44Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::decompress::short_chunks,success,358.564,18.682,2026-11-05T06:43:02Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::futures::write::decompress::zeros,success,358.564,18.557,2026-11-05T06:43:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::compress::empty,success,358.564,18.815,2026-11-05T06:43:40Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::compress::empty_chunk,success,358.564,18.287,2026-11-05T06:43:58Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::compress::long,test_failed,358.564,14.843,2026-11-05T06:44:13Z,50232623.0,panic,"thread 'zlib::tokio::bufread::compress::long' (38632) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::compress::short,success,358.564,19.118,2026-11-05T06:44:32Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::compress::to_full_output,success,358.564,17.565,2026-11-05T06:44:50Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::compress::with_level_0,success,358.564,18.843,2026-11-05T06:45:08Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::compress::with_level_best,success,358.564,18.585,2026-11-05T06:45:27Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::compress::with_level_default,success,358.564,18.499,2026-11-05T06:45:45Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::compress::with_level_max,success,358.564,18.902,2026-11-05T06:46:04Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::decompress::empty,success,358.564,18.135,2026-11-05T06:46:23Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::decompress::long,test_failed,358.564,14.873,2026-11-05T06:46:37Z,50232623.0,panic,"thread 'zlib::tokio::bufread::decompress::long' (47544) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::decompress::long_chunks,test_failed,358.564,14.984,2026-11-05T06:46:52Z,50232623.0,panic,"thread 'zlib::tokio::bufread::decompress::long_chunks' (47938) panicked at tests/zlib.rs:4:1: timeout: the function call took 1001 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::decompress::multiple_members,test_failed,358.564,14.572,2026-11-05T06:47:07Z,50232623.0,panic,"thread 'zlib::tokio::bufread::decompress::multiple_members' (48228) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::decompress::short,success,358.564,18.285,2026-11-05T06:47:25Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::decompress::short_chunks,success,358.564,19.111,2026-11-05T06:47:44Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::decompress::to_full_output,success,358.564,17.787,2026-11-05T06:48:02Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::decompress::trailer,success,358.564,18.589,2026-11-05T06:48:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::bufread::decompress::zeros,success,358.564,18.928,2026-11-05T06:48:40Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::compress::empty,success,358.564,18.095,2026-11-05T06:48:58Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::compress::empty_chunk,success,358.564,19.024,2026-11-05T06:49:17Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::compress::long,test_failed,358.564,14.542,2026-11-05T06:49:31Z,50232623.0,panic,"thread 'zlib::tokio::write::compress::long' (56676) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::compress::long_chunk_output,test_failed,358.564,14.439,2026-11-05T06:49:46Z,50232623.0,panic,"thread 'zlib::tokio::write::compress::long_chunk_output' (56918) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::compress::short,test_failed,358.564,14.910,2026-11-05T06:50:01Z,50232623.0,panic,"thread 'zlib::tokio::write::compress::short' (57212) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::compress::short_chunk_output,test_failed,358.564,14.926,2026-11-05T06:50:16Z,50232623.0,panic,"thread 'zlib::tokio::write::compress::short_chunk_output' (57352) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::compress::with_level_0,success,358.564,19.228,2026-11-05T06:50:35Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::compress::with_level_best,success,358.564,19.980,2026-11-05T06:50:55Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::compress::with_level_default,success,358.564,19.591,2026-11-05T06:51:15Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::compress::with_level_max,success,358.564,19.574,2026-11-05T06:51:34Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::decompress::empty,success,358.564,18.949,2026-11-05T06:51:53Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::decompress::long,test_failed,358.564,14.523,2026-11-05T06:52:08Z,50232623.0,panic,"thread 'zlib::tokio::write::decompress::long' (59145) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::decompress::long_chunks,test_failed,358.564,14.588,2026-11-05T06:52:22Z,50232623.0,panic,"thread 'zlib::tokio::write::decompress::long_chunks' (63395) panicked at tests/zlib.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::decompress::short,success,358.564,18.987,2026-11-05T06:52:41Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::decompress::short_chunks,success,358.564,18.418,2026-11-05T06:53:00Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zlib::tokio::write::decompress::zeros,success,358.564,18.062,2026-11-05T06:53:18Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::compress::empty,success,358.564,17.966,2026-11-05T06:53:36Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::compress::empty_chunk,success,358.564,17.331,2026-11-05T06:53:53Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::compress::long,test_failed,358.564,15.799,2026-11-05T06:54:09Z,50232623.0,panic,"thread 'zstd::futures::bufread::compress::long' (66358) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::compress::short,success,358.564,17.948,2026-11-05T06:54:27Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::compress::to_full_output,success,358.564,17.516,2026-11-05T06:54:45Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::compress::with_level_0,success,358.564,18.139,2026-11-05T06:55:03Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::compress::with_level_best,success,358.564,18.684,2026-11-05T06:55:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::compress::with_level_default,success,358.564,17.615,2026-11-05T06:55:39Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::compress::with_level_max,success,358.564,18.433,2026-11-05T06:55:58Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::decompress::empty,success,358.564,18.248,2026-11-05T06:56:16Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::decompress::long,test_failed,358.564,15.732,2026-11-05T06:56:32Z,50232623.0,panic,"thread 'zstd::futures::bufread::decompress::long' (75158) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::decompress::long_chunks,test_failed,358.564,16.730,2026-11-05T06:56:48Z,50232623.0,panic,"thread 'zstd::futures::bufread::decompress::long_chunks' (75525) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::decompress::multiple_members,success,358.564,17.816,2026-11-05T06:57:06Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::decompress::short,success,358.564,18.042,2026-11-05T06:57:24Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::decompress::short_chunks,success,358.564,18.474,2026-11-05T06:57:43Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::decompress::to_full_output,success,358.564,17.599,2026-11-05T06:58:00Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::decompress::trailer,success,358.564,18.192,2026-11-05T06:58:19Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::bufread::decompress::zeros,success,358.564,17.952,2026-11-05T06:58:36Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::compress::empty,success,358.564,17.768,2026-11-05T06:58:54Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::compress::empty_chunk,success,358.564,18.440,2026-11-05T06:59:13Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::compress::long,test_failed,358.564,15.722,2026-11-05T06:59:28Z,50232623.0,panic,"thread 'zstd::futures::write::compress::long' (84391) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::compress::long_chunk_output,test_failed,358.564,16.221,2026-11-05T06:59:45Z,50232623.0,panic,"thread 'zstd::futures::write::compress::long_chunk_output' (84925) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::compress::short,success,358.564,18.234,2026-11-05T07:00:03Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::compress::short_chunk_output,success,358.564,17.844,2026-11-05T07:00:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::compress::with_level_0,success,358.564,18.541,2026-11-05T07:00:39Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::compress::with_level_best,success,358.564,18.060,2026-11-05T07:00:57Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::compress::with_level_default,success,358.564,18.576,2026-11-05T07:01:16Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::compress::with_level_max,success,358.564,17.961,2026-11-05T07:01:34Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::decompress::empty,success,358.564,17.530,2026-11-05T07:01:52Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::decompress::long,test_failed,358.564,16.393,2026-11-05T07:02:08Z,50232623.0,panic,"thread 'zstd::futures::write::decompress::long' (93640) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::decompress::long_chunks,test_failed,358.564,16.350,2026-11-05T07:02:24Z,50232623.0,panic,"thread 'zstd::futures::write::decompress::long_chunks' (93883) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::decompress::short,success,358.564,17.720,2026-11-05T07:02:42Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::decompress::short_chunks,success,358.564,17.857,2026-11-05T07:03:00Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::futures::write::decompress::zeros,success,358.564,18.243,2026-11-05T07:03:18Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::compress::empty,success,358.564,17.886,2026-11-05T07:03:36Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::compress::empty_chunk,success,358.564,17.725,2026-11-05T07:03:54Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::compress::long,test_failed,358.564,16.157,2026-11-05T07:04:10Z,50232623.0,panic,"thread 'zstd::tokio::bufread::compress::long' (99144) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::compress::short,success,358.564,17.714,2026-11-05T07:04:28Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::compress::to_full_output,success,358.564,17.438,2026-11-05T07:04:45Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::compress::with_level_0,success,358.564,18.143,2026-11-05T07:05:03Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::compress::with_level_best,success,358.564,17.868,2026-11-05T07:05:21Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::compress::with_level_default,success,358.564,17.901,2026-11-05T07:05:39Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::compress::with_level_max,success,358.564,18.438,2026-11-05T07:05:58Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::decompress::empty,success,358.564,17.455,2026-11-05T07:06:15Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::decompress::long,test_failed,358.564,16.055,2026-11-05T07:06:31Z,50232623.0,panic,"thread 'zstd::tokio::bufread::decompress::long' (14098) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::decompress::long_chunks,test_failed,358.564,16.391,2026-11-05T07:06:47Z,50232623.0,panic,"thread 'zstd::tokio::bufread::decompress::long_chunks' (15338) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::decompress::multiple_members,success,358.564,17.587,2026-11-05T07:07:05Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::decompress::short,success,358.564,17.678,2026-11-05T07:07:23Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::decompress::short_chunks,success,358.564,18.250,2026-11-05T07:07:41Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::decompress::to_full_output,success,358.564,17.577,2026-11-05T07:07:59Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::decompress::trailer,success,358.564,18.070,2026-11-05T07:08:17Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::bufread::decompress::zeros,success,358.564,18.046,2026-11-05T07:08:35Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::compress::empty,success,358.564,17.475,2026-11-05T07:08:52Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::compress::empty_chunk,success,358.564,18.519,2026-11-05T07:09:11Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::compress::long,test_failed,358.564,15.705,2026-11-05T07:09:27Z,50232623.0,panic,"thread 'zstd::tokio::write::compress::long' (27442) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::compress::long_chunk_output,test_failed,358.564,15.969,2026-11-05T07:09:43Z,50232623.0,panic,"thread 'zstd::tokio::write::compress::long_chunk_output' (32323) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::compress::short,success,358.564,18.406,2026-11-05T07:10:01Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::compress::short_chunk_output,success,358.564,17.417,2026-11-05T07:10:18Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::compress::with_level_0,success,358.564,18.125,2026-11-05T07:10:37Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::compress::with_level_best,success,358.564,18.172,2026-11-05T07:10:55Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::compress::with_level_default,success,358.564,17.805,2026-11-05T07:11:13Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::compress::with_level_max,success,358.564,18.307,2026-11-05T07:11:31Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::decompress::empty,success,358.564,17.679,2026-11-05T07:11:49Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::decompress::long,test_failed,358.564,16.480,2026-11-05T07:12:05Z,50232623.0,panic,"thread 'zstd::tokio::write::decompress::long' (41587) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::decompress::long_chunks,test_failed,358.564,16.785,2026-11-05T07:12:22Z,50232623.0,panic,"thread 'zstd::tokio::write::decompress::long_chunks' (42373) panicked at tests/zstd.rs:4:1: timeout: the function call took 1002 ms. Max time 1000 ms"
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::decompress::short,success,358.564,17.587,2026-11-05T07:12:40Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::decompress::short_chunks,success,358.564,18.031,2026-11-05T07:12:58Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd::tokio::write::decompress::zeros,success,358.564,18.359,2026-11-05T07:13:16Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd_decode_large_window_size_default,success,358.564,17.737,2026-11-05T07:13:34Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd_decode_large_window_size_explicit_large_window_size,success,358.564,18.061,2026-11-05T07:13:52Z,50232623.0,,
+experimental-bsan,async-compression-0.4.17,zstd_decode_large_window_size_explicit_small_window_size,success,358.564,18.189,2026-11-05T07:14:10Z,50232623.0,,

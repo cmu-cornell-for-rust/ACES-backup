@@ -1,0 +1,2 @@
+experimental-bsan,hyper-native-tls-0.3.0,test::client,success,73.814,2.727,2026-11-05T08:50:59Z,50264179.0,,
+experimental-bsan,hyper-native-tls-0.3.0,test::server,test_failed,73.814,1.997,2026-11-05T08:51:01Z,50264179.0,panic,"thread 'test::server' (16285) panicked at src/lib.rs:275:71: called `Result::unwrap()` on an `Err` value: Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"

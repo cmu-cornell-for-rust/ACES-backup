@@ -1,0 +1,18 @@
+experimental-bsan,memfile-0.3.2,clones_share_metadata_and_seals,test_failed,20.409,3.010,2026-11-05T05:11:22Z,50251367.0,panic,"thread 'clones_share_metadata_and_seals' (70442) panicked at tests/memfile.rs:143:5: assertion failed"
+experimental-bsan,memfile-0.3.2,create_write_seek_read,success,20.409,2.826,2026-11-05T05:11:25Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,from_fd,success,20.409,2.814,2026-11-05T05:11:28Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,seal::test::test_all,success,20.409,2.820,2026-11-05T05:11:31Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,seal::test::test_bitand,success,20.409,2.836,2026-11-05T05:11:33Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,seal::test::test_bitor,success,20.409,2.834,2026-11-05T05:11:36Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,seal::test::test_bitxor,success,20.409,2.823,2026-11-05T05:11:39Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,seal::test::test_debug,success,20.409,2.832,2026-11-05T05:11:42Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,seal::test::test_empty,success,20.409,2.824,2026-11-05T05:11:45Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,seal::test::test_iter,success,20.409,2.833,2026-11-05T05:11:48Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,seal_future_write,test_failed,20.409,2.989,2026-11-05T05:11:51Z,50251367.0,panic,"thread 'seal_future_write' (81863) panicked at tests/memfile.rs:128:5: assertion failed"
+experimental-bsan,memfile-0.3.2,seal_grow,success,20.409,2.831,2026-11-05T05:11:53Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,seal_seal,success,20.409,2.836,2026-11-05T05:11:56Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,seal_shrink,success,20.409,2.833,2026-11-05T05:11:59Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,seal_write,success,20.409,2.837,2026-11-05T05:12:02Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,sealing_must_be_enabled,test_failed,20.409,2.943,2026-11-05T05:12:05Z,50251367.0,panic,"thread 'sealing_must_be_enabled' (84746) panicked at tests/memfile.rs:155:5: assertion failed"
+experimental-bsan,memfile-0.3.2,set_len_stat,success,20.409,2.820,2026-11-05T05:12:08Z,50251367.0,,
+experimental-bsan,memfile-0.3.2,try_clone,success,20.409,2.847,2026-11-05T05:12:11Z,50251367.0,,

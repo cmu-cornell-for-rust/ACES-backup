@@ -1,0 +1,14 @@
+experimental-bsan,walle-core-0.7.4,action::action,success,146.904,1.601,2026-11-05T05:33:44Z,50253291.0,,
+experimental-bsan,walle-core-0.7.4,config::toml_test,success,146.904,1.598,2026-11-05T05:33:46Z,50253291.0,,
+experimental-bsan,walle-core-0.7.4,obc::app_obc::test_bot_map,test_failed,146.904,2.812,2026-11-05T05:33:48Z,50253291.0,panic,"thread 'obc::app_obc::test_bot_map' (11559) panicked at src/obc/app_obc/mod.rs:282:5: assertion failed: map.conns.get(&0).unwrap().1.len() == 1"
+experimental-bsan,walle-core-0.7.4,obc::test_query,success,146.904,1.580,2026-11-05T05:33:50Z,50253291.0,,
+experimental-bsan,walle-core-0.7.4,test::action,success,146.904,1.739,2026-11-05T05:33:52Z,50253291.0,,
+experimental-bsan,walle-core-0.7.4,test::action_resp,success,146.904,1.562,2026-11-05T05:33:53Z,50253291.0,,
+experimental-bsan,walle-core-0.7.4,test::enum_action,success,146.904,1.564,2026-11-05T05:33:55Z,50253291.0,,
+experimental-bsan,walle-core-0.7.4,test::event,test_failed,146.904,1.767,2026-11-05T05:33:57Z,50253291.0,panic,"thread 'test::event' (12748) panicked at src/test/mod.rs:23:9: assertion `left == right` failed"
+experimental-bsan,walle-core-0.7.4,test::option_action,success,146.904,1.575,2026-11-05T05:33:58Z,50253291.0,,
+experimental-bsan,walle-core-0.7.4,test::segment,success,146.904,1.597,2026-11-05T05:34:00Z,50253291.0,,
+experimental-bsan,walle-core-0.7.4,test::valuemap_test,success,146.904,1.584,2026-11-05T05:34:02Z,50253291.0,,
+experimental-bsan,walle-core-0.7.4,util::bytes::detest,success,146.904,1.578,2026-11-05T05:34:03Z,50253291.0,,
+experimental-bsan,walle-core-0.7.4,util::bytes::sertest,success,146.904,1.558,2026-11-05T05:34:05Z,50253291.0,,
+experimental-bsan,walle-core-0.7.4,util::value::_macro::macro_test,success,146.904,1.631,2026-11-05T05:34:06Z,50253291.0,,

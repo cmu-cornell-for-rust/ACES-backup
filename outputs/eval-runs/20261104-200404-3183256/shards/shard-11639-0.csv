@@ -1,0 +1,12 @@
+experimental-bsan,jira_query-1.5.0,access::tests::it_works,success,219.270,2.970,2026-11-05T05:48:17Z,50254178.0,,
+experimental-bsan,jira_query-1.5.0,access_apache_issues,success,219.270,32.987,2026-11-05T05:48:50Z,50254178.0,,
+experimental-bsan,jira_query-1.5.0,access_atlassian_issues,success,219.270,44.447,2026-11-05T05:49:34Z,50254178.0,,
+experimental-bsan,jira_query-1.5.0,access_issue,test_failed,219.270,12.829,2026-11-05T05:49:47Z,50254178.0,panic,"thread 'access_issue' (79643) panicked at tests/integration.rs:29:51: called `Result::unwrap()` on an `Err` value: Request(reqwest::Error { kind: Request, url: ""https://issues.redhat.com/rest/api/2/issue/CS-1111"", source: hyper_util::client::legacy::Error(SendRequest, hyper::Error(IncompleteMessage)"
+experimental-bsan,jira_query-1.5.0,access_issues,test_failed,219.270,4.683,2026-11-05T05:49:52Z,50254178.0,panic,"thread 'access_issues' (81069) panicked at tests/integration.rs:37:65: called `Result::unwrap()` on an `Err` value: Request(reqwest::Error { kind: Decode, source: Error(""missing field `issues`"", line: 1, column: 217) })"
+experimental-bsan,jira_query-1.5.0,access_missing_issue,success,219.270,4.595,2026-11-05T05:49:56Z,50254178.0,,
+experimental-bsan,jira_query-1.5.0,check_no_issues,success,219.270,3.144,2026-11-05T05:49:59Z,50254178.0,,
+experimental-bsan,jira_query-1.5.0,check_standard_fields,test_failed,219.270,12.497,2026-11-05T05:50:12Z,50254178.0,panic,"thread 'check_standard_fields' (82086) panicked at tests/integration.rs:61:5: assertion `left == right` failed"
+experimental-bsan,jira_query-1.5.0,check_time,success,219.270,12.405,2026-11-05T05:50:24Z,50254178.0,,
+experimental-bsan,jira_query-1.5.0,search_for_atlassian_issues,timeout,219.270,150.028,2026-11-05T05:52:54Z,50254178.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jira_query-1.5.0,search_for_issues,test_failed,219.270,4.857,2026-11-05T05:52:59Z,50254178.0,panic,"thread 'search_for_issues' (880) panicked at tests/integration.rs:91:47: called `Result::unwrap()` on an `Err` value: Request(reqwest::Error { kind: Decode, source: Error(""missing field `issues`"", line: 1, column: 217) })"
+experimental-bsan,jira_query-1.5.0,search_for_issues_start_at,test_failed,219.270,4.720,2026-11-05T05:53:04Z,50254178.0,panic,"thread 'search_for_issues_start_at' (1248) panicked at tests/integration.rs:112:47: called `Result::unwrap()` on an `Err` value: Request(reqwest::Error { kind: Decode, source: Error(""missing field `issues`"", line: 1, column: 217) })"

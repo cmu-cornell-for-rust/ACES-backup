@@ -1,0 +1,43 @@
+experimental-bsan,cab-0.6.0,builder::tests::write_uncompressed_cabinet_with_non_ascii_filename,success,63.782,4.383,2026-11-05T03:09:32Z,50244761.0,,
+experimental-bsan,cab-0.6.0,builder::tests::write_uncompressed_cabinet_with_one_file,success,63.782,4.384,2026-11-05T03:09:37Z,50244761.0,,
+experimental-bsan,cab-0.6.0,builder::tests::write_uncompressed_cabinet_with_two_files,success,63.782,4.378,2026-11-05T03:09:41Z,50244761.0,,
+experimental-bsan,cab-0.6.0,cabinet::tests::read_lzx_cabinet_with_two_files,success,63.782,4.424,2026-11-05T03:09:46Z,50244761.0,,
+experimental-bsan,cab-0.6.0,cabinet::tests::read_mszip_cabinet_with_one_file,success,63.782,5.057,2026-11-05T03:09:51Z,50244761.0,,
+experimental-bsan,cab-0.6.0,cabinet::tests::read_mszip_cabinet_with_two_files,success,63.782,5.424,2026-11-05T03:09:56Z,50244761.0,,
+experimental-bsan,cab-0.6.0,cabinet::tests::read_uncompressed_cabinet_with_non_ascii_filename,success,63.782,4.373,2026-11-05T03:10:00Z,50244761.0,,
+experimental-bsan,cab-0.6.0,cabinet::tests::read_uncompressed_cabinet_with_one_file,success,63.782,4.367,2026-11-05T03:10:05Z,50244761.0,,
+experimental-bsan,cab-0.6.0,cabinet::tests::read_uncompressed_cabinet_with_two_data_blocks,success,63.782,4.384,2026-11-05T03:10:09Z,50244761.0,,
+experimental-bsan,cab-0.6.0,cabinet::tests::read_uncompressed_cabinet_with_two_files,success,63.782,4.373,2026-11-05T03:10:14Z,50244761.0,,
+experimental-bsan,cab-0.6.0,cabinet_with_one_big_mszipped_binary_file,timeout,63.782,150.032,2026-11-05T03:12:44Z,50244761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cab-0.6.0,cabinet_with_one_big_mszipped_text_file,timeout,63.782,150.017,2026-11-05T03:15:14Z,50244761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cab-0.6.0,cabinet_with_one_big_uncompressed_binary_file,timeout,63.782,150.033,2026-11-05T03:17:44Z,50244761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cab-0.6.0,cabinet_with_one_big_uncompressed_text_file,timeout,63.782,150.016,2026-11-05T03:20:14Z,50244761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cab-0.6.0,cabinet_with_one_small_mszipped_binary_file,success,63.782,45.392,2026-11-05T03:20:59Z,50244761.0,,
+experimental-bsan,cab-0.6.0,cabinet_with_one_small_mszipped_text_file,success,63.782,59.138,2026-11-05T03:21:58Z,50244761.0,,
+experimental-bsan,cab-0.6.0,cabinet_with_one_small_uncompressed_binary_file,success,63.782,8.655,2026-11-05T03:22:07Z,50244761.0,,
+experimental-bsan,cab-0.6.0,cabinet_with_one_small_uncompressed_text_file,success,63.782,46.212,2026-11-05T03:22:53Z,50244761.0,,
+experimental-bsan,cab-0.6.0,checksum::tests::checksum_from_cab_spec,success,63.782,4.346,2026-11-05T03:22:58Z,50244761.0,,
+experimental-bsan,cab-0.6.0,checksum::tests::empty_checksum,success,63.782,4.375,2026-11-05T03:23:02Z,50244761.0,,
+experimental-bsan,cab-0.6.0,checksum::tests::simple_checksums,success,63.782,4.361,2026-11-05T03:23:06Z,50244761.0,,
+experimental-bsan,cab-0.6.0,ctype::tests::compression_type_from_bitfield,success,63.782,4.351,2026-11-05T03:23:11Z,50244761.0,,
+experimental-bsan,cab-0.6.0,ctype::tests::compression_type_to_bitfield,success,63.782,4.348,2026-11-05T03:23:15Z,50244761.0,,
+experimental-bsan,cab-0.6.0,datetime::tests::datetime_outside_range,success,63.782,4.364,2026-11-05T03:23:19Z,50244761.0,,
+experimental-bsan,cab-0.6.0,datetime::tests::datetime_round_to_nearest_two_seconds,success,63.782,4.367,2026-11-05T03:23:24Z,50244761.0,,
+experimental-bsan,cab-0.6.0,datetime::tests::valid_datetime_bits,success,63.782,4.365,2026-11-05T03:23:28Z,50244761.0,,
+experimental-bsan,cab-0.6.0,mszip::tests::lorem_ipsum::lib_to_lib,success,63.782,11.990,2026-11-05T03:23:40Z,50244761.0,,
+experimental-bsan,cab-0.6.0,mszip::tests::one_block_exactly::lib_to_lib,success,63.782,25.993,2026-11-05T03:24:06Z,50244761.0,,
+experimental-bsan,cab-0.6.0,mszip::tests::one_block_less_a_byte::lib_to_lib,success,63.782,25.962,2026-11-05T03:24:32Z,50244761.0,,
+experimental-bsan,cab-0.6.0,mszip::tests::one_block_plus_a_byte::lib_to_lib,success,63.782,36.861,2026-11-05T03:25:09Z,50244761.0,,
+experimental-bsan,cab-0.6.0,mszip::tests::random_many_blocks::lib_to_lib,timeout,63.782,150.032,2026-11-05T03:27:39Z,50244761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cab-0.6.0,mszip::tests::random_one_block::lib_to_lib,success,63.782,14.060,2026-11-05T03:27:53Z,50244761.0,,
+experimental-bsan,cab-0.6.0,mszip::tests::random_two_blocks::lib_to_lib,timeout,63.782,150.032,2026-11-05T03:30:23Z,50244761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cab-0.6.0,mszip::tests::read_compressed_data,success,63.782,5.022,2026-11-05T03:30:28Z,50244761.0,,
+experimental-bsan,cab-0.6.0,mszip::tests::repeating_many_blocks::lib_to_lib,timeout,63.782,150.013,2026-11-05T03:32:58Z,50244761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cab-0.6.0,mszip::tests::repeating_one_block::lib_to_lib,success,63.782,12.958,2026-11-05T03:33:11Z,50244761.0,,
+experimental-bsan,cab-0.6.0,mszip::tests::repeating_two_blocks::lib_to_lib,success,63.782,37.338,2026-11-05T03:33:49Z,50244761.0,,
+experimental-bsan,cab-0.6.0,mszip::tests::zeros_many_blocks::lib_to_lib,timeout,63.782,150.013,2026-11-05T03:36:19Z,50244761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cab-0.6.0,mszip::tests::zeros_one_block::lib_to_lib,success,63.782,12.367,2026-11-05T03:36:31Z,50244761.0,,
+experimental-bsan,cab-0.6.0,mszip::tests::zeros_two_blocks::lib_to_lib,success,63.782,30.467,2026-11-05T03:37:02Z,50244761.0,,
+experimental-bsan,cab-0.6.0,seek_within_big_mszipped_file,timeout,63.782,150.016,2026-11-05T03:39:32Z,50244761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cab-0.6.0,seek_within_big_uncompressed_file,timeout,63.782,150.015,2026-11-05T03:42:02Z,50244761.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,cab-0.6.0,seek_within_empty_file,success,63.782,4.369,2026-11-05T03:42:06Z,50244761.0,,

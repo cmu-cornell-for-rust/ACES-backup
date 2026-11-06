@@ -1,0 +1,35 @@
+experimental-bsan,sway-ir-0.66.3,ccp,success,336.658,76.143,2026-11-05T03:47:37Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,constants,timeout,336.658,150.016,2026-11-05T03:50:07Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,cse,timeout,336.658,150.016,2026-11-05T03:52:37Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,dce,timeout,336.658,150.016,2026-11-05T03:55:07Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,demote_arg,timeout,336.658,150.016,2026-11-05T03:57:37Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,demote_const,timeout,336.658,150.016,2026-11-05T04:00:07Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,demote_misc,timeout,336.658,150.017,2026-11-05T04:02:37Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,demote_ret,timeout,336.658,150.015,2026-11-05T04:05:07Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,fndedup_debug,success,336.658,94.650,2026-11-05T04:06:42Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,fndedup_release,success,336.658,101.547,2026-11-05T04:08:23Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,inline,timeout,336.658,150.016,2026-11-05T04:10:53Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::array,success,336.658,43.444,2026-11-05T04:11:37Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::b256,success,336.658,4.587,2026-11-05T04:11:41Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::boolean,success,336.658,4.590,2026-11-05T04:11:46Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::pointer,success,336.658,17.524,2026-11-05T04:12:03Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::r#struct,timeout,336.658,150.015,2026-11-05T04:14:33Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::slice,success,336.658,4.592,2026-11-05T04:14:38Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::string_array,success,336.658,4.592,2026-11-05T04:14:43Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::string_slice,success,336.658,4.574,2026-11-05T04:14:47Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::union,timeout,336.658,150.015,2026-11-05T04:17:17Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::unit,success,336.658,4.685,2026-11-05T04:17:22Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::unsigned_u16_u32_u64,success,336.658,4.600,2026-11-05T04:17:26Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::unsigned_u256,success,336.658,4.609,2026-11-05T04:17:31Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,irtype::tests::memory_layout::unsigned_u8,success,336.658,4.601,2026-11-05T04:17:36Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,mem2reg,timeout,336.658,150.019,2026-11-05T04:20:06Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,memcpyopt,timeout,336.658,150.017,2026-11-05T04:22:36Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,optimize::constants::tests::binary_op_are_not_optimized,success,336.658,16.005,2026-11-05T04:22:52Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,optimize::constants::tests::binary_op_are_optimized,success,336.658,21.643,2026-11-05T04:23:13Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,optimize::constants::tests::ok_chain_optimization,success,336.658,9.296,2026-11-05T04:23:23Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,optimize::constants::tests::ok_remove_useless_mul,success,336.658,9.308,2026-11-05T04:23:32Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,optimize::constants::tests::unary_op_are_optimized,success,336.658,5.987,2026-11-05T04:23:38Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,serialize,timeout,336.658,150.015,2026-11-05T04:26:08Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,simplify_cfg,timeout,336.658,150.018,2026-11-05T04:28:38Z,50246959.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sway-ir-0.66.3,sroa,success,336.658,138.938,2026-11-05T04:30:57Z,50246959.0,,
+experimental-bsan,sway-ir-0.66.3,verify,success,336.658,14.432,2026-11-05T04:31:12Z,50246959.0,,

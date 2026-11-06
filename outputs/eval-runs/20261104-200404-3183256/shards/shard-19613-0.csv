@@ -1,0 +1,2 @@
+experimental-bsan,tun-easytier-1.1.1,platform::posix::sockaddr::test_conversion,success,105.723,1.626,2026-11-05T09:09:13Z,50265143.0,,
+experimental-bsan,tun-easytier-1.1.1,platform::test::create,test_failed,105.723,1.710,2026-11-05T09:09:15Z,50265143.0,panic,"thread 'platform::test::create' (1740) panicked at src/platform/mod.rs:69:10: called `Result::unwrap()` on an `Err` value: Io(Os { code: 19, kind: Uncategorized, message: ""No such device"" })"

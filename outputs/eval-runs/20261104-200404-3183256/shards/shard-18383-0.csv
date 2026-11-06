@@ -1,0 +1,2 @@
+experimental-bsan,actix-redis-0.13.1+deprecated,test_error_connect,success,326.616,3.233,2026-11-05T08:42:11Z,50263504.0,,
+experimental-bsan,actix-redis-0.13.1+deprecated,test_redis,test_failed,326.616,3.268,2026-11-05T08:42:15Z,50263504.0,panic,"thread 'test_redis' (60203) panicked at tests/test_redis.rs:40:14: Should not happen Ok(Err(NotConnected))"

@@ -1,0 +1,38 @@
+experimental-bsan,shiva-1.4.9,core::tests::test_as_repr,success,1628.823,2.266,2026-11-05T03:50:57Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,core::tests::test_document_type_as_list,success,1628.823,1.763,2026-11-05T03:50:59Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,core::tests::test_document_type_count,success,1628.823,1.756,2026-11-05T03:51:00Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,core::tests::test_from_extension,success,1628.823,1.784,2026-11-05T03:51:02Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,core::tests::test_image_alignment,success,1628.823,1.754,2026-11-05T03:51:04Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,core::tests::test_image_new,success,1628.823,1.767,2026-11-05T03:51:06Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,core::tests::test_image_type_defaut,success,1628.823,1.767,2026-11-05T03:51:08Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,core::tests::test_image_type_display,success,1628.823,1.770,2026-11-05T03:51:09Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,core::tests::test_image_type_extension,success,1628.823,1.767,2026-11-05T03:51:11Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,core::tests::test_image_type_from_str,success,1628.823,1.757,2026-11-05T03:51:13Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,core::tests::test_serialize_all_lower_case,success,1628.823,1.764,2026-11-05T03:51:15Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,core::tests::test_supported_extensions,success,1628.823,1.775,2026-11-05T03:51:16Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,csv::tests::test,success,1628.823,6.512,2026-11-05T03:51:23Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,docx::tests::test,test_failed,1628.823,1.785,2026-11-05T03:51:25Z,50245961.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,shiva-1.4.9,docx::tests::test_parse,test_failed,1628.823,1.783,2026-11-05T03:51:27Z,50245961.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,shiva-1.4.9,html::tests::test_image_loader_saver,test_failed,1628.823,2.123,2026-11-05T03:51:29Z,50245961.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,shiva-1.4.9,html::tests::test_parse_html,test_failed,1628.823,2.861,2026-11-05T03:51:32Z,50245961.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,shiva-1.4.9,json::tests::test,test_failed,1628.823,2.431,2026-11-05T03:51:34Z,50245961.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,shiva-1.4.9,markdown::tests::test,test_failed,1628.823,2.514,2026-11-05T03:51:37Z,50245961.0,panic,"thread 'markdown::tests::test' (17142) panicked at src/markdown.rs:740:9: assertion failed: parsed.is_ok()"
+experimental-bsan,shiva-1.4.9,markdown::tests::test_html_to_markdown_to_cdm,success,1628.823,6.805,2026-11-05T03:51:43Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,markdown::tests::test_parse_header,success,1628.823,1.779,2026-11-05T03:51:45Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,markdown::tests::test_parse_table,success,1628.823,1.822,2026-11-05T03:51:47Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,ods::tests::test_generate,test_failed,1628.823,1.837,2026-11-05T03:51:49Z,50245961.0,panic,"thread 'ods::tests::test_generate' (17611) panicked at src/ods.rs:153:41: Cannot open ods file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,shiva-1.4.9,ods::tests::test_parse,test_failed,1628.823,1.838,2026-11-05T03:51:51Z,50245961.0,panic,"thread 'ods::tests::test_parse' (17725) panicked at src/ods.rs:136:41: Cannot open ods file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,shiva-1.4.9,pdf::tests::simple_test,test_failed,1628.823,1.823,2026-11-05T03:51:53Z,50245961.0,panic,"thread 'pdf::tests::simple_test' (17784) panicked at src/pdf.rs:407:59: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,shiva-1.4.9,pdf::tests::test,test_failed,1628.823,1.777,2026-11-05T03:51:54Z,50245961.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,shiva-1.4.9,pdf::tests::test_hyperlink_generation,timeout,1628.823,150.027,2026-11-05T03:54:24Z,50245961.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,shiva-1.4.9,pdf::tests::test_list,test_failed,1628.823,1.776,2026-11-05T03:54:26Z,50245961.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,shiva-1.4.9,pdf::tests::test_md,test_failed,1628.823,1.770,2026-11-05T03:54:28Z,50245961.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,shiva-1.4.9,rtf::tests::test,test_failed,1628.823,1.775,2026-11-05T03:54:30Z,50245961.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,shiva-1.4.9,text::tests::test,success,1628.823,1.994,2026-11-05T03:54:32Z,50245961.0,,
+experimental-bsan,shiva-1.4.9,typst::test::test_generate,test_failed,1628.823,1.770,2026-11-05T03:54:34Z,50245961.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,shiva-1.4.9,typst::test::test_generate_from_xml,test_failed,1628.823,1.778,2026-11-05T03:54:35Z,50245961.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,shiva-1.4.9,xls::tests::test_parse,test_failed,1628.823,1.833,2026-11-05T03:54:37Z,50245961.0,panic,"thread 'xls::tests::test_parse' (21058) panicked at src/xls.rs:93:41: Cannot open xls file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,shiva-1.4.9,xlsx::tests::test_generate,test_failed,1628.823,1.845,2026-11-05T03:54:39Z,50245961.0,panic,"thread 'xlsx::tests::test_generate' (30109) panicked at src/xlsx.rs:137:41: Cannot open xlsx file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,shiva-1.4.9,xlsx::tests::test_parse,test_failed,1628.823,1.832,2026-11-05T03:54:41Z,50245961.0,panic,"thread 'xlsx::tests::test_parse' (34177) panicked at src/xlsx.rs:121:41: Cannot open xlsx file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,shiva-1.4.9,xml::tests::test_generate,test_failed,1628.823,1.839,2026-11-05T03:54:43Z,50245961.0,panic,"thread 'xml::tests::test_generate' (35230) panicked at src/xml.rs:1036:41: Cannot open xml file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,shiva-1.4.9,xml::tests::test_parse,test_failed,1628.823,1.844,2026-11-05T03:54:45Z,50245961.0,panic,"thread 'xml::tests::test_parse' (35507) panicked at src/xml.rs:1019:41: Cannot open xml file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

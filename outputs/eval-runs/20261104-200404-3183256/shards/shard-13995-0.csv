@@ -1,0 +1,7 @@
+experimental-bsan,alloy-pubsub-2.5.0,service::tests::default_close_with_error_still_reconnects,success,167.108,1.935,2026-11-05T06:51:08Z,50257537.0,,
+experimental-bsan,alloy-pubsub-2.5.0,service::tests::non_retryable_close_skips_reconnect_loop,success,167.108,1.946,2026-11-05T06:51:09Z,50257537.0,,
+experimental-bsan,alloy-pubsub-2.5.0,service::tests::non_retryable_reconnect_error_short_circuits_retry_loop,success,167.108,1.907,2026-11-05T06:51:11Z,50257537.0,,
+experimental-bsan,alloy-pubsub-2.5.0,service::tests::reconnect_retry_interval_does_not_shorten_base_above_cap,success,167.108,1.784,2026-11-05T06:51:13Z,50257537.0,,
+experimental-bsan,alloy-pubsub-2.5.0,service::tests::reconnect_retry_interval_uses_capped_exponential_backoff,success,167.108,1.780,2026-11-05T06:51:15Z,50257537.0,,
+experimental-bsan,alloy-pubsub-2.5.0,service::tests::reconnect_retry_interval_uses_configured_base_interval,success,167.108,1.799,2026-11-05T06:51:17Z,50257537.0,,
+experimental-bsan,alloy-pubsub-2.5.0,service::tests::reconnects_after_request_dispatch_hits_backend_gone,success,167.108,1.921,2026-11-05T06:51:19Z,50257537.0,,

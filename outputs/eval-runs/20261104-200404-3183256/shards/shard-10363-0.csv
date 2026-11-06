@@ -1,0 +1,15 @@
+experimental-bsan,cansi-2.2.1,categorise::tests::cat_and_matches_len,success,151.557,3.068,2026-11-05T05:18:29Z,50252424.0,,
+experimental-bsan,cansi-2.2.1,categorise::tests::malformed_escapes,success,151.557,3.003,2026-11-05T05:18:32Z,50252424.0,,
+experimental-bsan,cansi-2.2.1,parsing::tests::malformed_escape,success,151.557,3.020,2026-11-05T05:18:35Z,50252424.0,,
+experimental-bsan,cansi-2.2.1,parsing::tests::parse_string_with_different_chars,success,151.557,3.016,2026-11-05T05:18:38Z,50252424.0,,
+experimental-bsan,cansi-2.2.1,parsing::tests::parse_test,success,151.557,3.017,2026-11-05T05:18:41Z,50252424.0,,
+experimental-bsan,cansi-2.2.1,test_colored_function,test_failed,151.557,3.404,2026-11-05T05:18:45Z,50252424.0,panic,"thread 'test_colored_function' (95885) panicked at tests/api.rs:176:5: assertion `left == right` failed: black()"
+experimental-bsan,cansi-2.2.1,test_readme_code,test_failed,151.557,3.086,2026-11-05T05:18:48Z,50252424.0,panic,"thread 'test_readme_code' (95951) panicked at tests/api.rs:37:5: assertion `left == right` failed"
+experimental-bsan,cansi-2.2.1,tests::byte_bug,success,151.557,3.032,2026-11-05T05:18:51Z,50252424.0,,
+experimental-bsan,cansi-2.2.1,tests::clone_style_test,success,151.557,3.026,2026-11-05T05:18:54Z,50252424.0,,
+experimental-bsan,cansi-2.2.1,tests::colouring_with_emojis,success,151.557,3.041,2026-11-05T05:18:57Z,50252424.0,,
+experimental-bsan,cansi-2.2.1,tests::cover_other_parameters,success,151.557,3.078,2026-11-05T05:19:00Z,50252424.0,,
+experimental-bsan,cansi-2.2.1,tests::line_iter_bugs,success,151.557,3.109,2026-11-05T05:19:03Z,50252424.0,,
+experimental-bsan,cansi-2.2.1,tests::line_iter_newline_starts_with_esc,test_failed,151.557,1.798,2026-11-05T05:19:05Z,50252424.0,panic,"thread 'tests::line_iter_newline_starts_with_esc' (2175) panicked at src/tests.rs:410:5: assertion `left == right` failed"
+experimental-bsan,cansi-2.2.1,tests::line_iter_test,test_failed,151.557,1.917,2026-11-05T05:19:07Z,50252424.0,panic,"thread 'tests::line_iter_test' (2318) panicked at src/tests.rs:304:5: assertion `left == right` failed"
+experimental-bsan,cansi-2.2.1,tests::split_on_new_line_tests,success,151.557,3.053,2026-11-05T05:19:10Z,50252424.0,,

@@ -1,0 +1,21 @@
+experimental-bsan,zune-image-0.5.0-rc0,channel::tests::test_clone_works,success,169.621,1.549,2026-11-05T04:44:15Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,channel::tests::test_correct_interpretation,success,169.621,1.529,2026-11-05T04:44:17Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,channel::tests::test_wrong_interpretation,success,169.621,1.547,2026-11-05T04:44:19Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,core_filters::colorspace::rgb_to_hsl::tests::test_round_trip_random,success,169.621,1.589,2026-11-05T04:44:20Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,core_filters::colorspace::rgb_to_hsv::tests::test_round_trip_random,success,169.621,1.608,2026-11-05T04:44:22Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,core_filters::colorspace::tests::test_bgr_to_other_colors,success,169.621,68.588,2026-11-05T04:45:30Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,core_filters::colorspace::tests::test_bgra_to_other_colors,success,169.621,62.101,2026-11-05T04:46:32Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,core_filters::colorspace::tests::test_cmyk_to_rgb,success,169.621,3.649,2026-11-05T04:46:36Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,core_filters::colorspace::tests::test_hsl_to_other_colors,timeout,169.621,150.013,2026-11-05T04:49:06Z,50250452.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,zune-image-0.5.0-rc0,core_filters::colorspace::tests::test_luma_a_to_other_colors,success,169.621,50.547,2026-11-05T04:49:57Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,core_filters::colorspace::tests::test_luma_to_other_colors,success,169.621,56.293,2026-11-05T04:50:53Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,core_filters::colorspace::tests::test_real_time_rgb_to_cmyk,test_failed,169.621,1.608,2026-11-05T04:50:55Z,50250452.0,panic,"thread 'core_filters::colorspace::tests::test_real_time_rgb_to_cmyk' (91665) panicked at src/core_filters/colorspace/tests.rs:39:44: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,zune-image-0.5.0-rc0,core_filters::colorspace::tests::test_rgb_to_cmyk,success,169.621,3.820,2026-11-05T04:50:58Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,core_filters::colorspace::tests::test_rgb_to_other_colors,success,169.621,67.019,2026-11-05T04:52:05Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,core_filters::colorspace::tests::test_rgba_to_other_colors,success,169.621,61.743,2026-11-05T04:53:07Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,frame::tests::test_color_separation_argb,success,169.621,1.525,2026-11-05T04:53:09Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,frame::tests::test_color_separation_luma_a,success,169.621,1.531,2026-11-05T04:53:10Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,frame::tests::test_color_separation_rgba,success,169.621,1.526,2026-11-05T04:53:12Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,frame::tests::test_conversion_to_native_endian,success,169.621,1.511,2026-11-05T04:53:13Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,ops::add,success,169.621,4.995,2026-11-05T04:53:18Z,50250452.0,,
+experimental-bsan,zune-image-0.5.0-rc0,tests::test_fractal,timeout,169.621,150.032,2026-11-05T04:55:48Z,50250452.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

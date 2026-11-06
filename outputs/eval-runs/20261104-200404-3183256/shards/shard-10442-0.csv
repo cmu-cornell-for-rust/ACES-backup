@@ -1,0 +1,15 @@
+experimental-bsan,janus_collector-0.7.143,credential::tests::serde_collector_credential,success,1138.585,3.732,2026-11-05T05:39:04Z,50252562.0,,
+experimental-bsan,janus_collector-0.7.143,tests::collect_poll_retry_after,success,1138.585,13.699,2026-11-05T05:39:18Z,50252562.0,,
+experimental-bsan,janus_collector-0.7.143,tests::failed_collect_poll,test_failed,1138.585,83.925,2026-11-05T05:40:42Z,50252562.0,panic,"thread 'tests::failed_collect_poll' (59263) panicked at /local/ev-50252562-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/mockito-1.7.2/src/mock.rs:633:13:"
+experimental-bsan,janus_collector-0.7.143,tests::failed_collect_start,success,1138.585,29.087,2026-11-05T05:41:11Z,50252562.0,,
+experimental-bsan,janus_collector-0.7.143,tests::failed_delete,success,1138.585,11.311,2026-11-05T05:41:22Z,50252562.0,,
+experimental-bsan,janus_collector-0.7.143,tests::leader_endpoint_end_in_slash,success,1138.585,6.238,2026-11-05T05:41:28Z,50252562.0,,
+experimental-bsan,janus_collector-0.7.143,tests::poll_content_length_header,test_failed,1138.585,22.267,2026-11-05T05:41:51Z,50252562.0,panic,"thread 'tests::poll_content_length_header' (76051) panicked at src/lib.rs:2015:59: called `Result::unwrap()` on an `Err` value: Http(HttpErrorResponse { problem_details: HttpApiProblem { type_url: None, status: Some(500), title: None, detail: None, instance: None, additional_fields: {} }, dap_proble"
+experimental-bsan,janus_collector-0.7.143,tests::poll_timing,success,1138.585,13.185,2026-11-05T05:42:04Z,50252562.0,,
+experimental-bsan,janus_collector-0.7.143,tests::successful_collect_authentication_bearer,success,1138.585,33.371,2026-11-05T05:42:37Z,50252562.0,,
+experimental-bsan,janus_collector-0.7.143,tests::successful_collect_fixed_size,success,1138.585,33.542,2026-11-05T05:43:11Z,50252562.0,,
+experimental-bsan,janus_collector-0.7.143,tests::successful_collect_prio3_count,test_failed,1138.585,28.698,2026-11-05T05:43:39Z,50252562.0,panic,"thread 'tests::successful_collect_prio3_count' (88168) panicked at /local/ev-50252562-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/mockito-1.7.2/src/mock.rs:633:13:"
+experimental-bsan,janus_collector-0.7.143,tests::successful_collect_prio3_fixedpoint_boundedl2_vec_sum,success,1138.585,40.987,2026-11-05T05:44:20Z,50252562.0,,
+experimental-bsan,janus_collector-0.7.143,tests::successful_collect_prio3_histogram,success,1138.585,35.963,2026-11-05T05:44:56Z,50252562.0,,
+experimental-bsan,janus_collector-0.7.143,tests::successful_collect_prio3_sum,success,1138.585,35.644,2026-11-05T05:45:32Z,50252562.0,,
+experimental-bsan,janus_collector-0.7.143,tests::successful_delete,test_failed,1138.585,14.590,2026-11-05T05:45:47Z,50252562.0,panic,"thread 'tests::successful_delete' (93968) panicked at src/lib.rs:1922:14: called `Result::unwrap()` on an `Err` value: Http(HttpErrorResponse { problem_details: HttpApiProblem { type_url: None, status: Some(500), title: None, detail: None, instance: None, additional_fields: {} }, dap_problem_type: N"

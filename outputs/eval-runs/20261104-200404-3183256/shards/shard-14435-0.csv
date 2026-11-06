@@ -1,0 +1,7 @@
+experimental-bsan,recloser-1.1.1,r#async::tests::custom_timeout,test_failed,187.295,12.802,2026-11-05T07:00:47Z,50258167.0,gc,"test r#async::tests::custom_timeout ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,recloser-1.1.1,r#async::tests::multi_futures,test_failed,187.295,12.757,2026-11-05T07:01:00Z,50258167.0,gc,"test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 6 filtered outERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,recloser-1.1.1,recloser::tests::error_predicate,success,187.295,1.690,2026-11-05T07:01:02Z,50258167.0,,
+experimental-bsan,recloser-1.1.1,recloser::tests::multi_errors,success,187.295,1.684,2026-11-05T07:01:04Z,50258167.0,,
+experimental-bsan,recloser-1.1.1,recloser::tests::recloser_concurrent,timeout,187.295,150.016,2026-11-05T07:03:34Z,50258167.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,recloser-1.1.1,recloser::tests::recloser_correctness,success,187.295,1.621,2026-11-05T07:03:35Z,50258167.0,,
+experimental-bsan,recloser-1.1.1,ring_buffer::tests::ring_buffer_correctness,timeout,187.295,150.018,2026-11-05T07:06:05Z,50258167.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

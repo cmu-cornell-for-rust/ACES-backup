@@ -1,0 +1,33 @@
+experimental-bsan,bcrypt-0.19.3,bcrypt::tests::raw_bcrypt,timeout,23.194,150.015,2026-11-05T03:47:34Z,50247275.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bcrypt-0.19.3,tests::a_wrong_password_is_false,success,23.194,19.679,2026-11-05T03:47:53Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::allow_null_bytes,timeout,23.194,150.013,2026-11-05T03:50:23Z,50247275.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bcrypt-0.19.3,tests::can_get_raw_salt_from_parsed_hash,success,23.194,1.595,2026-11-05T03:50:25Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::can_output_cost_and_salt_from_parsed_hash,success,23.194,1.604,2026-11-05T03:50:27Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::can_split_hash,success,23.194,1.606,2026-11-05T03:50:28Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::can_verify_arbitrary_own_generated,timeout,23.194,150.011,2026-11-05T03:52:58Z,50247275.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bcrypt-0.19.3,tests::can_verify_hash_generated_from_go,success,23.194,19.707,2026-11-05T03:53:18Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::can_verify_hash_generated_from_node,success,23.194,19.816,2026-11-05T03:53:38Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::can_verify_hash_generated_from_python,success,23.194,19.648,2026-11-05T03:53:57Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::can_verify_hash_generated_from_some_online_tool,success,23.194,19.753,2026-11-05T03:54:17Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::can_verify_own_generated,success,23.194,37.974,2026-11-05T03:54:55Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::can_write_hash_for_version_without_allocating,success,23.194,1.611,2026-11-05T03:54:57Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::does_no_error_on_char_boundary_splitting,success,23.194,1.585,2026-11-05T03:54:58Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::doesnt_verify_different_passwords,timeout,23.194,150.011,2026-11-05T03:57:28Z,50247275.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bcrypt-0.19.3,tests::errors_with_a_hash_too_long,success,23.194,1.576,2026-11-05T03:57:30Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::errors_with_invalid_hash,success,23.194,1.584,2026-11-05T03:57:32Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::errors_with_non_number_cost,success,23.194,1.580,2026-11-05T03:57:33Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::generate_versions,timeout,23.194,150.013,2026-11-05T04:00:03Z,50247275.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bcrypt-0.19.3,tests::hash_bytes_matches_hash_string,success,23.194,37.264,2026-11-05T04:00:40Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::hash_bytes_returns_valid_utf8_bcrypt_string,success,23.194,37.761,2026-11-05T04:01:18Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::hash_with_fixed_salt,success,23.194,36.609,2026-11-05T04:01:55Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::hash_with_salt_bytes_matches_hash_with_salt,success,23.194,72.144,2026-11-05T04:03:07Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::invalid_hash_does_not_panic,success,23.194,1.590,2026-11-05T04:03:09Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::long_passwords_truncate_correctly,success,23.194,36.906,2026-11-05T04:03:46Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::non_truncating_hash_bytes_errors_on_long_password,success,23.194,1.618,2026-11-05T04:03:47Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::non_truncating_hash_bytes_returns_valid_utf8_bcrypt_string,success,23.194,37.550,2026-11-05T04:04:25Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::non_truncating_hash_with_salt_bytes_errors_on_long_password,success,23.194,1.568,2026-11-05T04:04:26Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::non_truncating_operations,timeout,23.194,150.014,2026-11-05T04:06:56Z,50247275.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,bcrypt-0.19.3,tests::returns_an_error_if_a_parsed_hash_is_baddly_formated,success,23.194,1.625,2026-11-05T04:06:58Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::split_hash_rejects_non_ascii,success,23.194,1.600,2026-11-05T04:07:00Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::verify_rejects_multibyte_utf8_in_hash,success,23.194,1.617,2026-11-05T04:07:01Z,50247275.0,,
+experimental-bsan,bcrypt-0.19.3,tests::write_for_version_matches_format_for_version,timeout,23.194,150.013,2026-11-05T04:09:31Z,50247275.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

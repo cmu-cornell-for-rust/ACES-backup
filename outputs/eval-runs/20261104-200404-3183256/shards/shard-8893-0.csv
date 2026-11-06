@@ -1,0 +1,20 @@
+experimental-bsan,chwp-1.239.26,config_test::is_local_path_empty,success,599.064,1.578,2026-11-05T04:52:36Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,config_test::is_local_path_false,success,599.064,1.598,2026-11-05T04:52:37Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,config_test::is_local_path_true,success,599.064,1.581,2026-11-05T04:52:39Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,config_test::is_url_empty,success,599.064,1.569,2026-11-05T04:52:40Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,config_test::is_url_false,success,599.064,1.573,2026-11-05T04:52:42Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,config_test::is_url_true,success,599.064,1.626,2026-11-05T04:52:44Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,config_test::parse_cli_args_no_arg,success,599.064,1.585,2026-11-05T04:52:45Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,config_test::parse_cli_args_only_span,success,599.064,1.568,2026-11-05T04:52:47Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,config_test::parse_cli_args_single_arg,success,599.064,1.572,2026-11-05T04:52:48Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,config_test::parse_cli_args_two_arg,success,599.064,1.612,2026-11-05T04:52:50Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,download_test::get_data,success,599.064,6.629,2026-11-05T04:52:57Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,download_test::get_string,success,599.064,6.582,2026-11-05T04:53:03Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,filesystem_test::read_file_single_element,success,599.064,3.814,2026-11-05T04:53:07Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,filesystem_test::read_file_text_file,success,599.064,3.845,2026-11-05T04:53:11Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,filesystem_test::read_file_text_file_whole_dir,success,599.064,3.748,2026-11-05T04:53:15Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,filesystem_test::read_file_two_element,success,599.064,5.451,2026-11-05T04:53:20Z,50250563.0,,
+experimental-bsan,chwp-1.239.26,image_processor_test::scale_image_different_aspect_ratio_but_smaller_screen,timeout,599.064,150.021,2026-11-05T04:55:50Z,50250563.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,chwp-1.239.26,image_processor_test::scale_image_same_aspect_ratio_but_smaller_screen,timeout,599.064,150.033,2026-11-05T04:58:20Z,50250563.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,chwp-1.239.26,image_processor_test::scale_image_two_displays_with_span,timeout,599.064,150.022,2026-11-05T05:00:50Z,50250563.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,chwp-1.239.26,image_processor_test::scale_image_two_displays_without_span,timeout,599.064,150.033,2026-11-05T05:03:20Z,50250563.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

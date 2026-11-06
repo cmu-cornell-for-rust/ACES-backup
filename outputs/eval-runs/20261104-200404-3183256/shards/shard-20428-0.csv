@@ -1,0 +1,1 @@
+experimental-bsan,google-cloud-artifact-registry-0.7.1,client::tests::test_crud_repository,test_failed,521.062,2.940,2026-11-05T09:34:24Z,50266212.0,panic,"thread 'client::tests::test_crud_repository' (54211) panicked at src/client.rs:119:81: called `Result::unwrap()` on an `Err` value: CredentialsIOError(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"

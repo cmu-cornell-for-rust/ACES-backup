@@ -1,0 +1,5 @@
+experimental-bsan,gleam_finder-0.5.3,gleam::tests::get_gleam_urls,success,69.484,1.617,2026-11-05T07:27:03Z,50259878.0,,
+experimental-bsan,gleam_finder-0.5.3,gleam::tests::test_giveaway_struct,test_failed,69.484,50.797,2026-11-05T07:27:54Z,50259878.0,panic,"thread 'gleam::tests::test_giveaway_struct' (57408) panicked at src/lib.rs:372:22: called `Result::unwrap()` on an `Err` value: InvalidResponse"
+experimental-bsan,gleam_finder-0.5.3,google::tests::get_full_url_test,success,69.484,1.612,2026-11-05T07:27:56Z,50259878.0,,
+experimental-bsan,gleam_finder-0.5.3,google::tests::resolve_google_request,test_failed,69.484,4.484,2026-11-05T07:28:00Z,50259878.0,panic,"thread 'google::tests::resolve_google_request' (62841) panicked at src/lib.rs:98:13: assertion failed: !result.is_empty()"
+experimental-bsan,gleam_finder-0.5.3,intermediary::test::resolving,test_failed,69.484,4.997,2026-11-05T07:28:05Z,50259878.0,panic,"thread 'intermediary::test::resolving' (63101) panicked at src/lib.rs:176:13: assertion `left == right` failed"

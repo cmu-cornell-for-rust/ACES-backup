@@ -1,0 +1,38 @@
+experimental-bsan,wavers-1.4.3,chunks::fact::fact_tests::test_as_bytes,success,168.138,1.762,2026-11-05T03:27:23Z,50245989.0,,
+experimental-bsan,wavers-1.4.3,chunks::list::list_chunk_tests::can_deocde_list_bytes,success,168.138,1.755,2026-11-05T03:27:25Z,50245989.0,,
+experimental-bsan,wavers-1.4.3,conversion::conversion_tests::f32_to_i16,timeout,168.138,150.022,2026-11-05T03:29:55Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,conversion::conversion_tests::i16_to_f32,timeout,168.138,150.021,2026-11-05T03:32:25Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,conversion::conversion_tests::i16_to_f32_slice,timeout,168.138,150.020,2026-11-05T03:34:55Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,core::core_tests::can_read_two_channel,timeout,168.138,150.020,2026-11-05T03:37:25Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,core::core_tests::channels_iter_correct,timeout,168.138,150.021,2026-11-05T03:39:55Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,core::core_tests::convert_write_read,timeout,168.138,150.021,2026-11-05T03:42:25Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,core::core_tests::duration_one_channel,success,168.138,1.736,2026-11-05T03:42:27Z,50245989.0,,
+experimental-bsan,wavers-1.4.3,core::core_tests::duration_two_channel,success,168.138,1.728,2026-11-05T03:42:29Z,50245989.0,,
+experimental-bsan,wavers-1.4.3,core::core_tests::i16_i32_convert,success,168.138,39.230,2026-11-05T03:43:08Z,50245989.0,,
+experimental-bsan,wavers-1.4.3,core::core_tests::n_samples_after_convert,success,168.138,1.721,2026-11-05T03:43:10Z,50245989.0,,
+experimental-bsan,wavers-1.4.3,core::core_tests::primitive_to_u8_slice,success,168.138,1.716,2026-11-05T03:43:12Z,50245989.0,,
+experimental-bsan,wavers-1.4.3,core::core_tests::read_and_convert,timeout,168.138,150.020,2026-11-05T03:45:42Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,core::core_tests::read_i24_correctly,timeout,168.138,150.021,2026-11-05T03:48:12Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,core::core_tests::read_some_then_read_remainder,success,168.138,1.752,2026-11-05T03:48:14Z,50245989.0,,
+experimental-bsan,wavers-1.4.3,core::core_tests::seek_by_duration,timeout,168.138,150.022,2026-11-05T03:50:44Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,core::core_tests::seek_by_samples,timeout,168.138,150.020,2026-11-05T03:53:14Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,core::core_tests::write_i24_correctly,timeout,168.138,150.020,2026-11-05T03:55:44Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,header::header_tests::can_convert_to_and_from_bytes,success,168.138,1.731,2026-11-05T03:55:45Z,50245989.0,,
+experimental-bsan,wavers-1.4.3,header::header_tests::can_read_header,success,168.138,1.728,2026-11-05T03:55:47Z,50245989.0,,
+experimental-bsan,wavers-1.4.3,header::header_tests::test_printing,success,168.138,1.753,2026-11-05T03:55:49Z,50245989.0,,
+experimental-bsan,wavers-1.4.3,header::header_tests::test_size,success,168.138,1.726,2026-11-05T03:55:51Z,50245989.0,,
+experimental-bsan,wavers-1.4.3,iter::iter_tests::test_channel_iterator,timeout,168.138,150.020,2026-11-05T03:58:21Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,iter::iter_tests::test_channel_iterator_resets,timeout,168.138,150.021,2026-11-05T04:00:51Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,iter::iter_tests::test_frame_iterator,timeout,168.138,150.021,2026-11-05T04:03:21Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,iter::iter_tests::test_frame_iterator_resets,timeout,168.138,150.020,2026-11-05T04:05:51Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,lib_tests::read_f32,timeout,168.138,150.020,2026-11-05T04:08:21Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,lib_tests::read_f64,timeout,168.138,150.023,2026-11-05T04:10:51Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,lib_tests::read_i16,timeout,168.138,150.020,2026-11-05T04:13:21Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,lib_tests::read_i32,timeout,168.138,150.020,2026-11-05T04:15:51Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,lib_tests::test_read,timeout,168.138,150.021,2026-11-05T04:18:21Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,lib_tests::test_write,timeout,168.138,150.022,2026-11-05T04:20:51Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,lib_tests::write_f32,timeout,168.138,150.022,2026-11-05T04:23:21Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,lib_tests::write_f64,timeout,168.138,150.023,2026-11-05T04:25:51Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,lib_tests::write_i16,timeout,168.138,150.021,2026-11-05T04:28:21Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,lib_tests::write_i32,timeout,168.138,150.021,2026-11-05T04:30:51Z,50245989.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wavers-1.4.3,lib_tests::write_sin_wav,success,168.138,51.448,2026-11-05T04:31:43Z,50245989.0,,

@@ -1,0 +1,12 @@
+experimental-bsan,rex-sm-0.7.0,ingress::tests::rex_builder,success,120.932,3.153,2026-11-05T05:49:31Z,50254329.0,,
+experimental-bsan,rex-sm-0.7.0,ingress::tests::route_from_network,success,120.932,2.538,2026-11-05T05:49:34Z,50254329.0,,
+experimental-bsan,rex-sm-0.7.0,ingress::tests::route_to_network,success,120.932,2.575,2026-11-05T05:49:36Z,50254329.0,,
+experimental-bsan,rex-sm-0.7.0,manager::tests::ping_timeout,test_failed,120.932,4.004,2026-11-05T05:49:40Z,50254329.0,panic,"thread 'manager::tests::ping_timeout' (480) panicked at src/manager.rs:924:9: assertion `left == right` failed"
+experimental-bsan,rex-sm-0.7.0,manager::tests::pong_timeout,test_failed,120.932,4.325,2026-11-05T05:49:45Z,50254329.0,panic,"thread 'manager::tests::pong_timeout' (1164) panicked at src/manager.rs:880:13: assertion `left == right` failed"
+experimental-bsan,rex-sm-0.7.0,manager::tests::state_machine,success,120.932,3.693,2026-11-05T05:49:48Z,50254329.0,,
+experimental-bsan,rex-sm-0.7.0,node::tests::insert_child_state,success,120.932,1.577,2026-11-05T05:49:50Z,50254329.0,,
+experimental-bsan,rex-sm-0.7.0,notification::tests::route_to_timeout_manager,test_failed,120.932,1.756,2026-11-05T05:49:52Z,50254329.0,panic,"thread 'notification::tests::route_to_timeout_manager' (1916) panicked at src/notification.rs:249:43: timeout one"
+experimental-bsan,rex-sm-0.7.0,queue::tests::streamable_deque,success,120.932,1.629,2026-11-05T05:49:53Z,50254329.0,,
+experimental-bsan,rex-sm-0.7.0,timeout::tests::partial_timeout_cancellation,test_failed,120.932,3.206,2026-11-05T05:49:57Z,50254329.0,panic,"thread 'timeout::tests::partial_timeout_cancellation' (2187) panicked at src/timeout.rs:534:70: called `Option::unwrap()` on a `None` value"
+experimental-bsan,rex-sm-0.7.0,timeout::tests::timeout_cancellation,test_failed,120.932,1.765,2026-11-05T05:49:58Z,50254329.0,panic,"thread 'timeout::tests::timeout_cancellation' (2505) panicked at src/timeout.rs:475:9: assertion failed: timeout_manager.signal_queue.pop_front().is_none()"
+experimental-bsan,rex-sm-0.7.0,timeout::tests::timeout_to_signal,success,120.932,1.678,2026-11-05T05:50:00Z,50254329.0,,

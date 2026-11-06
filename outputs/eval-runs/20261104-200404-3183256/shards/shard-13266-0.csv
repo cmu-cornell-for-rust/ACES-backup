@@ -1,0 +1,9 @@
+experimental-bsan,simple-cmd-0.0.19,test::tests::test_cancel_signal,success,57.496,3.534,2026-11-05T06:34:06Z,50256626.0,,
+experimental-bsan,simple-cmd-0.0.19,test::tests::test_cmd_to_string,success,57.496,1.585,2026-11-05T06:34:08Z,50256626.0,,
+experimental-bsan,simple-cmd-0.0.19,test::tests::test_current_dir,test_failed,57.496,2.567,2026-11-05T06:34:10Z,50256626.0,panic,"thread 'test::tests::test_current_dir' (95860) panicked at src/impls.rs:255:41: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,simple-cmd-0.0.19,test::tests::test_error,success,57.496,3.557,2026-11-05T06:34:14Z,50256626.0,,
+experimental-bsan,simple-cmd-0.0.19,test::tests::test_pipe,success,57.496,2.561,2026-11-05T06:34:16Z,50256626.0,,
+experimental-bsan,simple-cmd-0.0.19,test::tests::test_run,success,57.496,2.546,2026-11-05T06:34:19Z,50256626.0,,
+experimental-bsan,simple-cmd-0.0.19,test::tests::test_simple,success,57.496,2.604,2026-11-05T06:34:21Z,50256626.0,,
+experimental-bsan,simple-cmd-0.0.19,test::tests::test_sleep,success,57.496,2.644,2026-11-05T06:34:24Z,50256626.0,,
+experimental-bsan,simple-cmd-0.0.19,test::tests::test_to_command,success,57.496,3.510,2026-11-05T06:34:28Z,50256626.0,,

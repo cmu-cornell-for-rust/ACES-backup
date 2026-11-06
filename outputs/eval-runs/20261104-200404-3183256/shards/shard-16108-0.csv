@@ -1,0 +1,5 @@
+experimental-bsan,strip-ansi-0.1.0,tests::strip_color_from_ls_command,success,51.105,3.537,2026-11-05T07:35:56Z,50260434.0,,
+experimental-bsan,strip-ansi-0.1.0,tests::strip_color_from_string,success,51.105,3.575,2026-11-05T07:35:59Z,50260434.0,,
+experimental-bsan,strip-ansi-0.1.0,tests::strip_link_from_terminal_link,test_failed,51.105,3.307,2026-11-05T07:36:03Z,50260434.0,panic,"thread 'tests::strip_link_from_terminal_link' (18288) panicked at src/lib.rs:50:9: assertion `left == right` failed"
+experimental-bsan,strip-ansi-0.1.0,tests::strip_reset_setfg_setbg_italics_strike_underline_sequence_from_string,success,51.105,3.587,2026-11-05T07:36:06Z,50260434.0,,
+experimental-bsan,strip-ansi-0.1.0,tests::test_strip_ansi_basic,success,51.105,3.490,2026-11-05T07:36:10Z,50260434.0,,

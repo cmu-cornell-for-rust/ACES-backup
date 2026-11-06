@@ -1,0 +1,73 @@
+experimental-bsan,diplomat_core-0.16.1,ast::attrs::tests::test_attr,success,227.887,13.995,2026-11-05T02:22:51Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::attrs::tests::test_cfgs,success,227.887,14.584,2026-11-05T02:23:05Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::attrs::tests::test_rename,success,227.887,14.008,2026-11-05T02:23:19Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::enums::tests::enum_with_discr,success,227.887,16.345,2026-11-05T02:23:36Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::enums::tests::simple_enum,success,227.887,15.462,2026-11-05T02:23:51Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::functions::tests::test_free_function,success,227.887,15.184,2026-11-05T02:24:06Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::functions::tests::test_free_function_lifetimes,success,227.887,16.151,2026-11-05T02:24:22Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::functions::tests::test_free_function_output,success,227.887,15.230,2026-11-05T02:24:38Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::idents::tests::test_span_parsing,success,227.887,18.096,2026-11-05T02:24:56Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::methods::tests::cfged_method,success,227.887,16.637,2026-11-05T02:25:12Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::methods::tests::nonstatic_methods,success,227.887,19.161,2026-11-05T02:25:32Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::methods::tests::nonstatic_params_held_by_return_type,success,227.887,4.054,2026-11-05T02:25:36Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::methods::tests::static_methods,success,227.887,20.181,2026-11-05T02:25:56Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::methods::tests::static_params_held_by_return_type,test_failed,227.887,5.435,2026-11-05T02:26:01Z,50240258.0,crash,"test ast::methods::tests::static_params_held_by_return_type ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,ast::modules::tests::import_in_non_diplomat_not_analyzed,success,227.887,15.433,2026-11-05T02:26:17Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::modules::tests::method_visibility,success,227.887,17.098,2026-11-05T02:26:34Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::modules::tests::simple_mod,success,227.887,27.359,2026-11-05T02:27:01Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::modules::tests::struct_visibility,success,227.887,15.422,2026-11-05T02:27:17Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::structs::tests::simple_struct,success,227.887,16.446,2026-11-05T02:27:33Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::types::tests::lifetimes,success,227.887,25.359,2026-11-05T02:27:58Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::types::tests::typename_boxes,success,227.887,14.730,2026-11-05T02:28:13Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::types::tests::typename_named,success,227.887,14.146,2026-11-05T02:28:27Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::types::tests::typename_option,success,227.887,14.936,2026-11-05T02:28:42Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::types::tests::typename_primitives,success,227.887,14.692,2026-11-05T02:28:57Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::types::tests::typename_references,success,227.887,14.848,2026-11-05T02:29:12Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::types::tests::typename_result,success,227.887,16.611,2026-11-05T02:29:28Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_auto,test_failed,227.887,2.051,2026-11-05T02:29:31Z,50240258.0,crash,"test hir::attrs::tests::test_auto ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_comparator,test_failed,227.887,2.936,2026-11-05T02:29:33Z,50240258.0,crash,"test hir::attrs::tests::test_comparator ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_custom_extra_code,success,227.887,15.431,2026-11-05T02:29:49Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_custom_extra_code_fail,success,227.887,15.252,2026-11-05T02:30:04Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_custom_extra_code_fail_unsupported,success,227.887,14.599,2026-11-05T02:30:19Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_default_args,success,227.887,14.919,2026-11-05T02:30:34Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_default_args_unsupport,success,227.887,14.752,2026-11-05T02:30:48Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_iterator,test_failed,227.887,2.099,2026-11-05T02:30:51Z,50240258.0,crash,"test hir::attrs::tests::test_iterator ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_mocking_interface_for_non_opaque_type,success,227.887,15.705,2026-11-05T02:31:06Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_mocking_interface_for_opaque_type,test_failed,227.887,1.827,2026-11-05T02:31:08Z,50240258.0,crash,"test hir::attrs::tests::test_mocking_interface_for_opaque_type ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_mocking_interface_for_unsupported_backend,success,227.887,15.536,2026-11-05T02:31:24Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_mut_struct_ref_for_unsupported_backend,success,227.887,14.977,2026-11-05T02:31:39Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_primitive_struct_slices,test_failed,227.887,1.829,2026-11-05T02:31:41Z,50240258.0,crash,"test hir::attrs::tests::test_primitive_struct_slices ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_primitive_struct_slices_for_unsupported_backend,test_failed,227.887,1.834,2026-11-05T02:31:42Z,50240258.0,crash,"test hir::attrs::tests::test_primitive_struct_slices_for_unsupported_backend ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_struct_ref_for_unsupported_backend,success,227.887,14.695,2026-11-05T02:31:57Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::attrs::tests::test_unsupported_features,test_failed,227.887,2.043,2026-11-05T02:31:59Z,50240258.0,crash,"test hir::attrs::tests::test_unsupported_features ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::docs::test_docs_url_generator,success,227.887,3.014,2026-11-05T02:32:02Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::elision::tests::simple_mod,success,227.887,29.514,2026-11-05T02:32:32Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::elision::tests::test_borrowing_fields,success,227.887,16.750,2026-11-05T02:32:48Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::elision::tests::test_elision_in_struct,success,227.887,16.980,2026-11-05T02:33:05Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::non_opaque_move,test_failed,227.887,1.951,2026-11-05T02:33:07Z,50240258.0,crash,"test hir::type_context::tests::non_opaque_move ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::opaque_checks_with_error,success,227.887,14.839,2026-11-05T02:33:22Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::opaque_checks_with_safe_use,test_failed,227.887,1.914,2026-11-05T02:33:24Z,50240258.0,crash,"test hir::type_context::tests::opaque_checks_with_safe_use ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::option_invalid,test_failed,227.887,1.863,2026-11-05T02:33:26Z,50240258.0,crash,"test hir::type_context::tests::option_invalid ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::option_valid,test_failed,227.887,1.767,2026-11-05T02:33:28Z,50240258.0,crash,"test hir::type_context::tests::option_valid ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_basic_lowering,test_failed,227.887,2.285,2026-11-05T02:33:30Z,50240258.0,crash,"test hir::type_context::tests::test_basic_lowering ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_callback_borrowing_fails,test_failed,227.887,1.818,2026-11-05T02:33:32Z,50240258.0,crash,"test hir::type_context::tests::test_callback_borrowing_fails ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_callback_borrowing_fails_with_unsafe_borrows,test_failed,227.887,1.898,2026-11-05T02:33:34Z,50240258.0,crash,"test hir::type_context::tests::test_callback_borrowing_fails_with_unsafe_borrows ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_callback_result_option_wrap_fails,test_failed,227.887,1.799,2026-11-05T02:33:36Z,50240258.0,crash,"test hir::type_context::tests::test_callback_result_option_wrap_fails ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_lifetime_in_return,success,227.887,15.792,2026-11-05T02:33:52Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_mut_struct,success,227.887,15.964,2026-11-05T02:34:08Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_mut_struct_fails,success,227.887,15.131,2026-11-05T02:34:23Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_non_primitive_struct_slices_fails,test_failed,227.887,1.849,2026-11-05T02:34:25Z,50240258.0,crash,"test hir::type_context::tests::test_non_primitive_struct_slices_fails ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_opaque_ffi,test_failed,227.887,1.908,2026-11-05T02:34:26Z,50240258.0,crash,"test hir::type_context::tests::test_opaque_ffi ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_opaque_slice,test_failed,227.887,1.921,2026-11-05T02:34:28Z,50240258.0,crash,"test hir::type_context::tests::test_opaque_slice ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_opaque_slice_borrows,test_failed,227.887,1.848,2026-11-05T02:34:30Z,50240258.0,crash,"test hir::type_context::tests::test_opaque_slice_borrows ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_option,test_failed,227.887,2.095,2026-11-05T02:34:32Z,50240258.0,crash,"test hir::type_context::tests::test_option ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_partial_comparison_unsupported,test_failed,227.887,1.846,2026-11-05T02:34:34Z,50240258.0,crash,"test hir::type_context::tests::test_partial_comparison_unsupported ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_required_implied_bounds,test_failed,227.887,2.061,2026-11-05T02:34:36Z,50240258.0,crash,"test hir::type_context::tests::test_required_implied_bounds ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_return_struct_slice,test_failed,227.887,1.831,2026-11-05T02:34:38Z,50240258.0,crash,"test hir::type_context::tests::test_return_struct_slice ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_struct_forbidden,test_failed,227.887,1.868,2026-11-05T02:34:40Z,50240258.0,crash,"test hir::type_context::tests::test_struct_forbidden ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_struct_ref_fails,test_failed,227.887,1.894,2026-11-05T02:34:42Z,50240258.0,crash,"test hir::type_context::tests::test_struct_ref_fails ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_tuple_inputs,success,227.887,16.886,2026-11-05T02:34:59Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_unsupported_mut_slice,test_failed,227.887,1.883,2026-11-05T02:35:01Z,50240258.0,crash,"test hir::type_context::tests::test_unsupported_mut_slice ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::test_usage,test_failed,227.887,1.950,2026-11-05T02:35:03Z,50240258.0,crash,"test hir::type_context::tests::test_usage ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,diplomat_core-0.16.1,hir::type_context::tests::zst_non_opaque,success,227.887,14.307,2026-11-05T02:35:17Z,50240258.0,,
+experimental-bsan,diplomat_core-0.16.1,ast::logging::tests::test_errors_ugly,no_match,227.887,1.590,2026-11-05T02:35:19Z,50240258.0,,

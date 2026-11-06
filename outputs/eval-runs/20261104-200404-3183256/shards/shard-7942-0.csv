@@ -1,0 +1,25 @@
+experimental-bsan,svix-2.8.0,api::client::tests::test_default_server_url,timeout,378.505,150.020,2026-11-05T04:24:00Z,50249129.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svix-2.8.0,api::client::tests::test_future_send_sync,timeout,378.505,150.018,2026-11-05T04:26:30Z,50249129.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svix-2.8.0,api::client::tests::test_regional_server_url,timeout,378.505,150.017,2026-11-05T04:29:00Z,50249129.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svix-2.8.0,api::client::tests::test_server_url_trailing_slashes_are_stripped,timeout,378.505,150.016,2026-11-05T04:31:30Z,50249129.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svix-2.8.0,api::client::tests::test_server_url_without_trailing_slash_is_unchanged,timeout,378.505,150.016,2026-11-05T04:34:00Z,50249129.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svix-2.8.0,api::client::tests::test_user_agent,timeout,378.505,150.017,2026-11-05T04:36:30Z,50249129.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svix-2.8.0,api::client::tests::test_with_token_keeps_normalized_server_url,timeout,378.505,150.016,2026-11-05T04:39:00Z,50249129.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,svix-2.8.0,autoconfig::tests::decode_autoconfig_token_dispatches_and_rejects_unknown_prefix,success,378.505,1.681,2026-11-05T04:39:02Z,50249129.0,,
+experimental-bsan,svix-2.8.0,autoconfig::tests::decode_autoconfig_token_v1_parses_payload,success,378.505,1.644,2026-11-05T04:39:03Z,50249129.0,,
+experimental-bsan,svix-2.8.0,autoconfig::tests::decode_autoconfig_token_v1_rejects_bad_prefix,success,378.505,1.613,2026-11-05T04:39:05Z,50249129.0,,
+experimental-bsan,svix-2.8.0,autoconfig::tests::decode_autoconfig_token_v1_rejects_invalid_json,success,378.505,1.612,2026-11-05T04:39:06Z,50249129.0,,
+experimental-bsan,svix-2.8.0,autoconfig::tests::decode_autoconfig_token_v2_parses_payload,success,378.505,1.631,2026-11-05T04:39:08Z,50249129.0,,
+experimental-bsan,svix-2.8.0,autoconfig::tests::decode_autoconfig_token_v2_rejects_bad_prefix,success,378.505,1.605,2026-11-05T04:39:10Z,50249129.0,,
+experimental-bsan,svix-2.8.0,autoconfig::tests::decode_autoconfig_token_v2_rejects_invalid_json,success,378.505,1.611,2026-11-05T04:39:11Z,50249129.0,,
+experimental-bsan,svix-2.8.0,webhooks::tests::test_from_bytes_rejects_empty_secret,success,378.505,1.614,2026-11-05T04:39:13Z,50249129.0,,
+experimental-bsan,svix-2.8.0,webhooks::tests::test_missing_headers,success,378.505,1.742,2026-11-05T04:39:15Z,50249129.0,,
+experimental-bsan,svix-2.8.0,webhooks::tests::test_new_rejects_empty_secret,success,378.505,1.594,2026-11-05T04:39:16Z,50249129.0,,
+experimental-bsan,svix-2.8.0,webhooks::tests::test_no_verify,success,378.505,1.797,2026-11-05T04:39:18Z,50249129.0,,
+experimental-bsan,svix-2.8.0,webhooks::tests::test_no_verify_with_multiple_signatures,success,378.505,1.717,2026-11-05T04:39:20Z,50249129.0,,
+experimental-bsan,svix-2.8.0,webhooks::tests::test_sign,success,378.505,1.668,2026-11-05T04:39:22Z,50249129.0,,
+experimental-bsan,svix-2.8.0,webhooks::tests::test_verify,success,378.505,1.860,2026-11-05T04:39:23Z,50249129.0,,
+experimental-bsan,svix-2.8.0,webhooks::tests::test_verify_incorrect_timestamp,success,378.505,2.190,2026-11-05T04:39:26Z,50249129.0,,
+experimental-bsan,svix-2.8.0,webhooks::tests::test_verify_out_of_bounds_timestamp,success,378.505,1.765,2026-11-05T04:39:27Z,50249129.0,,
+experimental-bsan,svix-2.8.0,webhooks::tests::test_verify_partial_signature,success,378.505,2.051,2026-11-05T04:39:29Z,50249129.0,,
+experimental-bsan,svix-2.8.0,webhooks::tests::test_verify_with_multiple_signatures,success,378.505,1.782,2026-11-05T04:39:31Z,50249129.0,,

@@ -1,0 +1,4 @@
+experimental-bsan,tokio-timerfd-0.2.0,delay::tests::delay_works,test_failed,46.904,1.766,2026-11-05T08:15:10Z,50262004.0,panic,"thread 'delay::tests::delay_works' (84051) panicked at src/delay.rs:94:9: assertion failed: elapsed < Duration::from_millis(1)"
+experimental-bsan,tokio-timerfd-0.2.0,delay::tests::delay_zero_duration,test_failed,46.904,1.772,2026-11-05T08:15:11Z,50262004.0,panic,"thread 'delay::tests::delay_zero_duration' (84287) panicked at src/delay.rs:83:9: assertion failed: elapsed < Duration::from_millis(1)"
+experimental-bsan,tokio-timerfd-0.2.0,interval::tests::interval_works,test_failed,46.904,1.786,2026-11-05T08:15:13Z,50262004.0,panic,"thread 'interval::tests::interval_works' (84431) panicked at src/interval.rs:100:9: assertion failed: elapsed < Duration::from_millis(1)"
+experimental-bsan,tokio-timerfd-0.2.0,interval::tests::long_interval_works,success,46.904,6.689,2026-11-05T08:15:20Z,50262004.0,,

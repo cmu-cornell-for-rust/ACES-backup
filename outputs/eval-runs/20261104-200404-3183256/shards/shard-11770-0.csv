@@ -1,0 +1,12 @@
+experimental-bsan,rs_merkle-1.5.0,commit::should_give_correct_root_after_commit,success,29.456,6.688,2026-11-05T05:49:08Z,50254349.0,,
+experimental-bsan,rs_merkle-1.5.0,commit::should_not_change_the_result_when_called_twice,success,29.456,6.383,2026-11-05T05:49:14Z,50254349.0,,
+experimental-bsan,rs_merkle-1.5.0,from_bytes::should_return_error_when_proof_can_not_be_parsed,success,29.456,5.549,2026-11-05T05:49:20Z,50254349.0,,
+experimental-bsan,rs_merkle-1.5.0,from_bytes::should_return_result_with_proof,success,29.456,5.694,2026-11-05T05:49:25Z,50254349.0,,
+experimental-bsan,rs_merkle-1.5.0,proof::should_return_a_correct_proof,success,29.456,5.958,2026-11-05T05:49:31Z,50254349.0,,
+experimental-bsan,rs_merkle-1.5.0,rollback::should_rollback_previous_commit,success,29.456,6.603,2026-11-05T05:49:38Z,50254349.0,,
+experimental-bsan,rs_merkle-1.5.0,root::should_return_a_correct_root,timeout,29.456,150.031,2026-11-05T05:52:08Z,50254349.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rs_merkle-1.5.0,root::should_return_a_correct_root_sha384,success,29.456,6.008,2026-11-05T05:52:14Z,50254349.0,,
+experimental-bsan,rs_merkle-1.5.0,root::should_return_error_not_enough_hashes_to_calculate_root,success,29.456,5.792,2026-11-05T05:52:20Z,50254349.0,,
+experimental-bsan,rs_merkle-1.5.0,root::should_sort_indices,success,29.456,5.878,2026-11-05T05:52:26Z,50254349.0,,
+experimental-bsan,rs_merkle-1.5.0,to_bytes::should_correctly_serialize_to_bytes,success,29.456,5.769,2026-11-05T05:52:31Z,50254349.0,,
+experimental-bsan,rs_merkle-1.5.0,tree_depth::should_return_a_correct_tree_depth,success,29.456,5.771,2026-11-05T05:52:37Z,50254349.0,,

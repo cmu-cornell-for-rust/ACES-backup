@@ -1,0 +1,10 @@
+experimental-bsan,evm_rpc_types-1.2.0,result::tests::test_multi_rpc_result_map,success,233.060,1.738,2026-11-05T06:19:50Z,50255604.0,,
+experimental-bsan,evm_rpc_types-1.2.0,rpc_client::tests::should_contain_host_without_sensitive_information,success,233.060,1.825,2026-11-05T06:19:52Z,50255604.0,,
+experimental-bsan,evm_rpc_types-1.2.0,tests::hex_string::should_decode_single_hex_char_into_hex_byte,success,233.060,1.732,2026-11-05T06:19:54Z,50255604.0,,
+experimental-bsan,evm_rpc_types-1.2.0,tests::hex_string::should_encode_decode,timeout,233.060,150.016,2026-11-05T06:22:24Z,50255604.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,evm_rpc_types-1.2.0,tests::hex_string::should_fail_to_decode_strings_with_wrong_length,timeout,233.060,150.025,2026-11-05T06:24:54Z,50255604.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,evm_rpc_types-1.2.0,tests::hex_string::should_have_ethereum_style_debug_format,success,233.060,1.709,2026-11-05T06:24:56Z,50255604.0,,
+experimental-bsan,evm_rpc_types-1.2.0,tests::nat256::should_convert_to_bytes_and_back,success,233.060,21.251,2026-11-05T06:25:17Z,50255604.0,,
+experimental-bsan,evm_rpc_types-1.2.0,tests::nat256::should_encode_decode,success,233.060,37.708,2026-11-05T06:25:55Z,50255604.0,,
+experimental-bsan,evm_rpc_types-1.2.0,tests::nat256::should_fail_to_decode_nat_overflowing_a_u256,success,233.060,62.101,2026-11-05T06:26:57Z,50255604.0,,
+experimental-bsan,evm_rpc_types-1.2.0,tests::nat256::should_have_transparent_debug_and_display_representation,success,233.060,1.714,2026-11-05T06:26:59Z,50255604.0,,

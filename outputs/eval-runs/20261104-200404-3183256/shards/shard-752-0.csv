@@ -1,0 +1,242 @@
+experimental-bsan,elf-0.8.0,compression::parse_tests::parse_chdr32_lsb,success,13.458,1.522,2026-11-05T01:28:58Z,50233308.0,,
+experimental-bsan,elf-0.8.0,compression::parse_tests::parse_chdr32_lsb_fuzz_too_short,success,13.458,1.517,2026-11-05T01:29:00Z,50233308.0,,
+experimental-bsan,elf-0.8.0,compression::parse_tests::parse_chdr32_msb,success,13.458,1.512,2026-11-05T01:29:02Z,50233308.0,,
+experimental-bsan,elf-0.8.0,compression::parse_tests::parse_chdr32_msb_fuzz_too_short,success,13.458,1.514,2026-11-05T01:29:03Z,50233308.0,,
+experimental-bsan,elf-0.8.0,compression::parse_tests::parse_chdr64_lsb,success,13.458,1.517,2026-11-05T01:29:05Z,50233308.0,,
+experimental-bsan,elf-0.8.0,compression::parse_tests::parse_chdr64_lsb_fuzz_too_short,success,13.458,1.545,2026-11-05T01:29:06Z,50233308.0,,
+experimental-bsan,elf-0.8.0,compression::parse_tests::parse_chdr64_msb,success,13.458,1.512,2026-11-05T01:29:08Z,50233308.0,,
+experimental-bsan,elf-0.8.0,compression::parse_tests::parse_chdr64_msb_fuzz_too_short,success,13.458,1.528,2026-11-05T01:29:09Z,50233308.0,,
+experimental-bsan,elf-0.8.0,dynamic::parse_tests::parse_dyn32_lsb,success,13.458,1.510,2026-11-05T01:29:11Z,50233308.0,,
+experimental-bsan,elf-0.8.0,dynamic::parse_tests::parse_dyn32_lsb_fuzz_too_short,success,13.458,1.512,2026-11-05T01:29:12Z,50233308.0,,
+experimental-bsan,elf-0.8.0,dynamic::parse_tests::parse_dyn32_msb,success,13.458,1.507,2026-11-05T01:29:14Z,50233308.0,,
+experimental-bsan,elf-0.8.0,dynamic::parse_tests::parse_dyn32_msb_fuzz_too_short,success,13.458,1.509,2026-11-05T01:29:15Z,50233308.0,,
+experimental-bsan,elf-0.8.0,dynamic::parse_tests::parse_dyn64_lsb,success,13.458,1.508,2026-11-05T01:29:17Z,50233308.0,,
+experimental-bsan,elf-0.8.0,dynamic::parse_tests::parse_dyn64_lsb_fuzz_too_short,success,13.458,1.510,2026-11-05T01:29:18Z,50233308.0,,
+experimental-bsan,elf-0.8.0,dynamic::parse_tests::parse_dyn64_msb,success,13.458,1.509,2026-11-05T01:29:20Z,50233308.0,,
+experimental-bsan,elf-0.8.0,dynamic::parse_tests::parse_dyn64_msb_fuzz_too_short,success,13.458,1.512,2026-11-05T01:29:21Z,50233308.0,,
+experimental-bsan,elf-0.8.0,dynamic::parse_tests::test_d_val_and_d_ptr,success,13.458,1.503,2026-11-05T01:29:23Z,50233308.0,,
+experimental-bsan,elf-0.8.0,elf_bytes::arch_tests::aarch64,test_failed,13.458,1.583,2026-11-05T01:29:24Z,50233308.0,panic,"thread 'elf_bytes::arch_tests::aarch64' (32525) panicked at src/elf_bytes.rs:1556:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::arch_tests::armhf,test_failed,13.458,1.572,2026-11-05T01:29:26Z,50233308.0,panic,"thread 'elf_bytes::arch_tests::armhf' (32782) panicked at src/elf_bytes.rs:1561:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::arch_tests::m68k,test_failed,13.458,1.571,2026-11-05T01:29:28Z,50233308.0,panic,"thread 'elf_bytes::arch_tests::m68k' (33035) panicked at src/elf_bytes.rs:1551:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::arch_tests::powerpc64,test_failed,13.458,1.576,2026-11-05T01:29:29Z,50233308.0,panic,"thread 'elf_bytes::arch_tests::powerpc64' (33242) panicked at src/elf_bytes.rs:1566:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::arch_tests::powerpc64le,test_failed,13.458,1.579,2026-11-05T01:29:31Z,50233308.0,panic,"thread 'elf_bytes::arch_tests::powerpc64le' (33442) panicked at src/elf_bytes.rs:1571:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::arch_tests::riscv64,test_failed,13.458,1.571,2026-11-05T01:29:32Z,50233308.0,panic,"thread 'elf_bytes::arch_tests::riscv64' (33668) panicked at src/elf_bytes.rs:1576:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::arch_tests::x86_64,test_failed,13.458,1.576,2026-11-05T01:29:34Z,50233308.0,panic,"thread 'elf_bytes::arch_tests::x86_64' (33987) panicked at src/elf_bytes.rs:1546:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::dynamic,test_failed,13.458,1.573,2026-11-05T01:29:36Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::dynamic' (34139) panicked at src/elf_bytes.rs:1241:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::dynamic_symbol_table,test_failed,13.458,1.583,2026-11-05T01:29:37Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::dynamic_symbol_table' (34373) panicked at src/elf_bytes.rs:1300:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::find_common_data,test_failed,13.458,1.588,2026-11-05T01:29:39Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::find_common_data' (34596) panicked at src/elf_bytes.rs:1025:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::gnu_hash_table,test_failed,13.458,1.582,2026-11-05T01:29:40Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::gnu_hash_table' (34984) panicked at src/elf_bytes.rs:1426:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::section_data,test_failed,13.458,1.584,2026-11-05T01:29:42Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::section_data' (35269) panicked at src/elf_bytes.rs:1044:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::section_data_as_notes,test_failed,13.458,1.589,2026-11-05T01:29:44Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::section_data_as_notes' (35471) panicked at src/elf_bytes.rs:1178:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::section_data_as_relas,test_failed,13.458,1.592,2026-11-05T01:29:45Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::section_data_as_relas' (35747) panicked at src/elf_bytes.rs:1141:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::section_data_as_strtab,test_failed,13.458,1.589,2026-11-05T01:29:47Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::section_data_as_strtab' (36045) panicked at src/elf_bytes.rs:1118:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::section_data_as_wrong_type,test_failed,13.458,1.589,2026-11-05T01:29:49Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::section_data_as_wrong_type' (36487) panicked at src/elf_bytes.rs:1068:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::section_header_by_name,test_failed,13.458,1.589,2026-11-05T01:29:50Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::section_header_by_name' (36826) panicked at src/elf_bytes.rs:1004:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::section_headers,test_failed,13.458,1.589,2026-11-05T01:29:52Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::section_headers' (37203) panicked at src/elf_bytes.rs:935:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::section_headers_with_strtab,test_failed,13.458,1.589,2026-11-05T01:29:53Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::section_headers_with_strtab' (37490) panicked at src/elf_bytes.rs:951:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::segment_data_as_notes,test_failed,13.458,1.587,2026-11-05T01:29:55Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::segment_data_as_notes' (37824) panicked at src/elf_bytes.rs:1206:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::segments,test_failed,13.458,1.584,2026-11-05T01:29:57Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::segments' (38100) panicked at src/elf_bytes.rs:881:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::segments_phnum_in_shdr0,test_failed,13.458,1.590,2026-11-05T01:29:58Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::segments_phnum_in_shdr0' (38635) panicked at src/elf_bytes.rs:908:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::shnum_and_shstrndx_in_shdr0,test_failed,13.458,1.594,2026-11-05T01:30:00Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::shnum_and_shstrndx_in_shdr0' (39088) panicked at src/elf_bytes.rs:980:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::simultaenous_segments_parsing,test_failed,13.458,1.595,2026-11-05T01:30:01Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::simultaenous_segments_parsing' (39377) panicked at src/elf_bytes.rs:840:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::symbol_table,test_failed,13.458,1.570,2026-11-05T01:30:03Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::symbol_table' (39605) panicked at src/elf_bytes.rs:1269:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::symbol_version_table,test_failed,13.458,1.586,2026-11-05T01:30:05Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::symbol_version_table' (39792) panicked at src/elf_bytes.rs:1331:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_bytes::interface_tests::sysv_hash_table,test_failed,13.458,1.583,2026-11-05T01:30:06Z,50233308.0,panic,"thread 'elf_bytes::interface_tests::sysv_hash_table' (40035) panicked at src/elf_bytes.rs:1386:45: Could not read file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::arch_tests::aarch64,test_failed,13.458,1.577,2026-11-05T01:30:08Z,50233308.0,panic,"thread 'elf_stream::arch_tests::aarch64' (40235) panicked at src/elf_stream.rs:1289:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::arch_tests::armhf,test_failed,13.458,1.577,2026-11-05T01:30:09Z,50233308.0,panic,"thread 'elf_stream::arch_tests::armhf' (40640) panicked at src/elf_stream.rs:1294:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::arch_tests::m68k,test_failed,13.458,1.576,2026-11-05T01:30:11Z,50233308.0,panic,"thread 'elf_stream::arch_tests::m68k' (40846) panicked at src/elf_stream.rs:1284:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::arch_tests::powerpc64,test_failed,13.458,1.576,2026-11-05T01:30:13Z,50233308.0,panic,"thread 'elf_stream::arch_tests::powerpc64' (41066) panicked at src/elf_stream.rs:1299:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::arch_tests::powerpc64le,test_failed,13.458,1.583,2026-11-05T01:30:14Z,50233308.0,panic,"thread 'elf_stream::arch_tests::powerpc64le' (41377) panicked at src/elf_stream.rs:1304:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::arch_tests::riscv64,test_failed,13.458,1.594,2026-11-05T01:30:16Z,50233308.0,panic,"thread 'elf_stream::arch_tests::riscv64' (41757) panicked at src/elf_stream.rs:1309:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::arch_tests::x86_64,test_failed,13.458,1.579,2026-11-05T01:30:17Z,50233308.0,panic,"thread 'elf_stream::arch_tests::x86_64' (41953) panicked at src/elf_stream.rs:1279:9: file should exist: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::dynamic,test_failed,13.458,1.582,2026-11-05T01:30:19Z,50233308.0,panic,"thread 'elf_stream::interface_tests::dynamic' (42269) panicked at src/elf_stream.rs:971:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::dynamic_symbol_table,test_failed,13.458,1.588,2026-11-05T01:30:21Z,50233308.0,panic,"thread 'elf_stream::interface_tests::dynamic_symbol_table' (42488) panicked at src/elf_stream.rs:941:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::section_data,test_failed,13.458,1.580,2026-11-05T01:30:22Z,50233308.0,panic,"thread 'elf_stream::interface_tests::section_data' (42689) panicked at src/elf_stream.rs:837:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::section_data_as_notes,test_failed,13.458,1.599,2026-11-05T01:30:24Z,50233308.0,panic,"thread 'elf_stream::interface_tests::section_data_as_notes' (43096) panicked at src/elf_stream.rs:1040:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::section_data_as_relas,test_failed,13.458,1.583,2026-11-05T01:30:25Z,50233308.0,panic,"thread 'elf_stream::interface_tests::section_data_as_relas' (43249) panicked at src/elf_stream.rs:1009:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::section_data_as_rels,test_failed,13.458,1.585,2026-11-05T01:30:27Z,50233308.0,panic,"thread 'elf_stream::interface_tests::section_data_as_rels' (43431) panicked at src/elf_stream.rs:998:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::section_data_as_strtab,test_failed,13.458,1.586,2026-11-05T01:30:29Z,50233308.0,panic,"thread 'elf_stream::interface_tests::section_data_as_strtab' (43600) panicked at src/elf_stream.rs:852:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::section_data_for_nobits,test_failed,13.458,1.592,2026-11-05T01:30:30Z,50233308.0,panic,"thread 'elf_stream::interface_tests::section_data_for_nobits' (43974) panicked at src/elf_stream.rs:822:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::section_header_by_name,test_failed,13.458,1.591,2026-11-05T01:30:32Z,50233308.0,panic,"thread 'elf_stream::interface_tests::section_header_by_name' (44239) panicked at src/elf_stream.rs:802:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::section_headers_with_strtab,test_failed,13.458,1.578,2026-11-05T01:30:33Z,50233308.0,panic,"thread 'elf_stream::interface_tests::section_headers_with_strtab' (44488) panicked at src/elf_stream.rs:759:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::segment_data,test_failed,13.458,1.580,2026-11-05T01:30:35Z,50233308.0,panic,"thread 'elf_stream::interface_tests::segment_data' (44698) panicked at src/elf_stream.rs:1062:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::segment_data_as_notes,test_failed,13.458,1.576,2026-11-05T01:30:37Z,50233308.0,panic,"thread 'elf_stream::interface_tests::segment_data_as_notes' (44899) panicked at src/elf_stream.rs:1088:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::segments,test_failed,13.458,1.578,2026-11-05T01:30:38Z,50233308.0,panic,"thread 'elf_stream::interface_tests::segments' (45069) panicked at src/elf_stream.rs:868:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::segments_phnum_in_shdr0,test_failed,13.458,1.591,2026-11-05T01:30:40Z,50233308.0,panic,"thread 'elf_stream::interface_tests::segments_phnum_in_shdr0' (45346) panicked at src/elf_stream.rs:890:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::shnum_and_shstrndx_in_shdr0,test_failed,13.458,1.580,2026-11-05T01:30:42Z,50233308.0,panic,"thread 'elf_stream::interface_tests::shnum_and_shstrndx_in_shdr0' (45633) panicked at src/elf_stream.rs:779:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::symbol_table,test_failed,13.458,1.579,2026-11-05T01:30:43Z,50233308.0,panic,"thread 'elf_stream::interface_tests::symbol_table' (45866) panicked at src/elf_stream.rs:911:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::symbol_version_table,test_failed,13.458,1.579,2026-11-05T01:30:45Z,50233308.0,panic,"thread 'elf_stream::interface_tests::symbol_version_table' (46257) panicked at src/elf_stream.rs:1118:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::sysv_hash_table,test_failed,13.458,1.587,2026-11-05T01:30:46Z,50233308.0,panic,"thread 'elf_stream::interface_tests::sysv_hash_table' (46500) panicked at src/elf_stream.rs:1172:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,elf_stream::interface_tests::test_open_stream,test_failed,13.458,1.586,2026-11-05T01:30:48Z,50233308.0,panic,"thread 'elf_stream::interface_tests::test_open_stream' (46761) panicked at src/elf_stream.rs:751:44: Could not open file.: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,elf-0.8.0,endian::tests::fuzz_i32_too_short,success,13.458,1.509,2026-11-05T01:30:49Z,50233308.0,,
+experimental-bsan,elf-0.8.0,endian::tests::fuzz_i64_too_short,success,13.458,1.518,2026-11-05T01:30:51Z,50233308.0,,
+experimental-bsan,elf-0.8.0,endian::tests::fuzz_u16_too_short,success,13.458,1.509,2026-11-05T01:30:52Z,50233308.0,,
+experimental-bsan,elf-0.8.0,endian::tests::fuzz_u32_too_short,success,13.458,1.518,2026-11-05T01:30:54Z,50233308.0,,
+experimental-bsan,elf-0.8.0,endian::tests::fuzz_u64_too_short,success,13.458,1.513,2026-11-05T01:30:56Z,50233308.0,,
+experimental-bsan,elf-0.8.0,endian::tests::fuzz_u8_too_short,success,13.458,1.507,2026-11-05T01:30:57Z,50233308.0,,
+experimental-bsan,elf-0.8.0,endian::tests::parse_i32_at,success,13.458,1.509,2026-11-05T01:30:59Z,50233308.0,,
+experimental-bsan,elf-0.8.0,endian::tests::parse_i64_at,success,13.458,1.508,2026-11-05T01:31:00Z,50233308.0,,
+experimental-bsan,elf-0.8.0,endian::tests::parse_u16_at,success,13.458,1.510,2026-11-05T01:31:02Z,50233308.0,,
+experimental-bsan,elf-0.8.0,endian::tests::parse_u32_at,success,13.458,1.511,2026-11-05T01:31:03Z,50233308.0,,
+experimental-bsan,elf-0.8.0,endian::tests::parse_u64_at,success,13.458,1.509,2026-11-05T01:31:05Z,50233308.0,,
+experimental-bsan,elf-0.8.0,endian::tests::parse_u8_at,success,13.458,1.510,2026-11-05T01:31:06Z,50233308.0,,
+experimental-bsan,elf-0.8.0,file::parse_tests::test_parse_ehdr32_fuzz_too_short,success,13.458,1.558,2026-11-05T01:31:08Z,50233308.0,,
+experimental-bsan,elf-0.8.0,file::parse_tests::test_parse_ehdr32_works,success,13.458,1.512,2026-11-05T01:31:09Z,50233308.0,,
+experimental-bsan,elf-0.8.0,file::parse_tests::test_parse_ehdr64_fuzz_too_short,success,13.458,1.565,2026-11-05T01:31:11Z,50233308.0,,
+experimental-bsan,elf-0.8.0,file::parse_tests::test_parse_ehdr64_works,success,13.458,1.531,2026-11-05T01:31:12Z,50233308.0,,
+experimental-bsan,elf-0.8.0,file::parse_tests::test_verify_ident_invalid_mag0,success,13.458,1.513,2026-11-05T01:31:14Z,50233308.0,,
+experimental-bsan,elf-0.8.0,file::parse_tests::test_verify_ident_invalid_mag1,success,13.458,1.507,2026-11-05T01:31:15Z,50233308.0,,
+experimental-bsan,elf-0.8.0,file::parse_tests::test_verify_ident_invalid_mag2,success,13.458,1.503,2026-11-05T01:31:17Z,50233308.0,,
+experimental-bsan,elf-0.8.0,file::parse_tests::test_verify_ident_invalid_mag3,success,13.458,1.517,2026-11-05T01:31:18Z,50233308.0,,
+experimental-bsan,elf-0.8.0,file::parse_tests::test_verify_ident_invalid_version,success,13.458,1.508,2026-11-05T01:31:20Z,50233308.0,,
+experimental-bsan,elf-0.8.0,file::parse_tests::test_verify_ident_valid,success,13.458,1.508,2026-11-05T01:31:21Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::verdef_iter,success,13.458,1.513,2026-11-05T01:31:23Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::verdef_iter_early_termination_on_broken_next_link,success,13.458,1.510,2026-11-05T01:31:25Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::verdefaux_iter_early_termination_on_broken_next_link,success,13.458,1.508,2026-11-05T01:31:26Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::verdefaux_iter_multiple_entries,success,13.458,1.505,2026-11-05T01:31:28Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::verdefaux_iter_one_entry,success,13.458,1.514,2026-11-05T01:31:29Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::verdefaux_iter_two_lists_interspersed,success,13.458,1.513,2026-11-05T01:31:31Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::verneed_iter,success,13.458,1.515,2026-11-05T01:31:32Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::verneed_iter_early_termination_on_broken_next_link,success,13.458,1.523,2026-11-05T01:31:34Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::verneedaux_iter_early_termination_on_broken_next_link,success,13.458,1.514,2026-11-05T01:31:35Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::verneedaux_iter_multiple_entries,success,13.458,1.503,2026-11-05T01:31:37Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::verneedaux_iter_one_entry,success,13.458,1.517,2026-11-05T01:31:38Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::verneedaux_iter_two_lists_interspersed,success,13.458,1.520,2026-11-05T01:31:40Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::iter_tests::version_table,success,13.458,1.522,2026-11-05T01:31:41Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdef32_fuzz_too_short,success,13.458,1.521,2026-11-05T01:31:43Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdef32_lsb,success,13.458,1.509,2026-11-05T01:31:44Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdef64_fuzz_too_short,success,13.458,1.523,2026-11-05T01:31:46Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdef64_msb,success,13.458,1.512,2026-11-05T01:31:47Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdef_bad_version_errors,success,13.458,1.504,2026-11-05T01:31:49Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdefaux32_lsb,success,13.458,1.497,2026-11-05T01:31:50Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdefaux32_lsb_fuzz_too_short,success,13.458,1.505,2026-11-05T01:31:52Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdefaux32_msb,success,13.458,1.512,2026-11-05T01:31:53Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdefaux32_msb_fuzz_too_short,success,13.458,1.515,2026-11-05T01:31:55Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdefaux64_lsb,success,13.458,1.512,2026-11-05T01:31:56Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdefaux64_lsb_fuzz_too_short,success,13.458,1.517,2026-11-05T01:31:58Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdefaux64_msb,success,13.458,1.511,2026-11-05T01:32:00Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verdefaux64_msb_fuzz_too_short,success,13.458,1.504,2026-11-05T01:32:01Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verndx32_lsb,success,13.458,1.516,2026-11-05T01:32:03Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verndx32_lsb_fuzz_too_short,success,13.458,1.509,2026-11-05T01:32:04Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verndx32_msb,success,13.458,1.511,2026-11-05T01:32:06Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verndx32_msb_fuzz_too_short,success,13.458,1.507,2026-11-05T01:32:07Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verndx64_lsb,success,13.458,1.513,2026-11-05T01:32:09Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verndx64_lsb_fuzz_too_short,success,13.458,1.511,2026-11-05T01:32:10Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verndx64_msb,success,13.458,1.513,2026-11-05T01:32:12Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verndx64_msb_fuzz_too_short,success,13.458,1.523,2026-11-05T01:32:13Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verneed32_fuzz_too_short,success,13.458,1.530,2026-11-05T01:32:15Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verneed32_lsb,success,13.458,1.526,2026-11-05T01:32:16Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verneed64_fuzz_too_short,success,13.458,1.523,2026-11-05T01:32:18Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verneed64_msb,success,13.458,1.523,2026-11-05T01:32:19Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verneedaux32_lsb,success,13.458,1.521,2026-11-05T01:32:21Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verneedaux32_lsb_fuzz_too_short,success,13.458,1.531,2026-11-05T01:32:22Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verneedaux32_msb,success,13.458,1.516,2026-11-05T01:32:24Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verneedaux32_msb_fuzz_too_short,success,13.458,1.525,2026-11-05T01:32:25Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verneedaux64_lsb,success,13.458,1.523,2026-11-05T01:32:27Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verneedaux64_lsb_fuzz_too_short,success,13.458,1.534,2026-11-05T01:32:29Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verneedaux64_msb,success,13.458,1.526,2026-11-05T01:32:30Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::parse_tests::parse_verneedaux64_msb_fuzz_too_short,success,13.458,1.528,2026-11-05T01:32:32Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::version_index_tests::index_hidden,success,13.458,1.514,2026-11-05T01:32:33Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::version_index_tests::index_visible,success,13.458,1.520,2026-11-05T01:32:35Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::version_index_tests::is_global,success,13.458,1.514,2026-11-05T01:32:36Z,50233308.0,,
+experimental-bsan,elf-0.8.0,gnu_symver::version_index_tests::is_local,success,13.458,1.513,2026-11-05T01:32:38Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::gnu_parse_tests::gnu_hash_tests,success,13.458,1.514,2026-11-05T01:32:39Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::gnu_parse_tests::parse_gnuhdr32_lsb,success,13.458,1.518,2026-11-05T01:32:41Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::gnu_parse_tests::parse_gnuhdr32_lsb_fuzz_too_short,success,13.458,1.521,2026-11-05T01:32:42Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::gnu_parse_tests::parse_gnuhdr32_msb,success,13.458,1.524,2026-11-05T01:32:44Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::gnu_parse_tests::parse_gnuhdr32_msb_fuzz_too_short,success,13.458,1.520,2026-11-05T01:32:45Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::gnu_parse_tests::parse_gnuhdr64_lsb,success,13.458,1.515,2026-11-05T01:32:47Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::gnu_parse_tests::parse_gnuhdr64_lsb_fuzz_too_short,success,13.458,1.525,2026-11-05T01:32:48Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::gnu_parse_tests::parse_gnuhdr64_msb,success,13.458,1.516,2026-11-05T01:32:50Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::gnu_parse_tests::parse_gnuhdr64_msb_fuzz_too_short,success,13.458,1.528,2026-11-05T01:32:52Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::sysv_parse_tests::parse_sysvhdr32_lsb,success,13.458,1.521,2026-11-05T01:32:53Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::sysv_parse_tests::parse_sysvhdr32_lsb_fuzz_too_short,success,13.458,1.517,2026-11-05T01:32:55Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::sysv_parse_tests::parse_sysvhdr32_msb,success,13.458,1.516,2026-11-05T01:32:56Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::sysv_parse_tests::parse_sysvhdr32_msb_fuzz_too_short,success,13.458,1.511,2026-11-05T01:32:58Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::sysv_parse_tests::parse_sysvhdr64_lsb,success,13.458,1.509,2026-11-05T01:32:59Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::sysv_parse_tests::parse_sysvhdr64_lsb_fuzz_too_short,success,13.458,1.524,2026-11-05T01:33:01Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::sysv_parse_tests::parse_sysvhdr64_msb,success,13.458,1.522,2026-11-05T01:33:02Z,50233308.0,,
+experimental-bsan,elf-0.8.0,hash::sysv_parse_tests::parse_sysvhdr64_msb_fuzz_too_short,success,13.458,1.524,2026-11-05T01:33:04Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::name_str_errors_for_note_any_with_invalid_utf8_name,success,13.458,1.515,2026-11-05T01:33:05Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::name_str_works_for_note_any_with_valid_utf8_name,success,13.458,1.519,2026-11-05T01:33:07Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_desc_gnu_build_id,success,13.458,1.523,2026-11-05T01:33:08Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_nhdr32_lsb,success,13.458,1.520,2026-11-05T01:33:10Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_nhdr32_lsb_fuzz_too_short,success,13.458,1.531,2026-11-05T01:33:11Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_nhdr32_msb,success,13.458,1.513,2026-11-05T01:33:13Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_nhdr32_msb_fuzz_too_short,success,13.458,1.525,2026-11-05T01:33:14Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_nhdr64_lsb,success,13.458,1.517,2026-11-05T01:33:16Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_nhdr64_lsb_fuzz_too_short,success,13.458,1.521,2026-11-05T01:33:17Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_nhdr64_msb,success,13.458,1.514,2026-11-05T01:33:19Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_nhdr64_msb_fuzz_too_short,success,13.458,1.538,2026-11-05T01:33:21Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_note_32_lsb,success,13.458,1.508,2026-11-05T01:33:22Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_note_32_lsb_with_desc_padding,success,13.458,1.511,2026-11-05T01:33:24Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_note_32_lsb_with_name_padding,success,13.458,1.509,2026-11-05T01:33:25Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_note_32_lsb_with_no_desc,success,13.458,1.514,2026-11-05T01:33:27Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_note_32_lsb_with_no_name,success,13.458,1.507,2026-11-05T01:33:28Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_note_any_with_invalid_utf8_name,success,13.458,1.515,2026-11-05T01:33:30Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_note_errors_with_zero_alignment,success,13.458,1.516,2026-11-05T01:33:31Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_note_for_elf64_expects_nhdr32,success,13.458,1.507,2026-11-05T01:33:33Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_note_with_8_byte_alignment,success,13.458,1.509,2026-11-05T01:33:34Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_note_with_8_byte_alignment_unaligned_namesz,success,13.458,1.507,2026-11-05T01:33:36Z,50233308.0,,
+experimental-bsan,elf-0.8.0,note::parse_tests::parse_nt_gnu_abi_tag,success,13.458,1.507,2026-11-05T01:33:37Z,50233308.0,,
+experimental-bsan,elf-0.8.0,parse::parsing_table_tests::test_any_lsb_u32_table_get,success,13.458,1.511,2026-11-05T01:33:39Z,50233308.0,,
+experimental-bsan,elf-0.8.0,parse::parsing_table_tests::test_any_msb_u32_table_get,success,13.458,1.528,2026-11-05T01:33:40Z,50233308.0,,
+experimental-bsan,elf-0.8.0,parse::parsing_table_tests::test_lsb_u32_table_get,success,13.458,1.515,2026-11-05T01:33:42Z,50233308.0,,
+experimental-bsan,elf-0.8.0,parse::parsing_table_tests::test_msb_u32_table_get,success,13.458,1.509,2026-11-05T01:33:43Z,50233308.0,,
+experimental-bsan,elf-0.8.0,parse::parsing_table_tests::test_u32_parse_at,success,13.458,1.515,2026-11-05T01:33:45Z,50233308.0,,
+experimental-bsan,elf-0.8.0,parse::parsing_table_tests::test_u32_table_get_parse_failure,success,13.458,1.512,2026-11-05T01:33:46Z,50233308.0,,
+experimental-bsan,elf-0.8.0,parse::parsing_table_tests::test_u32_table_get_unaligned,success,13.458,1.510,2026-11-05T01:33:48Z,50233308.0,,
+experimental-bsan,elf-0.8.0,parse::parsing_table_tests::test_u32_table_is_empty,success,13.458,1.514,2026-11-05T01:33:49Z,50233308.0,,
+experimental-bsan,elf-0.8.0,parse::parsing_table_tests::test_u32_table_len,success,13.458,1.520,2026-11-05T01:33:51Z,50233308.0,,
+experimental-bsan,elf-0.8.0,parse::parsing_table_tests::test_u32_validate_entsize,success,13.458,1.517,2026-11-05T01:33:53Z,50233308.0,,
+experimental-bsan,elf-0.8.0,parse::read_bytes_tests::get_bytes_out_of_range_errors,success,13.458,1.521,2026-11-05T01:33:54Z,50233308.0,,
+experimental-bsan,elf-0.8.0,parse::read_bytes_tests::get_bytes_works,success,13.458,1.526,2026-11-05T01:33:56Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rel32_lsb,success,13.458,1.512,2026-11-05T01:33:57Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rel32_lsb_fuzz_too_short,success,13.458,1.519,2026-11-05T01:33:59Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rel32_msb,success,13.458,1.521,2026-11-05T01:34:00Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rel32_msb_fuzz_too_short,success,13.458,1.518,2026-11-05T01:34:02Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rel64_lsb,success,13.458,1.518,2026-11-05T01:34:03Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rel64_lsb_fuzz_too_short,success,13.458,1.529,2026-11-05T01:34:05Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rel64_msb,success,13.458,1.512,2026-11-05T01:34:06Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rel64_msb_fuzz_too_short,success,13.458,1.521,2026-11-05T01:34:08Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rela32_lsb,success,13.458,1.519,2026-11-05T01:34:09Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rela32_lsb_fuzz_too_short,success,13.458,1.522,2026-11-05T01:34:11Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rela32_msb,success,13.458,1.508,2026-11-05T01:34:12Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rela32_msb_fuzz_too_short,success,13.458,1.514,2026-11-05T01:34:14Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rela64_lsb,success,13.458,1.511,2026-11-05T01:34:15Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rela64_lsb_fuzz_too_short,success,13.458,1.521,2026-11-05T01:34:17Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rela64_msb,success,13.458,1.510,2026-11-05T01:34:18Z,50233308.0,,
+experimental-bsan,elf-0.8.0,relocation::parse_tests::parse_rela64_msb_fuzz_too_short,success,13.458,1.525,2026-11-05T01:34:20Z,50233308.0,,
+experimental-bsan,elf-0.8.0,section::parse_tests::parse_shdr32_lsb,success,13.458,1.514,2026-11-05T01:34:22Z,50233308.0,,
+experimental-bsan,elf-0.8.0,section::parse_tests::parse_shdr32_lsb_fuzz_too_short,success,13.458,1.558,2026-11-05T01:34:23Z,50233308.0,,
+experimental-bsan,elf-0.8.0,section::parse_tests::parse_shdr32_msb,success,13.458,1.522,2026-11-05T01:34:25Z,50233308.0,,
+experimental-bsan,elf-0.8.0,section::parse_tests::parse_shdr32_msb_fuzz_too_short,success,13.458,1.562,2026-11-05T01:34:26Z,50233308.0,,
+experimental-bsan,elf-0.8.0,section::parse_tests::parse_shdr64_lsb,success,13.458,1.522,2026-11-05T01:34:28Z,50233308.0,,
+experimental-bsan,elf-0.8.0,section::parse_tests::parse_shdr64_lsb_fuzz_too_short,success,13.458,1.586,2026-11-05T01:34:29Z,50233308.0,,
+experimental-bsan,elf-0.8.0,section::parse_tests::parse_shdr64_msb,success,13.458,1.516,2026-11-05T01:34:31Z,50233308.0,,
+experimental-bsan,elf-0.8.0,section::parse_tests::parse_shdr64_msb_fuzz_too_short,success,13.458,1.585,2026-11-05T01:34:32Z,50233308.0,,
+experimental-bsan,elf-0.8.0,segment::parse_tests::parse_phdr32_lsb,success,13.458,1.511,2026-11-05T01:34:34Z,50233308.0,,
+experimental-bsan,elf-0.8.0,segment::parse_tests::parse_phdr32_lsb_fuzz_too_short,success,13.458,1.536,2026-11-05T01:34:36Z,50233308.0,,
+experimental-bsan,elf-0.8.0,segment::parse_tests::parse_phdr32_msb,success,13.458,1.521,2026-11-05T01:34:37Z,50233308.0,,
+experimental-bsan,elf-0.8.0,segment::parse_tests::parse_phdr32_msb_fuzz_too_short,success,13.458,1.545,2026-11-05T01:34:39Z,50233308.0,,
+experimental-bsan,elf-0.8.0,segment::parse_tests::parse_phdr64_lsb,success,13.458,1.525,2026-11-05T01:34:40Z,50233308.0,,
+experimental-bsan,elf-0.8.0,segment::parse_tests::parse_phdr64_lsb_fuzz_too_short,success,13.458,1.574,2026-11-05T01:34:42Z,50233308.0,,
+experimental-bsan,elf-0.8.0,segment::parse_tests::parse_phdr64_msb,success,13.458,1.525,2026-11-05T01:34:43Z,50233308.0,,
+experimental-bsan,elf-0.8.0,segment::parse_tests::parse_phdr64_msb_fuzz_too_short,success,13.458,1.570,2026-11-05T01:34:45Z,50233308.0,,
+experimental-bsan,elf-0.8.0,string_table::tests::test_empty_table_errors,success,13.458,1.515,2026-11-05T01:34:46Z,50233308.0,,
+experimental-bsan,elf-0.8.0,string_table::tests::test_get_index_0_gives_empty_string,success,13.458,1.523,2026-11-05T01:34:48Z,50233308.0,,
+experimental-bsan,elf-0.8.0,string_table::tests::test_get_index_out_of_bounds_errors,success,13.458,1.520,2026-11-05T01:34:49Z,50233308.0,,
+experimental-bsan,elf-0.8.0,string_table::tests::test_get_raw_index_out_of_bounds_errors,success,13.458,1.516,2026-11-05T01:34:51Z,50233308.0,,
+experimental-bsan,elf-0.8.0,string_table::tests::test_get_raw_with_malformed_table_no_trailing_nul,success,13.458,1.519,2026-11-05T01:34:52Z,50233308.0,,
+experimental-bsan,elf-0.8.0,string_table::tests::test_get_raw_works,success,13.458,1.516,2026-11-05T01:34:54Z,50233308.0,,
+experimental-bsan,elf-0.8.0,string_table::tests::test_get_string_works,success,13.458,1.518,2026-11-05T01:34:56Z,50233308.0,,
+experimental-bsan,elf-0.8.0,string_table::tests::test_get_with_malformed_table_no_trailing_nul,success,13.458,1.521,2026-11-05T01:34:57Z,50233308.0,,
+experimental-bsan,elf-0.8.0,symbol::parse_tests::parse_sym32_lsb,success,13.458,1.518,2026-11-05T01:34:59Z,50233308.0,,
+experimental-bsan,elf-0.8.0,symbol::parse_tests::parse_sym32_lsb_fuzz_too_short,success,13.458,1.531,2026-11-05T01:35:00Z,50233308.0,,
+experimental-bsan,elf-0.8.0,symbol::parse_tests::parse_sym32_msb,success,13.458,1.516,2026-11-05T01:35:02Z,50233308.0,,
+experimental-bsan,elf-0.8.0,symbol::parse_tests::parse_sym32_msb_fuzz_too_short,success,13.458,1.521,2026-11-05T01:35:03Z,50233308.0,,
+experimental-bsan,elf-0.8.0,symbol::parse_tests::parse_sym64_lsb,success,13.458,1.514,2026-11-05T01:35:05Z,50233308.0,,
+experimental-bsan,elf-0.8.0,symbol::parse_tests::parse_sym64_lsb_fuzz_too_short,success,13.458,1.537,2026-11-05T01:35:06Z,50233308.0,,
+experimental-bsan,elf-0.8.0,symbol::parse_tests::parse_sym64_msb,success,13.458,1.519,2026-11-05T01:35:08Z,50233308.0,,
+experimental-bsan,elf-0.8.0,symbol::parse_tests::parse_sym64_msb_fuzz_too_short,success,13.458,1.540,2026-11-05T01:35:09Z,50233308.0,,
+experimental-bsan,elf-0.8.0,symbol::symbol_tests::symbol_undefined,success,13.458,1.517,2026-11-05T01:35:11Z,50233308.0,,

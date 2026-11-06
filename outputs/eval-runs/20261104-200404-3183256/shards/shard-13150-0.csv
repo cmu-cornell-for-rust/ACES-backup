@@ -1,0 +1,9 @@
+experimental-bsan,minetest-gltf-3.0.1,tests::check_cube_glb,test_failed,280.214,2.712,2026-11-05T06:34:47Z,50256459.0,panic,"thread 'tests::check_cube_glb' (71848) panicked at src/lib.rs:179:17: Cube: failed to load. invalid glTF: extensionsRequired[0] = ""KHR_lights_punctual"": Unsupported extension;"
+experimental-bsan,minetest-gltf-3.0.1,tests::check_cube_gltf,test_failed,280.214,5.509,2026-11-05T06:34:53Z,50256459.0,panic,"thread 'tests::check_cube_gltf' (71936) panicked at src/lib.rs:230:17: cube_classic: failed to load. invalid glTF: extensionsRequired[0] = ""KHR_lights_punctual"": Unsupported extension;"
+experimental-bsan,minetest-gltf-3.0.1,tests::check_different_meshes,success,280.214,142.174,2026-11-05T06:37:15Z,50256459.0,,
+experimental-bsan,minetest-gltf-3.0.1,tests::check_invalid_path,success,280.214,1.696,2026-11-05T06:37:17Z,50256459.0,,
+experimental-bsan,minetest-gltf-3.0.1,tests::check_model,test_failed,280.214,2.800,2026-11-05T06:37:20Z,50256459.0,panic,"thread 'tests::check_model' (75254) panicked at src/lib.rs:243:17: cube: failed to load. invalid glTF: extensionsRequired[0] = ""KHR_lights_punctual"": Unsupported extension;"
+experimental-bsan,minetest-gltf-3.0.1,tests::load_simple_skin,success,280.214,4.811,2026-11-05T06:37:24Z,50256459.0,,
+experimental-bsan,minetest-gltf-3.0.1,tests::load_snowman,success,280.214,11.643,2026-11-05T06:37:36Z,50256459.0,,
+experimental-bsan,minetest-gltf-3.0.1,tests::test_sam,success,280.214,88.224,2026-11-05T06:39:04Z,50256459.0,,
+experimental-bsan,minetest-gltf-3.0.1,tests::test_the_spider_animations,timeout,280.214,150.018,2026-11-05T06:41:34Z,50256459.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

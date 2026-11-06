@@ -1,0 +1,59 @@
+experimental-bsan,dicom-pixeldata-0.10.0,attribute::tests::errors_are_not_too_large,success,537.920,2.954,2026-11-05T02:44:23Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,attribute::tests::get_required_field_from_per_frame_fns,success,537.920,2.978,2026-11-05T02:44:26Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,attribute::tests::get_required_field_from_shared_fn_groups,success,537.920,8.408,2026-11-05T02:44:34Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,attribute::tests::get_required_field_from_shared_fn_groups_improper_placement,success,537.920,8.378,2026-11-05T02:44:43Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,attribute::tests::get_required_field_from_top_level_dataset,success,537.920,2.971,2026-11-05T02:44:46Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,attribute::tests::get_required_field_with_fallback,success,537.920,8.390,2026-11-05T02:44:54Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,encapsulation::tests::test_encapsulate,success,537.920,2.955,2026-11-05T02:44:57Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,encapsulation::tests::test_encapsulate_single_framme,success,537.920,2.945,2026-11-05T02:45:00Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,jpeg::can_read_jpeg,timeout,537.920,150.021,2026-11-05T02:47:30Z,50242670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dicom-pixeldata-0.10.0,lut::tests::lut_8bit,success,537.920,30.857,2026-11-05T02:48:01Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,lut::tests::lut_rescale_and_normalize_16bit,success,537.920,17.459,2026-11-05T02:48:18Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,lut::tests::lut_rescale_and_window_16bit,success,537.920,17.468,2026-11-05T02:48:36Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,lut::tests::lut_signed_numbers,success,537.920,3.784,2026-11-05T02:48:40Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,lut::tests::lut_unsigned_numbers,success,537.920,4.414,2026-11-05T02:48:44Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,lut::tests::modality_lut_baseline_2,success,537.920,2.944,2026-11-05T02:48:47Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::error_is_send_and_sync,success,537.920,2.943,2026-11-05T02:48:50Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_decode_pixel_data_individual_frames::case_1,timeout,537.920,150.018,2026-11-05T02:51:20Z,50242670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_decode_pixel_data_individual_frames::case_2,timeout,537.920,150.025,2026-11-05T02:53:50Z,50242670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_decode_pixel_data_individual_frames::case_3,timeout,537.920,150.020,2026-11-05T02:56:20Z,50242670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_decode_pixel_data_individual_frames::case_4,timeout,537.920,150.020,2026-11-05T02:58:50Z,50242670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_decode_pixel_data_individual_frames::case_5,test_failed,537.920,77.024,2026-11-05T03:00:07Z,50242670.0,panic,"thread 'tests::not_gdcm::test_decode_pixel_data_individual_frames::case_5' (71045) panicked at src/lib.rs:3119:49: called `Result::unwrap()` on an `Err` value: Os { code: 30, kind: ReadOnlyFilesystem, message: ""Read-only file system"" }"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_decode_pixel_data_individual_frames::case_6,test_failed,537.920,18.283,2026-11-05T03:00:25Z,50242670.0,panic,"thread 'tests::not_gdcm::test_decode_pixel_data_individual_frames::case_6' (72621) panicked at src/lib.rs:3119:49: called `Result::unwrap()` on an `Err` value: Os { code: 30, kind: ReadOnlyFilesystem, message: ""Read-only file system"" }"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_decode_pixel_data_individual_frames::case_7,test_failed,537.920,82.094,2026-11-05T03:01:48Z,50242670.0,panic,"thread 'tests::not_gdcm::test_decode_pixel_data_individual_frames::case_7' (73034) panicked at src/lib.rs:3119:49: called `Result::unwrap()` on an `Err` value: Os { code: 30, kind: ReadOnlyFilesystem, message: ""Read-only file system"" }"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_native_decoding_pixel_data_rle_16bit_1frame,success,537.920,109.178,2026-11-05T03:03:37Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_native_decoding_pixel_data_rle_16bit_2frame,timeout,537.920,150.018,2026-11-05T03:06:07Z,50242670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_native_decoding_pixel_data_rle_8bit_1frame_ndarray,success,537.920,87.758,2026-11-05T03:07:35Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_native_decoding_pixel_data_rle_8bit_1frame_vec,success,537.920,27.906,2026-11-05T03:08:02Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_native_decoding_pixel_data_rle_8bit_2frame,success,537.920,51.886,2026-11-05T03:08:54Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_parse_jpeg_encoded_dicom_pixel_data::case_1,success,537.920,121.127,2026-11-05T03:10:56Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_parse_jpeg_encoded_dicom_pixel_data::case_2,timeout,537.920,150.017,2026-11-05T03:13:26Z,50242670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_parse_jpeg_encoded_dicom_pixel_data::case_3,test_failed,537.920,74.285,2026-11-05T03:14:40Z,50242670.0,panic,"thread 'tests::not_gdcm::test_parse_jpeg_encoded_dicom_pixel_data::case_3' (3511) panicked at src/lib.rs:3082:44: called `Result::unwrap()` on an `Err` value: Os { code: 30, kind: ReadOnlyFilesystem, message: ""Read-only file system"" }"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_parse_jpeg_encoded_dicom_pixel_data::case_4,test_failed,537.920,128.259,2026-11-05T03:16:48Z,50242670.0,panic,"thread 'tests::not_gdcm::test_parse_jpeg_encoded_dicom_pixel_data::case_4' (5295) panicked at src/lib.rs:3082:44: called `Result::unwrap()` on an `Err` value: Os { code: 30, kind: ReadOnlyFilesystem, message: ""Read-only file system"" }"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_parse_jpeg_encoded_dicom_pixel_data::case_5,timeout,537.920,150.019,2026-11-05T03:19:18Z,50242670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::not_gdcm::test_parse_jpeg_encoded_dicom_pixel_data::case_6,timeout,537.920,150.020,2026-11-05T03:21:48Z,50242670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_1bit_image_decoding_data,timeout,537.920,150.019,2026-11-05T03:24:18Z,50242670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_1bit_image_decoding_data_frame,test_failed,537.920,3.219,2026-11-05T03:24:22Z,50242670.0,panic,"thread 'tests::test_1bit_image_decoding_data_frame' (29854) panicked at src/lib.rs:3202:45: called `Result::unwrap()` on an `Err` value: Os { code: 30, kind: ReadOnlyFilesystem, message: ""Read-only file system"" }"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_correct_rescale_extracted_without_element,success,537.920,69.077,2026-11-05T03:25:31Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_correct_ri_extracted,success,537.920,71.343,2026-11-05T03:26:42Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_force_bit_depth_from_16bit,success,537.920,90.405,2026-11-05T03:28:12Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_force_bit_depth_from_rgb,success,537.920,75.808,2026-11-05T03:29:28Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_frame_out_of_range,success,537.920,37.802,2026-11-05T03:30:06Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_general_properties_from_16bit,success,537.920,11.084,2026-11-05T03:30:17Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_interleave,success,537.920,2.960,2026-11-05T03:30:20Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_monochrome1_decode_retains_pmi,timeout,537.920,150.018,2026-11-05T03:32:50Z,50242670.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_to_ndarray_16bit,success,537.920,18.857,2026-11-05T03:33:09Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_to_ndarray_error,success,537.920,14.672,2026-11-05T03:33:24Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_to_ndarray_rgb,success,537.920,80.227,2026-11-05T03:34:44Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_to_vec_16bit_to_window,success,537.920,40.532,2026-11-05T03:35:24Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,tests::test_to_vec_rgb,success,537.920,17.338,2026-11-05T03:35:42Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,transcode::tests::test_no_transcoding_needed,success,537.920,65.143,2026-11-05T03:36:47Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,transcode::tests::test_transcode_2frames_to_jpeg,success,537.920,86.921,2026-11-05T03:38:14Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,transcode::tests::test_transcode_encapsulated_uncompressed,success,537.920,3.585,2026-11-05T03:38:17Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,transcode::tests::test_transcode_from_jpeg_lossless_to_native_rgb,success,537.920,69.089,2026-11-05T03:39:27Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,transcode::tests::test_transcode_from_native_to_jpeg_rgb,success,537.920,25.371,2026-11-05T03:39:52Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,transcode::tests::transcode_from_jpeg_baseline_to_native_rgb,success,537.920,75.167,2026-11-05T03:41:07Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,transform::tests::modality_lut_baseline,success,537.920,2.945,2026-11-05T03:41:10Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,transform::tests::voi_lut_transform,success,537.920,3.699,2026-11-05T03:41:14Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,transform::tests::window_level_linear_1,success,537.920,2.946,2026-11-05T03:41:17Z,50242670.0,,
+experimental-bsan,dicom-pixeldata-0.10.0,transform::tests::window_level_linear_example,success,537.920,2.944,2026-11-05T03:41:20Z,50242670.0,,

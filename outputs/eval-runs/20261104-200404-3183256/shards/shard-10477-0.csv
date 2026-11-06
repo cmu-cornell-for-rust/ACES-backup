@@ -1,0 +1,15 @@
+experimental-bsan,marble-16.0.2,burn_in,success,162.627,9.266,2026-11-05T05:22:50Z,50252597.0,,
+experimental-bsan,marble-16.0.2,test_00,test_failed,162.627,4.700,2026-11-05T05:22:55Z,50252597.0,panic,"thread 'test_00' (55019) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/alloc/global.rs:360:18: unsafe precondition(s) violated: hint::assert_unchecked must never be called when the condition is false"
+experimental-bsan,marble-16.0.2,test_01,test_failed,162.627,4.770,2026-11-05T05:23:00Z,50252597.0,panic,"thread 'test_01' (65163) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/alloc/global.rs:360:18: unsafe precondition(s) violated: hint::assert_unchecked must never be called when the condition is false"
+experimental-bsan,marble-16.0.2,test_02,test_failed,162.627,4.964,2026-11-05T05:23:05Z,50252597.0,panic,"thread 'test_02' (70233) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/alloc/global.rs:360:18: unsafe precondition(s) violated: hint::assert_unchecked must never be called when the condition is false"
+experimental-bsan,marble-16.0.2,test_03,success,162.627,4.759,2026-11-05T05:23:09Z,50252597.0,,
+experimental-bsan,marble-16.0.2,test_04,success,162.627,4.927,2026-11-05T05:23:14Z,50252597.0,,
+experimental-bsan,marble-16.0.2,test_05,success,162.627,4.860,2026-11-05T05:23:19Z,50252597.0,,
+experimental-bsan,marble-16.0.2,test_06,success,162.627,4.993,2026-11-05T05:23:24Z,50252597.0,,
+experimental-bsan,marble-16.0.2,test_07,test_failed,162.627,5.104,2026-11-05T05:23:29Z,50252597.0,panic,"thread 'test_07' (71025) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/alloc/global.rs:360:18: unsafe precondition(s) violated: hint::assert_unchecked must never be called when the condition is false"
+experimental-bsan,marble-16.0.2,test_08,test_failed,162.627,5.054,2026-11-05T05:23:34Z,50252597.0,panic,"thread 'test_08' (71203) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/alloc/global.rs:360:18: unsafe precondition(s) violated: hint::assert_unchecked must never be called when the condition is false"
+experimental-bsan,marble-16.0.2,test_09,timeout,162.627,150.014,2026-11-05T05:26:04Z,50252597.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,marble-16.0.2,test_10,success,162.627,109.492,2026-11-05T05:27:54Z,50252597.0,,
+experimental-bsan,marble-16.0.2,test_11,success,162.627,4.486,2026-11-05T05:27:58Z,50252597.0,,
+experimental-bsan,marble-16.0.2,test_12,success,162.627,4.496,2026-11-05T05:28:03Z,50252597.0,,
+experimental-bsan,marble-16.0.2,test_13,success,162.627,4.793,2026-11-05T05:28:08Z,50252597.0,,

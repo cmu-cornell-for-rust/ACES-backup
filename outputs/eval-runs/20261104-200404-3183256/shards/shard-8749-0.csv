@@ -1,0 +1,21 @@
+experimental-bsan,ntex-redis-2.0.0,codec::tests::test_array,success,214.762,2.876,2026-11-05T04:44:07Z,50250265.0,,
+experimental-bsan,ntex-redis-2.0.0,codec::tests::test_array_macro,success,214.762,2.867,2026-11-05T04:44:10Z,50250265.0,,
+experimental-bsan,ntex-redis-2.0.0,codec::tests::test_bulk_string,success,214.762,2.847,2026-11-05T04:44:13Z,50250265.0,,
+experimental-bsan,ntex-redis-2.0.0,codec::tests::test_decode_array,success,214.762,2.984,2026-11-05T04:44:16Z,50250265.0,,
+experimental-bsan,ntex-redis-2.0.0,codec::tests::test_hashmap_conversion,success,214.762,2.842,2026-11-05T04:44:19Z,50250265.0,,
+experimental-bsan,ntex-redis-2.0.0,codec::tests::test_hashmap_conversion_fails_with_odd_length_array,success,214.762,2.851,2026-11-05T04:44:22Z,50250265.0,,
+experimental-bsan,ntex-redis-2.0.0,codec::tests::test_integer_convesion,success,214.762,2.838,2026-11-05T04:44:25Z,50250265.0,,
+experimental-bsan,ntex-redis-2.0.0,codec::tests::test_integer_overflow,success,214.762,2.852,2026-11-05T04:44:27Z,50250265.0,,
+experimental-bsan,ntex-redis-2.0.0,codec::tests::test_integer_underflow,success,214.762,2.833,2026-11-05T04:44:30Z,50250265.0,,
+experimental-bsan,ntex-redis-2.0.0,codec::tests::test_nil_string,success,214.762,2.834,2026-11-05T04:44:33Z,50250265.0,,
+experimental-bsan,ntex-redis-2.0.0,test_auth,success,214.762,2.929,2026-11-05T04:44:36Z,50250265.0,,
+experimental-bsan,ntex-redis-2.0.0,test_auth_simple,success,214.762,2.943,2026-11-05T04:44:39Z,50250265.0,,
+experimental-bsan,ntex-redis-2.0.0,test_connection,test_failed,214.762,3.050,2026-11-05T04:44:42Z,50250265.0,panic,"thread 'test_connection' (41567) panicked at tests/test_redis.rs:10:10: called `Result::unwrap()` on an `Err` value: Connect(Io(Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" }))"
+experimental-bsan,ntex-redis-2.0.0,test_hashes,test_failed,214.762,3.067,2026-11-05T04:44:45Z,50250265.0,panic,"thread 'test_hashes' (41812) panicked at tests/test_redis.rs:10:10: called `Result::unwrap()` on an `Err` value: Connect(Io(Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" }))"
+experimental-bsan,ntex-redis-2.0.0,test_keys,test_failed,214.762,3.069,2026-11-05T04:44:48Z,50250265.0,panic,"thread 'test_keys' (42128) panicked at tests/test_redis.rs:10:10: called `Result::unwrap()` on an `Err` value: Connect(Io(Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" }))"
+experimental-bsan,ntex-redis-2.0.0,test_lists,test_failed,214.762,3.062,2026-11-05T04:44:51Z,50250265.0,panic,"thread 'test_lists' (42362) panicked at tests/test_redis.rs:10:10: called `Result::unwrap()` on an `Err` value: Connect(Io(Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" }))"
+experimental-bsan,ntex-redis-2.0.0,test_psubscribe,test_failed,214.762,3.081,2026-11-05T04:44:54Z,50250265.0,panic,"thread 'test_psubscribe' (42623) panicked at tests/test_redis.rs:311:10: called `Result::unwrap()` on an `Err` value: Connect(Io(Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" }))"
+experimental-bsan,ntex-redis-2.0.0,test_ssubscribe,test_failed,214.762,3.081,2026-11-05T04:44:58Z,50250265.0,panic,"thread 'test_ssubscribe' (42926) panicked at tests/test_redis.rs:262:10: called `Result::unwrap()` on an `Err` value: Connect(Io(Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" }))"
+experimental-bsan,ntex-redis-2.0.0,test_strings,test_failed,214.762,3.049,2026-11-05T04:45:01Z,50250265.0,panic,"thread 'test_strings' (43152) panicked at tests/test_redis.rs:10:10: called `Result::unwrap()` on an `Err` value: Connect(Io(Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" }))"
+experimental-bsan,ntex-redis-2.0.0,test_strings_simple,test_failed,214.762,3.048,2026-11-05T04:45:04Z,50250265.0,panic,"thread 'test_strings_simple' (43322) panicked at tests/test_redis.rs:110:10: called `Result::unwrap()` on an `Err` value: Connect(Io(Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" }))"
+experimental-bsan,ntex-redis-2.0.0,test_subscribe,test_failed,214.762,3.078,2026-11-05T04:45:07Z,50250265.0,panic,"thread 'test_subscribe' (43465) panicked at tests/test_redis.rs:212:10: called `Result::unwrap()` on an `Err` value: Connect(Io(Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" }))"

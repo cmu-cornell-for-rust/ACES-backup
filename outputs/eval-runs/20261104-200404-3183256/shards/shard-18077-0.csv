@@ -1,0 +1,3 @@
+experimental-bsan,secret-lib-1.0.0,keyring,test_failed,506.393,5.650,2026-11-05T08:39:01Z,50263094.0,panic,"thread 'keyring' (21387) panicked at tests/keyring.rs:16:10: called `Result::unwrap()` on an `Err` value: SetSecretError(PlatformFailure(Unavailable), ""key"")"
+experimental-bsan,secret-lib-1.0.0,raw,success,506.393,6.921,2026-11-05T08:39:08Z,50263094.0,,
+experimental-bsan,secret-lib-1.0.0,test_command,success,506.393,6.965,2026-11-05T08:39:15Z,50263094.0,,

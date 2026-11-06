@@ -1,0 +1,8 @@
+experimental-bsan,uhlc-0.8.0,id::tests::parse_display,success,122.725,1.563,2026-11-05T06:48:24Z,50257447.0,,
+experimental-bsan,uhlc-0.8.0,ntp64::tests::as_secs_f64,success,122.725,1.540,2026-11-05T06:48:25Z,50257447.0,,
+experimental-bsan,uhlc-0.8.0,ntp64::tests::bijective_to_string,success,122.725,35.244,2026-11-05T06:49:01Z,50257447.0,,
+experimental-bsan,uhlc-0.8.0,ntp64::tests::rfc3339_conversion,success,122.725,7.992,2026-11-05T06:49:09Z,50257447.0,,
+experimental-bsan,uhlc-0.8.0,tests::hlc_parallel,test_failed,122.725,12.455,2026-11-05T06:49:21Z,50257447.0,gc,"test tests::hlc_parallel ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,uhlc-0.8.0,tests::hlc_update_with_timestamp,success,122.725,1.531,2026-11-05T06:49:23Z,50257447.0,,
+experimental-bsan,uhlc-0.8.0,timestamp::tests::bijective_to_string,success,122.725,112.729,2026-11-05T06:51:15Z,50257447.0,,
+experimental-bsan,uhlc-0.8.0,timestamp::tests::test_timestamp,success,122.725,1.540,2026-11-05T06:51:17Z,50257447.0,,

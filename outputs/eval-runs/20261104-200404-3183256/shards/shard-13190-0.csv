@@ -1,0 +1,9 @@
+experimental-bsan,os_pipe-1.2.1,tests::test_debug,success,7.148,5.585,2026-11-05T06:30:17Z,50256507.0,,
+experimental-bsan,os_pipe-1.2.1,tests::test_parent_handles,test_failed,7.148,2.999,2026-11-05T06:30:20Z,50256507.0,panic,"thread 'tests::test_parent_handles' (23177) panicked at src/lib.rs:437:14: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,os_pipe-1.2.1,tests::test_parent_handles_dont_close,success,7.148,5.572,2026-11-05T06:30:26Z,50256507.0,,
+experimental-bsan,os_pipe-1.2.1,tests::test_pipe_a_megabyte_of_data_from_another_thread,success,7.148,5.574,2026-11-05T06:30:31Z,50256507.0,,
+experimental-bsan,os_pipe-1.2.1,tests::test_pipe_no_data,success,7.148,5.537,2026-11-05T06:30:37Z,50256507.0,,
+experimental-bsan,os_pipe-1.2.1,tests::test_pipe_some_data,success,7.148,5.548,2026-11-05T06:30:43Z,50256507.0,,
+experimental-bsan,os_pipe-1.2.1,tests::test_pipe_some_data_with_refs,success,7.148,5.545,2026-11-05T06:30:48Z,50256507.0,,
+experimental-bsan,os_pipe-1.2.1,tests::test_pipes_are_not_inheritable,test_failed,7.148,1.602,2026-11-05T06:30:50Z,50256507.0,panic,"thread 'tests::test_pipes_are_not_inheritable' (28036) panicked at src/lib.rs:392:14: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,os_pipe-1.2.1,tests::test_try_clone,success,7.148,5.539,2026-11-05T06:30:55Z,50256507.0,,

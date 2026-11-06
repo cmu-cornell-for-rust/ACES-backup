@@ -1,0 +1,4 @@
+experimental-bsan,sergeant-0.8.1,twitch::announcements::test_check_announcement_false,success,574.941,2.967,2026-11-05T08:04:50Z,50261611.0,,
+experimental-bsan,sergeant-0.8.1,twitch::announcements::test_check_announcement_true,success,574.941,2.970,2026-11-05T08:04:53Z,50261611.0,,
+experimental-bsan,sergeant-0.8.1,twitch::announcements::test_get_announcements,test_failed,574.941,1.752,2026-11-05T08:04:55Z,50261611.0,panic,"thread 'twitch::announcements::test_get_announcements' (96130) panicked at src/twitch/announcements.rs:140:9: assertion failed: list.len() == 1"
+experimental-bsan,sergeant-0.8.1,twitch::parse::test_get_message_symbols,test_failed,574.941,7.042,2026-11-05T08:05:02Z,50261611.0,panic,"thread 'twitch::parse::test_get_message_symbols' (96183) panicked at src/twitch/parse.rs:183:5: assertion `left == right` failed"

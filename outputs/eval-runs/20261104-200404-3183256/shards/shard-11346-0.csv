@@ -1,0 +1,13 @@
+experimental-bsan,scru128-4.2.0,generator::tests::handle_clock_rollback,timeout,46.477,150.018,2026-11-05T05:42:41Z,50253750.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,scru128-4.2.0,generator::tests::reads_timestamp_from_time_source,success,46.477,1.670,2026-11-05T05:42:42Z,50253750.0,,
+experimental-bsan,scru128-4.2.0,global_gen::tests::generates_no_ids_sharing_same_timestamp_and_counters_under_multithreading,success,46.477,102.234,2026-11-05T05:44:25Z,50253750.0,,
+experimental-bsan,scru128-4.2.0,id::tests::encodes_and_decodes_prepared_cases_correctly,success,46.477,1.744,2026-11-05T05:44:27Z,50253750.0,,
+experimental-bsan,scru128-4.2.0,id::tests::has_symmetric_converters_from_to_various_values,success,46.477,9.797,2026-11-05T05:44:36Z,50253750.0,,
+experimental-bsan,scru128-4.2.0,id::tests::returns_error_if_an_invalid_string_representation_is_supplied,success,46.477,1.637,2026-11-05T05:44:38Z,50253750.0,,
+experimental-bsan,scru128-4.2.0,id::tests::supports_comparison_operators,success,46.477,5.200,2026-11-05T05:44:43Z,50253750.0,,
+experimental-bsan,scru128-4.2.0,id::with_serde::tests::serializes_and_deserializes_prepared_cases_correctly,success,46.477,1.686,2026-11-05T05:44:45Z,50253750.0,,
+experimental-bsan,scru128-4.2.0,tests::encodes_unique_sortable_tuple_of_timestamp_and_counters,timeout,46.477,150.032,2026-11-05T05:47:15Z,50253750.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,scru128-4.2.0,tests::encodes_up_to_date_timestamp,success,46.477,8.693,2026-11-05T05:47:24Z,50253750.0,,
+experimental-bsan,scru128-4.2.0,tests::generates_100k_identifiers_without_collision,timeout,46.477,150.032,2026-11-05T05:49:54Z,50253750.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,scru128-4.2.0,tests::generates_25_digit_canonical_string,timeout,46.477,150.021,2026-11-05T05:52:24Z,50253750.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,scru128-4.2.0,tests::generates_sortable_string_representation_by_creation_time,timeout,46.477,150.033,2026-11-05T05:54:54Z,50253750.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

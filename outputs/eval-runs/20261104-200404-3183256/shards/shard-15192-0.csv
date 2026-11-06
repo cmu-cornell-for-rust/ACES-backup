@@ -1,0 +1,6 @@
+experimental-bsan,rustc-build-sysroot-0.5.14,cross,test_failed,39.144,88.773,2026-11-05T07:15:47Z,50259201.0,panic,"thread 'cross' (12406) panicked at tests/tests.rs:13:5: assertion failed: cmd.stdout(process::Stdio::null()).stderr(process::Stdio::null()).status().expect(""failed to run {cmd:?}"").success()"
+experimental-bsan,rustc-build-sysroot-0.5.14,host,test_failed,39.144,141.723,2026-11-05T07:18:09Z,50259201.0,panic,"thread 'host' (25052) panicked at tests/tests.rs:13:5: assertion failed: cmd.stdout(process::Stdio::null()).stderr(process::Stdio::null()).status().expect(""failed to run {cmd:?}"").success()"
+experimental-bsan,rustc-build-sysroot-0.5.14,json_target,success,39.144,82.789,2026-11-05T07:19:32Z,50259201.0,,
+experimental-bsan,rustc-build-sysroot-0.5.14,no_std,success,39.144,76.656,2026-11-05T07:20:49Z,50259201.0,,
+experimental-bsan,rustc-build-sysroot-0.5.14,tests::check_patches_no_std,success,39.144,8.544,2026-11-05T07:20:57Z,50259201.0,,
+experimental-bsan,rustc-build-sysroot-0.5.14,tests::check_patches_with_std,success,39.144,8.461,2026-11-05T07:21:06Z,50259201.0,,

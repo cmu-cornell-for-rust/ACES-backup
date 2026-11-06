@@ -1,0 +1,12 @@
+experimental-bsan,crate_crypto_internal_eth_kzg_bls12_381-0.5.2,batch_add::tests::test_batch_addition,success,176.136,2.277,2026-11-05T05:46:25Z,50254070.0,,
+experimental-bsan,crate_crypto_internal_eth_kzg_bls12_381-0.5.2,batch_add::tests::test_multi_batch_addition_binary_stride,success,176.136,5.641,2026-11-05T05:46:31Z,50254070.0,,
+experimental-bsan,crate_crypto_internal_eth_kzg_bls12_381-0.5.2,batch_inversion::tests::batch_inverse_panic_check,success,176.136,1.804,2026-11-05T05:46:33Z,50254070.0,,
+experimental-bsan,crate_crypto_internal_eth_kzg_bls12_381-0.5.2,batch_inversion::tests::batch_inversion_smoke_test,success,176.136,8.715,2026-11-05T05:46:42Z,50254070.0,,
+experimental-bsan,crate_crypto_internal_eth_kzg_bls12_381-0.5.2,booth_encoding::tests::smoke_scalar_mul,success,176.136,1.685,2026-11-05T05:46:44Z,50254070.0,,
+experimental-bsan,crate_crypto_internal_eth_kzg_bls12_381-0.5.2,fixed_base_msm::tests::fixed_base_msm_non_zero,success,176.136,3.664,2026-11-05T05:46:47Z,50254070.0,,
+experimental-bsan,crate_crypto_internal_eth_kzg_bls12_381-0.5.2,fixed_base_msm::tests::smoke_test_fixed_base_msm,success,176.136,20.014,2026-11-05T05:47:07Z,50254070.0,,
+experimental-bsan,crate_crypto_internal_eth_kzg_bls12_381-0.5.2,fixed_base_msm_window::tests::bench_window_sizes_msm,timeout,176.136,150.018,2026-11-05T05:49:37Z,50254070.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,crate_crypto_internal_eth_kzg_bls12_381-0.5.2,fixed_base_msm_window::tests::msm_blst_precomp,success,176.136,9.073,2026-11-05T05:49:46Z,50254070.0,,
+experimental-bsan,crate_crypto_internal_eth_kzg_bls12_381-0.5.2,fixed_base_msm_window::tests::precomp_lookup_table,success,176.136,1.801,2026-11-05T05:49:48Z,50254070.0,,
+experimental-bsan,crate_crypto_internal_eth_kzg_bls12_381-0.5.2,lincomb::tests::blst_footgun,test_failed,176.136,2.294,2026-11-05T05:49:51Z,50254070.0,panic,"thread 'lincomb::tests::blst_footgun' (57322) panicked at src/lincomb.rs:107:9: assertion `left == right` failed"
+experimental-bsan,crate_crypto_internal_eth_kzg_bls12_381-0.5.2,tests::test_reduce_bytes_to_scalar_edge_cases,success,176.136,1.610,2026-11-05T05:49:52Z,50254070.0,,

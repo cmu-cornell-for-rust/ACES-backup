@@ -1,0 +1,13 @@
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,common::test_stream::stream_bad,test_failed,108.556,6.754,2026-11-05T05:34:09Z,50253324.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,common::test_stream::stream_buffered_handshake,test_failed,108.556,6.698,2026-11-05T05:34:16Z,50253324.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,common::test_stream::stream_eof,test_failed,108.556,6.713,2026-11-05T05:34:23Z,50253324.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,common::test_stream::stream_good,test_failed,108.556,6.673,2026-11-05T05:34:29Z,50253324.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,common::test_stream::stream_handshake,test_failed,108.556,6.719,2026-11-05T05:34:36Z,50253324.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,common::test_stream::stream_handshake_eof,success,108.556,9.473,2026-11-05T05:34:45Z,50253324.0,,
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,common::test_stream::stream_handshake_regression_issues_77,test_failed,108.556,4.135,2026-11-05T05:34:50Z,50253324.0,panic,"thread 'common::test_stream::stream_handshake_regression_issues_77' (92365) panicked at src/common/test_stream.rs:254:5: assertion `left == right` failed"
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,fail,success,108.556,11.896,2026-11-05T05:35:02Z,50253324.0,,
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,lazy_config_acceptor_eof,success,108.556,7.487,2026-11-05T05:35:09Z,50253324.0,,
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,pass,test_failed,108.556,11.661,2026-11-05T05:35:21Z,50253324.0,other,"error: test failed, to rerun pass `--test test`"
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,test_lazy_config_acceptor,test_failed,108.556,10.910,2026-11-05T05:35:32Z,50253324.0,panic,"thread 'test_lazy_config_acceptor' (100107) panicked at tests/test.rs:172:67: called `Result::unwrap()` on an `Err` value: Custom { kind: InvalidData, error: InvalidCertificate(Expired) }"
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,test_modern,success,108.556,11.681,2026-11-05T05:35:43Z,50253324.0,,
+experimental-bsan,async-nats-tokio-rustls-deps-0.24.0-ALPHA.1,test_tls12,success,108.556,11.606,2026-11-05T05:35:55Z,50253324.0,,

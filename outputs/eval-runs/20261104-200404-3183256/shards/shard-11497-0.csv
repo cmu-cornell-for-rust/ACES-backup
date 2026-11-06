@@ -1,0 +1,12 @@
+experimental-bsan,axum-server-0.8.0,server::tests::start_and_request,success,343.985,3.432,2026-11-05T05:47:19Z,50253974.0,,
+experimental-bsan,axum-server-0.8.0,server::tests::test_graceful_shutdown_no_timeout,success,343.985,3.807,2026-11-05T05:47:24Z,50253974.0,,
+experimental-bsan,axum-server-0.8.0,server::tests::test_graceful_shutdown_timeout,test_failed,343.985,3.986,2026-11-05T05:47:28Z,50253974.0,panic,"thread 'server::tests::test_graceful_shutdown_timeout' (61488) panicked at src/server.rs:518:18: called `Result::unwrap()` on an `Err` value: hyper::Error(Body, Custom { kind: UnexpectedEof, error: ""unexpected EOF during chunk size line"" })"
+experimental-bsan,axum-server-0.8.0,server::tests::test_http1_only,success,343.985,3.733,2026-11-05T05:47:31Z,50253974.0,,
+experimental-bsan,axum-server-0.8.0,server::tests::test_http2_only,success,343.985,7.078,2026-11-05T05:47:39Z,50253974.0,,
+experimental-bsan,axum-server-0.8.0,server::tests::test_shutdown,success,343.985,2.076,2026-11-05T05:47:41Z,50253974.0,,
+experimental-bsan,axum-server-0.8.0,tls_openssl::tests::start_and_request,success,343.985,2.081,2026-11-05T05:47:43Z,50253974.0,,
+experimental-bsan,axum-server-0.8.0,tls_openssl::tests::test_reload,success,343.985,2.200,2026-11-05T05:47:45Z,50253974.0,,
+experimental-bsan,axum-server-0.8.0,tls_rustls::tests::from_pem_file_chain_file_not_found,success,343.985,2.132,2026-11-05T05:47:47Z,50253974.0,,
+experimental-bsan,axum-server-0.8.0,tls_rustls::tests::from_pem_file_not_found,success,343.985,1.869,2026-11-05T05:47:49Z,50253974.0,,
+experimental-bsan,axum-server-0.8.0,tls_rustls::tests::start_and_request,success,343.985,6.447,2026-11-05T05:47:55Z,50253974.0,,
+experimental-bsan,axum-server-0.8.0,tls_rustls::tests::test_reload,success,343.985,13.257,2026-11-05T05:48:09Z,50253974.0,,

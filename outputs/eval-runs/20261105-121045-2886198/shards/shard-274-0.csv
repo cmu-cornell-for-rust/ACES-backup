@@ -1,0 +1,3 @@
+experimental-bsan,nswrap-0.1.0,callback_return_value_in_thread,test_failed,53.544,627.252,2026-11-05T17:58:31Z,50276324.0,panic,"thread '<unnamed>' (50610) panicked at tests/basic.rs:85:64: called `Option::unwrap()` on a `None` value"
+experimental-bsan,nswrap-0.1.0,bind_mount,test_failed,53.544,621.185,2026-11-05T18:08:53Z,50276324.0,panic,"thread 'bind_mount' (83452) panicked at tests/basic.rs:58:66: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,nswrap-0.1.0,callback_return_value,test_failed,53.544,618.020,2026-11-05T18:19:11Z,50276324.0,panic,"thread 'callback_return_value' (92047) panicked at tests/basic.rs:71:60: called `Option::unwrap()` on a `None` value"

@@ -1,0 +1,60 @@
+experimental-bsan,libflatterer-0.20.0,guess_array::tests::guess,success,1065.254,2.401,2026-11-05T02:51:34Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,schema_analysis::tests::test_schema_order,success,1065.254,46.577,2026-11-05T02:52:21Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,schema_analysis::tests::test_schema_titles,success,1065.254,46.517,2026-11-05T02:53:07Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,schema_analysis::tests::test_slug,success,1065.254,52.339,2026-11-05T02:54:00Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::array_literal,success,1065.254,2.286,2026-11-05T02:54:02Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::array_mixed,success,1065.254,2.447,2026-11-05T02:54:05Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::array_object,test_failed,1065.254,31.453,2026-11-05T02:54:36Z,50242510.0,panic,"thread 'tests::array_object' (88141) panicked at src/lib.rs:4023:17: error was Postgres Error: error connecting to server"
+experimental-bsan,libflatterer-0.20.0,tests::check_nesting,success,1065.254,42.547,2026-11-05T02:55:19Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::full_test_in_object,timeout,1065.254,150.027,2026-11-05T02:57:49Z,50242510.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libflatterer-0.20.0,tests::full_test_in_object_memory,success,1065.254,83.664,2026-11-05T02:59:12Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::full_test_in_object_with_extra,timeout,1065.254,150.026,2026-11-05T03:01:42Z,50242510.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libflatterer-0.20.0,tests::full_test_in_object_with_multiple,timeout,1065.254,150.023,2026-11-05T03:04:12Z,50242510.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libflatterer-0.20.0,tests::full_test_in_object_with_prefix,timeout,1065.254,150.025,2026-11-05T03:06:43Z,50242510.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libflatterer-0.20.0,tests::full_test_inline,test_failed,1065.254,93.407,2026-11-05T03:08:16Z,50242510.0,panic,"thread 'tests::full_test_inline' (43941) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::full_test_mixed_case,test_failed,1065.254,121.107,2026-11-05T03:10:17Z,50242510.0,panic,"thread 'tests::full_test_mixed_case' (50929) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::full_test_select,test_failed,1065.254,80.692,2026-11-05T03:11:38Z,50242510.0,panic,"thread 'tests::full_test_select' (65498) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::full_test_simple,test_failed,1065.254,121.976,2026-11-05T03:13:40Z,50242510.0,panic,"thread 'tests::full_test_simple' (73409) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::invalid_xlsx_char,success,1065.254,68.270,2026-11-05T03:14:48Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::main_array_empty,success,1065.254,2.260,2026-11-05T03:14:50Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::main_array_literal,success,1065.254,2.787,2026-11-05T03:14:53Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::no_link,test_failed,1065.254,125.840,2026-11-05T03:16:59Z,50242510.0,panic,"thread 'tests::no_link' (93619) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::string_list,test_failed,1065.254,115.352,2026-11-05T03:18:54Z,50242510.0,panic,"thread 'tests::string_list' (9329) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_array_element,success,1065.254,3.001,2026-11-05T03:18:57Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::test_array_str_after_stream,test_failed,1065.254,63.090,2026-11-05T03:20:01Z,50242510.0,panic,"thread 'tests::test_array_str_after_stream' (26371) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_bad_utf8,success,1065.254,2.826,2026-11-05T03:20:03Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::test_download_upload_s3,success,1065.254,1.721,2026-11-05T03:20:05Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::test_empty_array,test_failed,1065.254,28.116,2026-11-05T03:20:33Z,50242510.0,panic,"thread 'tests::test_empty_array' (34286) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_evolve,test_failed,1065.254,77.192,2026-11-05T03:21:50Z,50242510.0,panic,"thread 'tests::test_evolve' (37149) panicked at src/lib.rs:4783:10: called `Result::unwrap()` on an `Err` value: DatapackageConvertError { source: PostgresError { source: Error { kind: Connect, cause: Some(Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" }) } }, backtrace: Back"
+experimental-bsan,libflatterer-0.20.0,tests::test_fields_csv,test_failed,1065.254,106.249,2026-11-05T03:23:37Z,50242510.0,panic,"thread 'tests::test_fields_csv' (46507) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_gz_input,test_failed,1065.254,124.791,2026-11-05T03:25:42Z,50242510.0,panic,"thread 'tests::test_gz_input' (65755) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_http_input,timeout,1065.254,150.032,2026-11-05T03:28:12Z,50242510.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libflatterer-0.20.0,tests::test_id_prefix,test_failed,1065.254,121.633,2026-11-05T03:30:13Z,50242510.0,panic,"thread 'tests::test_id_prefix' (94815) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_inline_o2o_when_o2m,success,1065.254,40.022,2026-11-05T03:30:53Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::test_inline_o2o_when_o2o,success,1065.254,39.916,2026-11-05T03:31:33Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::test_invalid,success,1065.254,2.780,2026-11-05T03:31:36Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::test_invalid_json_lines,success,1065.254,2.333,2026-11-05T03:31:38Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::test_json_path,test_failed,1065.254,129.455,2026-11-05T03:33:48Z,50242510.0,panic,"thread 'tests::test_json_path' (12863) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_json_path_condition,test_failed,1065.254,144.756,2026-11-05T03:36:13Z,50242510.0,panic,"thread 'tests::test_json_path_condition' (23478) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_large_cell,timeout,1065.254,150.023,2026-11-05T03:38:43Z,50242510.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libflatterer-0.20.0,tests::test_low_disk,test_failed,1065.254,138.768,2026-11-05T03:41:01Z,50242510.0,panic,"thread 'tests::test_low_disk' (59769) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_low_memory,test_failed,1065.254,120.841,2026-11-05T03:43:02Z,50242510.0,panic,"thread 'tests::test_low_memory' (66449) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_missing_middle_table,success,1065.254,26.192,2026-11-05T03:43:29Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::test_multi,timeout,1065.254,150.021,2026-11-05T03:45:59Z,50242510.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libflatterer-0.20.0,tests::test_multi_file,test_failed,1065.254,127.183,2026-11-05T03:48:06Z,50242510.0,panic,"thread 'tests::test_multi_file' (78246) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_multi_small,success,1065.254,98.069,2026-11-05T03:49:44Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::test_multi_speed,timeout,1065.254,150.023,2026-11-05T03:52:14Z,50242510.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libflatterer-0.20.0,tests::test_nan,test_failed,1065.254,113.454,2026-11-05T03:54:07Z,50242510.0,panic,"thread 'tests::test_nan' (83996) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_ndjson_missing_line,test_failed,1065.254,31.790,2026-11-05T03:54:39Z,50242510.0,panic,"thread 'tests::test_ndjson_missing_line' (84523) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_pushdown,test_failed,1065.254,145.293,2026-11-05T03:57:05Z,50242510.0,panic,"thread 'tests::test_pushdown' (84683) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_s3,success,1065.254,1.756,2026-11-05T03:57:06Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::test_s3_input,success,1065.254,1.759,2026-11-05T03:57:08Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,tests::test_simple_speed,timeout,1065.254,150.024,2026-11-05T03:59:38Z,50242510.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libflatterer-0.20.0,tests::test_tables_csv,test_failed,1065.254,94.007,2026-11-05T04:01:12Z,50242510.0,panic,"thread 'tests::test_tables_csv' (86316) panicked at src/lib.rs:4029:17: Error raised and there is no error_text to match it. Error was "
+experimental-bsan,libflatterer-0.20.0,tests::test_xlxs_title,success,1065.254,1.812,2026-11-05T04:01:14Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,yajlparser::tests::test_yajlparse_basic,success,1065.254,38.693,2026-11-05T04:01:53Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,yajlparser::tests::test_yajlparse_basic_array,success,1065.254,37.827,2026-11-05T04:02:30Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,yajlparser::tests::test_yajlparse_basic_jl,success,1065.254,38.604,2026-11-05T04:03:09Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,yajlparser::tests::test_yajlparse_many_lists,success,1065.254,38.692,2026-11-05T04:03:48Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,yajlparser::tests::test_yajlparse_mixed,success,1065.254,38.338,2026-11-05T04:04:26Z,50242510.0,,
+experimental-bsan,libflatterer-0.20.0,yajlparser::tests::test_yajlparse_not_object,success,1065.254,37.984,2026-11-05T04:05:04Z,50242510.0,,

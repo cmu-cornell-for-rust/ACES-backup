@@ -1,0 +1,7 @@
+experimental-bsan,xattr-1.6.1,test_debug,success,18.359,2.961,2026-11-05T07:01:50Z,50258444.0,,
+experimental-bsan,xattr-1.6.1,test_fd,success,18.359,2.955,2026-11-05T07:01:53Z,50258444.0,,
+experimental-bsan,xattr-1.6.1,test_large,test_failed,18.359,4.215,2026-11-05T07:01:58Z,50258444.0,panic,"thread 'test_large' (42948) panicked at tests/main.rs:193:37: called `Result::unwrap()` on an `Err` value: Os { code: 95, kind: Unsupported, message: ""Operation not supported"" }"
+experimental-bsan,xattr-1.6.1,test_missing,success,18.359,2.936,2026-11-05T07:02:01Z,50258444.0,,
+experimental-bsan,xattr-1.6.1,test_multi,success,18.359,2.951,2026-11-05T07:02:04Z,50258444.0,,
+experimental-bsan,xattr-1.6.1,test_path,success,18.359,2.936,2026-11-05T07:02:07Z,50258444.0,,
+experimental-bsan,xattr-1.6.1,test_path_deref,success,18.359,2.972,2026-11-05T07:02:09Z,50258444.0,,

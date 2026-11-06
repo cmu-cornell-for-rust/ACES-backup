@@ -1,0 +1,88 @@
+experimental-bsan,ms_toollib-1.5.16,algorithms::tests::test_cal_probability_cells_not_mine,timeout,741.104,150.028,2026-11-05T02:22:29Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,algorithms::tests::test_cal_probability_cells_not_mine_2,timeout,741.104,150.025,2026-11-05T02:24:59Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,avf_video_works,test_failed,741.104,3.274,2026-11-05T02:25:02Z,50239290.0,panic,"thread 'avf_video_works' (35983) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,avf_video_works_other_encoding,test_failed,741.104,3.261,2026-11-05T02:25:05Z,50239290.0,panic,"thread 'avf_video_works_other_encoding' (36441) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,base_video_safe_board_works,success,741.104,19.372,2026-11-05T02:25:25Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,base_video_works,test_failed,741.104,5.270,2026-11-05T02:25:30Z,50239290.0,panic,"thread 'base_video_works' (40735) panicked at src/videos/minesweeper_board.rs:457:9: pos out of range"
+experimental-bsan,ms_toollib-1.5.16,base_video_works_2_win,success,741.104,18.118,2026-11-05T02:25:48Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,base_video_works_3,success,741.104,17.896,2026-11-05T02:26:06Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,base_video_works_4_win,test_failed,741.104,5.542,2026-11-05T02:26:12Z,50239290.0,panic,"thread 'base_video_works_4_win' (43405) panicked at src/videos/base_video.rs:1153:65: called `Result::unwrap()` on an `Err` value: ()"
+experimental-bsan,ms_toollib-1.5.16,base_video_works_5_1bv,success,741.104,20.851,2026-11-05T02:26:33Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,base_video_works_6_fail,success,741.104,19.139,2026-11-05T02:26:52Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,base_video_works_7_guess,timeout,741.104,150.018,2026-11-05T02:29:22Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,base_video_works_err,success,741.104,19.408,2026-11-05T02:29:41Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,base_video_works_set_board,success,741.104,18.550,2026-11-05T02:30:00Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,board_10_works,timeout,741.104,150.025,2026-11-05T02:32:30Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_11_works,timeout,741.104,150.023,2026-11-05T02:35:00Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_12_works,timeout,741.104,150.023,2026-11-05T02:37:30Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_13_works,timeout,741.104,150.028,2026-11-05T02:40:00Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_16_works,timeout,741.104,150.024,2026-11-05T02:42:30Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_1_works,timeout,741.104,150.026,2026-11-05T02:45:00Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_2_works,timeout,741.104,150.024,2026-11-05T02:47:30Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_3_works,timeout,741.104,150.024,2026-11-05T02:50:00Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_4_works,timeout,741.104,150.026,2026-11-05T02:52:30Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_5_works,timeout,741.104,150.026,2026-11-05T02:55:00Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_6_works,timeout,741.104,150.025,2026-11-05T02:57:30Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_7_works,timeout,741.104,150.022,2026-11-05T03:00:00Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_8_works,timeout,741.104,150.023,2026-11-05T03:02:30Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,board_9_works,timeout,741.104,150.023,2026-11-05T03:05:01Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,cal_bbbv_works,success,741.104,18.210,2026-11-05T03:05:19Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,cal_is_op_probability_cells_works,timeout,741.104,150.026,2026-11-05T03:07:49Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,cal_probability_onboard_1_works,timeout,741.104,150.024,2026-11-05T03:10:19Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,cal_probability_onboard_2_works,timeout,741.104,150.021,2026-11-05T03:12:49Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,cal_probability_onboard_3_works,timeout,741.104,150.022,2026-11-05T03:15:19Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,cal_probability_onboard_4_works,success,741.104,18.408,2026-11-05T03:15:37Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,cal_probability_onboard_5_works,success,741.104,21.751,2026-11-05T03:15:59Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,cal_probability_onboard_7_works,timeout,741.104,150.027,2026-11-05T03:18:29Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,cal_table_minenum_recursion_works,success,741.104,17.920,2026-11-05T03:18:47Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,csp_prob_gt_1,timeout,741.104,150.027,2026-11-05T03:21:17Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,custom_video_works,test_failed,741.104,3.198,2026-11-05T03:21:20Z,50239290.0,panic,"thread 'custom_video_works' (32309) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,evf_video_works_for_temp_video,test_failed,741.104,3.186,2026-11-05T03:21:24Z,50239290.0,panic,"thread 'evf_video_works_for_temp_video' (32373) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,evf_video_works_v3,test_failed,741.104,3.185,2026-11-05T03:21:27Z,50239290.0,panic,"thread 'evf_video_works_v3' (32428) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,evf_video_works_v4,success,741.104,21.739,2026-11-05T03:21:49Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,evf_video_works_v4_replay,test_failed,741.104,5.736,2026-11-05T03:21:54Z,50239290.0,panic,"thread 'evf_video_works_v4_replay' (32609) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,evfs_save_works,test_failed,741.104,7.248,2026-11-05T03:22:02Z,50239290.0,panic,"thread 'evfs_save_works' (32668) panicked at src/videos/minesweeper_board.rs:457:9: pos out of range"
+experimental-bsan,ms_toollib-1.5.16,evfs_save_works_2,test_failed,741.104,6.031,2026-11-05T03:22:08Z,50239290.0,panic,"thread 'evfs_save_works_2' (32752) panicked at src/evfs.rs:253:39: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,is_able_to_solve_works,success,741.104,19.556,2026-11-05T03:22:27Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,is_guess_while_needless_works,success,741.104,19.978,2026-11-05T03:22:47Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,laymine_op_works,success,741.104,17.742,2026-11-05T03:23:05Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,laymine_solvable_adjust_works,timeout,741.104,150.020,2026-11-05T03:25:35Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,laymine_solvable_thread_works,timeout,741.104,150.019,2026-11-05T03:28:05Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,laymine_solvable_works,timeout,741.104,150.018,2026-11-05T03:30:35Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,laymine_works,success,741.104,17.863,2026-11-05T03:30:53Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,minesweeper_board_works,success,741.104,17.665,2026-11-05T03:31:11Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,mvf_video_works,test_failed,741.104,3.207,2026-11-05T03:31:14Z,50239290.0,panic,"thread 'mvf_video_works' (37035) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,play_video_works_avf,test_failed,741.104,10.385,2026-11-05T03:31:24Z,50239290.0,panic,"thread 'play_video_works_avf' (37138) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,play_video_works_evf,test_failed,741.104,10.411,2026-11-05T03:31:35Z,50239290.0,panic,"thread 'play_video_works_evf' (37486) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,pluck_works_1,test_failed,741.104,11.806,2026-11-05T03:31:47Z,50239290.0,panic,"thread 'pluck_works_1' (37622) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,refresh_matrixses_works,success,741.104,19.736,2026-11-05T03:32:06Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,refresh_matrixses_works2,timeout,741.104,150.025,2026-11-05T03:34:36Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,rmv1_noutf8_but_valid_utf8,success,741.104,46.910,2026-11-05T03:35:23Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,rmv1_utf8_basic,success,741.104,92.541,2026-11-05T03:36:56Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,rmv1_utf8_invalid,success,741.104,18.068,2026-11-05T03:37:14Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,rmv1_utf8_nonascii,success,741.104,92.590,2026-11-05T03:38:47Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,rmv2_16px_preflags,success,741.104,24.719,2026-11-05T03:39:11Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,rmv2_24px,success,741.104,20.627,2026-11-05T03:39:32Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,rmv2_24px_preflags,success,741.104,25.924,2026-11-05T03:39:58Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,rmv2_utf8_basic,success,741.104,19.053,2026-11-05T03:40:17Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,rmv2_utf8_invalid,success,741.104,17.518,2026-11-05T03:40:34Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,rmv2_utf8_nonascii,success,741.104,19.049,2026-11-05T03:40:53Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,rmv_video_works,test_failed,741.104,3.220,2026-11-05T03:40:57Z,50239290.0,panic,"thread 'rmv_video_works' (39558) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,safe_board_works,success,741.104,17.786,2026-11-05T03:41:14Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,solve_direct_works,success,741.104,18.833,2026-11-05T03:41:33Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,solve_enumerate_works,success,741.104,17.656,2026-11-05T03:41:51Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,temp_avf_video_works,test_failed,741.104,3.195,2026-11-05T03:41:54Z,50239290.0,panic,"thread 'temp_avf_video_works' (39837) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,temp_mvf_video_works,test_failed,741.104,3.196,2026-11-05T03:41:57Z,50239290.0,panic,"thread 'temp_mvf_video_works' (39892) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,temp_rmv_video_works,test_failed,741.104,3.172,2026-11-05T03:42:01Z,50239290.0,panic,"thread 'temp_rmv_video_works' (39946) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,test_probability_jsminesweeper_all_unknown,timeout,741.104,150.024,2026-11-05T03:44:31Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,test_probability_jsminesweeper_beg,timeout,741.104,150.023,2026-11-05T03:47:01Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,test_probability_jsminesweeper_contradiction,timeout,741.104,150.021,2026-11-05T03:49:31Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,test_probability_jsminesweeper_known_result,timeout,741.104,150.026,2026-11-05T03:52:01Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,test_probability_jsminesweeper_simple,timeout,741.104,150.022,2026-11-05T03:54:31Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,try_solve_works,success,741.104,24.721,2026-11-05T03:54:56Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,utils::chunk_matrix_works,success,741.104,17.245,2026-11-05T03:55:13Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,zini::tests::test_big_board,timeout,741.104,150.014,2026-11-05T03:57:43Z,50239290.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ms_toollib-1.5.16,zini::tests::test_empty_board,success,741.104,17.248,2026-11-05T03:58:00Z,50239290.0,,
+experimental-bsan,ms_toollib-1.5.16,zini::tests::test_greedy_vs_reference,test_failed,741.104,1.730,2026-11-05T03:58:02Z,50239290.0,panic,"thread 'zini::tests::test_greedy_vs_reference' (42765) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,zini::tests::test_human_vs_reference,test_failed,741.104,1.717,2026-11-05T03:58:04Z,50239290.0,panic,"thread 'zini::tests::test_human_vs_reference' (42818) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,ms_toollib-1.5.16,zini::tests::test_random_min_le_greedy,test_failed,741.104,1.734,2026-11-05T03:58:05Z,50239290.0,panic,"thread 'zini::tests::test_random_min_le_greedy' (42871) panicked at src/videos/base_video.rs:580:53: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

@@ -1,0 +1,87 @@
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_afl_defaults,timeout,537.664,150.025,2026-11-05T02:19:26Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_afl_relay_seed,timeout,537.664,150.022,2026-11-05T02:21:56Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_cmpcov_integration,timeout,537.664,150.020,2026-11-05T02:24:27Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_cmplog_integration,timeout,537.664,150.022,2026-11-05T02:26:57Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_complete_generation,timeout,537.664,150.023,2026-11-05T02:29:27Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_environment_variables,success,537.664,3.069,2026-11-05T02:29:30Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_fuzzer_roles,success,537.664,3.032,2026-11-05T02:29:33Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_generator_initialization,success,537.664,3.013,2026-11-05T02:29:36Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_generator_with_dictionary,timeout,537.664,150.020,2026-11-05T02:32:06Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_generator_with_raw_flags,test_failed,537.664,1.694,2026-11-05T02:32:08Z,50239308.0,panic,"thread 'afl::cmd_gen::tests::test_generator_with_raw_flags' (66054) panicked at src/afl/cmd_gen.rs:359:9: assertion failed: result.is_ok()"
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_generator_with_too_many_runners,success,537.664,2.983,2026-11-05T02:32:11Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_sanitizer_binary,success,537.664,2.988,2026-11-05T02:32:14Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::cmd_gen::tests::test_target_args_handling,success,537.664,2.986,2026-11-05T02:32:17Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::coverage::tests::test_collect_queue_files,test_failed,537.664,7.780,2026-11-05T02:32:24Z,50239308.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,afl_runner-0.6.0,afl::coverage::tests::test_collector_config,test_failed,537.664,6.960,2026-11-05T02:32:31Z,50239308.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,afl_runner-0.6.0,afl::coverage::tests::test_empty_afl_directory,test_failed,537.664,6.942,2026-11-05T02:32:38Z,50239308.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,afl_runner-0.6.0,afl::coverage::tests::test_find_queue_directories,test_failed,537.664,6.968,2026-11-05T02:32:45Z,50239308.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,afl_runner-0.6.0,afl::coverage::tests::test_invalid_afl_directory,test_failed,537.664,6.914,2026-11-05T02:32:52Z,50239308.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,afl_runner-0.6.0,afl::coverage::tests::test_is_file_based_harness,test_failed,537.664,6.909,2026-11-05T02:32:59Z,50239308.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,afl_runner-0.6.0,afl::coverage::tests::test_process_queue_directory,test_failed,537.664,7.011,2026-11-05T02:33:06Z,50239308.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,afl_runner-0.6.0,afl::env::tests::test_apply_flags,success,537.664,3.013,2026-11-05T02:33:09Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::env::tests::test_default_env,success,537.664,2.975,2026-11-05T02:33:12Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::env::tests::test_enable_flag,success,537.664,2.990,2026-11-05T02:33:15Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::env::tests::test_env_generation,timeout,537.664,150.022,2026-11-05T02:35:45Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,afl::env::tests::test_flag_display,success,537.664,2.980,2026-11-05T02:35:48Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::env::tests::test_flag_parsing,success,537.664,2.983,2026-11-05T02:35:51Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::env::tests::test_new_multiple_environments,timeout,537.664,150.021,2026-11-05T02:38:21Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,afl::env::tests::test_new_with_afl_defaults,timeout,537.664,150.024,2026-11-05T02:40:51Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,afl::env::tests::test_new_with_many_runners,timeout,537.664,150.021,2026-11-05T02:43:21Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,afl::env::tests::test_set_testcache_size,success,537.664,2.977,2026-11-05T02:43:24Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::harness::tests::test_builder_methods,success,537.664,2.997,2026-11-05T02:43:27Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::harness::tests::test_builder_with_invalid_path,success,537.664,2.986,2026-11-05T02:43:30Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::harness::tests::test_builder_with_none,success,537.664,3.001,2026-11-05T02:43:33Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::harness::tests::test_getters,success,537.664,2.985,2026-11-05T02:43:36Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::harness::tests::test_harness_creation,success,537.664,3.005,2026-11-05T02:43:39Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::harness::tests::test_invalid_binary,success,537.664,2.985,2026-11-05T02:43:42Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::harness::tests::test_resolve_binary,success,537.664,3.000,2026-11-05T02:43:45Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::harness::tests::test_resolve_binary_invalid,success,537.664,2.988,2026-11-05T02:43:48Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::application_tests::test_apply_format_modes,success,537.664,3.079,2026-11-05T02:43:51Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::application_tests::test_apply_mutation_modes,success,537.664,3.108,2026-11-05T02:43:55Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::application_tests::test_apply_power_schedules,success,537.664,3.193,2026-11-05T02:43:58Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::application_tests::test_optional_features,success,537.664,3.372,2026-11-05T02:44:01Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::application_tests::test_optional_features_exclusive_mode,success,537.664,3.080,2026-11-05T02:44:04Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::application_tests::test_optional_features_exclusive_mode_full_probability,success,537.664,3.047,2026-11-05T02:44:07Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::application_tests::test_optional_features_threshold_behavior,success,537.664,3.253,2026-11-05T02:44:11Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::builder_tests::test_builder_default,success,537.664,2.960,2026-11-05T02:44:14Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::builder_tests::test_builder_multicore,success,537.664,2.971,2026-11-05T02:44:17Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::builder_tests::test_builder_with_all_options,success,537.664,2.960,2026-11-05T02:44:19Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::cmpcov_tests::test_cmpcov_application,success,537.664,3.206,2026-11-05T02:44:23Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::cmpcov_tests::test_cmpcov_max_instances,success,537.664,2.971,2026-11-05T02:44:26Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::cmpcov_tests::test_cmpcov_with_cmplog_conflict,success,537.664,3.522,2026-11-05T02:44:29Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::cmplog_tests::test_multiple_cmplog,success,537.664,3.554,2026-11-05T02:44:33Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::cmplog_tests::test_single_cmplog,success,537.664,3.114,2026-11-05T02:44:36Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::display_tests::test_cmplog_mode_display,success,537.664,2.981,2026-11-05T02:44:39Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::display_tests::test_format_mode_display,success,537.664,2.980,2026-11-05T02:44:42Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::display_tests::test_mutation_mode_display,success,537.664,2.984,2026-11-05T02:44:45Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,afl::strategies::tests::display_tests::test_power_schedule_display,success,537.664,2.977,2026-11-05T02:44:48Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,cli::generate::tests::test_gen_args_default,success,537.664,2.965,2026-11-05T02:44:51Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,cli::generate::tests::test_gen_args_with_values,success,537.664,2.963,2026-11-05T02:44:54Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,cli::run::tests::test_run_args_default,success,537.664,2.971,2026-11-05T02:44:57Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,cli::run::tests::test_run_args_with_values,success,537.664,2.964,2026-11-05T02:45:00Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,cli::session::tests::test_session_runner_from_str,success,537.664,2.975,2026-11-05T02:45:03Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,cli::tests::test_gen_args_merge,success,537.664,2.976,2026-11-05T02:45:06Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,cli::tests::test_run_args_merge,success,537.664,2.990,2026-11-05T02:45:09Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,runners::runner::tests::test_session_command_parsing,success,537.664,2.956,2026-11-05T02:45:12Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,runners::screen::tests::test_screen_commands,success,537.664,2.957,2026-11-05T02:45:15Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,runners::tmux::tests::test_tmux_commands,success,537.664,2.972,2026-11-05T02:45:18Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,tui::data_collection::tests::test_average_calculations,timeout,537.664,150.022,2026-11-05T02:47:48Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,tui::data_collection::tests::test_campaign_data_lifecycle,timeout,537.664,150.023,2026-11-05T02:50:18Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,tui::data_collection::tests::test_fuzzer_metrics_parsing,success,537.664,3.035,2026-11-05T02:50:21Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,tui::data_collection::tests::test_parse_solution_filename,success,537.664,3.012,2026-11-05T02:50:24Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,tui::data_collection::tests::test_stats_calculation_and_stability,timeout,537.664,150.022,2026-11-05T02:52:54Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,tui::data_collection::tests::test_time_without_finds_direct_usage,timeout,537.664,150.021,2026-11-05T02:55:24Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,tui::data_collection::tests::test_zero_value_handling,timeout,537.664,150.022,2026-11-05T02:57:54Z,50239308.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,afl_runner-0.6.0,tui::tests::test_format_duration,success,537.664,3.011,2026-11-05T02:57:57Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,tui::tests::test_format_float_to_hfloat,success,537.664,3.031,2026-11-05T02:58:00Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,tui::tests::test_format_int_to_hint,success,537.664,3.040,2026-11-05T02:58:03Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,tui::tests::test_format_last_event,success,537.664,2.985,2026-11-05T02:58:06Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,tui::tests::test_format_solution_time,success,537.664,2.991,2026-11-05T02:58:09Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,tui::tests::test_number_formatting_consistency,success,537.664,3.038,2026-11-05T02:58:12Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,tui::tests::test_number_scale_classification,success,537.664,2.981,2026-11-05T02:58:15Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,tui::tests::test_number_scale_formatting,success,537.664,3.029,2026-11-05T02:58:18Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,utils::system::tests::test_find_binary_custom_path,success,537.664,2.992,2026-11-05T02:58:21Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,utils::system::tests::test_find_binary_env_var,success,537.664,3.002,2026-11-05T02:58:24Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,utils::system::tests::test_is_directory_empty,success,537.664,2.989,2026-11-05T02:58:27Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,utils::system::tests::test_mkdir_existing_file,success,537.664,3.007,2026-11-05T02:58:30Z,50239308.0,,
+experimental-bsan,afl_runner-0.6.0,utils::system::tests::test_mkdir_new_directory,success,537.664,3.010,2026-11-05T02:58:33Z,50239308.0,,

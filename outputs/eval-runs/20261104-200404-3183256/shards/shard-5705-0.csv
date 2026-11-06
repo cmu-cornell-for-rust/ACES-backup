@@ -1,0 +1,39 @@
+experimental-bsan,texted-1.2.1,bootstrap::tests::test_sample_cfg,timeout,451.768,150.018,2026-11-05T03:30:53Z,50245712.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,texted-1.2.1,content::html_renderer::tests::test_change_images,success,451.768,16.751,2026-11-05T03:31:10Z,50245712.0,,
+experimental-bsan,texted-1.2.1,content::html_renderer::tests::test_change_images_no_image,success,451.768,10.162,2026-11-05T03:31:20Z,50245712.0,,
+experimental-bsan,texted-1.2.1,content::html_renderer::tests::test_full_content_html,timeout,451.768,150.017,2026-11-05T03:33:50Z,50245712.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,texted-1.2.1,content::parsing_utils::tests::test_extract_tags,success,451.768,4.501,2026-11-05T03:33:54Z,50245712.0,,
+experimental-bsan,texted-1.2.1,content::parsing_utils::tests::test_extract_texted_header,success,451.768,52.025,2026-11-05T03:34:46Z,50245712.0,,
+experimental-bsan,texted-1.2.1,content::parsing_utils::tests::test_lines_texted,timeout,451.768,150.017,2026-11-05T03:37:16Z,50245712.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,texted-1.2.1,content::parsing_utils::tests::test_no_header,success,451.768,41.919,2026-11-05T03:37:58Z,50245712.0,,
+experimental-bsan,texted-1.2.1,content::parsing_utils::tests::test_parse_removes_comment,success,451.768,4.492,2026-11-05T03:38:03Z,50245712.0,,
+experimental-bsan,texted-1.2.1,content::texted_renderer::tests::test_full_content,timeout,451.768,150.017,2026-11-05T03:40:33Z,50245712.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,texted-1.2.1,content::texted_renderer::tests::test_header_only,timeout,451.768,150.018,2026-11-05T03:43:03Z,50245712.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,texted-1.2.1,content_cache::tests::test_add_and_get_page,success,451.768,4.510,2026-11-05T03:43:08Z,50245712.0,,
+experimental-bsan,texted-1.2.1,content_cache::tests::test_add_and_get_post_expires_after,success,451.768,4.679,2026-11-05T03:43:12Z,50245712.0,,
+experimental-bsan,texted-1.2.1,content_cache::tests::test_add_and_get_post_never_expires,success,451.768,4.480,2026-11-05T03:43:17Z,50245712.0,,
+experimental-bsan,texted-1.2.1,content_cache::tests::test_content_cache_new,success,451.768,4.467,2026-11-05T03:43:21Z,50245712.0,,
+experimental-bsan,texted-1.2.1,content_cache::tests::test_content_cache_non_caching,success,451.768,4.481,2026-11-05T03:43:26Z,50245712.0,,
+experimental-bsan,texted-1.2.1,content_cache::tests::test_get_nonexistent_key,success,451.768,4.502,2026-11-05T03:43:30Z,50245712.0,,
+experimental-bsan,texted-1.2.1,content_cache::tests::test_non_caching_behavior,success,451.768,4.483,2026-11-05T03:43:35Z,50245712.0,,
+experimental-bsan,texted-1.2.1,decompress::tests::test_uncompress,test_failed,451.768,4.650,2026-11-05T03:43:39Z,50245712.0,panic,"thread 'decompress::tests::test_uncompress' (11488) panicked at src/bin/texted-tool/decompress.rs:22:37: called `Result::unwrap()` on an `Err` value: Custom { kind: ReadOnlyFilesystem, error: TarError { desc: ""failed to create `/Users/thiago/src/texted/z`"", io: Os { code: 30, kind: ReadOnlyFilesyste"
+experimental-bsan,texted-1.2.1,metrics::event_slot::tests::test_10_second_slot,success,451.768,4.466,2026-11-05T03:43:44Z,50245712.0,,
+experimental-bsan,texted-1.2.1,metrics::event_slot::tests::test_15_second_slot,success,451.768,4.454,2026-11-05T03:43:48Z,50245712.0,,
+experimental-bsan,texted-1.2.1,metrics::event_slot::tests::test_30_second_slot,success,451.768,4.475,2026-11-05T03:43:53Z,50245712.0,,
+experimental-bsan,texted-1.2.1,metrics::event_slot::tests::test_5_second_slot,success,451.768,4.498,2026-11-05T03:43:57Z,50245712.0,,
+experimental-bsan,texted-1.2.1,metrics::event_slot::tests::test_60_second_slot,success,451.768,4.514,2026-11-05T03:44:02Z,50245712.0,,
+experimental-bsan,texted-1.2.1,paginator::tests::test_empty,success,451.768,4.556,2026-11-05T03:44:06Z,50245712.0,,
+experimental-bsan,texted-1.2.1,paginator::tests::test_happy_case,success,451.768,4.575,2026-11-05T03:44:11Z,50245712.0,,
+experimental-bsan,texted-1.2.1,post::tests::test_happy_case,success,451.768,4.567,2026-11-05T03:44:16Z,50245712.0,,
+experimental-bsan,texted-1.2.1,post::tests::test_url_from_title,success,451.768,4.553,2026-11-05T03:44:20Z,50245712.0,,
+experimental-bsan,texted-1.2.1,post_processor::tests::test_extract_last,test_failed,451.768,2.104,2026-11-05T03:44:22Z,50245712.0,panic,"thread 'post_processor::tests::test_extract_last' (15198) panicked at src/post_processor.rs:325:9: assertion `left == right` failed"
+experimental-bsan,texted-1.2.1,post_render::tests::test_add_prefix,success,451.768,4.511,2026-11-05T03:44:27Z,50245712.0,,
+experimental-bsan,texted-1.2.1,post_render::tests::test_add_prefix_empty_label,success,451.768,4.499,2026-11-05T03:44:31Z,50245712.0,,
+experimental-bsan,texted-1.2.1,query_string::tests::test_get_page,success,451.768,4.512,2026-11-05T03:44:36Z,50245712.0,,
+experimental-bsan,texted-1.2.1,query_string::tests::test_parse_invalid_query_str,success,451.768,4.501,2026-11-05T03:44:40Z,50245712.0,,
+experimental-bsan,texted-1.2.1,query_string::tests::test_parse_key_only_query_str,success,451.768,4.525,2026-11-05T03:44:45Z,50245712.0,,
+experimental-bsan,texted-1.2.1,query_string::tests::test_parse_query_str,success,451.768,4.536,2026-11-05T03:44:49Z,50245712.0,,
+experimental-bsan,texted-1.2.1,text_utils::tests::test_parse_date_time,timeout,451.768,150.017,2026-11-05T03:47:19Z,50245712.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,texted-1.2.1,util::toml_date::tests::test_date_time,success,451.768,4.652,2026-11-05T03:47:24Z,50245712.0,,
+experimental-bsan,texted-1.2.1,view::post_renderer::tests::render_view,success,451.768,4.548,2026-11-05T03:47:29Z,50245712.0,,
+experimental-bsan,texted-1.2.1,view::rss_renderer::tests::render_xml,success,451.768,4.580,2026-11-05T03:47:33Z,50245712.0,,

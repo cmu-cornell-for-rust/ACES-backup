@@ -1,0 +1,11 @@
+experimental-bsan,managed-lhapdf-0.4.2,test::check_lookup_pdf,test_failed,203.108,13.952,2026-11-05T06:03:17Z,50254925.0,panic,"thread 'test::check_lookup_pdf' (40992) panicked at src/lib.rs:314:9: assertion failed: matches!(lookup_pdf(324900), Some((name, member)) if"
+experimental-bsan,managed-lhapdf-0.4.2,test::check_pdf,test_failed,203.108,7.614,2026-11-05T06:03:24Z,50254925.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,managed-lhapdf-0.4.2,test::check_pdf_pdfset,success,203.108,1.961,2026-11-05T06:03:26Z,50254925.0,,
+experimental-bsan,managed-lhapdf-0.4.2,test::check_pdf_set,test_failed,203.108,2.027,2026-11-05T06:03:28Z,50254925.0,panic,"thread 'test::check_pdf_set' (41623) panicked at src/lib.rs:405:9: assertion failed: matches!(pdf_set.entry(""Particle""), Some(value) if value == ""2212"")"
+experimental-bsan,managed-lhapdf-0.4.2,test::check_setname_and_nmem,test_failed,203.108,2.021,2026-11-05T06:03:30Z,50254925.0,panic,"thread 'test::check_setname_and_nmem' (41679) panicked at src/lib.rs:375:9: assertion `left != right` failed"
+experimental-bsan,managed-lhapdf-0.4.2,test::debug_pdf,test_failed,203.108,2.016,2026-11-05T06:03:32Z,50254925.0,panic,"thread 'test::debug_pdf' (41815) panicked at src/lib.rs:325:9: assertion `left == right` failed"
+experimental-bsan,managed-lhapdf-0.4.2,test::debug_pdf_set,test_failed,203.108,2.017,2026-11-05T06:03:34Z,50254925.0,panic,"thread 'test::debug_pdf_set' (41870) panicked at src/lib.rs:440:9: assertion `left == right` failed"
+experimental-bsan,managed-lhapdf-0.4.2,test::download_pdf_set,success,203.108,1.967,2026-11-05T06:03:36Z,50254925.0,,
+experimental-bsan,managed-lhapdf-0.4.2,test::force_positive,test_failed,203.108,2.012,2026-11-05T06:03:38Z,50254925.0,panic,"thread 'test::force_positive' (48656) panicked at src/lib.rs:463:9: assertion `left == right` failed"
+experimental-bsan,managed-lhapdf-0.4.2,test::set_flavors,test_failed,203.108,2.035,2026-11-05T06:03:41Z,50254925.0,panic,"thread 'test::set_flavors' (57955) panicked at src/lib.rs:472:9: assertion `left == right` failed"
+experimental-bsan,managed-lhapdf-0.4.2,test::set_verbosity,success,203.108,1.960,2026-11-05T06:03:42Z,50254925.0,,

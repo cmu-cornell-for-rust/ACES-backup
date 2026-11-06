@@ -1,0 +1,316 @@
+experimental-bsan,triton-vm-0.42.1,aet::tests::height_of_any_table_can_be_computed,success,1120.293,2.361,2026-11-05T01:43:03Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,aet::tests::pad_program_requiring_no_padding_zeros,success,1120.293,1.835,2026-11-05T01:43:05Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,arithmetic_domain::tests::can_evaluate_polynomial_larger_than_domain,timeout,1120.293,150.018,2026-11-05T01:45:35Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,arithmetic_domain::tests::domain_values,success,1120.293,1.678,2026-11-05T01:45:37Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,arithmetic_domain::tests::evaluate_constant_polynomial,timeout,1120.293,150.013,2026-11-05T01:48:07Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,arithmetic_domain::tests::evaluate_empty_polynomial,timeout,1120.293,150.015,2026-11-05T01:50:37Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,arithmetic_domain::tests::evaluate_linear_polynomial,timeout,1120.293,150.012,2026-11-05T01:53:07Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,arithmetic_domain::tests::evaluate_polynomial,timeout,1120.293,150.013,2026-11-05T01:55:37Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,arithmetic_domain::tests::halving_domain_squares_all_points,timeout,1120.293,150.015,2026-11-05T01:58:07Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,arithmetic_domain::tests::low_degree_extension,success,1120.293,1.694,2026-11-05T01:58:08Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,arithmetic_domain::tests::too_small_domains_cannot_be_halved,success,1120.293,1.615,2026-11-05T01:58:10Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,challenges::tests::various_challenge_indexing_operations_are_possible,success,1120.293,1.704,2026-11-05T01:58:12Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,config::tests::triton_vm_can_generate_valid_proof_with_cached_lde_trace,timeout,1120.293,150.019,2026-11-05T02:00:42Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,config::tests::triton_vm_can_generate_valid_proof_with_just_in_time_lde,timeout,1120.293,150.019,2026-11-05T02:03:12Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,constraints::test::triton_assembly_constraint_evaluators_are_straight_line_and_does_not_halt,timeout,1120.293,150.016,2026-11-05T02:05:42Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,constraints::test::triton_assembly_constraint_evaluators_declare_no_labels,timeout,1120.293,150.017,2026-11-05T02:08:12Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,constraints::test::triton_assembly_constraint_evaluators_do_not_write_outside_of_dedicated_memory_region,timeout,1120.293,150.022,2026-11-05T02:10:42Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,constraints::test::triton_constraints_and_assembly_constraints_agree,timeout,1120.293,150.024,2026-11-05T02:13:12Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,error::tests::assert_false,success,1120.293,1.792,2026-11-05T02:13:14Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,error::tests::assert_unequal_vec,success,1120.293,145.713,2026-11-05T02:15:40Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,error::tests::division_by_zero,success,1120.293,1.794,2026-11-05T02:15:41Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,error::tests::failed_u32_conversion,success,1120.293,1.795,2026-11-05T02:15:43Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,error::tests::instruction_pointer_overflow,success,1120.293,1.706,2026-11-05T02:15:45Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,error::tests::inverse_of_zero,success,1120.293,1.764,2026-11-05T02:15:47Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,error::tests::log_of_zero,success,1120.293,1.778,2026-11-05T02:15:48Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,error::tests::print_unequal_vec_assert_error,success,1120.293,2.060,2026-11-05T02:15:51Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,error::tests::recurse_without_call,success,1120.293,1.766,2026-11-05T02:15:52Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,error::tests::return_without_call,success,1120.293,1.737,2026-11-05T02:15:54Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,error::tests::shrink_op_stack_too_much,success,1120.293,1.730,2026-11-05T02:15:56Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,error::tests::xfe_inverse_of_zero,success,1120.293,1.827,2026-11-05T02:15:58Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,fri::tests::codeword_corresponding_to_high_degree_polynomial_results_in_verification_failure,timeout,1120.293,150.020,2026-11-05T02:18:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,fri::tests::domain_size_smaller_than_expansion_factor_is_rejected,success,1120.293,21.283,2026-11-05T02:18:49Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,fri::tests::expansion_factor_not_a_power_of_two_is_rejected,success,1120.293,8.983,2026-11-05T02:18:58Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,fri::tests::incorrect_authentication_structure_results_in_validation_failure,timeout,1120.293,150.018,2026-11-05T02:21:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,fri::tests::incorrect_last_round_polynomial_results_in_verification_failure,timeout,1120.293,150.020,2026-11-05T02:23:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,fri::tests::last_round_codeword_unequal_to_last_round_commitment_results_in_validation_failure,timeout,1120.293,150.018,2026-11-05T02:26:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,fri::tests::num_rounds_are_reasonable,success,1120.293,26.318,2026-11-05T02:26:54Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,fri::tests::polynomial_evaluation_and_barycentric_evaluation_are_equivalent,timeout,1120.293,150.022,2026-11-05T02:29:25Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,fri::tests::prove_and_fail_to_verify_high_degree_polynomial,timeout,1120.293,150.026,2026-11-05T02:31:55Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,fri::tests::prove_and_verify_low_degree_of_twice_cubing_plus_one,timeout,1120.293,150.015,2026-11-05T02:34:25Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,fri::tests::prove_and_verify_low_degree_polynomial,timeout,1120.293,150.015,2026-11-05T02:36:55Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,fri::tests::revealing_wrong_number_of_leaves_results_in_validation_failure,timeout,1120.293,150.014,2026-11-05T02:39:25Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,fri::tests::sample_indices,timeout,1120.293,150.034,2026-11-05T02:41:55Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,fri::tests::serialization,timeout,1120.293,150.017,2026-11-05T02:44:25Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,fri::tests::smallest_possible_fri_can_only_verify_constant_polynomials,success,1120.293,1.656,2026-11-05T02:44:27Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,fri::tests::smallest_possible_fri_has_no_rounds,success,1120.293,1.650,2026-11-05T02:44:28Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,fri::tests::too_small_expansion_factor_is_rejected,success,1120.293,1.654,2026-11-05T02:44:30Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,fri::tests::verifying_arbitrary_proof_does_not_panic,success,1120.293,107.018,2026-11-05T02:46:17Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,memory_layout::tests::definitely_integral_memory_layout_is_detected_as_integral,success,1120.293,1.668,2026-11-05T02:46:19Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,memory_layout::tests::definitely_non_integral_memory_layout_is_detected_as_non_integral,success,1120.293,1.664,2026-11-05T02:46:20Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,memory_layout::tests::memory_layout_integrity_check_does_not_panic_due_to_arithmetic_overflow,success,1120.293,1.653,2026-11-05T02:46:22Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,memory_layout::tests::size_0_memory_region_contains_no_addresses,success,1120.293,23.864,2026-11-05T02:46:46Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,memory_layout::tests::size_1_memory_region_contains_only_start_address,success,1120.293,25.765,2026-11-05T02:47:12Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,ndarray_helper::test::can_start_at_non_zero_index_and_stop_before_end,success,1120.293,1.658,2026-11-05T02:47:13Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,ndarray_helper::test::contiguous_column_slices_generates_valid_partition,success,1120.293,18.578,2026-11-05T02:47:32Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,ndarray_helper::test::fast_zeros_column_major_has_right_dimensions,timeout,1120.293,150.014,2026-11-05T02:50:02Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,ndarray_helper::test::fast_zeros_column_major_is_all_zeros,timeout,1120.293,150.021,2026-11-05T02:52:32Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,ndarray_helper::test::fast_zeros_column_major_is_not_standard_layout,timeout,1120.293,150.015,2026-11-05T02:55:02Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,ndarray_helper::test::horizontal_multi_slice_works_as_expected,success,1120.293,1.670,2026-11-05T02:55:04Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,ndarray_helper::test::horizontal_slice_with_partial_sums,success,1120.293,57.207,2026-11-05T02:56:01Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,ndarray_helper::test::repeated_index_gives_empty_slice,success,1120.293,1.653,2026-11-05T02:56:02Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,profiler::tests::clk_freq,success,1120.293,1.756,2026-11-05T02:56:04Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,profiler::tests::creating_profile_without_starting_profile_does_not_cause_panic,success,1120.293,1.683,2026-11-05T02:56:06Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,profiler::tests::extensive,timeout,1120.293,150.013,2026-11-05T02:58:36Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,profiler::tests::invocation_path_can_be_displayed,success,1120.293,1.652,2026-11-05T02:58:38Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,profiler::tests::loops,success,1120.293,1.702,2026-11-05T02:58:39Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,profiler::tests::nested_loops,success,1120.293,1.910,2026-11-05T02:58:41Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,profiler::tests::profiler_with_unfinished_tasks_can_generate_profile_report,success,1120.293,1.685,2026-11-05T02:58:43Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,profiler::tests::profiler_without_any_tasks_can_generate_a_profile_report,success,1120.293,1.663,2026-11-05T02:58:45Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,profiler::tests::sanity,success,1120.293,2.133,2026-11-05T02:58:47Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,profiler::tests::starting_the_profiler_twice_does_not_cause_panic,success,1120.293,1.655,2026-11-05T02:58:48Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof::tests::decode_claim,success,1120.293,20.810,2026-11-05T02:59:09Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof::tests::decode_proof,success,1120.293,17.608,2026-11-05T02:59:27Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof::tests::decoding_arbitrary_proof_data_does_not_panic,timeout,1120.293,150.021,2026-11-05T03:01:57Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,proof::tests::proof_with_multiple_padded_height_gives_err,success,1120.293,2.759,2026-11-05T03:02:00Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof::tests::proof_with_no_padded_height_gives_err,success,1120.293,2.784,2026-11-05T03:02:03Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof_item::tests::can_loop_over_proof_item_variants,success,1120.293,1.651,2026-11-05T03:02:04Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof_item::tests::interpreting_a_merkle_root_as_anything_else_gives_appropriate_error,success,1120.293,1.647,2026-11-05T03:02:06Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof_item::tests::proof_item_and_its_variant_have_same_bfield_codec_discriminant,success,1120.293,1.640,2026-11-05T03:02:07Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof_item::tests::proof_item_payload_static_length_is_as_expected,success,1120.293,1.655,2026-11-05T03:02:09Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof_item::tests::proof_item_variants_payload_type_has_expected_format,success,1120.293,1.646,2026-11-05T03:02:11Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof_item::tests::serialize_authentication_structure_in_isolation,timeout,1120.293,150.016,2026-11-05T03:04:41Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,proof_item::tests::serialize_authentication_structure_in_proof_stream,timeout,1120.293,150.015,2026-11-05T03:07:11Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,proof_item::tests::serialize_fri_response_in_isolation,timeout,1120.293,150.017,2026-11-05T03:09:41Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,proof_item::tests::serialize_fri_response_in_proof_stream,timeout,1120.293,150.016,2026-11-05T03:12:11Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,proof_stream::tests::dequeuing_from_empty_stream_fails,success,1120.293,1.644,2026-11-05T03:12:13Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof_stream::tests::dequeuing_more_items_than_have_been_enqueued_fails,success,1120.293,1.644,2026-11-05T03:12:14Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof_stream::tests::encoded_length_of_prove_stream_is_not_known_at_compile_time,success,1120.293,1.649,2026-11-05T03:12:16Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof_stream::tests::enqueue_dequeue_verify_partial_authentication_structure,success,1120.293,5.610,2026-11-05T03:12:22Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,proof_stream::tests::serialize_proof_with_fiat_shamir,timeout,1120.293,150.015,2026-11-05T03:14:52Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::can_read_twice_from_same_ram_address_within_one_cycle,timeout,1120.293,150.017,2026-11-05T03:17:22Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::check_io_terminals,timeout,1120.293,150.017,2026-11-05T03:19:52Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::claim_in_ram_corresponds_to_currently_running_program,timeout,1120.293,150.017,2026-11-05T03:22:22Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraint_polynomials_use_right_number_of_variables,success,1120.293,4.246,2026-11-05T03:22:26Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_big_mmr_snippet,timeout,1120.293,150.020,2026-11-05T03:24:56Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_fibonacci,timeout,1120.293,150.021,2026-11-05T03:27:26Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_many_u32_operations,timeout,1120.293,150.020,2026-11-05T03:29:56Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_0_lt_0,timeout,1120.293,150.018,2026-11-05T03:32:26Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_executing_every_instruction,timeout,1120.293,150.021,2026-11-05T03:34:56Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_add_mul_invert,timeout,1120.293,150.016,2026-11-05T03:37:26Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_and,timeout,1120.293,150.017,2026-11-05T03:39:56Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_assert_vector,timeout,1120.293,150.017,2026-11-05T03:42:26Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_call_recurse_return,timeout,1120.293,150.018,2026-11-05T03:44:56Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_div_mod,timeout,1120.293,150.017,2026-11-05T03:47:26Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_divine,timeout,1120.293,150.017,2026-11-05T03:49:56Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_eq,timeout,1120.293,150.017,2026-11-05T03:52:27Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_halt,timeout,1120.293,150.018,2026-11-05T03:54:57Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_hash,timeout,1120.293,150.017,2026-11-05T03:57:27Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_log2floor,timeout,1120.293,150.023,2026-11-05T03:59:57Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_lsb,timeout,1120.293,150.017,2026-11-05T04:02:27Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_lt,timeout,1120.293,150.016,2026-11-05T04:04:57Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_many_sponge_instructions,timeout,1120.293,150.020,2026-11-05T04:07:27Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_merkle_step_left_sibling,timeout,1120.293,150.017,2026-11-05T04:09:57Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_merkle_step_mem_left_sibling,timeout,1120.293,150.018,2026-11-05T04:12:27Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_merkle_step_mem_right_sibling,timeout,1120.293,150.020,2026-11-05T04:14:57Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_merkle_step_right_sibling,timeout,1120.293,150.018,2026-11-05T04:17:27Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_pop_count,timeout,1120.293,150.016,2026-11-05T04:19:57Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_pow,timeout,1120.293,150.021,2026-11-05T04:22:27Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_push_pop_dup_swap_nop,timeout,1120.293,150.018,2026-11-05T04:24:57Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_read_io_write_io,timeout,1120.293,150.016,2026-11-05T04:27:27Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_recurse_or_return,timeout,1120.293,150.015,2026-11-05T04:29:57Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_skiz,timeout,1120.293,150.017,2026-11-05T04:32:27Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_split,timeout,1120.293,150.025,2026-11-05T04:34:57Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_sponge_instructions,timeout,1120.293,150.023,2026-11-05T04:37:27Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_sponge_instructions_2,timeout,1120.293,150.027,2026-11-05T04:39:57Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_starting_with_pop_count,timeout,1120.293,150.017,2026-11-05T04:42:27Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_write_mem_read_mem,timeout,1120.293,150.017,2026-11-05T04:44:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_x_invert,timeout,1120.293,150.017,2026-11-05T04:47:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_xb_mul,timeout,1120.293,150.016,2026-11-05T04:49:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_xor,timeout,1120.293,150.016,2026-11-05T04:52:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_xx_add,timeout,1120.293,150.017,2026-11-05T04:54:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_for_xx_mul,timeout,1120.293,150.016,2026-11-05T04:57:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_program_hash_nop_nop_lt,timeout,1120.293,150.024,2026-11-05T04:59:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_and,timeout,1120.293,150.016,2026-11-05T05:02:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_assert_vector,timeout,1120.293,150.017,2026-11-05T05:04:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_div_mod,timeout,1120.293,150.015,2026-11-05T05:07:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_eq,timeout,1120.293,150.016,2026-11-05T05:09:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_is_u32,timeout,1120.293,150.016,2026-11-05T05:12:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_log2floor,timeout,1120.293,150.016,2026-11-05T05:14:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_lsb,timeout,1120.293,150.016,2026-11-05T05:17:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_lt,timeout,1120.293,150.016,2026-11-05T05:19:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_merkle_tree_update,timeout,1120.293,150.016,2026-11-05T05:22:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_pop_count,timeout,1120.293,150.017,2026-11-05T05:24:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_pow,timeout,1120.293,150.016,2026-11-05T05:27:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_random_ram_access,timeout,1120.293,150.022,2026-11-05T05:29:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_recurse_or_return,timeout,1120.293,150.017,2026-11-05T05:32:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_split,timeout,1120.293,150.017,2026-11-05T05:34:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_sponge_instructions,timeout,1120.293,150.022,2026-11-05T05:37:28Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_xb_dot_step,timeout,1120.293,150.021,2026-11-05T05:39:58Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_xor,timeout,1120.293,150.015,2026-11-05T05:42:29Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_property_based_test_program_for_xx_dot_step,timeout,1120.293,150.017,2026-11-05T05:44:59Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::constraints_evaluate_to_zero_on_single_sponge_absorb_mem_instructions,timeout,1120.293,150.015,2026-11-05T05:47:29Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::deep_update,success,1120.293,58.139,2026-11-05T05:48:27Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,stark::tests::derived_constraints_evaluate_to_zero_on_halt,timeout,1120.293,150.013,2026-11-05T05:50:57Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::linear_combination_weights_samples_correct_number_of_elements,timeout,1120.293,150.010,2026-11-05T05:53:51Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::negative_log_2_floor,success,1120.293,49.465,2026-11-05T05:54:47Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,stark::tests::negative_log_2_floor_of_0,success,1120.293,1.737,2026-11-05T05:55:04Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,stark::tests::number_of_quotient_degree_bounds_match_number_of_constraints,success,1120.293,4.177,2026-11-05T05:55:08Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,stark::tests::polynomial_segments_cohere_with_originating_polynomial,timeout,1120.293,150.016,2026-11-05T05:57:38Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::print_all_constraint_degrees,success,1120.293,2.829,2026-11-05T05:57:41Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,stark::tests::print_number_of_all_constraints_per_table,timeout,1120.293,150.023,2026-11-05T06:00:11Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::print_op_stack_table_example_for_specification,success,1120.293,50.104,2026-11-05T06:01:01Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,stark::tests::print_ram_table_example_for_specification,timeout,1120.293,150.016,2026-11-05T06:03:31Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::program_executing_every_instruction_actually_executes_every_instruction,success,1120.293,27.701,2026-11-05T06:03:59Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,stark::tests::prove_and_verify_fibonacci_100,timeout,1120.293,150.019,2026-11-05T06:06:29Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::prove_and_verify_halt_with_different_fri_expansion_factors,timeout,1120.293,150.016,2026-11-05T06:08:59Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::prove_and_verify_simple_program,timeout,1120.293,150.020,2026-11-05T06:11:29Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::prove_verify_many_u32_operations,timeout,1120.293,150.017,2026-11-05T06:13:59Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::prove_verify_program_using_pick_and_place,timeout,1120.293,150.021,2026-11-05T06:16:29Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,stark::tests::quotient_segments_of_old_and_new_methods_are_identical,test_failed,1120.293,2.392,2026-11-05T06:16:31Z,50233027.0,crash,"test stark::tests::quotient_segments_of_old_and_new_methods_are_identical ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,triton-vm-0.42.1,stark::tests::split_polynomial_into_segments_of_equal_size,success,1120.293,1.949,2026-11-05T06:16:33Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,stark::tests::split_polynomial_into_segments_of_unequal_size,success,1120.293,2.491,2026-11-05T06:16:36Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,stark::tests::verifying_arbitrary_proof_does_not_panic,success,1120.293,32.818,2026-11-05T06:17:09Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::hash::tests::hash_table_mode_discriminant_is_unique,success,1120.293,1.609,2026-11-05T06:17:10Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::hash::tests::terminal_constraints_hold_for_sponge_init_edge_case,timeout,1120.293,150.016,2026-11-05T06:19:40Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::master_table::tests::air_constraints_evaluators_have_not_changed,success,1120.293,10.568,2026-11-05T06:19:51Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::master_table::tests::aux_table_width_is_correct,timeout,1120.293,150.015,2026-11-05T06:22:21Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::master_table::tests::main_table_width_is_correct,success,1120.293,23.171,2026-11-05T06:22:44Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::master_table::tests::master_aux_table_mut,success,1120.293,9.220,2026-11-05T06:22:53Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::master_table::tests::print_all_master_table_indices,success,1120.293,2.609,2026-11-05T06:22:56Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::master_table::tests::sponge_with_pending_absorb_is_equivalent_to_usual_sponge,success,1120.293,40.159,2026-11-05T06:23:36Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::master_table::tests::update_arithmetization_overview,timeout,1120.293,150.020,2026-11-05T06:26:06Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::master_table::tests::zerofiers_are_correct,success,1120.293,2.447,2026-11-05T06:26:09Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::op_stack::tests::clk_stays_same_in_sequence_of_op_stack_table_entries,success,1120.293,87.890,2026-11-05T06:27:37Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::op_stack::tests::compare_rows_with_equal_stack_pointer_and_unequal_clk,success,1120.293,9.459,2026-11-05T06:27:46Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::op_stack::tests::compare_rows_with_unequal_stack_pointer_and_equal_clk,success,1120.293,9.509,2026-11-05T06:27:56Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::op_stack::tests::op_stack_pointer_in_sequence_of_op_stack_table_entries,success,1120.293,90.547,2026-11-05T06:29:26Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::op_stack::tests::op_stack_table_entry_either_shrinks_stack_or_grows_stack,success,1120.293,17.044,2026-11-05T06:29:43Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::constructing_factor_for_op_stack_table_running_product_never_panics,timeout,1120.293,150.014,2026-11-05T06:32:13Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::constructing_factor_for_ram_table_running_product_never_panics,timeout,1120.293,150.017,2026-11-05T06:34:43Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::division_by_zero_is_impossible,success,1120.293,1.686,2026-11-05T06:34:45Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::opcode_decomposition_for_skiz_is_unique,success,1120.293,1.610,2026-11-05T06:34:47Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::print_simple_processor_table_row,success,1120.293,2.183,2026-11-05T06:34:49Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_and,timeout,1120.293,150.016,2026-11-05T06:37:19Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_call,timeout,1120.293,150.016,2026-11-05T06:39:49Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_div_mod,timeout,1120.293,150.017,2026-11-05T06:42:19Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_divine_n,timeout,1120.293,150.015,2026-11-05T06:44:49Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_dup,timeout,1120.293,150.015,2026-11-05T06:47:19Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_eq,timeout,1120.293,150.016,2026-11-05T06:49:49Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_log2floor,timeout,1120.293,150.016,2026-11-05T06:52:19Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_lt,timeout,1120.293,150.015,2026-11-05T06:54:49Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_merkle_step,timeout,1120.293,150.014,2026-11-05T06:57:19Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_merkle_step_mem,timeout,1120.293,150.014,2026-11-05T06:59:49Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_pick,timeout,1120.293,150.013,2026-11-05T07:02:19Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_place,timeout,1120.293,150.013,2026-11-05T07:04:49Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_pop_n,timeout,1120.293,150.013,2026-11-05T07:07:19Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_pow,timeout,1120.293,150.013,2026-11-05T07:09:49Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_push,timeout,1120.293,150.014,2026-11-05T07:12:19Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_read_io_n,timeout,1120.293,150.013,2026-11-05T07:14:49Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_read_mem,timeout,1120.293,150.013,2026-11-05T07:17:19Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_recurse,timeout,1120.293,150.013,2026-11-05T07:19:50Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_recurse_or_return,timeout,1120.293,150.013,2026-11-05T07:22:20Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_return,timeout,1120.293,150.015,2026-11-05T07:24:50Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_skiz,timeout,1120.293,150.013,2026-11-05T07:27:20Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_split,timeout,1120.293,150.016,2026-11-05T07:29:50Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_sponge_absorb,timeout,1120.293,150.017,2026-11-05T07:32:20Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_sponge_absorb_mem,timeout,1120.293,150.015,2026-11-05T07:34:50Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_sponge_init,timeout,1120.293,150.015,2026-11-05T07:37:20Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_sponge_squeeze,timeout,1120.293,150.015,2026-11-05T07:39:50Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_swap,timeout,1120.293,150.015,2026-11-05T07:42:20Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_write_io_n,timeout,1120.293,150.015,2026-11-05T07:44:50Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_write_mem,timeout,1120.293,150.015,2026-11-05T07:47:20Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_x_invert,timeout,1120.293,150.015,2026-11-05T07:49:50Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_xb_dot_step,timeout,1120.293,150.014,2026-11-05T07:52:20Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_xb_mul,timeout,1120.293,150.013,2026-11-05T07:54:50Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_xor,timeout,1120.293,150.015,2026-11-05T07:57:20Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_xx_add,timeout,1120.293,150.014,2026-11-05T07:59:50Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_xx_dot_step,timeout,1120.293,150.014,2026-11-05T08:02:20Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::processor::tests::transition_constraints_for_instruction_xx_mul,timeout,1120.293,150.013,2026-11-05T08:04:50Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::ram::tests::bezout_coefficient_polynomials_agree_with_xgcd,timeout,1120.293,150.014,2026-11-05T08:07:20Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::ram::tests::bezout_coefficient_polynomials_are_as_expected,success,1120.293,4.041,2026-11-05T08:07:24Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::ram::tests::bezout_coefficient_polynomials_of_empty_ram_table_are_default,success,1120.293,1.611,2026-11-05T08:07:26Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::ram::tests::bezout_coefficients_are_actually_bezout_coefficients,timeout,1120.293,150.013,2026-11-05T08:09:56Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::ram::tests::ram_table_call_can_be_converted_to_table_row,success,1120.293,16.365,2026-11-05T08:10:12Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,table::tests::degree_lowering_works_correctly_for_all_tables,timeout,1120.293,150.022,2026-11-05T08:12:42Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,table::tests::nodes_are_unique_for_all_constraints,timeout,1120.293,150.021,2026-11-05T08:15:12Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,tests::lib_prove_verify,timeout,1120.293,150.015,2026-11-05T08:17:43Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,tests::lib_prove_with_incorrect_program_digest_gives_appropriate_error,success,1120.293,1.871,2026-11-05T08:17:44Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,tests::lib_prove_with_incorrect_public_output_gives_appropriate_error,success,1120.293,2.613,2026-11-05T08:17:47Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,tests::lib_use_initial_ram,timeout,1120.293,150.016,2026-11-05T08:20:17Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,tests::nested_triton_asm_interpolation,success,1120.293,2.958,2026-11-05T08:20:20Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,tests::parsing_pop_with_illegal_argument_fails,success,1120.293,1.612,2026-11-05T08:20:22Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,tests::prove_verify_knowledge_of_hash_preimage,timeout,1120.293,150.014,2026-11-05T08:22:52Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,tests::public_types_implement_usual_auto_traits,success,1120.293,1.609,2026-11-05T08:22:53Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,tests::triton_asm_interpolation_of_many_pops,success,1120.293,2.659,2026-11-05T08:22:56Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,tests::triton_asm_macro_can_parse_type_hints,success,1120.293,1.956,2026-11-05T08:22:58Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,tests::triton_program_macro_can_parse_type_hints,success,1120.293,2.295,2026-11-05T08:23:00Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::can_compute_dot_product_from_uninitialized_ram,success,1120.293,1.787,2026-11-05T08:23:02Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::crash_triton_vm_and_print_vm_error,success,1120.293,2.060,2026-11-05T08:23:04Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::from_various_types_to_non_determinism,success,1120.293,17.172,2026-11-05T08:23:21Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::from_various_types_to_public_input,success,1120.293,16.895,2026-11-05T08:23:38Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::initialise_table,success,1120.293,5.539,2026-11-05T08:23:44Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_and_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.737,2026-11-05T08:23:45Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_assert_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.753,2026-11-05T08:23:47Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_assert_vector_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.875,2026-11-05T08:23:49Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_div_mod_on_denominator_0_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.762,2026-11-05T08:23:51Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_div_mod_on_non_u32_operand_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.772,2026-11-05T08:23:53Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_divine_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.692,2026-11-05T08:23:54Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_invert_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.728,2026-11-05T08:23:56Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_log_2_floor_on_non_u32_operand_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.741,2026-11-05T08:23:58Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_log_2_floor_on_operand_0_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.730,2026-11-05T08:24:00Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_lt_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.727,2026-11-05T08:24:01Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_merkle_step_does_not_change_vm_state_when_crashing_vm_invalid_node_index,success,1120.293,1.788,2026-11-05T08:24:03Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_merkle_step_does_not_change_vm_state_when_crashing_vm_no_nd_digests,success,1120.293,1.773,2026-11-05T08:24:05Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_merkle_step_mem_does_not_change_vm_state_when_crashing_vm_invalid_node_index,success,1120.293,1.784,2026-11-05T08:24:07Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_pop_count_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.743,2026-11-05T08:24:08Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_pop_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.724,2026-11-05T08:24:10Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_pow_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.765,2026-11-05T08:24:12Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_read_io_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.716,2026-11-05T08:24:14Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_sponge_absorb_does_not_change_vm_state_when_crashing_vm_sponge_uninit,success,1120.293,2.021,2026-11-05T08:24:16Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_sponge_absorb_does_not_change_vm_state_when_crashing_vm_stack_too_small,success,1120.293,1.766,2026-11-05T08:24:18Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_sponge_absorb_mem_does_not_change_vm_state_when_crashing_vm_sponge_uninit,success,1120.293,1.728,2026-11-05T08:24:19Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_sponge_squeeze_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.705,2026-11-05T08:24:21Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_x_invert_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.712,2026-11-05T08:24:23Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instruction_xor_does_not_change_vm_state_when_crashing_vm,success,1120.293,1.734,2026-11-05T08:24:24Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::instructions_act_on_op_stack_as_indicated,success,1120.293,22.194,2026-11-05T08:24:47Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::iterating_over_public_inputs_individual_tokens_is_easy,success,1120.293,1.606,2026-11-05T08:24:48Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::merkle_tree_updating_program_correctly_updates_a_merkle_tree,timeout,1120.293,150.015,2026-11-05T08:27:18Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,vm::tests::negative_property_is_u32,success,1120.293,109.197,2026-11-05T08:29:07Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::profile_can_be_created_and_agrees_with_regular_vm_run,success,1120.293,57.077,2026-11-05T08:30:05Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::program_with_too_many_returns_crashes_vm_but_not_profiler,success,1120.293,1.762,2026-11-05T08:30:06Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::program_without_halt,success,1120.293,2.175,2026-11-05T08:30:09Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::property_based_recurse_or_return_program_sanity_check,timeout,1120.293,150.014,2026-11-05T08:32:39Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,vm::tests::property_based_sponge_and_hash_instructions_program_sanity_check,timeout,1120.293,150.019,2026-11-05T08:35:09Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,vm::tests::prove_verify_merkle_tree_update,timeout,1120.293,150.017,2026-11-05T08:37:39Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,vm::tests::pseudo_sub,success,1120.293,134.310,2026-11-05T08:39:53Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::read_mem_uninitialized,success,1120.293,2.277,2026-11-05T08:39:55Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::read_non_deterministically_initialized_ram_at_address_0,timeout,1120.293,150.015,2026-11-05T08:42:25Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,vm::tests::read_non_deterministically_initialized_ram_at_random_address,timeout,1120.293,150.014,2026-11-05T08:44:55Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_dont_prove_property_based_test_for_random_ram_access,success,1120.293,48.427,2026-11-05T08:45:44Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_dont_prove_property_based_test_program_for_xb_dot_step,success,1120.293,3.995,2026-11-05T08:45:48Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_dont_prove_property_based_test_program_for_xx_dot_step,success,1120.293,10.956,2026-11-05T08:45:59Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_basic_ram_read_write,success,1120.293,2.389,2026-11-05T08:46:01Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_countdown_from_10,success,1120.293,2.214,2026-11-05T08:46:03Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_edgy_ram_writes,success,1120.293,2.284,2026-11-05T08:46:06Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_fibonacci,success,1120.293,3.040,2026-11-05T08:46:09Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_gcd,success,1120.293,2.414,2026-11-05T08:46:11Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_get_collinear_y,timeout,1120.293,150.014,2026-11-05T08:48:41Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_halt_then_do_stuff,success,1120.293,2.496,2026-11-05T08:48:44Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_hello_world,success,1120.293,2.280,2026-11-05T08:48:46Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_merkle_step_left_sibling,success,1120.293,2.497,2026-11-05T08:48:49Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_merkle_step_mem_left_sibling,success,1120.293,2.572,2026-11-05T08:48:51Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_merkle_step_mem_right_sibling,success,1120.293,2.574,2026-11-05T08:48:54Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_merkle_step_right_sibling,success,1120.293,2.491,2026-11-05T08:48:56Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::run_tvm_swap,success,1120.293,1.866,2026-11-05T08:48:58Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::serialize_deserialize_vm_state_to_and_from_json_is_identity,success,1120.293,81.499,2026-11-05T08:50:20Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::swap_st0_is_like_no_op,success,1120.293,1.778,2026-11-05T08:50:21Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::triton_assembly_merkle_tree_authentication_path_verification,timeout,1120.293,150.013,2026-11-05T08:52:51Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,vm::tests::verify_sudoku,success,1120.293,141.224,2026-11-05T08:55:13Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::vm_crashes_when_executing_recurse_or_return_with_empty_jump_stack,success,1120.293,1.724,2026-11-05T08:55:14Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::xb_dot_step,timeout,1120.293,150.012,2026-11-05T08:57:44Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,vm::tests::xb_mul,success,1120.293,106.169,2026-11-05T08:59:31Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::xinv,success,1120.293,101.279,2026-11-05T09:01:12Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::xx_add,success,1120.293,119.991,2026-11-05T09:03:12Z,50233027.0,,
+experimental-bsan,triton-vm-0.42.1,vm::tests::xx_dot_step,timeout,1120.293,150.011,2026-11-05T09:05:42Z,50233027.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,triton-vm-0.42.1,vm::tests::xx_mul,success,1120.293,119.941,2026-11-05T09:07:42Z,50233027.0,,

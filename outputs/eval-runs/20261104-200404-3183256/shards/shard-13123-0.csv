@@ -1,0 +1,9 @@
+experimental-bsan,libp2p-webrtc-0.10.0-alpha,concurrent_connections_and_streams_tokio,timeout,765.943,150.031,2026-11-05T06:44:20Z,50256415.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libp2p-webrtc-0.10.0-alpha,smoke,test_failed,765.943,17.738,2026-11-05T06:44:38Z,50256415.0,panic,"thread 'smoke' (21888) panicked at tests/smoke.rs:342:28: called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: Internal(""data channel opening took longer than 10 seconds (see logs)"") }"
+experimental-bsan,libp2p-webrtc-0.10.0-alpha,tokio::certificate::test::test_certificate_serialize_pem_and_from_pem,success,765.943,4.160,2026-11-05T06:44:42Z,50256415.0,,
+experimental-bsan,libp2p-webrtc-0.10.0-alpha,tokio::transport::tests::can_parse_valid_addr_without_certhash,success,765.943,3.140,2026-11-05T06:44:45Z,50256415.0,,
+experimental-bsan,libp2p-webrtc-0.10.0-alpha,tokio::transport::tests::cannot_follow_other_protocols_after_certhash,success,765.943,3.158,2026-11-05T06:44:49Z,50256415.0,,
+experimental-bsan,libp2p-webrtc-0.10.0-alpha,tokio::transport::tests::close_listener,success,765.943,4.779,2026-11-05T06:44:53Z,50256415.0,,
+experimental-bsan,libp2p-webrtc-0.10.0-alpha,tokio::transport::tests::fails_to_parse_if_certhash_present_but_wrong_hash_function,success,765.943,3.152,2026-11-05T06:44:57Z,50256415.0,,
+experimental-bsan,libp2p-webrtc-0.10.0-alpha,tokio::transport::tests::missing_webrtc_protocol,success,765.943,3.145,2026-11-05T06:45:00Z,50256415.0,,
+experimental-bsan,libp2p-webrtc-0.10.0-alpha,tokio::transport::tests::tcp_is_invalid_protocol,success,765.943,3.139,2026-11-05T06:45:03Z,50256415.0,,

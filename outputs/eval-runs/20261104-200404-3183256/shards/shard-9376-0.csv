@@ -1,0 +1,19 @@
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::search_options,test_failed,190.502,6.041,2026-11-05T04:55:54Z,50251197.0,panic,"thread 'async_impl::tests::search_options' (51429) panicked at src/async_impl.rs:242:9: assertion failed: resp.is_ok()"
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_api_responses_missing_fields,test_failed,190.502,5.753,2026-11-05T04:56:00Z,50251197.0,panic,"thread 'async_impl::tests::test_api_responses_missing_fields' (51649) panicked at src/async_impl.rs:152:87: called `Result::unwrap()` on an `Err` value: FetchFailed(""404 Not Found"")"
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_get,success,190.502,6.802,2026-11-05T04:56:07Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_get_metadata,success,190.502,7.335,2026-11-05T04:56:14Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_get_quote_history,success,190.502,7.257,2026-11-05T04:56:21Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_get_quote_range,success,190.502,7.404,2026-11-05T04:56:29Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_get_single_quote,success,190.502,7.427,2026-11-05T04:56:36Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_large_volume,success,190.502,6.308,2026-11-05T04:56:43Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_mutual_fund_capital_gains,test_failed,190.502,106.577,2026-11-05T04:58:29Z,50251197.0,panic,"thread 'async_impl::tests::test_mutual_fund_capital_gains' (53801) panicked at src/async_impl.rs:302:9: assertion failed: capital_gains.len() > 0usize"
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_mutual_fund_history,success,190.502,7.178,2026-11-05T04:58:36Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_mutual_fund_latest,success,190.502,7.393,2026-11-05T04:58:44Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_mutual_fund_latest_with_null_first_trade_date,success,190.502,6.152,2026-11-05T04:58:50Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_mutual_fund_range,success,190.502,7.144,2026-11-05T04:58:57Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_search_ticker,success,190.502,8.392,2026-11-05T04:59:05Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,async_impl::tests::test_strange_api_responses,success,190.502,21.376,2026-11-05T04:59:27Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,quotes::tests::test_deserialize_period_info,success,190.502,1.663,2026-11-05T04:59:29Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,quotes::tests::test_deserialize_trading_periods_complex,success,190.502,1.744,2026-11-05T04:59:30Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,quotes::tests::test_deserialize_trading_periods_complex_regular_only,success,190.502,1.676,2026-11-05T04:59:32Z,50251197.0,,
+experimental-bsan,yahoo_finance_api-2.3.0,quotes::tests::test_deserialize_trading_periods_simple,success,190.502,1.685,2026-11-05T04:59:34Z,50251197.0,,

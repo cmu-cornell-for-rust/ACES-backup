@@ -1,0 +1,45 @@
+experimental-bsan,seekstorm-3.4.1,bitmap_and_count_excludes_deleted,timeout,1217.397,150.027,2026-11-05T03:27:17Z,50244503.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,seekstorm-3.4.1,bitmap_or_count_excludes_deleted,timeout,1217.397,150.036,2026-11-05T03:29:47Z,50244503.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,seekstorm-3.4.1,delete_committed_control,success,1217.397,57.317,2026-11-05T03:30:44Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,delete_out_of_range_ignored,success,1217.397,55.775,2026-11-05T03:31:40Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,delete_reused_docid_after_clear,success,1217.397,72.430,2026-11-05T03:32:52Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,delete_uncommitted_survives_commit,success,1217.397,55.492,2026-11-05T03:33:48Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,docid3_disjoint_terms_fill_heap,success,1217.397,126.383,2026-11-05T03:35:54Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,docid3_overlap_control,success,1217.397,121.892,2026-11-05T03:37:56Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,docid3_topkcount_total_consistent,success,1217.397,137.740,2026-11-05T03:40:14Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,frequent_terms_topk_returns_results,timeout,1217.397,150.026,2026-11-05T03:42:44Z,50244503.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,seekstorm-3.4.1,get_nonstored_only_mmap,success,1217.397,57.852,2026-11-05T03:43:42Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,get_nonstored_only_ram,success,1217.397,65.628,2026-11-05T03:44:47Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,get_stored_control,success,1217.397,56.654,2026-11-05T03:45:44Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,realtime_single_count_excludes_deleted,timeout,1217.397,150.025,2026-11-05T03:48:14Z,50244503.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,seekstorm-3.4.1,realtime_union_count_excludes_deleted,success,1217.397,60.100,2026-11-05T03:49:14Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,repro_range_facet_empty_ranges_no_panic,success,1217.397,55.605,2026-11-05T03:50:10Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,scan32_distinct_scores_exact_selection,timeout,1217.397,150.042,2026-11-05T03:52:40Z,50244503.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,seekstorm-3.4.1,scan32_pagination_is_consistent,timeout,1217.397,150.035,2026-11-05T03:55:10Z,50244503.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,seekstorm-3.4.1,scan32_sparse_uniform_fills_heap,timeout,1217.397,150.037,2026-11-05T03:57:40Z,50244503.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,seekstorm-3.4.1,scan32_topk_matches_global_ranking,timeout,1217.397,150.033,2026-11-05T04:00:10Z,50244503.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,seekstorm-3.4.1,scan32_topkcount_and_topk_agree,timeout,1217.397,150.024,2026-11-05T04:02:40Z,50244503.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,seekstorm-3.4.1,single_count_excludes_deleted,success,1217.397,58.935,2026-11-05T04:03:39Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,single_count_no_deletes_control,success,1217.397,58.583,2026-11-05T04:04:38Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,successor_after_empty_matrix,success,1217.397,101.767,2026-11-05T04:06:20Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,test_01_create_index,success,1217.397,46.505,2026-11-05T04:07:06Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,test_02_index_document,success,1217.397,47.518,2026-11-05T04:07:54Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,test_03_get_iterator,success,1217.397,34.199,2026-11-05T04:08:28Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,test_04_query_index,success,1217.397,34.064,2026-11-05T04:09:02Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,test_05_empty_query,success,1217.397,34.058,2026-11-05T04:09:36Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,test_06_clear_index,success,1217.397,56.678,2026-11-05T04:10:33Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,test_07_get_document,success,1217.397,33.768,2026-11-05T04:11:06Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,test_08_delete_document,success,1217.397,31.587,2026-11-05T04:11:38Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,test_09_create_index_vector_internal,test_failed,1217.397,31.780,2026-11-05T04:12:10Z,50244503.0,panic,"thread 'test_09_create_index_vector_internal' (94483) panicked at src/index.rs:2185:89: called `Result::unwrap()` on an `Err` value: could not load 'minishlab/potion-base-2M' from HuggingFace Hub"
+experimental-bsan,seekstorm-3.4.1,test_10_index_document_vector_internal,test_failed,1217.397,16.142,2026-11-05T04:12:26Z,50244503.0,panic,"thread 'test_10_index_document_vector_internal' (95574) panicked at tests/test.rs:552:50: called `Result::unwrap()` on an `Err` value: ""No such file or directory (os error 2)"""
+experimental-bsan,seekstorm-3.4.1,test_11_query_index_vector_internal,test_failed,1217.397,16.247,2026-11-05T04:12:42Z,50244503.0,panic,"thread 'test_11_query_index_vector_internal' (96042) panicked at tests/test.rs:576:50: called `Result::unwrap()` on an `Err` value: ""No such file or directory (os error 2)"""
+experimental-bsan,seekstorm-3.4.1,test_12_create_index_vector_external,success,1217.397,32.972,2026-11-05T04:13:15Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,test_13_index_document_vector_external,success,1217.397,61.345,2026-11-05T04:14:17Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,test_14_query_index_vector_external,success,1217.397,36.068,2026-11-05T04:14:53Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,test_15_facet_scope,success,1217.397,71.491,2026-11-05T04:16:04Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,union_count_cross_block_consistent,timeout,1217.397,150.025,2026-11-05T04:18:34Z,50244503.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,seekstorm-3.4.1,union_count_excludes_deleted,success,1217.397,61.776,2026-11-05T04:19:36Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,union_count_no_deletes_control,success,1217.397,62.262,2026-11-05T04:20:38Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,union_count_overlap_same_block,success,1217.397,42.724,2026-11-05T04:21:21Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,union_count_two_terms_stable,success,1217.397,46.430,2026-11-05T04:22:08Z,50244503.0,,
+experimental-bsan,seekstorm-3.4.1,union_topk_forty_terms,timeout,1217.397,150.026,2026-11-05T04:24:38Z,50244503.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

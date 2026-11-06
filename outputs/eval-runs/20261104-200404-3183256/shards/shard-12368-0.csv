@@ -1,0 +1,11 @@
+experimental-bsan,vrc-log-0.15.6,cache::tests::creates_database_and_table,success,668.290,3.226,2026-11-05T06:14:57Z,50255174.0,,
+experimental-bsan,vrc-log-0.15.6,cache::tests::ignores_entries_older_than_30_days,success,668.290,3.221,2026-11-05T06:15:00Z,50255174.0,,
+experimental-bsan,vrc-log-0.15.6,cache::tests::inserts_and_reads_avatar_ids,success,668.290,3.246,2026-11-05T06:15:04Z,50255174.0,,
+experimental-bsan,vrc-log-0.15.6,cache::tests::respects_chunking_limits,success,668.290,28.887,2026-11-05T06:15:33Z,50255174.0,,
+experimental-bsan,vrc-log-0.15.6,cache::tests::returns_none_for_missing_ids,success,668.290,3.206,2026-11-05T06:15:36Z,50255174.0,,
+experimental-bsan,vrc-log-0.15.6,cache::tests::updates_provider_bits_on_conflict,success,668.290,3.243,2026-11-05T06:15:39Z,50255174.0,,
+experimental-bsan,vrc-log-0.15.6,process::tests::failed_provider_does_not_update_cache,test_failed,668.290,2.015,2026-11-05T06:15:41Z,50255174.0,panic,"thread 'process::tests::failed_provider_does_not_update_cache' (4821) panicked at src/process.rs:258:9: assertion `left == right` failed: Cache must not update on failure"
+experimental-bsan,vrc-log-0.15.6,process::tests::process_with_cache_skips_existing_provider_bits,success,668.290,3.318,2026-11-05T06:15:44Z,50255174.0,,
+experimental-bsan,vrc-log-0.15.6,process::tests::process_with_cache_updates_provider_bits_on_success,success,668.290,3.274,2026-11-05T06:15:48Z,50255174.0,,
+experimental-bsan,vrc-log-0.15.6,process::tests::provider_bit_check_logic,success,668.290,3.022,2026-11-05T06:15:51Z,50255174.0,,
+experimental-bsan,vrc-log-0.15.6,process::tests::provider_kind_bitmask_is_unique,success,668.290,3.026,2026-11-05T06:15:54Z,50255174.0,,

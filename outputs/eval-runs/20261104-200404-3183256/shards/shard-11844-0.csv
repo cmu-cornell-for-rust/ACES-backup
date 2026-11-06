@@ -1,0 +1,12 @@
+experimental-bsan,symspell-0.4.3,string_strategy::tests::ascii_at_correct,success,19.463,1.516,2026-11-05T05:51:52Z,50254467.0,,
+experimental-bsan,symspell-0.4.3,string_strategy::tests::ascii_at_negative,success,19.463,1.504,2026-11-05T05:51:53Z,50254467.0,,
+experimental-bsan,symspell-0.4.3,string_strategy::tests::ascii_at_over_limit,success,19.463,1.510,2026-11-05T05:51:55Z,50254467.0,,
+experimental-bsan,symspell-0.4.3,string_strategy::tests::ascii_remove,success,19.463,1.498,2026-11-05T05:51:56Z,50254467.0,,
+experimental-bsan,symspell-0.4.3,string_strategy::tests::ascii_slice_prefix,success,19.463,1.498,2026-11-05T05:51:58Z,50254467.0,,
+experimental-bsan,symspell-0.4.3,string_strategy::tests::ascii_slice_suffix,success,19.463,1.507,2026-11-05T05:51:59Z,50254467.0,,
+experimental-bsan,symspell-0.4.3,string_strategy::tests::prepare,success,19.463,1.500,2026-11-05T05:52:01Z,50254467.0,,
+experimental-bsan,symspell-0.4.3,string_strategy::tests::unicodei_strategy,success,19.463,1.490,2026-11-05T05:52:02Z,50254467.0,,
+experimental-bsan,symspell-0.4.3,symspell::tests::test_lookup_compound,test_failed,19.463,2.099,2026-11-05T05:52:04Z,50254467.0,panic,"thread 'symspell::tests::test_lookup_compound' (18829) panicked at src/symspell.rs:951:9: assertion `left == right` failed"
+experimental-bsan,symspell-0.4.3,symspell::tests::test_lookup_compound_overflow,success,19.463,2.265,2026-11-05T05:52:07Z,50254467.0,,
+experimental-bsan,symspell-0.4.3,symspell::tests::test_lookup_compound_with_bigrams,test_failed,19.463,2.026,2026-11-05T05:52:09Z,50254467.0,panic,"thread 'symspell::tests::test_lookup_compound_with_bigrams' (19108) panicked at src/symspell.rs:1019:9: assertion `left == right` failed"
+experimental-bsan,symspell-0.4.3,symspell::tests::test_word_segmentation,test_failed,19.463,1.574,2026-11-05T05:52:10Z,50254467.0,panic,"thread 'symspell::tests::test_word_segmentation' (19173) panicked at src/symspell.rs:1033:9: assertion `left == right` failed"

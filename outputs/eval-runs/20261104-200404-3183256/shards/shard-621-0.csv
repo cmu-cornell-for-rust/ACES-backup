@@ -1,0 +1,279 @@
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_apt_no_space_error,success,327.870,31.361,2026-11-05T01:31:38Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_broken_packages_direct,success,327.870,7.088,2026-11-05T01:31:45Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_copy_extracted_data_no_space_direct,success,327.870,69.137,2026-11-05T01:32:55Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_dpkg_error_general,success,327.870,49.669,2026-11-05T01:33:44Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_dpkg_error_no_space,success,327.870,50.701,2026-11-05T01:34:35Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_dpkg_error_processing_package_direct,success,327.870,58.767,2026-11-05T01:35:34Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_dpkg_no_space_on_device,success,327.870,28.180,2026-11-05T01:36:02Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_error_from_dose3_reports,test_failed,327.870,8.953,2026-11-05T01:36:11Z,50233132.0,bsan,"test apt::tests::test_error_from_dose3_reports ... error: Undefined Behavior: reborrow through <16796120>(unprotected) at alloc232735[0x20] is forbidden\n   --> /local/ev-50233132-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/rowan-0.16.1/src/cursor.rs:219:5\n    |\n219 | }\n    | ^\n    = note: the above line calls library code, where the error was detected:\n   --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:0\n    |\n848 | pub(crate) const unsafe fn drop_glue<T: PointeeSized>(_: &mut T)\n    | ^\n    = help: the accessed tag <16796120>(unprotected) has state Disabled which forbids this reborrow (acting as a child read access)\nhelp: the accessed tag <16796120>(unprotected) was created here, in the initial state Reserved (interior mutable)\n   --> /local/ev-50233132-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/rowan-0.16.1/src/cursor.rs:194:20\n    |\n194 | let node = Box::from_raw(data.as_ptr());\n    |            ^\nhelp: the accessed tag <16796120>(unprotected) later transitioned to Disabled due to a foreign write access at offsets [0x20..0x28]\n   --> /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/mem/mod.rs:978:49\n    |\n978 | crate::intrinsics::write_via_move(dest, src);\n    |                                         ^\n    = help: this transition corresponds to a loss of read permissions\n\nstack backtrace:\n0: core::ptr::drop_glue::<rowan::cursor::NodeData>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848\n1: core::ptr::drop_glue::<alloc::boxed::Box<rowan::cursor::NodeData>>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n2: rowan::cursor::free\n      at /local/ev-50233132-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/rowan-0.16.1/src/cursor.rs:219:5\n3: <rowan::cursor::SyntaxToken as core::ops::drop::Drop>::drop\n      at /local/ev-50233132-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/rowan-0.16.1/src/cursor.rs:184:22\n4: core::ptr::drop_glue::<rowan::cursor::SyntaxToken>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n5: core::ptr::drop_glue::<rowan::utility_types::NodeOrToken<rowan::cursor::SyntaxNode, rowan::cursor::SyntaxToken>>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:848:1\n6: <rowan::utility_types::NodeOrToken<rowan::cursor::SyntaxNode, rowan::cursor::SyntaxToken>>::to_next_sibling_or_token\n      at /local/ev-50233132-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/rowan-0.16.1/src/cursor.rs:1246:5\n7: <rowan::cursor::SyntaxElementChildren as core::iter::traits::iterator::Iterator>::next::{closure#0}\n      at /local/ev-50233132-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/rowan-0.16.1/src/cursor.rs:1461:63\n8: <core::option::Option<rowan::utility_types::NodeOrToken<rowan::cursor::SyntaxNode, rowan::cursor::SyntaxToken>>>::and_then::<rowan::utility_types::NodeOrToken<rowan::cursor::SyntaxNode, rowan::cursor::SyntaxToken>, <rowan::cursor::SyntaxElementChildren as core::iter::traits::iterator::Iterator>::next::{closure#0}>\n      at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/option.rs:1544:24\n9: <rowan::cursor::SyntaxElementChildren as core::iter::traits::iterator::Iterator>::next\n      at /local/ev-50233132-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/rowan-0.16.1/src/cursor.rs:1461:42\n\nnote: stack trace was truncated after 10 frames; set stacktrace_max_len (e.g. BSAN_OPTIONS=stacktrace_max_len=32) to capture more.\nerror: test failed, to rerun pass `--lib`"
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_find_cudf_output,success,327.870,14.818,2026-11-05T01:36:26Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_generic_no_space_error_direct,success,327.870,66.667,2026-11-05T01:37:32Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_make_missing_rule,success,327.870,14.817,2026-11-05T01:37:47Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_missing_release_file,success,327.870,20.276,2026-11-05T01:38:07Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_no_space_on_device,success,327.870,14.723,2026-11-05T01:38:22Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_unable_to_locate_package_direct,success,327.870,37.761,2026-11-05T01:39:00Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_vague,success,327.870,64.159,2026-11-05T01:40:04Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,apt::tests::test_write_error_no_space,success,327.870,35.438,2026-11-05T01:40:40Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_line::test_error,success,327.870,15.750,2026-11-05T01:40:55Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_line::test_results,success,327.870,16.210,2026-11-05T01:41:12Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_line::test_source,success,327.870,15.914,2026-11-05T01:41:27Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_line::test_stderr,success,327.870,16.132,2026-11-05T01:41:44Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_line::test_summary,success,327.870,15.769,2026-11-05T01:41:59Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_line::test_test_begin_output,success,327.870,15.983,2026-11-05T01:42:15Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_line::test_test_end_output,success,327.870,15.981,2026-11-05T01:42:31Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_line::test_test_output,success,327.870,16.083,2026-11-05T01:42:47Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_line::test_testbed_setup,success,327.870,16.209,2026-11-05T01:43:04Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_summary::test_empty,success,327.870,7.053,2026-11-05T01:43:11Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_summary::test_multiple,success,327.870,48.016,2026-11-05T01:43:59Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_summary::test_single_fail,success,327.870,43.138,2026-11-05T01:44:42Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_summary::test_single_flaky,success,327.870,42.612,2026-11-05T01:45:25Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_summary::test_single_pass,success,327.870,22.217,2026-11-05T01:45:47Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::parse_autopkgtest_summary::test_single_skip,success,327.870,42.837,2026-11-05T01:46:30Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_deps,success,327.870,52.414,2026-11-05T01:47:22Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_dpkg_failure,success,327.870,35.770,2026-11-05T01:47:58Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_empty,success,327.870,7.087,2026-11-05T01:48:05Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_last_stderr_line,timeout,327.870,150.017,2026-11-05T01:50:35Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_no_match,success,327.870,13.755,2026-11-05T01:50:49Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_python_error_in_output,timeout,327.870,150.018,2026-11-05T01:53:19Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_session_disappeared,success,327.870,60.632,2026-11-05T01:54:19Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_stderr,timeout,327.870,150.018,2026-11-05T01:56:49Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_test_command_failure,timeout,327.870,150.019,2026-11-05T01:59:20Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_testbed_failure,success,327.870,31.219,2026-11-05T01:59:51Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_testbed_failure_with_test,timeout,327.870,150.016,2026-11-05T02:02:21Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_timed_out,success,327.870,50.856,2026-11-05T02:03:12Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,autopkgtest::tests::test_unknown_error,success,327.870,56.189,2026-11-05T02:04:08Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,brz::tests::test_brz_error_internal_assertion_error_empty,success,327.870,120.823,2026-11-05T02:06:09Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,brz::tests::test_brz_error_internal_attribute_error_with_message,success,327.870,124.114,2026-11-05T02:08:13Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,brz::tests::test_brz_error_nested_tree_unresolvable,success,327.870,123.379,2026-11-05T02:10:16Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,brz::tests::test_brz_error_submodule_encountered,success,327.870,127.905,2026-11-05T02:12:24Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,brz::tests::test_brz_error_uscan_remote_version_mismatch,success,327.870,137.953,2026-11-05T02:14:42Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,brz::tests::test_brz_error_uscan_watchfile_malformed,success,327.870,130.804,2026-11-05T02:16:53Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,brz::tests::test_inconsistent_source_format,success,327.870,126.341,2026-11-05T02:18:59Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,brz::tests::test_missing_debcargo_crate,success,327.870,131.323,2026-11-05T02:21:11Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,brz::tests::test_missing_debcargo_crate2,success,327.870,131.743,2026-11-05T02:23:22Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,brz::tests::test_uscan_failed_multiline_reflow,success,327.870,133.031,2026-11-05T02:25:35Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,brz::tests::test_uscan_no_matching_files_for_version,success,327.870,131.253,2026-11-05T02:27:47Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_arch_prefixed_ld_recompile_with_fpic_matches,timeout,327.870,150.017,2026-11-05T02:30:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_assembler,timeout,327.870,150.017,2026-11-05T02:32:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_autoconf_macro,timeout,327.870,150.020,2026-11-05T02:35:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_autoconf_version,timeout,327.870,150.017,2026-11-05T02:37:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_automake_input,timeout,327.870,150.019,2026-11-05T02:40:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_backtrack_limit_handling,timeout,327.870,150.022,2026-11-05T02:42:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_bash_redir_missing,timeout,327.870,150.018,2026-11-05T02:45:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_build_xml_missing_file,timeout,327.870,150.018,2026-11-05T02:47:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_c_header_missing,timeout,327.870,150.018,2026-11-05T02:50:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_ccache_error,timeout,327.870,150.018,2026-11-05T02:52:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_chown_operation_not_permitted_matches,timeout,327.870,150.018,2026-11-05T02:55:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_claws_version,timeout,327.870,150.018,2026-11-05T02:57:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_cmake_missing_cmake_files,timeout,327.870,150.018,2026-11-05T03:00:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_cmake_missing_command,timeout,327.870,150.019,2026-11-05T03:02:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_cmake_missing_exact_version,timeout,327.870,150.018,2026-11-05T03:05:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_cmake_missing_file,timeout,327.870,150.019,2026-11-05T03:07:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_cmake_missing_include,timeout,327.870,150.018,2026-11-05T03:10:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_cmake_missing_vague,timeout,327.870,150.018,2026-11-05T03:12:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_cmake_qt6_config_not_ambiguous_a,timeout,327.870,150.017,2026-11-05T03:15:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_command_missing,timeout,327.870,150.018,2026-11-05T03:17:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_config_status_input,timeout,327.870,150.017,2026-11-05T03:20:18Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_cp,timeout,327.870,150.018,2026-11-05T03:22:48Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_debhelper_pattern,timeout,327.870,150.017,2026-11-05T03:25:18Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_debhelper_pattern_not_found_trait,success,327.870,7.156,2026-11-05T03:25:25Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_dh_addon_load_failure,timeout,327.870,150.017,2026-11-05T03:27:55Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_dh_before,timeout,327.870,150.017,2026-11-05T03:30:25Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_dh_compat_dupe,timeout,327.870,150.017,2026-11-05T03:32:55Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_dh_compat_missing,timeout,327.870,150.017,2026-11-05T03:35:25Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_dh_compat_too_old,timeout,327.870,150.018,2026-11-05T03:37:55Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_dh_link_error,timeout,327.870,150.019,2026-11-05T03:40:25Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_dh_missing_addon,timeout,327.870,150.018,2026-11-05T03:42:55Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_dh_missing_uninstalled,timeout,327.870,150.016,2026-11-05T03:45:25Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_dh_systemd,timeout,327.870,150.017,2026-11-05T03:47:55Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_dh_udeb_shared_library,timeout,327.870,150.017,2026-11-05T03:50:25Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_dh_until_unsupported,timeout,327.870,150.018,2026-11-05T03:52:55Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_dh_with_order,timeout,327.870,150.018,2026-11-05T03:55:25Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_directory_missing,timeout,327.870,150.017,2026-11-05T03:57:55Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_distutils_missing,timeout,327.870,150.017,2026-11-05T04:00:25Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_fpic,timeout,327.870,150.019,2026-11-05T04:02:55Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_gettext_mismatch,timeout,327.870,150.017,2026-11-05T04:05:25Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_gir,timeout,327.870,150.019,2026-11-05T04:07:56Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_git_identity,timeout,327.870,150.018,2026-11-05T04:10:26Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_go_missing,timeout,327.870,150.017,2026-11-05T04:12:56Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_go_test,timeout,327.870,150.019,2026-11-05T04:15:26Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_gxx_missing_file,timeout,327.870,150.018,2026-11-05T04:17:56Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_install_cannot_change_ownership_matches,timeout,327.870,150.016,2026-11-05T04:20:26Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_install_docs_link,timeout,327.870,150.017,2026-11-05T04:22:56Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_installdocs_missing,timeout,327.870,150.017,2026-11-05T04:25:26Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_interpreter_missing,timeout,327.870,150.017,2026-11-05T04:27:56Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_ioerror,timeout,327.870,150.017,2026-11-05T04:30:26Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_jvm,timeout,327.870,150.017,2026-11-05T04:32:56Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_lazy_font,timeout,327.870,150.017,2026-11-05T04:35:26Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_libtoolize_missing_file,timeout,327.870,150.018,2026-11-05T04:37:56Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_make_missing_rule,timeout,327.870,150.017,2026-11-05T04:40:26Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_maven_errors,timeout,327.870,150.017,2026-11-05T04:42:56Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_meson_missing_git,timeout,327.870,150.018,2026-11-05T04:45:26Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_meson_missing_lib,timeout,327.870,150.018,2026-11-05T04:47:56Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_meson_version,timeout,327.870,150.017,2026-11-05T04:50:26Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_boost_components,timeout,327.870,150.016,2026-11-05T04:52:56Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_command_or_build_file_trait,success,327.870,7.180,2026-11-05T04:53:03Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_configure_trait,success,327.870,7.172,2026-11-05T04:53:11Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_go_mod_file,timeout,327.870,150.017,2026-11-05T04:55:41Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_go_mod_file_display,success,327.870,7.154,2026-11-05T04:55:48Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_go_runtime_trait,success,327.870,7.178,2026-11-05T04:55:55Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_haskell_dependencies_trait,success,327.870,7.141,2026-11-05T04:56:02Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_java_class,timeout,327.870,150.017,2026-11-05T04:58:32Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_javascript_runtime,timeout,327.870,150.018,2026-11-05T05:01:02Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_jdk,timeout,327.870,150.017,2026-11-05T05:03:32Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_jdk_file,timeout,327.870,150.017,2026-11-05T05:06:02Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_jre,timeout,327.870,150.017,2026-11-05T05:08:32Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_latex_file_trait,success,327.870,7.118,2026-11-05T05:08:40Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_latex_files,timeout,327.870,150.017,2026-11-05T05:11:10Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_library,timeout,327.870,150.017,2026-11-05T05:13:40Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_maven_artifacts,timeout,327.870,150.017,2026-11-05T05:16:10Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_ocaml_package_trait,success,327.870,7.175,2026-11-05T05:16:17Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_perl_file,timeout,327.870,150.019,2026-11-05T05:18:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_perl_module,timeout,327.870,150.018,2026-11-05T05:21:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_perl_plugin,timeout,327.870,150.017,2026-11-05T05:23:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_php_class,timeout,327.870,150.017,2026-11-05T05:26:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_php_class_trait,success,327.870,7.129,2026-11-05T05:26:24Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_python_module_display,success,327.870,7.131,2026-11-05T05:26:31Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_ruby_file_trait,success,327.870,7.123,2026-11-05T05:26:38Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_ruby_gem,timeout,327.870,150.018,2026-11-05T05:29:09Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_sprockets_file,timeout,327.870,150.017,2026-11-05T05:31:39Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_missing_xml_entity,timeout,327.870,150.017,2026-11-05T05:34:09Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_multi_line_configure_error,timeout,327.870,150.017,2026-11-05T05:36:39Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_multiple_definition,timeout,327.870,150.017,2026-11-05T05:39:09Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_mv_stat,timeout,327.870,150.016,2026-11-05T05:41:39Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_need_pgbuildext,timeout,327.870,150.017,2026-11-05T05:44:09Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_nim_error,timeout,327.870,150.017,2026-11-05T05:46:39Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_no_disk_space,timeout,327.870,150.018,2026-11-05T05:49:09Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_node_module_missing,timeout,327.870,150.017,2026-11-05T05:51:39Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_ocaml_library_missing,timeout,327.870,150.017,2026-11-05T05:54:09Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_perl_expand,timeout,327.870,150.018,2026-11-05T05:56:39Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_perl_missing_predeclared,timeout,327.870,150.018,2026-11-05T05:59:09Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_pkg_config_missing,timeout,327.870,150.017,2026-11-05T06:01:39Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_pkg_config_too_old,timeout,327.870,150.017,2026-11-05T06:04:09Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_pkgconf,timeout,327.870,150.017,2026-11-05T06:06:39Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_pytest_args,timeout,327.870,150.023,2026-11-05T06:09:09Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_pytest_config,timeout,327.870,150.017,2026-11-05T06:11:39Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_pytest_config_ini_key_warning,timeout,327.870,150.017,2026-11-05T06:14:09Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_pytest_import,timeout,327.870,150.017,2026-11-05T06:16:39Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_python2_import,timeout,327.870,150.017,2026-11-05T06:19:09Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_python3_import,timeout,327.870,150.019,2026-11-05T06:21:39Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_python_missing_file,timeout,327.870,150.019,2026-11-05T06:24:10Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_r_missing,timeout,327.870,150.019,2026-11-05T06:26:40Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_rspec,timeout,327.870,150.017,2026-11-05T06:29:10Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_ruby_missing_file,timeout,327.870,150.018,2026-11-05T06:31:40Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_scala_error,timeout,327.870,150.019,2026-11-05T06:34:10Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_secondary,timeout,327.870,150.024,2026-11-05T06:36:40Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_secondary_e_prefix_is_anchored,timeout,327.870,150.022,2026-11-05T06:39:10Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_sed,timeout,327.870,150.017,2026-11-05T06:41:40Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_segmentation_fault,timeout,327.870,150.018,2026-11-05T06:44:10Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_setup_py_command,timeout,327.870,150.016,2026-11-05T06:46:40Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_shellcheck,timeout,327.870,150.016,2026-11-05T06:49:10Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_sphinx,timeout,327.870,150.017,2026-11-05T06:51:40Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_symbols,timeout,327.870,150.016,2026-11-05T06:54:10Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_ts_error,timeout,327.870,150.016,2026-11-05T06:56:40Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_unknown_cert_authority,timeout,327.870,150.017,2026-11-05T06:59:10Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_unknown_certificate_authority_trait,success,327.870,7.111,2026-11-05T06:59:17Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_upstart_file_present,timeout,327.870,150.016,2026-11-05T07:01:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_vague,timeout,327.870,150.017,2026-11-05T07:04:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_vala_error,timeout,327.870,150.018,2026-11-05T07:06:47Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_vcs_control_directory,timeout,327.870,150.016,2026-11-05T07:09:17Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_vcs_control_directory_needed_trait,success,327.870,7.072,2026-11-05T07:09:25Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_vcversioner,timeout,327.870,150.016,2026-11-05T07:11:55Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_vignette,timeout,327.870,150.016,2026-11-05T07:14:25Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_vignette_builder,timeout,327.870,150.017,2026-11-05T07:16:55Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_webpack_missing,timeout,327.870,150.017,2026-11-05T07:19:25Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,common::tests::test_x11_missing,timeout,327.870,150.016,2026-11-05T07:21:55Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,cudf::tests::test_cudf_deserialization,success,327.870,14.429,2026-11-05T07:22:09Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,cudf::tests::test_cudf_with_conflict,success,327.870,14.471,2026-11-05T07:22:24Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,cudf::tests::test_deserialize_output_version,success,327.870,7.120,2026-11-05T07:22:31Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,cudf::tests::test_deserialize_output_version_invalid,success,327.870,7.115,2026-11-05T07:22:38Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,lines::tests::test_empty_collections,success,327.870,7.073,2026-11-05T07:22:45Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,lines::tests::test_enumerate_backward,success,327.870,7.104,2026-11-05T07:22:52Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,lines::tests::test_enumerate_forward,success,327.870,7.120,2026-11-05T07:22:59Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,lines::tests::test_enumerate_tail_forward,success,327.870,7.117,2026-11-05T07:23:06Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,lines::tests::test_iter_backward,success,327.870,7.112,2026-11-05T07:23:14Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,lines::tests::test_iter_forward,success,327.870,7.160,2026-11-05T07:23:21Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,lines::tests::test_slice_impl,success,327.870,7.151,2026-11-05T07:23:28Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,lines::tests::test_string_vec_impl,success,327.870,7.134,2026-11-05T07:23:35Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::apt_package_unknown_accepts_bare_string,success,327.870,7.101,2026-11-05T07:23:42Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::missing_autoconf_macro_omits_need_rebuild,success,327.870,7.117,2026-11-05T07:23:49Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::missing_file_missing_path_returns_none,success,327.870,7.140,2026-11-05T07:23:56Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::missing_file_wrong_type_returns_none,success,327.870,7.131,2026-11-05T07:24:04Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::missing_haskell_dependencies_accepts_bare_array,success,327.870,7.145,2026-11-05T07:24:11Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::missing_python_module_only_required_field,success,327.870,7.142,2026-11-05T07:24:18Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_apt_package_unknown,success,327.870,7.127,2026-11-05T07:24:25Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_autoconf_macro_default,success,327.870,7.133,2026-11-05T07:24:32Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_autoconf_macro_need_rebuild,success,327.870,7.126,2026-11-05T07:24:39Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_c_header,success,327.870,7.171,2026-11-05T07:24:47Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_command,success,327.870,7.141,2026-11-05T07:24:54Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_file,success,327.870,7.143,2026-11-05T07:25:01Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_go_package,success,327.870,7.156,2026-11-05T07:25:08Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_haskell_dependencies,success,327.870,7.156,2026-11-05T07:25:15Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_haskell_module,success,327.870,7.172,2026-11-05T07:25:22Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_library,success,327.870,7.168,2026-11-05T07:25:30Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_node_module,success,327.870,7.160,2026-11-05T07:25:37Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_node_package,success,327.870,7.175,2026-11-05T07:25:44Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_pkg_config,success,327.870,7.166,2026-11-05T07:25:51Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_pkg_config_no_version,success,327.870,7.187,2026-11-05T07:25:58Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_python_distribution,success,327.870,7.173,2026-11-05T07:26:05Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_python_distribution_simple,success,327.870,7.157,2026-11-05T07:26:13Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_python_module,success,327.870,7.159,2026-11-05T07:26:20Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_python_module_with_versions,success,327.870,7.157,2026-11-05T07:26:27Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_missing_vala_package,success,327.870,7.145,2026-11-05T07:26:34Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_unsatisfied_apt_dependencies,success,327.870,7.149,2026-11-05T07:26:41Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::roundtrip_vcs_control_directory_needed,success,327.870,7.154,2026-11-05T07:26:48Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problem::tests::unknown_kind_returns_none,success,327.870,7.135,2026-11-05T07:26:56Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problems::autopkgtest::tests::test_autopkgtest_testbed_setup_failure_trait,success,327.870,7.143,2026-11-05T07:27:03Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problems::debian::tests::test_dpkg_source_local_changes_trait,success,327.870,7.135,2026-11-05T07:27:10Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,problems::debian::tests::test_uscan_too_many_requests_trait,success,327.870,7.175,2026-11-05T07:27:17Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,r#match::tests::test_error_display,success,327.870,7.159,2026-11-05T07:27:24Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,r#match::tests::test_matcher_group,success,327.870,7.785,2026-11-05T07:27:32Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,r#match::tests::test_matcher_group_no_match,success,327.870,7.769,2026-11-05T07:27:40Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,r#match::tests::test_regex_line_matcher_extract_from_line,success,327.870,7.710,2026-11-05T07:27:47Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,r#match::tests::test_regex_line_matcher_extract_from_line_no_match,success,327.870,7.728,2026-11-05T07:27:55Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,r#match::tests::test_regex_line_matcher_extract_from_line_no_problem,success,327.870,7.764,2026-11-05T07:28:03Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,r#match::tests::test_regex_line_matcher_extract_from_lines,success,327.870,7.746,2026-11-05T07:28:11Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,r#match::tests::test_regex_line_matcher_extract_from_lines_no_match,success,327.870,7.728,2026-11-05T07:28:18Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,r#match::tests::test_regex_line_matcher_macro,success,327.870,7.736,2026-11-05T07:28:26Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,r#match::tests::test_regex_line_matcher_macro_simple,success,327.870,7.775,2026-11-05T07:28:34Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,r#match::tests::test_regex_line_matcher_matches_line,success,327.870,7.769,2026-11-05T07:28:42Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,r#match::tests::test_regex_line_matcher_new,success,327.870,7.774,2026-11-05T07:28:50Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_find_failed_stage,success,327.870,7.161,2026-11-05T07:28:57Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_find_failure_apt_get_update_sets_phase,success,327.870,14.937,2026-11-05T07:29:12Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_find_failure_autopkgtest_keeps_testname_when_present,success,327.870,30.747,2026-11-05T07:29:42Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_find_failure_autopkgtest_sets_phase_without_testname,success,327.870,30.523,2026-11-05T07:30:13Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_find_failure_unpack_sets_phase,success,327.870,68.481,2026-11-05T07:31:21Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_find_failure_unpack_sets_phase_without_preamble_match,success,327.870,117.567,2026-11-05T07:33:19Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_parse_sbuild_log,success,327.870,41.005,2026-11-05T07:34:00Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_parse_summary,success,327.870,14.492,2026-11-05T07:34:15Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_phase_unpack_and_apt_get_update_serde,success,327.870,7.124,2026-11-05T07:34:22Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_sbuild_log_from_str,success,327.870,33.236,2026-11-05T07:34:55Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_sbuild_log_get_section,success,327.870,7.155,2026-11-05T07:35:02Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_sbuild_log_get_section_is_case_insensitive,success,327.870,7.171,2026-11-05T07:35:09Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_sbuild_log_get_section_lines,success,327.870,7.127,2026-11-05T07:35:16Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_sbuild_log_get_section_lines_is_case_insensitive,success,327.870,7.150,2026-11-05T07:35:24Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_sbuild_log_get_section_none_matches_unnamed_section,success,327.870,7.138,2026-11-05T07:35:31Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_sbuild_log_get_section_only_folds_ascii,success,327.870,7.144,2026-11-05T07:35:38Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_sbuild_log_get_section_returns_first_match,success,327.870,7.155,2026-11-05T07:35:45Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_sbuild_log_section_titles,success,327.870,7.105,2026-11-05T07:35:52Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_sbuild_log_sections,success,327.870,7.130,2026-11-05T07:35:59Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_space_from_str,success,327.870,7.140,2026-11-05T07:36:06Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_strip_build_tail,success,327.870,27.754,2026-11-05T07:36:34Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_strip_section_header_timestamp,success,327.870,39.204,2026-11-05T07:37:13Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,sbuild::tests::test_worker_failure_falls_back_to_brz_parser_after_generic_match,timeout,327.870,150.019,2026-11-05T07:39:43Z,50233132.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_highlight_lines,success,327.870,7.126,2026-11-05T07:39:51Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_multilinelmatch_add_offset,success,327.870,7.124,2026-11-05T07:39:58Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_multilinelmatch_line,success,327.870,7.124,2026-11-05T07:40:05Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_multilinelmatch_lineno,success,327.870,7.125,2026-11-05T07:40:12Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_multilinelmatch_lines,success,327.870,7.153,2026-11-05T07:40:19Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_multilinelmatch_offset,success,327.870,7.154,2026-11-05T07:40:26Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_multilinelmatch_offsets,success,327.870,7.117,2026-11-05T07:40:33Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_multilinelmatch_origin,success,327.870,7.117,2026-11-05T07:40:41Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_singlelinematch_add_offset,success,327.870,7.121,2026-11-05T07:40:48Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_singlelinematch_line,success,327.870,7.129,2026-11-05T07:40:55Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_singlelinematch_lineno,success,327.870,7.137,2026-11-05T07:41:02Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_singlelinematch_linenos,success,327.870,7.126,2026-11-05T07:41:09Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_singlelinematch_lines,success,327.870,7.122,2026-11-05T07:41:16Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_singlelinematch_offset,success,327.870,7.143,2026-11-05T07:41:23Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_singlelinematch_offsets,success,327.870,7.133,2026-11-05T07:41:31Z,50233132.0,,
+experimental-bsan,buildlog-consultant-0.1.11,tests::test_singlelinematch_origin,success,327.870,7.124,2026-11-05T07:41:38Z,50233132.0,,

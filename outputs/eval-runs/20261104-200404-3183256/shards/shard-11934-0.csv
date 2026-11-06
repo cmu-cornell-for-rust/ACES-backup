@@ -1,0 +1,11 @@
+experimental-bsan,async-rustls-0.4.2,common::test_stream::stream_bad,test_failed,109.242,6.284,2026-11-05T05:56:29Z,50254612.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,async-rustls-0.4.2,common::test_stream::stream_eof,test_failed,109.242,6.326,2026-11-05T05:56:36Z,50254612.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,async-rustls-0.4.2,common::test_stream::stream_good,test_failed,109.242,6.319,2026-11-05T05:56:42Z,50254612.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,async-rustls-0.4.2,common::test_stream::stream_handshake,test_failed,109.242,6.325,2026-11-05T05:56:48Z,50254612.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,async-rustls-0.4.2,common::test_stream::stream_handshake_eof,success,109.242,9.034,2026-11-05T05:56:57Z,50254612.0,,
+experimental-bsan,async-rustls-0.4.2,common::test_stream::stream_handshake_regression_issues_77,test_failed,109.242,3.896,2026-11-05T05:57:01Z,50254612.0,panic,"thread 'common::test_stream::stream_handshake_regression_issues_77' (81732) panicked at src/common/test_stream.rs:228:9: assertion `left == right` failed"
+experimental-bsan,async-rustls-0.4.2,fail,test_failed,109.242,16.843,2026-11-05T05:57:18Z,50254612.0,gc,"test fail ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-rustls-0.4.2,lazy_config_acceptor_eof,success,109.242,7.086,2026-11-05T05:57:25Z,50254612.0,,
+experimental-bsan,async-rustls-0.4.2,pass,test_failed,109.242,17.813,2026-11-05T05:57:43Z,50254612.0,gc,"test pass ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-rustls-0.4.2,test_modern,test_failed,109.242,13.096,2026-11-05T05:57:56Z,50254612.0,gc,"test test_modern ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-rustls-0.4.2,test_tls12,test_failed,109.242,12.990,2026-11-05T05:58:09Z,50254612.0,gc,"test test_tls12 ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."

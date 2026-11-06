@@ -1,0 +1,6 @@
+experimental-bsan,mozjpeg-sys-2.2.3,all_links,success,25.503,1.541,2026-11-05T07:12:08Z,50259029.0,,
+experimental-bsan,mozjpeg-sys-2.2.3,enum_32bit,success,25.503,1.512,2026-11-05T07:12:09Z,50259029.0,,
+experimental-bsan,mozjpeg-sys-2.2.3,simd_is_detectable,success,25.503,1.514,2026-11-05T07:12:11Z,50259029.0,,
+experimental-bsan,mozjpeg-sys-2.2.3,simd_works_sse2,test_failed,25.503,1.564,2026-11-05T07:12:12Z,50259029.0,panic,"thread 'simd_works_sse2' (41872) panicked at src/lib.rs:895:9: assertion failed: jsimd_can_fdct_ifast() != 0"
+experimental-bsan,mozjpeg-sys-2.2.3,try_compress,success,25.503,1.518,2026-11-05T07:12:14Z,50259029.0,,
+experimental-bsan,mozjpeg-sys-2.2.3,try_decompress,success,25.503,1.513,2026-11-05T07:12:15Z,50259029.0,,

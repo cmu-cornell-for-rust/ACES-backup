@@ -1,0 +1,60 @@
+experimental-bsan,loco-gen-1.2.0,column::tests::a_single_flag_still_parses_in_either_position,success,860.364,4.596,2026-11-05T02:48:11Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::array_parses_inner_type,success,860.364,4.448,2026-11-05T02:48:15Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::array_unsupported_inner_is_rejected,success,860.364,4.441,2026-11-05T02:48:20Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::bang_is_required,success,860.364,4.439,2026-11-05T02:48:24Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::bare_is_nullable,success,860.364,4.450,2026-11-05T02:48:29Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::binary_len_parses_len,success,860.364,4.435,2026-11-05T02:48:33Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::bool_unique_is_rejected,success,860.364,4.423,2026-11-05T02:48:38Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::both_flags_parse_in_either_order,success,860.364,4.430,2026-11-05T02:48:42Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::both_flags_parse_on_a_parametrized_type,success,860.364,4.443,2026-11-05T02:48:47Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::caret_is_unique_and_required,success,860.364,4.425,2026-11-05T02:48:51Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::columns_from_fields_empty_input_is_empty_output,success,860.364,4.410,2026-11-05T02:48:55Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::columns_from_fields_parses_each_field,success,860.364,4.425,2026-11-05T02:49:00Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::columns_from_fields_propagates_parse_errors,success,860.364,4.478,2026-11-05T02:49:04Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::columns_from_fields_skips_ignore_fields,success,860.364,4.469,2026-11-05T02:49:09Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::decimal_len_non_numeric_is_rejected,success,860.364,4.423,2026-11-05T02:49:13Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::decimal_len_parses_precision_and_scale,success,860.364,4.389,2026-11-05T02:49:18Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::decimal_len_wrong_arity_is_rejected,success,860.364,4.406,2026-11-05T02:49:22Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::derivations_table,timeout,860.364,150.023,2026-11-05T02:51:52Z,50242511.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,loco-gen-1.2.0,column::tests::enum_empty_value_list_is_rejected,success,860.364,4.411,2026-11-05T02:51:57Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::enum_parses_values,success,860.364,4.416,2026-11-05T02:52:01Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::enum_required_parses,success,860.364,4.428,2026-11-05T02:52:05Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::json_unique_is_rejected,success,860.364,4.427,2026-11-05T02:52:10Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::parametrized_type_flag_after_base_name_parses,success,860.364,4.442,2026-11-05T02:52:14Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::references_always_reduces_to_big_integer_col_type,success,860.364,4.419,2026-11-05T02:52:19Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::references_is_not_null_by_default,success,860.364,4.412,2026-11-05T02:52:23Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::references_nullable_with_custom_fk_field,success,860.364,4.417,2026-11-05T02:52:28Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::references_question_mark_is_nullable,success,860.364,4.397,2026-11-05T02:52:32Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::references_with_custom_fk_field,success,860.364,4.408,2026-11-05T02:52:36Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::tstz_unique_is_rejected,success,860.364,4.426,2026-11-05T02:52:41Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::unknown_type_is_rejected,success,860.364,4.416,2026-11-05T02:52:45Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::unsigned_scalar_type_derivations_are_reachable_even_though_dsl_does_not_expose_it,success,860.364,4.422,2026-11-05T02:52:50Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,column::tests::var_binary_parses_len,success,860.364,4.411,2026-11-05T02:52:54Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,template::tests::test_collect,success,860.364,6.339,2026-11-05T02:53:00Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,template::tests::test_collect_files,success,860.364,5.094,2026-11-05T02:53:06Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,template::tests::test_exists,success,860.364,4.556,2026-11-05T02:53:10Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,template::tests::test_get_ignored_paths,success,860.364,4.477,2026-11-05T02:53:15Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,template::tests::test_is_path_ignored,success,860.364,4.398,2026-11-05T02:53:19Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,templates::anchors::every_home_page_keeps_the_anchor_the_scaffold_links_from,test_failed,860.364,4.458,2026-11-05T02:53:24Z,50242511.0,panic,"thread 'templates::anchors::every_home_page_keeps_the_anchor_the_scaffold_links_from' (14096) panicked at tests/templates/anchors.rs:29:55: /loco-new/base_template/frontend/src/pages/Home.tsx: No such file or directory (os error 2)"
+experimental-bsan,loco-gen-1.2.0,templates::anchors::every_migrator_keeps_the_anchor_migrations_are_registered_at,test_failed,860.364,4.446,2026-11-05T02:53:28Z,50242511.0,panic,"thread 'templates::anchors::every_migrator_keeps_the_anchor_migrations_are_registered_at' (14290) panicked at tests/templates/anchors.rs:29:55: /loco-new/base_template/migration/src/lib.rs.t: No such file or directory (os error 2)"
+experimental-bsan,loco-gen-1.2.0,templates::anchors::every_route_table_keeps_the_anchors_the_scaffold_injects_at,test_failed,860.364,4.427,2026-11-05T02:53:32Z,50242511.0,panic,"thread 'templates::anchors::every_route_table_keeps_the_anchors_the_scaffold_injects_at' (14558) panicked at tests/templates/anchors.rs:29:55: /loco-new/base_template/frontend/src/routes.tsx: No such file or directory (os error 2)"
+experimental-bsan,loco-gen-1.2.0,templates::controller::actions_are_wired_to_the_verb_their_name_implies,timeout,860.364,150.022,2026-11-05T02:56:02Z,50242511.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,loco-gen-1.2.0,templates::controller::can_generate,timeout,860.364,150.021,2026-11-05T02:58:33Z,50242511.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,loco-gen-1.2.0,templates::controller::the_auth_flag_protects_every_generated_handler_and_its_test,timeout,860.364,150.017,2026-11-05T03:01:03Z,50242511.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,loco-gen-1.2.0,templates::deployment::can_generate_docker::copy_paths_1_vec___::is_client_side_rendering_1_true,timeout,860.364,150.020,2026-11-05T03:03:33Z,50242511.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,loco-gen-1.2.0,templates::deployment::can_generate_docker::copy_paths_1_vec___::is_client_side_rendering_2_false,success,860.364,149.772,2026-11-05T03:06:02Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,templates::deployment::can_generate_docker::copy_paths_2_vec__std__path__PathBuf__from___404_html____PathBuf__from___asse::is_client_side_rendering_1_true,timeout,860.364,150.019,2026-11-05T03:08:32Z,50242511.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,loco-gen-1.2.0,templates::deployment::can_generate_docker::copy_paths_2_vec__std__path__PathBuf__from___404_html____PathBuf__from___asse::is_client_side_rendering_2_false,timeout,860.364,150.020,2026-11-05T03:11:02Z,50242511.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,loco-gen-1.2.0,templates::deployment::can_generate_lambda::db_1_true,timeout,860.364,150.022,2026-11-05T03:13:33Z,50242511.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,loco-gen-1.2.0,templates::deployment::can_generate_lambda::db_2_false,timeout,860.364,150.020,2026-11-05T03:16:03Z,50242511.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,loco-gen-1.2.0,templates::deployment::can_generate_nginx,success,860.364,84.845,2026-11-05T03:17:27Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,templates::links::every_docs_link_a_generated_app_ships_resolves_to_a_real_page,test_failed,860.364,4.455,2026-11-05T03:17:32Z,50242511.0,panic,"thread 'templates::links::every_docs_link_a_generated_app_ships_resolves_to_a_real_page' (89178) panicked at tests/templates/links.rs:61:13: loco-new/base_template/README.md no longer exists — update this test's SHIPPED list"
+experimental-bsan,loco-gen-1.2.0,templates::mailer::can_generate,timeout,860.364,150.021,2026-11-05T03:20:02Z,50242511.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,loco-gen-1.2.0,templates::scheduler::can_generate,success,860.364,48.100,2026-11-05T03:20:50Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,templates::task::can_generate,timeout,860.364,150.024,2026-11-05T03:23:20Z,50242511.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,loco-gen-1.2.0,templates::worker::can_generate,timeout,860.364,150.020,2026-11-05T03:25:50Z,50242511.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,loco-gen-1.2.0,test_migrations_flow::db_kind_1___postgres__,test_failed,860.364,3.337,2026-11-05T03:25:54Z,50242511.0,panic,"thread 'test_migrations_flow::db_kind_1___postgres__' (6958) panicked at tests/postgres/mod.rs:85:14: a Postgres container — is a Docker daemon running? With Colima, DOCKER_HOST must point at ~/.colima/default/docker.sock: Client(Init(SocketNotFoundError(""/var/run/docker.sock"")))"
+experimental-bsan,loco-gen-1.2.0,test_migrations_flow::db_kind_2___sqlite__,test_failed,860.364,4.557,2026-11-05T03:25:58Z,50242511.0,panic,"thread 'test_migrations_flow::db_kind_2___sqlite__' (7051) panicked at tests/db.rs:65:6: new: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,loco-gen-1.2.0,tests::can_collect_messages,success,860.364,5.018,2026-11-05T03:26:03Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,tests::test_copy_template_valid_folder_template,success,860.364,4.503,2026-11-05T03:26:08Z,50242511.0,,
+experimental-bsan,loco-gen-1.2.0,tests::test_template_not_found,success,860.364,4.540,2026-11-05T03:26:12Z,50242511.0,,

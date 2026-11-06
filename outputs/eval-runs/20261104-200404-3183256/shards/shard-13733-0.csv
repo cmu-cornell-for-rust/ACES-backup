@@ -1,0 +1,8 @@
+experimental-bsan,oxitraffic-0.10.3,app::tests::simple_requests,test_failed,550.198,34.195,2026-11-05T06:51:58Z,50257174.0,panic,"thread 'app::tests::simple_requests' (3802) panicked at src/app.rs:195:53: called `Result::unwrap()` on an `Err` value: Failed to connect to the PostgreSQL database!"
+experimental-bsan,oxitraffic-0.10.3,extractors::query_path::tests::path_normalization,success,550.198,1.710,2026-11-05T06:52:00Z,50257174.0,,
+experimental-bsan,oxitraffic-0.10.3,states::visitor_state::tests::ids,success,550.198,18.260,2026-11-05T06:52:18Z,50257174.0,,
+experimental-bsan,oxitraffic-0.10.3,states::visitor_state::tests::no_delay,success,550.198,18.467,2026-11-05T06:52:36Z,50257174.0,,
+experimental-bsan,oxitraffic-0.10.3,states::visitor_state::tests::no_post_visit_insertion,success,550.198,18.488,2026-11-05T06:52:55Z,50257174.0,,
+experimental-bsan,oxitraffic-0.10.3,states::visitor_state::tests::page_left,success,550.198,18.817,2026-11-05T06:53:14Z,50257174.0,,
+experimental-bsan,oxitraffic-0.10.3,states::visitor_state::tests::post_min_delay,success,550.198,19.684,2026-11-05T06:53:33Z,50257174.0,,
+experimental-bsan,oxitraffic-0.10.3,states::visitor_state::tests::pre_min_delay,success,550.198,18.775,2026-11-05T06:53:52Z,50257174.0,,

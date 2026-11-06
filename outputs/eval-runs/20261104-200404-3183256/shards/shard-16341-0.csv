@@ -1,0 +1,4 @@
+experimental-bsan,axum-keycloak-auth-0.8.3,action::test::test_action_dispatch,success,641.350,3.349,2026-11-05T07:50:45Z,50260735.0,,
+experimental-bsan,axum-keycloak-auth-0.8.3,layer::test::build_basic_layer,success,641.350,3.248,2026-11-05T07:50:48Z,50260735.0,,
+experimental-bsan,axum-keycloak-auth-0.8.3,layer::test::build_full_layer,success,641.350,3.256,2026-11-05T07:50:51Z,50260735.0,,
+experimental-bsan,axum-keycloak-auth-0.8.3,test_integration,test_failed,641.350,4.135,2026-11-05T07:50:55Z,50260735.0,panic,"thread 'test_integration' (20600) panicked at tests/keycloak_container/mod.rs:43:57: Keycloak started: Client(Init(SocketNotFoundError(""/var/run/docker.sock"")))"

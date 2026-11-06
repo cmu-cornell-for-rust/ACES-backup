@@ -1,0 +1,6 @@
+experimental-bsan,roux-2.2.13,models::subreddit::tests::test_no_auth,test_failed,212.140,3.345,2026-11-05T07:17:16Z,50259196.0,panic,"thread 'models::subreddit::tests::test_no_auth' (29341) panicked at src/models/subreddit/mod.rs:312:9: assertion failed: hot.is_ok()"
+experimental-bsan,roux-2.2.13,models::user::tests::test_no_auth,test_failed,212.140,3.207,2026-11-05T07:17:19Z,50259196.0,panic,"thread 'models::user::tests::test_no_auth' (29674) panicked at src/models/user/mod.rs:137:9: assertion failed: overview.is_ok()"
+experimental-bsan,roux-2.2.13,tests::test_oauth,test_failed,212.140,3.182,2026-11-05T07:17:23Z,50259196.0,panic,"thread 'tests::test_oauth' (30108) panicked at tests/tests.rs:25:47: called `Result::unwrap()` on an `Err` value: NotPresent"
+experimental-bsan,roux-2.2.13,util::option::tests::test_build_url_after,success,212.140,3.002,2026-11-05T07:17:26Z,50259196.0,,
+experimental-bsan,roux-2.2.13,util::option::tests::test_build_url_before,success,212.140,3.056,2026-11-05T07:17:29Z,50259196.0,,
+experimental-bsan,roux-2.2.13,util::option::tests::test_build_url_count,success,212.140,3.003,2026-11-05T07:17:32Z,50259196.0,,

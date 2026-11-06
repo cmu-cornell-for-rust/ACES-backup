@@ -1,0 +1,6 @@
+experimental-bsan,wolfram-app-discovery-0.6.0,build_scripts::test_wstp_c_header_path,test_failed,16.145,2.047,2026-11-05T07:19:09Z,50259465.0,panic,"thread 'build_scripts::test_wstp_c_header_path' (62330) panicked at src/build_scripts.rs:362:10: called `Result::unwrap()` on an `Err` value: Error(Undiscoverable { resource: ""default Wolfram Language installation"", environment_variable: Some(""WOLFRAM_APP_DIRECTORY"") })"
+experimental-bsan,wolfram-app-discovery-0.6.0,macos_default_wolframscript_path,success,16.145,3.813,2026-11-05T07:19:13Z,50259465.0,,
+experimental-bsan,wolfram-app-discovery-0.6.0,macos_wolfram_engine_contains_wolfram_player,success,16.145,3.838,2026-11-05T07:19:17Z,50259465.0,,
+experimental-bsan,wolfram-app-discovery-0.6.0,macos_wolfram_engine_properties,success,16.145,3.834,2026-11-05T07:19:21Z,50259465.0,,
+experimental-bsan,wolfram-app-discovery-0.6.0,test_try_default,test_failed,16.145,4.568,2026-11-05T07:19:26Z,50259465.0,panic,"thread 'test_try_default' (63768) panicked at tests/main.rs:6:10: WolframApp::try_default() could not locate any apps: Error(Undiscoverable { resource: ""default Wolfram Language installation"", environment_variable: Some(""WOLFRAM_APP_DIRECTORY"") })"
+experimental-bsan,wolfram-app-discovery-0.6.0,tests::test_wolfram_version_ordering,success,16.145,3.540,2026-11-05T07:19:29Z,50259465.0,,

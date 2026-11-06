@@ -1,0 +1,15 @@
+experimental-bsan,rewriter-2.1.0,backup::tests::backup_is_readonly,success,78.387,4.356,2026-11-05T05:22:26Z,50252699.0,,
+experimental-bsan,rewriter-2.1.0,backup::tests::backup_rejects_read_only_file,success,78.387,4.320,2026-11-05T05:22:31Z,50252699.0,,
+experimental-bsan,rewriter-2.1.0,backup::tests::disable_preserves_changes_and_removes_backup,success,78.387,4.329,2026-11-05T05:22:35Z,50252699.0,,
+experimental-bsan,rewriter-2.1.0,backup::tests::file_attributes_are_preserved,success,78.387,4.343,2026-11-05T05:22:39Z,50252699.0,,
+experimental-bsan,rewriter-2.1.0,backup::tests::mtime_is_updated,success,78.387,4.359,2026-11-05T05:22:44Z,50252699.0,,
+experimental-bsan,rewriter-2.1.0,backup::tests::permission_changes_are_preserved,success,78.387,4.350,2026-11-05T05:22:48Z,50252699.0,,
+experimental-bsan,rewriter-2.1.0,backup::tests::prefix_and_suffix,success,78.387,4.367,2026-11-05T05:22:53Z,50252699.0,,
+experimental-bsan,rewriter-2.1.0,backup::tests::sanity,success,78.387,4.344,2026-11-05T05:22:57Z,50252699.0,,
+experimental-bsan,rewriter-2.1.0,dylint,test_failed,78.387,3.785,2026-11-05T05:23:01Z,50252699.0,panic,"thread 'dylint' (73487) panicked at tests/ci.rs:12:10: Unexpected failure."
+experimental-bsan,rewriter-2.1.0,hack_each_feature_clippy,test_failed,78.387,3.897,2026-11-05T05:23:05Z,50252699.0,panic,"thread 'hack_each_feature_clippy' (73640) panicked at tests/ci.rs:38:10: Unexpected failure."
+experimental-bsan,rewriter-2.1.0,hack_each_feature_udeps,test_failed,78.387,3.768,2026-11-05T05:23:08Z,50252699.0,panic,"thread 'hack_each_feature_udeps' (73785) panicked at tests/ci.rs:38:10: Unexpected failure."
+experimental-bsan,rewriter-2.1.0,markdown_link_check,test_failed,78.387,2.958,2026-11-05T05:23:11Z,50252699.0,panic,"thread 'markdown_link_check' (73959) panicked at tests/ci.rs:51:10: Failed to spawn cd ""/tmp/.tmpdVBp0i"" && ""npm"" ""install"" ""markdown-link-check@3.11"": No such file or directory (os error 2)"
+experimental-bsan,rewriter-2.1.0,oob_span,success,78.387,4.190,2026-11-05T05:23:16Z,50252699.0,,
+experimental-bsan,rewriter-2.1.0,readme_reference_links_are_sorted,success,78.387,9.910,2026-11-05T05:23:26Z,50252699.0,,
+experimental-bsan,rewriter-2.1.0,readme_reference_links_are_used,success,78.387,11.770,2026-11-05T05:23:37Z,50252699.0,,

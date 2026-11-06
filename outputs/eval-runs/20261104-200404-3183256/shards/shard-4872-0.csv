@@ -1,0 +1,47 @@
+experimental-bsan,tdigest-1.0.1,adding_zero_sum_and_weight_preserves_a_centroid,success,279.985,6.088,2026-11-05T03:08:55Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,centroid_add_keeps_a_representable_mean_when_sum_overflows,success,279.985,6.073,2026-11-05T03:09:01Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,centroid_constructor_rejects_zero_compression_size,success,279.985,6.061,2026-11-05T03:09:07Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,centroid_ordering_agrees_with_equality,success,279.985,6.137,2026-11-05T03:09:13Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,constructor_recompresses_to_the_requested_size,success,279.985,7.341,2026-11-05T03:09:21Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,constructor_sorts_centroids_before_queries_and_merges,success,279.985,6.160,2026-11-05T03:09:27Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,empty_constructor_rejects_zero_compression_size,success,279.985,6.085,2026-11-05T03:09:33Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,extreme_finite_quantiles_and_ranks_interpolate_without_overflow,success,279.985,6.103,2026-11-05T03:09:39Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,mean_stays_finite_when_the_sum_overflows,success,279.985,6.096,2026-11-05T03:09:45Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,quantiles_are_monotonic_across_uneven_centroid_gaps,success,279.985,8.261,2026-11-05T03:09:54Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,rank_interpolates_when_compression_retains_one_centroid,success,279.985,6.116,2026-11-05T03:10:00Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,subnormal_positive_weights_have_finite_quantiles,success,279.985,6.107,2026-11-05T03:10:06Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::proptests::chunked_merges_conserve_count_and_sum,timeout,279.985,150.032,2026-11-05T03:12:36Z,50244295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tdigest-1.0.1,tests::proptests::merge_paths_have_similar_medians,timeout,279.985,150.029,2026-11-05T03:15:06Z,50244295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tdigest-1.0.1,tests::proptests::quantile_estimates_are_monotonic,timeout,279.985,150.026,2026-11-05T03:17:36Z,50244295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tdigest-1.0.1,tests::proptests::quantile_estimates_stay_within_bounds,timeout,279.985,150.028,2026-11-05T03:20:06Z,50244295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tdigest-1.0.1,tests::proptests::rank_quantile_round_trip,timeout,279.985,150.021,2026-11-05T03:22:36Z,50244295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tdigest-1.0.1,tests::test_bulk_quantiles_match_individual_queries,success,279.985,103.983,2026-11-05T03:24:20Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_centroid_addition_regression,success,279.985,6.271,2026-11-05T03:24:27Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_empty_digest,success,279.985,6.100,2026-11-05T03:24:33Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_estimate_rank_single_value,success,279.985,6.189,2026-11-05T03:24:39Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_estimate_rank_uniform_and_round_trip,timeout,279.985,150.039,2026-11-05T03:27:09Z,50244295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tdigest-1.0.1,tests::test_identical_values_have_exact_quantiles,success,279.985,7.368,2026-11-05T03:27:16Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_large_finite_values_keep_quantiles_monotonic,success,279.985,6.183,2026-11-05T03:27:23Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_merge_digests,success,279.985,138.170,2026-11-05T03:29:41Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_merge_digests_empty_preserves_max_size,success,279.985,6.152,2026-11-05T03:29:47Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_merge_digests_matches_merge_sorted,success,279.985,24.245,2026-11-05T03:30:11Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_merge_digests_uses_largest_max_size,success,279.985,8.543,2026-11-05T03:30:20Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_merge_sorted_against_skewed_distro,timeout,279.985,150.028,2026-11-05T03:32:50Z,50244295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tdigest-1.0.1,tests::test_merge_sorted_against_uniform_distro,timeout,279.985,150.036,2026-11-05T03:35:20Z,50244295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tdigest-1.0.1,tests::test_merge_sorted_rejects_infinity_in_debug_builds,success,279.985,6.522,2026-11-05T03:35:26Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_merge_unsorted_against_skewed_distro,timeout,279.985,150.028,2026-11-05T03:37:57Z,50244295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tdigest-1.0.1,tests::test_merge_unsorted_against_uniform_distro,timeout,279.985,150.038,2026-11-05T03:40:27Z,50244295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tdigest-1.0.1,tests::test_merge_unsorted_rejects_nan_in_debug_builds,success,279.985,6.293,2026-11-05T03:40:33Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_mutable_collection_traits,success,279.985,6.198,2026-11-05T03:40:39Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_negative_values,success,279.985,7.099,2026-11-05T03:40:46Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_new_panics_on_missing_min_max,success,279.985,6.294,2026-11-05T03:40:53Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_push_buffer_boundary_and_eager_summaries,success,279.985,6.245,2026-11-05T03:40:59Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_push_matches_batch_ingestion,timeout,279.985,150.016,2026-11-05T03:43:29Z,50244295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tdigest-1.0.1,tests::test_push_uniform_values,timeout,279.985,150.027,2026-11-05T03:45:59Z,50244295.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,tdigest-1.0.1,tests::test_quantile_monotonicity,success,279.985,15.682,2026-11-05T03:46:15Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_single_value,success,279.985,6.212,2026-11-05T03:46:21Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_small_max_sizes_are_bounded_and_monotonic,success,279.985,24.162,2026-11-05T03:46:45Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_trimmed_mean,success,279.985,102.924,2026-11-05T03:48:28Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_two_value_interpolation,success,279.985,6.128,2026-11-05T03:48:34Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,tests::test_unflushed_summary_queries,success,279.985,6.011,2026-11-05T03:48:40Z,50244295.0,,
+experimental-bsan,tdigest-1.0.1,trimmed_mean_stays_finite_for_large_finite_values,success,279.985,6.065,2026-11-05T03:48:46Z,50244295.0,,

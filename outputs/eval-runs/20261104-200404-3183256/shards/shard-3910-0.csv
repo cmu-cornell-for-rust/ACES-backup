@@ -1,0 +1,59 @@
+experimental-bsan,ring-channel-0.12.0,atomic::tests::atomic_option_is_linearizable,timeout,236.314,150.016,2026-11-05T02:42:05Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,atomic::tests::falls_back_to_boxing_for_large_types,success,236.314,8.947,2026-11-05T02:42:14Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,atomic::tests::get_clones_the_item,success,236.314,9.224,2026-11-05T02:42:23Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,atomic::tests::store_inserts_item,success,236.314,9.255,2026-11-05T02:42:33Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,atomic::tests::swap_replaces_item,success,236.314,10.604,2026-11-05T02:42:43Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,atomic::tests::take_removes_item,success,236.314,9.154,2026-11-05T02:42:52Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,buffer::tests::atomic_option_is_used_when_capacity_is_one,success,236.314,9.168,2026-11-05T02:43:02Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,buffer::tests::buffer_is_linearizable,timeout,236.314,150.014,2026-11-05T02:45:32Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,buffer::tests::capacity_returns_the_maximum_buffer_size,success,236.314,9.331,2026-11-05T02:45:41Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,buffer::tests::new_panics_if_capacity_is_zero,success,236.314,1.925,2026-11-05T02:45:43Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,buffer::tests::oldest_items_are_overwritten_on_overflow,success,236.314,19.526,2026-11-05T02:46:02Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::channel_is_disconnected_if_there_are_no_receivers,success,236.314,9.653,2026-11-05T02:46:12Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::channel_is_disconnected_if_there_are_no_senders,success,236.314,9.822,2026-11-05T02:46:22Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::cloning_receiver_increments_receivers_counter,success,236.314,10.660,2026-11-05T02:46:33Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::cloning_receiver_registers_waitlist_slot,success,236.314,10.746,2026-11-05T02:46:43Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::cloning_sender_increments_senders,success,236.314,9.722,2026-11-05T02:46:53Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::cloning_sender_resets_backoff_flag,success,236.314,9.689,2026-11-05T02:47:03Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::dropping_receiver_decrements_receivers_counter,success,236.314,9.675,2026-11-05T02:47:12Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::dropping_receiver_deregisters_waitlist_slot,success,236.314,9.788,2026-11-05T02:47:22Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::dropping_sender_decrements_senders_counter,success,236.314,9.841,2026-11-05T02:47:32Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::endpoints_are_safe_to_send_across_threads,success,236.314,9.798,2026-11-05T02:47:42Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::endpoints_are_safe_to_share_across_threads,success,236.314,9.802,2026-11-05T02:47:52Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::receiver_implements_stream,timeout,236.314,150.017,2026-11-05T02:50:22Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::receivers_are_equal_if_they_are_associated_with_the_same_ring_channel,success,236.314,12.350,2026-11-05T02:50:34Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::recv_fails_on_empty_disconnected_channel,timeout,236.314,150.013,2026-11-05T02:53:04Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::recv_succeeds_on_non_empty_connected_channel,timeout,236.314,150.014,2026-11-05T02:55:34Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::recv_succeeds_on_non_empty_disconnected_channel,timeout,236.314,150.014,2026-11-05T02:58:04Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::recv_wakes_on_disconnect,timeout,236.314,150.015,2026-11-05T03:00:34Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::recv_wakes_on_send,timeout,236.314,150.015,2026-11-05T03:03:04Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::ring_channel_is_associated_with_a_single_control_block,success,236.314,9.640,2026-11-05T03:03:14Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::send_fails_on_disconnected_channel,timeout,236.314,150.018,2026-11-05T03:05:44Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::send_overwrites_old_messages,success,236.314,21.222,2026-11-05T03:06:05Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::send_succeeds_on_connected_channel,timeout,236.314,150.016,2026-11-05T03:08:35Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::sender_implements_sink,timeout,236.314,150.018,2026-11-05T03:11:05Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::sender_sets_backoff_to_true_if_sink_overwrites_on_send,success,236.314,10.028,2026-11-05T03:11:15Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::sender_yields_once_on_poll_ready_if_backoff_is_true,success,236.314,10.021,2026-11-05T03:11:25Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::senders_are_equal_even_if_backoff_is_different,success,236.314,9.770,2026-11-05T03:11:35Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::senders_are_equal_if_they_are_associated_with_the_same_ring_channel,success,236.314,10.305,2026-11-05T03:11:46Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,channel::tests::stream_wakes_on_disconnect,timeout,236.314,150.028,2026-11-05T03:14:16Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::stream_wakes_on_sink,timeout,236.314,150.030,2026-11-05T03:16:46Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::try_recv_fails_on_empty_connected_channel,timeout,236.314,150.024,2026-11-05T03:19:16Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::try_recv_fails_on_empty_disconnected_channel,timeout,236.314,150.025,2026-11-05T03:21:46Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::try_recv_succeeds_on_non_empty_connected_channel,timeout,236.314,150.024,2026-11-05T03:24:16Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,channel::tests::try_recv_succeeds_on_non_empty_disconnected_channel,timeout,236.314,150.027,2026-11-05T03:26:46Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,control::tests::control_block_allocates_buffer_given_capacity,success,236.314,14.051,2026-11-05T03:27:00Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,control::tests::control_block_starts_connected,success,236.314,13.420,2026-11-05T03:27:14Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,control::tests::control_block_starts_with_reference_counters_equal_to_one,success,236.314,13.387,2026-11-05T03:27:27Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,error::tests::recv_error_implements_error_trait,success,236.314,13.847,2026-11-05T03:27:41Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,error::tests::send_error_implements_error_trait,success,236.314,13.913,2026-11-05T03:27:55Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,error::tests::try_recv_error_implements_error_trait,success,236.314,19.874,2026-11-05T03:28:15Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,waitlist::tests::deregister_deallocates_slot,success,236.314,17.390,2026-11-05T03:28:32Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,waitlist::tests::deregister_returns_current_item,success,236.314,20.280,2026-11-05T03:28:52Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,waitlist::tests::get_clones_item,success,236.314,14.191,2026-11-05T03:29:07Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,waitlist::tests::inserts_replaces_current_item,success,236.314,16.331,2026-11-05T03:29:23Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,waitlist::tests::pop_removes_one_item_from_any_slot,success,236.314,22.809,2026-11-05T03:29:46Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,waitlist::tests::register_allocates_slot,success,236.314,19.079,2026-11-05T03:30:05Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,waitlist::tests::remove_takes_item,success,236.314,14.021,2026-11-05T03:30:19Z,50242700.0,,
+experimental-bsan,ring-channel-0.12.0,waitlist::tests::waitlist_is_linearizable,timeout,236.314,150.031,2026-11-05T03:32:49Z,50242700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ring-channel-0.12.0,waitlist::tests::waitlist_starts_empty,success,236.314,13.644,2026-11-05T03:33:03Z,50242700.0,,

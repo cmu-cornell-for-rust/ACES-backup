@@ -1,0 +1,7 @@
+experimental-bsan,nwc-0.45.1,tests::test_send_request_nip04_cipher_no_info,test_failed,735.309,26.218,2026-11-05T07:08:13Z,50258057.0,panic,"thread 'tests::test_send_request_nip04_cipher_no_info' (35891) panicked at src/lib.rs:640:14: called `Result::unwrap()` on an `Err` value: Error(NoResponse)"
+experimental-bsan,nwc-0.45.1,tests::test_send_request_nip04_cipher_with_info,test_failed,735.309,24.089,2026-11-05T07:08:37Z,50258057.0,panic,"thread 'tests::test_send_request_nip04_cipher_with_info' (36899) panicked at src/lib.rs:694:14: called `Result::unwrap()` on an `Err` value: Error(NoResponse)"
+experimental-bsan,nwc-0.45.1,tests::test_send_request_nip44_cipher_no_info,test_failed,735.309,24.109,2026-11-05T07:09:01Z,50258057.0,panic,"thread 'tests::test_send_request_nip44_cipher_no_info' (43870) panicked at src/lib.rs:667:14: called `Result::unwrap()` on an `Err` value: Error(NoResponse)"
+experimental-bsan,nwc-0.45.1,tests::test_send_request_no_cipher,success,735.309,23.415,2026-11-05T07:09:24Z,50258057.0,,
+experimental-bsan,nwc-0.45.1,tests::test_send_request_no_cipher_but_info_latest_cipher,success,735.309,27.158,2026-11-05T07:09:51Z,50258057.0,,
+experimental-bsan,nwc-0.45.1,tests::test_send_request_no_cipher_but_info_single_cipher,success,735.309,26.172,2026-11-05T07:10:18Z,50258057.0,,
+experimental-bsan,nwc-0.45.1,tests::test_send_request_no_cipher_but_info_single_old_cipher,success,735.309,26.610,2026-11-05T07:10:44Z,50258057.0,,

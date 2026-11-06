@@ -1,0 +1,49 @@
+experimental-bsan,rusteron-code-gen-0.2.13,arg_classifier::tests::clientd_and_self_absorb_correctly,success,220.194,1.583,2026-11-05T03:08:34Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,arg_classifier::tests::retained_handler_on_int_setter_is_owned,success,220.194,1.788,2026-11-05T03:08:36Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,arg_classifier::tests::sync_handler_is_once_capable_and_not_registered,success,220.194,1.780,2026-11-05T03:08:38Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,c_build::tests::detects_linker_plugin_lto,success,220.194,1.555,2026-11-05T03:08:39Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,c_build::tests::from_source_targets_this_cpu,success,220.194,1.553,2026-11-05T03:08:41Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,c_build::tests::lto_c_follows_rustc_cpu,success,220.194,1.564,2026-11-05T03:08:42Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,c_build::tests::lto_flags_carry_kind_and_rustc_target,success,220.194,1.561,2026-11-05T03:08:44Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,c_build::tests::march_override_wins,success,220.194,1.561,2026-11-05T03:08:45Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,c_build::tests::parses_llvm_major,success,220.194,1.569,2026-11-05T03:08:47Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,c_build::tests::published_libraries_target_the_architecture_baseline,success,220.194,1.557,2026-11-05T03:08:48Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,common::handler_tests::clones_share_the_same_clientd_pointer,success,220.194,1.556,2026-11-05T03:08:50Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,common::handler_tests::value_dropped_exactly_once_when_last_clone_drops,success,220.194,1.556,2026-11-05T03:08:52Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,common::managed_c_resource_lifecycle_tests::manual_close_required_false_when_cleanup_closure_present,success,220.194,1.555,2026-11-05T03:08:53Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,common::managed_c_resource_lifecycle_tests::manual_close_required_false_when_struct_owned,success,220.194,1.558,2026-11-05T03:08:55Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,common::managed_c_resource_lifecycle_tests::manual_close_required_true_for_none_cleanup_no_struct,success,220.194,1.558,2026-11-05T03:08:56Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,generator::arg_classification_tests::classifies_any_pointer,success,220.194,1.563,2026-11-05T03:08:58Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,generator::arg_classification_tests::classifies_byte_arrays,success,220.194,1.558,2026-11-05T03:08:59Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,generator::arg_classification_tests::classifies_c_strings,success,220.194,1.553,2026-11-05T03:09:01Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,generator::arg_classification_tests::classifies_mut_pointers_single_vs_double,success,220.194,1.554,2026-11-05T03:09:03Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,generator::arg_classification_tests::classifies_primitives,success,220.194,1.567,2026-11-05T03:09:04Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,generator::arg_classification_tests::classifies_raw_int_return,success,220.194,1.557,2026-11-05T03:09:06Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,generator::arg_classification_tests::classifies_void_pointer,success,220.194,1.550,2026-11-05T03:09:07Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,generator::parse_custom_methods_tests::empty_input_yields_empty_map,success,220.194,1.554,2026-11-05T03:09:09Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,generator::parse_custom_methods_tests::extracts_method_names_from_inherent_impls,success,220.194,1.783,2026-11-05T03:09:11Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,generator::parse_custom_methods_tests::ignores_trait_impls,success,220.194,1.785,2026-11-05T03:09:12Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,generator::parse_custom_methods_tests::panics_loudly_on_malformed_input,success,220.194,1.575,2026-11-05T03:09:14Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,generator::parse_custom_methods_tests::self_type_keyed_by_plain_token_stream,success,220.194,1.647,2026-11-05T03:09:16Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,parser::tests::client,timeout,220.194,150.021,2026-11-05T03:11:46Z,50244044.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rusteron-code-gen-0.2.13,parser::tests::media_driver,timeout,220.194,150.025,2026-11-05T03:14:16Z,50244044.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rusteron-code-gen-0.2.13,parser::tests::mut_string_fill_buffer_merges,timeout,220.194,150.023,2026-11-05T03:16:46Z,50244044.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rusteron-code-gen-0.2.13,parser::tests::reserved_value_supplier_buffer_merges_with_frame_length,timeout,220.194,150.021,2026-11-05T03:19:16Z,50244044.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rusteron-code-gen-0.2.13,test::close_resource_closes_shared_resource_once_across_clones,success,220.194,1.547,2026-11-05T03:19:17Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,test::close_resource_deferral_is_retryable_if_owner_close_fails_after_dependent_drops,success,220.194,1.558,2026-11-05T03:19:19Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,test::close_resource_defers_owner_close_while_dependent_is_alive,success,220.194,1.550,2026-11-05T03:19:21Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,test::close_resource_is_noop_for_stack_and_borrowed_resources,success,220.194,1.547,2026-11-05T03:19:22Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,test::close_resource_propagates_failure_and_allows_retry,success,220.194,1.550,2026-11-05T03:19:24Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,test::close_resource_with_failure_restores_default_cleanup_for_retry,success,220.194,1.547,2026-11-05T03:19:25Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,test::close_resource_with_uses_custom_cleanup_once_across_clones,success,220.194,1.548,2026-11-05T03:19:27Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,test::stack_resource_is_writable_through_shared_get,success,220.194,1.545,2026-11-05T03:19:28Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,test::test_drop_calls_cleanup_non_borrowed_no_cleanup_struct,success,220.194,1.555,2026-11-05T03:19:30Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,test::test_drop_calls_cleanup_non_borrowed_with_cleanup_struct,success,220.194,1.553,2026-11-05T03:19:31Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,test::test_drop_does_not_call_cleanup_if_already_closed,success,220.194,1.548,2026-11-05T03:19:33Z,50244044.0,,
+experimental-bsan,rusteron-code-gen-0.2.13,tests::aeron_custom_rs_snapshots_match_source,test_failed,220.194,1.628,2026-11-05T03:19:35Z,50244044.0,panic,"thread 'tests::aeron_custom_rs_snapshots_match_source' (90672) panicked at src/lib.rs:427:37: missing committed aeron_custom.rs: /work/../rusteron-client/docs-rs/aeron_custom.rs"
+experimental-bsan,rusteron-code-gen-0.2.13,tests::archive,timeout,220.194,150.022,2026-11-05T03:22:05Z,50244044.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rusteron-code-gen-0.2.13,tests::archive_aeron_rs_matches_committed_snapshot,timeout,220.194,150.021,2026-11-05T03:24:35Z,50244044.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rusteron-code-gen-0.2.13,tests::client,timeout,220.194,150.019,2026-11-05T03:27:05Z,50244044.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rusteron-code-gen-0.2.13,tests::client_aeron_rs_matches_committed_snapshot,timeout,220.194,150.021,2026-11-05T03:29:35Z,50244044.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rusteron-code-gen-0.2.13,tests::media_driver,timeout,220.194,150.022,2026-11-05T03:32:05Z,50244044.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rusteron-code-gen-0.2.13,tests::media_driver_aeron_rs_matches_committed_snapshot,timeout,220.194,150.022,2026-11-05T03:34:35Z,50244044.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

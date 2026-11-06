@@ -1,0 +1,9 @@
+experimental-bsan,bolero-engine-0.13.6,shrink::tests::middle_vec_shrink_test,test_failed,40.965,3.911,2026-11-05T06:26:42Z,50256166.0,panic,"thread 'shrink::tests::middle_vec_shrink_test' (92576) panicked at src/shrink/tests.rs:105:13: assertion `left == right` failed"
+experimental-bsan,bolero-engine-0.13.6,shrink::tests::non_start_vec_shrink_test,test_failed,40.965,2.850,2026-11-05T06:26:45Z,50256166.0,panic,"thread 'shrink::tests::non_start_vec_shrink_test' (92789) panicked at src/shrink/tests.rs:92:9: assertion failed: value[1] < 5"
+experimental-bsan,bolero-engine-0.13.6,shrink::tests::slice_shrink_to_min_len,success,40.965,2.637,2026-11-05T06:26:47Z,50256166.0,,
+experimental-bsan,bolero-engine-0.13.6,shrink::tests::u16_shrink_test,success,40.965,1.736,2026-11-05T06:26:49Z,50256166.0,,
+experimental-bsan,bolero-engine-0.13.6,shrink::tests::u16_shrink_test_zero_time,success,40.965,1.645,2026-11-05T06:26:51Z,50256166.0,,
+experimental-bsan,bolero-engine-0.13.6,shrink::tests::u32_shrink_test,success,40.965,1.753,2026-11-05T06:26:53Z,50256166.0,,
+experimental-bsan,bolero-engine-0.13.6,shrink::tests::vec_shrink_test,success,40.965,2.217,2026-11-05T06:26:55Z,50256166.0,,
+experimental-bsan,bolero-engine-0.13.6,target_location::tests::format_symbol_name_test,success,40.965,1.685,2026-11-05T06:26:57Z,50256166.0,,
+experimental-bsan,bolero-engine-0.13.6,target_location::tests::item_path_test,success,40.965,1.633,2026-11-05T06:26:58Z,50256166.0,,

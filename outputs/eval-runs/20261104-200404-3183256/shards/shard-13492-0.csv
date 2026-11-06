@@ -1,0 +1,8 @@
+experimental-bsan,citationberg-0.4.0,test::page_range,success,149.709,1.640,2026-11-05T06:41:42Z,50256886.0,,
+experimental-bsan,citationberg-0.4.0,test::page_range_prefix,success,149.709,1.567,2026-11-05T06:41:43Z,50256886.0,,
+experimental-bsan,citationberg-0.4.0,test::roundtrip_cbor_all,test_failed,149.709,1.619,2026-11-05T06:41:45Z,50256886.0,panic,"thread 'test::roundtrip_cbor_all' (80990) panicked at src/lib.rs:3612:40: please check out the CSL styles repo: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,citationberg-0.4.0,test::roundtrip_cbor_all_locales,test_failed,149.709,1.621,2026-11-05T06:41:46Z,50256886.0,panic,"thread 'test::roundtrip_cbor_all_locales' (81336) panicked at src/lib.rs:3653:41: please check out the CSL locales repo: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,citationberg-0.4.0,test::test_bug_hayagriva_115,success,149.709,1.538,2026-11-05T06:41:48Z,50256886.0,,
+experimental-bsan,citationberg-0.4.0,test::test_dependent,success,149.709,2.466,2026-11-05T06:41:50Z,50256886.0,,
+experimental-bsan,citationberg-0.4.0,test::test_independent,timeout,149.709,150.020,2026-11-05T06:44:21Z,50256886.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,citationberg-0.4.0,test::test_locale,timeout,149.709,150.031,2026-11-05T06:46:51Z,50256886.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

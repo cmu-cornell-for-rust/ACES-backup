@@ -1,0 +1,2 @@
+experimental-bsan,bufreaderwriter-0.2.4,tests::testrand,success,16.890,2.761,2026-11-05T08:39:57Z,50263658.0,,
+experimental-bsan,bufreaderwriter-0.2.4,tests::testseq,test_failed,16.890,1.773,2026-11-05T08:39:59Z,50263658.0,panic,"thread 'tests::testseq' (94931) panicked at src/lib.rs:107:60: TcpStream error: Os { code: 111, kind: ConnectionRefused, message: ""Connection refused"" }"

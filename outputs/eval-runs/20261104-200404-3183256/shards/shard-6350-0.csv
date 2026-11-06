@@ -1,0 +1,35 @@
+experimental-bsan,libcasr-2.13.1,asan::tests::test_asan_stacktrace,success,187.778,149.799,2026-11-05T03:43:56Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,csharp::tests::test_csharp_parse_exception,success,187.778,73.496,2026-11-05T03:45:10Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,csharp::tests::test_csharp_stacktrace,timeout,187.778,150.021,2026-11-05T03:47:40Z,50246847.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_bl_arm,success,187.778,1.675,2026-11-05T03:47:42Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_blr_arm64,success,187.778,1.731,2026-11-05T03:47:43Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_call_av_riscv,success,187.778,1.702,2026-11-05T03:47:45Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_call_av_x64,success,187.778,1.695,2026-11-05T03:47:47Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_call_av_x86,success,187.778,1.699,2026-11-05T03:47:49Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_call_av_x86_taint,success,187.778,1.678,2026-11-05T03:47:50Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_dest_av_arm,success,187.778,1.806,2026-11-05T03:47:52Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_dest_av_x64,success,187.778,1.686,2026-11-05T03:47:54Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_dest_av_x86,success,187.778,1.732,2026-11-05T03:47:56Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_dest_av_x86_taint,success,187.778,1.710,2026-11-05T03:47:57Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_jalr_riscv64,success,187.778,1.726,2026-11-05T03:47:59Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_jmp_untainted_x86,success,187.778,1.675,2026-11-05T03:48:01Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_jump_av_arm,success,187.778,1.714,2026-11-05T03:48:02Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_ld_riscv64,success,187.778,1.700,2026-11-05T03:48:04Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_ldr_arm64,success,187.778,1.696,2026-11-05T03:48:06Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_sd_riscv64,success,187.778,1.691,2026-11-05T03:48:08Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,gdb::exploitable::tests::test_str_arm64,success,187.778,1.685,2026-11-05T03:48:09Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,go::tests::test_go_extract_stacktrace,success,187.778,40.651,2026-11-05T03:48:50Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,go::tests::test_go_panic,success,187.778,58.696,2026-11-05T03:49:49Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,go::tests::test_go_parse_stacktrace,success,187.778,88.239,2026-11-05T03:51:17Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,java::tests::test_java_stacktrace,success,187.778,77.818,2026-11-05T03:52:35Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,js::tests::test_js_stacktrace,timeout,187.778,150.017,2026-11-05T03:55:05Z,50246847.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcasr-2.13.1,lua::tests::test_lua_exception,timeout,187.778,150.031,2026-11-05T03:57:35Z,50246847.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcasr-2.13.1,python::tests::test_python_stacktrace,success,187.778,130.571,2026-11-05T03:59:45Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,report::tests::test_report_cluster,timeout,187.778,150.018,2026-11-05T04:02:15Z,50246847.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcasr-2.13.1,report::tests::test_report_dedup,timeout,187.778,150.017,2026-11-05T04:04:45Z,50246847.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcasr-2.13.1,report::tests::test_report_display,success,187.778,1.914,2026-11-05T04:04:47Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,rust::tests::test_rust_panic,success,187.778,15.475,2026-11-05T04:05:03Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,rust::tests::test_rust_parse_stacktrace,timeout,187.778,150.017,2026-11-05T04:07:33Z,50246847.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcasr-2.13.1,sarif::tests::test_sarif,timeout,187.778,150.018,2026-11-05T04:10:03Z,50246847.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,libcasr-2.13.1,stacktrace::tests::test_main_lorentz,success,187.778,1.730,2026-11-05T04:10:05Z,50246847.0,,
+experimental-bsan,libcasr-2.13.1,ubsan::tests::test_ubsan_parse,timeout,187.778,150.017,2026-11-05T04:12:35Z,50246847.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

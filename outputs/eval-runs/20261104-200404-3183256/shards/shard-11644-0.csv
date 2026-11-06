@@ -1,0 +1,12 @@
+experimental-bsan,juniper_actix-0.7.0,subscription_tests::test_graphql_transport_ws_integration,test_failed,489.893,4.764,2026-11-05T05:52:49Z,50254183.0,panic,"thread 'subscription_tests::test_graphql_transport_ws_integration' (104476) panicked at /local/ev-50254183-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/juniper-0.17.0/src/http/mod.rs:873:45: called `Result::unwrap()` on an `Err` value: Timed-out waiting for message"
+experimental-bsan,juniper_actix-0.7.0,subscription_tests::test_graphql_ws_integration,test_failed,489.893,4.671,2026-11-05T05:52:54Z,50254183.0,panic,"thread 'subscription_tests::test_graphql_ws_integration' (104674) panicked at /local/ev-50254183-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/juniper-0.17.0/src/http/mod.rs:736:45: called `Result::unwrap()` on an `Err` value: Timed-out waiting for message"
+experimental-bsan,juniper_actix-0.7.0,tests::batch_request_deserialization_can_fail,success,489.893,1.672,2026-11-05T05:52:55Z,50254183.0,,
+experimental-bsan,juniper_actix-0.7.0,tests::batch_request_works,success,489.893,2.632,2026-11-05T05:52:58Z,50254183.0,,
+experimental-bsan,juniper_actix-0.7.0,tests::graphiql_endpoint_matches,success,489.893,1.859,2026-11-05T05:53:00Z,50254183.0,,
+experimental-bsan,juniper_actix-0.7.0,tests::graphiql_endpoint_returns_graphiql_source,success,489.893,2.023,2026-11-05T05:53:02Z,50254183.0,,
+experimental-bsan,juniper_actix-0.7.0,tests::graphiql_response_does_not_panic,success,489.893,1.817,2026-11-05T05:53:04Z,50254183.0,,
+experimental-bsan,juniper_actix-0.7.0,tests::graphql_get_works,success,489.893,2.381,2026-11-05T05:53:06Z,50254183.0,,
+experimental-bsan,juniper_actix-0.7.0,tests::graphql_post_works_json_post,success,489.893,2.376,2026-11-05T05:53:09Z,50254183.0,,
+experimental-bsan,juniper_actix-0.7.0,tests::playground_endpoint_matches,success,489.893,2.104,2026-11-05T05:53:11Z,50254183.0,,
+experimental-bsan,juniper_actix-0.7.0,tests::playground_endpoint_returns_playground_source,success,489.893,2.557,2026-11-05T05:53:13Z,50254183.0,,
+experimental-bsan,juniper_actix-0.7.0,tests::test_actix_web_integration,success,489.893,11.205,2026-11-05T05:53:24Z,50254183.0,,

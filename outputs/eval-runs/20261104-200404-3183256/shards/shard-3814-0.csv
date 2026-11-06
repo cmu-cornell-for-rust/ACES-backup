@@ -1,0 +1,60 @@
+experimental-bsan,jedi-0.2.3,auth::jwks::tests::dual_key_accepts_both,timeout,647.299,150.027,2026-11-05T02:46:45Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,auth::jwks::tests::es256_roundtrip_via_jwks,timeout,647.299,150.027,2026-11-05T02:49:15Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,auth::jwks::tests::es256_unknown_kid_rejected,timeout,647.299,150.025,2026-11-05T02:51:45Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,auth::jwks::tests::hs256_rejected_when_secret_absent,timeout,647.299,150.024,2026-11-05T02:54:15Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,auth::jwks::tests::hs256_roundtrip,timeout,647.299,150.026,2026-11-05T02:56:45Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,auth::jwks::tests::verify_refreshed_fetches_rotated_key,timeout,647.299,150.026,2026-11-05T02:59:15Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,auth::jwks::tests::verify_refreshed_hits_cached_key,timeout,647.299,150.026,2026-11-05T03:01:45Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,auth::jwks::tests::verify_refreshed_missing_kid_is_rate_limited,timeout,647.299,150.025,2026-11-05T03:04:15Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,auth::jwks::tests::verify_refreshed_unknown_kid_survives_fetch_failure,timeout,647.299,150.027,2026-11-05T03:06:45Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,auth::jwt_cache::tests::base64url_decodes_jwt_segment,success,647.299,1.895,2026-11-05T03:06:47Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,auth::jwt_cache::tests::expired_token_short_circuits_without_network,timeout,647.299,150.025,2026-11-05T03:09:17Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,auth::jwt_cache::tests::expiry_uses_clock,success,647.299,1.866,2026-11-05T03:09:19Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,auth::jwt_cache::tests::non_staff_denied_dashboard,success,647.299,1.836,2026-11-05T03:09:21Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,auth::jwt_cache::tests::permission_is_flag_scoped,success,647.299,1.856,2026-11-05T03:09:23Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,auth::jwt_cache::tests::staff_perm_matches_proto_layout,success,647.299,1.867,2026-11-05T03:09:25Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,auth::jwt_cache::tests::superadmin_implies_all,success,647.299,1.855,2026-11-05T03:09:27Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::ai::featherless::tests::test_featherless_client_clone,timeout,647.299,150.025,2026-11-05T03:11:57Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::ai::featherless::tests::test_featherless_client_creation,timeout,647.299,150.026,2026-11-05T03:14:27Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::ai::featherless::tests::test_featherless_error_display,success,647.299,1.859,2026-11-05T03:14:28Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::ai::featherless::tests::test_queue_add_and_status,timeout,647.299,150.025,2026-11-05T03:16:59Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::add_assignees_success,timeout,647.299,150.027,2026-11-05T03:19:29Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::create_comment_success,timeout,647.299,150.026,2026-11-05T03:21:59Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::create_issue_success,timeout,647.299,150.024,2026-11-05T03:24:29Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::deserialize_branch_protection_json,success,647.299,1.830,2026-11-05T03:24:31Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::deserialize_commit_json,success,647.299,1.824,2026-11-05T03:24:32Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::deserialize_issue_json,success,647.299,1.880,2026-11-05T03:24:34Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::deserialize_issue_missing_optional_labels,success,647.299,1.849,2026-11-05T03:24:36Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::deserialize_issue_with_pr_field,success,647.299,1.881,2026-11-05T03:24:38Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::deserialize_pull_json,success,647.299,1.866,2026-11-05T03:24:40Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::deserialize_repo_json,success,647.299,1.855,2026-11-05T03:24:42Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::error_401_maps_to_unauthorized,timeout,647.299,150.024,2026-11-05T03:27:12Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::error_403_maps_to_forbidden,timeout,647.299,150.025,2026-11-05T03:29:42Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::error_404_maps_to_not_found,timeout,647.299,150.025,2026-11-05T03:32:12Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::error_429_maps_to_forbidden,timeout,647.299,150.026,2026-11-05T03:34:42Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::error_500_maps_to_internal,timeout,647.299,150.027,2026-11-05T03:37:12Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::get_repo_success,timeout,647.299,150.025,2026-11-05T03:39:42Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::invalid_json_maps_to_parse_error,timeout,647.299,150.025,2026-11-05T03:42:12Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::list_comments_success,timeout,647.299,150.026,2026-11-05T03:44:42Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::list_issues_filters_pull_requests,timeout,647.299,150.025,2026-11-05T03:47:12Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::list_pulls_success,timeout,647.299,150.026,2026-11-05T03:49:42Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::policy_blocks_create_issue,timeout,647.299,150.025,2026-11-05T03:52:12Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::rate_limit_healthy_no_issue,timeout,647.299,150.024,2026-11-05T03:54:42Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::rate_limit_low_logs_warning,timeout,647.299,150.025,2026-11-05T03:57:12Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::remove_assignees_success,timeout,647.299,150.029,2026-11-05T03:59:42Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::stale_issues_empty_input,success,647.299,1.889,2026-11-05T03:59:44Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::stale_issues_empty_when_all_recent,success,647.299,1.880,2026-11-05T03:59:46Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::stale_issues_filters_by_threshold,success,647.299,1.898,2026-11-05T03:59:48Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::stale_issues_handles_invalid_dates,success,647.299,1.870,2026-11-05T03:59:50Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::stale_pulls_filters_by_threshold,success,647.299,1.890,2026-11-05T03:59:52Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::update_issue_success,timeout,647.299,150.024,2026-11-05T04:02:22Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::client::tests::with_base_url_trims_trailing_slash,timeout,647.299,150.024,2026-11-05T04:04:52Z,50242400.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,jedi-0.2.3,entity::github::policy::tests::allowlist_blocks_unlisted_repos,success,647.299,1.839,2026-11-05T04:04:54Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::policy::tests::allowlist_permits_listed_repos,success,647.299,1.888,2026-11-05T04:04:56Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::policy::tests::check_returns_forbidden,success,647.299,1.875,2026-11-05T04:04:58Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::policy::tests::empty_allowlist_becomes_open,success,647.299,1.880,2026-11-05T04:05:00Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::policy::tests::open_allows_everything,success,647.299,1.873,2026-11-05T04:05:01Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::types::tests::update_issue_omits_none_state_reason,success,647.299,1.878,2026-11-05T04:05:03Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,entity::github::types::tests::update_issue_serializes_state_reason,success,647.299,1.865,2026-11-05T04:05:05Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,rcon::tests::endpoint_addr_formats_host_port,success,647.299,1.846,2026-11-05T04:05:07Z,50242400.0,,
+experimental-bsan,jedi-0.2.3,rcon::tests::endpoint_clone_is_cheap_and_independent,success,647.299,1.862,2026-11-05T04:05:09Z,50242400.0,,

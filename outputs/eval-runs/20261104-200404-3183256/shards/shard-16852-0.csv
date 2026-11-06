@@ -1,0 +1,4 @@
+experimental-bsan,openjp2-0.6.1,consts::tests::test_jp2_box_type_roundtrip,success,42.293,4.623,2026-11-05T07:51:51Z,50261376.0,,
+experimental-bsan,openjp2-0.6.1,consts::tests::test_jpip_box_type_roundtrip,success,42.293,4.602,2026-11-05T07:51:56Z,50261376.0,,
+experimental-bsan,openjp2-0.6.1,decode_byte_stream,test_failed,42.293,3.191,2026-11-05T07:51:59Z,50261376.0,panic,"thread 'decode_byte_stream' (6296) panicked at tests/byte_stream.rs:112:58: Open file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,openjp2-0.6.1,decode_sample_file_hadley_crater,test_failed,42.293,4.718,2026-11-05T07:52:04Z,50261376.0,panic,"thread 'decode_sample_file_hadley_crater' (6405) panicked at tests/file_stream.rs:48:3: assertion failed: ret != 0"

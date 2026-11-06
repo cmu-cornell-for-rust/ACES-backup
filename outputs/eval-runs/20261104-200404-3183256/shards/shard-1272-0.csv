@@ -1,0 +1,161 @@
+experimental-bsan,ntex-mqtt-4.2.1,inflight::tests::test_inflight,success,629.657,6.779,2026-11-05T01:50:30Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,inflight::tests::test_inflight2,success,629.657,6.877,2026-11-05T01:50:37Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,inflight::tests::test_inflight3,success,629.657,6.742,2026-11-05T01:50:44Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,io::tests::test_basic,test_failed,629.657,1.722,2026-11-05T01:50:45Z,50234078.0,crash,"test io::tests::test_basic ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,io::tests::test_err_in_service,test_failed,629.657,1.704,2026-11-05T01:50:47Z,50234078.0,crash,"test io::tests::test_err_in_service ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,io::tests::test_err_in_service_ready,test_failed,629.657,1.693,2026-11-05T01:50:49Z,50234078.0,crash,"test io::tests::test_err_in_service_ready ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,io::tests::test_keepalive,test_failed,629.657,1.709,2026-11-05T01:50:50Z,50234078.0,crash,"test io::tests::test_keepalive ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,io::tests::test_no_keepalive_err_after_frame_timeout,test_failed,629.657,1.696,2026-11-05T01:50:52Z,50234078.0,crash,"test io::tests::test_no_keepalive_err_after_frame_timeout ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,io::tests::test_ordering,test_failed,629.657,1.700,2026-11-05T01:50:54Z,50234078.0,crash,"test io::tests::test_ordering ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,io::tests::test_read_timeout,test_failed,629.657,1.710,2026-11-05T01:50:56Z,50234078.0,crash,"test io::tests::test_read_timeout ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,io::tests::test_shutdown_dispatcher_waker,test_failed,629.657,1.704,2026-11-05T01:50:57Z,50234078.0,crash,"test io::tests::test_shutdown_dispatcher_waker ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,io::tests::test_sink,test_failed,629.657,1.704,2026-11-05T01:50:59Z,50234078.0,crash,"test io::tests::test_sink ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,io::tests::test_write_backpressure,test_failed,629.657,1.718,2026-11-05T01:51:01Z,50234078.0,crash,"test io::tests::test_write_backpressure ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_ack_order,test_failed,629.657,3.884,2026-11-05T01:51:05Z,50234078.0,crash,"test test_ack_order ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_ack_order_sink,test_failed,629.657,3.896,2026-11-05T01:51:09Z,50234078.0,crash,"test test_ack_order_sink ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_client_disconnect,test_failed,629.657,3.904,2026-11-05T01:51:13Z,50234078.0,crash,"test test_client_disconnect ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_connect_fail,test_failed,629.657,3.897,2026-11-05T01:51:16Z,50234078.0,crash,"test test_connect_fail ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_disconnect,test_failed,629.657,3.931,2026-11-05T01:51:20Z,50234078.0,crash,"test test_disconnect ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_disconnect_after_control_error,test_failed,629.657,6.637,2026-11-05T01:51:27Z,50234078.0,crash,"test test_disconnect_after_control_error ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_disconnect_on_error,test_failed,629.657,6.666,2026-11-05T01:51:34Z,50234078.0,crash,"test test_disconnect_on_error ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_disconnect_with_reason,test_failed,629.657,6.648,2026-11-05T01:51:40Z,50234078.0,crash,"test test_disconnect_with_reason ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_dups,test_failed,629.657,6.637,2026-11-05T01:51:47Z,50234078.0,crash,"test test_dups ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_frame_read_rate,test_failed,629.657,3.882,2026-11-05T01:51:51Z,50234078.0,crash,"test test_frame_read_rate ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_handle_incoming,test_failed,629.657,3.913,2026-11-05T01:51:55Z,50234078.0,crash,"test test_handle_incoming ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_handle_incoming_after_disconnect,test_failed,629.657,3.901,2026-11-05T01:51:59Z,50234078.0,crash,"test test_handle_incoming_after_disconnect ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_handshake_failed,test_failed,629.657,6.637,2026-11-05T01:52:05Z,50234078.0,crash,"test test_handshake_failed ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_keepalive,test_failed,629.657,6.641,2026-11-05T01:52:12Z,50234078.0,crash,"test test_keepalive ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_keepalive2,test_failed,629.657,6.651,2026-11-05T01:52:19Z,50234078.0,crash,"test test_keepalive2 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_keepalive3,test_failed,629.657,6.667,2026-11-05T01:52:25Z,50234078.0,crash,"test test_keepalive3 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_large_publish,test_failed,629.657,3.892,2026-11-05T01:52:29Z,50234078.0,crash,"test test_large_publish ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_large_publish_openssl,test_failed,629.657,13.644,2026-11-05T01:52:43Z,50234078.0,gc,"test test_large_publish_openssl ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,ntex-mqtt-4.2.1,test_max_qos,test_failed,629.657,3.894,2026-11-05T01:52:47Z,50234078.0,crash,"test test_max_qos ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_max_receive,test_failed,629.657,6.621,2026-11-05T01:52:54Z,50234078.0,crash,"test test_max_receive ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_nested_errors,test_failed,629.657,3.915,2026-11-05T01:52:58Z,50234078.0,crash,"test test_nested_errors ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_nested_errors_handling,test_failed,629.657,6.627,2026-11-05T01:53:04Z,50234078.0,crash,"test test_nested_errors_handling ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_ping,test_failed,629.657,3.899,2026-11-05T01:53:08Z,50234078.0,crash,"test test_ping ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_request_problem_info,test_failed,629.657,6.632,2026-11-05T01:53:15Z,50234078.0,crash,"test test_request_problem_info ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_simple,test_failed,629.657,3.872,2026-11-05T01:53:19Z,50234078.0,crash,"test test_simple ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_sink_encoder_error_pub_qos0,test_failed,629.657,6.639,2026-11-05T01:53:25Z,50234078.0,crash,"test test_sink_encoder_error_pub_qos0 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_sink_encoder_error_pub_qos1,test_failed,629.657,6.607,2026-11-05T01:53:32Z,50234078.0,crash,"test test_sink_encoder_error_pub_qos1 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_sink_publish_noblock,test_failed,629.657,3.881,2026-11-05T01:53:36Z,50234078.0,crash,"test test_sink_publish_noblock ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_sink_ready,test_failed,629.657,3.887,2026-11-05T01:53:40Z,50234078.0,crash,"test test_sink_ready ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_sink_success_after_encoder_error_qos1,test_failed,629.657,6.639,2026-11-05T01:53:46Z,50234078.0,crash,"test test_sink_success_after_encoder_error_qos1 ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,test_suback_with_reason,test_failed,629.657,6.640,2026-11-05T01:53:53Z,50234078.0,crash,"test test_suback_with_reason ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::fail_hash1,success,629.657,5.602,2026-11-05T01:53:59Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::fail_hash2,success,629.657,5.619,2026-11-05T01:54:04Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::fail_hash3,success,629.657,5.645,2026-11-05T01:54:10Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::fail_hash4,success,629.657,5.645,2026-11-05T01:54:16Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::fail_hash5,success,629.657,5.657,2026-11-05T01:54:21Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::fail_hash6,success,629.657,5.680,2026-11-05T01:54:27Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::fail_plus1,success,629.657,5.670,2026-11-05T01:54:33Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::fail_plus2,success,629.657,5.640,2026-11-05T01:54:38Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::fail_plus3,success,629.657,5.668,2026-11-05T01:54:44Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::pass_hash1,success,629.657,5.647,2026-11-05T01:54:50Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::pass_hash2,success,629.657,5.654,2026-11-05T01:54:55Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::pass_hash3,success,629.657,5.660,2026-11-05T01:55:01Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::pass_norm1,success,629.657,5.697,2026-11-05T01:55:07Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::pass_norm2,success,629.657,5.675,2026-11-05T01:55:12Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::pass_norm3,success,629.657,5.641,2026-11-05T01:55:18Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::pass_norm4,success,629.657,5.618,2026-11-05T01:55:24Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::pass_plus1,success,629.657,5.645,2026-11-05T01:55:29Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::pass_plus2,success,629.657,5.635,2026-11-05T01:55:35Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::pass_plus3,success,629.657,5.625,2026-11-05T01:55:41Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::check_is_valid::pass_plus4,success,629.657,5.653,2026-11-05T01:55:46Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_1,success,629.657,5.634,2026-11-05T01:55:52Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_10,success,629.657,5.652,2026-11-05T01:55:58Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_11,success,629.657,5.662,2026-11-05T01:56:03Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_12,success,629.657,5.662,2026-11-05T01:56:09Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_13,success,629.657,5.653,2026-11-05T01:56:15Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_2,success,629.657,5.653,2026-11-05T01:56:20Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_3,success,629.657,5.657,2026-11-05T01:56:26Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_4,success,629.657,5.655,2026-11-05T01:56:32Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_5,success,629.657,5.662,2026-11-05T01:56:37Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_6,success,629.657,5.656,2026-11-05T01:56:43Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_7,success,629.657,5.656,2026-11-05T01:56:49Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_8,success,629.657,5.647,2026-11-05T01:56:54Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_filter::_9,success,629.657,5.668,2026-11-05T01:57:00Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::_sport_sport_expects_true,success,629.657,5.647,2026-11-05T01:57:06Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::_sport_tennis_player1_sport_tennis_player1_expects_true,success,629.657,5.643,2026-11-05T01:57:11Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::_sport_tennis_player1_sport_tennis_player1_score_expects_true,success,629.657,5.650,2026-11-05T01:57:17Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::_sport_tennis_player1_sport_tennis_player1_score_wimbledon_expects_true,success,629.657,5.668,2026-11-05T01:57:23Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::_sport_tennis_sport_tennis_player1_expects_true,success,629.657,5.635,2026-11-05T01:57:28Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::_sport_tennis_sport_tennis_player1_ranking_expects_false,success,629.657,5.656,2026-11-05T01:57:34Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::_sport_tennis_sport_tennis_player2_expects_true,success,629.657,5.616,2026-11-05T01:57:39Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::_sys_sys_expects_true,success,629.657,5.617,2026-11-05T01:57:45Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::_test_test_expects_true,success,629.657,5.626,2026-11-05T01:57:51Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::single1,success,629.657,5.638,2026-11-05T01:57:56Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::single2,success,629.657,5.631,2026-11-05T01:58:02Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::single3,success,629.657,5.622,2026-11-05T01:58:08Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::single4,success,629.657,5.612,2026-11-05T01:58:13Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::single5,success,629.657,5.614,2026-11-05T01:58:19Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::sys1,success,629.657,5.634,2026-11-05T01:58:25Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::sys2,success,629.657,5.635,2026-11-05T01:58:30Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::sys3,success,629.657,5.614,2026-11-05T01:58:36Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::sys4,success,629.657,5.637,2026-11-05T01:58:41Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::sys5,success,629.657,5.631,2026-11-05T01:58:47Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::sys6,success,629.657,5.628,2026-11-05T01:58:53Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::matches_topic::sys7,success,629.657,5.655,2026-11-05T01:58:58Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::parsing::_1,success,629.657,5.667,2026-11-05T01:59:04Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::parsing::_10,success,629.657,5.628,2026-11-05T01:59:10Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::parsing::_11,success,629.657,5.644,2026-11-05T01:59:15Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::parsing::_12,success,629.657,5.628,2026-11-05T01:59:21Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::parsing::_13,success,629.657,5.639,2026-11-05T01:59:27Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::parsing::_2,success,629.657,5.642,2026-11-05T01:59:32Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::parsing::_3,success,629.657,5.628,2026-11-05T01:59:38Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::parsing::_4,success,629.657,5.635,2026-11-05T01:59:44Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::parsing::_5,success,629.657,5.648,2026-11-05T01:59:49Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::parsing::_6,success,629.657,5.641,2026-11-05T01:59:55Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::parsing::_7,success,629.657,5.626,2026-11-05T02:00:01Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::parsing::_8,success,629.657,5.627,2026-11-05T02:00:06Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::test_multi_wildcard_topic,success,629.657,5.646,2026-11-05T02:00:12Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::test_single_wildcard_topic,success,629.657,5.643,2026-11-05T02:00:17Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::test_write_topic,success,629.657,5.638,2026-11-05T02:00:23Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::topic_is_valid::_1,success,629.657,5.648,2026-11-05T02:00:29Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::topic_is_valid::_2,success,629.657,5.625,2026-11-05T02:00:34Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::topic_is_valid::_3,success,629.657,5.631,2026-11-05T02:00:40Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::topic_is_valid::_4,success,629.657,5.629,2026-11-05T02:00:46Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::topic_is_valid::_5,success,629.657,5.608,2026-11-05T02:00:51Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,topic::tests::topic_is_valid::_6,success,629.657,5.648,2026-11-05T02:00:57Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,utils::tests::test_decode_variable_length,success,629.657,5.639,2026-11-05T02:01:03Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,utils::tests::test_encode_variable_length,success,629.657,5.617,2026-11-05T02:01:08Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::client::dispatcher::tests::test_dup_packet_id,test_failed,629.657,1.705,2026-11-05T02:01:10Z,50234078.0,crash,"test v3::client::dispatcher::tests::test_dup_packet_id ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,v3::client::dispatcher::tests::test_wr_backpressure,test_failed,629.657,1.707,2026-11-05T02:01:12Z,50234078.0,crash,"test v3::client::dispatcher::tests::test_wr_backpressure ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,v3::codec::codec::tests::test_max_size,success,629.657,5.628,2026-11-05T02:01:17Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::codec::codec::tests::test_packet,success,629.657,5.643,2026-11-05T02:01:23Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::codec::decode::tests::test_decode_connect_packets,success,629.657,5.620,2026-11-05T02:01:29Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::codec::decode::tests::test_decode_ping_packets,success,629.657,5.620,2026-11-05T02:01:34Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::codec::decode::tests::test_decode_publish_packets,success,629.657,5.647,2026-11-05T02:01:40Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::codec::decode::tests::test_decode_subscribe_packets,success,629.657,5.644,2026-11-05T02:01:46Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::codec::encode::tests::test_encode_connect_packets,success,629.657,5.621,2026-11-05T02:01:51Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::codec::encode::tests::test_encode_fixed_header,success,629.657,5.619,2026-11-05T02:01:57Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::codec::encode::tests::test_encode_ping_packets,success,629.657,5.623,2026-11-05T02:02:02Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::codec::encode::tests::test_encode_publish_packets,success,629.657,5.612,2026-11-05T02:02:08Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::codec::encode::tests::test_encode_subscribe_packets,success,629.657,5.625,2026-11-05T02:02:14Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::codec::packet::tests::test_ack_reason,success,629.657,5.627,2026-11-05T02:02:19Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v3::dispatcher::tests::test_dup_packet_id,test_failed,629.657,1.695,2026-11-05T02:02:21Z,50234078.0,crash,"test v3::dispatcher::tests::test_dup_packet_id ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,v3::dispatcher::tests::test_wr_backpressure,test_failed,629.657,1.696,2026-11-05T02:02:23Z,50234078.0,crash,"test v3::dispatcher::tests::test_wr_backpressure ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,v5::client::dispatcher::tests::test_wr_backpressure,test_failed,629.657,1.684,2026-11-05T02:02:24Z,50234078.0,crash,"test v5::client::dispatcher::tests::test_wr_backpressure ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::codec::tests::test_max_size,success,629.657,5.615,2026-11-05T02:02:30Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::decode::tests::test_decode_connect_packets,success,629.657,5.664,2026-11-05T02:02:36Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::decode::tests::test_decode_ping_packets,success,629.657,5.631,2026-11-05T02:02:41Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::decode::tests::test_decode_publish_packets,success,629.657,5.643,2026-11-05T02:02:47Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::decode::tests::test_decode_subscribe_packets,success,629.657,5.651,2026-11-05T02:02:53Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::encode::tests::test_encode_connect_packets,success,629.657,5.674,2026-11-05T02:02:58Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::encode::tests::test_encode_fixed_header,success,629.657,5.654,2026-11-05T02:03:04Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::encode::tests::test_encode_ping_packets,success,629.657,5.655,2026-11-05T02:03:10Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::encode::tests::test_encode_publish_packets,success,629.657,5.648,2026-11-05T02:03:15Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::encode::tests::test_encode_subscribe_packets,success,629.657,5.651,2026-11-05T02:03:21Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::packet::pubacks::tests::puback_decode_must_fail::packet_id_zero,success,629.657,5.621,2026-11-05T02:03:27Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::packet::pubacks::tests::puback_decode_must_fail::properties_promised,success,629.657,5.635,2026-11-05T02:03:32Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::packet::pubacks::tests::puback_decode_success::all_out,success,629.657,5.648,2026-11-05T02:03:38Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::packet::pubacks::tests::puback_decode_success::no_success_min,success,629.657,5.605,2026-11-05T02:03:44Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::packet::pubacks::tests::puback_decode_success::no_success_no_prop_len,success,629.657,5.627,2026-11-05T02:03:49Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::packet::pubacks::tests::puback_decode_success::success_empty,success,629.657,5.625,2026-11-05T02:03:55Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::packet::pubacks::tests::puback_decode_success::success_no_prop_len,success,629.657,5.637,2026-11-05T02:04:00Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::packet::pubacks::tests::puback_decode_success::success_no_reason,success,629.657,5.613,2026-11-05T02:04:06Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::packet::subscribe::tests::test_sub,success,629.657,5.641,2026-11-05T02:04:12Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::packet::subscribe::tests::test_sub_ack,success,629.657,5.642,2026-11-05T02:04:17Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::codec::packet::subscribe::tests::test_sub_pkt,success,629.657,5.667,2026-11-05T02:04:23Z,50234078.0,,
+experimental-bsan,ntex-mqtt-4.2.1,v5::dispatcher::tests::test_wr_backpressure,test_failed,629.657,1.710,2026-11-05T02:04:25Z,50234078.0,crash,"test v5::dispatcher::tests::test_wr_backpressure ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,ntex-mqtt-4.2.1,version::tests::test_decode_connect_packets,success,629.657,5.651,2026-11-05T02:04:30Z,50234078.0,,

@@ -1,0 +1,28 @@
+experimental-bsan,envelopers-0.8.4,caching_key_wrapper::tests::test_caches_decryption,test_failed,873.101,1.994,2026-11-05T04:16:29Z,50248290.0,panic,"thread 'caching_key_wrapper::tests::test_caches_decryption' (70344) panicked at src/caching_key_wrapper.rs:504:9: assertion `left == right` failed"
+experimental-bsan,envelopers-0.8.4,caching_key_wrapper::tests::test_expires_decryption_key_after_10ms,test_failed,873.101,1.982,2026-11-05T04:16:31Z,50248290.0,panic,"thread 'caching_key_wrapper::tests::test_expires_decryption_key_after_10ms' (70585) panicked at src/caching_key_wrapper.rs:532:9: assertion `left == right` failed"
+experimental-bsan,envelopers-0.8.4,caching_key_wrapper::tests::test_generate_caches_for_decrypt,success,873.101,1.818,2026-11-05T04:16:32Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,caching_key_wrapper::tests::test_generate_expires_after_100_bytes,test_failed,873.101,2.015,2026-11-05T04:16:34Z,50248290.0,panic,"thread 'caching_key_wrapper::tests::test_generate_expires_after_100_bytes' (71095) panicked at src/caching_key_wrapper.rs:437:9: assertion `left == right` failed"
+experimental-bsan,envelopers-0.8.4,caching_key_wrapper::tests::test_generate_expires_after_10_messages,test_failed,873.101,2.394,2026-11-05T04:16:37Z,50248290.0,panic,"thread 'caching_key_wrapper::tests::test_generate_expires_after_10_messages' (71518) panicked at src/caching_key_wrapper.rs:419:9: assertion `left == right` failed"
+experimental-bsan,envelopers-0.8.4,caching_key_wrapper::tests::test_generate_expires_after_10_ms,success,873.101,1.888,2026-11-05T04:16:39Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,caching_key_wrapper::tests::test_generate_uses_cached_key,test_failed,873.101,1.954,2026-11-05T04:16:41Z,50248290.0,panic,"thread 'caching_key_wrapper::tests::test_generate_uses_cached_key' (72280) panicked at src/caching_key_wrapper.rs:391:9: assertion `left == right` failed"
+experimental-bsan,envelopers-0.8.4,kms_key_provider::tests::test_generate_bad_request,success,873.101,6.005,2026-11-05T04:16:47Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,kms_key_provider::tests::test_generate_data_key,success,873.101,4.440,2026-11-05T04:16:51Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,kms_key_provider::tests::test_generate_missing_encrypted_key_response,success,873.101,4.364,2026-11-05T04:16:56Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,kms_key_provider::tests::test_generate_missing_key_id_response,success,873.101,4.427,2026-11-05T04:17:00Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,kms_key_provider::tests::test_generate_missing_plaintext_key_response,success,873.101,4.430,2026-11-05T04:17:04Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,simple_key_provider::tests::test_fails_on_invalid_aad,success,873.101,1.911,2026-11-05T04:17:06Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,simple_key_provider::tests::test_fails_on_invalid_data_key,success,873.101,1.848,2026-11-05T04:17:08Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,simple_key_provider::tests::test_fails_on_invalid_nonce,success,873.101,1.879,2026-11-05T04:17:10Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,simple_key_provider::tests::test_fails_on_invalid_version,success,873.101,1.871,2026-11-05T04:17:12Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,simple_key_provider::tests::test_fails_on_tiny_slice,success,873.101,1.647,2026-11-05T04:17:14Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,simple_key_provider::tests::test_generate_decrypt_data_key_128_gcm,success,873.101,2.123,2026-11-05T04:17:16Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,simple_key_provider::tests::test_generate_decrypt_data_key_128_gcm_siv,success,873.101,2.132,2026-11-05T04:17:18Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,simple_key_provider::tests::test_generate_decrypt_data_key_256_gcm,success,873.101,2.197,2026-11-05T04:17:20Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,simple_key_provider::tests::test_generate_decrypt_data_key_256_gcm_siv,success,873.101,2.190,2026-11-05T04:17:22Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,simple_key_provider::tests::test_load_encrypted_key_from_slice,success,873.101,1.627,2026-11-05T04:17:24Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,simple_key_provider::tests::test_serialize_key,success,873.101,1.617,2026-11-05T04:17:26Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,tests::test_encrypt_decrypt_128_gcm,success,873.101,2.761,2026-11-05T04:17:28Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,tests::test_encrypt_decrypt_128_gcm_siv,success,873.101,2.659,2026-11-05T04:17:31Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,tests::test_encrypt_decrypt_256_gcm,success,873.101,2.876,2026-11-05T04:17:34Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,tests::test_encrypt_decrypt_256_gcm_siv,success,873.101,2.809,2026-11-05T04:17:37Z,50248290.0,,
+experimental-bsan,envelopers-0.8.4,tests::test_encrypt_decrypt_cache,success,873.101,2.101,2026-11-05T04:17:39Z,50248290.0,,

@@ -1,0 +1,13 @@
+experimental-bsan,gitlab_clippy-1.0.3,cli::accepts_version_option,success,145.711,4.551,2026-11-05T05:37:46Z,50253506.0,,
+experimental-bsan,gitlab_clippy-1.0.3,cli::chokes_on_invalid_input,success,145.711,4.550,2026-11-05T05:37:51Z,50253506.0,,
+experimental-bsan,gitlab_clippy-1.0.3,cli::converts_error_from_pipe,test_failed,145.711,4.745,2026-11-05T05:37:56Z,50253506.0,panic,"thread 'cli::converts_error_from_pipe' (44103) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected stdout, failed var.contains(doomed comparison with `NAN`, use `{f32,f64}::is_nan()` instead)"
+experimental-bsan,gitlab_clippy-1.0.3,cli::converts_valid_input_file,success,145.711,18.436,2026-11-05T05:38:14Z,50253506.0,,
+experimental-bsan,gitlab_clippy-1.0.3,cli::converts_valid_input_from_stdin,success,145.711,18.680,2026-11-05T05:38:33Z,50253506.0,,
+experimental-bsan,gitlab_clippy-1.0.3,cli::converts_valid_input_to_file,success,145.711,18.196,2026-11-05T05:38:51Z,50253506.0,,
+experimental-bsan,gitlab_clippy-1.0.3,cli::converts_warnings_from_pipe,test_failed,145.711,4.823,2026-11-05T05:38:56Z,50253506.0,panic,"thread 'cli::converts_warnings_from_pipe' (58179) panicked at /opt/rust/rustup/toolchains/bsan/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5: Unexpected stdout, failed ((var.contains(examples/warn.rs) && var.contains(redundant field names in struct initialization)) && var.contains(use "
+experimental-bsan,gitlab_clippy-1.0.3,lib::tests::fingerprint_is_unique,timeout,145.711,150.015,2026-11-05T05:41:26Z,50253506.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,gitlab_clippy-1.0.3,tests::fingerprint_is_unique,timeout,145.711,150.014,2026-11-05T05:43:56Z,50253506.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,gitlab_clippy-1.0.3,tests::parse_invalid_fixture_to_string,success,145.711,4.328,2026-11-05T05:44:00Z,50253506.0,,
+experimental-bsan,gitlab_clippy-1.0.3,tests::parse_invalid_fixture_to_writer,success,145.711,4.344,2026-11-05T05:44:05Z,50253506.0,,
+experimental-bsan,gitlab_clippy-1.0.3,tests::parse_valid_fixture_to_string,success,145.711,18.467,2026-11-05T05:44:23Z,50253506.0,,
+experimental-bsan,gitlab_clippy-1.0.3,tests::parse_valid_fixture_to_writer,success,145.711,18.529,2026-11-05T05:44:42Z,50253506.0,,

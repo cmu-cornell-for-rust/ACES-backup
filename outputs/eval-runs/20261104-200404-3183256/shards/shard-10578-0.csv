@@ -1,0 +1,15 @@
+experimental-bsan,schnorrkel-0.11.4,batch::test::verify_batch_seven_signatures,success,195.336,55.473,2026-11-05T05:26:17Z,50252726.0,,
+experimental-bsan,schnorrkel-0.11.4,cert::tests::adaptor_cert_public_vs_private_paths,success,195.336,5.438,2026-11-05T05:26:23Z,50252726.0,,
+experimental-bsan,schnorrkel-0.11.4,derive::tests::derive_key_public_vs_private_paths,success,195.336,90.406,2026-11-05T05:27:53Z,50252726.0,,
+experimental-bsan,schnorrkel-0.11.4,keys::test::derives_from_core,success,195.336,1.830,2026-11-05T05:27:55Z,50252726.0,,
+experimental-bsan,schnorrkel-0.11.4,keys::test::keypair_zeroize,success,195.336,1.893,2026-11-05T05:27:57Z,50252726.0,,
+experimental-bsan,schnorrkel-0.11.4,keys::test::pubkey_from_mini_secret_and_expanded_secret,success,195.336,2.856,2026-11-05T05:28:00Z,50252726.0,,
+experimental-bsan,schnorrkel-0.11.4,keys::test::secret_key_can_be_converted_to_ed25519_bytes_and_back,timeout,195.336,150.017,2026-11-05T05:30:30Z,50252726.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorrkel-0.11.4,musig::tests::aggregation_btreeemap_vs_slice,success,195.336,70.813,2026-11-05T05:31:40Z,50252726.0,,
+experimental-bsan,schnorrkel-0.11.4,musig::tests::multi_signature,timeout,195.336,150.015,2026-11-05T05:34:10Z,50252726.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,schnorrkel-0.11.4,scalars::tests::cofactor_adjustment,success,195.336,1.762,2026-11-05T05:34:12Z,50252726.0,,
+experimental-bsan,schnorrkel-0.11.4,sign::test::sign_verify_bytes,success,195.336,13.797,2026-11-05T05:34:26Z,50252726.0,,
+experimental-bsan,schnorrkel-0.11.4,sign::test::sign_verify_xof,success,195.336,14.676,2026-11-05T05:34:41Z,50252726.0,,
+experimental-bsan,schnorrkel-0.11.4,vrf::tests::vrf_malleable,success,195.336,71.853,2026-11-05T05:35:53Z,50252726.0,,
+experimental-bsan,schnorrkel-0.11.4,vrf::tests::vrf_single,success,195.336,34.463,2026-11-05T05:36:27Z,50252726.0,,
+experimental-bsan,schnorrkel-0.11.4,vrf::tests::vrfs_merged_and_batched,timeout,195.336,150.014,2026-11-05T05:38:57Z,50252726.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

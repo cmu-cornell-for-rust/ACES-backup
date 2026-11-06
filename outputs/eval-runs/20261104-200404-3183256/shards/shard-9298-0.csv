@@ -1,0 +1,19 @@
+experimental-bsan,scarb-metadata-1.15.1,cfg_is_transmutable_via_serde,success,207.232,5.577,2026-11-05T04:54:17Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::can_define_profile,success,207.232,5.596,2026-11-05T04:54:23Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_crlf,success,207.232,6.001,2026-11-05T04:54:29Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_empty,success,207.232,5.635,2026-11-05T04:54:34Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_empty_nl,success,207.232,5.624,2026-11-05T04:54:40Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_garbage_message,success,207.232,5.652,2026-11-05T04:54:46Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_garbage_message_nl,success,207.232,5.654,2026-11-05T04:54:51Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_garbage_messages,success,207.232,5.681,2026-11-05T04:54:57Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_impersonator,success,207.232,5.956,2026-11-05T04:55:03Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_not_serializable,success,207.232,5.652,2026-11-05T04:55:09Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_ok,success,207.232,5.942,2026-11-05T04:55:15Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_ok_nl,success,207.232,5.947,2026-11-05T04:55:20Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_ok_random_text_around,success,207.232,5.921,2026-11-05T04:55:26Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_trailing_nl,success,207.232,5.944,2026-11-05T04:55:32Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,command::metadata_command::tests::parse_stream_version_0,success,207.232,5.651,2026-11-05T04:55:38Z,50251075.0,,
+experimental-bsan,scarb-metadata-1.15.1,empty_project,test_failed,207.232,2.943,2026-11-05T04:55:41Z,50251075.0,panic,"thread 'empty_project' (35341) panicked at tests/command.rs:24:5: assertion failed: result.unwrap_err().to_string().contains(""failed to read manifest"")"
+experimental-bsan,scarb-metadata-1.15.1,manifest_path,test_failed,207.232,3.465,2026-11-05T04:55:44Z,50251075.0,panic,"thread 'manifest_path' (35515) panicked at tests/command.rs:77:10: Failed to spawn: No such file or directory (os error 2)"
+experimental-bsan,scarb-metadata-1.15.1,no_deps,test_failed,207.232,3.474,2026-11-05T04:55:48Z,50251075.0,panic,"thread 'no_deps' (35859) panicked at tests/command.rs:77:10: Failed to spawn: No such file or directory (os error 2)"
+experimental-bsan,scarb-metadata-1.15.1,sample_project,test_failed,207.232,3.463,2026-11-05T04:55:51Z,50251075.0,panic,"thread 'sample_project' (35992) panicked at tests/command.rs:77:10: Failed to spawn: No such file or directory (os error 2)"

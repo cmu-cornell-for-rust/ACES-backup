@@ -1,0 +1,13 @@
+experimental-bsan,pinger-2.2.0,linux::tests::test_linux_detection,test_failed,93.045,2.081,2026-11-05T05:37:54Z,50253628.0,panic,"thread 'linux::tests::test_linux_detection' (30095) panicked at src/linux.rs:127:10: called `Result::unwrap()` on an `Err` value: SpawnError(Os { code: 2, kind: NotFound, message: ""No such file or directory"" })"
+experimental-bsan,pinger-2.2.0,test::tests::alpine,success,93.045,13.171,2026-11-05T05:38:07Z,50253628.0,,
+experimental-bsan,pinger-2.2.0,test::tests::android,success,93.045,13.239,2026-11-05T05:38:21Z,50253628.0,,
+experimental-bsan,pinger-2.2.0,test::tests::debian,success,93.045,13.116,2026-11-05T05:38:34Z,50253628.0,,
+experimental-bsan,pinger-2.2.0,test::tests::dragonfly,success,93.045,8.061,2026-11-05T05:38:42Z,50253628.0,,
+experimental-bsan,pinger-2.2.0,test::tests::freebsd,success,93.045,8.037,2026-11-05T05:38:50Z,50253628.0,,
+experimental-bsan,pinger-2.2.0,test::tests::macos,success,93.045,8.177,2026-11-05T05:38:58Z,50253628.0,,
+experimental-bsan,pinger-2.2.0,test::tests::netbsd,success,93.045,7.967,2026-11-05T05:39:06Z,50253628.0,,
+experimental-bsan,pinger-2.2.0,test::tests::openbsd,success,93.045,7.978,2026-11-05T05:39:14Z,50253628.0,,
+experimental-bsan,pinger-2.2.0,test::tests::test_integration_any,test_failed,93.045,2.078,2026-11-05T05:39:16Z,50253628.0,panic,"thread '<unnamed>' (36016) panicked at src/test.rs:26:10: called `Result::unwrap()` on an `Err` value: Error spawning ping: No such file or directory (os error 2)"
+experimental-bsan,pinger-2.2.0,test::tests::test_integration_ip6,test_failed,93.045,2.076,2026-11-05T05:39:18Z,50253628.0,panic,"thread '<unnamed>' (36123) panicked at src/test.rs:48:17: called `Result::unwrap()` on an `Err` value: Error spawning ping: No such file or directory (os error 2)"
+experimental-bsan,pinger-2.2.0,test::tests::test_integration_ipv4,test_failed,93.045,2.109,2026-11-05T05:39:20Z,50253628.0,panic,"thread '<unnamed>' (41277) panicked at src/test.rs:36:10: called `Result::unwrap()` on an `Err` value: Error spawning ping: No such file or directory (os error 2)"
+experimental-bsan,pinger-2.2.0,test::tests::ubuntu,success,93.045,13.576,2026-11-05T05:39:34Z,50253628.0,,

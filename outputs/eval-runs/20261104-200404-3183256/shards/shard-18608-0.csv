@@ -1,0 +1,2 @@
+experimental-bsan,cp-core-5123.0.0,get_config_existing_config_file_returns,success,38.440,5.797,2026-11-05T08:43:24Z,50263809.0,,
+experimental-bsan,cp-core-5123.0.0,secrets::bitwarden_secrets_manager_test::get_secret_existing_secret_returns_expected_string,test_failed,38.440,5.840,2026-11-05T08:43:30Z,50263809.0,panic,"thread 'secrets::bitwarden_secrets_manager_test::get_secret_existing_secret_returns_expected_string' (55426) panicked at tests/secrets/bitwarden_secrets_manager_test.rs:18:70: called `Result::unwrap()` on an `Err` value: NotPresent"

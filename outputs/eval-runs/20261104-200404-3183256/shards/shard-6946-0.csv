@@ -1,0 +1,31 @@
+experimental-bsan,ttfb-2.0.0,can_run_http2_measurement_from_tokio_runtime,timeout,382.040,150.022,2026-11-05T04:02:50Z,50247797.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ttfb-2.0.0,can_run_ttfb_lib_from_tokio_runtime,timeout,382.040,150.021,2026-11-05T04:05:20Z,50247797.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ttfb-2.0.0,client::tests::http11_timeout,timeout,382.040,150.021,2026-11-05T04:07:50Z,50247797.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ttfb-2.0.0,client::tests::http2_timeout,timeout,382.040,150.023,2026-11-05T04:10:20Z,50247797.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ttfb-2.0.0,client::tests::https11_timeout,timeout,382.040,150.020,2026-11-05T04:12:50Z,50247797.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ttfb-2.0.0,client::tests::invalid_timeout,timeout,382.040,150.019,2026-11-05T04:15:20Z,50247797.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ttfb-2.0.0,deadline::tests::explain,success,382.040,3.096,2026-11-05T04:15:23Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,deadline::tests::remaining,success,382.040,3.112,2026-11-05T04:15:26Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,deadline::tests::run,success,382.040,3.314,2026-11-05T04:15:29Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,error::tests::io_errors_are_equal_by_variant_and_kind,success,382.040,3.112,2026-11-05T04:15:33Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,http11::tests::reads_chunked_response_with_trailer,success,382.040,3.134,2026-11-05T04:15:36Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,http11::tests::reads_close_delimited_response,success,382.040,3.036,2026-11-05T04:15:39Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,http11::tests::reads_fixed_length_response,success,382.040,3.023,2026-11-05T04:15:42Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,http11::tests::reads_response_without_body,success,382.040,3.078,2026-11-05T04:15:45Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,http11::tests::rejects_conflicting_content_lengths,success,382.040,3.120,2026-11-05T04:15:48Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,http11::tests::request_includes_query_and_non_default_port,success,382.040,3.110,2026-11-05T04:15:51Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,http11::tests::returns_head_of_final_response,success,382.040,3.137,2026-11-05T04:15:54Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,http11::tests::skips_interim_response,success,382.040,3.110,2026-11-05T04:15:57Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,http2::tests::requires_https,timeout,382.040,150.020,2026-11-05T04:18:27Z,50247797.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ttfb-2.0.0,http3::tests::requires_https,timeout,382.040,150.020,2026-11-05T04:20:57Z,50247797.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,ttfb-2.0.0,outcome::tests::outcome_durations_are_sane,success,382.040,3.069,2026-11-05T04:21:01Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,outcome::tests::quic_handshake_replaces_tcp_and_tls,success,382.040,3.063,2026-11-05T04:21:04Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,target::tests::resolve_defaults_to_http,success,382.040,3.064,2026-11-05T04:21:07Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,target::tests::resolve_ip_address_with_ip_version,success,382.040,3.197,2026-11-05T04:21:10Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,target::tests::resolve_localhost_with_ip_version,success,382.040,3.125,2026-11-05T04:21:13Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,target::tests::resolve_rejects_empty_input,success,382.040,3.040,2026-11-05T04:21:16Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,target::tests::test_append_scheme_if_necessary,success,382.040,3.025,2026-11-05T04:21:19Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,target::tests::test_check_scheme,success,382.040,3.067,2026-11-05T04:21:22Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,target::tests::test_dns_if_necessary_localhost_shortcut,success,382.040,3.044,2026-11-05T04:21:25Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,target::tests::test_parse_input_as_url,success,382.040,3.174,2026-11-05T04:21:28Z,50247797.0,,
+experimental-bsan,ttfb-2.0.0,tls::tests::server_name_of_ip_addresses,success,382.040,3.078,2026-11-05T04:21:32Z,50247797.0,,

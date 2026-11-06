@@ -1,0 +1,45 @@
+experimental-bsan,landlock-0.4.1,access::bit_flags_full_negation,success,19.578,1.521,2026-11-05T03:04:27Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,access::compat_bit_flags,success,19.578,1.526,2026-11-05T03:04:29Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,compat::abi_from,success,19.578,1.514,2026-11-05T03:04:30Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,compat::compat_state_update_1,success,19.578,1.516,2026-11-05T03:04:32Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,compat::compat_state_update_2,success,19.578,1.510,2026-11-05T03:04:33Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,compat::current_kernel_abi,test_failed,19.578,1.572,2026-11-05T03:04:35Z,50244470.0,panic,"thread 'compat::current_kernel_abi' (41206) panicked at src/compat.rs:192:5: assertion `left == right` failed"
+experimental-bsan,landlock-0.4.1,compat::deprecated_set_best_effort,success,19.578,1.509,2026-11-05T03:04:36Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,compat::known_abi,success,19.578,1.512,2026-11-05T03:04:38Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,compat::tailored_compat_level,success,19.578,1.519,2026-11-05T03:04:39Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,errors::ruleset_error_breaking_change,success,19.578,1.515,2026-11-05T03:04:41Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,fs::consistent_access_fs_rw,success,19.578,1.520,2026-11-05T03:04:42Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,fs::path_beneath_check_consistency,success,19.578,1.516,2026-11-05T03:04:44Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,fs::path_beneath_compatibility,success,19.578,1.512,2026-11-05T03:04:45Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,fs::path_beneath_rules_iter,success,19.578,1.523,2026-11-05T03:04:47Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,fs::path_beneath_try_compat,success,19.578,1.530,2026-11-05T03:04:49Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,fs::path_beneath_try_compat_children,success,19.578,1.517,2026-11-05T03:04:50Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,fs::path_fd,success,19.578,1.512,2026-11-05T03:04:52Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,net::net_port_check_consistency,success,19.578,1.512,2026-11-05T03:04:53Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,ruleset::ignore_abi_v2_with_abi_v1,success,19.578,1.524,2026-11-05T03:04:55Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,ruleset::ruleset_add_rule_iter,success,19.578,1.515,2026-11-05T03:04:56Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,ruleset::ruleset_as_mut,success,19.578,1.514,2026-11-05T03:04:58Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,ruleset::ruleset_attr,success,19.578,1.517,2026-11-05T03:04:59Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,ruleset::ruleset_compat_dummy,success,19.578,1.525,2026-11-05T03:05:01Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,ruleset::ruleset_compat_partial,success,19.578,1.522,2026-11-05T03:05:02Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,ruleset::ruleset_created_attr,success,19.578,1.508,2026-11-05T03:05:04Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,ruleset::ruleset_created_handle_access_fs,success,19.578,1.526,2026-11-05T03:05:05Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,ruleset::ruleset_created_handle_access_net_tcp,success,19.578,1.515,2026-11-05T03:05:07Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,ruleset::ruleset_unsupported,test_failed,19.578,1.597,2026-11-05T03:05:08Z,50244470.0,panic,"thread 'ruleset::ruleset_unsupported' (43617) panicked at src/ruleset.rs:892:18: called `Result::unwrap()` on an `Err` value: CreateRuleset(CreateRulesetCall { source: Os { code: 38, kind: Unsupported, message: ""Function not implemented"" } })"
+experimental-bsan,landlock-0.4.1,ruleset::unsupported_handled_access,success,19.578,1.511,2026-11-05T03:05:10Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,tests::abi_v2_exec_refer,test_failed,19.578,1.770,2026-11-05T03:05:12Z,50244470.0,panic,"thread 'tests::abi_v2_exec_refer' (43827) panicked at src/lib.rs:156:21: assertion failed: matches!(ret, Ok(RestrictionStatus { ruleset, no_new_privs: true, }) if"
+experimental-bsan,landlock-0.4.1,tests::abi_v2_refer_only,test_failed,19.578,1.804,2026-11-05T03:05:14Z,50244470.0,panic,"thread 'tests::abi_v2_refer_only' (43900) panicked at src/lib.rs:156:21: assertion failed: matches!(ret, Ok(RestrictionStatus { ruleset, no_new_privs: true, }) if"
+experimental-bsan,landlock-0.4.1,tests::abi_v3_truncate,test_failed,19.578,1.799,2026-11-05T03:05:15Z,50244470.0,panic,"thread 'tests::abi_v3_truncate' (44013) panicked at src/lib.rs:156:21: assertion failed: matches!(ret, Ok(RestrictionStatus { ruleset, no_new_privs: true, }) if"
+experimental-bsan,landlock-0.4.1,tests::abi_v4_tcp,test_failed,19.578,1.850,2026-11-05T03:05:17Z,50244470.0,panic,"thread 'tests::abi_v4_tcp' (44122) panicked at src/lib.rs:156:21: assertion failed: matches!(ret, Ok(RestrictionStatus { ruleset, no_new_privs: true, }) if"
+experimental-bsan,landlock-0.4.1,tests::abi_v5_ioctl_dev,test_failed,19.578,1.888,2026-11-05T03:05:19Z,50244470.0,panic,"thread 'tests::abi_v5_ioctl_dev' (44223) panicked at src/lib.rs:156:21: assertion failed: matches!(ret, Ok(RestrictionStatus { ruleset, no_new_privs: true, }) if"
+experimental-bsan,landlock-0.4.1,tests::allow_root_compat,test_failed,19.578,1.781,2026-11-05T03:05:21Z,50244470.0,panic,"thread 'tests::allow_root_compat' (44400) panicked at src/lib.rs:156:21: assertion failed: matches!(ret, Ok(RestrictionStatus { ruleset, no_new_privs: true, }) if"
+experimental-bsan,landlock-0.4.1,tests::allow_root_fragile,test_failed,19.578,1.915,2026-11-05T03:05:23Z,50244470.0,panic,"thread 'tests::allow_root_fragile' (44592) panicked at src/lib.rs:156:21: assertion failed: matches!(ret, Ok(RestrictionStatus { ruleset, no_new_privs: true, }) if"
+experimental-bsan,landlock-0.4.1,tests::path_beneath_rules_with_too_much_access_rights_for_a_file,test_failed,19.578,1.776,2026-11-05T03:05:25Z,50244470.0,panic,"thread 'tests::path_beneath_rules_with_too_much_access_rights_for_a_file' (44796) panicked at src/lib.rs:156:21: assertion failed: matches!(ret, Ok(RestrictionStatus { ruleset, no_new_privs: true, }) if"
+experimental-bsan,landlock-0.4.1,tests::ruleset_created_try_clone,test_failed,19.578,1.767,2026-11-05T03:05:27Z,50244470.0,panic,"thread 'tests::ruleset_created_try_clone' (44956) panicked at src/lib.rs:156:21: assertion failed: matches!(ret, Ok(RestrictionStatus { ruleset, no_new_privs: true, }) if"
+experimental-bsan,landlock-0.4.1,tests::ruleset_enforced,test_failed,19.578,1.785,2026-11-05T03:05:28Z,50244470.0,panic,"thread 'tests::ruleset_enforced' (45167) panicked at src/lib.rs:156:21: assertion failed: matches!(ret, Ok(RestrictionStatus { ruleset, no_new_privs: true, }) if"
+experimental-bsan,landlock-0.4.1,tests::too_much_access_rights_for_a_file,test_failed,19.578,1.765,2026-11-05T03:05:30Z,50244470.0,panic,"thread 'tests::too_much_access_rights_for_a_file' (45382) panicked at src/lib.rs:156:21: assertion failed: matches!(ret, Ok(RestrictionStatus { ruleset, no_new_privs: true, }) if"
+experimental-bsan,landlock-0.4.1,uapi::landlock::bindgen_test_layout___kernel_fd_set,success,19.578,1.512,2026-11-05T03:05:32Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,uapi::landlock::bindgen_test_layout___kernel_fsid_t,success,19.578,1.515,2026-11-05T03:05:33Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,uapi::landlock::bindgen_test_layout_landlock_net_port_attr,success,19.578,1.514,2026-11-05T03:05:35Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,uapi::landlock::bindgen_test_layout_landlock_path_beneath_attr,success,19.578,1.512,2026-11-05T03:05:36Z,50244470.0,,
+experimental-bsan,landlock-0.4.1,uapi::landlock::bindgen_test_layout_landlock_ruleset_attr,success,19.578,1.521,2026-11-05T03:05:38Z,50244470.0,,

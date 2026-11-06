@@ -1,0 +1,8 @@
+experimental-bsan,deadwiki-0.1.27,db::test::test_absolute,success,38.913,2.960,2026-11-05T06:39:53Z,50256916.0,,
+experimental-bsan,deadwiki-0.1.27,db::test::test_exists,test_failed,38.913,1.682,2026-11-05T06:39:55Z,50256916.0,panic,"thread 'db::test::test_exists' (55190) panicked at src/db.rs:301:48: called `Option::unwrap()` on a `None` value"
+experimental-bsan,deadwiki-0.1.27,db::test::test_git_dir,success,38.913,2.972,2026-11-05T06:39:58Z,50256916.0,,
+experimental-bsan,deadwiki-0.1.27,db::test::test_is_git,test_failed,38.913,1.627,2026-11-05T06:39:59Z,50256916.0,panic,"thread 'db::test::test_is_git' (56328) panicked at src/db.rs:323:9: assertion failed: db.is_git()"
+experimental-bsan,deadwiki-0.1.27,db::test::test_len,test_failed,38.913,1.662,2026-11-05T06:40:01Z,50256916.0,panic,"thread 'db::test::test_len' (56674) panicked at src/db.rs:263:9: assertion `left == right` failed"
+experimental-bsan,deadwiki-0.1.27,db::test::test_pages,test_failed,38.913,1.645,2026-11-05T06:40:03Z,50256916.0,panic,"thread 'db::test::test_pages' (56895) panicked at src/db.rs:275:33: index out of bounds: the len is 0 but the index is 0"
+experimental-bsan,deadwiki-0.1.27,db::test::test_pathify,success,38.913,2.960,2026-11-05T06:40:06Z,50256916.0,,
+experimental-bsan,deadwiki-0.1.27,page::test::test_name,success,38.913,3.029,2026-11-05T06:40:09Z,50256916.0,,

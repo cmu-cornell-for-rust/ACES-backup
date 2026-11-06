@@ -1,0 +1,3 @@
+experimental-bsan,cargo-pgrx-0.12.7,command::schema::tests::test_parse_managed_postmasters,test_failed,774.747,1.844,2026-11-05T08:28:18Z,50262254.0,panic,"thread 'command::schema::tests::test_parse_managed_postmasters' (72668) panicked at src/command/schema.rs:624:40: called `Result::unwrap()` on an `Err` value: $PGRX_HOME does not exist"
+experimental-bsan,cargo-pgrx-0.12.7,command::schema::tests::test_parse_universal_binary_slice,success,774.747,1.741,2026-11-05T08:28:20Z,50262254.0,,
+experimental-bsan,cargo-pgrx-0.12.7,command::schema::tests::test_slice_unknown_architecture,success,774.747,1.675,2026-11-05T08:28:22Z,50262254.0,,

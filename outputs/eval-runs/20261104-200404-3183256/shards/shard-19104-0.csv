@@ -1,0 +1,2 @@
+experimental-bsan,nsi-sys-0.8.0,c_api::bindgen_test_layout_NSIParam,success,41.736,1.529,2026-11-05T08:55:32Z,50264470.0,,
+experimental-bsan,nsi-sys-0.8.0,c_api::bindgen_test_layout_NSIProcedural,test_failed,41.736,1.606,2026-11-05T08:55:34Z,50264470.0,panic,"thread 'c_api::bindgen_test_layout_NSIProcedural' (49148) panicked at /local/ev-50264470-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/nsi-sys/43dd414c38d03619/out/bindings.rs:257:5: assertion `left == right` failed: Size of: NSIProcedural"

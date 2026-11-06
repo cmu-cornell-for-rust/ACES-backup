@@ -1,0 +1,15 @@
+experimental-bsan,rfesi-0.50.2,builders::tests::test_builder_change_urls,success,354.237,1.703,2026-11-05T05:27:01Z,50252700.0,,
+experimental-bsan,rfesi-0.50.2,builders::tests::test_builder_from_json_filled,success,354.237,1.645,2026-11-05T05:27:03Z,50252700.0,,
+experimental-bsan,rfesi-0.50.2,builders::tests::test_builder_missing_value,success,354.237,1.622,2026-11-05T05:27:05Z,50252700.0,,
+experimental-bsan,rfesi-0.50.2,builders::tests::test_builder_no_client,success,354.237,1.674,2026-11-05T05:27:06Z,50252700.0,,
+experimental-bsan,rfesi-0.50.2,builders::tests::test_builder_to_json_empty,success,354.237,1.627,2026-11-05T05:27:08Z,50252700.0,,
+experimental-bsan,rfesi-0.50.2,builders::tests::test_builder_valid,success,354.237,1.681,2026-11-05T05:27:10Z,50252700.0,,
+experimental-bsan,rfesi-0.50.2,builders::tests::test_builder_with_spec,success,354.237,1.678,2026-11-05T05:27:11Z,50252700.0,,
+experimental-bsan,rfesi-0.50.2,client::tests::test_authenticateresponse_deserialize,success,354.237,1.621,2026-11-05T05:27:13Z,50252700.0,,
+experimental-bsan,rfesi-0.50.2,client::tests::test_authenticateresponse_deserialize_no_refresh_token,success,354.237,1.633,2026-11-05T05:27:15Z,50252700.0,,
+experimental-bsan,rfesi-0.50.2,client::tests::test_error_limit_header_limited,success,354.237,1.815,2026-11-05T05:27:17Z,50252700.0,,
+experimental-bsan,rfesi-0.50.2,client::tests::test_error_limit_header_not_limited,success,354.237,1.815,2026-11-05T05:27:18Z,50252700.0,,
+experimental-bsan,rfesi-0.50.2,jwt_util::tests::test_jwt_validity,timeout,354.237,150.016,2026-11-05T05:29:48Z,50252700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rfesi-0.50.2,jwt_util::tests::test_jwt_validity_no_aud,timeout,354.237,150.015,2026-11-05T05:32:18Z,50252700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rfesi-0.50.2,jwt_util::tests::test_jwt_validity_wrong_exp,timeout,354.237,150.016,2026-11-05T05:34:48Z,50252700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rfesi-0.50.2,jwt_util::tests::test_jwt_validity_wrong_iss,timeout,354.237,150.016,2026-11-05T05:37:19Z,50252700.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

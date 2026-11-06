@@ -1,0 +1,25 @@
+experimental-bsan,dcv-color-primitives-0.6.1,bootstrap,success,197.814,6.159,2026-11-05T04:17:30Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,buffers_size,success,197.814,6.184,2026-11-05T04:17:36Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::bgr_to_rgb,timeout,197.814,150.018,2026-11-05T04:20:06Z,50248954.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::bgra_to_rgb,timeout,197.814,150.019,2026-11-05T04:22:36Z,50248954.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::i420_to_rgbx,timeout,197.814,150.012,2026-11-05T04:25:06Z,50248954.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::i444_to_rgbx,timeout,197.814,150.012,2026-11-05T04:27:36Z,50248954.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::nv12_to_rgb_1,success,197.814,35.081,2026-11-05T04:28:11Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::nv12_to_rgb_2,success,197.814,124.144,2026-11-05T04:30:16Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::nv12_to_rgbx_1,success,197.814,65.706,2026-11-05T04:31:21Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::nv12_to_rgbx_2,timeout,197.814,150.011,2026-11-05T04:33:51Z,50248954.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::rgb_to_bgra,timeout,197.814,150.015,2026-11-05T04:36:21Z,50248954.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::rgb_to_i420,success,197.814,52.707,2026-11-05T04:37:14Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::rgb_to_i444,timeout,197.814,150.010,2026-11-05T04:39:44Z,50248954.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::rgb_to_nv12_1,success,197.814,16.608,2026-11-05T04:40:01Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,conversions::rgb_to_nv12_2,success,197.814,27.705,2026-11-05T04:40:29Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,errors::bgr_to_rgb,success,197.814,6.012,2026-11-05T04:40:35Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,errors::bgra_to_rgb,success,197.814,5.990,2026-11-05T04:40:41Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,errors::i420_to_rgb,success,197.814,6.735,2026-11-05T04:40:47Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,errors::i444_to_rgb,success,197.814,6.767,2026-11-05T04:40:54Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,errors::nv12_to_rgb,success,197.814,6.628,2026-11-05T04:41:01Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,errors::rgb_to_bgra,success,197.814,5.995,2026-11-05T04:41:07Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,errors::rgb_to_i420,success,197.814,6.649,2026-11-05T04:41:13Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,errors::rgb_to_i444,success,197.814,6.720,2026-11-05T04:41:20Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,errors::rgb_to_nv12,success,197.814,6.606,2026-11-05T04:41:27Z,50248954.0,,
+experimental-bsan,dcv-color-primitives-0.6.1,over_4gb,test_failed,197.814,126.684,2026-11-05T04:43:33Z,50248954.0,oom,"process didn't exit successfully: `/local/ev-50248954-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/dcv-color-primitives/1d7e780e97fdedae/out/tests-1d7e780e97fdedae --exact over_4gb` (signal: 9, SIGKILL: kill)"

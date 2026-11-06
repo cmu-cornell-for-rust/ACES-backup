@@ -1,0 +1,14 @@
+experimental-bsan,velcro_core-0.5.4,seq::tests::empty_input_is_simple,success,150.565,1.502,2026-11-05T05:33:46Z,50253285.0,,
+experimental-bsan,velcro_core-0.5.4,seq::tests::non_spread_input_is_simple,success,150.565,1.548,2026-11-05T05:33:48Z,50253285.0,,
+experimental-bsan,velcro_core-0.5.4,seq::tests::parse_empty_input_as_empty_sequence,success,150.565,1.493,2026-11-05T05:33:49Z,50253285.0,,
+experimental-bsan,velcro_core-0.5.4,seq::tests::parse_single_expression_as_one_value_of_one,success,150.565,1.578,2026-11-05T05:33:51Z,50253285.0,,
+experimental-bsan,velcro_core-0.5.4,seq::tests::parse_single_spread_expression_as_one_value_of_many,success,150.565,1.588,2026-11-05T05:33:53Z,50253285.0,,
+experimental-bsan,velcro_core-0.5.4,seq::tests::spread_input_is_not_simple,success,150.565,1.555,2026-11-05T05:33:54Z,50253285.0,,
+experimental-bsan,velcro_core-0.5.4,value::tests::expression_with_spread_is_not_simple,success,150.565,1.515,2026-11-05T05:33:56Z,50253285.0,,
+experimental-bsan,velcro_core-0.5.4,value::tests::expression_without_spread_is_simple,success,150.565,1.516,2026-11-05T05:33:57Z,50253285.0,,
+experimental-bsan,velcro_core-0.5.4,value::tests::parenthesized_spread_with_no_expression_is_single_value,success,150.565,1.526,2026-11-05T05:33:59Z,50253285.0,,
+experimental-bsan,velcro_core-0.5.4,value::tests::parse_complex_expression_as_one,test_failed,150.565,1.703,2026-11-05T05:34:00Z,50253285.0,crash,"test value::tests::parse_complex_expression_as_one ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,velcro_core-0.5.4,value::tests::parse_literal_as_one,success,150.565,1.524,2026-11-05T05:34:02Z,50253285.0,,
+experimental-bsan,velcro_core-0.5.4,value::tests::parse_spread_simple_expression_as_many,success,150.565,1.534,2026-11-05T05:34:03Z,50253285.0,,
+experimental-bsan,velcro_core-0.5.4,value::tests::spread_complex_expression_as_many,test_failed,150.565,1.666,2026-11-05T05:34:05Z,50253285.0,crash,"test value::tests::spread_complex_expression_as_many ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,velcro_core-0.5.4,value::tests::spread_with_no_expression_is_error,success,150.565,1.510,2026-11-05T05:34:07Z,50253285.0,,

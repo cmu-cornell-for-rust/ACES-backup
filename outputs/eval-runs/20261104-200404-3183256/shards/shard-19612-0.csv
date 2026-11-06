@@ -1,0 +1,2 @@
+experimental-bsan,tun2-4.0.0,platform::posix::sockaddr::test_conversion,success,103.621,1.551,2026-11-05T09:09:11Z,50265142.0,,
+experimental-bsan,tun2-4.0.0,platform::test::create,test_failed,103.621,1.616,2026-11-05T09:09:12Z,50265142.0,panic,"thread 'platform::test::create' (41964) panicked at src/platform/mod.rs:69:10: called `Result::unwrap()` on an `Err` value: Io(Os { code: 19, kind: Uncategorized, message: ""No such device"" })"

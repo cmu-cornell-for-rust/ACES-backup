@@ -1,0 +1,5 @@
+experimental-bsan,wai-bindgen-wasmer-0.705.0,,build_failed,755.566,,2026-11-05T08:27:00Z,50262057.0,oom,"process didn't exit successfully: `/opt/rust/cargo/bin/cargo-bsan /ocean/projects/cis260383p/shared/ACES-backup/outputs/eval-runs/20261104-200404-3183256/rustc-cfg-miri.sh --crate-name cpp_demangle --edition=2018 /local/ev-50262057-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/cpp_demangle-0."
+experimental-bsan,wai-bindgen-wasmer-0.705.0,region::test::nonoverlapping,killed,,,2026-11-05T08:27:00Z,50262057.0,oom,"srun step OOM-killed at --mem-per-task 8G before this test got a row"
+experimental-bsan,wai-bindgen-wasmer-0.705.0,region::test::overlapping,killed,,,2026-11-05T08:27:00Z,50262057.0,oom,"srun step OOM-killed at --mem-per-task 8G before this test got a row"
+experimental-bsan,wai-bindgen-wasmer-0.705.0,region::test::zero_length,killed,,,2026-11-05T08:27:00Z,50262057.0,oom,"srun step OOM-killed at --mem-per-task 8G before this test got a row"
+experimental-bsan,wai-bindgen-wasmer-0.705.0,table::tests::simple,killed,,,2026-11-05T08:27:00Z,50262057.0,oom,"srun step OOM-killed at --mem-per-task 8G before this test got a row"

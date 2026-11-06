@@ -1,0 +1,9 @@
+experimental-bsan,resend-rs-0.9.1,api_keys::test::all,test_failed,216.425,1.770,2026-11-05T06:35:50Z,50256556.0,panic,"thread 'api_keys::test::all' (99892) panicked at src/client.rs:113:14: env variable `RESEND_API_KEY` should be a valid API key: NotPresent"
+experimental-bsan,resend-rs-0.9.1,audiences::test::all,test_failed,216.425,1.766,2026-11-05T06:35:52Z,50256556.0,panic,"thread 'audiences::test::all' (99953) panicked at src/client.rs:113:14: env variable `RESEND_API_KEY` should be a valid API key: NotPresent"
+experimental-bsan,resend-rs-0.9.1,contacts::test::all,test_failed,216.425,1.783,2026-11-05T06:35:54Z,50256556.0,panic,"thread 'contacts::test::all' (100030) panicked at src/client.rs:113:14: env variable `RESEND_API_KEY` should be a valid API key: NotPresent"
+experimental-bsan,resend-rs-0.9.1,domains::test::all,test_failed,216.425,1.770,2026-11-05T06:35:56Z,50256556.0,panic,"thread 'domains::test::all' (100089) panicked at src/client.rs:113:14: env variable `RESEND_API_KEY` should be a valid API key: NotPresent"
+experimental-bsan,resend-rs-0.9.1,emails::test::all,test_failed,216.425,1.763,2026-11-05T06:35:57Z,50256556.0,panic,"thread 'emails::test::all' (100157) panicked at src/client.rs:113:14: env variable `RESEND_API_KEY` should be a valid API key: NotPresent"
+experimental-bsan,resend-rs-0.9.1,emails::test::deserialize_test,success,216.425,1.672,2026-11-05T06:35:59Z,50256556.0,,
+experimental-bsan,resend-rs-0.9.1,emails::test::schedule_email,test_failed,216.425,13.683,2026-11-05T06:36:13Z,50256556.0,panic,"thread 'emails::test::schedule_email' (100267) panicked at src/client.rs:113:14: env variable `RESEND_API_KEY` should be a valid API key: NotPresent"
+experimental-bsan,resend-rs-0.9.1,rate_limit::tests::test_retry_count_err,success,216.425,6.793,2026-11-05T06:36:20Z,50256556.0,,
+experimental-bsan,resend-rs-0.9.1,rate_limit::tests::test_retry_count_ok,success,216.425,1.685,2026-11-05T06:36:21Z,50256556.0,,

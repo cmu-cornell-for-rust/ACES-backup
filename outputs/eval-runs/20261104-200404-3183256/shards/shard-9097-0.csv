@@ -1,0 +1,20 @@
+experimental-bsan,v_escape-0.18.0,bytes_buff::test_escape,success,31.926,3.018,2026-11-05T04:47:08Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,bytes_buff_nosimd::test_escape,success,31.926,3.008,2026-11-05T04:47:11Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,char_syntax::a::test_escape,success,31.926,77.814,2026-11-05T04:48:29Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,empty::test_escape,success,31.926,76.206,2026-11-05T04:49:45Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,no_avx::a::test_escape,timeout,31.926,150.044,2026-11-05T04:52:15Z,50250833.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,v_escape-0.18.0,no_avx::b::test_escape,timeout,31.926,150.065,2026-11-05T04:54:46Z,50250833.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,v_escape-0.18.0,no_simd::a::test_escape,test_failed,31.926,104.128,2026-11-05T04:56:30Z,50250833.0,oom,"process didn't exit successfully: `/local/ev-50250833-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/v_escape/dfebc9505ab736a9/out/lib-dfebc9505ab736a9 --exact 'no_simd::a::test_escape'` (signal: 9, SIGKILL: kill)"
+experimental-bsan,v_escape-0.18.0,no_simd::b::test_escape,timeout,31.926,150.045,2026-11-05T04:59:01Z,50250833.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,v_escape-0.18.0,test_avx::a::test_escape,timeout,31.926,150.046,2026-11-05T05:01:31Z,50250833.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,v_escape-0.18.0,test_avx::b::test_escape,timeout,31.926,150.032,2026-11-05T05:04:01Z,50250833.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,v_escape-0.18.0,test_avx::c::test_escape,success,31.926,118.187,2026-11-05T05:05:59Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,test_avx::d::test_escape,success,31.926,104.766,2026-11-05T05:07:44Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,test_avx::e::test_escape,success,31.926,111.330,2026-11-05T05:09:35Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,test_avx::f::test_escape,success,31.926,118.079,2026-11-05T05:11:33Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,test_avx::g::test_escape,success,31.926,131.490,2026-11-05T05:13:45Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,test_avx::h::test_escape,success,31.926,77.894,2026-11-05T05:15:03Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,test_avx::i::test_escape,success,31.926,77.886,2026-11-05T05:16:21Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,test_avx::numbers::test_escape_a,success,31.926,90.990,2026-11-05T05:17:52Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,test_avx::numbers::test_escape_b,success,31.926,113.168,2026-11-05T05:19:45Z,50250833.0,,
+experimental-bsan,v_escape-0.18.0,test_escape,success,31.926,77.634,2026-11-05T05:21:02Z,50250833.0,,

@@ -1,0 +1,412 @@
+experimental-bsan,roaring-0.11.5,advance_back_to_earlier_bitmap_after_iteration_started,success,217.842,47.737,2026-11-05T01:25:23Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_back_to_missing_bitmap,success,217.842,47.722,2026-11-05T01:26:11Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_bitset,success,217.842,147.441,2026-11-05T01:28:38Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_bitset_back_to_start_word,timeout,217.842,150.010,2026-11-05T01:31:08Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,advance_bitset_current_word,timeout,217.842,150.010,2026-11-05T01:33:38Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,advance_bitset_front_and_back_past_each_other,success,217.842,48.189,2026-11-05T01:34:27Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_bitset_to_end_word,timeout,217.842,150.010,2026-11-05T01:36:57Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,advance_run_back_before_start,success,217.842,48.105,2026-11-05T01:37:45Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_run_back_reduces_forward_iter,success,217.842,48.172,2026-11-05T01:38:33Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_run_both_sides_past_each_other,success,217.842,47.886,2026-11-05T01:39:21Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_run_front_and_back_past_each_other,success,217.842,47.774,2026-11-05T01:40:09Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_run_past_the_end,success,217.842,47.635,2026-11-05T01:40:56Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_run_with_nth,success,217.842,47.609,2026-11-05T01:41:44Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_to_end,success,217.842,47.598,2026-11-05T01:42:31Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_to_later_bitmap_after_iteration_started,success,217.842,47.530,2026-11-05T01:43:19Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_to_missing_bitmap,success,217.842,47.586,2026-11-05T01:44:07Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_to_with_next_len,success,217.842,47.624,2026-11-05T01:44:54Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,advance_to_with_tail_iter,success,217.842,48.108,2026-11-05T01:45:42Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,and,success,217.842,47.780,2026-11-05T01:46:30Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,append,timeout,217.842,150.015,2026-11-05T01:49:00Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,append_empty,success,217.842,47.588,2026-11-05T01:49:48Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,append_error,success,217.842,47.593,2026-11-05T01:50:35Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,append_tree,timeout,217.842,150.018,2026-11-05T01:53:05Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,array,success,217.842,134.775,2026-11-05T01:55:20Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,array_and_bitmap,timeout,217.842,150.011,2026-11-05T01:57:50Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,array_bitmap_not,success,217.842,74.100,2026-11-05T01:59:04Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,array_not,success,217.842,84.292,2026-11-05T02:00:29Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,array_to_array,success,217.842,69.563,2026-11-05T02:01:38Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,array_to_bitmap,success,217.842,97.480,2026-11-05T02:03:16Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,arrays,timeout,217.842,150.014,2026-11-05T02:05:46Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,arrays_not,success,217.842,100.644,2026-11-05T02:07:26Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,arrays_removing_one_whole_container,success,217.842,88.786,2026-11-05T02:08:55Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,basic,success,217.842,48.035,2026-11-05T02:09:43Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,basic_2,success,217.842,48.350,2026-11-05T02:10:32Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,basic_3,timeout,217.842,150.010,2026-11-05T02:13:02Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap,timeout,217.842,150.012,2026-11-05T02:15:32Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::inherent::tests::insert_range,timeout,217.842,150.015,2026-11-05T02:18:02Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::inherent::tests::insert_range_single,success,217.842,48.005,2026-11-05T02:18:50Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::inherent::tests::remove_biggest_for_bit,success,217.842,88.539,2026-11-05T02:20:18Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::inherent::tests::remove_biggest_for_vec,success,217.842,47.977,2026-11-05T02:21:06Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::inherent::tests::remove_smallest_for_bit,success,217.842,92.240,2026-11-05T02:22:39Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::inherent::tests::remove_smallest_for_vec,success,217.842,48.043,2026-11-05T02:23:27Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::inherent::tests::test_insert_max_u32,success,217.842,47.996,2026-11-05T02:24:15Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::inherent::tests::test_insert_remove_across_container,success,217.842,47.992,2026-11-05T02:25:03Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::inherent::tests::test_insert_remove_range_multi_container,success,217.842,47.978,2026-11-05T02:25:51Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::inherent::tests::test_insert_remove_range_pre_populated,success,217.842,47.930,2026-11-05T02:26:39Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::inherent::tests::test_insert_remove_range_same_container,success,217.842,47.944,2026-11-05T02:27:26Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::inherent::tests::test_insert_remove_single_element,success,217.842,48.075,2026-11-05T02:28:15Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::ops::test::all_difference_give_the_same_result,timeout,217.842,150.013,2026-11-05T02:30:45Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::ops::test::all_intersection_give_the_same_result,timeout,217.842,150.016,2026-11-05T02:33:15Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::ops::test::all_symmetric_difference_give_the_same_result,timeout,217.842,150.017,2026-11-05T02:35:45Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::ops::test::all_union_give_the_same_result,timeout,217.842,150.015,2026-11-05T02:38:15Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::ops::test::difference_len_eq_len_of_materialized_difference,timeout,217.842,150.016,2026-11-05T02:40:45Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::ops::test::intersection_len_eq_len_of_materialized_intersection,timeout,217.842,150.012,2026-11-05T02:43:15Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::ops::test::symmetric_difference_len_eq_len_of_materialized_symmetric_difference,timeout,217.842,150.012,2026-11-05T02:45:45Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::ops::test::union_len_eq_len_of_materialized_union,timeout,217.842,150.014,2026-11-05T02:48:15Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::ops_with_serialized::test::intersection_with_serialized_eq_materialized_intersection,timeout,217.842,150.015,2026-11-05T02:50:45Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::antisymmetry,timeout,217.842,150.014,2026-11-05T02:53:15Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::empty_set_domination,timeout,217.842,150.016,2026-11-05T02:55:45Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::existence_of_joins,timeout,217.842,150.016,2026-11-05T02:58:15Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::existence_of_meets,timeout,217.842,150.015,2026-11-05T03:00:45Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::inclusion_can_be_characterized_by_union_or_inersection,timeout,217.842,150.013,2026-11-05T03:03:15Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::intersection_distributes_over_symmetric_difference,timeout,217.842,150.015,2026-11-05T03:05:45Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::intersection_distributes_over_union,timeout,217.842,150.016,2026-11-05T03:08:15Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::intersections_are_associative,timeout,217.842,150.015,2026-11-05T03:10:45Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::intersections_are_commutative,timeout,217.842,150.016,2026-11-05T03:13:15Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::intersections_are_idempotent,timeout,217.842,150.015,2026-11-05T03:15:45Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::reflexivity,timeout,217.842,150.015,2026-11-05T03:18:15Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::relative_compliments,timeout,217.842,150.014,2026-11-05T03:20:45Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::symmetric_difference_empty_set_neutral,timeout,217.842,150.014,2026-11-05T03:23:15Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::symmetric_difference_inverse_of_itself,timeout,217.842,150.015,2026-11-05T03:25:45Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::symmetric_difference_relative_compliments,timeout,217.842,150.015,2026-11-05T03:28:16Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::symmetric_difference_triangle_inequality,timeout,217.842,150.016,2026-11-05T03:30:46Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::symmetric_differences_are_associative,timeout,217.842,150.016,2026-11-05T03:33:16Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::symmetric_differences_are_commutative,timeout,217.842,150.013,2026-11-05T03:35:46Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::the_empty_set_is_the_identity_for_symmetric_difference,timeout,217.842,150.014,2026-11-05T03:38:16Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::the_empty_set_is_the_identity_for_union,timeout,217.842,150.013,2026-11-05T03:40:46Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::transitivity,timeout,217.842,150.014,2026-11-05T03:43:16Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::union_distributes_over_intersection,timeout,217.842,150.014,2026-11-05T03:45:46Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::unions_are_associative,timeout,217.842,150.015,2026-11-05T03:48:16Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::unions_are_commutative,timeout,217.842,150.015,2026-11-05T03:50:46Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::proptests::test::unions_are_idempotent,timeout,217.842,150.017,2026-11-05T03:53:16Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::serialization::test::test_deserialize_overflow_s_plus_len,success,217.842,47.646,2026-11-05T03:54:04Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::serialization::test::test_from_lsb0_bytes,success,217.842,138.357,2026-11-05T03:56:22Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::serialization::test::test_from_lsb0_bytes_not_multiple_of_8,success,217.842,57.351,2026-11-05T03:57:19Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::serialization::test::test_from_lsb0_bytes_overflow,success,217.842,48.555,2026-11-05T03:58:08Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::serialization::test::test_serialization,timeout,217.842,150.013,2026-11-05T04:00:38Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_array_contains_range,success,217.842,48.448,2026-11-05T04:01:26Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_array_insert_invalid_range,success,217.842,48.486,2026-11-05T04:02:15Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_array_insert_range,success,217.842,48.244,2026-11-05T04:03:03Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_array_insert_range_full_overlap,success,217.842,48.515,2026-11-05T04:03:52Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_array_insert_range_left_overlap,success,217.842,48.319,2026-11-05T04:04:40Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_array_insert_range_right_overlap,success,217.842,48.365,2026-11-05T04:05:28Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_bitmap_insert_invalid_range,success,217.842,48.071,2026-11-05T04:06:16Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_bitmap_insert_range,success,217.842,47.954,2026-11-05T04:07:04Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_bitmap_insert_range_full_overlap,success,217.842,47.987,2026-11-05T04:07:52Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_bitmap_insert_range_left_overlap,success,217.842,47.880,2026-11-05T04:08:40Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_bitmap_insert_range_right_overlap,success,217.842,47.637,2026-11-05T04:09:28Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_bitmap_insert_same_key_overlap,success,217.842,47.627,2026-11-05T04:10:16Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_bitmap_remove_biggest,success,217.842,47.576,2026-11-05T04:11:03Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::array_store::tests::test_bitmap_remove_smallest,success,217.842,47.925,2026-11-05T04:11:51Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::bitmap_store::tests::test_bitmap_remove_biggest,success,217.842,48.450,2026-11-05T04:12:40Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::bitmap_store::tests::test_bitmap_remove_smallest,success,217.842,48.467,2026-11-05T04:13:28Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::contains_index_1,success,217.842,47.623,2026-11-05T04:14:16Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::contains_index_2,success,217.842,47.667,2026-11-05T04:15:03Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::contains_range_1,success,217.842,47.899,2026-11-05T04:15:51Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::contains_range_2,success,217.842,47.658,2026-11-05T04:16:39Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::contains_range_3,success,217.842,47.641,2026-11-05T04:17:27Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::difference,success,217.842,47.567,2026-11-05T04:18:14Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_arbitrary,success,217.842,47.578,2026-11-05T04:19:02Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_consecutive_begin,success,217.842,47.487,2026-11-05T04:19:49Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_consecutive_begin_end,success,217.842,47.485,2026-11-05T04:20:37Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_consecutive_end,success,217.842,47.919,2026-11-05T04:21:25Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_consecutive_end_with_extra,success,217.842,47.596,2026-11-05T04:22:12Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_empty,success,217.842,47.477,2026-11-05T04:23:00Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_begin_overlap_concescutive_end,success,217.842,47.765,2026-11-05T04:23:47Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_concescutive_begin,success,217.842,47.461,2026-11-05T04:24:35Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_concescutive_begin_end,success,217.842,47.307,2026-11-05T04:25:22Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_concescutive_begin_overlap_end,success,217.842,47.270,2026-11-05T04:26:10Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_concescutive_end,success,217.842,47.277,2026-11-05T04:26:57Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_empty,success,217.842,47.286,2026-11-05T04:27:44Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_no_overlap,success,217.842,47.264,2026-11-05T04:28:31Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_overlap_begin,success,217.842,47.264,2026-11-05T04:29:19Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_overlap_begin_end,success,217.842,47.268,2026-11-05T04:30:06Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_overlap_end,success,217.842,47.234,2026-11-05T04:30:53Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_overlap_some,success,217.842,47.227,2026-11-05T04:31:40Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_pin_1,success,217.842,47.570,2026-11-05T04:32:28Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_u16_max_no_overlap,success,217.842,49.962,2026-11-05T04:33:18Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_u16_max_overlap_all,success,217.842,47.890,2026-11-05T04:34:06Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_range_u16_max_overlap_begin,success,217.842,47.566,2026-11-05T04:34:53Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_u16_max,success,217.842,47.700,2026-11-05T04:35:41Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::insert_u16_max_consecutive,success,217.842,47.465,2026-11-05T04:36:29Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::intersection,success,217.842,47.435,2026-11-05T04:37:16Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::intersection_len_1,success,217.842,47.363,2026-11-05T04:38:03Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::intersection_len_2,success,217.842,47.400,2026-11-05T04:38:51Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::intersection_len_3,success,217.842,47.339,2026-11-05T04:39:38Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::intersection_len_array_1,success,217.842,47.355,2026-11-05T04:40:26Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::intersection_len_array_2,success,217.842,48.071,2026-11-05T04:41:14Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::intersection_len_bitmap_1,success,217.842,48.231,2026-11-05T04:42:02Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::intersection_len_bitmap_2,success,217.842,47.930,2026-11-05T04:42:50Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::intersection_len_bitmap_3,success,217.842,50.083,2026-11-05T04:43:40Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::intersection_len_bitmap_4,success,217.842,50.223,2026-11-05T04:44:30Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::intersection_len_bitmap_5,success,217.842,50.611,2026-11-05T04:45:21Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::intersection_len_bitmap_6,success,217.842,50.240,2026-11-05T04:46:11Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::is_disjoint_1,success,217.842,47.652,2026-11-05T04:46:59Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::is_disjoint_2,success,217.842,47.646,2026-11-05T04:47:46Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::is_disjoint_3,success,217.842,47.503,2026-11-05T04:48:34Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::is_disjoint_array_store_1,success,217.842,47.497,2026-11-05T04:49:21Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::is_disjoint_array_store_2,success,217.842,47.471,2026-11-05T04:50:09Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::is_disjoint_bitmap_store_1,success,217.842,47.626,2026-11-05T04:50:57Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::is_disjoint_bitmap_store_2,success,217.842,47.431,2026-11-05T04:51:44Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::is_empty,success,217.842,47.650,2026-11-05T04:52:32Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::is_subset_1,success,217.842,47.415,2026-11-05T04:53:19Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::is_subset_2,success,217.842,47.393,2026-11-05T04:54:06Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::iter_advance_back_to,success,217.842,47.517,2026-11-05T04:54:54Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::iter_advance_to,success,217.842,47.724,2026-11-05T04:55:42Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::iter_next,success,217.842,47.985,2026-11-05T04:56:30Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::iter_next_and_next_back,success,217.842,47.956,2026-11-05T04:57:18Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::iter_next_back,success,217.842,47.807,2026-11-05T04:58:05Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::iter_nth,success,217.842,47.844,2026-11-05T04:58:53Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::iter_nth_single_element_intervals,success,217.842,47.951,2026-11-05T04:59:41Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::iter_u16_max,success,217.842,103.891,2026-11-05T05:01:25Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::len_1,success,217.842,47.613,2026-11-05T05:02:13Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::max_0,success,217.842,47.575,2026-11-05T05:03:00Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::max_1,success,217.842,47.812,2026-11-05T05:03:48Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::min_0,success,217.842,47.390,2026-11-05T05:04:36Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::min_1,success,217.842,47.316,2026-11-05T05:05:23Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::overlapping_interval_1,success,217.842,47.272,2026-11-05T05:06:10Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::overlapping_interval_2,success,217.842,47.371,2026-11-05T05:06:58Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::overlapping_interval_3,success,217.842,47.356,2026-11-05T05:07:45Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::push_empty,success,217.842,47.717,2026-11-05T05:08:33Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::push_existing,success,217.842,47.552,2026-11-05T05:09:20Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::push_existing_u16_max,success,217.842,47.415,2026-11-05T05:10:08Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::push_new_max,success,217.842,47.466,2026-11-05T05:10:55Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::push_new_max_consecutive,success,217.842,47.918,2026-11-05T05:11:43Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::push_new_u16_max,success,217.842,48.130,2026-11-05T05:12:31Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::push_non_existing_non_max,success,217.842,48.298,2026-11-05T05:13:20Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::rank,success,217.842,47.866,2026-11-05T05:14:07Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_begin_of_interval,success,217.842,47.608,2026-11-05T05:14:55Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_biggest_exact_interval_boundary,success,217.842,47.337,2026-11-05T05:15:42Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_biggest_many_1,success,217.842,47.620,2026-11-05T05:16:30Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_biggest_many_2,success,217.842,47.771,2026-11-05T05:17:18Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_biggest_one,success,217.842,47.782,2026-11-05T05:18:06Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_end_of_interval,success,217.842,47.815,2026-11-05T05:18:53Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_interval,success,217.842,47.491,2026-11-05T05:19:41Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_middle,success,217.842,47.376,2026-11-05T05:20:28Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_nothing,success,217.842,47.374,2026-11-05T05:21:16Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_begin_exact_overlap_end_one,success,217.842,47.290,2026-11-05T05:22:03Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_begin_no_overlap_end_exact_one_1,success,217.842,47.388,2026-11-05T05:22:50Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_begin_no_overlap_end_exact_one_2,success,217.842,47.378,2026-11-05T05:23:38Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_begin_overlap,success,217.842,47.341,2026-11-05T05:24:25Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_begin_overlap_end_exact_one,success,217.842,47.367,2026-11-05T05:25:12Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_begin_overlap_many,success,217.842,47.794,2026-11-05T05:26:00Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_both_overlap,success,217.842,47.870,2026-11-05T05:26:48Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_complete_overlap,success,217.842,47.884,2026-11-05T05:27:36Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_end_overlap,success,217.842,47.431,2026-11-05T05:28:23Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_end_overlap_many,success,217.842,47.427,2026-11-05T05:29:11Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_exact_many,success,217.842,47.535,2026-11-05T05:29:58Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_exact_one,success,217.842,47.508,2026-11-05T05:30:46Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_no_overlap,success,217.842,47.419,2026-11-05T05:31:33Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_no_overlap_many,success,217.842,47.300,2026-11-05T05:32:21Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_nothing,success,217.842,47.345,2026-11-05T05:33:08Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_one_with_extra_1,success,217.842,50.904,2026-11-05T05:33:59Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_one_with_extra_2,success,217.842,47.831,2026-11-05T05:34:47Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_range_with_extra,success,217.842,48.893,2026-11-05T05:35:36Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_smallest_exact_interval_boundary,success,217.842,49.656,2026-11-05T05:36:25Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_smallest_many_1,success,217.842,47.570,2026-11-05T05:37:13Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_smallest_many_2,success,217.842,50.804,2026-11-05T05:38:04Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_smallest_one,success,217.842,48.049,2026-11-05T05:38:52Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::remove_u16_max,success,217.842,47.522,2026-11-05T05:39:39Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::select,success,217.842,47.761,2026-11-05T05:40:27Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::symmetric_difference_0,success,217.842,47.789,2026-11-05T05:41:15Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::symmetric_difference_1,success,217.842,47.553,2026-11-05T05:42:03Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::symmetric_difference_2,success,217.842,47.600,2026-11-05T05:42:50Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::union_1,success,217.842,47.335,2026-11-05T05:43:37Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::store::interval_store::tests::union_array,success,217.842,47.296,2026-11-05T05:44:25Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::util::test::test_convert_range_to_inclusive,success,217.842,50.494,2026-11-05T05:45:15Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::util::test::test_join_u32,success,217.842,47.849,2026-11-05T05:46:03Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap::util::test::test_split_u32,success,217.842,47.548,2026-11-05T05:46:51Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap_and_array,success,217.842,131.969,2026-11-05T05:49:03Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap_and_array_to_array,success,217.842,120.438,2026-11-05T05:51:03Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap_and_array_to_bitmap,success,217.842,149.803,2026-11-05T05:53:33Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap_array,success,217.842,78.512,2026-11-05T05:54:51Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap_array_not,success,217.842,78.041,2026-11-05T05:56:09Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap_not,success,217.842,112.193,2026-11-05T05:58:02Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmap_to_array,timeout,217.842,150.009,2026-11-05T06:00:32Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmap_to_bitmap,timeout,217.842,150.009,2026-11-05T06:03:02Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmaps,timeout,217.842,150.013,2026-11-05T06:05:32Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,bitmaps_iterator,success,217.842,97.154,2026-11-05T06:07:09Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,bitmaps_not,timeout,217.842,150.013,2026-11-05T06:09:39Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,combine_with_nth,success,217.842,47.549,2026-11-05T06:10:27Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,count,timeout,217.842,150.020,2026-11-05T06:12:57Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,cross_bucket_boundary,success,217.842,47.356,2026-11-05T06:13:44Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,deserialize_array_duplicate_value,success,217.842,47.352,2026-11-05T06:14:31Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,deserialize_array_unsorted_values,success,217.842,47.354,2026-11-05T06:15:19Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,deserialize_bitset_incorrect_cardinality,success,217.842,47.745,2026-11-05T06:16:06Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,deserialize_duplicate_keys,success,217.842,47.384,2026-11-05T06:16:54Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,deserialize_empty_run_container,success,217.842,47.314,2026-11-05T06:17:41Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,deserialize_huge_container_count,success,217.842,47.353,2026-11-05T06:18:29Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,deserialize_negative_container_count,success,217.842,47.306,2026-11-05T06:19:16Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,deserialize_run_container_contiguous_ranges,success,217.842,47.340,2026-11-05T06:20:03Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,deserialize_run_container_overflow,success,217.842,47.408,2026-11-05T06:20:51Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,deserialize_run_container_overlap,success,217.842,47.389,2026-11-05T06:21:38Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,deserialize_unsorted_keys,success,217.842,47.301,2026-11-05T06:22:25Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,empty,success,217.842,47.362,2026-11-05T06:23:13Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,empty_range,timeout,217.842,150.014,2026-11-05T06:25:43Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,empty_range_always_contained,success,217.842,47.306,2026-11-05T06:26:30Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,empty_range_cardinality_is_zero,success,217.842,47.286,2026-11-05T06:27:17Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,empty_treemap_not_contained,success,217.842,47.309,2026-11-05T06:28:05Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,fold,timeout,217.842,150.018,2026-11-05T06:30:35Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,from_iter,success,217.842,47.414,2026-11-05T06:31:22Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,huge_nth,success,217.842,47.299,2026-11-05T06:32:09Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,insert_range,timeout,217.842,150.032,2026-11-05T06:34:40Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,interleaved,success,217.842,80.412,2026-11-05T06:36:00Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,interleaved_array,success,217.842,47.272,2026-11-05T06:36:47Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,interleaved_bitmap,success,217.842,55.308,2026-11-05T06:37:43Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,interleaved_iter,timeout,217.842,150.020,2026-11-05T06:40:13Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,into_invalid_range,timeout,217.842,150.016,2026-11-05T06:42:43Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,into_invalid_range_equal_excluded,timeout,217.842,150.013,2026-11-05T06:45:13Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,into_iter_back_empty,success,217.842,47.395,2026-11-05T06:46:00Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,into_iter_basic,success,217.842,47.395,2026-11-05T06:46:47Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,into_iter_empty,success,217.842,47.366,2026-11-05T06:47:35Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,into_iter_multi_container,success,217.842,47.492,2026-11-05T06:48:22Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,into_iter_next_range_back_basic,success,217.842,47.337,2026-11-05T06:49:10Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,into_iter_next_range_basic,success,217.842,47.301,2026-11-05T06:49:57Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,invalid_range,success,217.842,131.325,2026-11-05T06:52:08Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,invalid_range_equal_excluded,timeout,217.842,150.014,2026-11-05T06:54:38Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,iter,timeout,217.842,150.016,2026-11-05T06:57:08Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,iter::array,success,217.842,47.453,2026-11-05T06:57:56Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter::arrays,success,217.842,65.795,2026-11-05T06:59:02Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter::bitmap,timeout,217.842,150.011,2026-11-05T07:01:32Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,iter::bitmaps,timeout,217.842,150.010,2026-11-05T07:04:02Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,iter::count,timeout,217.842,150.018,2026-11-05T07:06:32Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,iter::fold,timeout,217.842,150.014,2026-11-05T07:09:02Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,iter::from_iter,success,217.842,47.270,2026-11-05T07:09:49Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter::huge_nth,success,217.842,47.316,2026-11-05T07:10:36Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter::interleaved_array,success,217.842,47.409,2026-11-05T07:11:24Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter::interleaved_bitmap,success,217.842,55.282,2026-11-05T07:12:19Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter::interleaved_iter,timeout,217.842,150.021,2026-11-05T07:14:49Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,iter::iter,timeout,217.842,150.016,2026-11-05T07:17:19Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,iter::nth,timeout,217.842,150.013,2026-11-05T07:19:49Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,iter::outside_in_iterator,success,217.842,47.363,2026-11-05T07:20:37Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter::range,success,217.842,54.922,2026-11-05T07:21:32Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter::rev_array,success,217.842,47.510,2026-11-05T07:22:19Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter::rev_bitmap,success,217.842,113.423,2026-11-05T07:24:13Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter::rev_iter,timeout,217.842,150.020,2026-11-05T07:26:43Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,iter::run_nth_back_max,success,217.842,66.678,2026-11-05T07:27:49Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter::run_nth_max,success,217.842,47.437,2026-11-05T07:28:37Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter_advance_past_end,success,217.842,47.371,2026-11-05T07:29:24Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter_back_basic,success,217.842,47.348,2026-11-05T07:30:11Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter_back_empty,success,217.842,47.390,2026-11-05T07:30:59Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter_basic,success,217.842,47.390,2026-11-05T07:31:46Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter_empty,success,217.842,47.430,2026-11-05T07:32:34Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter_multi_container,success,217.842,47.612,2026-11-05T07:33:21Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,iter_multi_container_multi_bitmap,success,217.842,47.556,2026-11-05T07:34:09Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,multi_bucket_gap_not_contained,timeout,217.842,150.032,2026-11-05T07:36:39Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,next_range_advance_back_to_integration,success,217.842,47.418,2026-11-05T07:37:26Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_advance_to_integration,success,217.842,47.441,2026-11-05T07:38:14Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_back_basic,success,217.842,47.460,2026-11-05T07:39:01Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_back_bitmap_store_forced,success,217.842,56.379,2026-11-05T07:39:58Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_back_partial_consumption,success,217.842,47.508,2026-11-05T07:40:45Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_basic,success,217.842,47.541,2026-11-05T07:41:33Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_bitmap_store_alternating_pattern,success,217.842,54.280,2026-11-05T07:42:27Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_bitmap_store_dense_with_gaps,success,217.842,55.056,2026-11-05T07:43:22Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_bitmap_store_forced,success,217.842,56.132,2026-11-05T07:44:18Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_bitmap_store_mixed_operations,success,217.842,55.124,2026-11-05T07:45:13Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_bitmap_store_partial_consumption,success,217.842,54.056,2026-11-05T07:46:07Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_bitmap_store_single_elements,success,217.842,53.150,2026-11-05T07:47:01Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_bitmap_store_with_small_clusters,success,217.842,54.285,2026-11-05T07:47:55Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_dense_bitmap,success,217.842,47.660,2026-11-05T07:48:43Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_empty_bitmap,success,217.842,47.349,2026-11-05T07:49:30Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_exhausted_iterator,success,217.842,47.321,2026-11-05T07:50:17Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_long_consecutive,success,217.842,47.259,2026-11-05T07:51:05Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_mixed_operations,success,217.842,47.236,2026-11-05T07:51:52Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_multi_container,success,217.842,47.236,2026-11-05T07:52:39Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_multi_container_range,success,217.842,47.191,2026-11-05T07:53:26Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_overlapping_calls,success,217.842,47.312,2026-11-05T07:54:14Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_partial_consumption,success,217.842,47.358,2026-11-05T07:55:01Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_single_element_bitmap,success,217.842,47.324,2026-11-05T07:55:48Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_single_elements,success,217.842,47.302,2026-11-05T07:56:36Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_u32_max_boundary,success,217.842,47.346,2026-11-05T07:57:23Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,next_range_very_sparse,success,217.842,47.296,2026-11-05T07:58:10Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,no_difference,success,217.842,47.393,2026-11-05T07:58:58Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,no_intersection,success,217.842,47.376,2026-11-05T07:59:45Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,no_symmetric_difference,success,217.842,47.485,2026-11-05T08:00:32Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,nth,timeout,217.842,150.013,2026-11-05T08:03:03Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,optimize_array,success,217.842,55.446,2026-11-05T08:03:58Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,optimize_bitmap,success,217.842,53.687,2026-11-05T08:04:52Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,optimize_prunes_empty_bitmaps_and_returns_true,success,217.842,47.271,2026-11-05T08:05:39Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,optimize_returns_false_when_nothing_changes,success,217.842,47.332,2026-11-05T08:06:26Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,optimize_run,success,217.842,48.747,2026-11-05T08:07:15Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,optimize_works_for_single_shard,success,217.842,63.733,2026-11-05T08:08:19Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,or,success,217.842,47.538,2026-11-05T08:09:06Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,outside_in_iterator,success,217.842,47.342,2026-11-05T08:09:54Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,proptest_cross_bucket,timeout,217.842,150.032,2026-11-05T08:12:24Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,proptest_range,timeout,217.842,150.012,2026-11-05T08:14:54Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,proptest_range_boundaries,success,217.842,66.795,2026-11-05T08:16:01Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,proptest_rank,timeout,217.842,150.013,2026-11-05T08:18:31Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,proptest_select,timeout,217.842,150.019,2026-11-05T08:21:01Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,range,success,217.842,64.957,2026-11-05T08:22:06Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,range_array,success,217.842,47.433,2026-11-05T08:22:53Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,range_back_after_next,success,217.842,47.233,2026-11-05T08:23:40Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,range_bitmap,success,217.842,130.579,2026-11-05T08:25:51Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,range_partial_consume,success,217.842,47.430,2026-11-05T08:26:38Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,range_with_gap,success,217.842,47.592,2026-11-05T08:27:26Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,range_with_initial_next,success,217.842,47.625,2026-11-05T08:28:14Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,rank,success,217.842,48.247,2026-11-05T08:29:02Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,rank_array,success,217.842,48.444,2026-11-05T08:29:50Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,rank_bitmap,timeout,217.842,150.014,2026-11-05T08:32:20Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,rank_roaring_bitmaps,timeout,217.842,150.011,2026-11-05T08:34:50Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,remove_range,timeout,217.842,150.010,2026-11-05T08:37:20Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,remove_range_array,success,217.842,56.843,2026-11-05T08:38:17Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,remove_range_bitmap,success,217.842,76.784,2026-11-05T08:39:34Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,remove_run_compression,success,217.842,53.719,2026-11-05T08:40:28Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,rev,success,217.842,71.305,2026-11-05T08:41:39Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,rev_array,success,217.842,47.589,2026-11-05T08:42:27Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,rev_bitmap,success,217.842,114.282,2026-11-05T08:44:21Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,rev_iter,timeout,217.842,150.013,2026-11-05T08:46:51Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,run,success,217.842,57.079,2026-11-05T08:47:48Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,run_nth_back_max,success,217.842,67.094,2026-11-05T08:48:55Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,run_nth_max,success,217.842,47.418,2026-11-05T08:49:43Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,runs,success,217.842,81.481,2026-11-05T08:51:04Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,select,success,217.842,52.765,2026-11-05T08:51:57Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,select_array,success,217.842,49.680,2026-11-05T08:52:47Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,select_bitmap,success,217.842,71.888,2026-11-05T08:53:58Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,select_empty,success,217.842,47.517,2026-11-05T08:54:46Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,select_multiple_bitmap,timeout,217.842,150.010,2026-11-05T08:57:16Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,single_bucket_contained,success,217.842,47.599,2026-11-05T08:58:04Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,smoke,success,217.842,47.461,2026-11-05T08:58:51Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,sub,success,217.842,61.411,2026-11-05T08:59:53Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,subtraction_preserves_zero_element,success,217.842,47.443,2026-11-05T09:00:40Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_array,success,217.842,50.786,2026-11-05T09:01:31Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_array_boundary,success,217.842,54.484,2026-11-05T09:02:25Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_arrays,success,217.842,57.767,2026-11-05T09:03:23Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_bitmap,success,217.842,55.031,2026-11-05T09:04:18Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_bitmap_boundary,success,217.842,54.764,2026-11-05T09:05:13Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_bitmap_high16bits,timeout,217.842,150.021,2026-11-05T09:07:43Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,test_bitmaps,success,217.842,63.528,2026-11-05T09:08:46Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_deserialize_with_runs_from_provided_data,timeout,217.842,150.013,2026-11-05T09:11:16Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,test_deserialize_without_runs_from_provided_data,timeout,217.842,150.012,2026-11-05T09:13:47Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,test_empty,success,217.842,47.518,2026-11-05T09:14:34Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_max,success,217.842,47.500,2026-11-05T09:15:22Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_min,success,217.842,47.481,2026-11-05T09:16:09Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_mixed,success,217.842,59.000,2026-11-05T09:17:08Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_one,success,217.842,47.553,2026-11-05T09:17:56Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_runs,success,217.842,57.745,2026-11-05T09:18:53Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_serialize_into_provided_data,success,217.842,138.586,2026-11-05T09:21:12Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_serialize_with_runs_into_provided_data,success,217.842,141.302,2026-11-05T09:23:33Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,test_strange,success,217.842,54.411,2026-11-05T09:24:28Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,tmp,success,217.842,47.548,2026-11-05T09:25:15Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,to_array,success,217.842,81.127,2026-11-05T09:26:36Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,to_bitmap,success,217.842,66.109,2026-11-05T09:27:43Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,to_missing_container,success,217.842,47.534,2026-11-05T09:28:30Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,to_next_bitmap,success,217.842,47.463,2026-11-05T09:29:18Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,treemap::inherent::test::optimize_preserves_values,timeout,217.842,150.013,2026-11-05T09:31:48Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,treemap::inherent::test::optimize_prunes_empty_partitions_from_bitmaps,timeout,217.842,150.012,2026-11-05T09:34:18Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,treemap::ops::test::all_difference_give_the_same_result,timeout,217.842,150.014,2026-11-05T09:36:48Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,treemap::ops::test::all_intersection_give_the_same_result,timeout,217.842,150.014,2026-11-05T09:39:18Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,treemap::ops::test::all_symmetric_difference_give_the_same_result,timeout,217.842,150.011,2026-11-05T09:41:48Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,treemap::ops::test::all_union_give_the_same_result,timeout,217.842,150.011,2026-11-05T09:44:18Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,treemap::ops::test::difference_len_eq_len_of_materialized_difference,timeout,217.842,150.011,2026-11-05T09:46:48Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,treemap::ops::test::intersection_len_eq_len_of_materialized_intersection,timeout,217.842,150.018,2026-11-05T09:49:18Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,treemap::ops::test::symmetric_difference_len_eq_len_of_materialized_symmetric_difference,timeout,217.842,150.016,2026-11-05T09:51:48Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,treemap::ops::test::union_len_eq_len_of_materialized_union,timeout,217.842,150.019,2026-11-05T09:54:18Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,treemap::serialization::test::test_serialization,timeout,217.842,150.018,2026-11-05T09:56:48Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,treemap::util::test::test_convert_range_to_inclusive,success,217.842,51.290,2026-11-05T09:57:39Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,treemap::util::test::test_join_u64,success,217.842,51.196,2026-11-05T09:58:30Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,treemap::util::test::test_split_u64,success,217.842,51.245,2026-11-05T09:59:22Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,u32_max,success,217.842,63.951,2026-11-05T10:00:26Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,u64_max_boundary,success,217.842,51.174,2026-11-05T10:01:17Z,50232835.0,,
+experimental-bsan,roaring-0.11.5,unbounded_range,timeout,217.842,150.034,2026-11-05T10:03:47Z,50232835.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,roaring-0.11.5,xor,success,217.842,51.728,2026-11-05T10:04:39Z,50232835.0,,

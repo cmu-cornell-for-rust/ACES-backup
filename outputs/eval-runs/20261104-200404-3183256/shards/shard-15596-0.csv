@@ -1,0 +1,5 @@
+experimental-bsan,dnsclient-0.1.19,r#async::tests::test_query_a,test_failed,98.201,12.575,2026-11-05T07:25:37Z,50259747.0,gc,"test r#async::tests::test_query_a ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,dnsclient-0.1.19,r#async::tests::test_query_addrs,test_failed,98.201,18.589,2026-11-05T07:25:56Z,50259747.0,gc,"test r#async::tests::test_query_addrs ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,dnsclient-0.1.19,r#async::tests::test_query_txt,test_failed,98.201,18.585,2026-11-05T07:26:14Z,50259747.0,gc,"test r#async::tests::test_query_txt ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,dnsclient-0.1.19,sync::test_query_a,success,98.201,1.743,2026-11-05T07:26:16Z,50259747.0,,
+experimental-bsan,dnsclient-0.1.19,sync::test_query_ptr,success,98.201,1.753,2026-11-05T07:26:18Z,50259747.0,,

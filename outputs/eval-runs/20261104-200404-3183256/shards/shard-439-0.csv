@@ -1,0 +1,362 @@
+experimental-bsan,taskchampion-3.1.0,aws_tls,test_failed,1263.293,3.536,2026-11-05T01:43:10Z,50232924.0,panic,"thread 'aws_tls' (100151) panicked at tests/tls_utils.rs:60:5: Expected something to open a filename containing /ssl/ to load native certs, since `tls-native-roots` is enabled."
+experimental-bsan,taskchampion-3.1.0,cross_sync,success,1263.293,15.890,2026-11-05T01:43:26Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,depmap::test::dependencies,success,1263.293,11.318,2026-11-05T01:43:37Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,depmap::test::dependents,success,1263.293,11.256,2026-11-05T01:43:48Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,gcp_tls,test_failed,1263.293,5.967,2026-11-05T01:43:54Z,50232924.0,panic,"thread 'gcp_tls' (5756) panicked at tests/tls_utils.rs:60:5: Expected something to open a filename containing /ssl/ to load native certs, since `tls-native-roots` is enabled."
+experimental-bsan,taskchampion-3.1.0,multi_replica_sync,timeout,1263.293,150.022,2026-11-05T01:46:24Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,operation::test::op_order,success,1263.293,11.554,2026-11-05T01:46:36Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,operation::test::test_json_create,success,1263.293,11.269,2026-11-05T01:46:47Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,operation::test::test_json_delete,success,1263.293,11.259,2026-11-05T01:46:58Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,operation::test::test_json_update,success,1263.293,11.346,2026-11-05T01:47:10Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,operation::test::test_json_update_none,success,1263.293,11.327,2026-11-05T01:47:21Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::all_tasks,success,1263.293,11.361,2026-11-05T01:47:32Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::commit_operations,success,1263.293,11.426,2026-11-05T01:47:44Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::commit_reversed_operations,success,1263.293,11.379,2026-11-05T01:47:55Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::delete_task,success,1263.293,11.332,2026-11-05T01:48:07Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::dependency_map,success,1263.293,11.561,2026-11-05T01:48:18Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::expire,success,1263.293,11.535,2026-11-05T01:48:30Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::get_and_modify,success,1263.293,11.424,2026-11-05T01:48:41Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::get_does_not_exist,success,1263.293,11.306,2026-11-05T01:48:52Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::get_task_data_and_operations,success,1263.293,11.356,2026-11-05T01:49:04Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::modify_task,success,1263.293,11.521,2026-11-05T01:49:15Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::new_pending_adds_to_working_set,success,1263.293,11.350,2026-11-05T01:49:27Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::new_recurring_adds_to_working_set,success,1263.293,11.315,2026-11-05T01:49:38Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::new_task,success,1263.293,11.351,2026-11-05T01:49:49Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::pending_tasks,success,1263.293,11.399,2026-11-05T01:50:01Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,replica::tests::rebuild_working_set_includes_recurring,success,1263.293,11.384,2026-11-05T01:50:12Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::aws::tests::compare_and_swap_appears,success,1263.293,11.263,2026-11-05T01:50:24Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::aws::tests::compare_and_swap_changes,success,1263.293,11.260,2026-11-05T01:50:35Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::aws::tests::compare_and_swap_create,success,1263.293,11.330,2026-11-05T01:50:46Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::aws::tests::compare_and_swap_disappears,success,1263.293,11.312,2026-11-05T01:50:57Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::aws::tests::compare_and_swap_expected_no_file,success,1263.293,11.298,2026-11-05T01:51:09Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::aws::tests::compare_and_swap_matches,success,1263.293,11.285,2026-11-05T01:51:20Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::aws::tests::compare_and_swap_old_value,success,1263.293,11.292,2026-11-05T01:51:31Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::aws::tests::del,success,1263.293,11.324,2026-11-05T01:51:43Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::aws::tests::del_missing,success,1263.293,11.279,2026-11-05T01:51:54Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::aws::tests::get_missing,success,1263.293,11.302,2026-11-05T01:52:05Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::aws::tests::list,success,1263.293,11.287,2026-11-05T01:52:17Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::aws::tests::put_and_get,success,1263.293,11.316,2026-11-05T01:52:28Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::gcp::tests::compare_and_swap_appears,success,1263.293,11.297,2026-11-05T01:52:39Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::gcp::tests::compare_and_swap_changes,success,1263.293,11.288,2026-11-05T01:52:51Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::gcp::tests::compare_and_swap_create,success,1263.293,11.276,2026-11-05T01:53:02Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::gcp::tests::compare_and_swap_disappears,success,1263.293,11.277,2026-11-05T01:53:13Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::gcp::tests::compare_and_swap_expected_no_file,success,1263.293,11.275,2026-11-05T01:53:24Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::gcp::tests::compare_and_swap_matches,success,1263.293,11.251,2026-11-05T01:53:36Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::gcp::tests::compare_and_swap_old_value,success,1263.293,11.284,2026-11-05T01:53:47Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::gcp::tests::del,success,1263.293,11.298,2026-11-05T01:53:58Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::gcp::tests::del_missing,success,1263.293,11.299,2026-11-05T01:54:10Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::gcp::tests::get_missing,success,1263.293,11.265,2026-11-05T01:54:21Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::gcp::tests::list,success,1263.293,11.306,2026-11-05T01:54:32Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::gcp::tests::put_and_get,success,1263.293,11.299,2026-11-05T01:54:43Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::add_snapshot,timeout,1263.293,150.021,2026-11-05T01:57:13Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::add_version_empty,timeout,1263.293,150.021,2026-11-05T01:59:44Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::add_version_good,timeout,1263.293,150.021,2026-11-05T02:02:14Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::add_version_not_latest,timeout,1263.293,150.022,2026-11-05T02:04:44Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::add_version_not_latest_race,timeout,1263.293,150.022,2026-11-05T02:07:14Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::add_version_unknown,timeout,1263.293,150.025,2026-11-05T02:09:44Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::cleanup_children_of_latest,timeout,1263.293,150.024,2026-11-05T02:12:14Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::cleanup_cycle,timeout,1263.293,150.025,2026-11-05T02:14:44Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::cleanup_empty,timeout,1263.293,150.024,2026-11-05T02:17:14Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::cleanup_extra_branches,timeout,1263.293,150.023,2026-11-05T02:19:44Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::cleanup_extra_snapshots,timeout,1263.293,150.022,2026-11-05T02:22:14Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::cleanup_linear,timeout,1263.293,150.023,2026-11-05T02:24:44Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::cleanup_old_versions_newer_than_snapshot,timeout,1263.293,150.022,2026-11-05T02:27:14Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::cleanup_old_versions_no_snapshot,timeout,1263.293,150.023,2026-11-05T02:29:44Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::cleanup_old_versions_with_snapshot,timeout,1263.293,150.024,2026-11-05T02:32:14Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_child_version_empty,timeout,1263.293,150.025,2026-11-05T02:34:44Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_child_version_multiple,timeout,1263.293,150.024,2026-11-05T02:37:14Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_child_version_single,timeout,1263.293,150.024,2026-11-05T02:39:44Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_child_version_single_invalid,timeout,1263.293,150.023,2026-11-05T02:42:14Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_child_versions_empty,timeout,1263.293,150.022,2026-11-05T02:44:44Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_child_versions_multiple,timeout,1263.293,150.023,2026-11-05T02:47:15Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_child_versions_single,timeout,1263.293,150.022,2026-11-05T02:49:45Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_latest_empty,timeout,1263.293,150.022,2026-11-05T02:52:15Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_latest_exists,timeout,1263.293,150.021,2026-11-05T02:54:45Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_latest_invalid,timeout,1263.293,150.023,2026-11-05T02:57:15Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_salt_create,success,1263.293,11.422,2026-11-05T02:57:26Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_salt_existing,success,1263.293,11.412,2026-11-05T02:57:38Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_snapshot_missing,timeout,1263.293,150.021,2026-11-05T03:00:08Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::get_snapshot_present,timeout,1263.293,150.021,2026-11-05T03:02:38Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::parse_snapshot_name_bad_prefix,success,1263.293,11.283,2026-11-05T03:02:49Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::parse_snapshot_name_invalid,success,1263.293,11.296,2026-11-05T03:03:00Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::parse_snapshot_name_too_long,success,1263.293,11.277,2026-11-05T03:03:12Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::parse_snapshot_name_too_short,success,1263.293,11.301,2026-11-05T03:03:23Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::parse_version_name_bad_prefix,success,1263.293,11.338,2026-11-05T03:03:34Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::parse_version_name_bad_separator,success,1263.293,11.355,2026-11-05T03:03:46Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::parse_version_name_too_long,success,1263.293,11.336,2026-11-05T03:03:57Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::parse_version_name_too_short,success,1263.293,11.339,2026-11-05T03:04:08Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::snapshot_name_round_trip,success,1263.293,11.281,2026-11-05T03:04:20Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::version_name,success,1263.293,11.285,2026-11-05T03:04:31Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::cloud::server::tests::version_name_round_trip,success,1263.293,11.300,2026-11-05T03:04:42Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::envelope_bad_version,success,1263.293,11.360,2026-11-05T03:04:54Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::envelope_round_trip,success,1263.293,11.364,2026-11-05T03:05:05Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::envelope_too_short,success,1263.293,11.360,2026-11-05T03:05:16Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::externally_valid::bad_app_id,timeout,1263.293,150.018,2026-11-05T03:07:46Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::externally_valid::bad_salt,timeout,1263.293,150.018,2026-11-05T03:10:16Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::externally_valid::bad_secret,timeout,1263.293,150.020,2026-11-05T03:12:46Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::externally_valid::bad_version,timeout,1263.293,150.018,2026-11-05T03:15:16Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::externally_valid::bad_version_id,timeout,1263.293,150.018,2026-11-05T03:17:46Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::externally_valid::good,timeout,1263.293,150.018,2026-11-05T03:20:17Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::round_trip,timeout,1263.293,150.018,2026-11-05T03:22:47Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::round_trip_bad_key,timeout,1263.293,150.019,2026-11-05T03:25:17Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::round_trip_bad_salt,timeout,1263.293,150.019,2026-11-05T03:27:47Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::encryption::test::round_trip_bad_version,timeout,1263.293,150.020,2026-11-05T03:30:17Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_add_nonzero_base_forbidden,timeout,1263.293,150.020,2026-11-05T03:32:47Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_add_version_conflict_with_remote,timeout,1263.293,150.020,2026-11-05T03:35:17Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_add_zero_base,timeout,1263.293,150.017,2026-11-05T03:37:47Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_cleanup_removes_version_files,timeout,1263.293,150.019,2026-11-05T03:40:17Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_cleanup_retains_recent_version_files,timeout,1263.293,150.018,2026-11-05T03:42:47Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_get_child_version_corrupted_file,timeout,1263.293,150.020,2026-11-05T03:45:17Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_get_child_version_from_remote,timeout,1263.293,150.021,2026-11-05T03:47:47Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_get_child_version_local,timeout,1263.293,150.021,2026-11-05T03:50:17Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_init_creates_repo_and_meta,timeout,1263.293,150.019,2026-11-05T03:52:47Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_init_idempotent,timeout,1263.293,150.019,2026-11-05T03:55:17Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_local_only_with_remote_ignores_remote,timeout,1263.293,150.018,2026-11-05T03:57:47Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_push_and_pull,timeout,1263.293,150.019,2026-11-05T04:00:17Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_read_write_meta_roundtrip,timeout,1263.293,150.019,2026-11-05T04:02:47Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_snapshot_empty,timeout,1263.293,150.019,2026-11-05T04:05:17Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_snapshot_from_remote,timeout,1263.293,150.021,2026-11-05T04:07:47Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_snapshot_overwrite,timeout,1263.293,150.018,2026-11-05T04:10:17Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_snapshot_push_rejected_rollback,timeout,1263.293,150.019,2026-11-05T04:12:47Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::gitsync::test::test_snapshot_roundtrip,timeout,1263.293,150.019,2026-11-05T04:15:17Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::http::tests::test_client_proxy_configurations,timeout,1263.293,150.020,2026-11-05T04:17:48Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::local::test::test_add_nonzero_base,success,1263.293,11.403,2026-11-05T04:17:59Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::local::test::test_add_nonzero_base_forbidden,success,1263.293,11.437,2026-11-05T04:18:10Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::local::test::test_add_zero_base,success,1263.293,11.397,2026-11-05T04:18:22Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::local::test::test_empty,success,1263.293,11.387,2026-11-05T04:18:33Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::op::proptest_test::test_from_op_create,success,1263.293,11.290,2026-11-05T04:18:44Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::op::proptest_test::test_from_op_delete,success,1263.293,11.326,2026-11-05T04:18:56Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::op::proptest_test::test_from_op_undo_point,success,1263.293,11.302,2026-11-05T04:19:07Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::op::proptest_test::test_from_op_update,success,1263.293,11.313,2026-11-05T04:19:18Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::op::proptest_test::transform_invariant_holds,timeout,1263.293,150.023,2026-11-05T04:21:49Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::op::test::test_json_create,success,1263.293,11.319,2026-11-05T04:22:00Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::op::test::test_json_delete,success,1263.293,11.317,2026-11-05T04:22:11Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::op::test::test_json_update,success,1263.293,11.353,2026-11-05T04:22:23Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::op::test::test_json_update_none,success,1263.293,11.366,2026-11-05T04:22:34Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::op::test::test_related_updates_different_props,success,1263.293,11.402,2026-11-05T04:22:46Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::op::test::test_related_updates_same_prop,success,1263.293,11.390,2026-11-05T04:22:57Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::op::test::test_related_updates_same_prop_same_time,success,1263.293,11.390,2026-11-05T04:23:08Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::op::test::test_unrelated_create,success,1263.293,11.370,2026-11-05T04:23:20Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,server::sync::test::add_snapshot,timeout,1263.293,150.023,2026-11-05T04:25:50Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::sync::test::add_snapshot_error,timeout,1263.293,150.020,2026-11-05T04:28:20Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::sync::test::add_version,timeout,1263.293,150.021,2026-11-05T04:30:50Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::sync::test::add_version_conflict,timeout,1263.293,150.020,2026-11-05T04:33:20Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::sync::test::add_version_error,timeout,1263.293,150.037,2026-11-05T04:35:50Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::sync::test::get_child_version,timeout,1263.293,150.022,2026-11-05T04:38:20Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::sync::test::get_child_version_error,timeout,1263.293,150.020,2026-11-05T04:40:50Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::sync::test::get_child_version_not_found,timeout,1263.293,150.020,2026-11-05T04:43:20Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::sync::test::get_snapshot_error,timeout,1263.293,150.020,2026-11-05T04:45:50Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::sync::test::get_snapshot_found,timeout,1263.293,150.021,2026-11-05T04:48:20Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::sync::test::get_snapshot_not_found,timeout,1263.293,150.021,2026-11-05T04:50:50Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,server::sync::test::sync_server_url_construction,timeout,1263.293,150.024,2026-11-05T04:53:20Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::add_to_working_set,success,1263.293,11.514,2026-11-05T04:53:32Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::all_tasks_and_uuids,success,1263.293,11.375,2026-11-05T04:53:43Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::all_tasks_empty,success,1263.293,11.334,2026-11-05T04:53:55Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::base_version_default,success,1263.293,11.287,2026-11-05T04:54:06Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::base_version_setting,success,1263.293,11.304,2026-11-05T04:54:17Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::clear_working_set,success,1263.293,11.297,2026-11-05T04:54:28Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::create,success,1263.293,11.296,2026-11-05T04:54:40Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::create_exists,success,1263.293,11.319,2026-11-05T04:54:51Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::delete_task_exists,success,1263.293,11.310,2026-11-05T04:55:02Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::delete_task_missing,success,1263.293,11.269,2026-11-05T04:55:14Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::drop_transaction,success,1263.293,11.274,2026-11-05T04:55:25Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::get_missing,success,1263.293,11.274,2026-11-05T04:55:36Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::get_working_set_empty,success,1263.293,11.276,2026-11-05T04:55:48Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::pending_tasks,success,1263.293,11.429,2026-11-05T04:55:59Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::pending_tasks_empty,success,1263.293,11.432,2026-11-05T04:56:10Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::remove_operations,success,1263.293,11.288,2026-11-05T04:56:22Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::set_task,success,1263.293,11.321,2026-11-05T04:56:33Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::set_working_set_item,success,1263.293,11.308,2026-11-05T04:56:44Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::sync_complete,success,1263.293,11.301,2026-11-05T04:56:56Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::task_operations,success,1263.293,11.301,2026-11-05T04:57:07Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::inmemory::test::unsynced_operations,success,1263.293,11.353,2026-11-05T04:57:18Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::add_to_working_set,success,1263.293,11.418,2026-11-05T04:57:30Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::all_tasks_and_uuids,success,1263.293,11.472,2026-11-05T04:57:41Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::all_tasks_empty,success,1263.293,11.383,2026-11-05T04:57:53Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::base_version_default,success,1263.293,11.374,2026-11-05T04:58:04Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::base_version_setting,success,1263.293,11.363,2026-11-05T04:58:15Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::clear_working_set,success,1263.293,11.442,2026-11-05T04:58:27Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::create,success,1263.293,11.362,2026-11-05T04:58:38Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::create_exists,success,1263.293,11.374,2026-11-05T04:58:50Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::delete_task_exists,success,1263.293,11.403,2026-11-05T04:59:01Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::delete_task_missing,success,1263.293,11.347,2026-11-05T04:59:12Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::drop_transaction,success,1263.293,11.415,2026-11-05T04:59:24Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::get_missing,success,1263.293,11.359,2026-11-05T04:59:35Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::get_working_set_empty,success,1263.293,11.350,2026-11-05T04:59:47Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::pending_tasks,success,1263.293,11.509,2026-11-05T04:59:58Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::pending_tasks_empty,success,1263.293,11.383,2026-11-05T05:00:09Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::remove_operations,success,1263.293,11.595,2026-11-05T05:00:21Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::set_task,success,1263.293,11.434,2026-11-05T05:00:32Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::set_working_set_item,success,1263.293,11.589,2026-11-05T05:00:44Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::sync_complete,success,1263.293,11.560,2026-11-05T05:00:56Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::task_operations,success,1263.293,11.575,2026-11-05T05:01:07Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::test_implicit_rollback,success,1263.293,11.372,2026-11-05T05:01:19Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::test_init_failure,success,1263.293,11.317,2026-11-05T05:01:30Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::send_wrapper::test::unsynced_operations,success,1263.293,11.577,2026-11-05T05:01:42Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::inner::test::test_0_8_0_db,success,1263.293,14.514,2026-11-05T05:01:56Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::inner::test::test_concurrent_access,success,1263.293,11.758,2026-11-05T05:02:08Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::inner::test::test_empty_dir,success,1263.293,11.542,2026-11-05T05:02:19Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::inner::test::test_read_only::case_1_create_non_existent,success,1263.293,11.499,2026-11-05T05:02:31Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::inner::test::test_read_only::case_2_create_exists,success,1263.293,11.501,2026-11-05T05:02:42Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::inner::test::test_read_only::case_3_exists_dont_create,success,1263.293,11.497,2026-11-05T05:02:54Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::schema::test::get_db_version_empty,success,1263.293,11.300,2026-11-05T05:03:05Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::schema::test::get_db_version_no_table,success,1263.293,11.259,2026-11-05T05:03:16Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::schema::test::get_db_version_set,success,1263.293,11.231,2026-11-05T05:03:28Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::schema::test::get_db_version_set_twice,success,1263.293,11.233,2026-11-05T05:03:39Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::schema::test::test_upgrade_to_0_1,success,1263.293,11.280,2026-11-05T05:03:50Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::schema::test::test_upgrade_to_0_2,success,1263.293,11.302,2026-11-05T05:04:02Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::add_to_working_set,success,1263.293,11.651,2026-11-05T05:04:13Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::all_tasks_and_uuids,success,1263.293,11.620,2026-11-05T05:04:25Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::all_tasks_empty,success,1263.293,11.545,2026-11-05T05:04:36Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::base_version_default,success,1263.293,11.500,2026-11-05T05:04:48Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::base_version_setting,success,1263.293,11.555,2026-11-05T05:04:59Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::clear_working_set,success,1263.293,11.681,2026-11-05T05:05:11Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::create,success,1263.293,11.557,2026-11-05T05:05:23Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::create_exists,success,1263.293,11.583,2026-11-05T05:05:34Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::delete_task_exists,success,1263.293,11.576,2026-11-05T05:05:46Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::delete_task_missing,success,1263.293,11.556,2026-11-05T05:05:57Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::drop_transaction,success,1263.293,11.552,2026-11-05T05:06:09Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::get_missing,success,1263.293,11.522,2026-11-05T05:06:21Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::get_working_set_empty,success,1263.293,11.509,2026-11-05T05:06:32Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::pending_tasks,success,1263.293,11.713,2026-11-05T05:06:44Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::pending_tasks_empty,success,1263.293,11.485,2026-11-05T05:06:55Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::remove_operations,success,1263.293,11.855,2026-11-05T05:07:07Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::set_task,success,1263.293,11.545,2026-11-05T05:07:19Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::set_working_set_item,success,1263.293,11.810,2026-11-05T05:07:31Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::sync_complete,success,1263.293,11.787,2026-11-05T05:07:42Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::task_operations,success,1263.293,12.172,2026-11-05T05:07:55Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::test_implicit_rollback,success,1263.293,11.511,2026-11-05T05:08:06Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::test_init_failure,success,1263.293,11.328,2026-11-05T05:08:17Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,storage::sqlite::test::unsynced_operations,success,1263.293,11.883,2026-11-05T05:08:29Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,sync_server_tls,timeout,1263.293,150.022,2026-11-05T05:10:59Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,task::data::test::create,success,1263.293,11.508,2026-11-05T05:11:11Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::data::test::delete,success,1263.293,11.337,2026-11-05T05:11:22Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::data::test::get,success,1263.293,11.328,2026-11-05T05:11:34Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::data::test::get_uuid,success,1263.293,11.357,2026-11-05T05:11:45Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::data::test::has,success,1263.293,11.357,2026-11-05T05:11:56Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::data::test::iter,success,1263.293,11.334,2026-11-05T05:12:08Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::data::test::properties,success,1263.293,11.320,2026-11-05T05:12:19Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::data::test::update_existing_prop,success,1263.293,11.316,2026-11-05T05:12:30Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::data::test::update_new_prop,success,1263.293,11.344,2026-11-05T05:12:42Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::data::test::update_remove_prop,success,1263.293,11.290,2026-11-05T05:12:53Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::status::test::display,success,1263.293,11.288,2026-11-05T05:13:04Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::status::test::from_taskmap,success,1263.293,11.235,2026-11-05T05:13:15Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::status::test::to_taskmap,success,1263.293,11.242,2026-11-05T05:13:27Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_err::case_1_empty,success,1263.293,11.274,2026-11-05T05:13:38Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_err::case_2_colon_infix,success,1263.293,11.253,2026-11-05T05:13:49Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_err::case_3_digits,success,1263.293,11.249,2026-11-05T05:14:01Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_err::case_4_initial_plus,success,1263.293,11.246,2026-11-05T05:14:12Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_err::case_5_initial_dash_prefix,success,1263.293,11.280,2026-11-05T05:14:23Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_err::case_6_initial_dash_single,success,1263.293,11.251,2026-11-05T05:14:34Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_err::case_7_initial_white,success,1263.293,11.219,2026-11-05T05:14:46Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_err::case_8_subsequent_white,success,1263.293,11.232,2026-11-05T05:14:57Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_err::case_9_no_such_synthetic,success,1263.293,11.221,2026-11-05T05:15:08Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_success::case_1_simple_single,success,1263.293,11.198,2026-11-05T05:15:19Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_success::case_2_simple_word,success,1263.293,11.171,2026-11-05T05:15:30Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_success::case_3_colon_prefix,success,1263.293,11.183,2026-11-05T05:15:42Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_success::case_4_glyph_single,success,1263.293,11.189,2026-11-05T05:15:53Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_success::case_5_glyph_prefix,success,1263.293,11.205,2026-11-05T05:16:04Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_success::case_6_letters_and_numbers,success,1263.293,11.198,2026-11-05T05:16:15Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::tag::test::test_tag_try_into_success::case_7_synthetic,success,1263.293,11.202,2026-11-05T05:16:26Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::dependencies_tags,success,1263.293,11.350,2026-11-05T05:16:38Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::set_value_modified,success,1263.293,11.330,2026-11-05T05:16:49Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_add_annotation,success,1263.293,11.309,2026-11-05T05:17:00Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_add_annotation_overwrite,success,1263.293,11.345,2026-11-05T05:17:12Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_add_due,success,1263.293,11.349,2026-11-05T05:17:23Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_add_tags,success,1263.293,11.339,2026-11-05T05:17:34Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_delete,success,1263.293,11.341,2026-11-05T05:17:46Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_dependencies_one,success,1263.293,11.354,2026-11-05T05:17:57Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_dependencies_removed,success,1263.293,11.342,2026-11-05T05:18:09Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_dependencies_two,success,1263.293,11.354,2026-11-05T05:18:20Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_done,success,1263.293,11.342,2026-11-05T05:18:31Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_due_new_task,success,1263.293,11.286,2026-11-05T05:18:43Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_entry_not_set,success,1263.293,11.180,2026-11-05T05:18:54Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_entry_set,success,1263.293,11.200,2026-11-05T05:19:05Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_get_annotations,success,1263.293,11.200,2026-11-05T05:19:16Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_get_due,success,1263.293,11.189,2026-11-05T05:19:27Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_get_invalid_due,success,1263.293,11.197,2026-11-05T05:19:39Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_get_legacy_uda,success,1263.293,11.174,2026-11-05T05:19:50Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_get_priority_default,success,1263.293,11.170,2026-11-05T05:20:01Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_get_priority_new_task,success,1263.293,11.268,2026-11-05T05:20:12Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_get_tags,success,1263.293,11.201,2026-11-05T05:20:23Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_get_tags_invalid_tags,success,1263.293,11.223,2026-11-05T05:20:35Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_get_uda,success,1263.293,11.182,2026-11-05T05:20:46Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_get_udas,success,1263.293,11.192,2026-11-05T05:20:57Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_get_user_defined_attribute,success,1263.293,11.199,2026-11-05T05:21:08Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_has_tag,success,1263.293,11.199,2026-11-05T05:21:19Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_is_active_active,success,1263.293,11.202,2026-11-05T05:21:31Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_is_active_inactive,success,1263.293,11.173,2026-11-05T05:21:42Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_is_active_never_started,success,1263.293,11.188,2026-11-05T05:21:53Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_remove_annotation,success,1263.293,11.326,2026-11-05T05:22:04Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_remove_due,success,1263.293,11.324,2026-11-05T05:22:16Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_remove_legacy_uda,success,1263.293,11.304,2026-11-05T05:22:27Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_remove_tags,success,1263.293,11.332,2026-11-05T05:22:38Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_remove_uda,success,1263.293,11.321,2026-11-05T05:22:50Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_remove_uda_invalid,success,1263.293,11.275,2026-11-05T05:23:01Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_remove_user_defined_attribute,success,1263.293,11.303,2026-11-05T05:23:12Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_set_get_priority,success,1263.293,11.327,2026-11-05T05:23:24Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_set_get_value,success,1263.293,11.343,2026-11-05T05:23:35Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_set_get_value_none,success,1263.293,11.316,2026-11-05T05:23:46Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_set_legacy_uda,success,1263.293,11.346,2026-11-05T05:23:58Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_set_status_completed,success,1263.293,11.317,2026-11-05T05:24:09Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_set_status_deleted,success,1263.293,11.319,2026-11-05T05:24:20Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_set_status_pending,success,1263.293,11.378,2026-11-05T05:24:32Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_set_status_recurring,success,1263.293,11.362,2026-11-05T05:24:43Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_set_uda,success,1263.293,11.365,2026-11-05T05:24:54Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_set_uda_invalid,success,1263.293,11.270,2026-11-05T05:25:06Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_set_user_defined_attribute,success,1263.293,11.335,2026-11-05T05:25:17Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_start,success,1263.293,11.302,2026-11-05T05:25:28Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_stop,success,1263.293,11.318,2026-11-05T05:25:40Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_wait_in_future,success,1263.293,11.192,2026-11-05T05:25:51Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_wait_in_past,success,1263.293,11.192,2026-11-05T05:26:02Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,task::task::test::test_wait_not_set,success,1263.293,11.173,2026-11-05T05:26:13Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::apply_operations_create,success,1263.293,11.256,2026-11-05T05:26:25Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::apply_operations_create_delete,success,1263.293,11.244,2026-11-05T05:26:36Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::apply_operations_create_exists,success,1263.293,11.255,2026-11-05T05:26:47Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::apply_operations_create_exists_update,success,1263.293,11.262,2026-11-05T05:26:58Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::apply_operations_create_update,success,1263.293,11.266,2026-11-05T05:27:10Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::apply_operations_create_update_delete_prop,success,1263.293,11.270,2026-11-05T05:27:21Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::apply_operations_delete_not_present,success,1263.293,11.256,2026-11-05T05:27:32Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::apply_operations_delete_then_update,success,1263.293,11.305,2026-11-05T05:27:43Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::apply_operations_several_tasks,success,1263.293,11.259,2026-11-05T05:27:55Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::apply_operations_update_does_not_exist,success,1263.293,11.270,2026-11-05T05:28:06Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::test_apply_create,success,1263.293,11.249,2026-11-05T05:28:17Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::test_apply_create_delete,success,1263.293,11.273,2026-11-05T05:28:29Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::test_apply_create_exists,success,1263.293,11.283,2026-11-05T05:28:40Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::test_apply_create_update,success,1263.293,11.242,2026-11-05T05:28:51Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::test_apply_create_update_delete_prop,success,1263.293,11.258,2026-11-05T05:29:02Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::test_apply_delete_not_present,success,1263.293,11.264,2026-11-05T05:29:14Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::apply::tests::test_apply_update_does_not_exist,success,1263.293,11.254,2026-11-05T05:29:25Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::snapshot::test::test_round_trip,success,1263.293,12.373,2026-11-05T05:29:37Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::snapshot::test::test_serialize_empty,success,1263.293,11.149,2026-11-05T05:29:48Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::snapshot::test::test_serialize_tasks,success,1263.293,11.189,2026-11-05T05:30:00Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::sync::test::test_sync,success,1263.293,12.140,2026-11-05T05:30:12Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::sync::test::test_sync_add_snapshot_start_with_snapshot,success,1263.293,13.057,2026-11-05T05:30:25Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::sync::test::test_sync_avoids_snapshot,success,1263.293,11.283,2026-11-05T05:30:36Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::sync::test::test_sync_batched,timeout,1263.293,150.021,2026-11-05T05:33:06Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,taskdb::sync::test::test_sync_batches_at_least_one_op,timeout,1263.293,150.021,2026-11-05T05:35:36Z,50232924.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,taskchampion-3.1.0,taskdb::sync::test::test_sync_conflicting_updates,success,1263.293,11.859,2026-11-05T05:35:48Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::sync::test::test_sync_create_delete,success,1263.293,11.883,2026-11-05T05:36:00Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::tests::commit_operations,success,1263.293,11.235,2026-11-05T05:36:11Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::tests::commit_operations_update_working_set,success,1263.293,11.246,2026-11-05T05:36:23Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::tests::test_num_operations,success,1263.293,11.255,2026-11-05T05:36:34Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::tests::test_num_undo_points,success,1263.293,11.230,2026-11-05T05:36:45Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::undo::tests::test_apply_create,success,1263.293,11.414,2026-11-05T05:36:56Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::undo::tests::test_reverse_create,success,1263.293,11.154,2026-11-05T05:37:08Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::undo::tests::test_reverse_delete,success,1263.293,11.139,2026-11-05T05:37:19Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::undo::tests::test_reverse_undo_point,success,1263.293,11.155,2026-11-05T05:37:30Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::undo::tests::test_reverse_update,success,1263.293,11.182,2026-11-05T05:37:41Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::working_set::test::rebuild_working_set_no_change,success,1263.293,11.299,2026-11-05T05:37:52Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::working_set::test::rebuild_working_set_no_renumber,success,1263.293,11.287,2026-11-05T05:38:04Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::working_set::test::rebuild_working_set_renumber,success,1263.293,11.292,2026-11-05T05:38:15Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,taskdb::working_set::test::rebuild_working_set_shrinks,success,1263.293,11.305,2026-11-05T05:38:26Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,update_and_delete_sync_delete_first,success,1263.293,13.029,2026-11-05T05:38:39Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,update_and_delete_sync_update_first,success,1263.293,13.324,2026-11-05T05:38:53Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,utils::test::test_from_bytes,success,1263.293,11.145,2026-11-05T05:39:04Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,utils::test::test_from_bytes_bad_len,success,1263.293,11.201,2026-11-05T05:39:15Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,workingset::test::test_by_index,success,1263.293,11.164,2026-11-05T05:39:26Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,workingset::test::test_by_uuid,success,1263.293,11.182,2026-11-05T05:39:37Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,workingset::test::test_iter,success,1263.293,11.167,2026-11-05T05:39:49Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,workingset::test::test_largest_index,success,1263.293,11.158,2026-11-05T05:40:00Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,workingset::test::test_len_and_is_empty,success,1263.293,11.141,2026-11-05T05:40:11Z,50232924.0,,
+experimental-bsan,taskchampion-3.1.0,workingset::test::test_new,success,1263.293,11.188,2026-11-05T05:40:22Z,50232924.0,,

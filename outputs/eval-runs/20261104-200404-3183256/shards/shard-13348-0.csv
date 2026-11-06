@@ -1,0 +1,9 @@
+experimental-bsan,unc-primitives-core-0.12.2,account::tests::test_account_deserialization,success,159.680,1.846,2026-11-05T06:41:50Z,50256719.0,,
+experimental-bsan,unc-primitives-core-0.12.2,account::tests::test_account_serialization,test_failed,159.680,2.009,2026-11-05T06:41:52Z,50256719.0,panic,"thread 'account::tests::test_account_serialization' (77694) panicked at src/account.rs:262:9: assertion `left == right` failed"
+experimental-bsan,unc-primitives-core-0.12.2,hash::tests::test_base58_successes,success,159.680,2.204,2026-11-05T06:41:54Z,50256719.0,,
+experimental-bsan,unc-primitives-core-0.12.2,hash::tests::test_from_str_failures,success,159.680,2.034,2026-11-05T06:41:56Z,50256719.0,,
+experimental-bsan,unc-primitives-core-0.12.2,hash::tests::test_hash_borsh,success,159.680,2.976,2026-11-05T06:41:59Z,50256719.0,,
+experimental-bsan,unc-primitives-core-0.12.2,hash::tests::test_serde_deserialise_failures,success,159.680,2.118,2026-11-05T06:42:01Z,50256719.0,,
+experimental-bsan,unc-primitives-core-0.12.2,serialize::test_option_u128_dec_format,success,159.680,1.872,2026-11-05T06:42:03Z,50256719.0,,
+experimental-bsan,unc-primitives-core-0.12.2,serialize::test_u128_dec_format,success,159.680,1.890,2026-11-05T06:42:05Z,50256719.0,,
+experimental-bsan,unc-primitives-core-0.12.2,serialize::test_u64_dec_format,success,159.680,1.881,2026-11-05T06:42:07Z,50256719.0,,

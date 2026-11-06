@@ -1,0 +1,29 @@
+experimental-bsan,mdbook-katex-0.10.0,tests::escape::test_dollar_escape,success,201.048,3.575,2026-11-05T04:01:15Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::escape::test_escape_underscore,success,201.048,3.593,2026-11-05T04:01:18Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::escape::test_escape_vmatrix,success,201.048,3.597,2026-11-05T04:01:22Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::escape::test_escape_with_math,success,201.048,3.584,2026-11-05T04:01:26Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::escape::test_escape_without_math,success,201.048,3.585,2026-11-05T04:01:29Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::render::not_duktape::test_katex_rendering_vmatrix,test_failed,201.048,3.344,2026-11-05T04:01:32Z,50248116.0,panic,"thread 'tests::render::not_duktape::test_katex_rendering_vmatrix' (61316) panicked at src/tests/render/not_duktape.rs:10:62: called `Result::unwrap()` on an `Err` value: JsExecError(""String(\""SyntaxError: stack overflow\"")"")"
+experimental-bsan,mdbook-katex-0.10.0,tests::render::not_duktape::test_rendering_vmatrix,test_failed,201.048,5.562,2026-11-05T04:01:38Z,50248116.0,panic,"thread 'tests::render::not_duktape::test_rendering_vmatrix' (61746) panicked at src/tests/render/not_duktape.rs:17:5: assertion `left == right` failed"
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_display_rendering,test_failed,201.048,4.686,2026-11-05T04:01:43Z,50248116.0,panic,"thread 'tests::render::test_display_rendering' (62297) panicked at src/tests/render.rs:76:5: assertion `left == right` failed"
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_dollar_escaping,success,201.048,3.601,2026-11-05T04:01:46Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_dollar_escaping_inside_expr,test_failed,201.048,4.937,2026-11-05T04:01:51Z,50248116.0,panic,"thread 'tests::render::test_dollar_escaping_inside_expr' (64859) panicked at src/tests/render.rs:60:5: assertion `left == right` failed"
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_escaping_backtick,test_failed,201.048,4.300,2026-11-05T04:01:56Z,50248116.0,panic,"thread 'tests::render::test_escaping_backtick' (66368) panicked at src/tests/render.rs:224:5: assertion `left == right` failed"
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_fenced_code,test_failed,201.048,4.679,2026-11-05T04:02:00Z,50248116.0,panic,"thread 'tests::render::test_fenced_code' (67090) panicked at src/tests/render.rs:262:5: assertion `left == right` failed"
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_include_src,test_failed,201.048,5.121,2026-11-05T04:02:06Z,50248116.0,panic,"thread 'tests::render::test_include_src' (67751) panicked at src/tests/render.rs:244:5: assertion `left == right` failed"
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_inline_rendering,test_failed,201.048,4.687,2026-11-05T04:02:10Z,50248116.0,panic,"thread 'tests::render::test_inline_rendering' (68356) panicked at src/tests/render.rs:68:5: assertion `left == right` failed"
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_inline_rendering_w_custom_delimiter,test_failed,201.048,5.067,2026-11-05T04:02:15Z,50248116.0,panic,"thread 'tests::render::test_inline_rendering_w_custom_delimiter' (69130) panicked at src/tests/render.rs:291:5: assertion `left == right` failed"
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_invalid_expr_display,success,201.048,6.295,2026-11-05T04:02:22Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_invalid_expr_inline,success,201.048,6.316,2026-11-05T04:02:28Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_macro_file_loading,success,201.048,3.020,2026-11-05T04:02:31Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_macros_with_argument,test_failed,201.048,4.217,2026-11-05T04:02:35Z,50248116.0,panic,"thread 'tests::render::test_macros_with_argument' (71997) panicked at src/tests/render.rs:96:5: assertion `left == right` failed"
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_macros_without_argument,test_failed,201.048,4.263,2026-11-05T04:02:39Z,50248116.0,panic,"thread 'tests::render::test_macros_without_argument' (72627) panicked at src/tests/render.rs:86:5: assertion `left == right` failed"
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_rendering_delimiter_in_block_code_when_block_delimiter_starts_with_backtick,success,201.048,3.568,2026-11-05T04:02:43Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_rendering_delimiter_in_code_block,success,201.048,3.598,2026-11-05T04:02:47Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_rendering_delimiter_in_inline_code,success,201.048,3.596,2026-11-05T04:02:50Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_rendering_delimiter_in_inline_code_when_block_delimiter_starts_with_backtick,success,201.048,3.635,2026-11-05T04:02:54Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_rendering_delimiter_in_inline_code_when_inline_delimiter_starts_with_backtick,success,201.048,3.599,2026-11-05T04:02:58Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_rendering_table_with_math,success,201.048,5.361,2026-11-05T04:03:03Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::render::test_rendering_without_math,success,201.048,3.621,2026-11-05T04:03:07Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::test_name,success,201.048,2.946,2026-11-05T04:03:09Z,50248116.0,,
+experimental-bsan,mdbook-katex-0.10.0,tests::test_support_html,success,201.048,2.953,2026-11-05T04:03:12Z,50248116.0,,

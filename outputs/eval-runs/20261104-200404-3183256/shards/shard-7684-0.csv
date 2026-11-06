@@ -1,0 +1,26 @@
+experimental-bsan,hdt-0.7.3,containers::bitmap::tests::bugtest,success,534.892,2.978,2026-11-05T04:23:05Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,containers::bitmap::tests::write,success,534.892,3.000,2026-11-05T04:23:08Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,containers::control_info::tests::read_info,success,534.892,2.976,2026-11-05T04:23:11Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,containers::control_info::tests::write_info,success,534.892,2.997,2026-11-05T04:23:14Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,containers::sequence::tests::write_read,success,534.892,2.998,2026-11-05T04:23:17Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,containers::vbyte::tests::test_decode_too_large,success,534.892,3.039,2026-11-05T04:23:20Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,containers::vbyte::tests::test_encode_decode,success,534.892,2.974,2026-11-05T04:23:23Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,containers::vbyte::tests::test_max_value,success,534.892,2.994,2026-11-05T04:23:26Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,dict_sect_pfc::tests::compress,success,534.892,40.535,2026-11-05T04:24:06Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,dict_sect_pfc::tests::read_section_read,success,534.892,7.257,2026-11-05T04:24:14Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,dict_sect_pfc::tests::write,success,534.892,7.018,2026-11-05T04:24:21Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,four_sect_dict::tests::read_write_dict,success,534.892,54.793,2026-11-05T04:25:15Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,hdt::concurrent_interner::tests::concurrent_growth_bounded,timeout,534.892,150.028,2026-11-05T04:27:45Z,50248776.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hdt-0.7.3,hdt::concurrent_interner::tests::empty_interner,success,534.892,3.060,2026-11-05T04:27:49Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,hdt::concurrent_interner::tests::parallel_inserts_are_consistent,success,534.892,33.644,2026-11-05T04:28:22Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,hdt::concurrent_interner::tests::round_trip_indices,success,534.892,3.056,2026-11-05T04:28:25Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,hdt::nt::tests::from_triples,timeout,534.892,150.017,2026-11-05T04:30:55Z,50248776.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hdt-0.7.3,hdt::nt::tests::read_nt,timeout,534.892,150.017,2026-11-05T04:33:25Z,50248776.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hdt-0.7.3,hdt::tests::cache,timeout,534.892,150.017,2026-11-05T04:35:55Z,50248776.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hdt-0.7.3,hdt::tests::modify_header,success,534.892,16.833,2026-11-05T04:36:12Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,hdt::tests::write,timeout,534.892,150.017,2026-11-05T04:38:42Z,50248776.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hdt-0.7.3,hdt_graph::tests::test_graph,timeout,534.892,150.017,2026-11-05T04:41:12Z,50248776.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,hdt-0.7.3,header::tests::read_header,success,534.892,7.368,2026-11-05T04:41:20Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,sparql::tests::select,test_failed,534.892,10.656,2026-11-05T04:41:30Z,50248776.0,crash,"test sparql::tests::select ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,hdt-0.7.3,sparql::tests::w3c_tests,success,534.892,3.002,2026-11-05T04:41:33Z,50248776.0,,
+experimental-bsan,hdt-0.7.3,triples::tests::read_triples,success,534.892,21.504,2026-11-05T04:41:55Z,50248776.0,,

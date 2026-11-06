@@ -1,0 +1,34 @@
+experimental-bsan,pdf-0.10.0,content::tests::test_inline_image,success,259.461,5.597,2026-11-05T03:48:00Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,crypt::tests::unencrypted_strings,success,259.461,9.600,2026-11-05T03:48:09Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,enc::tests::base_85,success,259.461,5.555,2026-11-05T03:48:15Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,enc::tests::run_length_decode_test,success,259.461,5.520,2026-11-05T03:48:20Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,ending_angle_bracket,success,259.461,5.539,2026-11-05T03:48:26Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,error::tests::error_is_send_and_sync,success,259.461,5.528,2026-11-05T03:48:32Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,font::tests::test_to_char,success,259.461,5.554,2026-11-05T03:48:37Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,font::tests::utf16be_to_string_quick,success,259.461,5.554,2026-11-05T03:48:43Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,infinite_loop_invalid_file,success,259.461,5.529,2026-11-05T03:48:48Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,invalid_pdfs,test_failed,259.461,2.926,2026-11-05T03:48:51Z,50247187.0,panic,"thread 'invalid_pdfs' (32223) panicked at tests/integration.rs:29:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,pdf-0.10.0,object::types::tests::parse_struct_type,success,259.461,5.536,2026-11-05T03:48:57Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,object::types::tests::test_field_type,success,259.461,5.541,2026-11-05T03:49:02Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,open_file,test_failed,259.461,2.933,2026-11-05T03:49:05Z,50247187.0,panic,"thread 'open_file' (33028) panicked at tests/integration.rs:37:13: IO Error, caused by"
+experimental-bsan,pdf-0.10.0,owner_password,test_failed,259.461,2.936,2026-11-05T03:49:08Z,50247187.0,panic,"thread 'owner_password' (33260) panicked at tests/integration.rs:29:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,pdf-0.10.0,parse_objects_from_stream,test_failed,259.461,2.936,2026-11-05T03:49:11Z,50247187.0,panic,"thread 'parse_objects_from_stream' (33467) panicked at tests/integration.rs:118:16: IO Error, caused by"
+experimental-bsan,pdf-0.10.0,parser::lexer::str::tests::hex_test,success,259.461,5.536,2026-11-05T03:49:17Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,parser::lexer::str::tests::octal_escape,success,259.461,5.533,2026-11-05T03:49:22Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,parser::lexer::str::tests::string_split_lines,success,259.461,5.560,2026-11-05T03:49:28Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,parser::lexer::str::tests::tests,success,259.461,5.531,2026-11-05T03:49:33Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,parser::lexer::tests::test_boundary,success,259.461,5.532,2026-11-05T03:49:39Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,parser::lexer::tests::test_boundary_rev,success,259.461,5.539,2026-11-05T03:49:44Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,parser::lexer::tests::test_substr,success,259.461,5.555,2026-11-05T03:49:50Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,parser::tests::compact_array,success,259.461,5.554,2026-11-05T03:49:56Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,parser::tests::dict_with_empty_name_as_key,success,259.461,5.540,2026-11-05T03:50:01Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,parser::tests::dict_with_empty_name_as_value,success,259.461,5.568,2026-11-05T03:50:07Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,parser::tests::empty_array,success,259.461,5.533,2026-11-05T03:50:12Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,primitive::test_name,success,259.461,5.522,2026-11-05T03:50:18Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,primitive::tests::date,success,259.461,5.537,2026-11-05T03:50:23Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,primitive::tests::pdfstring_lossy_vs_ascii,success,259.461,5.554,2026-11-05T03:50:29Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,primitive::tests::utf16be_invalid_bytelen,success,259.461,5.529,2026-11-05T03:50:34Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,primitive::tests::utf16be_invalid_string,success,259.461,5.547,2026-11-05T03:50:40Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,primitive::tests::utf16be_string,success,259.461,5.579,2026-11-05T03:50:46Z,50247187.0,,
+experimental-bsan,pdf-0.10.0,read_pages,test_failed,259.461,2.937,2026-11-05T03:50:49Z,50247187.0,panic,"thread 'read_pages' (37773) panicked at tests/integration.rs:29:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,pdf-0.10.0,user_password,test_failed,259.461,2.941,2026-11-05T03:50:51Z,50247187.0,panic,"thread 'user_password' (37838) panicked at tests/integration.rs:29:10: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"

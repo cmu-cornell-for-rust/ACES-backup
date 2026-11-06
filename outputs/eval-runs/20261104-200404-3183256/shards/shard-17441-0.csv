@@ -1,0 +1,3 @@
+experimental-bsan,cloudflare-zlib-sys-0.3.7,test::test_compress,success,10.482,1.553,2026-11-05T08:15:32Z,50262291.0,,
+experimental-bsan,cloudflare-zlib-sys-0.3.7,test::test_files,test_failed,10.482,1.608,2026-11-05T08:15:34Z,50262291.0,panic,"thread 'test::test_files' (58460) panicked at rust/lib.rs:193:82: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,cloudflare-zlib-sys-0.3.7,test::test_synthetic,success,10.482,1.610,2026-11-05T08:15:36Z,50262291.0,,

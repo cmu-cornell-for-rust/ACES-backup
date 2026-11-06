@@ -1,0 +1,89 @@
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::module_path_resolver::tests::should_generate_import_paths_with_correct_extensions,success,573.957,7.255,2026-11-05T02:16:51Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::module_path_resolver::tests::should_generate_single_import_path,success,573.957,7.047,2026-11-05T02:16:58Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::module_path_resolver::tests::should_generate_single_import_path_when_module_prefix_match,success,573.957,7.070,2026-11-05T02:17:05Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::module_path_resolver::tests::should_panic_when_import_module_is_empty,success,573.957,6.977,2026-11-05T02:17:12Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::module_path_resolver::tests::should_return_empty_smallvec_when_import_module_has_only_module_prefix,success,573.957,6.982,2026-11-05T02:17:19Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::module_path_resolver::tests::should_return_smallvec_when_import_module,success,573.957,7.070,2026-11-05T02:17:26Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::module_path_resolver::tests::should_return_valid_pbr_paths_back_to_current_dir,success,573.957,7.070,2026-11-05T02:17:33Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::module_path_resolver::tests::should_return_valid_pbr_paths_from_repeated_part,success,573.957,7.095,2026-11-05T02:17:40Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::name_demangle::tests::test_demangle_mod_names,success,573.957,145.836,2026-11-05T02:20:06Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::name_demangle::tests::test_make_valid_rust_import,success,573.957,6.985,2026-11-05T02:20:13Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::parse_imports::tests::test_parsing_from_contents,success,573.957,13.574,2026-11-05T02:20:26Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::parse_imports::tests::test_parsing_imports_from_bevy_mesh_view_bindings,success,573.957,13.434,2026-11-05T02:20:40Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bevy_util::source_file::tests::test_parsing_imports_from_bevy_mesh_view_bindings,success,573.957,13.813,2026-11-05T02:20:54Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,bindgen_tests::test_bevy_bindgen,timeout,573.957,150.022,2026-11-05T02:23:24Z,50239063.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wgsl_bindgen-0.15.1,bindgen_tests::test_main_bindgen,timeout,573.957,150.021,2026-11-05T02:25:54Z,50239063.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wgsl_bindgen-0.15.1,bindgen_tests::test_struct_alignment_minimal,timeout,573.957,150.021,2026-11-05T02:28:24Z,50239063.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wgsl_bindgen-0.15.1,bindgen_tests::test_struct_alignment_padding,timeout,573.957,150.021,2026-11-05T02:30:54Z,50239063.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wgsl_bindgen-0.15.1,deptree_tests::test_bevy_all_files_enumeration,success,573.957,47.741,2026-11-05T02:31:42Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,deptree_tests::test_bevy_full_dependencies,success,573.957,49.467,2026-11-05T02:32:31Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,deptree_tests::test_bevy_mesh_wgsl_dependency_order,success,573.957,48.026,2026-11-05T02:33:19Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::bind_group::tests::bind_group_data_consecutive_bind_groups,success,573.957,7.164,2026-11-05T02:33:26Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::bind_group::tests::bind_group_data_first_group_not_zero,success,573.957,7.067,2026-11-05T02:33:33Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::bind_group::tests::bind_group_data_non_consecutive_bind_groups,success,573.957,7.189,2026-11-05T02:33:41Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::bind_group::tests::bind_groups_module_compute,test_failed,573.957,91.533,2026-11-05T02:35:12Z,50239063.0,crash,"test generate::bind_group::tests::bind_groups_module_compute ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_bindgen-0.15.1,generate::bind_group::tests::bind_groups_module_fragment,test_failed,573.957,78.054,2026-11-05T02:36:30Z,50239063.0,crash,"test generate::bind_group::tests::bind_groups_module_fragment ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_bindgen-0.15.1,generate::bind_group::tests::bind_groups_module_vertex,test_failed,573.957,77.636,2026-11-05T02:37:48Z,50239063.0,crash,"test generate::bind_group::tests::bind_groups_module_vertex ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_bindgen-0.15.1,generate::bind_group::tests::bind_groups_module_vertex_fragment,test_failed,573.957,117.038,2026-11-05T02:39:45Z,50239063.0,crash,"test generate::bind_group::tests::bind_groups_module_vertex_fragment ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_bindgen-0.15.1,generate::consts::tests::write_global_constants,success,573.957,73.836,2026-11-05T02:40:59Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::consts::tests::write_pipeline_overrideable_constants,test_failed,573.957,8.002,2026-11-05T02:41:07Z,50239063.0,crash,"test generate::consts::tests::write_pipeline_overrideable_constants ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_bindgen-0.15.1,generate::consts::tests::write_pipeline_overrideable_constants_empty,success,573.957,7.117,2026-11-05T02:41:14Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::entry::test::write_entry_constants,success,573.957,8.707,2026-11-05T02:41:23Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::entry::test::write_fragment_states_multiple_entries,success,573.957,20.555,2026-11-05T02:41:43Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::entry::test::write_fragment_states_single_entry,success,573.957,15.291,2026-11-05T02:41:59Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::entry::test::write_vertex_module_empty,success,573.957,7.056,2026-11-05T02:42:06Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::entry::test::write_vertex_module_single_input_float32,success,573.957,82.442,2026-11-05T02:43:28Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::entry::test::write_vertex_module_single_input_float64,success,573.957,81.995,2026-11-05T02:44:50Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::entry::test::write_vertex_module_single_input_sint32,success,573.957,81.597,2026-11-05T02:46:12Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::entry::test::write_vertex_module_single_input_uint32,success,573.957,82.223,2026-11-05T02:47:34Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::entry::test::write_vertex_shader_entry_multiple_buffers,success,573.957,82.066,2026-11-05T02:48:56Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::entry::test::write_vertex_shader_entry_no_buffers,success,573.957,14.758,2026-11-05T02:49:11Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::entry::test::write_vertex_shader_multiple_entries,success,573.957,82.763,2026-11-05T02:50:34Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::entry::test::write_vertex_states_no_entries,success,573.957,7.180,2026-11-05T02:50:41Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::shader_module::tests::test_create_canonical_variable_name,success,573.957,7.164,2026-11-05T02:50:48Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::shader_module::tests::write_compute_module_empty,success,573.957,7.288,2026-11-05T02:50:55Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,generate::shader_module::tests::write_compute_module_multiple_entries,success,573.957,17.790,2026-11-05T02:51:13Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,quote_gen::rust_module_builder::tests::test_include_relative_root_but_dont_generate_it,success,573.957,9.094,2026-11-05T02:51:22Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,quote_gen::rust_module_builder::tests::test_merge,success,573.957,8.679,2026-11-05T02:51:31Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,quote_gen::rust_module_builder::tests::test_module_add_duplicates,success,573.957,7.756,2026-11-05T02:51:39Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,quote_gen::rust_module_builder::tests::test_module_add_duplicates_different_contents,success,573.957,7.119,2026-11-05T02:51:46Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,quote_gen::rust_module_builder::tests::test_module_generation_works,success,573.957,8.354,2026-11-05T02:51:54Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,quote_gen::rust_module_builder::tests::test_relative_root_feature,success,573.957,9.355,2026-11-05T02:52:03Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,quote_gen::tests::should_fully_qualify_mangled_string,success,573.957,126.137,2026-11-05T02:54:10Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,quote_gen::tests::should_not_fully_qualify_non_mangled_string,success,573.957,72.226,2026-11-05T02:55:22Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::test_struct_visibility,success,573.957,75.399,2026-11-05T02:56:37Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_all_structs_bytemuck_input_layout_validation,test_failed,573.957,80.152,2026-11-05T02:57:57Z,50239063.0,crash,"test structs::tests::write_all_structs_bytemuck_input_layout_validation ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_all_structs_bytemuck_skip_input_layout_validation,success,573.957,76.105,2026-11-05T02:59:13Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_all_structs_encase,success,573.957,78.169,2026-11-05T03:00:32Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_all_structs_glam,success,573.957,106.421,2026-11-05T03:02:18Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_all_structs_nalgebra,test_failed,573.957,87.000,2026-11-05T03:03:45Z,50239063.0,crash,"test structs::tests::write_all_structs_nalgebra ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_all_structs_rust,test_failed,573.957,91.528,2026-11-05T03:05:17Z,50239063.0,crash,"test structs::tests::write_all_structs_rust ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_all_structs_serde_encase,success,573.957,79.677,2026-11-05T03:06:36Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_all_structs_skip_stage_outputs,success,573.957,77.275,2026-11-05T03:07:54Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_atomic_types,success,573.957,74.720,2026-11-05T03:09:08Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_nonpower_of_2_mats,success,573.957,83.941,2026-11-05T03:10:32Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_nonpower_of_2_mats_for_bytemuck_glam_option,success,573.957,78.278,2026-11-05T03:11:51Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_nonpower_of_2_mats_for_bytemuck_option,success,573.957,78.034,2026-11-05T03:13:09Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_runtime_sized_array,success,573.957,74.555,2026-11-05T03:14:23Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_runtime_sized_array_bytemuck,success,573.957,80.052,2026-11-05T03:15:43Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_runtime_sized_array_not_last_field,success,573.957,71.806,2026-11-05T03:16:55Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,structs::tests::write_shorter_constructor,success,573.957,76.424,2026-11-05T03:18:12Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,test::create_shader_module_consecutive_bind_groups,test_failed,573.957,99.507,2026-11-05T03:19:51Z,50239063.0,crash,"test test::create_shader_module_consecutive_bind_groups ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,wgsl_bindgen-0.15.1,test::create_shader_module_embed_source,success,573.957,25.043,2026-11-05T03:20:16Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,test::create_shader_module_non_consecutive_bind_groups,success,573.957,13.025,2026-11-05T03:20:29Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,test::create_shader_module_repeated_bindings,success,573.957,13.089,2026-11-05T03:20:42Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,test_bevy_all_files_enumeration,success,573.957,48.594,2026-11-05T03:21:31Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,test_bevy_bindgen,timeout,573.957,150.022,2026-11-05T03:24:01Z,50239063.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wgsl_bindgen-0.15.1,test_bevy_full_dependencies,success,573.957,50.365,2026-11-05T03:24:51Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,test_bevy_mesh_wgsl_dependency_order,success,573.957,48.719,2026-11-05T03:25:40Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,test_issue_35,timeout,573.957,150.023,2026-11-05T03:28:10Z,50239063.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wgsl_bindgen-0.15.1,test_main_bindgen,timeout,573.957,150.022,2026-11-05T03:30:40Z,50239063.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wgsl_bindgen-0.15.1,test_struct_alignment_minimal,timeout,573.957,150.020,2026-11-05T03:33:10Z,50239063.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wgsl_bindgen-0.15.1,test_struct_alignment_padding,timeout,573.957,150.020,2026-11-05T03:35:40Z,50239063.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,wgsl_bindgen-0.15.1,wgsl::tests::shader_stages_all,success,573.957,7.146,2026-11-05T03:35:47Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,wgsl::tests::shader_stages_compute,success,573.957,7.067,2026-11-05T03:35:54Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,wgsl::tests::shader_stages_fragment,success,573.957,7.036,2026-11-05T03:36:01Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,wgsl::tests::shader_stages_none,success,573.957,7.022,2026-11-05T03:36:08Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,wgsl::tests::shader_stages_vertex,success,573.957,7.061,2026-11-05T03:36:16Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,wgsl::tests::shader_stages_vertex_fragment,success,573.957,7.077,2026-11-05T03:36:23Z,50239063.0,,
+experimental-bsan,wgsl_bindgen-0.15.1,wgsl::tests::vertex_input_structs_two_structs,success,573.957,73.463,2026-11-05T03:37:36Z,50239063.0,,

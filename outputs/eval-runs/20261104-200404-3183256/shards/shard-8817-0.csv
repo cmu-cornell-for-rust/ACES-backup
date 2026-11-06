@@ -1,0 +1,21 @@
+experimental-bsan,sourcemap-9.0.0,decoder::test_bad_newline,success,149.650,1.565,2026-11-05T04:43:54Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,decoder::test_decode_rmi,success,149.650,1.574,2026-11-05T04:43:56Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,decoder::test_strip_header,success,149.650,1.551,2026-11-05T04:43:58Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,encoder::test_encode_rmi,success,149.650,2.387,2026-11-05T04:44:00Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,js_identifiers::test_is_valid_javascript_identifier,success,149.650,1.570,2026-11-05T04:44:02Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,ram_bundle::test_file_ram_bundle_parse,test_failed,149.650,1.626,2026-11-05T04:44:03Z,50250349.0,panic,"thread 'ram_bundle::test_file_ram_bundle_parse' (58093) panicked at src/ram_bundle.rs:583:5: assertion failed: is_unbundle_path(valid_bundle_path)"
+experimental-bsan,sourcemap-9.0.0,ram_bundle::test_indexed_ram_bundle_parse,test_failed,149.650,1.594,2026-11-05T04:44:05Z,50250349.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,sourcemap-9.0.0,ram_bundle::test_indexed_ram_bundle_split,test_failed,149.650,1.599,2026-11-05T04:44:06Z,50250349.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,sourcemap-9.0.0,sourceview::test_minified_source_view,success,149.650,1.589,2026-11-05T04:44:08Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,types::tests::prop::test_composition_identity,timeout,149.650,150.031,2026-11-05T04:46:38Z,50250349.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sourcemap-9.0.0,types::tests::test_adjust_mappings_injection,test_failed,149.650,1.652,2026-11-05T04:46:40Z,50250349.0,panic,"thread 'types::tests::test_adjust_mappings_injection' (84791) panicked at src/types.rs:1345:14: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,sourcemap-9.0.0,types::tests::test_rewrite_debugid,success,149.650,1.626,2026-11-05T04:46:41Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,types::tests::test_roundtrip,success,149.650,1.630,2026-11-05T04:46:43Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,utils::test_find_common_prefix,success,149.650,1.627,2026-11-05T04:46:45Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,utils::test_greatest_lower_bound,success,149.650,1.583,2026-11-05T04:46:46Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,utils::test_is_abs_path,success,149.650,1.563,2026-11-05T04:46:48Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,utils::test_make_relative_path,success,149.650,1.597,2026-11-05T04:46:50Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,utils::test_split_path,success,149.650,1.571,2026-11-05T04:46:51Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,vlq::test_overflow,success,149.650,1.576,2026-11-05T04:46:53Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,vlq::test_vlq_decode,success,149.650,1.574,2026-11-05T04:46:54Z,50250349.0,,
+experimental-bsan,sourcemap-9.0.0,vlq::test_vlq_encode,success,149.650,1.575,2026-11-05T04:46:56Z,50250349.0,,

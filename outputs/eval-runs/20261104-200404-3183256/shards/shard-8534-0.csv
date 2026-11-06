@@ -1,0 +1,22 @@
+experimental-bsan,proto_go-0.11.2,go::detector::detects_gomod,success,471.869,3.173,2026-11-05T04:42:24Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::detector::detects_gowork,success,471.869,3.198,2026-11-05T04:42:27Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::detector::detects_multiline,success,471.869,3.153,2026-11-05T04:42:30Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::detector::doesnt_match_if_no_files,success,471.869,3.116,2026-11-05T04:42:33Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::downloader::doesnt_download_if_file_exists,timeout,471.869,150.020,2026-11-05T04:45:03Z,50249963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,proto_go-0.11.2,go::downloader::downloads_no_patch_versions,timeout,471.869,150.022,2026-11-05T04:47:33Z,50249963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,proto_go-0.11.2,go::downloader::downloads_to_temp,timeout,471.869,150.019,2026-11-05T04:50:03Z,50249963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,proto_go-0.11.2,go::downloader::sets_path_to_temp,success,471.869,3.079,2026-11-05T04:50:07Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::downloads_verifies_installs_tool,timeout,471.869,150.019,2026-11-05T04:52:37Z,50249963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,proto_go-0.11.2,go::installer::doesnt_install_if_dir_exists,success,471.869,3.210,2026-11-05T04:52:40Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::installer::errors_for_missing_download,success,471.869,3.123,2026-11-05T04:52:43Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::installer::sets_dir_to_tools,success,471.869,3.078,2026-11-05T04:52:46Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::resolver::resolve_alias_version,success,471.869,12.089,2026-11-05T04:52:58Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::resolver::resolve_base_version,success,471.869,12.031,2026-11-05T04:53:10Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::resolver::resolve_custom_alias,success,471.869,11.303,2026-11-05T04:53:22Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::resolver::resolve_latest_version,success,471.869,11.124,2026-11-05T04:53:33Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::resolver::resolve_rc_version,success,471.869,11.277,2026-11-05T04:53:44Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::resolver::resolve_specific_version,success,471.869,11.201,2026-11-05T04:53:55Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::verifier::doesnt_download_if_file_exists,success,471.869,6.514,2026-11-05T04:54:02Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::verifier::downloads_to_temp,success,471.869,6.450,2026-11-05T04:54:08Z,50249963.0,,
+experimental-bsan,proto_go-0.11.2,go::verifier::errors_for_checksum_mismatch,timeout,471.869,150.018,2026-11-05T04:56:38Z,50249963.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,proto_go-0.11.2,go::verifier::sets_path_to_temp,success,471.869,3.128,2026-11-05T04:56:41Z,50249963.0,,

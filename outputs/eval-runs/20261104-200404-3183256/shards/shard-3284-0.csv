@@ -1,0 +1,68 @@
+experimental-bsan,artisan_middleware-7.3.0,aggregator_test::tests::status_as_str_name_round_trips_through_from_str_name,success,849.960,1.721,2026-11-05T02:36:28Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,aggregator_test::tests::status_from_str_name_is_case_insensitive,success,849.960,1.701,2026-11-05T02:36:30Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,aggregator_test::tests::status_from_str_name_rejects_unrecognized_values_instead_of_silently_falling_back,success,849.960,1.705,2026-11-05T02:36:31Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,aggregator_test::tests::test_network_delta_and_reset_behavior,success,849.960,1.843,2026-11-05T02:36:33Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,aggregator_test::tests::test_network_first_sample_sets_baseline,success,849.960,1.820,2026-11-05T02:36:35Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,custom_config::tests::missing_key_is_none_not_an_error,success,849.960,1.691,2026-11-05T02:36:37Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,custom_config::tests::remove_drops_a_key,success,849.960,1.690,2026-11-05T02:36:38Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,custom_config::tests::round_trips_through_json,success,849.960,1.705,2026-11-05T02:36:40Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,custom_config::tests::wrong_shape_is_none_not_an_error,success,849.960,1.692,2026-11-05T02:36:42Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,encryption_test::tests::test_encrypt_decrypt_cycle,success,849.960,1.905,2026-11-05T02:36:44Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,encryption_test::tests::test_encrypt_produces_different_output,success,849.960,1.902,2026-11-05T02:36:46Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,enviornment_test::tests::enviornment_parse_dispatches_v1,success,849.960,3.545,2026-11-05T02:36:49Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,enviornment_test::tests::enviornment_parse_dispatches_v2,success,849.960,5.189,2026-11-05T02:36:54Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,enviornment_test::tests::v1_round_trips_through_its_own_envelope,success,849.960,3.566,2026-11-05T02:36:58Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,enviornment_test::tests::v2_round_trips_as_plain_toml,success,849.960,2.698,2026-11-05T02:37:01Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,enviornment_test::tests::v2_round_trips_through_its_own_envelope,success,849.960,5.210,2026-11-05T02:37:06Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,git_action_test::tests::test_bootstrap_git_credentials,success,849.960,1.818,2026-11-05T02:37:08Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,git_action_test::tests::test_git_auth_url_generation,success,849.960,1.707,2026-11-05T02:37:09Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,git_action_test::tests::test_git_credentials_add,success,849.960,1.696,2026-11-05T02:37:11Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,identity::action_tests::every_action_round_trips_through_as_str_and_from_str,success,849.960,1.697,2026-11-05T02:37:13Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,identity::action_tests::from_str_rejects_an_unrecognized_action,success,849.960,1.702,2026-11-05T02:37:15Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,identity_test::tests::test_identifier_json_roundtrip,success,849.960,1.878,2026-11-05T02:37:16Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,identity_test::tests::test_identifier_new_and_verify,success,849.960,1.891,2026-11-05T02:37:18Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,network_test::tests::test_resolve_invalid,timeout,849.960,150.019,2026-11-05T02:39:48Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,network_test::tests::test_resolve_localhost,timeout,849.960,150.019,2026-11-05T02:42:18Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,notification_test::tests::test_email_json_roundtrip,success,849.960,1.734,2026-11-05T02:42:20Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,notification_test::tests::test_email_validation,success,849.960,1.707,2026-11-05T02:42:22Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_child_lock_concurrency,timeout,849.960,150.023,2026-11-05T02:44:52Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_spawn_complex_process,timeout,849.960,150.020,2026-11-05T02:47:22Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_spawn_simple_process_failure,success,849.960,3.176,2026-11-05T02:47:25Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_spawn_simple_process_inherit,success,849.960,2.933,2026-11-05T02:47:28Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_spawn_simple_process_output_capture,timeout,849.960,150.023,2026-11-05T02:49:58Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_supervised_child_clone,timeout,849.960,150.021,2026-11-05T02:52:28Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_supervised_child_monitor_usage,timeout,849.960,150.021,2026-11-05T02:54:58Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_supervised_child_spawn_and_kill,timeout,849.960,150.022,2026-11-05T02:57:28Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_supervised_child_stdx_monitor_does_not_stop_resource_monitor,timeout,849.960,150.021,2026-11-05T02:59:58Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_supervised_child_watchdogs_attach_and_start,timeout,849.960,150.021,2026-11-05T03:02:28Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_supervised_process_clone,success,849.960,2.247,2026-11-05T03:02:31Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_supervised_process_kill,timeout,849.960,150.019,2026-11-05T03:05:01Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,process_manager_test::tests::test_supervised_process_with_invalid_pid,success,849.960,1.813,2026-11-05T03:05:03Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,resource_monitor_test::tests::test_resource_monitor_interval_cpu_sampling,success,849.960,3.459,2026-11-05T03:05:06Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,resource_monitor_test::tests::test_resource_monitor_invalid_pid,success,849.960,1.842,2026-11-05T03:05:08Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,resource_monitor_test::tests::test_resource_monitor_metrics,success,849.960,2.222,2026-11-05T03:05:10Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,runtime_bundle::tests::commit_updates_a_single_entry_without_disturbing_others,timeout,849.960,150.018,2026-11-05T03:07:40Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,runtime_bundle::tests::round_trips_all_three_pieces,timeout,849.960,150.018,2026-11-05T03:10:10Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,runtime_bundle::tests::tampering_with_the_bundle_bytes_is_detected,timeout,849.960,150.016,2026-11-05T03:12:40Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,runtime_bundle::tests::unpack_writes_only_the_two_control_plane_files,timeout,849.960,150.017,2026-11-05T03:15:10Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,runtime_bundle::tests::wrong_passphrase_is_rejected,timeout,849.960,150.017,2026-11-05T03:17:40Z,50240564.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,artisan_middleware-7.3.0,state_persistence_test::tests::test_load_nonexistent_file,success,849.960,1.806,2026-11-05T03:17:42Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,state_persistence_test::tests::test_save_and_load_state,success,849.960,6.151,2026-11-05T03:17:48Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,taxonomy_ids_test::tests::ais_name_and_strip_ais_prefix_are_inverses,success,849.960,1.690,2026-11-05T03:17:50Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,taxonomy_ids_test::tests::domain_id_wire_encoding_matches_node_id,success,849.960,1.686,2026-11-05T03:17:52Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,taxonomy_ids_test::tests::node_id_deserialize_also_accepts_a_bare_number,success,849.960,1.684,2026-11-05T03:17:53Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,taxonomy_ids_test::tests::node_id_wire_encoding_is_a_decimal_string,success,849.960,1.676,2026-11-05T03:17:55Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,taxonomy_ids_test::tests::organization_id_round_trips_as_uuid_string,success,849.960,1.680,2026-11-05T03:17:57Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,taxonomy_ids_test::tests::project_id_ais_name_round_trips,success,849.960,1.705,2026-11-05T03:17:58Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,taxonomy_ids_test::tests::project_id_generation_is_deterministic,success,849.960,1.726,2026-11-05T03:18:00Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,taxonomy_ids_test::tests::project_id_matches_the_known_test_vectors,success,849.960,1.780,2026-11-05T03:18:02Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,taxonomy_ids_test::tests::project_id_parse_accepts_only_8_lowercase_hex_chars,success,849.960,1.681,2026-11-05T03:18:04Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,taxonomy_ids_test::tests::secret_ref_display_matches_urn_id_segment,success,849.960,1.683,2026-11-05T03:18:05Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,taxonomy_ids_test::tests::strip_ais_prefix_only_matches_a_leading_prefix,success,849.960,1.677,2026-11-05T03:18:07Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,urn::resource_type_tests::every_resource_type_round_trips_through_as_str_and_from_str,success,849.960,1.686,2026-11-05T03:18:09Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,urn::resource_type_tests::from_str_rejects_an_unrecognized_resource_type,success,849.960,1.686,2026-11-05T03:18:10Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,urn_test::tests::composite_secret_urn_keeps_its_slashes,success,849.960,1.679,2026-11-05T03:18:12Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,urn_test::tests::parse_rejects_empty_id,success,849.960,1.675,2026-11-05T03:18:14Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,urn_test::tests::parse_rejects_missing_prefix,success,849.960,1.682,2026-11-05T03:18:16Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,urn_test::tests::parse_rejects_unknown_resource_type,success,849.960,1.685,2026-11-05T03:18:17Z,50240564.0,,
+experimental-bsan,artisan_middleware-7.3.0,urn_test::tests::simple_urns_round_trip,success,849.960,1.697,2026-11-05T03:18:19Z,50240564.0,,

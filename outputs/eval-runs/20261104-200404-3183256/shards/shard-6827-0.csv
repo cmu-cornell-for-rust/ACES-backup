@@ -1,0 +1,31 @@
+experimental-bsan,asap-0.11.0,generator::tests::is_sync,success,296.118,3.114,2026-11-05T03:58:46Z,50247647.0,,
+experimental-bsan,asap-0.11.0,generator::tests::it_does_not_cache_more_tokens_than_max_count,test_failed,296.118,5.179,2026-11-05T03:58:51Z,50247647.0,panic,"thread 'generator::tests::it_does_not_cache_more_tokens_than_max_count' (81094) panicked at src/generator.rs:408:9: assertion `left == right` failed"
+experimental-bsan,asap-0.11.0,instantiates_from_environment,test_failed,296.118,6.183,2026-11-05T03:58:57Z,50247647.0,panic,"thread 'instantiates_from_environment' (81256) panicked at tests/api.rs:85:5: assertion failed: token_data.claims.iat > now - 2 && token_data.claims.iat < now + 2"
+experimental-bsan,asap-0.11.0,iss_is_assumed_if_sub_is_undefined,success,296.118,6.985,2026-11-05T03:59:04Z,50247647.0,,
+experimental-bsan,asap-0.11.0,it_allows_extra_claims,success,296.118,5.470,2026-11-05T03:59:10Z,50247647.0,,
+experimental-bsan,asap-0.11.0,it_caches_tokens_when_enabled,test_failed,296.118,5.630,2026-11-05T03:59:15Z,50247647.0,panic,"thread 'it_caches_tokens_when_enabled' (82312) panicked at tests/api.rs:580:5: assertion `left == right` failed"
+experimental-bsan,asap-0.11.0,it_caches_tokens_with_extra_claims_when_enabled,test_failed,296.118,5.980,2026-11-05T03:59:21Z,50247647.0,panic,"thread 'it_caches_tokens_with_extra_claims_when_enabled' (82612) panicked at tests/api.rs:599:5: assertion `left == right` failed"
+experimental-bsan,asap-0.11.0,it_does_not_fetch_expired_key_from_cache,success,296.118,7.561,2026-11-05T03:59:29Z,50247647.0,,
+experimental-bsan,asap-0.11.0,it_does_not_override_required_claims,test_failed,296.118,5.428,2026-11-05T03:59:34Z,50247647.0,panic,"thread 'it_does_not_override_required_claims' (83311) panicked at tests/api.rs:566:5: assertion failed: token_data.claims.iat > now - 2 && token_data.claims.iat < now + 2"
+experimental-bsan,asap-0.11.0,it_does_not_return_expired_cached_tokens,success,296.118,5.519,2026-11-05T03:59:40Z,50247647.0,,
+experimental-bsan,asap-0.11.0,it_fails_with_no_public_key,success,296.118,4.916,2026-11-05T03:59:45Z,50247647.0,,
+experimental-bsan,asap-0.11.0,it_fails_with_wrong_public_key,success,296.118,5.217,2026-11-05T03:59:50Z,50247647.0,,
+experimental-bsan,asap-0.11.0,it_fetches_key_from_cache,success,296.118,6.977,2026-11-05T03:59:57Z,50247647.0,,
+experimental-bsan,asap-0.11.0,it_regenerates_cached_tokens_when_they_are_different,success,296.118,7.687,2026-11-05T04:00:05Z,50247647.0,,
+experimental-bsan,asap-0.11.0,it_rejects_duplicate_jti_claims,success,296.118,7.326,2026-11-05T04:00:12Z,50247647.0,,
+experimental-bsan,asap-0.11.0,it_rejects_tokens_signed_with_unsupported_alg,success,296.118,9.282,2026-11-05T04:00:21Z,50247647.0,,
+experimental-bsan,asap-0.11.0,it_rejects_tokens_with_missing_signatures,success,296.118,5.092,2026-11-05T04:00:26Z,50247647.0,,
+experimental-bsan,asap-0.11.0,it_rejects_unsigned_tokens,success,296.118,3.311,2026-11-05T04:00:30Z,50247647.0,,
+experimental-bsan,asap-0.11.0,it_uses_the_fallback_keyserver,test_failed,296.118,5.684,2026-11-05T04:00:35Z,50247647.0,panic,"thread 'it_uses_the_fallback_keyserver' (87805) panicked at tests/api.rs:85:5: assertion failed: token_data.claims.iat > now - 2 && token_data.claims.iat < now + 2"
+experimental-bsan,asap-0.11.0,it_works,test_failed,296.118,5.441,2026-11-05T04:00:41Z,50247647.0,panic,"thread 'it_works' (88159) panicked at tests/api.rs:85:5: assertion failed: token_data.claims.iat > now - 2 && token_data.claims.iat < now + 2"
+experimental-bsan,asap-0.11.0,keyserver_works,success,296.118,134.908,2026-11-05T04:02:56Z,50247647.0,,
+experimental-bsan,asap-0.11.0,util::key_conversion,success,296.118,3.239,2026-11-05T04:02:59Z,50247647.0,,
+experimental-bsan,asap-0.11.0,validates_exp_is_before_current_time,success,296.118,7.377,2026-11-05T04:03:07Z,50247647.0,,
+experimental-bsan,asap-0.11.0,validates_if_custom_max_lifespan_is_exceeded,success,296.118,6.998,2026-11-05T04:03:14Z,50247647.0,,
+experimental-bsan,asap-0.11.0,validates_if_encounters_unrecognized_audience,success,296.118,6.985,2026-11-05T04:03:21Z,50247647.0,,
+experimental-bsan,asap-0.11.0,validates_if_max_lifespan_is_exceeded,success,296.118,6.968,2026-11-05T04:03:27Z,50247647.0,,
+experimental-bsan,asap-0.11.0,validates_kid_is_owned_by_isser,success,296.118,6.911,2026-11-05T04:03:34Z,50247647.0,,
+experimental-bsan,asap-0.11.0,validates_nbf_is_after_current_time,success,296.118,7.774,2026-11-05T04:03:42Z,50247647.0,,
+experimental-bsan,asap-0.11.0,validator::tests::is_sync,success,296.118,3.152,2026-11-05T04:03:45Z,50247647.0,,
+experimental-bsan,asap-0.11.0,works_with_aud_as_string,success,296.118,7.020,2026-11-05T04:03:52Z,50247647.0,,
+experimental-bsan,asap-0.11.0,works_with_aud_as_vec,success,296.118,7.076,2026-11-05T04:03:59Z,50247647.0,,

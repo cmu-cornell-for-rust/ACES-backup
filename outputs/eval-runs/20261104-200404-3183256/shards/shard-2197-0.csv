@@ -1,0 +1,102 @@
+experimental-bsan,tetsy-wasm-0.42.1,builder::code::tests::example,success,19.006,1.478,2026-11-05T01:59:18Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,builder::code::tests::func_example,success,19.006,1.480,2026-11-05T01:59:19Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,builder::code::tests::func_example_multi_result,success,19.006,1.482,2026-11-05T01:59:21Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,builder::export::tests::example,success,19.006,1.479,2026-11-05T01:59:22Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,builder::global::tests::example,success,19.006,1.483,2026-11-05T01:59:24Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,builder::import::tests::example,success,19.006,1.481,2026-11-05T01:59:25Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,builder::module::tests::data,success,19.006,1.481,2026-11-05T01:59:27Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,builder::module::tests::export,success,19.006,1.483,2026-11-05T01:59:28Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,builder::module::tests::functions,success,19.006,1.477,2026-11-05T01:59:30Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,builder::module::tests::global,success,19.006,1.480,2026-11-05T01:59:31Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,builder::module::tests::reuse_types,success,19.006,1.472,2026-11-05T01:59:33Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,builder::module::tests::smoky,success,19.006,1.481,2026-11-05T01:59:34Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::clear_removes_all_values,success,19.006,1.475,2026-11-05T01:59:35Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::contains_key_returns_true_when_a_key_is_present,success,19.006,1.468,2026-11-05T01:59:37Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::default_is_empty_no_matter_how_we_look_at_it,success,19.006,1.477,2026-11-05T01:59:38Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::deserialize_enforces_max_idx,success,19.006,1.472,2026-11-05T01:59:40Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::deserialize_requires_elements_to_be_in_order,success,19.006,1.489,2026-11-05T01:59:41Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::from_iterator_builds_a_map,success,19.006,1.477,2026-11-05T01:59:43Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::get_returns_elements_that_are_there_but_nothing_else,success,19.006,1.486,2026-11-05T01:59:44Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::insert_behaves_like_other_maps,success,19.006,1.483,2026-11-05T01:59:46Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::iterators_are_well_behaved,success,19.006,1.470,2026-11-05T01:59:47Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::partial_eq_is_smart_about_none_values_at_the_end,success,19.006,1.492,2026-11-05T01:59:49Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::partial_eq_works_as_expected_in_simple_cases,success,19.006,1.488,2026-11-05T01:59:50Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::remove_behaves_like_other_maps,success,19.006,1.481,2026-11-05T01:59:52Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::serialize_and_deserialize,success,19.006,1.480,2026-11-05T01:59:53Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::index_map::tests::with_capacity_creates_empty_map,success,19.006,1.480,2026-11-05T01:59:55Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::add_custom_section,test_failed,19.006,1.579,2026-11-05T01:59:56Z,50237448.0,panic,"thread 'elements::module::integration_tests::add_custom_section' (30013) panicked at src/elements/module.rs:855:76: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::add_start,test_failed,19.006,1.572,2026-11-05T01:59:58Z,50237448.0,panic,"thread 'elements::module::integration_tests::add_start' (30251) panicked at src/elements/module.rs:883:76: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::add_start_custom,test_failed,19.006,1.586,2026-11-05T02:00:00Z,50237448.0,panic,"thread 'elements::module::integration_tests::add_start_custom' (30526) panicked at src/elements/module.rs:894:83: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::const_,test_failed,19.006,1.577,2026-11-05T02:00:01Z,50237448.0,panic,"thread 'elements::module::integration_tests::const_' (30804) panicked at src/elements/module.rs:728:68: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::hello,test_failed,19.006,1.572,2026-11-05T02:00:03Z,50237448.0,panic,"thread 'elements::module::integration_tests::hello' (30944) panicked at src/elements/module.rs:652:68: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::insert_sections,success,19.006,1.493,2026-11-05T02:00:04Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::memory_space,test_failed,19.006,1.571,2026-11-05T02:00:06Z,50237448.0,panic,"thread 'elements::module::integration_tests::memory_space' (31366) panicked at src/elements/module.rs:849:71: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::module_default_round_trip,success,19.006,1.482,2026-11-05T02:00:07Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::mut_start,test_failed,19.006,1.573,2026-11-05T02:00:09Z,50237448.0,panic,"thread 'elements::module::integration_tests::mut_start' (31690) panicked at src/elements/module.rs:873:76: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::names,test_failed,19.006,1.556,2026-11-05T02:00:11Z,50237448.0,panic,"thread 'elements::module::integration_tests::names' (31912) panicked at src/elements/module.rs:810:14: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::names_section_not_present,test_failed,19.006,1.569,2026-11-05T02:00:12Z,50237448.0,panic,"thread 'elements::module::integration_tests::names_section_not_present' (32069) panicked at src/elements/module.rs:925:71: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::names_section_present,test_failed,19.006,1.567,2026-11-05T02:00:14Z,50237448.0,panic,"thread 'elements::module::integration_tests::names_section_present' (32308) panicked at src/elements/module.rs:909:72: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::peek,test_failed,19.006,1.568,2026-11-05T02:00:15Z,50237448.0,panic,"thread 'elements::module::integration_tests::peek' (32530) panicked at src/elements/module.rs:767:68: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::peek_2,test_failed,19.006,1.567,2026-11-05T02:00:17Z,50237448.0,panic,"thread 'elements::module::integration_tests::peek_2' (32764) panicked at src/elements/module.rs:780:69: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::peek_3,test_failed,19.006,1.563,2026-11-05T02:00:19Z,50237448.0,panic,"thread 'elements::module::integration_tests::peek_3' (32893) panicked at src/elements/module.rs:792:74: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::serde,test_failed,19.006,1.570,2026-11-05T02:00:20Z,50237448.0,panic,"thread 'elements::module::integration_tests::serde' (33096) panicked at src/elements/module.rs:660:68: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::serde_code,test_failed,19.006,1.573,2026-11-05T02:00:22Z,50237448.0,panic,"thread 'elements::module::integration_tests::serde_code' (33288) panicked at src/elements/module.rs:707:72: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::serde_import,test_failed,19.006,1.571,2026-11-05T02:00:23Z,50237448.0,panic,"thread 'elements::module::integration_tests::serde_import' (33527) panicked at src/elements/module.rs:689:72: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::serde_type,test_failed,19.006,1.578,2026-11-05T02:00:25Z,50237448.0,panic,"thread 'elements::module::integration_tests::serde_type' (33665) panicked at src/elements/module.rs:671:72: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::serialization_roundtrip,test_failed,19.006,1.565,2026-11-05T02:00:27Z,50237448.0,panic,"thread 'elements::module::integration_tests::serialization_roundtrip' (33880) panicked at src/elements/module.rs:966:67: failed to deserialize: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::shared_memory_flag,success,19.006,1.483,2026-11-05T02:00:28Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::module::integration_tests::store,test_failed,19.006,1.564,2026-11-05T02:00:30Z,50237448.0,panic,"thread 'elements::module::integration_tests::store' (34192) panicked at src/elements/module.rs:756:69: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::name_section::tests::deserialize_local_names,test_failed,19.006,1.569,2026-11-05T02:00:31Z,50237448.0,panic,"thread 'elements::name_section::tests::deserialize_local_names' (34373) panicked at src/elements/name_section.rs:363:14: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::name_section::tests::serialize_all_subsections,success,19.006,1.477,2026-11-05T02:00:33Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::name_section::tests::serialize_function_names,success,19.006,1.465,2026-11-05T02:00:34Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::name_section::tests::serialize_local_names,success,19.006,1.482,2026-11-05T02:00:36Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::name_section::tests::serialize_module_name,success,19.006,1.475,2026-11-05T02:00:37Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::ops::display,success,19.006,1.484,2026-11-05T02:00:39Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::ops::ifelse,success,19.006,1.476,2026-11-05T02:00:40Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::ops::instructions_hashset,success,19.006,1.483,2026-11-05T02:00:42Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::ops::size_off,success,19.006,1.478,2026-11-05T02:00:43Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::counted_list,success,19.006,1.482,2026-11-05T02:00:45Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint32_8192,success,19.006,1.481,2026-11-05T02:00:46Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint32_bad_extended,success,19.006,1.479,2026-11-05T02:00:48Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint32_bad_extended2,success,19.006,1.486,2026-11-05T02:00:49Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint32_max,success,19.006,1.479,2026-11-05T02:00:51Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint32_min,success,19.006,1.484,2026-11-05T02:00:52Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint32_neg_8192,success,19.006,1.481,2026-11-05T02:00:54Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint32_too_long,success,19.006,1.474,2026-11-05T02:00:55Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint64_8192,success,19.006,1.478,2026-11-05T02:00:56Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint64_bad_extended,success,19.006,1.478,2026-11-05T02:00:58Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint64_max,success,19.006,1.483,2026-11-05T02:00:59Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint64_min,success,19.006,1.480,2026-11-05T02:01:01Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint64_neg_8192,success,19.006,1.482,2026-11-05T02:01:02Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint64_too_long,success,19.006,1.479,2026-11-05T02:01:04Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint7_invalid,success,19.006,1.485,2026-11-05T02:01:05Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varint7_neg,success,19.006,1.475,2026-11-05T02:01:07Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint32_0,success,19.006,1.487,2026-11-05T02:01:08Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint32_1,success,19.006,1.496,2026-11-05T02:01:10Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint32_135,success,19.006,1.480,2026-11-05T02:01:11Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint32_8192,success,19.006,1.485,2026-11-05T02:01:13Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint32_too_long,success,19.006,1.494,2026-11-05T02:01:14Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint32_too_long_nulled,success,19.006,1.468,2026-11-05T02:01:16Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint32_too_long_trailing,success,19.006,1.482,2026-11-05T02:01:17Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint64_0,success,19.006,1.486,2026-11-05T02:01:19Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint64_1,success,19.006,1.492,2026-11-05T02:01:20Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint64_135,success,19.006,1.485,2026-11-05T02:01:22Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint64_8192,success,19.006,1.490,2026-11-05T02:01:23Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint64_too_long,success,19.006,1.489,2026-11-05T02:01:25Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::primitives::tests::varuint64_too_long_trailing,success,19.006,1.476,2026-11-05T02:01:26Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::reloc_section::tests::reloc_section,test_failed,19.006,1.590,2026-11-05T02:01:28Z,50237448.0,panic,"thread 'elements::reloc_section::tests::reloc_section' (39749) panicked at src/elements/reloc_section.rs:330:65: Module should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::code_detect,success,19.006,1.489,2026-11-05T02:01:29Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::code_section_ser,success,19.006,1.489,2026-11-05T02:01:31Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::data_section_detect,success,19.006,1.492,2026-11-05T02:01:32Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::data_section_ser,success,19.006,1.491,2026-11-05T02:01:34Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::element_section_ser,success,19.006,1.498,2026-11-05T02:01:35Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::export_detect,success,19.006,1.494,2026-11-05T02:01:37Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::fn_section_detect,success,19.006,1.484,2026-11-05T02:01:38Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::fn_section_number,success,19.006,1.483,2026-11-05T02:01:40Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::fn_section_ref,success,19.006,1.488,2026-11-05T02:01:41Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::import_section,test_failed,19.006,1.575,2026-11-05T02:01:43Z,50237448.0,panic,"thread 'elements::section::tests::import_section' (41399) panicked at src/elements/section.rs:831:68: Should be deserialized: HeapOther(""Can't read from the file: Os { code: 2, kind: NotFound, message: \""No such file or directory\"" }"")"
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::start_section,success,19.006,1.490,2026-11-05T02:01:45Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::type_section_infer,success,19.006,1.500,2026-11-05T02:01:46Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,elements::section::tests::type_section_len,success,19.006,1.489,2026-11-05T02:01:48Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,io::tests::cursor,success,19.006,1.494,2026-11-05T02:01:49Z,50237448.0,,
+experimental-bsan,tetsy-wasm-0.42.1,io::tests::overflow_in_cursor,success,19.006,1.491,2026-11-05T02:01:51Z,50237448.0,,

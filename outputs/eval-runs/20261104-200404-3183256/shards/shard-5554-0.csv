@@ -1,0 +1,40 @@
+experimental-bsan,qfilter-0.3.1,portable_select::tests::test_select,success,140.842,6.373,2026-11-05T03:18:31Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::extreme_fp_rate_does_not_overflow,success,140.842,1.558,2026-11-05T03:18:33Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::run_end_crossing,success,140.842,1.571,2026-11-05T03:18:35Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::run_end_eob,success,140.842,1.566,2026-11-05T03:18:36Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::run_end_simple,success,140.842,1.580,2026-11-05T03:18:38Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_auto_resize_one,success,140.842,14.689,2026-11-05T03:18:52Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_auto_resize_two,success,140.842,2.633,2026-11-05T03:18:55Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_builder_auto_growth,success,140.842,35.528,2026-11-05T03:19:31Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_builder_empty_filter,success,140.842,1.550,2026-11-05T03:19:32Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_builder_hash_collision_dedup,success,140.842,1.561,2026-11-05T03:19:34Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_builder_identical_state,success,140.842,25.225,2026-11-05T03:19:59Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_builder_matches_regular,timeout,140.842,150.011,2026-11-05T03:22:29Z,50245300.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,qfilter-0.3.1,tests::test_builder_multi_block_spillover,success,140.842,40.642,2026-11-05T03:23:10Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_builder_no_duplicates,success,140.842,3.181,2026-11-05T03:23:13Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_builder_single_block,success,140.842,1.761,2026-11-05T03:23:15Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_builder_various_fingerprint_sizes,success,140.842,22.186,2026-11-05T03:23:37Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_builder_with_duplicates,success,140.842,1.566,2026-11-05T03:23:38Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_capacity_edge_cases,success,140.842,7.196,2026-11-05T03:23:46Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_compute_fingerprint,success,140.842,1.551,2026-11-05T03:23:47Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_custom_hasher,success,140.842,2.927,2026-11-05T03:23:50Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_dec_offset_edge_case,success,140.842,37.694,2026-11-05T03:24:28Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_insert_duplicated,timeout,140.842,150.013,2026-11-05T03:26:58Z,50245300.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,qfilter-0.3.1,tests::test_insert_duplicated_one,timeout,140.842,150.015,2026-11-05T03:29:28Z,50245300.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,qfilter-0.3.1,tests::test_insert_duplicated_two,timeout,140.842,150.012,2026-11-05T03:31:58Z,50245300.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,qfilter-0.3.1,tests::test_it_works,timeout,140.842,150.010,2026-11-05T03:34:28Z,50245300.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,qfilter-0.3.1,tests::test_max_capacity,success,140.842,1.583,2026-11-05T03:34:30Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_merge,success,140.842,4.173,2026-11-05T03:34:34Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_merge_correctness,success,140.842,105.349,2026-11-05T03:36:19Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_new_capacity_overflow,success,140.842,1.574,2026-11-05T03:36:21Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_new_hash_overflow,success,140.842,1.577,2026-11-05T03:36:22Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_new_resizeable,success,140.842,1.565,2026-11-05T03:36:24Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_new_resizeable_fp_rate_ceiling,success,140.842,1.557,2026-11-05T03:36:25Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_random_build_hasher,success,140.842,2.993,2026-11-05T03:36:28Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_remainders_and_shifts,success,140.842,3.225,2026-11-05T03:36:32Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_remove,timeout,140.842,150.013,2026-11-05T03:39:02Z,50245300.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,qfilter-0.3.1,tests::test_remove_dup_one,timeout,140.842,150.012,2026-11-05T03:41:32Z,50245300.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,qfilter-0.3.1,tests::test_remove_dup_two,timeout,140.842,150.012,2026-11-05T03:44:02Z,50245300.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,qfilter-0.3.1,tests::test_stable_build_hasher_deterministic,success,140.842,3.774,2026-11-05T03:44:06Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_with_fingerprint_size,success,140.842,2.282,2026-11-05T03:44:08Z,50245300.0,,
+experimental-bsan,qfilter-0.3.1,tests::test_with_fingerprint_size_resizes,success,140.842,2.290,2026-11-05T03:44:10Z,50245300.0,,

@@ -1,0 +1,15 @@
+experimental-bsan,adx-5.0.0,channel::tests::alpha_version,success,253.441,1.582,2026-11-05T05:18:17Z,50252356.0,,
+experimental-bsan,adx-5.0.0,channel::tests::beta_version,success,253.441,1.593,2026-11-05T05:18:19Z,50252356.0,,
+experimental-bsan,adx-5.0.0,channel::tests::calver,success,253.441,1.598,2026-11-05T05:18:20Z,50252356.0,,
+experimental-bsan,adx-5.0.0,channel::tests::cmp_channels,success,253.441,1.577,2026-11-05T05:18:22Z,50252356.0,,
+experimental-bsan,adx-5.0.0,channel::tests::cmp_parsed_versions,success,253.441,1.587,2026-11-05T05:18:24Z,50252356.0,,
+experimental-bsan,adx-5.0.0,channel::tests::dev_version,success,253.441,1.576,2026-11-05T05:18:25Z,50252356.0,,
+experimental-bsan,adx-5.0.0,channel::tests::rc_version,success,253.441,1.581,2026-11-05T05:18:27Z,50252356.0,,
+experimental-bsan,adx-5.0.0,channel::tests::stable_version,success,253.441,1.579,2026-11-05T05:18:28Z,50252356.0,,
+experimental-bsan,adx-5.0.0,parse::test::check_all_packages_are_parsed,test_failed,253.441,1.657,2026-11-05T05:18:30Z,50252356.0,panic,"thread 'parse::test::check_all_packages_are_parsed' (44420) panicked at src/parse.rs:217:14: Parsing offline copies should always work: No such file or directory (os error 2)"
+experimental-bsan,adx-5.0.0,parse::test::check_filter_works,test_failed,253.441,1.653,2026-11-05T05:18:32Z,50252356.0,panic,"thread 'parse::test::check_filter_works' (44579) panicked at src/parse.rs:199:14: called `Result::unwrap()` on an `Err` value: No such file or directory (os error 2)"
+experimental-bsan,adx-5.0.0,test::cli_assert,success,253.441,1.688,2026-11-05T05:18:33Z,50252356.0,,
+experimental-bsan,adx-5.0.0,test::cli_help,test_failed,253.441,37.902,2026-11-05T05:19:11Z,50252356.0,panic,"thread 'test::cli_help' (44840) panicked at /local/ev-50252356-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-cmd-0.6.0/src/cargo.rs:64:5: Cannot determine path to executable 'adx'"
+experimental-bsan,adx-5.0.0,test::cli_search,test_failed,253.441,38.253,2026-11-05T05:19:50Z,50252356.0,panic,"thread 'test::cli_search' (46172) panicked at /local/ev-50252356-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-cmd-0.6.0/src/cargo.rs:64:5: Cannot determine path to executable 'adx'"
+experimental-bsan,adx-5.0.0,test::cli_search_no_results,test_failed,253.441,38.580,2026-11-05T05:20:28Z,50252356.0,panic,"thread 'test::cli_search_no_results' (47959) panicked at /local/ev-50252356-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-cmd-0.6.0/src/cargo.rs:64:5: Cannot determine path to executable 'adx'"
+experimental-bsan,adx-5.0.0,test::cli_search_stable,test_failed,253.441,37.993,2026-11-05T05:21:06Z,50252356.0,panic,"thread 'test::cli_search_stable' (57990) panicked at /local/ev-50252356-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/insta-cmd-0.6.0/src/cargo.rs:64:5: Cannot determine path to executable 'adx'"

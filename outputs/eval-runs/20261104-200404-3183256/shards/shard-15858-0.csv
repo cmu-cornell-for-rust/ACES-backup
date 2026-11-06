@@ -1,0 +1,5 @@
+experimental-bsan,named-lock-0.4.1,tests::check_traits,success,18.555,1.612,2026-11-05T07:29:05Z,50260102.0,,
+experimental-bsan,named-lock-0.4.1,tests::cross_process_lock,test_failed,18.555,3.794,2026-11-05T07:29:09Z,50260102.0,panic,"thread 'tests::cross_process_lock' (93679) panicked at src/lib.rs:236:17: assertion failed: matches!(lock.try_lock(), Err(Error::WouldBlock))"
+experimental-bsan,named-lock-0.4.1,tests::edge_cases,success,18.555,3.354,2026-11-05T07:29:13Z,50260102.0,,
+experimental-bsan,named-lock-0.4.1,tests::invalid_names,success,18.555,1.673,2026-11-05T07:29:14Z,50260102.0,,
+experimental-bsan,named-lock-0.4.1,tests::owned_guard,success,18.555,1.647,2026-11-05T07:29:16Z,50260102.0,,

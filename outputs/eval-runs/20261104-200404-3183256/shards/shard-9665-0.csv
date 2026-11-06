@@ -1,0 +1,18 @@
+experimental-bsan,webparse-0.3.1,extensions::test_extensions,success,30.836,3.003,2026-11-05T05:11:36Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,http::http2::frame::kind::test_encode,success,30.836,2.995,2026-11-05T05:11:39Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,http::request::tests::urltest_001,test_failed,30.836,1.758,2026-11-05T05:11:41Z,50251537.0,panic,"thread 'http::request::tests::urltest_001' (47598) panicked at src/http/request.rs:771:5: assertion `left == right` failed"
+experimental-bsan,webparse-0.3.1,http::request::tests::urltest_002,success,30.836,3.015,2026-11-05T05:11:44Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,http::request::tests::urltest_003,test_failed,30.836,1.758,2026-11-05T05:11:45Z,50251537.0,panic,"thread 'http::request::tests::urltest_003' (50099) panicked at src/http/request.rs:799:5: assertion `left == right` failed"
+experimental-bsan,webparse-0.3.1,http::request::tests::urltest_004,success,30.836,3.045,2026-11-05T05:11:48Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,url::url::tests::urltest_001,success,30.836,3.006,2026-11-05T05:11:52Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,url::url::tests::urltest_002,success,30.836,3.010,2026-11-05T05:11:55Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,url::url::tests::urltest_003,success,30.836,2.996,2026-11-05T05:11:58Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,url::url::tests::urltest_004,success,30.836,3.001,2026-11-05T05:12:01Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,ws::dataframe::tests::read_incomplete_payloads,success,30.836,3.001,2026-11-05T05:12:04Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,ws::dataframe::tests::test_read_dataframe,success,30.836,2.982,2026-11-05T05:12:07Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,ws::dataframe::tests::test_write_dataframe,success,30.836,2.989,2026-11-05T05:12:10Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,ws::frame_header::tests::test_read_header_complex,success,30.836,2.997,2026-11-05T05:12:13Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,ws::frame_header::tests::test_read_header_simple,success,30.836,2.990,2026-11-05T05:12:16Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,ws::frame_header::tests::test_write_header_complex,success,30.836,3.009,2026-11-05T05:12:19Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,ws::frame_header::tests::test_write_header_simple,success,30.836,2.989,2026-11-05T05:12:22Z,50251537.0,,
+experimental-bsan,webparse-0.3.1,ws::mask::tests::test_mask_data,success,30.836,2.983,2026-11-05T05:12:25Z,50251537.0,,

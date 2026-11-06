@@ -1,0 +1,40 @@
+experimental-bsan,salvo-csrf-1.0.1,aes_gcm_cipher::tests::test_aes_gcm_cipher,success,390.099,2.135,2026-11-05T03:23:22Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,bcrypt_cipher::tests::test_bcrypt_cipher_new,success,390.099,1.685,2026-11-05T03:23:24Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,bcrypt_cipher::tests::test_bcrypt_cipher_verify_and_generate,timeout,390.099,150.015,2026-11-05T03:25:54Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,bcrypt_cipher::tests::test_bcrypt_cipher_verify_invalid_token,timeout,390.099,150.015,2026-11-05T03:28:24Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,bcrypt_cipher::tests::test_bcrypt_cipher_with_cost,success,390.099,1.775,2026-11-05T03:28:26Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,bcrypt_cipher::tests::test_bcrypt_cipher_with_invalid_cost,success,390.099,1.789,2026-11-05T03:28:27Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,bcrypt_cipher::tests::test_bcrypt_cipher_with_min_token_size,success,390.099,1.748,2026-11-05T03:28:29Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,bcrypt_cipher::tests::test_bcrypt_cipher_with_token_size,success,390.099,1.757,2026-11-05T03:28:31Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,bcrypt_cipher::tests::test_bcrypt_cipher_with_too_large_token_size,success,390.099,1.761,2026-11-05T03:28:33Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,bcrypt_cipher::tests::test_bcrypt_cipher_with_too_small_token_size,success,390.099,1.786,2026-11-05T03:28:35Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,cookie_store::tests::test_cookie_store,timeout,390.099,150.018,2026-11-05T03:31:05Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,cookie_store::tests::test_cookie_store_infers_secure_from_https_scheme,timeout,390.099,150.016,2026-11-05T03:33:35Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,cookie_store::tests::test_cookie_store_secure_policy_can_disable_https_secure,timeout,390.099,150.017,2026-11-05T03:36:05Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,cookie_store::tests::test_cookie_store_secure_policy_can_force_secure,timeout,390.099,150.015,2026-11-05T03:38:35Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,finder::tests::test_form_finder,success,390.099,1.822,2026-11-05T03:38:37Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,finder::tests::test_header_finder,success,390.099,1.809,2026-11-05T03:38:38Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,finder::tests::test_json_finder,success,390.099,1.807,2026-11-05T03:38:40Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,finder::tests::test_json_finder_not_string,success,390.099,1.802,2026-11-05T03:38:42Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,hmac_cipher::tests::test_generate,success,390.099,1.850,2026-11-05T03:38:44Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,hmac_cipher::tests::test_new,success,390.099,1.700,2026-11-05T03:38:46Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,hmac_cipher::tests::test_verify,success,390.099,1.844,2026-11-05T03:38:47Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,hmac_cipher::tests::test_verify_custom_token_size,success,390.099,1.825,2026-11-05T03:38:49Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,hmac_cipher::tests::test_verify_invalid,success,390.099,1.841,2026-11-05T03:38:51Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,hmac_cipher::tests::test_with_token_size,success,390.099,1.677,2026-11-05T03:38:53Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,tests::test_adds_csrf_cookie_sets_request_token,timeout,390.099,150.015,2026-11-05T03:41:23Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_custom_skipper_bypasses_csrf_validation,timeout,390.099,150.016,2026-11-05T03:43:53Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_exposes_csrf_request_extensions,timeout,390.099,150.016,2026-11-05T03:46:23Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_per_request_rotates_token_across_safe_requests,timeout,390.099,150.017,2026-11-05T03:48:53Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_per_request_rotates_token_after_successful_unsafe_request,timeout,390.099,150.021,2026-11-05T03:51:23Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_per_session_reuses_token_across_safe_requests,timeout,390.099,150.018,2026-11-05T03:53:53Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_rejects_invalid_base64_token,timeout,390.099,150.017,2026-11-05T03:56:23Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_rejects_mismatched_token,timeout,390.099,150.019,2026-11-05T03:58:53Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_rejects_short_token,timeout,390.099,150.015,2026-11-05T04:01:23Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_session_store_without_session_middleware_does_not_panic,timeout,390.099,150.016,2026-11-05T04:03:53Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_validates_token_in_alternate_form,timeout,390.099,150.016,2026-11-05T04:06:23Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_validates_token_in_alternate_query,success,390.099,2.243,2026-11-05T04:06:26Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,tests::test_validates_token_in_custom_header,timeout,390.099,150.016,2026-11-05T04:08:56Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_validates_token_in_form,success,390.099,2.319,2026-11-05T04:08:58Z,50245322.0,,
+experimental-bsan,salvo-csrf-1.0.1,tests::test_validates_token_in_header,timeout,390.099,150.016,2026-11-05T04:11:28Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,salvo-csrf-1.0.1,tests::test_validates_token_in_query,timeout,390.099,150.020,2026-11-05T04:13:58Z,50245322.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

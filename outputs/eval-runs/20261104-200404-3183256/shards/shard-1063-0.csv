@@ -1,0 +1,185 @@
+experimental-bsan,flapigen-0.12.3,code_parse::tests::cpp_constructor_rejects_box_of_self_type,test_failed,454.460,3.894,2026-11-05T01:43:23Z,50233704.0,crash,"test code_parse::tests::cpp_constructor_rejects_box_of_self_type ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,flapigen-0.12.3,code_parse::tests::test_do_parse_foreigner_class,success,454.460,9.558,2026-11-05T01:43:33Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,code_parse::tests::test_parse_foreign_callback_consuming_method,success,454.460,6.431,2026-11-05T01:43:40Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,code_parse::tests::test_parse_foreign_callback_inherited_auto_traits,success,454.460,6.251,2026-11-05T01:43:46Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,code_parse::tests::test_parse_foreign_callback_multi_traits,success,454.460,6.360,2026-11-05T01:43:52Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,code_parse::tests::test_parse_foreign_callback_path,success,454.460,6.351,2026-11-05T01:43:59Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,code_parse::tests::test_parse_foreign_callback_rejects_nonterminal_consuming_method,success,454.460,5.873,2026-11-05T01:44:04Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,code_parse::tests::test_parse_foreign_callback_simple,success,454.460,6.296,2026-11-05T01:44:11Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,code_parse::tests::test_parse_foreign_class_with_copy_derive,success,454.460,6.495,2026-11-05T01:44:17Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,code_parse::tests::test_parse_foreign_enum,success,454.460,5.834,2026-11-05T01:44:23Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,code_parse::tests::test_parse_generic_foreign_callback,success,454.460,6.294,2026-11-05T01:44:29Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,cpp::tests::indirect_foreign_class_slices_are_not_direct_mapped,timeout,454.460,150.013,2026-11-05T01:46:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,cpp::tests::nested_foreign_vectors_reject_non_direct_classes,timeout,454.460,150.014,2026-11-05T01:49:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,cpp::tests::plain_class_indirect_slice_explains_missing_borrowed_wrapper,timeout,454.460,150.013,2026-11-05T01:51:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,cpp::tests::plain_class_vector_explains_missing_borrowed_wrapper,timeout,454.460,150.015,2026-11-05T01:54:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,cpp::tests::slice_conversion_graph_keeps_element_types_separate,timeout,454.460,150.014,2026-11-05T01:57:00Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,cpp::tests::slices_of_arc_and_rc_foreign_objects_are_generated,timeout,454.460,150.014,2026-11-05T01:59:30Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,cpp::tests::unsupported_foreign_class_vectors_do_not_use_inline_access,timeout,454.460,150.015,2026-11-05T02:02:00Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,expectation_snapshot::tests::between_preserves_partial_fragment,success,454.460,5.738,2026-11-05T02:02:05Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,expectation_snapshot::tests::crlf_expectation_matches_lf_output,success,454.460,5.805,2026-11-05T02:02:11Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,expectation_snapshot::tests::failed_expectations_show_complete_generated_file,success,454.460,6.054,2026-11-05T02:02:17Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,expectation_snapshot::tests::greedy_match_uses_last_end_boundary,success,454.460,5.786,2026-11-05T02:02:23Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,expectation_snapshot::tests::item_selector_ignores_comments_and_string_delimiters,success,454.460,5.741,2026-11-05T02:02:29Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,expectation_snapshot::tests::missing_and_ambiguous_boundaries_fail,success,454.460,5.708,2026-11-05T02:02:34Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,expectation_snapshot::tests::omitted_boundaries_mean_file_edges,success,454.460,5.743,2026-11-05T02:02:40Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,expectation_snapshot::tests::overwrite_updates_only_selected_body,success,454.460,6.025,2026-11-05T02:02:46Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,expectation_snapshot::tests::snapshot_format_round_trip,success,454.460,5.735,2026-11-05T02:02:52Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,test_callback_without_self_err,timeout,454.460,150.015,2026-11-05T02:05:22Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_code_in_readme,test_failed,454.460,3.046,2026-11-05T02:05:25Z,50233704.0,panic,"thread 'test_code_in_readme' (103680) panicked at tests/test_code_in_readme.rs:74:58: Can not open README: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,flapigen-0.12.3,test_derive_extension_usage,timeout,454.460,150.015,2026-11-05T02:07:55Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_access,timeout,454.460,150.015,2026-11-05T02:10:25Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_basic_foreign_class,timeout,454.460,150.016,2026-11-05T02:12:55Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_bool_in_out,timeout,454.460,150.015,2026-11-05T02:15:25Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_bool_in_out_interface,timeout,454.460,150.016,2026-11-05T02:17:55Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_c_self_type,timeout,454.460,150.014,2026-11-05T02:20:25Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_callback_auto_traits,timeout,454.460,150.015,2026-11-05T02:22:55Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_callback_in_callback_args,timeout,454.460,150.016,2026-11-05T02:25:25Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_callback_ref_as_param,timeout,454.460,150.015,2026-11-05T02:27:55Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_callback_with_several_traits,timeout,454.460,150.016,2026-11-05T02:30:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cenum,timeout,454.460,150.015,2026-11-05T02:32:56Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_circular_deps,timeout,454.460,150.016,2026-11-05T02:35:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_class_with_dummy_constructor,timeout,454.460,150.015,2026-11-05T02:37:56Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_consuming_callback,timeout,454.460,150.016,2026-11-05T02:40:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_class_header_dependencies,timeout,454.460,150.016,2026-11-05T02:42:56Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_code_cache,timeout,454.460,150.016,2026-11-05T02:45:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_empty_views,timeout,454.460,150.016,2026-11-05T02:47:56Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_generic_ptr_rule,timeout,454.460,150.015,2026-11-05T02:50:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_include_custom_rule,timeout,454.460,150.017,2026-11-05T02:52:56Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_include_return_only_result_vec,timeout,454.460,150.016,2026-11-05T02:55:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_interface_self_include,timeout,454.460,150.016,2026-11-05T02:57:56Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_issue_309_option_refs,timeout,454.460,150.016,2026-11-05T03:00:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_plain_circular_deps,timeout,454.460,150.016,2026-11-05T03:02:56Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_plain_class,timeout,454.460,150.015,2026-11-05T03:05:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_plain_class_ref_custom,timeout,454.460,150.016,2026-11-05T03:07:56Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_plain_class_ref_error,timeout,454.460,150.015,2026-11-05T03:10:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_qdate_typemap,timeout,454.460,150.015,2026-11-05T03:12:56Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_ret_opt_qstring,timeout,454.460,150.016,2026-11-05T03:15:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_return_option,timeout,454.460,150.014,2026-11-05T03:17:56Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_return_tuple,timeout,454.460,150.016,2026-11-05T03:20:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_cpp_self_ref,timeout,454.460,150.015,2026-11-05T03:22:56Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_default_constructor_allocation,timeout,454.460,150.016,2026-11-05T03:25:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_direct_foreign_slices,timeout,454.460,150.016,2026-11-05T03:27:56Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_document_generated_code,timeout,454.460,150.016,2026-11-05T03:30:26Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_fenum,timeout,454.460,150.021,2026-11-05T03:32:57Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_fenum_with_comments,timeout,454.460,150.015,2026-11-05T03:35:27Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_foreign_class_as_arg_type_simple,timeout,454.460,150.015,2026-11-05T03:37:57Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_foreign_class_as_return_type_simple,timeout,454.460,150.017,2026-11-05T03:40:27Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_foreign_class_static_only_methods,timeout,454.460,150.025,2026-11-05T03:42:57Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_foreign_enum_plus_interface,timeout,454.460,150.018,2026-11-05T03:45:27Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_foreign_interface,timeout,454.460,150.016,2026-11-05T03:47:57Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_foreign_interface_cpp_return_not_void,timeout,454.460,150.016,2026-11-05T03:50:27Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_foreign_vec_as_arg_cpp,timeout,454.460,150.016,2026-11-05T03:52:57Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_foreign_vec_return,timeout,454.460,150.019,2026-11-05T03:55:27Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_generated_ref_classes,timeout,454.460,150.017,2026-11-05T03:57:57Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_generic,timeout,454.460,150.020,2026-11-05T04:00:27Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_generic_consuming_callback,timeout,454.460,150.016,2026-11-05T04:02:57Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_import_null_annotation_java,timeout,454.460,150.014,2026-11-05T04:05:27Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_indirect_foreign_slices,timeout,454.460,150.014,2026-11-05T04:07:57Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_indirect_foreign_vec,timeout,454.460,150.015,2026-11-05T04:10:27Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_inline_dyn,timeout,454.460,150.016,2026-11-05T04:12:57Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_inline_function,timeout,454.460,150.015,2026-11-05T04:15:27Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_int_array,timeout,454.460,150.024,2026-11-05T04:17:57Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_interface_with_str,timeout,454.460,150.017,2026-11-05T04:20:27Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_javadoc,timeout,454.460,150.017,2026-11-05T04:22:57Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_lifetime_param_in_result,timeout,454.460,150.014,2026-11-05T04:25:27Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_nested_foreign_vec,timeout,454.460,150.017,2026-11-05T04:27:57Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_null_annotation_java,timeout,454.460,150.016,2026-11-05T04:30:28Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_option_arg_cpp,timeout,454.460,150.015,2026-11-05T04:32:58Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_option_java,timeout,454.460,150.025,2026-11-05T04:35:28Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_own_objects_creation,timeout,454.460,150.019,2026-11-05T04:37:58Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_parse_errors,timeout,454.460,150.015,2026-11-05T04:40:28Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_pass_c_function_as_param,timeout,454.460,150.017,2026-11-05T04:42:58Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_pass_foreign_trait_cpp,timeout,454.460,150.013,2026-11-05T04:45:28Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_pass_objects_as_param,timeout,454.460,150.021,2026-11-05T04:47:58Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_pass_objects_as_param_simple,timeout,454.460,150.017,2026-11-05T04:50:28Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_pass_slice_as_args,timeout,454.460,150.014,2026-11-05T04:52:58Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_preallocated_foreign_class,timeout,454.460,150.016,2026-11-05T04:55:28Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_reachability_fence_java,timeout,454.460,150.016,2026-11-05T04:57:58Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_references,timeout,454.460,150.014,2026-11-05T05:00:28Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_result_in_callback,timeout,454.460,150.016,2026-11-05T05:02:58Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_return_foreign_class1,timeout,454.460,150.014,2026-11-05T05:05:28Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_return_foreign_class2,timeout,454.460,150.014,2026-11-05T05:07:58Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_return_foreign_class3,timeout,454.460,150.016,2026-11-05T05:10:28Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_return_foreign_class_arc,timeout,454.460,150.013,2026-11-05T05:12:58Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_return_foreign_enum_as_err,timeout,454.460,150.016,2026-11-05T05:15:28Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_return_foreign_interface_opt,timeout,454.460,150.015,2026-11-05T05:17:58Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_return_result_i64_object,timeout,454.460,150.017,2026-11-05T05:20:28Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_return_result_with_object_as_value_and_err,timeout,454.460,150.015,2026-11-05T05:22:58Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_return_result_with_object_as_value_and_err_cpp,timeout,454.460,150.016,2026-11-05T05:25:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_return_slice,timeout,454.460,150.014,2026-11-05T05:27:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_return_string_slices,timeout,454.460,150.015,2026-11-05T05:30:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_return_string_slices_boost,timeout,454.460,150.016,2026-11-05T05:32:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_smart_ptr_copy_derived,timeout,454.460,150.011,2026-11-05T05:35:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_smart_ptr_copy_derived_arc,timeout,454.460,150.016,2026-11-05T05:37:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_static_func_with_foreign_class_as_param1,timeout,454.460,150.014,2026-11-05T05:40:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_static_func_with_foreign_class_as_param2,timeout,454.460,150.016,2026-11-05T05:42:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_static_func_with_foreign_class_full,timeout,454.460,150.016,2026-11-05T05:45:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_string_containers,timeout,454.460,150.012,2026-11-05T05:47:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_string_handling,timeout,454.460,150.011,2026-11-05T05:50:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_test_bare_fn_match,timeout,454.460,150.016,2026-11-05T05:52:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_unified_slices,timeout,454.460,150.016,2026-11-05T05:55:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_vec_string,timeout,454.460,150.011,2026-11-05T05:57:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_vec_with_basic_types,timeout,454.460,150.014,2026-11-05T06:00:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectation_work_with_rc,timeout,454.460,150.015,2026-11-05T06:02:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectations_class_with_methods_without_constructor,timeout,454.460,150.014,2026-11-05T06:05:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectations_foreign_vec_as_arg,timeout,454.460,150.013,2026-11-05T06:07:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_expectations_parse_without_self_type_err,timeout,454.460,150.012,2026-11-05T06:10:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_foreign_enum_vs_int,timeout,454.460,150.012,2026-11-05T06:12:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_foreign_interface_cpp,timeout,454.460,150.015,2026-11-05T06:15:29Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_foreign_typemap_not_direct_intermediate,timeout,454.460,150.015,2026-11-05T06:17:59Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_includes_syntax_ok,success,454.460,5.694,2026-11-05T06:18:05Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,test_return_foreign_class_ref,timeout,454.460,150.015,2026-11-05T06:20:35Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_return_result_type_with_object,timeout,454.460,150.015,2026-11-05T06:23:05Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,test_rust_expectation_matches_generated_item_across_newline_styles,success,454.460,6.047,2026-11-05T06:23:11Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::generic_type_conv_find,test_failed,454.460,2.879,2026-11-05T06:23:14Z,50233704.0,crash,"test typemap::ast::tests::generic_type_conv_find ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_get_trait_bounds,success,454.460,5.845,2026-11-05T06:23:20Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_is_second_subst_of_first_char_pointer,success,454.460,5.774,2026-11-05T06:23:26Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_is_second_subst_of_first_extern_c_fn_ptr,success,454.460,5.857,2026-11-05T06:23:32Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_is_second_subst_of_first_impl_fnonce_no_ret,success,454.460,5.764,2026-11-05T06:23:37Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_is_second_subst_of_first_impl_fnonce_with_ret,success,454.460,5.812,2026-11-05T06:23:43Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_is_second_subst_of_first_pointer,success,454.460,5.733,2026-11-05T06:23:49Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_is_second_subst_of_first_span,success,454.460,5.868,2026-11-05T06:23:55Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_is_second_subst_of_first_tuple,success,454.460,5.868,2026-11-05T06:24:01Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_jlong_to_option_wrong_conv,success,454.460,6.603,2026-11-05T06:24:07Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_list_lifetimes,success,454.460,5.736,2026-11-05T06:24:13Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_normalize_ty,success,454.460,6.248,2026-11-05T06:24:19Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_parse_type_spanned_macro,success,454.460,5.802,2026-11-05T06:24:25Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_replace_all_types_with,success,454.460,5.930,2026-11-05T06:24:31Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_work_with_option,success,454.460,5.801,2026-11-05T06:24:37Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_work_with_rc,success,454.460,5.923,2026-11-05T06:24:43Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::ast::tests::test_work_with_result,success,454.460,6.239,2026-11-05T06:24:49Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::merge::tests::test_merge,success,454.460,8.119,2026-11-05T06:24:57Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::parse::tests::test_double_map_err,success,454.460,5.732,2026-11-05T06:25:03Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::parse::tests::test_extract_trait_param_type,success,454.460,5.875,2026-11-05T06:25:09Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::parse::tests::test_get_foreigner_hint_for_generic,success,454.460,5.900,2026-11-05T06:25:15Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::parse::tests::test_my_syn_attrs_to_hashmap,success,454.460,6.308,2026-11-05T06:25:21Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::parse::tests::test_parse_cfg_target_width,success,454.460,5.936,2026-11-05T06:25:27Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::parse::tests::test_parse_conv_impl_with_type_params,test_failed,454.460,2.597,2026-11-05T06:25:30Z,50233704.0,crash,"test typemap::parse::tests::test_parse_conv_impl_with_type_params ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,flapigen-0.12.3,typemap::parse::tests::test_parse_foreign_types_map_mod,success,454.460,5.994,2026-11-05T06:25:36Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::parse::tests::test_parse_macros_conv,success,454.460,7.877,2026-11-05T06:25:43Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::parse::tests::test_parse_main_lang_typemaps,test_failed,454.460,20.463,2026-11-05T06:26:04Z,50233704.0,crash,"test typemap::parse::tests::test_parse_main_lang_typemaps ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,flapigen-0.12.3,typemap::parse::tests::test_parse_trait_with_code,success,454.460,7.110,2026-11-05T06:26:11Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::parse::tests::test_parsing_only_types_map_mod,success,454.460,5.974,2026-11-05T06:26:17Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::tests::registering_traits_updates_existing_rust_type_clones,success,454.460,5.941,2026-11-05T06:26:23Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::tests::test_try_build_path,timeout,454.460,150.015,2026-11-05T06:28:53Z,50233704.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::compound_foreign_type_parameter_substitutes_nested_type,success,454.460,5.976,2026-11-05T06:28:59Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::define_c_type_accepts_trait_impls_for_its_descriptor,success,454.460,6.001,2026-11-05T06:29:05Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::define_c_type_rejects_unrelated_impls,success,454.460,6.303,2026-11-05T06:29:11Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::generic_alias_resolves_compound_foreign_types,success,454.460,6.334,2026-11-05T06:29:18Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_expand_generic_type_with_ptr,test_failed,454.460,2.512,2026-11-05T06:29:20Z,50233704.0,crash,"test typemap::typemap_macro::tests::test_expand_generic_type_with_ptr ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_bare_fn_two_args,success,454.460,7.453,2026-11-05T06:29:28Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_callback_to_future,success,454.460,8.778,2026-11-05T06:29:36Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_cpp_bool,success,454.460,7.699,2026-11-05T06:29:44Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_cpp_pair_expand,success,454.460,12.324,2026-11-05T06:29:56Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_cpp_pair_syntax,success,454.460,11.449,2026-11-05T06:30:08Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_cpp_ruststring,success,454.460,7.832,2026-11-05T06:30:16Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_cpp_str,success,454.460,8.145,2026-11-05T06:30:24Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_java_datetime,success,454.460,7.598,2026-11-05T06:30:32Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_jboolean,success,454.460,7.007,2026-11-05T06:30:39Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_qdatetime,success,454.460,6.363,2026-11-05T06:30:45Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_qstring,success,454.460,6.343,2026-11-05T06:30:51Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_simple_generic,success,454.460,6.075,2026-11-05T06:30:57Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_simple_typemap,success,454.460,5.864,2026-11-05T06:31:03Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_foreign_typemap_unique_prefix,success,454.460,7.425,2026-11-05T06:31:11Z,50233704.0,,
+experimental-bsan,flapigen-0.12.3,typemap::typemap_macro::tests::test_java_c_like_enum_generic,success,454.460,6.764,2026-11-05T06:31:17Z,50233704.0,,

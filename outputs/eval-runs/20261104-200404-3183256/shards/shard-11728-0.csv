@@ -1,0 +1,12 @@
+experimental-bsan,pq-1.4.4,test_bad_input,success,261.920,145.120,2026-11-05T05:54:14Z,50254298.0,,
+experimental-bsan,pq-1.4.4,test_cat_noncanonical_decode,success,261.920,4.131,2026-11-05T05:54:18Z,50254298.0,,
+experimental-bsan,pq-1.4.4,test_dog_decode,success,261.920,4.190,2026-11-05T05:54:23Z,50254298.0,,
+experimental-bsan,pq-1.4.4,test_dog_decode_from_proto,test_failed,261.920,4.360,2026-11-05T05:54:27Z,50254298.0,panic,"thread 'test_dog_decode_from_proto' (93074) panicked at /local/ev-50254298-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/assert_cli-0.6.3/src/assert.rs:441:13: Assertion failed for `cargo run --quiet -- --msgtype=com.example.dog.Dog --protofile=/work/tests/protos/dog.proto`"
+experimental-bsan,pq-1.4.4,test_dog_decode_i32be_stream,success,261.920,4.178,2026-11-05T05:54:31Z,50254298.0,,
+experimental-bsan,pq-1.4.4,test_dog_decode_stream,success,261.920,4.181,2026-11-05T05:54:35Z,50254298.0,,
+experimental-bsan,pq-1.4.4,test_no_args,success,261.920,4.177,2026-11-05T05:54:40Z,50254298.0,,
+experimental-bsan,pq-1.4.4,test_no_fdset_files,success,261.920,4.227,2026-11-05T05:54:44Z,50254298.0,,
+experimental-bsan,pq-1.4.4,test_nonexistent_fdset_dir,success,261.920,4.227,2026-11-05T05:54:48Z,50254298.0,,
+experimental-bsan,pq-1.4.4,test_person_decode,success,261.920,4.161,2026-11-05T05:54:52Z,50254298.0,,
+experimental-bsan,pq-1.4.4,test_person_decode_with_command_line_fdset_dir,success,261.920,4.151,2026-11-05T05:54:56Z,50254298.0,,
+experimental-bsan,pq-1.4.4,test_person_decode_with_command_line_fdset_file,success,261.920,4.133,2026-11-05T05:55:01Z,50254298.0,,

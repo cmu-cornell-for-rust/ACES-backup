@@ -1,0 +1,122 @@
+experimental-bsan,rust_swig-0.5.1,code_parse::tests::test_do_parse_foreigner_class,test_failed,480.931,4.399,2026-11-05T01:59:00Z,50234857.0,crash,"test code_parse::tests::test_do_parse_foreigner_class ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,code_parse::tests::test_parse_foreign_callback_multi_traits,success,480.931,6.437,2026-11-05T01:59:06Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,code_parse::tests::test_parse_foreign_callback_path,success,480.931,6.406,2026-11-05T01:59:13Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,code_parse::tests::test_parse_foreign_callback_simple,success,480.931,6.268,2026-11-05T01:59:19Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,code_parse::tests::test_parse_foreign_class_with_copy_derive,success,480.931,6.471,2026-11-05T01:59:25Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,code_parse::tests::test_parse_foreign_enum,success,480.931,5.803,2026-11-05T01:59:31Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,test_callback_without_self_err,timeout,480.931,150.017,2026-11-05T02:02:01Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_code_in_readme,test_failed,480.931,3.023,2026-11-05T02:02:04Z,50234857.0,panic,"thread 'test_code_in_readme' (81876) panicked at tests/test_code_in_readme.rs:76:58: Can not open README: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,rust_swig-0.5.1,test_expectation_bool_in_out,timeout,480.931,150.016,2026-11-05T02:04:34Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_bool_in_out_interface,timeout,480.931,150.016,2026-11-05T02:07:04Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_callback_with_several_traits,timeout,480.931,150.017,2026-11-05T02:09:34Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_circular_deps,timeout,480.931,150.017,2026-11-05T02:12:04Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_class_with_dummy_constructor,timeout,480.931,150.016,2026-11-05T02:14:34Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_cpp_generic_ptr_rule,timeout,480.931,150.016,2026-11-05T02:17:05Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_cpp_include_custom_rule,timeout,480.931,150.017,2026-11-05T02:19:35Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_cpp_include_return_only_result_vec,timeout,480.931,150.018,2026-11-05T02:22:05Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_cpp_qdate_typemap,timeout,480.931,150.016,2026-11-05T02:24:35Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_cpp_return_option,timeout,480.931,150.017,2026-11-05T02:27:05Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_cpp_return_tuple,timeout,480.931,150.016,2026-11-05T02:29:35Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_cpp_self_ref,timeout,480.931,150.016,2026-11-05T02:32:05Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_document_generated_code,timeout,480.931,150.018,2026-11-05T02:34:35Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_fenum_with_comments,timeout,480.931,150.017,2026-11-05T02:37:05Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_foreign_class_as_arg_type_simple,timeout,480.931,150.017,2026-11-05T02:39:35Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_foreign_class_as_return_type_simple,timeout,480.931,150.017,2026-11-05T02:42:05Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_foreign_class_static_only_methods,timeout,480.931,150.017,2026-11-05T02:44:35Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_foreign_enum_plus_interface,timeout,480.931,150.017,2026-11-05T02:47:05Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_foreign_interface,timeout,480.931,150.017,2026-11-05T02:49:35Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_foreign_interface_cpp_return_not_void,timeout,480.931,150.017,2026-11-05T02:52:05Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_foreign_vec_as_arg_cpp,timeout,480.931,150.017,2026-11-05T02:54:35Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_foreign_vec_return,timeout,480.931,150.017,2026-11-05T02:57:05Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_generated_ref_classes,timeout,480.931,150.017,2026-11-05T02:59:35Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_generic,timeout,480.931,150.019,2026-11-05T03:02:05Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_inline_dyn,timeout,480.931,150.018,2026-11-05T03:04:35Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_inline_function,timeout,480.931,150.018,2026-11-05T03:07:05Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_int_array,timeout,480.931,150.017,2026-11-05T03:09:35Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_interface_with_str,timeout,480.931,150.017,2026-11-05T03:12:05Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_javadoc,timeout,480.931,150.017,2026-11-05T03:14:36Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_lifetime_param_in_result,timeout,480.931,150.017,2026-11-05T03:17:06Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_null_annotation_java,timeout,480.931,150.018,2026-11-05T03:19:36Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_option_arg_cpp,timeout,480.931,150.017,2026-11-05T03:22:06Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_option_java,timeout,480.931,150.017,2026-11-05T03:24:36Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_own_objects_creation,timeout,480.931,150.017,2026-11-05T03:27:06Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_pass_foreign_trait_cpp,timeout,480.931,150.017,2026-11-05T03:29:36Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_pass_objects_as_param,timeout,480.931,150.016,2026-11-05T03:32:06Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_pass_objects_as_param_simple,timeout,480.931,150.016,2026-11-05T03:34:36Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_pass_slice_as_args,timeout,480.931,150.017,2026-11-05T03:37:06Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_reachability_fence_java,timeout,480.931,150.018,2026-11-05T03:39:36Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_references,timeout,480.931,150.018,2026-11-05T03:42:06Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_return_foreign_class1,timeout,480.931,150.017,2026-11-05T03:44:36Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_return_foreign_class2,timeout,480.931,150.018,2026-11-05T03:47:06Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_return_foreign_class3,timeout,480.931,150.018,2026-11-05T03:49:36Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_return_foreign_class_arc,timeout,480.931,150.017,2026-11-05T03:52:06Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_return_foreign_enum_as_err,timeout,480.931,150.017,2026-11-05T03:54:36Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_return_foreign_interface_opt,timeout,480.931,150.017,2026-11-05T03:57:06Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_return_result_i64_object,timeout,480.931,150.017,2026-11-05T03:59:36Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_return_result_with_object_as_value_and_err,timeout,480.931,150.016,2026-11-05T04:02:06Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_return_result_with_object_as_value_and_err_cpp,timeout,480.931,150.017,2026-11-05T04:04:36Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_return_result_with_vec,timeout,480.931,150.018,2026-11-05T04:07:06Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_return_slice,timeout,480.931,150.017,2026-11-05T04:09:36Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_smart_ptr_copy_derived,timeout,480.931,150.017,2026-11-05T04:12:07Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_static_func_with_foreign_class_as_param1,timeout,480.931,150.018,2026-11-05T04:14:37Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_static_func_with_foreign_class_as_param2,timeout,480.931,150.017,2026-11-05T04:17:07Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_static_func_with_foreign_class_full,timeout,480.931,150.017,2026-11-05T04:19:37Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_string_containers,timeout,480.931,150.018,2026-11-05T04:22:07Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_string_handling,timeout,480.931,150.017,2026-11-05T04:24:37Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_test_bare_fn_match,timeout,480.931,150.019,2026-11-05T04:27:07Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectation_work_with_rc,timeout,480.931,150.016,2026-11-05T04:29:37Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectations_class_with_methods_without_constructor,timeout,480.931,150.018,2026-11-05T04:32:07Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectations_foreign_vec_as_arg,timeout,480.931,150.016,2026-11-05T04:34:37Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_expectations_parse_without_self_type_err,timeout,480.931,150.016,2026-11-05T04:37:07Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_foreign_enum_vs_int,timeout,480.931,150.016,2026-11-05T04:39:37Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_foreign_interface_cpp,timeout,480.931,150.017,2026-11-05T04:42:07Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_foreign_typemap_not_direct_intermidiate,timeout,480.931,150.017,2026-11-05T04:44:37Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_includes_syntax_ok,success,480.931,5.747,2026-11-05T04:44:43Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,test_return_foreign_class_ref,timeout,480.931,150.016,2026-11-05T04:47:13Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,test_return_result_type_with_object,timeout,480.931,150.017,2026-11-05T04:49:43Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::generic_type_conv_find,test_failed,480.931,1.735,2026-11-05T04:49:45Z,50234857.0,crash,"test typemap::ast::tests::generic_type_conv_find ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_get_trait_bounds,success,480.931,5.853,2026-11-05T04:49:51Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_is_second_subst_of_first_char_pointer,success,480.931,5.801,2026-11-05T04:49:56Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_is_second_subst_of_first_extern_c_fn_ptr,success,480.931,5.841,2026-11-05T04:50:02Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_is_second_subst_of_first_impl_fnonce_no_ret,success,480.931,5.793,2026-11-05T04:50:08Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_is_second_subst_of_first_impl_fnonce_with_ret,success,480.931,5.846,2026-11-05T04:50:14Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_is_second_subst_of_first_pointer,success,480.931,5.761,2026-11-05T04:50:20Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_is_second_subst_of_first_span,success,480.931,5.884,2026-11-05T04:50:26Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_jlong_to_option_wrong_conv,test_failed,480.931,2.280,2026-11-05T04:50:28Z,50234857.0,crash,"test typemap::ast::tests::test_jlong_to_option_wrong_conv ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_list_lifetimes,test_failed,480.931,1.675,2026-11-05T04:50:30Z,50234857.0,crash,"test typemap::ast::tests::test_list_lifetimes ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_normalize_ty,test_failed,480.931,1.717,2026-11-05T04:50:31Z,50234857.0,panic,"thread 'typemap::ast::tests::test_normalize_ty' (58733) panicked at src/typemap/ast/tests.rs:12:5: assertion `left == right` failed"
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_parse_type_spanned_macro,success,480.931,5.869,2026-11-05T04:50:37Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_replace_all_types_with,success,480.931,5.983,2026-11-05T04:50:43Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_work_with_option,success,480.931,5.872,2026-11-05T04:50:49Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_work_with_rc,test_failed,480.931,1.667,2026-11-05T04:50:51Z,50234857.0,crash,"test typemap::ast::tests::test_work_with_rc ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,typemap::ast::tests::test_work_with_result,test_failed,480.931,2.088,2026-11-05T04:50:53Z,50234857.0,crash,"test typemap::ast::tests::test_work_with_result ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,typemap::merge::tests::test_merge,test_failed,480.931,2.909,2026-11-05T04:50:56Z,50234857.0,crash,"test typemap::merge::tests::test_merge ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_double_map_err,success,480.931,5.768,2026-11-05T04:51:02Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_extract_trait_param_type,success,480.931,5.936,2026-11-05T04:51:08Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_get_foreigner_hint_for_generic,success,480.931,5.994,2026-11-05T04:51:14Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_my_syn_attrs_to_hashmap,success,480.931,6.342,2026-11-05T04:51:20Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_parse_cfg_target_width,success,480.931,6.022,2026-11-05T04:51:26Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_parse_conv_impl_with_type_params,test_failed,480.931,2.354,2026-11-05T04:51:28Z,50234857.0,crash,"test typemap::parse::tests::test_parse_conv_impl_with_type_params ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_parse_deref,success,480.931,6.384,2026-11-05T04:51:35Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_parse_foreign_types_map_mod,success,480.931,6.068,2026-11-05T04:51:41Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_parse_macros_conv,test_failed,480.931,2.209,2026-11-05T04:51:43Z,50234857.0,crash,"test typemap::parse::tests::test_parse_macros_conv ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_parse_main_lang_typemaps,test_failed,480.931,18.593,2026-11-05T04:52:02Z,50234857.0,crash,"test typemap::parse::tests::test_parse_main_lang_typemaps ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_parse_trait_with_code,test_failed,480.931,2.361,2026-11-05T04:52:04Z,50234857.0,crash,"test typemap::parse::tests::test_parse_trait_with_code ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_parsing_only_types_map_mod,success,480.931,6.083,2026-11-05T04:52:10Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::parse::tests::test_unpack_first_associated_type,test_failed,480.931,1.823,2026-11-05T04:52:12Z,50234857.0,panic,"thread 'typemap::parse::tests::test_unpack_first_associated_type' (85427) panicked at src/typemap/parse.rs:1074:9: assertion `left == right` failed"
+experimental-bsan,rust_swig-0.5.1,typemap::tests::test_try_build_path,timeout,480.931,150.017,2026-11-05T04:54:42Z,50234857.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_expand_generic_type_with_ptr,test_failed,480.931,2.579,2026-11-05T04:54:45Z,50234857.0,crash,"test typemap::typemap_macro::tests::test_expand_generic_type_with_ptr ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_bare_fn,success,480.931,7.487,2026-11-05T04:54:52Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_callback_to_future,success,480.931,8.815,2026-11-05T04:55:01Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_cpp_bool,test_failed,480.931,4.521,2026-11-05T04:55:05Z,50234857.0,panic,"thread 'typemap::typemap_macro::tests::test_foreign_typemap_cpp_bool' (91738) panicked at src/typemap/typemap_macro/tests.rs:77:5: assertion `left == right` failed"
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_cpp_pair_expand,success,480.931,12.446,2026-11-05T04:55:18Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_cpp_pair_syntax,test_failed,480.931,8.821,2026-11-05T04:55:27Z,50234857.0,panic,"thread 'typemap::typemap_macro::tests::test_foreign_typemap_cpp_pair_syntax' (92763) panicked at src/typemap/typemap_macro/tests.rs:429:5: assertion `left == right` failed"
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_cpp_ruststring,success,480.931,7.861,2026-11-05T04:55:35Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_cpp_str,success,480.931,8.196,2026-11-05T04:55:43Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_java_datetime,success,480.931,7.649,2026-11-05T04:55:50Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_jboolean,success,480.931,7.030,2026-11-05T04:55:57Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_qdatetime,test_failed,480.931,2.172,2026-11-05T04:56:00Z,50234857.0,crash,"test typemap::typemap_macro::tests::test_foreign_typemap_qdatetime ... BorrowSanitizer:DEADLYSIGNAL"
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_qstring,success,480.931,6.378,2026-11-05T04:56:06Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_simple_generic,success,480.931,6.104,2026-11-05T04:56:12Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_simple_typemap,success,480.931,5.875,2026-11-05T04:56:18Z,50234857.0,,
+experimental-bsan,rust_swig-0.5.1,typemap::typemap_macro::tests::test_foreign_typemap_unique_prefix,test_failed,480.931,3.071,2026-11-05T04:56:21Z,50234857.0,crash,"test typemap::typemap_macro::tests::test_foreign_typemap_unique_prefix ... BorrowSanitizer:DEADLYSIGNAL"

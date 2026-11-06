@@ -1,0 +1,14 @@
+experimental-bsan,proto_deno-0.11.2,deno::detector::detects_dvmrc,success,467.646,3.204,2026-11-05T05:37:10Z,50253130.0,,
+experimental-bsan,proto_deno-0.11.2,deno::detector::doesnt_match_if_no_files,success,467.646,3.151,2026-11-05T05:37:13Z,50253130.0,,
+experimental-bsan,proto_deno-0.11.2,deno::downloader::doesnt_download_if_file_exists,timeout,467.646,150.022,2026-11-05T05:39:43Z,50253130.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,proto_deno-0.11.2,deno::downloader::downloads_to_temp,timeout,467.646,150.020,2026-11-05T05:42:13Z,50253130.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,proto_deno-0.11.2,deno::downloader::sets_path_to_temp,success,467.646,3.160,2026-11-05T05:42:16Z,50253130.0,,
+experimental-bsan,proto_deno-0.11.2,deno::downloads_verifies_installs_tool,timeout,467.646,150.021,2026-11-05T05:44:46Z,50253130.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,proto_deno-0.11.2,deno::installer::doesnt_install_if_dir_exists,success,467.646,3.203,2026-11-05T05:44:49Z,50253130.0,,
+experimental-bsan,proto_deno-0.11.2,deno::installer::errors_for_missing_download,success,467.646,3.189,2026-11-05T05:44:53Z,50253130.0,,
+experimental-bsan,proto_deno-0.11.2,deno::installer::sets_dir_to_tools,success,467.646,3.155,2026-11-05T05:44:56Z,50253130.0,,
+experimental-bsan,proto_deno-0.11.2,deno::resolver::resolve_alias_version,success,467.646,10.693,2026-11-05T05:45:06Z,50253130.0,,
+experimental-bsan,proto_deno-0.11.2,deno::resolver::resolve_base_version,success,467.646,10.712,2026-11-05T05:45:17Z,50253130.0,,
+experimental-bsan,proto_deno-0.11.2,deno::resolver::resolve_custom_alias,success,467.646,10.069,2026-11-05T05:45:27Z,50253130.0,,
+experimental-bsan,proto_deno-0.11.2,deno::resolver::resolve_latest_version,timeout,467.646,150.021,2026-11-05T05:47:57Z,50253130.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,proto_deno-0.11.2,deno::resolver::resolve_specific_version,success,467.646,10.006,2026-11-05T05:48:07Z,50253130.0,,

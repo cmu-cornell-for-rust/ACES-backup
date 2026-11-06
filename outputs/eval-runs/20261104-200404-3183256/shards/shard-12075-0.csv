@@ -1,0 +1,11 @@
+experimental-bsan,gctex-0.3.12,tests2::test_decode_cmpr_fast,test_failed,349.389,1.709,2026-11-05T06:03:34Z,50254797.0,panic,"thread 'tests2::test_decode_cmpr_fast' (89257) panicked at src/lib.rs:1042:55: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,gctex-0.3.12,tests3::test_decode_all_formats,test_failed,349.389,1.700,2026-11-05T06:03:35Z,50254797.0,panic,"thread 'tests3::test_decode_all_formats' (89371) panicked at src/lib.rs:1780:41: Failed to open raw image file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,gctex-0.3.12,tests3::test_decode_cmpr_nonfast2,test_failed,349.389,1.687,2026-11-05T06:03:37Z,50254797.0,panic,"thread 'tests3::test_decode_cmpr_nonfast2' (89444) panicked at src/lib.rs:1948:57: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,gctex-0.3.12,tests3::test_decode_with_random_data,timeout,349.389,150.013,2026-11-05T06:06:07Z,50254797.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,gctex-0.3.12,tests3::test_encode_all_formats,test_failed,349.389,1.714,2026-11-05T06:06:09Z,50254797.0,panic,"thread 'tests3::test_encode_all_formats' (92160) panicked at src/lib.rs:1780:41: Failed to open raw image file: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,gctex-0.3.12,tests3::test_encode_with_random_data,timeout,349.389,150.014,2026-11-05T06:08:39Z,50254797.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,gctex-0.3.12,tests::image_size_c8,success,349.389,1.642,2026-11-05T06:08:41Z,50254797.0,,
+experimental-bsan,gctex-0.3.12,tests::test_rii_compute_image_size_mip_with_1x1,success,349.389,1.600,2026-11-05T06:08:42Z,50254797.0,,
+experimental-bsan,gctex-0.3.12,tests::test_rii_compute_image_size_mip_with_large_size,success,349.389,1.614,2026-11-05T06:08:44Z,50254797.0,,
+experimental-bsan,gctex-0.3.12,tests::test_rii_compute_image_size_mip_with_multiple_images,success,349.389,1.632,2026-11-05T06:08:45Z,50254797.0,,
+experimental-bsan,gctex-0.3.12,tests::test_rii_compute_image_size_mip_with_small_size,success,349.389,1.620,2026-11-05T06:08:47Z,50254797.0,,

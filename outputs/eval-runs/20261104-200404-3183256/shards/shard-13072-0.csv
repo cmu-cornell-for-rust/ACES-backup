@@ -1,0 +1,9 @@
+experimental-bsan,h3ron-h3-sys-0.17.0,bindgen_test_layout_CellBoundary,success,81.154,1.986,2026-11-05T06:29:30Z,50256359.0,,
+experimental-bsan,h3ron-h3-sys-0.17.0,bindgen_test_layout_CoordIJ,success,81.154,2.004,2026-11-05T06:29:32Z,50256359.0,,
+experimental-bsan,h3ron-h3-sys-0.17.0,bindgen_test_layout_GeoLoop,success,81.154,1.857,2026-11-05T06:29:34Z,50256359.0,,
+experimental-bsan,h3ron-h3-sys-0.17.0,bindgen_test_layout_GeoMultiPolygon,success,81.154,1.738,2026-11-05T06:29:36Z,50256359.0,,
+experimental-bsan,h3ron-h3-sys-0.17.0,bindgen_test_layout_GeoPolygon,success,81.154,1.740,2026-11-05T06:29:37Z,50256359.0,,
+experimental-bsan,h3ron-h3-sys-0.17.0,bindgen_test_layout_LatLng,success,81.154,1.763,2026-11-05T06:29:39Z,50256359.0,,
+experimental-bsan,h3ron-h3-sys-0.17.0,bindgen_test_layout_LinkedGeoLoop,no_match,81.154,2.008,2026-11-05T06:29:41Z,50256359.0,,
+experimental-bsan,h3ron-h3-sys-0.17.0,bindgen_test_layout_LinkedGeoPolygon,test_failed,81.154,2.117,2026-11-05T06:29:43Z,50256359.0,panic,"thread 'bindgen_test_layout_LinkedGeoPolygon' (64273) panicked at /local/ev-50256359-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/h3ron-h3-sys/f1975ec9982f62eb/out/bindings.rs:251:5: assertion `left == right` failed: Size of: LinkedGeoPolygon"
+experimental-bsan,h3ron-h3-sys-0.17.0,bindgen_test_layout_LinkedLatLng,no_match,81.154,2.009,2026-11-05T06:29:45Z,50256359.0,,

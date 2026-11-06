@@ -1,0 +1,98 @@
+experimental-bsan,base64-compat-1.0.0,because_we_can,success,104.479,7.048,2026-11-05T02:02:24Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,chunked_encoder::tests::chunked_encode_empty,success,104.479,7.042,2026-11-05T02:02:31Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,chunked_encoder::tests::chunked_encode_fast_loop,success,104.479,7.090,2026-11-05T02:02:38Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,chunked_encoder::tests::chunked_encode_intermediate_fast_loop,success,104.479,7.041,2026-11-05T02:02:45Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,chunked_encoder::tests::chunked_encode_matches_normal_encode_random_string_sink,timeout,104.479,150.010,2026-11-05T02:05:15Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,chunked_encoder::tests::chunked_encode_slow_loop_only,success,104.479,7.057,2026-11-05T02:05:22Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,chunked_encoder::tests::max_input_length_cant_use_extra_single_encoded_byte,success,104.479,7.085,2026-11-05T02:05:29Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,chunked_encoder::tests::max_input_length_no_pad,success,104.479,7.048,2026-11-05T02:05:36Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,chunked_encoder::tests::max_input_length_with_pad_decrements_one_triple,success,104.479,7.043,2026-11-05T02:05:43Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,chunked_encoder::tests::max_input_length_with_pad_fits_exactly,success,104.479,7.051,2026-11-05T02:05:51Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,chunked_encoder::tests::max_input_length_with_pad_one_byte_short,success,104.479,7.053,2026-11-05T02:05:58Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode::tests::decode_chunk_precise_writes_only_6_bytes,success,104.479,7.049,2026-11-05T02:06:05Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode::tests::decode_chunk_writes_8_bytes,success,104.479,7.043,2026-11-05T02:06:12Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode::tests::decode_into_nonempty_vec_doesnt_clobber_existing_prefix,timeout,104.479,150.011,2026-11-05T02:08:42Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,decode::tests::decode_into_slice_doesnt_clobber_existing_prefix_or_suffix,timeout,104.479,150.011,2026-11-05T02:11:12Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,decode::tests::decode_into_slice_fits_in_precisely_sized_slice,timeout,104.479,150.011,2026-11-05T02:13:42Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,decode::tests::detect_invalid_last_symbol_every_possible_three_symbols,timeout,104.479,150.034,2026-11-05T02:16:12Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,decode::tests::detect_invalid_last_symbol_every_possible_two_symbols,success,104.479,13.903,2026-11-05T02:16:26Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode::tests::detect_invalid_last_symbol_one_byte,success,104.479,7.171,2026-11-05T02:16:33Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode::tests::detect_invalid_last_symbol_two_bytes,success,104.479,7.144,2026-11-05T02:16:40Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_1_pad_byte_in_fast_loop_then_extra_padding_chunk_error,success,104.479,7.259,2026-11-05T02:16:48Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_2_pad_bytes_in_leftovers_then_extra_padding_chunk_error,success,104.479,7.262,2026-11-05T02:16:55Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_absurd_pad_error,success,104.479,7.259,2026-11-05T02:17:02Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_extra_padding_after_1_pad_bytes_in_trailing_quad_returns_error,success,104.479,7.283,2026-11-05T02:17:09Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_extra_padding_after_2_pad_bytes_in_trailing_quad_2_returns_error,success,104.479,7.261,2026-11-05T02:17:17Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_one_char_in_quad_with_padding_error,success,104.479,7.467,2026-11-05T02:17:24Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_one_char_in_quad_without_padding_error,success,104.479,7.194,2026-11-05T02:17:31Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_padding_followed_by_non_padding_returns_error,success,104.479,12.278,2026-11-05T02:17:44Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_reject_invalid_bytes_with_correct_error,timeout,104.479,150.016,2026-11-05T02:20:14Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,decode_reject_null,success,104.479,7.118,2026-11-05T02:20:21Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_rfc4648_0,success,104.479,7.116,2026-11-05T02:20:28Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_rfc4648_1,success,104.479,7.147,2026-11-05T02:20:35Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_rfc4648_1_just_a_bit_of_padding,success,104.479,7.074,2026-11-05T02:20:42Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_rfc4648_1_no_padding,success,104.479,7.087,2026-11-05T02:20:49Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_rfc4648_2,success,104.479,7.146,2026-11-05T02:20:56Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_rfc4648_2_no_padding,success,104.479,7.100,2026-11-05T02:21:03Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_rfc4648_3,success,104.479,7.099,2026-11-05T02:21:11Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_rfc4648_4,success,104.479,7.125,2026-11-05T02:21:18Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_rfc4648_4_no_padding,success,104.479,7.106,2026-11-05T02:21:25Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_rfc4648_5,success,104.479,7.060,2026-11-05T02:21:32Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_rfc4648_5_no_padding,success,104.479,7.087,2026-11-05T02:21:39Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_rfc4648_6,success,104.479,7.100,2026-11-05T02:21:46Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_single_pad_byte_after_2_chars_in_trailing_quad_ok,success,104.479,7.270,2026-11-05T02:21:53Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_start_quad_with_padding_returns_error,success,104.479,12.277,2026-11-05T02:22:06Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,decode_valid_bytes_after_padding_in_leftovers_error,success,104.479,7.252,2026-11-05T02:22:13Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,display::tests::basic_display,success,104.479,7.104,2026-11-05T02:22:20Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,display::tests::display_encode_matches_normal_encode,timeout,104.479,150.010,2026-11-05T02:24:50Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,display_wrapper_matches_normal_encode,success,104.479,7.155,2026-11-05T02:24:57Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode::tests::add_padding_random_valid_utf8,success,104.479,7.071,2026-11-05T02:25:04Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode::tests::encode_config_buf_into_nonempty_buffer_doesnt_clobber_prefix,timeout,104.479,150.013,2026-11-05T02:27:34Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,encode::tests::encode_config_slice_fits_into_precisely_sized_slice,timeout,104.479,150.012,2026-11-05T02:30:04Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,encode::tests::encode_config_slice_into_nonempty_buffer_doesnt_clobber_suffix,timeout,104.479,150.012,2026-11-05T02:32:34Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,encode::tests::encode_to_slice_random_valid_utf8,timeout,104.479,150.011,2026-11-05T02:35:04Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,encode::tests::encode_with_padding_random_valid_utf8,timeout,104.479,150.011,2026-11-05T02:37:35Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,encode::tests::encoded_size_correct_no_pad,success,104.479,7.141,2026-11-05T02:37:42Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode::tests::encoded_size_correct_standard,success,104.479,7.177,2026-11-05T02:37:49Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode::tests::encoded_size_overflow,success,104.479,7.056,2026-11-05T02:37:56Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_all_ascii,success,104.479,7.110,2026-11-05T02:38:03Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_all_bytes,success,104.479,7.133,2026-11-05T02:38:10Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_all_bytes_url,success,104.479,7.132,2026-11-05T02:38:17Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_config_slice_can_use_inline_buffer,success,104.479,7.079,2026-11-05T02:38:24Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_config_slice_panics_when_buffer_too_small,success,104.479,7.120,2026-11-05T02:38:32Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_rfc4648_0,success,104.479,7.129,2026-11-05T02:38:39Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_rfc4648_1,success,104.479,7.062,2026-11-05T02:38:46Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_rfc4648_2,success,104.479,7.067,2026-11-05T02:38:53Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_rfc4648_3,success,104.479,7.073,2026-11-05T02:39:00Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_rfc4648_4,success,104.479,7.074,2026-11-05T02:39:07Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_rfc4648_5,success,104.479,7.062,2026-11-05T02:39:14Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_rfc4648_6,success,104.479,7.059,2026-11-05T02:39:21Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,encode_url_safe_without_padding,success,104.479,7.045,2026-11-05T02:39:28Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,roundtrip_decode_trailing_10_bytes,success,104.479,7.359,2026-11-05T02:39:36Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,roundtrip_random_no_padding,timeout,104.479,150.014,2026-11-05T02:42:06Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,roundtrip_random_short_no_padding,timeout,104.479,150.015,2026-11-05T02:44:36Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,roundtrip_random_short_standard,timeout,104.479,150.015,2026-11-05T02:47:06Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,roundtrip_random_with_fast_loop_standard,timeout,104.479,150.015,2026-11-05T02:49:36Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,tests::roundtrip_random_config_long,timeout,104.479,150.011,2026-11-05T02:52:06Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,tests::roundtrip_random_config_short,success,104.479,116.195,2026-11-05T02:54:02Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::drop_calls_finish_for_you,success,104.479,7.127,2026-11-05T02:54:09Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::encode_1_2_3_bytes,success,104.479,7.153,2026-11-05T02:54:16Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::encode_nine_bytes_two_writes,success,104.479,7.180,2026-11-05T02:54:23Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::encode_one_then_five_bytes,success,104.479,7.181,2026-11-05T02:54:31Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::encode_one_then_two_bytes,success,104.479,7.162,2026-11-05T02:54:38Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::encode_random_config_matches_normal_encode_reasonable_input_len,timeout,104.479,150.011,2026-11-05T02:57:08Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::encode_random_config_matches_normal_encode_tiny_input_len,timeout,104.479,150.011,2026-11-05T02:59:38Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::encode_three_bytes,success,104.479,7.010,2026-11-05T02:59:45Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::encode_with_padding,success,104.479,7.009,2026-11-05T02:59:52Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::encode_with_padding_multiple_writes,success,104.479,7.047,2026-11-05T02:59:59Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::every_possible_split_of_input,timeout,104.479,150.010,2026-11-05T03:02:29Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::finish_writes_extra_byte,success,104.479,7.032,2026-11-05T03:02:36Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::retrying_writes_that_error_with_interrupted_works,timeout,104.479,150.011,2026-11-05T03:05:06Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::write_1_chunk_and_partial_encodes_only_complete_chunk,success,104.479,7.155,2026-11-05T03:05:13Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::write_1_chunk_encodes_complete_chunk,success,104.479,7.144,2026-11-05T03:05:20Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::write_2_partials_to_exactly_complete_chunk_encodes_complete_chunk,success,104.479,7.185,2026-11-05T03:05:28Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::write_partial_chunk_encodes_partial_chunk,success,104.479,7.141,2026-11-05T03:05:35Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::write_partial_then_enough_to_complete_chunk_and_another_chunk_and_another_partial_chunk_encodes_only_complete_chunks,success,104.479,7.150,2026-11-05T03:05:42Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::write_partial_then_enough_to_complete_chunk_and_another_chunk_encodes_complete_chunks,success,104.479,7.120,2026-11-05T03:05:49Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::write_partial_then_enough_to_complete_chunk_but_not_complete_another_chunk_encodes_complete_chunk_without_consuming_remaining,success,104.479,7.116,2026-11-05T03:05:56Z,50237832.0,,
+experimental-bsan,base64-compat-1.0.0,write::encoder_tests::writes_that_only_write_part_of_input_and_sometimes_interrupt_produce_correct_encoded_data,timeout,104.479,150.011,2026-11-05T03:08:26Z,50237832.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"

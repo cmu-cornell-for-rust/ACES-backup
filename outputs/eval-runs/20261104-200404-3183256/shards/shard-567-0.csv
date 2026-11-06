@@ -1,0 +1,300 @@
+experimental-bsan,lingua-1.8.0,alphabet::tests::test_alphabets_supporting_single_language,success,306.211,6.065,2026-11-05T01:30:14Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_can_be_built_from_all_languages,success,306.211,5.106,2026-11-05T01:30:19Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_can_be_built_from_blacklist,success,306.211,5.297,2026-11-05T01:30:24Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_can_be_built_from_iso_639_1_codes,success,306.211,5.042,2026-11-05T01:30:29Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_can_be_built_from_iso_639_3_codes,success,306.211,4.973,2026-11-05T01:30:34Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_can_be_built_from_languages_with_arabic_script,success,306.211,5.072,2026-11-05T01:30:39Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_can_be_built_from_languages_with_cyrillic_script,success,306.211,5.146,2026-11-05T01:30:44Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_can_be_built_from_languages_with_devanagari_script,success,306.211,5.114,2026-11-05T01:30:50Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_can_be_built_from_languages_with_latin_script,success,306.211,5.291,2026-11-05T01:30:55Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_can_be_built_from_spoken_languages,success,306.211,5.278,2026-11-05T01:31:00Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_can_be_built_from_whitelist,success,306.211,4.898,2026-11-05T01:31:05Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_cannot_be_built_from_too_few_iso_639_1_codes,success,306.211,4.893,2026-11-05T01:31:10Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_cannot_be_built_from_too_few_iso_639_3_codes,success,306.211,4.985,2026-11-05T01:31:15Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_cannot_be_built_from_too_large_minimum_relative_distance,success,306.211,5.003,2026-11-05T01:31:20Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_cannot_be_built_from_too_long_blacklist,success,306.211,5.159,2026-11-05T01:31:25Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_cannot_be_built_from_too_short_whitelist,success,306.211,4.846,2026-11-05T01:31:30Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,builder::tests::assert_detector_cannot_be_built_from_too_small_minimum_relative_distance,success,306.211,5.009,2026-11-05T01:31:35Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_computation_of_language_probabilities_works_correctly::case_1_unigram_model,success,306.211,22.136,2026-11-05T01:31:57Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_computation_of_language_probabilities_works_correctly::case_2_trigram_model,success,306.211,22.145,2026-11-05T01:32:19Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_computation_of_language_probabilities_works_correctly::case_3_quadrigram_model,success,306.211,21.983,2026-11-05T01:32:41Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_is_deterministic::case_1,timeout,306.211,150.021,2026-11-05T01:35:11Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_is_deterministic::case_2,timeout,306.211,150.021,2026-11-05T01:37:41Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_001,timeout,306.211,150.020,2026-11-05T01:40:11Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_002,timeout,306.211,150.021,2026-11-05T01:42:42Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_003,timeout,306.211,150.021,2026-11-05T01:45:12Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_004,timeout,306.211,150.020,2026-11-05T01:47:42Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_005,timeout,306.211,150.020,2026-11-05T01:50:12Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_006,timeout,306.211,150.021,2026-11-05T01:52:42Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_007,timeout,306.211,150.021,2026-11-05T01:55:12Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_008,timeout,306.211,150.020,2026-11-05T01:57:42Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_009,timeout,306.211,150.022,2026-11-05T02:00:12Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_010,timeout,306.211,150.018,2026-11-05T02:02:42Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_011,timeout,306.211,150.019,2026-11-05T02:05:12Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_012,timeout,306.211,150.020,2026-11-05T02:07:42Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_013,success,306.211,70.908,2026-11-05T02:08:53Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_014,timeout,306.211,150.020,2026-11-05T02:11:23Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_015,timeout,306.211,150.019,2026-11-05T02:13:53Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_016,success,306.211,84.105,2026-11-05T02:15:17Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_017,timeout,306.211,150.019,2026-11-05T02:17:47Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_018,timeout,306.211,150.019,2026-11-05T02:20:17Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_019,timeout,306.211,150.020,2026-11-05T02:22:47Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_020,timeout,306.211,150.019,2026-11-05T02:25:17Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_021,timeout,306.211,150.019,2026-11-05T02:27:47Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_022,timeout,306.211,150.019,2026-11-05T02:30:17Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_023,timeout,306.211,150.019,2026-11-05T02:32:47Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_024,timeout,306.211,150.019,2026-11-05T02:35:18Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_025,timeout,306.211,150.020,2026-11-05T02:37:48Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_026,timeout,306.211,150.019,2026-11-05T02:40:18Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_027,timeout,306.211,150.018,2026-11-05T02:42:48Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_028,timeout,306.211,150.019,2026-11-05T02:45:18Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_029,timeout,306.211,150.019,2026-11-05T02:47:48Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_030,timeout,306.211,150.019,2026-11-05T02:50:18Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_031,timeout,306.211,150.020,2026-11-05T02:52:48Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_032,timeout,306.211,150.020,2026-11-05T02:55:18Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_033,timeout,306.211,150.018,2026-11-05T02:57:48Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_034,timeout,306.211,150.020,2026-11-05T03:00:18Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_035,timeout,306.211,150.020,2026-11-05T03:02:48Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_036,timeout,306.211,150.021,2026-11-05T03:05:18Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_037,timeout,306.211,150.020,2026-11-05T03:07:48Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_038,timeout,306.211,150.019,2026-11-05T03:10:18Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_039,timeout,306.211,150.021,2026-11-05T03:12:48Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_040,timeout,306.211,150.019,2026-11-05T03:15:18Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_041,timeout,306.211,150.019,2026-11-05T03:17:48Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_042,timeout,306.211,150.020,2026-11-05T03:20:18Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_043,timeout,306.211,150.020,2026-11-05T03:22:48Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_044,timeout,306.211,150.022,2026-11-05T03:25:18Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_045,timeout,306.211,150.019,2026-11-05T03:27:49Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_046,timeout,306.211,150.021,2026-11-05T03:30:19Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_047,timeout,306.211,150.018,2026-11-05T03:32:49Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_048,timeout,306.211,150.020,2026-11-05T03:35:19Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_049,timeout,306.211,150.019,2026-11-05T03:37:49Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_050,timeout,306.211,150.017,2026-11-05T03:40:19Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_051,timeout,306.211,150.020,2026-11-05T03:42:49Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_052,timeout,306.211,150.019,2026-11-05T03:45:19Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_053,timeout,306.211,150.019,2026-11-05T03:47:49Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_054,timeout,306.211,150.021,2026-11-05T03:50:19Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_055,timeout,306.211,150.020,2026-11-05T03:52:49Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_056,timeout,306.211,150.019,2026-11-05T03:55:19Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_057,timeout,306.211,150.020,2026-11-05T03:57:49Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_058,timeout,306.211,150.021,2026-11-05T04:00:19Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_059,timeout,306.211,150.020,2026-11-05T04:02:49Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_060,timeout,306.211,150.020,2026-11-05T04:05:19Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_061,timeout,306.211,150.019,2026-11-05T04:07:49Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_062,timeout,306.211,150.020,2026-11-05T04:10:19Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_063,timeout,306.211,150.020,2026-11-05T04:12:49Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_064,timeout,306.211,150.020,2026-11-05T04:15:19Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_065,timeout,306.211,150.020,2026-11-05T04:17:49Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_066,timeout,306.211,150.020,2026-11-05T04:20:20Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_067,timeout,306.211,150.019,2026-11-05T04:22:50Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_068,timeout,306.211,150.019,2026-11-05T04:25:20Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_069,timeout,306.211,150.020,2026-11-05T04:27:50Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_070,timeout,306.211,150.021,2026-11-05T04:30:20Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_071,timeout,306.211,150.020,2026-11-05T04:32:50Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_072,timeout,306.211,150.020,2026-11-05T04:35:20Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_073,timeout,306.211,150.019,2026-11-05T04:37:50Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_074,timeout,306.211,150.019,2026-11-05T04:40:20Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_075,timeout,306.211,150.021,2026-11-05T04:42:50Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_076,timeout,306.211,150.018,2026-11-05T04:45:20Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_077,timeout,306.211,150.019,2026-11-05T04:47:50Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_078,timeout,306.211,150.018,2026-11-05T04:50:20Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_079,timeout,306.211,150.020,2026-11-05T04:52:50Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_080,timeout,306.211,150.020,2026-11-05T04:55:20Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_081,timeout,306.211,150.019,2026-11-05T04:57:50Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_082,timeout,306.211,150.020,2026-11-05T05:00:20Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_083,timeout,306.211,150.019,2026-11-05T05:02:50Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_084,timeout,306.211,150.021,2026-11-05T05:05:20Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_085,timeout,306.211,150.022,2026-11-05T05:07:50Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_086,timeout,306.211,150.017,2026-11-05T05:10:21Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_087,timeout,306.211,150.017,2026-11-05T05:12:51Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_088,timeout,306.211,150.018,2026-11-05T05:15:21Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_089,timeout,306.211,150.018,2026-11-05T05:17:51Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_090,timeout,306.211,150.018,2026-11-05T05:20:21Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_091,timeout,306.211,150.016,2026-11-05T05:22:51Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_092,timeout,306.211,150.018,2026-11-05T05:25:21Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_093,timeout,306.211,150.017,2026-11-05T05:27:51Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_094,timeout,306.211,150.016,2026-11-05T05:30:21Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_095,timeout,306.211,150.018,2026-11-05T05:32:51Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_096,timeout,306.211,150.017,2026-11-05T05:35:21Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_097,timeout,306.211,150.017,2026-11-05T05:37:51Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_098,success,306.211,72.346,2026-11-05T05:39:03Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_099,success,306.211,47.868,2026-11-05T05:39:51Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_100,success,306.211,73.188,2026-11-05T05:41:05Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_101,success,306.211,66.755,2026-11-05T05:42:11Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_102,success,306.211,58.026,2026-11-05T05:43:09Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_103,success,306.211,79.857,2026-11-05T05:44:29Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_104,success,306.211,68.208,2026-11-05T05:45:38Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_105,success,306.211,74.292,2026-11-05T05:46:52Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_106,success,306.211,59.258,2026-11-05T05:47:51Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_107,success,306.211,58.443,2026-11-05T05:48:50Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_108,success,306.211,58.508,2026-11-05T05:49:48Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_109,success,306.211,84.118,2026-11-05T05:51:12Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_detection_with_rules_works_correctly::case_110,timeout,306.211,150.017,2026-11-05T05:53:42Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_01,success,306.211,9.146,2026-11-05T05:53:52Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_02,success,306.211,9.165,2026-11-05T05:54:01Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_03,success,306.211,9.243,2026-11-05T05:54:10Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_04,success,306.211,9.499,2026-11-05T05:54:19Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_05,success,306.211,9.607,2026-11-05T05:54:29Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_06,success,306.211,9.857,2026-11-05T05:54:39Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_07,success,306.211,9.946,2026-11-05T05:54:49Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_08,success,306.211,9.932,2026-11-05T05:54:59Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_09,success,306.211,9.785,2026-11-05T05:55:09Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_10,success,306.211,9.624,2026-11-05T05:55:18Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_11,success,306.211,9.217,2026-11-05T05:55:28Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_12,success,306.211,9.136,2026-11-05T05:55:37Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_13,success,306.211,9.163,2026-11-05T05:55:46Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_14,success,306.211,121.038,2026-11-05T05:57:47Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_15,success,306.211,122.107,2026-11-05T05:59:49Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_16,success,306.211,121.060,2026-11-05T06:01:50Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_17,success,306.211,122.905,2026-11-05T06:03:53Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_18,success,306.211,121.518,2026-11-05T06:05:55Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_19,success,306.211,122.567,2026-11-05T06:07:57Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_20,success,306.211,121.774,2026-11-05T06:09:59Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_21,success,306.211,121.452,2026-11-05T06:12:00Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_22,success,306.211,129.059,2026-11-05T06:14:09Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_23,success,306.211,137.238,2026-11-05T06:16:27Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_24,success,306.211,137.940,2026-11-05T06:18:45Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_25,success,306.211,135.708,2026-11-05T06:21:00Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_26,success,306.211,138.832,2026-11-05T06:23:19Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_27,success,306.211,139.079,2026-11-05T06:25:38Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_28,success,306.211,137.202,2026-11-05T06:27:55Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_29,success,306.211,135.913,2026-11-05T06:30:11Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_30,success,306.211,136.847,2026-11-05T06:32:28Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_31,success,306.211,136.317,2026-11-05T06:34:45Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_32,success,306.211,136.494,2026-11-05T06:37:01Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_33,success,306.211,136.484,2026-11-05T06:39:18Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_34,success,306.211,137.040,2026-11-05T06:41:35Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_35,success,306.211,136.316,2026-11-05T06:43:51Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_36,success,306.211,136.435,2026-11-05T06:46:07Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_37,success,306.211,136.077,2026-11-05T06:48:23Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_38,success,306.211,139.304,2026-11-05T06:50:43Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_39,success,306.211,138.492,2026-11-05T06:53:01Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_40,success,306.211,137.461,2026-11-05T06:55:19Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_41,success,306.211,136.013,2026-11-05T06:57:35Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_42,success,306.211,136.313,2026-11-05T06:59:51Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_43,success,306.211,137.027,2026-11-05T07:02:08Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_44,success,306.211,138.259,2026-11-05T07:04:26Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_45,success,306.211,137.166,2026-11-05T07:06:44Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_46,success,306.211,136.737,2026-11-05T07:09:00Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_47,success,306.211,139.068,2026-11-05T07:11:19Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_48,success,306.211,137.687,2026-11-05T07:13:37Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_49,success,306.211,135.996,2026-11-05T07:15:53Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_50,success,306.211,137.709,2026-11-05T07:18:11Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_51,success,306.211,137.980,2026-11-05T07:20:29Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_52,success,306.211,137.786,2026-11-05T07:22:47Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_53,success,306.211,138.172,2026-11-05T07:25:05Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_54,success,306.211,135.771,2026-11-05T07:27:21Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_55,success,306.211,136.284,2026-11-05T07:29:37Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_56,success,306.211,136.730,2026-11-05T07:31:54Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_57,success,306.211,135.608,2026-11-05T07:34:09Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_58,success,306.211,136.157,2026-11-05T07:36:26Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_59,success,306.211,135.346,2026-11-05T07:38:41Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_60,success,306.211,137.684,2026-11-05T07:40:59Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_61,success,306.211,139.439,2026-11-05T07:43:18Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_language_filtering_with_rules_works_correctly::case_62,success,306.211,136.929,2026-11-05T07:45:35Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_low_accuracy_mode_returns_no_language_for_unigrams_and_bigrams,timeout,306.211,150.027,2026-11-05T07:48:05Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::assert_ngram_probability_lookup_works_correctly::case_01,success,306.211,20.387,2026-11-05T07:48:26Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_ngram_probability_lookup_works_correctly::case_02,success,306.211,20.345,2026-11-05T07:48:46Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_ngram_probability_lookup_works_correctly::case_03,success,306.211,20.591,2026-11-05T07:49:07Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_ngram_probability_lookup_works_correctly::case_04,success,306.211,20.914,2026-11-05T07:49:27Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_ngram_probability_lookup_works_correctly::case_05,success,306.211,20.162,2026-11-05T07:49:48Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_ngram_probability_lookup_works_correctly::case_06,success,306.211,20.372,2026-11-05T07:50:08Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_ngram_probability_lookup_works_correctly::case_07,success,306.211,20.725,2026-11-05T07:50:29Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_ngram_probability_lookup_works_correctly::case_08,success,306.211,20.876,2026-11-05T07:50:50Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_ngram_probability_lookup_works_correctly::case_09,success,306.211,21.051,2026-11-05T07:51:11Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_ngram_probability_lookup_works_correctly::case_10,success,306.211,20.626,2026-11-05T07:51:31Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_ngram_probability_lookup_works_correctly::case_11,success,306.211,20.531,2026-11-05T07:51:52Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_ngram_probability_lookup_works_correctly::case_12,success,306.211,20.502,2026-11-05T07:52:12Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_strings_without_letters_return_no_language::case_1,success,306.211,46.628,2026-11-05T07:52:59Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_strings_without_letters_return_no_language::case_2,success,306.211,46.638,2026-11-05T07:53:46Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_strings_without_letters_return_no_language::case_3,success,306.211,46.961,2026-11-05T07:54:33Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_summation_of_ngram_probabilities_works_correctly::case_1,success,306.211,20.645,2026-11-05T07:54:53Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_summation_of_ngram_probabilities_works_correctly::case_2,success,306.211,20.883,2026-11-05T07:55:14Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::assert_summation_of_ngram_probabilities_works_correctly::case_3,success,306.211,20.584,2026-11-05T07:55:35Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_compute_language_confidence::case_1_german_detected_by_rules,timeout,306.211,150.018,2026-11-05T07:58:05Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_compute_language_confidence::case_2_english_detected_by_rules,timeout,306.211,150.021,2026-11-05T08:00:35Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_compute_language_confidence::case_3_german_known_ngrams,timeout,306.211,150.017,2026-11-05T08:03:05Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_compute_language_confidence::case_4_english_known_ngrams,timeout,306.211,150.018,2026-11-05T08:05:35Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_compute_language_confidence::case_5_german_unknown_ngrams,timeout,306.211,150.020,2026-11-05T08:08:05Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_compute_language_confidence::case_6_english_unknown_ngrams,timeout,306.211,150.020,2026-11-05T08:10:35Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_compute_language_confidence::case_7_unknown_language,timeout,306.211,150.026,2026-11-05T08:13:05Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_compute_language_confidence_values::case_1_language_detected_by_rules,timeout,306.211,150.016,2026-11-05T08:15:35Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_compute_language_confidence_values::case_2_known_ngrams,timeout,306.211,150.018,2026-11-05T08:18:05Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_compute_language_confidence_values::case_3_unknown_ngrams,timeout,306.211,150.017,2026-11-05T08:20:35Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_compute_language_confidence_values_for_very_large_input_text,timeout,306.211,150.054,2026-11-05T08:23:06Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_detect_language::case_1,timeout,306.211,150.033,2026-11-05T08:25:36Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_detect_language::case_2,timeout,306.211,150.020,2026-11-05T08:28:06Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_detect_multiple_languages_for_empty_string,success,306.211,7.592,2026-11-05T08:28:14Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_detect_multiple_languages_with_one_language::case_1_english_1,timeout,306.211,150.021,2026-11-05T08:30:44Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_detect_multiple_languages_with_one_language::case_2_english_2,timeout,306.211,150.018,2026-11-05T08:33:14Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_detect_multiple_languages_with_one_language::case_3_kazakh,timeout,306.211,150.020,2026-11-05T08:35:44Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_detect_multiple_languages_with_three_languages::case_1_french_german_english,timeout,306.211,150.021,2026-11-05T08:38:14Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_detect_multiple_languages_with_three_languages::case_2_polish_german_english,timeout,306.211,150.029,2026-11-05T08:40:44Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_detect_multiple_languages_with_two_languages::case_1_english_german,timeout,306.211,150.027,2026-11-05T08:43:14Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_detect_multiple_languages_with_two_languages::case_2_chinese_english,timeout,306.211,150.021,2026-11-05T08:45:44Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_detect_multiple_languages_with_two_languages::case_3_english_russian,timeout,306.211,150.018,2026-11-05T08:48:14Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_specific_language_detection_problems::case_1,timeout,306.211,150.024,2026-11-05T08:50:44Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_specific_language_detection_problems::case_2,timeout,306.211,150.019,2026-11-05T08:53:14Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_specific_language_detection_problems::case_3,timeout,306.211,150.020,2026-11-05T08:55:44Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_specific_language_detection_problems::case_4,timeout,306.211,150.028,2026-11-05T08:58:14Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_01,success,306.211,57.773,2026-11-05T08:59:12Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_02,success,306.211,53.523,2026-11-05T09:00:05Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_03,success,306.211,101.193,2026-11-05T09:01:47Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_04_latin_alphabet,success,306.211,58.268,2026-11-05T09:02:45Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_05_arabic_alphabet,success,306.211,119.603,2026-11-05T09:04:45Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_06_armenian_alphabet,success,306.211,122.400,2026-11-05T09:06:47Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_07_bengali_alphabet,success,306.211,69.409,2026-11-05T09:07:56Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_08_cyrillic_alphabet,success,306.211,126.680,2026-11-05T09:10:03Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_09_devanagari_alphabet,success,306.211,76.999,2026-11-05T09:11:20Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_10_georgian_alphabet,success,306.211,84.823,2026-11-05T09:12:45Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_11_greek_alphabet,success,306.211,122.852,2026-11-05T09:14:48Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_12_gujarati_alphabet,success,306.211,79.709,2026-11-05T09:16:08Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_13_gurmukhi_alphabet,success,306.211,86.948,2026-11-05T09:17:34Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_14_han_alphabet,success,306.211,129.870,2026-11-05T09:19:44Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_15_hangul_alphabet,success,306.211,100.720,2026-11-05T09:21:25Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_16_hebrew_alphabet,success,306.211,113.762,2026-11-05T09:23:19Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_17_hiragana_and_katakana_alphabet,success,306.211,129.901,2026-11-05T09:25:29Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_18_tamil_alphabet,success,306.211,51.718,2026-11-05T09:26:21Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_19_telugu_alphabet,success,306.211,55.844,2026-11-05T09:27:16Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,detector::tests::test_split_text_into_words::case_20_thai_alphabet,success,306.211,75.319,2026-11-05T09:28:32Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,file::tests::test_read_count_model_data_file,success,306.211,4.734,2026-11-05T09:28:36Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,file::tests::test_read_probability_model_data_file,success,306.211,4.720,2026-11-05T09:28:41Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,isocode::tests::assert_iso_code_639_1_string_representation_is_correct,success,306.211,4.707,2026-11-05T09:28:46Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,isocode::tests::assert_iso_code_639_3_string_representation_is_correct,success,306.211,4.694,2026-11-05T09:28:51Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,isocode::tests::assert_string_to_iso_code_639_1_is_correct,success,306.211,4.733,2026-11-05T09:28:55Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,isocode::tests::assert_string_to_iso_code_639_3_is_correct,success,306.211,4.802,2026-11-05T09:29:00Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,language::tests::assert_all_languages_are_available,success,306.211,4.826,2026-11-05T09:29:05Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,language::tests::assert_all_spoken_languages_are_available,success,306.211,4.893,2026-11-05T09:29:10Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,language::tests::assert_certain_languages_support_arabic_script,success,306.211,4.782,2026-11-05T09:29:15Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,language::tests::assert_certain_languages_support_cyrillic_script,success,306.211,4.815,2026-11-05T09:29:20Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,language::tests::assert_certain_languages_support_devanagari_script,success,306.211,4.796,2026-11-05T09:29:24Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,language::tests::assert_certain_languages_support_latin_script,success,306.211,4.905,2026-11-05T09:29:29Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,language::tests::assert_language_string_representation_is_correct,success,306.211,4.722,2026-11-05T09:29:34Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,language::tests::test_from_str,success,306.211,4.725,2026-11-05T09:29:39Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,language::tests::test_languages_with_single_unique_script,success,306.211,5.890,2026-11-05T09:29:45Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::test_data::test_ngram_model_creation::case_1_unigram_model,success,306.211,57.830,2026-11-05T09:30:42Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::test_data::test_ngram_model_creation::case_2_bigram_model,success,306.211,58.023,2026-11-05T09:31:40Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::test_data::test_ngram_model_creation::case_3_trigram_model,success,306.211,57.712,2026-11-05T09:32:38Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::test_data::test_ngram_model_creation::case_4_quadrigram_model,success,306.211,58.174,2026-11-05T09:33:36Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::test_data::test_ngram_model_creation::case_5_fivegram_model,success,306.211,57.002,2026-11-05T09:34:33Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::test_load_most_common_ngram_model,success,306.211,4.718,2026-11-05T09:34:38Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::test_load_ngram_probability_model,success,306.211,4.730,2026-11-05T09:34:43Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::test_load_unique_ngram_model,success,306.211,4.701,2026-11-05T09:34:48Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::training_data::test_ngram_model_creation::case_1_unigram_model,success,306.211,26.552,2026-11-05T09:35:14Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::training_data::test_ngram_model_creation::case_2_bigram_model,success,306.211,27.761,2026-11-05T09:35:42Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::training_data::test_ngram_model_creation::case_3_trigram_model,success,306.211,27.516,2026-11-05T09:36:09Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::training_data::test_ngram_model_creation::case_4_quadrigram_model,success,306.211,27.839,2026-11-05T09:36:37Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,model::tests::training_data::test_ngram_model_creation::case_5_fivegram_model,success,306.211,27.786,2026-11-05T09:37:05Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,ngram::tests::test_ngram_iterator,success,306.211,4.687,2026-11-05T09:37:10Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,writer::tests::language_model_files::test_language_model_files_writer,timeout,306.211,150.030,2026-11-05T09:39:40Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,writer::tests::most_common_ngrams_writer::test_identify_most_common_ngrams,timeout,306.211,150.027,2026-11-05T09:42:10Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,writer::tests::most_common_ngrams_writer::test_most_common_ngrams_writer,timeout,306.211,150.031,2026-11-05T09:44:40Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,writer::tests::most_common_ngrams_writer::test_most_common_ngrams_writer_with_non_existing_output_directory_path,success,306.211,4.689,2026-11-05T09:44:45Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,writer::tests::most_common_ngrams_writer::test_most_common_ngrams_writer_with_relative_output_directory_path,success,306.211,4.742,2026-11-05T09:44:49Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,writer::tests::most_common_ngrams_writer::test_most_common_ngrams_writer_without_languages,success,306.211,4.698,2026-11-05T09:44:54Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,writer::tests::most_common_ngrams_writer::test_most_common_ngrams_writer_without_most_common,success,306.211,4.702,2026-11-05T09:44:59Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,writer::tests::test_data_files::test_test_data_files_writer,timeout,306.211,150.025,2026-11-05T09:47:29Z,50233075.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,lingua-1.8.0,writer::tests::unique_ngrams_writer::test_identify_unique_ngrams,success,306.211,32.647,2026-11-05T09:48:02Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,writer::tests::unique_ngrams_writer::test_store_unique_ngrams,success,306.211,18.631,2026-11-05T09:48:20Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,writer::tests::unique_ngrams_writer::test_unique_ngrams_writer_with_non_existing_output_directory_path,success,306.211,4.750,2026-11-05T09:48:25Z,50233075.0,,
+experimental-bsan,lingua-1.8.0,writer::tests::unique_ngrams_writer::test_unique_ngrams_writer_with_relative_output_directory_path,success,306.211,4.677,2026-11-05T09:48:30Z,50233075.0,,

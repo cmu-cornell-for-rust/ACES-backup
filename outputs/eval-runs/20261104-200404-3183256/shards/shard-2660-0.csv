@@ -1,0 +1,86 @@
+experimental-bsan,self_encryption-0.36.2,cross_platform_check,success,288.644,12.837,2026-11-05T02:14:01Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map::tests::test_bincode_new_format,success,288.644,6.097,2026-11-05T02:14:07Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map::tests::test_bincode_version_byte,success,288.644,6.063,2026-11-05T02:14:13Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map::tests::test_bincode_version_byte_consistency,success,288.644,6.151,2026-11-05T02:14:19Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map::tests::test_deserialize_new_format_json,success,288.644,6.305,2026-11-05T02:14:26Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map::tests::test_error_handling_for_corrupted_data,success,288.644,6.151,2026-11-05T02:14:32Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map::tests::test_new_format_without_child_json,success,288.644,6.346,2026-11-05T02:14:38Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map::tests::test_preserve_chunk_order,success,288.644,7.095,2026-11-05T02:14:45Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map::tests::test_round_trip_serialization_consistency,success,288.644,6.857,2026-11-05T02:14:52Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map_index::tests::chunk_index_must_be_in_range,success,288.644,79.272,2026-11-05T02:16:12Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map_index::tests::content_must_have_the_declared_hash,success,288.644,111.843,2026-11-05T02:18:03Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map_index::tests::content_must_have_the_declared_size,success,288.644,92.623,2026-11-05T02:19:36Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map_index::tests::decrypted_chunks_reassemble_the_content,success,288.644,99.990,2026-11-05T02:21:16Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map_index::tests::indices_must_run_from_zero_without_gaps_or_repeats,success,288.644,7.381,2026-11-05T02:21:23Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map_index::tests::overlapping_chunks_follow_half_open_ranges,success,288.644,88.261,2026-11-05T02:22:52Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map_index::tests::positions_beyond_four_gib_need_no_wide_usize,success,288.644,7.448,2026-11-05T02:22:59Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map_index::tests::positions_map_by_the_maps_own_chunk_sizes,success,288.644,10.239,2026-11-05T02:23:09Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,data_map_with_child,success,288.644,7.302,2026-11-05T02:23:17Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_omitted_chunk_fails_instead_of_truncating,success,288.644,105.958,2026-11-05T02:25:03Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_random_access_basic,success,288.644,85.467,2026-11-05T02:26:28Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_random_access_chunk_boundaries,timeout,288.644,150.017,2026-11-05T02:28:58Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_random_access_convenience_methods,success,288.644,70.755,2026-11-05T02:30:09Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_random_access_edge_cases,success,288.644,18.528,2026-11-05T02:30:28Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_random_access_file_size,success,288.644,20.680,2026-11-05T02:30:48Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_random_access_respects_explicit_batch_size,timeout,288.644,150.017,2026-11-05T02:33:18Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_random_access_vs_sequential,timeout,288.644,150.029,2026-11-05T02:35:48Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_streaming_decrypt_basic,timeout,288.644,150.022,2026-11-05T02:38:19Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_streaming_decrypt_error_handling,success,288.644,88.145,2026-11-05T02:39:47Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_streaming_decrypt_explicit_batch_size,timeout,288.644,150.021,2026-11-05T02:42:17Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_streaming_decrypt_explicit_batch_size_rejects_zero,timeout,288.644,150.024,2026-11-05T02:44:47Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,stream_decrypt::tests::test_streaming_decrypt_large_file,timeout,288.644,150.022,2026-11-05T02:47:17Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,stream_encrypt::tests::test_stream_encrypt_basic,timeout,288.644,150.020,2026-11-05T02:49:47Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,stream_encrypt::tests::test_stream_encrypt_consistency,timeout,288.644,150.028,2026-11-05T02:52:17Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,stream_encrypt::tests::test_stream_encrypt_large_file,timeout,288.644,150.027,2026-11-05T02:54:47Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,stream_encrypt::tests::test_stream_encrypt_memory_efficiency,timeout,288.644,150.025,2026-11-05T02:57:17Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,stream_encrypt::tests::test_stream_encrypt_single_chunk,success,288.644,83.876,2026-11-05T02:58:41Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,stream_encrypt::tests::test_stream_encrypt_too_small,success,288.644,7.561,2026-11-05T02:58:49Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,test_100mb_encryption_consistency,timeout,288.644,150.020,2026-11-05T03:01:19Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_10mb_encryption_consistency,timeout,288.644,150.022,2026-11-05T03:03:49Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_5mb_encryption_consistency,timeout,288.644,150.022,2026-11-05T03:06:19Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_5mb_stream_encrypt_roundtrip,timeout,288.644,150.018,2026-11-05T03:08:49Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_aead_rejects_tampered_ciphertext_through_pipeline,success,288.644,87.039,2026-11-05T03:10:16Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,test_aead_tag_protects_integrity,success,288.644,9.987,2026-11-05T03:10:26Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,test_all_encryption_methods_consistency,timeout,288.644,150.021,2026-11-05T03:12:56Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_chunk_verification,timeout,288.644,150.021,2026-11-05T03:15:26Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_comprehensive_encryption_decryption,timeout,288.644,150.020,2026-11-05T03:17:56Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_concurrent_backend_access,timeout,288.644,150.021,2026-11-05T03:20:26Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_content_hash_is_blake3,success,288.644,7.380,2026-11-05T03:20:34Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,test_cross_backend_encryption_decryption,timeout,288.644,150.014,2026-11-05T03:23:04Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_cross_platform_compatibility,timeout,288.644,150.020,2026-11-05T03:25:34Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_data_map_debug,success,288.644,7.442,2026-11-05T03:25:41Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,test_data_map_len_and_is_child,success,288.644,7.478,2026-11-05T03:25:49Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,test_data_map_serialization,success,288.644,7.396,2026-11-05T03:25:56Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,test_encrypt_from_file_stores_all_chunks,timeout,288.644,150.014,2026-11-05T03:28:26Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_encrypted_chunk_dst_hash_is_blake3,success,288.644,82.811,2026-11-05T03:29:49Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,test_encrypted_chunks_do_not_contain_plaintext,success,288.644,46.628,2026-11-05T03:30:36Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,test_error_handling_across_backends,timeout,288.644,150.014,2026-11-05T03:33:06Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_file_encrypt_stream_decrypt_cross,timeout,288.644,150.024,2026-11-05T03:35:36Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_file_stream_encrypt_decrypt_roundtrip,timeout,288.644,150.017,2026-11-05T03:38:06Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_key_derivation_sizes_and_roundtrip,success,288.644,12.333,2026-11-05T03:38:18Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,test_large_file_cross_backend,timeout,288.644,150.022,2026-11-05T03:40:49Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_large_file_streaming_roundtrip,timeout,288.644,150.023,2026-11-05T03:43:19Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_memory_encrypt_stream_decrypt,timeout,288.644,150.023,2026-11-05T03:45:49Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_minimum_size_data,success,288.644,12.226,2026-11-05T03:46:01Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,test_multi_chunk_boundary,timeout,288.644,150.025,2026-11-05T03:48:31Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_non_aligned_sizes,timeout,288.644,150.021,2026-11-05T03:51:01Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_platform_specific_sizes,timeout,288.644,150.023,2026-11-05T03:53:31Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_single_chunk_boundary,timeout,288.644,150.021,2026-11-05T03:56:01Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_stream_encrypt_decrypt_roundtrip,timeout,288.644,150.016,2026-11-05T03:58:31Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_stream_encrypt_file_decrypt_storage_cross,timeout,288.644,150.023,2026-11-05T04:01:01Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_stream_encrypt_memory_decrypt,timeout,288.644,150.022,2026-11-05T04:03:32Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_streaming_decrypt_range_access,timeout,288.644,150.022,2026-11-05T04:06:02Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_streaming_decrypt_with_parallel_random_chunks,timeout,288.644,150.016,2026-11-05T04:08:32Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_streaming_decrypt_with_parallel_retrieval,timeout,288.644,150.022,2026-11-05T04:11:02Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,test_tampered_chunk_fails_decryption,success,288.644,82.300,2026-11-05T04:12:24Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,test_wrong_datamap_fails_decryption,timeout,288.644,150.020,2026-11-05T04:14:54Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,tests::test_multiple_levels_of_shrinking,timeout,288.644,150.019,2026-11-05T04:17:24Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,tests::test_stream_decrypt_batch_size_env_fallbacks,success,288.644,15.832,2026-11-05T04:17:40Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,tests::test_streaming_encrypt_4mb_file,timeout,288.644,150.016,2026-11-05T04:20:10Z,50239393.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,self_encryption-0.36.2,utils::tests::test_different_chunks_same_predecessors_yield_different_key_nonce,success,288.644,6.570,2026-11-05T04:20:17Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,utils::tests::test_get_n_1_n_2_out_of_bounds,success,288.644,6.626,2026-11-05T04:20:23Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,utils::tests::test_kdf_avalanche_single_bit_flip,success,288.644,6.653,2026-11-05T04:20:30Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,utils::tests::test_kdf_deterministic,success,288.644,6.629,2026-11-05T04:20:37Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,utils::tests::test_kdf_domain_separation_by_child_level,success,288.644,6.660,2026-11-05T04:20:43Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,utils::tests::test_kdf_domain_separation_by_chunk_index,success,288.644,6.598,2026-11-05T04:20:50Z,50239393.0,,
+experimental-bsan,self_encryption-0.36.2,utils::tests::test_kdf_output_sizes,success,288.644,6.651,2026-11-05T04:20:57Z,50239393.0,,

@@ -1,0 +1,31 @@
+experimental-bsan,sealy-0.2.0,decryptor::tests::can_encrypt_and_decrypt_from_return_components,success,338.611,24.426,2026-11-05T17:19:12Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,addition_noise_less_equal_operands,test_failed,338.611,1136.802,2026-11-05T17:38:08Z,50276018.0,oom,"process didn't exit successfully: `/local/ev-50276018-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/sealy/e6827de3cb1f306b/out/assumptions-e6827de3cb1f306b --exact addition_noise_less_equal_operands` (signal: 9, SIGKILL: kill)"
+experimental-bsan,sealy-0.2.0,evaluator::bfv::tests::can_add_plain,success,338.611,1091.866,2026-11-05T17:56:20Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::bfv::tests::can_add_many,test_failed,338.611,128.477,2026-11-05T17:58:29Z,50276018.0,oom,"process didn't exit successfully: `/local/ev-50276018-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/sealy/2b62396ad4350ddc/out/sealy-2b62396ad4350ddc --exact 'evaluator::bfv::tests::can_add_many'` (signal: 9, SIGKILL: kill)"
+experimental-bsan,sealy-0.2.0,evaluator::bfv::tests::can_add_plain_inplace,success,338.611,1180.051,2026-11-05T18:18:09Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::bfv::tests::can_multiply_plain,success,338.611,143.697,2026-11-05T18:20:33Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::bfv::tests::can_multiply_plain_inplace,success,338.611,152.674,2026-11-05T18:23:05Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::bfv::tests::can_negate,success,338.611,1237.683,2026-11-05T18:43:43Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::bfv::tests::can_negate_inplace,success,338.611,1286.526,2026-11-05T19:05:10Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::bfv::tests::can_sub_plain,success,338.611,1080.803,2026-11-05T19:23:10Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::bfv::tests::can_sub_plain_inplace,success,338.611,1096.094,2026-11-05T19:41:27Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_add,success,338.611,204.356,2026-11-05T19:44:51Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_add_inplace,success,338.611,200.599,2026-11-05T19:48:12Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_add_plain,success,338.611,204.202,2026-11-05T19:51:36Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_multiply_inplace,success,338.611,356.909,2026-11-05T19:57:33Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_add_plain_inplace,success,338.611,197.912,2026-11-05T20:00:51Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_multiply,success,338.611,348.477,2026-11-05T20:06:39Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_multiply_plain,success,338.611,263.885,2026-11-05T20:11:03Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_multiply_plain_inplace,success,338.611,255.276,2026-11-05T20:15:18Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_square,success,338.611,1549.338,2026-11-05T20:41:08Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_square_inplace,success,338.611,1546.813,2026-11-05T21:06:55Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_sub,success,338.611,221.847,2026-11-05T21:10:36Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_sub_inplace,success,338.611,219.394,2026-11-05T21:14:16Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,key_generator::tests::can_create_relin_key,success,338.611,18.175,2026-11-05T21:14:34Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,key_generator::tests::can_create_public_key,success,338.611,355.392,2026-11-05T21:20:30Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_sub_plain,success,338.611,211.743,2026-11-05T21:24:01Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,lane_modulus_is_not_power_of_2,success,338.611,1054.118,2026-11-05T21:41:35Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,multiply_plaintext_does_not_increase_polynomials,timeout,338.611,1800.020,2026-11-05T22:11:36Z,50276018.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sealy-0.2.0,poly_array::tests::multiprecision_and_back_is_identity,timeout,338.611,1800.020,2026-11-05T22:41:36Z,50276018.0,timeout,"test timed out after 30m (--test-timeout; killed by SIGTERM)"
+experimental-bsan,sealy-0.2.0,poly_array::tests::poly_array_drop,success,338.611,21.916,2026-11-05T22:41:58Z,50276018.0,,
+experimental-bsan,sealy-0.2.0,evaluator::ckks::tests::can_add_many,test_failed,338.611,229.411,2026-11-05T22:45:47Z,50276018.0,oom,"process didn't exit successfully: `/local/ev-50276018-0/target/bsan/x86_64-unknown-linux-gnu/debug/build/sealy/2b62396ad4350ddc/out/sealy-2b62396ad4350ddc --exact 'evaluator::ckks::tests::can_add_many'` (signal: 9, SIGKILL: kill)"

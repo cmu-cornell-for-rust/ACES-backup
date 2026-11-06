@@ -1,0 +1,2 @@
+experimental-bsan,wai-parser-0.2.3,ast::lex::test_tokenizer,success,63.789,3.757,2026-11-05T09:10:28Z,50265226.0,,
+experimental-bsan,wai-parser-0.2.3,ast::lex::test_validate_id,test_failed,63.789,1.629,2026-11-05T09:10:30Z,50265226.0,panic,"thread 'ast::lex::test_validate_id' (39949) panicked at src/ast/lex.rs:637:5: assertion failed: validate_id(0, ""apple\u{200c}pear"").is_err()"

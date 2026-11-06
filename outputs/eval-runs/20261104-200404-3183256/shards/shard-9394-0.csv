@@ -1,0 +1,18 @@
+experimental-bsan,async-pop-1.1.1,response::parser::rfc1939::test::test_list_stats,success,208.586,1.743,2026-11-05T05:14:24Z,50251215.0,,
+experimental-bsan,async-pop-1.1.1,response::parser::rfc1939::test::test_rfc822,success,208.586,1.753,2026-11-05T05:14:25Z,50251215.0,,
+experimental-bsan,async-pop-1.1.1,response::parser::rfc1939::test::test_stat,success,208.586,1.715,2026-11-05T05:14:27Z,50251215.0,,
+experimental-bsan,async-pop-1.1.1,response::parser::rfc1939::test::test_status,success,208.586,1.725,2026-11-05T05:14:29Z,50251215.0,,
+experimental-bsan,async-pop-1.1.1,response::parser::rfc2449::test::test_expire,success,208.586,1.730,2026-11-05T05:14:31Z,50251215.0,,
+experimental-bsan,async-pop-1.1.1,response::parser::test::test_capa,success,208.586,1.759,2026-11-05T05:14:32Z,50251215.0,,
+experimental-bsan,async-pop-1.1.1,response::parser::test::test_list,success,208.586,1.741,2026-11-05T05:14:34Z,50251215.0,,
+experimental-bsan,async-pop-1.1.1,response::parser::test::test_stat,success,208.586,1.740,2026-11-05T05:14:36Z,50251215.0,,
+experimental-bsan,async-pop-1.1.1,response::parser::test::test_string,success,208.586,1.734,2026-11-05T05:14:38Z,50251215.0,,
+experimental-bsan,async-pop-1.1.1,response::parser::test::test_uidl,success,208.586,1.773,2026-11-05T05:14:39Z,50251215.0,,
+experimental-bsan,async-pop-1.1.1,test::e2e_auth,test_failed,208.586,12.739,2026-11-05T05:14:52Z,50251215.0,gc,"test test::e2e_auth ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-pop-1.1.1,test::e2e_capa,test_failed,208.586,12.771,2026-11-05T05:15:05Z,50251215.0,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-pop-1.1.1,test::e2e_connect,test_failed,208.586,12.863,2026-11-05T05:15:18Z,50251215.0,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-pop-1.1.1,test::e2e_list,test_failed,208.586,12.793,2026-11-05T05:15:31Z,50251215.0,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-pop-1.1.1,test::e2e_login,test_failed,208.586,12.758,2026-11-05T05:15:43Z,50251215.0,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-pop-1.1.1,test::e2e_noop,test_failed,208.586,12.774,2026-11-05T05:15:56Z,50251215.0,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-pop-1.1.1,test::e2e_stat,test_failed,208.586,12.807,2026-11-05T05:16:09Z,50251215.0,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-pop-1.1.1,test::e2e_uidl,test_failed,208.586,12.776,2026-11-05T05:16:22Z,50251215.0,gc,"ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."

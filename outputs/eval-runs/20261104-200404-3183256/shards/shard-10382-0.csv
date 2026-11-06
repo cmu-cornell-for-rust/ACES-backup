@@ -1,0 +1,15 @@
+experimental-bsan,crates_io_api-0.12.0,async_client::test::test_crate_reverse_dependency_count_async,test_failed,171.289,2.352,2026-11-05T05:18:49Z,50252443.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,crates_io_api-0.12.0,async_client::test::test_crates_filter_by_category_async,test_failed,171.289,2.262,2026-11-05T05:18:51Z,50252443.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,crates_io_api-0.12.0,async_client::test::test_crates_filter_by_ids_async,test_failed,171.289,2.368,2026-11-05T05:18:54Z,50252443.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,crates_io_api-0.12.0,async_client::test::test_crates_filter_by_user_async,test_failed,171.289,2.233,2026-11-05T05:18:56Z,50252443.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,crates_io_api-0.12.0,async_client::test::test_crates_stream_async,test_failed,171.289,2.343,2026-11-05T05:18:59Z,50252443.0,panic,"thread 'async_client::test::test_crates_stream_async' (3333) panicked at src/async_client.rs:503:55: called `Result::unwrap()` on an `Err` value: PermissionDenied(PermissionDeniedError { reason: """" })"
+experimental-bsan,crates_io_api-0.12.0,async_client::test::test_full_crate_async,test_failed,171.289,2.259,2026-11-05T05:19:01Z,50252443.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,crates_io_api-0.12.0,async_client::test::test_get_crate_with_slash,success,171.289,1.726,2026-11-05T05:19:03Z,50252443.0,,
+experimental-bsan,crates_io_api-0.12.0,async_client::test::test_summary_async,test_failed,171.289,2.221,2026-11-05T05:19:05Z,50252443.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,crates_io_api-0.12.0,async_client::test::test_user_get_async,test_failed,171.289,2.290,2026-11-05T05:19:07Z,50252443.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,crates_io_api-0.12.0,sync_client::test::sync_client_ensure_send,success,171.289,1.728,2026-11-05T05:19:09Z,50252443.0,,
+experimental-bsan,crates_io_api-0.12.0,sync_client::test::test_crate_reverse_dependency_count,test_failed,171.289,2.405,2026-11-05T05:19:11Z,50252443.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,crates_io_api-0.12.0,sync_client::test::test_crates_filter_by_user_async,test_failed,171.289,2.335,2026-11-05T05:19:14Z,50252443.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,crates_io_api-0.12.0,sync_client::test::test_full_crate,test_failed,171.289,2.337,2026-11-05T05:19:16Z,50252443.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,crates_io_api-0.12.0,sync_client::test::test_summary,test_failed,171.289,2.316,2026-11-05T05:19:18Z,50252443.0,other,"error: test failed, to rerun pass `--lib`"
+experimental-bsan,crates_io_api-0.12.0,sync_client::test::test_user_get_async,test_failed,171.289,2.312,2026-11-05T05:19:21Z,50252443.0,other,"error: test failed, to rerun pass `--lib`"

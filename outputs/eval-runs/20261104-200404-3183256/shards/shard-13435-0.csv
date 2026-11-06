@@ -1,0 +1,8 @@
+experimental-bsan,async-tls-0.13.0,fail,test_failed,124.643,16.216,2026-11-05T06:41:31Z,50256828.0,gc,"test fail ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-tls-0.13.0,fetch_google,test_failed,124.643,13.803,2026-11-05T06:41:45Z,50256828.0,gc,"test fetch_google ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-tls-0.13.0,pass,test_failed,124.643,16.170,2026-11-05T06:42:01Z,50256828.0,gc,"test pass ... ERROR: BorrowSanitizer: garbage collection has been waiting 10001 ms for threads to reach a safepoint (gc_hang_threshold_ms=10000)."
+experimental-bsan,async-tls-0.13.0,rusttls::stream::test_stream::stream_bad,success,124.643,9.686,2026-11-05T06:42:10Z,50256828.0,,
+experimental-bsan,async-tls-0.13.0,rusttls::stream::test_stream::stream_eof,success,124.643,9.644,2026-11-05T06:42:20Z,50256828.0,,
+experimental-bsan,async-tls-0.13.0,rusttls::stream::test_stream::stream_good,success,124.643,10.822,2026-11-05T06:42:31Z,50256828.0,,
+experimental-bsan,async-tls-0.13.0,rusttls::stream::test_stream::stream_handshake,success,124.643,9.642,2026-11-05T06:42:41Z,50256828.0,,
+experimental-bsan,async-tls-0.13.0,rusttls::stream::test_stream::stream_handshake_eof,success,124.643,5.891,2026-11-05T06:42:46Z,50256828.0,,

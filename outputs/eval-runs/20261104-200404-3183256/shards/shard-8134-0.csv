@@ -1,0 +1,24 @@
+experimental-bsan,substudy-0.5.2,align::test_alignment,success,398.670,4.243,2026-11-05T04:32:57Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,align::test_combine_files,timeout,398.670,150.019,2026-11-05T04:35:27Z,50249488.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,substudy-0.5.2,clean::test_clean_subtitle_file,success,398.670,79.666,2026-11-05T04:36:47Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,cmd_clean,test_failed,398.670,3.050,2026-11-05T04:36:50Z,50249488.0,panic,"thread 'cmd_clean' (71713) panicked at tests/tests.rs:43:10: could not run substudy: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,substudy-0.5.2,cmd_combine,test_failed,398.670,3.046,2026-11-05T04:36:53Z,50249488.0,panic,"thread 'cmd_combine' (71830) panicked at tests/tests.rs:57:10: could not run substudy: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,substudy-0.5.2,cmd_export_csv,test_failed,398.670,3.052,2026-11-05T04:36:56Z,50249488.0,panic,"thread 'cmd_export_csv' (71924) panicked at /local/ev-50249488-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/cli_test_dir-0.1.8/src/lib.rs:337:42: Could not canonicalize path: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,substudy-0.5.2,cmd_export_review,test_failed,398.670,3.058,2026-11-05T04:36:59Z,50249488.0,panic,"thread 'cmd_export_review' (72028) panicked at /local/ev-50249488-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/cli_test_dir-0.1.8/src/lib.rs:337:42: Could not canonicalize path: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,substudy-0.5.2,cmd_export_tracks,test_failed,398.670,3.063,2026-11-05T04:37:02Z,50249488.0,panic,"thread 'cmd_export_tracks' (72201) panicked at /local/ev-50249488-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/cli_test_dir-0.1.8/src/lib.rs:337:42: Could not canonicalize path: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,substudy-0.5.2,cmd_list_tracks,test_failed,398.670,3.031,2026-11-05T04:37:05Z,50249488.0,panic,"thread 'cmd_list_tracks' (72312) panicked at /local/ev-50249488-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/cli_test_dir-0.1.8/src/lib.rs:337:42: Could not canonicalize path: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,substudy-0.5.2,decode::test_smart_decode,success,398.670,3.026,2026-11-05T04:37:08Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,export::csv::test_episode_prefix,success,398.670,17.739,2026-11-05T04:37:26Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,merge::test::merge_long,success,398.670,7.874,2026-11-05T04:37:34Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,merge::test::merge_one,success,398.670,7.952,2026-11-05T04:37:42Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,merge::test::merge_short,success,398.670,7.778,2026-11-05T04:37:50Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,merge::test::merge_zero,success,398.670,7.440,2026-11-05T04:37:57Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,show_help,test_failed,398.670,3.024,2026-11-05T04:38:00Z,50249488.0,panic,"thread 'show_help' (73579) panicked at tests/tests.rs:15:10: could not run substudy: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,substudy-0.5.2,show_version,test_failed,398.670,3.046,2026-11-05T04:38:03Z,50249488.0,panic,"thread 'show_version' (73680) panicked at tests/tests.rs:27:10: could not run substudy: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,substudy-0.5.2,srt::test::detect_language,success,398.670,87.039,2026-11-05T04:39:30Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,srt::test::subtitle_file_from_path,success,398.670,3.455,2026-11-05T04:39:34Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,srt::test::subtitle_file_to_string,success,398.670,2.934,2026-11-05T04:39:37Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,srt::test::subtitle_to_string,success,398.670,2.926,2026-11-05T04:39:40Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,srt::test::zero_duration_subtitle,success,398.670,2.897,2026-11-05T04:39:43Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,time::test_timestamp,success,398.670,2.914,2026-11-05T04:39:46Z,50249488.0,,
+experimental-bsan,substudy-0.5.2,video::test_stream_decode,success,398.670,11.383,2026-11-05T04:39:57Z,50249488.0,,

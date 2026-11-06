@@ -1,0 +1,30 @@
+experimental-bsan,madato-0.8.0,cal::tests::test_list_sheet_names,test_failed,153.424,1.607,2026-11-05T03:57:26Z,50247932.0,panic,"thread 'cal::tests::test_list_sheet_names' (8753) panicked at src/cal/mod.rs:276:9: assertion failed: result.is_ok()"
+experimental-bsan,madato-0.8.0,cal::tests::test_md_santise,success,153.424,2.911,2026-11-05T03:57:29Z,50247932.0,,
+experimental-bsan,madato-0.8.0,cal::tests::test_spreadsheet_to_md_with_formula_and_value,test_failed,153.424,1.629,2026-11-05T03:57:31Z,50247932.0,panic,"thread 'cal::tests::test_spreadsheet_to_md_with_formula_and_value' (9413) panicked at src/cal/mod.rs:62:53: Cannot open file: Xlsx(Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,madato-0.8.0,cal::tests::test_spreadsheet_to_md_with_formulas_only,test_failed,153.424,1.633,2026-11-05T03:57:32Z,50247932.0,panic,"thread 'cal::tests::test_spreadsheet_to_md_with_formulas_only' (9715) panicked at src/cal/mod.rs:62:53: Cannot open file: Xlsx(Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,madato-0.8.0,cal::tests::test_spreadsheet_to_md_without_formulas,test_failed,153.424,1.653,2026-11-05T03:57:34Z,50247932.0,panic,"thread 'cal::tests::test_spreadsheet_to_md_without_formulas' (10282) panicked at src/cal/mod.rs:62:53: Cannot open file: Xlsx(Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,madato-0.8.0,cal::tests::test_spreadsheet_to_named_table_with_formulas,test_failed,153.424,1.629,2026-11-05T03:57:36Z,50247932.0,panic,"thread 'cal::tests::test_spreadsheet_to_named_table_with_formulas' (10688) panicked at src/cal/mod.rs:62:53: Cannot open file: Xlsx(Io(Os { code: 2, kind: NotFound, message: ""No such file or directory"" }))"
+experimental-bsan,madato-0.8.0,can_extract_headers,success,153.424,2.924,2026-11-05T03:57:39Z,50247932.0,,
+experimental-bsan,madato-0.8.0,can_make_table,success,153.424,2.936,2026-11-05T03:57:42Z,50247932.0,,
+experimental-bsan,madato-0.8.0,can_make_table_all_cols,success,153.424,2.969,2026-11-05T03:57:45Z,50247932.0,,
+experimental-bsan,madato-0.8.0,can_mk_data,success,153.424,2.922,2026-11-05T03:57:47Z,50247932.0,,
+experimental-bsan,madato-0.8.0,can_mk_data_limiting_headers,success,153.424,2.923,2026-11-05T03:57:50Z,50247932.0,,
+experimental-bsan,madato-0.8.0,can_mk_header,success,153.424,2.895,2026-11-05T03:57:53Z,50247932.0,,
+experimental-bsan,madato-0.8.0,can_mk_table_with_1_filter,success,153.424,3.047,2026-11-05T03:57:56Z,50247932.0,,
+experimental-bsan,madato-0.8.0,can_mk_table_with_2_filter,success,153.424,3.135,2026-11-05T03:58:00Z,50247932.0,,
+experimental-bsan,madato-0.8.0,can_mk_table_with_value_regex,success,153.424,13.376,2026-11-05T03:58:13Z,50247932.0,,
+experimental-bsan,madato-0.8.0,csv::tests::test_csv_file_to_md,success,153.424,4.900,2026-11-05T03:58:18Z,50247932.0,,
+experimental-bsan,madato-0.8.0,csv::tests::test_load_csv,success,153.424,4.885,2026-11-05T03:58:23Z,50247932.0,,
+experimental-bsan,madato-0.8.0,csv::tests::test_mk_csv_from_table_result,success,153.424,2.909,2026-11-05T03:58:26Z,50247932.0,,
+experimental-bsan,madato-0.8.0,csv::tests::test_mk_md_table_from_csv,success,153.424,4.894,2026-11-05T03:58:31Z,50247932.0,,
+experimental-bsan,madato-0.8.0,tests::test_detect_csv_by_content,success,153.424,2.894,2026-11-05T03:58:33Z,50247932.0,,
+experimental-bsan,madato-0.8.0,tests::test_detect_csv_by_extension,success,153.424,2.920,2026-11-05T03:58:36Z,50247932.0,,
+experimental-bsan,madato-0.8.0,tests::test_detect_json_by_content,success,153.424,2.914,2026-11-05T03:58:39Z,50247932.0,,
+experimental-bsan,madato-0.8.0,tests::test_detect_unknown_file,success,153.424,2.916,2026-11-05T03:58:42Z,50247932.0,,
+experimental-bsan,madato-0.8.0,tests::test_detect_xlsx_by_magic_number,success,153.424,2.898,2026-11-05T03:58:45Z,50247932.0,,
+experimental-bsan,madato-0.8.0,tests::test_detect_xlsx_renamed_file,test_failed,153.424,2.979,2026-11-05T03:58:48Z,50247932.0,panic,"thread 'tests::test_detect_xlsx_renamed_file' (30904) panicked at src/main.rs:286:74: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
+experimental-bsan,madato-0.8.0,tests::test_detect_yaml_by_content,success,153.424,2.912,2026-11-05T03:58:51Z,50247932.0,,
+experimental-bsan,madato-0.8.0,tests::test_detect_yaml_by_extension,success,153.424,2.890,2026-11-05T03:58:54Z,50247932.0,,
+experimental-bsan,madato-0.8.0,tests::test_version,success,153.424,2.889,2026-11-05T03:58:57Z,50247932.0,,
+experimental-bsan,madato-0.8.0,yaml::can_yaml_to_md,success,153.424,3.560,2026-11-05T03:59:00Z,50247932.0,,
+experimental-bsan,madato-0.8.0,yaml::can_yaml_to_md_with_headings,success,153.424,3.536,2026-11-05T03:59:04Z,50247932.0,,

@@ -1,0 +1,6 @@
+experimental-bsan,lefthk-core-0.2.2,config::command::chord::tests::normalize_process,success,101.342,1.658,2026-11-05T07:11:19Z,50258939.0,,
+experimental-bsan,lefthk-core-0.2.2,config::command::execute::tests::normalize_process,success,101.342,1.592,2026-11-05T07:11:20Z,50258939.0,,
+experimental-bsan,lefthk-core-0.2.2,config::command::exit_chord::tests::normalize_process,success,101.342,1.536,2026-11-05T07:11:22Z,50258939.0,,
+experimental-bsan,lefthk-core-0.2.2,config::command::kill::testes::normalize_process,success,101.342,1.529,2026-11-05T07:11:24Z,50258939.0,,
+experimental-bsan,lefthk-core-0.2.2,config::command::reload::tests::normalize_process,success,101.342,1.520,2026-11-05T07:11:25Z,50258939.0,,
+experimental-bsan,lefthk-core-0.2.2,tests::ipc::simulate_command_sending,test_failed,101.342,1.731,2026-11-05T07:11:27Z,50258939.0,panic,"thread 'tests::ipc::simulate_command_sending' (27265) panicked at src/tests.rs:7:14: Blocking task joined: Custom { kind: NotFound, error: PathError { path: ""/work/../target/.tmpOxb4nz"", err: Os { code: 2, kind: NotFound, message: ""No such file or directory"" } } }"

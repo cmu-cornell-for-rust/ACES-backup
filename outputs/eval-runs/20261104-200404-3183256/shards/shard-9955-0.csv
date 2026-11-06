@@ -1,0 +1,17 @@
+experimental-bsan,timestamped-socket-0.3.0,interface::tests::interface_index_invalid,success,62.113,1.587,2026-11-05T05:12:07Z,50251886.0,,
+experimental-bsan,timestamped-socket-0.3.0,interface::tests::interface_index_ipv4,success,62.113,1.577,2026-11-05T05:12:08Z,50251886.0,,
+experimental-bsan,timestamped-socket-0.3.0,interface::tests::interface_index_ipv6,success,62.113,1.581,2026-11-05T05:12:10Z,50251886.0,,
+experimental-bsan,timestamped-socket-0.3.0,interface::tests::interface_name_from_string,success,62.113,1.583,2026-11-05T05:12:12Z,50251886.0,,
+experimental-bsan,timestamped-socket-0.3.0,interface::tests::test_interface_name_iterator,success,62.113,1.594,2026-11-05T05:12:13Z,50251886.0,,
+experimental-bsan,timestamped-socket-0.3.0,interface::tests::test_mac_address_iterator,success,62.113,1.589,2026-11-05T05:12:15Z,50251886.0,,
+experimental-bsan,timestamped-socket-0.3.0,interface::tests::test_socket_addr_iterator,success,62.113,1.595,2026-11-05T05:12:16Z,50251886.0,,
+experimental-bsan,timestamped-socket-0.3.0,socket::linux::tests::test_open_ip_reuse_addr_after_interface,test_failed,62.113,1.802,2026-11-05T05:12:18Z,50251886.0,panic,"thread 'socket::linux::tests::test_open_ip_reuse_addr_after_interface' (53934) panicked at src/socket/linux.rs:390:10: called `Result::unwrap()` on an `Err` value: Os { code: 1, kind: PermissionDenied, message: ""Operation not permitted"" }"
+experimental-bsan,timestamped-socket-0.3.0,socket::linux::tests::test_open_ip_reuse_addr_before_interface,test_failed,62.113,1.804,2026-11-05T05:12:20Z,50251886.0,panic,"thread 'socket::linux::tests::test_open_ip_reuse_addr_before_interface' (54114) panicked at src/socket/linux.rs:414:10: called `Result::unwrap()` on an `Err` value: Os { code: 1, kind: PermissionDenied, message: ""Operation not permitted"" }"
+experimental-bsan,timestamped-socket-0.3.0,socket::linux::tests::test_open_udp,test_failed,62.113,1.809,2026-11-05T05:12:22Z,50251886.0,panic,"thread 'socket::linux::tests::test_open_udp' (54268) panicked at src/socket/linux.rs:348:10: called `Result::unwrap()` on an `Err` value: Os { code: 1, kind: PermissionDenied, message: ""Operation not permitted"" }"
+experimental-bsan,timestamped-socket-0.3.0,socket::linux::tests::test_open_udp4,test_failed,62.113,1.800,2026-11-05T05:12:24Z,50251886.0,panic,"thread 'socket::linux::tests::test_open_udp4' (54345) panicked at src/socket/linux.rs:456:10: called `Result::unwrap()` on an `Err` value: Os { code: 1, kind: PermissionDenied, message: ""Operation not permitted"" }"
+experimental-bsan,timestamped-socket-0.3.0,socket::linux::tests::test_open_udp6,test_failed,62.113,1.803,2026-11-05T05:12:26Z,50251886.0,panic,"thread 'socket::linux::tests::test_open_udp6' (54462) panicked at src/socket/linux.rs:426:10: called `Result::unwrap()` on an `Err` value: Os { code: 1, kind: PermissionDenied, message: ""Operation not permitted"" }"
+experimental-bsan,timestamped-socket-0.3.0,socket::linux::tests::test_software_timestamping,success,62.113,1.732,2026-11-05T05:12:27Z,50251886.0,,
+experimental-bsan,timestamped-socket-0.3.0,socket::tests::test_open_ip,success,62.113,1.740,2026-11-05T05:12:29Z,50251886.0,,
+experimental-bsan,timestamped-socket-0.3.0,socket::tests::test_open_ip_dest_addr,success,62.113,1.756,2026-11-05T05:12:31Z,50251886.0,,
+experimental-bsan,timestamped-socket-0.3.0,socket::tests::test_send_from,success,62.113,1.747,2026-11-05T05:12:33Z,50251886.0,,
+experimental-bsan,timestamped-socket-0.3.0,socket::tests::test_send_from_v6,success,62.113,1.736,2026-11-05T05:12:34Z,50251886.0,,

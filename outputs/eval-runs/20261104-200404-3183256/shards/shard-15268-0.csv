@@ -1,0 +1,6 @@
+experimental-bsan,stdio-override-0.2.0,imp::test_original,test_failed,6.504,1.664,2026-11-05T07:16:47Z,50259323.0,panic,"thread 'imp::test_original' (41436) panicked at src/unix.rs:69:5: assertion `left == right` failed"
+experimental-bsan,stdio-override-0.2.0,test::test_multiple,success,6.504,1.627,2026-11-05T07:16:49Z,50259323.0,,
+experimental-bsan,stdio-override-0.2.0,test::test_multiple_panic,success,6.504,1.677,2026-11-05T07:16:50Z,50259323.0,,
+experimental-bsan,stdio-override-0.2.0,test::test_stderr,test_failed,6.504,1.667,2026-11-05T07:16:52Z,50259323.0,panic,"thread 'test::test_stderr' (41735) panicked at src/lib.rs:405:9: assertion `left == right` failed"
+experimental-bsan,stdio-override-0.2.0,test::test_stdin,success,6.504,1.606,2026-11-05T07:16:54Z,50259323.0,,
+experimental-bsan,stdio-override-0.2.0,test::test_stdout,test_failed,6.504,1.726,2026-11-05T07:16:55Z,50259323.0,panic,"thread 'test::test_stdout' (41934) panicked at src/lib.rs:384:9: assertion `left == right` failed"

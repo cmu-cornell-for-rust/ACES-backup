@@ -1,0 +1,42 @@
+experimental-bsan,mdcat-2.19.0,args::tests::verify_app,success,1383.118,7.631,2026-11-05T03:35:35Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,cli::file_list_fail_fast,timeout,1383.118,150.036,2026-11-05T03:38:05Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::file_list_fail_late,timeout,1383.118,150.037,2026-11-05T03:40:35Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::frontmatter_flag_falls_back_to_stripping_non_mapping_frontmatter,timeout,1383.118,150.049,2026-11-05T03:43:05Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::frontmatter_flag_renders_a_table,timeout,1383.118,150.039,2026-11-05T03:45:35Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::frontmatter_is_stripped_by_default,timeout,1383.118,150.040,2026-11-05T03:48:05Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::ignore_broken_pipe,timeout,1383.118,150.041,2026-11-05T03:50:35Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::image_protocol_config_default_is_used_and_overridable,timeout,1383.118,150.037,2026-11-05T03:53:06Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::image_protocol_env_var_forces_iterm2_escape_sequence,timeout,1383.118,150.038,2026-11-05T03:55:36Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::image_protocol_flag_forces_kitty_escape_sequence,timeout,1383.118,150.037,2026-11-05T03:58:06Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::image_protocol_flag_has_no_effect_when_paginating,timeout,1383.118,150.041,2026-11-05T04:00:36Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::image_protocol_flag_overrides_env_var,timeout,1383.118,150.033,2026-11-05T04:03:06Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::image_protocol_flag_still_applies_when_paginating_with_lessi,timeout,1383.118,150.038,2026-11-05T04:05:36Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::long_version_includes_license,success,1383.118,6.711,2026-11-05T04:05:43Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,cli::show_help,success,1383.118,7.749,2026-11-05T04:05:50Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,cli::tabs_config_default_is_used_and_overridable,timeout,1383.118,150.038,2026-11-05T04:08:20Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::tabs_flag_expands_tabs_in_code_blocks,timeout,1383.118,150.037,2026-11-05T04:10:51Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::toc_lists_headings_before_content,timeout,1383.118,150.040,2026-11-05T04:13:21Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::toc_on_stdin_has_no_links,timeout,1383.118,150.033,2026-11-05T04:15:51Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,cli::without_tabs_flag_tabs_pass_through_unchanged,timeout,1383.118,150.036,2026-11-05T04:18:21Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,config::tests::applies_modifiers_and_colors,success,1383.118,4.506,2026-11-05T04:18:25Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,config::tests::defaults_default_to_none,success,1383.118,4.521,2026-11-05T04:18:30Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,config::tests::h1_override_keeps_prefix_background_in_sync,success,1383.118,4.620,2026-11-05T04:18:34Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,config::tests::overrides_alert_label_text,success,1383.118,4.620,2026-11-05T04:18:39Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,config::tests::overrides_heading_marker_text,success,1383.118,4.596,2026-11-05T04:18:44Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,config::tests::parses_full_config_and_applies_overrides,success,1383.118,4.901,2026-11-05T04:18:49Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,config::tests::parses_hex_and_ansi_colors,success,1383.118,4.526,2026-11-05T04:18:53Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,config::tests::rejects_invalid_color,success,1383.118,4.509,2026-11-05T04:18:58Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,config::tests::rejects_unknown_modifier,success,1383.118,4.527,2026-11-05T04:19:02Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,config::tests::rejects_unknown_style_name,success,1383.118,4.597,2026-11-05T04:19:07Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,config::tests::resolves_palette_indirection,success,1383.118,4.521,2026-11-05T04:19:11Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,config::tests::style_without_text_leaves_marker_at_default,success,1383.118,4.589,2026-11-05T04:19:16Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,config::tests::unknown_toml_field_is_rejected,success,1383.118,4.545,2026-11-05T04:19:20Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,mdpick::errors_when_the_directory_has_no_markdown_files,success,1383.118,21.826,2026-11-05T04:19:42Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,mdpick::errors_with_more_than_one_directory_argument,success,1383.118,7.168,2026-11-05T04:19:49Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,mdpick::exits_cleanly_when_the_picker_is_cancelled,success,1383.118,27.167,2026-11-05T04:20:17Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,mdpick::renders_the_file_selected_in_fzf,timeout,1383.118,150.036,2026-11-05T04:22:47Z,50244994.0,timeout,"test timed out after 150 (--test-timeout; killed by SIGTERM)"
+experimental-bsan,mdcat-2.19.0,toc::tests::duplicate_titles_get_deduplicated_slugs,success,1383.118,4.608,2026-11-05T04:22:51Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,toc::tests::flat_headings_become_a_flat_list,success,1383.118,4.597,2026-11-05T04:22:56Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,toc::tests::nested_headings_become_a_nested_list,success,1383.118,4.624,2026-11-05T04:23:01Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,toc::tests::no_headings_produces_no_events,success,1383.118,4.523,2026-11-05T04:23:05Z,50244994.0,,
+experimental-bsan,mdcat-2.19.0,toc::tests::without_file_ref_entries_have_no_link,success,1383.118,4.566,2026-11-05T04:23:10Z,50244994.0,,

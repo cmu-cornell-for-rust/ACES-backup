@@ -1,0 +1,3 @@
+experimental-bsan,gmt_dos-actors-12.2.0,actor::serde_with::tests::serde,success,424.344,1.743,2026-11-05T08:31:33Z,50262573.0,,
+experimental-bsan,gmt_dos-actors-12.2.0,client::tests::client,success,424.344,1.700,2026-11-05T08:31:35Z,50262573.0,,
+experimental-bsan,gmt_dos-actors-12.2.0,framework::model::tests::pipe,test_failed,424.344,1.770,2026-11-05T08:31:36Z,50262573.0,panic,"thread 'framework::model::tests::pipe' (91827) panicked at src/framework/model.rs:274:14: called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: ""No such file or directory"" }"
