@@ -97,9 +97,11 @@
 #                     the slow-list jobs plus ceil(regular tests / T), raised
 #                     to the fewest jobs that give every crate a worker
 #                     (--max-tasks per job) and capped at one per crate. Counted
-#                     after every filter. Crates are never split, so a job
-#                     holding a crate with more than T tests goes over T.
-#                     Can't be combined with --jobs
+#                     after every filter. A (non-slow-list) crate with more
+#                     than T tests is split into ceil(tests / T) parts, each
+#                     run by its own worker -- compiling the crate again --
+#                     so the jobs really get about T tests each. Can't be
+#                     combined with --jobs
 #   --max-jobs N      most of your jobs in SLURM at once, running + pending;
 #                     the rest are staged (default 4999, one under Bridges-2's
 #                     5000-per-user limit; 0 = no limit)
@@ -337,8 +339,9 @@ summarize_run() {
         }' || true
     done_crates=$(cat "$rundir"/done/*.txt 2>/dev/null | wc -l || true)
     if (( done_crates < ncrates )); then
-        echo "  NOTE: $(( ncrates - done_crates )) crate(s) never finished (walltime / job failure)."
-        echo "  Re-run them with --only: comm -23 <(sort $rundir/queues/*.txt) <(sort $rundir/done/*.txt)"
+        echo "  NOTE: $(( ncrates - done_crates )) crate(s)/part(s) never finished (walltime / job failure)."
+        echo "  Re-run them with --only: comm -23 <(sort $rundir/queues/*.txt) <(sort $rundir/done/*.txt) | sed 's/@[0-9]*\$//' | sort -u"
+        echo "  (or, for just the unfinished tests: cat the matching $rundir/lists/<unit>.txt)"
         echo "  See $rundir/job-*.out and the crates' eval-<image>.log"
     fi
 }
@@ -794,7 +797,40 @@ for crate in "${CRATES[@]}"; do
     [[ -n "${IS_SLOW[$crate]:-}" ]] || REG_CRATES+=("$crate")
 done
 NSLOW=${#SLOW_CRATES[@]}
+
+# ── --tests-per-job: split big regular crates into parts ────────────────────
+# A regular crate with more than TESTS_PER_JOB tests is cut into
+# ceil(tests / TESTS_PER_JOB) contiguous, near-equal slices of its list (file
+# order kept, so a module's tests stay together for the timeout streak),
+# each a queue unit "<crate>@<k>" with its own lists/<crate>@<k>.txt. Every
+# unit is scheduled like a crate: its own worker, its own copy and compile of
+# the crate, and its own eval-<image>@<k>.log. Rows still carry the plain
+# crate name; a crate that fails to build gets one build_failed row per part.
+# From here on REG_CRATES holds queue units (a crate name or <crate>@<k>).
+NSPLIT=0
+if [[ -n "$TESTS_PER_JOB" ]]; then
+    UNITS=()
+    for crate in ${REG_CRATES[@]+"${REG_CRATES[@]}"}; do
+        n=${NT[$crate]}
+        if (( n <= TESTS_PER_JOB )); then UNITS+=("$crate"); continue; fi
+        parts=$(( (n + TESTS_PER_JOB - 1) / TESTS_PER_JOB ))
+        start=1
+        for (( k = 0; k < parts; k++ )); do
+            # Sizes differ by at most one: the first n % parts get the extra.
+            size=$(( n / parts + (k < n % parts ? 1 : 0) ))
+            sed -n "${start},$(( start + size - 1 ))p" "$RUNDIR/lists/$crate.txt" \
+                > "$RUNDIR/lists/$crate@$k.txt"
+            NT[$crate@$k]=$size
+            UNITS+=("$crate@$k")
+            start=$(( start + size ))
+        done
+        rm -f "$RUNDIR/lists/$crate.txt"
+        NSPLIT=$(( NSPLIT + 1 ))
+    done
+    REG_CRATES=(${UNITS[@]+"${UNITS[@]}"})
+fi
 NREG=${#REG_CRATES[@]}
+NUNITS=$(( NSLOW + NREG ))
 
 # ── Shape: spread the tests evenly over as many jobs as allowed ──────────────
 # The slow crates fill the first SLOW_JOBS jobs, MAX_TASKS each in list order,
@@ -883,7 +919,7 @@ while IFS=$'\t' read -r cnt crate; do
     JOB_CRATES[best]=$(( JOB_CRATES[best] + 1 ))
 done < <(for crate in ${REG_CRATES[@]+"${REG_CRATES[@]}"}; do printf '%d\t%s\n' "${NT[$crate]}" "$crate"; done \
          | sort -t$'\t' -k1,1nr -k2,2)
-PER_JOB_MAX=0; PER_JOB_MIN=$NCRATES; TESTS_MAX=0; TESTS_MIN=$NTESTS
+PER_JOB_MAX=0; PER_JOB_MIN=$NUNITS; TESTS_MAX=0; TESTS_MIN=$NTESTS
 for (( j = 0; j < JOBS; j++ )); do
     (( JOB_CRATES[j] > PER_JOB_MAX )) && PER_JOB_MAX=${JOB_CRATES[j]}
     (( JOB_CRATES[j] < PER_JOB_MIN )) && PER_JOB_MIN=${JOB_CRATES[j]}
@@ -1348,20 +1384,20 @@ next_crate() {
     NEXT=$(sed -n "$(( n + 1 ))p" "$QUEUE")
 }
 
-# killed_rows <crate> <shard> <rc> <log> <job id>: a status=killed row for each
-# of the crate's tests that has no row yet, once its srun step was killed
+# killed_rows <unit> <shard> <rc> <log> <job id>: a status=killed row for each
+# of the unit's tests (a crate, or a <crate>@<k> part) that has no row yet, once its srun step was killed
 # outright (step OOM, signal) and took inner.sh down with it. When only the
 # test process was OOM-killed, inner.sh recorded it and this adds nothing.
 killed_rows() {
-    local etype=other why="srun step exited $3" ts
+    local etype=other why="srun step exited $3" ts crate="${1%@*}"
     if grep -q 'oom[-_]kill' "$4"; then
         etype=oom
         why="srun step OOM-killed at --mem-per-task ${MEM_PER_TASK}G"
     fi
-    echo "--- step killed: $1 ($why) ---" >> "$4"
+    echo "--- step killed: $crate ($why) ---" >> "$4"
     ts=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
     # FILENAME, not NR == FNR: the shard may be empty.
-    awk -F, -v b="$IMAGE" -v c="$1" \
+    awk -F, -v b="$IMAGE" -v c="$crate" \
         -v tail=",killed,,,$ts,$5,$etype,\"$why before this test got a row\"" '
         FILENAME == ARGV[1] { if ($1 == b && $2 == c) have[$3] = 1; next }
         !($0 in have) { print b "," c "," $0 tail }' \
@@ -1372,27 +1408,31 @@ worker() {
     local tid="$1"
     local shard="$RUNDIR/shards/shard-${JOBIDX}-${tid}.csv"
     local scr="$SCRATCH_BASE/ev-${SLURM_JOB_ID}-${tid}"
-    local crate cdir log e b rc
+    local unit crate part cdir log e b rc
     # CARGO_HOME lives as long as the worker, so registry downloads carry over
     # from crate to crate; the source copy and target dir are per crate.
     rm -rf "$scr"
     mkdir -p "$scr/home"
     shopt -s dotglob nullglob
     while next_crate; [ -n "$NEXT" ]; do
-        crate="$NEXT"
+        # A queue unit is a crate, or <crate>@<k>: part k of a crate split
+        # by --tests-per-job, with its own test list and log.
+        unit="$NEXT"
+        crate="${unit%@*}"
+        part=""; [ "$unit" = "$crate" ] || part="@${unit##*@}"
         cdir="$DATASET_DIR/$crate"
-        log="$cdir/eval-${IMAGE}.log"
-        echo "[job $JOBIDX task $tid] $crate"
+        log="$cdir/eval-${IMAGE}${part}.log"
+        echo "[job $JOBIDX task $tid] $unit"
         rm -rf "$scr/work" "$scr/target" "$scr/$crate"
         mkdir -p "$scr/target"
         if [ "$DOWNLOAD" = 1 ]; then
             # No dataset dir: the crate comes straight from crates.io into
             # this worker's scratch, and is removed with it.
-            log="$RUNDIR/crate-logs/$crate/eval-${IMAGE}.log"
+            log="$RUNDIR/crate-logs/$crate/eval-${IMAGE}${part}.log"
             mkdir -p "${log%/*}"
             if ! download_crate "$crate" "$scr" > "$log" 2>&1; then
                 echo "$IMAGE,$crate,,fetch_failed,,,$(date -u +'%Y-%m-%dT%H:%M:%SZ'),${SLURM_JOB_ID}.${tid},other,\"crates.io download failed (see $log)\"" >> "$shard"
-                echo "$crate" >> "$RUNDIR/done/done-${JOBIDX}-${tid}.txt"
+                echo "$unit" >> "$RUNDIR/done/done-${JOBIDX}-${tid}.txt"
                 continue
             fi
             mv "$scr/$crate" "$scr/work"
@@ -1421,7 +1461,7 @@ worker() {
             --env EV_BUILD="$IMAGE" --env EV_MODE="$MODE" \
             --env EV_CRATE="$crate" \
             --env EV_SHARD="$shard" \
-            --env EV_TESTS="$RUNDIR/lists/$crate.txt" \
+            --env EV_TESTS="$RUNDIR/lists/$unit.txt" \
             --env EV_TEST_THREADS="$TEST_THREADS" \
             --env EV_PARALLEL_TESTS="$PARALLEL_TESTS" \
             --env EV_TEST_TIMEOUT="$TEST_TIMEOUT" \
@@ -1439,16 +1479,16 @@ worker() {
         # (walltime, scancel): the crate was interrupted, not at fault, so it
         # gets no rows and stays out of done/ for the re-run list to pick up.
         if (( rc == 143 )) && ! grep -q 'oom[-_]kill' "$log"; then
-            echo "--- step interrupted: $crate (srun step exited 143; not recorded) ---" >> "$log"
+            echo "--- step interrupted: $unit (srun step exited 143; not recorded) ---" >> "$log"
             break
         fi
         # inner.sh itself exits 0, or 1 after its fetch/build_failed row; past
         # 128, or with slurmstepd's oom_kill report, the step was killed.
         if (( rc > 128 )) || grep -q 'oom[-_]kill' "$log"; then
-            killed_rows "$crate" "$shard" "$rc" "$log" "${SLURM_JOB_ID}.${tid}"
+            killed_rows "$unit" "$shard" "$rc" "$log" "${SLURM_JOB_ID}.${tid}"
         fi
         rm -rf "$scr/work" "$scr/target"
-        echo "$crate" >> "$RUNDIR/done/done-${JOBIDX}-${tid}.txt"
+        echo "$unit" >> "$RUNDIR/done/done-${JOBIDX}-${tid}.txt"
     done
     rm -rf "$scr"
 }
@@ -1467,6 +1507,7 @@ else
     echo "Dataset:  $DATASET_DIR"
 fi
 echo "Tests:    $NTESTS across $NCRATES crate(s) (from $TESTS_CSV)"
+(( NSPLIT > 0 )) && echo "Split:    $NSPLIT crate(s) over $TESTS_PER_JOB tests split into parts: $NUNITS queue unit(s) in all"
 echo "Skipped:  ignored=$skip_ignored$( (( ${#BSAN_FAIL_CSVS[@]} > 0 )) && echo " bsan-build-fail=$skip_bsanfail") not-in-only=$skip_only${VERSIONS:+ not-$VERSIONS=$skip_version}${SAFETY:+ not-$SAFETY=$skip_safety} no-dir=${#MISSING[@]}"
 for _f in ${BSAN_FAIL_CSVS[@]+"${BSAN_FAIL_CSVS[@]}"}; do
     echo "          bsan build-fail list: $_f"
@@ -1629,7 +1670,7 @@ while :; do
     fi
     done_crates=$(cat "$RUNDIR"/done/*.txt 2>/dev/null | wc -l || true)
     rows=$(cat "$RUNDIR"/shards/*.csv 2>/dev/null | wc -l || true)
-    echo "$(date +%H:%M:%S)  jobs in queue: $left   staged: $(nstaged)   all yours: $NQUEUED$( (( MAX_JOBS > 0 )) && echo "/$MAX_JOBS")   crates done: $done_crates/$NCRATES   result rows: $rows"
+    echo "$(date +%H:%M:%S)  jobs in queue: $left   staged: $(nstaged)   all yours: $NQUEUED$( (( MAX_JOBS > 0 )) && echo "/$MAX_JOBS")   units done: $done_crates/$NUNITS   result rows: $rows"
     (( left == 0 && $(nstaged) == 0 )) && break
     sleep 60
 done
@@ -1640,4 +1681,4 @@ echo
 MERGED=1
 merge_shards "$RUNDIR" "$CSV"
 echo "Done. Results CSV: $CSV"
-summarize_run "$RUNDIR" "$NCRATES"
+summarize_run "$RUNDIR" "$NUNITS"
