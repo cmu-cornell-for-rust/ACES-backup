@@ -93,6 +93,13 @@
 #   --jobs N          sbatch jobs to spread the crates over, slow-list jobs
 #                     included (default: one per crate, never packed; the
 #                     ones past --max-jobs are staged -- see below)
+#   --tests-per-job T aim for about T tests per regular job: --jobs is set to
+#                     the slow-list jobs plus ceil(regular tests / T), raised
+#                     to the fewest jobs that give every crate a worker
+#                     (--max-tasks per job) and capped at one per crate. Counted
+#                     after every filter. Crates are never split, so a job
+#                     holding a crate with more than T tests goes over T.
+#                     Can't be combined with --jobs
 #   --max-jobs N      most of your jobs in SLURM at once, running + pending;
 #                     the rest are staged (default 4999, one under Bridges-2's
 #                     5000-per-user limit; 0 = no limit)
@@ -290,6 +297,7 @@ NO_SLOW=0
 BSAN_FAIL_CSVS=()
 NO_BSAN_FAILS=0
 JOBS=""              # empty = auto: one per crate, never packed
+TESTS_PER_JOB=""     # --tests-per-job: derive the regular job count from this
 MAX_TASKS=""         # empty = auto: what fits NODE_CPUS / NODE_MEM
 CPUS_PER_TASK=4       # 8G per worker is billed as 4 cores on RM-shared anyway
 MEM_PER_TASK=8
@@ -364,6 +372,8 @@ while [[ $# -gt 0 ]]; do
         --tests=*)       TESTS_CSV="${1#*=}"; shift ;;
         --jobs)          JOBS="$2"; shift 2 ;;
         --jobs=*)        JOBS="${1#*=}"; shift ;;
+        --tests-per-job) TESTS_PER_JOB="$2"; shift 2 ;;
+        --tests-per-job=*) TESTS_PER_JOB="${1#*=}"; shift ;;
         --max-jobs)      MAX_JOBS="$2"; shift 2 ;;
         --max-jobs=*)    MAX_JOBS="${1#*=}"; shift ;;
         --max-tasks)     MAX_TASKS="$2"; shift 2 ;;
@@ -421,7 +431,8 @@ usage() {
     echo "           --skip-list FILE (default $GROUP/scripts/skip_list.csv) | --no-skip-list" >&2
     echo "           --bsan-build-fails FILE (repeatable; default in bsan mode:" >&2
     echo "             $GROUP/scripts/bsan_build_fails.csv) | --no-bsan-build-fails" >&2
-    echo "           --jobs N --max-jobs N (default 4999; 0 = no limit) --max-tasks N (default $DEFAULT_MAX_TASKS, <= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
+    echo "           --jobs N | --tests-per-job T" >&2
+    echo "           --max-jobs N (default 4999; 0 = no limit) --max-tasks N (default $DEFAULT_MAX_TASKS, <= $MAX_TASKS_PER_JOB) --cpus-per-task N" >&2
     echo "           --mem-per-task G (<= $MAX_MEM_PER_TASK)" >&2
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 30m, 0 = none)" >&2
     echo "           --no-timeout-skip (don't skip a module's tests after 5 timeouts in a row)" >&2
@@ -472,6 +483,10 @@ done
     || { echo "Error: --cpus-per-task is at most $NODE_CPUS." >&2; exit 1; }
 if [[ -n "$JOBS" ]]; then
     [[ "$JOBS" =~ ^[1-9][0-9]*$ ]] || { echo "Error: --jobs must be a positive integer." >&2; exit 1; }
+fi
+if [[ -n "$TESTS_PER_JOB" ]]; then
+    [[ "$TESTS_PER_JOB" =~ ^[1-9][0-9]*$ ]] || { echo "Error: --tests-per-job must be a positive integer." >&2; exit 1; }
+    [[ -z "$JOBS" ]] || { echo "Error: --jobs and --tests-per-job can't be combined." >&2; exit 1; }
 fi
 # The largest worker count a job may hold at this cpu/mem per worker.
 FIT_TASKS=$(( NODE_CPUS / CPUS_PER_TASK ))
@@ -792,7 +807,15 @@ NREG=${#REG_CRATES[@]}
 # run that would need more than REG_JOBS x MAX_TASKS workers for the regular
 # crates is refused rather than queueing crates behind one another.
 SLOW_JOBS=$(( (NSLOW + MAX_TASKS - 1) / MAX_TASKS ))
-if [[ -z "$JOBS" ]]; then
+if [[ -n "$TESTS_PER_JOB" ]]; then
+    # About TESTS_PER_JOB tests per regular job, but at least enough jobs for
+    # one worker per crate (the cap to NREG follows below).
+    REG_TESTS=0
+    for crate in ${REG_CRATES[@]+"${REG_CRATES[@]}"}; do REG_TESTS=$(( REG_TESTS + NT[$crate] )); done
+    REG_JOBS=$(( (REG_TESTS + TESTS_PER_JOB - 1) / TESTS_PER_JOB ))
+    MIN_REG_JOBS=$(( (NREG + MAX_TASKS - 1) / MAX_TASKS ))
+    (( REG_JOBS < MIN_REG_JOBS )) && REG_JOBS=$MIN_REG_JOBS
+elif [[ -z "$JOBS" ]]; then
     # Auto: one job per regular crate, never packed; jobs past MAX_JOBS are
     # staged and submitted as slots free up.
     REG_JOBS=$NREG
@@ -1460,6 +1483,7 @@ if [[ -n "$SLOW_CSV" ]]; then
         echo "Slow:     none of the ${#SLOW_RANK[@]} crate(s) in $SLOW_CSV are in this run"
     fi
 fi
+[[ -n "$TESTS_PER_JOB" ]] && echo "Target:   ~$TESTS_PER_JOB test(s) per regular job (--tests-per-job)"
 echo "Shape:    $JOBS job(s), $TESTS_MIN-$TESTS_MAX test(s) / $PER_JOB_MIN-$PER_JOB_MAX crate(s) each, up to $TASKS worker(s)/job"
 echo "          x ${CPUS_PER_TASK} cpu, ${MEM_PER_TASK}G/worker, $WALLTIME walltime$( (( SLOW_JOBS > 0 )) && echo " (regular jobs)")"
 (( MAX_JOBS > 0 && JOBS > MAX_JOBS )) && echo "Staging:  at most $MAX_JOBS of your jobs in SLURM at once; the rest are submitted
