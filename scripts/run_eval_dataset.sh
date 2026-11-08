@@ -1103,9 +1103,12 @@ classify() {
     [ -n "$emsg" ] || emsg=$(grep -aE '^error' "$1" | tail -n1)
     [ -n "$emsg" ] || emsg=$(grep -av '^[[:space:]]*$' "$1" | tail -n1)
     emsg=$(printf '%s' "$emsg" | sed -e 's/\x1b\[[0-9;]*[A-Za-z]//g' \
-        | tr -d '\r' | tr '\n\t' '  ' | sed -e 's/^ *//' -e 's/  */ /g' | cut -c1-300)
+        | tr -d '\r' | tr '\n\t' '  ' | sed -e 's/^ *//' -e 's/  */ /g' | cut -c1-300 | utf8_trim)
 }
 
+# GNU cut -c counts bytes, so it can split a multi-byte character; drop a
+# dangling partial UTF-8 sequence at the end so the CSV stays valid UTF-8.
+utf8_trim() { LC_ALL=C sed -E $'s/([\xc0-\xdf]|[\xe0-\xef][\x80-\xbf]?|[\xf0-\xf7][\x80-\xbf]{0,2})$//'; }
 csvq() { [ -n "$1" ] && printf '"%s"' "${1//\"/\"\"}"; }
 
 # row <test> <status> <compile_s> <run_s> [<error_type> <error>]
