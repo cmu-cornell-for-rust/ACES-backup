@@ -1,0 +1,1234 @@
+﻿crate,version,miri AV tests,AV-Inv.,AV-Ins.,AV-P,bsan status,bsan error type,bsan error,bsan source,example test,example miri report
+rocket,0.5.1,77,0,0,77,build_failed,rustc,error[E0432]: unresolved import `crate::http::tls::rustls::cipher_suite`,experimental-bsan-treeborrows-build.csv,tests::get_passes_through,"error: Undefined Behavior: write access through <4521675> at alloc1775973[0x1c9] is forbidden
+    --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/state-0.6.0/src/init.rs:71:12
+     |
+71   |         if self.started.compare_exchange(false, true, AcqRel, Relaxed).is_err() {
+     |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <4521675> at alloc1775973[0x1c9] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <4521675> is foreign to the protected tag <4521696> (i.e., it is not a child)
+     = help: this foreign write access would cause the protected tag <4521696> (currently Reserved (conflicted)) to become Disabled
+     = help: protected tags must never be Disabled
+help: the accessed tag <4521675> was created here
+    --> /build/src/local/asynchronous/response.rs:86:25
+     |
+86   |         let boxed_req = Box::new(req);
+     |                         ^^^^^^^^^^^^^
+help: the protected tag <4521696> was created here, in the initial state Reserved
+    --> /build/src/local/asynchronous/response.rs:89:9
+     |
+89   | /         async move {
+90   | |             let response: Response<'c> = f(request).await;
+91   | |             let mut cookies = CookieJar::new(request.rocket().config());
+92   | |             for cookie in response.cookies() {
+...    |
+96   | |             LocalResponse { cookies, _request: boxed_req, response, }
+97   | |         }
+     | |_________^
+help: the protected tag <4521696> later transitioned to Reserved (conflicted) due to a foreign read access at offsets [0x1c9..0x1ca]
+    --> /build/src/request/request.rs:570:9
+     |
+570  | /         self.state.accept.get_or_init(|| {
+571  | |             self.headers().get_one(""Accept"").and_then(|v| v.parse().ok())
+572  | |         }).as_ref()
+     | |__________^
+     = help: this transition corresponds to a temporary loss of write permissions until function exit"
+polars,0.44.2,63,0,0,63,build_failed,rustc,error[E0432]: unresolved import `core::unicode::Cased`,experimental-bsan-treeborrows-notfinal-eval.csv,io::parquet::arrow::arrow_type,"error: Undefined Behavior: deallocation through <3972872> at alloc1599816[0x0] is forbidden
+    --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytes-1.8.0/src/bytes.rs:1191:18
+     |
+1191 |         unsafe { dealloc(self.buf, Layout::from_size_align(self.cap, 1).unwrap()) }
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ deallocation through <3972872> at alloc1599816[0x0] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <3972872> is foreign to the protected tag <3991399> (i.e., it is not a child)
+     = help: this deallocation (acting as a foreign write access) would cause the protected tag <3991399> (currently Frozen) to become Disabled
+     = help: protected tags must never be Disabled
+help: the accessed tag <3972872> was created here
+    --> tests/it/io/parquet/read/row_group.rs:113:17
+     |
+113  |                 MemReader::from_vec(chunk),
+     |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the protected tag <3991399> was created here, in the initial state Frozen
+    --> tests/it/io/parquet/read/row_group.rs:125:5
+     |
+125  |     column_iter_to_arrays(columns, types, field, filter)
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+may,0.3.47,61,61,0,0,build_failed,rustc,error[E0310]: the parameter type `T` may not live long enough,experimental-bsan-treeborrows-build.csv,local_in_thread,"error: Undefined Behavior: reborrow through <270777> at alloc107903[0x48] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/generator-0.8.3/src/rt.rs:266:28
+    |
+266 |     let mut ctx = unsafe { &mut *root.parent };
+    |                            ^^^^^^^^^^^^^^^^^ reborrow through <270777> at alloc107903[0x48] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <270777> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <270777> was created here, in the initial state Reserved
+   --> /build/src/local.rs:48:15
+    |
+48  |     let ptr = get_local_data();
+    |               ^^^^^^^^^^^^^^^^
+help: the accessed tag <270777> later transitioned to Disabled due to a foreign write access at offsets [0x48..0x50]
+   --> /build/src/local.rs:48:15
+    |
+48  |     let ptr = get_local_data();
+    |               ^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read and write permissions"
+debian-analyzer,0.158.21,50,49,1,0,build_failed,linker,= note: rust-lld: error: unable to find library -lpython3.13,experimental-bsan-treeborrows-build.csv,changelog::tests::test_find_previous_upload,"error: Undefined Behavior: reborrow through <636442> at alloc246337[0x30] is forbidden
+   --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:521:1
+    |
+521 | pub unsafe fn drop_in_place<T: ?Sized>(to_drop: *mut T) {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ reborrow through <636442> at alloc246337[0x30] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <636442> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <636442> was created here, in the initial state Reserved
+   --> src/changelog.rs:81:12
+    |
+81  |         if block.is_unreleased() != Some(true) {
+    |            ^^^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <636442> later transitioned to Disabled due to a foreign write access at offsets [0x30..0x38]
+   --> src/changelog.rs:81:12
+    |
+81  |         if block.is_unreleased() != Some(true) {
+    |            ^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read permissions"
+rocket_cors,0.6.0,48,0,0,48,build_failed,rustc,error[E0282]: type annotations needed for `Box<_>`,experimental-bsan-treeborrows-build.csv,request_headers_round_trip_smoke_test,"error: Undefined Behavior: write access through <2717855> at alloc1089027[0x149] is forbidden
+  --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/state-0.6.0/src/init.rs:71:12
+   |
+71 |         if self.started.compare_exchange(false, true, AcqRel, Relaxed).is_err() {
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <2717855> at alloc1089027[0x149] is forbidden
+   |
+   = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+   = help: the accessed tag <2717855> is foreign to the protected tag <2717876> (i.e., it is not a child)
+   = help: this foreign write access would cause the protected tag <2717876> (currently Reserved (conflicted)) to become Disabled
+   = help: protected tags must never be Disabled
+help: the accessed tag <2717855> was created here
+  --> tests/headers.rs:52:20
+   |
+52 |     let response = req.dispatch();
+   |                    ^^^^^^^^^^^^^^
+help: the protected tag <2717876> was created here, in the initial state Reserved
+  --> tests/headers.rs:52:20
+   |
+52 |     let response = req.dispatch();
+   |                    ^^^^^^^^^^^^^^
+help: the protected tag <2717876> later transitioned to Reserved (conflicted) due to a foreign read access at offsets [0x149..0x14a]
+  --> tests/headers.rs:52:20
+   |
+52 |     let response = req.dispatch();
+   |                    ^^^^^^^^^^^^^^
+   = help: this transition corresponds to a temporary loss of write permissions until function exit"
+cogo,0.1.36,46,46,0,0,build_failed,rustc,error[E0310]: the parameter type `T` may not live long enough,experimental-bsan-treeborrows-build.csv,local_in_thread,"error: Undefined Behavior: reborrow through <270162> at alloc107851[0x48] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/generator-0.7.5/src/rt.rs:284:28
+    |
+284 |     let mut ctx = unsafe { &mut *root.parent };
+    |                            ^^^^^^^^^^^^^^^^^ reborrow through <270162> at alloc107851[0x48] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <270162> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <270162> was created here, in the initial state Reserved
+   --> /build/src/local.rs:48:15
+    |
+48  |     let ptr = get_local_data();
+    |               ^^^^^^^^^^^^^^^^
+help: the accessed tag <270162> later transitioned to Disabled due to a foreign write access at offsets [0x48..0x50]
+   --> /build/src/local.rs:48:15
+    |
+48  |     let ptr = get_local_data();
+    |               ^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read and write permissions"
+lance,0.19.1,36,0,36,0,build_failed,other,error: could not compile `rustix` (lib) due to 4 previous errors,experimental-bsan-treeborrows-build.csv,dataset::scanner::test::test_ann_with_deletion::data_storage_version_1_LanceFileVersion__Legacy::stable_row_ids_1_false,"error: Undefined Behavior: write access through <2945681> at alloc1154302[0x20] is forbidden
+    --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/alloc/src/collections/vec_deque/mod.rs:1703:13
+     |
+1703 |             self.len -= 1;
+     |             ^^^^^^^^^^^^^ write access through <2945681> at alloc1154302[0x20] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <2945681> is a child of the conflicting tag <2913656>
+     = help: the conflicting tag <2913656> has state Frozen which forbids this child write access
+help: the accessed tag <2945681> was created here
+    --> src/dataset/write.rs:283:58
+     |
+283  |     while let Some(batch_chunk) = buffered_reader.next().await {
+     |                                                          ^^^^^
+help: the conflicting tag <2913656> was created here, in the initial state Reserved
+    --> src/dataset/write.rs:283:58
+     |
+283  |     while let Some(batch_chunk) = buffered_reader.next().await {
+     |                                                          ^^^^^
+help: the conflicting tag <2913656> later transitioned to Active due to a child write access at offsets [0x20..0x28]
+    --> src/dataset/write.rs:283:58
+     |
+283  |     while let Some(batch_chunk) = buffered_reader.next().await {
+     |                                                          ^^^^^
+     = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference
+help: the conflicting tag <2913656> later transitioned to Frozen due to a reborrow (acting as a foreign read access) at offsets [0x0..0x88]
+    --> src/dataset/write.rs:283:58
+     |
+283  |     while let Some(batch_chunk) = buffered_reader.next().await {
+     |                                                          ^^^^^
+     = help: this transition corresponds to a loss of write permissions"
+miden-crypto,0.12.0,32,32,0,0,fetch_failed,other,error: could not create temp file /opt/rust/rustup/tmp/r1o_wbmnc5xh8hwd_file: Read-only file system (os error 30),experimental-bsan-treeborrows-build.csv,merkle::merkle_tree::tests::build_merkle_tree,"error: Undefined Behavior: reborrow through <398390> at alloc182935[0x40] is forbidden
+   --> src/merkle/merkle_tree.rs:53:38
+    |
+53  |             nodes[i] = Rpo256::merge(&pairs[i]);
+    |                                      ^^^^^^^^^ reborrow through <398390> at alloc182935[0x40] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <398390> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <398390> was created here, in the initial state Frozen
+   --> src/merkle/merkle_tree.rs:49:30
+    |
+49  |         let pairs = unsafe { slice::from_raw_parts(ptr, n) };
+    |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <398390> later transitioned to Disabled due to a foreign write access at offsets [0x40..0x60]
+   --> src/merkle/merkle_tree.rs:53:13
+    |
+53  |             nodes[i] = Rpo256::merge(&pairs[i]);
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read permissions"
+nodejs-resolver,0.1.1,32,0,32,0,fetch_failed,other,error: could not create temp file /opt/rust/rustup/tmp/bxx8xnbm842_plxn_file: Read-only file system (os error 30),experimental-bsan-treeborrows-build.csv,alias_test,"error: Undefined Behavior: write access through <5358125> at alloc1954192[0x10] is forbidden
+    --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:1890:9
+     |
+1890 |         self.len = new_len;
+     |         ^^^^^^^^^^^^^^^^^^ write access through <5358125> at alloc1954192[0x10] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <5358125> is a child of the conflicting tag <5318503>
+     = help: the conflicting tag <5318503> has state Frozen which forbids this child write access
+help: the accessed tag <5358125> was created here
+    --> /build/src/resolve.rs:28:17
+     |
+28   |                 v.set_len(v.len() - ext.len());
+     |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the conflicting tag <5318503> was created here, in the initial state Reserved
+    --> /build/src/resolve.rs:19:26
+     |
+19   |         let v = unsafe { &mut *(&mut path as *mut PathBuf as *mut Vec<u8>) };
+     |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the conflicting tag <5318503> later transitioned to Active due to a child write access at offsets [0x10..0x18]
+    --> /build/src/resolve.rs:21:13
+     |
+21   |             v.extend_from_slice(ext.as_bytes());
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference
+help: the conflicting tag <5318503> later transitioned to Frozen due to a reborrow (acting as a foreign read access) at offsets [0x0..0x18]
+    --> /build/src/resolve.rs:22:32
+     |
+22   |             if self.load_entry(path.as_ref()).is_file() {
+     |                                ^^^^
+     = help: this transition corresponds to a loss of write permissions"
+sphinx-lang,0.8.6,28,0,0,28,build_failed,rustc,error[E0635]: unknown feature `stdsimd`,experimental-bsan-treeborrows-build.csv,closure_tests::assign_to_upvalue,"error: Undefined Behavior: reborrow through <5491409> at alloc1888111[0x30] is forbidden
+   --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/core/src/ptr/non_null.rs:381:18
+    |
+381 |         unsafe { &*self.as_ptr().cast_const() }
+    |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ reborrow through <5491409> at alloc1888111[0x30] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <5491409> is foreign to the protected tag <5781762> (i.e., it is not a child)
+    = help: this reborrow (acting as a foreign read access) would cause the protected tag <5781762> (currently Active) to become Disabled
+    = help: protected tags must never be Disabled
+help: the accessed tag <5491409> was created here
+   --> tests/test_scripts.rs:28:20
+    |
+28  |     let main_env = builtins::create_prelude();
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the protected tag <5781762> was created here, in the initial state Reserved
+   --> tests/test_scripts.rs:32:5
+    |
+32  |     vm.run()?;
+    |     ^^^^^^^^
+help: the protected tag <5781762> later transitioned to Active due to a child write access at offsets [0x30..0x31]
+   --> tests/test_scripts.rs:32:5
+    |
+32  |     vm.run()?;
+    |     ^^^^^^^^
+    = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference"
+r-description,0.2.2,26,20,6,0,build_failed,rustc,error[E0599]: no associated function or constant named `new_root_mut` found for struct `rowan::SyntaxNode<L>` in the current scope,experimental-bsan-treeborrows-build.csv,lossless::relations::tests::test_drop_constraint,"error: Undefined Behavior: write access through <342100> at alloc120444[0x0] is forbidden
+    --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rowan-0.15.16/src/arc.rs:106:24
+     |
+106  |         let old_size = self.inner().count.fetch_add(1, Relaxed);
+     |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <342100> at alloc120444[0x0] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <342100> has state Frozen which forbids this child write access
+help: the accessed tag <342100> was created here, in the initial state Frozen
+    --> src/lossless.rs:934:25
+     |
+934  |                         prev.detach();
+     |                         ^^^^^^^^^^^^^"
+didcomm,0.4.1,20,0,20,0,build_failed,rustc,error[E0635]: unknown feature `proc_macro_span_shrink`,experimental-bsan-treeborrows-build.csv,jwe::decrypt::tests::decrypt_works,"error: Undefined Behavior: write access through <3552424> at alloc1431301[0x0] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aes-0.7.5/src/soft.rs:119:1
+    |
+119 | / define_aes_impl!(
+120 | |     Aes256,
+121 | |     U32,
+122 | |     FixsliceKeys256,
+...   |
+126 | |     ""AES-256 block cipher instance""
+127 | | );
+    | |_^ write access through <3552424> at alloc1431301[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <3552424> is a child of the conflicting tag <3515642>
+    = help: the conflicting tag <3515642> has state Frozen which forbids this child write access
+help: the accessed tag <3552424> was created here
+   --> src/jwe/decrypt.rs:83:13
+    |
+83  |             cek.decrypt_in_place(&mut buf, &iv, self.jwe.protected.as_bytes())
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the conflicting tag <3515642> was created here, in the initial state Frozen
+   --> src/jwe/decrypt.rs:83:13
+    |
+83  |             cek.decrypt_in_place(&mut buf, &iv, self.jwe.protected.as_bytes())
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+internment,0.8.6,18,16,2,0,build_failed,rustc,error[E0635]: unknown feature `stdsimd`,experimental-bsan-treeborrows-notfinal-eval.csv,arc::arc_test::can_clone,"error: Undefined Behavior: read access through <332007> at alloc128931[0x0] is forbidden
+   --> src/arc.rs:218:30
+    |
+218 |                 let oldval = b.0.count.fetch_add(1, Ordering::SeqCst);
+    |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ read access through <332007> at alloc128931[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <332007> has state Disabled which forbids this child read access
+help: the accessed tag <332007> was created here, in the initial state Reserved
+   --> src/arc.rs:241:25
+    |
+241 |                         e.insert(());
+    |                         ^^^^^^^^^^^^
+help: the accessed tag <332007> later transitioned to Disabled due to a foreign write access at offsets [0x0..0x8]
+   --> src/arc.rs:265:18
+    |
+265 |         unsafe { self.pointer.as_ref().count.fetch_add(1, Ordering::Relaxed) };
+    |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read and write permissions"
+jrsonnet-gcmodule,0.3.7,15,7,8,0,fetch_failed,other,error: could not create temp file /opt/rust/rustup/tmp/lndu8a_c_wth7muh_file: Read-only file system (os error 30),experimental-bsan-treeborrows-build.csv,cc::tests::test_gc_header_value,"error: Undefined Behavior: reborrow through <289059> at alloc113761[0x8] is forbidden
+    --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:1375:9
+     |
+1375 |         crate::intrinsics::read_via_copy(src)
+     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ reborrow through <289059> at alloc113761[0x8] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <289059> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <289059> was created here, in the initial state Reserved
+    --> src/collect.rs:254:1
+     |
+254  | thread_local!(pub(crate) static THREAD_OBJECT_SPACE: ObjectSpace = ObjectSpace::default());
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <289059> later transitioned to Disabled due to a foreign write access at offsets [0x8..0x10]
+    --> src/collect.rs:97:13
+     |
+97   |             (*next).prev.set(header);
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^
+     = help: this transition corresponds to a loss of read and write permissions"
+rocket-validation,0.2.0,15,0,0,15,build_failed,rustc,error[E0282]: type annotations needed for `Box<_>`,experimental-bsan-treeborrows-build.csv,invalid_max_age,"error: Undefined Behavior: write access through <2926795> at alloc1169373[0x59] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/state-0.6.0/src/init.rs:71:12
+    |
+71  |         if self.started.compare_exchange(false, true, AcqRel, Relaxed).is_err() {
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <2926795> at alloc1169373[0x59] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <2926795> is foreign to the protected tag <2926816> (i.e., it is not a child)
+    = help: this foreign write access would cause the protected tag <2926816> (currently Reserved (conflicted)) to become Disabled
+    = help: protected tags must never be Disabled
+help: the accessed tag <2926795> was created here
+   --> tests/test_json.rs:105:35
+    |
+105 |     let response: LocalResponse = req.dispatch();
+    |                                   ^^^^^^^^^^^^^^
+help: the protected tag <2926816> was created here, in the initial state Reserved
+   --> tests/test_json.rs:105:35
+    |
+105 |     let response: LocalResponse = req.dispatch();
+    |                                   ^^^^^^^^^^^^^^
+help: the protected tag <2926816> later transitioned to Reserved (conflicted) due to a foreign read access at offsets [0x59..0x5a]
+   --> tests/test_json.rs:105:35
+    |
+105 |     let response: LocalResponse = req.dispatch();
+    |                                   ^^^^^^^^^^^^^^
+    = help: this transition corresponds to a temporary loss of write permissions until function exit"
+nebari,0.5.5,14,0,14,0,build_failed,rustc,error[E0635]: unknown feature `proc_macro_span_shrink`,experimental-bsan-treeborrows-build.csv,roots::tests::basic_transaction_isolation_test,"error: Undefined Behavior: write access through <564403> at alloc229965[0x10] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/lru-0.7.8/src/lib.rs:905:13
+    |
+905 |             (*(*node).next).prev = node;
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <564403> at alloc229965[0x10] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <564403> has state Frozen which forbids this child write access
+help: the accessed tag <564403> was created here, in the initial state Reserved
+   --> src/transaction/state.rs:171:13
+    |
+171 |             cache.put(*id, *position);
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <564403> later transitioned to Active due to a child write access at offsets [0x10..0x18]
+   --> src/transaction/state.rs:171:13
+    |
+171 |             cache.put(*id, *position);
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference
+help: the accessed tag <564403> later transitioned to Frozen due to a reborrow (acting as a foreign read access) at offsets [0x0..0x28]
+   --> src/transaction/state.rs:171:13
+    |
+171 |             cache.put(*id, *position);
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of write permissions"
+mwalib,1.7.1,12,0,12,0,build_failed,panic,thread 'main' (18186) panicked at /local/build-50219426/home/registry/src/index.crates.io-1949cf8c6b5b557f/fitsio-sys-0.5.3/build.rs:184:19: Unhandled error: ,experimental-bsan-treeborrows-build.csv,ffi::test::test_mwalib_correlator_context_display_null_ptr,"error: Undefined Behavior: write access through <489821> at alloc180051[0x0] is forbidden
+   --> src/ffi/mod.rs:74:9
+    |
+74  |         error_message_slice[..error_message_bytes.len()].copy_from_slice(error_message_bytes);
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <489821> at alloc180051[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <489821> is a child of the conflicting tag <488118>
+    = help: the conflicting tag <488118> has state Frozen which forbids this child write access
+help: the accessed tag <489821> was created here
+   --> src/ffi/mod.rs:74:9
+    |
+74  |         error_message_slice[..error_message_bytes.len()].copy_from_slice(error_message_bytes);
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the conflicting tag <488118> was created here, in the initial state Frozen
+   --> src/ffi/test.rs:614:29
+    |
+614 |     let error_message_ptr = error_message.as_ptr() as *const c_char;
+    |                             ^^^^^^^^^^^^^^^^^^^^^^"
+upstream-ontologist,0.1.46,12,12,0,0,build_failed,linker,= note: rust-lld: error: unable to find library -lpython3.13,experimental-bsan-treeborrows-build.csv,providers::r::description_tests::test_read,"error: Undefined Behavior: reborrow through <1555749> at alloc609900[0x30] is forbidden
+   --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:521:1
+    |
+521 | pub unsafe fn drop_in_place<T: ?Sized>(to_drop: *mut T) {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ reborrow through <1555749> at alloc609900[0x30] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <1555749> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <1555749> was created here, in the initial state Reserved
+   --> src/providers/r.rs:34:28
+    |
+34  |     if let Some(package) = msg.package() {
+    |                            ^^^^^^^^^^^^^
+help: the accessed tag <1555749> later transitioned to Disabled due to a foreign write access at offsets [0x30..0x38]
+   --> src/providers/r.rs:34:28
+    |
+34  |     if let Some(package) = msg.package() {
+    |                            ^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read permissions"
+vectordb,0.4.10,11,0,11,0,build_failed,rustc,error[E0282]: type annotations needed for `Box<_>`,experimental-bsan-treeborrows-build.csv,io::object_store::test::test_e2e,"error: Undefined Behavior: write access through <1197052> at alloc521180[0x20] is forbidden
+    --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/alloc/src/collections/vec_deque/mod.rs:1703:13
+     |
+1703 |             self.len -= 1;
+     |             ^^^^^^^^^^^^^ write access through <1197052> at alloc521180[0x20] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <1197052> is a child of the conflicting tag <1166234>
+     = help: the conflicting tag <1166234> has state Frozen which forbids this child write access
+help: the accessed tag <1197052> was created here
+    --> src/table.rs:499:14
+     |
+499  |             .await
+     |              ^^^^^
+help: the conflicting tag <1166234> was created here, in the initial state Reserved
+    --> src/table.rs:499:14
+     |
+499  |             .await
+     |              ^^^^^
+help: the conflicting tag <1166234> later transitioned to Active due to a child write access at offsets [0x20..0x28]
+    --> src/table.rs:499:14
+     |
+499  |             .await
+     |              ^^^^^
+     = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference
+help: the conflicting tag <1166234> later transitioned to Frozen due to a reborrow (acting as a foreign read access) at offsets [0x0..0x88]
+    --> src/table.rs:499:14
+     |
+499  |             .await
+     |              ^^^^^
+     = help: this transition corresponds to a loss of write permissions"
+stream-vbyte,0.4.1,10,0,10,0,build_failed,rustc,error[E0635]: unknown feature `proc_macro_span_shrink`,experimental-bsan-treeborrows-build.csv,decode_cursor_every_decode_len_ssse3,"error: Undefined Behavior: write access through <3887803> at alloc158494[0x0] is forbidden
+    --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/x86/sse2.rs:1280:5
+     |
+1280 |     mem_addr.write_unaligned(a);
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <3887803> at alloc158494[0x0] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <3887803> has state Frozen which forbids this child write access
+help: the accessed tag <3887803> was created here, in the initial state Frozen
+    --> /build/src/decode/ssse3.rs:67:35
+     |
+67   |         unsafe { _mm_storeu_si128(slice.as_ptr() as *mut __m128i, quad) }
+     |                                   ^^^^^^^^^^^^^^"
+gluon_repl,0.18.2,6,6,0,0,build_failed,rustc,error[E0635]: unknown feature `stdsimd`,experimental-bsan-treeborrows-build.csv,repl::tests::compile_repl_test,"error: Undefined Behavior: read access through <2853086> at alloc1146373[0x0] is forbidden
+   --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/core/src/cell.rs:544:18
+    |
+544 |         unsafe { *self.value.get() }
+    |                  ^^^^^^^^^^^^^^^^^ read access through <2853086> at alloc1146373[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <2853086> has state Disabled which forbids this child read access
+help: the accessed tag <2853086> was created here, in the initial state Reserved
+   --> src/repl.rs:735:9
+    |
+735 |         assert!(repl.is_ok(), ""{}"", repl.err().unwrap());
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <2853086> later transitioned to Disabled due to a foreign write access at offsets [0x0..0x1]
+   --> src/repl.rs:735:9
+    |
+735 |         assert!(repl.is_ok(), ""{}"", repl.err().unwrap());
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read permissions"
+makefile-lossless,0.1.5,6,3,3,0,build_failed,rustc,error[E0599]: no associated function or constant named `new_root_mut` found for struct `rowan::SyntaxNode<L>` in the current scope,experimental-bsan-treeborrows-build.csv,parse::tests::test_add_rule,"error: Undefined Behavior: write access through <305598> at alloc111432[0x0] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rowan-0.15.16/src/arc.rs:162:12
+    |
+162 |         if self.inner().count.fetch_sub(1, Release) != 1 {
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <305598> at alloc111432[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <305598> has state Frozen which forbids this child write access
+help: the accessed tag <305598> was created here, in the initial state Frozen
+   --> src/parse.rs:424:9
+    |
+424 | /         self.0
+425 | |             .splice_children(pos..pos, vec![syntax.into()]);
+    | |___________________________________________________________^"
+sp1-recursion-compiler,3.1.0,6,6,0,0,build_failed,rustc,error[E0282]: type annotations needed,experimental-bsan-treeborrows-build.csv,circuit::compiler::tests::test_assert_eq_noop,"error: Undefined Behavior: read access through <277751> at alloc110996[0x0] is forbidden
+    --> src/ir/builder.rs:179:18
+     |
+179  |         unsafe { (*self.inner.get()).variable_count }
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ read access through <277751> at alloc110996[0x0] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <277751> has state Disabled which forbids this child read access
+help: the accessed tag <277751> was created here, in the initial state Reserved
+    --> src/circuit/compiler.rs:1099:35
+     |
+1099 |                 let mut builder = AsmBuilder::<F, EF>::default();
+     |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+1129 |         test_assert_fixture!(assert_felt_eq, assert_ext_eq, false);
+     |         ---------------------------------------------------------- in this macro invocation
+help: the accessed tag <277751> later transitioned to Disabled due to a foreign write access at offsets [0x0..0x4]
+    --> src/ir/arithmetic.rs:325:9
+     |
+325  |         inner.variable_count += 1;
+     |         ^^^^^^^^^^^^^^^^^^^^^^^^^
+     = help: this transition corresponds to a loss of read permissions"
+miden,0.3.0,5,5,0,0,build_failed,rustc,error[E0635]: unknown feature `proc_macro_span_shrink`,experimental-bsan-treeborrows-build.csv,air::chiplets::hasher::mtree_cwm,"error: Undefined Behavior: reborrow through <607969> at alloc218352[0xc0] is forbidden
+  --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/miden-core-0.3.0/src/inputs/advice/merkle_tree.rs:48:38
+   |
+48 |             nodes[i] = hasher::merge(&two_nodes[i]).into();
+   |                                      ^^^^^^^^^^^^^ reborrow through <607969> at alloc218352[0xc0] is forbidden
+   |
+   = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+   = help: the accessed tag <607969> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <607969> was created here, in the initial state Frozen
+  --> tests/integration/air/chiplets/hasher.rs:64:16
+   |
+64 |     let tree = AdviceSet::new_merkle_tree(leaves.clone()).unwrap();
+   |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <607969> later transitioned to Disabled due to a foreign write access at offsets [0xc0..0xe0]
+  --> tests/integration/air/chiplets/hasher.rs:64:16
+   |
+64 |     let tree = AdviceSet::new_merkle_tree(leaves.clone()).unwrap();
+   |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   = help: this transition corresponds to a loss of read permissions"
+may_waiter,0.1.16,5,5,0,0,build_failed,rustc,error[E0310]: the parameter type `T` may not live long enough,experimental-bsan-treeborrows-build.csv,token_waiter::tests::token_waiter_id,"error: Undefined Behavior: reborrow through <273683> at alloc108549[0x48] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/generator-0.8.3/src/rt.rs:266:28
+    |
+266 |     let mut ctx = unsafe { &mut *root.parent };
+    |                            ^^^^^^^^^^^^^^^^^ reborrow through <273683> at alloc108549[0x48] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <273683> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <273683> was created here, in the initial state Reserved
+   --> src/waiter.rs:16:22
+    |
+16  |             blocker: Blocker::new(false),
+    |                      ^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <273683> later transitioned to Disabled due to a foreign write access at offsets [0x48..0x50]
+   --> src/waiter.rs:16:22
+    |
+16  |             blocker: Blocker::new(false),
+    |                      ^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read and write permissions"
+safe-token,3.5.1,5,0,5,0,build_failed,rustc,error[E0432]: unresolved import `console::Term`,experimental-bsan-treeborrows-build.csv,processor::tests::test_burn_and_close_system_and_incinerator_tokens,"error: Undefined Behavior: write access through <462335> at alloc120351[0x20] is forbidden
+    --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/safecoin-program-1.14.17/src/account_info.rs:187:13
+     |
+187  | /             std::ptr::write_volatile(
+188  | |                 self.owner as *const Pubkey as *mut [u8; 32],
+189  | |                 new_owner.to_bytes(),
+190  | |             );
+     | |_____________^ write access through <462335> at alloc120351[0x20] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <462335> has state Frozen which forbids this child write access
+help: the accessed tag <462335> was created here, in the initial state Frozen
+    --> src/processor.rs:1112:29
+     |
+1112 |         let account_infos = create_is_signer_account_infos(&mut meta);
+     |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+solarti-token,4.1.1,5,0,5,0,build_failed,rustc,error[E0277]: the trait bound `S: Pack` is not satisfied,experimental-bsan-treeborrows-build.csv,processor::tests::test_burn_and_close_system_and_incinerator_tokens,"error: Undefined Behavior: write access through <462613> at alloc120546[0x20] is forbidden
+    --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/miraland-program-1.18.5/src/account_info.rs:189:13
+     |
+189  | /             std::ptr::write_volatile(
+190  | |                 self.owner as *const Pubkey as *mut [u8; 32],
+191  | |                 new_owner.to_bytes(),
+192  | |             );
+     | |_____________^ write access through <462613> at alloc120546[0x20] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <462613> has state Frozen which forbids this child write access
+help: the accessed tag <462613> was created here, in the initial state Frozen
+    --> src/processor.rs:1122:29
+     |
+1122 |         let account_infos = create_is_signer_account_infos(&mut meta);
+     |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+zmq,0.10.0,5,5,0,0,build_failed,other,error: failed to run custom build command for `zmq-sys v0.12.0`,experimental-bsan-treeborrows-build.csv,test_getset_backlog,"error: Undefined Behavior: reborrow through <315866> at alloc123534[0x0] is forbidden
+    --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/alloc/src/boxed.rs:1167:9
+     |
+1167 |         Box(unsafe { Unique::new_unchecked(raw) }, alloc)
+     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ reborrow through <315866> at alloc123534[0x0] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <315866> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <315866> was created here, in the initial state Reserved
+    --> tests/common/mod.rs:15:13
+     |
+15   |               $crate::common::timebomb::timeout_ms(|| $block, 10000);
+     |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+    ::: tests/test.rs:329:1
+     |
+329  | / test!(test_getset_backlog, {
+330  | |     let ctx = Context::new();
+331  | |     let sock = ctx.socket(REQ).unwrap();
+332  | |     sock.set_backlog(50).unwrap();
+333  | |     assert_eq!(sock.get_backlog().unwrap(), 50);
+334  | | });
+     | |__- in this macro invocation
+help: the accessed tag <315866> later transitioned to Disabled due to a foreign write access at offsets [0x0..0x8]
+    --> tests/common/mod.rs:15:13
+     |
+15   |               $crate::common::timebomb::timeout_ms(|| $block, 10000);
+     |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+    ::: tests/test.rs:329:1
+     |
+329  | / test!(test_getset_backlog, {
+330  | |     let ctx = Context::new();
+331  | |     let sock = ctx.socket(REQ).unwrap();
+332  | |     sock.set_backlog(50).unwrap();
+333  | |     assert_eq!(sock.get_backlog().unwrap(), 50);
+334  | | });
+     | |__- in this macro invocation
+     = help: this transition corresponds to a loss of read and write permissions"
+lightws,0.6.12,4,4,0,0,build_failed,rustc,error[E0107]: struct takes 1 generic argument but 0 generic arguments were supplied,experimental-bsan-treeborrows-build.csv,endpoint::client::test::client_connect,"error: Undefined Behavior: reborrow through <442849> at alloc116252[0x0] is forbidden
+   --> src/endpoint/detail/connect.rs:59:32
+    |
+59  |         match response.decode(&buf_const[..offset]) {
+    |                                ^^^^^^^^^ reborrow through <442849> at alloc116252[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <442849> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <442849> was created here, in the initial state Frozen
+   --> src/endpoint/detail/connect.rs:47:31
+    |
+47  |     let buf_const: &'b [u8] = &*(buf as *const [u8]);
+    |                               ^^^^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <442849> later transitioned to Disabled due to a foreign write access at offsets [0x0..0x1]
+   --> src/endpoint/mod.rs:71:13
+    |
+71  |             buf.write(&self.rbuf[self.cursor..self.cursor + to_read])
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read permissions"
+solarti-token-2022,1.0.1,4,0,4,0,build_failed,rustc,error[E0277]: the trait bound `S: Pack` is not satisfied,experimental-bsan-treeborrows-build.csv,processor::tests::test_close_account,"error: Undefined Behavior: write access through <444197> at alloc129390[0x20] is forbidden
+    --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/miraland-program-1.18.5/src/account_info.rs:189:13
+     |
+189  | /             std::ptr::write_volatile(
+190  | |                 self.owner as *const Pubkey as *mut [u8; 32],
+191  | |                 new_owner.to_bytes(),
+192  | |             );
+     | |_____________^ write access through <444197> at alloc129390[0x20] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <444197> has state Frozen which forbids this child write access
+help: the accessed tag <444197> was created here, in the initial state Frozen
+    --> src/processor.rs:1891:29
+     |
+1891 |         let account_infos = create_is_signer_account_infos(&mut meta);
+     |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+tremor-script,0.13.0-rc.33,4,0,4,0,build_failed,rustc,error[E0308]: mismatched types,experimental-bsan-treeborrows-build.csv,tests::test_assign_event,"error: Undefined Behavior: write access through <1384594> at alloc506631[0x18] is forbidden
+   --> src/interpreter/expr.rs:590:13
+    |
+590 |             *mem::transmute::<&Value<'event>, &mut Value<'event>>(current) = value;
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <1384594> at alloc506631[0x18] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <1384594> is a child of the conflicting tag <1384592>
+    = help: the conflicting tag <1384592> has state Frozen which forbids this child write access
+help: the accessed tag <1384594> was created here
+   --> src/interpreter/expr.rs:590:14
+    |
+590 |             *mem::transmute::<&Value<'event>, &mut Value<'event>>(current) = value;
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the conflicting tag <1384592> was created here, in the initial state Frozen
+   --> src/interpreter/expr.rs:590:67
+    |
+590 |             *mem::transmute::<&Value<'event>, &mut Value<'event>>(current) = value;
+    |                                                                   ^^^^^^^"
+zenoh-protocol-core,0.7.0-rc,4,0,0,4,build_failed,other,error: could not compile `rustix` (lib) due to 4 previous errors,experimental-bsan-treeborrows-build.csv,key_expr::borrowed::autocanon,"error: Undefined Behavior: write access through <274635> at alloc109933[0x0] is forbidden
+   --> src/key_expr/utils.rs:22:18
+    |
+22  |         unsafe { std::ptr::copy(slice.as_ptr(), self.ptr.add(self.len), len) };
+    |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <274635> at alloc109933[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <274635> is foreign to the protected tag <277504> (i.e., it is not a child)
+    = help: this foreign write access would cause the protected tag <277504> (currently Frozen) to become Disabled
+    = help: protected tags must never be Disabled
+help: the accessed tag <274635> was created here
+   --> src/key_expr/canon.rs:27:18
+    |
+27  |             ptr: self.as_mut_ptr(),
+    |                  ^^^^^^^^^^^^^^^^^
+help: the protected tag <277504> was created here, in the initial state Frozen
+   --> src/key_expr/utils.rs:20:36
+    |
+20  |     pub(crate) fn write(&mut self, slice: &[u8]) {
+    |                                    ^^^^^"
+autopilot,0.4.0,3,0,3,0,build_failed,linker,= note: rust-lld: error: unable to find library -lX11,experimental-bsan-treeborrows-build.csv,bitmap::tests::count_of_tiled_bitmap,"error: Undefined Behavior: write access through <500950> at alloc229237[0x0] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/image-0.22.5/./src/buffer.rs:744:9
+    |
+744 |         *self.get_pixel_mut(x, y) = pixel
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <500950> at alloc229237[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <500950> is a child of the conflicting tag <500941>
+    = help: the conflicting tag <500941> has state Frozen which forbids this child write access
+help: the accessed tag <500950> was created here
+   --> src/bitmap.rs:751:21
+    |
+751 | /                     haystack_img.put_pixel(
+752 | |                         x as u32,
+753 | |                         y as u32,
+754 | |                         tile.image.get_pixel(tile_x, tile_y)
+755 | |                     );
+    | |_____________________^
+help: the conflicting tag <500941> was created here, in the initial state Frozen
+   --> src/bitmap.rs:751:21
+    |
+751 | /                     haystack_img.put_pixel(
+752 | |                         x as u32,
+753 | |                         y as u32,
+754 | |                         tile.image.get_pixel(tile_x, tile_y)
+755 | |                     );
+    | |_____________________^"
+gluon_doc,0.18.2,3,3,0,0,build_failed,rustc,error[E0635]: unknown feature `stdsimd`,experimental-bsan-treeborrows-build.csv,basic,"error: Undefined Behavior: read access through <2536400> at alloc1008602[0x10] is forbidden
+   --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/core/src/cell.rs:544:18
+    |
+544 |         unsafe { *self.value.get() }
+    |                  ^^^^^^^^^^^^^^^^^ read access through <2536400> at alloc1008602[0x10] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <2536400> has state Disabled which forbids this child read access
+help: the accessed tag <2536400> was created here, in the initial state Reserved
+   --> tests/doc.rs:10:5
+    |
+10  | /     ::gluon::VmBuilder::new()
+11  | |         .import_paths(Some(vec!["".."".into()]))
+12  | |         .build()
+    | |________________^
+help: the accessed tag <2536400> later transitioned to Disabled due to a foreign write access at offsets [0x10..0x11]
+   --> tests/doc.rs:10:5
+    |
+10  | /     ::gluon::VmBuilder::new()
+11  | |         .import_paths(Some(vec!["".."".into()]))
+12  | |         .build()
+    | |________________^
+    = help: this transition corresponds to a loss of read permissions"
+mssf-core,0.0.14,3,0,3,0,build_failed,linker,= note: rust-lld: error: unable to find library -lFabricClient,experimental-bsan-treeborrows-build.csv,strings::test::test_str_addr,"error: Undefined Behavior: write access through <285667> at alloc118786[0x18] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/windows-core-0.57.0/src/imp/weak_ref_count.rs:33:9
+    |
+33  | /         self.0
+34  | |             .fetch_update(Ordering::Release, Ordering::Relaxed, |count_or_pointer| {
+35  | |                 bool::then_some(!is_weak_ref(count_or_pointer), count_or_pointer - 1)
+36  | |             })
+    | |______________^ write access through <285667> at alloc118786[0x18] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <285667> has state Frozen which forbids this child write access
+help: the accessed tag <285667> was created here, in the initial state Frozen
+   --> src/strings.rs:13:1
+    |
+13  | #[implement(IFabricStringResult)]
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+caches,0.2.8,2,0,2,0,build_failed,rustc,error[E0635]: unknown feature `stdsimd`,experimental-bsan-treeborrows-notfinal-eval.csv,lru::two_queue::test::test_2q_cache,"error: Undefined Behavior: write access through <791391> at alloc177192[0x0] is forbidden
+    --> src/lru/raw.rs:1551:13
+     |
+1551 |             (*(*node).next).prev = node;
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <791391> at alloc177192[0x0] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <791391> has state Frozen which forbids this child write access
+help: the accessed tag <791391> was created here, in the initial state Reserved
+    --> src/lru/raw.rs:1433:29
+     |
+1433 |                 self.attach(bks.as_mut());
+     |                             ^^^^^^^^^^^^
+help: the accessed tag <791391> later transitioned to Active due to a child write access at offsets [0x0..0x8]
+    --> src/lru/raw.rs:1549:13
+     |
+1549 |             (*node).prev = self.head;
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^
+     = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference
+help: the accessed tag <791391> later transitioned to Frozen due to a reborrow (acting as a foreign read access) at offsets [0x0..0x20]
+    --> src/lru/raw.rs:1436:28
+     |
+1436 |                         k: bks.as_ref().key.as_ptr(),
+     |                            ^^^^^^^^^^^^
+     = help: this transition corresponds to a loss of write permissions"
+doh-client,3.1.2,2,0,2,0,build_failed,rustc,error[E0635]: unknown feature `stdsimd`,experimental-bsan-treeborrows-build.csv,cache::tests::test_1,"error: Undefined Behavior: write access through <279273> at alloc112307[0x8] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/lru-0.7.8/src/lib.rs:905:13
+    |
+905 |             (*(*node).next).prev = node;
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <279273> at alloc112307[0x8] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <279273> has state Frozen which forbids this child write access
+help: the accessed tag <279273> was created here, in the initial state Reserved
+   --> src/cache.rs:19:17
+    |
+19  |                 self.lru_cache.put(k.clone(), v);
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <279273> later transitioned to Active due to a child write access at offsets [0x8..0x10]
+   --> src/cache.rs:19:17
+    |
+19  |                 self.lru_cache.put(k.clone(), v);
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference
+help: the accessed tag <279273> later transitioned to Frozen due to a reborrow (acting as a foreign read access) at offsets [0x0..0x30]
+   --> src/cache.rs:19:17
+    |
+19  |                 self.lru_cache.put(k.clone(), v);
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of write permissions"
+dsalgo,0.3.10,2,0,0,2,build_failed,rustc,error[E0635]: unknown feature `array_chunks`,experimental-bsan-treeborrows-build.csv,splay_tree_multiset_unsafe::tests::test_abc217,"error: Undefined Behavior: write access through <910855> at alloc303767[0x0] is forbidden
+   --> src/splay_tree_node_unsafe.rs:61:9
+    |
+61  |         p.e[s] = c;
+    |         ^^^^^^^^^^ write access through <910855> at alloc303767[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <910855> is foreign to the protected tag <910556> (i.e., it is not a child)
+    = help: this foreign write access would cause the protected tag <910556> (currently Reserved (conflicted)) to become Disabled
+    = help: protected tags must never be Disabled
+help: the accessed tag <910855> was created here
+   --> src/splay_tree_node_unsafe.rs:47:26
+    |
+47  |         let p = unsafe { self.e[2].as_mut().unwrap() };
+    |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the protected tag <910556> was created here, in the initial state Reserved
+   --> src/splay_tree_node_unsafe.rs:99:9
+    |
+99  |         &mut self,
+    |         ^^^^^^^^^
+help: the protected tag <910556> later transitioned to Reserved (conflicted) due to a reborrow (acting as a foreign read access) at offsets [0x0..0x28]
+   --> src/splay_tree_node_unsafe.rs:33:18
+    |
+33  |         unsafe { self.e[2].as_ref() }.map_or(2, |p| {
+    |                  ^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a temporary loss of write permissions until function exit"
+llhd,0.16.0,2,2,0,0,build_failed,rustc,error[E0308]: mismatched types,experimental-bsan-treeborrows-build.csv,call_with_return_value,"error: Undefined Behavior: reborrow through <276080> at alloc108218[0xa8] is forbidden
+   --> /build/src/ir/inst.rs:664:34
+    |
+664 |             if let Some(value) = self.builder.get_inst_result(inst) {
+    |                                  ^^^^^^^^^^^^ reborrow through <276080> at alloc108218[0xa8] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <276080> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <276080> was created here, in the initial state Frozen
+   --> tests/ir.rs:10:23
+    |
+10  |     let mut builder = UnitBuilder::new_anonymous(&mut func);
+    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <276080> later transitioned to Disabled due to a foreign write access at offsets [0xa8..0xb0]
+   --> /build/src/table.rs:294:9
+    |
+294 |         self.used.add(id);
+    |         ^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read permissions"
+mprober,0.11.0-beta.17,2,0,0,2,build_failed,rustc,error[E0282]: type annotations needed for `Box<_>`,experimental-bsan-treeborrows-build.csv,rocket_mounts::api::test::test_need_auth,"error: Undefined Behavior: write access through <2883274> at alloc1157023[0xd9] is forbidden
+    --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/state-0.6.0/src/init.rs:71:12
+     |
+71   |         if self.started.compare_exchange(false, true, AcqRel, Relaxed).is_err() {
+     |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <2883274> at alloc1157023[0xd9] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <2883274> is foreign to the protected tag <2883295> (i.e., it is not a child)
+     = help: this foreign write access would cause the protected tag <2883295> (currently Reserved (conflicted)) to become Disabled
+     = help: protected tags must never be Disabled
+help: the accessed tag <2883274> was created here
+    --> src/rocket_mounts/api/mod.rs:1038:23
+     |
+1038 |             let res = req.dispatch();
+     |                       ^^^^^^^^^^^^^^
+help: the protected tag <2883295> was created here, in the initial state Reserved
+    --> src/rocket_mounts/api/mod.rs:1038:23
+     |
+1038 |             let res = req.dispatch();
+     |                       ^^^^^^^^^^^^^^
+help: the protected tag <2883295> later transitioned to Reserved (conflicted) due to a foreign read access at offsets [0xd9..0xda]
+    --> src/rocket_mounts/api/mod.rs:1038:23
+     |
+1038 |             let res = req.dispatch();
+     |                       ^^^^^^^^^^^^^^
+     = help: this transition corresponds to a temporary loss of write permissions until function exit"
+ramp,0.7.0,2,2,0,0,build_failed,rustc,error[E0432]: unresolved import `std::intrinsics::abort`,experimental-bsan-treeborrows-build.csv,ll::test::test_add_self,"error: Undefined Behavior: reborrow through <360860> at alloc138305[0x0] is forbidden
+   --> src/ll/limb_ptr.rs:84:26
+    |
+84  |                 unsafe { &*self.ptr }
+    |                          ^^^^^^^^^^ reborrow through <360860> at alloc138305[0x0] is forbidden
+...
+90  | api!(Limbs, *const Limb);
+    | ------------------------ in this macro invocation
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <360860> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <360860> was created here, in the initial state Reserved
+   --> src/ll/mod.rs:286:39
+    |
+286 |                 unsafe {LimbsMut::new($nm.as_mut_ptr(), 0, $len as i32)}
+    |                                       ^^^^^^^^^^^^^^^^
+...
+353 |         let bp = make_limbs!(out b, 2);
+    |                  --------------------- in this macro invocation
+help: the accessed tag <360860> later transitioned to Disabled due to a foreign write access at offsets [0x0..0x8]
+   --> src/ll/mod.rs:355:9
+    |
+355 |         b[0] = Limb(5);
+    |         ^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read and write permissions"
+sawtooth,0.8.0,2,0,2,0,build_failed,panic,thread 'main' (42646) panicked at /local/build-50219377/home/registry/src/index.crates.io-1949cf8c6b5b557f/zmq-sys-0.11.0/build/pkg_config.rs:26:17: Unable to locate libzmq:,experimental-bsan-treeborrows-build.csv,transact::state::merkle::sql::cache::tests::test_cache_limits,"error: Undefined Behavior: write access through <4287054> at alloc1728963[0x50] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/lru-0.7.8/src/lib.rs:905:13
+    |
+905 |             (*(*node).next).prev = node;
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <4287054> at alloc1728963[0x50] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <4287054> has state Frozen which forbids this child write access
+help: the accessed tag <4287054> was created here, in the initial state Reserved
+   --> src/transact/state/merkle/sql/cache.rs:68:9
+    |
+68  |         inner.cache.put(address, (data_hash, data));
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <4287054> later transitioned to Active due to a child write access at offsets [0x50..0x58]
+   --> src/transact/state/merkle/sql/cache.rs:68:9
+    |
+68  |         inner.cache.put(address, (data_hash, data));
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference
+help: the accessed tag <4287054> later transitioned to Frozen due to a reborrow (acting as a foreign read access) at offsets [0x0..0x58]
+   --> src/transact/state/merkle/sql/cache.rs:68:9
+    |
+68  |         inner.cache.put(address, (data_hash, data));
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of write permissions"
+toad,1.0.1-beta.1,2,2,0,0,build_failed,rustc,error[E0635]: unknown feature `proc_macro_span_shrink`,experimental-bsan-treeborrows-build.csv,retry::test::delay_retrier,"error: Undefined Behavior: read access through <316687> at alloc122756[0x0] is forbidden
+   --> src/retry.rs:280:32
+    |
+280 |       unsafe { Ok(Instant::new(*self.0)) }
+    |                                ^^^^^^^ read access through <316687> at alloc122756[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <316687> has state Disabled which forbids this child read access
+help: the accessed tag <316687> was created here, in the initial state Frozen
+   --> src/retry.rs:289:32
+    |
+289 |     let clock = FakeClock::new(&time_millis as *const _);
+    |                                ^^^^^^^^^^^^
+help: the accessed tag <316687> later transitioned to Disabled due to a foreign write access at offsets [0x0..0x8]
+   --> src/retry.rs:298:5
+    |
+298 |     time_millis = 999;
+    |     ^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read permissions"
+aes,0.9.0-pre.2,1,1,0,0,build_failed,rustc,error[E0432]: unresolved import `crypto_common::BlockSizes`,experimental-bsan-treeborrows-build.csv,tests::zeroize_works,"error: Undefined Behavior: reborrow through <287638> at alloc122018[0x0] is forbidden
+   --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/core/src/slice/raw.rs:138:9
+    |
+138 |         &*ptr::slice_from_raw_parts(data, len)
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ reborrow through <287638> at alloc122018[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <287638> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <287638> was created here, in the initial state Frozen
+   --> src/lib.rs:167:23
+    |
+167 |             let ptr = &val as *const _ as *const u8;
+    |                       ^^^^
+help: the accessed tag <287638> later transitioned to Disabled due to a foreign write access at offsets [0x0..0x8]
+   --> src/soft.rs:118:17
+    |
+118 |                   zeroize::Zeroize::zeroize(&mut self.keys);
+    |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+297 | / define_aes_impl!(
+298 | |     Aes128,
+299 | |     Aes128Enc,
+300 | |     Aes128Dec,
+...   |
+308 | |     ""AES-128"",
+309 | | );
+    | |_- in this macro invocation
+    = help: this transition corresponds to a loss of read permissions"
+audio-processor-standalone-midi,1.13.0,1,1,0,0,build_failed,panic,thread 'main' (41100) panicked at /local/build-50219387/home/registry/src/index.crates.io-1949cf8c6b5b557f/alsa-sys-0.3.1/build.rs:13:18:,experimental-bsan-treeborrows-build.csv,vst::test::test_accept_events,"error: Undefined Behavior: deallocation through <347352> at alloc143718[0x0] is forbidden
+   --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:48:18
+    |
+48  |         unsafe { libc::free(ptr as *mut libc::c_void) }
+    |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ deallocation through <347352> at alloc143718[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <347352> has state Disabled which forbids this deallocation (acting as a child write access)
+help: the accessed tag <347352> was created here, in the initial state Reserved
+   --> src/vst.rs:72:17
+    |
+72  |                 events_lst.push(Box::from_raw(*event_ptr_cell));
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <347352> later transitioned to Disabled due to a foreign write access at offsets [0x0..0x20]
+   --> src/vst.rs:120:17
+    |
+120 |                 *midi_event = event;
+    |                 ^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read and write permissions"
+cdbc,0.1.23,1,1,0,0,build_failed,rustc,error[E0310]: the parameter type `T` may not live long enough,experimental-bsan-treeborrows-build.csv,pool::semaphore::test::test_acq_release_num,"error: Undefined Behavior: reborrow through <279892> at alloc111792[0x48] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/generator-0.7.5/src/rt.rs:284:28
+    |
+284 |     let mut ctx = unsafe { &mut *root.parent };
+    |                            ^^^^^^^^^^^^^^^^^ reborrow through <279892> at alloc111792[0x48] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <279892> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <279892> was created here, in the initial state Reserved
+   --> src/pool/semaphore.rs:47:26
+    |
+47  |                 blocker: Blocker::current(),
+    |                          ^^^^^^^^^^^^^^^^^^
+help: the accessed tag <279892> later transitioned to Disabled due to a foreign write access at offsets [0x48..0x50]
+   --> src/pool/semaphore.rs:47:26
+    |
+47  |                 blocker: Blocker::current(),
+    |                          ^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read and write permissions"
+mainline,4.0.0,1,0,1,0,build_failed,rustc,error[E0635]: unknown feature `stdsimd`,experimental-bsan-treeborrows-build.csv,storage::peer_storage::tests::test_get_peers_newer_than,"error: Undefined Behavior: write access through <357962> at alloc139206[0x30] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/lru-0.7.8/src/lib.rs:905:13
+    |
+905 |             (*(*node).next).prev = node;
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <357962> at alloc139206[0x30] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <357962> has state Frozen which forbids this child write access
+help: the accessed tag <357962> was created here, in the initial state Reserved
+   --> src/storage/peer_storage.rs:48:17
+    |
+48  |                 swarm_lru.put(peer_addr, PeerInfo::new(peer_addr));
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the accessed tag <357962> later transitioned to Active due to a child write access at offsets [0x30..0x38]
+   --> src/storage/peer_storage.rs:48:17
+    |
+48  |                 swarm_lru.put(peer_addr, PeerInfo::new(peer_addr));
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference
+help: the accessed tag <357962> later transitioned to Frozen due to a reborrow (acting as a foreign read access) at offsets [0x0..0x60]
+   --> src/storage/peer_storage.rs:48:17
+    |
+48  |                 swarm_lru.put(peer_addr, PeerInfo::new(peer_addr));
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of write permissions"
+lol_alloc,0.4.1,1,0,1,0,build_failed,rustc,error[E0463]: can't find crate for `core`,experimental-bsan-treeborrows-build.csv,free_list_allocator::tests::populates_free_list,"error: Undefined Behavior: write access through <316712> at alloc108263[0x30] is forbidden
+   --> src/free_list_allocator.rs:123:17
+    |
+123 |                 (*ptr).next = EMPTY_FREE_LIST;
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <316712> at alloc108263[0x30] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <316712> has state Frozen which forbids this child write access
+help: the accessed tag <316712> was created here, in the initial state Frozen
+   --> src/free_list_allocator.rs:333:22
+    |
+333 |                     (allocator.grower.borrow().pages.as_ptr() as *mut u8).add(alloc.offset),
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+moka,0.12.8,1,0,1,0,build_failed,other,error: could not compile `rustix` (lib) due to 4 previous errors,experimental-bsan-treeborrows-build.csv,common::deque::tests::basics,"error: Undefined Behavior: write access through <382149> at alloc143329[0x0] is forbidden
+   --> src/common/deque.rs:177:31
+    |
+177 |                 Some(tail) => (*tail.as_ptr()).next = Some(node),
+    |                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <382149> at alloc143329[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <382149> is a child of the conflicting tag <382119>
+    = help: the conflicting tag <382119> has state Frozen which forbids this child write access
+help: the accessed tag <382149> was created here
+   --> src/common/deque.rs:210:28
+    |
+210 |             let mut node = NonNull::from(node);
+    |                            ^^^^^^^^^^^^^^^^^^^
+help: the conflicting tag <382119> was created here, in the initial state Reserved
+   --> src/common/deque.rs:196:20
+    |
+196 |         let node = node.as_mut(); // this one is ours now, we can create an &mut.
+    |                    ^^^^^^^^^^^^^
+help: the conflicting tag <382119> later transitioned to Active due to a child write access at offsets [0x0..0x8]
+   --> src/common/deque.rs:207:29
+    |
+207 |         if let Some(next) = node.next.take() {
+    |                             ^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to the first write to a 2-phase borrowed mutable reference
+help: the conflicting tag <382119> later transitioned to Frozen due to a reborrow (acting as a foreign read access) at offsets [0x0..0x28]
+   --> src/common/deque.rs:449:22
+    |
+449 |             unsafe { node1_ptr.as_ref() }
+    |                      ^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of write permissions"
+pcap,2.2.0,1,1,0,0,build_failed,linker,= note: rust-lld: error: unable to find library -lpcap,experimental-bsan-treeborrows-build.csv,device::tests::test_list,"error: Undefined Behavior: reborrow through <347311> at alloc137206[0x40] is forbidden
+   --> src/device.rs:164:51
+    |
+164 |                     devices.push(Device::try_from(&*dev)?);
+    |                                                   ^^^^^ reborrow through <347311> at alloc137206[0x40] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <347311> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <347311> was created here, in the initial state Reserved
+   --> src/device.rs:348:24
+    |
+348 |         devs[0].next = &mut devs[1];
+    |                        ^^^^^^^^^^^^
+help: the accessed tag <347311> later transitioned to Disabled due to a foreign write access at offsets [0x40..0x48]
+   --> src/device.rs:598:9
+    |
+598 |         devs[1].addresses = &mut pcap_addr;
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read and write permissions"
+pict-rs,0.5.17-pre.6,1,0,1,0,build_failed,rustc,error[E0521]: borrowed data escapes outside of associated function,experimental-bsan-treeborrows-build.csv,repo::sled::tests::round_trip,"error: Undefined Behavior: write access through <292010> at alloc148135[0x0] is forbidden
+    --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sled-0.34.7/src/arc.rs:140:22
+     |
+140  |             unsafe { (*self.ptr).rc.fetch_add(1, Ordering::Relaxed) };
+     |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <292010> at alloc148135[0x0] is forbidden
+     |
+     = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+     = help: the accessed tag <292010> has state Frozen which forbids this child write access
+help: the accessed tag <292010> was created here, in the initial state Frozen
+    --> src/repo/sled.rs:1768:45
+     |
+1768 |             super::parse_variant_access_key(sled::IVec::from(key)).expect(""Parsed bytes"");
+     |                                             ^^^^^^^^^^^^^^^^^^^^^"
+ping-rs,0.1.2,1,0,1,0,build_failed,rustc,error[E0635]: unknown feature `proc_macro_span_shrink`,experimental-bsan-treeborrows-build.csv,linux_ping::icmp_header::test::test_encode,"error: Undefined Behavior: write access through <268140> at alloc106922[0x0] is forbidden
+  --> src/linux_ping/icmp_header.rs:52:9
+   |
+52 |         header.r#type = 1;
+   |         ^^^^^^^^^^^^^^^^^ write access through <268140> at alloc106922[0x0] is forbidden
+   |
+   = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+   = help: the accessed tag <268140> is a child of the conflicting tag <268135>
+   = help: the conflicting tag <268135> has state Frozen which forbids this child write access
+help: the accessed tag <268140> was created here
+  --> src/linux_ping/icmp_header.rs:51:22
+   |
+51 |         let header = IcmpEchoHeader::get_mut_ref(&mut buffer);
+   |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the conflicting tag <268135> was created here, in the initial state Frozen
+  --> src/linux_ping/icmp_header.rs:29:22
+   |
+29 |         let header = be_buffer.as_ptr() as *mut IcmpEchoHeader;
+   |                      ^^^^^^^^^^^^^^^^^^"
+rtbvh,0.6.2,1,1,0,0,build_failed,rustc,error[E0308]: mismatched types,experimental-bsan-treeborrows-build.csv,tests::test_sah,"error: Undefined Behavior: reborrow through <287127> at alloc113575[0x0] is forbidden
+   --> src/builders/binned_sah.rs:366:13
+    |
+366 |             node_stack,
+    |             ^^^^^^^^^^ reborrow through <287127> at alloc113575[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <287127> has state Disabled which forbids this reborrow (acting as a child read access)
+help: the accessed tag <287127> was created here, in the initial state Frozen
+   --> src/builders/binned_sah.rs:360:14
+    |
+360 |         let (node_stack, first_node) = AtomicNodeStack::new(&node_count, nodes.as_mut_slice());
+    |              ^^^^^^^^^^
+help: the accessed tag <287127> later transitioned to Disabled due to a foreign write access at offsets [0x0..0x20]
+   --> src/builders/binned_sah.rs:361:9
+    |
+361 |         first_node.bounds = Aabb::union_of_list(self.aabbs);
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a loss of read permissions"
+spin,0.9.8,1,0,0,1,build_failed,rustc,error[E0635]: unknown feature `proc_macro_span_shrink`,experimental-bsan-treeborrows-build.csv,barrier::tests::test_barrier,"error: Undefined Behavior: write access through <351849> at alloc117860[0x28] is forbidden
+   --> src/barrier.rs:112:9
+    |
+112 |         lock.count += 1;
+    |         ^^^^^^^^^^^^^^^ write access through <351849> at alloc117860[0x28] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <351849> is foreign to the protected tag <351755> (i.e., it is not a child)
+    = help: this foreign write access would cause the protected tag <351755> (currently Reserved (conflicted)) to become Disabled
+    = help: protected tags must never be Disabled
+help: the accessed tag <351849> was created here
+   --> src/barrier.rs:112:9
+    |
+112 |         lock.count += 1;
+    |         ^^^^^^^^^^
+help: the protected tag <351755> was created here, in the initial state Reserved
+   --> src/barrier.rs:119:17
+    |
+119 |                 drop(lock);
+    |                 ^^^^^^^^^^
+help: the protected tag <351755> later transitioned to Reserved (conflicted) due to a reborrow (acting as a foreign read access) at offsets [0x28..0x38]
+   --> src/mutex/ticket.rs:200:28
+    |
+200 |             data: unsafe { &mut *self.data.get() },
+    |                            ^^^^^^^^^^^^^^^^^^^^^
+    = help: this transition corresponds to a temporary loss of write permissions until function exit"
+termscp,0.16.0,1,0,1,0,build_failed,panic,thread 'main' (12794) panicked at /local/build-50219538/home/registry/src/index.crates.io-1949cf8c6b5b557f/libdbus-sys-0.2.5/build.rs:25:9: explicit panic,experimental-bsan-treeborrows-build.csv,utils::crypto::tests::test_utils_crypto_aes128,"error: Undefined Behavior: write access through <456593> at alloc178198[0x0] is forbidden
+  --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/block-modes-0.8.1/src/utils.rs:11:9
+   |
+11 |         *a ^= *b;
+   |         ^^^^^^^^ write access through <456593> at alloc178198[0x0] is forbidden
+   |
+   = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+   = help: the accessed tag <456593> is a child of the conflicting tag <456174>
+   = help: the conflicting tag <456174> has state Frozen which forbids this child write access
+help: the accessed tag <456593> was created here
+  --> src/utils/crypto.rs:11:5
+   |
+11 |     crypter.encrypt_str_to_base64(input)
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the conflicting tag <456174> was created here, in the initial state Frozen
+  --> src/utils/crypto.rs:11:5
+   |
+11 |     crypter.encrypt_str_to_base64(input)
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+tantivy,0.22.0,1,0,0,1,build_failed,other,error: could not compile `rustix` (lib) due to 4 previous errors,experimental-bsan-treeborrows-build.csv,store::index::tests::test_skip_index_empty,"error: Undefined Behavior: deallocation through <889000> (root of the allocation) at alloc323223[0x0] is forbidden
+   --> /root/.rustup/toolchains/miri/lib/rustlib/src/rust/library/alloc/src/raw_vec.rs:754:17
+    |
+754 |                 self.alloc.deallocate(ptr, layout);
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ deallocation through <889000> (root of the allocation) at alloc323223[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <889000> (root of the allocation) is foreign to the protected tag <890779> (i.e., it is not a child)
+    = help: this deallocation (acting as a foreign write access) would cause the protected tag <890779> (currently Frozen) to become Disabled
+    = help: protected tags must never be Disabled
+help: the accessed tag <889000> was created here
+   --> src/store/index/skip_index_builder.rs:111:9
+    |
+111 |         layer_sizes.serialize(output)?;
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: the protected tag <890779> was created here, in the initial state Frozen
+   --> src/store/index/skip_index.rs:61:17
+    |
+61  |     pub fn open(mut data: OwnedBytes) -> SkipIndex {
+    |                 ^^^^^^^^"
+typed-sled,0.2.3,1,0,1,0,build_failed,rustc,error[E0635]: unknown feature `proc_macro_span_shrink`,experimental-bsan-treeborrows-build.csv,custom_serde::serialize::test_lazy,"error: Undefined Behavior: write access through <272514> at alloc108381[0x0] is forbidden
+   --> /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sled-0.34.7/src/arc.rs:153:22
+    |
+153 |             let rc = (*self.ptr).rc.fetch_sub(1, Ordering::Release) - 1;
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ write access through <272514> at alloc108381[0x0] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <272514> has state Frozen which forbids this child write access
+help: the accessed tag <272514> was created here, in the initial state Frozen
+   --> src/custom_serde/serialize.rs:150:25
+    |
+150 |       let ref_str_bytes = sled::IVec::from(
+    |  _________________________^
+151 | |         bincode::serialize::<&str>(&""hello there my darling how has your day been?"").unwrap(),
+152 | |     );
+    | |_____^"
