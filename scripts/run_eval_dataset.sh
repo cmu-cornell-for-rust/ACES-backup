@@ -1081,6 +1081,17 @@ trap 'rm -rf "$tmp"' EXIT
 
 # ── fetch ──
 cargo fetch < /dev/null > "$tmp/out" 2>&1; rc=$?
+# A crate's rust-toolchain(.toml) can pin a toolchain the image lacks, which
+# rustup then tries to install into the read-only $RUSTUP_HOME. Pin the image's
+# default (miri/bsan) instead -- RUSTUP_TOOLCHAIN beats that file -- for the
+# refetch, compile and every test run after it.
+if [ "$rc" -ne 0 ] && grep -qE 'could not create temp file .*rustup.*Read-only file system' "$tmp/out"; then
+    cat "$tmp/out"
+    tc=$(cd / && rustup default 2>/dev/null | awk '{print $1}')
+    echo "fetch: $EV_CRATE's rust-toolchain needs an install; retrying with RUSTUP_TOOLCHAIN=$tc"
+    export RUSTUP_TOOLCHAIN="$tc"
+    cargo fetch < /dev/null > "$tmp/out" 2>&1; rc=$?
+fi
 cat "$tmp/out"
 if [ "$rc" -ne 0 ]; then
     classify "$tmp/out"
