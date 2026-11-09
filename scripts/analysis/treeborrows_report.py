@@ -28,7 +28,7 @@ with no treeborrows junit.xml, e.g. it didn't build), columns:
                     Out-of-Bound, Null Pointer Dereference) plus Miri-only ones:
                     Uninitialized Memory, Invalid Value, Misaligned Access,
                     Incorrect Dealloc Layout, Data Race, Unavailable Target
-                    Feature, other
+                    Feature, ABI Mismatch, other
 
 The bug location and "tag created at" are read from each UB report to group
 bug ids, but aren't written out.
@@ -97,6 +97,9 @@ def error_type(lines, i):
     """Classify the UB report whose "Undefined Behavior:" line is lines[i]."""
     l = lines[i].rstrip()
     m = l.split("Undefined Behavior:", 1)[1].lower()
+    # ABI mismatches: calling convention, argument/return type, argument count
+    if re.match(r"\s*calling a function (with|whose) ", m):
+        return "ABI Mismatch"
     if " through " in l and l.endswith(" is forbidden"):
         return aliasing_type(lines[i + 1:])
     if "data race" in m:
