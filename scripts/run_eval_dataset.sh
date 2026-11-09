@@ -113,6 +113,12 @@
 #                     to match MiriLLI's runs; the master CSV gets a
 #                     "default-features" slug. Pair it with a test list made
 #                     by build_dataset.sh --default-features
+#   --lockfiles DIR   pin dependencies: a crate with a DIR/<crate>.lock (e.g.
+#                     the Cargo.lock a Miri run of it saved) gets that file as
+#                     its Cargo.lock before cargo fetch, replacing any it ships
+#                     with, so it builds against the same dependency versions
+#                     as that run instead of whatever resolves today. Crates
+#                     without one resolve as usual
 # Environment:
 #   BSAN_SYMBOLIZER   llvm-symbolizer path inside the image, so BSAN reports
 #                     carry source locations (bsan mode). Default:
@@ -298,6 +304,7 @@ TEST_THREADS=""
 TEST_TIMEOUT="30m"    # 0 = no limit
 TIMEOUT_STREAK=5      # timeouts in a row in a module before its rest is skipped; 0 = never skip
 DEFAULT_FEATURES=0    # 1 = default features, not the docs.rs ones
+LOCKFILES=""          # dir of <crate>.lock files to pin dependencies with
 WALLTIME_ARG=12
 SLOW_WALLTIME_ARG=24
 
@@ -382,6 +389,8 @@ while [[ $# -gt 0 ]]; do
         --slow-walltime=*) SLOW_WALLTIME_ARG="${1#*=}"; shift ;;
         --test-timeout)  TEST_TIMEOUT="$2"; shift 2 ;;
         --default-features) DEFAULT_FEATURES=1; shift ;;
+        --lockfiles)     LOCKFILES="$2"; shift 2 ;;
+        --lockfiles=*)   LOCKFILES="${1#*=}"; shift ;;
         --test-timeout=*) TEST_TIMEOUT="${1#*=}"; shift ;;
         --no-timeout-skip) TIMEOUT_STREAK=0; shift ;;
         --)              shift; POS+=("$@"); break ;;
@@ -426,6 +435,7 @@ usage() {
     echo "           --test-threads N --test-timeout T (per-test limit, e.g. 10m; default 30m, 0 = none)" >&2
     echo "           --no-timeout-skip (don't skip a module's tests after 5 timeouts in a row)" >&2
     echo "           --default-features (default features, not the docs.rs ones)" >&2
+    echo "           --lockfiles DIR (pin a crate's dependencies to DIR/<crate>.lock)" >&2
     echo "           --slow-walltime T (slow-list jobs, HH or HH:MM; default 24) | --no-slow-list" >&2
     exit 1
 }
@@ -544,6 +554,10 @@ fi
 [[ -d "$DATASET_DIR" || "$DOWNLOAD" == 1 ]] \
     || { echo "Error: dataset dir not found: $DATASET_DIR (and no $DATASET-dataset.csv to download it from)" >&2; exit 1; }
 command -v sbatch >/dev/null || { echo "Error: sbatch not found (run on a login node)." >&2; exit 1; }
+if [[ -n "$LOCKFILES" ]]; then
+    [[ -d "$LOCKFILES" ]] || { echo "Error: --lockfiles dir not found: $LOCKFILES" >&2; exit 1; }
+    LOCKFILES="$(cd "$LOCKFILES" && pwd)"   # the nodes copy from it
+fi
 
 [[ -n "$TESTS_CSV" ]] || {
     echo "Error: --tests FILE is required: the tests CSV naming the crates (<name>-<version> dirs) and tests to run," >&2
@@ -885,6 +899,7 @@ TASKS=$PER_JOB_MAX
     printf 'TEST_TIMEOUT=%q\n'     "$TEST_TIMEOUT"
     printf 'TIMEOUT_STREAK=%q\n'   "$TIMEOUT_STREAK"
     printf 'DEFAULT_FEATURES=%q\n' "$DEFAULT_FEATURES"
+    printf 'LOCKFILES=%q\n'        "$LOCKFILES"
     printf 'MIRIFLAGS_ALL=%q\n'    "$MIRIFLAGS_ALL"
     printf 'BSAN_OPTIONS_ALL=%q\n' "$BSAN_OPTIONS_ALL"
     printf 'BSAN_SYMBOLIZER=%q\n'  "$BSAN_SYMBOLIZER"
@@ -1394,6 +1409,10 @@ worker() {
                 cp -a "$e" "$scr/work/"
             done
         fi
+        if [ -n "$LOCKFILES" ] && [ -f "$LOCKFILES/$crate.lock" ]; then
+            cp "$LOCKFILES/$crate.lock" "$scr/work/Cargo.lock"
+            echo "[job $JOBIDX task $tid] $crate: Cargo.lock from $LOCKFILES" >> "$log"
+        fi
         # Each crate is its own job step, so it gets its own cgroup capped at
         # --mem-per-task: an OOM kills this crate only, never its neighbours
         # (which a shared job-wide pool would let it starve or take down).
@@ -1454,6 +1473,7 @@ if [[ "$DOWNLOAD" == 1 ]]; then
 else
     echo "Dataset:  $DATASET_DIR"
 fi
+[[ -n "$LOCKFILES" ]] && echo "Lockfiles: $LOCKFILES ($(ls "$LOCKFILES"/*.lock 2>/dev/null | wc -l) pinned)"
 echo "Tests:    $NTESTS across $NCRATES crate(s) (from $TESTS_CSV)"
 echo "Skipped:  ignored=$skip_ignored$( (( ${#BSAN_FAIL_CSVS[@]} > 0 )) && echo " bsan-build-fail=$skip_bsanfail") not-in-only=$skip_only${VERSIONS:+ not-$VERSIONS=$skip_version}${SAFETY:+ not-$SAFETY=$skip_safety} no-dir=${#MISSING[@]}"
 for _f in ${BSAN_FAIL_CSVS[@]+"${BSAN_FAIL_CSVS[@]}"}; do
