@@ -1,0 +1,103 @@
+build,crate,test,status,compile_seconds,run_seconds,timestamp,job_id,error_type,error
+experimental-bsan,polars-0.44.2,,build_failed,383.350,,2026-11-09T17:55:46Z,2326758.0,rustc,"error[E0432]: unresolved import `core::unicode::Cased`"
+experimental-bsan,cogo-0.1.36,,build_failed,24.707,,2026-11-09T17:49:42Z,2326768.0,rustc,"error[E0310]: the parameter type `T` may not live long enough"
+experimental-bsan,rocket-0.5.1,,build_failed,110.138,,2026-11-09T17:51:03Z,2326759.0,rustc,"error[E0432]: unresolved import `crate::http::tls::rustls::cipher_suite`"
+experimental-bsan,voluntary-servitude-4.0.8,iterator::tests::iter_all,success,68.070,2.536,2026-11-09T17:50:24Z,2326769.0,,
+experimental-bsan,voluntary-servitude-4.0.8,iterator::tests::iter_drop,success,68.070,2.543,2026-11-09T17:50:24Z,2326769.0,,
+experimental-bsan,voluntary-servitude-4.0.8,iterator::tests::iter_drop_many,success,68.070,2.530,2026-11-09T17:50:24Z,2326769.0,,
+experimental-bsan,voluntary-servitude-4.0.8,iterator::tests::iter_grows,success,68.070,2.538,2026-11-09T17:50:24Z,2326769.0,,
+experimental-bsan,voluntary-servitude-4.0.8,traits::serde::tests::json,success,68.070,2.518,2026-11-09T17:50:27Z,2326769.0,,
+experimental-bsan,voluntary-servitude-4.0.8,traits::serde::tests::derive_json,success,68.070,2.530,2026-11-09T17:50:27Z,2326769.0,,
+experimental-bsan,voluntary-servitude-4.0.8,iterator::tests::iter_many,success,68.070,2.548,2026-11-09T17:50:27Z,2326769.0,,
+experimental-bsan,voluntary-servitude-4.0.8,iterator::tests::iter_isnt_growable_when_consumed,success,68.070,2.560,2026-11-09T17:50:27Z,2326769.0,,
+experimental-bsan,voluntary-servitude-4.0.8,voluntary_servitude::tests::extend_partial_eq,success,68.070,2.472,2026-11-09T17:50:29Z,2326769.0,,
+experimental-bsan,voluntary-servitude-4.0.8,voluntary_servitude::tests::iter_outlives,success,68.070,2.495,2026-11-09T17:50:30Z,2326769.0,,
+experimental-bsan,voluntary-servitude-4.0.8,voluntary_servitude::tests::swap_empty,success,68.070,2.508,2026-11-09T17:50:30Z,2326769.0,,
+experimental-bsan,voluntary-servitude-4.0.8,voluntary_servitude::tests::voluntary_servitude_len_append_clear,success,68.070,2.515,2026-11-09T17:50:30Z,2326769.0,,
+experimental-bsan,voluntary-servitude-4.0.8,clear,success,68.070,2.414,2026-11-09T17:50:32Z,2326769.0,,
+experimental-bsan,mwalib-1.7.1,,build_failed,21.465,,2026-11-09T17:49:36Z,2326770.0,panic,"thread 'main' (1565185) panicked at /tmp/job.2326770/ev-2326770-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/fitsio-sys-0.5.3/build.rs:184:19: Unhandled error: "
+experimental-bsan,may-0.3.47,,build_failed,57.656,,2026-11-09T17:50:16Z,2326771.0,rustc,"error[E0310]: the parameter type `T` may not live long enough"
+experimental-bsan,makefile-lossless-0.1.5,,build_failed,30.972,,2026-11-09T17:49:58Z,2326772.0,rustc,"error[E0599]: no associated function or constant named `new_root_mut` found for struct `rowan::SyntaxNode<L>` in the current scope"
+experimental-bsan,pulse-0.5.3,dropped_barrier,success,24.654,4.689,2026-11-09T17:49:45Z,2326773.0,,
+experimental-bsan,pulse-0.5.3,using_slice,success,24.654,4.661,2026-11-09T17:49:45Z,2326773.0,,
+experimental-bsan,pulse-0.5.3,select_one,success,24.654,4.674,2026-11-09T17:49:45Z,2326773.0,,
+experimental-bsan,pulse-0.5.3,using_vec,success,24.654,4.724,2026-11-09T17:49:45Z,2326773.0,,
+experimental-bsan,pulse-0.5.3,select_three,success,24.654,4.704,2026-11-09T17:49:49Z,2326773.0,,
+experimental-bsan,pulse-0.5.3,test_timeout,success,24.654,4.727,2026-11-09T17:49:49Z,2326773.0,,
+experimental-bsan,rocket-validation-0.2.0,,build_failed,39.272,,2026-11-09T17:49:55Z,2326774.0,rustc,"error[E0282]: type annotations needed for `Box<_>`"
+experimental-bsan,safe-token-3.5.1,,build_failed,224.048,,2026-11-09T17:53:02Z,2326775.0,rustc,"error[E0432]: unresolved import `console::Term`"
+experimental-bsan,solarti-token-4.1.1,,build_failed,281.868,,2026-11-09T17:53:55Z,2326776.0,rustc,"error[E0433]: cannot find module or crate `solana_program` in this scope"
+experimental-bsan,didcomm-0.4.1,,build_failed,6.824,,2026-11-09T17:49:18Z,2326777.0,rustc,"error[E0635]: unknown feature `proc_macro_span_shrink`"
+experimental-bsan,fortify-0.4.1,tests::test_complex,success,30.286,3.290,2026-11-09T17:49:45Z,2326778.0,,
+experimental-bsan,fortify-0.4.1,tests::test_drop_new_box_mut,success,30.286,3.307,2026-11-09T17:49:45Z,2326778.0,,
+experimental-bsan,fortify-0.4.1,tests::test_drop_new_box_ref,success,30.286,3.295,2026-11-09T17:49:45Z,2326778.0,,
+experimental-bsan,fortify-0.4.1,test,success,30.286,3.401,2026-11-09T17:49:45Z,2326778.0,,
+experimental-bsan,debian-analyzer-0.158.21,,build_failed,119.877,,2026-11-09T17:51:13Z,2326760.0,linker,"= note: rust-lld: error: unable to find library -lpython3.13"
+experimental-bsan,solarti-token-2022-1.0.1,,build_failed,385.327,,2026-11-09T17:55:39Z,2326779.0,rustc,"error[E0432]: unresolved import `spl_transfer_hook_interface::offchain::resolve_extra_account_metas`"
+experimental-bsan,tremor-script-0.13.0-rc.33,,build_failed,192.085,,2026-11-09T17:52:25Z,2326780.0,rustc,"error[E0308]: mismatched types"
+experimental-bsan,jrsonnet-gcmodule-0.3.7,,fetch_failed,,,2026-11-09T17:49:40Z,2326781.0,other,"error: could not create temp file /opt/rust/rustup/tmp/yap4sfybqbh8luxo_file: Read-only file system (os error 30)"
+experimental-bsan,lightws-0.6.12,,build_failed,26.521,,2026-11-09T17:50:11Z,2326782.0,rustc,"error[E0107]: struct takes 1 generic argument but 0 generic arguments were supplied"
+experimental-bsan,mssf-core-0.0.14,,build_failed,32.484,,2026-11-09T17:50:12Z,2326783.0,linker,"= note: rust-lld: error: unable to find library -lFabricClient"
+experimental-bsan,sp1-recursion-compiler-3.1.0,,build_failed,109.098,,2026-11-09T17:51:31Z,2326784.0,rustc,"error[E0282]: type annotations needed"
+experimental-bsan,spmc-0.3.0,,build_failed,12.059,,2026-11-09T17:49:50Z,2326785.0,other,"error: could not compile `generator` (lib) due to 3 previous errors"
+experimental-bsan,stream-vbyte-0.4.1,,build_failed,3.459,,2026-11-09T17:50:26Z,2326786.0,rustc,"error[E0635]: unknown feature `proc_macro_span_shrink`"
+experimental-bsan,sxd-document-0.3.2,parser::test::comment_before_top_element,success,17.467,2.156,2026-11-09T17:50:42Z,2326787.0,,
+experimental-bsan,sxd-document-0.3.2,parser::test::multiple_comments_before_top_element,success,17.467,2.162,2026-11-09T17:50:42Z,2326787.0,,
+experimental-bsan,sxd-document-0.3.2,parser::test::top_level_processing_instructions,success,17.467,2.157,2026-11-09T17:50:42Z,2326787.0,,
+experimental-bsan,zenoh-protocol-core-0.7.0-rc,,build_failed,17.966,,2026-11-09T17:51:07Z,2326788.0,other,"error: could not compile `rustix` (lib) due to 4 previous errors"
+experimental-bsan,sphinx-lang-0.8.6,,build_failed,17.791,,2026-11-09T17:49:29Z,2326761.0,rustc,"error[E0635]: unknown feature `stdsimd`"
+experimental-bsan,atom-0.4.0,lifo,success,10.975,2.116,2026-11-09T17:51:04Z,2326789.0,,
+experimental-bsan,atom-0.4.0,lifo_drop,success,10.975,2.101,2026-11-09T17:51:04Z,2326789.0,,
+experimental-bsan,doh-client-3.1.2,,build_failed,14.927,,2026-11-09T17:50:33Z,2326790.0,rustc,"error[E0635]: unknown feature `stdsimd`"
+experimental-bsan,dsalgo-0.3.10,,build_failed,8.363,,2026-11-09T17:50:25Z,2326791.0,rustc,"error[E0635]: unknown feature `array_chunks`"
+experimental-bsan,llhd-0.16.0,,build_failed,18.626,,2026-11-09T17:51:11Z,2326792.0,rustc,"error[E0308]: mismatched types"
+experimental-bsan,nebari-0.5.5,,build_failed,3.945,,2026-11-09T17:50:52Z,2326793.0,rustc,"error[E0635]: unknown feature `proc_macro_span_shrink`"
+experimental-bsan,ramp-0.7.0,,build_failed,18.644,,2026-11-09T17:51:06Z,2326794.0,rustc,"error[E0432]: unresolved import `std::intrinsics::abort`"
+experimental-bsan,toad-1.0.1-beta.1,,build_failed,3.158,,2026-11-09T17:50:56Z,2326795.0,rustc,"error[E0635]: unknown feature `proc_macro_span_shrink`"
+experimental-bsan,ach-cell-0.1.17,base,success,2.584,4.220,2026-11-09T17:50:59Z,2326796.0,,
+experimental-bsan,aes-0.9.0-pre.2,,build_failed,4.512,,2026-11-09T17:50:57Z,2326797.0,rustc,"error[E0432]: unresolved import `crypto_common::BlockSizes`"
+experimental-bsan,audio-processor-standalone-midi-1.13.0,,build_failed,7.182,,2026-11-09T17:51:00Z,2326798.0,panic,"thread 'main' (4106440) panicked at /tmp/job.2326798/ev-2326798-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/alsa-sys-0.3.1/build.rs:13:18:"
+experimental-bsan,r-description-0.2.2,,build_failed,45.404,,2026-11-09T17:50:05Z,2326762.0,rustc,"error[E0599]: no associated function or constant named `new_root_mut` found for struct `rowan::SyntaxNode<L>` in the current scope"
+experimental-bsan,autopilot-0.4.0,,build_failed,41.525,,2026-11-09T17:52:04Z,2326799.0,linker,"= note: rust-lld: error: unable to find library -lX11"
+experimental-bsan,gazebo-0.8.1,cell::tests::test_borrow_guards,success,9.402,1.029,2026-11-09T17:51:28Z,2326800.0,,
+experimental-bsan,interchange-0.3.1,test_function,success,2.224,3.219,2026-11-09T17:50:53Z,2326801.0,,
+experimental-bsan,mainline-4.0.0,,build_failed,16.164,,2026-11-09T17:51:04Z,2326802.0,rustc,"error[E0635]: unknown feature `stdsimd`"
+experimental-bsan,may_waiter-0.1.16,,build_failed,8.093,,2026-11-09T17:51:27Z,2326803.0,rustc,"error[E0310]: the parameter type `T` may not live long enough"
+experimental-bsan,moka-0.12.8,,build_failed,43.831,,2026-11-09T17:52:02Z,2326804.0,other,"error: could not compile `rustix` (lib) due to 4 previous errors"
+experimental-bsan,pcap-2.2.0,,build_failed,48.931,,2026-11-09T17:52:08Z,2326805.0,linker,"= note: rust-lld: error: unable to find library -lpcap"
+experimental-bsan,pict-rs-0.5.17-pre.6,,build_failed,130.019,,2026-11-09T17:53:30Z,2326806.0,rustc,"error[E0521]: borrowed data escapes outside of associated function"
+experimental-bsan,rtbvh-0.6.2,,build_failed,31.961,,2026-11-09T17:51:51Z,2326807.0,rustc,"error[E0308]: mismatched types"
+experimental-bsan,skiplist-0.5.1,skiplist::tests::basic_small,success,68.122,1.473,2026-11-09T17:53:02Z,2326809.0,,
+experimental-bsan,nodejs-resolver-0.1.1,,fetch_failed,,,2026-11-09T17:49:16Z,2326763.0,other,"error: could not create temp file /opt/rust/rustup/tmp/z1up7orgp73sqmzt_file: Read-only file system (os error 30)"
+experimental-bsan,spin-0.9.8,,build_failed,12.680,,2026-11-09T17:52:05Z,2326810.0,rustc,"error[E0635]: unknown feature `proc_macro_span_shrink`"
+experimental-bsan,spinning-0.1.0,tests::multithread_once,success,2.984,1.156,2026-11-09T17:51:21Z,2326811.0,,
+experimental-bsan,tantivy-0.22.0,,build_failed,18.288,,2026-11-09T17:51:37Z,2326812.0,other,"error: could not compile `rustix` (lib) due to 4 previous errors"
+experimental-bsan,termscp-0.16.0,,build_failed,96.675,,2026-11-09T17:53:28Z,2326813.0,panic,"thread 'main' (1317687) panicked at /tmp/job.2326813/ev-2326813-0/home/registry/src/index.crates.io-1949cf8c6b5b557f/libdbus-sys-0.2.5/build.rs:25:9: explicit panic"
+experimental-bsan,typed-sled-0.2.3,,build_failed,2.387,,2026-11-09T17:51:52Z,2326814.0,rustc,"error[E0635]: unknown feature `proc_macro_span_shrink`"
+experimental-bsan,upstream-ontologist-0.1.46,,build_failed,172.007,,2026-11-09T17:54:43Z,2326815.0,linker,"= note: rust-lld: error: unable to find library -lpython3.13"
+experimental-bsan,zitadel-5.3.1,rocket::introspection::guard::tests::guard_fails_if_no_config_present,success,290.980,3.447,2026-11-09T17:56:45Z,2326816.0,,
+experimental-bsan,yrs-0.21.3,doc::test::apply_snapshot_updates,test_failed,124.482,49.971,2026-11-09T17:52:15Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::apply_update_basic_v2,test_failed,124.482,50.447,2026-11-09T17:52:15Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::apply_update_basic_v1,test_failed,124.482,50.502,2026-11-09T17:52:15Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::encode_basic,test_failed,124.482,51.070,2026-11-09T17:52:16Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::incremental_observe_update,test_failed,124.482,35.781,2026-11-09T17:52:51Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::force_gc,test_failed,124.482,36.026,2026-11-09T17:52:51Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::integrate,test_failed,124.482,36.239,2026-11-09T17:52:51Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::integrate_block_with_parent_gc,test_failed,124.482,36.817,2026-11-09T17:52:53Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::observe_transaction_cleanup,test_failed,124.482,35.939,2026-11-09T17:53:27Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::observe_after_transaction,test_failed,124.482,36.650,2026-11-09T17:53:28Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::on_update,test_failed,124.482,36.434,2026-11-09T17:53:28Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::out_of_order_updates,test_failed,124.482,37.089,2026-11-09T17:53:31Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::pending_update_integration,test_failed,124.482,35.023,2026-11-09T17:54:03Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::snapshots_splitting_text,test_failed,124.482,35.758,2026-11-09T17:54:04Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::partially_duplicated_update,test_failed,124.482,37.180,2026-11-09T17:54:04Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::subdoc,test_failed,124.482,35.239,2026-11-09T17:54:07Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::subdoc_load_edge_cases,test_failed,124.482,35.498,2026-11-09T17:54:39Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::subdoc_auto_load_edge_cases,test_failed,124.482,36.337,2026-11-09T17:54:40Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::to_json,test_failed,124.482,37.039,2026-11-09T17:54:42Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::ycrdt_issue_174,test_failed,124.482,35.858,2026-11-09T17:54:44Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::yrb_issue_45,test_failed,124.482,19.846,2026-11-09T17:54:59Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,yrs-0.21.3,doc::test::ypy_issue_32,test_failed,124.482,20.041,2026-11-09T17:55:00Z,2326764.0,rustc,"error[E0432]: unresolved import `yrs::Quotable`"
+experimental-bsan,miden-crypto-0.12.0,,fetch_failed,,,2026-11-09T17:49:15Z,2326765.0,other,"error: could not create temp file /opt/rust/rustup/tmp/0leadvhuux37nmmc_file: Read-only file system (os error 30)"
+experimental-bsan,rocket_cors-0.6.0,,build_failed,29.682,,2026-11-09T17:49:48Z,2326766.0,rustc,"error[E0282]: type annotations needed for `Box<_>`"
+experimental-bsan,internment-0.8.6,,build_failed,48.716,,2026-11-09T17:50:06Z,2326767.0,rustc,"error[E0635]: unknown feature `stdsimd`"
